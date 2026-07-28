@@ -454,6 +454,9 @@
 //	"m_FriendlyOnlyModifier":
 //	{
 //	},
+//	"m_CasterModifier":
+//	{
+//	},
 //	"m_BuffModifier":
 //	{
 //	},

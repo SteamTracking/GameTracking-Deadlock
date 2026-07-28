@@ -453,6 +453,9 @@
 //	},
 //	"m_FriendlyOnlyModifier":
 //	{
+//	},
+//	"m_CasterModifier":
+//	{
 //	}
 //}
 class CCitadel_Item_ContainmentVData : public CCitadel_Item_TrackingProjectileApplyModifierVData

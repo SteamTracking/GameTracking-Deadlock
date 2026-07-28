@@ -436,6 +436,9 @@
 //	"m_DebuffModifier":
 //	{
 //	},
+//	"m_TargetLifestealModifier":
+//	{
+//	},
 //	"m_flAirSpeedMax": 1.000000,
 //	"m_flAirDrag": 1.000000,
 //	"m_flFallSpeedMax": 1.000000,
@@ -455,6 +458,7 @@ class CCitadel_Ability_Fencer_RiposteVData : public CitadelAbilityVData
 	CSoundEventName m_strStartParry;
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_DebuffModifier;
+	CEmbeddedSubclass< CCitadelModifier > m_TargetLifestealModifier;
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flAirSpeedMax;
 	float32 m_flAirDrag;

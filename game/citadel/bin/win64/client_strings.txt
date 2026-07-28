@@ -89,8 +89,11 @@
  (%d)Unknown
  (%ld unused bits)\n
  (+%d more due to usercommand delivery)
- (08@HPX`j 
- (08@HPZ 
+ (08@HPX`j
+ (08@HPXb@z
+ (08@HPZ
+ (08@HR@z
+ (0X`hpz@z
  (Dirty Animation)
  (INVALID PSS PARAMETERS)\n
  (Negative)
@@ -2999,6 +3002,7 @@ $hRh
 )\n\nQueryParam
 )\n\taux_stats
 )\n\tdir_index
+)binary_zstd
 )fuG
 )haI
 *%*/*O*U*_*e*k*m*s*
@@ -4947,6 +4951,7 @@ $hRh
 .?AV?$CModifierFactory@VCCitadel_Modifier_FealtyTarget@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Fear@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_FearWatcher@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Fencer_Riposte_TargetLifesteal@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Fervor@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Fervor_Bonuses@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_FireBomb@@$0PPPP@@@
@@ -8157,6 +8162,7 @@ $hRh
 .?AV?$CSubclassFactory@VCCitadel_Modifier_FealtyTarget@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Fear@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_FearWatcher@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Fencer_Riposte_TargetLifesteal@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Fervor@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Fervor_Bonuses@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_FireBomb@@VCBaseModifier@@@@
@@ -11869,6 +11875,7 @@ $hRh
 .?AVCCitadel_Modifier_FearWatcher@@
 .?AVCCitadel_Modifier_FearWatcherVData@@
 .?AVCCitadel_Modifier_Fear_VData@@
+.?AVCCitadel_Modifier_Fencer_Riposte_TargetLifesteal@@
 .?AVCCitadel_Modifier_Fervor@@
 .?AVCCitadel_Modifier_Fervor_Bonuses@@
 .?AVCCitadel_Modifier_Fervor_Bonuses_VData@@
@@ -16771,8 +16778,8 @@ $hRh
 0123456789
 02V8[
 05=k
-08@HR 
-08B 
+08@HR
+08@J@z
 08bX
 09,h
 0:00
@@ -16815,7 +16822,6 @@ $hRh
 0e\r8
 0pp@5tqE?|sO541
 0tU+xc:
-0vdK
 0x%4.4x 
 0x%X
 0x%X 
@@ -17104,7 +17110,7 @@ $hRh
 4@AA
 4Ch;
 4F0I
-4F\vp
+4F\v0
 4Mv8
 4Redirection URI provided during client registration.2
 4Zis
@@ -17476,6 +17482,7 @@ $hRh
 >333>
 >4|6eXg_e
 >7^0g
+>8Zn
 >9Only Show Ping Indicator at Ping Location (no ping sound)
 >BShow Ping Indicator at Ping Location, Play Ping Sound, and Play VO
 >CShow Ping Indicator on Pinging Player, Play Ping Sound, and Play VO
@@ -17504,7 +17511,6 @@ $hRh
 >ztq
 ?(Optional) Video Id of a YouTube video for this published file.
 ?333?
-?8m5
 ??0HandleScope@v8@@QEAA@PEAVIsolate@1@@Z
 ??0TryCatch@v8@@QEAA@PEAVIsolate@1@@Z
 ??0Utf8Value@String@v8@@QEAA@PEAVIsolate@2@V?$Local@VValue@v8@@@2@@Z
@@ -17556,14 +17562,14 @@ $hRh
 ?x29
 @!@%@+@1@?@C@E@]@a@g@m@
 @":\n$CCitadelUserMsg_SpectatorTeamChanged
-@08NdK
+@08N
 @0pp
-@60m
-@6Pl
+@6Pq
 @?SlowGetInternalField@Object@v8@@AEAA?AV?$Local@VData@v8@@@2@H@Z
 @BH]f
 @DebugIndividualStyle
-@HPX`hv
+@HPX`hv0
+@Hce
 @MPropertyAttributeEditor
 @MfKZ
 @Pgl
@@ -17579,14 +17585,12 @@ $hRh
 @\n\vPowerUpBuff
 @absorigin_follow
 @dKb]
-@fdK
 @fff>fff>fff>fff>
+@ht0
 @i1V
 @keyframes 
 @keyframes '%s'\r\n{\r\n
-@m_EmpowerBulletModifier
 @n2w
-@ndK
 A random value [0.0, 1.0] used to make sure entities are not all in sync
 A specific_item component must define either an exact item to use or a lootlist to select an item from!
 A string associated with this Cursor, to use later for remote Kill or Wait requests. Cursors can have any number of Tags associated with them.
@@ -17602,6 +17606,7 @@ A<fP
 A>x8
 AA Compromise
 AA->Output
+AA:0
 AABBDirection
 AACompromise
 ABXY
@@ -18479,6 +18484,7 @@ BAscendantHasClass
 BAsyncSend
 BAsyncSendProto
 BC (default)
+BCCitadel_Pickup_Modifier_VData
 BCDFGHJKMNPQRSTVWXYZ0123456789
 BCanSeeInParentScroll
 BEOS_BIND_FUNC
@@ -18811,7 +18817,6 @@ BlurOutput
 BlurVert
 BlurVisionRange
 Blur_DistanceField_t
-Bm_nOriginalLaneAssignment
 BoX5
 Body Component Scriptdesc
 BodyGameSystem
@@ -19272,8 +19277,8 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability_slide.cpp:723
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_accolades_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4321
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4495
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4337
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4511
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_hero.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_bot_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_camera_controller.cpp:168
@@ -27051,6 +27056,7 @@ ImbueAbilityLifesteal
 ImbueEntry
 ImbueList
 ImbueTargetAbilityIcon
+ImbuedCooldownMultiplier
 ImbuementSourceSnippet
 ImgPanel
 Immediately removes the specified entity
@@ -29083,6 +29089,7 @@ NonHeroHealingFactor
 NonHeroMult
 NonHeroReductionPercent
 NonLatchedDurationPct
+NonPlayerBonusWeaponPower
 NonPlayerCardResourceScale
 NonPlayerResourceScalePct
 Nonce
@@ -29455,11 +29462,13 @@ P-224
 P-256
 P-384
 P-521
-P08J@\n
-P08NdK
+P08@J@z
+P08N
 P1\t98"
+P2@z
 P2P ping to "%s". Timed out after %.2fms\n
 P5[1
+P60g
 PAGN_4
 PANORAMA_LAYOUTFILE
 PARALYZE
@@ -30181,7 +30190,6 @@ Please Wait
 Please specify 0 or 1 with the -stream Parameter\n
 Pm8A?
 PmR"H?
-PndK
 Point entity.
 Point under crosshair
 PointType
@@ -33474,6 +33482,7 @@ TargetDummyPanel
 TargetFindingDelay
 TargetIdentifier
 TargetLifesteal
+TargetLifestealDuration
 TargetLifestealNonHero
 TargetLingerDuration
 TargetName
@@ -35078,7 +35087,7 @@ XRJ2
 XWY]
 XYD%
 X\tQo
-X`hr 
+X`hr
 Xd3h
 XfJ7
 XjfR
@@ -36319,6 +36328,7 @@ Z~wl
 \rChallengeID_t
 \rChallengeID_t"
 \rCitadelMMRu_t
+\rHHk
 \rHeroBadgeXP_t
 \rHeroBuildID_t
 \rHeroBuildID_t"
@@ -36428,6 +36438,7 @@ Z~wl
 \tMatchID_t"9\n&CMsgGCToServerAllocateForMatchResponse
 \tMatchID_t"Z\n#CMsgClientToGCSpectateLobbyResponse
 \tNone\n
+\tP00
 \tParam BasePlayerWeapon returned NULL!\n
 \tParam selecting string is out of range!\n
 \tPartyID_t
@@ -36562,6 +36573,7 @@ Z~wl
 \vGt5
 \vHCK/
 \vNCE\v
+\vP00
 \vUY6[E
 \v\n\tRemoveFan
 \v\vTSG
@@ -36636,9 +36648,6 @@ _xU`u
 _}eOk
 `28)fk
 `3?New@Array@v8@@SA?AV?$Local@VArray@v8@@@2@PEAVIsolate@2@H@Z
-`60n
-`6po
-`6pp
 `:zQF
 `D$daM-l
 `DZG
@@ -36648,9 +36657,8 @@ _}eOk
 `VX:H
 `\n\rvector_values
 `fPw.\vM
-`fdK
 `h9T~
-`ndK
+`ht@i
 `o_je
 `yNT
 a null shared library handle was used
@@ -36668,7 +36676,6 @@ a:typeparam
 a;Tg
 a@XZ
 aA0k
-aBvdK
 aD/x
 aDSS
 aECDH
@@ -39841,7 +39848,6 @@ down
 down-wrap
 down-wrap-left
 dpiaware
-dq\fp
 draft_inner_wheel
 draft_inner_wheel_blur
 draft_item_sets
@@ -42048,6 +42054,7 @@ houseIdentifier
 hover
 hovering
 hp_stat
+hpz@z
 hr_H
 href="
 hscroll
@@ -44999,6 +45006,7 @@ modifier_fathom_scalding_spray_target
 modifier_fathom_scalding_spray_weapon_damage
 modifier_fear
 modifier_fear_watcher
+modifier_fencer_riposte_target_lifesteal
 modifier_fencer_ultimate_caster
 modifier_fencer_ultimate_target
 modifier_fervor
@@ -46283,8 +46291,8 @@ p.other
 p.ppBasis
 p.prime
 p.tpBasis
-p08@H^dK
-p0jPX
+p08@H^
+p2@z
 p2p_ping could not convert "%s" to a CPeerToPeerAddress\n
 p2p_ping could not ping "%s" because they are an unknown peer\n
 p2p_ping requires a destination address\n
@@ -46295,7 +46303,6 @@ p5Z3
 p5\nL,
 p618
 p>?Set@Template@v8@@QEAAXV?$Local@VName@v8@@@2@V?$Local@VData@v8@@@2@W4PropertyAttribute@2@@Z
-p>dK
 p@0pqE5tsO?|1
 pCheckpointName
 pD4t
@@ -46971,7 +46978,6 @@ playrandom
 playtime_2weeks
 playtime_forever
 plum
-pndK
 pngsize
 point
 point arithmetic failure
@@ -50542,6 +50548,7 @@ wQ0"
 wR\fe3c
 wRlb.
 wY[K,
+w\vij
 w_5&#R4
 wait_until_end
 waiting for lock

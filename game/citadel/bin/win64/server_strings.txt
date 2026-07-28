@@ -181,8 +181,8 @@
  ( NOT SUPPORTED BY ANIMGRAPH ) 
  (%ld unused bits)\n
  (%u unread)
- (08@HPX`j 
- (08@HPZ 
+ (08@HPX`j
+ (08@HPZ
  (Dirty Animation)
  (Eluded)
  (INVALID PSS PARAMETERS)\n
@@ -206,7 +206,6 @@
  - movable mesh id = none\n
  - vert %d = (%0.3f, %0.3f, %0.3f)\n
  -0000
- .pg2
  8f\ff
  <-- Arg '%s'
  <-- Retval '%s'
@@ -1688,6 +1687,7 @@ $light_emissive
 (d4t8
 (debug)
 (default)
+(fPs2
 (fS{ggRcjh
 (from angle, to angle, time) - Spherical lerp of angle from->to based on time
 (hInflictor, hAttacker, flDamage) - Allocate a damageinfo object, used as an argument to TakeDamage(). Call DestroyDamageInfo( hInfo ) to free the object.
@@ -2060,7 +2060,7 @@ $light_emissive
 ... %s culled event %s after max %i reached \n
 ....................
 ..uR5&m
-.0u2
+.0y2
 .4bb
 .97yY
 .?AU?$CameraOp_Approach_t@M@@
@@ -3627,6 +3627,7 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_FealtyTarget@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Fear@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_FearWatcher@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Fencer_Riposte_TargetLifesteal@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Fervor@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Fervor_Bonuses@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_FireBomb@@$0PPPP@@@
@@ -6784,6 +6785,7 @@ $light_emissive
 .?AV?$CSubclassFactory@VCCitadel_Modifier_FealtyTarget@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Fear@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_FearWatcher@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Fencer_Riposte_TargetLifesteal@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Fervor@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Fervor_Bonuses@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_FireBomb@@VCBaseModifier@@@@
@@ -10033,6 +10035,7 @@ $light_emissive
 .?AVCCitadel_Modifier_FearWatcher@@
 .?AVCCitadel_Modifier_FearWatcherVData@@
 .?AVCCitadel_Modifier_Fear_VData@@
+.?AVCCitadel_Modifier_Fencer_Riposte_TargetLifesteal@@
 .?AVCCitadel_Modifier_Fervor@@
 .?AVCCitadel_Modifier_Fervor_Bonuses@@
 .?AVCCitadel_Modifier_Fervor_Bonuses_VData@@
@@ -14086,6 +14089,7 @@ $light_emissive
 .GCProtoBufMsgSrc
 .HCK\v
 .MODIFIER_ENTRY_TYPE
+.P62
 .P6AXAEBUSoundOpvarManagerSettableData_t@@PEAVCSoundOpvarSetPointStackCollection@@@Z
 .P6AXPEAVCPulseAPIExtensionRegistrationContext_t@@@Z
 .PARTICLE_MESSAGE
@@ -14106,11 +14110,12 @@ $light_emissive
 .PEAVCPlayer_UseServices@@
 .PEAVCPlayer_WaterServices@@
 .PEAVCPlayer_WeaponServices@@
+.PZ2
 .PartnerAccountType
-.Pd2
 .PingCommonData
 .PostProcessingGameStates
-.Pp2
+.Px2
+.Py2
 .Q.Ol
 .\crypto\asn1\a_bitstr.c
 .\crypto\asn1\a_bool.c
@@ -14395,9 +14400,9 @@ $light_emissive
 .google.protobuf.ServiceOptions
 .lbN
 .league
-.pH2
-.pd2
+.pB2
 .pp@0
+.px2
 .solo
 .steammessages_unified_base.steamworkssdk.proto"\\n"CMsgSteamLearnDataSourceDescObject
 .text$
@@ -14454,16 +14459,13 @@ $light_emissive
 0.75
 0123456789
 02V8[
-042-
 05=k
-08@HR 
-08B 
+08@HR
 08bX
 09,h
 0;Q5[
 0<cz
 0=normal, 1=rebirth, 2=rejuvenator
-0>PR2
 0AgffA
 0M2~@p
 0W/5
@@ -14629,7 +14631,6 @@ $light_emissive
 2\n\tsource_gc
 2\r.CameraAction
 2\rlhp
-2\vp42-
 2^pV
 2_BONE_IK
 2_tasks_left
@@ -14690,6 +14691,7 @@ $light_emissive
 4Ch;
 4DL=
 4F0I
+4F\v0D
 4Mv8
 4Zis
 4\fPl
@@ -14739,13 +14741,19 @@ $light_emissive
 5s\nl
 5t?F
 5~EW
-6 i2
+6 G2
+6 s2
 6#6165676;6M6O6S6Y6a6k6m6
 6#RDP#
 6%vi
 6,2K
 6-zeZ
+60+2
 60000
+6022
+60H2
+60W2
+60i2
 62$|S)6f
 64CK\vH
 65535
@@ -14755,10 +14763,13 @@ $light_emissive
 6666666666666666
 666666666666666666666666666666666666666666666666\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\.\ssl\s3_enc.c
 67-s
-6@S2
+6@52
+6@Z2
 6H,N
 6O|T%
-6P22
+6P,2
+6Pj2
+6Po2
 6Qd=
 6\n2GAME_PARTICLE_MANAGER_EVENT_UPDATE_ENTITY_POSITION
 6\n2STEAMLEARN_INFERENCE_ERROR_INVALID_NAMED_INFERENCE
@@ -14770,8 +14781,9 @@ $light_emissive
 6\n\tstructure
 6\n\vmatch_slots
 6_wEX
-6`A2
-6`T2
+6`12
+6`c2
+6`e2
 6afD
 6bX+
 6c&0|vvX
@@ -14779,7 +14791,8 @@ $light_emissive
 6l13
 6lkc
 6myY;
-6pi2
+6p*2
+6p-2
 6qo~
 6r-m_v
 6r1ij
@@ -14829,8 +14842,7 @@ $light_emissive
 8<pl
 8= zp
 8A6j
-8F`Q2
-8FpP2
+8B@x
 8GZS
 8SIffK5W
 8TZvrv<
@@ -15044,8 +15056,9 @@ $light_emissive
 >>NAVGEN: stage %02d / %02d: %s, disabled\n
 >BShow Ping Indicator at Ping Location, Play Ping Sound, and Play VO
 >CShow Ping Indicator on Pinging Player, Play Ping Sound, and Play VO
->P12
+>P32
 >POTG Eval: Best play interval(%.3f -> %.3f)[%.1fs] (cur: %.3f) score (%.2f -> %.2f). Primary Ent (%s)\n
+>PU2
 >Sem
 >WK6
 >\n:GAME_PARTICLE_MANAGER_EVENT_ADD_MODELLIST_OVERRIDE_ELEMENT
@@ -15067,7 +15080,7 @@ $light_emissive
 >fN46R^
 >l\rur
 >p00<
->pU2
+>ps2
 >yhP
 >ztq
 ?333?
@@ -15090,7 +15103,6 @@ $light_emissive
 ?ffffff
 ?gwL
 ?jOb
-?m_bIsInCatform
 ?srJO
 ?tya
 ?uWS
@@ -15099,12 +15111,10 @@ $light_emissive
 @":\n$CCitadelUserMsg_SpectatorTeamChanged
 @08N
 @0pp
-@6pG2
+@6@x2
 @BH]f
-@HPX`hv
-@HV K2
+@HPX`hv0J2
 @MfKZ
-@N@62
 @Pgl
 @Pu\rm
 @Requests the metadata that was generated from a specified fetch.
@@ -15118,6 +15128,7 @@ $light_emissive
 @\n\vPowerUpBuff
 @dKb]
 @fff>fff>fff>fff>
+@htP
 @i1V
 @n2w
 @player_start_teleport_destination
@@ -15151,7 +15162,7 @@ ACTIVATE_TYPE_DATAUPDATE_CREATION
 ACTIVATE_TYPE_INITIAL_CREATION
 ACTIVATE_TYPE_ONRESTORE
 ACTOR
-ACUserMessageUpdateCssClasses_t
+ACUserMessageHapticsManagerEffect_t
 AD Time Stamping
 ADDED %s (%s) to transition.\n
 ADDED.\n
@@ -15383,6 +15394,7 @@ A\n\tent_index
 A\n\vdescriptors
 A\n\vdiagnostics
 A\rjW
+A\v:Pv
 AbW_
 Abandon
 Abandoned
@@ -15832,7 +15844,7 @@ AveragePlayerMMR
 Avg Frame: %.2fms, Avg Idle: %.2fms - %u frames\n
 AwaitingTether
 AwakeDamage
-Ax&M
+Ax=M
 Axis
 AxisAngleToQuaternion
 B!rA
@@ -15998,6 +16010,7 @@ B\n>STEAMLEARN_REGISTER_DATA_SOURCE_RESULT_ERROR_INVALID_TIMESTAMP
 B\n\fmeasurements
 B\n\nobjectives
 B\n\vbook_reward
+B\v0D
 B\vP\n0
 B\vp\n0
 B`4I
@@ -16588,8 +16601,8 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ability_b
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ability_beam.cpp:243
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_accolades_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4321
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4495
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4337
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4511
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_hero.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_bot_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_gamerules.cpp
@@ -18860,7 +18873,6 @@ CUserMessageEmpty
 CUserMessageFade
 CUserMessageFade_t
 CUserMessageGameTitle"
-CUserMessageHapticsManagerEffect_t
 CUserMessageHapticsManagerPulse
 CUserMessageHapticsManagerPulse_t
 CUserMessageHudMsg
@@ -18905,6 +18917,7 @@ CUserMessageShowMenu_t
 CUserMessageTextMsg
 CUserMessageTextMsg_t
 CUserMessageUpdateCssClasses
+CUserMessageUpdateCssClasses_t
 CUserMessageVoiceMask
 CUserMessageVoiceMask_t
 CUserMessageWaterShake
@@ -21570,7 +21583,7 @@ FN|p
 FORM
 FORMAT
 FOV2D
-FPX2
+FPS2
 FU\n-XP
 FVisible
 FV|FgUV
@@ -22942,6 +22955,7 @@ Ignoring unsupported entity class '%s' in shared environment: %s\n
 Ij)s
 Ik\f`dub`D
 ImbueAbilityLifesteal
+ImbuedCooldownMultiplier
 Immediately removes the specified entity
 ImmobilizeDuration
 ImmunityDuration
@@ -25176,6 +25190,7 @@ NonHeroMult
 NonHeroReductionPercent
 NonHeroStackLimit
 NonLatchedDurationPct
+NonPlayerBonusWeaponPower
 NonPlayerCardResourceScale
 NonPlayerResourceScalePct
 Nonce
@@ -25765,12 +25780,10 @@ P-224
 P-256
 P-384
 P-521
-P08J@
 P08N
 P1\t98"
 P5[1
-P60\n2
-P6@)2
+P6p\f2
 PAGN_4
 PARALYZE
 PARAMETER NAME: %s | OPTIONAL: %s, TYPE: %s, BOUND: %s, REFERENCED: %s\n
@@ -26736,7 +26749,6 @@ RSA_verify
 RSA_verify_ASN1_OCTET_STRING
 RSA_verify_PKCS1_PSS
 RSA_verify_PKCS1_PSS_mgf1
-R\fp42-
 R\n)k_EPingMarkerInfo_NoMarkerYesSoundMiniMap
 R\n\nBookReward
 R\r1>Vp
@@ -29490,6 +29502,7 @@ TargetEntityName
 TargetFindingDelay
 TargetIdentifier
 TargetLifesteal
+TargetLifestealDuration
 TargetLifestealNonHero
 TargetLingerDuration
 TargetName
@@ -30211,7 +30224,6 @@ V3 s
 V3_ADDR_VALIDATE_PATH_INTERNAL
 V3_GENERIC_EXTENSION
 V5u f
-V@v2
 VALV
 VALVw
 VDPr
@@ -30353,6 +30365,7 @@ VoteRoundToTallyEntry
 VotingPosterCount
 VotingPosterSpeed
 Vp>u
+Vp{2
 Vt_9
 VulnerabilityPerStack
 V~~Vq
@@ -30721,10 +30734,10 @@ XRJ2
 XWY]
 XYD%
 X\tQo
-X`hr 
+X`hr
 Xd3h
 XfJ7
-XfpS2
+Xf`i2
 XjfR
 XqgA+
 Xuub
@@ -31926,7 +31939,6 @@ Z~wl
 \v\vTSG
 \vj0k
 \vjC7
-\vp42-
 ]1h=bfz
 ]FhSD}
 ]GT7]
@@ -32009,6 +32021,7 @@ _}eOk
 `\n\rvector_values
 `fPw.\vM
 `h9T~
+`ht0
 `o_je
 `yNT
 a null shared library handle was used
@@ -34343,6 +34356,7 @@ dHHp
 dITRedirect
 dNSDomain
 dOj\f,
+dP\t`8
 dSAQuality
 dWry
 dZ!2.
@@ -34738,7 +34752,6 @@ doorman_bomb_projectile
 dotProductMax
 double_shot
 down
-dq\fP\t
 draft
 draft_item_sets
 drag_override
@@ -39022,6 +39035,7 @@ modifier_fathom_scalding_spray_target
 modifier_fathom_scalding_spray_weapon_damage
 modifier_fear
 modifier_fear_watcher
+modifier_fencer_riposte_target_lifesteal
 modifier_fencer_ultimate_caster
 modifier_fencer_ultimate_target
 modifier_fervor
@@ -39574,6 +39588,7 @@ my_hero
 mzP"T
 n < (int)sizeof(ctx->enc_data)
 n does not equal p q
+n g2
 n0?X
 n1Z 
 n5cM
@@ -39608,7 +39623,6 @@ nMeshGroupMask
 nMode
 nMoveType
 nNumerator
-nPW2
 nPitch
 nPriority != NETWORK_FIELD_CHANGE_DEFAULT_PRIORITY
 nSRecord
@@ -39623,7 +39637,6 @@ nValue
 nVersion
 n\r2S
 n`3i
-n`J2
 name constraints minimum and maximum not supported
 name of highest net worth enemy
 name too long
@@ -40237,12 +40250,14 @@ p.ppBasis
 p.prime
 p.tpBasis
 p08@H^
+p0jPQ
+p2@x
 p2{l
-p42-
 p4Z3
 p5Z3
 p5\nL,
 p618
+p6@^2
 p@0pqE5tsO?|1
 pActivator
 pAnimGraphEntity
@@ -41149,7 +41164,6 @@ rX&O0
 rZ1VwGf5
 rZPM
 r\vDi
-r\vp42-
 rad2deg
 radial
 radialalt
@@ -42791,6 +42805,7 @@ tLY^m`6
 tLl 
 tLsq
 tNt5
+tR\t`8
 t\n\fDamageSource
 t\n\tCacheData
 t_movement_idle_turn_target
@@ -43256,6 +43271,7 @@ uJ4CA2
 uQ'ZH
 uQbK!
 u\vMW
+u\vij
 uaqf
 ub=A
 udp_connect_ip
@@ -43858,7 +43874,6 @@ volume_resolution_z
 volumematcheseventramp
 vote_round_to_tally
 voxel_size
-vp62
 vparams
 vqw0\nU
 vscripts
@@ -44192,6 +44207,5 @@ zz2K
 ~P2T
 ~R65Fu
 ~jLRG
-~pv2
 ~w]UG
 ~yhZ

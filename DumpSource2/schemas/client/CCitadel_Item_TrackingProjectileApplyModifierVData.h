@@ -453,6 +453,9 @@
 //	},
 //	"m_FriendlyOnlyModifier":
 //	{
+//	},
+//	"m_CasterModifier":
+//	{
 //	}
 //}
 class CCitadel_Item_TrackingProjectileApplyModifierVData : public CitadelItemVData
@@ -462,4 +465,6 @@ class CCitadel_Item_TrackingProjectileApplyModifierVData : public CitadelItemVDa
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_TargetModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_FriendlyOnlyModifier;
+	// MPropertyDescription = "Optional. Applied to the caster on cast for the ability's duration - use for a self-cost."
+	CEmbeddedSubclass< CCitadelModifier > m_CasterModifier;
 };

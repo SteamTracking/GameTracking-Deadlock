@@ -1010,6 +1010,7 @@ Any cursors above this count will wait, up to the limit.
 Any extra waiting cursors will be terminated. -1 for infinite cursors.
 AnyAllowed
 Application Mode
+Applied to a burned target as its per-target cooldown; blocks re-triggering while present.
 Applies Steam Audio Hybrid Reverb.
 Applies a pre-delay to an impulse response.
 Applies an effects preset from the source1 DSP system.
@@ -3278,6 +3279,7 @@ CCitadel_Modifier_Fear
 CCitadel_Modifier_FearWatcher
 CCitadel_Modifier_FearWatcherVData
 CCitadel_Modifier_Fear_VData
+CCitadel_Modifier_Fencer_Riposte_TargetLifesteal
 CCitadel_Modifier_Fervor
 CCitadel_Modifier_Fervor_Bonuses
 CCitadel_Modifier_Fervor_Bonuses_VData
@@ -13028,6 +13030,7 @@ MODIFIER_STATE_IS_MELEE_TARGET
 MODIFIER_STATE_IS_SMALL_DEPLOYABLE
 MODIFIER_STATE_IS_TINY_CHARACTER
 MODIFIER_STATE_ITEMS_DISABLED
+MODIFIER_STATE_ITEMS_IGNORE_IMMOBILIZE
 MODIFIER_STATE_JUMP_DISABLED
 MODIFIER_STATE_KEEP_HP_PERCENTAGE_ON_MAXHEALTH_CHANGE
 MODIFIER_STATE_KNOCKDOWN_IMMUNE
@@ -14711,6 +14714,7 @@ Optional name of a send in your main mix graph.  When set this node's mix will b
 Optional output value to match if applicable. Leave empty to match any possible value for the output param.
 Optional second key to check
 Optional text that will appear in the outliner to help organize Smart Prop elements and communicate their purpose to other users.
+Optional. Applied to the caster on cast for the ability's duration - use for a self-cost.
 Optionally how far to hover off the ground
 Options
 Opvar Float
@@ -27885,6 +27889,7 @@ m_TargetEntities
 m_TargetEntity
 m_TargetFOV
 m_TargetInput
+m_TargetLifestealModifier
 m_TargetLoopingSound
 m_TargetModifier
 m_TargetModifierDurationAbilityProp
@@ -28605,6 +28610,7 @@ m_bCanHighlightSubassets
 m_bCanOverrideNPCState
 m_bCanProc
 m_bCanProcByOtherObjects
+m_bCanProcFromItems
 m_bCanProcMultipleTimesFromSameShot
 m_bCanProcMultipleTimesFromSameShot != true
 m_bCanProcMultipleTimesOnOneTarget

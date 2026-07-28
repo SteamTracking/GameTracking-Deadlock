@@ -140,6 +140,7 @@
 //	"m_bShouldApplyAbilityCooldown": false,
 //	"m_bCanProcMultipleTimesOnOneTarget": true,
 //	"m_bCanProcByOtherObjects": false,
+//	"m_bCanProcFromItems": true,
 //	"m_nAbilityTargetTypes": "",
 //	"m_nAbilityTargetFlags": "",
 //	"m_vecProcDamageTypes":

@@ -140,6 +140,7 @@
 //	"m_bShouldApplyAbilityCooldown": false,
 //	"m_bCanProcMultipleTimesOnOneTarget": true,
 //	"m_bCanProcByOtherObjects": false,
+//	"m_bCanProcFromItems": true,
 //	"m_nAbilityTargetTypes": "",
 //	"m_nAbilityTargetFlags": "",
 //	"m_vecProcDamageTypes":
@@ -154,6 +155,7 @@ class CCitadel_Modifier_BaseEventProcVData : public CCitadelModifierVData
 	// MPropertySuppressExpr = "m_bCanProcMultipleTimesFromSameShot != true"
 	bool m_bCanProcMultipleTimesOnOneTarget;
 	bool m_bCanProcByOtherObjects;
+	bool m_bCanProcFromItems;
 	CITADEL_UNIT_TARGET_TYPE m_nAbilityTargetTypes;
 	CITADEL_UNIT_TARGET_FLAGS m_nAbilityTargetFlags;
 	CUtlVector< ECitadelDamageType > m_vecProcDamageTypes;
