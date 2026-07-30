@@ -25,7 +25,7 @@ enum ECitadelMatchMode {
 	k_ECitadelMatchMode_ServerTest = 5;
 	k_ECitadelMatchMode_Tutorial = 6;
 	k_ECitadelMatchMode_HeroLabs = 7;
-	k_ECitadelMatchMode_Calibration = 8;
+	k_ECitadelMatchMode_NewPlayerPlacement = 8;
 }
 
 enum ECitadelLobbyTeam {
@@ -39,6 +39,11 @@ enum ECitadelAccountStatMedal {
 	k_eBronze = 1;
 	k_eSilver = 2;
 	k_eGold = 3;
+}
+
+enum ECitadelRankedType {
+	k_eCitadelRankedType_Invalid = 0;
+	k_eCitadelRankedType_Normal = 1;
 }
 
 enum ECitadelMMPreference {
@@ -160,6 +165,27 @@ enum EFeatureBanReason {
 	k_eFeatureBanReason_ReportedByOtherPlayers = 2;
 	k_eFeatureBanReason_MatchAbandons = 3;
 	k_eFeatureBanReason_TooManyReportsSubmitted = 4;
+}
+
+enum EHeroXPGrantReason {
+	k_eGrant_Win = 0;
+	k_eGrant_Loss = 1;
+	k_eGrant_Award = 2;
+}
+
+enum EPlayerMatchOutcome {
+	k_EPlayerMatchOutcome_Invalid = 0;
+	k_EPlayerMatchOutcome_Win = 1;
+	k_EPlayerMatchOutcome_Loss = 2;
+	k_EPlayerMatchOutcome_Penalized = 3;
+	k_EPlayerMatchOutcome_PenalizedParty = 4;
+	k_EPlayerMatchOutcome_NotScored = 5;
+}
+
+message CMsgHeroXPGrant {
+	optional uint32 hero_id = 1;
+	optional uint32 xp_grant = 2;
+	optional .EHeroXPGrantReason reason = 3 [default = k_eGrant_Win];
 }
 
 message CSOCitadelLobby {
@@ -286,6 +312,14 @@ message CSOCitadelParty {
 		optional bool duplicate_heroes_enabled = 9;
 	}
 
+	message RankedScores {
+		optional .ECitadelRankedType rank_type = 1 [default = k_eCitadelRankedType_Invalid];
+		optional uint32 rank_interval = 2;
+		optional uint32 rank_display_badge = 3;
+		repeated uint32 unlocked_heroes = 5;
+		optional bool in_calibration = 6;
+	}
+
 	message Member {
 		optional uint32 account_id = 1;
 		optional string persona_name = 2;
@@ -300,6 +334,7 @@ message CSOCitadelParty {
 		optional uint64 new_player_progress = 11;
 		repeated uint32 owned_heroes = 12 [packed = true];
 		optional uint32 low_priority_games_remaining = 13;
+		repeated .CSOCitadelParty.RankedScores ranked_scores = 14;
 	}
 
 	message LeftMember {
@@ -426,6 +461,17 @@ message CMsgMatchPlayerDamageMatrix {
 	optional .CMsgMatchPlayerDamageMatrix.SourceDetails source_details = 3;
 }
 
+message CMsgMatchPlayerRankData {
+	optional uint32 initial_display_rank = 1;
+	optional uint32 initial_flat_progress = 2;
+	optional uint32 final_flat_progress = 3;
+	optional int32 desired_progress_change = 4;
+	optional uint32 initial_calibration_games = 6;
+	optional uint32 initial_demotion_protection_games = 7;
+	optional bool consumed_demotion_protection = 8;
+	optional uint32 initial_win_streak = 9;
+}
+
 message CMsgMatchMetaDataContents {
 	message Position {
 		optional float x = 1;
@@ -547,6 +593,10 @@ message CMsgMatchMetaDataContents {
 		optional uint32 starting_xp = 3;
 	}
 
+	message HeroXPReward {
+		optional .CMsgHeroXPGrant xp_grant = 1;
+	}
+
 	message PlayerAccolade {
 		optional uint32 accolade_id = 1;
 		optional int32 accolade_stat_value = 2;
@@ -582,6 +632,9 @@ message CMsgMatchMetaDataContents {
 		optional uint32 mvp_rank = 28;
 		optional bool earned_holiday_award_2025 = 29;
 		repeated .CMsgMatchMetaDataContents.PowerUpBuff power_up_buffs = 30;
+		repeated .CMsgMatchMetaDataContents.HeroXPReward hero_xp_rewards = 31;
+		optional .CMsgMatchPlayerRankData player_rank_data = 32;
+		optional .EPlayerMatchOutcome player_match_outcome = 33 [default = k_EPlayerMatchOutcome_Invalid];
 	}
 
 	message Teams {
@@ -656,6 +709,8 @@ message CMsgMatchMetaDataContents {
 		repeated .CMsgMatchMetaDataContents.Teams teams = 30;
 		optional .ECitadelBotDifficulty bot_difficulty = 32 [default = k_ECitadelBotDifficulty_None];
 		repeated .CMsgMatchMetaDataContents.StreetBrawlRound street_brawl_rounds = 33;
+		optional .ECitadelRankedType ranked_type = 34 [default = k_eCitadelRankedType_Invalid];
+		optional uint32 rank_interval = 35;
 	}
 
 	enum EMatchOutcome {

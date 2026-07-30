@@ -1,0 +1,101 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_db_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_db_page_play.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_db_page_play_bots.vcss_c" />
+	</styles>
+	<CitadelPlayPageBots class="DashboardPage" oncancel="CitadelNavigateBack();" dashboardclass="isShowingPlayPageBots">
+		<CitadelScenePanel id="HeroScenePanelBacker" map="ui/hero_select_backer/hero_select_backer" camera="hero_select_backer_camera" particleonly="false" />
+		<Panel id="PlayModes">
+			<Label class="PlayTitle" text="#menu_bot_practice" />
+			<Panel id="PlayOptions" hittest="false">
+				<Panel id="PrimaryModes">
+					<Button id="Option_CoOpBots" class="playoption hide_in_queue option1 largeButton" onactivate="CitadelStartBotMatch( false, k_ECitadelGameMode_Normal, k_ECitadelBotDifficulty_Easy )" onmouseover="CitadelMusicQueueArpeggiatorNote()">
+						<Panel class="backgroundImg" />
+						<Panel class="playImage" />
+						<Panel class="TextArea">
+							<Panel class="TitleArea">
+								<Panel class="titleBG" />
+								<Label text="#menu_bots_coop" class="playoptionLabel" />
+							</Panel>
+						</Panel>
+					</Button>
+				</Panel>
+				<Panel id="SubModes">
+					<Panel id="SubModesContainerTop">
+						<Label text="#Citadel_BotMatchModal_Private" class="DescText align_center" />
+						<Panel class="botDifficulties">
+							<Button class="playoption smallButton dim_in_queue botOption botsEasy" onactivate="CitadelStartBotMatch( true, k_ECitadelGameMode_Normal, k_ECitadelBotDifficulty_Easy )" onmouseover="CitadelMusicQueueArpeggiatorNote()">
+								<Panel class="backgroundImg" />
+								<Panel class="playImage" />
+								<Panel class="TextArea">
+									<Panel class="TitleArea">
+										<Panel class="titleBG" />
+										<Label text="#menu_bots_easy" class="playoptionLabel" />
+									</Panel>
+								</Panel>
+							</Button>
+							<Button class="playoption smallButton dim_in_queue botOption botsMed" onactivate="CitadelStartBotMatch( true, k_ECitadelGameMode_Normal, k_ECitadelBotDifficulty_Medium )" onmouseover="CitadelMusicQueueArpeggiatorNote()">
+								<Panel class="backgroundImg" />
+								<Panel class="playImage" />
+								<Panel class="TextArea">
+									<Panel class="TitleArea">
+										<Panel class="titleBG" />
+										<Label text="#menu_bots_medium" class="playoptionLabel" />
+									</Panel>
+								</Panel>
+							</Button>
+							<Button class="playoption smallButton dim_in_queue botOption botsHard" onactivate="CitadelStartBotMatch( true, k_ECitadelGameMode_Normal, k_ECitadelBotDifficulty_Hard )" onmouseover="CitadelMusicQueueArpeggiatorNote()">
+								<Panel class="backgroundImg" />
+								<Panel class="playImage" />
+								<Panel class="TextArea">
+									<Panel class="TitleArea">
+										<Panel class="titleBG" />
+										<Label text="#menu_bots_hard" class="playoptionLabel" />
+									</Panel>
+								</Panel>
+							</Button>
+						</Panel>
+					</Panel>
+					<Panel id="SubModesContainerBottom">
+						<Label text="#Citadel_BotMatchModal_PrivateBrawl" class="DescText align_center" />
+						<Panel class="botDifficulties">
+							<Button class="playoption smallButton dim_in_queue botOption botsEasy" onactivate="CitadelStartBotMatch( true, k_ECitadelGameMode_StreetBrawl, k_ECitadelBotDifficulty_Easy )" onmouseover="CitadelMusicQueueArpeggiatorNote()">
+								<Panel class="backgroundImg" />
+								<Panel class="playImage" />
+								<Panel class="TextArea">
+									<Panel class="TitleArea">
+										<Panel class="titleBG" />
+										<Label text="#menu_bots_easy" class="playoptionLabel" />
+									</Panel>
+								</Panel>
+							</Button>
+							<Button class="playoption smallButton dim_in_queue botOption botsMed" onactivate="CitadelStartBotMatch( true, k_ECitadelGameMode_StreetBrawl, k_ECitadelBotDifficulty_Medium )" onmouseover="CitadelMusicQueueArpeggiatorNote()">
+								<Panel class="backgroundImg" />
+								<Panel class="playImage" />
+								<Panel class="TextArea">
+									<Panel class="TitleArea">
+										<Panel class="titleBG" />
+										<Label text="#menu_bots_medium" class="playoptionLabel" />
+									</Panel>
+								</Panel>
+							</Button>
+							<Button class="playoption smallButton dim_in_queue botOption botsHard" onactivate="CitadelStartBotMatch( true, k_ECitadelGameMode_StreetBrawl, k_ECitadelBotDifficulty_Hard )" onmouseover="CitadelMusicQueueArpeggiatorNote()">
+								<Panel class="backgroundImg" />
+								<Panel class="playImage" />
+								<Panel class="TextArea">
+									<Panel class="TitleArea">
+										<Panel class="titleBG" />
+										<Label text="#menu_bots_hard" class="playoptionLabel" />
+									</Panel>
+								</Panel>
+							</Button>
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</CitadelPlayPageBots>
+</root>

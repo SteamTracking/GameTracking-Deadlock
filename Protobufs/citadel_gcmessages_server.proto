@@ -57,6 +57,7 @@ enum EGCServerSignoutData {
 	k_EServerSignoutData_MatchKills = 14;
 	k_EServerSignoutData_PlayerBehavior = 15;
 	k_EServerSignoutData_StreetBrawlData = 16;
+	k_EServerSignoutData_HeroDraftData = 17;
 }
 
 message CMsgServerCrashSentinelFile {
@@ -179,6 +180,16 @@ message CSOCitadelServerStaticLobby {
 		optional .CMsgPlayerHeroData hero_data = 19;
 		optional uint32 match_number = 20;
 		optional bool randomed_hero = 21;
+		repeated uint32 unlocked_hero_ids = 26;
+		optional uint32 ranked_calibration_matches = 27;
+		optional uint32 ranked_demote_protection_matches = 28;
+		optional uint32 ranked_progress = 29;
+		optional int32 ranked_delta_win = 30;
+		optional int32 ranked_delta_loss = 31;
+		optional int32 ranked_delta_abandon = 32;
+		optional uint32 rank_progress_badge = 33;
+		optional uint32 rank_display_badge = 34;
+		optional uint32 ranked_win_streak = 35;
 	}
 
 	message DevSettings {
@@ -213,6 +224,8 @@ message CSOCitadelServerStaticLobby {
 	optional string gameplay_experiment = 27;
 	optional bool rewards_eligible = 28;
 	repeated uint32 banned_heroes = 29;
+	optional .ECitadelRankedType rank_type = 30 [default = k_eCitadelRankedType_Invalid];
+	optional uint32 rank_interval = 31;
 }
 
 message CSOCitadelServerHideoutLobby {
@@ -268,6 +281,8 @@ message CMsgServerToGCUpdateMatchInfo {
 	optional uint64 objectives_mask_team1 = 10;
 	optional uint32 brawl_score_team0 = 11;
 	optional uint32 brawl_score_team1 = 12;
+	repeated uint32 changed_hero_slots = 13 [packed = true];
+	repeated uint32 changed_hero_ids = 14 [packed = true];
 }
 
 message CMsgServerToGCMatchSignoutPermission {
@@ -471,21 +486,9 @@ message CMsgServerSignoutData_ChallengeProgress {
 }
 
 message CMsgServerSignoutData_HeroXPGrant {
-	message HeroXPGrant {
-		optional uint32 hero_id = 1;
-		optional uint32 xp_grant = 2;
-		optional .CMsgServerSignoutData_HeroXPGrant.EGrantReason reason = 3 [default = k_eGrant_Win];
-	}
-
 	message AccountXPGrant {
 		optional uint32 account_id = 1;
-		repeated .CMsgServerSignoutData_HeroXPGrant.HeroXPGrant xp_grant = 2;
-	}
-
-	enum EGrantReason {
-		k_eGrant_Win = 0;
-		k_eGrant_Loss = 1;
-		k_eGrant_Award = 2;
+		repeated .CMsgHeroXPGrant xp_grant = 2;
 	}
 
 	repeated .CMsgServerSignoutData_HeroXPGrant.AccountXPGrant account_xp = 1;
@@ -598,6 +601,23 @@ message CMsgServerSignoutData_StreetBrawlData {
 	repeated .CMsgServerSignoutData_StreetBrawlData.Round rounds = 1;
 }
 
+message CMsgServerSignoutData_HeroDraftData {
+	message HeroDraftAttempt {
+		optional uint32 player_slot = 1;
+		optional uint32 hero_id = 2;
+		optional .CMsgServerSignoutData_HeroDraftData.EDraftOutcome outcome = 3 [default = k_eError];
+		optional uint32 time = 4;
+	}
+
+	enum EDraftOutcome {
+		k_eError = 0;
+		k_eAlreadyTaken = 1;
+		k_eSuccess = 2;
+	}
+
+	repeated .CMsgServerSignoutData_HeroDraftData.HeroDraftAttempt hero_draft_attempts = 1;
+}
+
 message CMsgServerSignoutData_PenalizedPlayers {
 	message Penalty {
 		optional uint32 account_id = 1;
@@ -691,6 +711,8 @@ message CMsgMatchData {
 		repeated .CMsgTrackedStat player_tracked_stats = 56;
 		optional float new_player_score = 57;
 		optional float hero_mmru_skill = 58;
+		optional .EPlayerMatchOutcome player_match_outcome = 61 [default = k_EPlayerMatchOutcome_Invalid];
+		optional int32 rank_change_delta = 62;
 	}
 
 	message TeamInfo {
@@ -730,6 +752,8 @@ message CMsgMatchData {
 	optional float winner_pct_time_in_enemy = 21;
 	optional bool forgive_existing_abandons = 22;
 	optional uint32 brawl_avg_round_time_s = 23;
+	optional .ECitadelRankedType rank_type = 25 [default = k_eCitadelRankedType_Invalid];
+	optional uint32 rank_interval = 26;
 }
 
 message CMsgServerToGCMatchSignout {

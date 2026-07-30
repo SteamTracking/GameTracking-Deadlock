@@ -15,6 +15,7 @@
 // MNetworkVarNames = "int32 m_nLevel"
 // MNetworkVarNames = "int32 m_nCurrencies"
 // MNetworkVarNames = "int32 m_nSpentCurrencies"
+// MNetworkVarNames = "int m_nNumHeroChangesUsed"
 // MNetworkVarNames = "GameTime_t m_flRespawnTime"
 // MNetworkVarNames = "GameTime_t m_flLastSpawnTime"
 // MNetworkVarNames = "bool m_bInRegenerationZone"
@@ -90,6 +91,9 @@ class CCitadelPlayerPawn : public CCitadelPlayerPawnBase
 	int32[6] m_nCurrencies;
 	// MNetworkEnable
 	int32[6] m_nSpentCurrencies;
+	// MNetworkEnable
+	// MNetworkUserGroup = "LocalPlayerExclusive"
+	int32 m_nNumHeroChangesUsed;
 	// MNetworkEnable
 	GameTime_t m_flRespawnTime;
 	// MNetworkEnable

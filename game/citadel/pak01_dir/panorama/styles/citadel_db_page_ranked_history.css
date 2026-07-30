@@ -1,0 +1,129 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+CitadelRankedHistoryPage
+{
+	width: 100%;
+	height: 100%;
+	background-color: #000c;
+}
+
+.MainContents
+{
+	flow-children: down;
+	vertical-align: middle;
+	horizontal-align: center;
+	width: 1200px;
+	height: 800px;
+}
+
+.MainContents .Title
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	font-size: 48px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.MainContents #RankedSeasonsList
+{
+	flow-children: down;
+	width: 100%;
+	overflow: squish scroll;
+}
+
+.RankedSeason
+{
+	flow-children: right;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #222 ), to( #333 ));
+	margin-bottom: 16px;
+	width: 100%;
+	height: 180px;
+	padding-right: 24px;
+	transition-property: brightness;
+	transition-duration: 0.2s;
+}
+
+.RankedSeason:hover
+{
+	brightness: 2.0;
+}
+
+.RankedSeason:active
+{
+	brightness: 1.5;
+}
+
+.RankedSeason .PlayerRankStatus
+{
+	width: 200px;
+	vertical-align: middle;
+}
+
+.RankedSeason .PlayerRankStatus .PlayerRankStatusLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	color: #666;
+	font-family: oracle;
+	border: 1px solid #666;
+	padding: 4px 8px;
+}
+
+.RankedSeason .PlayerRankStatus #RankedBadge
+{
+	ui-scale: 60%;
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.RankedSeason .SeasonInfo
+{
+	flow-children: down;
+	vertical-align: middle;
+	width: fill-parent-flow( 1.0 );
+}
+
+.RankedSeason .SeasonInfo .SeasonName
+{
+	font-family: oracle;
+	font-size: 32px;
+}
+
+.RankedSeason .SeasonInfo .SeasonDates
+{
+	font-family: oracle;
+	color: #999;
+}
+
+.RankedSeason .SeasonStatus
+{
+	vertical-align: middle;
+	margin-left: 32px;
+	font-family: block;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 32px;
+}
+
+.RankedSeason.SeasonActive .SeasonStatus
+{
+	color: soulColor;
+}
+
+.RankedSeason.SeasonFinished .SeasonStatus
+{
+	color: #666;
+}
+
+.RankedSeason.ShowBadge #RankedBadge
+{
+	visibility: visible;
+}
+
+.RankedSeason.ShowBadge .PlayerRankStatusLabel
+{
+	visibility: collapse;
+}
+

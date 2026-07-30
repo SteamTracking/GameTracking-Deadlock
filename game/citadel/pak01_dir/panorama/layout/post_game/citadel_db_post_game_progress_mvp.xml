@@ -25,7 +25,10 @@
 				<Panel id="Accolades" />
 				<Panel id="Awards" />
 				<Panel class="Footer">
-					<Label class="PlayedBy" text="{s:hero_name}" />
+					<Panel class="HeroNameContainer">
+						<CitadelHeroBadgeIcon id="HeroBadgeIcon" class="PostGame" />
+						<Label class="HeroName" text="{s:hero_name}" />
+					</Panel>
 					<CitadelUserName id="PlayerName" />
 					<Button id="CommendButton" focusonmousedown="false" class="CommendButton" onmouseover="UIShowTextTooltip( &apos;#Citadel_MatchDetails_CommendTooltip&apos; )" onmouseout="UIHideTextTooltip()">
 						<Panel id="commendIcon" />
@@ -54,7 +57,10 @@
 			<Panel id="MVPAccolades" />
 			<Panel id="MVPAwards" />
 			<Panel class="MVPPlayerIdentity">
-				<CitadelHeroLogo id="MVPHeroLogo" />
+				<Panel class="HeroNameContainer">
+					<CitadelHeroBadgeIcon id="MVPHeroBadgeIcon" class="MVP" />
+					<CitadelHeroLogo id="MVPHeroLogo" />
+				</Panel>
 				<Panel class="PlayerInfo">
 					<Label class="MVPPlayedBy" text="#Citadel_Post_Game_PlayedBy" />
 					<CitadelUserName id="MVPPlayerName" />

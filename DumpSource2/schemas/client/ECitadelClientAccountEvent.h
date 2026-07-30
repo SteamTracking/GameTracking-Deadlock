@@ -56,7 +56,7 @@ enum ECitadelClientAccountEvent : uint32_t
 	k_eSandboxViaHeroPage = 55,
 	k_eViewedSettings_SteamInput = 56,
 	k_eViewedSettings_Social = 57,
-	k_eCalibrationMatch = 58,
+	k_eNewPlayerPlacementMatch = 58,
 	k_eSandboxViaPlayMenu = 59,
 	k_eBotMatch_Medium = 60,
 	k_eSandboxViaHideoutTeleport = 61,

@@ -1,5 +1,6 @@
 // MEntityAllowsPortraitWorldSpawn
 // MNetworkVarNames = "bool m_bDisabled"
+// MNetworkVarNames = "bool m_bEnableMipGen"
 // MNetworkVarNames = "int m_nResolutionX"
 // MNetworkVarNames = "int m_nResolutionY"
 // MNetworkVarNames = "string_t m_szPanelType"
@@ -12,6 +13,8 @@ class CInfoOffscreenPanoramaTexture : public CPointEntity
 {
 	// MNetworkEnable
 	bool m_bDisabled;
+	// MNetworkEnable
+	bool m_bEnableMipGen;
 	// MNetworkEnable
 	int32 m_nResolutionX;
 	// MNetworkEnable

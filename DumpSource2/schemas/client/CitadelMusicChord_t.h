@@ -4,7 +4,8 @@
 //	"m_nNumOctaves": 1,
 //	"m_ChordVoicing":
 //	[
-//	]
+//	],
+//	"m_strRenderedChordEvent": ""
 //}
 class CitadelMusicChord_t
 {
@@ -12,4 +13,5 @@ class CitadelMusicChord_t
 	CitadelArpeggiatorMode_t m_ArpeggiatorMode;
 	uint8 m_nNumOctaves;
 	CUtlVector< CitadelMidiNotePitch_t > m_ChordVoicing;
+	CUtlString m_strRenderedChordEvent;
 };

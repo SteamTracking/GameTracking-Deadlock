@@ -371,7 +371,7 @@ $SPECULARSCALE
 <player name> <gold> Gives the specified player gold
 <player_slot> <message>
 <state> Turn on/off simulated GC communications failure (GC is down in a way that we know it is down)
-<target account id> [match id]
+<target account id> [match id] [hero_id]
 <team number> - Lock the flex slots for a team (or both teams if you omit the team number)
 <team number> - Unlock the flex slots for a team (or both teams if you omit the team number)
 <title> <message> <URL> [Priority] Create a new announcement with the specified title, message, and URL. use empty quotes if you want to skip message or URL
@@ -840,6 +840,7 @@ Allow for a private lobby to not have players to help test with spectating
 Allow gathering of conditions to be done asynchronously.
 Allow immediately loading mips of textures (when possible) when their headers are loaded, saving IO & reducing latency.
 Allow only a single health bar, no stacking.
+Allow pausing in the pregame state
 Allow playback of demo even if game directories are not matched [may crash or fail to load].
 Allow players to pause in matchmade games
 Allow stationary/dynamic lights to cast shadows.
@@ -2093,6 +2094,7 @@ CCitadelItemPickupRejuvVData
 CCitadelItemPickupVData
 CCitadelItemPunchableNeutralGold
 CCitadelItemPunchableNeutralGoldVData
+CCitadelLocalPlayerRankedBadgeProp
 CCitadelLootTable
 CCitadelLootTableBase
 CCitadelLootTableBasic
@@ -2153,6 +2155,7 @@ CCitadelPlayer_MovementServices
 CCitadelPlayer_ObserverServices
 CCitadelPointPulseAPI
 CCitadelPortalTrigger
+CCitadelPregameHeroDraftButton
 CCitadelPreviewPlayerController
 CCitadelProjectile
 CCitadelProjectileTouchVolume
@@ -2160,6 +2163,7 @@ CCitadelProjectileTouchVolumeVData
 CCitadelProjectileTrackingParams
 CCitadelProjectile_ImmobilizeTrap
 CCitadelPushTrigger
+CCitadelRankedBadgeProp
 CCitadelRecentDamage
 CCitadelRegenComponent
 CCitadelShopTunnelTrigger
@@ -4794,6 +4798,7 @@ CInButtonState
 CInWorldItemPanel
 CInWorldKeyBindPanel
 CInfoAbilityTestBot
+CInfoCitadelHelperLocation
 CInfoCitadelHideout
 CInfoCoverPoint
 CInfoData
@@ -4927,6 +4932,7 @@ CLASS_ITEM_PICKUP
 CLASS_ITEM_SHOP
 CLASS_KOTH_CAPTURE_POINT
 CLASS_KOTH_SPAWNER
+CLASS_LOCAL_PLAYER_RANKED_BADGE_PROP
 CLASS_MAGICIAN_TURRET
 CLASS_MATCH_INTRO_HERO_CARD
 CLASS_MEDIUM_NEUTRAL_CAMP
@@ -4954,6 +4960,7 @@ CLASS_PLAYER_SPRAY
 CLASS_PRIEST_BEARTRAP_PROJECTILE
 CLASS_PROJECTILE_TOUCH_VOLUME
 CLASS_PROP_MIDBOSS_INDICATOR
+CLASS_RANKED_BADGE_PROP
 CLASS_ROLLERMINE
 CLASS_SENTRY
 CLASS_SHIELD
@@ -6242,6 +6249,8 @@ CRandStopwatch
 CRandomNumberGeneratorParameters
 CRangeFloat
 CRangeInt
+CRankedSeasonDefinition
+CRankedSeasonIntervalDefinition
 CRectLight
 CRegenerateZone
 CRegionSVM
@@ -7639,6 +7648,8 @@ CitadelAbilityUpgradeInfoPacked_t
 CitadelAbilityVData
 CitadelArpeggiatorMode_t
 CitadelArpeggiator_t
+CitadelBadgeRank_t
+CitadelBadgeSubRank_t
 CitadelBodygroupSetting_t
 CitadelCameraDistanceOperationDef_t
 CitadelCameraFOVOperationDef_t
@@ -7693,6 +7704,28 @@ CitadelUserMessageIds
 CitadelVotingPosterHeroData_t
 CitadelWeaponID_t
 CitadelWeaponRecoilData_t
+Citadel_Rank1
+Citadel_Rank10
+Citadel_Rank11
+Citadel_Rank2
+Citadel_Rank3
+Citadel_Rank4
+Citadel_Rank5
+Citadel_Rank6
+Citadel_Rank7
+Citadel_Rank8
+Citadel_Rank9
+Citadel_RankInvalid
+Citadel_RankMax
+Citadel_SubRank1
+Citadel_SubRank2
+Citadel_SubRank3
+Citadel_SubRank4
+Citadel_SubRank5
+Citadel_SubRank6
+Citadel_SubRankInvalid
+Citadel_SubRankMax
+Citadel_Unranked
 Clamp Blend Curve
 Clamp Non-Sheet texture V coords
 Clamp UVs
@@ -9062,6 +9095,7 @@ ECitadelRandomRoll_BreakablePowerupPickup
 ECitadelRandomRoll_BulletCritChance
 ECitadelRandomRoll_BulletCritDebuffChance
 ECitadelRandomRoll_LastEnum
+ECitadelRankedType
 ECitadelRegionMode
 ECitadelStatCategory
 ECitadelStat_Invalid
@@ -9242,6 +9276,7 @@ EHeroSceneStyle
 EHeroSpiritLifestealEffectiveness
 EHeroSwap
 EHeroType
+EHeroXPGrantReason
 EHideoutButtonAction
 EHideoutButtonInteractStyle
 EIKEndEffectorRotationFixUpMode
@@ -9611,6 +9646,7 @@ EPlayerChoosingHero
 EPlayerKill
 EPlayerKillAssist
 EPlayerKillComeback
+EPlayerMatchOutcome
 EPlayerPlayState
 EPlayerPlayStateCount
 EPlayerSprayStatus
@@ -9635,8 +9671,6 @@ EPreviewStatFlags
 EProcBuildUpRateScale
 EProceduralRagdollWeightIndexPropagationMethod
 EProfileCardSlotType
-EProfileSortGamesPlayed
-EProfileSortRankedPerformance
 EProgressType_t
 EProgress_ClipDown
 EProgress_ClipLeft
@@ -10341,6 +10375,7 @@ FAMILIARTASK_DAMAGE_ATTACH
 FAMILIARTASK_DAMAGE_ATTACH_DIRECT
 FAMILIARTASK_DAMAGE_ORB
 FAMILIARTASK_DAMAGE_SHOOT_TARGET
+FAMILIARTASK_HANG_OUT
 FAMILIARTASK_INFEST_BEGIN
 FAMILIARTASK_INFEST_HEAL
 FAMILIARTASK_INVALID
@@ -10892,6 +10927,7 @@ Force Cropping On
 Force Latest Value
 Force Spawning Koth Capture point with Warning
 Force Static
+Force XP value for all badges (client only)
 Force a breakable to break
 Force a busy wait for the specified number of milliseconds during save to simulate a hitch
 Force a certain duration in the waiting for map to load state
@@ -11404,7 +11440,6 @@ HeroLevel_t
 HeroPersona_t
 HeroPurchaseBonus_t
 HeroScalingStat_t
-HeroSortingType_t
 HeroStatsDisplay_t
 HeroStatsUI_t
 Hide POTG hud
@@ -11552,7 +11587,8 @@ How long in milliseconds before we warn about lock hold duration
 How long is the cinematic intro applied to npcs (shrine/patron)
 How long is the cinematic intro applied to the player
 How long it takes after pressing the +ping command for the chat wheel to appear.
-How long lane swap is available, including pre-match time. Set to 0 to disable.
+How long lane swap is available in pre-game wait. Set to 0 to disable, -1 for infinity.
+How long lane swap is available in-game. Set to 0 to disable, -1 for infinity.
 How long looping soundpatch captions should display for.
 How long postgame lasts until play of the game
 How long pre-match is until we start the match
@@ -12303,6 +12339,7 @@ Kick a player by name.
 Kick a player by userid or uniqueid, with a message.
 Kick a previously connected player with the same steamID if a replacement comes along
 Kick all the bots
+Kick bot <name>
 Kill & Assist Credit
 Kill 2 Tier 2
 Kill 3 Tier 1
@@ -12904,7 +12941,6 @@ MODIFIER_STATE_COOP_TETHER_ACTIVE
 MODIFIER_STATE_COOP_TETHER_LOCKED_TARGET
 MODIFIER_STATE_COUNT
 MODIFIER_STATE_DAMAGE_MOVEMENT_PENALTY_IMMUNE
-MODIFIER_STATE_DASHJUMP_STAMINA_FREE
 MODIFIER_STATE_DASH_DISABLED
 MODIFIER_STATE_DASH_DISABLED_DEBUFF
 MODIFIER_STATE_DEAF
@@ -12994,6 +13030,7 @@ MODIFIER_STATE_IGNORE_OUT_OF_PLAY_AREA_CHECK
 MODIFIER_STATE_IGNORE_PORTALS
 MODIFIER_STATE_IMMOBILIZED
 MODIFIER_STATE_INFINITE_CLIP
+MODIFIER_STATE_INFINITE_STAMINA
 MODIFIER_STATE_INHIBIT_SOFT_CAMERA_COLLISION
 MODIFIER_STATE_INVALID
 MODIFIER_STATE_INVALID_TELEPORT_TARGET
@@ -13265,6 +13302,7 @@ MODIFIER_VALUE_FIRE_RATE_SLOW
 MODIFIER_VALUE_FLAT_BULLET_DAMAGE_POST_SCALE
 MODIFIER_VALUE_FOOTSTEP_ADDITIONAL
 MODIFIER_VALUE_FOOTSTEP_OVERRIDE
+MODIFIER_VALUE_FREE_AIR_JUMPS
 MODIFIER_VALUE_FRICTION_PERCENTAGE
 MODIFIER_VALUE_GAMEPLAY_TIME_SCALE_ADDITIVE
 MODIFIER_VALUE_GAMEPLAY_TIME_SCALE_PERCENT
@@ -14214,6 +14252,7 @@ Name of particle control point config to use for status effect (empty means use 
 Name of the DSP effect / subgraph used.
 Name of the animation
 Name of the breakable to trigger breaking on when health reaches zero.
+Name of the hero that should be faked as the local player
 Name of the layer
 Name of the locator. This can be used to reference the locator in this element or its children. If the locator is configurable, the locator will be identified by this name in Hammer.
 Name of the mixgroup. TODO: needs to be autopopulated with mixgroups.
@@ -14346,6 +14385,7 @@ Number of instances of this object and its children to be placed.
 Number of minutes past which bots should try to end the game
 Number of minutes to ban users who fail rcon authentication
 Number of packets per second of updates you are requesting from the server
+Number of per-player hero changes allowed during pregame hero draft
 Number of periods of accumulated tick gold. Combine with citadel_tick_gold_period_duration_s to configure resolution and total duration.
 Number of seconds after which the game will automatically unpause
 Number of seconds before a player is allowed to pause again
@@ -15316,6 +15356,7 @@ PVEC_TYPE_RANDOM_UNIFORM_OFFSET
 PVS is shared between teams
 Package
 PackedAABB_t
+PackedRank_t
 Packet delivery anomaly rate (0..100) higher than this is considered 'poor'.
 PackingMode_t
 Paired Animation Clip
@@ -16143,6 +16184,9 @@ Range to consider targeting local player.
 Range(m) to Scan for Orbs
 RangeAttack
 RangeEditor()
+RankFlatProgress_t
+RankInterval_t
+RankProgress_t
 Rapid Fire
 RatchetType_Absolute
 RatchetType_EachEngage
@@ -17356,6 +17400,7 @@ Show entity contexts in ent_text display
 Show entity packing stats, pass 'clear' as argument to reset counts.
 Show frame time (FPS) in the HUD.  0=never, 1=only if poor, 2=always
 Show graph of the server recv margin in the HUD.  (How early/late user commands are arriving at the server before they are executed.)   0=never, 1=only when there are command queue problems, 2=always
+Show hero progression UI (i.e. hero levels)
 Show hideout news
 Show human gib entities
 Show lag compensated hitboxes for the specified player index whenever a player fires.
@@ -17851,7 +17896,7 @@ Start recording bug voice attachment.
 Start recording movie frames.
 Start the Early Warning of Koth and Teleport the active player there
 Starts SourceTV demo recording.
-Starts a calibration match
+Starts a new_player_placement match
 Starts a sound event, returns a handle that can be used to stop it. Keywords: create, sound, event, audio
 Starts a specified soundevent
 Starts a specified soundevent at the given position
@@ -18255,6 +18300,7 @@ Teleport the specified entity to where the player is looking.\n\tFormat: ent_tel
 TeleporterParams_t
 Tells camera to change modes
 Temporal filtering weight
+Temporarily resets the commend state for testing (will get set to false after a commend is triggered)
 Terminate every broadcast with a stop command
 Test
 Test AI LOS from the player's POV
@@ -18266,10 +18312,12 @@ Test command that drops an entity blocker out in front of the player.
 Test depth.
 Test flight paths
 Test nesting voice containers.
+Test new abandon feature
 Test node that just generates the integer 50. Nothing to see here!
 Test node that picks between two outflows as specified in the test domain.
 Test node that randomly picks between two outflows.
 Test pinging a player
+Test pregame draft
 Test swim paths
 Test zoomed in minimap
 TestInputOutputCombinationsEnum_t
@@ -18750,11 +18798,16 @@ Turn on a particular trace output by file or function name
 Turn on a particular trace output by table/instance
 Turn on all trace output
 Turn on demo debug spew.
+Turn on pre-game hero draft for testing
+Turn on pre-game hero draft in ranked mode
+Turn on pre-game hero draft in unranked mode
 Turn on some model hit size debug visuals
 Turn on to see animgraph variable changes for entities passing animgraph_debug_filterent.
+Turn on to show all matches in the ranked season view, not just matches from that ranked season.
 Turn to Face
 Turn to Face Limit
 Turn to Face Offset
+Turn to show fake versions of the rank history
 Turns off interactive fish behavior. Fish become immobile and unresponsive.
 Turns off the ability to have aggressive and passive pings.
 Turns on bullet impacts and decals on world from troopers and neutrals shooting
@@ -19688,6 +19741,8 @@ Whether this explosion relates to fire
 Whether this weapon is safe to automatically switch to (should be false for eg. explosives that can the player may accidentally hurt themselves with)
 Whether to show an outline through walls
 Whether to show an outline when visible
+Whether to use commend toasts (older) or the custom commend notification (newer)
+Whether to use the special intro team spawn locations during pregame
 Whether we should be submitting data to SteamLearn
 Whether we should ignore the user config file for reading/writing.
 Which 'column' to display this weapon in the HUD
@@ -19809,6 +19864,9 @@ Zoom
 [ 0, 1 ] Value specifying the location on the gradient to pick the color from.
 [BookID/Book Name] Opens up the specified book by ID or name
 [BookID=1] Resets the current book progress
+[New Abandon Rules] Abandon is considered 'early' if this is before the first T1 kill, no matter the match time.
+[New Abandon Rules] Auto-match end countdown.
+[New Abandon Rules] Time for the 'early' trigger to take effect. Match will not be scored, etc.
 [Test] Explicit Yes/No Outflow
 [Test] Int Value 50
 [Test] Random Yes/No Outflow
@@ -20615,6 +20673,7 @@ citadel_bot_give_all_abilities_base
 citadel_bot_give_team_gold
 citadel_bot_hero_testing_pitch
 citadel_bot_jump
+citadel_bot_kick
 citadel_bot_list_ents
 citadel_bot_list_objectives_ent
 citadel_bot_match_on_dedicated_server
@@ -20644,6 +20703,7 @@ citadel_bot_takeover_time
 citadel_bot_team_sensing_tick_interval
 citadel_bot_teamsense_homebase_range
 citadel_bot_teamsense_pushed_range
+citadel_bot_test_disconnect
 citadel_bot_test_mode
 citadel_bot_use_ability
 citadel_bot_use_ability_once
@@ -20775,6 +20835,7 @@ citadel_commend_fake_received
 citadel_commend_player
 citadel_commend_toast_enemy_seconds
 citadel_commend_toast_seconds
+citadel_commend_use_toasts
 citadel_complete_new_player
 citadel_cone_view_alpha
 citadel_context_profile_page
@@ -20996,8 +21057,11 @@ citadel_event_timer_min_view_angle
 citadel_event_timer_scale_on_direct_look
 citadel_exonerate_account
 citadel_fake_bots_as_pinging_player
+citadel_fake_brawl_losses
+citadel_fake_brawl_wins
 citadel_fake_comms_ban_timestamp
 citadel_fake_death_gold
+citadel_fake_losses
 citadel_fake_low_pri_games_remaining
 citadel_fake_no_match_metadata
 citadel_fake_number_of_games_played
@@ -21005,6 +21069,7 @@ citadel_fake_party_roster_usage
 citadel_fake_rank_for_match
 citadel_fake_report_ban_timestamp
 citadel_fake_subrank_for_match
+citadel_fake_wins
 citadel_familiar_debug
 citadel_familiar_infiniteattach
 citadel_familiar_sprites_debug
@@ -21113,6 +21178,9 @@ citadel_hideout_cancel_matchmaking
 citadel_hideout_enable_testing_tools
 citadel_hideout_exclusive_mode
 citadel_hideout_hero_id
+citadel_hideout_in_world_ranked_doodle
+citadel_hideout_in_world_ranked_fake_eligible_heroes
+citadel_hideout_in_world_ranked_fake_last_match
 citadel_hideout_intro_dismiss_escape_only
 citadel_hideout_intro_version_seen
 citadel_hideout_map_enabled
@@ -21197,6 +21265,7 @@ citadel_koth_warning_time
 citadel_landing_to_predicted
 citadel_lane_matchups_mmr_variance
 citadel_lane_swap_available_duration
+citadel_lane_swap_available_duration_prematch
 citadel_language_and_english_hero_names
 citadel_language_and_english_mod_names
 citadel_lash_ground_strike_debug
@@ -21232,7 +21301,7 @@ citadel_match_details_failure_delay_s
 citadel_match_details_flip_teams
 citadel_match_details_lane_stats_time
 citadel_match_end
-citadel_match_history_failure_delay_s
+citadel_match_history_cache_duration_s
 citadel_match_intro_duration_full
 citadel_match_intro_duration_simple
 citadel_match_intro_force_enabled
@@ -21314,6 +21383,9 @@ citadel_neutral_spawn_enabled
 citadel_neutral_spawn_interval_override
 citadel_neutral_spawn_range
 citadel_neutral_weakpoints_enabled
+citadel_new_abandon_rules_early_end_countdown
+citadel_new_abandon_rules_early_t1
+citadel_new_abandon_rules_early_time
 citadel_new_player_flow_finished can't be turned off (because of the callback) unless you reset the other new player convars. This allows you to turn it off.
 citadel_new_player_flow_visible
 citadel_new_player_progress
@@ -21370,6 +21442,7 @@ citadel_passthrough_fakewall_combat_lockout_time
 citadel_passthrough_fakewall_draw_debug
 citadel_pause
 citadel_pause_allow_immediate_if_single_player
+citadel_pause_allow_in_pregame
 citadel_pause_cooldown_time
 citadel_pause_count
 citadel_pause_countdown
@@ -21393,10 +21466,7 @@ citadel_ping_indicator_display_time
 citadel_ping_indicator_duration
 citadel_ping_indicator_duration_for_bosses
 citadel_ping_wheel_activation_radius
-citadel_play_page_fake_brawl_wins
 citadel_play_page_fake_data
-citadel_play_page_fake_normal_losses
-citadel_play_page_fake_normal_wins
 citadel_play_page_finished_tutorial
 citadel_play_stats_laning_end_time
 citadel_player_aim_at_hero_query_angle
@@ -21515,9 +21585,15 @@ citadel_playtest_kick_disconnected_players
 citadel_port_muzzles
 citadel_portrait_unit_ag2_enable
 citadel_portrait_world_renderer_off
+citadel_post_game_fake_local_account_id
+citadel_post_game_fake_local_hero
 citadel_post_game_force_hero_id
 citadel_post_game_local_player_screen_enabled
+citadel_post_game_mvp_screen_enabled
 citadel_post_game_progress
+citadel_post_game_progress_use_test_data
+citadel_post_game_ranked_screen_enabled
+citadel_post_game_reset_commend_state
 citadel_postgame_duration
 citadel_powerup_initial_spawn_time_override
 citadel_powerup_spawn_enabled
@@ -21528,8 +21604,18 @@ citadel_pregame_fake_match_intro_duration
 citadel_pregame_fake_match_intro_state
 citadel_pregame_fake_team_reveal_heroes_1
 citadel_pregame_fake_team_reveal_heroes_2
+citadel_pregame_hero_draft_force_enabled
+citadel_pregame_hero_draft_notification_time
+citadel_pregame_hero_draft_num_changes
+citadel_pregame_hero_draft_ranked
+citadel_pregame_hero_draft_test
+citadel_pregame_hero_draft_unranked
 citadel_pregame_hero_reveal_duration
 citadel_pregame_hero_reveal_full_sequence
+citadel_pregame_ranked_summary_force_enabled
+citadel_pregame_ranked_summary_test_state
+citadel_pregame_ranked_summary_time
+citadel_pregame_use_intro_spawn
 citadel_pregame_wait_duration
 citadel_previous_umuted_audio_level
 citadel_priority_token_fake_count
@@ -21562,6 +21648,22 @@ citadel_radial_ability_suggestion_weight
 citadel_radial_distortion
 citadel_radial_distortion_growth_factor
 citadel_radial_testing
+citadel_ranked_allow_overrides
+citadel_ranked_hero_roster
+citadel_ranked_hero_roster_banned
+citadel_ranked_hero_roster_high_priority
+citadel_ranked_hero_roster_preferred
+citadel_ranked_hero_roster_random
+citadel_ranked_progress_fake_calibration_games
+citadel_ranked_progress_fake_demotion_protection_games
+citadel_ranked_progress_fake_match_count
+citadel_ranked_progress_fake_max_rank
+citadel_ranked_progress_fake_missing
+citadel_ranked_progress_fake_rank
+citadel_ranked_progress_fake_win_mask
+citadel_ranked_progress_fake_win_streak
+citadel_ranked_season_match_history_fake_rank_changes
+citadel_ranked_season_match_history_unfiltered
 citadel_rapid_stamina_regen
 citadel_recent_boss_damage_for_assist_time
 citadel_recent_comms_recording_window
@@ -21589,6 +21691,7 @@ citadel_reset_survey_responses
 citadel_respond_to_ping_time
 citadel_restore_components_only_during_sellback
 citadel_roster_select_force_enable_priority_token
+citadel_roster_select_force_select_any
 citadel_roster_select_hover_delay
 citadel_rp_show_dev_messages
 citadel_rr_killstreak_for_death_line
@@ -21651,6 +21754,8 @@ citadel_show_page_reload_button
 citadel_show_personal_best_duration
 citadel_show_playerintents
 citadel_show_playerintents_bothteams
+citadel_show_ranked_history_page
+citadel_show_ranked_season_page
 citadel_show_rating_notification_on_change
 citadel_show_reportcard
 citadel_show_reportcard_finished
@@ -21695,11 +21800,10 @@ citadel_spoof_connection_status
 citadel_spoof_invalid_client_version
 citadel_spoof_match_in_progress
 citadel_spoof_matchmaking_status
-citadel_spoof_num_matches_on_profile
 citadel_spoof_persona_name
 citadel_spoof_profile_account
 citadel_spray_max_range
-citadel_start_calibration_bot_match
+citadel_start_new_player_placement_bot_match
 citadel_start_players_on_zipline
 citadel_stat_override_official_match
 citadel_steamlearn_disable
@@ -21742,6 +21846,7 @@ citadel_team_size
 citadel_tech_damage_vdata_tagging
 citadel_tech_power_scaling_vdata_tweak
 citadel_teleporter_enabled_time
+citadel_test_abandon
 citadel_test_banned_heroes_message
 citadel_test_cinematic_intro
 citadel_test_flex_unlocked_message
@@ -21881,6 +21986,8 @@ citadel_ui_damage_impact_show_for_everything
 citadel_ui_damage_impact_status_minimum_duration
 citadel_ui_fake_active_matches
 citadel_ui_fake_invite_parties
+citadel_ui_hero_badge_debug_xp
+citadel_ui_show_hero_progression
 citadel_ui_spoof_active_match_bot_account
 citadel_ui_test_ranked_highlight_time
 citadel_ui_watch_active_game_refresh_s
@@ -21944,6 +22051,9 @@ citadel_use_contextual_ping_wheel_option
 citadel_use_csgo_style_recoil_follow_crosshair
 citadel_use_fake_lobby_signout_details
 citadel_use_hold_sprint
+citadel_use_new_abandon_rules_force_enabled
+citadel_use_new_abandon_rules_ranked
+citadel_use_new_abandon_rules_unranked
 citadel_use_new_minimap
 citadel_use_pvs_for_players
 citadel_use_shop_component_groupings
@@ -24217,10 +24327,10 @@ k_ECitadelLobbyTeam_Team1
 k_ECitadelMMPreference_Casual
 k_ECitadelMMPreference_Invalid
 k_ECitadelMMPreference_Serious
-k_ECitadelMatchMode_Calibration
 k_ECitadelMatchMode_CoopBot
 k_ECitadelMatchMode_HeroLabs
 k_ECitadelMatchMode_Invalid
+k_ECitadelMatchMode_NewPlayerPlacement
 k_ECitadelMatchMode_PrivateLobby
 k_ECitadelMatchMode_Ranked
 k_ECitadelMatchMode_ServerTest
@@ -24438,6 +24548,8 @@ k_EMsgClientToGCSpectateUser
 k_EMsgClientToGCSpectateUserResponse
 k_EMsgClientToGCStartMatchmaking
 k_EMsgClientToGCStartMatchmakingResponse
+k_EMsgClientToGCStartRankedInterval
+k_EMsgClientToGCStartRankedIntervalResponse
 k_EMsgClientToGCStopMatchmaking
 k_EMsgClientToGCStopMatchmakingResponse
 k_EMsgClientToGCSubmitHeroReleaseVote
@@ -24676,6 +24788,12 @@ k_EPingMarkerInfo_OnlyPlaySound
 k_EPingMarkerInfo_OnlyShowMarker
 k_EPingMarkerInfo_ShowMarkerAndSound
 k_EPingMarkerInfo_ShowMarkerOnSender
+k_EPlayerMatchOutcome_Invalid
+k_EPlayerMatchOutcome_Loss
+k_EPlayerMatchOutcome_NotScored
+k_EPlayerMatchOutcome_Penalized
+k_EPlayerMatchOutcome_PenalizedParty
+k_EPlayerMatchOutcome_Win
 k_EProfileCardSlotType_Empty
 k_EProfileCardSlotType_Hero
 k_EProfileCardSlotType_Stat
@@ -24704,6 +24822,7 @@ k_EServerSignoutData_BookRewards
 k_EServerSignoutData_ChallengeProgress
 k_EServerSignoutData_DetailedStats
 k_EServerSignoutData_Disconnections
+k_EServerSignoutData_HeroDraftData
 k_EServerSignoutData_HeroXPGrant
 k_EServerSignoutData_MatchDevStats
 k_EServerSignoutData_MatchKills
@@ -24727,6 +24846,7 @@ k_EUserMsg_BossKilled
 k_EUserMsg_BulletHit
 k_EUserMsg_CallCheaterVote
 k_EUserMsg_CameraController
+k_EUserMsg_ChangeHeroStatus
 k_EUserMsg_ChatEvent
 k_EUserMsg_ChatMsg
 k_EUserMsg_ChatWheel
@@ -24786,7 +24906,6 @@ k_eBotMatch_Guided
 k_eBotMatch_Hard
 k_eBotMatch_Medium
 k_eBronze
-k_eCalibrationMatch
 k_eCitadelObjective_Neutral_Mid
 k_eCitadelObjective_Team0_BarrackBoss_Lane1
 k_eCitadelObjective_Team0_BarrackBoss_Lane2
@@ -24820,6 +24939,8 @@ k_eCitadelObjective_Team1_Tier2_Lane4
 k_eCitadelObjective_Team1_Titan
 k_eCitadelObjective_Team1_TitanShieldGenerator_1
 k_eCitadelObjective_Team1_TitanShieldGenerator_2
+k_eCitadelRankedType_Invalid
+k_eCitadelRankedType_Normal
 k_eCitadelTeamObjective_BarrackBoss_Lane1
 k_eCitadelTeamObjective_BarrackBoss_Lane2
 k_eCitadelTeamObjective_BarrackBoss_Lane3
@@ -24867,6 +24988,9 @@ k_eGCPlatform_PC
 k_eGCPlatform_iOS
 k_eGeneric
 k_eGold
+k_eGrant_Award
+k_eGrant_Loss
+k_eGrant_Win
 k_eGrazingAngle
 k_eHeroReleaseVote
 k_eHeroes
@@ -24894,6 +25018,7 @@ k_eMatchTrackedStatImpl_Expression
 k_eMatchTrackedStatImpl_Invalid
 k_eMatchTrackedStatImpl_PlayerAggregate
 k_eMatchTrackedStatImpl_TeamAggregate
+k_eNewPlayerPlacementMatch
 k_eNewPlayerProgress_CombinedTutorial2026
 k_eNewPlayerProgress_GettingStarted
 k_eNewPlayerProgress_HeroTraining
@@ -24908,6 +25033,7 @@ k_ePlay
 k_ePlayerTrackedStatImpl_Direct
 k_ePlayerTrackedStatImpl_Expression
 k_ePlayerTrackedStatImpl_Invalid
+k_eRankedHub
 k_eRejectPartyInvite
 k_eResources
 k_eRosterSelectSingleHero
@@ -24960,6 +25086,7 @@ k_eViewedSettings_Social
 k_eViewedSettings_SteamInput
 k_eViewedSettings_Video
 k_eViewedWatch
+k_eWardrobe
 k_eWatch
 k_eWatchedReplay
 k_nOldestSentriesToShowInUI
@@ -28361,6 +28488,9 @@ m_b2DFOV
 m_b2DOrientation
 m_b2D_TRI
 m_b3D
+m_bAbandon
+m_bAbandonTriggerAmber
+m_bAbandonTriggerSapphire
 m_bAbilityLocked
 m_bAbsVal
 m_bAbsValInv
@@ -28608,6 +28738,7 @@ m_bCanFreeze
 m_bCanHLTVUse
 m_bCanHighlightSubassets
 m_bCanOverrideNPCState
+m_bCanPartyInCalibration
 m_bCanProc
 m_bCanProcByOtherObjects
 m_bCanProcFromItems
@@ -28881,6 +29012,7 @@ m_bEnableLinearLimit
 m_bEnableLinearMotor
 m_bEnableLockBreaking
 m_bEnableMLLocomotion
+m_bEnableMipGen
 m_bEnableMovementToNodes
 m_bEnableNamedValues
 m_bEnableOcclusionBlend
@@ -30003,7 +30135,6 @@ m_bRequireGroundForPickup
 m_bRequired
 m_bRequiresAbilityUpgrade
 m_bRequiresDynamicBodies
-m_bRequiresReportCardDismissal
 m_bRequiresTargetFilter
 m_bRequiresUpNormal
 m_bRequiresUseKey
@@ -31139,6 +31270,7 @@ m_eProjectileShape
 m_eProjectileShape != Capsule
 m_eProjectileShape != Sphere
 m_eProvidedPropertyType
+m_eRankedType
 m_eRareModTier
 m_eRecipientsType
 m_eRespawnMechanic
@@ -34121,7 +34253,6 @@ m_flPreDelayMS5
 m_flPreDelayMS6
 m_flPreDelayMS7
 m_flPreEnableWindowInSeconds
-m_flPreGameWaitEndTime
 m_flPreModifiedDamage
 m_flPreResistDamage
 m_flPreScoringTime
@@ -34321,7 +34452,6 @@ m_flRenderFxStartTime
 m_flRenderTime
 m_flRepathTime
 m_flRepeat
-m_flReportCardDismissalWaitStart
 m_flRepulsionMaxDistance
 m_flRepulsionMaxStrength
 m_flRepulsionMinDistance
@@ -35507,6 +35637,7 @@ m_hAuraProvider
 m_hAuraThinker
 m_hAuraUnits
 m_hAutoTarget
+m_hBadgeProp
 m_hBall
 m_hBarrel
 m_hBaseAbility
@@ -37388,6 +37519,7 @@ m_nFxIndex
 m_nGameFlags
 m_nGameIndex
 m_nGameOverEvent
+m_nGameStateChangedEventID
 m_nGiveUpOrbs
 m_nGlintParticleIndex
 m_nGlowRange
@@ -37838,6 +37970,7 @@ m_nNumControlPoints
 m_nNumDelayVariations
 m_nNumEnemyPlayers
 m_nNumFrames
+m_nNumHeroChangesUsed
 m_nNumIterations
 m_nNumMasks
 m_nNumMeshlets
@@ -37999,6 +38132,7 @@ m_nPowerLevel
 m_nPowerupParticle
 m_nPreClipSize
 m_nPreEnableFX
+m_nPreGameHeroID
 m_nPreModifierNPCState
 m_nPrecomputedSubFrusta
 m_nPreserveOffsetCP
@@ -39083,6 +39217,8 @@ m_rotationParam
 m_rotationParamName
 m_roughThreshold
 m_roughnessFactor
+m_rtIntervalEndTimestamp
+m_rtIntervalStartTimestamp
 m_rtProxies
 m_rtProxyDrawCalls
 m_rule
@@ -40043,6 +40179,7 @@ m_strRejuvPickupSound
 m_strRelationships
 m_strReloadEndSound
 m_strReloadSound
+m_strRenderedChordEvent
 m_strRestoreValue
 m_strReturnSound
 m_strRiccochetSound
@@ -40058,6 +40195,7 @@ m_strSapphireTrooperPickupToDrop
 m_strScreenParticleEffect
 m_strScreenParticleEffectConfig
 m_strSearchName
+m_strSeasonLocName
 m_strSecondaryStatName
 m_strSecondaryWeaponDescLocString
 m_strSelectedLoopSound
@@ -40311,6 +40449,7 @@ m_szVariableName
 m_szWeaponBeamParticle
 m_szWorldContext
 m_szWorldModel
+m_tAbandonTriggerEarlyTime
 m_tAbilityCreateTime
 m_tActivationTime
 m_tActiveEndTime
@@ -40521,6 +40660,7 @@ m_uchShuffleCaseMap
 m_unAccoladeID
 m_unAccountID
 m_unAlignmentDegrees
+m_unCalibrationMatches
 m_unClientFlags
 m_unComponentID
 m_unExpectedPlayerCount
@@ -40534,13 +40674,18 @@ m_unHeroBadgeXP
 m_unHeroBuildID
 m_unHeroID
 m_unHorizontalAlign
+m_unInterval
 m_unItemID
 m_unLobbyPlayerSlot
 m_unMajorStuckAttemptCount
 m_unMatchID
+m_unMinHeroUnlocks
+m_unMinHeroWins
+m_unMinWins
 m_unOrientation
 m_unOverrideOrigin
 m_unOwnerContext
+m_unPackedRank
 m_unPingWheelOptionID
 m_unPrevWaypointBaseMovableMeshId
 m_unPrevWaypointMovableMeshId
@@ -40941,7 +41086,6 @@ m_vSnapIncrement
 m_vSortOrigin
 m_vSound
 m_vSourceAnchorPos
-m_vSpawnPoint
 m_vSpawnPos
 m_vSpotlightDir
 m_vSpotlightOrg
@@ -41084,6 +41228,7 @@ m_vecAverageVertPosition
 m_vecAxis
 m_vecBackBoundsMax
 m_vecBackBoundsMin
+m_vecBannedHeroes
 m_vecBaseLocationX
 m_vecBaseLocationY
 m_vecBaseVelocity
@@ -41552,6 +41697,7 @@ m_vecUnitStatusOffset
 m_vecUpgrades
 m_vecUsers
 m_vecValidBounceTargets
+m_vecValidPartySizes
 m_vecVariants
 m_vecVelocity
 m_vecVertOffsetOperations

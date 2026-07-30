@@ -1,0 +1,291 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+.CommendToast
+{
+	width: 252px;
+	vertical-align: top;
+	horizontal-align: right;
+	margin-top: 140px;
+	flow-children: down;
+	transition-property: transform, opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+	opacity: 0;
+	transform: translateX(480px);
+}
+
+.CommendToast.ShowCommends
+{
+	opacity: 1;
+	transform: none;
+}
+
+.CommendToast.CommendTrigger
+{
+	sound: "UI.CommendToast";
+	animation-name: CommendGroove;
+	animation-duration: 0.5s;
+	animation-iteration-count: 2;
+}
+
+.CommendToast.SingleCommend .NumCommends,.CommendToast.SingleCommend #CommendingPlayersContainer
+{
+	visibility: collapse;
+}
+
+.CommendToast.SingleCommend .CommendDesc
+{
+	margin-left: 20px;
+}
+
+.CommendToast .CommendTypeContainer
+{
+	flow-children: right;
+	background-image: url("s2r://panorama/images/post_game/commend_bg_shape.vsvg");
+	background-size: 100%;
+	background-img-opacity: 0.9;
+	padding: 8px 10px 12px 20px;
+	margin-left: 48px;
+	margin-bottom: -40px;
+	margin-top: 12px;
+	opacity-mask: url("s2r://panorama/images/main_menu/text_speckle_mask_main_psd.vtex") 0.7;
+	opacity-mask-scale: 100% 200%;
+	transition-property: color, background-color, box-shadow, text-shadow, background-img-opacity;
+	transition-duration: 0.1s;
+	transition-timing-function: ease-in-out;
+	transform: rotateZ(-4deg);
+}
+
+.CommendToast .CommendTypeContainer .CommendTypeName
+{
+	font-size: 28px;
+	vertical-align: center;
+	color: #252423;
+	font-family: block;
+	text-transform: uppercase;
+	margin-top: 2px;
+}
+
+.CommendToast .CommendTypeContainer .ThumbsUp
+{
+	wash-color: #252423;
+	opacity: 1;
+}
+
+.CommendToast .CommendCountContainer
+{
+	height: 68px;
+	flow-children: right;
+	width: 100%;
+}
+
+.CommendToast .CommendCountContainer Label
+{
+	vertical-align: bottom;
+}
+
+.CommendToast .CommendCountContainer .NumCommends
+{
+	font-size: 60px;
+	margin-right: 4px;
+	font-weight: bold;
+	color: #C1F4D5;
+	font-family: oracle;
+	height: 64px;
+}
+
+.CommendToast .CommendCountContainer .CommendDesc
+{
+	vertical-align: bottom;
+	color: #C2F4D5;
+	font-family: oracle;
+	font-size: 18px;
+	line-height: 20px;
+	padding: 2px 8px 2px 4px;
+	width: fill-parent-flow( 1.0 );
+}
+
+.CommendToast #CommendingPlayersContainer
+{
+	horizontal-align: left;
+	flow-children:right-wrap;
+	margin-top: -4px;
+	margin-left: 40px;
+	width: 200px;
+}
+
+.ThumbsUp
+{
+	vertical-align: center;
+	width: 32px;
+	height: 32px;
+	background-image: url("s2r://panorama/images/icons/icon_thumbsup.vsvg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 64% 64%;
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 1;
+	visibility: visible;
+	wash-color: #5CCD88;
+}
+
+.ThumbsUp.Big
+{
+	width: 44px;
+	height: 44px;
+	margin-top: -4px;
+	background-size: 50% 50%;
+}
+
+.MainBranch #CommendFXPersist,.MainBranch #CommendFX
+{
+	ignore-parent-flow: true;
+	vertical-align: center;
+	horizontal-align: right;
+	width: 400px;
+	height: 60px;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-in-out;
+	opacity: 0.5;
+	visibility: collapse;
+}
+
+#HeroImage
+{
+	height: 64px;
+	width: height-percentage( 100% );
+	background-color: #00000090;
+	padding: 8px;
+}
+
+#CommendLabel
+{
+	vertical-align: middle;
+	margin: 0px 12px;
+	width: fill-parent-flow( 1.0 );
+	max-height: 100%;
+	text-overflow: shrink;
+	font-family: oracle;
+	color: offWhite;
+}
+
+#ReturnButton
+{
+	width: 48px;
+	height: 48px;
+	background-color: #ffffff04;
+	border-radius: 50%;
+	pre-transform-scale2d: 0.9;
+	tooltip-position: bottom;
+	vertical-align: middle;
+	margin-right: 12px;
+	transition-property: brightness, pre-transform-scale2d;
+	transition-duration: 0.08s;
+	transition-timing-function: ease-in-out;
+}
+
+#ReturnButton:hover
+{
+	pre-transform-scale2d: 1;
+	brightness: 1.3;
+}
+
+#ReturnButton:active
+{
+	pre-transform-scale2d: 0.9;
+	brightness: 1.3;
+}
+
+#ReturnButton .ReturnIcon
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	width: 18px;
+	height: 18px;
+	background-image: url("s2r://panorama/images/icons/icon_thumbsup.vsvg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	wash-color: offWhite;
+}
+
+.AlreadyCommended #ReturnButton
+{
+	visibility: collapse;
+}
+
+#DismissButton
+{
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+	background-size: auto 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/icons/icon_x.vsvg");
+	opacity: 0.5;
+	wash-color: copperFlat;
+	pre-transform-scale2d: 0.9;
+	transition-property: brightness, pre-transform-scale2d;
+	transition-duration: 0.08s;
+	transition-timing-function: ease-in-out;
+	visibility: collapse;
+}
+
+#DismissButton:hover
+{
+	pre-transform-scale2d: 1;
+	brightness: 1.3;
+}
+
+#DismissButton:active
+{
+	pre-transform-scale2d: 0.9;
+	brightness: 1.3;
+}
+
+@keyframes 'CommendGroove'
+{
+	0%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	26%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	51%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	76%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+}
+

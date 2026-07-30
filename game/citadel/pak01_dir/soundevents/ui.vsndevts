@@ -992,7 +992,7 @@
 	UI.CommendConfirmation = 
 	{
 		base = "Base.UI"
-		volume = 0.0
+		volume = 2.0
 		delay = 0.0
 		spread_min_value = 1.0
 		spread_max_value = 1.0
@@ -1015,14 +1015,14 @@
 	UI.CommendToast = 
 	{
 		base = "Base.UI"
-		volume = 0.0
+		volume = 2.0
 		delay = 0.0
 		spread_min_value = 1.0
 		spread_max_value = 1.0
 		limiter_max = 0.0
 		block_duration = 0.5
 		hrtf_on = 0.0
-		pitch = 1.5
+		pitch = 1.0
 		vsnd_files = 
 		[
 			"sounds/ui/ui_commend_receive_01.vsnd",
@@ -1039,18 +1039,18 @@
 	UI.RevealRank = 
 	{
 		base = "Base.UI"
-		volume = -3.0
+		volume = 2.0
 		pitch = 1.0
 		limiter_max = 0.0
 		volume_fade_out = 0.1
 		vsnd_files = 
 		[
-			"sounds/ui/ui_hud_acquire_ap_01.vsnd",
-			"sounds/ui/ui_hud_acquire_ap_02.vsnd",
-			"sounds/ui/ui_hud_acquire_ap_03.vsnd",
-			"sounds/ui/ui_hud_acquire_ap_04.vsnd",
+			"sounds/ui/ui_ranked_rankup_01.vsnd",
+			"sounds/ui/ui_ranked_rankup_02.vsnd",
+			"sounds/ui/ui_ranked_rankup_03.vsnd",
+			"sounds/ui/ui_ranked_rankup_04.vsnd",
 		]
-		vsnd_duration = 6.149116
+		vsnd_duration = 5.435147
 	}
 	UI.RevealVote = 
 	{
@@ -1068,6 +1068,131 @@
 			"sounds/ui/ui_hud_acquire_ap_04.vsnd",
 		]
 		vsnd_duration = 6.149116
+	}
+	UI.Ranked.ProgressUp = 
+	{
+		base = "Base.UI"
+		volume = -1.0
+		pitch = 1.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/ui/ui_ranked_progress_up_01.vsnd",
+		]
+		vsnd_duration = 5.293197
+	}
+	UI.Ranked.ProgressDown = 
+	{
+		base = "Base.UI"
+		volume = -3.0
+		pitch = 1.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/ui/ui_ranked_progress_down_01.vsnd",
+		]
+		vsnd_duration = 5.224694
+	}
+	UI.Ranked.RankLost = 
+	{
+		base = "Base.UI"
+		volume = 6.0
+		pitch = 1.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/ui/ui_ranked_rank_down_poof_01.vsnd",
+			"sounds/ui/ui_ranked_rank_down_poof_02.vsnd",
+			"sounds/ui/ui_ranked_rank_down_poof_03.vsnd",
+		]
+		vsnd_duration = 2.663719
+	}
+	UI.Ranked.RankUp.Intra = 
+	{
+		base = "Base.UI"
+		volume = 6.0
+		pitch = 1.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/ui/ui_ranked_rankup_intra_01.vsnd",
+			"sounds/ui/ui_ranked_rankup_intra_02.vsnd",
+			"sounds/ui/ui_ranked_rankup_intra_03.vsnd",
+		]
+		vsnd_duration = 3.929977
+	}
+	UI.Ranked.RankProtected = 
+	{
+		base = "Base.UI"
+		volume = 6.0
+		pitch = 1.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/player/melee/shared/melee_parry_success.vsnd",
+		]
+		vsnd_duration = 3.531814
+	}
+	UI.Ranked.Calibration.Progress = 
+	{
+		base = "Base.UI"
+		volume = -1.0
+		pitch = 1.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/ui/ui_calibration_progress_01.vsnd",
+		]
+		vsnd_duration = 1.428938
+	}
+	UI.Ranked.Calibration.Complete = 
+	{
+		base = "Base.UI"
+		volume = 3.0
+		pitch = 1.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/ui/ui_calibration_complete_01.vsnd",
+			"sounds/ui/ui_calibration_complete_02.vsnd",
+			"sounds/ui/ui_calibration_complete_03.vsnd",
+		]
+		vsnd_duration = 3.428292
+	}
+	UI.Ranked.Change = 
+	{
+		base = "Base.UI"
+		volume = 6.0
+		pitch = 1.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/ui/ui_ranked_whoosh_generic_01.vsnd",
+			"sounds/ui/ui_ranked_whoosh_generic_02.vsnd",
+			"sounds/ui/ui_ranked_whoosh_generic_03.vsnd",
+		]
+		vsnd_duration = 2.26517
+	}
+	UI.Ranked.WinStreak.Appear = 
+	{
+		base = "Base.UI"
+		volume = 2.0
+		pitch = 1.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/ui/ui_ranked_win_streak_appear_01.vsnd",
+		]
+		vsnd_duration = 4.546062
 	}
 	UI.Notify.ItemPurchase = 
 	{
@@ -1171,6 +1296,30 @@
 		pitch = 1.0
 		vsnd_files = "sounds/ui/ui_achievement_toast_seasonal.vsnd"
 		vsnd_duration = 3.806395
+	}
+	UI.PostGame.HeroXPReward = 
+	{
+		type = "citadel_ui_panner"
+		volume = -1.0
+		hrtf_on = 0.0
+		vsnd_files = "sounds/ui/ui_postgame_heroxp_ding.vsnd"
+		vsnd_duration = 2.069138
+	}
+	UI.PostGame.HeroXPReward_Tick = 
+	{
+		type = "citadel_ui_panner"
+		volume = -1.0
+		hrtf_on = 0.0
+		vsnd_files = "sounds/ui/ui_xp_click_01.vsnd"
+		vsnd_duration = 0.018889
+	}
+	UI.PostGame.HeroXPReward_LevelUp = 
+	{
+		type = "citadel_ui_panner"
+		volume = -1.0
+		hrtf_on = 0.0
+		vsnd_files = "sounds/ui/ui_draft_item_appear_enhanced.vsnd"
+		vsnd_duration = 6.458685
 	}
 	UI.PostGame.Award = 
 	{

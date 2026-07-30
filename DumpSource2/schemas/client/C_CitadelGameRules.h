@@ -15,6 +15,9 @@
 // MNetworkVarNames = "Vector m_vMinimapMaxs"
 // MNetworkVarNames = "bool m_bMatchSafeToAbandon"
 // MNetworkVarNames = "bool m_bMatchNotScored"
+// MNetworkVarNames = "GameTime_t m_tAbandonTriggerEarlyTime"
+// MNetworkVarNames = "bool m_bAbandonTriggerSapphire"
+// MNetworkVarNames = "bool m_bAbandonTriggerAmber"
 // MNetworkVarNames = "bool m_bNoDeathEnabled"
 // MNetworkVarNames = "bool m_bFastCooldownsEnabled"
 // MNetworkVarNames = "bool m_bStaminaCooldownsEnabled"
@@ -28,6 +31,7 @@
 // MNetworkVarNames = "AccountID_t m_nHideoutOwner"
 // MNetworkVarNames = "CHandle<CCitadelTrooperMinimap> m_hTrooperMinimap"
 // MNetworkVarNames = "CitadelTeam_t m_iWinningTeam"
+// MNetworkVarNames = "HeroID_t m_vecBannedHeroes"
 // MNetworkVarNames = "TeamKothState_t m_vecTeamKothStates"
 // MNetworkVarNames = "CitadelTeam_t m_nKothScoringTeam"
 // MNetworkVarNames = "GameTime_t m_timeKothScoring"
@@ -47,7 +51,6 @@
 // MNetworkVarNames = "int m_nMatchClockUpdateTick"
 // MNetworkVarNames = "float m_flMatchClockAtLastUpdate"
 // MNetworkVarNames = "float m_fUnpauseRawTime"
-// MNetworkVarNames = "bool m_bRequiresReportCardDismissal"
 // MNetworkVarNames = "int m_eGGTeam"
 // MNetworkVarNames = "GameTime_t m_flGGEndsAtTime"
 // MNetworkVarNames = "MatchID_t m_unMatchID"
@@ -95,6 +98,12 @@ class C_CitadelGameRules : public C_TeamplayRules
 	// MNetworkEnable
 	bool m_bMatchNotScored;
 	// MNetworkEnable
+	GameTime_t m_tAbandonTriggerEarlyTime;
+	// MNetworkEnable
+	bool m_bAbandonTriggerSapphire;
+	// MNetworkEnable
+	bool m_bAbandonTriggerAmber;
+	// MNetworkEnable
 	bool m_bNoDeathEnabled;
 	// MNetworkEnable
 	bool m_bFastCooldownsEnabled;
@@ -120,6 +129,8 @@ class C_CitadelGameRules : public C_TeamplayRules
 	CHandle< CCitadelTrooperMinimap > m_hTrooperMinimap;
 	// MNetworkEnable
 	int32 m_iWinningTeam;
+	// MNetworkEnable
+	C_NetworkUtlVectorBase< HeroID_t > m_vecBannedHeroes;
 	// MNetworkEnable
 	C_UtlVectorEmbeddedNetworkVar< TeamKothState_t > m_vecTeamKothStates;
 	// MNetworkEnable
@@ -169,10 +180,6 @@ class C_CitadelGameRules : public C_TeamplayRules
 	// MNetworkEnable
 	float32 m_fUnpauseRawTime;
 	float32 m_fUnpauseCurTime;
-	// MNetworkEnable
-	bool m_bRequiresReportCardDismissal;
-	GameTime_t m_flPreGameWaitEndTime;
-	GameTime_t m_flReportCardDismissalWaitStart;
 	int32 m_nLastPreGameCount;
 	// MNetworkEnable
 	int32 m_eGGTeam;

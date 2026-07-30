@@ -68,42 +68,48 @@ CitadelProfilePage
 	flow-children: down;
 }
 
-#ProfileInfo Button.SimpleIconButtonSteam
+#ProfileInfo .SteamInfo #ViewSteamProfile
 {
-	flow-children: right;
+	width: 23px;
+	height: 23px;
+	margin-right: 4px;
 	transition-duration: 0.1s;
 	transition-property: wash-color;
-	height: 20px;
 	margin-right: 4px;
 	visibility: visible;
 	margin-left: -1px;
 	tooltip-position: left;
+	wash-color: offWhite;
+	opacity: 0.5;
+	transition-property: opacity;
+	transition-duration: 0.08s;
+	transition-timing-function: ease-in-out;
 }
 
-#ProfileInfo Button.SimpleIconButtonSteam:hover
+#ProfileInfo .SteamInfo #ViewSteamProfile:hover
 {
-	wash-color: #ffffff;
-	color: #ffffff;
-}
-
-#ProfileInfo Button.SimpleIconButtonSteam Image
-{
-	width: 20px;
-	margin-right: 4px;
+	opacity: 1;
 }
 
 #ProfileInfo .FriendID
 {
 	color: offWhite;
 	font-weight: semi-bold;
-	font-size: 18px;
-	margin-left: 8px;
+	font-size: 12px;
+	margin-left: 30px;
 	opacity: 0.5;
-	max-height: 20px;
-	max-width: 120px;
+	max-height: 30px;
 	text-overflow: shrink;
-	vertical-align: bottom;
+	vertical-align: center;
 	text-transform: uppercase;
+	transition-property: opacity;
+	transition-duration: 0.08s;
+	transition-timing-function: ease-in-out;
+}
+
+#ProfileInfo .FriendID:hover
+{
+	opacity: 1;
 }
 
 #MatchBlockBigContainer,#MatchBlockMiniContainer
@@ -178,7 +184,7 @@ CitadelProfilePage
 	visibility: visible;
 }
 
-.isLoadingStats #StatsSection,.isLoadingStats #GamesPlayed,.isLoadingStats #MatchHistoryArea,.isLoadingStats #RankedPerformanceTab
+.isLoadingStats #StatsSection,.isLoadingStats #GamesPlayed,.isLoadingStats #MatchHistoryArea
 {
 	visibility: collapse;
 }
@@ -336,6 +342,7 @@ CitadelProfilePage
 {
 	flow-children: down;
 	width: 100%;
+	margin-bottom: 30px;
 }
 
 .titleArea
@@ -367,7 +374,7 @@ CitadelProfilePage
 	height: 140px;
 	visibility: collapse;
 	background-color: #000000ee;
-	border-radius: 5px;
+	border-radius: 2px;
 	flow-children: right;
 }
 
@@ -438,15 +445,10 @@ CitadelProfilePage
 	pre-transform-scale2d: 1;
 }
 
-.sortedGamesPlayed #GamesPlayedTab,.sortedPerformance #RankedPerformanceTab
+#GamesPlayedTab
 {
 	background-color: offBlack;
 	pre-transform-scale2d: 1;
-}
-
-.sortedPerformance #GamesPlayedTab .smallTitle,.sortedGamesPlayed #RankedPerformanceTab .smallTitle
-{
-	color: #FFEFD740;
 }
 
 .profileTab .smallTitle
@@ -455,34 +457,10 @@ CitadelProfilePage
 	text-shadow: 0px 0px 12px #00000088;
 }
 
-#AllStats,#CoreRating
-{
-	visibility: collapse;
-}
-
-.sortedGamesPlayed #AllStats,.sortedPerformance #CoreRating
-{
-	visibility: visible;
-}
-
-#CoreRating
-{
-	height: 64px;
-	padding: 0px 0px 0px 0px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #76767604 ), to( #76767610) );
-	box-shadow: inset 0px 0px 20px #00000022;
-	margin-bottom: 4px;
-}
-
 .smallTitle
 {
 	font-weight: bold;
 	font-size: 20px;
-}
-
-#RankedPerformanceTab:disabled
-{
-	opacity: 0;
 }
 
 #MatchHistoryButton
@@ -581,7 +559,7 @@ CitadelProfilePage
 	vertical-align: middle;
 }
 
-CitadelRankedBadgeMini
+CitadelRankedBadgeOldMini
 {
 	vertical-align: middle;
 	text-align: left;
@@ -609,33 +587,12 @@ CitadelRankedBadgeMini
 	font-style: italic;
 }
 
-#TabsContainer
-{
-	width: 100%;
-	margin-top: 28px;
-	visibility: collapse;
-	flow-children: right;
-}
-
-.viewingSelf #TabsContainer
-{
-	visibility: visible;
-}
-
-.SortByLabel
-{
-	vertical-align: center;
-	font-weight: bold;
-	margin: 0px 8px 8px 0px;
-	color: #FFEFD740;
-}
-
 #StatsContent
 {
 	flow-children: right;
 	width: 100%;
 	height: 100%;
-	border-radius: 5px;
+	border-radius: 2px;
 }
 
 #HeroList
@@ -647,7 +604,7 @@ CitadelRankedBadgeMini
 	overflow: squish scroll;
 }
 
-.heroRowContents,.coreRating
+.heroRowContents
 {
 	margin-left: 0px;
 }
@@ -655,91 +612,6 @@ CitadelRankedBadgeMini
 .AllHeroesRow .heroRowContents
 {
 	vertical-align: center;
-}
-
-.coreRating
-{
-	height: 64px;
-}
-
-.performanceArrow
-{
-	background-size: 100% 100%;
-	height: 20px;
-	width: 0px;
-	vertical-align: middle;
-	img-shadow: 0px 0px 12px #00000088;
-	margin: 4px;
-	opacity: 0.4;
-	wash-color: offWhite;
-	transition: all 0.15s ease-in-out;
-	tooltip-position: left;
-}
-
-.sortedPerformance .performanceArrow
-{
-	width: 20px;
-}
-
-.sortedPerformance .heroRowContents,.sortedPerformance .coreRating
-{
-	margin-left: 28px;
-}
-
-.sortedPerformance .infoButton
-{
-	width: 20px;
-	height: 20px;
-	vertical-align: center;
-	text-align: left;
-	img-shadow: 0px 0px 12px #00000088;
-	margin: 16px 6px 6px 12px;
-	opacity: 0.3;
-	wash-color: offWhite;
-	background-image: url("s2r://panorama/images/profile/info.vsvg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	wash-color: offWhite;
-	transition-property: opacity;
-	transition-duration: 0.15s;
-	transition-timing-function: ease-in-out;
-	tooltip-position: left;
-}
-
-.infoButton:hover
-{
-	opacity: 0.6;
-	sound: soundMainMenuHover;
-}
-
-.relativeMMR2 .performanceArrow
-{
-	background-image: url("s2r://panorama/images/profile/double_up.vsvg");
-	wash-color: #62E762;
-}
-
-.relativeMMR1 .performanceArrow
-{
-	background-image: url("s2r://panorama/images/profile/single_up.vsvg");
-	wash-color: #419941;
-}
-
-.relativeMMR0 .performanceArrow
-{
-	background-image: url("s2r://panorama/images/profile/double_down.vsvg");
-	wash-color: #403c3c;
-}
-
-.relativeMMR-1 .performanceArrow
-{
-	background-image: url("s2r://panorama/images/profile/single_down.vsvg");
-	wash-color: #726B6B;
-}
-
-.relativeMMR-2 .performanceArrow
-{
-	background-image: url("s2r://panorama/images/profile/double_down.vsvg");
-	wash-color: #726B6B;
 }
 
 #StatsBlock
@@ -1151,19 +1023,19 @@ CitadelRankedBadgeMini
 {
 	vertical-align: bottom;
 	horizontal-align: center;
-	margin-bottom: 20px;
+	margin-top: 4px;
 	opacity: 0.3;
 	visibility: collapse;
 	flow-children: right;
-	transition-property: brigntness;
-	transition-duration: 0.15s;
+	transition-property: opacity;
+	transition-duration: 0.08s;
 	transition-timing-function: ease-in-out;
 }
 
 #ForumButton:hover
 {
 	sound: soundMainMenuHover;
-	brightness: 2;
+	opacity: 1;
 }
 
 #ForumButton:active
@@ -1178,16 +1050,16 @@ CitadelRankedBadgeMini
 
 .ForumIcon
 {
-	width: 16px;
-	height: 16px;
+	width: 20px;
+	height: 20px;
 	wash-color: offWhite&44;
 	vertical-align: middle;
-	margin-top: 3px;
 	opacity: 1;
-	margin-right: 8px;
+	margin-right: 10px;
 	background-image: url("s2r://panorama/images/icons/icon_feedback.vsvg");
 	background-size: contain;
 	opacity: 0.2;
+	margin-top: 1px;
 }
 
 .defaultText
@@ -1413,6 +1285,7 @@ CitadelRankedBadgeMini
 {
 	height: 48px;
 	width: 48px;
+	margin: 4px;
 	saturation: 0.3;
 	transition-property: transform;
 	transition-duration: 0.1s;
@@ -1421,7 +1294,17 @@ CitadelRankedBadgeMini
 .AllHeroesRow #HeroRowImage
 {
 	img-shadow: 0px 0px 12px #00000044;
-	padding: 4px;
+	background-image: url("s2r://panorama/images/icons/deadlock_logo.vsvg");
+	background-size: 28px;
+	background-position: center;
+	background-repeat: no-repeat;
+	wash-color: offWhite;
+	brightness: 0.5;
+}
+
+.AllHeroesRow.heroRow:selected #HeroRowImage
+{
+	brightness: 1;
 }
 
 .AllHeroesRow
@@ -1429,7 +1312,7 @@ CitadelRankedBadgeMini
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #76767604 ), to( #76767610) );
 	box-shadow: inset 0px 0px 20px #00000022;
 	margin-bottom: 4px;
-	height: 64px;
+	height: 48px;
 	vertical-align: center;
 }
 
@@ -1441,7 +1324,7 @@ CitadelRankedBadgeMini
 
 .heroRowName
 {
-	margin-left: 60px;
+	margin-left: 52px;
 	margin-right: 10px;
 	vertical-align: center;
 	font-weight: bold;
@@ -1460,47 +1343,11 @@ CitadelRankedBadgeMini
 	color: offWhite;
 }
 
-#CoreRating.heroRow .heroRowName
-{
-	transform: none;
-	margin-top: 0px;
-}
-
-#CoreRating.heroRow
-{
-	margin-top: -10px;
-	transition-property: none;
-	transform: none;
-}
-
-.coreRatingLabel
-{
-	margin: 35px 4px 0px 60px;
-	vertical-align: center;
-	font-weight: normal;
-	font-size: 14px;
-	max-height: 20px;
-	text-overflow: shrink;
-	color: offWhite&33;
-	transition-property: transform;
-	transition-duration: 0.15s;
-}
-
-.heroRow:selected .coreRatingLabel
-{
-	margin-left: 60px;
-}
-
 #HeroRowBackground
 {
 	height: 100%;
 	width: 100%;
 	opacity-brush: gradient( linear, 100% 0%, 0% 0%, from( #ffffff ), to( #ffffff20 ) );
-}
-
-.sortedPerformance #HeroRowBackground
-{
-	background-color: none;
 }
 
 #ViewLeaderboardContainer

@@ -964,7 +964,7 @@ citadel_abandon_pregame_if_not_connected_in_s_streaming 120 (developmentonly gam
 citadel_abandon_pregame_if_not_connected_in_s_streaming_dev 120 (developmentonly gamedll defensive)
 	After N seconds, if we don't have all the players connect to the match with the streaming map, the match will be abandoned. This only applies to the initial match start when going from players connecting to pregame, for dev
 
-citadel_abandon_time_for_match_not_scored 300 (developmentonly gamedll defensive)
+citadel_abandon_time_for_match_not_scored 180 (developmentonly gamedll defensive)
 	If someone abandons before this match time (in seconds), we will call the match forfeit and not update mmr for anyone in the match.
 
 citadel_ability_busy_queue_time 0.25 (developmentonly gamedll clientdll replicated defensive)
@@ -1468,6 +1468,9 @@ citadel_bot_teamsense_homebase_range 75 (developmentonly gamedll replicated defe
 citadel_bot_teamsense_pushed_range 20 (developmentonly gamedll replicated defensive)
 	Distance(m) from Objective to consider it pushed to
 
+citadel_bot_test_disconnect true (developmentonly gamedll)
+	<no description>
+
 citadel_bot_test_mode false (gamedll replicated release)
 	Set citadel bots to be and in test mode (default idle)
 
@@ -1831,11 +1834,14 @@ citadel_client_solo_mm_keep_alive_check_s 45 (developmentonly clientdll defensiv
 citadel_client_status_cycle_delay 4 (developmentonly clientdll)
 	<no description>
 
-citadel_commend_toast_enemy_seconds 4 (developmentonly clientdll)
+citadel_commend_toast_enemy_seconds 3 (developmentonly clientdll)
 	Number of seconds to show enemy commend toasts
 
-citadel_commend_toast_seconds 30 (developmentonly clientdll)
+citadel_commend_toast_seconds 5 (developmentonly clientdll)
 	Number of seconds to show commend toasts
+
+citadel_commend_use_toasts true (clientdll release)
+	Whether to use commend toasts (older) or the custom commend notification (newer)
 
 citadel_cone_view_alpha 80 (developmentonly clientdll)
 	<no description>
@@ -2404,10 +2410,19 @@ citadel_event_timer_scale_on_direct_look 1.33 (developmentonly clientdll)
 citadel_fake_bots_as_pinging_player false (gamedll cheat)
 	<no description>
 
+citadel_fake_brawl_losses -1 (developmentonly clientdll)
+	<no description>
+
+citadel_fake_brawl_wins -1 (developmentonly clientdll)
+	<no description>
+
 citadel_fake_comms_ban_timestamp 0 (developmentonly clientdll)
 	<no description>
 
 citadel_fake_death_gold false (developmentonly clientdll)
+	<no description>
+
+citadel_fake_losses -1 (developmentonly clientdll)
 	<no description>
 
 citadel_fake_low_pri_games_remaining -1 (developmentonly clientdll)
@@ -2430,6 +2445,9 @@ citadel_fake_report_ban_timestamp 0 (developmentonly clientdll)
 
 citadel_fake_subrank_for_match -1 (developmentonly gamedll clientdll replicated)
 	Set what subrank you want to fake for the match. -1 is disabled
+
+citadel_fake_wins -1 (developmentonly clientdll)
+	<no description>
 
 citadel_familiar_debug -1 (developmentonly gamedll clientdll replicated cheat)
 	<no description>
@@ -2701,6 +2719,15 @@ citadel_hideout_exclusive_mode true (developmentonly clientdll)
 citadel_hideout_hero_id 63 (clientdll archive release)
 	<no description>
 
+citadel_hideout_in_world_ranked_doodle -1 (developmentonly clientdll)
+	<no description>
+
+citadel_hideout_in_world_ranked_fake_eligible_heroes -1 (developmentonly clientdll)
+	<no description>
+
+citadel_hideout_in_world_ranked_fake_last_match false (developmentonly clientdll)
+	<no description>
+
 citadel_hideout_intro_dismiss_escape_only false (developmentonly clientdll)
 	<no description>
 
@@ -2911,8 +2938,11 @@ citadel_koth_warning_time 20 (gamedll clientdll replicated cheat)
 citadel_lane_matchups_mmr_variance 0 (gamedll release)
 	specifies how much of a gap between MMR's we allow to randomize lane assignment
 
-citadel_lane_swap_available_duration 40 (gamedll clientdll replicated cheat)
-	How long lane swap is available, including pre-match time. Set to 0 to disable.
+citadel_lane_swap_available_duration 0 (gamedll clientdll replicated cheat)
+	How long lane swap is available in-game. Set to 0 to disable, -1 for infinity.
+
+citadel_lane_swap_available_duration_prematch -1 (gamedll clientdll replicated cheat)
+	How long lane swap is available in pre-game wait. Set to 0 to disable, -1 for infinity.
 
 citadel_language_and_english_hero_names "" (developmentonly clientdll defensive)
 	For data gathering.
@@ -3001,7 +3031,7 @@ citadel_match_details_flip_teams false (developmentonly clientdll)
 citadel_match_details_lane_stats_time 540 (developmentonly clientdll)
 	<no description>
 
-citadel_match_history_failure_delay_s 3 (developmentonly clientdll defensive)
+citadel_match_history_cache_duration_s 300 (developmentonly clientdll defensive)
 	<no description>
 
 citadel_match_intro_duration_full 23 (gamedll cheat)
@@ -3235,6 +3265,15 @@ citadel_neutral_spawn_range 100 (developmentonly gamedll)
 citadel_neutral_weakpoints_enabled false (developmentonly gamedll)
 	<no description>
 
+citadel_new_abandon_rules_early_end_countdown 10 (developmentonly gamedll clientdll replicated defensive)
+	[New Abandon Rules] Auto-match end countdown.
+
+citadel_new_abandon_rules_early_t1 false (developmentonly gamedll defensive)
+	[New Abandon Rules] Abandon is considered 'early' if this is before the first T1 kill, no matter the match time.
+
+citadel_new_abandon_rules_early_time 300 (developmentonly gamedll defensive)
+	[New Abandon Rules] Time for the 'early' trigger to take effect. Match will not be scored, etc.
+
 citadel_new_player_flow_visible true (clientdll archive release)
 	Are we still showing the new player instructions
 
@@ -3373,6 +3412,9 @@ citadel_passthrough_fakewall_draw_debug false (developmentonly gamedll defensive
 citadel_pause_allow_immediate_if_single_player false (developmentonly gamedll defensive)
 	When there is only a single player on the server, set whether or not we allow for instant pausing/unpausing
 
+citadel_pause_allow_in_pregame false (developmentonly gamedll)
+	Allow pausing in the pregame state
+
 citadel_pause_cooldown_time 900 (developmentonly gamedll defensive)
 	Number of seconds before a player is allowed to pause again
 
@@ -3388,7 +3430,7 @@ citadel_pause_force_unpause_time 10800 (developmentonly gamedll defensive)
 citadel_pause_game_pause_silently false (developmentonly clientdll defensive)
 	When set, we don't show the pause dialog when paused
 
-citadel_pause_matchtime_before_allow 0 (developmentonly gamedll defensive)
+citadel_pause_matchtime_before_allow 120 (developmentonly gamedll defensive)
 	How much match time before pausing is allowed by clients
 
 citadel_pause_minimum_time 2 (gamedll cheat)
@@ -3442,16 +3484,7 @@ citadel_ping_indicator_duration_for_bosses 2 (developmentonly clientdll)
 citadel_ping_wheel_activation_radius 0.37 (developmentonly clientdll)
 	LEGACY. See: citadel_show_chat_wheel_angle_threshold. Increase this to change how much you have to move your mouse to make the mousewheel visible.
 
-citadel_play_page_fake_brawl_wins 0 (developmentonly clientdll)
-	<no description>
-
 citadel_play_page_fake_data false (developmentonly clientdll)
-	<no description>
-
-citadel_play_page_fake_normal_losses 0 (developmentonly clientdll)
-	<no description>
-
-citadel_play_page_fake_normal_wins 0 (developmentonly clientdll)
 	<no description>
 
 citadel_play_page_finished_tutorial false (developmentonly clientdll)
@@ -3784,11 +3817,29 @@ citadel_portrait_unit_ag2_enable true (developmentonly clientdll)
 citadel_portrait_world_renderer_off false (developmentonly clientdll)
 	<no description>
 
+citadel_post_game_fake_local_account_id 0 (developmentonly clientdll)
+	<no description>
+
+citadel_post_game_fake_local_hero "" (developmentonly clientdll)
+	Name of the hero that should be faked as the local player
+
 citadel_post_game_local_player_screen_enabled false (developmentonly clientdll)
+	<no description>
+
+citadel_post_game_mvp_screen_enabled true (developmentonly clientdll)
 	<no description>
 
 citadel_post_game_progress 0 (developmentonly clientdll)
 	-1 = force disabled, 0 = default, 1 = force enabled
+
+citadel_post_game_progress_use_test_data false (developmentonly clientdll)
+	<no description>
+
+citadel_post_game_ranked_screen_enabled true (developmentonly clientdll)
+	<no description>
+
+citadel_post_game_reset_commend_state false (developmentonly clientdll)
+	Temporarily resets the commend state for testing (will get set to false after a commend is triggered)
 
 citadel_postgame_duration 10 (gamedll cheat)
 	How long postgame lasts until play of the game
@@ -3805,7 +3856,7 @@ citadel_powerup_spawn_interval_override -1 (developmentonly gamedll)
 citadel_powerup_spawner_show_event_timer false (developmentonly clientdll replicated)
 	<no description>
 
-citadel_pregame_fake_game_state -1 (developmentonly clientdll)
+citadel_pregame_fake_game_state "EGameState_Invalid" (developmentonly clientdll)
 	<no description>
 
 citadel_pregame_fake_match_intro_duration 23 (developmentonly clientdll)
@@ -3820,13 +3871,40 @@ citadel_pregame_fake_team_reveal_heroes_1 "" (developmentonly clientdll)
 citadel_pregame_fake_team_reveal_heroes_2 "" (developmentonly clientdll)
 	Comma separated hero names or hero ids for the team reveal screen.
 
+citadel_pregame_hero_draft_force_enabled false (developmentonly gamedll clientdll replicated)
+	Turn on pre-game hero draft for testing
+
+citadel_pregame_hero_draft_notification_time 8 (developmentonly clientdll)
+	<no description>
+
+citadel_pregame_hero_draft_num_changes 1 (developmentonly gamedll clientdll replicated)
+	Number of per-player hero changes allowed during pregame hero draft
+
+citadel_pregame_hero_draft_ranked true (developmentonly gamedll clientdll replicated)
+	Turn on pre-game hero draft in ranked mode
+
+citadel_pregame_hero_draft_unranked false (developmentonly gamedll clientdll replicated)
+	Turn on pre-game hero draft in unranked mode
+
 citadel_pregame_hero_reveal_duration 7 (developmentonly clientdll)
 	<no description>
 
 citadel_pregame_hero_reveal_full_sequence false (developmentonly clientdll)
 	<no description>
 
-citadel_pregame_wait_duration 5 (gamedll cheat)
+citadel_pregame_ranked_summary_force_enabled false (developmentonly clientdll)
+	<no description>
+
+citadel_pregame_ranked_summary_test_state -1 (developmentonly clientdll)
+	<no description>
+
+citadel_pregame_ranked_summary_time 10 (developmentonly gamedll clientdll replicated)
+	<no description>
+
+citadel_pregame_use_intro_spawn false (developmentonly gamedll defensive)
+	Whether to use the special intro team spawn locations during pregame
+
+citadel_pregame_wait_duration 30 (gamedll cheat)
 	How long pre-match is until we start the match
 
 citadel_previous_umuted_audio_level 1 (clientdll archive)
@@ -3919,6 +3997,54 @@ citadel_radial_distortion_growth_factor 1.25 (developmentonly clientdll defensiv
 citadel_radial_testing 0 (developmentonly clientdll defensive)
 	0: Normal. 1: Inhibit showing the hud abilities' upgrade panel when the scoreboard is open.
 
+citadel_ranked_allow_overrides true (developmentonly clientdll)
+	<no description>
+
+citadel_ranked_hero_roster "" (clientdll archive release)
+	A comma separated list of hero IDs that hold the currently selected brawl roster heroes
+
+citadel_ranked_hero_roster_banned "" (clientdll archive release)
+	A comma separated list of hero IDs that hold the currently banned brawl roster heroes
+
+citadel_ranked_hero_roster_high_priority "" (clientdll archive release)
+	A comma separated list of hero IDs that hold the currently high priority brawl roster heroes
+
+citadel_ranked_hero_roster_preferred "" (clientdll archive release)
+	A comma separated list of hero IDs that hold the currently preferred brawl roster heroes
+
+citadel_ranked_hero_roster_random false (clientdll archive release)
+	Is the brawl hero roster set to random
+
+citadel_ranked_progress_fake_calibration_games -1 (developmentonly clientdll)
+	<no description>
+
+citadel_ranked_progress_fake_demotion_protection_games -1 (developmentonly clientdll)
+	<no description>
+
+citadel_ranked_progress_fake_match_count -1 (developmentonly clientdll)
+	<no description>
+
+citadel_ranked_progress_fake_max_rank -1 (developmentonly clientdll)
+	<no description>
+
+citadel_ranked_progress_fake_missing false (developmentonly clientdll)
+	<no description>
+
+citadel_ranked_progress_fake_rank -1 (developmentonly clientdll)
+	<no description>
+
+citadel_ranked_progress_fake_win_mask -1 (developmentonly clientdll)
+	<no description>
+
+citadel_ranked_progress_fake_win_streak -1 (developmentonly clientdll)
+	<no description>
+
+citadel_ranked_season_match_history_fake_rank_changes false (developmentonly clientdll)
+	Turn to show fake versions of the rank history
+
+citadel_ranked_season_match_history_unfiltered false (developmentonly clientdll)
+	Turn on to show all matches in the ranked season view, not just matches from that ranked season.
+
 citadel_rapid_stamina_regen false (gamedll clientdll replicated cheat)
 	<no description>
 
@@ -3974,6 +4100,9 @@ citadel_restore_components_only_during_sellback true (developmentonly gamedll cl
 	<no description>
 
 citadel_roster_select_force_enable_priority_token false (developmentonly clientdll)
+	<no description>
+
+citadel_roster_select_force_select_any false (developmentonly clientdll)
 	<no description>
 
 citadel_roster_select_hover_delay 0.2 (developmentonly clientdll)
@@ -4226,9 +4355,6 @@ citadel_spoof_match_in_progress false (developmentonly clientdll)
 	<no description>
 
 citadel_spoof_matchmaking_status -1 (developmentonly clientdll)
-	<no description>
-
-citadel_spoof_num_matches_on_profile -1 (developmentonly clientdll)
 	<no description>
 
 citadel_spoof_persona_name "" (developmentonly clientdll)
@@ -4699,6 +4825,12 @@ citadel_ui_fake_active_matches 0 (developmentonly clientdll)
 citadel_ui_fake_invite_parties 0 (developmentonly clientdll)
 	Set to > 0 to add dummy parties that have invites
 
+citadel_ui_hero_badge_debug_xp -1 (developmentonly clientdll)
+	Force XP value for all badges (client only)
+
+citadel_ui_show_hero_progression false (developmentonly clientdll archive)
+	Show hero progression UI (i.e. hero levels)
+
 citadel_ui_spoof_active_match_bot_account 0 (developmentonly clientdll)
 	When set to non-zero, it will use this account as the account for bots to test UI on the active match
 
@@ -4884,6 +5016,15 @@ citadel_use_fake_lobby_signout_details false (developmentonly gamedll)
 
 citadel_use_hold_sprint false (developmentonly gamedll clientdll replicated defensive)
 	Use hold sprint ability?
+
+citadel_use_new_abandon_rules_force_enabled false (developmentonly gamedll defensive)
+	<no description>
+
+citadel_use_new_abandon_rules_ranked true (developmentonly gamedll defensive)
+	<no description>
+
+citadel_use_new_abandon_rules_unranked true (developmentonly gamedll defensive)
+	<no description>
 
 citadel_use_new_minimap true (developmentonly clientdll)
 	Turns on/off the new minimap

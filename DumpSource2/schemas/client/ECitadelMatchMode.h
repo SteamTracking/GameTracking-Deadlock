@@ -8,5 +8,5 @@ enum ECitadelMatchMode : uint32_t
 	k_ECitadelMatchMode_ServerTest = 5,
 	k_ECitadelMatchMode_Tutorial = 6,
 	k_ECitadelMatchMode_HeroLabs = 7,
-	k_ECitadelMatchMode_Calibration = 8,
+	k_ECitadelMatchMode_NewPlayerPlacement = 8,
 };

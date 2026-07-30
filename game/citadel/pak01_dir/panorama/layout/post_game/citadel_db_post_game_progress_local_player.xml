@@ -4,15 +4,30 @@
 		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
 		<include src="s2r://panorama/styles/post_game/citadel_db_post_game_progress_local_player.vcss_c" />
 	</styles>
+	<snippets>
+		<snippet name="HeroXPReward">
+			<Panel class="HeroXPRewardContainer">
+				<Label html="true" class="RewardName" text="{s:reward_name}" />
+				<Label html="true" class="RewardAmount" text="#Citadel_Post_Game_HeroXPReward_Amount" />
+			</Panel>
+		</snippet>
+	</snippets>
 	<scripts>
 		<include src="s2r://panorama/scripts/async.vts_c" />
 		<include src="s2r://panorama/scripts/post_game/citadel_db_post_game_progress_local_player.vts_c" />
 	</scripts>
 	<CitadelPostGameProgressLocalPlayer class="PostGameScreen" navclass="LocalPlayer" navtooltip="#Citadel_Post_Game_Personal">
 		<Panel class="LocalPlayerBackground" />
+		<Panel class="HeroLevelProgressContainer">
+			<Panel class="ProgressBarContainer">
+				<Panel class="PreProgressBar" />
+				<ProgressBarWithMiddle id="HeroLevelProgressBar" class="HeroLevelProgressBar" />
+				<ProgressBar id="NextLevelProgressBar" class="PostProgressBar HeroLevelProgressBar" />
+			</Panel>
+			<CitadelHeroBadgeIcon id="NextHeroBadgeIcon" />
+		</Panel>
 		<CitadelHeroScenePanelNew id="HeroScenePanel" heroscenestyle="Portrait" />
 		<Panel class="PlayerDetails">
-			<Panel id="Accolades" />
 			<Panel class="PlayerTop">
 				<CitadelHeroLogo id="HeroLogo" />
 				<Panel class="PlayerIdentity">
@@ -21,6 +36,7 @@
 					<CitadelUserName id="PlayerName" />
 				</Panel>
 			</Panel>
+			<Panel id="HeroXPRewards" />
 		</Panel>
 	</CitadelPostGameProgressLocalPlayer>
 </root>

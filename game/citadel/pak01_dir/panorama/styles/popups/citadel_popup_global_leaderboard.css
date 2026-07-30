@@ -1,26 +1,17 @@
 /* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
 
-CitadelPopupGlobalLeaderboard
+CitadelPopupGlobalLeaderboard.PopupPanel
 {
 	flow-children: right;
-	height: 800px;
-	width: 1480px;
+	height: 900px;
+	width: 1400px;
 	vertical-align: center;
 	horizontal-align: center;
+	padding: 0px;
 	background-color: #282826f8;
-	border-radius: 7px;
-	transition-property: transform, pre-transform-scale2d, opacity, background-color, height;
-	transition-duration: 0.3s;
-	transition-timing-function: ease-in;
-	transition-delay: 0.0s;
-	opacity: 1.0;
-	pre-transform-scale2d: 1.0;
-}
-
-CitadelPopupGlobalLeaderboard.Hidden
-{
-	opacity: 0;
-	pre-transform-scale2d: 0.3;
+	background-image: url("s2r://panorama/images/textures/paper_panel_bg_01_png.vtex");
+	background-img-opacity: 0.8;
+	background-size: 100%;
 }
 
 #HeroSelectionContainer
@@ -50,6 +41,46 @@ CitadelPopupGlobalLeaderboard.Hidden
 	ui-scale: 80%;
 	margin: 20px 0px 0px 36px;
 	overflow: scroll;
+}
+
+#Heroes .Hero
+{
+	background-color: black;
+	margin: 0px 8px 8px 0px;
+	border: 4px solid transparent;
+	transition-property: brightness;
+	transition-duration: 0.2s;
+}
+
+#Heroes .Hero #HeroImage
+{
+	width: 96px;
+	height: 160px;
+}
+
+#Heroes .Hero:hover
+{
+	brightness: 2.0;
+}
+
+#Heroes .Hero:active
+{
+	brightness: 1.5;
+}
+
+#Heroes .Hero:selected
+{
+	border: 4px solid offWhite&cc;
+	border-radius: 3px;
+}
+
+#Heroes .Hero:nth-child(1) #HeroImage
+{
+	background-image: url("s2r://panorama/images/icons/deadlock_logo.vsvg");
+	background-size: 70px 70px;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: offWhite;
 }
 
 #CountriesSelection
@@ -136,7 +167,7 @@ CitadelPopupGlobalLeaderboard.Hidden
 
 #PlayersRatingContainer
 {
-	height: 600px;
+	height: 700px;
 	width: 440px;
 	margin-bottom: 12px;
 	background-color: gradient( linear, 50% 50%, 0% 0%, from( #FFEFD702), to( #FFEFD705) );
@@ -158,6 +189,7 @@ CitadelPopupGlobalLeaderboard.Hidden
 	font-weight: bold;
 	vertical-align: center;
 	margin-top: 6px;
+	font-family: oracle;
 }
 
 .headerDescLabel
@@ -206,17 +238,6 @@ CitadelPopupGlobalLeaderboard.Hidden
 	text-overflow: shrink;
 }
 
-CitadelHeroCard
-{
-	opacity: 0.5;
-}
-
-CitadelHeroCard:selected
-{
-	opacity: 1;
-	brightness: 2;
-}
-
 #TopHeroesContainer
 {
 	flow-children: right;
@@ -225,20 +246,20 @@ CitadelHeroCard:selected
 	margin-right: 4px;
 }
 
-CitadelHeroImage
+#TopHeroesContainer CitadelHeroImage
 {
 	height: 25px;
 	width: 25px;
 }
 
-CitadelRankedBadgeMini#RankedBadge
+CitadelRankedBadgeOldMini#RankedBadge
 {
 	height: 30px;
 	width: 53px;
 	visibility: collapse;
 }
 
-.showingGlobalLeaderboards CitadelRankedBadgeMini#RankedBadge
+.showingGlobalLeaderboards CitadelRankedBadgeOldMini#RankedBadge
 {
 	visibility: visible;
 }

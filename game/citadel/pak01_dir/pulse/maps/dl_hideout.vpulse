@@ -9,14 +9,12 @@
 			m_RegisterMap = 
 			{
 				m_Inparams = null
-				m_Outparams = null
+				m_Outparams = 
+				{
+					eMatchMode = 0
+				}
 			}
 			m_EventName = "CCitadelPointPulseAPI::OnStartMatchmaking"
-		},
-		{
-			m_nEditorNodeID = 554074980
-			_class = "CPulseCell_Step_EntFire"
-			m_Input = "Start"
 		},
 		{
 			_class = "CPulseCell_Inflow_EventHandler"
@@ -54,9 +52,39 @@
 			m_EventName = "CCitadelPointPulseAPI::OnStopMatchmaking"
 		},
 		{
+			m_nEditorNodeID = 669746428
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "Skin"
+		},
+		{
 			m_nEditorNodeID = 229045771
 			_class = "CPulseCell_Step_EntFire"
 			m_Input = "StopPlayEndCap"
+		},
+		{
+			m_nEditorNodeID = 225143227
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "StopPlayEndCap"
+		},
+		{
+			m_nEditorNodeID = 438976257
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "SetControlPoint"
+		},
+		{
+			m_nEditorNodeID = 570402585
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "SetColor"
+		},
+		{
+			m_nEditorNodeID = 491929299
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "Skin"
+		},
+		{
+			m_nEditorNodeID = 730303173
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "Skin"
 		},
 		{
 			_class = "CPulseCell_Inflow_EntOutputHandler"
@@ -94,19 +122,44 @@
 			m_HookName = "CPulseGraphInstance_ServerEntity::GraphStart"
 		},
 		{
-			m_nEditorNodeID = 432564199
+			m_nEditorNodeID = 554074980
 			_class = "CPulseCell_Step_EntFire"
-			m_Input = "StopPlayEndCap"
+			m_Input = "Start"
 		},
 		{
-			m_nEditorNodeID = 881298902
+			m_nEditorNodeID = 661560073
 			_class = "CPulseCell_Step_EntFire"
 			m_Input = "SetControlPoint"
 		},
 		{
-			m_nEditorNodeID = 631371517
+			m_nEditorNodeID = 207175741
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "Skin"
+		},
+		{
+			m_nEditorNodeID = 994528772
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "Start"
+		},
+		{
+			m_nEditorNodeID = 104824703
 			_class = "CPulseCell_Step_EntFire"
 			m_Input = "SetControlPoint"
+		},
+		{
+			m_nEditorNodeID = 394137877
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "SetColor"
+		},
+		{
+			m_nEditorNodeID = 938347115
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "Skin"
+		},
+		{
+			m_nEditorNodeID = 360582195
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "Skin"
 		},
 		{
 			m_nEditorNodeID = 811898506
@@ -142,6 +195,21 @@
 			m_nEditorNodeID = 189560937
 			_class = "CPulseCell_Step_EntFire"
 			m_Input = "TurnOff"
+		},
+		{
+			m_nEditorNodeID = 432564199
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "StopPlayEndCap"
+		},
+		{
+			m_nEditorNodeID = 881298902
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "SetControlPoint"
+		},
+		{
+			m_nEditorNodeID = 631371517
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "SetControlPoint"
 		},
 		{
 			m_nEditorNodeID = 364368368
@@ -208,6 +276,14 @@
 			m_Value = true
 		},
 		{
+			m_Type = "PVAL_SCHEMA_ENUM:ECitadelMatchMode"
+			m_Value = "k_ECitadelMatchMode_Unranked"
+		},
+		{
+			m_Type = "PVAL_SCHEMA_ENUM:ECitadelMatchMode"
+			m_Value = "k_ECitadelMatchMode_Ranked"
+		},
+		{
 			m_Type = "PVAL_BOOL"
 			m_Value = 1
 		},
@@ -221,11 +297,23 @@
 		},
 		{
 			m_Type = "PVAL_STRING"
-			m_Value = "5: 2 0 0"
+			m_Value = "8: 0 0 0"
+		},
+		{
+			m_Type = "PVAL_COLOR_RGB"
+			m_Value = [ 42, 224, 129 ]
+		},
+		{
+			m_Type = "PVAL_INT"
+			m_Value = 1
 		},
 		{
 			m_Type = "PVAL_STRING"
-			m_Value = "6: 1 0 0"
+			m_Value = "8: 1 0 0"
+		},
+		{
+			m_Type = "PVAL_COLOR_RGB"
+			m_Value = [ 132, 113, 255 ]
 		},
 		{
 			m_Type = "PVAL_STRING"
@@ -239,9 +327,18 @@
 			m_Type = "PVAL_STRING"
 			m_Value = "6: 0 0 0"
 		},
+		{
+			m_Type = "PVAL_STRING"
+			m_Value = "5: 2 0 0"
+		},
 	]
 	m_DomainValues = 
 	[
+		{
+			m_nType = "ENTITY_NAME"
+			m_Value = "button_play"
+			m_RequiredRuntimeType = "PVAL_ENTITY_NAME"
+		},
 		{
 			m_nType = "ENTITY_NAME"
 			m_Value = "status_finding_match"
@@ -249,12 +346,32 @@
 		},
 		{
 			m_nType = "ENTITY_NAME"
-			m_Value = "fortune_teller_wispy_smoke"
+			m_Value = "status_finding_match_ranked"
 			m_RequiredRuntimeType = "PVAL_ENTITY_NAME"
 		},
 		{
 			m_nType = "ENTITY_NAME"
 			m_Value = "fortune_teller_fx_on"
+			m_RequiredRuntimeType = "PVAL_ENTITY_NAME"
+		},
+		{
+			m_nType = "ENTITY_NAME"
+			m_Value = "playbuttonfogandlight"
+			m_RequiredRuntimeType = "PVAL_ENTITY_NAME"
+		},
+		{
+			m_nType = "ENTITY_NAME"
+			m_Value = "playcandles"
+			m_RequiredRuntimeType = "PVAL_ENTITY_NAME"
+		},
+		{
+			m_nType = "ENTITY_NAME"
+			m_Value = "playbutton_salt_circle"
+			m_RequiredRuntimeType = "PVAL_ENTITY_NAME"
+		},
+		{
+			m_nType = "ENTITY_NAME"
+			m_Value = "fortune_teller_wispy_smoke"
 			m_RequiredRuntimeType = "PVAL_ENTITY_NAME"
 		},
 		{
@@ -288,27 +405,102 @@
 				m_Inparams = 
 				{
 					TargetName = 1
+					pParam = 2
 				}
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 1
-			m_nSrcChunk = 0
-			m_nSrcInstruction = 4
+			m_nCellIndex = 4
+			m_nSrcChunk = 4
+			m_nSrcInstruction = 5
 		},
 		{
 			m_RegisterMap = 
 			{
 				m_Inparams = 
 				{
-					TargetName = 1
+					TargetName = 3
 				}
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
 			m_nCellIndex = 5
 			m_nSrcChunk = 4
-			m_nSrcInstruction = 4
+			m_nSrcInstruction = 7
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 4
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 6
+			m_nSrcChunk = 4
+			m_nSrcInstruction = 9
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 5
+					pParam = 6
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 7
+			m_nSrcChunk = 4
+			m_nSrcInstruction = 12
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 7
+					pParam = 8
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 8
+			m_nSrcChunk = 4
+			m_nSrcInstruction = 15
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 9
+					pParam = 10
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 9
+			m_nSrcChunk = 4
+			m_nSrcInstruction = 18
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 11
+					pParam = 12
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 10
+			m_nSrcChunk = 4
+			m_nSrcInstruction = 21
 		},
 		{
 			m_RegisterMap = 
@@ -329,88 +521,14 @@
 			{
 				m_Inparams = 
 				{
-					TargetName = 3
-				}
-				m_Outparams = null
-			}
-			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 9
-			m_nSrcChunk = 0
-			m_nSrcInstruction = 10
-		},
-		{
-			m_RegisterMap = 
-			{
-				m_Inparams = 
-				{
-					TargetName = 4
-					pParam = 5
-				}
-				m_Outparams = null
-			}
-			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 10
-			m_nSrcChunk = 0
-			m_nSrcInstruction = 13
-		},
-		{
-			m_RegisterMap = 
-			{
-				m_Inparams = 
-				{
-					TargetName = 6
-					pParam = 7
-				}
-				m_Outparams = null
-			}
-			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 11
-			m_nSrcChunk = 0
-			m_nSrcInstruction = 17
-		},
-		{
-			m_RegisterMap = 
-			{
-				m_Inparams = 
-				{
-					TargetName = 2
-					pParam = 3
-				}
-				m_Outparams = null
-			}
-			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 12
-			m_nSrcChunk = 3
-			m_nSrcInstruction = 10
-		},
-		{
-			m_RegisterMap = 
-			{
-				m_Inparams = 
-				{
-					TargetName = 3
-				}
-				m_Outparams = null
-			}
-			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 13
-			m_nSrcChunk = 4
-			m_nSrcInstruction = 10
-		},
-		{
-			m_RegisterMap = 
-			{
-				m_Inparams = 
-				{
-					TargetName = 4
-					pParam = 5
+					TargetName = 5
 				}
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
 			m_nCellIndex = 14
-			m_nSrcChunk = 4
-			m_nSrcInstruction = 13
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 12
 		},
 		{
 			m_RegisterMap = 
@@ -424,8 +542,97 @@
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
 			m_nCellIndex = 15
-			m_nSrcChunk = 4
-			m_nSrcInstruction = 17
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 15
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 9
+					pParam = 10
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 16
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 22
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 11
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 17
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 24
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 12
+					pParam = 13
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 18
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 27
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 14
+					pParam = 15
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 19
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 30
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 16
+					pParam = 17
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 20
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 33
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 18
+					pParam = 19
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 21
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 36
 		},
 		{
 			m_RegisterMap = 
@@ -438,7 +645,66 @@
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 16
+			m_nCellIndex = 22
+			m_nSrcChunk = 3
+			m_nSrcInstruction = 10
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 14
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 23
+			m_nSrcChunk = 4
+			m_nSrcInstruction = 27
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 15
+					pParam = 16
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 24
+			m_nSrcChunk = 4
+			m_nSrcInstruction = 30
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 17
+					pParam = 18
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 25
+			m_nSrcChunk = 4
+			m_nSrcInstruction = 34
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 2
+					pParam = 3
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 26
 			m_nSrcChunk = 5
 			m_nSrcInstruction = 10
 		},
@@ -452,7 +718,7 @@
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::Run"
-			m_nCellIndex = 17
+			m_nCellIndex = 27
 			m_nSrcChunk = 7
 			m_nSrcInstruction = 7
 		},
@@ -466,7 +732,7 @@
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::Run"
-			m_nCellIndex = 18
+			m_nCellIndex = 28
 			m_nSrcChunk = 7
 			m_nSrcInstruction = 10
 		},
@@ -503,12 +769,56 @@
 			{
 				m_Inparams = 
 				{
+					TargetName = 20
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 29
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 39
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 21
+					pParam = 22
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 30
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 42
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 23
+					pParam = 24
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 31
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 46
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
 					TargetName = 2
 				}
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 19
+			m_nCellIndex = 32
 			m_nSrcChunk = 2
 			m_nSrcInstruction = 14
 		},
@@ -522,7 +832,7 @@
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 20
+			m_nCellIndex = 33
 			m_nSrcChunk = 2
 			m_nSrcInstruction = 17
 		},
@@ -536,7 +846,7 @@
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 21
+			m_nCellIndex = 34
 			m_nSrcChunk = 2
 			m_nSrcInstruction = 20
 		},
@@ -550,7 +860,7 @@
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 22
+			m_nCellIndex = 35
 			m_nSrcChunk = 2
 			m_nSrcInstruction = 22
 		},
@@ -564,7 +874,7 @@
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 23
+			m_nCellIndex = 36
 			m_nSrcChunk = 2
 			m_nSrcInstruction = 25
 		},
@@ -578,7 +888,7 @@
 				m_Outparams = null
 			}
 			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
-			m_nCellIndex = 24
+			m_nCellIndex = 37
 			m_nSrcChunk = 2
 			m_nSrcInstruction = 27
 		},
@@ -667,6 +977,12 @@
 			m_Param = ""
 		},
 		{
+			m_SourceOutput = "Step_EntFire:104824703"
+			m_TargetEntity = "fortune_teller_fx_on"
+			m_TargetInput = "SetControlPoint"
+			m_Param = "param"
+		},
+		{
 			m_SourceOutput = "Step_EntFire:159096439"
 			m_TargetEntity = "hideout_xmas_earned_2025"
 			m_TargetInput = "TurnOff"
@@ -679,6 +995,18 @@
 			m_Param = ""
 		},
 		{
+			m_SourceOutput = "Step_EntFire:207175741"
+			m_TargetEntity = "button_play"
+			m_TargetInput = "Skin"
+			m_Param = "param"
+		},
+		{
+			m_SourceOutput = "Step_EntFire:225143227"
+			m_TargetEntity = "status_finding_match_ranked"
+			m_TargetInput = "StopPlayEndCap"
+			m_Param = ""
+		},
+		{
 			m_SourceOutput = "Step_EntFire:229045771"
 			m_TargetEntity = "status_finding_match"
 			m_TargetInput = "StopPlayEndCap"
@@ -688,6 +1016,12 @@
 			m_SourceOutput = "Step_EntFire:353160539"
 			m_TargetEntity = "fortune_teller_fx_on"
 			m_TargetInput = "SetControlPoint"
+			m_Param = "param"
+		},
+		{
+			m_SourceOutput = "Step_EntFire:360582195"
+			m_TargetEntity = "playbutton_salt_circle"
+			m_TargetInput = "Skin"
 			m_Param = "param"
 		},
 		{
@@ -709,6 +1043,12 @@
 			m_Param = ""
 		},
 		{
+			m_SourceOutput = "Step_EntFire:394137877"
+			m_TargetEntity = "playbuttonfogandlight"
+			m_TargetInput = "SetColor"
+			m_Param = "param"
+		},
+		{
 			m_SourceOutput = "Step_EntFire:420814798"
 			m_TargetEntity = "fortune_teller_fx_on"
 			m_TargetInput = "SetControlPoint"
@@ -721,9 +1061,21 @@
 			m_Param = ""
 		},
 		{
+			m_SourceOutput = "Step_EntFire:438976257"
+			m_TargetEntity = "fortune_teller_fx_on"
+			m_TargetInput = "SetControlPoint"
+			m_Param = "param"
+		},
+		{
 			m_SourceOutput = "Step_EntFire:488300011"
 			m_TargetEntity = "fortune_teller_fx_on"
 			m_TargetInput = "SetControlPoint"
+			m_Param = "param"
+		},
+		{
+			m_SourceOutput = "Step_EntFire:491929299"
+			m_TargetEntity = "playcandles"
+			m_TargetInput = "Skin"
 			m_Param = "param"
 		},
 		{
@@ -731,6 +1083,12 @@
 			m_TargetEntity = "status_finding_match"
 			m_TargetInput = "Start"
 			m_Param = ""
+		},
+		{
+			m_SourceOutput = "Step_EntFire:570402585"
+			m_TargetEntity = "playbuttonfogandlight"
+			m_TargetInput = "SetColor"
+			m_Param = "param"
 		},
 		{
 			m_SourceOutput = "Step_EntFire:578143499"
@@ -745,10 +1103,28 @@
 			m_Param = "param"
 		},
 		{
+			m_SourceOutput = "Step_EntFire:661560073"
+			m_TargetEntity = "fortune_teller_fx_on"
+			m_TargetInput = "SetControlPoint"
+			m_Param = "param"
+		},
+		{
 			m_SourceOutput = "Step_EntFire:665266743"
 			m_TargetEntity = "hideout_xmas_earned_particle"
 			m_TargetInput = "Start"
 			m_Param = ""
+		},
+		{
+			m_SourceOutput = "Step_EntFire:669746428"
+			m_TargetEntity = "button_play"
+			m_TargetInput = "Skin"
+			m_Param = "param"
+		},
+		{
+			m_SourceOutput = "Step_EntFire:730303173"
+			m_TargetEntity = "playbutton_salt_circle"
+			m_TargetInput = "Skin"
+			m_Param = "param"
 		},
 		{
 			m_SourceOutput = "Step_EntFire:791184148"
@@ -769,6 +1145,12 @@
 			m_Param = "param"
 		},
 		{
+			m_SourceOutput = "Step_EntFire:938347115"
+			m_TargetEntity = "playcandles"
+			m_TargetInput = "Skin"
+			m_Param = "param"
+		},
+		{
 			m_SourceOutput = "Step_EntFire:951340787"
 			m_TargetEntity = "fortune_teller_fx_on"
 			m_TargetInput = "SetControlPoint"
@@ -778,6 +1160,12 @@
 			m_SourceOutput = "Step_EntFire:987546133"
 			m_TargetEntity = "votedsticker_00"
 			m_TargetInput = "TurnOn"
+			m_Param = ""
+		},
+		{
+			m_SourceOutput = "Step_EntFire:994528772"
+			m_TargetEntity = "status_finding_match_ranked"
+			m_TargetInput = "Start"
 			m_Param = ""
 		},
 	]
@@ -803,7 +1191,7 @@
 				{
 					m_nCode = "GET_CONST"
 					m_nVar = -1
-					m_nReg0 = 0
+					m_nReg0 = 1
 					m_nReg1 = -1
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
@@ -817,20 +1205,6 @@
 				{
 					m_nCode = "SET_VAR"
 					m_nVar = 0
-					m_nReg0 = 0
-					m_nReg1 = -1
-					m_nReg2 = -1
-					m_nInvokeBindingIndex = -1
-					m_nChunk = -1
-					m_nDestInstruction = 0
-					m_nCallInfoIndex = -1
-					m_nConstIdx = -1
-					m_nDomainValueIdx = -1
-					m_nBlackboardReferenceIdx = -1
-				},
-				{
-					m_nCode = "GET_DOMAIN_VALUE"
-					m_nVar = -1
 					m_nReg0 = 1
 					m_nReg1 = -1
 					m_nReg2 = -1
@@ -839,29 +1213,29 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 0
-					m_nBlackboardReferenceIdx = -1
-				},
-				{
-					m_nCode = "CELL_INVOKE"
-					m_nVar = -1
-					m_nReg0 = -1
-					m_nReg1 = -1
-					m_nReg2 = -1
-					m_nInvokeBindingIndex = 0
-					m_nChunk = -1
-					m_nDestInstruction = 0
-					m_nCallInfoIndex = -1
-					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
-					m_nCode = "GET_VAR"
-					m_nVar = 1
-					m_nReg0 = 2
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 3
 					m_nReg1 = -1
 					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "EQ"
+					m_nVar = -1
+					m_nReg0 = 2
+					m_nReg1 = 0
+					m_nReg2 = 3
 					m_nInvokeBindingIndex = -1
 					m_nChunk = -1
 					m_nDestInstruction = 0
@@ -878,7 +1252,49 @@
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
 					m_nChunk = -1
-					m_nDestInstruction = 9
+					m_nDestInstruction = 11
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 4
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 2
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "EQ"
+					m_nVar = -1
+					m_nReg0 = 2
+					m_nReg1 = 0
+					m_nReg2 = 4
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "JUMP_COND"
+					m_nVar = -1
+					m_nReg0 = 2
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 20
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
@@ -892,7 +1308,7 @@
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
 					m_nChunk = -1
-					m_nDestInstruction = 15
+					m_nDestInstruction = 11
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
@@ -915,7 +1331,7 @@
 				{
 					m_nCode = "GET_DOMAIN_VALUE"
 					m_nVar = -1
-					m_nReg0 = 3
+					m_nReg0 = 5
 					m_nReg1 = -1
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
@@ -932,7 +1348,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 3
+					m_nInvokeBindingIndex = 8
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -943,7 +1359,147 @@
 				{
 					m_nCode = "GET_DOMAIN_VALUE"
 					m_nVar = -1
-					m_nReg0 = 4
+					m_nReg0 = 6
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 3
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 7
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 6
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 9
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_VAR"
+					m_nVar = 1
+					m_nReg0 = 8
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "JUMP_COND"
+					m_nVar = -1
+					m_nReg0 = 8
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 38
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "JUMP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 44
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "IMMEDIATE_HALT"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 9
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 0
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 10
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 8
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 10
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 11
 					m_nReg1 = -1
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
@@ -955,16 +1511,44 @@
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
-					m_nCode = "GET_CONST"
+					m_nCode = "CELL_INVOKE"
 					m_nVar = -1
-					m_nReg0 = 5
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 11
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 12
 					m_nReg1 = -1
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
-					m_nConstIdx = 4
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 3
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 13
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 9
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
 				},
@@ -974,7 +1558,217 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 4
+					m_nInvokeBindingIndex = 12
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 14
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 4
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 15
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 10
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 13
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 16
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 5
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 17
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 8
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 14
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 18
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 6
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 19
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 8
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 15
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "JUMP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 16
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 20
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 7
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 25
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 21
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 3
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 22
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 14
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 26
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -999,7 +1793,7 @@
 				{
 					m_nCode = "GET_DOMAIN_VALUE"
 					m_nVar = -1
-					m_nReg0 = 6
+					m_nReg0 = 23
 					m_nReg1 = -1
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
@@ -1007,20 +1801,20 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 2
+					m_nDomainValueIdx = 3
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
 					m_nCode = "GET_CONST"
 					m_nVar = -1
-					m_nReg0 = 7
+					m_nReg0 = 24
 					m_nReg1 = -1
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
-					m_nConstIdx = 5
+					m_nConstIdx = 13
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
 				},
@@ -1030,7 +1824,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 5
+					m_nInvokeBindingIndex = 27
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -1046,7 +1840,7 @@
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
 					m_nChunk = -1
-					m_nDestInstruction = 9
+					m_nDestInstruction = 38
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
@@ -1057,58 +1851,177 @@
 			[
 				{
 					m_nReg = 0
+					m_Type = "PVAL_SCHEMA_ENUM:ECitadelMatchMode"
+					m_OriginName = "216778216:eMatchMode"
+					m_nWrittenByInstruction = -1
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 1
 					m_Type = "PVAL_BOOL"
 					m_OriginName = "835023963:m_Value"
 					m_nWrittenByInstruction = 1
 					m_nLastReadByInstruction = -1
 				},
 				{
-					m_nReg = 1
-					m_Type = "PVAL_ENTITY_NAME"
-					m_OriginName = "554074980:TargetName"
-					m_nWrittenByInstruction = 3
-					m_nLastReadByInstruction = -1
-				},
-				{
 					m_nReg = 2
 					m_Type = "PVAL_BOOL"
-					m_OriginName = "814433817:value"
-					m_nWrittenByInstruction = 5
+					m_OriginName = "123310570:__case_cond"
+					m_nWrittenByInstruction = 7
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 3
-					m_Type = "PVAL_ENTITY_NAME"
-					m_OriginName = "432564199:TargetName"
-					m_nWrittenByInstruction = 9
+					m_Type = "PVAL_SCHEMA_ENUM:ECitadelMatchMode"
+					m_OriginName = "123310570:__case_value_0"
+					m_nWrittenByInstruction = 3
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 4
-					m_Type = "PVAL_ENTITY_NAME"
-					m_OriginName = "881298902:TargetName"
-					m_nWrittenByInstruction = 11
+					m_Type = "PVAL_SCHEMA_ENUM:ECitadelMatchMode"
+					m_OriginName = "123310570:__case_value_1"
+					m_nWrittenByInstruction = 6
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 5
-					m_Type = "PVAL_STRING"
-					m_OriginName = "881298902:pParam"
-					m_nWrittenByInstruction = 12
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "554074980:TargetName"
+					m_nWrittenByInstruction = 11
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 6
 					m_Type = "PVAL_ENTITY_NAME"
-					m_OriginName = "631371517:TargetName"
-					m_nWrittenByInstruction = 15
+					m_OriginName = "661560073:TargetName"
+					m_nWrittenByInstruction = 13
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 7
 					m_Type = "PVAL_STRING"
-					m_OriginName = "631371517:pParam"
+					m_OriginName = "661560073:pParam"
+					m_nWrittenByInstruction = 14
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 8
+					m_Type = "PVAL_BOOL"
+					m_OriginName = "814433817:value"
 					m_nWrittenByInstruction = 16
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 9
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "207175741:TargetName"
+					m_nWrittenByInstruction = 20
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 10
+					m_Type = "PVAL_INT"
+					m_OriginName = "207175741:pParam"
+					m_nWrittenByInstruction = 21
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 11
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "994528772:TargetName"
+					m_nWrittenByInstruction = 23
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 12
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "104824703:TargetName"
+					m_nWrittenByInstruction = 25
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 13
+					m_Type = "PVAL_STRING"
+					m_OriginName = "104824703:pParam"
+					m_nWrittenByInstruction = 26
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 14
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "394137877:TargetName"
+					m_nWrittenByInstruction = 28
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 15
+					m_Type = "PVAL_COLOR_RGB"
+					m_OriginName = "394137877:pParam"
+					m_nWrittenByInstruction = 29
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 16
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "938347115:TargetName"
+					m_nWrittenByInstruction = 31
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 17
+					m_Type = "PVAL_INT"
+					m_OriginName = "938347115:pParam"
+					m_nWrittenByInstruction = 32
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 18
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "360582195:TargetName"
+					m_nWrittenByInstruction = 34
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 19
+					m_Type = "PVAL_INT"
+					m_OriginName = "360582195:pParam"
+					m_nWrittenByInstruction = 35
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 20
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "432564199:TargetName"
+					m_nWrittenByInstruction = 38
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 21
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "881298902:TargetName"
+					m_nWrittenByInstruction = 40
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 22
+					m_Type = "PVAL_STRING"
+					m_OriginName = "881298902:pParam"
+					m_nWrittenByInstruction = 41
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 23
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "631371517:TargetName"
+					m_nWrittenByInstruction = 44
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 24
+					m_Type = "PVAL_STRING"
+					m_OriginName = "631371517:pParam"
+					m_nWrittenByInstruction = 45
 					m_nLastReadByInstruction = -1
 				},
 			]
@@ -1130,6 +2043,46 @@
 					m_SequencePointName = "m_StepPoint"
 				},
 				{
+					m_nFlowNodeID = 123310570
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 123310570
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 123310570
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 123310570
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 123310570
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 123310570
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 123310570
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 123310570
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
 					m_nFlowNodeID = 554074980
 					m_nValueNodeID = -1
 					m_SequencePointName = "m_StepPoint"
@@ -1140,9 +2093,19 @@
 					m_SequencePointName = "m_StepPoint"
 				},
 				{
-					m_nFlowNodeID = 908041243
+					m_nFlowNodeID = 661560073
 					m_nValueNodeID = -1
-					m_SequencePointName = "m_PrimaryPoint"
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 661560073
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 661560073
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
 				},
 				{
 					m_nFlowNodeID = 908041243
@@ -1158,6 +2121,101 @@
 					m_nFlowNodeID = 908041243
 					m_nValueNodeID = -1
 					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 908041243
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 207175741
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 207175741
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 207175741
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 994528772
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 994528772
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 104824703
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 104824703
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 104824703
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 394137877
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 394137877
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 394137877
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 938347115
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 938347115
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 938347115
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 360582195
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 360582195
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 360582195
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 908041243
+					m_nValueNodeID = -1
+					m_SequencePointName = "InDefault"
 				},
 				{
 					m_nFlowNodeID = 432564199
@@ -1356,7 +2414,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 13
+					m_nInvokeBindingIndex = 23
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -1412,7 +2470,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 14
+					m_nInvokeBindingIndex = 24
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -1473,7 +2531,7 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 4
+					m_nDomainValueIdx = 9
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
@@ -1482,7 +2540,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 15
+					m_nInvokeBindingIndex = 28
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -1515,7 +2573,7 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 4
+					m_nDomainValueIdx = 9
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
@@ -1524,7 +2582,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 16
+					m_nInvokeBindingIndex = 29
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -1557,7 +2615,7 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 5
+					m_nDomainValueIdx = 10
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
@@ -1566,7 +2624,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 17
+					m_nInvokeBindingIndex = 30
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -1585,7 +2643,7 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 6
+					m_nDomainValueIdx = 11
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
@@ -1594,7 +2652,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 18
+					m_nInvokeBindingIndex = 31
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -1627,7 +2685,7 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 5
+					m_nDomainValueIdx = 10
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
@@ -1636,7 +2694,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 19
+					m_nInvokeBindingIndex = 32
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -1655,7 +2713,7 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 6
+					m_nDomainValueIdx = 11
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
@@ -1664,7 +2722,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 20
+					m_nInvokeBindingIndex = 33
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -1922,7 +2980,7 @@
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
-					m_nConstIdx = 1
+					m_nConstIdx = 3
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
 				},
@@ -2021,7 +3079,7 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 2
+					m_nDomainValueIdx = 3
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
@@ -2034,7 +3092,7 @@
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
-					m_nConstIdx = 6
+					m_nConstIdx = 11
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
 				},
@@ -2044,7 +3102,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 6
+					m_nInvokeBindingIndex = 16
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -2189,7 +3247,7 @@
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
-					m_nConstIdx = 2
+					m_nConstIdx = 4
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
 				},
@@ -2222,68 +3280,26 @@
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 2
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 5
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
 					m_nCode = "CELL_INVOKE"
 					m_nVar = -1
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 1
-					m_nChunk = -1
-					m_nDestInstruction = 0
-					m_nCallInfoIndex = -1
-					m_nConstIdx = -1
-					m_nDomainValueIdx = -1
-					m_nBlackboardReferenceIdx = -1
-				},
-				{
-					m_nCode = "GET_VAR"
-					m_nVar = 1
-					m_nReg0 = 2
-					m_nReg1 = -1
-					m_nReg2 = -1
-					m_nInvokeBindingIndex = -1
-					m_nChunk = -1
-					m_nDestInstruction = 0
-					m_nCallInfoIndex = -1
-					m_nConstIdx = -1
-					m_nDomainValueIdx = -1
-					m_nBlackboardReferenceIdx = -1
-				},
-				{
-					m_nCode = "JUMP_COND"
-					m_nVar = -1
-					m_nReg0 = 2
-					m_nReg1 = -1
-					m_nReg2 = -1
-					m_nInvokeBindingIndex = -1
-					m_nChunk = -1
-					m_nDestInstruction = 9
-					m_nCallInfoIndex = -1
-					m_nConstIdx = -1
-					m_nDomainValueIdx = -1
-					m_nBlackboardReferenceIdx = -1
-				},
-				{
-					m_nCode = "JUMP"
-					m_nVar = -1
-					m_nReg0 = -1
-					m_nReg1 = -1
-					m_nReg2 = -1
-					m_nInvokeBindingIndex = -1
-					m_nChunk = -1
-					m_nDestInstruction = 15
-					m_nCallInfoIndex = -1
-					m_nConstIdx = -1
-					m_nDomainValueIdx = -1
-					m_nBlackboardReferenceIdx = -1
-				},
-				{
-					m_nCode = "IMMEDIATE_HALT"
-					m_nVar = -1
-					m_nReg0 = -1
-					m_nReg1 = -1
-					m_nReg2 = -1
-					m_nInvokeBindingIndex = -1
+					m_nInvokeBindingIndex = 0
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -2311,7 +3327,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 7
+					m_nInvokeBindingIndex = 1
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -2334,9 +3350,79 @@
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
-					m_nCode = "GET_CONST"
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 2
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
 					m_nVar = -1
 					m_nReg0 = 5
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 3
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 6
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 6
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 3
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 7
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 4
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 8
 					m_nReg1 = -1
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
@@ -2353,7 +3439,217 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 8
+					m_nInvokeBindingIndex = 4
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 9
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 5
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 10
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 5
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 5
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 11
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 6
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 12
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 5
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 6
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_VAR"
+					m_nVar = 1
+					m_nReg0 = 13
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "JUMP_COND"
+					m_nVar = -1
+					m_nReg0 = 13
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 26
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "JUMP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 32
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "IMMEDIATE_HALT"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 14
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 7
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 17
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 15
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 3
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 16
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 12
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 18
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -2378,7 +3674,7 @@
 				{
 					m_nCode = "GET_DOMAIN_VALUE"
 					m_nVar = -1
-					m_nReg0 = 6
+					m_nReg0 = 17
 					m_nReg1 = -1
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
@@ -2386,20 +3682,20 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 2
+					m_nDomainValueIdx = 3
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
 					m_nCode = "GET_CONST"
 					m_nVar = -1
-					m_nReg0 = 7
+					m_nReg0 = 18
 					m_nReg1 = -1
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
-					m_nConstIdx = 8
+					m_nConstIdx = 13
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
 				},
@@ -2409,7 +3705,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 9
+					m_nInvokeBindingIndex = 19
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -2425,7 +3721,7 @@
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
 					m_nChunk = -1
-					m_nDestInstruction = 9
+					m_nDestInstruction = 26
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
@@ -2444,50 +3740,127 @@
 				{
 					m_nReg = 1
 					m_Type = "PVAL_ENTITY_NAME"
-					m_OriginName = "229045771:TargetName"
+					m_OriginName = "669746428:TargetName"
 					m_nWrittenByInstruction = 3
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 2
-					m_Type = "PVAL_BOOL"
-					m_OriginName = "814433817:value"
-					m_nWrittenByInstruction = 5
+					m_Type = "PVAL_INT"
+					m_OriginName = "669746428:pParam"
+					m_nWrittenByInstruction = 4
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 3
 					m_Type = "PVAL_ENTITY_NAME"
-					m_OriginName = "361881566:TargetName"
-					m_nWrittenByInstruction = 9
+					m_OriginName = "229045771:TargetName"
+					m_nWrittenByInstruction = 6
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 4
 					m_Type = "PVAL_ENTITY_NAME"
-					m_OriginName = "951340787:TargetName"
-					m_nWrittenByInstruction = 11
+					m_OriginName = "225143227:TargetName"
+					m_nWrittenByInstruction = 8
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 5
-					m_Type = "PVAL_STRING"
-					m_OriginName = "951340787:pParam"
-					m_nWrittenByInstruction = 12
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "438976257:TargetName"
+					m_nWrittenByInstruction = 10
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 6
-					m_Type = "PVAL_ENTITY_NAME"
-					m_OriginName = "488300011:TargetName"
-					m_nWrittenByInstruction = 15
+					m_Type = "PVAL_STRING"
+					m_OriginName = "438976257:pParam"
+					m_nWrittenByInstruction = 11
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 7
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "570402585:TargetName"
+					m_nWrittenByInstruction = 13
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 8
+					m_Type = "PVAL_COLOR_RGB"
+					m_OriginName = "570402585:pParam"
+					m_nWrittenByInstruction = 14
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 9
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "491929299:TargetName"
+					m_nWrittenByInstruction = 16
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 10
+					m_Type = "PVAL_INT"
+					m_OriginName = "491929299:pParam"
+					m_nWrittenByInstruction = 17
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 11
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "730303173:TargetName"
+					m_nWrittenByInstruction = 19
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 12
+					m_Type = "PVAL_INT"
+					m_OriginName = "730303173:pParam"
+					m_nWrittenByInstruction = 20
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 13
+					m_Type = "PVAL_BOOL"
+					m_OriginName = "814433817:value"
+					m_nWrittenByInstruction = 22
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 14
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "361881566:TargetName"
+					m_nWrittenByInstruction = 26
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 15
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "951340787:TargetName"
+					m_nWrittenByInstruction = 28
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 16
+					m_Type = "PVAL_STRING"
+					m_OriginName = "951340787:pParam"
+					m_nWrittenByInstruction = 29
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 17
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "488300011:TargetName"
+					m_nWrittenByInstruction = 32
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 18
 					m_Type = "PVAL_STRING"
 					m_OriginName = "488300011:pParam"
-					m_nWrittenByInstruction = 16
+					m_nWrittenByInstruction = 33
 					m_nLastReadByInstruction = -1
 				},
 			]
@@ -2509,12 +3882,97 @@
 					m_SequencePointName = "m_StepPoint"
 				},
 				{
+					m_nFlowNodeID = 669746428
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 669746428
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 669746428
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
 					m_nFlowNodeID = 229045771
 					m_nValueNodeID = -1
 					m_SequencePointName = "m_StepPoint"
 				},
 				{
 					m_nFlowNodeID = 229045771
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 225143227
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 225143227
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 438976257
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 438976257
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 438976257
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 570402585
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 570402585
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 570402585
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 491929299
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 491929299
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 491929299
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 730303173
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 730303173
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 730303173
 					m_nValueNodeID = -1
 					m_SequencePointName = "m_StepPoint"
 				},
@@ -2617,7 +4075,7 @@
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
-					m_nConstIdx = 2
+					m_nConstIdx = 4
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
 				},
@@ -2716,7 +4174,7 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 2
+					m_nDomainValueIdx = 3
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
@@ -2729,7 +4187,7 @@
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
-					m_nConstIdx = 8
+					m_nConstIdx = 13
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
 				},
@@ -2739,7 +4197,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 10
+					m_nInvokeBindingIndex = 20
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -2932,7 +4390,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 2
+					m_nInvokeBindingIndex = 7
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -2950,7 +4408,7 @@
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
-					m_nConstIdx = 3
+					m_nConstIdx = 5
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
 				},
@@ -3021,7 +4479,7 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 3
+					m_nDomainValueIdx = 8
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
@@ -3030,7 +4488,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 11
+					m_nInvokeBindingIndex = 21
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
@@ -3063,7 +4521,7 @@
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
-					m_nDomainValueIdx = 3
+					m_nDomainValueIdx = 8
 					m_nBlackboardReferenceIdx = -1
 				},
 				{
@@ -3072,7 +4530,7 @@
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
-					m_nInvokeBindingIndex = 12
+					m_nInvokeBindingIndex = 22
 					m_nChunk = -1
 					m_nDestInstruction = 0
 					m_nCallInfoIndex = -1

@@ -21,6 +21,7 @@
 				<TabButton id="MipsTab" text="Mips" group="zoo_tabs" />
 				<TabButton id="IconsTab" text="Icons" group="zoo_tabs" />
 				<TabButton id="MasksTab" text="Masks" group="zoo_tabs" />
+				<TabButton id="RankedTab" text="Ranked" group="zoo_tabs" />
 			</Panel>
 			<Button id="exit_button" class="exit_button header_tab" onactivate="CitadelNavigateBack()" />
 		</Panel>
@@ -1993,6 +1994,16 @@
 			<Panel class="MaterialPanelTest">
 				<MaterialPanel id="MaterialPanel" src="s2r://materials/dev/ui_example.vmat" />
 			</Panel>
+			<Panel class="PostProcessTests">
+				<Panel class="PostProcessTest">
+					<Label text="None" />
+					<CitadelHeroScenePanelNew heroid="6" heroimagestyle="Shop" />
+				</Panel>
+				<Panel class="PostProcessTest">
+					<Label text="post_process_film_grain.vmat" />
+					<CitadelHeroScenePanelNew heroid="6" heroimagestyle="Shop" post-process-material="materials/dev/post_process_film_grain.vmat" />
+				</Panel>
+			</Panel>
 		</TabContents>
 		<TabContents tabid="MipsTab" class="ZooContainerPanel" style="flow-children: right;" group="zoo_tabs">
 			<Panel class="ImageTest">
@@ -3027,6 +3038,9 @@
 				</Panel>
 				<Panel class="MaskTestAnim" />
 			</Panel>
+		</TabContents>
+		<TabContents tabid="RankedTab" class="ZooContainerPanel" group="zoo_tabs">
+			<CitadelHideoutInWorldRanked />
 		</TabContents>
 	</CitadelControlLibraryPage>
 </root>

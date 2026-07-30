@@ -349,7 +349,7 @@ Button:hover
 	transition-duration: 0.1s;
 }
 
-.GameStatePreGame #health_and_abilities_container,.GameStatePreGame #gold_and_ap_container,.GameStatePreGame CitadelHudActivePlayerStats,.GameStatePreGame CitadelHudModifiers,.GameStatePreGame Citadel_AbilityHUDPanels,.GameStatePreGameWait #health_and_abilities_container,.GameStatePreGameWait #gold_and_ap_container,.GameStatePreGameWait CitadelHudActivePlayerStats,.GameStatePreGameWait CitadelHudModifiers,.GameStatePreGameWait Citadel_AbilityHUDPanels
+.GameStatePreGame #health_and_abilities_container,.GameStatePreGame #gold_and_ap_container,.GameStatePreGame CitadelHudActivePlayerStats,.GameStatePreGame CitadelHudModifiers,.GameStatePreGame Citadel_AbilityHUDPanels,.GameStatePreGame #StatsAndModsContainer,.GameStatePreGameWait #health_and_abilities_container,.GameStatePreGameWait #gold_and_ap_container,.GameStatePreGameWait #APContainer,.GameStatePreGameWait CitadelHudActivePlayerStats,.GameStatePreGameWait CitadelHudModifiers,.GameStatePreGameWait Citadel_AbilityHUDPanels
 {
 	opacity: 0;
 	transition-property: opacity, transform;
@@ -2218,87 +2218,45 @@ CitadelTooltipManager
 #SafeToAbandonIndicator
 {
 	margin: 12px;
+	padding: 10px;
 	vertical-align: top;
 	horizontal-align: right;
-	background-color: #911717ee;
-	border-radius: 8px;
-	max-width: 200px;
+	background-color: #4e0909;
+	border-radius: 3px;
+	max-width: 220px;
+	flow-children: down;
 	visibility: collapse;
 }
 
-.SafeToAbandon #SafeToAbandonIndicator
+#SafeToAbandonIndicator.SafeToAbandon
 {
 	visibility: visible;
 }
 
-#SafeToAbandonIndicator .NotScoredLabel
-{
-	visibility: collapse;
-}
-
-#SafeToAbandonIndicator .MinimizeSafeToLeave
-{
-	vertical-align: top;
-	horizontal-align: right;
-}
-
-#SafeToAbandonIndicator .CloseButton
-{
-	width: 25px;
-	height: 25px;
-	background-size: auto 50%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-image: url("s2r://panorama/images/icons/icon_x.vsvg");
-	background-color: none;
-	wash-color: offWhite;
-}
-
-.MinimizeSafeToLeave #SafeToAbandonIndicator .CloseButton
-{
-	background-image: url("s2r://panorama/images/icons/icon_plus_white_png.vtex");
-	background-size: auto 75%;
-}
-
-.NotScored #SafeToAbandonIndicator
+#SafeToAbandonIndicator.SafeToAbandonEarly
 {
 	background-color: #179117ee;
-}
-
-.NotScored #SafeToAbandonIndicator .NotScoredLabel
-{
-	visibility: visible;
-}
-
-.NotScored #SafeToAbandonIndicator .SafeToAbandonLabel
-{
-	visibility: collapse;
-}
-
-.NotScored #SafeToAbandonIndicator .MinimizeSafeToLeave
-{
-	visibility: collapse;
-}
-
-.NotScored #SafeToAbandonIndicator Label
-{
-	margin-right: 0px;
 }
 
 #SafeToAbandonIndicator Label
 {
 	padding: 8px;
-	margin-right: 18px;
 	vertical-align: center;
 	horizontal-align: center;
-	text-align: center;
-	font-weight: bold;
-	opacity: 0.75;
+	text-align: left;
+	font-weight: semi-bold;
+	font-family: oracle;
+	opacity: 0.5;
+	font-size: 16px;
 }
 
-.MinimizeSafeToLeave #SafeToAbandonIndicator Label
+#SafeToAbandonIndicator Label.abandon_title
 {
-	visibility: collapse;
+	font-family: block;
+	text-transform: uppercase;
+	opacity: 1;
+	padding-bottom: 0px;
+	color: offWhite;
 }
 
 .connectedToHeroTesting #stats_game_clock,.connectedToHeroTesting:not(.isDefaultMap) #minimap_persp,.connectedToHeroTesting:not(.isDefaultMap) #ObjectivesMap,.connectedToHeroTesting .top_left_team_panel,.connectedToHeroTesting .top_right_team_panel

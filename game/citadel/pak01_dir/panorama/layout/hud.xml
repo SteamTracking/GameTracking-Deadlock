@@ -57,9 +57,8 @@
 			<CitadelHudQuickResponse id="CitadelQuickResponse" />
 			<CitadelRadialAbilities id="RadialAbilitiesMenu" startangle="-70" endangle="70" />
 			<Panel id="SafeToAbandonIndicator">
-				<Button class="MinimizeSafeToLeave CloseButton" onactivate="$.GetContextPanel().ToggleClass(&apos;MinimizeSafeToLeave&apos;)" />
-				<Label class="SafeToAbandonLabel" text="#SafeToAbandon_Text" />
-				<Label class="NotScoredLabel" text="#NotScored_Text" />
+				<Label class="abandon_title" text="#AbandonTriggerTeam_Title" />
+				<Label text="{s:safe_to_abandon_text}" />
 			</Panel>
 			<Panel id="context_action_container">
 				<GlobalClassListener classes="gDetailView" />
@@ -318,6 +317,7 @@
 			<CitadelHudPregame id="Pregame" hittest="false" />
 			<CitadelHudMatchStart id="MatchStart" />
 		</Panel>
+		<CitadelCommendNotification id="CommendNotification" />
 		<ToastManager id="ToastManager" hittest="false" toastduration="5s" maxtoastsvisible="4" />
 		<CitadelHudEscapeMenu id="EscapeMenu" />
 		<Panel id="CitadelPartyContainer" hittest="false">

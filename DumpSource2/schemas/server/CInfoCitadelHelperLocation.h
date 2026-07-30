@@ -1,0 +1,3 @@
+class CInfoCitadelHelperLocation : public CServerOnlyPointEntity
+{
+};

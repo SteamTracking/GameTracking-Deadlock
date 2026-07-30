@@ -1,0 +1,54 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
+		<include src="s2r://panorama/styles/post_game/citadel_db_post_game_team.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="Player">
+			<Panel class="Player" hittestChildren="false">
+				<Panel class="PlayerCard">
+					<Panel class="PlayerBorder" />
+					<Panel class="HeroScenePanelBackground HeroMaskPanel" />
+					<CitadelHeroScenePanelNew id="HeroScenePanel" class="HeroMaskPanel" heroscenestyle="PostGamePortrait" />
+					<Panel class="HeroScenePanelTint HeroMaskPanel" />
+					<Panel class="MVPContainer">
+						<Label class="MVP_HonorableMention" text="#Citadel_Post_Game_MVP_HonorableMention" />
+						<Label class="MVP" text="#Citadel_Post_Game_MVP" />
+						<Panel class="MVP_HonorableMention KeyPlayerTrophy" />
+						<Panel class="MVP MVPTrophy" />
+					</Panel>
+					<Panel class="CardBottom">
+						<Panel id="AwardsContainer" />
+						<CitadelHeroLogo id="HeroLogo" />
+					</Panel>
+					<CitadelHeroBadgeIcon id="HeroBadgeIcon" class="PostGame" />
+				</Panel>
+				<Panel class="PlayerActionContainer">
+					<Panel id="LocalPlayerIdentifier">
+						<Label text="#Citadel_Post_Game_You" />
+					</Panel>
+					<Button id="CommendPlayerButton" focusonmousedown="false" onmouseover="UIShowTextTooltip( #Citadel_MatchDetails_CommendTooltip );" onmouseout="UIHideTextTooltip()" hittest="true">
+						<Panel id="commendIcon" />
+					</Button>
+					<Panel class="GotCommendedIcon" />
+					<Button id="ShowPlayerContextMenuButton" />
+				</Panel>
+				<CitadelUserName id="PlayerName" hittest="false" />
+				<Panel class="HeroNameContainer">
+					<Label class="HeroName" text="{s:hero_name}" />
+				</Panel>
+				<ParticleScenePanel id="CommendFX" particleonly="false" particleName="particles/ui/ui_commend.vpcf" fov="20" cameraOrigin="200 0 0" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" startActive="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<CitadelPostGameTeam hittest="false">
+		<CitadelScenePanel id="HeroScenePanelBacker" map="ui/hero_select_backer/post_game_backer" camera="hero_select_backer_camera" particleonly="false" />
+		<Panel class="TeamNameContainer">
+			<Label class="TeamName" />
+			<Label text="#Citadel_MatchDetails_Victory" class="VictoryLabel" />
+			<Label text="#Citadel_MatchDetails_Defeat" class="DefeatLabel" />
+		</Panel>
+		<Panel class="TeamPlayerContainer" id="TeamPlayers" />
+	</CitadelPostGameTeam>
+</root>

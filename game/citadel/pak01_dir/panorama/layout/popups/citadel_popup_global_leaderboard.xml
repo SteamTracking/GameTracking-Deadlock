@@ -2,7 +2,7 @@
 <root>
 	<styles>
 		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
 		<include src="s2r://panorama/styles/popups/citadel_popup_global_leaderboard.vcss_c" />
 	</styles>
 	<snippets>
@@ -10,15 +10,14 @@
 			<Panel class="playerSnippet">
 				<Panel class="playerInfoContainer LeftRightFlow">
 					<Label class="playerRatingLabel" text="{i:player_rank}" />
-					<CitadelRankedBadgeMini id="RankedBadge" show_rank_tooltip="true" />
 					<Label class="playerRatingName" text="{s:player_name}" />
 				</Panel>
 				<Panel id="TopHeroesContainer" />
 			</Panel>
 		</snippet>
-		<snippet name="HeroCardSnippet">
-			<Panel class="heroCardSnippet">
-				<CitadelHeroCard id="LeaderboardHeroCard" />
+		<snippet name="Hero">
+			<Panel class="Hero">
+				<CitadelHeroImage id="HeroImage" heroimagestyle="vertical" scaling="cover" />
 			</Panel>
 		</snippet>
 	</snippets>

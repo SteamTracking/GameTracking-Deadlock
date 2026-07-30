@@ -7,31 +7,46 @@
 	<snippets>
 		<snippet name="HeroBadgeDefault">
 			<Panel class="HeroBadgeLarge">
-				<Panel class="BadgeBackground" />
-				<Panel class="BadgeRing" />
-				<CitadelHeroImage id="HeroImage" scaling="contain" />
-				<Panel class="BadgeIcon" />
-				<Label class="HeroLevel" text="{d:hero_level}" />
+				<Panel class="BadgeBackground ShowsProgression" />
+				<Panel class="BadgeRing ShowsProgression" />
+				<Panel class="HeroImageContainer">
+					<Panel class="HeroImageBackground" />
+					<CitadelHeroImage id="HeroImage" scaling="contain" />
+				</Panel>
+				<Panel class="BadgeIcon ShowsProgression" />
+				<Label class="HeroLevel ShowsProgression" text="{d:hero_level}" />
 			</Panel>
 		</snippet>
 		<snippet name="HeroBadgeProgress">
 			<Panel class="HeroBadgeMedium">
-				<Panel class="BadgeBackground" />
-				<Panel class="BadgeRing" />
-				<Panel class="BadgeRingInset" />
-				<Panel id="BadgeRingBaseXP" />
-				<Panel id="BadgeRingProgressXP" />
-				<CitadelHeroImage id="HeroImage" scaling="contain" />
-				<Panel class="BadgeIcon" />
-				<Label class="HeroLevel" text="{d:hero_level}" />
+				<Panel class="BadgeBackground ShowsProgression" />
+				<Panel class="BadgeRing ShowsProgression" />
+				<Panel class="BadgeRingInset ShowsProgression" />
+				<Panel id="BadgeRingBaseXP" class="ShowsProgression" />
+				<Panel id="BadgeRingProgressXP" class="ShowsProgression" />
+				<Panel class="HeroImageContainer">
+					<Panel class="HeroImageBackground" />
+					<CitadelHeroImage id="HeroImage" scaling="contain" />
+				</Panel>
+				<Panel class="BadgeIcon ShowsProgression" />
+				<Label class="HeroLevel ShowsProgression" text="{d:hero_level}" />
+			</Panel>
+		</snippet>
+		<snippet name="HeroBadgeSmall">
+			<Panel class="HeroBadgeSmall">
+				<Panel class="BadgeBackground ShowsProgression" />
+				<Panel class="HeroImageContainer">
+					<Panel class="HeroImageBackground" />
+					<CitadelHeroImage id="HeroImage" scaling="contain" />
+				</Panel>
+				<Panel class="BadgeRing ShowsProgression" />
+				<Panel class="BadgeIcon ShowsProgression" />
 			</Panel>
 		</snippet>
 		<snippet name="HeroBadgeIcon">
 			<Panel class="HeroBadgeIcon">
-				<Panel class="BadgeBackground" />
-				<Panel class="BadgeRing" />
-				<CitadelHeroImage id="HeroImage" scaling="contain" />
-				<Panel class="BadgeIcon" />
+				<Panel class="BadgeIcon ShowsProgression" />
+				<Label class="HeroLevel ShowsProgression" text="{d:hero_level}" />
 			</Panel>
 		</snippet>
 	</snippets>

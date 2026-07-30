@@ -1,0 +1,872 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+#RankPanelRoot
+{
+	width: 512px;
+	height: 512px;
+	flow-children: down;
+	ui-scale: 200%;
+	background-image: url("s2r://panorama/images/hideout/hideout_rank_blackboard_bg_psd.vtex");
+	background-size: 512px;
+	background-repeat: no-repeat;
+}
+
+#RankPanelRoot #ImageSlices Image:nth-child(1n)
+{
+	transform: translateY( 0% ) rotateZ(2deg);
+}
+
+#RankPanelRoot #ImageSlices Image:nth-child(2n)
+{
+	transform: translateY( -2% ) rotateZ(-2deg);
+}
+
+#RankPanelRoot #ImageSlices Image:nth-child(3n)
+{
+	transform: translateY( 1% ) skew(6deg);
+}
+
+#RankPanelContent
+{
+	width: 374px;
+	height: 100%;
+	flow-children: down;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+}
+
+.SeasonNotActive
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+}
+
+.State_NoSeasonActive .SeasonNotActive
+{
+	visibility: visible;
+}
+
+.SeasonNotActive Label
+{
+	margin-top: 48px;
+	padding: 0px 24px;
+	horizontal-align: center;
+	font-size: 48px;
+	text-align: center;
+}
+
+.SeasonActive
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+}
+
+.State_NoSeasonActive .SeasonActive
+{
+	visibility: collapse;
+}
+
+.SeasonActive .SeasonName
+{
+	horizontal-align: center;
+	text-align: center;
+	margin-top: 32px;
+}
+
+.SeasonActive .SeasonName Label
+{
+	font-family: oracle;
+	color: chalkBlue;
+	font-size: 40px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.SeasonActive #UserName
+{
+	horizontal-align: center;
+}
+
+.SeasonActive #UserName Label
+{
+	horizontal-align: center;
+	text-align: center;
+	font-size: 40px;
+	text-overflow: shrink;
+	font-weight: semibold;
+	color: chalkYellow;
+}
+
+.NotEligible
+{
+	width: 100%;
+	visibility: collapse;
+}
+
+.State_PlayerNotEligible .NotEligible
+{
+	visibility: visible;
+}
+
+.NotEligible Label
+{
+	margin-top: 48px;
+	padding: 0px 24px;
+	horizontal-align: center;
+	font-size: 48px;
+	text-align: center;
+}
+
+@define eligibleWinColumns: 2;
+.Eligiblity
+{
+	width: 100%;
+	flow-children: down;
+	visibility: collapse;
+}
+
+.State_PlayerNotParticipating .Eligiblity
+{
+	visibility: visible;
+}
+
+.Eligiblity #EligibleWinsPips
+{
+	flow-children: right-wrap;
+	horizontal-align: center;
+	margin-top: 16px;
+	width: 300px;
+	transform: skew(-12deg) rotateZ(-5deg) translateY(-10px) translateX(10px);
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPipRow
+{
+	flow-children: right;
+	overflow: noclip;
+	horizontal-align: center;
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPipGroup
+{
+	flow-children: right;
+	margin-right: 5px;
+	padding-left: 6px;
+	overflow: noclip;
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPipGroup:nth-child(1)
+{
+	transform: rotateZ(5deg);
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPipGroup:nth-child(1) .EligibleWinPip:nth-child(1)
+{
+	transform: scaleY( 1.2 ) rotateZ(5deg);
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPipGroup:nth-child(1) .EligibleWinPip:nth-child(3)
+{
+	transform: scaleY( 1.4 ) rotateZ(-5deg);
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPipGroup:nth-child(2)
+{
+	transform: rotateZ(5deg);
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPipGroup:nth-child(2) .EligibleWinPip:nth-child(2)
+{
+	transform: scaleY( 1.2 ) rotateZ(5deg);
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPipGroup:nth-child(2) .EligibleWinPip:nth-child(4)
+{
+	transform: scaleY( 1.4 ) rotateZ(-5deg);
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPip
+{
+	width: 4px;
+	height: 40px;
+	margin-right: 8px;
+	margin-bottom: 20px;
+	background-image: url("s2r://panorama/images/hideout/chalk_onestroke_psd.vtex");
+	background-size: 100%;
+	opacity: 0.0;
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPip:nth-child(1)
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_onestroke01_psd.vtex");
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPip:nth-child(2)
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_onestroke02_psd.vtex");
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPip:nth-child(3)
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_onestroke03_psd.vtex");
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPip:nth-child(4)
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_onestroke01_psd.vtex");
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPip:nth-child(5)
+{
+	transform: scaleY( 1.6 ) rotateZ( 60deg ) translate3d( -28px, 0px, 0px );
+}
+
+.Eligiblity #EligibleWinsPips .EligibleWinPip.HasWin
+{
+	opacity: 1.0;
+}
+
+.Eligiblity #EligibleHeros
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: -0px;
+	visibility: collapse;
+}
+
+.HasEligibleHeroes .Eligiblity #EligibleHeros
+{
+	visibility: visible;
+}
+
+.EligibleHero
+{
+	flow-children: down;
+	margin: 0px 8px;
+}
+
+.EligibleHero #HeroImage
+{
+	width: 70px;
+	height: 70px;
+	brightness: 12;
+	-s2-mix-blend-mode: screen;
+	img-shadow: 0px 0px 2px 6 #3a3a3a;
+	padding: 10px;
+	margin: -6px;
+}
+
+.EligibleHero .MissingHero
+{
+	width: 58px;
+	height: 58px;
+	border-radius: 50%;
+	border: 2px dashed chalkWhite;
+	visibility: collapse;
+}
+
+.EligibleHero .MissingHero Label
+{
+	vertical-align: middle;
+	color: chalkWhite;
+	font-size: 32px;
+}
+
+.EligibleHero Label
+{
+	horizontal-align: center;
+	text-align: center;
+	font-size: 38px;
+	color: chalkWhite;
+	margin-top: 0px;
+	transform: skew(-12deg);
+}
+
+.EligibleHero:nth-child(2) Label
+{
+	transform: skew(12deg);
+	font-size: 42px;
+	opacity: 0.8;
+}
+
+.EligibleHero .CheckIcon
+{
+	width: 48px;
+	height: 32px;
+	horizontal-align: center;
+	wash-color: soulColor;
+	background-image: url("s2r://panorama/images/hideout/chalk_check01_psd.vtex");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	visibility: collapse;
+}
+
+.EligibleHero.HeroUnlocked Label
+{
+	visibility: collapse;
+}
+
+.EligibleHero.HeroUnlocked .CheckIcon
+{
+	visibility: visible;
+}
+
+.EligibleHero:not(.HasHero) #HeroImage
+{
+	visibility: collapse;
+}
+
+.EligibleHero:not(.HasHero) .MissingHero
+{
+	visibility: visible;
+}
+
+.Calibrating
+{
+	width: 100%;
+	margin-top: 32px;
+	flow-children: down;
+	visibility: collapse;
+}
+
+.State_PlayerCalibrating .Calibrating
+{
+	visibility: visible;
+}
+
+.Calibrating .CalibratingTitle
+{
+	horizontal-align: center;
+	text-align: center;
+	font-size: 24px;
+	font-family: block;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.Calibrating .CalibratingTitle Label
+{
+	font-size: 24px;
+	font-family: block;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: chalkYellow;
+}
+
+.Calibrating #CalibratingPips
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 14px;
+	padding: 4px;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip
+{
+	width: 24px;
+	height: 24px;
+	margin: 0px 8px;
+	border: 2px dashed chalkYellow;
+	border-radius: 50%;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip:nth-child(1n)
+{
+	transform: translateY(2px) skew(10deg);
+	border-width: 3px;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip:nth-child(2n)
+{
+	transform: translateY(-2px) skew(-10deg);
+	border-width: 2px;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip:nth-child(3n)
+{
+	transform: translateY(2px) skew(5deg);
+	border-width: 3px;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip:nth-child(4n)
+{
+	transform: translateY(2px) skew(0deg);
+	border-width: 3px;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip:nth-child(5n)
+{
+	transform: translateY(-2px) skew(-3deg);
+	border-width: 2px;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip.MatchFinished
+{
+	background-color: offWhite;
+}
+
+.HasRank
+{
+	width: 100%;
+	visibility: collapse;
+}
+
+.State_PlayerHasRank .HasRank
+{
+	visibility: visible;
+}
+
+#AdditionalInfo
+{
+	ignore-parent-flow: true;
+	flow-children: down;
+	horizontal-align: right;
+	vertical-align: top;
+}
+
+#SeasonBadgeFramePlaque
+{
+	z-index: 2;
+	width: 140px;
+	margin: 0;
+	background-color: rgb(255, 181, 149);
+	background-color: rgb(196, 188, 167);
+}
+
+#RankBadgeFramePlaque
+{
+	z-index: 2;
+	width: 140px;
+	margin: 0;
+	background-color: rgb(188, 164, 129);
+}
+
+#RankBadgeFramePlaque .PlaqueSeasonName
+{
+	padding: 0 8px;
+}
+
+.PlaqueSeasonName
+{
+	width: 140px;
+	height: 32px;
+	font-family: serif;
+	color: rgb(236, 227, 224);
+	font-size: 28px;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+	letter-spacing: 2px;
+	color: gradient( radial, 50% 50%, -5% -5%, 60% 60%, from( #dba85f), to( #f7e2b5 ) );
+	text-overflow: shrink;
+	z-index: 2;
+}
+
+.PlaqueSeasonName.PlaqueLabelShadow
+{
+	transform: translateY(1px);
+	color: rgba(4, 4, 4, 0.532);
+	z-index: 1;
+	text-shadow: 0 0px 2 12px rgba(0, 0, 0, 1);
+	text-shadow: 0px 0px 3.0 #0004;
+}
+
+.PlaqueSeasonName.PlaqueLabelHighlight
+{
+	transform: translateY(-1px);
+	color: rgb(255, 255, 255);
+	z-index: 1;
+}
+
+.RankProgressBarContainer
+{
+	horizontal-align: center;
+	margin: 6px 42px;
+	margin-left: 36px;
+	height: 32px;
+	flow-children: down;
+	height: 64px;
+	overflow: noclip;
+	width: 360px;
+}
+
+.ShowingLeaderboardRank .RankProgressBarContainer
+{
+	visibility: collapse;
+}
+
+.RankProgressBarContainer .ChalkBadge
+{
+	ignore-parent-flow: true;
+	width: 96px;
+	height: 96px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	transform: translateX(-10px) translateY(-26px);
+	z-index: 2;
+}
+
+.RankProgressBarContainer Label
+{
+	color: white;
+	text-align: center;
+	horizontal-align: center;
+	font-weight: semibold;
+}
+
+.RankProgressBarContainer ProgressBar
+{
+	width: 216px;
+	height: 32px;
+	margin-left: 64px;
+	background-image: url("s2r://panorama/images/hideout/hideout_rank_blackboard_progressbar_border_psd.vtex");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	border-radius: 0;
+	background-color: transparent;
+}
+
+.RankProgressBarContainer ProgressBar #RankProgressBar_Left
+{
+	opacity: 1;
+	vertical-align: middle;
+	background-image: url("s2r://panorama/images/hideout/hideout_rank_blackboard_progressbar_fill_psd.vtex");
+	background-size: 100% 100%;
+	margin: 6px 10px;
+	background-color: transparent;
+}
+
+#DemotionProtectionPips
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 64px;
+	visibility: collapse;
+}
+
+.ShowDemotionProtection #DemotionProtectionPips
+{
+	visibility: visible;
+}
+
+.ShowingLeaderboardRank #DemotionProtectionPips
+{
+	flow-children: right-wrap;
+	horizontal-align: center;
+	ui-scale: 60%;
+	margin-top: 92px;
+}
+
+.ShowingLeaderboardRank #DemotionProtectionPips .DemotionProtectionPip
+{
+	margin: 4px;
+	width: 24px;
+	height: 24px;
+	horizontal-align: center;
+}
+
+#DemotionProtectionPips .DemotionProtectionPip
+{
+	width: 32px;
+	height: 32px;
+	margin: 12px 4px;
+	background-image: url("s2r://panorama/images/hideout/rankprotectshield_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: chalkBlue;
+}
+
+#DemotionProtectionPips .DemotionProtectionPip.Used
+{
+	wash-color: #485758;
+}
+
+.EternusPointsContainer
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 4px;
+}
+
+.LeaderboardPointsContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.LeaderboardPointsContainer .EternusDrawings
+{
+	ignore-parent-flow: true;
+	width: 500px;
+	height: 200px;
+	wash-color: chalkBlue;
+	background-image: url("s2r://panorama/images/hideout/eternus_chalk_psd.vtex");
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.LeaderboardPointsContainer .EternusSubRankContainer
+{
+	-s2-mix-blend-mode: screen;
+	horizontal-align: center;
+	transform: scaleX(1.2);
+}
+
+.LeaderboardPointsContainer .EternusLabels
+{
+	font-family: oracle;
+	text-align: center;
+	horizontal-align: center;
+	color: chalkBlue;
+}
+
+.LeaderboardPointsContainer .EternusLabels.EternusName
+{
+	text-transform: uppercase;
+	font-size: 22px;
+}
+
+.LeaderboardPointsContainer .EternusLabels.EternusSubRank
+{
+	font-size: 72px;
+	font-family: oracle;
+	margin-top: -22px;
+	margin-bottom: -2px;
+}
+
+.LeaderboardPointsContainer .EternusLabels.EternusSubRank.Hollow
+{
+	color: black;
+	font-weight: thin;
+	transform: scaleX(1.1) scaleY(0.95);
+}
+
+.ShowingLeaderboardRank .LeaderboardPointsContainer
+{
+	visibility: visible;
+}
+
+.LeaderboardPointsContainer .LeaderboardPoints
+{
+	font-family: oracle;
+	font-size: 32px;
+	margin-right: 6px;
+	horizontal-align: center;
+	vertical-align: middle;
+	text-align: center;
+	color: chalkWhite;
+}
+
+.LeaderboardPointsContainer .LeaderboardPointsTitle
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	text-align: center;
+	font-family: oracle;
+	font-size: 20px;
+	color: chalkBlue;
+}
+
+@define doodleCount: 9;
+.Doodle
+{
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: bottom;
+	width: 100%;
+	height: 200px;
+	background-image: url("s2r://panorama/images/hideout/chalk_doodle01_psd.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	margin-bottom: 32px;
+	margin-right: 4px;
+	margin-left: 6px;
+	opacity-mask: url("s2r://panorama/images/hideout/chalk_doodle_mask_psd.vtex") 1;
+}
+
+.Doodle1 .Doodle
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_doodle01_psd.vtex");
+}
+
+.Doodle2 .Doodle
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_doodle02_psd.vtex");
+}
+
+.Doodle3 .Doodle
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_doodle03_psd.vtex");
+}
+
+.Doodle4 .Doodle
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_doodle04_psd.vtex");
+}
+
+.Doodle5 .Doodle
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_doodle05_psd.vtex");
+}
+
+.Doodle6 .Doodle
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_doodle06_psd.vtex");
+}
+
+.Doodle7 .Doodle
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_doodle07_psd.vtex");
+}
+
+.Doodle8 .Doodle
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_doodle08_psd.vtex");
+}
+
+.Doodle9 .Doodle
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_doodle09_psd.vtex");
+}
+
+.State_PlayerNotParticipating.HasEligibleHeroes .Doodle
+{
+	visibility: collapse;
+}
+
+.LastMatch
+{
+	flow-children: down;
+	visibility: collapse;
+}
+
+.HasLastMatch .LastMatch
+{
+	visibility: visible;
+}
+
+.RankedMatchLatestOutcomesContainer
+{
+	horizontal-align: right;
+	margin-top: 64px;
+	flow-children: right;
+	ignore-parent-flow: true;
+	height: 100%;
+	background-color: black;
+}
+
+.RankedMatchLatestOutcomesContainer .RankedMatchLatestOutcomesMask
+{
+	width: 40px;
+	background-color: white;
+}
+
+.RankedMatchLatestOutcomesContainer #RankedMatchLatestOutcomes
+{
+	width: 96px;
+	flow-children: up;
+}
+
+.RankedMatchLatestOutcomesContainer #RankedMatchLatestOutcomes .MatchOutcome
+{
+	width: 100%;
+	height: 14px;
+	background-image: url("s2r://panorama/images/hideout/hideout_rank_ticker_negative_psd.vtex");
+	background-size: 50% 100%;
+	background-repeat: no-repeat;
+	background-position: right;
+	horizontal-align: right;
+}
+
+.RankedMatchLatestOutcomesContainer #RankedMatchLatestOutcomes .MatchOutcome.MatchWon
+{
+	background-image: url("s2r://panorama/images/hideout/hideout_rank_ticker_positive_psd.vtex");
+}
+
+#RankedMatchLatestOutcomesMask
+{
+	horizontal-align: right;
+	margin-top: 200px;
+	margin-right: 40px;
+	width: 40px;
+	background-color: black;
+	flow-children: down;
+	ignore-parent-flow: true;
+}
+
+#BlackboardLastMatchContainer
+{
+	flow-children: right;
+	vertical-align: bottom;
+	margin-bottom: 50px;
+	margin-left: 20px;
+	transform: skew(-12deg) rotateZ(15deg);
+	padding: 4px;
+	visibility: collapse;
+}
+
+.HasLastMatch #BlackboardLastMatchContainer
+{
+	visibility: visible;
+}
+
+#BlackboardLastMatchContainer .LastKDA #ImageSlices Image:nth-child(1n),#BlackboardLastMatchContainer .LastMatchHero #ImageSlices Image:nth-child(1n)
+{
+	transform: translateY( 0% ) rotateZ(2deg);
+}
+
+#BlackboardLastMatchContainer .LastKDA #ImageSlices Image:nth-child(2n),#BlackboardLastMatchContainer .LastMatchHero #ImageSlices Image:nth-child(2n)
+{
+	transform: translateY( -5% ) rotateZ(-2deg);
+}
+
+#BlackboardLastMatchContainer .LastKDA #ImageSlices Image:nth-child(3n),#BlackboardLastMatchContainer .LastMatchHero #ImageSlices Image:nth-child(3n)
+{
+	transform: translateY( 5% ) skew(6deg);
+}
+
+#BlackboardLastMatchContainer .LastKDA Label,#BlackboardLastMatchContainer .LastMatchHero Label
+{
+	color: chalkWhite;
+	font-size: 18px;
+	font-weight: thin;
+	letter-spacing: -1px;
+}
+
+#BlackboardLastMatchContainer .LastMatchHero
+{
+	transform: skew(-12deg) rotateZ(15deg);
+}
+
+#BlackboardLastMatchContainer .LastKDA Label
+{
+	color: chalkWhite;
+	font-size: 18px;
+	font-weight: thin;
+	letter-spacing: 1px;
+}
+
+#BlackboardLastMatchContainer .WinorLose
+{
+	width: 24px;
+	height: 24px;
+	background-size: contain;
+	margin: 0 4px;
+	background-image: url("s2r://panorama/images/hideout/chalk_sadface_psd.vtex");
+}
+
+.LastMatchWin #BlackboardLastMatchContainer .WinorLose
+{
+	background-image: url("s2r://panorama/images/hideout/chalk_smileyface_psd.vtex");
+}
+
+.LastMatchNotScored #BlackboardLastMatchContainer .WinorLose
+{
+	background-image: none;
+}
+

@@ -1,0 +1,197 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_db_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_db_page_ranked_season.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="MatchHistoryDay">
+			<Panel class="MatchHistoryDay">
+				<Label class="Date" text="{s:match_history_date}" />
+				<Panel id="MatchList" />
+			</Panel>
+		</snippet>
+		<snippet name="MatchHistoryRow">
+			<Panel class="MatchHistoryRow">
+				<Label class="MatchTime" text="{s:match_time}" />
+				<CitadelHeroImage id="HeroIcon" heroimagestyle="icon" />
+				<Label class="MatchKDA" text="{d:kills} / {d:deaths} / {d:assists}" />
+				<Label class="MatchOutcome" text="{s:match_outcome}" />
+				<Label class="MatchDuration" text="{g:citadel_match_time:match_duration}" />
+				<Panel class="MatchRank">
+					<Label class="MatchCalibratingLabel" text="#Citadel_RankedMatchHistory_Calibrating" />
+					<Label class="MatchCalibratedLabel" text="#Citadel_RankedMatchHistory_Calibrated" />
+					<Label class="MatchRankPointsChange" text="#Citadel_RankedMatchHistory_PointsChange" />
+					<Panel class="MatchBadge">
+						<CitadelRankedBadgeMini id="MatchFinalBadge" onmouseover="CitadelUIShowTextTooltip( &apos;#Citadel_RankedSeason_ResultingRank&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+						<Panel class="DemotionProtectionIcon" onmouseover="CitadelUIShowTextTooltip( &apos;#Citadel_RankedSeason_ProtectionUsed&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="HeroRow">
+			<Panel class="HeroRow">
+				<Panel class="UnlockedIcon" />
+				<CitadelHeroImage id="HeroIcon" heroimagestyle="icon" />
+				<Label class="HeroName" text="{g:citadel_hero_name:hero_id}" />
+				<Panel class="FillWidth" />
+				<Label class="HeroWins" text="#Citadel_RankedSeason_HeroWins:f" />
+			</Panel>
+		</snippet>
+		<snippet name="CalibratingPip">
+			<Panel class="CalibratingPip" />
+		</snippet>
+		<snippet name="DemotionProtectionPip">
+			<Panel class="DemotionProtectionPip" />
+		</snippet>
+		<snippet name="PercentileTableRow">
+			<Panel class="TableRow">
+				<Label class="RankName" text="{g:citadel_packed_rank_name:packed_rank}" />
+				<Label class="Percentile" text="{s:percentile}" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<CitadelRankedSeasonPage class="DashboardPage" oncancel="CitadelNavigateBack();">
+		<CitadelScenePanel id="HeroScenePanelBacker" map="ui/hero_select_backer/hero_select_backer" camera="hero_select_backer_camera" particleonly="false" />
+		<Panel class="MainContents">
+			<Panel class="Columns">
+				<Panel class="SeasonSummary">
+					<Label class="Title" text="#Citadel_RankedTitle" />
+					<SplitLabel class="SeasonName" text="{s:season_name}" />
+					<Label class="SeasonStartEnd" text="{s:season_start_time} - {s:season_end_time}" />
+					<Label class="SeasonRemainingLabel" text="#Citadel_RankedSeason_TimeRemaining" />
+					<Label class="SeasonFinishedLabel" text="#Citadel_RankedSeason_SeasonEnded" />
+					<CitadelUserName id="UserName" accountid="local" />
+					<Panel class="SeasonDesc">
+						<Label text="{s:season_desc}" />
+					</Panel>
+					<Panel class="EligibilityContainer">
+						<Label class="EligibilityTitle" text="#Citadel_RankedSeason_EligibilityTitle" />
+						<Panel class="EligibilityRows">
+							<Panel class="EligibilityRow AccountWins">
+								<Panel class="EligibilityIcon" />
+								<Label text="#Citadel_RankedSeason_Eligibility_AccountWins:f" />
+							</Panel>
+							<Panel class="EligibilityRow HeroUnlocks">
+								<Panel class="EligibilityIcon" />
+								<Label text="#Citadel_RankedSeason_Eligibility_HeroUnlocks:f" />
+							</Panel>
+						</Panel>
+						<Label class="NotEligibleDesc" text="#Citadel_RankedSeason_Eligibility_NotEligible" />
+						<Label class="EligibleDesc" text="#Citadel_RankedSeason_Eligibility_Eligible" />
+					</Panel>
+					<Panel class="MainRankContainer">
+						<CitadelRankedBadgeFull id="MainBadge" />
+						<Label class="MainRankLabel" text="{s:main_rank_label}" />
+						<Panel class="MainRankProgress">
+							<ProgressBar id="MainRankProgressBar" />
+							<Label text="{d:main_rank_current_progress} / {d:main_rank_max_progress}" />
+						</Panel>
+						<Label class="LeaderboardPoints" text="{d:main_rank_current_progress}" />
+						<Label class="LeaderboardPointsTitle" text="#Citadel_RankedProgress_RankPoints" />
+					</Panel>
+					<Panel class="Calibrating">
+						<Panel id="CalibratingBG" />
+						<SplitLabel class="CalibratingTitle" text="#Citadel_Ranked_CalibratingTitle" />
+						<Panel id="CalibratingPips" />
+					</Panel>
+					<Panel id="DemotionProtectionPips" onmouseover="CitadelUIShowTextTooltip( &apos;#Citadel_RankedSeason_ProtectionRemaining&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<Panel class="SeasonFooter">
+						<Panel class="MaxRankContainer">
+							<CitadelRankedBadgeFull id="MaxBadge" class="hideName" />
+							<Label class="MaxRankLabel" text="#Citadel_RankedSeason_HighestRank" />
+						</Panel>
+						<Panel class="WinStreakContainer">
+							<ParticleScenePanel id="WinStreakEffect" particleonly="false" particleName="particles/ui/ui_topbar_killstreak_stylized.vpcf" fov="33" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" />
+							<Panel class="WinStreakDetails">
+								<Label class="WinStreakAmount" text="{s:win_streak_amount}" />
+								<Label class="WinStreakWins" text="#Citadel_RankedSeason_Wins" />
+								<Panel class="WinStreakTitle" onmouseover="UIShowTextTooltip( &apos;#Citadel_RankedSeason_WinStreak_Tooltip&apos; )" onmouseout="UIHideTextTooltip()">
+									<Label text="#Citadel_RankedSeason_CurrentStreak" />
+									<Panel class="InfoIcon" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="Tabs">
+					<Panel class="TabsRow">
+						<TabButton id="OverviewTab" text="Overview" group="ranked_tabs" onactivate="CitadelRankedSeasonRefresh()" selected="true" />
+						<TabButton id="MatchHistoryTab" text="Matches" group="ranked_tabs" onactivate="CitadelRankedSeasonRefresh()" />
+						<TabButton id="HeroesTab" text="Heroes" group="ranked_tabs" onactivate="CitadelRankedSeasonRefresh()" />
+					</Panel>
+					<Panel class="TabsContents">
+						<TabContents id="OverviewTabContents" tabid="OverviewTab" group="ranked_tabs" selected="true">
+							<Label class="OverviewTopHeader" text="#Citadel_Ranked_Overview_Header" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Bullet1" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Bullet2" />
+							<Panel class="OverviewRanksRow SmallRanks">
+								<CitadelRankedBadgeFull rank="1" class="ShowMaterial" />
+								<CitadelRankedBadgeFull rank="2" class="ShowMaterial" />
+								<CitadelRankedBadgeFull rank="3" class="ShowMaterial" />
+								<CitadelRankedBadgeFull rank="4" class="ShowMaterial" />
+							</Panel>
+							<Panel class="OverviewRanksRow SmallRanks">
+								<CitadelRankedBadgeFull rank="5" class="ShowMaterial" />
+								<CitadelRankedBadgeFull rank="6" class="ShowMaterial" />
+								<CitadelRankedBadgeFull rank="7" class="ShowMaterial" />
+								<CitadelRankedBadgeFull rank="8" class="ShowMaterial" />
+							</Panel>
+							<Panel class="OverviewRanksRow LargeRanks">
+								<CitadelRankedBadgeFull rank="9" class="ShowMaterial" />
+								<CitadelRankedBadgeFull rank="10" class="ShowMaterial" />
+								<CitadelRankedBadgeFull rank="11" class="ShowMaterial" />
+							</Panel>
+							<Label class="OverviewHeader" text="#Citadel_Ranked_Overview_Eligibility" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Eligibility_Bullet1:f" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Eligibility_Bullet2" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Eligibility_Bullet3" />
+							<Label class="OverviewHeader" text="#Citadel_Ranked_Overview_PlayingMatches" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Playing_Bullet1" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Playing_Bullet2" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Playing_Bullet3" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Playing_Bullet4" />
+							<Panel class="PercentileTable">
+								<Panel class="TableRow HeaderRow">
+									<Label class="RankName" text="Rank" />
+									<Label class="Percentile" text="Percentile" />
+								</Panel>
+								<Panel id="PercentileTableContents" />
+							</Panel>
+							<Label class="OverviewHeader" text="#Citadel_Ranked_Overview_HeroSelection" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Hero_Bullet1" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Hero_Bullet2" />
+						</TabContents>
+						<TabContents id="MatchHistoryTabContents" tabid="MatchHistoryTab" group="ranked_tabs">
+							<AsyncDataPanel class="AsyncMatchHistory" state="{d:match_history_state}">
+								<Panel class="AsyncSuccessContainer">
+									<Label class="NoMatches" text="#Citadel_ranked_no_matches" />
+									<Panel class="HasMatches">
+										<Panel id="MatchHistoryDays" />
+										<Panel class="MoreHistory">
+											<Panel class="Spinner" />
+											<CitadelButton id="LoadMoreMatchHistoryButton" text="#Citadel_ranked_load_more" onactivate="CitadelRankedSeasonLoadMoreMatchHistory()" />
+										</Panel>
+									</Panel>
+								</Panel>
+							</AsyncDataPanel>
+						</TabContents>
+						<TabContents id="HeroesTabContents" tabid="HeroesTab" group="ranked_tabs">
+							<Label class="HeroesHeader" html="true" text="#Citadel_RankedSeason_HeroWinsRequired:f" />
+							<Panel id="HeroesList" />
+						</TabContents>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="Footer">
+				<CitadelButton id="ViewSeasonsButton" text="#Citadel_Ranked_ViewSeasonHistory" onactivate="CitadelShowRankedHistoryPage()" disabled="true" onmouseover="CitadelUIShowTextTooltip( &apos;#Citadel_RankedSeason_ViewNote&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				<CitadelButton id="ViewLeaderboardsButton" text="#Citadel_Ranked_ViewLeaderboards" onactivate="CitadelShowGlobalLeaderboard()" />
+			</Panel>
+		</Panel>
+		<Panel class="FailureInfo">
+			<Panel class="FailureIcon" />
+			<Label class="FailureMessage" text="{s:failure_message}" />
+		</Panel>
+	</CitadelRankedSeasonPage>
+</root>

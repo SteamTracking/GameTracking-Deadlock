@@ -1,0 +1,306 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+CitadelHudRankedPlayerSummary
+{
+	width: 100%;
+	height: 100%;
+	background-color: #000e;
+}
+
+.MainContents
+{
+	flow-children: right;
+	horizontal-align: center;
+	vertical-align: middle;
+	margin-top: -100px;
+}
+
+.MainContents .VersusLabel
+{
+	vertical-align: middle;
+	font-size: 48px;
+	margin: 40px 40px 0px 40px;
+	font-family: block;
+	color: #5d6f70;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	animation-name: TagGroove1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 1s;
+}
+
+#HeroScenePanelBacker
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	opacity: 1;
+	blur: gaussian(2.3px);
+	opacity: .03;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+	margin-right: -350px;
+}
+
+.Team
+{
+	flow-children: down;
+}
+
+.Team .TeamLogo
+{
+	width: 300px;
+	height: 120px;
+	horizontal-align: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.Team.Team1 .TeamLogo
+{
+	background-image: url("s2r://panorama/images/hud/objectives/team1_patron_logo_psd.vtex");
+	wash-color: team1Color;
+}
+
+.Team.Team2 .TeamLogo
+{
+	background-image: url("s2r://panorama/images/hud/objectives/team2_patron_logo_psd.vtex");
+	wash-color: team2Color;
+}
+
+.Team .TeamPlayers
+{
+	flow-children: down;
+	opacity-mask: url("s2r://panorama/images/main_menu/text_speckle_mask_main_psd.vtex") 0.4;
+	opacity-mask-scale: 200% 100%;
+}
+
+.Player
+{
+	flow-children: right;
+	width: 420px;
+	margin-bottom: 8px;
+	padding-left: 8px;
+	background-img-opacity: 0.04;
+	background-size: cover;
+}
+
+.Team1 .Player:nth-child(3n+0)
+{
+	background-image: url("s2r://panorama/images/match_intro/player_bg_03_team1_png.vtex");
+}
+
+.Team1 .Player:nth-child(3n+1)
+{
+	background-image: url("s2r://panorama/images/match_intro/player_bg_01_team1_png.vtex");
+}
+
+.Team1 .Player:nth-child(3n+2)
+{
+	background-image: url("s2r://panorama/images/match_intro/player_bg_02_team1_png.vtex");
+}
+
+.Team2 .Player:nth-child(3n+0)
+{
+	background-image: url("s2r://panorama/images/match_intro/player_bg_03_team2_png.vtex");
+}
+
+.Team2 .Player:nth-child(3n+1)
+{
+	background-image: url("s2r://panorama/images/match_intro/player_bg_01_team2_png.vtex");
+}
+
+.Team2 .Player:nth-child(3n+2)
+{
+	background-image: url("s2r://panorama/images/match_intro/player_bg_02_team2_png.vtex");
+}
+
+.Player #UserName
+{
+	vertical-align: middle;
+	width: fill-parent-flow( 1.0 );
+	margin-right: 8px;
+}
+
+.Player #UserName Label
+{
+	horizontal-align: right;
+	text-align: right;
+	font-size: 20px;
+	margin: 0px 12px;
+	font-family: oracle;
+	color: offWhite&88;
+}
+
+.Player #AvatarImage
+{
+	width: 40px;
+	height: 40px;
+	margin-right: 8px;
+	vertical-align: middle;
+}
+
+.Player #RankedBadge
+{
+	ui-scale: 25%;
+	vertical-align: middle;
+	margin-top: -8px;
+}
+
+.Team2 .Player
+{
+	flow-children: left;
+}
+
+.Team2 .Player #UserName Label
+{
+	horizontal-align: left;
+	text-align: left;
+}
+
+.Player.IsLocalPlayer
+{
+	background-img-opacity: 0.2;
+}
+
+.Player.IsLocalPlayer #UserName Label
+{
+	color: offWhite;
+}
+
+.Player .LoadingDots
+{
+	flow-children: right;
+	padding: 12px;
+	vertical-align: middle;
+	visibility: collapse;
+}
+
+.Player .LoadingDots .dot
+{
+	width: 8px;
+	height: 8px;
+	background-color: offWhite;
+	margin: 2px;
+	transform: skewX(5deg);
+}
+
+.Player .LoadingDots .dot:nth-child(1)
+{
+	animation-name: LoadingDot;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+}
+
+.Player .LoadingDots .dot:nth-child(2)
+{
+	animation-name: LoadingDot;
+	animation-duration: 0.5s;
+	animation-delay: 0.1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+}
+
+.Player .LoadingDots .dot:nth-child(3)
+{
+	animation-name: LoadingDot;
+	animation-duration: 0.5s;
+	animation-delay: 0.2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+}
+
+.Player.IsConnecting
+{
+	pre-transform-scale2d: 0.8;
+	opacity: 0.4;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.Player.IsConnecting .LoadingDots
+{
+	visibility: visible;
+}
+
+.Player.IsConnected
+{
+	opacity: 1.0;
+	animation-name: PopConnected;
+	animation-duration: 0.2s;
+	animation-iteration-count: 1;
+}
+
+@keyframes 'TagGroove1'
+{
+	0%
+	{
+		transform: rotateZ(-4deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(4deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(-8deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(-12deg);
+	}
+	
+}
+
+@keyframes 'PopConnected'
+{
+	0%
+	{
+		pre-transform-scale2d: 0.9;
+	}
+	
+	90%
+	{
+		pre-transform-scale2d: 1.05;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+}
+
+@keyframes 'LoadingDot'
+{
+	0%
+	{
+		opacity: 0.5;
+	}
+	
+	30%
+	{
+		opacity: 1;
+	}
+	
+	60%
+	{
+		opacity: 0.5;
+	}
+	
+	100%
+	{
+		opacity: 0.5;
+	}
+	
+}
+

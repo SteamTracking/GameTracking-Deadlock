@@ -1,0 +1,76 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
+		<include src="s2r://panorama/styles/post_game/citadel_db_post_game_progress_ranked.vcss_c" />
+	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/async.vts_c" />
+		<include src="s2r://panorama/scripts/post_game/citadel_db_post_game_progress_ranked.vts_c" />
+	</scripts>
+	<snippets>
+		<snippet name="CalibratingPip">
+			<Panel class="CalibratingPip" />
+		</snippet>
+		<snippet name="DemotionProtectionPip">
+			<Panel class="DemotionProtectionPip" />
+		</snippet>
+	</snippets>
+	<CitadelPostGameProgressRanked class="PostGameScreen" navclass="Ranked" navtooltip="#Citadel_Post_Game_Ranked">
+		<Panel class="RankedBackground" />
+		<CitadelScenePanel id="HeroScenePanelBacker" map="ui/hero_select_backer/hero_select_backer" camera="hero_select_backer_camera" particleonly="false" />
+		<Panel id="RankEffects">
+			<ParticleScenePanel id="RankUpEffects" particleName="particles/ui/ui_rank_up.vpcf" fov="65" lookAt="0 0 0" squarePixels="true" cameraOrigin="0 0 40" startActive="false" />
+			<ParticleScenePanel id="SubRankUpEffects" particleName="particles/ui/ui_rank_up_sublevel.vpcf" fov="65" lookAt="0 0 0" squarePixels="true" cameraOrigin="0 0 40" startActive="false" />
+			<ParticleScenePanel id="RankDownEffects" particleName="particles/ui/ui_rank_down.vpcf" fov="65" lookAt="0 0 0" squarePixels="true" cameraOrigin="0 0 40" startActive="false" />
+			<ParticleScenePanel id="RankLossPreventionEffects" particleName="particles/ui/ui_rank_loss_protection.vpcf" fov="65" lookAt="0 0 0" squarePixels="true" cameraOrigin="0 0 40" startActive="false" />
+		</Panel>
+		<Panel class="MainContents">
+			<Panel class="SeasonHeader">
+				<Label class="RankedTitle" text="#Citadel_RankedTitle" />
+				<SplitLabel class="RankedSeasonName" text="{s:season_name}" />
+				<Label class="RankedSeasonDates" text="{s:season_start_time} - {s:season_end_time}" />
+			</Panel>
+			<Panel class="PlayerInfo">
+				<CitadelAvatarImage id="AvatarImage" />
+				<CitadelUserName id="UserName" />
+			</Panel>
+			<Panel id="RankBadges" />
+			<Label class="MainRankLabel" text="#Citadel_RankedSeason_CurrentRank" />
+			<Panel class="Calibrating">
+				<Panel id="CalibratingBG" />
+				<SplitLabel class="CalibratingTitle" text="#Citadel_Ranked_CalibratingTitle" />
+				<Panel id="CalibratingPips" />
+			</Panel>
+			<Panel class="RankData">
+				<Panel class="ProgressBarContainer">
+					<ProgressBarWithMiddle id="RankProgressBar" />
+					<Label class="RankProgressBarLabel" text="{d:current_rank_progress} / {d:max_rank_progress}" />
+				</Panel>
+				<Panel class="LeaderboardPointsContainer">
+					<Label class="LeaderboardPoints" text="{d:current_rank_progress}" />
+					<Panel class="LeaderboardPointsTitle">
+						<Label text="#Citadel_RankedProgress_RankPoints" />
+						<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( &apos;#Citadel_LeaderboardRankDesc&apos; )" onmouseout="UIHideTextTooltip()" />
+					</Panel>
+				</Panel>
+				<Panel id="DemotionProtectionPips" onmouseover="CitadelUIShowTextTooltip( &apos;#Citadel_RankedSeason_ProtectionRemaining&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				<Panel class="RankChange">
+					<Label class="ChangeAmount" text="#Citadel_RankedProgress_RankPointsChange" />
+				</Panel>
+			</Panel>
+			<Panel class="WinStreakContainer">
+				<ParticleScenePanel id="WinStreakEffect" particleonly="false" particleName="particles/ui/ui_topbar_killstreak_stylized.vpcf" fov="33" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" />
+				<Panel class="WinStreakDetails">
+					<Label class="WinStreakAmount" text="{s:win_streak_amount}" />
+					<Label class="WinStreakWins" text="#Citadel_RankedSeason_WinStreak" />
+					<Label class="WinStreakPoints" text="#Citadel_RankedSeason_WinStreakPoints" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel class="RankReceived">
+			<Label class="RankReceivedTitle" text="{s:rank_received_title}" />
+			<CitadelRankedBadgeFull id="RankReceivedBadge" />
+		</Panel>
+	</CitadelPostGameProgressRanked>
+</root>

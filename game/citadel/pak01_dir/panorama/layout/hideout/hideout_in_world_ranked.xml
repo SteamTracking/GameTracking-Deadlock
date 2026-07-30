@@ -1,0 +1,104 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
+		<include src="s2r://panorama/styles/hideout/hideout_in_world_ranked.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="CalibratingPip">
+			<Panel class="CalibratingPip" />
+		</snippet>
+		<snippet name="EligibleWinPipRow">
+			<Panel class="EligibleWinPipRow" />
+		</snippet>
+		<snippet name="EligibleWinPipGroup">
+			<Panel class="EligibleWinPipGroup" />
+		</snippet>
+		<snippet name="EligibleWinPip">
+			<Panel class="EligibleWinPip" />
+		</snippet>
+		<snippet name="EligibleHero">
+			<Panel class="EligibleHero">
+				<CitadelHeroImage id="HeroImage" heroimagestyle="icon" />
+				<Panel class="MissingHero">
+					<Label text="?" />
+				</Panel>
+				<Label text="{d:hero_wins}" />
+				<Panel class="CheckIcon" />
+			</Panel>
+		</snippet>
+		<snippet name="DemotionProtectionPip">
+			<Panel class="DemotionProtectionPip" />
+		</snippet>
+		<snippet name="MatchOutcome">
+			<Panel class="MatchOutcome">
+				<Panel class="MatchOutcomeMask" />
+			</Panel>
+		</snippet>
+		<snippet name="MatchOutcomeMask">
+			<Panel class="MatchOutcomeMask" />
+		</snippet>
+	</snippets>
+	<CitadelHideoutInWorldRanked>
+		<Panel id="RankPanelRoot">
+			<Panel id="AdditionalInfo">
+				<Panel id="RankBadgeFramePlaque">
+					<Label class="PlaqueSeasonName PlaqueLabelShadow" text="{g:citadel_packed_rank_name:packed_rank}" />
+					<Label class="PlaqueSeasonName" text="{g:citadel_packed_rank_name:packed_rank}" />
+					<Label class="PlaqueSeasonName PlaqueLabelHighlight" text="{g:citadel_packed_rank_name:packed_rank}" />
+				</Panel>
+				<Panel id="SeasonBadgeFramePlaque">
+					<Label class="PlaqueSeasonName PlaqueLabelShadow" text="{s:season_name}" />
+					<Label class="PlaqueSeasonName" text="{s:season_name}" />
+					<Label class="PlaqueSeasonName PlaqueLabelHighlight" text="{s:season_name}" />
+				</Panel>
+			</Panel>
+			<Panel class="RankedMatchLatestOutcomesContainer">
+				<Panel id="RankedMatchLatestOutcomes" />
+			</Panel>
+			<Panel id="RankPanelContent">
+				<Panel class="SeasonNotActive">
+					<Label text="#Citadel_Ranked_NoSeasonActive" />
+				</Panel>
+				<Panel class="SeasonActive">
+					<SplitLabel class="SeasonName" text="{s:season_name}" />
+					<CitadelUserName id="UserName" accountid="local" />
+					<Panel class="Eligiblity">
+						<Panel id="EligibleWinsPips" />
+						<Panel id="EligibleHeros" />
+					</Panel>
+					<Panel class="Calibrating">
+						<SplitLabel class="CalibratingTitle" text="#Citadel_Ranked_CalibratingTitle" />
+						<Panel id="CalibratingPips" />
+					</Panel>
+					<Panel class="HasRank">
+						<Panel class="RankProgressBarContainer">
+							<CitadelRankedBadgeChalk id="CurrentBadge" class="ChalkBadge" />
+							<ProgressBar id="RankProgressBar" class="onBlackboard" />
+							<Label text="{d:rank_current_progress} / {d:rank_max_progress}" />
+						</Panel>
+						<Panel class="LeaderboardPointsContainer">
+							<Panel class="EternusDrawings" />
+							<Label class="EternusLabels EternusName" text="{g:citadel_packed_rank_rank_name:packed_rank}" />
+							<Panel class="EternusSubRankContainer">
+								<Label class="EternusLabels EternusSubRank" text="{g:citadel_packed_rank_subrank_name:packed_rank}" />
+								<Label class="EternusLabels EternusSubRank Hollow" text="{g:citadel_packed_rank_subrank_name:packed_rank}" />
+							</Panel>
+							<Panel class="EternusPointsContainer">
+								<Label class="LeaderboardPoints" text="{d:rank_current_progress}" />
+								<Label class="LeaderboardPointsTitle" text="#Citadel_RankedProgress_RankPoints" />
+							</Panel>
+						</Panel>
+						<Panel id="DemotionProtectionPips" onmouseover="CitadelUIShowTextTooltip( &apos;#Citadel_RankedSeason_ProtectionRemaining&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					</Panel>
+					<Panel class="Doodle" />
+					<Panel id="BlackboardLastMatchContainer">
+						<SplitLabel class="LastMatchHero" text="{g:citadel_hero_name:last_match_hero_id}" />
+						<Panel class="WinorLose" />
+						<SplitLabel class="LastKDA" text="{d:last_match_kills}/{d:last_match_deaths}/{d:last_match_assists}" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</CitadelHideoutInWorldRanked>
+</root>

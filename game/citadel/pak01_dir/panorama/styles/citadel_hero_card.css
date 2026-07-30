@@ -1,6 +1,6 @@
 /* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
 
-.HeroCard
+CitadelHeroCard.HeroCard
 {
 	width: 130px;
 	height: 210px;
@@ -17,12 +17,12 @@
 	tooltip-position: right;
 }
 
-.HeroCard:hover
+CitadelHeroCard.HeroCard:hover
 {
 	sound: soundHeroCardHover;
 }
 
-.HeroCard:active
+CitadelHeroCard.HeroCard:active
 {
 	sound: soundHeroCardActivate;
 }
@@ -76,9 +76,18 @@ CitadelHeroCard:hover
 .HasHeroesInRoster .HeroCard.RosterSelect
 {
 	saturation: 0.5;
-	brightness: 0.4;
+	brightness: 0.7;
 	animation-name: none;
 	z-index: 1;
+	pre-transform-scale2d: 0.98;
+}
+
+.HasHeroesInRoster .HeroCard.RosterSelect.isAssigned
+{
+	wash-color: none;
+	opacity: 0.2;
+	brightness: 0.2;
+	saturation: 0;
 	pre-transform-scale2d: 0.98;
 }
 
@@ -738,6 +747,21 @@ CitadelHeroGrid .assignedPlayersOnly #DevMessageAssigned
 	brightness: 0.5;
 }
 
+.rankedLocked,.HasHeroesInRoster .rankedLocked.HeroCard.RosterSelect
+{
+	wash-color: none;
+	opacity: 0.2;
+	brightness: 0.2;
+	saturation: 0;
+	pre-transform-scale2d: 0.98;
+}
+
+.isAssigned
+{
+	saturation: 0;
+	brightness: 0.1;
+}
+
 .assignedPlayersOnly #HeroName,.openTesting #HeroName,.isNewPlayer .newPlayers #HeroName
 {
 	margin-bottom: 2px;
@@ -912,5 +936,16 @@ CitadelHeroCard.isBanned
 CitadelHeroCard.isBanned .BannedIcon
 {
 	visibility: visible;
+}
+
+CitadelHeroCard #HeroBadgeIcon
+{
+	vertical-align: bottom;
+	horizontal-align: left;
+	ui-scale: 75%;
+	margin-bottom: 0px;
+	opacity: 1;
+	brightness: 1;
+	saturation: 1;
 }
 

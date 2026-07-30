@@ -6,40 +6,10 @@
 		<include src="s2r://panorama/styles/post_game/citadel_db_page_post_game_new.vcss_c" />
 		<include src="s2r://panorama/styles/loading_screen.vcss_c" />
 	</styles>
+	<scripts>
+		<include src="s2r://panorama/scripts/post_game/citadel_db_page_post_game_new.vts_c" />
+	</scripts>
 	<snippets>
-		<snippet name="Player">
-			<Panel class="Player">
-				<Panel class="PlayerCard">
-					<ParticleScenePanel id="CommendFX" particleonly="false" particleName="particles/ui/ui_hideout_findingmatch_corner.vpcf" fov="50" cameraOrigin="200 0 0" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" />
-					<Panel class="PlayerBorder" />
-					<Panel class="HeroScenePanelBackground HeroMaskPanel" />
-					<CitadelHeroScenePanelNew id="HeroScenePanel" class="HeroMaskPanel" heroscenestyle="PostGamePortrait" />
-					<Panel class="HeroScenePanelTint HeroMaskPanel" />
-					<Panel class="MVPContainer">
-						<Label class="MVP_HonorableMention" text="#Citadel_Post_Game_MVP_HonorableMention" />
-						<Label class="MVP" text="#Citadel_Post_Game_MVP" />
-						<Panel class="MVP_HonorableMention KeyPlayerTrophy" />
-						<Panel class="MVP MVPTrophy" />
-					</Panel>
-					<Panel class="CardBottom">
-						<Panel id="AwardsContainer" />
-						<CitadelHeroLogo id="HeroLogo" />
-					</Panel>
-				</Panel>
-				<Panel class="PlayerActionContainer">
-					<Panel id="LocalPlayerIdentifier">
-						<Label text="#Citadel_Post_Game_You" />
-					</Panel>
-					<Button id="CommendPlayerButton" focusonmousedown="false" onmouseover="UIShowTextTooltip( #Citadel_MatchDetails_CommendTooltip );" onmouseout="UIHideTextTooltip()">
-						<Panel id="commendIcon" />
-					</Button>
-					<Panel class="GotCommendedIcon" />
-					<Button id="ShowPlayerContextMenuButton" />
-				</Panel>
-				<CitadelUserName id="PlayerName" />
-				<Label class="HeroName" text="{s:hero_name}" />
-			</Panel>
-		</snippet>
 		<snippet name="CarouselNavItem">
 			<Panel class="CarouselNavItem">
 				<Panel class="Icon" />
@@ -51,29 +21,17 @@
 		<AsyncDataPanel class="Body" state="{d:match_load_state}">
 			<Panel class="AsyncSuccessContainer">
 				<Carousel id="ScreensCarousel" panels-visible="3">
-					<Panel class="Team PostGameScreen" id="Team1" acceptsfocus="true" navclass="Team1" navtooltip="#Citadel_Team1_Name">
+					<Panel id="Team1Screen" class="Team PostGameScreen" acceptsfocus="true" navclass="Team1" navtooltip="#Citadel_Team2_Name">
 						<Panel class="ScoreboardBackground" />
 						<Label class="MatchMode" text="{s:match_mode}" />
 						<Label id="MatchID" text="#Citadel_MatchDetails_MatchID" onmouseover="UIShowTextTooltip( #Citadel_PostGame_CopyMatchID )" onmouseout="UIHideTextTooltip()" onactivate="CitadelPostGameCopyMatchID()" />
-						<CitadelScenePanel id="HeroScenePanelBacker" map="ui/hero_select_backer/post_game_backer" camera="hero_select_backer_camera" particleonly="false" />
-						<Panel class="TeamPlayerContainer" id="TeamPlayers" />
-						<Panel class="TeamNameContainer">
-							<Label class="TeamName" />
-							<Label text="#Citadel_MatchDetails_Victory" class="VictoryLabel" />
-							<Label text="#Citadel_MatchDetails_Defeat" class="DefeatLabel" />
-						</Panel>
+						<CitadelPostGameTeam id="Team1" />
 					</Panel>
-					<Panel class="Team PostGameScreen" id="Team2" acceptsfocus="true" navclass="Team2" navtooltip="#Citadel_Team2_Name">
+					<Panel id="Team2Screen" class="Team PostGameScreen" acceptsfocus="true" navclass="Team2" navtooltip="#Citadel_Team2_Name">
 						<Panel class="ScoreboardBackground" />
 						<Label class="MatchMode" text="{s:match_mode}" />
 						<Label id="MatchID" text="#Citadel_MatchDetails_MatchID" onmouseover="UIShowTextTooltip( #Citadel_PostGame_CopyMatchID )" onmouseout="UIHideTextTooltip()" onactivate="CitadelPostGameCopyMatchID()" />
-						<CitadelScenePanel id="HeroScenePanelBacker" map="ui/hero_select_backer/post_game_backer" camera="hero_select_backer_camera" particleonly="false" />
-						<Panel class="TeamNameContainer">
-							<Label class="TeamName" />
-							<Label text="#Citadel_MatchDetails_Victory" class="VictoryLabel" />
-							<Label text="#Citadel_MatchDetails_Defeat" class="DefeatLabel" />
-						</Panel>
-						<Panel class="TeamPlayerContainer" id="TeamPlayers" />
+						<CitadelPostGameTeam id="Team2" />
 					</Panel>
 					<Panel id="ScoreboardScreen" class="PostGameScreen Scoreboard" navclass="Scoreboard" navtooltip="#Citadel_Post_Game_Scoreboard">
 						<Panel class="ScoreboardBackground" />
@@ -92,7 +50,7 @@
 					<Panel class="FooterBarBL">
 						<CitadelBindingButton action="MenuBack" onactivate="CitadelNavigateBack()" text="#menu_exit_db_page" />
 					</Panel>
-					<Panel class="FooterBarMid">
+					<Panel class="FooterBarMid" hittest="false">
 						<Panel class="CarouselNav">
 							<Button id="CarouselNavLeftArrow" class="CarouselNavArrow" onactivate="CitadelPostGameIncrementScreen( -1 )">
 								<Panel class="NavArrowIcon" />
@@ -133,5 +91,6 @@
 				</Panel>
 			</Panel>
 		</AsyncDataPanel>
+		<CitadelCommendNotification id="CommendNotification" />
 	</CitadelPostGameNew>
 </root>

@@ -21,6 +21,9 @@
 @define offWhite: #FFEFD7;
 @define offBlack: #10130D;
 @define silvered: #C6C6C6;
+@define chalkWhite: #FFFFFF;
+@define chalkYellow: #f0de8d;
+@define chalkBlue: #c3e8e8;
 @define soulColor: #70F8C1;
 @define shardColor: #99FFD6;
 @define brandGreen: #5FE69E;
@@ -165,6 +168,7 @@
 @define ominousGreen: #69e799;
 @define deeplyOminousGreen: #47A36C;
 @define alternateProgressBarYellow: #9DCF40;
+@define rankedPurple: #a7a8d1;
 @define electricYellow: #DED44C;
 @define redShine: gradient( radial, 50% 50%, -5% -5%, 60% 60%, from( #ff6464), to( #cc413a ) );
 @define redFlat: #cc544e;
@@ -3969,7 +3973,7 @@ SimpleContextMenu.BuildContextMenu .ContextMenuBody Label
 ProgressBar
 {
 	width: 320px;
-	height: 22px;
+	height: 24px;
 	border-radius: 50px;
 	background-color: #000000ff;
 }
@@ -5351,18 +5355,18 @@ CitadelButton.XSmall
 	ui-scale: 65%;
 }
 
-CitadelButton:hover
+CitadelButton:hover:enabled
 {
 	sound: "UI.MainMenu.Hover";
 }
 
-CitadelButton:hover .Bottom
+CitadelButton:hover:enabled .Bottom
 {
 	opacity: 0;
 	transition-duration: 0.3s;
 }
 
-CitadelButton:hover .Top
+CitadelButton:hover:enabled .Top
 {
 	wash-color: offWhite;
 	opacity-mask: url("s2r://panorama/images/buttons/button_mask_threshold_psd.vtex");
@@ -5372,12 +5376,12 @@ CitadelButton:hover .Top
 	transition-duration: 0.3s;
 }
 
-CitadelButton:hover Image
+CitadelButton:hover:enabled Image
 {
 	opacity: 1;
 }
 
-CitadelButton:hover Label
+CitadelButton:hover:enabled Label
 {
 	color: offWhite;
 	color: offBlack;
@@ -5520,22 +5524,12 @@ CitadelButton:selected
 CitadelButton:disabled,CitadelButton.Disabled
 {
 	sound: none;
-}
-
-CitadelButton:disabled .Bottom,CitadelButton.Disabled .Bottom
-{
-	wash-color: offBlack;
-	opacity: 0.2;
+	opacity: 0.1;
 }
 
 CitadelButton:disabled .Top,CitadelButton.Disabled .Top
 {
 	visibility: collapse;
-}
-
-CitadelButton:disabled Image,CitadelButton.Disabled Image
-{
-	opacity: 0.1;
 }
 
 CitadelButton:disabled Label,CitadelButton.Disabled Label

@@ -4,6 +4,7 @@
 // MNetworkVarNames = "float m_flHealthRegen"
 // MNetworkVarNames = "GameTime_t m_flRespawnTime"
 // MNetworkVarNames = "HeroID_t m_nHeroID"
+// MNetworkVarNames = "HeroID_t m_nPreGameHeroID"
 // MNetworkVarNames = "HeroBadgeXP_t m_unHeroBadgeXP"
 // MNetworkVarNames = "int32 m_iGoldNetWorth"
 // MNetworkVarNames = "int32 m_iAPNetWorth"
@@ -30,6 +31,7 @@
 // MNetworkVarNames = "bool m_bHasRejuvenator"
 // MNetworkVarNames = "bool m_bHasRebirth"
 // MNetworkVarNames = "bool m_bFlaggedAsCheater"
+// MNetworkVarNames = "bool m_bAbandon"
 // MNetworkVarNames = "int32 m_iHeroDamage"
 // MNetworkVarNames = "int32 m_iHeroHealing"
 // MNetworkVarNames = "int32 m_iSelfHealing"
@@ -48,6 +50,7 @@
 // MNetworkVarNames = "CUtlString m_strIconHeroCardOverride"
 // MNetworkVarNames = "CUtlString m_strIconHeroCardCriticalOverride"
 // MNetworkVarNames = "CUtlString m_strIconHeroCardGloatOverride"
+// MNetworkVarNames = "PackedRank_t m_unPackedRank"
 class PlayerDataGlobal_t
 {
 	// MNetworkEnable
@@ -62,6 +65,8 @@ class PlayerDataGlobal_t
 	GameTime_t m_flRespawnTime;
 	// MNetworkEnable
 	HeroID_t m_nHeroID;
+	// MNetworkEnable
+	HeroID_t m_nPreGameHeroID;
 	// MNetworkEnable
 	HeroBadgeXP_t m_unHeroBadgeXP;
 	// MNetworkEnable
@@ -116,6 +121,8 @@ class PlayerDataGlobal_t
 	// MNetworkEnable
 	bool m_bFlaggedAsCheater;
 	// MNetworkEnable
+	bool m_bAbandon;
+	// MNetworkEnable
 	int32 m_iHeroDamage;
 	// MNetworkEnable
 	int32 m_iHeroHealing;
@@ -163,4 +170,6 @@ class PlayerDataGlobal_t
 	CUtlString m_strIconHeroCardCriticalOverride;
 	// MNetworkEnable
 	CUtlString m_strIconHeroCardGloatOverride;
+	// MNetworkEnable
+	PackedRank_t m_unPackedRank;
 };

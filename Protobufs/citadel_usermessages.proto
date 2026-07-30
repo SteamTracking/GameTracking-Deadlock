@@ -64,6 +64,7 @@ enum CitadelUserMessageIds {
 	k_EUserMsg_ItemDraftReaction = 364;
 	k_EUserMsg_ImportantAbilityUsed = 365;
 	k_EUserMsg_BannedHeroes = 366;
+	k_EUserMsg_ChangeHeroStatus = 370;
 }
 
 enum CitadelEntityMessageIds {
@@ -510,6 +511,7 @@ message CCitadelUserMsg_StaminaConsumed {
 	optional bool drained = 5;
 	optional float stamina_max = 6;
 	optional float gametime = 7;
+	optional bool play_sound = 8;
 }
 
 message CCitadelUserMessage_AbilityNotify {
@@ -680,4 +682,11 @@ message CCitadelUserMessage_ImportantAbilityUsed {
 
 message CCitadelUserMsg_BannedHeroes {
 	repeated uint32 banned_hero_ids = 1;
+}
+
+message CCitadelUserMsg_ChangeHeroStatus {
+	optional bool success = 1;
+	optional bool is_hero_locked = 2;
+	repeated uint32 lock_hero_ids = 3;
+	repeated uint32 unlock_hero_ids = 4;
 }

@@ -159,6 +159,8 @@ message CCitadelClientMsg_HideoutSpawn {
 
 message CCitadelClientMsg_HideoutMatchmakingState {
 	optional bool is_matchmaking = 1;
+	optional .ECitadelMatchMode match_mode = 2 [default = k_ECitadelMatchMode_Invalid];
+	optional .ECitadelGameMode game_mode = 3 [default = k_ECitadelGameMode_Invalid];
 }
 
 message CCitadelClientMsg_PlayerStatsUpdated {

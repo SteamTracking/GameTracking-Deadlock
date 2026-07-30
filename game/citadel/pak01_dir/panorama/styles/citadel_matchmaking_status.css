@@ -41,6 +41,11 @@ CitadelMatchmakingStatus
 	wash-color: ominousGreen;
 }
 
+.MatchMode_Ranked.State_WaitingForMatch .IconContainer,.MatchMode_Ranked.State_ConnectingToServer .IconContainer
+{
+	wash-color: rankedPurple;
+}
+
 .IconContainer .Icon
 {
 	vertical-align: middle;
@@ -112,6 +117,11 @@ CitadelMatchmakingStatus
 	color: ominousGreen&66;
 }
 
+.MatchMode_Ranked.State_WaitingForMatch .Time
+{
+	color: rankedPurple&66;
+}
+
 .State_ConnectingToServer .Time
 {
 	visibility: collapse;
@@ -152,6 +162,11 @@ CitadelMatchmakingStatus
 	color: ominousGreen;
 }
 
+.MatchMode_Ranked.State_WaitingForMatch .Details .State,.MatchMode_Ranked.State_ConnectingToServer .Details .State
+{
+	color: rankedPurple;
+}
+
 .Details .Mode
 {
 	color: ominousGreen;
@@ -164,6 +179,11 @@ CitadelMatchmakingStatus
 .State_ConnectingToServer .Details .Mode,.State_WaitingForPartyRosters .Details .Mode
 {
 	visibility: collapse;
+}
+
+.MatchMode_Ranked .Details .Mode
+{
+	color: rankedPurple;
 }
 
 .Details .QueueCount
@@ -192,11 +212,21 @@ CitadelMatchmakingStatus
 	background-size: contain;
 }
 
+.MatchMode_Ranked .Details .QueueCount .QueueCountIcon
+{
+	wash-color: rankedPurple;
+}
+
 .Details .QueueCount Label
 {
 	color: ominousGreen;
 	font-family: block;
 	margin-top: 4px;
+}
+
+.MatchMode_Ranked .Details .QueueCount Label
+{
+	color: rankedPurple;
 }
 
 .Details .InteractHint
@@ -233,6 +263,11 @@ CitadelMatchmakingStatus
 	color: offWhite&22;
 }
 
+.MatchMode_Ranked.State_ConnectingToServer .Details .InteractHint Label,.MatchMode_Ranked.State_WaitingForMatch .Details .InteractHint Label
+{
+	color: rankedPurple&66;
+}
+
 .InHideout .Details .InteractHint Label.DefaultHint
 {
 	opacity: 0;
@@ -256,7 +291,14 @@ CitadelMatchmakingStatus
 	border-radius: 3px;
 }
 
-#FindingMatchFX
+.MatchMode_Ranked .Details .InteractHint Label CitadelBinding
+{
+	hue-rotation: 100deg;
+	brightness: 2;
+	saturation: .8;
+}
+
+.FindMatchFxPanel
 {
 	width: 1100px;
 	height: 808px;
@@ -268,7 +310,12 @@ CitadelMatchmakingStatus
 	opacity: 0;
 }
 
-.State_ConnectingToServer #FindingMatchFX,.State_WaitingForMatch #FindingMatchFX
+.State_ConnectingToServer:not(.MatchMode_Ranked) #FindingMatchFX,.State_WaitingForMatch:not(.MatchMode_Ranked) #FindingMatchFX
+{
+	opacity: 0.5;
+}
+
+.MatchMode_Ranked.State_ConnectingToServer #FindingMatchFXRanked,.MatchMode_Ranked.State_WaitingForMatch #FindingMatchFXRanked
 {
 	opacity: 0.5;
 }

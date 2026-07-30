@@ -196,6 +196,16 @@
 			]
 		},
 		{
+			name = "RankedDataManifest_global_server"
+			group = "GameStartup"
+			source_file = "src/game/shared/citadel/citadel_ranked_schema.cpp"
+			source_line = 36
+			resources = 
+			[
+				resource_name:"scripts/ranked_seasons.vdata",
+			]
+		},
+		{
 			name = "PhysicsGameSystemManifest_server"
 			group = ""
 			source_file = "src/game/shared/physicsgamesystem.cpp"
@@ -226,6 +236,27 @@
 			resources = 
 			[
 				resource_name:"dev/panorama_world_panel_hint_ui.vmat",
+			]
+		},
+		{
+			name = "RankedModelManifest_global_server"
+			group = "GameStartup"
+			source_file = "src/game/shared/citadel/citadel_ranked_badge_entities.cpp"
+			source_line = 19
+			resources = 
+			[
+				resource_name:"models/hideout/hideout_ranked_badge_obscurus.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_wood.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_iron.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_steel.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_bronze.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_silver.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_gold.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_platinum.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_diamond.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_phantom.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_ascendent.vmdl",
+				resource_name:"models/hideout/hideout_ranked_badge_eternus.vmdl",
 			]
 		},
 		{
@@ -367,7 +398,7 @@
 		"@lib:server.dll!CBaseTriggerAPI" = 2728627856
 		"@lib:server.dll!CCitadel_InfoTrooperSpawnAPI" = 1962868602
 		"@lib:server.dll!CCitadel_PickupItemSpawnerAPI" = 65945985
-		"@lib:server.dll!CCitadelPointPulseAPI" = 2655435330
+		"@lib:server.dll!CCitadelPointPulseAPI" = 2526833106
 		"@lib:server.dll!CFilterMultipleAPI" = 988869233
 		"@lib:server.dll!CFuncMoverAPI" = 3816299413
 		"@lib:server.dll!CLogicRelayAPI" = 555225203
@@ -439,6 +470,9 @@
 		"@type:server.dll!PVAL_SCHEMA_ENUM:ChoreoLookAtMode_t" = 1855753749
 		"@type:server.dll!PVAL_SCHEMA_ENUM:ChoreoLookAtSpeed_t" = 4241769962
 		"@type:server.dll!PVAL_SCHEMA_ENUM:DamageTypes_t" = 2170947975
+		"@type:server.dll!PVAL_SCHEMA_ENUM:ECitadelGameMode" = 4267472791
+		"@type:server.dll!PVAL_SCHEMA_ENUM:ECitadelMatchMode" = 1217247979
+		"@type:server.dll!PVAL_SCHEMA_ENUM:EGameState" = 1093534349
 		"@type:server.dll!PVAL_SCHEMA_ENUM:EStreetBrawlGameState" = 62714967
 		"@type:server.dll!PVAL_SCHEMA_ENUM:HitGroup_t" = 3817317871
 		"@type:server.dll!PVAL_SCHEMA_ENUM:MoveType_t" = 831783037
@@ -4982,6 +5016,53 @@
 					m_Outputs = [  ]
 					m_Helpers = [  ]
 				}
+				"CCitadelPointPulseAPI::GetGameMode" = 
+				{
+					m_BaseClasses = [  ]
+					m_FriendlyName = "Get Game Mode"
+					m_Description = "Get the game mode"
+					m_MetaData = 
+					{
+						supported_domains = 
+						{
+							ServerEntity = true
+						}
+						scope_to_dependency_name = 
+						{
+							server.dll = "@lib:server.dll!CCitadelPointPulseAPI"
+						}
+						pulse_inparams = null
+						pulse_outparams = 
+						{
+							retval = 
+							{
+								friendly_name = "Result"
+								description = ""
+								advanced_view = false
+								metadata = null
+								type = "PVAL_SCHEMA_ENUM:ECitadelGameMode"
+								default_value = 
+								[
+									"PVAL_VOID",
+								]
+								associated_outflow_name = "OutDefault"
+								direct_return_value_for = "CCitadelPointPulseAPI::GetGameMode"
+							}
+						}
+						generic_node_category = 4
+						is_pulse_library_method = true
+					}
+					m_HelpContextName = ""
+					m_nClassType = "vdata"
+					m_rgbColor = [ 220, 30, 220 ]
+					m_bmins = [ -8.0, -8.0, -8.0 ]
+					m_bmaxs = [ 8.0, 8.0, 8.0 ]
+					m_Tags = [  ]
+					m_Variables = [  ]
+					m_Inputs = [  ]
+					m_Outputs = [  ]
+					m_Helpers = [  ]
+				}
 				"CCitadelPointPulseAPI::GetHideoutOwnerHasSeasonalAward2024" = 
 				{
 					m_BaseClasses = [  ]
@@ -5170,6 +5251,60 @@
 					m_Outputs = [  ]
 					m_Helpers = [  ]
 				}
+				"CCitadelPointPulseAPI::OnGameStateChanged" = 
+				{
+					m_BaseClasses = [  ]
+					m_FriendlyName = "OnGameStateChanged"
+					m_Description = "Fired when the game state changes (in all game modes)."
+					m_MetaData = 
+					{
+						supported_domains = 
+						{
+							ServerEntity = true
+						}
+						scope_to_dependency_name = 
+						{
+							server.dll = "@lib:server.dll!CCitadelPointPulseAPI"
+						}
+						pulse_outparams = 
+						{
+							eState = 
+							{
+								friendly_name = "State"
+								description = ""
+								advanced_view = false
+								metadata = null
+								type = "PVAL_SCHEMA_ENUM:EGameState"
+								default_value = 
+								[
+									"PVAL_VOID",
+								]
+								associated_inflow_name = "CCitadelPointPulseAPI::OnGameStateChanged"
+							}
+						}
+						is_pulse_global_event = true
+						is_spontaneous = true
+						generic_node_category = 5
+						pulse_outflows = 
+						[
+							{
+								name = "OutDefault"
+								friendly_name = "Default Out"
+								is_default_outflow = true
+							},
+						]
+					}
+					m_HelpContextName = ""
+					m_nClassType = "vdata"
+					m_rgbColor = [ 220, 30, 220 ]
+					m_bmins = [ -8.0, -8.0, -8.0 ]
+					m_bmaxs = [ 8.0, 8.0, 8.0 ]
+					m_Tags = [  ]
+					m_Variables = [  ]
+					m_Inputs = [  ]
+					m_Outputs = [  ]
+					m_Helpers = [  ]
+				}
 				"CCitadelPointPulseAPI::OnHideoutLobbyChanged" = 
 				{
 					m_BaseClasses = [  ]
@@ -5263,7 +5398,35 @@
 						{
 							server.dll = "@lib:server.dll!CCitadelPointPulseAPI"
 						}
-						pulse_outparams = null
+						pulse_outparams = 
+						{
+							eMatchMode = 
+							{
+								friendly_name = "Match Mode"
+								description = ""
+								advanced_view = false
+								metadata = null
+								type = "PVAL_SCHEMA_ENUM:ECitadelMatchMode"
+								default_value = 
+								[
+									"PVAL_VOID",
+								]
+								associated_inflow_name = "CCitadelPointPulseAPI::OnStartMatchmaking"
+							}
+							eGameMode = 
+							{
+								friendly_name = "Game Mode"
+								description = ""
+								advanced_view = false
+								metadata = null
+								type = "PVAL_SCHEMA_ENUM:ECitadelGameMode"
+								default_value = 
+								[
+									"PVAL_VOID",
+								]
+								associated_inflow_name = "CCitadelPointPulseAPI::OnStartMatchmaking"
+							}
+						}
 						is_pulse_global_event = true
 						is_spontaneous = true
 						generic_node_category = 5

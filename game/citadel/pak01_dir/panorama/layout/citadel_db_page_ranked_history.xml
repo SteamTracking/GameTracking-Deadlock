@@ -1,0 +1,29 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_db_page_shared.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_db_page_ranked_history.vcss_c" />
+	</styles>
+	<snippets>
+		<snippet name="RankedSeason">
+			<Panel class="RankedSeason">
+				<Panel class="PlayerRankStatus">
+					<Label class="PlayerRankStatusLabel" text="{s:player_rank_status}" />
+					<CitadelRankedBadge id="RankedBadge" />
+				</Panel>
+				<Panel class="SeasonInfo">
+					<Label class="SeasonName" text="{s:season_name}" />
+					<Label class="SeasonDates" text="{s:season_start_time} - {s:season_end_time}" />
+				</Panel>
+				<Label class="SeasonStatus" text="{s:season_status}" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<CitadelRankedHistoryPage class="DashboardPage" oncancel="CitadelNavigateBack();">
+		<Panel class="MainContents">
+			<Label class="Title" text="#Citadel_RankedHistory_Title" />
+			<Panel id="RankedSeasonsList" />
+		</Panel>
+	</CitadelRankedHistoryPage>
+</root>

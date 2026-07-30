@@ -1,6 +1,6 @@
 /* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
 
-CitadelPopupRosterSelect
+CitadelPopupRosterSelect,CitadelPopupRosterSelect_HeroDraft
 {
 	width: 100%;
 	height: 100%;
@@ -172,9 +172,21 @@ CitadelPopupRosterSelect
 	visibility: visible;
 }
 
-#HeroInfo #HeroLogo
+#HeroInfo .HeroNameContainer
 {
+	margin-right: 120px;
+	flow-children: right;
 	horizontal-align: center;
+}
+
+#HeroInfo .HeroNameContainer #HeroBadgeIcon
+{
+	vertical-align: center;
+}
+
+#HeroInfo .HeroNameContainer #HeroLogo
+{
+	vertical-align: center;
 }
 
 #HeroInfo #GunTag
@@ -1126,5 +1138,103 @@ CitadelQuickSearch.Hidden
 	vertical-align: middle;
 	text-overflow: shrink;
 	text-align: center;
+}
+
+#Notifications
+{
+	horizontal-align: right;
+	vertical-align: top;
+	margin: 64px;
+	flow-children: down;
+}
+
+#Notifications .HeroChangeNotification
+{
+	flow-children: down;
+	width: 400px;
+	height: 120px;
+	animation-name: NotificationAppear;
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+}
+
+#Notifications .HeroChangeNotification .hero_swap_msg_bg
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	background-image: url("s2r://panorama/images/ranked/roster_swap_hero_notification_bg_png.vtex");
+	background-size: 100% 100%;
+}
+
+#Notifications .HeroChangeNotification Label
+{
+	font-family: oracle;
+	font-weight: bold;
+	color: offWhite;
+	font-size: 20px;
+	margin-top: 10px;
+	transform: rotateZ(-1deg);
+	margin: 20px;
+	text-shadow: 2px 2px 0px offBlack&90;
+}
+
+#Notifications .HeroSwapIcons
+{
+	flow-children: right;
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: bottom;
+	margin-right: 50px;
+	margin-bottom: 24px;
+	transform: rotateZ(2deg);
+}
+
+#Notifications .HeroSwapIcons .swap_arrow
+{
+	width: 20px;
+	height: 20px;
+	margin: 5px;
+	background-image: url("s2r://panorama/images/icons/icon_arrow.vsvg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	wash-color: offBlack;
+	vertical-align: middle;
+	opacity: 0.8;
+}
+
+#Notifications .HeroSwapIcons CitadelHeroImage
+{
+	width: 50px;
+	height: 50px;
+}
+
+#Notifications .HeroSwapIcons CitadelHeroImage#HeroIconOld
+{
+	opacity: 0.6;
+	width: 30px;
+	height: 30px;
+	margin-top: 5px;
+}
+
+@keyframes 'NotificationAppear'
+{
+	0%
+	{
+		opacity: 0;
+	}
+	
+	50%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1.2;
+		transform: rotateZ(-5deg);
+	}
+	
+	100%
+	{
+		opacity: 1.0;
+	}
+	
 }
 

@@ -60,4 +60,5 @@ enum CitadelUserMessageIds : uint32_t
 	k_EUserMsg_ItemDraftReaction = 364,
 	k_EUserMsg_ImportantAbilityUsed = 365,
 	k_EUserMsg_BannedHeroes = 366,
+	k_EUserMsg_ChangeHeroStatus = 370,
 };

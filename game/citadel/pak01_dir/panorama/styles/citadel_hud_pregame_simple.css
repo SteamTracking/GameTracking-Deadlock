@@ -16,6 +16,18 @@ CitadelHudPregameSimple.ShowPregame
 	opacity: 1.0;
 }
 
+#RankedPlayerSummary
+{
+	transition-property: opacity;
+	transition-duration: 0.5s;
+	opacity: 0.0;
+}
+
+.State_RankedPlayerSummary #RankedPlayerSummary
+{
+	opacity: 1.0;
+}
+
 .HeroDetails
 {
 	width: 100%;
@@ -25,7 +37,7 @@ CitadelHudPregameSimple.ShowPregame
 	opacity: 0.0;
 }
 
-.HeroLoaded .HeroDetails
+.State_HeroReveal.HeroLoaded .HeroDetails
 {
 	opacity: 1.0;
 	transition-duration: 0.0s;
@@ -74,5 +86,41 @@ CitadelHudPregameSimple.ShowPregame
 {
 	horizontal-align: center;
 	text-align: center;
+}
+
+.DebugButtons
+{
+	vertical-align: bottom;
+	horizontal-align: right;
+	flow-children: right;
+	visibility: collapse;
+}
+
+.ShowDebugButtons .DebugButtons
+{
+	visibility: visible;
+}
+
+.DebugButtons .DebugButton
+{
+	width: 48px;
+	height: 48px;
+	opacity: 0.2;
+	background-image: url("s2r://panorama/images/control_icons/refresh_psd.vtex");
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: center;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.DebugButtons .DebugButton:hover
+{
+	opacity: 1.0;
+}
+
+.DebugButtons .DebugButton:active
+{
+	opacity: 0.7;
 }
 

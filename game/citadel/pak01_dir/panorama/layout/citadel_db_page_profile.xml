@@ -62,27 +62,6 @@
 				<Panel id="PerformanceArrow" class="performanceArrow" onmouseout="UIHideTextTooltip();" />
 			</Panel>
 		</snippet>
-		<snippet name="RankMatchHistoryRow">
-			<Panel class="rankMatchHistoryRow">
-				<Panel class="rowContent LeftRightFlow">
-					<CitadelRankedBadgeMini id="RankBadge" />
-					<Label class="rankName" text="{s:rank_name}" />
-				</Panel>
-				<Label class="gamesPlayed" text="#Citadel_ranked_numGamesPlayed" />
-				<Label class="datesContainer" text="#Citadel_rank_phase_example" />
-			</Panel>
-		</snippet>
-		<snippet name="CoreRating">
-			<Panel class="heroRow">
-				<Panel class="coreRating">
-					<Panel id="HeroRowBackground" />
-					<CitadelRankedBadgeMini id="RankBadgeCoreRating" />
-					<Label class="heroRowName" text="{s:core_rating_rank} {s:core_rating_subrank}" />
-					<Label class="coreRatingLabel" text="#Citadel_core_skill_rating" />
-				</Panel>
-				<Panel class="infoButton" onactivate="CitadelShowRankedInfo();" onmouseover="UIShowTextTooltip( #Citadel_Profile_Skill_Rating_Tooltip )" onmouseout="UIHideTextTooltip()" />
-			</Panel>
-		</snippet>
 		<snippet name="BlockStat">
 			<Panel class="BlockStat">
 				<Panel class="blockBacker" />
@@ -102,10 +81,12 @@
 					<CitadelAvatarImage id="SelfImage" />
 					<Panel id="ProfileInfo">
 						<CitadelUserName id="SelfName" />
-						<Button class="SimpleIconButtonSteam" id="ViewSteamProfile" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #Citadel_Profile_ViewSteamProfile );">
-							<Image id="SteamLogo" src="s2r://panorama/images/profile/icon_steam_psd.vtex" />
-							<Label class="FriendID" text="#Citadel_Profile_FriendID" />
-						</Button>
+						<Panel class="SteamInfo">
+							<Button id="ViewSteamProfile" onmouseout="UIHideTextTooltip();" onmouseover="UIShowTextTooltip( #Citadel_Profile_ViewSteamProfile );">
+								<Image src="s2r://panorama/images/profile/icon_steam_psd.vtex" />
+							</Button>
+							<Label class="FriendID" text="#Citadel_Profile_FriendID" onmouseover="UIShowTextTooltip( #Citadel_Profile_CopyFriendCode )" onmouseout="UIHideTextTooltip()" onactivate="CitadelProfileCopyFriendCode()" />
+						</Panel>
 						<Button id="ForumButton" onactivate="CitadelJoinForum()">
 							<Panel class="ForumIcon buttonIcon" />
 							<Label class="defaultText" text="#Citadel_JoinForum_ViewInfo" />
@@ -139,21 +120,6 @@
 					</Panel>
 					<Panel id="ShowcaseList" />
 					<Panel id="HeroesSeasonalAchievement2024TooltipContainer" class="Hidden" />
-				</Panel>
-				<Panel id="TabsContainer">
-					<Label class="SortByLabel" text="#Citadel_Profile_Stats_SortBy" />
-					<Panel class="titleArea">
-						<Panel id="GamesPlayedTab" class="profileTab" onactivate="CitadelProfileSortHeroes( EProfileSortGamesPlayed );">
-							<Label class="smallTitle" text="#Citadel_Profile_TimePlayedSort" />
-						</Panel>
-						<Panel id="RankedPerformanceTab" class="profileTab" onactivate="CitadelProfileSortHeroes( EProfileSortRankedPerformance );">
-							<Label class="smallTitle" text="#Citadel_Profile_RankedPerformanceSort" />
-						</Panel>
-					</Panel>
-					<Panel id="ViewLeaderboardContainer" class="LeftRightFlow" onactivate="CitadelShowGlobalLeaderboard();">
-						<Label id="ViewLeaderboardsLabel" text="#Citadel_Profile_ViewLeaderboard" />
-						<Panel id="allHistoryIcon" />
-					</Panel>
 				</Panel>
 				<Panel id="GamesPlayed">
 					<Panel id="StatsContent">

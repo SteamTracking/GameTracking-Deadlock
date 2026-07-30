@@ -1,0 +1,751 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+CitadelPostGameProgressRanked.Team1
+{
+	background-color: gradient( radial, 50% 0%, 0% 0%, 40% 40%, from( team1Color&10 ), to( team1ColorDarker&08 ) );
+	background-image: url("s2r://panorama/images/post_game/bg_team1_psd.vtex");
+	background-size: cover;
+	background-position: center;
+}
+
+CitadelPostGameProgressRanked.Team2
+{
+	background-color: gradient( radial, 50% 0%, 0% 0%, 40% 40%, from( team2Color&10 ), to( team2ColorDarker&08 ) );
+	background-image: url("s2r://panorama/images/post_game/bg_team2_psd.vtex");
+	background-size: cover;
+	background-position: center;
+}
+
+.RankedBackground
+{
+	background-color: gradient( radial, 50% 50%, -5% -5%, 60% 60%, from( #00000044), to( #000000 ) );
+	width: 100%;
+	height: 100%;
+}
+
+#HeroScenePanelBacker
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	opacity: 1;
+	blur: gaussian(2.3px);
+	opacity: .03;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+	margin-right: -1050px;
+}
+
+.Team1 #HeroScenePanelBacker
+{
+	wash-color: #00000033;
+	opacity: .04;
+}
+
+.Team2 #HeroScenePanelBacker
+{
+	wash-color: #00000033;
+	opacity: .04;
+}
+
+.AspectRatio16x10 #HeroScenePanelBacker
+{
+	margin-right: -920px;
+}
+
+.MainContents
+{
+	horizontal-align: center;
+	flow-children: down;
+	margin-top: 80px;
+	transition-property: opacity, brightness, saturation;
+	transition-duration: 0.2s;
+}
+
+.ShowRankReceived .MainContents
+{
+	opacity: 0.1;
+	brightness: 0.2;
+	saturation: 0.0;
+}
+
+.SeasonHeader
+{
+	flow-children: down;
+	horizontal-align: center;
+}
+
+.SeasonHeader .RankedTitle
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #485758;
+	font-size: 44px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	pre-transform-rotate2d: -1.8deg;
+}
+
+.SeasonHeader .RankedSeasonName
+{
+	horizontal-align: center;
+	margin: -28px 0px -20px 0px;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	pre-transform-rotate2d: -0.8deg;
+}
+
+.SeasonHeader .RankedSeasonName Label
+{
+	text-align: center;
+	font-family: oracle;
+	color: #8faaa9;
+	font-size: 80px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.SeasonHeader .RankedSeasonName #ImageSlices Image:nth-child(1n)
+{
+	transform: translateY( 0% ) rotateZ(2deg);
+}
+
+.SeasonHeader .RankedSeasonName #ImageSlices Image:nth-child(2n)
+{
+	transform: translateY( -2% ) rotateZ(-2deg);
+}
+
+.SeasonHeader .RankedSeasonName #ImageSlices Image:nth-child(3n)
+{
+	transform: translateY( 1% ) skew(6deg);
+}
+
+.SeasonHeader .RankedSeasonDates
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #738a8a;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.PlayerInfo
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 20px;
+}
+
+.PlayerInfo #AvatarImage
+{
+	vertical-align: middle;
+	width: 64px;
+	height: 64px;
+	visibility: collapse;
+}
+
+.PlayerInfo #UserName
+{
+	vertical-align: middle;
+}
+
+.PlayerInfo #UserName Label
+{
+	font-size: 24px;
+	font-family: oracle;
+	color: offWhite;
+}
+
+.Calibrating
+{
+	horizontal-align: center;
+	flow-children: down;
+	margin-top: 12px;
+	visibility: collapse;
+}
+
+.ShowCalibrating .Calibrating
+{
+	visibility: visible;
+}
+
+.Calibrating .CalibratingTitle
+{
+	horizontal-align: center;
+	margin: 8px 16px;
+	height: 40px;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	opacity-mask-scale: 100% 100%;
+	pre-transform-rotate2d: -0.8deg;
+}
+
+.Calibrating .CalibratingTitle Label
+{
+	text-align: center;
+	font-size: 22px;
+	font-family: block;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #7a9392;
+}
+
+.Calibrating .CalibratingTitle #ImageSlices Image:nth-child(1n)
+{
+	transform: translateY( 0% ) rotateZ(2deg);
+}
+
+.Calibrating .CalibratingTitle #ImageSlices Image:nth-child(2n)
+{
+	transform: translateY( -2% ) rotateZ(-5deg);
+}
+
+.Calibrating .CalibratingTitle #ImageSlices Image:nth-child(3n)
+{
+	transform: translateY( 1% ) skew(6deg);
+}
+
+.Calibrating #CalibratingPips
+{
+	flow-children: right;
+	horizontal-align: center;
+	padding: 4px;
+	overflow: noclip;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip
+{
+	width: 32px;
+	height: 32px;
+	margin: 0px 8px;
+	border: 3px dashed offWhite&22;
+	border-radius: 50%;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip.MatchFinished
+{
+	background-color: offWhite&44;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip.MatchHighlighted
+{
+	background-image: url("s2r://panorama/images/icons/deadlock_logo.vsvg");
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	background-img-opacity: 0.4;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: offWhite;
+	animation-name: HighlightCalibratedPip;
+	animation-duration: 1.0s;
+	animation-iteration-count: 1;
+}
+
+.Calibrating #CalibratingPips .CalibratingPip.MatchCompleted
+{
+	background-image: url("s2r://panorama/images/icons/deadlock_logo.vsvg");
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	background-img-opacity: 0.4;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: offWhite;
+	animation-name: CompletedCalibratedPip;
+	animation-duration: 1.0s;
+	animation-iteration-count: 1;
+}
+
+#CalibratingBG
+{
+	background-position: top;
+	background-color: #48575822;
+	margin-top: -56px;
+	width: 100%;
+	height: 40%;
+	vertical-align: middle;
+	ignore-parent-flow: true;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	animation-name: TagGroove1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 1s;
+}
+
+@keyframes 'TagGroove1'
+{
+	0%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(1deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(-2deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(1deg);
+	}
+	
+}
+
+@keyframes 'HighlightCalibratedPip'
+{
+	0%
+	{
+		clip: radial( 50% 50%, 0deg, 0deg );
+	}
+	
+	100%
+	{
+		clip: radial( 50% 50%, 0deg, 360deg );
+	}
+	
+}
+
+@keyframes 'CompletedCalibratedPip'
+{
+	0%
+	{
+		transform: scale3d( 1.3, 1.3, 1.0 );
+	}
+	
+	100%
+	{
+		transform: none;
+	}
+	
+}
+
+.RankData
+{
+	width: 1000px;
+	flow-children: down;
+}
+
+.ShowCalibrating .RankData
+{
+	visibility: collapse;
+}
+
+#RankBadges
+{
+	width: 100%;
+	margin-top: 24px;
+	horizontal-align: center;
+}
+
+#RankBadges .RankBadge
+{
+	horizontal-align: center;
+	ui-scale: 136%;
+	transform-origin: 50% 75%;
+}
+
+#RankBadges .RankBadge.Animate
+{
+	transition-property: transform, opacity;
+	transition-duration: 0.5s;
+}
+
+#RankBadges .RankBadge.ExitLeft
+{
+	transform: scale3d( 0.3, 0.3, 1.0 ) translateX( -360px );
+	opacity: 0.0;
+}
+
+#RankBadges .RankBadge.Left
+{
+	transform: scale3d( 0.5, 0.5, 1.0 ) translateX( -180px );
+	opacity: 0.2;
+}
+
+#RankBadges .RankBadge.Right
+{
+	transform: scale3d( 0.5, 0.5, 1.0 ) translateX( 180px );
+	opacity: 0.2;
+}
+
+#RankBadges .RankBadge.ExitRight
+{
+	transform: scale3d( 0.3, 0.3, 1.0 ) translateX( 360px );
+	opacity: 0.0;
+}
+
+.ProgressBarContainer
+{
+	width: 400px;
+	height: 28px;
+	horizontal-align: center;
+	margin-top: 4px;
+}
+
+.ShowingLeaderboardRank .ProgressBarContainer
+{
+	visibility: collapse;
+}
+
+.ProgressBarContainer #RankProgressBar
+{
+	width: 100%;
+	height: 100%;
+	background-color: #A1CDCD06;
+	border-radius: 50px;
+}
+
+.ProgressBarContainer #RankProgressBar .ProgressBarLeft
+{
+	background-color: #A1CDCD88;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .8;
+}
+
+.ProgressBarContainer #RankProgressBar .ProgressBarRight
+{
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .8;
+}
+
+.GainedRank .ProgressBarContainer #RankProgressBar .ProgressBarMiddle
+{
+	background-color: #A1CDCD;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .8;
+}
+
+.LostRank .ProgressBarContainer #RankProgressBar .ProgressBarMiddle
+{
+	background-color: warningRed;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .8;
+}
+
+.ProgressBarContainer .RankProgressBarLabel
+{
+	font-family: oracle;
+	horizontal-align: center;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 20px;
+	color: offWhite;
+	text-shadow: 0px 0px 4px 3 #00000088;
+}
+
+.LeaderboardPointsContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.ShowingLeaderboardRank .LeaderboardPointsContainer
+{
+	visibility: visible;
+}
+
+.LeaderboardPointsContainer .LeaderboardPoints
+{
+	font-family: oracle;
+	font-size: 42px;
+	horizontal-align: center;
+	text-align: center;
+	color: #8faaa9;
+}
+
+.LeaderboardPointsContainer .LeaderboardPointsTitle
+{
+	flow-children: right;
+	horizontal-align: center;
+	text-align: center;
+}
+
+.LeaderboardPointsContainer .LeaderboardPointsTitle Label
+{
+	font-family: oracle;
+	font-size: 20px;
+	color: #485758;
+}
+
+.LeaderboardPointsContainer .LeaderboardPointsTitle .InfoIcon
+{
+	margin-left: 8px;
+	wash-color: #485758;
+	brightness: 1;
+}
+
+#DemotionProtectionPips
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 16px;
+	visibility: collapse;
+}
+
+.ShowDemotionProtection #DemotionProtectionPips
+{
+	visibility: visible;
+}
+
+#DemotionProtectionPips .DemotionProtectionPip
+{
+	width: 24px;
+	height: 24px;
+	background-image: url("s2r://panorama/images/icons/properties/armor_alt.vsvg");
+	background-img-opacity: 0.3;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: #4B8EB6;
+}
+
+#DemotionProtectionPips .DemotionProtectionPip.Used
+{
+	wash-color: #485758;
+}
+
+#DemotionProtectionPips .DemotionProtectionPip.Highlighted
+{
+	wash-color: white;
+	animation-name: HighlightDemotionPip;
+	animation-duration: 0.5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'HighlightDemotionPip'
+{
+	0%
+	{
+		transform: none;
+	}
+	
+	100%
+	{
+		transform: scale3d( 1.2, 1.2, 1.0 );
+	}
+	
+}
+
+.RankChange
+{
+	horizontal-align: center;
+	flow-children: down;
+	margin-top: 24px;
+}
+
+.NoRankChange .RankChange
+{
+	visibility: collapse;
+}
+
+.RankChange .ChangeAmount
+{
+	font-family: oracle;
+	font-size: 36px;
+	font-weight: bold;
+	horizontal-align: center;
+	text-align: center;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .8;
+	opacity-mask-scale: 100% 150%;
+}
+
+.GainedRank .RankChange .ChangeAmount
+{
+	color: #A1CDCD;
+}
+
+.LostRank .RankChange .ChangeAmount
+{
+	color: warningRed;
+}
+
+.MainRankLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #485758;
+	margin-top: -8px;
+	margin-bottom: 12px;
+	font-size: 20px;
+}
+
+#RankEffects
+{
+	width: 100%;
+	height: 100%;
+}
+
+#RankEffects ParticleScenePanel
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0.0;
+	transition-property: opacity;
+	transition-duration: 0.0s;
+}
+
+#RankEffects ParticleScenePanel.ShowEffects
+{
+	opacity: 1.0;
+	transition-duration: 0.5s;
+}
+
+.RankReceived
+{
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	vertical-align: middle;
+	flow-children: down;
+	padding: 36px;
+	opacity: 0.0;
+	transform: scale3d( 0.8, 0.8, 1.0 );
+	transition-property: opacity, transform;
+	transition-duration: 0.2s;
+}
+
+.ShowRankReceived .RankReceived
+{
+	opacity: 1.0;
+	transform: none;
+}
+
+.RankReceived .RankReceivedTitle
+{
+	font-size: 100px;
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 1px;
+	margin-bottom: -40px;
+	animation-name: SeasonIntro;
+	animation-duration: .34s;
+	animation-timing-function: ease-in-out;
+	pre-transform-rotate2d: -3deg;
+}
+
+.RankReceived #RankReceivedBadge
+{
+	ui-scale: 150%;
+	horizontal-align: center;
+}
+
+@keyframes 'SeasonIntro'
+{
+	0%
+	{
+		opacity: 0;
+		pre-transform-scale2d: 0.2;
+		pre-transform-rotate2d: -10deg;
+	}
+	
+	80%
+	{
+		pre-transform-scale2d: 1.1;
+		pre-transform-rotate2d: 2deg;
+	}
+	
+	100%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1;
+		pre-transform-rotate2d: -2.2deg;
+	}
+	
+}
+
+.WinStreakContainer
+{
+	width: 240px;
+	height: 400px;
+	overflow: noclip;
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	margin-top: 350px;
+	margin-right: 40px;
+	opacity: 0.0;
+	transform: scale3d( 1.2, 1.2, 1.0 );
+	transform-origin: 50% 100%;
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
+}
+
+.ShowWinStreak .WinStreakContainer
+{
+	opacity: 1.0;
+	transform: none;
+	transition-duration: 0.0s;
+}
+
+.WinStreakContainer #WinStreakEffect
+{
+	width: 100%;
+	height: 100%;
+	transform: scaleY( -1 ) translateY( 64px );
+	horizontal-align: center;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+	visibility: collapse;
+}
+
+.HasWinStreakBonus .WinStreakContainer #WinStreakEffect
+{
+	visibility: visible;
+}
+
+.WinStreakContainer .WinStreakDetails
+{
+	vertical-align: bottom;
+	flow-children: down;
+	width: 100%;
+}
+
+.WinStreakContainer .WinStreakAmount
+{
+	horizontal-align: center;
+	text-align: center;
+	font-size: 48px;
+	font-family: block;
+	color: offWhite;
+	opacity: 0.5;
+}
+
+.HasWinStreakBonus .WinStreakContainer .WinStreakAmount
+{
+	opacity: 1.0;
+	color: black;
+	text-shadow: 0px 0px 0px 3 #19ecca;
+}
+
+.WinStreakContainer .WinStreakWins
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: block;
+	color: #19ecca;
+	font-size: 24px;
+	text-transform: uppercase;
+	transform: rotateZ( 4deg );
+}
+
+.WinStreakContainer .WinStreakPoints
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #19ecca;
+	font-size: 24px;
+	font-weight: bold;
+	transform: rotateZ( 4deg );
+}
+

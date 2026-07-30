@@ -97,6 +97,11 @@ CitadelHudTopBar.showNewTopbar
 	border-radius: 5px;
 }
 
+.GameStatePreGameWait .GameClock
+{
+	visibility: collapse;
+}
+
 .TimeLow .GameClock
 {
 	animation-name: TimeLowPulse;
@@ -540,6 +545,11 @@ CitadelHudTopBarPlayer:hover #PlayerAbilitiesContainer
 {
 	width: 100%;
 	height: 100px;
+}
+
+.PreGameHeroDraft .enemy #HeroImageArea
+{
+	opacity: 0.2;
 }
 
 .HeroContentsBG
@@ -1518,6 +1528,16 @@ CitadelHudTopBarPlayer:not(.UltimateCooldownReady) #UltimateAbilityIcon
 	transition-duration: 0.07s;
 }
 
+.PreGameHeroDraft #PlayerNameNWContainer #KDAContainer,.PreGameHeroDraft #PlayerNameNWContainer CitadelHudItemBarGraph,.PreGameHeroDraft #PlayerNameNWContainer CitadelTopBarPlayerDetails,.PreGameHeroDraft #PlayerNameNWContainer #PlayerAbilitiesContainer
+{
+	visibility: collapse;
+}
+
+.GameStatePreGameWait .SoulsValueContainer,.GameStatePreGameWait .HeroLevelBacker,.GameStatePreGameWait #StatusRow,.GameStatePreGameWait #HealthBar
+{
+	visibility: collapse;
+}
+
 #PlayerModsContainer
 {
 	width: 100%;
@@ -1568,6 +1588,16 @@ CitadelHudTopBarPlayer:not(.UltimateCooldownReady) #UltimateAbilityIcon
 	opacity: 1;
 	height: 330px;
 	height: fit-children;
+}
+
+.PreGameHeroDraft .wants_scoreboard #PlayerNameNWContainer
+{
+	height: 300px;
+}
+
+.PreGameHeroDraft.wants_scoreboard #PlayerNameNWContainer,.PreGameHeroDraft.wants_scoreboard CitadelHudTopBarPlayer:selected #PlayerNameNWContainer
+{
+	height: 240px;
 }
 
 .wants_scoreboard CitadelHudTopBarPlayer:selected #PlayerNameNWContainer
@@ -1784,7 +1814,7 @@ CitadelHudTopBarPlayer:hover CitadelTopBarPlayerDetails
 	horizontal-align: center;
 }
 
-.gamemode_streetbrawl .TeamNetworth
+.gStreetBrawl .TeamNetworth
 {
 	visibility: collapse;
 }
@@ -1834,6 +1864,11 @@ CitadelHudTopBarPlayer:hover CitadelTopBarPlayerDetails
 	text-align: center;
 	color: white;
 	font-family: oracle;
+}
+
+.GameStatePreGameWait .ScoreLabel
+{
+	opacity: 0;
 }
 
 .TeamIcon
@@ -2351,6 +2386,11 @@ CitadelHudTopBarPlayer .demote
 	visibility: visible;
 }
 
+.wants_scoreboard.PreGameHeroDraft .KillsAndAbilityPointsContainer
+{
+	visibility: collapse;
+}
+
 .ScoreRow
 {
 	horizontal-align: middle;
@@ -2439,10 +2479,11 @@ CitadelHudTopBarPlayer .demote
 
 #LaneSwapContainer
 {
-	width: 50px;
-	height: 50px;
-	margin-top: 160px;
+	width: 36px;
+	height: 36px;
+	margin-top: 80px;
 	horizontal-align: center;
+	padding: 4px;
 	border-radius: 50% 50%;
 	border-brush: gradient( linear, 0% 0%, 0% 100%, from( #fbfbfb40 ), to( #c0c0c040 ) );
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #404040 ), to( #202020 ) );
@@ -2450,24 +2491,23 @@ CitadelHudTopBarPlayer .demote
 	background-color: offWhite;
 	box-shadow: 0px 0px 30px black&90;
 	z-index: 21;
-	opacity: 0.2;
+	opacity: 1;
+	border: 2px solid offBlack&ee;
+	saturation: 0;
+	transition-property: opacity, brightness, pre-transform-scale2d;
+	transition-duration: 0.1s;
 	visibility: collapse;
 }
 
-#LaneSwapContainer:hover
+.enemy #LaneSwapContainer
 {
-	brightness: 1.5;
-	opacity: 1;
+	visibility: collapse;
+	opacity: 0.01;
 }
 
 CitadelHudTopBarPlayer.LaneSwapDefault.LaneNum1 #LaneSwapContainer,CitadelHudTopBarPlayer.LaneSwapRequesting.LaneNum1 #LaneSwapContainer,CitadelHudTopBarPlayer.LaneSwapReceiving.LaneNum1 #LaneSwapContainer
 {
 	wash-color: laneYellowColor;
-}
-
-CitadelHudTopBarPlayer.LaneSwapDefault.LaneNum3 #LaneSwapContainer,CitadelHudTopBarPlayer.LaneSwapRequesting.LaneNum3 #LaneSwapContainer,CitadelHudTopBarPlayer.LaneSwapReceiving.LaneNum3 #LaneSwapContainer
-{
-	wash-color: laneGreenColor;
 }
 
 CitadelHudTopBarPlayer.LaneSwapDefault.LaneNum4 #LaneSwapContainer,CitadelHudTopBarPlayer.LaneSwapRequesting.LaneNum4 #LaneSwapContainer,CitadelHudTopBarPlayer.LaneSwapReceiving.LaneNum4 #LaneSwapContainer
@@ -2477,17 +2517,18 @@ CitadelHudTopBarPlayer.LaneSwapDefault.LaneNum4 #LaneSwapContainer,CitadelHudTop
 
 CitadelHudTopBarPlayer.LaneSwapDefault.LaneNum6 #LaneSwapContainer,CitadelHudTopBarPlayer.LaneSwapRequesting.LaneNum6 #LaneSwapContainer,CitadelHudTopBarPlayer.LaneSwapReceiving.LaneNum6 #LaneSwapContainer
 {
-	wash-color: lanePurpleColor;
-}
-
-.wants_scoreboard #LaneSwapContainer
-{
-	opacity: 1.0;
+	wash-color: laneGreenColor;
 }
 
 .LaneSwapAvailable #LaneSwapContainer
 {
 	visibility: visible;
+	opacity: 1;
+}
+
+.wants_scoreboard .LaneSwapAvailable #LaneSwapContainer
+{
+	opacity: 1.0;
 }
 
 .gamemode_streetbrawl #LaneSwapContainer
@@ -2516,6 +2557,13 @@ CitadelHudTopBarPlayer.LaneSwapDefault.LaneNum6 #LaneSwapContainer,CitadelHudTop
 	background-color: #555555ee;
 	background-color: colorEnemy&40;
 	wash-color: none;
+}
+
+.LaneSwapAvailable #LaneSwapContainer:hover
+{
+	brightness: 2;
+	pre-transform-scale2d: 1.1;
+	opacity: 1;
 }
 
 #LaneSwapIcon

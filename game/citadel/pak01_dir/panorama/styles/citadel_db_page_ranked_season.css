@@ -1,0 +1,1302 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+CitadelRankedSeasonPage
+{
+	width: 100%;
+	height: 100%;
+	background-color: #000000f8;
+}
+
+#HeroScenePanelBacker
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	opacity: 1;
+	blur: gaussian(2.3px);
+	opacity: .03;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+	margin-right: -350px;
+}
+
+.AspectRatio16x10 #HeroScenePanelBacker
+{
+	margin-right: -208px;
+}
+
+.MainContents
+{
+	flow-children: down;
+	vertical-align: middle;
+	horizontal-align: center;
+	width: 1400px;
+	height: 928px;
+}
+
+.FailedToLoad .MainContents
+{
+	visibility: collapse;
+}
+
+.MainContents .Columns
+{
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	flow-children: right;
+}
+
+.SeasonSummary
+{
+	flow-children: down;
+	width: fill-parent-flow( 1.0 );
+	margin-right: 8px;
+}
+
+.SeasonSummary .Title
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #485758;
+	font-size: 44px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	pre-transform-rotate2d: -1.8deg;
+}
+
+.SeasonSummary .SeasonName
+{
+	horizontal-align: center;
+	margin: -28px 0px -20px 0px;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	opacity-mask-scale: 100% 100%;
+	pre-transform-rotate2d: -0.8deg;
+}
+
+.SeasonSummary .SeasonName Label
+{
+	text-align: center;
+	font-family: oracle;
+	color: #8faaa9;
+	font-size: 80px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+.SeasonSummary .SeasonName #ImageSlices Image:nth-child(1n)
+{
+	transform: translateY( 0% ) rotateZ(2deg);
+}
+
+.SeasonSummary .SeasonName #ImageSlices Image:nth-child(2n)
+{
+	transform: translateY( -2% ) rotateZ(-2deg);
+}
+
+.SeasonSummary .SeasonName #ImageSlices Image:nth-child(3n)
+{
+	transform: translateY( 1% ) skew(6deg);
+}
+
+.PageActivated .SeasonSummary .SeasonName
+{
+	animation-name: SeasonIntro;
+	animation-duration: .24s;
+	animation-timing-function: ease-in-out;
+}
+
+.SeasonSummary .SeasonStartEnd
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #738a8a88;
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+.SeasonSummary .SeasonRemainingLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	font-size: 18px;
+	font-family: block;
+	text-transform: uppercase;
+	color: #48575888;
+	margin-top: 4px;
+	visibility: collapse;
+}
+
+.SeasonActive .SeasonSummary .SeasonRemainingLabel
+{
+	visibility: visible;
+}
+
+.SeasonSummary .SeasonFinishedLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	visibility: collapse;
+}
+
+.SeasonFinished .SeasonSummary .SeasonFinishedLabel
+{
+	visibility: visible;
+}
+
+.SeasonSummary #UserName
+{
+	horizontal-align: center;
+	margin: 28px 0px 0px 0px;
+}
+
+.SeasonSummary #UserName Label
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	font-size: 24px;
+}
+
+.SeasonSummary .EligibilityContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	margin-top: 48px;
+	visibility: collapse;
+}
+
+.ShowEligibility .SeasonSummary .EligibilityContainer
+{
+	visibility: visible;
+}
+
+.SeasonSummary .EligibilityContainer .EligibilityTitle
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #485758;
+	margin-bottom: 12px;
+	font-size: 20px;
+}
+
+.SeasonSummary .EligibilityContainer .EligibilityRows
+{
+	flow-children: down;
+	horizontal-align: center;
+	margin-top: 12px;
+}
+
+.SeasonSummary .EligibilityContainer .EligibilityRows .EligibilityRow
+{
+	flow-children: right;
+	margin: 4px;
+}
+
+.SeasonSummary .EligibilityContainer .EligibilityRows .EligibilityRow .EligibilityIcon
+{
+	width: 24px;
+	height: 24px;
+	margin-right: 12px;
+	background-image: url("s2r://panorama/images/upgrades/lock_icon_psd.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: offWhite;
+	opacity: 0.2;
+}
+
+.SeasonSummary .EligibilityContainer .EligibilityRows .EligibilityRow Label
+{
+	font-family: oracle;
+	font-size: 20px;
+	color: offWhite&44;
+}
+
+.AccountWinsEligible .SeasonSummary .EligibilityContainer .EligibilityRows .EligibilityRow.AccountWins .EligibilityIcon,.HeroUnlocksEligible .SeasonSummary .EligibilityContainer .EligibilityRows .EligibilityRow.HeroUnlocks .EligibilityIcon
+{
+	background-image: url("s2r://panorama/images/control_icons/check_png.vtex");
+	wash-color: #62e762;
+	opacity: 0.8;
+}
+
+.AccountWinsEligible .SeasonSummary .EligibilityContainer .EligibilityRows .EligibilityRow.AccountWins Label,.HeroUnlocksEligible .SeasonSummary .EligibilityContainer .EligibilityRows .EligibilityRow.HeroUnlocks Label
+{
+	color: #62e762cc;
+}
+
+.SeasonSummary .EligibilityContainer .NotEligibleDesc
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	font-size: 24px;
+	margin-top: 12px;
+	color: #8faaa9;
+}
+
+.IsEligibleForRanked .SeasonSummary .EligibilityContainer .NotEligibleDesc
+{
+	visibility: collapse;
+}
+
+.SeasonSummary .EligibilityContainer .EligibleDesc
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	font-size: 24px;
+	margin-top: 12px;
+	color: #8faaa9;
+	visibility: collapse;
+}
+
+.IsEligibleForRanked .SeasonSummary .EligibilityContainer .EligibleDesc
+{
+	visibility: collapse;
+}
+
+.SeasonSummary .SeasonDesc
+{
+	horizontal-align: center;
+	text-align: center;
+	border: 2px solid #666;
+	padding: 4px 12px;
+	margin-top: 24px;
+	width: 300px;
+	height: 200px;
+	visibility: collapse;
+}
+
+.ShowSeasonDesc .SeasonSummary .SeasonDesc
+{
+	visibility: visible;
+}
+
+.SeasonSummary .SeasonDesc Label
+{
+	font-size: 48px;
+	font-family: oracle;
+	color: #666;
+	text-align: center;
+	horizontal-align: center;
+	vertical-align: middle;
+	text-overflow: shrink;
+}
+
+.SeasonSummary .MainRankContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.ShowMainRank .SeasonSummary .MainRankContainer
+{
+	visibility: visible;
+}
+
+.SeasonSummary .MainRankContainer #MainBadge
+{
+	horizontal-align: center;
+	ui-scale: 120%;
+}
+
+.SeasonSummary .MainRankContainer .MainRankProgress
+{
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.ShowRankProgress.ShowRankProgressBar .SeasonSummary .MainRankContainer .MainRankProgress
+{
+	visibility: visible;
+}
+
+.SeasonSummary .MainRankContainer .MainRankProgress #MainRankProgressBar
+{
+	horizontal-align: center;
+}
+
+.SeasonSummary .MainRankContainer .MainRankProgress > Label
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	text-align: center;
+	font-weight: semi-bold;
+}
+
+.SeasonSummary .MainRankContainer .LeaderboardPoints
+{
+	horizontal-align: center;
+	text-align: center;
+	font-size: 24px;
+	font-family: oracle;
+	color: #8faaa9;
+	visibility: collapse;
+}
+
+.ShowRankProgress:not(.ShowRankProgressBar) .SeasonSummary .MainRankContainer .LeaderboardPoints
+{
+	visibility: visible;
+}
+
+.SeasonSummary .MainRankContainer .LeaderboardPointsTitle
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #485758;
+	margin-top: -8px;
+	font-size: 20px;
+	visibility: collapse;
+}
+
+.ShowRankProgress:not(.ShowRankProgressBar) .SeasonSummary .MainRankContainer .LeaderboardPointsTitle
+{
+	visibility: visible;
+}
+
+.SeasonSummary .MainRankContainer .MainRankLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #485758;
+	margin-top: -12px;
+	margin-bottom: 12px;
+	font-size: 20px;
+}
+
+.SeasonSummary .Calibrating
+{
+	horizontal-align: center;
+	flow-children: down;
+	padding-top: 24px;
+	visibility: collapse;
+}
+
+.ShowCalibrating .SeasonSummary .Calibrating
+{
+	visibility: visible;
+}
+
+.SeasonSummary .Calibrating .CalibratingTitle
+{
+	horizontal-align: center;
+	margin: 8px 16px;
+	height: 40px;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	opacity-mask-scale: 100% 100%;
+	pre-transform-rotate2d: -0.8deg;
+}
+
+.SeasonSummary .Calibrating .CalibratingTitle Label
+{
+	text-align: center;
+	font-size: 22px;
+	font-family: block;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #7a9392;
+}
+
+.SeasonSummary .Calibrating .CalibratingTitle #ImageSlices Image:nth-child(1n)
+{
+	transform: translateY( 0% ) rotateZ(2deg);
+}
+
+.SeasonSummary .Calibrating .CalibratingTitle #ImageSlices Image:nth-child(2n)
+{
+	transform: translateY( -2% ) rotateZ(-5deg);
+}
+
+.SeasonSummary .Calibrating .CalibratingTitle #ImageSlices Image:nth-child(3n)
+{
+	transform: translateY( 1% ) skew(6deg);
+}
+
+.SeasonSummary .Calibrating #CalibratingPips
+{
+	flow-children: right;
+	horizontal-align: center;
+	padding: 4px;
+}
+
+.SeasonSummary .Calibrating #CalibratingPips .CalibratingPip
+{
+	width: 32px;
+	height: 32px;
+	margin: 0px 8px;
+	border: 3px dashed offWhite&22;
+	border-radius: 50%;
+}
+
+.SeasonSummary .Calibrating #CalibratingPips .CalibratingPip.MatchFinished
+{
+	background-color: offWhite&44;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+}
+
+.SeasonSummary #CalibratingBG
+{
+	background-position: top;
+	background-color: #48575822;
+	margin-top: -56px;
+	width: 100%;
+	height: 40%;
+	vertical-align: middle;
+	ignore-parent-flow: true;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 1s;
+}
+
+.SeasonSummary #DemotionProtectionPips
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 16px;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	visibility: collapse;
+}
+
+.ShowDemotionProtection .SeasonSummary #DemotionProtectionPips
+{
+	visibility: visible;
+}
+
+.SeasonSummary #DemotionProtectionPips .DemotionProtectionPip
+{
+	width: 24px;
+	height: 24px;
+	background-image: url("s2r://panorama/images/icons/properties/armor_alt.vsvg");
+	background-img-opacity: 0.3;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: #4B8EB6;
+}
+
+.SeasonSummary #DemotionProtectionPips .DemotionProtectionPip.Used
+{
+	wash-color: #485758;
+}
+
+.SeasonSummary .SeasonFooter
+{
+	flow-children: right;
+	margin: -200px 60px 0px 60px;
+	visibility: collapse;
+}
+
+.ShowMaxRank .SeasonSummary .SeasonFooter,.ShowWinStreak .SeasonSummary .SeasonFooter
+{
+	visibility: visible;
+}
+
+.SeasonSummary .MaxRankContainer
+{
+	flow-children: down;
+	margin-top: 12px;
+	width: fill-parent-flow( 1.0 );
+	margin-top: 200px;
+	visibility: collapse;
+}
+
+.ShowMaxRank .SeasonSummary .MaxRankContainer
+{
+	visibility: visible;
+}
+
+.SeasonSummary .MaxRankContainer #MaxBadge
+{
+	horizontal-align: center;
+}
+
+.SeasonSummary .MaxRankContainer .MaxRankLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #485758;
+	font-size: 20px;
+	margin-top: -8px;
+}
+
+.SeasonSummary .WinStreakContainer
+{
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
+	visibility: collapse;
+}
+
+.ShowWinStreak .SeasonSummary .WinStreakContainer
+{
+	visibility: visible;
+}
+
+.SeasonSummary .WinStreakContainer #WinStreakEffect
+{
+	width: 240px;
+	height: 100%;
+	transform: scaleY( -1 ) translateY( 60px );
+	horizontal-align: center;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+	opacity: 0.4;
+	ui-scale: 80%;
+	visibility: collapse;
+}
+
+.HasWinStreakBonus .SeasonSummary .WinStreakContainer #WinStreakEffect
+{
+	visibility: visible;
+}
+
+.SeasonSummary .WinStreakContainer .WinStreakDetails
+{
+	vertical-align: bottom;
+	flow-children: down;
+	width: 100%;
+}
+
+.SeasonSummary .WinStreakContainer .WinStreakAmount
+{
+	horizontal-align: center;
+	text-align: center;
+	font-size: 48px;
+	font-family: block;
+	color: offWhite;
+	opacity: 0.5;
+}
+
+.HasWinStreakBonus .SeasonSummary .WinStreakContainer .WinStreakAmount
+{
+	opacity: 1.0;
+	color: black;
+}
+
+.SeasonSummary .WinStreakContainer .WinStreakWins
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+}
+
+.SeasonSummary .WinStreakContainer .WinStreakTitle
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+.SeasonSummary .WinStreakContainer .WinStreakTitle Label
+{
+	text-align: center;
+	font-family: oracle;
+	color: #485758;
+	font-size: 20px;
+}
+
+.SeasonSummary .WinStreakContainer .WinStreakTitle .InfoIcon
+{
+	width: 14px;
+	height: 14px;
+	vertical-align: middle;
+	margin-left: 4px;
+	wash-color: #485758;
+	brightness: 1.0;
+}
+
+.Footer
+{
+	flow-children: right;
+	horizontal-align: right;
+	margin-top: 16px;
+}
+
+.Footer CitadelButton
+{
+	margin-left: 16px;
+}
+
+.Tabs
+{
+	flow-children: down;
+	width: fill-parent-flow( 1.0 );
+	margin: 20px 0px 0px 8px;
+	height: 832px;
+}
+
+.Tabs .TabsRow
+{
+	flow-children: right;
+	margin-bottom: 8px;
+	horizontal-align: center;
+}
+
+.Tabs .TabsRow TabButton
+{
+	margin: 0px 24px;
+}
+
+.Tabs .TabsRow TabButton Label
+{
+	font-family: oracle;
+	font-weight: bold;
+	font-size: 28px;
+	color: #485758;
+	transition-property: transform, color;
+	transition-duration: 0.06s;
+	transition-timing-function: ease-in-out;
+}
+
+.Tabs .TabsRow TabButton:hover
+{
+	transform: rotateZ(-1.5deg);
+}
+
+.Tabs .TabsRow TabButton:hover Label
+{
+	color: #5a6e6d;
+}
+
+.Tabs .TabsRow TabButton:active
+{
+	transform: rotateZ(1.5deg);
+}
+
+.Tabs .TabsRow TabButton:active Label
+{
+	color: #acc7c6;
+}
+
+.Tabs .TabsRow TabButton:selected Label
+{
+	color: #7a9392;
+}
+
+.Tabs .TabsRow TabButton:selected:hover
+{
+	transform: rotateZ(0deg);
+}
+
+.Tabs .TabsContents
+{
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	background-image: url("s2r://panorama/images/textures/paper_panel_bg_01_png.vtex");
+	background-img-opacity: 0.8;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.Tabs .TabsContents TabContents
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0.0;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.Tabs .TabsContents TabContents:selected
+{
+	opacity: 1.0;
+}
+
+.FailureInfo
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	flow-children: down;
+	opacity: 0.7;
+	visibility: collapse;
+}
+
+.FailedToLoad .FailureInfo
+{
+	visibility: visible;
+}
+
+.FailureInfo .FailureIcon
+{
+	width: 40px;
+	height: 40px;
+	horizontal-align: center;
+	wash-color: offWhite;
+	margin-bottom: 12px;
+	background-size: 40px;
+	background-image: url("s2r://panorama/images/icons/notification_alert.vsvg");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.FailureInfo .FailureMessage
+{
+	horizontal-align: center;
+	text-align: center;
+	font-size: 20px;
+	font-family: oracle;
+	max-width: 600px;
+}
+
+#OverviewTabContents
+{
+	flow-children: down;
+	padding: 28px 36px 28px 28px;
+	overflow: squish scroll;
+	opacity-mask: url("s2r://panorama/images/masks/scroll_bottom_fade_psd.vtex");
+}
+
+#OverviewTabContents .OverviewText
+{
+	color: offWhite&44;
+}
+
+#OverviewTabContents .OverviewTopHeader
+{
+	color: offWhite&44;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#OverviewTabContents .OverviewHeader
+{
+	margin-top: 16px;
+	color: offWhite&44;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#OverviewTabContents .OverviewBullet
+{
+	padding-left: 20px;
+	background-image: url("s2r://panorama/images/icons/bullet_circle.vsvg");
+	background-img-opacity: 0.7;
+	background-repeat: no-repeat;
+	background-position: 0px 7px;
+	background-size: 10px 10px;
+	wash-color: offWhite;
+	opacity: 0.15;
+	color: white;
+	font-size: 16px;
+	margin: 4px;
+	width: 620px;
+}
+
+#OverviewTabContents .OverviewRanksRow
+{
+	flow-children: right;
+	horizontal-align: center;
+}
+
+#OverviewTabContents .OverviewRanksRow CitadelRankedBadgeFull
+{
+	ui-scale: 80%;
+	img-shadow: 12px 12px 24px #00000066;
+}
+
+#OverviewTabContents .OverviewRanksRow.SmallRanks CitadelRankedBadgeFull
+{
+	margin: 0px -4px;
+}
+
+#OverviewTabContents .Percentile,#OverviewTabContents .RankName
+{
+	color: offWhite;
+	opacity: 0.15;
+	font-size: 16px;
+}
+
+#OverviewTabContents .PercentileTable
+{
+	flow-children: down;
+	padding: 16px 40px;
+	margin: 12px 24px;
+	background-color: offWhite&05;
+	border-radius: 5px;
+}
+
+#OverviewTabContents .PercentileTable #PercentileTableContents
+{
+	flow-children: down;
+}
+
+#OverviewTabContents .PercentileTable .TableRow
+{
+	flow-children: right;
+}
+
+#OverviewTabContents .PercentileTable .TableRow .RankName
+{
+	width: 150px;
+}
+
+#OverviewTabContents .PercentileTable .TableRow .Percentile
+{
+	width: 150px;
+}
+
+#OverviewTabContents .PercentileTable .TableRow.HeaderRow Label
+{
+	font-weight: bold;
+}
+
+#OverviewTabContents #VerticalScrollBar
+{
+	margin: 36px 12px;
+	opacity: 0.5;
+}
+
+#MatchHistoryTabContents .AsyncMatchHistory
+{
+	width: 100%;
+	height: 100%;
+	padding: 16px;
+	margin-top: -4px;
+}
+
+#MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .NoMatches
+{
+	horizontal-align: center;
+	text-align: center;
+	color: offWhite&44;
+	margin-top: 80px;
+	font-weight: bold;
+	font-size: 18px;
+	border-radius: 3px;
+	background-color: #000b;
+	padding: 4px 24px;
+	pre-transform-rotate2d: -0.5deg;
+	visibility: collapse;
+}
+
+.MatchHistoryNoMatches #MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .NoMatches
+{
+	visibility: visible;
+}
+
+#MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .HasMatches
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	overflow: squish scroll;
+	margin-top: 8px;
+}
+
+.MatchHistoryNoMatches #MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .HasMatches
+{
+	visibility: collapse;
+}
+
+#MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .HasMatches #MatchHistoryDays
+{
+	width: 100%;
+	flow-children: down;
+}
+
+#MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .HasMatches .MoreHistory
+{
+	width: 100%;
+	height: 60px;
+}
+
+.MoreHistoryNotAvailable #MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .HasMatches .MoreHistory
+{
+	visibility: collapse;
+}
+
+#MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .HasMatches .MoreHistory .Spinner
+{
+	wash-color: offWhite;
+	width: 32px;
+	height: 32px;
+	horizontal-align: center;
+	vertical-align: middle;
+	background-image: url("s2r://panorama/images/control_icons/spinner_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	animation-name: RotateIcon;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	visibility: collapse;
+}
+
+.MoreHistoryLoading #MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .HasMatches .MoreHistory .Spinner
+{
+	visibility: visible;
+}
+
+#MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .HasMatches .MoreHistory #LoadMoreMatchHistoryButton
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	visibility: collapse;
+}
+
+.MoreHistoryAvailable #MatchHistoryTabContents .AsyncMatchHistory .AsyncSuccessContainer .HasMatches .MoreHistory #LoadMoreMatchHistoryButton
+{
+	visibility: visible;
+}
+
+.MatchHistoryDay
+{
+	flow-children: down;
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+.MatchHistoryDay .Date
+{
+	margin: 8px 0px 4px 4px;
+	color: white;
+	opacity: 0.04;
+	font-size: 16px;
+	wash-color: offWhite;
+}
+
+.MatchHistoryDay #MatchList
+{
+	width: 100%;
+	flow-children: down;
+}
+
+.MatchHistoryRow
+{
+	width: 100%;
+	flow-children: right;
+	margin-bottom: 4px;
+	margin-right: 16px;
+	padding: 8px 8px 8px 16px;
+	height: 64px;
+	background-color: #0006;
+	transition-property: background-color, brightness;
+	transition-duration: 0.2s;
+}
+
+.MatchHistoryRow:hover
+{
+	background-color: #000c;
+	brightness: 1.6;
+}
+
+.MatchHistoryRow:active
+{
+	brightness: 1.8;
+}
+
+.MatchHistoryRow .MatchTime
+{
+	font-size: 16px;
+	vertical-align: middle;
+	width: 120px;
+	font-family: oracle;
+	color: offWhite&22;
+}
+
+.MatchHistoryRow .MatchOutcome
+{
+	width: 80px;
+	vertical-align: middle;
+	text-align: center;
+	font-family: oracle;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.MatchHistoryRow #HeroIcon
+{
+	vertical-align: middle;
+	width: 36px;
+	height: 36px;
+}
+
+.MatchHistoryRow .MatchKDA
+{
+	vertical-align: middle;
+	font-family: oracle;
+	color: offWhite&22;
+	width: 100px;
+	font-size: 16px;
+	margin-left: 8px;
+}
+
+.MatchHistoryRow .MatchDuration
+{
+	vertical-align: middle;
+	text-align: center;
+	width: fill-parent-flow( 1.0 );
+	font-family: oracle;
+	color: offWhite&22;
+	font-size: 16px;
+	visibility: collapse;
+}
+
+.MatchHistoryRow .MatchRank
+{
+	margin-left: 8px;
+	flow-children: right;
+	vertical-align: middle;
+	horizontal-align: right;
+	width: 220px;
+}
+
+.MatchHistoryRow .MatchRank Label
+{
+	width: fill-parent-flow( 1.0 );
+	vertical-align: middle;
+	font-family: oracle;
+	font-size: 16px;
+	font-weight: bold;
+	text-overflow: shrink;
+	visibility: collapse;
+}
+
+.MatchHistoryRow .MatchRank .MatchBadge
+{
+	visibility: collapse;
+}
+
+.MatchHistoryRow .MatchRank .MatchBadge .DemotionProtectionIcon
+{
+	width: 24px;
+	height: 24px;
+	background-image: url("s2r://panorama/images/icons/properties/armor_alt.vsvg");
+	background-img-opacity: 0.8;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color:#485758;
+	vertical-align: bottom;
+	visibility: collapse;
+}
+
+.MatchHistoryRow.RankCalibrating .MatchCalibratingLabel
+{
+	visibility: visible;
+	color: offWhite&22;
+}
+
+.MatchHistoryRow.RankCalibrated .MatchCalibratedLabel
+{
+	visibility: visible;
+	color: offWhite&22;
+}
+
+.MatchHistoryRow.RankCalibrated .MatchBadge
+{
+	visibility: visible;
+}
+
+.MatchHistoryRow.RankPointsChanged .MatchRankPointsChange
+{
+	visibility: visible;
+}
+
+.MatchHistoryRow.RankPointsChanged .MatchBadge
+{
+	visibility: visible;
+}
+
+.MatchHistoryRow.DemotionProtectionUsed .MatchRank .MatchBadge .DemotionProtectionIcon
+{
+	visibility: visible;
+}
+
+.MatchHistoryRow.win .MatchOutcome
+{
+	color: #62e762cc;
+}
+
+.MatchHistoryRow.win .MatchRankPointsChange
+{
+	color: #a1cdcd;
+}
+
+.MatchHistoryRow.loss .MatchOutcome
+{
+	color: #c95555cc;
+}
+
+.MatchHistoryRow.loss .MatchRankPointsChange
+{
+	color: #485352;
+}
+
+.ProgressBarLeft
+{
+	background-color: #A1CDCD88;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .8;
+	opacity-mask-scale: 100% 150%;
+}
+
+.ProgressBarRight
+{
+	background-color: #A1CDCD06;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .8;
+	opacity-mask-scale: 100% 150%;
+}
+
+@keyframes 'SeasonIntro'
+{
+	0%
+	{
+		opacity: 0;
+		pre-transform-scale2d: 0.2;
+		pre-transform-rotate2d: -10deg;
+	}
+	
+	80%
+	{
+		pre-transform-scale2d: 1.1;
+		pre-transform-rotate2d: 2deg;
+	}
+	
+	100%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1;
+		pre-transform-rotate2d: -2.2deg;
+	}
+	
+}
+
+#HeroesTabContents
+{
+	flow-children: down;
+	padding: 16px;
+}
+
+#HeroesTabContents .HeroesHeader
+{
+	horizontal-align: center;
+	text-align: center;
+	margin: 16px 0px 20px 0px;
+	color: white;
+	opacity: 0.15;
+	font-size: 16px;
+	wash-color: offWhite;
+}
+
+#HeroesTabContents b
+{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+#HeroesTabContents #HeroesList
+{
+	flow-children: down;
+	width: 100%;
+	margin: 0px 0px;
+	horizontal-align: center;
+	overflow: squish scroll;
+}
+
+.HeroRow
+{
+	flow-children: right;
+	background-color: #000b;
+	width: 100%;
+	margin-bottom: 4px;
+	padding: 4px;
+	margin-right: 16px;
+	opacity: 0.3;
+}
+
+.HeroRow #HeroIcon
+{
+	width: 32px;
+	height: 32px;
+	margin: 4px;
+}
+
+.HeroRow .HeroName
+{
+	vertical-align: middle;
+	margin-left: 8px;
+	font-family: oracle;
+	font-size: 18px;
+	color: offWhite&44;
+}
+
+.HeroRow .UnlockedIcon
+{
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	wash-color: offWhite;
+	margin: 0px 12px;
+	background-image: url("s2r://panorama/images/control_icons/check_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0;
+}
+
+.HeroRow .HeroWins
+{
+	vertical-align: middle;
+	margin-right: 24px;
+	text-align: right;
+	font-size: 16px;
+	font-weight: bold;
+	font-family: oracle;
+	color: offWhite&44;
+}
+
+.HeroRow.HeroUnlocked
+{
+	background-color: #000b;
+	opacity: 1;
+}
+
+.HeroRow.HeroUnlocked .UnlockedIcon
+{
+	wash-color: #62e762;
+	opacity: 1;
+}
+
+.HeroRow.HeroUnlocked .HeroWins
+{
+	color: #62e762cc;
+}
+
+@keyframes 'TagGroove1'
+{
+	0%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(1deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(-2deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(1deg);
+	}
+	
+}
+

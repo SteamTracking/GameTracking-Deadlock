@@ -403,6 +403,9 @@ citadel_bot_give_all_abilities_base (developmentonly gamedll defensive)
 citadel_bot_give_team_gold (gamedll cheat)
 	Give all bots on a particular team gold
 
+citadel_bot_kick (developmentonly gamedll defensive)
+	Kick bot <name>
+
 citadel_bot_list_ents (gamedll cheat)
 	List ent id of all players that are bots in this game
 
@@ -442,11 +445,11 @@ citadel_clear_all_post_process_effects (developmentonly clientdll defensive)
 citadel_clear_killstreak (developmentonly gamedll defensive)
 	citadel_clear_killstreak [player_slot]
 
-citadel_commend_fake_received (developmentonly clientdll)
+citadel_commend_fake_received (clientdll release)
 	<no description>
 
-citadel_commend_player (developmentonly clientdll defensive)
-	<target account id> [match id]
+citadel_commend_player (clientdll release)
+	<target account id> [match id] [hero_id]
 
 citadel_complete_new_player (clientdll release)
 	[flag] Marks the new player state as complete
@@ -720,6 +723,9 @@ citadel_port_muzzles (developmentonly clientdll)
 citadel_post_game_force_hero_id (developmentonly clientdll defensive)
 	<no description>
 
+citadel_pregame_hero_draft_test (developmentonly clientdll cheat)
+	Test pregame draft
+
 citadel_purchase_quickbuy (clientdll release)
 	Purchase the next quickbuy item
 
@@ -763,6 +769,12 @@ citadel_show_hero_debut_popup (developmentonly clientdll)
 	[hero id] [allow swap]
 
 citadel_show_hero_select_popup (developmentonly clientdll)
+	<no description>
+
+citadel_show_ranked_history_page (developmentonly clientdll)
+	<no description>
+
+citadel_show_ranked_season_page (developmentonly clientdll)
 	<no description>
 
 citadel_show_roster_select_popup (developmentonly clientdll)
@@ -813,8 +825,8 @@ citadel_spew_active_movement_controller (developmentonly clientdll defensive)
 citadel_spew_player_modifiers (developmentonly clientdll defensive)
 	Spews all modifiers on the local player
 
-citadel_start_calibration_bot_match (developmentonly clientdll defensive)
-	Starts a calibration match
+citadel_start_new_player_placement_bot_match (developmentonly clientdll defensive)
+	Starts a new_player_placement match
 
 citadel_street_brawl_advance_state (developmentonly gamedll defensive)
 	Advance the state of a street brawl game
@@ -836,6 +848,9 @@ citadel_tech_damage_vdata_tagging (developmentonly clientdll)
 
 citadel_tech_power_scaling_vdata_tweak (developmentonly clientdll)
 	Command to tweak all ability tech power scaling, including ability upgrades.  Pass in scale factor, with 1.0 being no change.
+
+citadel_test_abandon (developmentonly gamedll defensive)
+	Test new abandon feature
 
 citadel_test_banned_heroes_message (developmentonly clientdll defensive)
 	Draws the banned heroes message
