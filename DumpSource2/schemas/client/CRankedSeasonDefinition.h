@@ -11,7 +11,8 @@
 //	"m_unMinWins": 0,
 //	"m_unMinHeroWins": 0,
 //	"m_unMinHeroUnlocks": 0,
-//	"m_unCalibrationMatches": 0
+//	"m_unCalibrationMatches": 0,
+//	"m_unBaseWinLossPointGrant": 0
 //}
 class CRankedSeasonDefinition
 {
@@ -24,4 +25,5 @@ class CRankedSeasonDefinition
 	uint32 m_unMinHeroWins;
 	uint32 m_unMinHeroUnlocks;
 	uint32 m_unCalibrationMatches;
+	uint32 m_unBaseWinLossPointGrant;
 };
