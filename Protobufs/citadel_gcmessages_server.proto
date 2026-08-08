@@ -34,6 +34,11 @@ enum ECitadelMatchAuxStat {
 	k_eMatchAuxStat_Dummy = 1;
 }
 
+enum ECitadelServerMode {
+	k_eCitadelServerMode_Match = 0;
+	k_eCitadelServerMode_Hideout = 1;
+}
+
 enum EGCServerLobbyData {
 	k_EServerLobbyData_PlayerMMR = 1;
 	k_EServerLobbyData_PlayerInfo = 2;
@@ -78,6 +83,7 @@ message CMsgServerCrashSentinelFile {
 		optional bool allow_matches = 10;
 		optional bool allow_hideout = 11;
 		optional bool was_lost_lobby = 12;
+		repeated .ECitadelServerMode server_modes = 13;
 	}
 
 	optional uint32 version = 1;
@@ -817,6 +823,7 @@ message CMsgServerToGCEnterMatchmaking {
 	optional bool allow_matches = 11;
 	optional bool allow_hideout = 12;
 	optional uint32 process_id = 13;
+	repeated .ECitadelServerMode server_modes = 14;
 }
 
 message CMsgGCToServerCancelAllocateForMatch {
@@ -864,6 +871,7 @@ message CMsgServerToGCAbandonMatch {
 	optional bool allow_matches = 21;
 	optional bool allow_hideout = 22;
 	optional bool was_lost_lobby = 23;
+	repeated .ECitadelServerMode server_modes = 24;
 }
 
 message CMsgServerToGCAbandonMatchResponse {

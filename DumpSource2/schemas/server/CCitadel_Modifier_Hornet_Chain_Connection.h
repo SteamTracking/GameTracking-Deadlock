@@ -1,4 +1,3 @@
-class CCitadel_Modifier_Hornet_Chain_Connection : public CCitadelModifier
+class CCitadel_Modifier_Hornet_Chain_Connection : public CCitadel_Modifier_Link
 {
-	Vector m_vecOrigin;
 };

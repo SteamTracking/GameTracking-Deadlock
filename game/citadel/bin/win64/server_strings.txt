@@ -182,10 +182,10 @@
  (%ld unused bits)\n
  (%u unread)
  (08@HPX`j
- (08@HPXb
+ (08@HPXb0$
  (08@HPZ
- (08@HR
- (0X`hpz
+ (08@HR0$
+ (0X`hpz0$
  (Dirty Animation)
  (Eluded)
  (INVALID PSS PARAMETERS)\n
@@ -212,6 +212,7 @@
  8f\ff
  <-- Arg '%s'
  <-- Retval '%s'
+ @Play the given VCD as an instanced scripted scene.
  ACTIVE GROUP
  Damage Dealt to Trooper Boss
  Damage Taken from Player
@@ -1417,7 +1418,6 @@ $light_emissive
 (\r"n\n\fCMsgTESparks
 (\r"s\n\rCMsgTEBubbles
 (\r"y\n\tEResponse
-(\r"|\n$CMsgGCToServerCancelAllocateForMatch
 (\t")\n\rCMsgSOIDOwner
 (\t".\n\tEAwardIDs
 (\t"7\n&CMsgSteamLearn_GetAccessTokens_Request
@@ -1697,7 +1697,7 @@ $light_emissive
 (d4t8
 (debug)
 (default)
-(f@e4
+(f@p4
 (fS{ggRcjh
 (from angle, to angle, time) - Spherical lerp of angle from->to based on time
 (hInflictor, hAttacker, flDamage) - Allocate a damageinfo object, used as an argument to TakeDamage(). Call DestroyDamageInfo( hInfo ) to free the object.
@@ -1787,6 +1787,7 @@ $light_emissive
 )\n%k_eCitadelObjective_Team1_Tier2_Lane3
 )\n%k_eCitadelObjective_Team1_Tier2_Lane4
 )\n\fMessageRange
+)\n\fserver_modes
 )\n\nExtraField
 )\n\nQueryParam
 )\n\taux_stats
@@ -2072,9 +2073,8 @@ $light_emissive
 ... %s culled event %s after max %i reached \n
 ....................
 ..uR5&m
-.004
-.024
-.0k4
+.034
+.0v4
 .4bb
 .97yY
 .?AU?$CameraOp_Approach_t@M@@
@@ -14140,6 +14140,9 @@ $light_emissive
 .ECitadelObjective
 .ECitadelRankedType
 .ECitadelRegionMode
+.ECitadelServerMode
+.ECitadelServerMode"
+.ECitadelServerMode"|\n$CMsgGCToServerCancelAllocateForMatch
 .ECitadelTeamObjective
 .EClientUIEvent
 .ECustomGameInstallStatus
@@ -14159,11 +14162,11 @@ $light_emissive
 .GCProtoBufMsgSrc
 .HCK\v
 .MODIFIER_ENTRY_TYPE
-.P04
-.P44
+.P34
 .P6AXAEBUSoundOpvarManagerSettableData_t@@PEAVCSoundOpvarSetPointStackCollection@@@Z
 .P6AXPEAVCPulseAPIExtensionRegistrationContext_t@@@Z
 .PARTICLE_MESSAGE
+.PE4
 .PEAVCAI_Motor@@
 .PEAVCBodyComponent@@
 .PEAVCChoreoComponent@@
@@ -14181,11 +14184,11 @@ $light_emissive
 .PEAVCPlayer_UseServices@@
 .PEAVCPlayer_WaterServices@@
 .PEAVCPlayer_WeaponServices@@
-.PM4
+.PX4
 .PartnerAccountType
 .PingCommonData
-.Pj4
 .PostProcessingGameStates
+.Pu4
 .Q.Ol
 .\crypto\asn1\a_bitstr.c
 .\crypto\asn1\a_bool.c
@@ -14470,11 +14473,8 @@ $light_emissive
 .google.protobuf.ServiceOptions
 .lbN
 .league
-.p04
-.p14
-.p44
-.pj4
 .pp@0
+.pu4
 .solo
 .steammessages_unified_base.steamworkssdk.proto"\\n"CMsgSteamLearnDataSourceDescObject
 .text$
@@ -14533,7 +14533,7 @@ $light_emissive
 02V8[
 05=k
 08@HR
-08@J
+08@J0$
 08bX
 09,h
 0;Q5[
@@ -14815,15 +14815,17 @@ $light_emissive
 5s\nl
 5t?F
 5~EW
-6 I4
+6 E4
+6 T4
+6 f4
 6#6165676;6M6O6S6Y6a6k6m6
 6#RDP#
 6%vi
 6,2K
 6-zeZ
-60'4
 60000
-60L4
+6024
+60W4
 62$|S)6f
 64CK\vH
 65535
@@ -14833,13 +14835,13 @@ $light_emissive
 666666666666666666666666666666666666666666666666\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\.\ssl\s3_enc.c
 6666666666666666CAttributeManager
 67-s
-6@a4
+6@g4
+6@l4
 6H,N
 6O|T%
-6P#4
-6PU4
-6PW4
-6Pw4
+6P.4
+6P`4
+6Pb4
 6Qd=
 6\n2GAME_PARTICLE_MANAGER_EVENT_UPDATE_ENTITY_POSITION
 6\n2STEAMLEARN_INFERENCE_ERROR_INVALID_NAMED_INFERENCE
@@ -14858,7 +14860,7 @@ $light_emissive
 6l13
 6lkc
 6myY;
-6pF4
+6pQ4
 6qo~
 6r-m_v
 6r1ij
@@ -14908,7 +14910,6 @@ $light_emissive
 8<pl
 8= zp
 8A6j
-8Bpk
 8GZS
 8SIffK5W
 8TZvrv<
@@ -15007,7 +15008,7 @@ $light_emissive
 ;"lY7
 ;5jNf
 ;83\v\nHBJ7
-;Dsv_remove_ent_from_pvs
+;DSource2GameEntities001
 ;LGEW
 ;Qo0
 ;X94<
@@ -15148,8 +15149,8 @@ $light_emissive
 >ztq
 ?333?
 ?33s?
-?Allow evaluation of new plays
 ?CAnimFoot
+?Ent %5d: class %s name "%s"\n
 ?HAI\t81\t9dcG'
 ?HP4
 ?Shows client (red) and server (blue) bullet impact point (1=both, 2=client-only, 3=server-only)
@@ -15166,6 +15167,7 @@ $light_emissive
 ?ffffff
 ?gwL
 ?jOb
+?kGravestone_State_Active
 ?srJO
 ?tya
 ?uWS
@@ -15173,10 +15175,9 @@ $light_emissive
 @!@%@+@1@?@C@E@]@a@g@m@
 @":\n$CCitadelUserMsg_SpectatorTeamChanged
 @0pp
-@60j4
+@60u4
 @BH]f
-@CCitadelItemPickupRejuv
-@HPX`hv <4
+@HPX`hv G4
 @MfKZ
 @Pgl
 @Pu\rm
@@ -15192,6 +15193,7 @@ $light_emissive
 @dKb]
 @fff>fff>fff>fff>
 @i1V
+@m_iObjective
 @n2w
 @player_start_teleport_destination
 @zipline_panel_tutorial_relay
@@ -15206,6 +15208,7 @@ A.00h
 A.I. Disabled...\n
 A2VPD
 A4Wn>
+A8L<
 A9ur
 A<fP
 A>x8
@@ -15224,6 +15227,7 @@ ACTIVATE_TYPE_DATAUPDATE_CREATION
 ACTIVATE_TYPE_INITIAL_CREATION
 ACTIVATE_TYPE_ONRESTORE
 ACTOR
+ACompute LOD mask internally like since 2016, i.e. force all LOD groups' bones to compute
 AD Time Stamping
 ADDED %s (%s) to transition.\n
 ADDED.\n
@@ -15301,6 +15305,7 @@ AES_XTS_CIPHER
 AG2_OnResourceChanged   - %s - %s entity %d (%s) to recreate the %sgraph instance\n
 AG2_OnResourcePreReload - %s - %s entity %d (%s) deleted %sgraph instance\n
 AGgV
+AH:O
 AI %s(%d) starting the same schedule %s repeatedly in the same tick %d (at %.2f).\n
 AI Conditions
 AI Disabled.\n
@@ -15447,7 +15452,6 @@ AVelocity: %.2f %.2f %.2f
 AW:S
 AW[.A
 AWt.
-AX*O
 A\n=STEAMLEARN_INFERENCE_METADATA_ERROR_INVALID_PUBLISHED_VERSION
 A\n\fplayer_stats
 A\n\fsocket_index
@@ -15750,7 +15754,6 @@ Any Extended Key Usage
 Any Other Cursors Have Tag
 Any Purpose
 Any language
-Ap0<
 Apollo##HeroDamagePreventedWithUlt
 AppInfo
 AppendToLogFile
@@ -15939,7 +15942,6 @@ BAddToMessage
 BAsyncSend
 BAsyncSendProto
 BC (default)
-BCCitadel_Modifier_PermanentPickupVData
 BEOS_BIND_FUNC
 BEOS_BIND_VAR
 BEOS_LOAD
@@ -16103,6 +16105,7 @@ Bad reinterpret on ArrayRemoveElementMatching
 Bad sequence in GetSequenceActivityName() for model '%s'!\n
 Bad sequence of path_tracks from %s\n
 Bad time value
+Bai_speechfilter
 BallHitRadius
 BallOffset
 BallRadius
@@ -21441,7 +21444,6 @@ Engine2/LightmapUVQuery
 Engine2/NetworkEncoderOverrides
 Engineer Sentry
 EnhancedHowlDebuffDuration
-Ent %5d: class %s name "%s"\n
 Ent %d: %s (%s)
 EntCmpOverride_CBodyComponent
 EntIndexToHScript
@@ -21628,11 +21630,12 @@ F+Zb
 F,mZq
 F/o4
 F2M+
+F48<
 F6tr
 F7!z
 F9q'
 F<mb
-F@E4
+F@P4
 FAILED - attempting to steal CopyUlt! Resetting cooldown and letting the user try again. \n
 FAILED - target has no valid ultimate ability. \n
 FALL
@@ -21785,6 +21788,7 @@ FearDuration
 FervorStatusResistancePercent
 Ff,n
 Fgi?)
+Fgrenade
 Fi:je
 Field "%s" of class "%s" cannot be unserialized yet (lacking array support)!\n
 Field %s::%s cannot have sub-keyfields since it is an atomic type!\n
@@ -24391,7 +24395,6 @@ MVDataSingleton
 MVDataUniqueMonotonicInt
 MVDataUseLinkedEntityClasses
 MZL}
-M[rj
 M\n\fperf_samples
 M\n\ngold_stats
 M\n\raccount_stats
@@ -25869,10 +25872,12 @@ P-224
 P-256
 P-384
 P-521
-P08@J
+P08@J0$
 P08J
 P1\t98"
+P20$
 P5[1
+P6`\t4
 PAGN_4
 PARALYZE
 PARAMETER NAME: %s | OPTIONAL: %s, TYPE: %s, BOUND: %s, REFERENCED: %s\n
@@ -30363,7 +30368,7 @@ V\n\vItemCharges
 V\rKk
 V_a|I
 V_strcmp( pDataMap->dataClassName, pCodeClass ) == 0
-V`m4
+V`x4
 VacuumRadius
 ValidatePrivateScriptScope
 ValidateVertices
@@ -30836,8 +30841,8 @@ X\tQo
 X`hr
 Xd3h
 XfJ7
-XfP[4
-Xfp\4
+XfPf4
+Xfpg4
 XjfR
 XqgA+
 Xuub
@@ -32057,8 +32062,7 @@ Z~wl
 ^RB!r
 ^\n\ffloat_values
 ^\n\fmap_mappings
-^pa4
-^pw4
+^pl4
 _ClientLevel
 _ClientModifier
 _ClientModifierLevel
@@ -32574,7 +32578,6 @@ ai_relationship cannot revert changes before they are applied!\n
 ai_script_conditions
 ai_setenabled <0 or 1>\n
 ai_sound
-ai_speechfilter
 ai_speechfilter finds no subject(s) called: %s\n
 ai_task
 ai_test_path
@@ -36287,7 +36290,6 @@ graph_param
 graph_states
 gravestonestate
 green
-grenade
 ground5_to_water1
 ground_dash
 ground_jump
@@ -36645,6 +36647,7 @@ hovering
 hoverposeangles
 hoverposeflags
 hoverposeposition
+hpz0$
 hr_H
 http request
 https proxy request
@@ -37983,6 +37986,7 @@ linear_motion_z
 lineardampingratio
 linearfrequency
 link = %0.2f (%0.2f)
+link_position
 list cannot be null
 list error
 listen_for_animtag
@@ -40387,14 +40391,15 @@ p.other
 p.ppBasis
 p.prime
 p.tpBasis
-p0jPD
-p2pk
+p0jpN
+p20$
 p2{l
 p4Z3
 p5Z3
 p5\nL,
-p60P4
+p60[4
 p618
+p6@\f4
 p@0pqE5tsO?|1
 pActivator
 pAnimGraphEntity
@@ -44298,7 +44303,6 @@ z(ov
 z/B,9d
 z<d2
 z>Hz
-zDEShopGroups
 zF):O4
 zFar
 zG2m8
@@ -44354,13 +44358,10 @@ zz2K
 }Xee+
 }gE3
 }n2W
-~0v4
 ~9ob
 ~If D
-~P24
 ~P2T
 ~R65Fu
 ~jLRG
-~p24
 ~w]UG
 ~yhZ
