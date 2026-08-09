@@ -5,5 +5,4 @@ class CCitadel_Modifier_Link : public CCitadelModifier
 	GameTime_t m_flPortalEndTime;
 	CUtlString m_sCasterAttachment;
 	CUtlString m_sParentAttachment;
-	VectorWS m_vecLinkPosition;
 };
