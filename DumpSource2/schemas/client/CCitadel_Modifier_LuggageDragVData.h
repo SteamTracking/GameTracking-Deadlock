@@ -139,20 +139,26 @@
 //	"m_SlowModifier":
 //	{
 //	},
+//	"m_StompIgnoreLingerModifier":
+//	{
+//	},
 //	"m_flForwardOffset": 0.000000,
 //	"m_flVerticalOffset": 0.000000,
 //	"m_flDragDistance": 40.000000,
 //	"m_flForceDistScale": 5.000000,
-//	"m_flWallStunLookAheadDist": 80.000000
+//	"m_flWallStunLookAheadDist": 80.000000,
+//	"m_flStompIgnoreLingerDuration": 0.500000
 //}
 class CCitadel_Modifier_LuggageDragVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_SlowModifier;
+	CEmbeddedSubclass< CCitadelModifier > m_StompIgnoreLingerModifier;
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flForwardOffset;
 	float32 m_flVerticalOffset;
 	float32 m_flDragDistance;
 	float32 m_flForceDistScale;
 	float32 m_flWallStunLookAheadDist;
+	float32 m_flStompIgnoreLingerDuration;
 };

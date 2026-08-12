@@ -182,8 +182,10 @@
  (%ld unused bits)\n
  (%u unread)
  (08@HPX`j
- (08@HPXb`#
+ (08@HPXb
  (08@HPZ
+ (08@HR
+ (0X`hpz
  (Dirty Animation)
  (Eluded)
  (INVALID PSS PARAMETERS)\n
@@ -207,7 +209,6 @@
  - movable mesh id = none\n
  - vert %d = (%0.3f, %0.3f, %0.3f)\n
  -0000
- .0z4
  8f\ff
  <-- Arg '%s'
  <-- Retval '%s'
@@ -1697,7 +1698,6 @@ $light_emissive
 (debug)
 (default)
 (fS{ggRcjh
-(fpo4
 (from angle, to angle, time) - Spherical lerp of angle from->to based on time
 (hInflictor, hAttacker, flDamage) - Allocate a damageinfo object, used as an argument to TakeDamage(). Call DestroyDamageInfo( hInfo ) to free the object.
 (h`H1pqA
@@ -2072,8 +2072,7 @@ $light_emissive
 ... %s culled event %s after max %i reached \n
 ....................
 ..uR5&m
-.024
-.0u4
+.0K4
 .4bb
 .97yY
 .?AU?$CameraOp_Approach_t@M@@
@@ -3684,6 +3683,7 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_GoatCharging@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_GoatFlipDamageBuff@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_GoatFlipEmpoweredMelee@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_GoatFlipMaxHealthBuff@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_GoatGoingUp@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_GoatGoingUp_LingeringAirControl@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_GooGrenade@@$0PPPP@@@
@@ -6852,6 +6852,7 @@ $light_emissive
 .?AV?$CSubclassFactory@VCCitadel_Modifier_GoatCharging@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_GoatFlipDamageBuff@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_GoatFlipEmpoweredMelee@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_GoatFlipMaxHealthBuff@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_GoatGoingUp@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_GoatGoingUp_LingeringAirControl@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_GooGrenade@@VCBaseModifier@@@@
@@ -10141,6 +10142,7 @@ $light_emissive
 .?AVCCitadel_Modifier_GoatCharging@@
 .?AVCCitadel_Modifier_GoatFlipDamageBuff@@
 .?AVCCitadel_Modifier_GoatFlipEmpoweredMelee@@
+.?AVCCitadel_Modifier_GoatFlipMaxHealthBuff@@
 .?AVCCitadel_Modifier_GoatGoingUp@@
 .?AVCCitadel_Modifier_GoatGoingUpVData@@
 .?AVCCitadel_Modifier_GoatGoingUp_LingeringAirControl@@
@@ -14181,11 +14183,12 @@ $light_emissive
 .PEAVCPlayer_UseServices@@
 .PEAVCPlayer_WaterServices@@
 .PEAVCPlayer_WeaponServices@@
+.PG4
+.PH4
+.PK4
 .PartnerAccountType
 .PingCommonData
 .PostProcessingGameStates
-.Pu4
-.Pw4
 .Q.Ol
 .\crypto\asn1\a_bitstr.c
 .\crypto\asn1\a_bool.c
@@ -14471,11 +14474,10 @@ $light_emissive
 .lbN
 .league
 .p24
-.pV4
+.pG4
+.pK4
+.pZ4
 .pp@0
-.pt4
-.pu4
-.pw4
 .solo
 .steammessages_unified_base.steamworkssdk.proto"\\n"CMsgSteamLearnDataSourceDescObject
 .text$
@@ -14534,6 +14536,7 @@ $light_emissive
 02V8[
 05=k
 08@HR
+08@J
 08bX
 09,h
 0;Q5[
@@ -14541,7 +14544,6 @@ $light_emissive
 0=normal, 1=rebirth, 2=rejuvenator
 0AgffA
 0M2~@p
-0P6/
 0W/5
 0Z@q
 0\n+k_EMsgClientToGCRemoveItemAttributeResponse
@@ -14569,9 +14571,10 @@ $light_emissive
 0\r%0h
 0\r0#0)070;0U0Y0[0g0q0y0}0
 0e\r8
+0hB/
 0pp@5tqE?|sO541
+0tQ/
 0tU+xc:
-0v$B/
 0x%s
 0}dV
 1!1'1-191C1E1K1]1a1g1m1s1
@@ -14707,7 +14710,7 @@ $light_emissive
 2\n\tsource_gc
 2\r.CameraAction
 2\rlhp
-2\vpP6/
+2\vptQ/
 2^pV
 2_BONE_IK
 2_tasks_left
@@ -14818,15 +14821,16 @@ $light_emissive
 5s\nl
 5t?F
 5~EW
-6 a4
-6 s4
+6 l4
+6 n4
 6#6165676;6M6O6S6Y6a6k6m6
 6#RDP#
 6%vi
 6,2K
 6-zeZ
-60)4
 60000
+6034
+6064
 62$|S)6f
 64CK\vH
 65535
@@ -14836,15 +14840,12 @@ $light_emissive
 666666666666666666666666666666666666666666666666\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\.\ssl\s3_enc.c
 6666666666666666CAttributeManager
 67-s
-6@C4
-6@o4
 6H,N
 6O|T%
-6P'4
-6P.4
-6PD4
-6PS4
-6Pe4
+6P44
+6P94
+6PZ4
+6P\t4
 6Qd=
 6\n2GAME_PARTICLE_MANAGER_EVENT_UPDATE_ENTITY_POSITION
 6\n2STEAMLEARN_INFERENCE_ERROR_INVALID_NAMED_INFERENCE
@@ -14856,8 +14857,6 @@ $light_emissive
 6\n\tstructure
 6\n\vmatch_slots
 6_wEX
-6`14
-6`V4
 6afD
 6bX+
 6c&0|vvX
@@ -14865,9 +14864,8 @@ $light_emissive
 6l13
 6lkc
 6myY;
-6p(4
-6pf4
-6pk4
+6p54
+6p\v4
 6qo~
 6r-m_v
 6r1ij
@@ -15109,6 +15107,7 @@ $light_emissive
 >#>)>/>3>A>W>c>e>w>
 >(Only show on Minimap, no world, no sound
 >0 = watershed, 1 = monotone, 2 = layers
+>074
 >33s?
 >4|6eXg_e
 >7^0g
@@ -15131,6 +15130,9 @@ $light_emissive
 >BShow Ping Indicator at Ping Location, Play Ping Sound, and Play VO
 >CShow Ping Indicator on Pinging Player, Play Ping Sound, and Play VO
 >POTG Eval: Best play interval(%.3f -> %.3f)[%.1fs] (cur: %.3f) score (%.2f -> %.2f). Primary Ent (%s)\n
+>Pb4
+>Ph4
+>Pi4
 >Sem
 >WK6
 >\n:GAME_PARTICLE_MANAGER_EVENT_ADD_MODELLIST_OVERRIDE_ELEMENT
@@ -15152,12 +15154,11 @@ $light_emissive
 >fN46R^
 >l\rur
 >p00<
->pQ4
->pW4
 >yhP
 >ztq
 ?333?
 ?33s?
+?89K
 ?CAnimFoot
 ?Ent %5d: class %s name "%s"\n
 ?HAI\t81\t9dcG'
@@ -15176,19 +15177,16 @@ $light_emissive
 ?ffffff
 ?gwL
 ?jOb
-?kGravestone_State_Active
 ?srJO
 ?tya
 ?uWS
 ?x29
 @!@%@+@1@?@C@E@]@a@g@m@
 @":\n$CCitadelUserMsg_SpectatorTeamChanged
-@08N$B/
 @0pp
-@6 u4
-@6`t4
+@6p/4
 @BH]f
-@HPX`hvPF4
+@HV`j4
 @MfKZ
 @Pgl
 @Pu\rm
@@ -15219,13 +15217,11 @@ A.00h
 A.I. Disabled...\n
 A2VPD
 A4Wn>
-A8L<
 A9ur
 A<fP
 A>x8
 A@d0I
 AA Compromise
-AA:P
 AABBDirection
 AACompromise
 AC2,h
@@ -15317,7 +15313,6 @@ AES_XTS_CIPHER
 AG2_OnResourceChanged   - %s - %s entity %d (%s) to recreate the %sgraph instance\n
 AG2_OnResourcePreReload - %s - %s entity %d (%s) deleted %sgraph instance\n
 AGgV
-AH:O
 AI %s(%d) starting the same schedule %s repeatedly in the same tick %d (at %.2f).\n
 AI Conditions
 AI Disabled.\n
@@ -15643,6 +15638,7 @@ AffectInvulnerableEnts
 Affiliation Changed
 Ag*g*
 AggregateEvent
+AhJO
 AimFOV
 AimTargetManager
 AimZoomDuration
@@ -16131,7 +16127,6 @@ BarbedWireTickRate
 Barracks Boss
 BarrageDamageOutput
 BarrelBounceVelocity
-BarrelDamage
 BarrelHeavyMeleeForceForward
 BarrelHeavyMeleeForceUp
 BarrelLifetime
@@ -16632,7 +16627,7 @@ C:\buildworker\citadel_rel_win64\build\src\game\server\citadel\citadel_player_bo
 C:\buildworker\citadel_rel_win64\build\src\game\server\citadel\citadel_player_pawn.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\server\citadel\citadel_serversignout.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\server\citadel\npc_barrack_boss.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\server\citadel\npc_base_defense_turret.cpp:284
+C:\buildworker\citadel_rel_win64\build\src\game\server\citadel\npc_base_defense_turret.cpp:287
 C:\buildworker\citadel_rel_win64\build\src\game\server\citadel\npc_boss_tier1.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\server\citadel\npc_boss_tier2.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\server\citadel\npc_field_sentry.cpp:336
@@ -21642,7 +21637,6 @@ F+Zb
 F,mZq
 F/o4
 F2M+
-F48<
 F6tr
 F7!z
 F9q'
@@ -21678,6 +21672,7 @@ FN|p
 FORM
 FORMAT
 FOV2D
+FPY4
 FU\n-XP
 FVisible
 FV|FgUV
@@ -22046,7 +22041,6 @@ Found target!\n
 Found target\n
 FourVectors
 FourthHitDamagePercentage
-FpO4
 Frac
 Fractional component (ie. returns 0.34 for 12.34)
 Frame Time >%.2fms
@@ -24556,6 +24550,8 @@ MaxGroundDashReductionPercent
 MaxHPDPS
 MaxHPDamage
 MaxHealth
+MaxHealthBuffDuration
+MaxHealthBuffPct
 MaxHealthDamage
 MaxHealthHealOnCast
 MaxHealthMelee
@@ -25884,11 +25880,11 @@ P-224
 P-256
 P-384
 P-521
-P08@J`#
+P08@J
 P08J
-P08N$B/
 P1\t98"
 P5[1
+P6p)4
 PAGN_4
 PARALYZE
 PARAMETER NAME: %s | OPTIONAL: %s, TYPE: %s, BOUND: %s, REFERENCED: %s\n
@@ -26101,7 +26097,6 @@ POTG Eval: No important events at hottest locale, skipped eval\n
 POTG: Began replay for %s [ %.2f -> %.2f ] \n
 POTG: Stashed %.2f -> %.2f (miss time: %.2f) \n
 POTG:\n\tEvents: %d\n\tLocales: %d\n\tMemory Total: %d bytes\n
-PP6/
 PPz\v=
 PRB+
 PRECIPITATION
@@ -26284,6 +26279,7 @@ Pet NPC Script Override:
 PetrifyDamage
 PetrifyDamageBreakThreshold
 PetrifyDuration
+PhB/
 PhaseOutDuration
 Phys.GlassBreakLg
 Phys.GlassBreakMd
@@ -26428,7 +26424,6 @@ Please specify 0 or 1 with the -stream Parameter\n
 Please wait for broadcast to start ...
 Pm8A?
 PmR"H?
-Pn$B/
 Point entity.
 Point under crosshair
 PointAtEntity
@@ -26857,12 +26852,12 @@ RSA_verify
 RSA_verify_ASN1_OCTET_STRING
 RSA_verify_PKCS1_PSS
 RSA_verify_PKCS1_PSS_mgf1
+R\fptQ/
 R\n)k_EPingMarkerInfo_NoMarkerYesSoundMiniMap
 R\n\nBookReward
 R\r1>Vp
 R\tV_log2f
 R\vp!y
-R\vpP6/
 R]Di
 Rad2 Deg
 RadiationThink
@@ -28041,7 +28036,6 @@ Seasonal Achievement 2024 (Historical)
 Seasonal Achievement 2025 (Historical)
 Seasonal Kills 2025 (Historical)
 Seasons %s and %s both have rank type %s and interval %u
-SecondDoorPlacementWindow
 SecondHit
 SecondHitDamagePercentage
 Secondary %02x%02x%02x
@@ -30325,7 +30319,6 @@ Ut]<E
 Uv1t
 Uz_G3=
 V07;m
-V0w4
 V2I_ASIDENTIFIERS
 V2I_AUTHORITY_INFO_ACCESS
 V2I_AUTHORITY_KEYID
@@ -30854,7 +30847,8 @@ XYD%
 X\tQo
 X`hr
 Xd3h
-Xf0g4
+Xf r4
+Xf@s4
 XfJ7
 XjfR
 XqgA+
@@ -31123,8 +31117,6 @@ Z~wl
 \f]ne3
 \fdhWTh
 \fiaR
-\fpP6/
-\fp\vPL
 \ful2
 \fy&3Gl
 \l:ArR
@@ -31263,6 +31255,7 @@ Z~wl
 \nDictionary: %s\n
 \nEnemy is %s
 \nGameTime_t
+\nPhB/
 \nSimulating Entities:\n\n
 \nVisMon: Polling now. (Frequency: %f)\n
 \n\fBPE_Teleport
@@ -32063,7 +32056,7 @@ Z~wl
 \v\vTSG
 \vj0k
 \vjC7
-\vpP6/
+\vptQ/
 ]1h=bfz
 ]FhSD}
 ]GT7]
@@ -32075,6 +32068,7 @@ Z~wl
 ^DqPt
 ^J_spY
 ^Nij
+^Pn4
 ^RB!r
 ^\n\ffloat_values
 ^\n\fmap_mappings
@@ -32137,9 +32131,6 @@ _tools_event_desc
 _xU`u
 _}eOk
 `28)fk
-`2Pq
-`2pt
-`6 v4
 `:zQF
 `D$daM-l
 `DZG
@@ -32149,7 +32140,6 @@ _}eOk
 `\n\rvector_values
 `fPw.\vM
 `h9T~
-`htp
 `o_je
 `yNT
 a null shared library handle was used
@@ -32168,7 +32158,6 @@ a:typeparam
 a;Tg
 a@XZ
 aA0k
-aBv$B/
 aD/x
 aDSS
 aECDH
@@ -34887,7 +34876,6 @@ doorman_bomb_projectile
 dotProductMax
 double_shot
 down
-dq\fp
 draft
 draft_item_sets
 drag_override
@@ -35563,7 +35551,6 @@ eyj5yR
 f#9i\n
 f%wyLmX:
 f&dy
-f0L4
 f1cK%
 f45\r
 fBB\fy
@@ -36669,7 +36656,6 @@ hovering
 hoverposeangles
 hoverposeflags
 hoverposeposition
-hpz`#
 hr_H
 http request
 https proxy request
@@ -39444,6 +39430,7 @@ modifier_punkgoat_blastedpassive
 modifier_punkgoat_blastedshred
 modifier_punkgoat_goatflip_damagebuff
 modifier_punkgoat_goatflip_empowermelee
+modifier_punkgoat_goatflip_maxhealthbuff
 modifier_punkgoat_goatgoingup
 modifier_punkgoat_goatgoingup_aircontrol
 modifier_punkgoat_sigil_aura
@@ -39754,13 +39741,11 @@ mzP"T
 n < (int)sizeof(ctx->enc_data)
 n does not equal p q
 n0?X
-n0d4
 n1Z 
 n5cM
 n6j/
 n:2C[
 n@PK
-n@c4
 nAlpha
 nAttributeValue
 nBodyGroup
@@ -40415,14 +40400,12 @@ p.other
 p.ppBasis
 p.prime
 p.tpBasis
-p08@H^$B/
+p0j@Z
 p2{l
 p4Z3
 p5Z3
 p5\nL,
 p618
-p6`Z4
-p6p\v4
 p@0pqE5tsO?|1
 pActivator
 pAnimGraphEntity
@@ -40467,7 +40450,6 @@ pOnEntity
 pOptionalLocationEnt
 pOtherEntity
 pOwner
-pP6/
 pParamValue
 pParameterName
 pPhysicsModel
@@ -40947,7 +40929,6 @@ playervisibilitystrength
 playerweapon
 playing_commentary
 playoverscript
-pn$B/
 point
 point arithmetic failure
 point at infinity
@@ -41225,6 +41206,7 @@ pszContextName
 pszExplosionType
 pszName
 pszTagName
+ptQ/
 pub: 
 pub_key
 pubkey
@@ -41334,6 +41316,7 @@ rX&O0
 rZ1VwGf5
 rZPM
 r\vDi
+r\vptQ/
 rad2deg
 radial
 radialalt

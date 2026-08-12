@@ -474,6 +474,9 @@
 //	"m_DamageBuff":
 //	{
 //	},
+//	"m_MaxHealthBuff":
+//	{
+//	},
 //	"m_EmpowerMelee":
 //	{
 //	},
@@ -492,6 +495,7 @@ class CAbilityPunkgoatGoatFlipVData : public CitadelAbilityVData
 	CEmbeddedSubclass< CCitadelModifier > m_Charging;
 	CEmbeddedSubclass< CCitadelModifier > m_GoatGoingUp;
 	CEmbeddedSubclass< CCitadelModifier > m_DamageBuff;
+	CEmbeddedSubclass< CCitadelModifier > m_MaxHealthBuff;
 	CEmbeddedSubclass< CCitadelModifier > m_EmpowerMelee;
 	CEmbeddedSubclass< CCitadelModifier > m_LingeringAirControl;
 	// MPropertyStartGroup = "Motion"

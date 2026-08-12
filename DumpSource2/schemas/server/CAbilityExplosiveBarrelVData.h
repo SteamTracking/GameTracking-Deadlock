@@ -436,7 +436,10 @@
 //	"m_strBarrelSoundLp": "",
 //	"m_strBarrelLaunchSound": "",
 //	"m_strBarrelMeleedSound": "",
-//	"m_strBarrelArmedSound": ""
+//	"m_strBarrelArmedSound": "",
+//	"m_BurnModifier":
+//	{
+//	}
 //}
 class CAbilityExplosiveBarrelVData : public CitadelAbilityVData
 {
@@ -453,4 +456,6 @@ class CAbilityExplosiveBarrelVData : public CitadelAbilityVData
 	CSoundEventName m_strBarrelLaunchSound;
 	CSoundEventName m_strBarrelMeleedSound;
 	CSoundEventName m_strBarrelArmedSound;
+	// MPropertyStartGroup = "Modifiers"
+	CEmbeddedSubclass< CCitadelModifier > m_BurnModifier;
 };

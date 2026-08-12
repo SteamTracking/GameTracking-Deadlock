@@ -28143,18 +28143,46 @@
 				m_strValue = "8"
 				m_strCSSClass = "duration"
 			}
-			BarrelDamage = 
+			ImpactDamage = 
 			{
-				m_strValue = 80
+				m_strValue = 40
 				m_strCSSClass = "tech_damage"
 				m_subclassScaleFunction = subclass:
 				{
 					_class = "scale_function_tech_damage"
-					_my_subclass_name = "BarrelDamage_scale_function"
-					m_flStatScale = 1.05
+					_my_subclass_name = "BarrelImpactDamage_scale_function"
+					m_flStatScale = 0.525
 					m_eSpecificStatScaleType = "ETechPower"
 				}
 				m_bIsAbilityDamageProperty = true
+			}
+			DPS = 
+			{
+				m_strValue = 13.3333
+				m_strCSSClass = "tech_damage"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					_my_subclass_name = "BarrelDPS_scale_function"
+					m_flStatScale = 0.175
+					m_eSpecificStatScaleType = "ETechPower"
+				}
+				m_bIsAbilityDamageProperty = true
+			}
+			BurnDuration = 
+			{
+				m_strValue = "3"
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "BurnDuration_scale_function"
+				}
+			}
+			TickRate = 
+			{
+				m_strValue = "0.5"
+				m_bIsHidden = true
 			}
 			BarrelRollSpeedMoveMin = 
 			{
@@ -28288,16 +28316,26 @@
 				m_vecPropertyUpgrades = 
 				[
 					{
-						m_strPropertyName = "BarrelDamage"
-						m_strBonus = "80"
+						m_strPropertyName = "ImpactDamage"
+						m_strBonus = "40"
+					},
+					{
+						m_strPropertyName = "DPS"
+						m_strBonus = "13.3333"
 					},
 					{
 						m_strPropertyName = "AbilityCooldownBetweenCharge"
 						m_strBonus = "-5"
 					},
 					{
-						m_strPropertyName = "BarrelDamage"
-						m_strBonus = 0.5
+						m_strPropertyName = "ImpactDamage"
+						m_strBonus = 0.25
+						m_eUpgradeType = "EAddToScale"
+						m_eScaleStatFilter = "ETechPower"
+					},
+					{
+						m_strPropertyName = "DPS"
+						m_strBonus = 0.083333
 						m_eUpgradeType = "EAddToScale"
 						m_eScaleStatFilter = "ETechPower"
 					},
@@ -28316,10 +28354,10 @@
 							m_vecAbilityProperties = 
 							[
 								{
-									m_strImportantProperty = "ArmTime"
+									m_strImportantProperty = "ImpactDamage"
 								},
 								{
-									m_strImportantProperty = "BarrelDamage"
+									m_strImportantProperty = "DPS"
 								},
 								{
 									m_strImportantProperty = "StatusEffectDisplacement"
@@ -28329,6 +28367,11 @@
 							]
 						},
 					]
+					m_vecBasicProperties = 
+					[
+						"BurnDuration",
+						"ArmTime",
+					]
 				},
 			]
 		}
@@ -28337,6 +28380,17 @@
 		m_BarrelExplodeParticle = resource_name:"particles/abilities/astro/astro_barrel_explode.vpcf"
 		m_MirvExplodeParticle = resource_name:"particles/abilities/engineer/engineer_barrage_explode.vpcf"
 		m_BarrelBurnParticle = resource_name:"particles/abilities/astro/astro_barrel_rope_burn.vpcf"
+		m_BurnModifier = subclass:
+		{
+			_class = "modifier_base_dot"
+			_my_subclass_name = "barrel_burn"
+			m_nAttributes = "MODIFIER_ATTRIBUTE_MULTIPLE"
+			m_sDOTParticle = resource_name:"particles/abilities/inferno/inferno_afterburn_debuff.vpcf"
+			m_strParticleStatusEffect = resource_name:"particles/status_fx/status_fx_afterburn.vpcf"
+			m_sLocalizationName = "modifier_astro_barrel_burn"
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+			m_eDebuffType = "MODIFIER_DEBUFF_YES"
+		}
 		m_strExplodeSound = soundevent:"Ability.Astro.ExpBarrels.Explode"
 		m_strMirvExplodeSound = soundevent:"Ability.Astro.ExpBarrels.Explode"
 		m_strRiccochetSound = soundevent:"Astro.ExpBarrels.Bullet.Ricochet"
@@ -48104,7 +48158,7 @@
 			m_flSpreadPerShot = 0.15
 			m_AimingShootSpreadPenalty = [ 0.0, 0.4 ]
 			m_strBulletImpactSound = soundevent:"McGinnis.Wpn.Impact"
-			m_flBulletDamage = 6.4
+			m_flBulletDamage = 6.08
 			m_strFirstShotSound = soundevent:"McGinnis.Wpn.Fire.First"
 			m_strShotReleaseSound = soundevent:"McGinnis.Wpn.Fire.Release"
 		}
@@ -49182,8 +49236,8 @@
 				m_vecPropertyUpgrades = 
 				[
 					{
-						m_strPropertyName = "SpiritResist"
-						m_strBonus = "40"
+						m_strPropertyName = "AbilityDuration"
+						m_strBonus = "1.5"
 					},
 				]
 			},
@@ -49213,8 +49267,8 @@
 						m_strBonus = "3m"
 					},
 					{
-						m_strPropertyName = "AbilityDuration"
-						m_strBonus = "1.5"
+						m_strPropertyName = "SpiritResist"
+						m_strBonus = "40"
 					},
 				]
 			},
@@ -49448,14 +49502,14 @@
 			}
 			TurretBaseHealth = 
 			{
-				m_strValue = "90"
+				m_strValue = "100"
 				m_strCSSClass = "health"
 				m_subclassScaleFunction = subclass:
 				{
 					_class = "scale_function_single_stat"
 					_my_subclass_name = "TurretBaseHealth_scale_function"
 					m_eSpecificStatScaleType = "ELevelUpBoons"
-					m_flStatScale = 7.8
+					m_flStatScale = 9
 				}
 			}
 			TurretAttackRange = 
@@ -49567,11 +49621,11 @@
 			}
 			DecayingResist = 
 			{
-				m_strValue = "80"
+				m_strValue = "0"
 			}
 			DecayingResistDuration = 
 			{
-				m_strValue = "6"
+				m_strValue = "0"
 			}
 		}
 		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
@@ -58259,7 +58313,7 @@
 					},
 					{
 						m_strPropertyName = "ShockRadius"
-						m_strBonus = "1.5m"
+						m_strBonus = "1.75m"
 						m_strStreetBrawlBonus = "1.27m"
 					},
 				]
@@ -63969,7 +64023,7 @@
 				[
 					{
 						m_strPropertyName = "Damage"
-						m_strBonus = "65"
+						m_strBonus = "45"
 					},
 				]
 			},
@@ -70786,8 +70840,8 @@
 			m_flRecoilSpeed = 1
 			m_flZoomFOV = 35.0
 			m_flZoomFOV_Relative = -40.0
-			m_flDamageFalloffStartRange = 787
-			m_flDamageFalloffEndRange = 2264.0
+			m_flDamageFalloffStartRange = 708.66
+			m_flDamageFalloffEndRange = 2125.98
 			m_flRange = 7000.0
 			m_flBulletLifetime = 2
 			m_flDamageFalloffStartScale = 1.0
@@ -98796,7 +98850,7 @@
 				[
 					{
 						m_strPropertyName = "StunDuration"
-						m_strBonus = "1"
+						m_strBonus = "0.75"
 						m_strCSSClass = "duration"
 					},
 					{
@@ -110164,7 +110218,7 @@
 				[
 					{
 						m_strPropertyName = "MagicDamagePerBullet"
-						m_strBonus = "0.06"
+						m_strBonus = "0.045"
 						m_eUpgradeType = "EAddToScale"
 					},
 					{
@@ -110430,7 +110484,7 @@
 			}
 			ClubSlowPercent = 
 			{
-				m_strValue = "-30"
+				m_strValue = "30"
 				m_strCSSClass = "slow"
 				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SPEED_SLOW_PERCENT"
 				m_eStatsUsageFlags = "ConditionallyApplied"
@@ -110489,7 +110543,7 @@
 				m_subclassScaleFunction = subclass:
 				{
 					_class = "scale_function_healing_spirit_scale"
-					m_flStatScale = 1.0
+					m_flStatScale = 0.75
 					_my_subclass_name = "heart_heal_sf"
 				}
 				m_strCSSClass = "healing"
@@ -110675,10 +110729,11 @@
 						m_strPropertyName = "HeartHeal"
 						m_strBonus = "0.5"
 						m_eUpgradeType = "EAddToScale"
+						m_eScaleStatFilter = "ETechPower"
 					},
 					{
 						m_strPropertyName = "ClubSlowPercent"
-						m_strBonus = "-20"
+						m_strBonus = "20"
 					},
 				]
 			},
@@ -120994,7 +121049,7 @@
 			}
 			Radius = 
 			{
-				m_strValue = "8m"
+				m_strValue = "12m"
 				m_subclassScaleFunction = subclass:
 				{
 					_class = "scale_function_tech_range"
@@ -121003,7 +121058,7 @@
 			}
 			PetrifyDuration = 
 			{
-				m_strValue = "2.0"
+				m_strValue = "2.2"
 				m_subclassScaleFunction = subclass:
 				{
 					_class = "scale_function_tech_duration"
@@ -156907,7 +156962,7 @@
 				{
 					_class = "scale_function_tech_damage"
 					_my_subclass_name = "attackdamagesf"
-					m_flStatScale = 0.2
+					m_flStatScale = 0.3
 				}
 				m_bIsAbilityDamageProperty = true
 			}
@@ -159627,7 +159682,7 @@
 			}
 			DoorwayDistance = 
 			{
-				m_strValue = "70m"
+				m_strValue = "65m"
 				m_subclassScaleFunction = subclass:
 				{
 					_class = "scale_function_multi_stats"
@@ -160374,6 +160429,14 @@
 				_class = ""
 				_my_subclass_name = ""
 			}
+			m_StompIgnoreLingerModifier = subclass:
+			{
+				_class = "modifier_base"
+				_my_subclass_name = "luggage_drag_stomp_ignore_linger"
+				m_nEnabledStateMask = "MODIFIER_STATE_DOORMAN_LUGGAGE_DRAGGED"
+				m_bIsHidden = true
+			}
+			m_flStompIgnoreLingerDuration = 0.5
 			m_sLocalizationName = "modifier_luggage_cart_drag"
 			m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
 			m_strHudMessageText = ""
@@ -163766,7 +163829,7 @@
 					_my_subclass_name = "Damage_scale_function"
 					_class = "scale_function_single_stat"
 					m_eSpecificStatScaleType = "ETechPower"
-					m_flStatScale = 1.0
+					m_flStatScale = 0.7
 				}
 				m_bIsAbilityDamageProperty = true
 			}
@@ -164532,6 +164595,22 @@
 					m_eSpecificStatScaleType = "ETechPower"
 				}
 			}
+			MaxHealthBuffPct = 
+			{
+				m_strValue = "0"
+				m_strCSSClass = "health"
+			}
+			MaxHealthBuffDuration = 
+			{
+				m_strValue = "0"
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "MaxHealthBuffDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
 		}
 		m_bitsPostCastEnabledStateMask = ""
 		_editor = 
@@ -164675,6 +164754,11 @@
 			_class = "modifier_punkgoat_goatflip_damagebuff"
 			_my_subclass_name = "damagebuff"
 		}
+		m_MaxHealthBuff = subclass:
+		{
+			_class = "modifier_punkgoat_goatflip_maxhealthbuff"
+			_my_subclass_name = "maxhealthbuff"
+		}
 		m_EmpowerMelee = subclass:
 		{
 			_class = "modifier_punkgoat_goatflip_empowermelee"
@@ -164711,13 +164795,12 @@
 				m_vecPropertyUpgrades = 
 				[
 					{
-						m_strPropertyName = "DealMaxHealthDamagePct"
-						m_strBonus = 7
+						m_strPropertyName = "MaxHealthBuffPct"
+						m_strBonus = 10
 					},
 					{
-						m_strPropertyName = "DealMaxHealthDamagePct"
-						m_strBonus = "0.03"
-						m_eUpgradeType = "EAddToScale"
+						m_strPropertyName = "MaxHealthBuffDuration"
+						m_strBonus = 16
 					},
 					{
 						m_strPropertyName = "AbilityCooldown"
@@ -164742,7 +164825,7 @@
 									m_strImportantProperty = "Damage"
 								},
 								{
-									m_strImportantProperty = "DealMaxHealthDamagePct"
+									m_strImportantProperty = "MaxHealthBuffPct"
 								},
 							]
 						},
@@ -167116,7 +167199,7 @@
 					_class = "scale_function_tech_damage"
 					_my_subclass_name = "BonusDamage_scale_function"
 					m_eSpecificStatScaleType = "ETechPower"
-					m_flStatScale = 1.7
+					m_flStatScale = 1.4
 				}
 				m_bIsAbilityDamageProperty = true
 				m_strLocTokenOverride = "DrifterRend_SpiritDamage"
@@ -167335,7 +167418,7 @@
 		{
 			AbilityCooldown = 
 			{
-				m_strValue = "24"
+				m_strValue = "26"
 				m_strDisableValue = "0"
 				m_strCSSClass = "cooldown"
 				m_bCanSetTokenOverride = true
@@ -167644,7 +167727,7 @@
 					},
 					{
 						m_strPropertyName = "AbilityCooldown"
-						m_strBonus = "-12"
+						m_strBonus = "-10"
 					},
 				]
 			},
@@ -256615,7 +256698,7 @@
 			}
 			MeleeResistReduction = 
 			{
-				m_strValue = "-22"
+				m_strValue = "-25"
 				m_strCSSClass = "bullet_armor_down"
 				m_eDisplayType = "EMeleeResist"
 				m_eProvidedPropertyType = "MODIFIER_VALUE_MELEE_RESIST_REDUCTION"
@@ -256733,7 +256816,11 @@
 				[
 					{
 						m_strPropertyName = "MeleeResistReduction"
-						m_strBonus = "-30"
+						m_strBonus = "-25"
+					},
+					{
+						m_strPropertyName = "StunDuration"
+						m_strBonus = "0.4"
 					},
 				]
 			},
@@ -256742,11 +256829,11 @@
 				[
 					{
 						m_strPropertyName = "TargetLifesteal"
-						m_strBonus = "60"
+						m_strBonus = "75"
 					},
 					{
 						m_strPropertyName = "TargetLifestealDuration"
-						m_strBonus = "7"
+						m_strBonus = "13"
 					},
 				]
 			},
@@ -257777,7 +257864,7 @@
 		m_nAbillityUnlocksCost = 1
 		m_eAbilityType = "EAbilityType_Ultimate"
 		m_iMaxLevel = 1
-		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED | MODIFIER_STATE_IS_ASLEEP | MODIFIER_STATE_IMMOBILIZED"
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED | MODIFIER_STATE_IS_ASLEEP"
 		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
 		m_strAbilityOffCooldownSound = soundevent:""
 		m_strAbilityChargeReadySound = soundevent:""
