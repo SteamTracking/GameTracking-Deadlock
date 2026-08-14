@@ -1,4 +1,3 @@
-class CCitadel_Modifier_Priest_Tether : public CCitadelModifier
+class CCitadel_Modifier_Priest_Tether : public CCitadel_Modifier_Link
 {
-	Vector m_vecOrigin;
 };

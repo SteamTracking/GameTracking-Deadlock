@@ -1,4 +1,3 @@
-class CCitadel_Modifier_Necro_WallTether : public CCitadelModifier
+class CCitadel_Modifier_Necro_WallTether : public CCitadel_Modifier_Link
 {
-	Vector m_vecOrigin;
 };
