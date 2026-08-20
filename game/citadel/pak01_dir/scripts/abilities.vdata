@@ -96002,8 +96002,8 @@
 			m_strCustomAttachmentSource = "attach_suitcase_fx"
 			m_strBulletImpactSound = soundevent:"Pocket.Barrage.Proj.Impact"
 		}
-		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_SHOOTING_DISABLED"
-		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_IN_ABILITY_ALLOW_ZOOM"
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_SHOOTING_DISABLED | MODIFIER_STATE_IN_ABILITY_ALLOW_ZOOM"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION | MODIFIER_STATE_IN_ABILITY_ALLOW_ZOOM"
 		_multibase = 
 		[
 			"signature_base",
@@ -156141,7 +156141,12 @@
 			}
 			GroundAuraSpacing = 
 			{
-				m_strValue = "1m"
+				m_strValue = "2m"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_range"
+					_my_subclass_name = "spacingsf"
+				}
 			}
 			AuraLingerDuration = 
 			{

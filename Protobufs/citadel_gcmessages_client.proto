@@ -489,6 +489,7 @@ message CMsgDevMatchInfo {
 	optional uint32 match_score = 18;
 	optional .ECitadelRegionMode region_mode = 19 [default = k_ECitadelRegionMode_ROW];
 	optional uint32 compat_version = 20;
+	optional bool low_pri_pool = 21;
 	repeated .CMsgDevMatchInfo.Team team_stats = 22;
 }
 
@@ -932,7 +933,6 @@ message CMsgClientToGCGetMatchHistoryResponse {
 		optional uint32 abandoned_time_s = 18;
 		optional .ECitadelMatchMode match_mode = 19 [default = k_ECitadelMatchMode_Invalid];
 		optional .ECitadelGameMode game_mode = 20 [default = k_ECitadelGameMode_Invalid];
-		optional bool not_scored = 21;
 		optional uint32 game_mode_version = 22;
 		optional uint32 brawl_score_team0 = 23;
 		optional uint32 brawl_score_team1 = 24;
@@ -942,6 +942,7 @@ message CMsgClientToGCGetMatchHistoryResponse {
 		optional int32 ranked_delta = 28;
 		optional uint32 ranked_calibration_match = 29;
 		optional bool ranked_used_demotion_protection = 30;
+		optional bool low_pri_pool = 31;
 	}
 
 	enum EResult {
