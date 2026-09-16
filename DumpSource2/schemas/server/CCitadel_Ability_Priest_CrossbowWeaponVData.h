@@ -48,6 +48,7 @@
 //		"m_iBullets": 1,
 //		"m_iSplitShotsMax": -1,
 //		"m_flSplitShotAngles": -1.000000,
+//		"m_bExpressShotDisabled": false,
 //		"m_bHitOnceAcrossAllBullets": false,
 //		"m_iBulletsToFullyClaimOrb": 1,
 //		"m_flExplosionRadius": 0.000000,
@@ -505,6 +506,7 @@
 //			0.000000
 //		]
 //	},
+//	"m_flRicochetBulletSpeed": 0.000000,
 //	"m_LaserSightParticle": "",
 //	"m_LaserSightParticleOwnerOnly": "",
 //	"m_BlessedTracerParticle": "",
@@ -537,6 +539,7 @@ class CCitadel_Ability_Priest_CrossbowWeaponVData : public CCitadel_Ability_Prim
 {
 	// MPropertyStartGroup = "Gameplay"
 	CPiecewiseCurve m_SpreadPenaltyScaleCurve;
+	float32 m_flRicochetBulletSpeed;
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_LaserSightParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_LaserSightParticleOwnerOnly;

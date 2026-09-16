@@ -48,6 +48,7 @@
 //		"m_iBullets": 1,
 //		"m_iSplitShotsMax": -1,
 //		"m_flSplitShotAngles": -1.000000,
+//		"m_bExpressShotDisabled": false,
 //		"m_bHitOnceAcrossAllBullets": false,
 //		"m_iBulletsToFullyClaimOrb": 1,
 //		"m_flExplosionRadius": 0.000000,

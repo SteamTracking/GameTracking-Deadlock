@@ -1421,6 +1421,7 @@ Break in debugger when missing resource match is found.\nFormat: cl_break_on_mis
 Break on unknown stall cause
 BreakableContentsType_t
 BreakablePowerupDropDefinition_t
+BreakableSpawnTimeDesc_t
 Brightness of player halos
 Broadcast
 Broadcast server debug overlays
@@ -4006,6 +4007,7 @@ CCitadel_Modifier_WeaponPowerForHealthVData
 CCitadel_Modifier_WebWall_Debuff
 CCitadel_Modifier_Werewolf
 CCitadel_Modifier_WerewolfVData
+CCitadel_Modifier_Werewolf_Bola
 CCitadel_Modifier_Werewolf_HuntAura_Werewolf
 CCitadel_Modifier_Werewolf_Kickflip_BonusDamage
 CCitadel_Modifier_Werewolf_Kickflip_BonusDamageVData
@@ -11000,6 +11002,10 @@ FourCovMatrices3
 FourQuaternions
 FourVectors2D
 Frac * 5 Players to get how much extra buildup is added. Larger values make the buildup complete faster.  0.2 (*5 Players) is exactly halving the buildup time
+Fraction of an active movement slow that is also applied as additional air drag
+Fraction of the comeback souls earned by a player above the enemy team's average net worth that is redirected to the tick gold pool for the two lowest net worth teammates
+Fraction of the dash travel speed kept when a parry cancels the dash, so the stop tapers off instead of snapping
+Fraction of the redirected comeback souls pool paid out to the two lowest net worth players each period
 FractionalPart
 Frame
 Frame Index
@@ -11248,6 +11254,7 @@ Granulator Container
 Graph Writable
 Graphics/Enable Distance Field rendering
 Gravity
+Gravity multiplier at the moment a parry cancels an air dash. Ramps to 1.0 over the glide duration
 Greater Than
 GreaterThan
 GreaterThanEqual
@@ -11261,6 +11268,7 @@ Grid segments along Length axis.
 Grid segments along width axis.
 Ground Dash Stuff
 Ground IK
+Ground friction change during the parry cancel slide, as a percentage. Negative reduces friction
 Group
 Group Input
 Group Output
@@ -11586,6 +11594,8 @@ How long do numbers live.
 How long do we show the can't pause/unpause dialog.
 How long do we wait for them to dismiss the popup dialog in lane training?
 How long does it takes to aim down sights. 
+How long gravity ramps back up after a parry cancels an air dash, so the fall eases in instead of snapping on
+How long ground friction stays reduced after a parry cancels a ground dash, so the kept momentum bleeds off visibly
 How long in addition to the tv_delay do we wait at the end of the match before going to the score screen in seconds
 How long in milliseconds before we warn about lock hold duration
 How long is the cinematic intro applied to npcs (shrine/patron)
@@ -12021,6 +12031,7 @@ If this is set, the modifier will use the value from this AbilityProperty as the
 If true and the bullet impacted a teammate, should we play an impact effect?
 If true the filter is applied to the signal before output.  If false the filter is applied while feeding back into each delay line.
 If true when log when a query is blocked (can cause very large log files)
+If true, Express Shot will not fire bonus shots from this weapon
 If true, application of the modifier will be delayed on the server to match the client's latency.
 If true, approaches the dafault value.  If false, allows specifying a target value
 If true, draw AI path for selected NPC.
@@ -13421,6 +13432,7 @@ MODIFIER_VALUE_TRACER_ADDITIONAL
 MODIFIER_VALUE_TRACER_REPLACEMENT
 MODIFIER_VALUE_TURN_ANGLE_PER_SECOND_MAX
 MODIFIER_VALUE_TURN_SIDEMOVE_PERCENTAGE
+MODIFIER_VALUE_ULTIMATE_COOLDOWN_REDUCTION_PERCENTAGE
 MODIFIER_VALUE_VEHICLE_TOP_SPEED_SCALE
 MODIFIER_VALUE_VISION_RADIUS
 MODIFIER_VALUE_VISUAL_ORIGIN_OFFSET
@@ -19736,6 +19748,7 @@ Whether or not melees autoclaim orbs.
 Whether or not we allow denies.
 Whether or not we slow playback rate if we start running out of buffered stream fragments.
 Whether server supports banid command
+Whether slows affect air drag
 Whether the damage level should be destroyed when the entity dies.
 Whether this explosion has explosive forces
 Whether this explosion relates to fire
@@ -20833,6 +20846,7 @@ citadel_clear_killstreak [player_slot]
 citadel_client_mm_ignore_engine_version
 citadel_client_solo_mm_keep_alive_check_s
 citadel_client_status_cycle_delay
+citadel_comeback_redirect_fraction
 citadel_commend_fake_received
 citadel_commend_player
 citadel_commend_toast_enemy_seconds
@@ -21028,6 +21042,7 @@ citadel_enable_new_ping_particle
 citadel_enable_no_hero_death
 citadel_enable_parties
 citadel_enable_ping_rate_limiting
+citadel_enable_slows_affect_air_drag
 citadel_enable_survey
 citadel_enable_unlimited_ammo
 citadel_enable_vdata_sound_preload
@@ -21768,6 +21783,7 @@ citadel_skip_client_ping_caluclation_in_dev_universe
 citadel_slide_debug
 citadel_slide_delay
 citadel_slide_one_button_falling_max_lookahead_distance
+citadel_slow_air_drag_penalty_scale
 citadel_snowball_level_override
 citadel_solo_bot_match
 citadel_spawn_all_heroes_in_a_line
@@ -21862,6 +21878,7 @@ citadel_tether_pull_speed
 citadel_tether_pull_speed_scale_per_meter
 citadel_text_chat_enabled
 citadel_throwsand_projectile_show_debug
+citadel_tick_gold_comeback_redirect_payout
 citadel_tick_gold_payout_for_lowest
 citadel_tick_gold_payout_for_second_lowest
 citadel_tick_gold_period_duration_s
@@ -25653,6 +25670,7 @@ m_BountyModifier
 m_BoxRigids
 m_BranchWallModel
 m_BreakableContentsType
+m_BreakableSpawnTimeDesc
 m_BreakoutProgressBarModifier
 m_BubbleExplodeParticle
 m_BubbleModifier
@@ -29098,6 +29116,7 @@ m_bExportScene
 m_bExposeAsParameter
 m_bExposeAsParameter == false
 m_bExposureControl
+m_bExpressShotDisabled
 m_bExtrapolateMovement
 m_bFaceEnemyWhileIdle
 m_bFadeCorpse
@@ -29543,7 +29562,6 @@ m_bIsInCatform
 m_bIsInExpressShot
 m_bIsInGroup
 m_bIsInRecast
-m_bIsInRicochet
 m_bIsIncindiary
 m_bIsInclusiveCheck
 m_bIsInputToGraph
@@ -32007,7 +32025,6 @@ m_flBulletLifetime
 m_flBulletOnlyTriggerRadius
 m_flBulletRadius
 m_flBulletRadiusVsWorld
-m_flBulletResist
 m_flBulletResistancePctMax
 m_flBulletResistancePctMin
 m_flBulletShouldExpireTime
@@ -34117,6 +34134,13 @@ m_flParamaterMinValue
 m_flParentParticleScale
 m_flParentRadiusScale
 m_flParentReaction
+m_flParryCancelAirGlideDuration
+m_flParryCancelAirGlideStartTime
+m_flParryCancelAirGravityScale
+m_flParryCancelSlideDuration
+m_flParryCancelSlideEndTime
+m_flParryCancelSlideFrictionPercent
+m_flParryCancelSpeedScale
 m_flParryCheckRadius
 m_flParryEndVisualTime
 m_flParryMoveSpeed
@@ -34463,10 +34487,14 @@ m_flRepulsionMinDistance
 m_flRequiredDuration
 m_flReselectionTimeWindow
 m_flResetRate
+m_flResistMaxAtStart
+m_flResistMaxCap
+m_flResistMaxPerMinute
 m_flResistValues
 m_flResonance
 m_flRespawnDelay
 m_flRespawnDuration
+m_flRespawnInterval
 m_flRespawnLifePct
 m_flRespawnRangeInSeconds
 m_flRespawnTime
@@ -34491,6 +34519,7 @@ m_flReverbTimeHigh
 m_flReverbTimeLow
 m_flReverbTimeMid
 m_flRichPresenceUpdateInterval
+m_flRicochetBulletSpeed
 m_flRicochetConeAngle
 m_flRicochetDamageScale
 m_flRicochetDotMaxDampening
@@ -34880,7 +34909,6 @@ m_flStatScale
 m_flStateEnterTime
 m_flStateStartTime
 m_flStaticImpactVolume
-m_flStatusResist
 m_flStealthSpeedMetersPerSecond
 m_flSteeringAxisFriction
 m_flStepDownHeight
@@ -35016,7 +35044,6 @@ m_flTargetingRadius
 m_flTargetingTaskStartTime
 m_flTechDamagePctIncrease
 m_flTechPower
-m_flTechResist
 m_flTechResistancePctMax
 m_flTechResistancePctMin
 m_flTeleportDelay

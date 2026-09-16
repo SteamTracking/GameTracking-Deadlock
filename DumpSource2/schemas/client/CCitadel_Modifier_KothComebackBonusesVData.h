@@ -136,13 +136,13 @@
 //	},
 //	"m_FootstepAdditional": "",
 //	"m_bRemoveOnInterrupted": false,
-//	"m_flTechResist": 0.000000,
-//	"m_flBulletResist": 0.000000,
-//	"m_flStatusResist": 0.000000
+//	"m_flResistMaxAtStart": 0.000000,
+//	"m_flResistMaxPerMinute": 0.000000,
+//	"m_flResistMaxCap": 0.000000
 //}
 class CCitadel_Modifier_KothComebackBonusesVData : public CCitadelModifierVData
 {
-	float32 m_flTechResist;
-	float32 m_flBulletResist;
-	float32 m_flStatusResist;
+	float32 m_flResistMaxAtStart;
+	float32 m_flResistMaxPerMinute;
+	float32 m_flResistMaxCap;
 };

@@ -89,10 +89,12 @@
  (%d)Unknown
  (%ld unused bits)\n
  (+%d more due to usercommand delivery)
- (08@HPX`j`=
- (08@HPXb
- (08@HR
- (0X`hpz
+ (08@HPX`j
+ (08@HPXbp
+ (08@HPZ
+ (08@HRp
+ (08@Jp
+ (0X`hpzp
  (Dirty Animation)
  (INVALID PSS PARAMETERS)\n
  (Negative)
@@ -2501,6 +2503,7 @@ $hRh
 (.CPlayer_SetPerFriendPreferences_Request
 (0'yX
 (0x%08X)'??'
+(40y
 (5Me
 (5jP
 (ACTIVE)
@@ -5534,6 +5537,7 @@ $hRh
 .?AV?$CModifierFactory@VCCitadel_Modifier_WeaponPowerForHealth@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_WebWall_Debuff@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Werewolf@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Werewolf_Bola@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Werewolf_HuntAura_Werewolf@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Werewolf_Kickflip_BonusDamage@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Werewolf_Kickflip_SucessSelf@@$0PPPP@@@
@@ -7275,6 +7279,8 @@ $hRh
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flNextWallCheck@CCitadel_Ability_GooBowlingBall@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flOnGroundStartTime@CCitadel_Ability_Slide@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flOverheatSoundTime@CCitadel_Ability_Tokamak_HeatSinks_Inherent@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flParryCancelAirGlideStartTime@CCitadel_Ability_Dash@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flParryCancelSlideEndTime@CCitadel_Ability_Dash@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flParryStartTime@CCitadel_Ability_MeleeParry@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flParrySuccessEndTime@CCitadel_Ability_MeleeParry@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flPostCastDelayEndTime@C_CitadelBaseAbility@@@@
@@ -8757,6 +8763,7 @@ $hRh
 .?AV?$CSubclassFactory@VCCitadel_Modifier_WeaponPowerForHealth@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_WebWall_Debuff@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Werewolf@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Werewolf_Bola@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Werewolf_HuntAura_Werewolf@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Werewolf_Kickflip_BonusDamage@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Werewolf_Kickflip_SucessSelf@@VCBaseModifier@@@@
@@ -12779,6 +12786,7 @@ $hRh
 .?AVCCitadel_Modifier_WebWall_Debuff@@
 .?AVCCitadel_Modifier_Werewolf@@
 .?AVCCitadel_Modifier_WerewolfVData@@
+.?AVCCitadel_Modifier_Werewolf_Bola@@
 .?AVCCitadel_Modifier_Werewolf_HuntAura_Werewolf@@
 .?AVCCitadel_Modifier_Werewolf_Kickflip_BonusDamage@@
 .?AVCCitadel_Modifier_Werewolf_Kickflip_BonusDamageVData@@
@@ -17020,14 +17028,14 @@ $hRh
 0123456789
 02V8[
 05=k
-08@HR`=
-08@J
-08B`=
+08@HR
+08@Jp
 08bX
 09,h
 0:00
 0;Q5[
 0<cz
+0>pa
 0M2~@p
 0Marks latest announcement timestamp read by user
 0Name of the file to publish in the user's cloud.
@@ -17291,8 +17299,6 @@ $hRh
 2\r.CameraAction
 2\r.ECommendType
 2\rlhp
-2\vp4
-2\vp|j
 2^pV
 2a"l
 2bT~
@@ -17350,18 +17356,19 @@ $hRh
 3w2URu
 3wQ]
 3|rN>
-4!$0m
 4(Optional) Sorting method to use on returned values.
 4)#bH
 4)m1
 4.CPlayer_GetMutualFriendsForIncomingInvites_Response"^
 40 40 40 196
+40q#
 474E4U4W4c4i4m4
 4<Td
 4@AA
 4Ch;
 4F0I
 4Mv8
+4Pq#
 4Redirection URI provided during client registration.2
 4Zis
 4\fPl
@@ -17508,6 +17515,7 @@ $hRh
 8<pl
 8= zp
 8A6j
+8Bp|
 8Client ID for which to count the number of issued tokens"
 8GZS
 8Gets the list of nicknames this user has for other users
@@ -17736,6 +17744,7 @@ $hRh
 >9Only Show Ping Indicator at Ping Location (no ping sound)
 >BShow Ping Indicator at Ping Location, Play Ping Sound, and Play VO
 >CShow Ping Indicator on Pinging Player, Play Ping Sound, and Play VO
+>Hcs
 >Sem
 >WK6
 >\n:GAME_PARTICLE_MANAGER_EVENT_ADD_MODELLIST_OVERRIDE_ELEMENT
@@ -17772,13 +17781,11 @@ $hRh
 ?CitadelParty
 ?CreateHandle@HandleScope@v8@@KAPEA_KPEAVIsolate@internal@2@_K@Z
 ?DisposeGlobal@api_internal@v8@@YAXPEA_K@Z
-?EDamageFlashFlags
 ?EncodeBC7Blocks
 ?Enter@Context@v8@@QEAAXXZ
 ?Enter@Isolate@v8@@QEAAXXZ
 ?Exit@Context@v8@@QEAAXXZ
 ?Exit@Isolate@v8@@QEAAXXZ
-?Failed to load %s - KV3 error: %s\n
 ?Far field
 ?For@Symbol@v8@@SA?AV?$Local@VSymbol@v8@@@2@PEAVIsolate@2@V?$Local@VString@v8@@@2@@Z
 ?FromJustIsNothing@api_internal@v8@@YAXXZ
@@ -17792,11 +17799,13 @@ $hRh
 ?HAI\t81\t9dcG'
 ?HP4
 ?HasCaught@TryCatch@v8@@QEBA_NXZ
-?HitsToHeadshot
+?InfestDamageTakenPercent
 ?LatchVariables
+?MODIFIER_VALUE_BASE_HEALTH_FROM_LEVEL
 ?TabButton
 ?The most recent last-played time the client already knows about"
 ?VBH;
+?What percent do we want weapon damage reduced for melee damage?
 ?\n1increase_spring_strength_to_keep_target_on_screen
 ?\n;GAME_PARTICLE_MANAGER_EVENT_CHANGE_CONTROL_POINT_ATTACHMENT
 ?\n;GAME_PARTICLE_MANAGER_EVENT_SET_SCENE_OBJECT_TINT_AND_DESAT
@@ -17808,6 +17817,7 @@ $hRh
 ?expf
 ?gwL
 ?jOb
+?m_flBlastedCurrentDuration
 ?srJO
 ?tya
 ?uWS
@@ -17818,6 +17828,7 @@ $hRh
 @?SlowGetInternalField@Object@v8@@AEAA?AV?$Local@VData@v8@@@2@H@Z
 @BH]f
 @DebugIndividualStyle
+@HPX`hv@
 @MfKZ
 @Pgl
 @Pu\rm
@@ -17833,9 +17844,11 @@ $hRh
 @absorigin_follow
 @dKb]
 @fff>fff>fff>fff>
+@ht0
 @i1V
 @keyframes 
 @keyframes '%s'\r\n{\r\n
+@m_flDomeStartTime
 @n2w
 @scripts/accolades.vdata
 A random value [0.0, 1.0] used to make sure entities are not all in sync
@@ -17953,7 +17966,6 @@ ANIMPARAM_ENUM == m_pParameter->GetParameterType()
 ANIMPARAM_GLOBALSYMBOL == m_pParameter->GetParameterType()
 ANSI X9.62
 ANY PRIVATE KEY
-AOERadius
 AOWorking
 APIN_txt
 APPEND_EXP
@@ -18068,7 +18080,6 @@ A\n\tent_index
 A\n\vdescriptors
 A\n\vdiagnostics
 A\rjW
-A\v:0J
 A_txt
 AbW_
 AbandonButton
@@ -18695,8 +18706,8 @@ B64_READ_PKCS7
 B64_WRITE_ASN1
 B64_WRITE_PKCS7
 B8Z"h
+B>In-world texture resolution scale
 B>J7I
-B>While a spectator, view team sapphire's minimap view
 BAD ENUMERATED
 BAD INTEGER
 BAD RECURSION DEPTH\n
@@ -19508,8 +19519,8 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability_slide.cpp:723
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_accolades_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4333
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4507
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4360
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4534
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_hero.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_bot_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_camera_controller.cpp:168
@@ -19521,8 +19532,8 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_music_dat
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_observer_movementservices.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ping_wheel_data.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_player_movementservices.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_player_pawn_shared.cpp:1901
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_player_pawn_shared.cpp:1902
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_player_pawn_shared.cpp:1921
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_player_pawn_shared.cpp:1922
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_post_processing_controller.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ranked_badge_entities.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ranked_schema.cpp
@@ -19532,7 +19543,7 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_utils.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_utils.cpp:2460
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_zip_line_node.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_bull.cpp:426
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_shiv.cpp:2024
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_shiv.cpp:1994
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_tengu.cpp:2130
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1541
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1578
@@ -24019,6 +24030,7 @@ D2Lb!
 D4tp
 D514p
 D@D/lcO+hcK
+D@Zj
 DAE!
 DAL\fL@
 DBDc
@@ -25759,6 +25771,7 @@ Failed to init camera of type '%u'\n
 Failed to initialize CCitadelNewSettingsSchema. %s
 Failed to join party: %s\n
 Failed to leave party: %s\n
+Failed to load %s - KV3 error: %s\n
 Failed to load %s: %s
 Failed to load book file: %s\n
 Failed to load match history results. Error code %d\n
@@ -26170,6 +26183,7 @@ FuelRefillRateOnWall
 Full
 FullChargeDamage
 FullMember
+FullRageCurrentHealthDamagePct
 FullUpdate
 Fullscreen
 FullscreenBrightness
@@ -27147,6 +27161,7 @@ Hit Test
 Hit Test Children
 Hit Trace: %s
 Hitbox indexing is incorrect for set %s, hitbox %s. Hitboxes will not be setup properly.\n
+HitsToHeadshot
 Hltv Director
 Hofw
 Hold
@@ -27446,7 +27461,6 @@ IndirectVoxelDimZ
 Indonesian
 InferenceAccessToken
 InferenceMetadata
-InfestDamageTakenPercent
 Inflictor is the entity that is dealing the damage.\nIt can be the attacker itself or a summoned unit, a projectile entity of some sort.\nIt is *MOST DEFINITELY NOT* the weapon or ability. Use Set/GetAbility for that.
 InfoPanel
 Inherit all
@@ -29806,7 +29820,7 @@ P-224
 P-256
 P-384
 P-521
-P08@J
+P08@Jp
 P08J
 P1\t98"
 P2P ping to "%s". Timed out after %.2fms\n
@@ -31113,15 +31127,12 @@ RSA_verify_PKCS1_PSS
 RSA_verify_PKCS1_PSS_mgf1
 RSDSy_C
 RT_txt
-R\fp4
 R\n)k_EPingMarkerInfo_NoMarkerYesSoundMiniMap
 R\n\nBookReward
 R\n\rincludekvtags
 R\r1>Vp
 R\tV_log2f
 R\vp!y
-R\vp0z
-R\vp|j
 R]Di
 Rad2 Deg
 RadialAbilitySegment_%d
@@ -35095,6 +35106,7 @@ WallLatchIdealDist
 WallLatchSettleDist
 WallLatchSettleTime
 WallStunDistance
+WangClientCameraChanged
 Warning (problem that doesn't prevent forward progress)
 Warning font %s does not have a 'name' key! No windows font will be created. Check your scheme to make sure all machine configs are supported.\n
 Warning: %s '%s' failed to parse curve string - %s
@@ -35212,7 +35224,6 @@ WinnerTie
 WinningTeam
 WinningTeamNumber
 WizardSubPanel.BgColor
-Wm_flTimeSlowedStart
 Wmn|CH
 Wn4'
 Work Item for Work Pool %s completed but job no longer existed to notify\n
@@ -35489,6 +35500,7 @@ XRJ2
 XWY]
 XYD%
 X\tQo
+X`hr
 Xd3h
 XfJ7
 XjfR
@@ -35693,7 +35705,7 @@ Z~wl
 \f*t\n ESteamLearnGetAccessTokensResult
 \f7ig
 \f<<0A1pq
-\f@scripts/heroes.vdata
+\f@LockonTarget_t
 \fAccoladeID_t
 \fCitadelMMR_t
 \fKS1
@@ -35704,7 +35716,6 @@ Z~wl
 \f]ne3
 \fdhWTh
 \fiaR
-\fp\vPLb
 \ful2
 \fy&3Gl
 \l:ArR
@@ -35919,7 +35930,6 @@ Z~wl
 \nDictionary: %s\n
 \nFinished generating SSTs (%.1f seconds)\n\n
 \nGameTime_t
-\nP0z
 \nSimulating Entities:\n\n
 \n[ Spirit ]
 \n[ Vitality ]
@@ -36770,6 +36780,7 @@ Z~wl
 \r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
 \r\vpL1
 \r^mX
+\rcitadel_trigger_no_portals
 \ri1I
 \rjwB\t
 \roKK
@@ -36988,8 +36999,6 @@ Z~wl
 \v\vTSG
 \vj0k
 \vjC7
-\vp0z
-\vpLb
 ]1h=bfz
 ]FhSD}
 ]GT7]
@@ -37067,9 +37076,9 @@ _}eOk
 `ITS
 `VX:H
 `\n\rvector_values
-`\rP\f00z
 `fPw.\vM
 `h9T~
+`ht0y
 `o_je
 `yNT
 a null shared library handle was used
@@ -39111,7 +39120,6 @@ citadel_thousands
 citadel_timewarp
 citadel_tracked_projectile
 citadel_trigger_hideout_teleport
-citadel_trigger_no_portals
 citadel_trigger_speed_boost
 citadel_trooper_minimap
 citadel_tunnel_trigger
@@ -42491,6 +42499,7 @@ houseIdentifier
 hover
 hovering
 hp_stat
+hpzp
 hr_H
 href="
 hscroll
@@ -45923,6 +45932,7 @@ modifier_weapon_capacitor_slow
 modifier_weapon_eater_stack
 modifier_webwall_debuff
 modifier_werewolf
+modifier_werewolf_bola
 modifier_werewolf_huntaura_werewolf
 modifier_werewolf_kickflip_bonusdamage
 modifier_werewolf_kickflip_success_self
@@ -46047,7 +46057,7 @@ n1Z
 n5cM
 n6j/
 n:2C[
-n<}\v<}\v<}\v<}\vP
+n<}\v<}\v<}\v<}\v
 n@PK
 nCRD
 nChangeOffset < INT16_MAX
@@ -46788,14 +46798,13 @@ p2p_ping could not convert "%s" to a CPeerToPeerAddress\n
 p2p_ping could not ping "%s" because they are an unknown peer\n
 p2p_ping requires a destination address\n
 p2p_ping sending to "%s"\n
+p2p|
 p2{l
 p4Z3
 p5Z3
 p5\nL,
 p618
 p>?Set@Template@v8@@QEAAXV?$Local@VName@v8@@@2@V?$Local@VData@v8@@@2@W4PropertyAttribute@2@@Z
-p>D0
-p>o0
 p@0pqE5tsO?|1
 pCheckpointName
 pD4t
@@ -47905,10 +47914,8 @@ rRfKR
 rX&O0
 rZ1VwGf5
 rZPM
-r\fp0z
 r\n\vstart_index
 r\vDi
-r\vp4
 r_citadel_edges 0
 r_citadel_edges 1
 r_cleardecals
@@ -51375,6 +51382,7 @@ z/B,9d
 z<d2
 z>Hz
 z?ff
+zDEHideoutButtonInteractStyle
 zF):O4
 zFar
 zG2m8

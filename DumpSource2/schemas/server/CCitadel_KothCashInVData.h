@@ -50,7 +50,6 @@
 //	"m_strKothGivingUpWarningLoopSound": "",
 //	"m_strKothContestedLoopSound": "",
 //	"m_strKothCaptureStartAnnounce": "",
-//	"m_iComebackBounty": 130,
 //	"m_flZoneHeightMeters": 25.000000,
 //	"m_flTotalTimeToCaptureFavored": 10.000000,
 //	"m_flTotalTimeToCaptureUnfavored": 15.000000,
@@ -84,7 +83,6 @@ class CCitadel_KothCashInVData : public CCitadel_MultiCapturePointVData
 	CSoundEventName m_strKothContestedLoopSound;
 	CSoundEventName m_strKothCaptureStartAnnounce;
 	// MPropertyStartGroup = "Gameplay"
-	int32 m_iComebackBounty;
 	float32 m_flZoneHeightMeters;
 	float32 m_flTotalTimeToCaptureFavored;
 	float32 m_flTotalTimeToCaptureUnfavored;

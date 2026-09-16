@@ -48,6 +48,7 @@
 //		"m_iBullets": 1,
 //		"m_iSplitShotsMax": -1,
 //		"m_flSplitShotAngles": -1.000000,
+//		"m_bExpressShotDisabled": false,
 //		"m_bHitOnceAcrossAllBullets": false,
 //		"m_iBulletsToFullyClaimOrb": 1,
 //		"m_flExplosionRadius": 0.000000,
@@ -487,6 +488,11 @@
 //	"m_flPostMaxDrag": 4.000000,
 //	"m_flPostDragDuration": 0.100000,
 //	"m_flDownwardAirDashSpeed": 500.000000,
+//	"m_flParryCancelSpeedScale": 0.400000,
+//	"m_flParryCancelSlideDuration": 0.350000,
+//	"m_flParryCancelSlideFrictionPercent": -80.000000,
+//	"m_flParryCancelAirGlideDuration": 0.350000,
+//	"m_flParryCancelAirGravityScale": 0.300000,
 //	"m_strAirDashSound": ""
 //}
 class CAbilityDashVData : public CitadelAbilityVData
@@ -517,5 +523,15 @@ class CAbilityDashVData : public CitadelAbilityVData
 	float32 m_flPostMaxDrag;
 	float32 m_flPostDragDuration;
 	float32 m_flDownwardAirDashSpeed;
+	// MPropertyDescription = "Fraction of the dash travel speed kept when a parry cancels the dash, so the stop tapers off instead of snapping"
+	float32 m_flParryCancelSpeedScale;
+	// MPropertyDescription = "How long ground friction stays reduced after a parry cancels a ground dash, so the kept momentum bleeds off visibly"
+	float32 m_flParryCancelSlideDuration;
+	// MPropertyDescription = "Ground friction change during the parry cancel slide, as a percentage. Negative reduces friction"
+	float32 m_flParryCancelSlideFrictionPercent;
+	// MPropertyDescription = "How long gravity ramps back up after a parry cancels an air dash, so the fall eases in instead of snapping on"
+	float32 m_flParryCancelAirGlideDuration;
+	// MPropertyDescription = "Gravity multiplier at the moment a parry cancels an air dash. Ramps to 1.0 over the glide duration"
+	float32 m_flParryCancelAirGravityScale;
 	CSoundEventName m_strAirDashSound;
 };

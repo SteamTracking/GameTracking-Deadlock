@@ -4,6 +4,7 @@
 //	"m_iBullets": 1,
 //	"m_iSplitShotsMax": -1,
 //	"m_flSplitShotAngles": -1.000000,
+//	"m_bExpressShotDisabled": false,
 //	"m_bHitOnceAcrossAllBullets": false,
 //	"m_iBulletsToFullyClaimOrb": 1,
 //	"m_flExplosionRadius": 0.000000,
@@ -155,6 +156,8 @@ class CCitadelWeaponInfo
 	int32 m_iSplitShotsMax;
 	// MPropertyDescription = "Override Angle of Split shots left and right most bullets"
 	float32 m_flSplitShotAngles;
+	// MPropertyDescription = "If true, Express Shot will not fire bonus shots from this weapon"
+	bool m_bExpressShotDisabled;
 	// MPropertyDescription = "If true, take full damage when hit by any of the bullets rather than being split across all bullets."
 	bool m_bHitOnceAcrossAllBullets;
 	// MPropertyDescription = "How many bullets must hit an orb in order to fully claim it."

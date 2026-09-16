@@ -5,6 +5,8 @@
 // MNetworkVarNames = "GameTime_t m_flAirDashCastTime"
 // MNetworkVarNames = "Vector m_flAirDashStartPos"
 // MNetworkVarNames = "GameTime_t m_flAirDashDragStartTime"
+// MNetworkVarNames = "GameTime_t m_flParryCancelSlideEndTime"
+// MNetworkVarNames = "GameTime_t m_flParryCancelAirGlideStartTime"
 // MNetworkVarNames = "int8 m_nConsecutiveAirDashes"
 // MNetworkVarNames = "int8 m_nConsecutiveDownDashes"
 // MNetworkVarNames = "bool m_bDownAirDash"
@@ -32,6 +34,12 @@ class CCitadel_Ability_Dash : public CCitadelBaseAbility
 	// MNetworkEnable
 	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
 	GameTime_t m_flAirDashDragStartTime;
+	// MNetworkEnable
+	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
+	GameTime_t m_flParryCancelSlideEndTime;
+	// MNetworkEnable
+	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
+	GameTime_t m_flParryCancelAirGlideStartTime;
 	// MNetworkEnable
 	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
 	int8 m_nConsecutiveAirDashes;

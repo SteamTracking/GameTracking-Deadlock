@@ -490,6 +490,9 @@
 //		"m_nPatronPhase1GoldKill": 0,
 //		"m_nPatronPhase1GoldOrbs": 0
 //	},
+//	"m_BreakableSpawnTimeDesc":
+//	[
+//	],
 //	"m_mapStatTypeImages":
 //	{
 //	},
@@ -634,6 +637,7 @@ class CitadelGenericData_t
 	KothParams_t m_KothParams;
 	TeleporterParams_t m_TeleporterParams;
 	ObjectivesParams_t m_ObjectiveParams;
+	CUtlVector< BreakableSpawnTimeDesc_t > m_BreakableSpawnTimeDesc;
 	CUtlOrderedMap< EStatsType, CUtlString > m_mapStatTypeImages;
 	// MPropertyDescription = "Remap camera angle delta to aim spring strength"
 	CRemapFloat m_AimSpringStrength;

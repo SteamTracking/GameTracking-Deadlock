@@ -181,9 +181,9 @@
  ( NOT SUPPORTED BY ANIMGRAPH ) 
  (%ld unused bits)\n
  (%u unread)
- (08@HPX`j
+ (08@HPX`j0`
  (08@HPXb
- (08@HPZ
+ (08@HPZ0`
  (08@HR
  (0X`hpz
  (Dirty Animation)
@@ -209,11 +209,13 @@
  - movable mesh id = none\n
  - vert %d = (%0.3f, %0.3f, %0.3f)\n
  -0000
+ .Ps4
  8f\ff
  <-- Arg '%s'
  <-- Retval '%s'
  @instanced_scripted_scene
  ACTIVE GROUP
+ AxA
  Damage Dealt to Trooper Boss
  Damage Taken from Player
  FLK
@@ -2033,6 +2035,7 @@ $light_emissive
 -\n\titem_defs
 -\n\ventityindex
 -\n\vplayerindex
+-\npy4
 -allents
 -classes
 -l34
@@ -2071,13 +2074,6 @@ $light_emissive
 ... %s culled event %s after max %i reached \n
 ....................
 ..uR5&m
-.044
-.0V4
-.0W4
-.0e4
-.0m4
-.0q4
-.0w4
 .4bb
 .97yY
 .?AU?$CameraOp_Approach_t@M@@
@@ -4131,6 +4127,7 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_WeaponPowerForHealth@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_WebWall_Debuff@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Werewolf@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Werewolf_Bola@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Werewolf_HuntAura_Werewolf@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Werewolf_Kickflip_BonusDamage@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Werewolf_Kickflip_SucessSelf@@$0PPPP@@@
@@ -5823,6 +5820,8 @@ $light_emissive
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flNextWallCheck@CCitadel_Ability_GooBowlingBall@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flOnGroundStartTime@CCitadel_Ability_Slide@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flOverheatSoundTime@CCitadel_Ability_Tokamak_HeatSinks_Inherent@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flParryCancelAirGlideStartTime@CCitadel_Ability_Dash@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flParryCancelSlideEndTime@CCitadel_Ability_Dash@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flParryStartTime@CCitadel_Ability_MeleeParry@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flParrySuccessEndTime@CCitadel_Ability_MeleeParry@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flPostCastDelayEndTime@CCitadelBaseAbility@@@@
@@ -7300,6 +7299,7 @@ $light_emissive
 .?AV?$CSubclassFactory@VCCitadel_Modifier_WeaponPowerForHealth@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_WebWall_Debuff@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Werewolf@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Werewolf_Bola@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Werewolf_HuntAura_Werewolf@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Werewolf_Kickflip_BonusDamage@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Werewolf_Kickflip_SucessSelf@@VCBaseModifier@@@@
@@ -10811,6 +10811,7 @@ $light_emissive
 .?AVCCitadel_Modifier_WebWall_Debuff@@
 .?AVCCitadel_Modifier_Werewolf@@
 .?AVCCitadel_Modifier_WerewolfVData@@
+.?AVCCitadel_Modifier_Werewolf_Bola@@
 .?AVCCitadel_Modifier_Werewolf_HuntAura_Werewolf@@
 .?AVCCitadel_Modifier_Werewolf_Kickflip_BonusDamage@@
 .?AVCCitadel_Modifier_Werewolf_Kickflip_BonusDamageVData@@
@@ -14188,15 +14189,9 @@ $light_emissive
 .PEAVCPlayer_UseServices@@
 .PEAVCPlayer_WaterServices@@
 .PEAVCPlayer_WeaponServices@@
-.PV4
-.PW4
-.PX4
 .PartnerAccountType
 .PingCommonData
-.Pm4
-.Pn4
 .PostProcessingGameStates
-.Pq4
 .Q.Ol
 .\crypto\asn1\a_bitstr.c
 .\crypto\asn1\a_bool.c
@@ -14481,13 +14476,7 @@ $light_emissive
 .google.protobuf.ServiceOptions
 .lbN
 .league
-.pV4
-.pW4
-.pn4
-.po4
 .pp@0
-.pq4
-.pt4
 .solo
 .steammessages_unified_base.steamworkssdk.proto"\\n"CMsgSteamLearnDataSourceDescObject
 .text$
@@ -14545,11 +14534,13 @@ $light_emissive
 0123456789
 02V8[
 05=k
-08@HR
+08@HR0`
 08@J
+08B0`
 08bX
 09,h
 0;Q5[
+0<B4
 0<cz
 0=normal, 1=rebirth, 2=rejuvenator
 0AgffA
@@ -14584,7 +14575,6 @@ $light_emissive
 0pp@5tqE?|sO541
 0tU+xc:
 0x%s
-0xh/
 0}dV
 1!1'1-191C1E1K1]1a1g1m1s1
 1.35
@@ -14719,6 +14709,7 @@ $light_emissive
 2\n\tsource_gc
 2\r.CameraAction
 2\rlhp
+2\vp<B4
 2^pV
 2_BONE_IK
 2_tasks_left
@@ -14776,10 +14767,10 @@ $light_emissive
 474E4U4W4c4i4m4
 4<Td
 4@AA
-4BhC<
 4Ch;
 4DL=
 4F0I
+4F\v c
 4Mv8
 4Zis
 4\fPl
@@ -14836,7 +14827,6 @@ $light_emissive
 6,2K
 6-zeZ
 60000
-60`4
 62$|S)6f
 64CK\vH
 65535
@@ -14846,11 +14836,8 @@ $light_emissive
 666666666666666666666666666666666666666666666666\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\.\ssl\s3_enc.c
 6666666666666666CAttributeManager
 67-s
-6@Y4
 6H,N
 6O|T%
-6P94
-6PC4
 6Qd=
 6\n2GAME_PARTICLE_MANAGER_EVENT_UPDATE_ENTITY_POSITION
 6\n2STEAMLEARN_INFERENCE_ERROR_INVALID_NAMED_INFERENCE
@@ -14862,7 +14849,6 @@ $light_emissive
 6\n\tstructure
 6\n\vmatch_slots
 6_wEX
-6`Z4
 6afD
 6bX+
 6c&0|vvX
@@ -14870,9 +14856,6 @@ $light_emissive
 6l13
 6lkc
 6myY;
-6p04
-6pc4
-6pd4
 6qo~
 6r-m_v
 6r1ij
@@ -14921,7 +14904,9 @@ $light_emissive
 851Pe
 8<pl
 8= zp
+8@J0`
 8A6j
+8B0`
 8GZS
 8SIffK5W
 8TZvrv<
@@ -15010,17 +14995,18 @@ $light_emissive
 :\n\nchallenges
 :\n\robjects_added
 :\n\tmove_type
+:citadel_ability_hold_melee
 :cwd|
 :eaI
 :gN(dq
 :mIR
-:m_flClimbSpeedDown
 :parsed on tick %d of %d got %d new commands through command number %d [%s]\n
 :w4v
 ;!;#;-;9;E;S;Y;_;q;{;
 ;"lY7
 ;5jNf
 ;83\v\nHBJ7
+;DSend a screen message to all clients.
 ;LGEW
 ;Qo0
 ;X94<
@@ -15114,6 +15100,7 @@ $light_emissive
 >#>)>/>3>A>W>c>e>w>
 >(Only show on Minimap, no world, no sound
 >0 = watershed, 1 = monotone, 2 = layers
+>0w4
 >33s?
 >4|6eXg_e
 >7^0g
@@ -15136,7 +15123,6 @@ $light_emissive
 >BShow Ping Indicator at Ping Location, Play Ping Sound, and Play VO
 >CShow Ping Indicator on Pinging Player, Play Ping Sound, and Play VO
 >POTG Eval: Best play interval(%.3f -> %.3f)[%.1fs] (cur: %.3f) score (%.2f -> %.2f). Primary Ent (%s)\n
->Pa4
 >Sem
 >WK6
 >\n:GAME_PARTICLE_MANAGER_EVENT_ADD_MODELLIST_OVERRIDE_ELEMENT
@@ -15163,11 +15149,13 @@ $light_emissive
 ?%s:  %s WRITE DirectoryCopy( %s, %p )\n
 ?333?
 ?33s?
+?C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_stats_shared.cpp
 ?CAnimFoot
+?CCitadel_Modifier_GoatGoingUp_LingeringAirControl
+?EDeathSequence
 ?HAI\t81\t9dcG'
 ?HP4
-?HnK
-?Shows client (red) and server (blue) bullet impact point (1=both, 2=client-only, 3=server-only)
+?InfestDamageTakenPercent
 ?VBH;
 ?\n1increase_spring_strength_to_keep_target_on_screen
 ?\n;GAME_PARTICLE_MANAGER_EVENT_CHANGE_CONTROL_POINT_ATTACHMENT
@@ -15181,23 +15169,20 @@ $light_emissive
 ?ffffff
 ?gwL
 ?jOb
-?m_ApplyStackSound
-?m_nCurrentObservedTeam
 ?srJO
 ?tya
 ?uWS
 ?x29
 @!@%@+@1@?@C@E@]@a@g@m@
 @":\n$CCitadelUserMsg_SpectatorTeamChanged
+@08Nd
 @0pp
-@6PO4
 @BH]f
-@CCitadelItemKothSpawner
-@HVp
 @MfKZ
 @Pgl
 @Pu\rm
 @Requests the metadata that was generated from a specified fetch.
+@Run the MVP calculation right now
 @WE]X
 @X!pf
 @Zs3
@@ -15232,6 +15217,7 @@ AABBDirection
 AACompromise
 AC2,h
 ACCESS_DESCRIPTION
+ACCitadel_Modifier_HealthSwapPrecast
 ACHIEVEMENT_EVENT_
 ACID
 ACPT_STATE
@@ -15359,7 +15345,6 @@ ANIMPARAM_ENUM == m_pParameter->GetParameterType()
 ANIMPARAM_GLOBALSYMBOL == m_pParameter->GetParameterType()
 ANSI X9.62
 ANY PRIVATE KEY
-AOERadius
 APPEND_EXP
 APPSYSTEM: In ConnectGameInterfaces(), s_nRegistrationCount is %d!\n
 APPSYSTEM: In ConnectGameInterfaces(), tried to use different connection modes!\n
@@ -16119,7 +16104,6 @@ Bad reinterpret on ArrayRemoveElementMatching
 Bad sequence in GetSequenceActivityName() for model '%s'!\n
 Bad sequence of path_tracks from %s\n
 Bad time value
-Bai_speechfilter
 BallHitRadius
 BallOffset
 BallRadius
@@ -16304,7 +16288,7 @@ BloodImpact
 BloodSpillDPSPercent
 BloodSpillDuration
 BlurVisionRange
-Bm_bUltimateTrained
+Bm_bAlive
 BoX5
 Body Component Scriptdesc
 BodyGameSystem
@@ -16595,6 +16579,7 @@ B{Y.w
 C q'O
 C!OFtq74
 C%C'C3C7C9COCWCiC
+C(ca
 C-gr
 C-side of entity framework
 C3ps
@@ -16678,8 +16663,8 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ability_b
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ability_beam.cpp:243
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_accolades_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4333
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4507
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4360
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:4534
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_hero.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_bot_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_gamerules.cpp
@@ -16689,12 +16674,11 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_music_dat
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_observer_movementservices.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ping_wheel_data.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_player_movementservices.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_player_pawn_shared.cpp:1901
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_player_pawn_shared.cpp:1902
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_player_pawn_shared.cpp:1921
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_player_pawn_shared.cpp:1922
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ranked_badge_entities.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ranked_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_stat_tracker_schema.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_stats_shared.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_utils.cpp:2335
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_utils.cpp:2460
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_archer.cpp:1258
@@ -16702,7 +16686,7 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_he
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_familiar.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_necro.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_necro.cpp:1991
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_shiv.cpp:2024
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_shiv.cpp:1994
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_tengu.cpp:2130
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1541
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1578
@@ -19873,9 +19857,12 @@ Comeback Gold Koth
 Comeback Inactive\n
 Comeback Koth - GameTime: %0.1f, Base Gold: %d, Extra Gold: %d, flComebackMultiplier: %0.1f, Sapphire Team Gold: %d, Amber Team Gold: %d\n
 Comeback Koth Inactive - GameTime: %0.1f, Base Gold: %d, Sapphire Team Gold: %d, Amber Team Gold: %d\n
+Comeback Koth redirected to tick gold %s %d\n
 Comeback Urn Captured: %.2fs Elapsed time, Amber vs Sapphire Participants: ( %d vs %d )\n
 Comeback Urn Give Up: %.2fs Elapsed time, Amber vs Sapphire Participants: ( %d vs %d )\n
+Comeback Urn redirected to tick gold %s %d\n
 Comeback paid %s %d\n
+Comeback redirected to tick gold %s %d\n
 ComebackGold %s
 ComebackGold Kills
 ComebackGold Misc
@@ -21664,7 +21651,6 @@ FCVAR_UNLOGGED
 FCVAR_USERINFO
 FCVAR_VCONSOLE_SET_FOCUS
 FDA~i
-FDV<
 FF!w
 FILE pointer
 FILE_CTRL
@@ -22079,6 +22065,7 @@ FuelRefillRate
 FuelRefillRateInAir
 FuelRefillRateOnWall
 FullChargeDamage
+FullRageCurrentHealthDamagePct
 FuncTrackChange.Blocking
 FuncTrackTrain '%s' has no target.\n
 FuncTrain '%s' has no target.\n
@@ -22760,6 +22747,7 @@ Header |
 Headshot Kills
 HeadshotBonus
 HeadshotBonusSteal
+HeadshotStacks
 Heal Lost
 Heal Prevented
 HealAmount
@@ -23111,7 +23099,6 @@ IndirectVoxelDimY
 IndirectVoxelDimZ
 InferenceAccessToken
 InferenceMetadata
-InfestDamageTakenPercent
 InfestHeal
 InfestHealInterval
 Infinite
@@ -24068,6 +24055,7 @@ LOS check failed.  Obstructed.
 LT[N
 LXKQ
 LY\r5
+L\tPW
 LabelledDebugHelperDebug
 LadderConnect
 LagCompensate
@@ -25889,10 +25877,11 @@ P-256
 P-384
 P-521
 P08@J
-P08J
+P08JPb
+P08Nd
 P1\t98"
+P20`
 P5[1
-P6@;4
 PAGN_4
 PARALYZE
 PARAMETER NAME: %s | OPTIONAL: %s, TYPE: %s, BOUND: %s, REFERENCED: %s\n
@@ -26329,6 +26318,7 @@ PingCommonData
 PingWheelOptionID_t"
 PitchShift
 PivotPaint
+Pj0`
 PlaceDecalEvent_t
 PlaceDistance
 PlaceDistanceInFrontOfCaster
@@ -26664,7 +26654,6 @@ PushSpeedMin
 PushThink
 Pushes an identifier used to group overlays. Deletes all existing overlays using this overlay id.
 Pushes an identifier used to group overlays. Overlays marked with this identifier can be deleted in a big batch.
-Pxh/
 P|iC\r
 Q*hd
 Q/xtJ2
@@ -26865,6 +26854,7 @@ R\n\nBookReward
 R\r1>Vp
 R\tV_log2f
 R\vp!y
+R\vp<B4
 R]Di
 Rad2 Deg
 RadiationThink
@@ -29800,6 +29790,7 @@ TickMiss_Perfect
 TickMiss_PerfectNet
 TickMiss_Samples
 TickRate
+TickRedirect
 TickTime
 Ticks: %d (%d)
 Ticks_Bad
@@ -30852,7 +30843,7 @@ XRJ2
 XWY]
 XYD%
 X\tQo
-X`hr
+X`hr0`
 Xd3h
 XfJ7
 XjfR
@@ -31260,7 +31251,6 @@ Z~wl
 \nDictionary: %s\n
 \nEnemy is %s
 \nGameTime_t
-\nPxh/
 \nSimulating Entities:\n\n
 \nVisMon: Polling now. (Frequency: %f)\n
 \n\fBPE_Teleport
@@ -31936,6 +31926,7 @@ Z~wl
 \rKT8v
 \rLAM
 \rMinghuaQu\f
+\rPz4
 \rTxL
 \rUHz4Z}\r
 \rWhO
@@ -31978,6 +31969,7 @@ Z~wl
 \t%s: Meta: %s, Account: %u, Hero: %u\n
 \t,L2y
 \t-f3F2
+\t0y4
 \t6trF
 \tAbilities + items\n
 \tAdditional arguments are of the form [{ "key1" "value1" "key2" "value2" }]\n
@@ -32068,6 +32060,7 @@ Z~wl
 ]MSd
 ][LK~lO
 ^.om5r
+^0r4
 ^DnJ
 ^DqPt
 ^J_spY
@@ -32161,6 +32154,7 @@ a:typeparam
 a;Tg
 a@XZ
 aA0k
+aBvd
 aD/x
 aDSS
 aECDH
@@ -32590,6 +32584,7 @@ ai_relationship cannot revert changes before they are applied!\n
 ai_script_conditions
 ai_setenabled <0 or 1>\n
 ai_sound
+ai_speechfilter
 ai_speechfilter finds no subject(s) called: %s\n
 ai_task
 ai_test_path
@@ -33391,6 +33386,7 @@ break_flip_pieces
 break_prop
 break_radius
 break_twist_pieces
+breakable_spawn_group
 breakables_destroyed_gold
 breakables_destroyed_powerup
 breakaftertime_x
@@ -33767,7 +33763,6 @@ citadel_ability_flying_strike
 citadel_ability_fortuna_primaryweapon
 citadel_ability_gunslinger_demon_carbine
 citadel_ability_healing_slash
-citadel_ability_hold_melee
 citadel_ability_hook
 citadel_ability_hornet_chain
 citadel_ability_hornet_leap
@@ -34483,6 +34478,7 @@ dHHp
 dITRedirect
 dNSDomain
 dOj\f,
+dP\tPW
 dSAQuality
 dWry
 dZ!2.
@@ -34879,7 +34875,6 @@ doorman_bomb_projectile
 dotProductMax
 double_shot
 down
-dq\f C
 draft
 draft_item_sets
 drag_override
@@ -38330,6 +38325,7 @@ m_nParamIndex < 0
 m_nResult
 m_nSerial
 m_nSound
+m_nSpawnGroup
 m_nSpawnGroupCount
 m_nSquadSoundPriority
 m_nStackDepthWhenAdded
@@ -39624,6 +39620,7 @@ modifier_weapon_capacitor_slow
 modifier_weapon_eater_stack
 modifier_webwall_debuff
 modifier_werewolf
+modifier_werewolf_bola
 modifier_werewolf_huntaura_werewolf
 modifier_werewolf_kickflip_bonusdamage
 modifier_werewolf_kickflip_success_self
@@ -39744,6 +39741,7 @@ my_hero
 mzP"T
 n < (int)sizeof(ctx->enc_data)
 n does not equal p q
+n p4
 n0?X
 n1Z 
 n5cM
@@ -40404,13 +40402,14 @@ p.other
 p.ppBasis
 p.prime
 p.tpBasis
-p0jP
+p08@H^d
+p20`
 p2{l
 p4Z3
 p5Z3
 p5\nL,
-p6 >4
 p618
+p<B4
 p@0pqE5tsO?|1
 pActivator
 pAnimGraphEntity
@@ -40679,6 +40678,7 @@ payload + padding <= 16381
 payment gateway capabilities
 payment_row_usd
 payment_us_usd
+pb0`
 pbeWithMD2AndDES-CBC
 pbeWithMD2AndRC2-CBC
 pbeWithMD5AndCast5CBC
@@ -42971,6 +42971,7 @@ tLY^m`6
 tLl 
 tLsq
 tNt5
+tR\tPW
 t\n\fDamageSource
 t\n\tCacheData
 t_movement_idle_turn_target
@@ -44312,8 +44313,8 @@ yyen
 z(ov
 z/B,9d
 z<d2
+z>HL
 z>Hz
-zDm_fUnpauseRawTime
 zF):O4
 zFar
 zG2m8
@@ -44369,13 +44370,10 @@ zz2K
 }Xee+
 }gE3
 }n2W
-~0o4
 ~9ob
 ~If D
 ~P2T
-~Po4
 ~R65Fu
 ~jLRG
-~pm4
 ~w]UG
 ~yhZ
