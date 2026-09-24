@@ -139,6 +139,7 @@
 //	"m_SalvageBeam": "",
 //	"m_ConnectBeam": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_WreckerSalvageVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

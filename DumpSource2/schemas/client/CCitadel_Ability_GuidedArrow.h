@@ -3,6 +3,7 @@
 // MNetworkVarNames = "GameTime_t m_flSnapAnglesBackTime"
 // MNetworkVarNames = "int m_nBonusTechPower"
 // MNetworkVarNames = "bool m_bNeedsExplosion"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_GuidedArrow : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

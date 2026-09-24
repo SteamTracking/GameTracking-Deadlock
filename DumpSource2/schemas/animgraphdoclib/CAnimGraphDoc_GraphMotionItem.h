@@ -27,6 +27,7 @@
 //	}
 //}
 // MPropertyFriendlyName = "Motion Graph"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_GraphMotionItem : public CAnimGraphDoc_MotionItem
 {
 	// MPropertyFriendlyName = "Name"

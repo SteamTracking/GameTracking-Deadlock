@@ -429,6 +429,7 @@
 //	},
 //	"m_BranchWallModel": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelAbilityDruidPlantBranchWallVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

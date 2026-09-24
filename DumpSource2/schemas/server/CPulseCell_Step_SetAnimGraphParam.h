@@ -3,6 +3,7 @@
 //	"m_nEditorNodeID": -1,
 //	"m_ParamName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_Step_SetAnimGraphParam : public CPulseCell_BaseFlow
 {
 	CUtlString m_ParamName;

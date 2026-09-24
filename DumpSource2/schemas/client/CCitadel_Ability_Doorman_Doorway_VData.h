@@ -517,6 +517,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Doorman_Doorway_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Sounds"

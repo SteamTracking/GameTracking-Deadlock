@@ -146,6 +146,7 @@
 //	"m_CasterMarkTriggerSound": "",
 //	"m_VictimMarkTriggerSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Gunslinger_DemonMarkVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

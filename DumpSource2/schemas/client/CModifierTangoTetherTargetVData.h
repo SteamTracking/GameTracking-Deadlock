@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_GrappleRopeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierTangoTetherTargetVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -140,6 +140,7 @@
 //	"m_EnemyHeroStasisEffect": "",
 //	"m_EnemyHeroGrabEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Wrecker_UltimateThrowEnemyVData : public CCitadel_Modifier_StunnedVData
 {
 	// MPropertyStartGroup = "Visuals"

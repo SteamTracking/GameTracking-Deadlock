@@ -3,6 +3,7 @@
 // MNetworkVarNames = "GameTime_t m_flFastChargeStartTime"
 // MNetworkVarNames = "GameTime_t m_flFastChargeEndTime"
 // MNetworkVarNames = "bool m_bHitAPlayer"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Bull_Charge : public CCitadelBaseAbility
 {
 	CUtlVector< CHandle< CBaseEntity > > m_vecHitEntities;

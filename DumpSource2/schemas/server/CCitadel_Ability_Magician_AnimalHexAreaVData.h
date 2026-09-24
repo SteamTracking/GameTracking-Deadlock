@@ -434,6 +434,7 @@
 //	"m_ProjectileHitConfirm": "",
 //	"m_AreaWarningEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Magician_AnimalHexAreaVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

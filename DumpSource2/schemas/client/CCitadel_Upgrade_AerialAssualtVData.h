@@ -453,6 +453,7 @@
 //	},
 //	"m_LaunchParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Upgrade_AerialAssualtVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

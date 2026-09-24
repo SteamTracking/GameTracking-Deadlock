@@ -1,7 +1,7 @@
 // MGetKV3ClassDefaults = {
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_fromNodeID": "00000000-0000-0000-0000-000000000000",
-//	"m_outputPinID": <HIDDEN FOR DIFF>,
+//	"m_outputPinID": "",
 //	"m_toNodeID": "00000000-0000-0000-0000-000000000000",
 //	"m_inputPinID": "00000000-0000-0000-0000-000000000000"
 //}

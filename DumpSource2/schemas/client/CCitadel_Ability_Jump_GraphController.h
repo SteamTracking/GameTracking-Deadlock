@@ -5,6 +5,7 @@
 //	"m_bJump": null,
 //	"m_pszLaunchType": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Jump_GraphController : public CCitadelBaseAbilityGraphController
 {
 	CAnimGraphParamRef< bool > m_bDashJump;

@@ -5,6 +5,7 @@
 // MVDataFileExtension = "vsnd"
 // MPropertyFriendlyName = "VSND Container"
 // MPropertyDescription = "Voice Container Base"
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerBase
 {
 	// MPropertySuppressField

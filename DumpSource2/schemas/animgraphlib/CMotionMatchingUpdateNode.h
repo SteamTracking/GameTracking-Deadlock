@@ -5,37 +5,37 @@
 //		"m_path":
 //		[
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			}
 //		],
 //		"m_nCount": 0
@@ -86,6 +86,7 @@
 //	"m_flDistanceScale_MinScale": 0.000000,
 //	"m_bEnableDistanceScaling": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CMotionMatchingUpdateNode : public CLeafUpdateNode
 {
 	CMotionDataSet m_dataSet;

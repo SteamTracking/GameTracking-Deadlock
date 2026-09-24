@@ -441,6 +441,7 @@
 //	"m_flKillCheckWindow": 3.000000,
 //	"m_flDamageInterval": 0.200000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_UltComboVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -433,6 +433,7 @@
 //	"m_flTimeToActivate": 0.000000,
 //	"m_flTimeForHint": 2.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_ZipLineBoost_VData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

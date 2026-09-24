@@ -434,6 +434,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_LifeDrainVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

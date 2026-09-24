@@ -141,6 +141,7 @@
 //	"m_HealParticle": "",
 //	"m_DamageParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ChronoSwap_BubbleMoveVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Gameplay"

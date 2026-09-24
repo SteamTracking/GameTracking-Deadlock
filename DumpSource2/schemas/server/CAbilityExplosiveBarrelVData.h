@@ -442,6 +442,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityExplosiveBarrelVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

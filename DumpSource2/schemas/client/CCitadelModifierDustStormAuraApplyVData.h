@@ -140,6 +140,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierDustStormAuraApplyVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

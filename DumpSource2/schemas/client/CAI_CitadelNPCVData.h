@@ -291,6 +291,7 @@
 // MPropertySuppressBaseClassField = "m_flArmDamageMultiplier"
 // MPropertySuppressBaseClassField = "m_flLegDamageMultiplier"
 // MPropertySuppressBaseClassField = "m_nMaxAdditionalAmmoBalancingShots"
+// MHasKV3TransferPolymorphicClassname
 class CAI_CitadelNPCVData : public CAI_BaseNPCVData
 {
 	CUtlOrderedMap< EAbilitySlots_t, CSubclassName< 4 > > m_mapBoundAbilities;

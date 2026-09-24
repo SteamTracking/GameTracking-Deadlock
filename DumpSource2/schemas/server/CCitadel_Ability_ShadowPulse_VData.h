@@ -458,6 +458,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_ShadowPulse_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

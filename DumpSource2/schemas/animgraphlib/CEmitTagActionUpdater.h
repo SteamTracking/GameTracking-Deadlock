@@ -3,6 +3,7 @@
 //	"m_nTagIndex": -1,
 //	"m_bIsZeroDuration": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CEmitTagActionUpdater : public CAnimActionUpdater
 {
 	int32 m_nTagIndex;

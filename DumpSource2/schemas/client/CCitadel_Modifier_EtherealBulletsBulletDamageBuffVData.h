@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_TracerParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_EtherealBulletsBulletDamageBuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

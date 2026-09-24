@@ -5,6 +5,7 @@
 //	"m_nTargetMaskNodeIdx": -1,
 //	"m_nBlendWeightValueNodeIdx": -1
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmBoneMaskBlendNode::CDefinition : public CNmBoneMaskValueNode::CDefinition
 {
 	int16 m_nSourceMaskNodeIdx;

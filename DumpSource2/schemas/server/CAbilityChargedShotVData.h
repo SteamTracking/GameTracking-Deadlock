@@ -431,6 +431,7 @@
 //	"m_ChannelStartParticle": "",
 //	"m_ShootParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityChargedShotVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

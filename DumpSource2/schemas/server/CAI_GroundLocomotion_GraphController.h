@@ -54,6 +54,7 @@
 //	"m_sMovementLeftBadZonePassAllowed": "Movement_Left_Bad_Zone_Pass_Allowed",
 //	"m_sMovementDisableStateTimeout": "Movement_Disable_State_Timeout"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAI_GroundLocomotion_GraphController : public CAnimGraphControllerBase
 {
 	CRelativeTransform m_stopTarget;

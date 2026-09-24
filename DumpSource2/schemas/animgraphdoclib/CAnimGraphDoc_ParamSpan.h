@@ -6,11 +6,12 @@
 //	"m_paramName": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_flStartCycle": 0.000000,
 //	"m_flEndCycle": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_ParamSpan
 {
 	CUtlVector< CAnimGraphDoc_ParamSpanSample > m_samples;

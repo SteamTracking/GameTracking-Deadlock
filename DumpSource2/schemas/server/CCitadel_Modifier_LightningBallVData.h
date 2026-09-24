@@ -139,6 +139,7 @@
 //	"m_ZapParticle": "",
 //	"m_TargetScreenParticleEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_LightningBallVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

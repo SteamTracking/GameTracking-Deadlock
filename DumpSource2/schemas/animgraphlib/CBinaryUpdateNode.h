@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CBinaryUpdateNode : public CAnimUpdateNodeBase
 {
 	CAnimUpdateNodeRef m_pChild1;

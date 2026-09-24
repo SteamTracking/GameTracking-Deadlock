@@ -435,6 +435,7 @@
 //	},
 //	"m_flDamageFalloffEndScale": 0.650000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_ShieldedSentry_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -3,6 +3,7 @@
 //	"m_nEditorNodeID": -1
 //}
 // MPulseFunctionHiddenInTool
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropPulse_BaseQueryableFlow : public CPulseCell_BaseFlow
 {
 };

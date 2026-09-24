@@ -462,6 +462,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_BurrowVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

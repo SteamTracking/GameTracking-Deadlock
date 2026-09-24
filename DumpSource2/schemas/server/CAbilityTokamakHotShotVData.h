@@ -439,6 +439,7 @@
 //	"m_HitParticle": "",
 //	"m_GroundParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityTokamakHotShotVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

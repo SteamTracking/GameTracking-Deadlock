@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,11 +16,11 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_ikChain": "",
@@ -30,31 +30,31 @@
 //	"m_clavicleRightJointName": "",
 //	"m_parameterNamePosition":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_parameterNameOrientation":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_parameterNamePelvisOffset":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_parameterCameraOnly":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_parameterCameraClearanceDistance":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_parameterWeaponDepenetrationDistance":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_parameterWeaponDepenetrationDelta":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_depenetrationJointName": "",
 //	"m_propJoints":
@@ -62,6 +62,7 @@
 //	]
 //}
 // MPropertyFriendlyName = "Aim Camera"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_AimCameraNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField

@@ -8,12 +8,13 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative"
 //}
 // MPropertyFriendlyName = "Input Stream"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_InputStreamNode : public CAnimGraphDoc_Node
 {
 };

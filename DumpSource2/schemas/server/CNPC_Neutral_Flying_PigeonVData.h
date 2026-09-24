@@ -16,6 +16,7 @@
 //	"m_DestroyParticle": "",
 //	"m_strDestroySound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Neutral_Flying_PigeonVData : public CEntitySubclassVDataBase
 {
 	CRangeFloat m_flFrequencyY;

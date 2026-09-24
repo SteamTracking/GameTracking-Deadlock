@@ -11,6 +11,7 @@
 //	"m_strBarrelBounceSound": "",
 //	"m_strExpiredSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Bounce_PadVData : public CEntitySubclassVDataBase
 {
 	float32 m_flBouncePadCollisionHeight;

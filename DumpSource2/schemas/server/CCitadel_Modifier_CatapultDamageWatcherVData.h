@@ -141,6 +141,7 @@
 //	},
 //	"m_flDamageHealthPct": 15.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_CatapultDamageWatcherVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

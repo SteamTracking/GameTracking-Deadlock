@@ -1,4 +1,5 @@
 // MNetworkVarNames = "bool m_bAlignCameraOnAutoDismount"
+// MClassHasEntityLimitedDataDesc
 class CCitadelClimbRopeTrigger : public CBaseTrigger
 {
 	// MNetworkEnable

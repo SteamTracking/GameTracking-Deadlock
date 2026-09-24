@@ -442,6 +442,7 @@
 //	"m_strEndingWarningSound": "",
 //	"m_strAG2PostCastAction": "post_cast"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Werewolf_TransformationVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

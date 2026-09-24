@@ -139,6 +139,7 @@
 //	"m_bStopMovementXY": true,
 //	"m_bStopMovementPosZ": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_RootVData : public CCitadelModifierVData
 {
 	bool m_bStopMovementXY;

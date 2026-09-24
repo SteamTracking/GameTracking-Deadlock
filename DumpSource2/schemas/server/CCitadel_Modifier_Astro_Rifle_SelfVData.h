@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_WeaponFxParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Astro_Rifle_SelfVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -437,6 +437,7 @@
 //	"m_strEffectsAttachName": "palm_l",
 //	"m_flChargeAnimDelayTime": 0.100000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityMeleeVData : public CitadelAbilityVData
 {
 	// MPropertyDescription = "How long we'll buffer input to trigger another melee if we're already performing a melee"

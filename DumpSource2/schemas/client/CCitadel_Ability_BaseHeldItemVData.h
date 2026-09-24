@@ -430,6 +430,7 @@
 //	"m_flBaseFallrate": 40.000000,
 //	"m_ItemModel": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_BaseHeldItemVData : public CitadelAbilityVData
 {
 	float32 m_flBaseFallrate;

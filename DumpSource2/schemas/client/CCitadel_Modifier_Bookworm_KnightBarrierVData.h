@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_BlockParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Bookworm_KnightBarrierVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

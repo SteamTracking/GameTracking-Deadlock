@@ -454,6 +454,7 @@
 //	"m_flFakeBulletDistanceFudge": 10.000000,
 //	"m_flDotProductToStun": -0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Priest_KnockbackVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -9,7 +9,7 @@
 //	"m_bNotPickable": false
 //}
 // MVDataRoot
-// MVDataOutlinerLeafNameFn (UNKNOWN FOR PARSER)
+// MVDataOutlinerLeafNameFn
 class CollisionDetailLayerInfo_t
 {
 	// MPropertyFriendlyName = "Description"

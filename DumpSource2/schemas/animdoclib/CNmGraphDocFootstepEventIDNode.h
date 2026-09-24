@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocFootstepEventIDNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "ID",
 //			"m_type": "ID",
 //			"m_bIsDynamicPin": false,
@@ -27,6 +27,7 @@
 //	"m_bLimitSearchToSourceState": false,
 //	"m_bIgnoreInactiveBranchEvents": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocFootstepEventIDNode : public CNmGraphDocFlowNode
 {
 	// MPropertyGroupName = "+Advanced Search Rules"

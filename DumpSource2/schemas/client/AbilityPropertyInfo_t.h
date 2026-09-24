@@ -8,7 +8,7 @@
 class AbilityPropertyInfo_t
 {
 	// MPropertyDescription = "What Property Attribute or Status Effect do you want to show? Status effects populated from drop down, manually type in Important Attribute"
-	// MPropertyLeafSuggestionProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyLeafSuggestionProviderFn
 	CUtlString m_strImportantProperty;
 	// MPropertyDescription = "Adds the requiresAbilityUpgrade class to the panel so we can style it correctly"
 	bool m_bRequiresAbilityUpgrade;

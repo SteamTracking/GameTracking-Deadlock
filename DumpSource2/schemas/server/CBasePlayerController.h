@@ -15,6 +15,7 @@
 // MNetworkVarNames = "uint64 m_steamID"
 // MNetworkVarNames = "bool m_bNoClipEnabled"
 // MNetworkVarNames = "uint32 m_iDesiredFOV"
+// MNetworkNoBase
 class CBasePlayerController : public CBaseEntity
 {
 	// MNotSaved

@@ -143,6 +143,7 @@
 //	"m_flAirSpeed": 100.000000,
 //	"m_flFallSpeed": 30.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Operative_UmbrellaManeuver_AirHang_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

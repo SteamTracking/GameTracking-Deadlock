@@ -10,6 +10,7 @@
 //	"m_DefaultValue": ""
 //}
 // MPropertyFriendlyName = "Material Group"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropVariable_MaterialGroup : public CSmartPropVariable
 {
 	// MPropertyDescription = "Model containing the set of material groups to select."

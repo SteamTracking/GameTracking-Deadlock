@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocTargetOffsetNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,7 +13,7 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Target",
 //			"m_type": "Target",
 //			"m_bIsDynamicPin": false,
@@ -23,7 +23,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Target",
 //			"m_bIsDynamicPin": false,
@@ -44,6 +44,7 @@
 //		0.000000
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocTargetOffsetNode : public CNmGraphDocFlowNode
 {
 	bool m_bIsBoneSpaceOffset;

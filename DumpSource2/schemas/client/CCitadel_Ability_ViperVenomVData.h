@@ -439,6 +439,7 @@
 //	"m_strVenomExplode": "",
 //	"m_strVenomStrongExplode": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_ViperVenomVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

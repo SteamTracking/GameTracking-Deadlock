@@ -21,6 +21,7 @@
 // MPropertyFriendlyName = "Distance"
 // MPropertyDescription = "Compute the distance between two 3D points"
 // MVDataClassGroup = "Compute"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_ComputeDistance3D : public CSmartPropOperation
 {
 	// MPropertyFriendlyName = "Output Variable"

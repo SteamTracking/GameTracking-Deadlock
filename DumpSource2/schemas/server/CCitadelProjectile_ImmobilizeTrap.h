@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadelProjectile_ImmobilizeTrap : public CCitadelProjectile
 {
 	GameTime_t m_flStartTime;

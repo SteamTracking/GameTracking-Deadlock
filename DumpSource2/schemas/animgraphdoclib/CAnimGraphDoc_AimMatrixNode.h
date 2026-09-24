@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,11 +16,11 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_sequenceName": "",
@@ -30,7 +30,7 @@
 //	"m_paramName": "",
 //	"m_param":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsPosition": false,
 //	"m_attachmentName": "",
@@ -55,6 +55,7 @@
 //	}
 //}
 // MPropertyFriendlyName = "Aim Matrix"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_AimMatrixNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField
@@ -73,10 +74,10 @@ class CAnimGraphDoc_AimMatrixNode : public CAnimGraphDoc_Node
 	CUtlString m_paramName;
 	// MPropertyFriendlyName = "Parameter"
 	// MPropertyAttributeChoiceName = "VectorParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_param;
 	// MPropertyFriendlyName = "Parameter is a Position"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bIsPosition;
 	// MPropertyFriendlyName = "Aim Attachment"
 	// MPropertyAttributeChoiceName = "Attachment"
@@ -86,7 +87,7 @@ class CAnimGraphDoc_AimMatrixNode : public CAnimGraphDoc_Node
 	AimMatrixBlendMode m_blendMode;
 	// MPropertyFriendlyName = "Bone Mask"
 	// MPropertyAttributeChoiceName = "BoneMask"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CUtlString m_boneMaskName;
 	// MPropertyFriendlyName = "Reset Child"
 	bool m_bResetBase;
@@ -96,14 +97,14 @@ class CAnimGraphDoc_AimMatrixNode : public CAnimGraphDoc_Node
 	// MPropertyAutoRebuildOnChange
 	bool m_bUseBiasAndClamp;
 	// MPropertyFriendlyName = "Yaw Offset Angle"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flBiasAndClampYawOffset;
 	// MPropertyFriendlyName = "Pitch Offset Angle"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flBiasAndClampPitchOffset;
 	// MPropertyFriendlyName = "Clamp Blend Curve"
 	// MPropertyAttributeEditor = "AnimGraphBlendCurve()"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CBlendCurve m_biasAndClampBlendCurve;
 	// MPropertyFriendlyName = "Damping"
 	CAnimInputDamping m_damping;

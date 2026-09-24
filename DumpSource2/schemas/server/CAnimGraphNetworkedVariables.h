@@ -22,6 +22,7 @@
 // MNetworkVarNames = "int m_nOwnerOnlyBoolVariablesCount"
 // MNetworkVarNames = "int m_nRandomSeedOffset"
 // MNetworkVarNames = "float m_flLastTeleportTime"
+// MIgnoreTypeScopeMetaChecks
 class CAnimGraphNetworkedVariables
 {
 	// MNetworkEnable

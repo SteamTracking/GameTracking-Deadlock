@@ -15,11 +15,11 @@
 //		},
 //		"m_AnimgraphParameterNamePosition":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_AnimgraphParameterNameOrientation":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_TargetCoordSystem": "World Space"
 //	},

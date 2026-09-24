@@ -456,6 +456,7 @@
 //	},
 //	"m_strHitConfirmSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItemSilenceGlyphVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

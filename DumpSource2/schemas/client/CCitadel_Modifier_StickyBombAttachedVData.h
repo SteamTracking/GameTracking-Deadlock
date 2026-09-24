@@ -148,6 +148,7 @@
 //	},
 //	"m_DetonateWarningTime": 1.200000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_StickyBombAttachedVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

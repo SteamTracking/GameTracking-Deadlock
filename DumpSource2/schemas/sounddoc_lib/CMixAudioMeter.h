@@ -12,6 +12,7 @@
 //}
 // MPropertyFriendlyName = "VMix Audio Meter Node"
 // MPropertyDescription = "This lets you meter an audio signal in vmixtool."
+// MHasKV3TransferPolymorphicClassname
 class CMixAudioMeter : public CMixPropertyBase
 {
 	float32 m_flLeftLevel;

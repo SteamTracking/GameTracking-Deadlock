@@ -3,6 +3,7 @@
 // MNetworkVarNames = "GameTime_t m_flHeatTime"
 // MNetworkVarNames = "GameTime_t m_flOverheatSoundTime"
 // MNetworkVarNames = "bool m_bOverheating"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Tokamak_HeatSinks_Inherent : public C_CitadelBaseAbility
 {
 	int32 m_nIntervalsElapsed;

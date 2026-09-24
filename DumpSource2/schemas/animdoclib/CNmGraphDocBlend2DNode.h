@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocBlend2DNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,35 +13,35 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "X",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Y",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Option (0.00, 0.00)",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": true,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Option (0.00, 0.00)",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": true,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Option (0.00, 0.00)",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": true,
@@ -51,7 +51,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Pose",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -97,6 +97,7 @@
 //	},
 //	"m_bAllowLooping": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocBlend2DNode : public CNmGraphDocFlowNode
 {
 	// MPropertyAttributeEditor = "BlendSpace2D()"

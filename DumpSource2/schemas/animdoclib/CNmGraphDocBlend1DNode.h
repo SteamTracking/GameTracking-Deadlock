@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocBlend1DNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,21 +13,21 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Parameter",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Option (0.00)",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": true,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Option (0.00)",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": true,
@@ -37,7 +37,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Pose",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -51,17 +51,18 @@
 //			{
 //				"m_name": "Option",
 //				"m_flValue": 0.000000,
-//				"m_pinID": <HIDDEN FOR DIFF>,
+//				"m_pinID": ""
 //			},
 //			{
 //				"m_name": "Option",
 //				"m_flValue": 0.000000,
-//				"m_pinID": <HIDDEN FOR DIFF>,
+//				"m_pinID": ""
 //			}
 //		]
 //	},
 //	"m_bAllowLooping": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocBlend1DNode : public CNmGraphDocFlowNode
 {
 	// MPropertyAttributeEditor = "BlendSpace1D()"

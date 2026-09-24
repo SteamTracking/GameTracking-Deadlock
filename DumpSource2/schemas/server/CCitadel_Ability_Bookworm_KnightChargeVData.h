@@ -494,6 +494,7 @@
 //	"m_flMaxPitch": 90.000000,
 //	"m_bDebug": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Bookworm_KnightChargeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

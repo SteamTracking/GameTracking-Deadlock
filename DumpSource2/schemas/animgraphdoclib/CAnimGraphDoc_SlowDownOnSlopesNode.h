@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,16 +16,17 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_flSlowDownStrength": 1.000000
 //}
 // MPropertyFriendlyName = "Slow Down On Slopes"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_SlowDownOnSlopesNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField

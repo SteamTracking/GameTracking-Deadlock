@@ -465,6 +465,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Drifter_ShadowMark_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

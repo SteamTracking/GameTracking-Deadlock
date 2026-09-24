@@ -142,6 +142,7 @@
 //	"m_ExplodeParticle": "",
 //	"m_ExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Cadence_GrandFinale_BuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

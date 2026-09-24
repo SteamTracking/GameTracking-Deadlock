@@ -16,6 +16,7 @@
 // MNetworkVarNames = "bool m_bNoClipEnabled"
 // MNetworkVarNames = "uint32 m_iDesiredFOV"
 // MNetworkReplayCompatField = "m_skeletonInstance\.m_vecOrigin\..*|"
+// MNetworkNoBase
 class CBasePlayerController : public C_BaseEntity
 {
 	// MNotSaved

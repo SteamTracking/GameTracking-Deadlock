@@ -156,6 +156,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_MeleeCharge_VData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyStartGroup = "Visuals"

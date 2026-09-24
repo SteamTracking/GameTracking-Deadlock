@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Upgrade_StabilizingTripod : public CCitadel_Item
 {
 	CUtlVector< CHandle< CBaseEntity > > m_vecDeployedSentries;

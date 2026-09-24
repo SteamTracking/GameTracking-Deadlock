@@ -5,6 +5,7 @@
 //	],
 //	"m_bShareEnemyInfo": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class SquadModeInfo_t
 {
 	CUtlVector< SquadSlotId_t > m_vecSlots;

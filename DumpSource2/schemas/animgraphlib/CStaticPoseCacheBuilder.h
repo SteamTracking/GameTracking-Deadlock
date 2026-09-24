@@ -6,6 +6,7 @@
 //	"m_nBoneCount": 0,
 //	"m_nMorphCount": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CStaticPoseCacheBuilder : public CStaticPoseCache
 {
 };

@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_BoostTrailParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Bull_Leap_BoostingVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

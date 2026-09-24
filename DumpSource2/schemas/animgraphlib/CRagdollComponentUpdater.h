@@ -3,7 +3,7 @@
 //	"m_name": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_networkMode": "ServerAuthoritative",
 //	"m_bStartEnabled": false,
@@ -30,6 +30,7 @@
 //	"m_flMaxStretch": 56.000000,
 //	"m_bSolidCollisionAtZeroWeight": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CRagdollComponentUpdater : public CAnimComponentUpdater
 {
 	CUtlVector< CAnimNodePath > m_ragdollNodePaths;

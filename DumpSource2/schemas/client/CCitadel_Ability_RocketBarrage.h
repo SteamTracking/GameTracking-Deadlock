@@ -1,4 +1,5 @@
 // MNetworkVarNames = "CCitadelAutoScaledTime m_flBarrageEndTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_RocketBarrage : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

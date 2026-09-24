@@ -22,6 +22,7 @@
 //}
 // MPropertyFriendlyName = "VMix Steam Audio Direct Node"
 // MPropertyDescription = "Applies steam audio model for direct audio.  This includes modeling the loss due to transmission in air, directivity and occlusion effects."
+// MHasKV3TransferPolymorphicClassname
 class CMixSteamAudioDirect : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Apply Distance Attenuation"

@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocTargetSelectorNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,21 +13,21 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Target",
 //			"m_type": "Target",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Option",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Option",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -37,7 +37,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Pose",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -54,10 +54,11 @@
 //	"m_bIsWorldSpaceTarget": true,
 //	"m_bIgnoreInvalidOptions": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocTargetSelectorNode : public CNmGraphDocFlowNode
 {
 	// MPropertyAutoExpandSelf
-	// MPropertyResizable (UNKNOWN FOR PARSER)
+	// MPropertyResizable = 0
 	CUtlVector< CUtlString > m_optionLabels;
 	float32 m_flOrientationScoreWeight;
 	float32 m_flPositionScoreWeight;

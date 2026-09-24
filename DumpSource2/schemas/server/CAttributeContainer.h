@@ -3,6 +3,7 @@
 // MNetworkIncludeByName = "m_iReapplyProvisionParity"
 // MNetworkIncludeByName = "m_Item"
 // MNetworkVarNames = "CEconItemView m_Item"
+// MNetworkNoBase
 class CAttributeContainer : public CAttributeManager
 {
 	// MNetworkEnable

@@ -140,6 +140,7 @@
 //	"m_strWeaponShootSound": "",
 //	"m_strBulletWhizSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_TargetPracticeSelfVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

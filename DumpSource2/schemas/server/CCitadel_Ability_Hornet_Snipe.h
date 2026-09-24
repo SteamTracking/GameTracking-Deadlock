@@ -1,5 +1,6 @@
 // MNetworkVarNames = "GameTime_t m_flScopeStartTime"
 // MNetworkVarNames = "int m_iSnipeKills"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Hornet_Snipe : public CCitadelBaseAbility
 {
 	// MNetworkEnable

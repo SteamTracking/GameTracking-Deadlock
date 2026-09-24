@@ -456,6 +456,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_WeaponUpgrade_ExpressShot_VData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -1,4 +1,5 @@
 // MNetworkVarNames = "int m_iTrophyCount"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Item_TrophyCollector : public CCitadel_Item
 {
 	// MNetworkEnable

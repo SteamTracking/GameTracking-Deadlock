@@ -144,6 +144,7 @@
 //	"m_flPullDistanceMin": 100.000000,
 //	"m_flPullDistanceMax": 1000.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_UltCombo_TargetVData : public CCitadel_Modifier_StunnedVData
 {
 	// MPropertyStartGroup = "Gameplay"

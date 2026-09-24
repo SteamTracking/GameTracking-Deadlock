@@ -1,3 +1,4 @@
+// MNetworkNoBase
 class CParticleProperty
 {
 };

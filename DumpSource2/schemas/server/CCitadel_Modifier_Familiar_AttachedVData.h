@@ -150,6 +150,7 @@
 //	"m_flInputHoldTimeToCancel": 0.000000,
 //	"m_flEndingWarningDuration": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Familiar_AttachedVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

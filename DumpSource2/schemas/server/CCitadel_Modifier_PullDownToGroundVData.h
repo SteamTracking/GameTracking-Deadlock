@@ -142,6 +142,7 @@
 //	"m_flFullPullDistance": 20.000000,
 //	"m_flDampenVelocityRate": -1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_PullDownToGroundVData : public CCitadelModifierVData
 {
 	float32 m_flMaxHeight;

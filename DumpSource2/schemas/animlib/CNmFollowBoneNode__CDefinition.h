@@ -7,6 +7,7 @@
 //	"m_nEnabledNodeIdx": -1,
 //	"m_mode": "RotationAndTranslation"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFollowBoneNode::CDefinition : public CNmPassthroughNode::CDefinition
 {
 	CGlobalSymbol m_bone;

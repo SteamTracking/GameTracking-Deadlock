@@ -16,6 +16,7 @@
 //	],
 //	"m_previewModelName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmSkeletonDocument : public CNmAnimDocument
 {
 	// MPropertyAttributeEditor = "ModelDocAssetBrowse( dmx, fbx, smd, *requiredoubleclick, *ShowRelatedFile )"

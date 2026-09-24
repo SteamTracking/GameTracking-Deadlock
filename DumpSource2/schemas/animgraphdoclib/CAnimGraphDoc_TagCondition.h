@@ -2,12 +2,13 @@
 //	"_class": "CAnimGraphDoc_TagCondition",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_comparisonValue": true,
 //	"m_latestValue": false
 //}
 // MPropertyFriendlyName = "Tag Condition"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_TagCondition : public CAnimGraphDoc_Condition
 {
 	// MPropertyFriendlyName = "Tag"

@@ -2,7 +2,7 @@
 //	"m_name": "",
 //	"m_hScript":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_transitionIndices":
 //	[
@@ -12,7 +12,7 @@
 //	],
 //	"m_stateID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsStartState": 0,
 //	"m_bIsEndState": 0,

@@ -8,9 +8,10 @@
 //	"m_eParamType": "ANIMPARAM_UNKNOWN",
 //	"m_hScript":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CExpressionActionUpdater : public CAnimActionUpdater
 {
 	CAnimParamHandle m_hParam;

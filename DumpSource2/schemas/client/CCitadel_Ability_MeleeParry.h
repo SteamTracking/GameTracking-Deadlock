@@ -1,6 +1,7 @@
 // MNetworkVarNames = "GameTime_t m_flParryStartTime"
 // MNetworkVarNames = "bool m_bAttackParried"
 // MNetworkVarNames = "GameTime_t m_flParrySuccessEndTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_MeleeParry : public C_CitadelBaseAbility
 {
 	ParticleIndex_t m_nActiveFX;

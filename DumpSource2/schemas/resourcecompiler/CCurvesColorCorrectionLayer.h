@@ -49,6 +49,7 @@
 //		]
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCurvesColorCorrectionLayer : public CColorCorrectionLayer
 {
 	CUtlVector< Vector2D > m_curvePointsRGB;

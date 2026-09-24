@@ -433,6 +433,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityWreckerUltimateVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -137,6 +137,7 @@
 //	"m_FootstepAdditional": "",
 //	"m_bRemoveOnInterrupted": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Synth_Barrage_Caster_VData : public CCitadelModifierVData
 {
 };

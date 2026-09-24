@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Projectile_RocketLauncher_Rocket : public C_CitadelProjectile
 {
 };

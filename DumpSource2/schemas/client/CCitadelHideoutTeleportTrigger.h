@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadelHideoutTeleportTrigger : public C_BaseTrigger
 {
 	CUtlSymbolLarge m_strDestLandmark;

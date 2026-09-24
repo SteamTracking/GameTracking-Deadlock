@@ -18,6 +18,7 @@
 //	"m_sRestrictMovementToNavMeshDuringCustomMove": "Movement_Restrict_To_Nav_Mesh_During_CustomMove",
 //	"m_sKeepPathActiveStop": "Keep_Path_Active_Stop"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAI_Motor_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< bool > m_bNavLinkIsOnPath;

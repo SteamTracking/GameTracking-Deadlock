@@ -152,6 +152,7 @@
 //	"m_flAuraTargetingConeHalfWidth": 0.000000,
 //	"m_flAuraTargetingConeAngle": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierAura_ConeVData : public CCitadelModifierAuraVData
 {
 	float32 m_flAuraTargetingConeHalfWidth;

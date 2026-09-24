@@ -2,6 +2,7 @@
 // MNetworkVarNames = "bool m_bIsLeaping"
 // MNetworkVarNames = "GameTime_t m_tLeapStartTime"
 // MNetworkVarNames = "GameTime_t m_tLeapOffTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Werewolf_Leap : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

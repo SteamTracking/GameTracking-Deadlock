@@ -190,6 +190,7 @@
 //	"m_AOETargetFlags": "",
 //	"m_AOELOSCheckType": "ELOSCheck_None"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_BreakablePropHealthPickupVData : public CCitadel_Pickup_VData
 {
 	// MPropertyGroupName = "Visuals"

@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocIDEventPercentageThroughNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -28,6 +28,7 @@
 //	"m_bIgnoreInactiveBranchEvents": false,
 //	"m_eventID": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocIDEventPercentageThroughNode : public CNmGraphDocFlowNode
 {
 	// MPropertyGroupName = "+Advanced Search Rules"

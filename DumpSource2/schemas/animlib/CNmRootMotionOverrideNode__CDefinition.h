@@ -13,6 +13,7 @@
 //		"m_flags": 1
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmRootMotionOverrideNode::CDefinition : public CNmPassthroughNode::CDefinition
 {
 	int16 m_desiredMovingVelocityNodeIdx;

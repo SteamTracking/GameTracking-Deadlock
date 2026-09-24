@@ -5,37 +5,37 @@
 //		"m_path":
 //		[
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			}
 //		],
 //		"m_nCount": 0
@@ -53,6 +53,7 @@
 //	"m_manualTurnOffset": 0.000000,
 //	"m_bUseManualTurnOffset": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CTurnHelperUpdateNode : public CUnaryUpdateNode
 {
 	AnimValueSource m_facingTarget;

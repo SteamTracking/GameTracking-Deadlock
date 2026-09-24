@@ -149,6 +149,7 @@
 //	"m_flWallStunLookAheadDist": 80.000000,
 //	"m_flStompIgnoreLingerDuration": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_LuggageDragVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

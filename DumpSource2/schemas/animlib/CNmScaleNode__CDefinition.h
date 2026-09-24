@@ -5,6 +5,7 @@
 //	"m_nMaskNodeIdx": -1,
 //	"m_nEnableNodeIdx": -1
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmScaleNode::CDefinition : public CNmPassthroughNode::CDefinition
 {
 	int16 m_nMaskNodeIdx;

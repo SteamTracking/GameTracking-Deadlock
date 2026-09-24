@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadelMatchmakingStatusInfo : public CPointEntity
 {
 	CEntityIOOutput m_OnStartMatchmaking;

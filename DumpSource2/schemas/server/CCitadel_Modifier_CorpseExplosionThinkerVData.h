@@ -140,6 +140,7 @@
 //	"m_ExplosionParticle": "",
 //	"m_flTickRate": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_CorpseExplosionThinkerVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

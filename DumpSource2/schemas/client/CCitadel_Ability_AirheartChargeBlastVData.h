@@ -428,6 +428,7 @@
 //		"m_bIsSeasonal": false
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_AirheartChargeBlastVData : public CitadelAbilityVData
 {
 };

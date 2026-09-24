@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Tengu_Urn : public CCitadelBaseAbility
 {
 	VectorWS m_vLaunchPosition;

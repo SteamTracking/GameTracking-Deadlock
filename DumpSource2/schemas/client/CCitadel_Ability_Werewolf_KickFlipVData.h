@@ -476,6 +476,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Werewolf_KickFlipVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Motion"

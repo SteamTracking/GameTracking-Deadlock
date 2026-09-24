@@ -330,6 +330,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_TrooperNeutralNodeMoverVData : public CNPC_TrooperNeutralVData
 {
 	// MPropertyStartGroup = "Node Movement"

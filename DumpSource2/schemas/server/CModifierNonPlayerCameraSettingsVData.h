@@ -140,6 +140,7 @@
 //	"m_flCameraBackOffset": 64.000000,
 //	"m_flCameraHeightStanding": 64.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierNonPlayerCameraSettingsVData : public CCitadelModifierVData
 {
 	float32 m_flCameraSideOffset;

@@ -12,6 +12,7 @@
 //	"m_bClientOnly": false,
 //	"m_attributeName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmEntityAttributeEventBase : public CNmEvent
 {
 	CUtlString m_attributeName;

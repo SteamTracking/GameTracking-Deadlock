@@ -7,6 +7,7 @@
 //	"m_nSortType": "SOS_SETPARAM_SORTTYPE_LOWEST"
 //}
 // MPropertyFriendlyName = "Set Sound Event Parameter"
+// MHasKV3TransferPolymorphicClassname
 class CSosGroupActionSetSoundeventParameterSchema : public CSosGroupActionSchema
 {
 	int32 m_nMaxCount;

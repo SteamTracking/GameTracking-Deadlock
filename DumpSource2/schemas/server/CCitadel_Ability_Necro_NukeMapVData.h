@@ -436,6 +436,7 @@
 //	"m_flVerticalOffset": 5.000000,
 //	"m_flForwardOffset": 60.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Necro_NukeMapVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

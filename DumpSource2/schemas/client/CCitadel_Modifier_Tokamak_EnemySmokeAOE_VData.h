@@ -150,6 +150,7 @@
 //	"m_flModifierProvidedByAuraDuration": -1.000000,
 //	"m_bRemoveProvidedModifierOnAuraRemoval": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Tokamak_EnemySmokeAOE_VData : public CCitadelModifierAuraVData
 {
 };

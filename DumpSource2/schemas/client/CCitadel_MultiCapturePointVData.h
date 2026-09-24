@@ -29,6 +29,7 @@
 //	"m_flHoldAtPercent": 99.000000,
 //	"m_flStepOutGraceWindow": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_MultiCapturePointVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Visuals"

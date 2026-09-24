@@ -437,6 +437,7 @@
 //	"m_ExplodeParticle": "",
 //	"m_ExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Operative_UmbrellaManeuver_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

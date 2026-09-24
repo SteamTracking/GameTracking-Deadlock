@@ -6,19 +6,19 @@
 //	"m_vectorParamNameOut": "",
 //	"m_floatParamIn":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_floatParamOut":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_vectorParamIn":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_vectorParamOut":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_flMinInputValue": 0.000000,
 //	"m_flMaxInputValue": 1.000000,
@@ -41,19 +41,19 @@ class CRemapValueItem
 	CUtlString m_vectorParamNameOut;
 	// MPropertyFriendlyName = "Parameter In"
 	// MPropertyAttributeChoiceName = "FloatParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_floatParamIn;
 	// MPropertyFriendlyName = "Parameter Out"
 	// MPropertyAttributeChoiceName = "PrivateFloatParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_floatParamOut;
 	// MPropertyFriendlyName = "Parameter In"
 	// MPropertyAttributeChoiceName = "VectorParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_vectorParamIn;
 	// MPropertyFriendlyName = "Parameter Out"
 	// MPropertyAttributeChoiceName = "PrivateVectorParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_vectorParamOut;
 	// MPropertyFriendlyName = "Min Input Value"
 	float32 m_flMinInputValue;

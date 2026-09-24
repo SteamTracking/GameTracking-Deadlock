@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_flBulletHitSlowPct": 15.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_CombatStatusVData : public CCitadelModifierVData
 {
 	float32 m_flBulletHitSlowPct;

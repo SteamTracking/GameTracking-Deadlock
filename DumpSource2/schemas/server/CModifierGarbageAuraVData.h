@@ -154,6 +154,7 @@
 //	"m_EnemyParticle": "",
 //	"m_strAmbientLoopingLocalPlayerSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierGarbageAuraVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

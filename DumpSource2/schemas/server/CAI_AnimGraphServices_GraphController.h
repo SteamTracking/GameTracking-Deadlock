@@ -15,6 +15,7 @@
 //	"m_flHitStrength": null,
 //	"m_nHitBone": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAI_AnimGraphServices_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< CGlobalSymbol > m_sTaskHandshakeType;

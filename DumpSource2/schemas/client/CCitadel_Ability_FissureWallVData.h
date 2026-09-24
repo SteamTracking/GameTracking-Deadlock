@@ -441,6 +441,7 @@
 //	"m_flWallStepHeight": 32.000000,
 //	"m_flWallTraceRadius": 5.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_FissureWallVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

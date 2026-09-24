@@ -404,6 +404,7 @@
 //	"m_flArmAttackKnockbackStrength": 400.000000,
 //	"m_flArmAttackInvulCooldownScale": 2.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Boss_Tier3VData : public CAI_CitadelNPCVData
 {
 	float32 m_flAllyPitTimeMin;

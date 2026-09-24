@@ -58,6 +58,7 @@
 //	"m_eArmSide": null,
 //	"m_eArmPosition": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Boss_Tier3_GraphController : public CAI_CitadelNPC_GraphController
 {
 	CAnimGraph2ParamOptionalRef< CGlobalSymbol > m_eBaseAction;

@@ -439,6 +439,7 @@
 //	"m_DestroyedParticle": "",
 //	"m_DeployParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_MobileResupplyVData : public CitadelAbilityVData
 {
 	float32 m_flResupplyForceScale;

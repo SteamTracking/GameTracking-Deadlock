@@ -20,6 +20,7 @@
 // MPropertyFriendlyName = "Material Color Tint"
 // MPropertyDescription = "Set a color tint to apply to a specific material."
 // MVDataClassGroup = "Color"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_MaterialTint : public CSmartPropOperation
 {
 	// MPropertyAttributeEditor = "SmartPropAttributeEditor(MaterialInSmartProp)"

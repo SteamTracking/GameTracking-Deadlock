@@ -5,37 +5,37 @@
 //		"m_path":
 //		[
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			}
 //		],
 //		"m_nCount": 0
@@ -60,6 +60,7 @@
 //	"m_bUseModelSpace": false,
 //	"m_bApplyScale": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAddUpdateNode : public CBinaryUpdateNode
 {
 	BinaryNodeChildOption m_footMotionTiming;

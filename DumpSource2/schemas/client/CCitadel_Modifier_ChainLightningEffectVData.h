@@ -139,6 +139,7 @@
 //	"m_ChainParticle": "",
 //	"m_strChainSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ChainLightningEffectVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

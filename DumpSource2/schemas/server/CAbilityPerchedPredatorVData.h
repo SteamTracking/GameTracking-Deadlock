@@ -437,6 +437,7 @@
 //	"m_flOnHitDetonateTimer": 1.000000,
 //	"m_flTraceTravelRadius": 30.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityPerchedPredatorVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

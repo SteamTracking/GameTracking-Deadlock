@@ -141,6 +141,7 @@
 //	},
 //	"m_strTargetHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Astro_Rifle_DebuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -9,6 +9,7 @@
 //	],
 //	"m_defaultValue": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmIDSelectorNode::CDefinition : public CNmIDValueNode::CDefinition
 {
 	CUtlVectorFixedGrowable< int16, 5 > m_conditionNodeIndices;

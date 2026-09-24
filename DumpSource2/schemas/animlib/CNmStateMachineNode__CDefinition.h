@@ -6,6 +6,7 @@
 //	],
 //	"m_nDefaultStateIndex": -1
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmStateMachineNode::CDefinition : public CNmPoseNode::CDefinition
 {
 	CUtlLeanVectorFixedGrowable< CNmStateMachineNode::StateDefinition_t, 5 > m_stateDefinitions;

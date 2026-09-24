@@ -6,6 +6,7 @@
 // MNetworkVarNames = "float32 m_y"
 // MNetworkVarNames = "float32 m_z"
 // MNetworkVarNames = "float32 m_angle"
+// MNetworkNoBase
 class C_Fish : public CBaseAnimGraph
 {
 	// MNotSaved

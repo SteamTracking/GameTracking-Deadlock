@@ -49,6 +49,7 @@
 //}
 // MPropertyFriendlyName = "Midpoint Deformer"
 // MPropertyDescription = "Soft deform the center of a volume defined by two endpoints."
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropElement_MidpointDeformer : public CSmartPropElement_Deformer
 {
 	// MPropertyFriendlyName = "Deformation Enabled"

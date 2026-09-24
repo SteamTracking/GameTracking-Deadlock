@@ -8,14 +8,14 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
 //	"m_children":
 //	[
 //	],
-//	"m_seed": <HIDDEN FOR DIFF>,
+//	"m_seed": 0,
 //	"m_choiceMethod": "WeightedRandom",
 //	"m_choiceChangeMethod": "OnReset",
 //	"m_blendMethod": "SingleBlendTime",
@@ -25,6 +25,7 @@
 //	"m_bDontResetSameSelection": false
 //}
 // MPropertyFriendlyName = "Choice"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_ChoiceNode : public CAnimGraphDoc_Node
 {
 	// MPropertyFriendlyName = "Options"
@@ -42,7 +43,7 @@ class CAnimGraphDoc_ChoiceNode : public CAnimGraphDoc_Node
 	ChoiceBlendMethod m_blendMethod;
 	// MPropertyGroupName = "Blending"
 	// MPropertyFriendlyName = "Blend Duration"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_blendTime;
 	// MPropertyGroupName = "Blending"
 	// MPropertyFriendlyName = "Cross Fade"
@@ -51,6 +52,6 @@ class CAnimGraphDoc_ChoiceNode : public CAnimGraphDoc_Node
 	// MPropertyAutoRebuildOnChange
 	bool m_bResetChosen;
 	// MPropertyFriendlyName = "Don't Reset Same Selection"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bDontResetSameSelection;
 };

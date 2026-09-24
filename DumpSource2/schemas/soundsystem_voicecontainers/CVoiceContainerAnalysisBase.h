@@ -25,6 +25,7 @@
 // MPropertyPolymorphicClass
 // MPropertyFriendlyName = "Analysis Container"
 // MPropertyDescription = "Does Not Play Sound, member of CVoiceContainerDefaultDefault"
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerAnalysisBase
 {
 	// MPropertyFriendlyName = "Regenerate curve on compile"

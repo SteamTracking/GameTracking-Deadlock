@@ -140,6 +140,7 @@
 //	"m_flTickInterval": 0.000000,
 //	"m_flDamageResistanceBonusPerGameMinute": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_DamageResistanceVData : public CCitadelModifierVData
 {
 	float32 m_flDamageResistancePerSecond;

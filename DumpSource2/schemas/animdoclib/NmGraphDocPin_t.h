@@ -1,5 +1,5 @@
 // MGetKV3ClassDefaults = {
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_type": "Unknown",
 //	"m_bIsDynamicPin": false,

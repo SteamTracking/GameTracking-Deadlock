@@ -8,6 +8,7 @@
 //	},
 //	"m_defaultValue": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmIDEventNode::CDefinition : public CNmIDValueNode::CDefinition
 {
 	int16 m_nSourceStateNodeIdx;

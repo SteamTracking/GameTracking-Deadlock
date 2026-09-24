@@ -4,6 +4,7 @@
 // MNetworkVarNames = "Vector m_vVacuumStartPos"
 // MNetworkVarNames = "Vector m_vInitialVacuumVel"
 // MNetworkVarNames = "CHandle< CBaseEntity> m_hVacuumTarget"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Pickup : public CBaseAnimGraph
 {
 	// MNetworkEnable

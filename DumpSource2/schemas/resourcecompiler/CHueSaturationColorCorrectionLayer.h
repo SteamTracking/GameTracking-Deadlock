@@ -26,6 +26,7 @@
 //	"m_nBrightnessBlue": 0,
 //	"m_nBrightnessMagenta": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CHueSaturationColorCorrectionLayer : public CColorCorrectionLayer
 {
 	int32 m_nHueMaster;

@@ -469,6 +469,7 @@
 //	"m_flWallStunLookAheadDist": 80.000000,
 //	"m_flEndChargeVelocityScale": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityBullChargeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Camera"

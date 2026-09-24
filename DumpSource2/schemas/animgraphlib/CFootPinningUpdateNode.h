@@ -5,37 +5,37 @@
 //		"m_path":
 //		[
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			}
 //		],
 //		"m_nCount": 0
@@ -64,6 +64,7 @@
 //	],
 //	"m_bResetChild": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CFootPinningUpdateNode : public CUnaryUpdateNode
 {
 	FootPinningPoseOpFixedData_t m_poseOpFixedData;

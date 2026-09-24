@@ -464,6 +464,7 @@
 //	"m_flOnBreakEffectDuration": 1.000000,
 //	"m_flOnRestoreEffectDuration": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_ArmorUpgrade_AblativeCoatVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

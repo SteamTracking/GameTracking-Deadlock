@@ -140,6 +140,7 @@
 //	"m_ChainedParticle": "",
 //	"m_DebuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierContainmentVictimVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

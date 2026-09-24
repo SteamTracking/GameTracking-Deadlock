@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Familiar_HealHostVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

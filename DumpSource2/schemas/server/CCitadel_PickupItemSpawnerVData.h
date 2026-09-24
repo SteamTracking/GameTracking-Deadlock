@@ -14,6 +14,7 @@
 //	"m_flRespawnTimeTest": 20.000000,
 //	"m_bRespawnTimerStartsAfterPickup": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_PickupItemSpawnerVData : public CEntitySubclassVDataBase
 {
 	// MPropertyGroupName = "Visuals"

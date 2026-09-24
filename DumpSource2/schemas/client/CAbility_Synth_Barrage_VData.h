@@ -442,6 +442,7 @@
 //	"m_strProjectileLaunchSound": "",
 //	"m_flAttackInterval": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Synth_Barrage_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

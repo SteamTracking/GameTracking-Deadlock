@@ -22,6 +22,7 @@
 //}
 // MPropertyFriendlyName = "VMix Subgraph Switch Audio Node"
 // MPropertyDescription = "Allows you to swap between sub-graphs with a short crossfade.  Can be used to swap out processing algorithms/configurations, or to dynamically enable/disable optional processing stages.  This can also expose control parameters from the subgraphs so those can be connected to the outer graph."
+// MHasKV3TransferPolymorphicClassname
 class CMixSubgraphSwitch : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Show Detailed Plug Names"

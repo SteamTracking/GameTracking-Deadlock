@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_BloodShardDebuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_GhostBloodShardDebuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -151,6 +151,7 @@
 //	"m_bRemoveProvidedModifierOnAuraRemoval": false,
 //	"m_AuraParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Tokamak_AllySmokeAOE_VData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

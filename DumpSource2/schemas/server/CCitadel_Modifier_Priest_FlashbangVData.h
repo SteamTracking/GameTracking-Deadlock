@@ -140,6 +140,7 @@
 //	"flFlashFadeOutTime": 1.000000,
 //	"flFlashAlpha": 255.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Priest_FlashbangVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Gameplay"

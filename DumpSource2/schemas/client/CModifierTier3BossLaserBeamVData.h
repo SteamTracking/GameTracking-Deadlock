@@ -154,6 +154,7 @@
 //	"m_flLaserDPSToNPCs": 80.000000,
 //	"m_flLaserDPSTickRate": 0.100000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierTier3BossLaserBeamVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

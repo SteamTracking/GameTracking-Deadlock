@@ -438,6 +438,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Nano_CatFormVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

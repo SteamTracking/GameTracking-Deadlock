@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_flScale": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierVData_SetModelScale : public CCitadelModifierVData
 {
 	CRangeFloat m_flScale;

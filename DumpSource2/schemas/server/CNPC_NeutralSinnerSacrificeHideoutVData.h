@@ -357,6 +357,7 @@
 //	"m_sLocHint02": "",
 //	"m_flRespawnTime": 10.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_NeutralSinnerSacrificeHideoutVData : public CNPC_NeutralSinnerSacrificeVData
 {
 	CUtlString m_sLocHint01;

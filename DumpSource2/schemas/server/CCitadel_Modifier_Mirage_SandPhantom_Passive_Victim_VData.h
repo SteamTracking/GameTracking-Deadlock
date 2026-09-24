@@ -151,6 +151,7 @@
 //	"m_ApplyStackNPCSound": "",
 //	"m_StunSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Mirage_SandPhantom_Passive_Victim_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

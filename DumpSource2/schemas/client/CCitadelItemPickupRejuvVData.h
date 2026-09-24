@@ -12,6 +12,7 @@
 //	},
 //	"m_IsFrozenParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelItemPickupRejuvVData : public CCitadelItemPickupVData
 {
 	CSubclassName< 4 > m_AbilityProjectile;

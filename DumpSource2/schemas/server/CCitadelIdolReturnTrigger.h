@@ -1,4 +1,5 @@
 // MNetworkVarNames = "CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent"
+// MClassHasEntityLimitedDataDesc
 class CCitadelIdolReturnTrigger : public CTriggerModifier
 {
 	// MNetworkEnable

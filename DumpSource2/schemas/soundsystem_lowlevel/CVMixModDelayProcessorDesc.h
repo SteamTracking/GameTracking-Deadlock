@@ -24,6 +24,7 @@
 //		"m_bApplyAntialiasing": false
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CVMixModDelayProcessorDesc : public CVMixBaseProcessorDesc
 {
 	VMixModDelayDesc_t m_desc;

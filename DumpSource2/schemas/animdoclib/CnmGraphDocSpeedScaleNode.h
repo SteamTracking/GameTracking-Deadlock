@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CnmGraphDocSpeedScaleNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,14 +13,14 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Input",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Scale",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -30,7 +30,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -39,6 +39,7 @@
 //	],
 //	"m_flMultiplier": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CnmGraphDocSpeedScaleNode : public CNmGraphDocFlowNode
 {
 	float32 m_flMultiplier;

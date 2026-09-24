@@ -436,6 +436,7 @@
 //	"m_flSSCameraPreviewSpeed": 0.500000,
 //	"m_flSSCameraPreviewDistance": 300.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_SettingSun_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

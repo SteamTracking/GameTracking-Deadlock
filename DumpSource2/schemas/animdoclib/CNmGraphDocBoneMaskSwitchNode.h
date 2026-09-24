@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocBoneMaskSwitchNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,21 +13,21 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Bool",
 //			"m_type": "Bool",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "If True",
 //			"m_type": "BoneMask",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "If False",
 //			"m_type": "BoneMask",
 //			"m_bIsDynamicPin": false,
@@ -37,7 +37,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "BoneMask",
 //			"m_bIsDynamicPin": false,
@@ -47,6 +47,7 @@
 //	"m_bSwitchDynamically": false,
 //	"m_flBlendTimeSeconds": 0.100000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocBoneMaskSwitchNode : public CNmGraphDocFlowNode
 {
 	bool m_bSwitchDynamically;

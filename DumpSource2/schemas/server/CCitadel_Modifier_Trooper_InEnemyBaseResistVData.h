@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_flDamageReductionForTroopers": 35.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Trooper_InEnemyBaseResistVData : public CCitadelModifierVData
 {
 	// MPropertyDescription = "How much should damage be reduced from players when enemy troopers are on your base? 0 is no reduction, 100 is complete reduction"

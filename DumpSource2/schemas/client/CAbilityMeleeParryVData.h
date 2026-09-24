@@ -459,6 +459,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityMeleeParryVData : public CitadelAbilityVData
 {
 	float32 m_flWhiffDuration;

@@ -438,6 +438,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Werewolf_TrackingBombVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

@@ -4,6 +4,7 @@
 //	"m_flDuration": 0.000000,
 //	"m_flBlendTimeSeconds": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipDocEvent_RootMotion : public CNmClipDocEvent
 {
 	float32 m_flBlendTimeSeconds;

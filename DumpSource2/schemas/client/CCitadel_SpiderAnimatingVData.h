@@ -10,6 +10,7 @@
 //		0
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_SpiderAnimatingVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Visuals"

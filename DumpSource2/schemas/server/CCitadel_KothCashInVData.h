@@ -61,6 +61,7 @@
 //	"m_flTroopersSpawnRate": 0.500000,
 //	"m_flDelayedDelete": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_KothCashInVData : public CCitadel_MultiCapturePointVData
 {
 	// MPropertyStartGroup = "Visuals"

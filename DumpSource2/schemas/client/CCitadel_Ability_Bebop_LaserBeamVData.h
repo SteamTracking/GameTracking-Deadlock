@@ -440,6 +440,7 @@
 //	"m_strLaserLoopSound": "",
 //	"m_strLaserHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Bebop_LaserBeamVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

@@ -11,6 +11,7 @@
 //		1.000000
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CBoneConstraintDotToMorph : public CBoneConstraintBase
 {
 	CUtlString m_sBoneName;

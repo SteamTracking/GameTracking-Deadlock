@@ -438,6 +438,7 @@
 //	"m_strBoltDelay": "",
 //	"m_strBoltFire": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Magician_BigBoltVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

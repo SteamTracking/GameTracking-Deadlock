@@ -141,6 +141,7 @@
 //	},
 //	"m_AuraParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_VampireBat_BatCloud_SelfVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

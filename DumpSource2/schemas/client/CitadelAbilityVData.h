@@ -429,7 +429,8 @@
 //	}
 //}
 // MVDataOverlayType = 2
-// MVDataOutlinerLeafNameFn (UNKNOWN FOR PARSER)
+// MVDataOutlinerLeafNameFn
+// MHasKV3TransferPolymorphicClassname
 class CitadelAbilityVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Meta"
@@ -499,7 +500,7 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	DeploymentInfo_t m_deploymentInfo;
 	// MPropertyStartGroup = ""
 	CUtlOrderedMap< CUtlString, CitadelAbilityProperty_t > m_mapAbilityProperties;
-	// MPropertyMapKeyLeafChoiceProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyMapKeyLeafChoiceProviderFn
 	CUtlOrderedMap< CSubclassName< 4 >, AbilityDependencyDescription_t > m_mapDependentAbilities;
 	CUtlVector< AbilityUpgrade_t > m_vecAbilityUpgrades;
 	// MPropertyStartGroup = "AnimGraph1"

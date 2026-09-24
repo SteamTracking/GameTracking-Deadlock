@@ -461,6 +461,7 @@
 //	"m_flInputForce": 0.000000,
 //	"m_flDampingConstant": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_VampireBat_BatCloudVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

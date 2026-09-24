@@ -151,6 +151,7 @@
 //	"m_bRemoveProvidedModifierOnAuraRemoval": false,
 //	"m_IsFrozenParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ItemPickupAuraVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

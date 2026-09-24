@@ -19,6 +19,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimParameterManagerUpdater
 {
 	CUtlVector< CSmartPtr< CAnimParameterBase > > m_parameters;

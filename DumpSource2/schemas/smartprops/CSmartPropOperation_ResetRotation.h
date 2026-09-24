@@ -9,6 +9,7 @@
 // MPropertyFriendlyName = "Transform: Reset Rotation"
 // MPropertyDescription = "Reset the current rotation such the element only inherits the object level rotation, but does not inherit the rotation applied to its parent."
 // MVDataClassGroup = "Transform"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_ResetRotation : public CSmartPropTransformOperation
 {
 	// MPropertyDescription = "If enabled, the rotation will be reset to a world space instead of object space, meaning any rotation applied to the object in Hammer will be ignored."

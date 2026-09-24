@@ -19,6 +19,7 @@
 //	"m_flLatchedReloadSpeed": 1.000000,
 //	"m_symLastMuzzle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_PrimaryWeapon_GraphController : public CCitadelBaseAbilityGraphController
 {
 	CAnimGraphParamRef< bool > m_bAiming;

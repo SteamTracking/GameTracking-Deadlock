@@ -13,6 +13,7 @@
 //}
 // MPropertyFriendlyName = "VMix Envelope Trigger Control Node"
 // MPropertyDescription = "Used to create reverb effects based on a model of a reverb plate."
+// MHasKV3TransferPolymorphicClassname
 class CMixEnvelopeTrigger : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Base Value"

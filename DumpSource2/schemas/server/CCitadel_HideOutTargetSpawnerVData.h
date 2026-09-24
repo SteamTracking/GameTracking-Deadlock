@@ -8,6 +8,7 @@
 //	"m_BallScored": "",
 //	"m_BallSpawned": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_HideOutTargetSpawnerVData : public CEntitySubclassVDataBase
 {
 	float32 m_flThinkRate;

@@ -444,6 +444,7 @@
 //	"m_flVerticalMoveSpeedPercent": 1.000000,
 //	"m_flAirAcceleration": 2.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityStormCloudVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

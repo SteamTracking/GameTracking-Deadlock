@@ -23,6 +23,7 @@
 //	"m_bIsOffState": false,
 //	"m_bUseActualElapsedTimeInStateForTimedEvents": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmStateNode::CDefinition : public CNmPoseNode::CDefinition
 {
 	int16 m_nChildNodeIdx;

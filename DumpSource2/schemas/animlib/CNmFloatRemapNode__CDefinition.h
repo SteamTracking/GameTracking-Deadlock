@@ -13,6 +13,7 @@
 //		"m_flEnd": 0.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFloatRemapNode::CDefinition : public CNmFloatValueNode::CDefinition
 {
 	int16 m_nInputValueNodeIdx;

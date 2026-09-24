@@ -9,6 +9,7 @@
 //	"m_hSequence": -1,
 //	"m_flCycle": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCachedPose
 {
 	CUtlVector< CTransform > m_transforms;

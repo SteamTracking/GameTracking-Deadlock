@@ -432,6 +432,7 @@
 //	},
 //	"m_strProcSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Necro_FearVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

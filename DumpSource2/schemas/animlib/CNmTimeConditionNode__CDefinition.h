@@ -7,6 +7,7 @@
 //	"m_type": "ElapsedTime",
 //	"m_operator": "LessThan"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmTimeConditionNode::CDefinition : public CNmBoolValueNode::CDefinition
 {
 	int16 m_sourceStateNodeIdx;

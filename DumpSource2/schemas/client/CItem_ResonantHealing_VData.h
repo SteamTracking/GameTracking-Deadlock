@@ -464,6 +464,7 @@
 //		"m_nPriority": 0
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItem_ResonantHealing_VData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

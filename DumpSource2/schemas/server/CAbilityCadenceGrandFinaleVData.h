@@ -436,6 +436,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityCadenceGrandFinaleVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

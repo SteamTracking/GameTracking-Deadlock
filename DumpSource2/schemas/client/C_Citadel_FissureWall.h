@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class C_Citadel_FissureWall : public CBaseAnimGraph
 {
 	Vector m_vStartPos;

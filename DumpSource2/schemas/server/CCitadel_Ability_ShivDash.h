@@ -1,6 +1,7 @@
 // MNetworkVarNames = "Vector m_vStartPosition"
 // MNetworkVarNames = "Vector m_vDashDirection"
 // MNetworkVarNames = "bool m_bIsDashing"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_ShivDash : public CCitadelBaseShivAbility
 {
 	// MNetworkEnable

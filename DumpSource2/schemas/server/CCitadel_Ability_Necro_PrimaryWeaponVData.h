@@ -505,6 +505,7 @@
 //	"m_flTetheredSpreadScale": 0.000000,
 //	"m_flApproachSpeed": 0.750000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Necro_PrimaryWeaponVData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "Modifiers"

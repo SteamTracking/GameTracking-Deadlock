@@ -15,6 +15,7 @@
 //	"e_action_body_section": "",
 //	"e_movement_body_section": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class AI_BaseNPC_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
 {
 	CGlobalSymbol npc_state;

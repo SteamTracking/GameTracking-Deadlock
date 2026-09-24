@@ -3,6 +3,7 @@
 //	"m_boneName": "",
 //	"m_followTargetBoneName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CnmGraphDocFollowBoneNode::CData : public CNmGraphDocVariationDataNode::CData
 {
 	CUtlString m_boneName;

@@ -488,6 +488,7 @@
 //	"m_flHoverSpeedDecay": 0.900000,
 //	"m_flCrashDownInputBuffer": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Bull_LeapVData : public CitadelAbilityVData
 {
 	CPiecewiseCurve m_CrashSpeedScaleCurve;

@@ -58,6 +58,7 @@
 //	"b_dead": null,
 //	"b_shield_active": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_BarrackBoss_GraphController : public CAI_CitadelNPC_GraphController
 {
 	CAnimGraph2ParamOptionalRef< bool > b_dying;

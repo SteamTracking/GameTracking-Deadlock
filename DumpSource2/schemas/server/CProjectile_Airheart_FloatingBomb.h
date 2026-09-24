@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CProjectile_Airheart_FloatingBomb : public CCitadelProjectile
 {
 	Vector vVelocity;

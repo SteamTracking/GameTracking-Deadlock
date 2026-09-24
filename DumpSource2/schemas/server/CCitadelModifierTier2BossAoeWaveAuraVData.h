@@ -152,6 +152,7 @@
 //	"m_flWaveHeight": 160.000000,
 //	"m_waveParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierTier2BossAoeWaveAuraVData : public CCitadelModifierAuraVData
 {
 	float32 m_flWaveHeight;

@@ -150,6 +150,7 @@
 //	},
 //	"m_flSentryDistanceFromWall": 20.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_FissureWallVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

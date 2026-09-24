@@ -436,6 +436,7 @@
 //	},
 //	"m_strProcSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Priest_AntiSpiritVestVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

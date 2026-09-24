@@ -1,4 +1,5 @@
 // MNetworkVarNames = "bool m_bCardIsFlying"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_CardToss : public CCitadelBaseAbility
 {
 	int32 m_nPreviousMaxCharges;

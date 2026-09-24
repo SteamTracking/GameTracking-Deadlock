@@ -149,6 +149,7 @@
 //	"m_nRequiredDamageFlags": "",
 //	"m_RicochetTracerParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Ricochet_ProcVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyGroupName = "Visuals"

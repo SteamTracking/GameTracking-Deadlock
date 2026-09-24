@@ -435,6 +435,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Tier3Boss_RocketBarrageVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

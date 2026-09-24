@@ -139,6 +139,7 @@
 //	"m_BlockParticle": "",
 //	"m_strTargetFoundSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Necro_HauntingSpiritsVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

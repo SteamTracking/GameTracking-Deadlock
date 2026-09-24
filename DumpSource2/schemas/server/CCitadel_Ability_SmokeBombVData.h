@@ -438,6 +438,7 @@
 //	},
 //	"m_PurgeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_SmokeBombVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

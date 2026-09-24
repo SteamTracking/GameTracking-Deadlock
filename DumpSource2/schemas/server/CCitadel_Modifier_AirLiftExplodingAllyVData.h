@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_strExplodeEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_AirLiftExplodingAllyVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

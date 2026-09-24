@@ -25,6 +25,7 @@
 //	"m_flTapeSpeedReleaseTime": 0.700000
 //}
 // MPropertyFriendlyName = "Tape Player"
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerTapePlayer : public CVoiceContainerAsyncGenerator
 {
 	bool m_bShouldWraparound;

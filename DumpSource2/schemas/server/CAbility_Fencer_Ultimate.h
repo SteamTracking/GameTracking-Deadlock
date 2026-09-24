@@ -3,6 +3,7 @@
 // MNetworkVarNames = "Vector m_vecLastPosition"
 // MNetworkVarNames = "EFencerUltState_t m_eUltState"
 // MNetworkVarNames = "GameTime_t m_flStateStartTime"
+// MClassHasEntityLimitedDataDesc
 class CAbility_Fencer_Ultimate : public CCitadelBaseAbility
 {
 	// MNetworkEnable

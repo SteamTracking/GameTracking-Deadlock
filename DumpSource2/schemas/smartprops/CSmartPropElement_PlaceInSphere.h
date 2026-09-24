@@ -35,6 +35,7 @@
 //}
 // MPropertyFriendlyName = "Place In Radius"
 // MPropertyDescription = "An element which places multiple instances of its child elements within a radius."
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropElement_PlaceInSphere : public CSmartPropElement_Group
 {
 	// MPropertyDescription = "Specifies how the positions are computed based on the radius."

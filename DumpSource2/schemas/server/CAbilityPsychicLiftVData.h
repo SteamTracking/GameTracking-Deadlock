@@ -436,6 +436,7 @@
 //	"m_TargetCastSound": "",
 //	"m_HitConfirmSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityPsychicLiftVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

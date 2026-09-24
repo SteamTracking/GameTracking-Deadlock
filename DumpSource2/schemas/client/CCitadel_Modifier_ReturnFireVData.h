@@ -142,6 +142,7 @@
 //	"m_strAttackerHitSound": "",
 //	"m_strHitProcSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ReturnFireVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

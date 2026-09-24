@@ -1,5 +1,5 @@
 // MGetKV3ClassDefaults = {
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_groupName": "",
 //	"m_valueType": "ID",
@@ -16,6 +16,6 @@ class CNmGraphDocDataDictionary::Parameter_t
 	CUtlString m_groupName;
 	NmGraphValueType_t m_valueType;
 	// MPropertyAutoExpandSelf
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CUtlVector< CGlobalSymbol > m_expectedValues;
 };

@@ -140,6 +140,7 @@
 //	"m_BuffEndParticle": "",
 //	"m_strHitProcSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_MetalSkinVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -15,6 +15,7 @@
 //}
 // MPropertyFriendlyName = "VMix Plateverb Audio Node"
 // MPropertyDescription = "Used to create reverb effects based on a model of a reverb plate."
+// MHasKV3TransferPolymorphicClassname
 class CMixPlateverb : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Prefilter"

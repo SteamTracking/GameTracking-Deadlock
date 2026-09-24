@@ -495,6 +495,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_CosmeticItem_Snowball_VData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Snowball Gameplay"

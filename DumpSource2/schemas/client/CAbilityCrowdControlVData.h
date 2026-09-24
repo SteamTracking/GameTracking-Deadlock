@@ -435,6 +435,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityCrowdControlVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

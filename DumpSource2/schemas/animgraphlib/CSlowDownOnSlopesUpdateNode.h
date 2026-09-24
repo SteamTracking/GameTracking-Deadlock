@@ -5,37 +5,37 @@
 //		"m_path":
 //		[
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			},
 //			{
-//				"m_id": <HIDDEN FOR DIFF>,
+//				"m_id": 0
 //			}
 //		],
 //		"m_nCount": 0
@@ -48,6 +48,7 @@
 //	},
 //	"m_flSlowDownStrength": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CSlowDownOnSlopesUpdateNode : public CUnaryUpdateNode
 {
 	float32 m_flSlowDownStrength;

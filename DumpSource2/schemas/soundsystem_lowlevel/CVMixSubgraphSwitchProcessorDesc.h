@@ -15,6 +15,7 @@
 //		"m_flInterpolationTime": 0.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CVMixSubgraphSwitchProcessorDesc : public CVMixBaseProcessorDesc
 {
 	VMixSubgraphSwitchDesc_t m_desc;

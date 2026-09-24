@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocStateCompletedConditionNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Bool",
 //			"m_bIsDynamicPin": false,
@@ -24,6 +24,7 @@
 //		}
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocStateCompletedConditionNode : public CNmGraphDocFlowNode
 {
 };

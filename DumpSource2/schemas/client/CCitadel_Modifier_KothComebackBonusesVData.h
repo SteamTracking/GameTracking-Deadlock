@@ -140,6 +140,7 @@
 //	"m_flResistMaxPerMinute": 0.000000,
 //	"m_flResistMaxCap": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_KothComebackBonusesVData : public CCitadelModifierVData
 {
 	float32 m_flResistMaxAtStart;

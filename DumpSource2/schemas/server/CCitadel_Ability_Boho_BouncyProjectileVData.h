@@ -456,6 +456,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Boho_BouncyProjectileVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

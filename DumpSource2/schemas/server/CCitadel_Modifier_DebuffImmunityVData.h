@@ -139,6 +139,7 @@
 //	"m_ShieldParticle": "",
 //	"m_PlayerShieldParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_DebuffImmunityVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

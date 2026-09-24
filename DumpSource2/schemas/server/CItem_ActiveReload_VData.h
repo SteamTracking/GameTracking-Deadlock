@@ -458,6 +458,7 @@
 //	"m_FailureParticle": "",
 //	"m_flGraceTime": 0.300000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItem_ActiveReload_VData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

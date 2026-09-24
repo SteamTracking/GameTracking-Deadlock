@@ -455,6 +455,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Upgrade_OverdriveClip_VData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

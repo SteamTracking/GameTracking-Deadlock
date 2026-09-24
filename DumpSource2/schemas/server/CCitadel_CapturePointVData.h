@@ -27,6 +27,7 @@
 //	"m_flPreEnableWindowInSeconds": 10.000000,
 //	"m_flRespawnRangeInSeconds": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_CapturePointVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Visuals"

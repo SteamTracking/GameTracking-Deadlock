@@ -179,6 +179,9 @@ announce_delete (clientdll release)
 announce_update (clientdll release)
 	<ID> <title> <message> <URL> [Priority] Create a new announcement with the specified title, message, and URL. use empty quotes if you want to skip message or URL
 
+assetsystem_clear_thumbnail_cache (developmentonly defensive)
+	Clear thumbnail cache
+
 auto_bug (developmentonly dontrecord defensive)
 	auto_bug : create non-interactive bug report.
 
@@ -1647,8 +1650,14 @@ dump_hero_names (clientdll cheat)
 dump_lobby (developmentonly clientdll)
 	Dumps the lobby that we are connected to
 
+dump_loc_token (developmentonly defensive)
+	List information on the given token
+
 dump_local_caches (developmentonly clientdll)
 	Dumps a list of caches that the GC currently has information about
+
+dump_localization_files (developmentonly defensive)
+	List all loaded localization files
 
 dump_modifier_message_count (developmentonly gamedll defensive)
 	dump_modifier_message_count
@@ -1673,6 +1682,9 @@ dump_secondary_scene_worlds (developmentonly clientdll defensive)
 
 dump_user_cache (developmentonly clientdll)
 	Dumps the SO cache for the current user
+
+dumpparticlelist (cheat)
+	Print out information on existing particle systems
 
 dumpstringtable (developmentonly defensive)
 	Usage:  dumpstringtable <tablename |all> <sv | cl> <verbose | simple> <element>      Print string tables to console, verbose to dump data, simple to show name and count only, can specifiy a single numeric element index to restrict spew.
@@ -1951,13 +1963,13 @@ ents (developmentonly gamedll defensive)
 escape (release clientcmd_can_execute)
 	Escape key pressed.
 
-exec (dontrecord release)
+exec (dontrecord release execute_immediately)
 	Execute a cfg file
 
 exec_async (cheat dontrecord)
 	Execute a cfg file over time
 
-execifexists (dontrecord release)
+execifexists (dontrecord release execute_immediately)
 	Execute a cfg file if file exists
 
 explode (gamedll cheat client_can_execute)
@@ -1999,11 +2011,17 @@ force_floating_point_exceptions (developmentonly)
 force_hibernate (developmentonly)
 	Force toggle hibernation state
 
+fp_trace (developmentonly defensive)
+	Toggle field path tracing to file
+
 fs_clear_open_duplicate_times (developmentonly defensive)
 	Clear the list of files that have been opened.
 
 fs_dump_open_duplicate_times (developmentonly defensive)
 	Set fs_report_long_reads 1 before loading to use this. Prints a list of files that were opened more than once and ~how long was spent reading from them.
+
+fs_spew_readfieldlist (cheat)
+	index <threshold bytes>: spew changes to ent index, optionally only spewing if update is > than threshold bytes
 
 game_particle_manager_dump_requeue (developmentonly clientdll)
 	Dump contents of particle manager requeue
@@ -2070,6 +2088,87 @@ getposcopy (clientdll cheat)
 
 getposcopy_exact (clientdll cheat)
 	dump origin and angles to the console and clipboard
+
+gfx_calculate_skin_diffusion_profile_dipole (developmentonly defensive)
+	Calculate a skin diffusion profile using scattering constants.
+
+gfx_generate_6point_ball (developmentonly defensive)
+	Generates a reference 6-point lighting ball
+
+gfx_generate_ao_cone_response (developmentonly defensive)
+	Generates a LUT for AO cone vs. sphere
+
+gfx_generate_ao_sphere_response (developmentonly defensive)
+	Generates a LUT for AO proxy calculations
+
+gfx_generate_arhosek_solar_radiance_image (developmentonly defensive)
+	Generate solar radiance image
+
+gfx_generate_color_temperature_table (developmentonly defensive)
+	Computes a table of color temperatures
+
+gfx_generate_cone_cone_union_LUT (developmentonly defensive)
+	Generates a LUT for cone-cone union
+
+gfx_generate_cone_cone_union_slice (developmentonly defensive)
+	Generates a LUT for cone-cone union
+
+gfx_generate_ellipse_coneangle_LUT (developmentonly defensive)
+	Generates a LUT to give a cone angle from parameterized ellipse
+
+gfx_generate_ggx_luts (developmentonly defensive)
+	Generate LUTs for modified GGX
+
+gfx_generate_limb_darkening_datasets (developmentonly defensive)
+	EXR containing sky model limb darkening datasets
+
+gfx_generate_poisson_disk (developmentonly defensive)
+	Generate a poisson disk of N samples using best-candidate sampling.
+
+gfx_generate_preintegrated_brdf (developmentonly defensive)
+	Generate a pre-integrated BRDF LUT
+
+gfx_generate_sh_ball (developmentonly defensive)
+	Generates a reference spherical harmonics lighting ball
+
+gfx_generate_sh_skyboxes (developmentonly defensive)
+	Generates SH skyboxes
+
+gfx_generate_sin_pulse_texture (developmentonly defensive)
+	Generate a sine pulse texture
+
+gfx_generate_skin_diffuse_warp (developmentonly defensive)
+	Generate the diffuse warp lookup texture used for pre-integrated skin shading.
+
+gfx_generate_skin_shadow_warp (developmentonly defensive)
+	Generate the shadow warp lookup texture used for pre-integrated skin shading.
+
+gfx_generate_solar_datasets (developmentonly defensive)
+	EXR containing sky model solar datasets
+
+gfx_generatemips_test (developmentonly defensive)
+	Test generate mips 32 bits
+
+gfx_graph_cie_color_matching_approx_funcs (developmentonly defensive)
+	Graphs CIE1931 functions to make sure they look right
+
+gfx_graph_lightmap_filter_kernels (developmentonly defensive)
+	Graphs the old broken filter kernel and candidates for new ones
+
+gfx_hemioct_flat_normal_test (developmentonly defensive)
+	Determine which constant(s) to use to preserve flat normals under HemiOctohedron normal map encoding
+
+gfx_load_skin_diffusion_profile (developmentonly defensive)
+	Load a measured diffusion profile.
+
+gfx_load_skin_diffusion_profile_image (developmentonly defensive)
+	Load a custom skin diffusion profile.
+
+gfx_load_skin_diffusion_profile_sum_of_gaussians (developmentonly defensive)
+	Load sum-of-gaussians skin diffusion profile.
+
+gfx_make_gpu_scrambled_halton_code (developmentonly defensive)
+	Make some code for me
 
 give (gamedll vconsole_fuzzy_matching client_can_execute)
 	Give item to player.
@@ -2158,6 +2257,12 @@ ik_debug_fabrik_backwards_iteration_toggle (linked_concommand developmentonly de
 ik_debug_fabrik_forwards_iteration_toggle (linked_concommand developmentonly defensive)
 	<no description>
 
+ime_info (developmentonly dontrecord defensive)
+	Spew IME info.
+
+ime_installed_names (hidden dontrecord release)
+	Spew list of installed IMEs.
+
 imgui_cycle_undocked_window_focus (developmentonly defensive)
 	Cycles focus between the game window and undocked imgui windows
 
@@ -2233,6 +2338,9 @@ key_findbinding (release)
 
 key_listboundkeys (release)
 	List bound keys with bindings.
+
+key_updatelayout (developmentonly defensive)
+	Updates game keyboard layout to current windows keyboard setting.
 
 kick (dontrecord release)
 	Kick a player by name.
@@ -2312,6 +2420,9 @@ lrucache_set_size (developmentonly defensive)
 
 lrucache_stats (developmentonly defensive)
 	Spews information about all CUtlLRUCaches
+
+lua_report_memory (developmentonly defensive)
+	<no description>
 
 map (release vconsole_fuzzy_matching vconsole_set_focus)
 	map <mapname> :Load a new map.
@@ -2589,11 +2700,68 @@ nav_toggle_selecting (gamedll cheat)
 nav_unmark (gamedll cheat)
 	Clears the marked Area or Ladder.
 
+net_captureculldata (developmentonly defensive)
+	Captures low-level data to replay path culling algorithm behavior in controlled unit test environment
+
+net_channels (release)
+	Shows net channel info
+
+net_connections_stats (release)
+	Print detailed network statistics for each network connection
+
+net_fakeclear (release)
+	Clear all simulated network conditions
+
+net_fakejitter (release)
+	Shortcut to set jitter net options.  Run with no arguments for usage.
+
+net_fakelag (release)
+	Shortcut to set both FakePacketLag_Recv and FakePacketLag_Send net options
+
+net_fakeloss (release)
+	Shortcut to set both FakePacketLoss_Recv and FakePacketLoss_Send net options
+
+net_fakestatus (release)
+	Print current simulated network condifions
+
+net_listallmessages (cheat)
+	List all registered net messages
+
+net_messageinfo (cheat)
+	Display info about a message (by classname or id)
+
+net_option (release)
+	Get or set SteamNetworkingSockets options such as fake packet lag and loss
+
+net_print_sdr_ping_times (release)
+	Print current ping times to SDR points of presence, and selected route
+
 net_reloadgameevents (developmentonly gamedll)
 	Reload the game events
 
+net_serializedentitymemory (developmentonly defensive)
+	Spew CSerializedEntity memory
+
+net_serializedentitymetadatainfo (developmentonly defensive)
+	Spew CSerializedEntity metadata information
+
+net_spewcounts (developmentonly defensive)
+	Spew serializer counts, client only by default, specify server to spew server counts
+
+net_spewserializer (developmentonly)
+	Spew serializer info
+
 net_stats_json (developmentonly defensive)
 	Output server networking statistics in json format
+
+net_status (release)
+	Shows current network status
+
+net_validatemessages (cheat)
+	Activates/deactivates net message validation
+
+net_why_field_excluded (developmentonly)
+	<classname> <fieldname>:  spew why field was excluded from networking for classname.
 
 nextdemo (release)
 	Play next demo in sequence.
@@ -2785,6 +2953,24 @@ panorama_print_cache_status (developmentonly defensive)
 panorama_print_svg_stats (developmentonly)
 	<no description>
 
+particle_profile (developmentonly defensive)
+	Profile particle
+
+particle_profile_spike (developmentonly defensive)
+	Profile particle spike
+
+particle_reset_assertions (developmentonly)
+	Causes all single-fire particle assertions to trigger once more.
+
+particle_stop_all (developmentonly clientdll cheat)
+	Stops all particle systems currently playing
+
+particle_stop_specified (developmentonly clientdll cheat)
+	Stops all particle systems that match specified name
+
+particle_stop_unspecified (developmentonly clientdll cheat)
+	Stops all particle systems that don't match specified name
+
 particle_test_create (gamedll cheat)
 	Creates the named particle system where the player is looking.
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
@@ -2918,6 +3104,9 @@ pop_var_values (developmentonly defensive)
 print_changed_convars (release)
 	Prints all convars that have changed from their default value
 
+print_model_bind_pose (developmentonly defensive)
+	Prints the bind pose of the specified model. Optionally limits to a particular bone and its parent chain, otherwise prints the entire skeleton.
+
 private_lobby_create (clientdll release)
 	Creates a private lobby party
 
@@ -2998,6 +3187,9 @@ r_renderdoc_capture_frame (linked_concommand developmentonly defensive)
 r_renderdoc_capture_window_dx11 (developmentonly)
 	Triggers a RenderDoc capture of a specific Window
 
+r_renderdoc_capture_window_vulkan (developmentonly)
+	Triggers a RenderDoc capture of a specific Window
+
 r_textures_evict_all (linked_concommand developmentonly defensive)
 	Evict all resident texture.
 
@@ -3033,6 +3225,9 @@ redirectend (hidden release)
 
 redirectstart (hidden release)
 	Redirect server console output
+
+reload_model (developmentonly defensive)
+	Force a reload of a vmdl resource
 
 reloadgame (cheat vconsole_set_focus)
 	Reload the most recent saved game.
@@ -3097,6 +3292,9 @@ respawn_player (gamedll cheat)
 
 restart (cheat vconsole_set_focus)
 	Poor man's restart: reload the current map from disk.
+
+return_to_tools_from_engine (developmentonly)
+	Return back to the last active tool from the engine.
 
 rr_dump_rules (gamedll cheat)
 	Print all response rules
@@ -3272,6 +3470,9 @@ script_trace_enable_key (gamedll cheat)
 scrubber (developmentonly defensive)
 	Scrub system off - not a dev build
 
+sdr (release)
+	An old command that has been renamed to 'net_option'
+
 server_dump_lobby (developmentonly gamedll defensive)
 	Prints server lobby object
 
@@ -3337,6 +3538,9 @@ shatterglass_restore (gamedll cheat)
 
 show_steam_id (clientdll release)
 	Prints out the local user's Steam ID. Handy for getting account ID for a player
+
+show_tool (developmentonly defensive)
+	Show or launch the specified engine tool
 
 showconsole (dontrecord release)
 	Show the console.
@@ -3600,8 +3804,17 @@ snd_soundmixer_set_trigger_factor (developmentonly)
 snd_soundmixer_setmixlayer_amount (developmentonly)
 	Set named mix layer mix amount.
 
+snd_steamaudio_baked_data_stats (cheat)
+	Display baked data stats for the current mod.
+
 snd_steamaudio_display_probes (developmentonly defensive)
 	Load all the probes from a file and display probes based on the passed on arguments.
+
+snd_steamaudio_enable_spatial_blend_fix (cheat)
+	Toggles the speculative fix for low-frequency issues when using spatial blend.
+
+snd_steamaudio_halton_sequence (cheat)
+	Generate Halton Sequence for a given order and number of samples.
 
 snd_stereo_speaker_pan_exponent (developmentonly defensive)
 	Specifies the exponent for the pan xfade from speaker to speaker if the "exp" pan law is being used.
@@ -3680,6 +3893,9 @@ spew_gold_sources (developmentonly gamedll defensive)
 
 splitscreen_testreadconfigconflict (developmentonly defensive)
 	<no description>
+
+srgb_to_xyz (developmentonly defensive)
+	sRGB to CIEXYZ conversion
 
 ss_add (developmentonly defensive)
 	Adds a splitscreen user.
@@ -3808,6 +4024,9 @@ test_voice_container_nesting (linked_concommand developmentonly defensive)
 test_voice_containers (linked_concommand developmentonly defensive)
 	Quick example for how we'd derive traits from voice containers.
 
+test_vqlayout (developmentonly)
+	Usage: test_vqlayout tools/layout/examples/simple.vqlayout
+
 thirdperson (clientdll cheat execute_per_tick)
 	Switch to thirdperson camera.
 
@@ -3828,6 +4047,9 @@ toggle (dontrecord release)
 
 toggleconsole (dontrecord release)
 	Show/hide the console.
+
+tool_request (developmentonly defensive)
+	Usage: tool_request <tool_name> { request_kv3_data }
 
 trooper_kill_all (gamedll cheat)
 	Kills all living troopers
@@ -3874,6 +4096,9 @@ unbind (release)
 unbindall (release)
 	Unbind all keys.
 
+unloadTool (developmentonly defensive)
+	unload the specified tool
+
 unpause (release)
 	Clear the pause state of the server.
 
@@ -3882,6 +4107,18 @@ url_execute (developmentonly clientdll defensive)
 
 users (developmentonly defensive)
 	Show user info for players on server.
+
+v8_dump_heap_snapshot (developmentonly)
+	<no description>
+
+v8_write_heap_stats (developmentonly)
+	Dump output of v8::Isolate::GetHeapStatistics.
+
+vcon_clear_buffered_log (developmentonly dontrecord defensive)
+	Clear buffered logging
+
+vcon_clients (developmentonly dontrecord defensive)
+	List connections
 
 vis_debug_currentcluster (developmentonly defensive)
 	Show the current cluster number
@@ -3969,6 +4206,27 @@ vprof_time_scale (developmentonly hidden)
 
 vtune (developmentonly defensive)
 	Controls VTune's sampling.
+
+vulkan_framebuffermgr_print (developmentonly defensive)
+	Prints out stats for the Vulkan Framebuffer manager
+
+vulkan_memgr_fragmentation_print (developmentonly defensive)
+	Prints out detailed memory fragmentation stats for the Vulkan memory manager
+
+vulkan_memgr_print (developmentonly defensive)
+	Prints out stats for the Vulkan memory manager
+
+vulkan_pipelinemgr_print (developmentonly defensive)
+	Prints out stats for the Vulkan Pipeline manager
+
+vulkan_shader_table_print (developmentonly defensive)
+	Prints out stats for the Vulkan shader table
+
+vulkan_vma_defrag (developmentonly defensive)
+	Force defragmenting memory with VMA
+
+vulkan_vma_gpu_mem_dump (developmentonly defensive)
+	Dump .json file for use by GpuMemDumpVis.py
 
 warp_onto_zipline (gamedll cheat)
 	warp onto the nearest point of the zipline lane passed in.  provides the zipline intro modifier as well

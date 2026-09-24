@@ -3,6 +3,7 @@
 // MNetworkVarNames = "float m_flLatchedTimeScaleFrac"
 // MNetworkVarNames = "GameTime_t m_flSpeedBoostEndTime"
 // MNetworkVarNames = "GameTime_t m_flShotTimeScaleEndTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Gunslinger_DemonCarbine : public CCitadelBaseAbility
 {
 	// MNetworkEnable

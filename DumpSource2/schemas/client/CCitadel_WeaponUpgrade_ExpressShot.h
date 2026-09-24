@@ -1,5 +1,6 @@
 // MNetworkVarNames = "int m_iShotsToCreate"
 // MNetworkVarNames = "bool m_bIsInExpressShot"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_WeaponUpgrade_ExpressShot : public CCitadel_Item
 {
 	// MNetworkEnable

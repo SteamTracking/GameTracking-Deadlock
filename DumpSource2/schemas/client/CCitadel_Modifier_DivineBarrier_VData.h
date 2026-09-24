@@ -139,6 +139,7 @@
 //	"m_BuffParticle": "",
 //	"m_TrailParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_DivineBarrier_VData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

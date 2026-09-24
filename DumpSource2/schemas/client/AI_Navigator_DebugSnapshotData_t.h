@@ -9,6 +9,7 @@
 //}
 // MDebugSnapshotDataRenderable
 // MDebugSnapshotDataRenderByDefault
+// MHasKV3TransferPolymorphicClassname
 class AI_Navigator_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
 {
 	CGlobalSymbol s_npc_nav_authority;

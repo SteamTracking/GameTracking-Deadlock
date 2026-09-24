@@ -9,6 +9,7 @@
 //	"m_AmbientParticle": "",
 //	"m_SpawnParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_HeroTestOrbSpawnerVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Gameplay"

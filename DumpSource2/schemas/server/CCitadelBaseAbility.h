@@ -32,7 +32,7 @@
 // MNetworkExcludeByUserGroup = "overlay_vars"
 // MNetworkUserGroupProxy = "CCitadelBaseAbility"
 // MNetworkUserGroupProxy = "CCitadelBaseAbility"
-// MNetworkOverride = "m_flTimeScale"
+// MNetworkOverride = "CBaseEntity::m_flTimeScale"
 // MNetworkVarNames = "bool m_bChanneling"
 // MNetworkVarNames = "bool m_bInCastDelay"
 // MNetworkVarNames = "bool m_bShouldBeExecuted"
@@ -58,6 +58,7 @@
 // MNetworkVarNames = "bool m_bCanBeImbued"
 // MNetworkVarNames = "EntitySubclassID_t m_vecImbuedAbilities"
 // MNetworkVarNames = "bool m_bSelectionModeIsAltMode"
+// MClassHasEntityLimitedDataDesc
 class CCitadelBaseAbility : public CBaseEntity
 {
 	CUtlVector< CModifierHandleTyped< CCitadelModifier > > m_vecIntrinsicModifiers;

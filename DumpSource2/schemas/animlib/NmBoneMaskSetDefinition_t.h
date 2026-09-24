@@ -1,5 +1,5 @@
 // MGetKV3ClassDefaults = {
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_primaryWeightList":
 //	{
 //		"m_skeletonName": "",

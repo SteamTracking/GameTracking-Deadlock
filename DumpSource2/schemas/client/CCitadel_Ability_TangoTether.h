@@ -9,6 +9,7 @@
 // MNetworkVarNames = "GameTime_t m_flGrappleShotAttackTime"
 // MNetworkVarNames = "Vector m_rgTargetPos"
 // MNetworkVarNames = "GameTime_t m_rgTargetPosTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_TangoTether : public C_CitadelBaseAbility
 {
 	SatVolumeIndex_t m_desatVolIdx;

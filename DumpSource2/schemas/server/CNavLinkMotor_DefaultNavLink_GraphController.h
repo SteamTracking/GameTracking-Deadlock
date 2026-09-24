@@ -9,6 +9,7 @@
 //	"m_sNavLinkExitGait": null,
 //	"m_vNavLinkExitDirection": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNavLinkMotor_DefaultNavLink_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraph2ParamRef< CTransform > m_tNavLinkTarget;

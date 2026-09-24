@@ -435,6 +435,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Priest_SmokeGrenadeVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

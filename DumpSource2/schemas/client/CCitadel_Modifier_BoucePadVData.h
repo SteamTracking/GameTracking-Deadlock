@@ -139,6 +139,7 @@
 //	"m_StompParticle": "",
 //	"m_strImpactSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BoucePadVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

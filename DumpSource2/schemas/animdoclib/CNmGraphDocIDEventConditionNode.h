@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocIDEventConditionNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Bool",
 //			"m_bIsDynamicPin": false,
@@ -31,6 +31,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocIDEventConditionNode : public CNmGraphDocFlowNode
 {
 	NmEventConditionOperator_t m_operator;

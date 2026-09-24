@@ -11,6 +11,7 @@
 // MPropertyFriendlyName = "Tint Color Choice"
 // MPropertyDescription = "Set the color tint to one color out of a pre-selected set of colors."
 // MVDataClassGroup = "Color"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_SetTintColor : public CSmartPropOperation
 {
 	// MPropertyFriendlyName = "Selection Mode"

@@ -38,6 +38,7 @@
 // MPropertyFriendlyName = "Boolean Switch State"
 // MPropertyDescription = "While active, activate a child state based on the results of a boolean condition. Any referenced variables must be marked as observable."
 // MPulseEditorCanvasItemSpecKV3 = "{ className = 'IsStateNode' item_factory = 'BooleanSwitchState' }"
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_BooleanSwitchState : public CPulseCell_BaseState
 {
 	// MPropertyDescription = "Condition to evaluate when any of its dependent values change."

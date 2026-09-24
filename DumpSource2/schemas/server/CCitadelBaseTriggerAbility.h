@@ -1,5 +1,6 @@
 // MNetworkVarNames = "CHandle< CCitadelBaseAbility> m_hAbilityToTrigger"
 // MNetworkVarNames = "GameTime_t m_SwappedToTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadelBaseTriggerAbility : public CCitadelBaseAbility
 {
 	// MNetworkEnable

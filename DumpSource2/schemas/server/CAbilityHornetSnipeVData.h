@@ -452,6 +452,7 @@
 //	],
 //	"m_flKillCheckDuration": 4.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityHornetSnipeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

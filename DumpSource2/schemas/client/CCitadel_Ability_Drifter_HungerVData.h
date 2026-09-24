@@ -439,6 +439,7 @@
 //	"m_HungerTargetKillParticle": "",
 //	"m_strStackGainedSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Drifter_HungerVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

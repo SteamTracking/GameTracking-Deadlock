@@ -458,6 +458,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityCadenceSilenceContraptionsVData : public CBaseDashCastAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

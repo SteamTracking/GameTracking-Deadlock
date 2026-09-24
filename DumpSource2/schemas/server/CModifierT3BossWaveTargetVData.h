@@ -145,6 +145,7 @@
 //	"m_flTossHorizontalMin": 0.000000,
 //	"m_flDebuffDuration": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierT3BossWaveTargetVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Sounds"

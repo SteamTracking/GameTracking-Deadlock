@@ -8,18 +8,19 @@
 //	"m_anticipationPosParamName": "",
 //	"m_anticipationPosParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_anticipationHeadingParamName": "",
 //	"m_anticipationHeadingParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_flSpringConstant": 10.000000,
 //	"m_flMinSpringTension": 1.000000,
 //	"m_flMaxSpringTension": 100.000000
 //}
 // MPropertyFriendlyName = "Damped Path Motor"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_DampedPathMotor : public CAnimGraphDoc_PathMotorBase
 {
 	// MPropertyFriendlyName = "Anticipation Time"

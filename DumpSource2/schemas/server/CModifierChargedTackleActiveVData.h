@@ -139,6 +139,7 @@
 //	"m_TackleParticle": "",
 //	"m_PullEnemiesParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierChargedTackleActiveVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

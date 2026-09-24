@@ -144,6 +144,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Necro_Ghoul_ExplodeVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -141,6 +141,7 @@
 //	"m_strKeyLoopEndSound": "",
 //	"m_HitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Doorman_Hotel_TeleportFX_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

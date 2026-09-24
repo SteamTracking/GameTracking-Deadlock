@@ -34,6 +34,7 @@
 //}
 // MPropertyFriendlyName = "Multi Blender"
 // MPropertyDescription = "Blends any number of containers"
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerMultiBlender : public CVoiceContainerBase
 {
 	// MPropertyFriendlyName = "Sounds To Blend"

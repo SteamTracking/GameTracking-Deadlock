@@ -154,6 +154,7 @@
 //	"m_strAreaEffectSelf": "",
 //	"m_DrainParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_Discord_AuraVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

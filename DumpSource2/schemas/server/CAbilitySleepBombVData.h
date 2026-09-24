@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilitySleepBombVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

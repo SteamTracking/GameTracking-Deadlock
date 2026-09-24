@@ -4,7 +4,7 @@ class IKSolverSettings_t
 	// MPropertyAutoRebuildOnChange
 	IKSolverType m_SolverType;
 	// MPropertyFriendlyName = "Num Iterations "
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	int32 m_nNumIterations;
 	// MPropertyFriendlyName = "End Effector Rotation Behaviour"
 	EIKEndEffectorRotationFixUpMode m_EndEffectorRotationFixUpMode;

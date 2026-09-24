@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -18,15 +18,16 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	}
 //}
 // MPropertyFriendlyName = "Ragdoll"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_RagdollNode : public CAnimGraphDoc_Node
 {
 	CUtlString m_weightListName;

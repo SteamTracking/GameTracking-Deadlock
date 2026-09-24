@@ -20,6 +20,7 @@
 // MNetworkVarNames = "bool m_bNoSave"
 // MNetworkVarNames = "bool m_bNoFreeze"
 // MNetworkVarNames = "bool m_bNoRamp"
+// MNetworkNoBase
 class CParticleSystem : public CBaseModelEntity
 {
 	// MNetworkEnable

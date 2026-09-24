@@ -446,6 +446,7 @@
 //	"m_strMeleeReloadSoundLight": "",
 //	"m_strMeleeReloadSoundHeavy": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityPunkgoatBlastedVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

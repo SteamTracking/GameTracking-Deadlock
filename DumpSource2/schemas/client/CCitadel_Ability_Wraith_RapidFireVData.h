@@ -433,6 +433,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Wraith_RapidFireVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -141,6 +141,7 @@
 //	"m_ShivOnlyExecuteHeart": "",
 //	"m_strShivOnlyActivateSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Killing_Blow_GlowVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

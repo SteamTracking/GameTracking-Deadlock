@@ -146,6 +146,7 @@
 //	"m_iMaxMessages": 3,
 //	"m_flMessageInterval": 0.200000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_RespawnCreditVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Respawn Settings"

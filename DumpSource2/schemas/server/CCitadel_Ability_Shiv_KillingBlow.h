@@ -8,6 +8,7 @@
 // MNetworkVarNames = "CCitadelAutoScaledTime m_flArrivalTime"
 // MNetworkVarNames = "GameTime_t m_flDrainSuppressEndTime"
 // MNetworkVarNames = "GameTime_t m_flRecastWindowEnd"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Shiv_KillingBlow : public CCitadelBaseShivAbility
 {
 	CUtlVector< CHandle< CBaseEntity > > m_vHitEnts;

@@ -495,6 +495,7 @@
 //	"m_flParryCancelAirGravityScale": 0.300000,
 //	"m_strAirDashSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityDashVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

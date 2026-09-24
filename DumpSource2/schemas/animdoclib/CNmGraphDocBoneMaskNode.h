@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocBoneMaskNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Bone Mask",
 //			"m_type": "BoneMask",
 //			"m_bIsDynamicPin": false,
@@ -25,6 +25,7 @@
 //	],
 //	"m_maskID": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocBoneMaskNode : public CNmGraphDocFlowNode
 {
 	// MPropertyAttributeEditor = "BoneMaskID()"

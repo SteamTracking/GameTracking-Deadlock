@@ -3,6 +3,7 @@
 // MNetworkVarNames = "int m_nBodyGroup"
 // MNetworkVarNames = "bool m_bPermanentlyBroken"
 // MNetworkVarNames = "int m_nBrokenBodygroupIndex"
+// MIgnoreTypeScopeMetaChecks
 class WeakPoint_t
 {
 	// MNotSaved

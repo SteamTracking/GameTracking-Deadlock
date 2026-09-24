@@ -149,6 +149,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Werewolf_TransformationWatcherVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

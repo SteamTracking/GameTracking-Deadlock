@@ -139,6 +139,7 @@
 //	"m_ShieldParticle": "",
 //	"m_flShieldRadius": 150.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierBossInvulnVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

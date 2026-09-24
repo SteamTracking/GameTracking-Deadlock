@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelAbilityDruidPlantInvisBushVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

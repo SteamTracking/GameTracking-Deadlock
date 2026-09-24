@@ -441,6 +441,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Magician_CopyUltVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

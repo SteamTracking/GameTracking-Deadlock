@@ -14,6 +14,7 @@
 //}
 // MPropertyFriendlyName = "VMix Steam Audio Hybrid Reverb Node"
 // MPropertyDescription = "Applies Steam Audio Hybrid Reverb."
+// MHasKV3TransferPolymorphicClassname
 class CMixSteamAudioHybridReverb : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Reverb Time (RT60), Low Frequency"

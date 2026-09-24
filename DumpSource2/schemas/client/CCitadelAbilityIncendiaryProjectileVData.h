@@ -434,6 +434,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelAbilityIncendiaryProjectileVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

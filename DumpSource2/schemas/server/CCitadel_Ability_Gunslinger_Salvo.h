@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Gunslinger_Salvo : public CCitadelBaseAbility
 {
 	CHandle< CBaseEntity > m_CastTarget;

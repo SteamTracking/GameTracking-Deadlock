@@ -454,6 +454,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_ArmorUpgrade_AutoCleanseVData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Sounds"

@@ -4,6 +4,7 @@
 //	"m_nInputValueNodeIdx": -1,
 //	"m_mode": "OnEntry"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmCachedTargetNode::CDefinition : public CNmTargetValueNode::CDefinition
 {
 	int16 m_nInputValueNodeIdx;

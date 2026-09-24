@@ -10,6 +10,7 @@
 // MNetworkVarNames = "int8 m_nConsecutiveAirDashes"
 // MNetworkVarNames = "int8 m_nConsecutiveDownDashes"
 // MNetworkVarNames = "bool m_bDownAirDash"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Dash : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

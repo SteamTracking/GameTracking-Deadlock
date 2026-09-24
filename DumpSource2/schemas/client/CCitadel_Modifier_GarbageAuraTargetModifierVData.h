@@ -141,6 +141,7 @@
 //	"m_flSpeedScaleBias": 0.100000,
 //	"m_TargetLoopingSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_GarbageAuraTargetModifierVData : public CCitadel_Modifier_StunnedVData
 {
 	float32 m_flOuterSpeedScale;

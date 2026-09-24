@@ -1,5 +1,6 @@
 // MNetworkVarNames = "bool m_bPreview"
 // MNetworkVarNames = "HeroID_t m_nActiveHero"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_CosmeticItem_VotingPoster : public CCitadel_Item
 {
 	// MNetworkEnable

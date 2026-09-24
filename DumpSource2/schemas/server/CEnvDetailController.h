@@ -1,5 +1,6 @@
 // MNetworkVarNames = "float32 m_flFadeStartDist"
 // MNetworkVarNames = "float32 m_flFadeEndDist"
+// MNetworkNoBase
 class CEnvDetailController : public CBaseEntity
 {
 	// MNetworkEnable

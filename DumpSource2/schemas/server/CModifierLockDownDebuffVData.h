@@ -152,6 +152,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierLockDownDebuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

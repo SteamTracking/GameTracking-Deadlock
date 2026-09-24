@@ -55,6 +55,7 @@
 //	"m_bHasTarget1": null,
 //	"m_bReloading": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAI_CitadelNPC_GraphController : public CAI_BaseNPCGraphController
 {
 	CAnimGraph2ParamOptionalRef< float32 > m_flRandomSeed;

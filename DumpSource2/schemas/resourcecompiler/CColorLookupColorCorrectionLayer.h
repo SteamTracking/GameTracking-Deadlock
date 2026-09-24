@@ -10,6 +10,7 @@
 //	],
 //	"m_nDim": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CColorLookupColorCorrectionLayer : public CColorCorrectionLayer
 {
 	CUtlString m_fileName;

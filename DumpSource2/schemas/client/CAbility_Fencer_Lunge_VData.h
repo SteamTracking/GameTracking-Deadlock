@@ -507,6 +507,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Fencer_Lunge_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

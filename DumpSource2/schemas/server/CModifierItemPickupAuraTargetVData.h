@@ -141,6 +141,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierItemPickupAuraTargetVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Timers"

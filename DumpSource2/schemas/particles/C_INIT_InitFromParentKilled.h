@@ -14,7 +14,7 @@
 //		"m_flRandomMin": 0.000000,
 //		"m_flRandomMax": 1.000000,
 //		"m_bHasRandomSignFlip": false,
-//		"m_nRandomSeed": <HIDDEN FOR DIFF>,
+//		"m_nRandomSeed": 0,
 //		"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
 //		"m_strSnapshotSubset": "",
 //		"m_flLOD0": 0.000000,
@@ -95,6 +95,7 @@
 //	"m_nAttributeToCopy": -1,
 //	"m_nEventType": "PARTICLE_EVENT_TYPE_MASK_KILLED"
 //}
+// MHasKV3TransferPolymorphicClassname
 class C_INIT_InitFromParentKilled : public CParticleFunctionInitializer
 {
 	// MPropertyFriendlyName = "field to init"

@@ -3,6 +3,7 @@
 //	"m_sModelName": "",
 //	"m_flPhysicsRadius": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelViscousBallVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Visuals"

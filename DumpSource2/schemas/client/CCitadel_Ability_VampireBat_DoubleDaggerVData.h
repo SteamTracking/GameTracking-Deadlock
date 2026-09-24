@@ -433,6 +433,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_VampireBat_DoubleDaggerVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

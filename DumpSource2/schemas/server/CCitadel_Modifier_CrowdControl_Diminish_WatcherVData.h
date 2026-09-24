@@ -140,6 +140,7 @@
 //	"m_flReductionPerModifier": 8.000000,
 //	"m_flMaxReduction": 24.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_CrowdControl_Diminish_WatcherVData : public CCitadelModifierVData
 {
 	float32 m_flModifierWindow;

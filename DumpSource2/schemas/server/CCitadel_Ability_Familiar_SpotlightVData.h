@@ -467,6 +467,7 @@
 //	],
 //	"m_flSatVolumeInnerConeSize": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Familiar_SpotlightVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

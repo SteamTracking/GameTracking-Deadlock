@@ -139,6 +139,7 @@
 //	"m_DashParticle": "",
 //	"m_DashTrailParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Fencer_Ultimate_Caster_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

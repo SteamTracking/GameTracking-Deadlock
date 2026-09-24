@@ -438,6 +438,7 @@
 //	"m_flMaxHeight": 1400.000000,
 //	"m_flForwardAngleBias": -10.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_IcePathVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

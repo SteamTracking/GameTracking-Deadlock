@@ -152,6 +152,7 @@
 //	"m_strTargetHeadShotHitSound": "",
 //	"m_strTargetCompleteSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_TargetPracticeEnemyVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

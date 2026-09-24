@@ -140,6 +140,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierApexWatcherVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

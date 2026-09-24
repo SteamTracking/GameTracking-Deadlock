@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadelInteriorTrigger : public CTriggerModifier
 {
 	int32 m_nInteriorType;

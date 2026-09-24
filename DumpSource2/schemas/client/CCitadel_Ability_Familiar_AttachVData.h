@@ -505,6 +505,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Familiar_AttachVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

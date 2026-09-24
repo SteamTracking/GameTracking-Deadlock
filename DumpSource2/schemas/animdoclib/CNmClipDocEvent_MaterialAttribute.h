@@ -80,6 +80,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipDocEvent_MaterialAttribute : public CNmClipDocEvent
 {
 	CUtlString m_attributeName;

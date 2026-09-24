@@ -435,6 +435,7 @@
 //	},
 //	"m_PurgeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityTokamakBreachVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

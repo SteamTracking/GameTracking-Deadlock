@@ -152,6 +152,7 @@
 //	"m_flPhysicsRadius": 7.000000,
 //	"m_sHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ItemPunchable_GoldVData : public CCitadelModifierAuraVData
 {
 	float32 m_flPhysicsRadius;

@@ -4,18 +4,18 @@
 //	"m_ikChainName": "",
 //	"m_tag":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_paramName": "",
 //	"m_param":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_flMaxRotationLeft": 90.000000,
 //	"m_flMaxRotationRight": 90.000000
 //}
 // MPropertyFriendlyName = "Item"
-// MPropertyElementNameFn (UNKNOWN FOR PARSER)
+// MPropertyElementNameFn
 class CFootPinningItem
 {
 	// MPropertyFriendlyName = "Foot"

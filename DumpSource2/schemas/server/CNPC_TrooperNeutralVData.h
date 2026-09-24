@@ -324,6 +324,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_TrooperNeutralVData : public CAI_CitadelNPCVData
 {
 	ENeutralTrooperType m_eTrooperType;

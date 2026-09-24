@@ -144,6 +144,7 @@
 //	},
 //	"m_strProcHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_VampireBat_LoveBitesProc_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

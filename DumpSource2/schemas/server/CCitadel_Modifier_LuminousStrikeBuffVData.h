@@ -142,6 +142,7 @@
 //	"m_IncomingParticle": "",
 //	"m_nStackCountForMaxParticle": 5
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_LuminousStrikeBuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

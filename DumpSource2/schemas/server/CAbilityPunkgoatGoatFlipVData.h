@@ -486,6 +486,7 @@
 //	},
 //	"m_flDelayBeforeCasterRegainsControlAfterFlip": 0.060000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityPunkgoatGoatFlipVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Motion"

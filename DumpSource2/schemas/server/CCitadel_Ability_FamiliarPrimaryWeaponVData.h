@@ -489,6 +489,7 @@
 //	"m_strPassiveWeaponAttachmentSource": "muzzle_fx",
 //	"m_flShotCosmeticVarianceMagnitude": 6000.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_FamiliarPrimaryWeaponVData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "Gameplay"

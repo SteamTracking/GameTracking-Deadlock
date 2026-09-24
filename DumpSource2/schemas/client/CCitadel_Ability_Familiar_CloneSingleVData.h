@@ -435,6 +435,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Familiar_CloneSingleVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

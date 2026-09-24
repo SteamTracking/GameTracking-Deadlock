@@ -577,6 +577,7 @@
 //	"flScreenShake_VTOL_Amplitude": 0.000000,
 //	"flScreenShake_VTOL_Frequency": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_AirheartRocketeer3VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

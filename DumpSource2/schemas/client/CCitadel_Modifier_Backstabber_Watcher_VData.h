@@ -142,6 +142,7 @@
 //	"flDotResultMin": 0.150000,
 //	"m_strHitConfirmSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Backstabber_Watcher_VData : public CCitadel_Modifier_Intrinsic_BaseVData
 {
 	// MPropertyGroupName = "Modifiers"

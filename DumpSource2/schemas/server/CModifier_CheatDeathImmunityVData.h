@@ -141,6 +141,7 @@
 //	"m_StatusEffect": "",
 //	"m_strTimerSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_CheatDeathImmunityVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -4,6 +4,7 @@
 //	"m_flDrainScale": null,
 //	"m_bStartDrain": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_MagicianTurret_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< float32 > m_flDrainScale;

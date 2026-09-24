@@ -88,7 +88,7 @@ class CAnimDemoCaptureSettings
 	EDemoBoneSelectionMode m_boneSelectionMode;
 	// MPropertyFriendlyName = "Bones"
 	// MPropertyGroupName = "+Bones"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CUtlVector< BoneDemoCaptureSettings_t > m_bones;
 	// MPropertyFriendlyName = "IK Chains"
 	CUtlVector< IKDemoCaptureSettings_t > m_ikChains;

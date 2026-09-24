@@ -21,6 +21,7 @@
 // MNetworkVarNames = "CHandle< CBaseEntity> m_hEndPoint"
 // MNetworkVarNames = "AttachmentHandle_t m_iStartAttachment"
 // MNetworkVarNames = "AttachmentHandle_t m_iEndAttachment"
+// MNetworkNoBase
 class CRopeKeyframe : public CBaseModelEntity
 {
 	// MNetworkEnable

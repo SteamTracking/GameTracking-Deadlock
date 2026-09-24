@@ -156,6 +156,7 @@
 //	"m_OnBulletRolledProcSound": ""
 //}
 // MPropertySuppressBaseClassField = "m_bProcChanceAffectedByEffectiveness"
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BaseBulletPreRollProcVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyDescription = "When true, we roll for a proc once per shot and apply that result to all bullets in the shot.  When false, we roll independently for each bullet in the shot."

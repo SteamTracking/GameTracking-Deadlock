@@ -13,6 +13,7 @@
 //	"m_attributeName": "",
 //	"m_nIntValue": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmEntityAttributeIntEvent : public CNmEntityAttributeEventBase
 {
 	int32 m_nIntValue;

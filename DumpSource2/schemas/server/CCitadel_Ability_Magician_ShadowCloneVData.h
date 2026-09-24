@@ -432,6 +432,7 @@
 //	},
 //	"m_ExplodeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Magician_ShadowCloneVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

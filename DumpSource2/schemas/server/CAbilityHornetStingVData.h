@@ -433,6 +433,7 @@
 //	"m_HitParticle": "",
 //	"m_RicochetTracerParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityHornetStingVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

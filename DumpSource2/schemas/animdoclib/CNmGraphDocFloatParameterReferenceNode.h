@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocFloatParameterReferenceNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Value",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -28,6 +28,7 @@
 //	"m_parameterName": "",
 //	"m_parameterGroupName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocFloatParameterReferenceNode : public CNmGraphDocParameterReferenceNode
 {
 };

@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Protection_Racket : public C_CitadelBaseAbility
 {
 };

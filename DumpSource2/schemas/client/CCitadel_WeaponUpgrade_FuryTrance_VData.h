@@ -453,6 +453,7 @@
 //	},
 //	"m_CastTargetEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_WeaponUpgrade_FuryTrance_VData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

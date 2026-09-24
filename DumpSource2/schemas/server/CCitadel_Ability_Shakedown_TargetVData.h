@@ -434,6 +434,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Shakedown_TargetVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

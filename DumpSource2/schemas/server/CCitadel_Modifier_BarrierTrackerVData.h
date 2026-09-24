@@ -143,6 +143,7 @@
 //	"m_strShieldRefreshSound": "",
 //	"m_flShieldImpactEffectDuration": 2.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BarrierTrackerVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

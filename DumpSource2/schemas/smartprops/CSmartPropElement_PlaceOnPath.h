@@ -37,6 +37,7 @@
 //}
 // MPropertyFriendlyName = "Place on Path"
 // MPropertyDescription = "An element which places an instance of its child elements at a specified interval along a path."
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropElement_PlaceOnPath : public CSmartPropElement_Group
 {
 	// MPropertyDescription = "Name of the path to use. This path name will show up in the property editor when selecting a placement of this smart prop in Hammer, allowing selection of a path object in the map to use."

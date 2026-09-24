@@ -11,6 +11,7 @@
 //		255
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModelConfigElement_SetRenderColor : public CModelConfigElement
 {
 	Color m_Color;

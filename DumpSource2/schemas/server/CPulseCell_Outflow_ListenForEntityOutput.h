@@ -21,6 +21,7 @@
 // MPropertyDescription = "Waits for the entity to fire a specific output. By default, this listens once, but can be configured to listen until canceled."
 // MPulseEditorSubHeaderText = "{ 'Output'='m_strEntityOutput' 'Param'='m_strEntityOutputParam' 'Until Canceled'='m_bListenUntilCanceled' }"
 // MPulseEditorHeaderIcon = "tools/images/pulse_editor/inflow_wait.png"
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_Outflow_ListenForEntityOutput : public CPulseCell_BaseYieldingInflow
 {
 	SignatureOutflow_Resume m_OnFired;

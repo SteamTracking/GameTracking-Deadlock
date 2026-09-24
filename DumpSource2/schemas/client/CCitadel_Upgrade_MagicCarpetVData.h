@@ -467,6 +467,7 @@
 //	"m_flBurstSpeedDuration": 0.500000,
 //	"m_flMinDistanceAboveGround": 30.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Upgrade_MagicCarpetVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

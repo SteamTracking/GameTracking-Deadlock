@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocReferencedGraphNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,7 +13,7 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Fallback",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -23,7 +23,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Pose",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -40,6 +40,7 @@
 //	],
 //	"m_defaultResourceName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocReferencedGraphNode : public CNmGraphDocVariationDataNode
 {
 };

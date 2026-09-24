@@ -8,6 +8,7 @@
 //	"m_flManualTargetSpeed": 150.000000
 //}
 // MPropertyFriendlyName = "Future Velocity Metric"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_FutureVelocityMetric : public CAnimGraphDoc_MotionMetric
 {
 	// MPropertyFriendlyName = "Distance"
@@ -19,9 +20,9 @@ class CAnimGraphDoc_FutureVelocityMetric : public CAnimGraphDoc_MotionMetric
 	VelocityMetricMode m_eMode;
 	// MPropertyFriendlyName = "Auto-Calculate target speed"
 	// MPropertyAutoRebuildOnChange
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bAutoTargetSpeed;
 	// MPropertyFriendlyName = "Target Speed"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flManualTargetSpeed;
 };

@@ -140,6 +140,7 @@
 //	"m_sSuccessSound": "",
 //	"m_sFailureSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierUnstickVData : public CCitadel_Modifier_StunnedVData
 {
 	// MPropertyGroupName = "Sounds"

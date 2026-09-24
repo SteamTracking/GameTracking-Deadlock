@@ -15,6 +15,7 @@
 // MVDataAnonymousNode
 // MPropertyFriendlyName = "Smart Prop Element"
 // MVDataOutlinerLabelExpr = "m_sLabel"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropElement
 {
 	// MPropertySuppressField

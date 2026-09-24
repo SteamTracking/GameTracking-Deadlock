@@ -14,7 +14,7 @@
 //		"m_flRandomMin": 0.000000,
 //		"m_flRandomMax": 1.000000,
 //		"m_bHasRandomSignFlip": false,
-//		"m_nRandomSeed": <HIDDEN FOR DIFF>,
+//		"m_nRandomSeed": 0,
 //		"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
 //		"m_strSnapshotSubset": "",
 //		"m_flLOD0": 0.000000,
@@ -105,6 +105,7 @@
 //	"m_nFieldInput": 9,
 //	"m_nFieldOutput": 3
 //}
+// MHasKV3TransferPolymorphicClassname
 class C_OP_RemapNamedModelSequenceEndCap : public C_OP_RemapNamedModelElementEndCap
 {
 };

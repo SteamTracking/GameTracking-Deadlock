@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Protection_RacketVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

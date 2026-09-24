@@ -433,6 +433,7 @@
 //	"m_SummonParticleAttachment": "",
 //	"m_ExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Wrecker_BoulderGrenadeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -508,6 +508,7 @@
 //	},
 //	"m_strShootDelaySound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Frank_PrimaryWeaponVData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "Gameplay"

@@ -1,5 +1,6 @@
 // MNetworkVarNames = "bool m_bIsTransformed"
 // MNetworkVarNames = "GameTime_t m_flWerewolfStartTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Werewolf_Transformation : public CCitadelBaseAbility
 {
 	// MNetworkEnable

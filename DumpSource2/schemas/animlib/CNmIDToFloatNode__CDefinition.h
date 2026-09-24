@@ -10,6 +10,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmIDToFloatNode::CDefinition : public CNmFloatValueNode::CDefinition
 {
 	int16 m_nInputValueNodeIdx;

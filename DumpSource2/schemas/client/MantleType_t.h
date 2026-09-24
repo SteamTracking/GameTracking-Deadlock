@@ -8,6 +8,7 @@
 //	"m_eMantleType": "EMantleNone",
 //	"m_flSlideExitBoostOnGround": 400.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class MantleType_t
 {
 	// MPropertyDescription = "The minimum height difference of the player origin from the ledge for this type to be selected"

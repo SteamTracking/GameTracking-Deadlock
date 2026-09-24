@@ -5,6 +5,7 @@
 //	"m_DestroySound": "",
 //	"m_DestroyParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_FissureWallVData : public CEntitySubclassVDataBase
 {
 	int32 m_nMeleeHits;

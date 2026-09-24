@@ -142,6 +142,7 @@
 //	"m_flPreTeleportDuration": 0.400000,
 //	"m_strAmbientLoopingLocalPlayerSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_MageWalkVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

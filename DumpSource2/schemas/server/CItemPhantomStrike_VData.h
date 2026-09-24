@@ -464,6 +464,7 @@
 //	"m_flTeleportDistance": 120.000000,
 //	"m_flVelocityScale": 0.750000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItemPhantomStrike_VData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

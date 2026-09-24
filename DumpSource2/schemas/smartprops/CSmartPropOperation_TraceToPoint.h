@@ -31,7 +31,8 @@
 // MPropertyFriendlyName = "Transform: Trace To Point"
 // MPropertyDescription = "Perform a trace between the specified origin and a specified target point."
 // MVDataClassGroup = "Transform"
-// MVDataExperimentalNodeSet (UNKNOWN FOR PARSER)
+// MVDataExperimentalNodeSet = "smartprops"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_TraceToPoint : public CSmartPropOperation_Trace
 {
 	// MPropertyStartGroup = "+Target Point"

@@ -150,6 +150,7 @@
 //	"m_flModifierProvidedByAuraDuration": -1.000000,
 //	"m_bRemoveProvidedModifierOnAuraRemoval": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierAuraVData : public CModifierVData_BaseAura
 {
 	CITADEL_UNIT_TARGET_TYPE m_iAuraSearchType;

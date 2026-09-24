@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,24 +16,24 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_target": "VectorParameter",
 //	"m_paramName": "",
 //	"m_param":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsPosition": false,
 //	"m_weightParamName": "",
 //	"m_weightParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_lookatChainName": "",
 //	"m_attachmentName": "",
@@ -55,6 +55,7 @@
 //	}
 //}
 // MPropertyFriendlyName = "Look At"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_LookAtNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField
@@ -66,10 +67,10 @@ class CAnimGraphDoc_LookAtNode : public CAnimGraphDoc_Node
 	CUtlString m_paramName;
 	// MPropertyFriendlyName = "Target Parameter"
 	// MPropertyAttributeChoiceName = "VectorParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_param;
 	// MPropertyFriendlyName = "Parameter is a Position"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bIsPosition;
 	// MPropertySuppressField
 	CUtlString m_weightParamName;
@@ -89,7 +90,7 @@ class CAnimGraphDoc_LookAtNode : public CAnimGraphDoc_Node
 	// MPropertyFriendlyName = "Yaw Limit"
 	// MPropertyAttributeRange = "0 180"
 	// MPropertyGroupName = "Rotation Limits"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flYawLimit;
 	// MPropertyFriendlyName = "Pitch Limit"
 	// MPropertyAttributeRange = "0 90"

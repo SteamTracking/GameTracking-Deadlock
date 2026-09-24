@@ -453,6 +453,7 @@
 //	},
 //	"m_ImpactParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_WeaponUpgrade_SpellslingerHeadshots_VData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

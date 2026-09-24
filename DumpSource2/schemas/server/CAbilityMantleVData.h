@@ -435,6 +435,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityMantleVData : public CitadelAbilityVData
 {
 	CUtlVector< MantleType_t > m_vecMantleTypes;

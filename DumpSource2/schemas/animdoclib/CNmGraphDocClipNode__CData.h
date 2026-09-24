@@ -4,6 +4,7 @@
 //	"m_flSpeedMultiplier": 1.000000,
 //	"m_nStartSyncEventOffset": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocClipNode::CData : public CNmGraphDocVariationDataNode::CData
 {
 	// MPropertyAttributeEditor = "AssetBrowse( vnmclip, *requiredoubleclick )"

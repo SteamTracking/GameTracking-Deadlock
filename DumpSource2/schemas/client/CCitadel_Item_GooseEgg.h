@@ -1,4 +1,5 @@
 // MNetworkVarNames = "int m_iAccruedGold"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Item_GooseEgg : public CCitadel_Item
 {
 	// MNetworkEnable

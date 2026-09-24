@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocFlowNode : public CNmGraphDocNode
 {
 	CUtlLeanVectorFixedGrowable< NmGraphDocPin_t, 4 > m_inputPins;

@@ -4,6 +4,7 @@
 // MNetworkVarNames = "bool m_bFalling"
 // MNetworkVarNames = "bool m_bInStoneForm"
 // MNetworkVarNames = "float m_flStartHeight"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Tengu_StoneForm : public CCitadelBaseAbility
 {
 	// MNetworkEnable

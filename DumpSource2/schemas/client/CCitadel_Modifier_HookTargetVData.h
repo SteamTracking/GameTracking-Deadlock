@@ -171,6 +171,7 @@
 //	"m_HookRetrieveParticle": "",
 //	"m_strApproachingWhooshSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_HookTargetVData : public CCitadel_Modifier_LinkVData
 {
 	// MPropertyStartGroup = "GamePlay"

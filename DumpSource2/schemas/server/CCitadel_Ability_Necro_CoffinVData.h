@@ -458,6 +458,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Necro_CoffinVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

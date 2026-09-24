@@ -141,6 +141,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_NearbyAlliesResistVData : public CCitadelModifierVData
 {
 	float32 m_flNearbyAllyResistRange;

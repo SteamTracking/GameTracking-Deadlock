@@ -143,6 +143,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_StatStealBaseVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Modifiers"

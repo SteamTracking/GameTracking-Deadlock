@@ -442,6 +442,7 @@
 //	"m_flMinRestitution": 0.000000,
 //	"m_flMaxRestitution": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityGooGrenadeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

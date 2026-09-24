@@ -139,6 +139,7 @@
 //	"m_EffectParticle": "",
 //	"m_DebuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Synth_Affliction_Debuff_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

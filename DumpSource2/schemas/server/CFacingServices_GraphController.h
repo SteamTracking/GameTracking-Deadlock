@@ -7,6 +7,7 @@
 //	"m_sFacingReason": null,
 //	"m_sFacingModeUsePath": "Entity_Facing_Mode_Use_Path"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CFacingServices_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< float32 > m_flFacingHeading;

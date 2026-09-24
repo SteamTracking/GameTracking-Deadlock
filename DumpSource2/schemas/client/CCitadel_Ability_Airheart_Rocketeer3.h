@@ -14,6 +14,7 @@
 // MNetworkVarNames = "Vector m_vIntentSpaceMPCOrigin"
 // MNetworkVarNames = "float m_flIntentSpeedVerticalActual"
 // MNetworkVarNames = "float m_flIntentMultiplier"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Airheart_Rocketeer3 : public C_CitadelBaseAbility
 {
 	Vector m_vDebugVelocityIntentModelSpace;

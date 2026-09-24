@@ -8,17 +8,18 @@
 //			"m_name": "",
 //			"m_groupName": "",
 //			"m_subgraphName": "",
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		{
 //			"m_name": "",
 //			"m_groupName": "",
 //			"m_subgraphName": "",
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	],
 //	"m_eConflictType": "NONE"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimParameterConflict : public CAnimConflictBase
 {
 };

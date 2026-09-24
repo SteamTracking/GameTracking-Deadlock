@@ -1,4 +1,5 @@
 // MNetworkVarNames = "EHANDLE m_vecTargetsInCone"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Familiar_Ability01 : public CCitadelBaseAbility
 {
 	// MNetworkEnable

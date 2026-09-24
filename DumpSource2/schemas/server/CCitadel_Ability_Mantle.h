@@ -5,6 +5,7 @@
 // MNetworkVarNames = "QAngle m_angFacing"
 // MNetworkVarNames = "int m_nMantleTypeIndex"
 // MNetworkVarNames = "GameTime_t m_flStartTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Mantle : public CCitadelBaseAbility
 {
 	// MNetworkEnable

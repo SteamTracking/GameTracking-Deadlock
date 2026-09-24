@@ -29,6 +29,7 @@
 // MNetworkVarNames = "bool m_bPassiveFXActive"
 // MNetworkVarNames = "float m_flAmmoFrac"
 // MNetworkVarNames = "bool m_bFiredRecently"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_PrimaryWeapon : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

@@ -467,6 +467,7 @@
 //	"m_sExpiredSound": "",
 //	"m_strHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Fencer_ThrowBladeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

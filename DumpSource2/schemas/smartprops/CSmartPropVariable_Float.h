@@ -11,6 +11,7 @@
 //	"m_flParamaterMaxValue": 1.000000
 //}
 // MPropertyFriendlyName = "Float"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropVariable_Float : public CSmartPropVariable
 {
 	float32 m_DefaultValue;

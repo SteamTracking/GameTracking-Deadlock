@@ -64,6 +64,7 @@
 //	"m_bFalling": null,
 //	"m_bShouldReset": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Trooper_GraphController : public CAI_CitadelNPC_GraphController
 {
 	CAnimGraph2ParamOptionalRef< float32 > m_flVariant;

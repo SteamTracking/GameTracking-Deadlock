@@ -150,6 +150,7 @@
 //	"m_AoECastEffect": "",
 //	"m_strHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Bookworm_AOEMagic_AreaModifierVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

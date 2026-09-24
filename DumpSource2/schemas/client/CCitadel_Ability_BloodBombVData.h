@@ -433,6 +433,7 @@
 //	},
 //	"m_strBloodSpillStatName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_BloodBombVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

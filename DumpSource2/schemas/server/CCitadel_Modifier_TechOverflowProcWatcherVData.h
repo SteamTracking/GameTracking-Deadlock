@@ -155,6 +155,7 @@
 //	},
 //	"m_BuildupSuccessEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_TechOverflowProcWatcherVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyStartGroup = "Modifiers"

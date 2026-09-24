@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_SummonParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_MagicCarpet_SummonVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -85,6 +85,7 @@
 //}
 // MPropertyFriendlyName = "Wind Generator Container"
 // MPropertyDescription = "This is a synth meant to generate whoosh noises."
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerShapedNoise : public CVoiceContainerGenerator
 {
 	bool m_bUseCurveForFrequency;

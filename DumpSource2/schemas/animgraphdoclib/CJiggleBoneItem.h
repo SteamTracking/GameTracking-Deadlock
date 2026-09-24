@@ -18,7 +18,7 @@
 //	]
 //}
 // MPropertyFriendlyName = "Item"
-// MPropertyElementNameFn (UNKNOWN FOR PARSER)
+// MPropertyElementNameFn
 class CJiggleBoneItem
 {
 	// MPropertyFriendlyName = "Bone"

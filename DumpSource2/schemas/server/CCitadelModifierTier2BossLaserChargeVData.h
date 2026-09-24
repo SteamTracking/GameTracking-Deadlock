@@ -141,6 +141,7 @@
 //	],
 //	"m_BeamChargingEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierTier2BossLaserChargeVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

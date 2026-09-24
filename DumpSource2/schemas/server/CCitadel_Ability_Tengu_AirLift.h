@@ -3,6 +3,7 @@
 // MNetworkVarNames = "bool m_bIsGrabbing"
 // MNetworkVarNames = "bool m_bIsHoldingBomb"
 // MNetworkVarNames = "float m_flCurrentSpeed"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Tengu_AirLift : public CCitadelBaseAbility
 {
 	// MNetworkEnable

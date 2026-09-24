@@ -157,6 +157,7 @@
 //	"m_ShadowRevealedEffect": "",
 //	"m_flMinInvisDuration": 2.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierShadowStepVData : public CCitadel_Modifier_InvisVData
 {
 	// MPropertyStartGroup = "Modifiers"

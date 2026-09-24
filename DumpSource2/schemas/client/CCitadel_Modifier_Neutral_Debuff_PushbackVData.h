@@ -139,6 +139,7 @@
 //	"m_flPushSpeed": 0.000000,
 //	"m_flPushRange": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Neutral_Debuff_PushbackVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Gameplay"

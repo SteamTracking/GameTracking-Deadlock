@@ -4,6 +4,7 @@
 // MNetworkVarNames = "bool m_bRequestJumpToRoof"
 // MNetworkVarNames = "GameTime_t m_flMoveDownStartTime"
 // MNetworkVarNames = "EClimbRopeState_t m_eClimbState"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Climb_Rope : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

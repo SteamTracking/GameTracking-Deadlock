@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,17 +16,18 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_flStoppingRadius": 36.000000,
 //	"m_flStoppingSpeedScale": 1.000000
 //}
 // MPropertyFriendlyName = "Path Helper"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_PathHelperNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField

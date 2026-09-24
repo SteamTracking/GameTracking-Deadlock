@@ -4,6 +4,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_ConditionContainer
 {
 	// MPropertySuppressField

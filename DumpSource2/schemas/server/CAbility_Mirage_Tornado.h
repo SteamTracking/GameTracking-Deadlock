@@ -1,5 +1,6 @@
 // MNetworkVarNames = "QAngle m_anglesCharging"
 // MNetworkVarNames = "GameTime_t m_flChargeStartTime"
+// MClassHasEntityLimitedDataDesc
 class CAbility_Mirage_Tornado : public CCitadelBaseAbility
 {
 	GameTime_t m_RecastWindowEnd;

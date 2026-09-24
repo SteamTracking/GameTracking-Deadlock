@@ -495,6 +495,7 @@
 //	"m_szWeaponBeamParticle": "",
 //	"m_flWindupRepeatCycle": 10000.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_PrimaryWeapon_BebopVData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "Sounds"

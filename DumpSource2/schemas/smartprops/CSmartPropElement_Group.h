@@ -15,6 +15,7 @@
 //}
 // MPropertyFriendlyName = "Group"
 // MPropertyDescription = "A group of elements that will all be evaulated."
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropElement_Group : public CSmartPropElement
 {
 	// MPropertyFriendlyName = "Children"

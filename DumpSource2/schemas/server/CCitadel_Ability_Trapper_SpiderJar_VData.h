@@ -433,6 +433,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Trapper_SpiderJar_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

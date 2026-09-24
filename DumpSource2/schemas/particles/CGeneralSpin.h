@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CGeneralSpin : public CParticleFunctionOperator
 {
 	// MPropertyFriendlyName = "spin rate degrees"

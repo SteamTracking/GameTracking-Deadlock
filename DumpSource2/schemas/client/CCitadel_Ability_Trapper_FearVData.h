@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Trapper_FearVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -10,7 +10,7 @@
 //	},
 //	"m_syncID": "",
 //	"m_bClientOnly": false,
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_curve":
 //	{
 //		"m_spline":
@@ -31,6 +31,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFloatCurveEvent : public CNmEvent
 {
 	CGlobalSymbol m_ID;

@@ -141,6 +141,7 @@
 //	"m_strFullyCharged": "",
 //	"m_strShotSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Gunslinger_DemonCarbineVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

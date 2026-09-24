@@ -7,6 +7,7 @@
 //	"m_GroupName": "",
 //	"m_nChoice": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModelConfigElement_SetBodygroupOnAttachedModels : public CModelConfigElement
 {
 	CUtlString m_GroupName;

@@ -144,6 +144,7 @@
 //	},
 //	"m_strHitConfirmSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Mirage_Tornado_Aura_Apply_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

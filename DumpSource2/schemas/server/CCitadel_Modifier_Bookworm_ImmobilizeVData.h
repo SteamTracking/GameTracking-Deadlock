@@ -142,6 +142,7 @@
 //	"flSpeedForNoDrag": 5.000000,
 //	"flSpeedForMaxDrag": 15.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Bookworm_ImmobilizeVData : public CCitadel_Modifier_RootVData
 {
 	// MPropertyStartGroup = "Gameplay"

@@ -454,6 +454,7 @@
 //	"m_StackSound": "",
 //	"m_AmmoSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Upgrade_AmmoScavenger_VData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

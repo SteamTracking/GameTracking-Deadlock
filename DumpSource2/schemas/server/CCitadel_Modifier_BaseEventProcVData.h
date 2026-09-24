@@ -148,6 +148,7 @@
 //	],
 //	"m_nRequiredDamageFlags": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BaseEventProcVData : public CCitadelModifierVData
 {
 	bool m_bProcChanceAffectedByEffectiveness;

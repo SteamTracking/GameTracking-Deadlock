@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CnmGraphDocTwoBoneIKNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,21 +13,21 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Input",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Target",
 //			"m_type": "Target",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Enabled",
 //			"m_type": "Bool",
 //			"m_bIsDynamicPin": false,
@@ -37,7 +37,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -58,6 +58,7 @@
 //	"m_blendMode": "Effector",
 //	"m_flReferencePoseTwistWeight": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CnmGraphDocTwoBoneIKNode : public CNmGraphDocVariationDataNode
 {
 	bool m_bIsTargetInWorldSpace;

@@ -13,6 +13,7 @@
 // MPropertyDescription = "An element which selects a single choice from its set of child choices."
 // MPulseEditorHeaderIcon = "tools/images/pulse_editor/requirements.png"
 // MPulseEditorCanvasItemSpecKV3 = "{ className='IsControlFlowNode AllOutflowsInSpecialSection IsSelectorNode' create_special_outflows_section=true }"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropPulse_PickOneSelector : public CPulseCell_BaseFlow
 {
 	// MPropertyGroupName = "Handle Settings"

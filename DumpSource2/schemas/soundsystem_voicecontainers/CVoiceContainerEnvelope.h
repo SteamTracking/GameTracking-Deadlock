@@ -24,6 +24,7 @@
 //}
 // MPropertyFriendlyName = "Envelope VSND"
 // MPropertyDescription = "Plays sound with envelope."
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerEnvelope : public CVoiceContainerDefault
 {
 	// MPropertyFriendlyName = "Vsnd File"

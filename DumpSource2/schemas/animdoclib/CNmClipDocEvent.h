@@ -3,6 +3,7 @@
 //	"m_flStartTime": 0.000000,
 //	"m_flDuration": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipDocEvent
 {
 	float32 m_flStartTime;

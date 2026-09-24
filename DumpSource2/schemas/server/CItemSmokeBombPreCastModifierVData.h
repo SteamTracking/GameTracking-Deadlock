@@ -139,6 +139,7 @@
 //	"m_SmokeAreaParticle": "",
 //	"m_CasterParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItemSmokeBombPreCastModifierVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

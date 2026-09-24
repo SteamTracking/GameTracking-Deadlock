@@ -431,6 +431,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityCadenceLullabyVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

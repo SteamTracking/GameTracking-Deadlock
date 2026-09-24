@@ -488,6 +488,7 @@
 //	"m_PassiveWeaponParticle": "",
 //	"m_strPassiveWeaponAttachmentSource": "muzzle_fx"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Punkgoat_PrimaryWeaponVData : public CCitadel_Ability_PrimaryWeaponVData
 {
 };

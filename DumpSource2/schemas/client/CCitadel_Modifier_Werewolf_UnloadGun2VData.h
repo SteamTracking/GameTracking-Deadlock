@@ -160,6 +160,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Werewolf_UnloadGun2VData : public CCitadel_Modifier_BaseBulletPreRollProcVData
 {
 	// MPropertyStartGroup = "Sounds"

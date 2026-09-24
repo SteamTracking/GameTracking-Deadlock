@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocTargetPointNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,7 +13,7 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Target",
 //			"m_type": "Target",
 //			"m_bIsDynamicPin": false,
@@ -23,7 +23,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Point",
 //			"m_type": "Vector",
 //			"m_bIsDynamicPin": false,
@@ -32,6 +32,7 @@
 //	],
 //	"m_bIsWorldSpaceTarget": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocTargetPointNode : public CNmGraphDocFlowNode
 {
 	bool m_bIsWorldSpaceTarget;

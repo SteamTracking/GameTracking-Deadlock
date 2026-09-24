@@ -17,6 +17,7 @@
 //	],
 //	"m_bAllowLooping": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmBlend2DNode::CDefinition : public CNmPoseNode::CDefinition
 {
 	CUtlVectorFixedGrowable< int16, 5 > m_sourceNodeIndices;

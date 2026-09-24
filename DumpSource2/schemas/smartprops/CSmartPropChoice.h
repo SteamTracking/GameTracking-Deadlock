@@ -10,6 +10,7 @@
 // MPropertyFriendlyName = "Choice"
 // MVDataAnonymousNode
 // MVDataOutlinerNameExpr = "m_Name"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropChoice : public CSmartPropParameter
 {
 	// MPropertyFriendlyName = "Choice Name"

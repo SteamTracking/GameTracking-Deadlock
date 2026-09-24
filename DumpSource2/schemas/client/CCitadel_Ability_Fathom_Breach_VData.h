@@ -435,12 +435,13 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Fathom_Breach_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ExplosionParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_LeapParticle;
-	// MPropertyLeafSuggestionProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyLeafSuggestionProviderFn
 	CGlobalSymbol m_strInFlightAnimGraphParam;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strExplodeSound;

@@ -160,6 +160,7 @@
 //		0
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Burrow_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

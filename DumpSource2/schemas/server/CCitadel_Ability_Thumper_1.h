@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Thumper_1 : public CCitadelBaseAbility
 {
 	CUtlVector< CHandle< CBaseEntity > > m_vecHitEntities;

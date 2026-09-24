@@ -5,6 +5,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_RigidBodyWeightList
 {
 	CUtlString m_name;

@@ -23,6 +23,7 @@
 //		"m_flFarBlurryDistance": -1.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_LerpCameraSettings : public CPulseCell_BaseLerp
 {
 	float32 m_flSeconds;

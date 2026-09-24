@@ -15,14 +15,14 @@ class IKDemoCaptureSettings_t
 	IKChannelMode m_eMode;
 	// MPropertyFriendlyName = "IK Chain"
 	// MPropertyAttributeChoiceName = "IKChain"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CUtlString m_ikChainName;
 	// MPropertyFriendlyName = "Start Bone"
 	// MPropertyAttributeChoiceName = "Bone"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CUtlString m_oneBoneStart;
 	// MPropertyFriendlyName = "End Bone"
 	// MPropertyAttributeChoiceName = "Bone"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CUtlString m_oneBoneEnd;
 };

@@ -29,6 +29,7 @@
 //	"m_flMinLifetime": 0.000000,
 //	"m_flAttackThinkTime": 0.010000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_ShieldedSentryVData : public CNPC_SimpleAnimatingAIVData
 {
 	float32 m_flZShootPostionOffset;

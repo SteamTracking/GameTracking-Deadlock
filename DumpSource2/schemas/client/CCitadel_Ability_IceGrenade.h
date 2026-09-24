@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_IceGrenade : public C_CitadelBaseAbility
 {
 	VectorWS m_vLaunchPosition;

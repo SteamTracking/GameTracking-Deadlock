@@ -438,6 +438,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelAbilityDruidPlantHealingTreeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

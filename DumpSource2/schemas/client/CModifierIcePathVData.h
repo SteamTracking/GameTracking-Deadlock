@@ -148,6 +148,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierIcePathVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

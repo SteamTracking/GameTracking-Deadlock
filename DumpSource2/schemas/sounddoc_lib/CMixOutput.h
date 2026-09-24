@@ -11,6 +11,7 @@
 //}
 // MPropertyFriendlyName = "VMix Output Node"
 // MPropertyDescription = "This is where your audio is output from the graph"
+// MHasKV3TransferPolymorphicClassname
 class CMixOutput : public CMixPropertyBase
 {
 	// MPropertyDescription = "Volume for audio.Input1.<br>Range is 0 - 1"

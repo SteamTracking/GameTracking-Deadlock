@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_flStatMult": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_TetherNoConnectionVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Gameplay"

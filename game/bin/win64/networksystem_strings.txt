@@ -258,13 +258,10 @@
 2\vpl
 2\vpt
 ::Storage_t
-<classname> <fieldname>:  spew why field was excluded from networking for classname.
 Accepting Steam Net connection %s\n
 AckSeqNum
-Activates/deactivates net message validation
 AddOrUpdateFieldMetadata:  adding/updating %s with invalid array count %d!
 Allowing IP connections without auth\n
-An old command that has been renamed to 'net_option'
 Applied simulated network conditions from gameinfo.\n
 ApplyOverrides_R:  couldn't find field from codegetn %s::%s\n
 ApplyOverrides_R:  couldn't find field from schema %s::%s\n
@@ -464,11 +461,9 @@ Cannot show net_fakeloss until SteamNetworkingUtils initialized\n
 Cannot show values of SteamNetworkingSockets configuration values until initialized\n
 Cannot use priority equal to NETWORK_FIELD_CHANGE_DEFAULT_PRIORITY!\n
 Capture active, %s samples written\nnet_captureculldata stop to stop the capture\n
-Captures low-level data to replay path culling algorithm behavior in controlled unit test environment
 Class does not allow allocation from its schema binding
 Class does not allow deallocation from its schema binding
 Class,Field,Field Path,Decode Count,Total Bits,Avg Bits,Total Index Bits,Avg Index Bits,Priority,=SUM(E:E),Full Name,Notes\n
-Clear all simulated network conditions
 CloseSocket
 CloseSteamNetConnection handle #%u (userdata %d)%s\n
 Closing '%s' P2P listen socket\n
@@ -476,7 +471,6 @@ Closing '%s' SDR listen socket\n
 Closing '%s' UDP listen socket\n
 Closing '%s' poll group\n
 Closing Steam Net Connection on socket '%s' to %s, handle #%u (%d %s)\n
-Compress network traffic
 Compressed
 ConnectSocket(%s) failed\n
 ConnectToHostedDedicatedServer(%s) failed\n
@@ -500,14 +494,9 @@ DegreeEuler
 Direct UDP connect
 Disassociating NetChan %s (%s) from Steam Net Connection handle #%u (userdata %d)\n
 Disconnecting netchan because of excessive CPU usage /+/ %dms, %d, current message type: '%s'
-Display info about a message (by classname or id)
-Don't bother compressing packets below this size.
-Dump UDP packets summary to console
-Dump non-loopback udp only
 Dynamic collections in fixed arrays not supported by networking:  %s::%s\n
 ERROR! SendData %s data too big (%i)\n
 ERROR: Field %s::%s unable to deduce unserializer for type (%s)!\n
-Enable optimization of slow path that makes HLTV CPU consumption high in AnimGraph-using mods. Will switch to this on by default soon.
 Encode
 Encountered 2 fields "%s" and "%s" in struct "%s" using the same change callback with different change callback types!\n
 Encountered message with an invalid network category! [net message %s]
@@ -556,10 +545,8 @@ FieldPathEncodeFinish
 Fixed Array
 FlattenedSerializerField_t::FindPolymorphicFieldInfoByCodegenBinding
 FlattenedSerializerField_t::FindPolymorphicFieldInfoBySchemaBinding
-For servers behind NAT/DHCP meant to be exposed to the public internet, this is the public facing ip address string: ("x.x.x.x" )
 GatherAllFieldOffsets_R:  local offset of %s::%s %u is too large (%u max)\n
 GatherSendProxyResults
-Get or set SteamNetworkingSockets options such as fake packet lag and loss
 GetBitRange( %d -> %d ) end is before or same as start\n
 GetPathData failed for read only CFieldPath
 Got ISteamNetworkingSockets user interfaces from standalone lib\n
@@ -572,12 +559,10 @@ HParticleSystemDefinitionStrong
 HPostProcessingStrong
 HRenderTextureStrong
 HVDataResourceStrong
-Host game server ip
 IND)ind)"
 INetChannel::SetCategories: Network category wasn't registered!\n
 INetworkSystem::RegisterNetworkCategory: Attempted to register category %u twice (debug name: %s and %s)\n
 INetworkSystem::RegisterNetworkCategory: all categories must have ids between 0-31!\n
-If set, only net_showmsg spew for data inbound on this socket name e.g. client, server, etc.
 InSeqNum
 Include/Exclude reasons for field %s::%s:\n
 InitFakeField
@@ -594,10 +579,6 @@ Kind
 LastSeqNum
 Latency. . . . . . . . : %7dms%7dms%7dms   net_fakelag\n
 Leaked channel %s remote %s\n
-Like net_showmsg, but only spew reliable messages
-List all registered net messages
-Log network processing
-Log packets to files
 Loss . . . . . . . . . : %8.2f%%%8.2f%%%9s   net_fakeloss\n
 MNetworkAlias
 MNetworkArraySerializer
@@ -633,9 +614,6 @@ MNetworkVarsAtomic
 MNetworkVarsDisabled
 MResourceTypeForInfoType
 MakeSerializersMatchByMeta failed for %s\n
-Max polymorphic variants to spew when spewing a flattened serializer.
-Maximum number of messages to allow waiting in queue after processing; exceeding this disconnects the client. 0 == no limit
-Maximum number of messages to process from a client in a single frame (0 == no limit).
 MbP?33s?
 Measured RTT to %d SDR points of presence.\n
 Merge
@@ -670,7 +648,6 @@ NetChanTransmitReliable
 NetChanTransmitUnreliable
 NetChannel '%s':\n
 NetMessage '%s' still using auto-assigned, has to generate id from name CUtlStringToken hashcode = %d\n
-NetSteamConn
 Netchan '%s' closed unexpectedly: %s\n
 Netchan [%s] already associated with hconn #%u, but now we are getting messages on new hconn #%u using the same 'from' address\n
 Netchan queued message new high water mark reached by %s at %d messages\n
@@ -683,7 +660,6 @@ NetworkSystem
 NetworkSystem/CreateListenSocketP2P
 NetworkSystem/SkipRedundantChangeCallbacks
 NetworkSystem/UseSerializedEntityPool
-Networking Reliable
 No SteamNetworkingUtils?\n
 No active net channels.\n
 No steam client; SDR features will be unavailable\n
@@ -706,7 +682,6 @@ Obtained direct RTT measurements to relays in %d POPs.  Closest %d are:\n
 Opened Steam Net Connection on socket '%s' to %s, connection %s\n
 Order,'From','To',Bits\n
 OutSeqNumAck
-Overrides IP for multihomed hosts
 P08@J0
 P08J
 PACKET_STATUS_DROPPED
@@ -733,9 +708,6 @@ PopNPlusN
 PopNPlusOne
 PopOnePlusN
 PopOnePlusOne
-Print current ping times to SDR points of presence, and selected route
-Print current simulated network condifions
-Print detailed network statistics for each network connection
 ProcessOverride encountered unknown directive NetworkOverrideType_t(%d)\n
 Processing
 Proto 
@@ -797,32 +769,11 @@ SendMessage %s failed with k_EResultLimitExceeded, crashing connection.
 SendMessage reliable failed AllocateMessage (%d).
 SendMessage unreliable failed AllocateMessage (%d).
 Serialized nonresident asset %s.
-Server will listen for direct UDP connections on the configured port.  This can be turned off to only listen for P2P/SDR connections.
-Server will not buffer more than N kb from connected clients
-Server will not buffer more than N messages from connected clients
-Server will reject message larger than N kb
-Server will reject packets with more than N segments
 Setting FS %s field %s to %s\n
-Shortcut to set both FakePacketLag_Recv and FakePacketLag_Send net options
-Shortcut to set both FakePacketLoss_Recv and FakePacketLoss_Send net options
-Shortcut to set jitter net options.  Run with no arguments for usage.
-Should dedicated server listen for new-style P2P?
-Show connectionless UDP traffic.
-Show dropped packets in console
-Show incoming message: <0|1|2|name> where 1 == all and 2 == all except net_NOP
-Show messages for large packets only: <size>
-Shows current network status
-Shows net channel info
 Socket '%s' bound to '%s' [%s]:\n
 Socket '%s' listening for %s on port %d:\n
 Socket '%s' listening for SDR on port %d virtual port %d\n
 Socket layer initialized: \n
-Spew CSerializedEntity memory
-Spew CSerializedEntity metadata information
-Spew QoS interval data as we gather it
-Spew a warning if packet loss percentage is above this threshold
-Spew serializer counts, client only by default, specify server to spew server counts\n
-Spew serializer info\n
 Steam Net connection %s %s, reason %d: %s\n
 Steam supporting smaller max routable packet than engine expecting (%d vs %d)\n
 SteamAPI_GetHSteamPipe
@@ -840,7 +791,6 @@ SteamDatagram_SetAppID
 SteamDatagram_SetUniverse
 SteamGameServerNetworkingSockets_LibV12
 SteamGameServer_GetHSteamPipe
-SteamNetSockets
 SteamNetworkingMessages_LibV2
 SteamNetworkingSockets config option not found\n
 SteamNetworkingSockets not initialized.\n
@@ -852,7 +802,6 @@ Summary of connection [%s]:\n
 TCP/UDP Disabled.\n
 The 'sdr' console command has been renamed to 'net_option'.  Please update your scripts\n
 TimeTable
-Toggle field path tracing to file\n
 Too many incoming messages on channel (%s) %d remain queued, limit per-frame is %d.\n
 Too many proxies for serializer %s.
 Too many queued messages (%d)
@@ -993,15 +942,12 @@ filesystem
 fixed array
 flags=%d, 
 found it %s is %s\n
-fp_trace
-fs_spew_readfieldlist
 g_pSteamGameServerNetworkingSockets
 g_pSteamNetworkingSockets
 g_pSteamNetworkingUtils
 groupindex
 groupnames
 has_network_encoding_data
-hostip
 hpz0
 huge
 identified %d entity related c++ field shadowing issues:\n
@@ -1010,7 +956,6 @@ including
 incoming_data_bytespersecond
 incoming_sequence
 incoming_sequence_start
-index <threshold bytes>: spew changes to ent index, optionally only spewing if update is > than threshold bytes
 index[%d] 
 index_bits
 indirections
@@ -1033,60 +978,13 @@ matrix3x4a_t
 max_size
 nIndex != m_priorityToOrderMap.InvalidIndex()
 nPriority != NETWORK_FIELD_CHANGE_DEFAULT_PRIORITY
-net_captureculldata
-net_channels
-net_compresspackets_minsize
-net_connections_stats
-net_culloptimization
-net_detailed_canpacket_log
-net_fakeclear
 net_fakeclear: Cleared simulated network conditions\n
-net_fakejitter
-net_fakelag
 net_fakelag = %dms  (net_option FakePacketLag_Send = %dms, net_option FakePacketLag_Recv = %dms)\n
-net_fakeloss
 net_fakeloss = %g%%  (net_option FakePacketLoss_Send = %g%%, net_option FakePacketLoss_Recv = %g%%)\n
-net_fakestatus
-net_filelogging
-net_fs_showindirections
-net_limit_sv_recv_max_message_size_kb
-net_limit_sv_recv_segments_per_packet
-net_limit_sv_recvbuffer_kb
-net_limit_sv_recvbuffer_msg
-net_listallmessages
-net_log_processing
-net_max_message_process_count
-net_max_message_queue_size
-net_max_polymorphic_spew
-net_messageinfo
 net_messageinfo %s
-net_option
 net_option %s = %s\n
 net_option settings will not apply to loopback listenservers. To run a listenserver without loopback. Select your map with "map foo loopback=0"\n
-net_p2p_listen_dedicated
-net_print_sdr_ping_times
-net_public_adr
-net_qosinterval_spew
-net_qospacketloss_percentage_threshold
-net_restrict_showmsg_socket
-net_serializedentitymemory
-net_serializedentitymetadatainfo
-net_showdrop
-net_showmsg
-net_showoob
-net_showpeaks
-net_showreliable
-net_showudp
-net_showudp_remoteonly
-net_skip_redundant_change_callbacks
-net_spewcounts
-net_spewserializer
-net_status
-net_use_delta_property_fastpath
-net_use_packet_compression
-net_validatemessages
 net_validatemessages = %d\n
-net_why_field_excluded
 netmessage
 networking/%04d_%02d_%02d_%02d_%02d_%02d
 networksystem.dll
@@ -1151,7 +1049,6 @@ skip
 steamappid
 string_t_table
 struct %s, fields: %s\n
-sv_listen_directudp
 tag='%s':%u
 target struct
 unable to match %s::%s (type %s) in %s, no likely matches found\n

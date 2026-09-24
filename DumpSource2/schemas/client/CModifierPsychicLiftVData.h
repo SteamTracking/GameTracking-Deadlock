@@ -161,6 +161,7 @@
 //	"m_flSlamMaxSpeed": 2000.000000,
 //	"m_flSlamImpactRadius": 50.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierPsychicLiftVData : public CCitadel_Modifier_StunnedVData
 {
 	// MPropertyStartGroup = "Modifiers"

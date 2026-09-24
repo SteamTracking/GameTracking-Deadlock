@@ -140,6 +140,7 @@
 //	"m_EmpPlayerParticle": "particles/modifiers/silenced_player_debuff.vpcf",
 //	"m_EmpStatusParticle": "particles/status_fx/status_fx_silenced.vpcf"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_SilencedVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

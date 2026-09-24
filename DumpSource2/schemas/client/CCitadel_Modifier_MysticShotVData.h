@@ -157,6 +157,7 @@
 //	"m_ExplodeParticle": "",
 //	"m_ExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_MysticShotVData : public CCitadel_Modifier_BaseBulletPreRollProcVData
 {
 	// MPropertyStartGroup = "Visuals"

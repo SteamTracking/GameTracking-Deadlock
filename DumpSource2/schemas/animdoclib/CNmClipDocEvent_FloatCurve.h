@@ -2,7 +2,7 @@
 //	"_class": "CNmClipDocEvent_FloatCurve",
 //	"m_flStartTime": 0.000000,
 //	"m_flDuration": 0.000000,
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_curve":
 //	{
 //		"m_spline":
@@ -23,6 +23,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipDocEvent_FloatCurve : public CNmClipDocEvent
 {
 	CUtlString m_ID;

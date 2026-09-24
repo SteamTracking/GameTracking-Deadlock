@@ -148,6 +148,7 @@
 //	"m_strActiveEffectConfigName": "tier1",
 //	"flShieldImpactDirectionOffset": 10.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Backdoor_ProtectionVData : public CCitadelModifierVData
 {
 	// MPropertyDescription = "How long this modifier must be alive before backdoor protection is activated"

@@ -437,6 +437,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityKobunVData : public CitadelAbilityVData
 {
 	Vector m_vSummonFollowOffset;

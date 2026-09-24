@@ -13,6 +13,7 @@
 //	"m_rule": "BlockTransition",
 //	"m_ID": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmTransitionEvent : public CNmEvent
 {
 	NmTransitionRule_t m_rule;

@@ -1,5 +1,6 @@
 // MNetworkVarNames = "CCitadelAutoScaledTime m_flFlurryEndTime"
 // MNetworkVarNames = "GameTime_t m_flNextAttackTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_BulletFlurry : public CCitadelBaseAbility
 {
 	// MNetworkEnable

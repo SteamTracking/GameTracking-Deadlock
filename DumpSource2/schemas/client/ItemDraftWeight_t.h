@@ -4,13 +4,13 @@
 //}
 class ItemDraftWeight_t
 {
-	// MPropertyLeafChoiceProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyLeafChoiceProviderFn
 	// MPropertyFlattenIntoParentRow
-	// MPropertyFlattenStretchFactor (UNKNOWN FOR PARSER)
+	// MPropertyFlattenStretchFactor = 1
 	// MPropertyFlattenIncludeLabel
 	CUtlString m_strBucket;
 	// MPropertyFlattenIntoParentRow
-	// MPropertyFlattenStretchFactor (UNKNOWN FOR PARSER)
+	// MPropertyFlattenStretchFactor = 1
 	// MPropertyFlattenIncludeLabel
 	float32 m_flWeight;
 };

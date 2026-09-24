@@ -7,6 +7,7 @@
 //	"m_flMinStepsRemaining": 1.000000
 //}
 // MPropertyFriendlyName = "Steps Remaining Metric"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_StepsRemainingMetric : public CAnimGraphDoc_MotionMetric
 {
 	// MPropertyFriendlyName = "Feet"

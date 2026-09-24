@@ -1,5 +1,6 @@
 // MNetworkVarNames = "CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent"
 // MNetworkVarNames = "Vector m_vExitOrigin"
+// MClassHasEntityLimitedDataDesc
 class CCitadelTeleportTrigger : public CTriggerModifier
 {
 	// MNetworkEnable

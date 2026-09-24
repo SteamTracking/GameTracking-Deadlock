@@ -439,6 +439,7 @@
 //	},
 //	"m_strHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityChargedTackleVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

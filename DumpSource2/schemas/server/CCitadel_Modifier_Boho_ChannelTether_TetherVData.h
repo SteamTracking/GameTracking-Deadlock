@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_TetherParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Boho_ChannelTether_TetherVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_WeaponBuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_WreckerSalvageBuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

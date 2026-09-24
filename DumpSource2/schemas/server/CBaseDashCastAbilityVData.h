@@ -455,6 +455,7 @@
 //	"m_strTargetHitSound": "",
 //	"m_strMissSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CBaseDashCastAbilityVData : public CitadelAbilityVData
 {
 	CSubclassName< 4 > m_AbilityToTrigger;

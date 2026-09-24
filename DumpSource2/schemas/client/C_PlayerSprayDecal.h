@@ -15,6 +15,7 @@
 // MNetworkVarNames = "CUtlString m_sTextureNameDamaged"
 // MNetworkVarNames = "CUtlString m_sSoundNameDamaged"
 // MNetworkVarNames = "bool m_bDamaged"
+// MClassHasEntityLimitedDataDesc
 class C_PlayerSprayDecal : public C_BaseModelEntity
 {
 	// MNetworkEnable

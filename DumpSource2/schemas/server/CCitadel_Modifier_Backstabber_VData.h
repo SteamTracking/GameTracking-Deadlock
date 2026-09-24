@@ -144,6 +144,7 @@
 //	},
 //	"m_strDamageTickSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Backstabber_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

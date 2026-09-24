@@ -1,5 +1,6 @@
 // MNetworkVarNames = "float m_flWidth"
 // MNetworkVarNames = "GameTime_t m_tDieTime"
+// MClassHasEntityLimitedDataDesc
 class C_Projectile_Stomp_Projectile : public C_CitadelProjectile
 {
 	// MNetworkEnable

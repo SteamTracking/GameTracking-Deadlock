@@ -453,6 +453,7 @@
 //	},
 //	"m_CastTargetEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_WeaponUpgrade_SurgingPowerVData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

@@ -436,6 +436,7 @@
 //	},
 //	"m_HoldingBallLoop": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityWreckingBallVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

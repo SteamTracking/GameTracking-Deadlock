@@ -15,6 +15,7 @@
 //	"m_bExtrapolateMovement": false,
 //	"m_flMinExtrapolationSpeed": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPathMetricEvaluator : public CMotionMetricEvaluator
 {
 	CUtlVector< float32 > m_pathTimeSamples;

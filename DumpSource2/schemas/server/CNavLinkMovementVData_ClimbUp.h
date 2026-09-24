@@ -15,6 +15,7 @@
 //		"m_verticalRange": 0.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNavLinkMovementVData_ClimbUp : public CNavLinkMovementVData
 {
 	bool m_bAlignOrientationWithEdgeNormal;

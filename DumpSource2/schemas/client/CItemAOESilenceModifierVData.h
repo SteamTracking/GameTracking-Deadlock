@@ -141,6 +141,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItemAOESilenceModifierVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Sounds"

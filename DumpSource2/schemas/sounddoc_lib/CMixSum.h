@@ -27,6 +27,7 @@
 //}
 // MPropertyFriendlyName = "VMix Mixer Audio Node"
 // MPropertyDescription = "Mixes audio tracks together into a single track.  Mix levels can be automated."
+// MHasKV3TransferPolymorphicClassname
 class CMixSum : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Volume:1"

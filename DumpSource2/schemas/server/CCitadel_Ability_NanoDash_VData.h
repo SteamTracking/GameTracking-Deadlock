@@ -479,6 +479,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_NanoDash_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

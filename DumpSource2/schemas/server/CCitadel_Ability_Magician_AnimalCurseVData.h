@@ -439,6 +439,7 @@
 //	"m_TargetWarningParticle": "",
 //	"m_ProjectileExplodeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Magician_AnimalCurseVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

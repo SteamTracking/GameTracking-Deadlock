@@ -36,6 +36,7 @@
 //	"m_nAssetTypeVersion": 0,
 //	"m_Test_InjectSearchable": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CBitmapAssetTypeInfo : public CSimpleAssetTypeInfo
 {
 };

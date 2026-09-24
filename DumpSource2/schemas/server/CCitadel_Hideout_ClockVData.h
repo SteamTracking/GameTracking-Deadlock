@@ -8,6 +8,7 @@
 //	"m_strMinuteSound": "",
 //	"m_flHourChimeInterval": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Hideout_ClockVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Visuals"

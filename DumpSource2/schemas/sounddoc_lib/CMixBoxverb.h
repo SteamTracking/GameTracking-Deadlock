@@ -32,6 +32,7 @@
 //}
 // MPropertyFriendlyName = "Legacy VMix Shoebox Reverb Node"
 // MPropertyDescription = "A simple reverb that approximates the reflections of a box-shaped room, copied from previous audio system."
+// MHasKV3TransferPolymorphicClassname
 class CMixBoxverb : public CMixPropertyBase
 {
 	// MPropertyDescription = "The reverb can be parameterized either by a delay range (min/max delay in milliseconds) OR by a delay size for each dimension of a box (width/height/depth).<br>If you set width, height, or depth to anything other than zero, these min/max fields will not be used."

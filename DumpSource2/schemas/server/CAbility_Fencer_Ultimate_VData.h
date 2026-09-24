@@ -453,6 +453,7 @@
 //	"m_DirPreviewEffect": "",
 //	"m_strDashHitEnemy": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Fencer_Ultimate_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Gameplay"

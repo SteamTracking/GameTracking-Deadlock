@@ -1,5 +1,6 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
 // MPropertyFriendlyName = "Blend Item"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_Blend2DItem
 {
 	// MPropertyFriendlyName = "Blend Value"
@@ -10,6 +11,6 @@ class CAnimGraphDoc_Blend2DItem
 	bool m_bUseCustomDuration;
 	// MPropertyGroupName = "+Duration Override"
 	// MPropertyFriendlyName = "Custom Duration"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flCustomDuration;
 };

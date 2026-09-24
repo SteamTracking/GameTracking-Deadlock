@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocFlowGraph",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_nodes":
 //	[
 //	],
@@ -15,6 +15,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocFlowGraph : public CNmGraphDocGraph
 {
 	CUtlVector< CNmGraphDocFlowGraph::Connection_t > m_connections;

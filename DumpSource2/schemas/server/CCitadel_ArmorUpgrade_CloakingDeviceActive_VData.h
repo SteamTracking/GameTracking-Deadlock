@@ -455,6 +455,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_ArmorUpgrade_CloakingDeviceActive_VData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

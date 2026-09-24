@@ -1,6 +1,7 @@
 // MNetworkVarNames = "Vector m_vStrikeVel"
 // MNetworkVarNames = "float m_flInitialYaw"
 // MNetworkVarNames = "float m_flStartHeight"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_LashDownStrike : public C_CitadelBaseAbility
 {
 	GameTime_t m_ImpactTime;

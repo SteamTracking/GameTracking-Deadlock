@@ -434,6 +434,7 @@
 //	"m_RetargetParticle": "",
 //	"m_strRedirect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Magician_MagicBoltVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

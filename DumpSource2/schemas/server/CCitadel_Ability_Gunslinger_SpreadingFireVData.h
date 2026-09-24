@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Gunslinger_SpreadingFireVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

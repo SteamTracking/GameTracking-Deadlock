@@ -3,6 +3,7 @@
 // MNetworkVarNames = "GameTime_t m_flTackleStartTime"
 // MNetworkVarNames = "GameTime_t m_flPrepareStartTime"
 // MNetworkVarNames = "Vector m_vecTackleDir"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_ChargedTackle : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

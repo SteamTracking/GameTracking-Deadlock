@@ -8,6 +8,7 @@
 //		0.000000
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmConstVectorNode::CDefinition : public CNmVectorValueNode::CDefinition
 {
 	Vector m_value;

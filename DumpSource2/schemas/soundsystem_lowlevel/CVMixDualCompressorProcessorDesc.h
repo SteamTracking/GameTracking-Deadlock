@@ -24,6 +24,7 @@
 //		}
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CVMixDualCompressorProcessorDesc : public CVMixBaseProcessorDesc
 {
 	VMixDualCompressorDesc_t m_desc;

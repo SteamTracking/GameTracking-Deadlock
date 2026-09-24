@@ -2,7 +2,7 @@
 //	"m_name": "",
 //	"m_groupName": "",
 //	"m_subgraphName": "",
-//	"m_id": <HIDDEN FOR DIFF>,
+//	"m_id": 0
 //}
 class CAnimConflictInfo_t
 {

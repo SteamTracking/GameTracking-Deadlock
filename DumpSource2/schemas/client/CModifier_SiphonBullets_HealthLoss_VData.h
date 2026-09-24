@@ -141,6 +141,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_SiphonBullets_HealthLoss_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

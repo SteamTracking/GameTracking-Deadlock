@@ -159,6 +159,7 @@
 //	"m_flLightMeleeRefresh": 1.500000,
 //	"m_flHeavyMeleeRefresh": 3.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_AfterburnWatcherVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyGroupName = "Modifiers"

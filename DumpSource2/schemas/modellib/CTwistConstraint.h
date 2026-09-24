@@ -29,6 +29,7 @@
 //		1.000000
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CTwistConstraint : public CBaseConstraint
 {
 	bool m_bInverse;

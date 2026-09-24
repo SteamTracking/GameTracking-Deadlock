@@ -156,6 +156,7 @@
 //		"m_strIconHeroCardGloat": ""
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_WerewolfVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Gameplay"

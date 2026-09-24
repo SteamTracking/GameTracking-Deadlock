@@ -3,6 +3,7 @@
 //	"m_nNodeIdx": -1,
 //	"m_flValue": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmConstFloatNode::CDefinition : public CNmFloatValueNode::CDefinition
 {
 	float32 m_flValue;

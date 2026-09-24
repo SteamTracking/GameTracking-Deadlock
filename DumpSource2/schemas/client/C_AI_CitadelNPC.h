@@ -5,7 +5,7 @@
 // MNetworkExcludeByUserGroup = "m_flCycle"
 // MNetworkExcludeByName = "m_flEncodedController"
 // MNetworkExcludeByName = "m_flPoseParameter"
-// MNetworkOverride = "m_lifeState"
+// MNetworkOverride = "C_BaseEntity::m_lifeState"
 // MNetworkVarNames = "bool m_bBeamActive"
 // MNetworkVarNames = "WeakPoint_t m_vecWeakPoints"
 // MNetworkVarNames = "bool m_bMinion"

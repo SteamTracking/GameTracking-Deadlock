@@ -28,6 +28,7 @@
 //	"m_BodygroupOnOtherModels": "",
 //	"m_MaterialGroupOnOtherModels": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModelConfigElement_AttachedModel : public CModelConfigElement
 {
 	CUtlString m_InstanceName;

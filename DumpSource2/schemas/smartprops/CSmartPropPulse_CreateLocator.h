@@ -6,6 +6,7 @@
 // MPropertyFriendlyName = "Create Locator"
 // MPropertyDescription = "Create a locator with the current transform. The locator may optionally be configurable, so that its transform can be modified in Hammer."
 // MVDataClassGroup = "Manipulators"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropPulse_CreateLocator : public CSmartPropPulse_BaseQueryableFlow
 {
 	// MPropertyFriendlyName = "Name"

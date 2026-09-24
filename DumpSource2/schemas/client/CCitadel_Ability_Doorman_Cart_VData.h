@@ -506,6 +506,7 @@
 //	"m_CartCastParticle": "",
 //	"m_WallImpactParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Doorman_Cart_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "+Gameplay"

@@ -454,6 +454,7 @@
 //	"m_flAirPitchSpeedRatio": 0.500000,
 //	"m_flAirRollSpeedRatio": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Priest_BearTrapVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

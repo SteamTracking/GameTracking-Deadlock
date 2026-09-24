@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadelDruidPlantShield : public CCitadelAnimatingModelEntity
 {
 	bool m_bSolid;

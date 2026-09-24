@@ -142,6 +142,7 @@
 //	"m_ShieldParticle": "",
 //	"m_flModelScale": 1.200000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BigBoltVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

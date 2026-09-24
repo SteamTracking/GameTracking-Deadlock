@@ -491,8 +491,6 @@ AllocationSizeMax
 AllocationSizeMin
 Allocations
 Allow
-Allow Low GPU Memory mode (i.e. when building maps).
-Allow disabling memory aliasing in the device memory pool.  This is just intended for testing/ruling out aliasing issues.
 Allow%d
 Alpha decoder initialization failed.
 AnalogBalance
@@ -852,8 +850,6 @@ ColorResponseUnit
 Colorize
 Colormap
 Combo
-Comma delimited list of stristr filters for excluding validation messages.  Any messages matching filter will be excluded.
-Comma delimited list of stristr filters for including validation messages.  Only messages matching filter will be included.
 Command stream pools: %s bytes in base, %s bytes in medium, %s bytes in large (%s extra data fallbacks)\n
 Compile Target Expression
 CompileTargets
@@ -935,7 +931,6 @@ DefaultPools
 DefaultScale
 DefaultVB
 Deflate
-Defrag algorithm 0=Fast 1=Balanced 2=full 3=Extensive
 DeletePoolAllocatedTexture
 Deleting texture with outstanding streaming request (%s)\n
 Denoiser
@@ -966,11 +961,7 @@ DrawMeshTasksIndirect failed - invalid indirect buffer.\n
 DrawMeshTasksIndirectCount failed - invalid count buffer.\n
 DrawMeshTasksIndirectCount failed - invalid indirect buffer.\n
 Driver Name:  %s\nDriver Version: %s\nVendorId / DeviceId:  0x%x / 0x%x\nSubSystem / Rev:  0x%x / 0x%x\nDXLevel:  %d\nTexture memory:  %s\nGPU memory (use / budget): %s / %s\nVid:  %s, render at %i x %i, display at %i x %i, refresh rate %.2fHz (%uHz desktop)\n
-Dump .json file for use by GpuMemDumpVis.py
 DumpModeDecode: Not enough data for scanline %d
-During a VMA defrag, number of MB in moves per pass.
-During a VMA defrag, number of moves per pass.
-During a VMA defrag, number of moves to process for a pass in a single frame update.
 DynamicCombo
 DynamicComboFromFeature
 DynamicComboRule
@@ -985,7 +976,6 @@ EXRReadFile() - B channel not found!\n
 EXRReadFile() - G channel not found!\n
 EXRReadFile() - R channel not found!\n
 EXRReadFile() - cannot read image data!\n
-Enable Software Command lists for Vulkan
 Enabling aggressive command pool rebalancing.\n
 Enabling instance extension: %s.\n
 Enabling validation feature: %s\n
@@ -1088,7 +1078,6 @@ FindOrCreateTexture: Texture usage is unspecified!\n
 Floating point "Predictor" not supported with %d data format
 FlushQueuedBufferCopies: %s size: %llu dstOffset: %llu srcOffset: %llu
 Flushing Pipeline Cache...\n
-Force defragmenting memory with VMA
 Fossilize ERROR: Binary varint buffer overflows payload.\n
 Fossilize ERROR: CRC mismatch!\n
 Fossilize ERROR: Cannot use imported metadata together with whitelists.\n
@@ -1226,7 +1215,6 @@ IS_PC
 IS_SM_
 IS_VULKAN
 IdThread
-If true, the main thread pauses and unpauses the Vulkan worker threads around each texture deallocation, which allows the workers to make a little bit of progress but results in main thread stalls. If false, we keep the workers paused until all deallocations are done, allowing the deallocations to complete significantly faster.
 Ik6 
 Image Layout Transitions (%s)
 Image data size is zero or too large: width = 
@@ -1574,7 +1562,6 @@ PostThreadMessageW
 Predictor
 PredictorEncodeTile
 PredictorSetup
-Prefer shader loop unrolling.
 PreferredBlockSize
 Premature EOL
 Premature end-of-file encountered.
@@ -1584,11 +1571,6 @@ Present_Queue
 Present_Wait
 Previous allocation with memoryRequirements.memoryTypeBits=0x%x was from heap %d (propertyFlags: %s) with requested propertyFlags (%s), trying in heap %d (propertyFlags: %s) with requested propertyFlags %s.\n
 PrimaryChromaticities
-Prints out detailed memory fragmentation stats for the Vulkan memory manager
-Prints out stats for the Vulkan Framebuffer manager
-Prints out stats for the Vulkan Pipeline manager
-Prints out stats for the Vulkan memory manager
-Prints out stats for the Vulkan shader table
 Query
 QueryServiceStatus
 RENDERDOC_GetAPI
@@ -1630,7 +1612,6 @@ Render system:  %s (initialized by %s)\n
 Render system:  %s\n
 RenderDoc capture window '%s'.\n
 RenderDoc is not active, did you forget to add -renderdoc to the command-line? Is RenderDoc installed?\n
-RenderSystem
 RenderSystem/AllowPartialMipChainImmediateTexLoads
 RenderSystem/GraphicsPipelineLibrary
 RenderSystem/IndexBufferPoolSizeMB
@@ -1739,9 +1720,7 @@ SamplesPerPixel
 SamplesPerPixel tag is missing, assuming correct SamplesPerPixel value is 1
 SamplesPerPixel tag is missing, assuming correct SamplesPerPixel value is 3
 Saved video settings config to '%s'\n
-SceneSystem/Vulkan GPU Memory Visualizer
 Seek error at scanline %lu
-Sets the renderArea of a render pass to its viewport bounds (false will use RT size). More accurate renderArea, but results in more render passes.
 Setting max texture resolution to: %dx%d\n
 Setting up field info failed
 Settubg validation duplicate_message_limit to %d\n
@@ -1757,7 +1736,6 @@ ShaderIDColor
 ShadingComplexity
 ShadowScale
 Sharpness
-Size (in KBs) above which textures should be allocated in dedicated memory (NV-only).
 SizeInBytes
 Skipping pipeline layout creation, encountered null descriptor set layout.\n
 Skipping texture streaming: looks like the texture was reloaded while in the streaming list (%s).\n
@@ -1936,7 +1914,6 @@ UpdateExternalTexture called on unknown external texture '%s'\n
 Usage
 Usage: %s <window_name>
 UsageBytes
-Use compute shader for mipgen.
 Using '%s' for Vulkan debug markers.\n
 Using Steam Shader Pre-Cache whitelist %s\n
 Using VK_EXT_memory_budget set texture memory budget to %llu MB.\n
@@ -1945,7 +1922,6 @@ VALIDATION
 VB Size: %s (Count: %d)\n
 VBPool
 VERBOSE : 
-VFX_DLL_001
 VFX_PROGRAM_MAX
 VK %s - Message Id Number: %d | Message Id Name: %s\n\t%s
 VKRenderThread
@@ -2121,7 +2097,6 @@ VMA defrag pass %d\n
 VMA defragmentation completed. AFTER: 
 VMA starting defragmentation. BEFORE: 
 VMA: Allocated %llu MB (Free: %llu MB) \n
-VRenderDeviceMgrBackdoor001
 VS_MS_RTX
 VS_RTX
 VULKAN
@@ -2793,8 +2768,6 @@ psrs
 pushConstantRanges
 quAt
 r\fpPD(
-r_allow_low_gpu_memory_mode
-r_cache_pool_allocations
 r_dilatedDepth
 r_dilated_motion_vectors
 r_dilated_reactive_masks
@@ -2811,28 +2784,12 @@ r_lanczos_lut
 r_lock_input_luma
 r_lock_status
 r_luma_history
-r_memory_aliasing
-r_mipgen_compute_shader
-r_prefer_loop_unrolling
 r_prepared_input_color
 r_previous_dilated_motion_vectors
 r_rcas_input
 r_reactive_mask
 r_reconstructed_previous_nearest_depth
-r_renderdoc_capture_window_vulkan
-r_show_gpu_memory_visualizer
 r_transparency_and_composition_mask
-r_vma_defrag_algorithm
-r_vma_defrag_enabled
-r_vma_defrag_max_allocation_count_per_pass
-r_vma_defrag_max_allocation_size_per_pass
-r_vma_defrag_moves_per_frame
-r_vma_defrag_threshold_mb
-r_vulkan_accurate_renderarea
-r_vulkan_force_sync1
-r_vulkan_sw_cmd_lists
-r_vulkan_validation_filter_in
-r_vulkan_validation_filter_out
 raB3G
 rasterizationSamples
 rasterizationState
@@ -2872,8 +2829,6 @@ robustBufferAccess
 robustBufferAccess2
 robustImageAccess
 robustImageAccess2
-rtx_allow_blas_compact
-rtx_allow_blas_create
 rw_auto_exposure
 rw_dilatedDepth
 rw_dilated_motion_vectors
@@ -3850,22 +3805,8 @@ vs_4_1
 vs_5_0
 vs_6_0
 vulkan-1.dll
-vulkan_batch_size
-vulkan_batch_submits
-vulkan_dedicated_allocation_threshold
-vulkan_framebuffermgr_print
-vulkan_link_time_optimize_libraries
-vulkan_memgr_fragmentation_print
-vulkan_memgr_print
 vulkan_peer2peer_mgpu.vtex
-vulkan_pipeline_compile_spew
-vulkan_pipeline_compile_throttle_ms
-vulkan_pipelinemgr_print
 vulkan_readpixels_resolve
-vulkan_shader_table_print
-vulkan_unpause_workers_after_each_texture_deallocation
-vulkan_vma_defrag
-vulkan_vma_gpu_mem_dump
 warning: NVSDK_NGX_VULKAN_RequiredExtensions will be deprecated in future SDK release. Use NVSDK_NGX_VULKAN_GetFeatureInstanceExtensionRequirements() and NVSDK_NGX_VULKAN_GetFeatureRequirements() instead
 warning: failed to load %ls
 warning: unable to find filename for the application

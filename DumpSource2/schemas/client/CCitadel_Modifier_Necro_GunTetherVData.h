@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_TetherParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Necro_GunTetherVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -140,6 +140,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierStackingDamageVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

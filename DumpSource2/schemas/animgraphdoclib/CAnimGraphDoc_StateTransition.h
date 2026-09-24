@@ -9,16 +9,17 @@
 //	},
 //	"m_srcState":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_destState":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_sComment": "",
 //	"m_bDisabled": false
 //}
 // MPropertyFriendlyName = "Transition"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_StateTransition
 {
 	// MPropertySuppressField

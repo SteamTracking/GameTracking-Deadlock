@@ -2,6 +2,7 @@
 // MNetworkVarNames = "bool m_bIsBlinking"
 // MNetworkVarNames = "GameTime_t m_RecastEndTime"
 // MNetworkVarNames = "GameTime_t m_BlinkEndTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_VampireBat_BatBlink : public CCitadelBaseAbility
 {
 	// MNetworkEnable

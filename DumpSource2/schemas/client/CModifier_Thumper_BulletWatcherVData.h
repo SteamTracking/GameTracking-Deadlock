@@ -139,6 +139,7 @@
 //	"m_ExplodeParticle": "",
 //	"m_ExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Thumper_BulletWatcherVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

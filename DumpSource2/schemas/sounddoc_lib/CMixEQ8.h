@@ -76,6 +76,7 @@
 //}
 // MPropertyFriendlyName = "VMix EQ8 Audio Node"
 // MPropertyDescription = "Up to 8 bands of EQ.  Boost/cut up to 8 bands with adjustable Q.  Filters can also be configured as low/high pass or low/high shelf."
+// MHasKV3TransferPolymorphicClassname
 class CMixEQ8 : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Channels"

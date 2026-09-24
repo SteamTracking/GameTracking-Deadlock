@@ -1,6 +1,7 @@
 // MNetworkVarNames = "float32 m_duration"
 // MNetworkVarNames = "float32 m_timestamp"
 // MNetworkVarNames = "float32 m_timescale"
+// MNetworkNoBase
 class EngineCountdownTimer
 {
 	// MNetworkEnable

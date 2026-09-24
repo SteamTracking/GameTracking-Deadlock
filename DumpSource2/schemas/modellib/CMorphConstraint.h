@@ -18,6 +18,7 @@
 //	"m_flMin": 0.000000,
 //	"m_flMax": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CMorphConstraint : public CBaseConstraint
 {
 	CUtlString m_sTargetMorph;

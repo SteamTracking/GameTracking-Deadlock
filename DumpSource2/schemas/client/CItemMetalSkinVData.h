@@ -452,6 +452,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItemMetalSkinVData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

@@ -4,6 +4,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocVariationIDComparisonNode::CData : public CNmGraphDocVariationDataNode::CData
 {
 	// MPropertyAttributeEditor = "AnimGraphID()"

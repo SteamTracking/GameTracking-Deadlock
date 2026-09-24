@@ -436,6 +436,7 @@
 //	},
 //	"m_flCastCompleteToAttackTime": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Tier2Boss_AoEWaveVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

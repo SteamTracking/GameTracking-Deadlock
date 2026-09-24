@@ -141,6 +141,7 @@
 //	"m_ZipLineKnockdownProtectionStatusParticle": "",
 //	"m_ZipLineKnockdownProtectionStatusEnemyParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ZiplineKnockdownImmuneVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

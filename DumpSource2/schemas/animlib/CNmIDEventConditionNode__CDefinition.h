@@ -10,6 +10,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmIDEventConditionNode::CDefinition : public CNmBoolValueNode::CDefinition
 {
 	int16 m_nSourceStateNodeIdx;

@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Projectile_BatSwarmProjectile : public CCitadelTrackedProjectile
 {
 	Vector m_vecTargetVelocity;

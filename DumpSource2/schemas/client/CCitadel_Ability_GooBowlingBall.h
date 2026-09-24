@@ -6,6 +6,7 @@
 // MNetworkVarNames = "GameTime_t m_flRollStartTime"
 // MNetworkVarNames = "GameTime_t m_flWallExitTime"
 // MNetworkVarNames = "Vector m_vecWallExitVelocity"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_GooBowlingBall : public C_CitadelBaseAbility
 {
 	int32 m_nAirJumpsLeft;

@@ -1,5 +1,6 @@
 // MNetworkVarNames = "int16 m_nAmmoToBeConsumedForChannel"
 // MNetworkVarNames = "bool m_bForceFiring"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Familiar_AltWeapon : public CCitadel_Ability_PrimaryWeapon
 {
 	// MNetworkEnable

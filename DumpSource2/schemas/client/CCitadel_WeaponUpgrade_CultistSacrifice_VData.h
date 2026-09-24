@@ -454,6 +454,7 @@
 //	"m_strOffCooldownSound": "",
 //	"m_CastTargetEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_WeaponUpgrade_CultistSacrifice_VData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

@@ -18,6 +18,7 @@
 //	"m_flUseAngleTolerance": 45.000000,
 //	"m_flCrouchTime": 0.400000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CBasePlayerVData : public CEntitySubclassVDataBase
 {
 	// MPropertyProvidesEditContextString = "ToolEditContext_ID_VMDL"

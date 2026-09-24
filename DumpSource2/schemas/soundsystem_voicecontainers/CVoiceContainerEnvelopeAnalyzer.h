@@ -26,6 +26,7 @@
 //}
 // MPropertyFriendlyName = "Envelope Analyzer"
 // MPropertyDescription = "Generates an Envelope Curve on compile"
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerEnvelopeAnalyzer : public CVoiceContainerAnalysisBase
 {
 	// MPropertyFriendlyName = "Envelope Mode"

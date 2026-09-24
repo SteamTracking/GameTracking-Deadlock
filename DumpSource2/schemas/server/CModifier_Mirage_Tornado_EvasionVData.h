@@ -144,6 +144,7 @@
 //	"m_strAttackerHitSound": "",
 //	"m_strVictimHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Mirage_Tornado_EvasionVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

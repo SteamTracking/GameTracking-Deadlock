@@ -19,6 +19,7 @@
 //	},
 //	"m_bUseAcceleration": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPlayerInputAnimMotorUpdater : public CAnimMotorUpdaterBase
 {
 	CUtlVector< float32 > m_sampleTimes;

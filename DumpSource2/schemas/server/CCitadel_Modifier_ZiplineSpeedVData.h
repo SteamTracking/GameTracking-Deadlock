@@ -140,6 +140,7 @@
 //	"m_flPercentageMultiplierEnd": 0.000000,
 //	"m_flRampUpTime": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ZiplineSpeedVData : public CCitadelModifierVData
 {
 	float32 m_flPercentageMultiplierStart;

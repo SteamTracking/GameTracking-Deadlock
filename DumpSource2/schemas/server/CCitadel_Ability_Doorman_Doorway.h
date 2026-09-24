@@ -1,4 +1,5 @@
 // MNetworkVarNames = "CHandle< CCitadel_DoorwayPortal> m_hDoor1"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Doorman_Doorway : public CCitadelBaseAbility
 {
 	// MNetworkEnable

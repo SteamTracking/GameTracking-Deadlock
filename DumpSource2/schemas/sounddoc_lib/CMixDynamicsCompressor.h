@@ -23,6 +23,7 @@
 //}
 // MPropertyFriendlyName = "VMix Compressor/Limiter Node"
 // MPropertyDescription = "Compress the dynamic range of a signal when it is louder than some threshold."
+// MHasKV3TransferPolymorphicClassname
 class CMixDynamicsCompressor : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Channels"

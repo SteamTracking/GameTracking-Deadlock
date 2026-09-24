@@ -5,7 +5,7 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false,
 //	"m_FootstepType": "FOOTSOUND_Left",
@@ -15,6 +15,7 @@
 //	"m_footstepJumpPhase": "Unknown"
 //}
 // MPropertyFriendlyName = "FootstepLanded Tag"
+// MHasKV3TransferPolymorphicClassname
 class CFootstepLandedAnimTag : public CAnimTagBase
 {
 	// MPropertyFriendlyName = "Footstep Type"

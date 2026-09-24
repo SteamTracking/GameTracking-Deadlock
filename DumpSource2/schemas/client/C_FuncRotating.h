@@ -1,5 +1,5 @@
-// MNetworkOverride = "m_angRotation CGameSceneNode"
-// MNetworkOverride = "m_flSimulationTime C_BaseEntity"
+// MNetworkOverride = "CGameSceneNode::m_angRotation"
+// MNetworkOverride = "C_BaseEntity::m_flSimulationTime"
 class C_FuncRotating : public C_BaseModelEntity
 {
 };

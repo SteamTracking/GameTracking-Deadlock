@@ -461,6 +461,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityPowerSlashVData : public CCitadelYamatoBaseVData
 {
 	float32 m_flAirDrag;

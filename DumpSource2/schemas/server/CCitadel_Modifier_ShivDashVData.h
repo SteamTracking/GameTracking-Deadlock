@@ -140,6 +140,7 @@
 //	"m_DashEchoParticle": "",
 //	"m_DashTrailParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ShivDashVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

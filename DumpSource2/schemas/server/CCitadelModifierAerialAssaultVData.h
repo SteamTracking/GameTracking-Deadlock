@@ -146,6 +146,7 @@
 //	"m_flAirSpeed": 100.000000,
 //	"m_flFallSpeed": 30.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierAerialAssaultVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

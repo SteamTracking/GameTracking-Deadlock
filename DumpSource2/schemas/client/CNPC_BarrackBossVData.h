@@ -315,6 +315,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_BarrackBossVData : public CAI_CitadelNPCVData
 {
 	float32 m_flPlayerAutoAttackRange;

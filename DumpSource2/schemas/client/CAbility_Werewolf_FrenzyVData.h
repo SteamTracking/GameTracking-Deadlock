@@ -436,6 +436,7 @@
 //	"m_strHitConfirmSound": "",
 //	"m_strPointBlankSweetenerSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Werewolf_FrenzyVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

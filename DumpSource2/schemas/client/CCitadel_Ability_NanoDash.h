@@ -1,6 +1,7 @@
 // MNetworkVarNames = "Vector m_vStartPosition"
 // MNetworkVarNames = "Vector m_vEndPosition"
 // MNetworkVarNames = "bool m_bIsDashing"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_NanoDash : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

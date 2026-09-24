@@ -139,6 +139,7 @@
 //	"m_ChargeParticle": "",
 //	"m_strBeepSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ChargedBombVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

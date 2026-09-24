@@ -436,6 +436,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityRestorativeGooVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_FlogDebuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Fathom_LurkersAmbush_Debuff_VData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

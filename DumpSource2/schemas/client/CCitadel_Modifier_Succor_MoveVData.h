@@ -142,6 +142,7 @@
 //	"m_flPullDistanceMin": 100.000000,
 //	"m_flPullDistanceMax": 1000.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Succor_MoveVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

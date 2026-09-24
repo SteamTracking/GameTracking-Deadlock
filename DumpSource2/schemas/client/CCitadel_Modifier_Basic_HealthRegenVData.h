@@ -144,6 +144,7 @@
 //		"m_nPriority": 0
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Basic_HealthRegenVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

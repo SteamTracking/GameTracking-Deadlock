@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CCitadelPlayerPawn_GraphController2 : public CAnimGraphControllerBase
 {
 	CAnimGraph2ParamRef< float32 > m_flTimeScale;

@@ -359,6 +359,7 @@
 //	"m_flStaggerDamageMult": 1.300000,
 //	"m_flAoeWaveHealthThreshold": 0.350000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Boss_Tier2VData : public CAI_CitadelNPCVData
 {
 	float32 m_flSightRange;

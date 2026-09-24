@@ -1,4 +1,5 @@
 // MNetworkVarNames = "bool m_bIsFullyCharged"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Necro_HauntingSkull : public CCitadelBaseAbility
 {
 	GameTime_t m_tPriorityTargetTime;

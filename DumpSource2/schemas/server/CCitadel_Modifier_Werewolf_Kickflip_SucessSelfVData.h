@@ -175,6 +175,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Werewolf_Kickflip_SucessSelfVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Gameplay"

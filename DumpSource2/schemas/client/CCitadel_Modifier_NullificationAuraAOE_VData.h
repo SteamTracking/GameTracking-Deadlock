@@ -142,6 +142,7 @@
 //	"m_PurgeCastParticle": "",
 //	"m_PurgeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_NullificationAuraAOE_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

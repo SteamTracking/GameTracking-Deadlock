@@ -431,6 +431,7 @@
 //	"m_strSprintSound": "",
 //	"m_flSprintAccMS": 0.600000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilitySprintVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

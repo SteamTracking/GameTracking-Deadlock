@@ -440,6 +440,7 @@
 //	"m_strDashHitEnemy": "",
 //	"m_flEchoDelay": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityShivDashVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

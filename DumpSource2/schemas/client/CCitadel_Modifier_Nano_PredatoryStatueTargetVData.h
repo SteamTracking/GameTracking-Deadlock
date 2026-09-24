@@ -143,6 +143,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Nano_PredatoryStatueTargetVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

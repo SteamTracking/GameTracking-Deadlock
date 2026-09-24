@@ -4,6 +4,7 @@
 //	"current_movement_gait": "",
 //	"movement_setting_id": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class AI_Motor_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
 {
 	CGlobalSymbol current_movement_gait_set;

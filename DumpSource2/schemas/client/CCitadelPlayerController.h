@@ -26,6 +26,7 @@
 // MNetworkVarNames = "PlayerDataGlobal_t m_PlayerDataGlobal"
 // MNetworkVarNames = "int8 m_nDeathReplayAvailable"
 // MNetworkVarNames = "CitadelLobbyPlayerSlot_t m_unLobbyPlayerSlot"
+// MClassHasEntityLimitedDataDesc
 class CCitadelPlayerController : public CBasePlayerController
 {
 	// MNetworkEnable

@@ -146,6 +146,7 @@
 //	"m_strLoopingSound": "",
 //	"m_strHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Magician_AnimalHex_HexAreaVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

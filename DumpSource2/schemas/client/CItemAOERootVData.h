@@ -457,6 +457,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItemAOERootVData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Visuals"

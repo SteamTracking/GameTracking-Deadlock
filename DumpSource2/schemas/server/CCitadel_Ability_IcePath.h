@@ -2,6 +2,7 @@
 // MNetworkVarNames = "QAngle m_qLastAngles"
 // MNetworkVarNames = "Vector m_vLastVelocity"
 // MNetworkVarNames = "bool m_bFirstMovementTick"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_IcePath : public CCitadelBaseAbility
 {
 	VectorWS m_vInitialPosition;

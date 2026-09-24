@@ -455,6 +455,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_WeaponUpgrade_GlassCannonVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Sounds"

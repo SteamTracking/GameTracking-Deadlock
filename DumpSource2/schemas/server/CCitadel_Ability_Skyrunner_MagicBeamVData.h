@@ -433,6 +433,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Skyrunner_MagicBeamVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

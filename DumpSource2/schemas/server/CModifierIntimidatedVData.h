@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_EffectParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierIntimidatedVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -5,6 +5,7 @@
 //	"bodygroup": "",
 //	"value": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipDocEvent_BodyGroup : public CNmClipDocEvent
 {
 	// MPropertyFriendlyName = "Body Group"

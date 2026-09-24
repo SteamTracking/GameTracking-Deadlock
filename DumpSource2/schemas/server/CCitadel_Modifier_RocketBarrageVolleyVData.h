@@ -140,6 +140,7 @@
 //	"m_RocketLaunchParticle": "",
 //	"m_RocketLaunchAmbientParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_RocketBarrageVolleyVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

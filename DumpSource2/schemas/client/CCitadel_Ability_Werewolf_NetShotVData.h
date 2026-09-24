@@ -440,6 +440,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Werewolf_NetShotVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

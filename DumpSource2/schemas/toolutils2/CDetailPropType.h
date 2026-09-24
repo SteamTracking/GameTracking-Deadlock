@@ -7,7 +7,7 @@
 // MVDataRoot
 // MPropertyFriendlyName = "Detail Prop Type"
 // MVDataAssociatedFile = "scripts/detail_prop_types.vdata"
-// MVDataOutlinerDefaultExpanded (UNKNOWN FOR PARSER)
+// MVDataOutlinerDefaultExpanded = false
 class CDetailPropType
 {
 	// MPropertyDescription = "Specifies the number of props placed per square foot."

@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_NextTargetParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Unicorn_DazzlingOrbNextTargetVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

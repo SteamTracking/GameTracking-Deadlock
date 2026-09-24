@@ -555,6 +555,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_ZipLine_VData : public CitadelAbilityVData
 {
 	// MPropertyDescription = "After using a zipline, players will have this air drag value applied to them until they touch the ground."

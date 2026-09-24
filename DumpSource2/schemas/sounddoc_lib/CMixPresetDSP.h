@@ -11,6 +11,7 @@
 //}
 // MPropertyFriendlyName = "VMix Preset DSP Audio Node"
 // MPropertyDescription = "Applies an effects preset from the source1 DSP system."
+// MHasKV3TransferPolymorphicClassname
 class CMixPresetDSP : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Channels"

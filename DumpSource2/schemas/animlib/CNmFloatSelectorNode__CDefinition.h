@@ -11,6 +11,7 @@
 //	"m_flEaseTime": 0.200000,
 //	"m_easingOp": "Linear"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFloatSelectorNode::CDefinition : public CNmFloatValueNode::CDefinition
 {
 	CUtlVectorFixedGrowable< int16, 5 > m_conditionNodeIndices;

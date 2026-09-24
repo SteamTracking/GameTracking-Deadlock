@@ -142,6 +142,7 @@
 //	"m_flTimeMin": 10.000000,
 //	"m_flTimeMax": 40.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ScalingPowerUpVData : public CCitadelModifierVData
 {
 	CUtlVector< ScalingPowerupDefinition_t > m_vecModifierValues;

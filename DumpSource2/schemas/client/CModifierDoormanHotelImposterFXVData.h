@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_DebuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierDoormanHotelImposterFXVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

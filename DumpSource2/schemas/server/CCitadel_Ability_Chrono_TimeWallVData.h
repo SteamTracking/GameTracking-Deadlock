@@ -437,6 +437,7 @@
 //	"m_strWallCreated": "",
 //	"m_strChargeUpSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Chrono_TimeWallVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

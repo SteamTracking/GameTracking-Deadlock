@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CGlobalLightBase
 {
 	bool m_bSpotLight;

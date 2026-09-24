@@ -5,7 +5,7 @@
 //	"m_group": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_componentName": "",
 //	"m_bNetworkingRequested": false,
@@ -25,6 +25,7 @@
 //	]
 //}
 // MPropertyFriendlyName = "Enum Parameter"
+// MHasKV3TransferPolymorphicClassname
 class CEnumAnimParameter : public CConcreteAnimParameter
 {
 	// MPropertyFriendlyName = "Default Value"

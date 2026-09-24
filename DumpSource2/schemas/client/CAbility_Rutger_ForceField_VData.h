@@ -441,6 +441,7 @@
 //	"m_strPushAndDamage": "",
 //	"m_ChronoSphereChargeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Rutger_ForceField_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

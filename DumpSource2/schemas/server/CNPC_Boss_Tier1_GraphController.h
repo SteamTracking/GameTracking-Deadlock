@@ -58,6 +58,7 @@
 //	"m_pszLaneSide": null,
 //	"m_bShieldMode": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Boss_Tier1_GraphController : public CAI_CitadelNPC_GraphController
 {
 	CAnimGraphParamRef< char* > m_pszActivity;

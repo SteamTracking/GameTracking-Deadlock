@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocFloatControlParameterNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Value",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -29,6 +29,7 @@
 //	"m_previewMin": 0.000000,
 //	"m_previewMax": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocFloatControlParameterNode : public CNmGraphDocControlParameterNode
 {
 	float32 m_previewStartValue;

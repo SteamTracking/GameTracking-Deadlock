@@ -452,6 +452,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_NullificationAuraVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

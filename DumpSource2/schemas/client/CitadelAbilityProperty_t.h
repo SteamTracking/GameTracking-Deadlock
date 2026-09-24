@@ -27,11 +27,11 @@
 class CitadelAbilityProperty_t
 {
 	// MPropertyFlattenIntoParentRow
-	// MPropertyFlattenStretchFactor (UNKNOWN FOR PARSER)
+	// MPropertyFlattenStretchFactor = 1
 	// MPropertyFlattenIncludeLabel
 	CUtlString m_strValue;
 	// MPropertyFlattenIntoParentRow
-	// MPropertyFlattenStretchFactor (UNKNOWN FOR PARSER)
+	// MPropertyFlattenStretchFactor = 1
 	// MPropertyFlattenIncludeLabel
 	// MPropertyFriendlyName = "SB"
 	CUtlString m_strStreetBrawlValue;
@@ -56,7 +56,7 @@ class CitadelAbilityProperty_t
 	// MPropertyDescription = "When true, we add a different class to show it's a negative attribute."
 	bool m_bIsNegativeAttribute;
 	// MPropertyFriendlyName = "CSS Class"
-	// MPropertyLeafSuggestionProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyLeafSuggestionProviderFn
 	CUtlString m_strCSSClass;
 	// MPropertyDescription = "If set, will be used for the localization token lookup instead of the name"
 	// MPropertySuppressExpr = "m_bCanSetTokenOverride == false"

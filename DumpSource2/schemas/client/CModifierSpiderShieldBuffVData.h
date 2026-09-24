@@ -143,6 +143,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierSpiderShieldBuffVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

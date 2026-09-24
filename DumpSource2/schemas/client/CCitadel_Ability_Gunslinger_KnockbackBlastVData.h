@@ -434,6 +434,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Gunslinger_KnockbackBlastVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

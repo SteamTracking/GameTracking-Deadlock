@@ -1,5 +1,6 @@
 // MEntityAllowsPortraitWorldSpawn
 // MNetworkVarNames = "fogparams_t m_fog"
+// MNetworkNoBase
 class C_FogController : public C_BaseEntity
 {
 	// MNetworkEnable

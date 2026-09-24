@@ -448,6 +448,7 @@
 //	"m_flBaseProjectileSpeed": 700.000000,
 //	"m_flMaxProjectileSpeed": 1400.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityWreckerTeleportVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

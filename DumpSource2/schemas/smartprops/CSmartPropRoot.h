@@ -20,7 +20,7 @@
 // MVDataSingleton
 // MVDataFileExtension = "vsmart"
 // MVDataPreviewWidget = "smart_prop"
-// MVDataGroupNodeClass (UNKNOWN FOR PARSER)
+// MVDataGroupNodeClass = "CSmartPropElement_Group"
 // MVDataUsesComponentEditor
 // MPropertyFriendlyName = "Smart Prop Root"
 // MPropertyDescription = "Root of a smart prop, contains a list of elements to evaluate."

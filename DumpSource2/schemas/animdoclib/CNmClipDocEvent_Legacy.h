@@ -5,6 +5,7 @@
 //	"m_eventClass": "",
 //	"m_KV": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipDocEvent_Legacy : public CNmClipDocEvent
 {
 	// MPropertyAutoRebuildOnChange

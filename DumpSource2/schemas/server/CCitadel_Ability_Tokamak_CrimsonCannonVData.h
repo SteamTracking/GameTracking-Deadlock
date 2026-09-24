@@ -437,6 +437,7 @@
 //	"m_strImpactSound": "",
 //	"m_strBlockedSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Tokamak_CrimsonCannonVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

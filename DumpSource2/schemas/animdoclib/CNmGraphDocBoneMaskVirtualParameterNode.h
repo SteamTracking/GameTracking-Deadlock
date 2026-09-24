@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocBoneMaskVirtualParameterNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -11,12 +11,12 @@
 //	"m_pChildGraph":
 //	{
 //		"_class": "CNmGraphDocFlowGraph",
-//		"m_ID": <HIDDEN FOR DIFF>,
+//		"m_ID": "",
 //		"m_nodes":
 //		[
 //			{
 //				"_class": "CNmGraphDocBoneMaskResultNode",
-//				"m_ID": <HIDDEN FOR DIFF>,
+//				"m_ID": "",
 //				"m_name": "",
 //				"m_floatingComment": "",
 //				"m_position":
@@ -29,7 +29,7 @@
 //				"m_inputPins":
 //				[
 //					{
-//						"m_ID": <HIDDEN FOR DIFF>,
+//						"m_ID": "",
 //						"m_name": "Out",
 //						"m_type": "BoneMask",
 //						"m_bIsDynamicPin": false,
@@ -60,7 +60,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Value",
 //			"m_type": "BoneMask",
 //			"m_bIsDynamicPin": false,
@@ -69,6 +69,7 @@
 //	],
 //	"m_groupName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocBoneMaskVirtualParameterNode : public CNmGraphDocVirtualParameterNode
 {
 };

@@ -140,6 +140,7 @@
 //	"m_HungerTargetPlayerParticle": "",
 //	"m_distanceToPitchRemap": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Hunger_Target_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

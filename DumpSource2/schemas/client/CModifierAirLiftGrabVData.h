@@ -144,6 +144,7 @@
 //	"m_flAllyGrabCancelTime": 1.000000,
 //	"m_flAllyPossibleStuckDistance": 320.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierAirLiftGrabVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

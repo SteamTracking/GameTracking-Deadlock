@@ -17,6 +17,7 @@
 //	}
 //}
 // MPulseFunctionHiddenInTool
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_InlineNodeSkipSelector : public CPulseCell_BaseFlow
 {
 	PulseDocNodeID_t m_nFlowNodeID;

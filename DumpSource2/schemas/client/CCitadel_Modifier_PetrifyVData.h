@@ -144,6 +144,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_PetrifyVData : public CCitadel_Modifier_StunnedVData
 {
 	// MPropertyStartGroup = "Visuals"

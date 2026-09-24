@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_BuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierStimPakVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

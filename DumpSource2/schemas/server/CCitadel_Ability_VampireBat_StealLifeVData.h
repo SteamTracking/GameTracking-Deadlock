@@ -438,6 +438,7 @@
 //	"m_strKillConfirmSound": "",
 //	"m_bAllowFloating": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_VampireBat_StealLifeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

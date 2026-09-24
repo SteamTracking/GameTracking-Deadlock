@@ -19,6 +19,7 @@
 // MNetworkVarNames = "Vector m_vVelocityHistory1"
 // MNetworkVarNames = "Vector m_vVelocityHistory2"
 // MNetworkVarNames = "int m_iDesiredLane"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_ZipLine : public C_CitadelBaseAbility
 {
 	GameTime_t m_flActivatePressTime;

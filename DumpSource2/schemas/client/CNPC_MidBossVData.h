@@ -297,6 +297,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_MidBossVData : public CAI_CitadelNPCVData
 {
 	int32 m_iStartingHealth;

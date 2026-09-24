@@ -27,6 +27,7 @@
 //}
 // MPropertyFriendlyName = "Layout Grid"
 // MPropertyDescription = "Generates set of child instances arranged in a regular grid layout."
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropElement_Layout2DGrid : public CSmartPropElement_Group
 {
 	// MPropertyDescription = "Overall grid dimension along X axis."

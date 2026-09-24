@@ -512,6 +512,7 @@
 //	"m_strHoldBegin": "",
 //	"m_strSuccessfulParrySound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityHoldMelee_VData : public CAbilityMeleeVData
 {
 	CUtlOrderedMap< EMeleeHold_AttackType, AttackData_t > m_mapAttacks;

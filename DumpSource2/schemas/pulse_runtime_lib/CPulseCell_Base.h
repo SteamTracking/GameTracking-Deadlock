@@ -2,6 +2,7 @@
 //	"_class": "CPulseCell_Base",
 //	"m_nEditorNodeID": -1
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_Base
 {
 	// MFgdFromSchemaCompletelySkipField

@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CParticleFunctionRenderer : public CParticleFunction
 {
 	// MPropertySortPriority = -1

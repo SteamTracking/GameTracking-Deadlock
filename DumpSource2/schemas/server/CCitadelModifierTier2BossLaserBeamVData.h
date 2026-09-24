@@ -148,6 +148,7 @@
 //	"m_BeamLoopSound": "",
 //	"m_BeamFireSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierTier2BossLaserBeamVData : public CCitadelModifierVData
 {
 	bool m_bIsSideHead;

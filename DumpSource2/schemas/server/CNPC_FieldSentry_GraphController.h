@@ -6,6 +6,7 @@
 //	"m_flVelocity": null,
 //	"m_bShoot": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_FieldSentry_GraphController : public CNPC_SimpleAnimatingAI_GraphController
 {
 	CAnimGraphParamRef< float32 > m_flPanel1;

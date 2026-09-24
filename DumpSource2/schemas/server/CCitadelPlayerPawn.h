@@ -68,6 +68,7 @@
 // MNetworkVarNames = "bool m_arrPreventAbilityLearning"
 // MNetworkVarNames = "uint8 m_nAudioEnclosure"
 // MNetworkVarNames = "bool m_bAudioHasSkyExposure"
+// MClassHasEntityLimitedDataDesc
 class CCitadelPlayerPawn : public CCitadelPlayerPawnBase
 {
 	int32[45] m_arrGoldSources;

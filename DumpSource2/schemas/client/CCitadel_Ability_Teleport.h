@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Teleport : public C_CitadelBaseAbility
 {
 	bool m_bTeleportingToTarget;

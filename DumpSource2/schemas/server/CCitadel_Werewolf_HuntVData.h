@@ -440,6 +440,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Werewolf_HuntVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

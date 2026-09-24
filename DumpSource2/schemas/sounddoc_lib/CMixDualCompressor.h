@@ -29,6 +29,7 @@
 //}
 // MPropertyFriendlyName = "VMix Dual Compressor Node"
 // MPropertyDescription = "Compress the dynamic range of both ends of a signal."
+// MHasKV3TransferPolymorphicClassname
 class CMixDualCompressor : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Channels"

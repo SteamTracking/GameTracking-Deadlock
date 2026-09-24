@@ -140,6 +140,7 @@
 //	"m_flHealthScale": 30.000000,
 //	"m_flDamageScale": 30.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Trooper_ShrineDownBuffVData : public CCitadelModifierVData
 {
 	float32 m_flModelScale;

@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CnmGraphDocConstBoneTargetNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Value",
 //			"m_type": "Target",
 //			"m_bIsDynamicPin": false,
@@ -25,6 +25,7 @@
 //	],
 //	"m_boneName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CnmGraphDocConstBoneTargetNode : public CNmGraphDocFlowNode
 {
 	CGlobalSymbol m_boneName;

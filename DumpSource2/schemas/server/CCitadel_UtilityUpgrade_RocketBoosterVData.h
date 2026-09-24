@@ -466,6 +466,7 @@
 //	},
 //	"m_flSlamEnabledTime": 0.200000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_UtilityUpgrade_RocketBoosterVData : public CCitadel_UtilityUpgrade_RocketBootsVData
 {
 	// MPropertyStartGroup = "Visuals"

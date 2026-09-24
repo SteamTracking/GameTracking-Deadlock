@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocTransitionConduitNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -12,7 +12,7 @@
 //	"m_pSecondaryGraph":
 //	{
 //		"_class": "CNmGraphDocFlowGraph",
-//		"m_ID": <HIDDEN FOR DIFF>,
+//		"m_ID": "",
 //		"m_nodes":
 //		[
 //		],
@@ -30,6 +30,7 @@
 //	"m_startStateID": "00000000-0000-0000-0000-000000000000",
 //	"m_endStateID": "00000000-0000-0000-0000-000000000000"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocTransitionConduitNode : public CNmGraphDocStateMachineGraphNode
 {
 	V_uuid_t m_startStateID;

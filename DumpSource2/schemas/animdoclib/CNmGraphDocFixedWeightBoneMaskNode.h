@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocFixedWeightBoneMaskNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Bone Mask",
 //			"m_type": "BoneMask",
 //			"m_bIsDynamicPin": false,
@@ -25,6 +25,7 @@
 //	],
 //	"m_flBoneWeight": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocFixedWeightBoneMaskNode : public CNmGraphDocFlowNode
 {
 	float32 m_flBoneWeight;

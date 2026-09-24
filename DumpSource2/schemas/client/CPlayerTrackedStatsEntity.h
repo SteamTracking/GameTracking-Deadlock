@@ -1,4 +1,5 @@
 // MNetworkVarNames = "CPlayerSlot m_nPlayerSlot"
+// MClassHasEntityLimitedDataDesc
 class CPlayerTrackedStatsEntity : public CBaseTrackedStatsEntity
 {
 	// MNetworkEnable

@@ -150,6 +150,7 @@
 //	"m_flModifierProvidedByAuraDuration": -1.000000,
 //	"m_bRemoveProvidedModifierOnAuraRemoval": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifer_Viscous_Goo_Aura_VData : public CCitadelModifierAuraVData
 {
 };

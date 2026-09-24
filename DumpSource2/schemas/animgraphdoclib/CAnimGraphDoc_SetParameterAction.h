@@ -3,13 +3,14 @@
 //	"m_paramName": "",
 //	"m_param":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_value":
 //	{
 //		"m_nType": 0
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_SetParameterAction : public CAnimGraphDoc_Action
 {
 	// MPropertyHideField

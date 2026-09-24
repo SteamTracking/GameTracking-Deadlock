@@ -6,6 +6,7 @@
 // MNetworkVarNames = "GameTime_t m_flStateEnterTime"
 // MNetworkVarNames = "CCitadelAutoScaledTime m_flNextStateTime"
 // MNetworkVarNames = "CCitadelAutoScaledTime m_flBoostEndTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Bull_Leap : public CCitadelBaseAbility
 {
 	// MNetworkEnable

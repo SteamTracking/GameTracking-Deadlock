@@ -140,6 +140,7 @@
 //	"m_flPercentageMultiplierStart": 80.000000,
 //	"m_flPercentageMultiplierEnd": 20.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_RampSlowModifierVData : public CCitadelModifierVData
 {
 	float32 m_flRampUpTime;

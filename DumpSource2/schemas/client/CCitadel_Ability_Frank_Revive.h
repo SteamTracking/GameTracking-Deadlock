@@ -2,6 +2,7 @@
 // MNetworkVarNames = "GameTime_t m_TimeOfDeath"
 // MNetworkVarNames = "GameTime_t m_TimeOfRevive"
 // MNetworkVarNames = "float m_flTotalPendingHeal"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Frank_Revive : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

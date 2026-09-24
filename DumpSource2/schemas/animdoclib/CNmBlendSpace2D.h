@@ -15,10 +15,10 @@
 class CNmBlendSpace2D
 {
 	// MPropertyAutoExpandSelf
-	// MPropertyResizable (UNKNOWN FOR PARSER)
+	// MPropertyResizable = 0
 	CUtlVector< CUtlString > m_pointNames;
 	// MPropertyAutoExpandSelf
-	// MPropertyResizable (UNKNOWN FOR PARSER)
+	// MPropertyResizable = 0
 	CUtlVector< Vector2D > m_points;
 	// MPropertySuppressField
 	CUtlVector< uint8 > m_indices;

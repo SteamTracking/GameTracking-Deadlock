@@ -141,6 +141,7 @@
 //	},
 //	"m_ProcNotificationEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_CrushingFistsDebuff_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

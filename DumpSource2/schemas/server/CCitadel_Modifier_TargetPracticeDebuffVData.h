@@ -146,6 +146,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_TargetPracticeDebuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

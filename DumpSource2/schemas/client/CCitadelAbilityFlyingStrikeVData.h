@@ -522,6 +522,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelAbilityFlyingStrikeVData : public CCitadelYamatoBaseVData
 {
 	// MPropertyStartGroup = "+Cast Properties"

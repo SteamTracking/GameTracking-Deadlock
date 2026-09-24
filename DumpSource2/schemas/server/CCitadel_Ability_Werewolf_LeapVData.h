@@ -461,6 +461,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Werewolf_LeapVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Sounds"

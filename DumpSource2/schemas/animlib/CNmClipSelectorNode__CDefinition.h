@@ -8,6 +8,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipSelectorNode::CDefinition : public CNmClipReferenceNode::CDefinition
 {
 	CUtlLeanVectorFixedGrowable< int16, 5 > m_optionNodeIndices;

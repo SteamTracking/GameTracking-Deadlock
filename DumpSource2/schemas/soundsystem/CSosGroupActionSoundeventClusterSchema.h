@@ -9,6 +9,7 @@
 //	"m_groupBoundingBoxMaxsOpvar": "cluster_group_box_maxs"
 //}
 // MPropertyFriendlyName = "Soundevent Cluster"
+// MHasKV3TransferPolymorphicClassname
 class CSosGroupActionSoundeventClusterSchema : public CSosGroupActionSchema
 {
 	// MPropertyFriendlyName = "Minimum Nearby Soundevents"

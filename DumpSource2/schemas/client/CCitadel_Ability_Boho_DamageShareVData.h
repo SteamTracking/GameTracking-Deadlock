@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Boho_DamageShareVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

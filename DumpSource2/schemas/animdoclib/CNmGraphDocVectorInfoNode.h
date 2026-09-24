@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocVectorInfoNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,7 +13,7 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Vector",
 //			"m_type": "Vector",
 //			"m_bIsDynamicPin": false,
@@ -23,7 +23,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -32,6 +32,7 @@
 //	],
 //	"m_desiredInfo": "X"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocVectorInfoNode : public CNmGraphDocFlowNode
 {
 	CNmVectorInfoNode::Info_t m_desiredInfo;

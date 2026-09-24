@@ -8,6 +8,7 @@
 // MNetworkVarNames = "int8 m_nConsecutiveAirJumps"
 // MNetworkVarNames = "int8 m_nConsecutiveWallJumps"
 // MNetworkVarNames = "GameTime_t m_flLateralInputSuppressEndTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Jump : public CCitadelBaseAbility
 {
 	GameTime_t m_flLastTimeOnZipLine;

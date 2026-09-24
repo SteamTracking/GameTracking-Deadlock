@@ -450,6 +450,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Frank_SelfZapVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

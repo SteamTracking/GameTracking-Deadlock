@@ -1,5 +1,6 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
-// MVDataOutlinerAssetNameExpr (UNKNOWN FOR PARSER)
+// MVDataOutlinerAssetNameExpr = "m_sModelName"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropElement_ModelEntity : public CSmartPropElement
 {
 	// MPropertyDescription = "Name of the model resource (.vmdl) to place."

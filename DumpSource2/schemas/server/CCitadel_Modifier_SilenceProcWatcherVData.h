@@ -162,6 +162,7 @@
 //	"m_sInstantProcIfCasterHasModifier": "",
 //	"m_TracerParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_SilenceProcWatcherVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyStartGroup = "Modifiers"

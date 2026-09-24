@@ -5,7 +5,7 @@
 //	"m_group": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_componentName": "",
 //	"m_bNetworkingRequested": false,
@@ -26,6 +26,7 @@
 //	"m_vectorType": "ANIMPARAM_VECTOR_TYPE_NONE"
 //}
 // MPropertyFriendlyName = "Vector Parameter"
+// MHasKV3TransferPolymorphicClassname
 class CVectorAnimParameter : public CConcreteAnimParameter
 {
 	// MPropertyFriendlyName = "Default Value"

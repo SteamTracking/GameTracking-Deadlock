@@ -456,6 +456,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_WeaponUpgrade_SplitShotVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Sounds"

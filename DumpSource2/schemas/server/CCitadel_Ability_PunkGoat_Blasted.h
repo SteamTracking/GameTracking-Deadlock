@@ -1,4 +1,5 @@
 // MNetworkVarNames = "float m_flBlastedCurrentDuration"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_PunkGoat_Blasted : public CCitadelBaseAbility
 {
 	GameTime_t m_tTimeOfLastBulletHit;

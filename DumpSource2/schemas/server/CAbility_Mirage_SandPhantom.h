@@ -1,4 +1,5 @@
 // MNetworkVarNames = "bool m_bHasVictims"
+// MClassHasEntityLimitedDataDesc
 class CAbility_Mirage_SandPhantom : public CCitadelBaseAbility
 {
 	// MNetworkEnable

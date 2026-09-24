@@ -1,6 +1,7 @@
 // MNetworkVarNames = "EHANDLE m_hProjectile"
 // MNetworkVarNames = "float m_flArrowSpeed"
 // MNetworkVarNames = "GameTime_t m_flSnapAnglesBackTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_WreckerTeleport : public CCitadelBaseAbility
 {
 	// MNetworkEnable

@@ -9,6 +9,7 @@
 // MNetworkIncludeByName = "m_pCameraServices"
 // MNetworkVarTypeOverride = "CCitadelObserver_MovementServices m_pMovementServices"
 // MNetworkIncludeByName = "m_pMovementServices"
+// MClassHasEntityLimitedDataDesc
 class CCitadelObserverPawn : public CCitadelPlayerPawnBase
 {
 };

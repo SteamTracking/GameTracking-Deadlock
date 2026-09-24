@@ -34,6 +34,7 @@
 //	"m_bAutomaticallyDecayStacks": false,
 //	"m_bAllowApplicationPrediction": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Time"

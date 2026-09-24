@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadelPassthroughFakeWall : public C_BaseModelEntity
 {
 	bool m_bAllowAnyone;

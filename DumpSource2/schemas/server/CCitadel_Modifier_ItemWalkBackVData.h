@@ -151,6 +151,7 @@
 //	"m_flWaitTimeLimitOverheld": 0.000000,
 //	"m_flCheckPlayerRate": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ItemWalkBackVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -16,6 +16,7 @@
 //}
 // MPropertyFriendlyName = "[Test] Random Yes/No Outflow"
 // MPropertyDescription = "Test node that randomly picks between two outflows."
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_Outflow_TestRandomYesNo : public CPulseCell_BaseFlow
 {
 	// MPropertyFriendlyName = "Yes"

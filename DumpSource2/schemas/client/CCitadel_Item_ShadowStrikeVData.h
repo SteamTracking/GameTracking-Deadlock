@@ -455,6 +455,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_ShadowStrikeVData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

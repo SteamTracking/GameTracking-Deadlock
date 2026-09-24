@@ -145,6 +145,7 @@
 //	"m_ExplodeSound": "",
 //	"m_ImpactSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Nano_CatFormVData : public CCitadelModifierVData
 {
 	ModelChange_t m_ModelChange;

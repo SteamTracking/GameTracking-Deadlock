@@ -139,6 +139,7 @@
 //	"m_ShieldParticle": "",
 //	"m_flShieldRadius": 200.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Boss_Damage_ProtectionVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

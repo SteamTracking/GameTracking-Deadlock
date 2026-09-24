@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocRootMotionOverrideNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,35 +13,35 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Input",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Desired Moving Velocity (Character)",
 //			"m_type": "Vector",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Desired Facing Direction (Character)",
 //			"m_type": "Vector",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Linear Velocity Limit (Optional)",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Angular Velocity Limit (Optional)",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -51,7 +51,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -66,6 +66,7 @@
 //	"m_bAllowPitchForFacing": false,
 //	"m_bListenForRootMotionEvents": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocRootMotionOverrideNode : public CNmGraphDocFlowNode
 {
 	float32 m_flMaxLinearVelocity;

@@ -3,7 +3,7 @@
 //	"m_paramName": "",
 //	"m_paramID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_comparisonOp": "COMPARISON_EQUALS",
 //	"m_comparisonValue":
@@ -13,6 +13,7 @@
 //	"m_comparisonString": ""
 //}
 // MPropertyFriendlyName = "Parameter Condition"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_ParameterCondition : public CAnimGraphDoc_Condition
 {
 	CUtlString m_paramName;

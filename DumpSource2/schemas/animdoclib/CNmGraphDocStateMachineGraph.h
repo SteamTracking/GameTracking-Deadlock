@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocStateMachineGraph",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_nodes":
 //	[
 //	],
@@ -11,8 +11,9 @@
 //		0.000000
 //	],
 //	"m_flViewZoom": 1.000000,
-//	"m_entryStateID": <HIDDEN FOR DIFF>,
+//	"m_entryStateID": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocStateMachineGraph : public CNmGraphDocGraph
 {
 	V_uuid_t m_entryStateID;

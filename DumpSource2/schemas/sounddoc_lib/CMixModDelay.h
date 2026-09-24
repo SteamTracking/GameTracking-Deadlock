@@ -20,6 +20,7 @@
 //}
 // MPropertyFriendlyName = "VMix Modulating Delay Audio Node"
 // MPropertyDescription = "A delay with a modulated delay time."
+// MHasKV3TransferPolymorphicClassname
 class CMixModDelay : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Invert Phase"

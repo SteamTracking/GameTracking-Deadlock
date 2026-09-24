@@ -9,6 +9,7 @@
 //	"m_flMinExtrapolationSpeed": 2.000000
 //}
 // MPropertyFriendlyName = "Path Metric"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_PathMetric : public CAnimGraphDoc_MotionMetric
 {
 	// MPropertyFriendlyName = "Distance"
@@ -19,6 +20,6 @@ class CAnimGraphDoc_PathMetric : public CAnimGraphDoc_MotionMetric
 	// MPropertyAutoRebuildOnChange
 	bool m_bExtrapolateMovement;
 	// MPropertyFriendlyName = "Min Extrapolation Speed"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flMinExtrapolationSpeed;
 };

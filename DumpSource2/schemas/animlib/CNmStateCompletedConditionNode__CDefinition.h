@@ -5,6 +5,7 @@
 //	"m_nTransitionDurationOverrideNodeIdx": -1,
 //	"m_flTransitionDurationSeconds": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmStateCompletedConditionNode::CDefinition : public CNmBoolValueNode::CDefinition
 {
 	int16 m_nSourceStateNodeIdx;

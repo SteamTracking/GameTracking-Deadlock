@@ -154,6 +154,7 @@
 //	"m_HitParticle": "",
 //	"m_FistReadyEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_SuperAcolytesGlove_VData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyGroupName = "Modifiers"

@@ -11,6 +11,7 @@
 //	"m_nParamaterMaxValue": 1
 //}
 // MPropertyFriendlyName = "Integer"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropVariable_Int : public CSmartPropVariable
 {
 	int32 m_DefaultValue;

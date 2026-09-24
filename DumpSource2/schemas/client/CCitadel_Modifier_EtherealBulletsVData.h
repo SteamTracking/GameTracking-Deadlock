@@ -155,6 +155,7 @@
 //	},
 //	"m_ProcParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_EtherealBulletsVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyStartGroup = "Modifiers"

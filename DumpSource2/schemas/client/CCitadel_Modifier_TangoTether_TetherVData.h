@@ -158,6 +158,7 @@
 //	"m_flCandidateCloserDistance": 250.000000,
 //	"m_flTargetAwayDistance": 400.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_TangoTether_TetherVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

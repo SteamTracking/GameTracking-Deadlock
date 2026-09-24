@@ -1,4 +1,5 @@
 // MNetworkVarNames = "CEnvWindShared m_EnvWindShared"
+// MNetworkNoBase
 class C_EnvWind : public C_BaseEntity
 {
 	// MNetworkEnable

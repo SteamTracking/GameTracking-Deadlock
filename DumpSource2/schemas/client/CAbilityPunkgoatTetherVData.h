@@ -446,6 +446,7 @@
 //	"m_strPullSound": "",
 //	"m_strTimerSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityPunkgoatTetherVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

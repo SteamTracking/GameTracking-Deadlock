@@ -155,6 +155,7 @@
 //	"m_flWalkDestinationRandomness": 200.000000,
 //	"m_flSpawningInTime": 0.100000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Necro_SpawnZombies_AreaVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

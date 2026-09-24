@@ -7,7 +7,7 @@
 //		"m_variations":
 //		[
 //			{
-//				"m_ID": <HIDDEN FOR DIFF>,
+//				"m_ID": "",
 //				"m_parentID": "",
 //				"m_skeleton": "",
 //				"m_pUserData": null
@@ -21,6 +21,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocument : public CNmAnimDocument
 {
 	CNmGraphDocFlowGraph* m_pRootGraph;

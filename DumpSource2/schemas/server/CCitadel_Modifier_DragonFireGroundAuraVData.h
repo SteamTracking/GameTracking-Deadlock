@@ -152,6 +152,7 @@
 //	"m_GroundParticle": "",
 //	"m_flHeight": 80.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_DragonFireGroundAuraVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

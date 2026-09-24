@@ -5,6 +5,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class ModifierScriptedEventHandler_t
 {
 	EModifierScriptedEvent m_eEvent;

@@ -27,6 +27,7 @@
 //	"m_flSlideSurfacePitch": null,
 //	"m_flSlideSurfaceRoll": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelPlayerPawn_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< char* > m_pszSprintState;

@@ -10,6 +10,7 @@
 //}
 // MPropertyFriendlyName = "Material"
 // MPropertyDescription = "Material Asset Variable"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropVariable_Material : public CSmartPropVariable
 {
 	// MPropertyFriendlyName = "Default Material"

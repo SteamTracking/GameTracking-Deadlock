@@ -3,7 +3,7 @@
 //	"m_name": "State Machine",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_networkMode": "ServerAuthoritative",
 //	"m_bStartEnabled": false,
@@ -19,6 +19,7 @@
 //		"m_startStateIndex": -1
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CStateMachineComponentUpdater : public CAnimComponentUpdater
 {
 	CAnimStateMachineUpdater m_stateMachine;

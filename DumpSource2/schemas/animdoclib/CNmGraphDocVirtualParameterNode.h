@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocVirtualParameterNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -11,7 +11,7 @@
 //	"m_pChildGraph":
 //	{
 //		"_class": "CNmGraphDocFlowGraph",
-//		"m_ID": <HIDDEN FOR DIFF>,
+//		"m_ID": "",
 //		"m_nodes":
 //		[
 //		],
@@ -35,6 +35,7 @@
 //	],
 //	"m_groupName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocVirtualParameterNode : public CNmGraphDocParameterBaseNode
 {
 };

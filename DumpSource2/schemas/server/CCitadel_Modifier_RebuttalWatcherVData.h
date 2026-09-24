@@ -143,6 +143,7 @@
 //	"m_strLightMeleeSweetenerSound": "",
 //	"m_strHeavyMeleeSweetenerSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_RebuttalWatcherVData : public CCitadel_Modifier_Intrinsic_BaseVData
 {
 	// MPropertyStartGroup = "Modifiers"

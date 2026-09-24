@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_DebuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ArcaneEaterDebuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

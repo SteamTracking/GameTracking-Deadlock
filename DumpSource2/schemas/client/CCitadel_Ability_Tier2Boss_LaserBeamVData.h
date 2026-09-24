@@ -440,6 +440,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Tier2Boss_LaserBeamVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

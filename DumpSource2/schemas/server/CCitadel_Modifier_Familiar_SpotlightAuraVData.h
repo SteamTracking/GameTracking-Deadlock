@@ -153,6 +153,7 @@
 //	"m_flHeight": 80.000000,
 //	"m_flOffset": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Familiar_SpotlightAuraVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

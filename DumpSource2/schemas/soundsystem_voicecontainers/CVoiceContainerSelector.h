@@ -36,6 +36,7 @@
 //}
 // MPropertyFriendlyName = "Selector"
 // MPropertyDescription = "Plays a selected vsnd on playback."
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerSelector : public CVoiceContainerBase
 {
 	// MPropertyFriendlyName = "Playback Mode"

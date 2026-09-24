@@ -437,6 +437,7 @@
 //	"m_strHitConfirmSound": "",
 //	"m_strWorldImpactSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Mirage_FireBeetles_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

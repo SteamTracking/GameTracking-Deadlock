@@ -1,5 +1,7 @@
 // MNetworkVarNames = "CHandle< CBaseEntity> m_Handle"
 // MNetworkVarNames = "bool m_bSendHandle"
+// MDisableDataDescValidation
+// MClassHasEntityLimitedDataDesc
 class CHandleTest : public CBaseEntity
 {
 	// MNetworkEnable

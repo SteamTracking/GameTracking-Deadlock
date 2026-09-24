@@ -13,6 +13,7 @@
 //	"m_bFilterByTimeRemaining": false,
 //	"m_flMinTimeRemaining": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CTimeRemainingMetricEvaluator : public CMotionMetricEvaluator
 {
 	bool m_bMatchByTimeRemaining;

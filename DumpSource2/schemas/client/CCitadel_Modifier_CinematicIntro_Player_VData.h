@@ -151,6 +151,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_CinematicIntro_Player_VData : public CCitadelModifierVData
 {
 	float32 m_flZiplineStartDelayDuration;

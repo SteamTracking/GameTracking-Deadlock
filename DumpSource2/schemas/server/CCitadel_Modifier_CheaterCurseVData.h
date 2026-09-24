@@ -139,6 +139,7 @@
 //	"m_CursedModel": "",
 //	"m_flModelScale": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_CheaterCurseVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

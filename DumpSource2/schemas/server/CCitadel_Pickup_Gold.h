@@ -1,4 +1,5 @@
 // MNetworkVarNames = "int m_iGoldReward"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Pickup_Gold : public CCitadel_Pickup
 {
 	// MNetworkEnable

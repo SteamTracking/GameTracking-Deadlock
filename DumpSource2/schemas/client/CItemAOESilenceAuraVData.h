@@ -151,6 +151,7 @@
 //	"m_bRemoveProvidedModifierOnAuraRemoval": false,
 //	"m_empWaveParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItemAOESilenceAuraVData : public CCitadelModifierAuraVData
 {
 	// MPropertyGroupName = "Visuals"

@@ -152,6 +152,7 @@
 //	"m_WaveParticle": "",
 //	"m_flHeight": 80.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_PunkgoatSigilAuraVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

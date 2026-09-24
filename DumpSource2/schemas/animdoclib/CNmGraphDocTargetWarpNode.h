@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocTargetWarpNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,14 +13,14 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Input",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "World Target",
 //			"m_type": "Target",
 //			"m_bIsDynamicPin": false,
@@ -30,7 +30,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -56,6 +56,7 @@
 //	"m_flTargetUpdateDistanceThresholdDegrees": 4.000000,
 //	"m_flTargetUpdateAngleThresholdDegrees": 5.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocTargetWarpNode : public CNmGraphDocVariationDataNode
 {
 	CNmTargetWarpNode::TargetUpdateRule_t m_targetUpdateRule;

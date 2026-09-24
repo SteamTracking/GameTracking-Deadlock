@@ -1,6 +1,7 @@
 // MNetworkVarNames = "GameTime_t m_tDrainLifeStopTime"
 // MNetworkVarNames = "GameTime_t m_tSlowStartTime"
 // MNetworkVarNames = "GameTime_t m_tSlowStopTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_LifeDrain : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_ChannelParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierIdolReturnTimerVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

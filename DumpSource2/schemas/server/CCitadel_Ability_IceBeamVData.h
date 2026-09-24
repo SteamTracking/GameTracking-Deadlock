@@ -448,6 +448,7 @@
 //	"m_BeamPointEndLoopSound": "",
 //	"m_BeamPointClosestLoopSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_IceBeamVData : public CitadelAbilityVData
 {
 	float32 m_SplitBeamWidth;

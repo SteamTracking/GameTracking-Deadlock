@@ -19,6 +19,7 @@
 //	"m_eRbfType": 0,
 //	"m_flFalloff": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CBoneConstraintPoseSpaceBone : public CBaseConstraint
 {
 	CUtlVector< CBoneConstraintPoseSpaceBone::Input_t > m_inputList;

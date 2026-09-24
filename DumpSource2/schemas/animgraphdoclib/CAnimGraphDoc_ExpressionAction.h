@@ -3,10 +3,11 @@
 //	"m_paramName": "",
 //	"m_param":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_expression": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_ExpressionAction : public CAnimGraphDoc_Action
 {
 	CUtlString m_paramName;

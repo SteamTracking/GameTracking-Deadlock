@@ -10,6 +10,7 @@
 //}
 // MPropertyFriendlyName = "VMix Panner Audio Node"
 // MPropertyDescription = "Adjust the stereo panning of an audio track."
+// MHasKV3TransferPolymorphicClassname
 class CMixPanner : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Type"

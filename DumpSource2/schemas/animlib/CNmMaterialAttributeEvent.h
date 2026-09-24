@@ -89,6 +89,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmMaterialAttributeEvent : public CNmEvent
 {
 	CUtlString m_attributeName;

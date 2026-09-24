@@ -435,6 +435,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityChronoSwapVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

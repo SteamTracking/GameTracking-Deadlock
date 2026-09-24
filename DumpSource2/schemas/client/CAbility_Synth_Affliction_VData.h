@@ -434,6 +434,7 @@
 //	"m_CastParticle": "",
 //	"m_strHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Synth_Affliction_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

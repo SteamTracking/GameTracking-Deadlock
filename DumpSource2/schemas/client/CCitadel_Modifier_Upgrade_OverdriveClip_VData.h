@@ -139,6 +139,7 @@
 //	"m_BuffEffect": "",
 //	"m_TracerParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Upgrade_OverdriveClip_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

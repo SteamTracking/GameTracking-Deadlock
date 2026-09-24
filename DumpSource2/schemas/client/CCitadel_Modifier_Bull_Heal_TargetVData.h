@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_DrainParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Bull_Heal_TargetVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

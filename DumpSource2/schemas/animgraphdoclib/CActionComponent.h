@@ -3,7 +3,7 @@
 //	"m_group": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bStartEnabled": true,
 //	"m_nPriority": 100,
@@ -13,6 +13,7 @@
 //	],
 //	"m_sName": "Action Component"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CActionComponent : public CAnimGraphDoc_Component
 {
 	CUtlVector< CSmartPtr< CAnimGraphDoc_Action > > m_actions;

@@ -1,4 +1,5 @@
 // MNetworkVarNames = "int m_nPowerLevel"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_PowerSlash : public CCitadelBaseYamatoAbility
 {
 	// MNetworkEnable

@@ -5,13 +5,14 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false,
 //	"m_bWarpPosition": true,
 //	"m_bWarpOrientation": true
 //}
 // MPropertyFriendlyName = "Warp Section Tag"
+// MHasKV3TransferPolymorphicClassname
 class CWarpSectionAnimTag : public CWarpSectionAnimTagBase
 {
 	// MPropertyFriendlyName = "Warp Position"

@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocEntryStateOverrideConduitNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -12,12 +12,12 @@
 //	"m_pSecondaryGraph":
 //	{
 //		"_class": "CNmGraphDocFlowGraph",
-//		"m_ID": <HIDDEN FOR DIFF>,
+//		"m_ID": "",
 //		"m_nodes":
 //		[
 //			{
 //				"_class": "CNmGraphDocEntryStateOverrideConditionsNode",
-//				"m_ID": <HIDDEN FOR DIFF>,
+//				"m_ID": "",
 //				"m_name": "",
 //				"m_floatingComment": "",
 //				"m_position":
@@ -51,6 +51,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocEntryStateOverrideConduitNode : public CNmGraphDocStateMachineGraphNode
 {
 };

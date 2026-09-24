@@ -7,6 +7,7 @@
 //	"m_Command": "",
 //	"m_Args": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModelConfigElement_Command : public CModelConfigElement
 {
 	CUtlString m_Command;

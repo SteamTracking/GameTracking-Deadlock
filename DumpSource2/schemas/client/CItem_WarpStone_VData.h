@@ -463,6 +463,7 @@
 //	"m_iMaxGroundIterations": 20,
 //	"m_flVelocityScale": 0.750000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItem_WarpStone_VData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

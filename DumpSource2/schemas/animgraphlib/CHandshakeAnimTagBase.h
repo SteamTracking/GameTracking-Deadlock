@@ -5,11 +5,12 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false,
 //	"m_bIsDisableTag": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CHandshakeAnimTagBase : public CAnimTagBase
 {
 	// MPropertyFriendlyName = "Disables Handshake"

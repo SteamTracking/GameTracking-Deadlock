@@ -7,6 +7,7 @@
 //	"m_flFalseValue": 0.000000,
 //	"m_flTrueValue": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFloatSwitchNode::CDefinition : public CNmFloatValueNode::CDefinition
 {
 	int16 m_nSwitchValueNodeIdx;

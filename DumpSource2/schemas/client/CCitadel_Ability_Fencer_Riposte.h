@@ -4,6 +4,7 @@
 // MNetworkVarNames = "GameTime_t m_flStateStartTime"
 // MNetworkVarNames = "uint8 m_nCurrentRiposteState"
 // MNetworkVarNames = "GameTime_t m_flSuccessfulRiposteTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Fencer_Riposte : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

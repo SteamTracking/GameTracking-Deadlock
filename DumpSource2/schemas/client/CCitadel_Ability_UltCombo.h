@@ -1,5 +1,6 @@
 // MNetworkVarNames = "int m_iBonusHealth"
 // MNetworkVarNames = "CHandle< CBaseEntity> m_hTarget"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_UltCombo : public C_CitadelBaseAbility
 {
 	GameTime_t m_flLastAttackTime;

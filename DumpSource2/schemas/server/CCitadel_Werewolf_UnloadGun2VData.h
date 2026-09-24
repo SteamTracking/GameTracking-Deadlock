@@ -454,6 +454,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Werewolf_UnloadGun2VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

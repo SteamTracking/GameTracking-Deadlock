@@ -464,6 +464,7 @@
 //		0.000000
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_AirheartRocketeer4VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

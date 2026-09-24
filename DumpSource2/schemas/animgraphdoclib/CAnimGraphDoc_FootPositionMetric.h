@@ -7,6 +7,7 @@
 //	"m_bIgnoreSlope": true
 //}
 // MPropertyFriendlyName = "Foot Position Metric"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_FootPositionMetric : public CAnimGraphDoc_MotionMetric
 {
 	// MPropertyFriendlyName = "Foot"

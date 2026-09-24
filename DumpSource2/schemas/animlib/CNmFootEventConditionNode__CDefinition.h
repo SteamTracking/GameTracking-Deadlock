@@ -8,6 +8,7 @@
 //		"m_flags": 0
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFootEventConditionNode::CDefinition : public CNmBoolValueNode::CDefinition
 {
 	int16 m_nSourceStateNodeIdx;

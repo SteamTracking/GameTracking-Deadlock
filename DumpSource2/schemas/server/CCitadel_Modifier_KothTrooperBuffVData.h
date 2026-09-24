@@ -152,6 +152,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_KothTrooperBuffVData : public CCitadelModifierVData
 {
 	CUtlVector< float32 > m_vecHealthPercents;

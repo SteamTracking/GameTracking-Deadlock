@@ -142,6 +142,7 @@
 //	"m_StrikeParticleFriendly": "",
 //	"m_flHeight": 80.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_LightningStrikeAreaVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

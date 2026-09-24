@@ -139,6 +139,7 @@
 //	"m_DroneParticle": "",
 //	"m_LoopSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierThumper_3VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

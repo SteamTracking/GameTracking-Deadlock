@@ -5,11 +5,12 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false
 //}
 // MPropertyFriendlyName = "Status Tag"
+// MHasKV3TransferPolymorphicClassname
 class CTaskStatusAnimTag : public CAnimTagBase
 {
 };

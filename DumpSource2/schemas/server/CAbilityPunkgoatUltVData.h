@@ -487,6 +487,7 @@
 //	"m_flGoUpDuration": 0.000000,
 //	"m_flGoDownVelocityDampRate": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityPunkgoatUltVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

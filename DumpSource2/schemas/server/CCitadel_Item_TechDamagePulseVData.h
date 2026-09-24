@@ -453,6 +453,7 @@
 //	"m_strPulseTickSound": "",
 //	"m_iMaxTargets": 2
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_TechDamagePulseVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

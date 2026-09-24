@@ -447,6 +447,7 @@
 //	"m_flShakeFreqency": 10.000000,
 //	"m_flShakeDuration": 3.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Tier3Boss_AoEWaveVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

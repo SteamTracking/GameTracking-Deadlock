@@ -458,6 +458,7 @@
 //	"m_flMaxGravity": 1.750000,
 //	"m_flLerpBeginDistanceToTarget": 400.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_ProjectileTest04VData : public CCitadel_Item_ProjectileTestVData
 {
 	// MPropertyStartGroup = "Gameplay"

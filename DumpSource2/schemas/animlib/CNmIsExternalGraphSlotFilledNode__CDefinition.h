@@ -3,6 +3,7 @@
 //	"m_nNodeIdx": -1,
 //	"m_nExternalGraphNodeIdx": -1
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmIsExternalGraphSlotFilledNode::CDefinition : public CNmBoolValueNode::CDefinition
 {
 	int16 m_nExternalGraphNodeIdx;

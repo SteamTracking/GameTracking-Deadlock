@@ -2,6 +2,7 @@
 // MVDataBase
 // MVDataNodeType = 1
 // MVDataAnonymousNode
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropModifier
 {
 	// MVDataEnableKey

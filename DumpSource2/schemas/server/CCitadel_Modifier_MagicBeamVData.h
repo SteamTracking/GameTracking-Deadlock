@@ -141,6 +141,7 @@
 //	"m_strBeamEndSound": "",
 //	"m_strTargetLoopingSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_MagicBeamVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

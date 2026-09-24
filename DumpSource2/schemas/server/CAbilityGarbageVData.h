@@ -436,6 +436,7 @@
 //	"m_flAirDrag": 3.000000,
 //	"m_flMaxMovespeed": 80.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityGarbageVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

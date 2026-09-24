@@ -436,6 +436,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityThumper2VData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

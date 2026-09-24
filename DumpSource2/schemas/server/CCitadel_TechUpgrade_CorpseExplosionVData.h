@@ -453,6 +453,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_TechUpgrade_CorpseExplosionVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

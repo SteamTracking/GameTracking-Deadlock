@@ -9,6 +9,7 @@
 //	"m_nSourceStateNodeIdx": -1,
 //	"m_ruleCondition": "AnyAllowed"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmTransitionEventConditionNode::CDefinition : public CNmBoolValueNode::CDefinition
 {
 	CGlobalSymbol m_requireRuleID;

@@ -453,6 +453,7 @@
 //	"m_flQAngleSmoothRate": 10.000000,
 //	"m_bShouldReflectAgainstWall": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Bookworm_DragonFireVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

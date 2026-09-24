@@ -1,5 +1,6 @@
 // MNetworkVarNames = "int m_nKillsEarned"
 // MNetworkVarNames = "int m_nAssistsEarned"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Drifter_Hunger : public C_CitadelBaseAbility
 {
 	CUtlVector< CHandle< C_BaseEntity > > m_vecCurrentTargets;

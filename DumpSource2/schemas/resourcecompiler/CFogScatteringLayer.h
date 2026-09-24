@@ -13,6 +13,7 @@
 //		"m_fGradientScale": 1.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CFogScatteringLayer : public CColorCorrectionLayer
 {
 	PostProcessingFogScatteringParameters_t m_params;

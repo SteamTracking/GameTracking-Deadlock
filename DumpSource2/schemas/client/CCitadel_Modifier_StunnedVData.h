@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_StunnedParticle": "particles/modifiers/stunned.vpcf"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_StunnedVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -12,6 +12,7 @@
 // MPropertyFriendlyName = "Create Sizer"
 // MPropertyDescription = "Create a sizer that will be displayed at the current location, allowing the user to manipulate the specified set of size values."
 // MVDataClassGroup = "Manipulators"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropPulse_CreateSizer : public CPulseCell_BaseFlow
 {
 	// MPropertyFriendlyName = "Name"

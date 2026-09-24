@@ -143,6 +143,7 @@
 //	"m_ReplaceWithTeleportToGangster": "",
 //	"m_ReplaceWithCancel": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierGangActivityAbilitySwapVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Ability References"

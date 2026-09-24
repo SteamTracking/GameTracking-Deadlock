@@ -139,6 +139,7 @@
 //	"m_bPlayCurrencySound": true,
 //	"m_strLabelName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Pickup_Currency_VData : public CCitadel_Pickup_VData
 {
 	// MPropertyStartGroup = "Currency"

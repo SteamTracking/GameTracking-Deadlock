@@ -3,9 +3,10 @@
 //	"m_bEnabled": true,
 //	"m_Expression": ""
 //}
-// MVDataComponentValidGrandParents (UNKNOWN FOR PARSER)
+// MVDataComponentValidGrandParents = "CSmartPropElement_PickOne"
 // MPropertyFriendlyName = "Is Valid"
 // MPropertyDescription = "Specifies if this element is currently valid choice."
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropSelectionCriteria_IsValid : public CSmartPropSelectionCriteria
 {
 	// MPropertyFriendlyName = "Valid When"

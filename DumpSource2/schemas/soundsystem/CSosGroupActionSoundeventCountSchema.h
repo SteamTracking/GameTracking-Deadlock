@@ -4,6 +4,7 @@
 //	"m_strCountKeyName": "current_count"
 //}
 // MPropertyFriendlyName = "Soundevent Count"
+// MHasKV3TransferPolymorphicClassname
 class CSosGroupActionSoundeventCountSchema : public CSosGroupActionSchema
 {
 	// MPropertyFriendlyName = "Exclude Stopped Sounds from Count"

@@ -142,6 +142,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierRiotProtocolBuffVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

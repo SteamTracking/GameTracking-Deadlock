@@ -2,6 +2,7 @@
 // MNetworkVarNames = "Vector m_vecCastPositionNormal"
 // MNetworkVarNames = "Vector m_vecEndPosition"
 // MNetworkVarNames = "Vector m_vecEndPositionNormal"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Trapper_WebWall : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

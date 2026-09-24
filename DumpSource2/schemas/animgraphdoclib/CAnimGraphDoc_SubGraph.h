@@ -27,6 +27,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_SubGraph
 {
 	CAnimGraphDoc_NodeManager m_nodeManager;

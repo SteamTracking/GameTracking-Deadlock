@@ -2,6 +2,7 @@
 // MNetworkVarNames = "float m_flSeasonal2025LevelFrac"
 // MNetworkVarNames = "GameTime_t m_flNextShotTime"
 // MNetworkVarNames = "int m_nShotsRemaining"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_CosmeticItem_Snowball : public CCitadel_Item
 {
 	// MNetworkEnable

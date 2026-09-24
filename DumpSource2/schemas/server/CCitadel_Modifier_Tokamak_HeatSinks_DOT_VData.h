@@ -139,6 +139,7 @@
 //	"m_sAfterburnParticle": "",
 //	"m_sAfterburnExplodeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Tokamak_HeatSinks_DOT_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

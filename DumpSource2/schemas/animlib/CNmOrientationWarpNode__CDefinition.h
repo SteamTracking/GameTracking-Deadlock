@@ -8,6 +8,7 @@
 //	"m_bWarpTranslation": false,
 //	"m_samplingMode": "WorldSpace"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmOrientationWarpNode::CDefinition : public CNmPoseNode::CDefinition
 {
 	int16 m_nClipReferenceNodeIdx;

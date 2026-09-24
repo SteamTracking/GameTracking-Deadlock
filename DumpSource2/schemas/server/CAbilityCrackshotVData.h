@@ -443,6 +443,7 @@
 //	"m_HeadShotConfirmationSound": "",
 //	"m_ReadySound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityCrackshotVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

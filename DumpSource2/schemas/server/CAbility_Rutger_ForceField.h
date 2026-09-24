@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CAbility_Rutger_ForceField : public CCitadelBaseAbility
 {
 	ParticleIndex_t m_hChargingParticle;

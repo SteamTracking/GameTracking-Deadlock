@@ -1,5 +1,6 @@
 // MNetworkVarNames = "bool m_bSprinting"
 // MNetworkVarNames = "GameTime_t m_flSprintStartTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Sprint : public CCitadelBaseAbility
 {
 	ParticleIndex_t m_nSprintParticle;

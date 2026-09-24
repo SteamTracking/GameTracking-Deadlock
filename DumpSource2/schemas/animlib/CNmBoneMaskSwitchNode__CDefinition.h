@@ -7,6 +7,7 @@
 //	"m_flBlendTimeSeconds": 0.100000,
 //	"m_bSwitchDynamically": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmBoneMaskSwitchNode::CDefinition : public CNmBoneMaskValueNode::CDefinition
 {
 	int16 m_nSwitchValueNodeIdx;

@@ -47,6 +47,7 @@
 //	"m_modelName": "",
 //	"m_previewModelName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_Graph : public CAnimGraphDoc_SubGraph
 {
 	CSmartPtr< CAnimGraphSettingsManager > m_pSettingsManager;

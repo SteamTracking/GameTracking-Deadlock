@@ -16,6 +16,7 @@
 //	"m_nTargetAxis": 0,
 //	"m_nSlaveAxis": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CTiltTwistConstraint : public CBaseConstraint
 {
 	int32 m_nTargetAxis;

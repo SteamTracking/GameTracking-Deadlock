@@ -12,6 +12,7 @@
 //	"m_flSpeedMultiplier": 1.000000,
 //	"m_nStartSyncEventOffset": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipNode::CDefinition : public CNmClipReferenceNode::CDefinition
 {
 	int16 m_nPlayInReverseValueNodeIdx;

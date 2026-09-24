@@ -449,6 +449,7 @@
 //	"m_flMaxPitchRangeScale": 2.000000,
 //	"m_flThrowAnimTossPoint": 0.750000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityLashUltimateVData : public CBaseLockonAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"
@@ -458,7 +459,7 @@ class CAbilityLashUltimateVData : public CBaseLockonAbilityVData
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_UltimateCastEnemyParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_AllyIndicatorParticle;
 	// MPropertyStartGroup = "Animation"
-	// MPropertyLeafSuggestionProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyLeafSuggestionProviderFn
 	CGlobalSymbol m_strThrowEnemyAnimGraphParam;
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadel_Modifier_LashGrappleEnemy_Debuff > m_GrappleEnemyModifier;

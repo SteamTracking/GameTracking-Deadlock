@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CConcreteAnimParameter : public CAnimParameterBase
 {
 	// MPropertyFriendlyName = "Preview Button"
@@ -11,10 +12,10 @@ class CConcreteAnimParameter : public CAnimParameterBase
 	bool m_bAutoReset;
 	// MPropertyFriendlyName = "Game Writable"
 	// MPropertyGroupName = "+Permissions"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bGameWritable;
 	// MPropertyFriendlyName = "Graph Writable"
 	// MPropertyGroupName = "+Permissions"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bGraphWritable;
 };

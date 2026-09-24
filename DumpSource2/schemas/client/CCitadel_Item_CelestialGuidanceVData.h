@@ -454,6 +454,7 @@
 //	"m_PurgeCastParticle": "",
 //	"m_strPurgeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_CelestialGuidanceVData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

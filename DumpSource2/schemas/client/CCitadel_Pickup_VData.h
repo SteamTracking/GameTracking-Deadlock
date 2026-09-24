@@ -135,6 +135,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Pickup_VData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Visuals"

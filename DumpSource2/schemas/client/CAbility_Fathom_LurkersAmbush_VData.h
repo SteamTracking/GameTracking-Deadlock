@@ -439,6 +439,7 @@
 //	},
 //	"m_strSwapStarted": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Fathom_LurkersAmbush_VData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

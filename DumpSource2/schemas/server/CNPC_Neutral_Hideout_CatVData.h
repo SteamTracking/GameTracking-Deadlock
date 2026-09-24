@@ -28,6 +28,7 @@
 //	"m_DestroyParticle": "",
 //	"m_strDestroySound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Neutral_Hideout_CatVData : public CEntitySubclassVDataBase
 {
 	float32 m_flCollisionRadius;

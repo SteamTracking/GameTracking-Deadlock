@@ -12,6 +12,7 @@
 // MPropertyFriendlyName = "Transform: Set Position"
 // MPropertyDescription = "Set the position of the current transform."
 // MVDataClassGroup = "Transform"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_SetPosition : public CSmartPropTransformOperation
 {
 	// MPropertyDescription = "Local space position translation to apply to the current transform"

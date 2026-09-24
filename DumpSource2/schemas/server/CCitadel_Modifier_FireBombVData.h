@@ -139,6 +139,7 @@
 //	"m_ChargeParticle": "",
 //	"m_GroundParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_FireBombVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

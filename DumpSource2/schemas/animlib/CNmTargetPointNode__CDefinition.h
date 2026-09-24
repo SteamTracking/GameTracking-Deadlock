@@ -4,6 +4,7 @@
 //	"m_nInputValueNodeIdx": -1,
 //	"m_bIsWorldSpaceTarget": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmTargetPointNode::CDefinition : public CNmVectorValueNode::CDefinition
 {
 	int16 m_nInputValueNodeIdx;

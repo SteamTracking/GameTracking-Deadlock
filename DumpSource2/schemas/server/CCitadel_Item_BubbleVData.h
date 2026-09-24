@@ -454,6 +454,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_BubbleVData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Visuals"

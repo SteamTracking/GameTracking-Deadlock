@@ -3,6 +3,7 @@
 //	"m_sPickup": "",
 //	"m_flPickupWeight": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class BreakablePowerupDropDefinition_t
 {
 	// MPropertyDescription = "What does this drop?"

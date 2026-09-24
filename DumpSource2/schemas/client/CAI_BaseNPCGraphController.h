@@ -30,6 +30,7 @@
 //	"m_bEnableMLLocomotion": null,
 //	"m_nNavLinkExternalGraphSlot": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAI_BaseNPCGraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< CGlobalSymbol > m_sCurrScheduleName;

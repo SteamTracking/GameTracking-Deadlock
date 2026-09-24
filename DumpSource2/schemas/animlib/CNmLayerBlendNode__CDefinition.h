@@ -7,6 +7,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmLayerBlendNode::CDefinition : public CNmPoseNode::CDefinition
 {
 	int16 m_nBaseNodeIdx;

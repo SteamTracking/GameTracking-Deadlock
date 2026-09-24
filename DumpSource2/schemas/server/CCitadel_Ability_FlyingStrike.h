@@ -16,6 +16,7 @@
 // MNetworkVarNames = "float m_flPathLength"
 // MNetworkVarNames = "Vector m_vFlyingInitialOffsetToPath"
 // MNetworkVarNames = "float flDistFlown"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_FlyingStrike : public CCitadelBaseYamatoAbility
 {
 	int32 m_iTargetPosIndex;

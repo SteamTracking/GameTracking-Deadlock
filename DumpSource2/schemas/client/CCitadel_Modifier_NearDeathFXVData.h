@@ -141,6 +141,7 @@
 //	"m_sSelfDestructStart": "",
 //	"m_sSelfDestructEnd": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_NearDeathFXVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

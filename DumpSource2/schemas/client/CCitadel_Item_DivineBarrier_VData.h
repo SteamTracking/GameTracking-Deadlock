@@ -454,6 +454,7 @@
 //	"m_CastParticle": "",
 //	"m_strPurgeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_DivineBarrier_VData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

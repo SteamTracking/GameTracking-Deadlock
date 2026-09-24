@@ -25,6 +25,7 @@
 //}
 // MPulseEditorHeaderIcon = "tools/images/pulse_editor/observable_variable_listener.png"
 // MPropertyFriendlyName = "Wait For Observable Condition"
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_WaitForObservable : public CPulseCell_BaseYieldingInflow
 {
 	// MPropertyDescription = "Condition to evaluate when any of its dependent values change."

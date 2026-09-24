@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocParameterizedClipSelectorNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,21 +13,21 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Parameter",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Option",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": true,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Option",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": true,
@@ -37,7 +37,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Pose",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -64,10 +64,11 @@
 //	],
 //	"m_bIgnoreInvalidOptions": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocParameterizedClipSelectorNode : public CNmGraphDocVariationDataNode
 {
 	// MPropertyAutoExpandSelf
-	// MPropertyResizable (UNKNOWN FOR PARSER)
+	// MPropertyResizable = 0
 	CUtlVector< CUtlString > m_optionLabels;
 	// MPropertyGroupName = "Advanced"
 	// MPropertyDescription = "Should we ignore any invalid option and remove them from the selection. This is useful if different variations has different sets of options filled"

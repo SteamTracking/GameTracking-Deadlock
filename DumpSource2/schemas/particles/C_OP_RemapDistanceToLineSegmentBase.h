@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class C_OP_RemapDistanceToLineSegmentBase : public CParticleFunctionOperator
 {
 	// MPropertyFriendlyName = "control point 0"

@@ -20,6 +20,7 @@
 //	"m_sequenceName": ""
 //}
 // MPropertyFriendlyName = "Sequence"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_SequenceMotionItem : public CAnimGraphDoc_MotionItem
 {
 	// MPropertyFriendlyName = "Sequence"

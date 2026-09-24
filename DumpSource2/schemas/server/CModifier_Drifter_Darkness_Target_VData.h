@@ -153,6 +153,7 @@
 //	"m_BlindedStatusParticle": "",
 //	"m_NearbyVictimStatusParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Drifter_Darkness_Target_VData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

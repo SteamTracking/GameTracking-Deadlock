@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CnmGraphDocChainLookatNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,21 +13,21 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Input",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Target",
 //			"m_type": "Vector",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Enabled",
 //			"m_type": "Bool",
 //			"m_bIsDynamicPin": false,
@@ -37,7 +37,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -63,6 +63,7 @@
 //	"m_defaultResourceName": "",
 //	"m_bIsTargetInWorldSpace": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CnmGraphDocChainLookatNode : public CNmGraphDocVariationDataNode
 {
 	bool m_bIsTargetInWorldSpace;

@@ -439,6 +439,7 @@
 //	"m_strHitConfirmSound": "",
 //	"m_strPointBlankSweetenerSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Drifter_BloodBlast_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

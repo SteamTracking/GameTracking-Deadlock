@@ -158,6 +158,7 @@
 //	"m_flMinRevealTime": 2.000000,
 //	"m_flMinDebuffTime": 3.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Nano_PredatoryStatueVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

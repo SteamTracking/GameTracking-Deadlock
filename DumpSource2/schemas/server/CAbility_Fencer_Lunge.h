@@ -9,6 +9,7 @@
 // MNetworkVarNames = "GameTime_t m_RecastEndTime"
 // MNetworkVarNames = "uint8 m_eLungeDirection"
 // MNetworkVarNames = "int m_nPowerLevel"
+// MClassHasEntityLimitedDataDesc
 class CAbility_Fencer_Lunge : public CCitadelBaseAbility
 {
 	// MNetworkEnable

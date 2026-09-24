@@ -158,6 +158,7 @@
 //	},
 //	"m_TracerParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_DisarmProcWatcherVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -455,6 +455,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Nano_CatFormPounceVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

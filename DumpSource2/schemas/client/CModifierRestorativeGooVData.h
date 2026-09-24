@@ -151,6 +151,7 @@
 //	"m_HeavyMeleeImpact": "",
 //	"m_flBreakoutProectionTime": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierRestorativeGooVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

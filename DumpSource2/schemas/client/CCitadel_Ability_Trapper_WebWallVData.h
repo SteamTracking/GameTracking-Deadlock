@@ -439,6 +439,7 @@
 //	"m_strWebWallCreated": "",
 //	"m_strWebWallDestroyed": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Trapper_WebWallVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -489,6 +489,7 @@
 //	"m_strPassiveWeaponAttachmentSource": "muzzle_fx",
 //	"m_flPushForce": 50.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_ShivWeapon_VData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "+Gun Properties"

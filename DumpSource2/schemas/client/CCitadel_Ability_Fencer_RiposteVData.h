@@ -446,6 +446,7 @@
 //	"m_flParryMoveSpeed": 50.000000,
 //	"m_flDashAnimDelay": 0.270000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Fencer_RiposteVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

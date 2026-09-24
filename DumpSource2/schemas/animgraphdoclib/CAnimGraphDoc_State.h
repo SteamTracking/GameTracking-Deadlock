@@ -10,7 +10,7 @@
 //	"m_sComment": "",
 //	"m_stateID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_position":
 //	[
@@ -25,6 +25,7 @@
 //	"m_bPreEvaluatePassthroughTransitionPath": false
 //}
 // MPropertyFriendlyName = "Animation State"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_State
 {
 	// MPropertySuppressField

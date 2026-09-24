@@ -459,6 +459,7 @@
 //	"m_flInitialSpeedBias": 0.800000,
 //	"m_flMaxSurfacePitch": 45.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Fathom_ReefdwellerHarpoon_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -140,6 +140,7 @@
 //	"m_LiftParticle": "",
 //	"m_strStartSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierVandalOverflowVData : public CCitadel_Modifier_StunnedVData
 {
 	// MPropertyStartGroup = "Visuals"

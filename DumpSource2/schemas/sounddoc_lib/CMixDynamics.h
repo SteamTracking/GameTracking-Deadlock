@@ -22,6 +22,7 @@
 //}
 // MPropertyFriendlyName = "VMix Dynamics Audio Node"
 // MPropertyDescription = "A dynamics multiprocessor.  This is a single unit that switches between being a noise gate, compressor, or limiter as the signal moves through its dynamic range.  Useful in some specific cases, e.g. gate+compress or gate+limit usually.  Other cases may be more suited to using multiple compressors in series."
+// MHasKV3TransferPolymorphicClassname
 class CMixDynamics : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Channels"

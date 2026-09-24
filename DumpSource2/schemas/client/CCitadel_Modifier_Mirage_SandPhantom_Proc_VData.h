@@ -154,6 +154,7 @@
 //	"m_ExplodeSound": ""
 //}
 // MPropertySuppressBaseClassField = "m_bProcChanceAffectedByEffectiveness"
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Mirage_SandPhantom_Proc_VData : public CCitadelModifierVData
 {
 	// MPropertyDescription = "When true, we roll for a proc once per shot and apply that result to all bullets in the shot.  When false, we roll independently for each bullet in the shot."

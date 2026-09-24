@@ -1,4 +1,5 @@
 // MNetworkVarNames = "GameTime_t m_tWallDeployFinishTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Necro_ZombieWall : public CCitadelBaseAbility
 {
 	// MNetworkEnable

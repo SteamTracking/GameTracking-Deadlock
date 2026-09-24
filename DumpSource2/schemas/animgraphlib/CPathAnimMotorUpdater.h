@@ -4,6 +4,7 @@
 //	"m_bDefault": false,
 //	"m_bLockToPath": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPathAnimMotorUpdater : public CPathAnimMotorUpdaterBase
 {
 };

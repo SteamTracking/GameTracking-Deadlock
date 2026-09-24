@@ -8,6 +8,7 @@
 // MVDataRoot
 // MVDataNodeType = 1
 // MVDataOverlayType = 1
+// MHasKV3TransferPolymorphicClassname
 class CScaleFunctionVData : public CEntitySubclassVDataBase
 {
 	EStatsType m_eSpecificStatScaleType;

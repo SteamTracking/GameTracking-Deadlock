@@ -451,6 +451,7 @@
 //	"m_flWhiskerForce": 1.000000,
 //	"m_flWhiskerPositionVerticalOffset": 30.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_SwingLineVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

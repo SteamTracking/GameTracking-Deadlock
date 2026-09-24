@@ -436,6 +436,7 @@
 //	"m_TargetWarningSound": "",
 //	"m_PreCastParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Gravity_Lasso_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

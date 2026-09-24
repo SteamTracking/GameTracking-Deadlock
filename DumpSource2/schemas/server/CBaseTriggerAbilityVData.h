@@ -432,6 +432,7 @@
 //	"m_eHintFeatureToMarkUsedOnTrigger": "CITADEL_HINT_FEATURE_INVALID",
 //	"bTriggerOnDeselect": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CBaseTriggerAbilityVData : public CitadelAbilityVData
 {
 	// MPropertyDescription = "Which ability to fire a MODIFIER_EVENT_ABILITY_TRIGGER_ACTIVATED event to when this ability is triggered"

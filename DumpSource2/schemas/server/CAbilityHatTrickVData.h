@@ -435,6 +435,7 @@
 //	},
 //	"m_strExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityHatTrickVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

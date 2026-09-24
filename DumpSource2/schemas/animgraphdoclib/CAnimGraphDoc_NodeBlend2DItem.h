@@ -11,16 +11,17 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_name": "<Unnamed Item>"
 //}
 // MPropertyFriendlyName = "Node Blend Item"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_NodeBlend2DItem : public CAnimGraphDoc_Blend2DItem
 {
 	// MPropertySuppressField

@@ -141,6 +141,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_NearbyEnemyBoostVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

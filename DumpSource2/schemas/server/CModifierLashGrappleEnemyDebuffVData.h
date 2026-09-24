@@ -146,6 +146,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierLashGrappleEnemyDebuffVData : public CCitadel_Modifier_StunnedVData
 {
 	// MPropertyStartGroup = "Visuals"

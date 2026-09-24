@@ -435,6 +435,7 @@
 //	},
 //	"m_strCastEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_MageWalkVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

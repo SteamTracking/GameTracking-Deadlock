@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,11 +16,11 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_boneName": "",
@@ -33,17 +33,18 @@
 //		},
 //		"m_AnimgraphParameterNamePosition":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_AnimgraphParameterNameOrientation":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_TargetCoordSystem": "World Space"
 //	},
 //	"m_bMatchTargetOrientation": false
 //}
 // MPropertyFriendlyName = "Follow Target"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_FollowTargetNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField

@@ -3,7 +3,7 @@
 //	"m_name": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_networkMode": "ServerAuthoritative",
 //	"m_bStartEnabled": false,
@@ -39,6 +39,7 @@
 //		"m_index": 255
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CSlopeComponentUpdater : public CAnimComponentUpdater
 {
 	float32 m_flTraceDistance;

@@ -3,11 +3,11 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_name": "",
@@ -15,7 +15,7 @@
 //	"m_blendTime": 0.200000
 //}
 // MPropertyFriendlyName = "Choice Item"
-// MPropertyElementNameFn (UNKNOWN FOR PARSER)
+// MPropertyElementNameFn
 class CChoiceNodeChild
 {
 	// MPropertySuppressField

@@ -140,6 +140,7 @@
 //	"m_strImpactSound": "",
 //	"m_strProcDeflectionImpactSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_DeflectingArmorVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

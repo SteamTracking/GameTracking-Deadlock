@@ -145,6 +145,7 @@
 //	"m_flInvulnRange": 0.000000,
 //	"m_bPlayersOnly": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Basic_RangedArmorBonusVData : public CCitadelModifierVData
 {
 	float32 m_flBulletResistancePctMin;

@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilitySleepDaggerVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

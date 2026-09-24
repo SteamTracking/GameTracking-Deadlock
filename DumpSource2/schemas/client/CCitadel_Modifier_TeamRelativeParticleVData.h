@@ -139,6 +139,7 @@
 //	"m_ParentViewParticle": "",
 //	"m_OtherPlayerViewParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_TeamRelativeParticleVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

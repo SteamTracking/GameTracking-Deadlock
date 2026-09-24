@@ -462,6 +462,7 @@
 //	"m_BeamHitParticle": "",
 //	"m_strLaserLoopSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_PrismBlastVData : public CCitadel_Item_BubbleVData
 {
 	float32 m_flBeamRotateSpeed;

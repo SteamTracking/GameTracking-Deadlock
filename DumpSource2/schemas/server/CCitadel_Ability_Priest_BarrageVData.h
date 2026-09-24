@@ -438,6 +438,7 @@
 //	"m_ExplodeParticle": "",
 //	"m_ShootParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Priest_BarrageVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

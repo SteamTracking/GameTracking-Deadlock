@@ -5,6 +5,7 @@
 //	]
 //}
 // MPropertyFriendlyName = "State Machine"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_StateMachine
 {
 	// MPropertyHideField

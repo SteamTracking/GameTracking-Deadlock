@@ -139,6 +139,7 @@
 //	"m_ImpactParticle": "",
 //	"m_strImpactSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_AbsorbingArmorVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

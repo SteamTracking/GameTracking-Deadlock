@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,11 +16,11 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_ikChainName": "",
@@ -33,18 +33,19 @@
 //	"m_targetParamName": "",
 //	"m_targetParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bMatchTargetOrientation": false,
 //	"m_rotationParamName": "",
 //	"m_rotationParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bConstrainTwist": false,
 //	"m_flMaxTwist": 15.000000
 //}
 // MPropertyFriendlyName = "Two-Bone IK"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_TwoBoneIKNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField
@@ -61,7 +62,7 @@ class CAnimGraphDoc_TwoBoneIKNode : public CAnimGraphDoc_Node
 	// MPropertyGroupName = "End Effector"
 	// MPropertyFriendlyName = "Attachment"
 	// MPropertyAttributeChoiceName = "Attachment"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CUtlString m_endEffectorAttachmentName;
 	// MPropertyGroupName = "Target"
 	// MPropertyFriendlyName = "Target Type"
@@ -70,19 +71,19 @@ class CAnimGraphDoc_TwoBoneIKNode : public CAnimGraphDoc_Node
 	// MPropertyGroupName = "Target"
 	// MPropertyFriendlyName = "Attachment"
 	// MPropertyAttributeChoiceName = "Attachment"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CUtlString m_attachmentName;
 	// MPropertyGroupName = "Target"
 	// MPropertyFriendlyName = "Bone"
 	// MPropertyAttributeChoiceName = "Bone"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CUtlString m_targetBoneName;
 	// MPropertySuppressField
 	CUtlString m_targetParamName;
 	// MPropertyGroupName = "Target"
 	// MPropertyFriendlyName = "Position Parameter"
 	// MPropertyAttributeChoiceName = "VectorParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_targetParam;
 	// MPropertyGroupName = "Target"
 	// MPropertyFriendlyName = "Match Target Orientation"
@@ -93,14 +94,14 @@ class CAnimGraphDoc_TwoBoneIKNode : public CAnimGraphDoc_Node
 	// MPropertyGroupName = "Target"
 	// MPropertyFriendlyName = "Rotation Parameter"
 	// MPropertyAttributeChoiceName = "QuaternionParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_rotationParam;
 	// MPropertyGroupName = "Target"
 	// MPropertyFriendlyName = "Constrain Twist"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bConstrainTwist;
 	// MPropertyGroupName = "Target"
 	// MPropertyFriendlyName = "Max Twist"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flMaxTwist;
 };

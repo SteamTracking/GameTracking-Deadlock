@@ -453,6 +453,7 @@
 //	],
 //	"m_nDecalLimit": 20
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_CosmeticItem_VotingPoster_VData : public CitadelItemVData
 {
 	CUtlVector< CitadelVotingPosterHeroData_t > m_vecVotingPosters;

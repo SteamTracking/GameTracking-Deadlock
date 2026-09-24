@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Vandal_PillarVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

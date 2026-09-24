@@ -6,6 +6,7 @@
 // MNetworkVarNames = "float32 m_angle"
 // MNetworkVarNames = "Vector m_poolOrigin"
 // MNetworkVarNames = "float32 m_waterLevel"
+// MNetworkNoBase
 class CFish : public CBaseAnimGraph
 {
 	CHandle< CFishPool > m_pool;

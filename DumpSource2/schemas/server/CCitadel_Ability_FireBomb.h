@@ -1,5 +1,6 @@
 // MNetworkVarNames = "CCitadelAutoScaledTime m_flDetonateTime"
 // MNetworkVarNames = "GameTime_t m_flStartTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_FireBomb : public CCitadelBaseAbility
 {
 	// MNetworkEnable

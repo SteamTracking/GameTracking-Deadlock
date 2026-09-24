@@ -6,6 +6,7 @@
 //	"m_bOnRespawn": null,
 //	"m_bHitTrigger": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class C_Citadel_BreakableProp_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< bool > m_bSetInit;

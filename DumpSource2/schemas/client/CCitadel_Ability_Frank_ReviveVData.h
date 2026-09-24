@@ -445,6 +445,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Frank_ReviveVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

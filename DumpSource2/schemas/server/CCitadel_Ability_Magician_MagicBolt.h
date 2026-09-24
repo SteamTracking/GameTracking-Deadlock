@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Magician_MagicBolt : public CCitadelBaseAbility
 {
 	CUtlVector< CHandle< CCitadelProjectile > > m_vecDeployedProjectiles;

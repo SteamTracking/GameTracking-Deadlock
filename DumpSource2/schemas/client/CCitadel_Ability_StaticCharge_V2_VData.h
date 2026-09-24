@@ -437,6 +437,7 @@
 //	"m_flWorldTraceRadius": 5.000000,
 //	"m_flUnitTraceRadius": 5.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_StaticCharge_V2_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

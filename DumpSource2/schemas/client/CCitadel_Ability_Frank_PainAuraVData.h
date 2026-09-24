@@ -437,6 +437,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Frank_PainAuraVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

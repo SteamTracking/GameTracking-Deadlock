@@ -7,6 +7,7 @@
 //	"m_nBrightness": 0,
 //	"m_nContrast": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CBrightnessContrastColorCorrectionLayer : public CColorCorrectionLayer
 {
 	int32 m_nBrightness;

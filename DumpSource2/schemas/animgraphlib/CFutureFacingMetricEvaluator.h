@@ -11,6 +11,7 @@
 //	"m_flDistance": 100.000000,
 //	"m_flTime": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CFutureFacingMetricEvaluator : public CMotionMetricEvaluator
 {
 	float32 m_flDistance;

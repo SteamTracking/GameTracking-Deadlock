@@ -7,6 +7,7 @@
 //	"m_flEpsilon": 0.000000,
 //	"m_flComparisonValue": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFloatComparisonNode::CDefinition : public CNmBoolValueNode::CDefinition
 {
 	int16 m_nInputValueNodeIdx;

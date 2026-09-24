@@ -429,6 +429,7 @@
 //	},
 //	"m_ExplosionParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityRocketLauncherVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

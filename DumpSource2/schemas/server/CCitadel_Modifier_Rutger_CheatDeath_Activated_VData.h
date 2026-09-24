@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_ActivatedParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Rutger_CheatDeath_Activated_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

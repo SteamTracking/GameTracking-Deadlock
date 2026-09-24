@@ -14,6 +14,7 @@
 //}
 // MPropertyFriendlyName = "VMix Filter Audio Node"
 // MPropertyDescription = "Resonant filter with adjustable slope. NOTE: This is a clean filter, not an analog model with distortion."
+// MHasKV3TransferPolymorphicClassname
 class CMixFilter : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Filter Type"

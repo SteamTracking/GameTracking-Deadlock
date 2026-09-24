@@ -547,6 +547,7 @@
 //	},
 //	"m_flInfestedNPCModelScale": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Familiar_HelpingHandsVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

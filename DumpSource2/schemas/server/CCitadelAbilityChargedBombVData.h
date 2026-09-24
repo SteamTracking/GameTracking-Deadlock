@@ -435,6 +435,7 @@
 //	"m_flChargeForMaxDamage": 1.500000,
 //	"m_flMinDamagePercent": 0.300000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelAbilityChargedBombVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -17,6 +17,7 @@
 //	]
 //}
 // MPropertyFriendlyName = "Group Input"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_GroupInputNode : public CAnimGraphDoc_ProxyNodeBase
 {
 };

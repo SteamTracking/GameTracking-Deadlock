@@ -4,17 +4,18 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_name": "Unnamed",
 //	"m_blendValue": 0.000000
 //}
 // MPropertyFriendlyName = "Blend Item"
+// MHasKV3TransferPolymorphicClassname
 class CBlendNodeChild
 {
 	// MPropertySuppressField

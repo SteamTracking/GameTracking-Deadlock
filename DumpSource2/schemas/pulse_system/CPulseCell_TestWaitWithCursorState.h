@@ -20,6 +20,7 @@
 //		"m_nInstruction": -1
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_TestWaitWithCursorState : public CPulseCell_BaseYieldingInflow
 {
 	CPulse_ResumePoint m_WakeResume;

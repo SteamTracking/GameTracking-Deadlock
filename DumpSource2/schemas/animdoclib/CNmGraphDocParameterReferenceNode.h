@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocParameterReferenceNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -21,6 +21,7 @@
 //	"m_parameterName": "",
 //	"m_parameterGroupName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocParameterReferenceNode : public CNmGraphDocFlowNode
 {
 	V_uuid_t m_parameterUUID;

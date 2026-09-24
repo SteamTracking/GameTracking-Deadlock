@@ -456,6 +456,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_CheatDeathVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

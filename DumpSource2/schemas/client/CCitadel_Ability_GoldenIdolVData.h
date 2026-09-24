@@ -451,6 +451,7 @@
 //	"m_flHeldTimeRadius": 1574.800049,
 //	"m_flJuggleTimeAdd": 8.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_GoldenIdolVData : public CCitadel_Ability_BaseHeldItemVData
 {
 	// MPropertyStartGroup = "Visuals"

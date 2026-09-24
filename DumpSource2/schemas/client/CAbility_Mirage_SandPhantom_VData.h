@@ -428,6 +428,7 @@
 //		"m_bIsSeasonal": false
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Mirage_SandPhantom_VData : public CitadelAbilityVData
 {
 };

@@ -143,6 +143,7 @@
 //	"m_AmberPitGroundEffect": "",
 //	"m_SaphhPitGroundEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_T3Phase1VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -432,6 +432,7 @@
 //	},
 //	"m_ClonedParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Familiar_CloneVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

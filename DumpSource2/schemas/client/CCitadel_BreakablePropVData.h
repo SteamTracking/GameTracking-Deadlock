@@ -37,6 +37,7 @@
 //	],
 //	"m_iLootListDeckSize": 1
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 {
 	// MPropertyGroupName = "Behavior"

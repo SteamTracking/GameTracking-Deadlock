@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CMotionMetricEvaluator
 {
 	CUtlVector< float32 > m_means;

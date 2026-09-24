@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,24 +16,24 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_bApplyMovement": true,
 //	"m_moveVectorParamName": "",
 //	"m_moveVectorParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bOrientMovement": false,
 //	"m_moveHeadingParamName": "",
 //	"m_moveHeadingParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bAdditive": false,
 //	"m_bTurnToFace": false,
@@ -41,7 +41,7 @@
 //	"m_paramName": "",
 //	"m_param":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bLimitOnly": false,
 //	"m_flTurnToFaceOffset": 0.000000,
@@ -55,6 +55,7 @@
 //	}
 //}
 // MPropertyFriendlyName = "Mover"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_MoverNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField
@@ -68,7 +69,7 @@ class CAnimGraphDoc_MoverNode : public CAnimGraphDoc_Node
 	// MPropertyFriendlyName = "Movement Velocity Parameter"
 	// MPropertyGroupName = "Generate Movement"
 	// MPropertyAttributeChoiceName = "VectorParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_moveVectorParam;
 	// MPropertyFriendlyName = "Orient Movement"
 	// MPropertyGroupName = "Orient Movement"
@@ -79,7 +80,7 @@ class CAnimGraphDoc_MoverNode : public CAnimGraphDoc_Node
 	// MPropertyFriendlyName = "Movement Heading Parameter"
 	// MPropertyGroupName = "Orient Movement"
 	// MPropertyAttributeChoiceName = "FloatParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_moveHeadingParam;
 	// MPropertyFriendlyName = "Additive"
 	bool m_bAdditive;
@@ -90,32 +91,32 @@ class CAnimGraphDoc_MoverNode : public CAnimGraphDoc_Node
 	// MPropertyFriendlyName = "Face Direction"
 	// MPropertyGroupName = "Turn to Face"
 	// MPropertyAutoRebuildOnChange
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimValueSource m_facingTarget;
 	// MPropertySuppressField
 	CUtlString m_paramName;
 	// MPropertyFriendlyName = "Facing Parameter"
 	// MPropertyGroupName = "Turn to Face"
 	// MPropertyAttributeChoiceName = "FloatParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_param;
 	// MPropertyFriendlyName = "Turn Limit Only"
 	// MPropertyGroupName = "Turn to Face"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	// MPropertyAutoRebuildOnChange
 	bool m_bLimitOnly;
 	// MPropertyFriendlyName = "Turn to Face Offset"
 	// MPropertyAttributeRange = "-180 180"
 	// MPropertyGroupName = "Turn to Face"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flTurnToFaceOffset;
 	// MPropertyFriendlyName = "Turn to Face Limit"
 	// MPropertyAttributeRange = "0 180"
 	// MPropertyGroupName = "Turn to Face"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flTurnToFaceLimit;
 	// MPropertyFriendlyName = "Damping"
 	// MPropertyGroupName = "Turn to Face"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CAnimInputDamping m_damping;
 };

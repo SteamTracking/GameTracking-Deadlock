@@ -1,5 +1,6 @@
 // MNetworkVarNames = "GameTime_t m_timeLastUpdate"
 // MNetworkVarNames = "STrooperFOWEntity m_vecFOWEntities"
+// MNetworkNoBase
 class CCitadelTrooperMinimap : public C_BaseEntity
 {
 	// MNetworkEnable

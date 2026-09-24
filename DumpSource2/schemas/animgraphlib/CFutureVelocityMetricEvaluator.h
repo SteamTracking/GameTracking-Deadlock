@@ -13,6 +13,7 @@
 //	"m_flTargetSpeed": 0.000000,
 //	"m_eMode": "DirectionOnly"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CFutureVelocityMetricEvaluator : public CMotionMetricEvaluator
 {
 	float32 m_flDistance;

@@ -144,6 +144,7 @@
 //	},
 //	"m_flMaxSurgeTime": 25.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Upgrade_ArcaneSurge_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

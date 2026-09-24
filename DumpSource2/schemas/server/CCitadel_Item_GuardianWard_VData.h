@@ -453,6 +453,7 @@
 //	},
 //	"m_CastParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_GuardianWard_VData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

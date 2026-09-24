@@ -156,6 +156,7 @@
 //	},
 //	"m_strLightningSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_UltimateBurst_ProcVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyGroupName = "Visuals"

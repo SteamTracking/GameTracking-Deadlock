@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,22 +16,22 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_subtractInputConnection":
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_timingBehavior": "UseChild1",
@@ -44,6 +44,7 @@
 //	"m_bUseModelSpace": false
 //}
 // MPropertyFriendlyName = "Subtract"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_SubtractNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField
@@ -55,7 +56,7 @@ class CAnimGraphDoc_SubtractNode : public CAnimGraphDoc_Node
 	BinaryNodeTiming m_timingBehavior;
 	// MPropertyFriendlyName = "Timing Blend"
 	// MPropertyAttributeRange = "0 1"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flTimingBlend;
 	// MPropertyFriendlyName = "Foot Motion Timing"
 	BinaryNodeChildOption m_footMotionTiming;

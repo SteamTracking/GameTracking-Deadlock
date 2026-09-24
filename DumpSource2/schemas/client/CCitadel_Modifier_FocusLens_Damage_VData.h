@@ -139,6 +139,7 @@
 //	"m_DamageTakenParticle": "",
 //	"m_FinalDamageParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_FocusLens_Damage_VData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

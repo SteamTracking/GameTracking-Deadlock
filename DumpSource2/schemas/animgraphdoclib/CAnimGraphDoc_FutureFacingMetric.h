@@ -5,6 +5,7 @@
 //	"m_flTime": 1.000000
 //}
 // MPropertyFriendlyName = "Future Facing Metric"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_FutureFacingMetric : public CAnimGraphDoc_MotionMetric
 {
 	// MPropertyFriendlyName = "Distance"

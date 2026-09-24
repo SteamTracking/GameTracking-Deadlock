@@ -152,6 +152,7 @@
 //	},
 //	"m_strWeaponShootSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierAirRaidVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyStartGroup = "Modifiers"

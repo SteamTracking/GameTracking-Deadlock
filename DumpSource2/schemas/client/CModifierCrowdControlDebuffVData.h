@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_DebuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierCrowdControlDebuffVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

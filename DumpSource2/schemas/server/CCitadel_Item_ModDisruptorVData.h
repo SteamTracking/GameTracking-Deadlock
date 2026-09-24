@@ -454,6 +454,7 @@
 //	},
 //	"m_flWaveSpeed": 0.400000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_ModDisruptorVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

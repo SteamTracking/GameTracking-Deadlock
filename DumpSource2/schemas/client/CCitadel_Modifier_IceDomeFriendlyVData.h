@@ -139,6 +139,7 @@
 //	"m_PurgeCastParticle": "",
 //	"m_PurgeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_IceDomeFriendlyVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

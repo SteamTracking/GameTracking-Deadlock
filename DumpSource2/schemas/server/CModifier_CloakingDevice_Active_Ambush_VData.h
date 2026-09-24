@@ -140,6 +140,7 @@
 //	"m_AmbushParticle": "",
 //	"m_strActivateAmbushSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_CloakingDevice_Active_Ambush_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

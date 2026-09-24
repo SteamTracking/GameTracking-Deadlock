@@ -19,6 +19,7 @@
 //	"m_flMinSpringTension": 1.000000,
 //	"m_flMaxSpringTension": 100.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CDampedPathAnimMotorUpdater : public CPathAnimMotorUpdaterBase
 {
 	float32 m_flAnticipationTime;

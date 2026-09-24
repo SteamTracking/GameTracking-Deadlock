@@ -5,7 +5,7 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false,
 //	"m_flStiffness": 1.000000,
@@ -14,6 +14,7 @@
 //	"m_nVertexSet": ""
 //}
 // MPropertyFriendlyName = "Cloth Settings Tag"
+// MHasKV3TransferPolymorphicClassname
 class CClothSettingsAnimTag : public CAnimTagBase
 {
 	// MPropertyFriendlyName = "Stiffness"

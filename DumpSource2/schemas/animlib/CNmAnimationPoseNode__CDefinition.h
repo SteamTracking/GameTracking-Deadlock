@@ -11,6 +11,7 @@
 //	"m_flUserSpecifiedTime": 0.000000,
 //	"m_bUseFramesAsInput": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmAnimationPoseNode::CDefinition : public CNmPoseNode::CDefinition
 {
 	int16 m_nPoseTimeValueNodeIdx;

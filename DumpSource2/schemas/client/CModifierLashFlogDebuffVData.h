@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_FlogDebuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierLashFlogDebuffVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_WeaponBuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Necro_Gravestone_BuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

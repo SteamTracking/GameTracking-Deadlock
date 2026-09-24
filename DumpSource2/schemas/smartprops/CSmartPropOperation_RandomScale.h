@@ -8,6 +8,7 @@
 // MPropertyFriendlyName = "Transform: Random Scale"
 // MPropertyDescription = "Apply a random scale to the current transform."
 // MVDataClassGroup = "Transform"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_RandomScale : public CSmartPropTransformOperation
 {
 	// MPropertyDescription = "Minimum scale range"

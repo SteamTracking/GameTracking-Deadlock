@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_HitParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierDelayedStunVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

@@ -2,6 +2,7 @@
 // MNetworkVarNames = "bool m_bAllowRotatingUp"
 // MNetworkVarNames = "bool m_bFixedPosition"
 // MNetworkVarNames = "float m_flShieldOffset"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Shield : public CCitadelModelEntity
 {
 	// MNetworkEnable

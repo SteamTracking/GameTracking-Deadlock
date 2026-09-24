@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class C_Projectile_Airheart_Package : public CBaseAnimGraph
 {
 	C_CitadelBaseAbility* m_pAbility;

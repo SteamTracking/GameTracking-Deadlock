@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -17,22 +17,22 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_inputConnection2":
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_blendSpace": "BlendSpace_Parent",
@@ -41,7 +41,7 @@
 //	"m_blendParameterName": "",
 //	"m_blendParameter":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_timingBehavior": "UseChild2",
 //	"m_flTimingBlend": 0.500000,
@@ -51,6 +51,7 @@
 //	"m_bResetChild2": true
 //}
 // MPropertyFriendlyName = "Bone Mask"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_BoneMaskNode : public CAnimGraphDoc_Node
 {
 	// MPropertyFriendlyName = "Bone Mask"
@@ -67,20 +68,20 @@ class CAnimGraphDoc_BoneMaskNode : public CAnimGraphDoc_Node
 	bool m_bUseBlendScale;
 	// MPropertyFriendlyName = "Blend Source"
 	// MPropertyAutoRebuildOnChange
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimValueSource m_blendValueSource;
 	// MPropertySuppressField
 	CUtlString m_blendParameterName;
 	// MPropertyFriendlyName = "Blend Parameter"
 	// MPropertyAttributeChoiceName = "FloatParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_blendParameter;
 	// MPropertyFriendlyName = "Timing Control"
 	// MPropertyAutoRebuildOnChange
 	BinaryNodeTiming m_timingBehavior;
 	// MPropertyFriendlyName = "Timing Blend"
 	// MPropertyAttributeRange = "0 1"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flTimingBlend;
 	// MPropertyFriendlyName = "Root Motion Blend"
 	// MPropertyAttributeRange = "0 1"

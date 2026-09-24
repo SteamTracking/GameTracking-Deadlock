@@ -153,6 +153,7 @@
 //	"m_AmberWaveParticle": "",
 //	"m_SapphWaveParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierTier3BossAoeWaveAuraVData : public CCitadelModifierAuraVData
 {
 	float32 m_flWaveHeight;

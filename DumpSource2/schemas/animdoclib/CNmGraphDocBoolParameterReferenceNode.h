@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocBoolParameterReferenceNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Value",
 //			"m_type": "Bool",
 //			"m_bIsDynamicPin": false,
@@ -28,6 +28,7 @@
 //	"m_parameterName": "",
 //	"m_parameterGroupName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocBoolParameterReferenceNode : public CNmGraphDocParameterReferenceNode
 {
 };

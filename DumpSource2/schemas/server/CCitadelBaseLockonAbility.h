@@ -1,5 +1,6 @@
 // MNetworkVarNames = "LockonTarget_t m_vecLockonTargets"
 // MNetworkVarNames = "GameTime_t m_LockOnStartTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadelBaseLockonAbility : public CCitadelBaseAbility
 {
 	// MNetworkEnable

@@ -445,6 +445,7 @@
 //	"m_flAllyTargetRangeMult": 2.000000,
 //	"m_flHookTargetOnlyWindow": 0.250000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityStickyBombVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

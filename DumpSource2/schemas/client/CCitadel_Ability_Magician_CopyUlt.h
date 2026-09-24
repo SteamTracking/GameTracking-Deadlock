@@ -4,6 +4,7 @@
 // MNetworkVarNames = "GameTime_t m_timeSwappedModel"
 // MNetworkVarNames = "CHandle< CCitadelBaseAbility> m_pActiveCopyUltimateAbility"
 // MNetworkVarNames = "HeroID_t m_nCopiedHeroID"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Magician_CopyUlt : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

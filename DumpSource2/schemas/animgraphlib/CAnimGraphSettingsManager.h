@@ -8,6 +8,7 @@
 //		}
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphSettingsManager
 {
 	CUtlVector< CSmartPtr< CAnimGraphSettingsGroup > > m_settingsGroups;

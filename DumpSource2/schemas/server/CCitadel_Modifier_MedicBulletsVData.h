@@ -157,6 +157,7 @@
 //	"m_ImpactParticle": "",
 //	"m_ProcSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_MedicBulletsVData : public CCitadel_Modifier_BaseBulletPreRollProcVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -437,6 +437,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Viper_DebuffDaggerVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

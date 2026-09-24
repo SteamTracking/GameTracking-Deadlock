@@ -1,4 +1,5 @@
 // MNetworkVarNames = "TrackedStatNetworkData_t m_vecTrackedStats"
+// MClassHasEntityLimitedDataDesc
 class CBaseTrackedStatsEntity : public C_BaseEntity
 {
 	// MNetworkEnable

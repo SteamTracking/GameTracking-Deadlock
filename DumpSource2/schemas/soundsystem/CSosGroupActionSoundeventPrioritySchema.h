@@ -6,6 +6,7 @@
 //	"m_bPriorityReadButDontContribute": "priority_read_dont_contribute"
 //}
 // MPropertyFriendlyName = "Soundevent Priority"
+// MHasKV3TransferPolymorphicClassname
 class CSosGroupActionSoundeventPrioritySchema : public CSosGroupActionSchema
 {
 	// MPropertyFriendlyName = "Priority Value, typically 0.0 to 1.0"

@@ -442,6 +442,7 @@
 //	"m_flRangeScaleIncreaseMaxSpeed": 600.000000,
 //	"m_flHitConeAngleExtra": 10.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Unicorn_RadiantBlastVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -1,5 +1,6 @@
 // MNetworkVarNames = "GameTime_t m_vecNextExplosionTime"
 // MNetworkVarNames = "Vector m_vecNextExplosionLocation"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Unicorn_LuminousStrike : public C_CitadelBaseAbility
 {
 	GameTime_t m_flLastStackChangeTime;

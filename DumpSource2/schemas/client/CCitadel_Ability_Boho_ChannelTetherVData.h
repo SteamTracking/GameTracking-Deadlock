@@ -465,6 +465,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Boho_ChannelTetherVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

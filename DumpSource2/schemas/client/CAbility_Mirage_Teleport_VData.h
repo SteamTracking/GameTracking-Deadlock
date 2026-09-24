@@ -441,6 +441,7 @@
 //	"m_strChannelDestinationSound": "",
 //	"m_flObjectiveOffset": 200.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Mirage_Teleport_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

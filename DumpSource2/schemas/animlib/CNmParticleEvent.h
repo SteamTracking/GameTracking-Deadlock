@@ -24,6 +24,7 @@
 //	"m_config": "preview",
 //	"m_effectForConfig": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmParticleEvent : public CNmEvent
 {
 	CNmEventRelevance_t m_relevance;

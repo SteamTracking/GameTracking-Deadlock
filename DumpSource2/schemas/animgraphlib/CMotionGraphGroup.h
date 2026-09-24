@@ -46,7 +46,7 @@
 //	],
 //	"m_hIsActiveScript":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	}
 //}
 class CMotionGraphGroup

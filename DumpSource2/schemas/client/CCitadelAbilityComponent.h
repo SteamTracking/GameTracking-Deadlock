@@ -13,6 +13,7 @@
 // MNetworkVarNames = "AbilityResource_t m_ResourceStamina"
 // MNetworkVarNames = "AbilityResource_t m_ResourceAbility"
 // MNetworkVarNames = "ConsumedComponentState_t m_vecConsumedComponents"
+// MClassHasEntityLimitedDataDesc
 class CCitadelAbilityComponent : public CEntityComponent
 {
 	// MNetworkEnable

@@ -1,6 +1,6 @@
 // MNetworkIncludeByName = "m_fFlags"
 // MNetworkIncludeByName = "m_vecVelocity"
-// MNetworkOverride = "m_fFlags CBaseEntity"
+// MNetworkOverride = "CBaseEntity::m_fFlags"
 class CFuncMoveLinear : public CBaseToggle
 {
 	MoveLinearAuthoredPos_t m_authoredPosition;

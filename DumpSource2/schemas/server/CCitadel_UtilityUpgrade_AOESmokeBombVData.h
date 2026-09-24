@@ -454,6 +454,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_UtilityUpgrade_AOESmokeBombVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -453,6 +453,7 @@
 //	},
 //	"m_strHitConfirmSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItemHauntingScreamVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

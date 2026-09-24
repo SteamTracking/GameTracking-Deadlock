@@ -13,6 +13,7 @@
 //	"m_flTargetUpdateAngleThresholdRadians": 0.087266,
 //	"m_alignmentBoneID": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmTargetWarpNode::CDefinition : public CNmPoseNode::CDefinition
 {
 	int16 m_nClipReferenceNodeIdx;

@@ -1,5 +1,6 @@
 // MNetworkVarNames = "float m_flWidth"
 // MNetworkVarNames = "GameTime_t m_tDieTime"
+// MClassHasEntityLimitedDataDesc
 class CProjectile_GraveStone_Projectile : public CCitadelProjectile
 {
 	Vector m_vLastStompPos;

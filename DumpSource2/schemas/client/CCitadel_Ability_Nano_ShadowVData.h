@@ -438,6 +438,7 @@
 //	},
 //	"m_flAuraRadius": 2000.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Nano_ShadowVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

@@ -143,6 +143,7 @@
 //	"m_strTimerSound": "",
 //	"m_sSlashSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Fencer_Ultimate_Target_VData : public CCitadelModifierVData
 {
 	float32 m_flDamageTimeOffset;

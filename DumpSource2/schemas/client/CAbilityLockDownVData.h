@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityLockDownVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

@@ -13,6 +13,7 @@
 //	],
 //	"m_flMinStepsRemaining": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CStepsRemainingMetricEvaluator : public CMotionMetricEvaluator
 {
 	CUtlVector< int32 > m_footIndices;

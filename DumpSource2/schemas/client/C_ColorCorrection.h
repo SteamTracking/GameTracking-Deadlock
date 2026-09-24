@@ -10,6 +10,7 @@
 // MNetworkVarNames = "bool m_bMaster"
 // MNetworkVarNames = "bool m_bClientSide"
 // MNetworkVarNames = "bool m_bExclusive"
+// MNetworkNoBase
 class C_ColorCorrection : public C_BaseEntity
 {
 	// MNotSaved

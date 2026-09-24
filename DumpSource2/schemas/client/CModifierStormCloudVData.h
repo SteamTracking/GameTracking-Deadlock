@@ -147,6 +147,7 @@
 //	"m_strDamageRecievedSound": "",
 //	"m_strAmbientZapSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierStormCloudVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

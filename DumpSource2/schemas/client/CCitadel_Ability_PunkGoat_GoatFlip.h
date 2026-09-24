@@ -2,6 +2,7 @@
 // MNetworkVarNames = "GameTime_t m_tStateStartTime"
 // MNetworkVarNames = "float m_flGoingUpTargetElevation"
 // MNetworkVarNames = "float m_flGoingUpStartElevation"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_PunkGoat_GoatFlip : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

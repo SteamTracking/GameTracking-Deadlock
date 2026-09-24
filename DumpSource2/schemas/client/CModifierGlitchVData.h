@@ -140,6 +140,7 @@
 //	"m_PurgeCastParticle": "",
 //	"m_PurgeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierGlitchVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

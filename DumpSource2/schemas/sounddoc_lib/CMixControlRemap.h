@@ -13,6 +13,7 @@
 //}
 // MPropertyFriendlyName = "VMix Control Remap Node"
 // MPropertyDescription = "Remap a control value using a clamped linear range or clamped power curve.  Allows you to stretch and clip a control signal."
+// MHasKV3TransferPolymorphicClassname
 class CMixControlRemap : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Input Min"

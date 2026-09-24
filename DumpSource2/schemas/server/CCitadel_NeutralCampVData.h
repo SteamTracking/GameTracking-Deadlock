@@ -8,6 +8,7 @@
 //	"m_sIdleAmbient": "",
 //	"m_sAlertAmbient": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_NeutralCampVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Gameplay"

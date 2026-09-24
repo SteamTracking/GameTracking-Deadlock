@@ -432,6 +432,7 @@
 //	},
 //	"m_strApplyLockonStack": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CBaseLockonAbilityVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

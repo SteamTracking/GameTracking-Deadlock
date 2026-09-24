@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Gunslinger_KnockbackBlast : public CCitadelBaseAbility
 {
 	Vector m_vecKnockbackDirection;

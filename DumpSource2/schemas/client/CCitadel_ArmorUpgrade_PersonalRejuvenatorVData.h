@@ -453,6 +453,7 @@
 //	"m_sDeploySound": "",
 //	"m_sRespawnSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_ArmorUpgrade_PersonalRejuvenatorVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

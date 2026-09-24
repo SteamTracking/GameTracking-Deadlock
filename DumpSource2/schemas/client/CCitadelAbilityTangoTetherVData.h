@@ -440,6 +440,7 @@
 //	"m_strGrappleHitWorld": "",
 //	"m_strGrappleHitNothing": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelAbilityTangoTetherVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

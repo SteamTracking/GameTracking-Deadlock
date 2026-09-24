@@ -152,6 +152,7 @@
 //	"m_IndicatorFX": "",
 //	"m_ExplosionFX": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Airheart_MarkVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -52,6 +52,7 @@
 //	"m_bIncreaseSpringStrengthToKeepTargetOnScreen": true,
 //	"m_nCameraParam": 2
 //}
+// MHasKV3TransferPolymorphicClassname
 class CitadelCameraDistanceOperationDef_t : public CitadelCameraOperationDef_t
 {
 	// MPropertyHideField

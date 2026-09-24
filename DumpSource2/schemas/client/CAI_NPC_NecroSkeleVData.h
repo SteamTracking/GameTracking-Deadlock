@@ -299,6 +299,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAI_NPC_NecroSkeleVData : public CAI_CitadelNPCVData
 {
 	float32 m_flMeleeDuration;

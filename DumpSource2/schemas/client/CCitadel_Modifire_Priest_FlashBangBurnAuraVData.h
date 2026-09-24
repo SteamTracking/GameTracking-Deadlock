@@ -154,6 +154,7 @@
 //	},
 //	"m_RadiusParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifire_Priest_FlashBangBurnAuraVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Modifiers"

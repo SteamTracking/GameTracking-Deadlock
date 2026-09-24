@@ -10,6 +10,7 @@
 //	"m_bIgnoreInvalidOptions": false,
 //	"m_bIsWorldSpaceTarget": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmTargetSelectorNode::CDefinition : public CNmClipReferenceNode::CDefinition
 {
 	CUtlLeanVectorFixedGrowable< int16, 5 > m_optionNodeIndices;

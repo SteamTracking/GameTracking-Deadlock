@@ -140,6 +140,7 @@
 //	"m_BlessedLoopSound": "",
 //	"m_AimLoopSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Priest_CrossbowEquippedVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -436,6 +436,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityPowerSurgeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

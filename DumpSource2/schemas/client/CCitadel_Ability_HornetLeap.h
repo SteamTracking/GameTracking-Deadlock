@@ -1,5 +1,6 @@
 // MNetworkVarNames = "bool m_bLeaping"
 // MNetworkVarNames = "GameTime_t m_flLeapStartTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_HornetLeap : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

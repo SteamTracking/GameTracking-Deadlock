@@ -21,6 +21,7 @@
 //	"m_bShootForward": null,
 //	"m_bShootBackward": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Shotgun_Astro_GraphController : public CCitadel_Ability_PrimaryWeapon_GraphController
 {
 	CAnimGraphParamRef< bool > m_bShootForward;

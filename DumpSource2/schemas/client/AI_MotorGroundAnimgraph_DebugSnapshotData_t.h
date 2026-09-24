@@ -11,6 +11,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class AI_MotorGroundAnimgraph_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
 {
 	CGlobalSymbol state;

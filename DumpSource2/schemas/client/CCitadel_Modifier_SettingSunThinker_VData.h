@@ -143,6 +143,7 @@
 //	"m_strExplodeSound": "",
 //	"m_strTargetingCompletedSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_SettingSunThinker_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

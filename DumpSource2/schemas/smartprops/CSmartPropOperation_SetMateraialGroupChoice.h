@@ -11,6 +11,7 @@
 // MPropertyFriendlyName = "Set Material Group Choice"
 // MPropertyDescription = "Picks a material group from a set of choices and assigns that material group to a specified variable."
 // MVDataClassGroup = "Material"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_SetMateraialGroupChoice : public CSmartPropOperation
 {
 	// MPropertyDescription = "Material group variable to set to the selected choice."

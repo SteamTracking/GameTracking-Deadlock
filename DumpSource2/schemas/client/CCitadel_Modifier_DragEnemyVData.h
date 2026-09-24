@@ -143,6 +143,7 @@
 //	"m_bZDownOnly": false,
 //	"m_bAnimate": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_DragEnemyVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Gameplay"

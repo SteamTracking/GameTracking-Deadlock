@@ -4,10 +4,11 @@
 //	"m_paramName": "",
 //	"m_paramID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_eSource": "Constant"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CFloatAnimValue
 {
 	// MPropertySuppressField

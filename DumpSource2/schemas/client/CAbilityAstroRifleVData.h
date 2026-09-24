@@ -437,6 +437,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityAstroRifleVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -433,6 +433,7 @@
 //	"m_strCastEffect": "",
 //	"m_strAllyPositionPreview": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_VoidSphereVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

@@ -32,7 +32,7 @@
 //}
 // MPropertyFriendlyName = "Model"
 // MVDataAnonymousNode
-// MVDataOutlinerAssetNameExpr (UNKNOWN FOR PARSER)
+// MVDataOutlinerAssetNameExpr = "m_ModelName"
 class CDetailPropModel
 {
 	// MPropertyDescription = "Model to be displayed."

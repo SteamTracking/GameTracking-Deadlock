@@ -139,6 +139,7 @@
 //	"m_sSpreadingFireParticle": "",
 //	"m_sSpreadingFireTetherParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_SpreadingFire_DOT_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

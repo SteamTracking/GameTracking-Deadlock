@@ -152,6 +152,7 @@
 //	"m_AmberGroundEffect": "",
 //	"m_SapphGroundEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierTier3BossLaserBeamAuraVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

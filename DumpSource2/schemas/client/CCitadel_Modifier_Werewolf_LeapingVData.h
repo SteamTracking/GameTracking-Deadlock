@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_ChargeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Werewolf_LeapingVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

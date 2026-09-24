@@ -36,6 +36,7 @@
 //	],
 //	"m_morphSet": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CRenderMesh
 {
 	CUtlLeanVectorFixedGrowable< CSceneObjectData, 1 > m_sceneObjects;

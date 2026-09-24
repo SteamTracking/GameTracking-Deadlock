@@ -152,6 +152,7 @@
 //	"m_flAuraTargetingCylinderUpOffset": 0.000000,
 //	"m_flAuraTargetingCylinderHalfHeight": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierAura_CylinderVData : public CCitadelModifierAuraVData
 {
 	float32 m_flAuraTargetingCylinderUpOffset;

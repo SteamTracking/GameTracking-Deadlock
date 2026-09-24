@@ -507,6 +507,7 @@
 //	"m_flSatVolumeInnerConeSize": 0.500000,
 //	"m_flLowTickRateDistCheck": 60.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_VampireBat_BatSwarmVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

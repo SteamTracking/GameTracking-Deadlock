@@ -438,6 +438,7 @@
 //	"m_strFailSound": "",
 //	"m_strHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Spinning_BladeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

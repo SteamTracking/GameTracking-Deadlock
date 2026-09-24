@@ -151,6 +151,7 @@
 //	"m_bRemoveProvidedModifierOnAuraRemoval": false,
 //	"m_AuraParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Thumper_PullAOE_VData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

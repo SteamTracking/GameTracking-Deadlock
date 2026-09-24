@@ -140,6 +140,7 @@
 //	"m_ShakeParticle": "",
 //	"m_ChainParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ShakedownPulseVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

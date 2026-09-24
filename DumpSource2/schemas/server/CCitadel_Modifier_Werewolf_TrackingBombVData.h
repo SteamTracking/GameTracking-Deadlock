@@ -140,6 +140,7 @@
 //	"m_bAllowAlliesToAlsoTrack": false,
 //	"m_flLabelOffset": 40.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Werewolf_TrackingBombVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

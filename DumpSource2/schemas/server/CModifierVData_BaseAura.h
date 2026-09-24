@@ -145,6 +145,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierVData_BaseAura : public CCitadelModifierVData
 {
 	AuraShapeType_t m_nAuraShapeType;

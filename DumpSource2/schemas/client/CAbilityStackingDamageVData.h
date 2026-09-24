@@ -431,6 +431,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityStackingDamageVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

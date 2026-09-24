@@ -439,6 +439,7 @@
 //	"m_strDaggerHitSound": "",
 //	"m_strDaggerExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_ShivDaggerVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

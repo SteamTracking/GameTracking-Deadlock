@@ -436,6 +436,7 @@
 //	},
 //	"m_strBolaExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Viper_PetrifyBolaVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

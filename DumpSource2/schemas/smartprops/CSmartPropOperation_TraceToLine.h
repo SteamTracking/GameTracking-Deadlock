@@ -38,7 +38,8 @@
 // MPropertyFriendlyName = "Transform: Trace To Line"
 // MPropertyDescription = "Perform a trace from a specified origin point to a the closest point on a line."
 // MVDataClassGroup = "Transform"
-// MVDataExperimentalNodeSet (UNKNOWN FOR PARSER)
+// MVDataExperimentalNodeSet = "smartprops"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_TraceToLine : public CSmartPropOperation_Trace
 {
 	// MPropertyStartGroup = "+Line End Point A"

@@ -13,6 +13,7 @@
 //	"m_groupName": "",
 //	"m_nGroupValue": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmBodyGroupEvent : public CNmEvent
 {
 	CUtlString m_groupName;

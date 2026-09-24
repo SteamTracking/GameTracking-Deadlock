@@ -433,6 +433,7 @@
 //	"m_TargetParticle": "",
 //	"m_TargetCastSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityVandalSurgeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

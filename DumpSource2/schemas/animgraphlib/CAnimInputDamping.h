@@ -5,6 +5,7 @@
 //	"m_fFallingSpeedScale": 1.000000
 //}
 // MPropertyFriendlyName = "Damping"
+// MHasKV3TransferPolymorphicClassname
 class CAnimInputDamping
 {
 	// MPropertyFriendlyName = "Speed Function"

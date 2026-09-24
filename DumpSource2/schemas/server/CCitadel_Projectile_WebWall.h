@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Projectile_WebWall : public CCitadelProjectile
 {
 	bool bHasDetonatedOnTarget;

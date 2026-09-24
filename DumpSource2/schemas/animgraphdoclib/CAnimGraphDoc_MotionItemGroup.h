@@ -13,6 +13,7 @@
 //	}
 //}
 // MPropertyFriendlyName = "Motion Clip Group"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_MotionItemGroup
 {
 	// MPropertySuppressField

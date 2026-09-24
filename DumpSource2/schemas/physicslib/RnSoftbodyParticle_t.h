@@ -1,5 +1,5 @@
 // MGetKV3ClassDefaults = {
-//	"m_flMassInv": -nan
+//	"m_flMassInv": "-nan"
 //}
 class RnSoftbodyParticle_t
 {

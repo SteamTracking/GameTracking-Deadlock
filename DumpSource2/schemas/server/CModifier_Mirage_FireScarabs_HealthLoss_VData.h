@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_HealthLossParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Mirage_FireScarabs_HealthLoss_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

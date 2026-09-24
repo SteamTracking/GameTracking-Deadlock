@@ -488,6 +488,7 @@
 //	"m_PassiveWeaponParticle": "",
 //	"m_strPassiveWeaponAttachmentSource": "muzzle_fx"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_PrimaryWeaponVData : public CitadelAbilityVData
 {
 	// MPropertyDescription = "The DOF settings to apply while zoomed in."

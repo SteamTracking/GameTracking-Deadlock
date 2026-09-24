@@ -436,6 +436,7 @@
 //	"m_ImpactParticle": "",
 //	"m_strAttackerHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_VampireBat_LoveBitesVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

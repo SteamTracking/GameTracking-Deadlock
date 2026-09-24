@@ -6,6 +6,7 @@
 //	"m_flMass": 0.000000,
 //	"m_flSpeed": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class AmmoTypeInfo_t
 {
 	int32 m_nMaxCarry;

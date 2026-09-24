@@ -4,6 +4,7 @@
 //	"m_flMaxDuration": 0.000000
 //}
 // MPropertyFriendlyName = "Timed Block Limiter"
+// MHasKV3TransferPolymorphicClassname
 class CSosGroupActionTimeBlockLimitSchema : public CSosGroupActionSchema
 {
 	int32 m_nMaxCount;

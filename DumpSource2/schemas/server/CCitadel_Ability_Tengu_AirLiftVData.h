@@ -483,6 +483,7 @@
 //	"m_flTrackAmount": 200.000000,
 //	"m_flMoveCollideSpeed": 275.591003
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Tengu_AirLiftVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

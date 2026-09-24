@@ -182,6 +182,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierKnockdownVData : public CCitadel_Modifier_StunnedVData
 {
 	float32 m_flSatVolumeRadius;

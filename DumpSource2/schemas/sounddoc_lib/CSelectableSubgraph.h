@@ -3,6 +3,7 @@
 //	"file": "soundstacks/subgraph_default.vmix",
 //	"subgraphName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CSelectableSubgraph
 {
 	// MPropertyFriendlyName = "File"

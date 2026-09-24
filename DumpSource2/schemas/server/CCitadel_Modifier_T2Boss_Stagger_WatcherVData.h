@@ -147,6 +147,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_T2Boss_Stagger_WatcherVData : public CCitadelModifierVData
 {
 	float32 m_flDecayDuration;

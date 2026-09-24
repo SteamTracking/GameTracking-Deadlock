@@ -9,18 +9,18 @@ class LootTableEntry_t
 {
 	// MPropertyDescription = "What type of loot this entry references."
 	// MPropertyFlattenIntoParentRow
-	// MPropertyFlattenStretchFactor (UNKNOWN FOR PARSER)
+	// MPropertyFlattenStretchFactor = 1
 	ELootTableEntryType m_eType;
 	// MPropertyDescription = "If this entry is rolled, this loot table's entries will then be rolled."
 	// MPropertyFlattenIntoParentRow
-	// MPropertyFlattenStretchFactor (UNKNOWN FOR PARSER)
+	// MPropertyFlattenStretchFactor = 1
 	// MPropertySuppressExpr = "m_eType != ELootType_LootTableReference"
 	CSubclassName< 6 > m_strNestedLootTable;
 	// MPropertyDescription = "If this entry is rolled, this item will be the loot."
 	// MPropertyFlattenIntoParentRow
-	// MPropertyFlattenStretchFactor (UNKNOWN FOR PARSER)
+	// MPropertyFlattenStretchFactor = 1
 	// MPropertySuppressExpr = "m_eType != ELootType_Item"
-	// MPropertyLeafChoiceProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyLeafChoiceProviderFn
 	CSubclassName< 4 > m_strItem;
 	// MPropertyDescription = "The weight of this entry.  The chance of this entry being rolled is this_weight / all_entries_weight"
 	// MPropertyFlattenIntoParentRow

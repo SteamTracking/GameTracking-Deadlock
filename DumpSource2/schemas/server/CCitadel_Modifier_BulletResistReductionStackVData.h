@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_bSelfish": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BulletResistReductionStackVData : public CCitadelModifierVData
 {
 	bool m_bSelfish;

@@ -28,7 +28,8 @@
 //}
 // MPropertyFriendlyName = "Model"
 // MPropertyDescription = "Places a model as the child of an element."
-// MVDataOutlinerAssetNameExpr (UNKNOWN FOR PARSER)
+// MVDataOutlinerAssetNameExpr = "m_sModelName"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropElement_Model : public CSmartPropElement
 {
 	// MPropertyDescription = "Name of the model resource (.vmdl) to place."

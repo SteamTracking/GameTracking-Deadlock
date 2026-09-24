@@ -25,6 +25,7 @@
 //	"m_flGammaG": 1.000000,
 //	"m_flGammaB": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CLevelsColorCorrectionLayer : public CColorCorrectionLayer
 {
 	int32 m_nInputBlackPointRGB;

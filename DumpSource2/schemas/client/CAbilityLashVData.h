@@ -436,6 +436,7 @@
 //	},
 //	"m_strVictimCastSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityLashVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

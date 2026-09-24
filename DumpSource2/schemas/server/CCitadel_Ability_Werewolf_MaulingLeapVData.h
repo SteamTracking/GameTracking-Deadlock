@@ -479,6 +479,7 @@
 //	},
 //	"m_strAG2SuccessHeroState": "ability_mauling_leap_success"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Werewolf_MaulingLeapVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Motion"

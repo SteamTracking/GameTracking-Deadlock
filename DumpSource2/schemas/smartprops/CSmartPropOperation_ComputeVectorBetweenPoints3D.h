@@ -22,6 +22,7 @@
 // MPropertyFriendlyName = "Vector Between Points"
 // MPropertyDescription = "Compute the vector between two 3D points"
 // MVDataClassGroup = "Compute"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_ComputeVectorBetweenPoints3D : public CSmartPropOperation
 {
 	// MPropertyFriendlyName = "Output Variable"

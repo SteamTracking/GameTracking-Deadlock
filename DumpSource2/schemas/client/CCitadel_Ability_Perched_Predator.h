@@ -1,4 +1,5 @@
 // MNetworkVarNames = "EHANDLE m_hActiveProjectile"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Perched_Predator : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

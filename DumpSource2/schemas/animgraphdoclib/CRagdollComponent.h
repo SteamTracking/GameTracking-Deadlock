@@ -3,7 +3,7 @@
 //	"m_group": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bStartEnabled": true,
 //	"m_nPriority": 100,
@@ -16,6 +16,7 @@
 //	"m_flMaxStretch": 56.000000,
 //	"m_bSolidCollisionAtZeroWeight": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CRagdollComponent : public CAnimGraphDoc_Component
 {
 	CUtlVector< CAnimGraphDoc_RigidBodyWeightList > m_weightLists;

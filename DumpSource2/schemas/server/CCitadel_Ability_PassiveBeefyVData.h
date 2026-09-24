@@ -429,6 +429,7 @@
 //	},
 //	"m_HealParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_PassiveBeefyVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

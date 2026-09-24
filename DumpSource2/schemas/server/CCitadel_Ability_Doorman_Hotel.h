@@ -1,4 +1,5 @@
 // MNetworkVarNames = "Vector m_vLookTarget"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Doorman_Hotel : public CCitadelBaseAbility
 {
 	CHandle< CBaseEntity > m_hHotelStart;

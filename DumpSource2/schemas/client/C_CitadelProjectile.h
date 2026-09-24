@@ -1,6 +1,6 @@
 // MNetworkIncludeByName = "m_flTimeScale"
-// MNetworkOverride = "m_flTimeScale"
-// MNetworkOverride = "m_flTimeScale"
+// MNetworkOverride = "C_BaseEntity::m_flTimeScale"
+// MNetworkOverride = "C_BaseEntity::m_flTimeScale"
 // MNetworkVarNames = "Vector m_vInitialVelocity"
 // MNetworkVarNames = "VectorWS m_vInitialPosition"
 // MNetworkVarNames = "AbilityID_t m_abilityID"
@@ -8,6 +8,7 @@
 // MNetworkVarNames = "Vector m_vecSpawnPosition"
 // MNetworkVarNames = "float m_flProjectileSpeed"
 // MNetworkVarNames = "float m_flMaxLifetime"
+// MClassHasEntityLimitedDataDesc
 class C_CitadelProjectile : public C_BaseModelEntity
 {
 	float32 m_flMaxDistance;

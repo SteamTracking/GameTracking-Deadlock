@@ -455,6 +455,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_ComboBreakerVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

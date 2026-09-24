@@ -10,6 +10,7 @@
 //	"m_bSaveToGroup": false
 //}
 // MPropertyFriendlyName = "Count Envelope"
+// MHasKV3TransferPolymorphicClassname
 class CSosGroupActionMemberCountEnvelopeSchema : public CSosGroupActionSchema
 {
 	// MPropertyFriendlyName = "Min Threshold Count"

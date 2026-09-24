@@ -4,6 +4,7 @@
 // MNetworkVarNames = "bool m_bCanCrash"
 // MNetworkVarNames = "Vector m_vecCrashPosition"
 // MNetworkVarNames = "Vector m_vecCrashDirection"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_UtilityUpgrade_RocketBooster : public CCitadel_UtilityUpgrade_RocketBoots
 {
 	ParticleIndex_t m_nTargetingParticleIndex;

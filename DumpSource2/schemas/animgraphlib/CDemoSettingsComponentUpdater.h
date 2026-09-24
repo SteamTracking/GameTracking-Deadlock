@@ -3,7 +3,7 @@
 //	"m_name": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_networkMode": "ServerAuthoritative",
 //	"m_bStartEnabled": false,
@@ -54,6 +54,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CDemoSettingsComponentUpdater : public CAnimComponentUpdater
 {
 	CAnimDemoCaptureSettings m_settings;

@@ -5,12 +5,13 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false,
 //	"m_foot": "FOOT1"
 //}
 // MPropertyFriendlyName = "FootFall Tag"
+// MHasKV3TransferPolymorphicClassname
 class CFootFallAnimTag : public CAnimTagBase
 {
 	// MPropertyFriendlyName = "Foot"

@@ -17,6 +17,7 @@
 //}
 // MPropertyFriendlyName = "VMix Short timeModulating Delay Audio Node"
 // MPropertyDescription = "A short time delay with modulation for flange and chorus effects."
+// MHasKV3TransferPolymorphicClassname
 class CMixFlanger : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Delay Time (ms)"

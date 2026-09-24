@@ -145,6 +145,7 @@
 //	"m_FlameDashParticle": "",
 //	"m_FlameAuraParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_FlameDashVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

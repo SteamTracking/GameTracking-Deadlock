@@ -139,6 +139,7 @@
 //	"m_flOutOfCombatHealthRegen": 0.000000,
 //	"m_flOutOfCombatRegenDelay": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Objective_RegenVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Objective Health Regen"

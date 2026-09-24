@@ -454,6 +454,7 @@
 //	},
 //	"m_strEarnedSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_TrophyCollectorVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

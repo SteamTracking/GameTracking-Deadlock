@@ -10,6 +10,7 @@
 // MNetworkVarNames = "float32 m_MaxFalloff"
 // MNetworkVarNames = "float32 m_flCurWeight"
 // MNetworkVarNames = "char m_netlookupFilename"
+// MNetworkNoBase
 class CColorCorrection : public CBaseEntity
 {
 	// MNetworkEnable

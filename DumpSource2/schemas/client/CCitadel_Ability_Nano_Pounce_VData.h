@@ -451,6 +451,7 @@
 //	"m_flAllyMinTargetRange": 400.000000,
 //	"m_flTargetVerticalOffset": 60.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Nano_Pounce_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

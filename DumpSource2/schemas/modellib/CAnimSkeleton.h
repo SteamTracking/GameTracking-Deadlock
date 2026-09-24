@@ -25,6 +25,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimSkeleton
 {
 	CUtlVector< CTransform > m_localSpaceTransforms;

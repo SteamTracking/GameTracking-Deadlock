@@ -157,6 +157,7 @@
 //	},
 //	"m_flPullToCasterLocationDuration": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_PunkgoatPullVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Gameplay"

@@ -5,6 +5,7 @@
 //	"m_rule": "AllowTransition",
 //	"m_optionalID": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipDocEvent_Transition : public CNmClipDocEvent
 {
 	NmTransitionRule_t m_rule;

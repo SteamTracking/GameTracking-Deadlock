@@ -11,6 +11,7 @@
 //}
 // MPropertyFriendlyName = "VMix Control Stack Input Node"
 // MPropertyDescription = "This will copy a control value from this soundevent's operator stack.  Works with any stack/variable without modifying the stack itself."
+// MHasKV3TransferPolymorphicClassname
 class CMixControlStackInput : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Default Value"

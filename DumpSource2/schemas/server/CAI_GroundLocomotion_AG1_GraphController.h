@@ -39,6 +39,7 @@
 //	"m_sMovementStumbleEnabled": "Movement_Stumble_Enabled",
 //	"m_sMovementBashEnabled": "Movement_Bash_Enabled"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAI_GroundLocomotion_AG1_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< Vector > m_vMovementCustomTargetPosition;

@@ -430,6 +430,7 @@
 //	"m_ImpactParticle": "",
 //	"m_ShootParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Rutger_RocketLauncher_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

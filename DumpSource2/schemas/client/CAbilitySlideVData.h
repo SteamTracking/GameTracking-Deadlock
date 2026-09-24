@@ -543,6 +543,7 @@
 //	"m_strLoopingSound": "",
 //	"m_strStopSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilitySlideVData : public CitadelAbilityVData
 {
 	// MPropertyDescription = "The minimum angle we consider to be a slope.  Less than this we will consider flat ground."

@@ -1,5 +1,6 @@
 // MNetworkVarNames = "CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent"
 // MNetworkVarNames = "uint8 m_nEnableState"
+// MClassHasEntityLimitedDataDesc
 class CCitadelTriggerMultiCapturePoint : public CBaseTrigger
 {
 	// MNetworkEnable

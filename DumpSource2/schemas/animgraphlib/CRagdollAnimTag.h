@@ -5,12 +5,13 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false,
 //	"m_profileName": ""
 //}
 // MPropertyFriendlyName = "Ragdoll Tag"
+// MHasKV3TransferPolymorphicClassname
 class CRagdollAnimTag : public CAnimTagBase
 {
 	// MPropertyFriendlyName = "Profile Name"

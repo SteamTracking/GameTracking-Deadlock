@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CnmGraphDocVariationConstFloatNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Value",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -33,6 +33,7 @@
 //	],
 //	"m_defaultResourceName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CnmGraphDocVariationConstFloatNode : public CNmGraphDocVariationDataNode
 {
 };

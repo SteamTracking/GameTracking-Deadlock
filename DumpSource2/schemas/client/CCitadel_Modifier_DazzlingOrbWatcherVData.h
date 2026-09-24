@@ -217,6 +217,7 @@
 //		"m_flMinTrackingTimeBeforeImpact": 0.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_DazzlingOrbWatcherVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

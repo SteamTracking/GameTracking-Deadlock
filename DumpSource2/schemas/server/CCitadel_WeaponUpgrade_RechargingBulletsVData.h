@@ -454,6 +454,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_WeaponUpgrade_RechargingBulletsVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

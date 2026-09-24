@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CnmGraphDocFollowBoneNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,14 +13,14 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Input",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
 //		},
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Enabled",
 //			"m_type": "Bool",
 //			"m_bIsDynamicPin": false,
@@ -30,7 +30,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -49,6 +49,7 @@
 //	"m_defaultResourceName": "",
 //	"m_mode": "RotationAndTranslation"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CnmGraphDocFollowBoneNode : public CNmGraphDocVariationDataNode
 {
 	NmFollowBoneMode_t m_mode;

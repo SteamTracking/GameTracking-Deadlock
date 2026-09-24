@@ -7,6 +7,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class AI_DefaultNPC_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
 {
 	CGlobalSymbol s_npc_current_ability;

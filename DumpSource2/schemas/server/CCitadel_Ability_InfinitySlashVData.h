@@ -465,6 +465,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_InfinitySlashVData : public CCitadelYamatoBaseVData
 {
 	float32 m_flRiseSpeed;

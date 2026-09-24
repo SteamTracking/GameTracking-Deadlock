@@ -10,6 +10,7 @@
 //	"m_nStrength": 20,
 //	"m_bPreserveLuminosity": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CColorTintColorCorrectionLayer : public CColorCorrectionLayer
 {
 	int32 m_nTintColorR;

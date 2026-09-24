@@ -8,6 +8,7 @@
 //	"m_flTestDepth": 0.000000
 //}
 // MPropertyFriendlyName = "Occlusion Info"
+// MHasKV3TransferPolymorphicClassname
 class CSosGroupActionOcclusionSchema : public CSosGroupActionSchema
 {
 	// MPropertyFriendlyName = "Calculation interval ( seconds )."

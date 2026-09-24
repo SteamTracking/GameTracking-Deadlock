@@ -140,6 +140,7 @@
 //	"m_strTargetEnemyParticleEffect": "",
 //	"m_strTargetScreenParticleEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_HealthSwapPrecastVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

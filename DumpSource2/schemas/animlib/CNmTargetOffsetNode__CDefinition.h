@@ -17,6 +17,7 @@
 //		0.000000
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmTargetOffsetNode::CDefinition : public CNmTargetValueNode::CDefinition
 {
 	int16 m_nInputValueNodeIdx;

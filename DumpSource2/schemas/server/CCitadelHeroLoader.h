@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadelHeroLoader : public CBaseEntity
 {
 	CUtlSymbolLarge m_hero;

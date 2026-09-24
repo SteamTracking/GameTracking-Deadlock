@@ -8,17 +8,17 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
 //	"m_inputNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_outputNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_inputConnectionMap":
 //	[
@@ -29,6 +29,7 @@
 //	}
 //}
 // MPropertyFriendlyName = "SubGraph"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_SubGraphNode : public CAnimGraphDoc_ContainerNodeBase
 {
 	// MPropertyFriendlyName = "SubGraph File"

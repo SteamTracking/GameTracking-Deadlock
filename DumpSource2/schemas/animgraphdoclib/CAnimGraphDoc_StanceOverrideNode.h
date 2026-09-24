@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,34 +16,35 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_stanceSourceConnection":
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_blendParamName": "",
 //	"m_blendParamID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_eMode": "Sequence",
 //	"m_sequenceName": "",
 //	"m_nFrameIndex": 0
 //}
 // MPropertyFriendlyName = "Stance Override"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_StanceOverrideNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField
@@ -60,9 +61,9 @@ class CAnimGraphDoc_StanceOverrideNode : public CAnimGraphDoc_Node
 	StanceOverrideMode m_eMode;
 	// MPropertyFriendlyName = "Sequence"
 	// MPropertyAttributeChoiceName = "Sequence"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CUtlString m_sequenceName;
 	// MPropertyFriendlyName = "Frame"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	int32 m_nFrameIndex;
 };

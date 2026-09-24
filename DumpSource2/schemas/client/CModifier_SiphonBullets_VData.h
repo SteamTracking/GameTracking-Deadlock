@@ -157,6 +157,7 @@
 //	"m_ExplodeParticle": "",
 //	"m_ExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_SiphonBullets_VData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyStartGroup = "Modifiers"

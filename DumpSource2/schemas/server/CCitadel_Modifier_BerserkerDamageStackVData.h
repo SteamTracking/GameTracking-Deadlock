@@ -141,6 +141,7 @@
 //	"m_strBerserkerStackSound": "",
 //	"m_strMaxStackLayer": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BerserkerDamageStackVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

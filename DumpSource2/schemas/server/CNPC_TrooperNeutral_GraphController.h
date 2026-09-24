@@ -60,6 +60,7 @@
 //	"m_pszOrbDrop": null,
 //	"m_bHeavyMelee": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_TrooperNeutral_GraphController : public CAI_CitadelNPC_GraphController
 {
 	CAnimGraphParamRef< bool > m_bShielded;

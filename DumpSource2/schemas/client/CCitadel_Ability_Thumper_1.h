@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Thumper_1 : public C_CitadelBaseAbility
 {
 	Vector m_vecAimPos;

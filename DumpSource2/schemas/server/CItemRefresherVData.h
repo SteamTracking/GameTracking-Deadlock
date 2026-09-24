@@ -450,6 +450,7 @@
 //	],
 //	"m_RefreshParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItemRefresherVData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Visuals"

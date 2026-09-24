@@ -433,6 +433,7 @@
 //	},
 //	"m_ExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Priest_SilenceBombVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -15,6 +15,7 @@
 //		0.000000
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmChainLookatNode::CDefinition : public CNmPassthroughNode::CDefinition
 {
 	CGlobalSymbol m_chainEndBoneID;

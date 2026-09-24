@@ -58,6 +58,7 @@
 //}
 // MPropertyFriendlyName = "VMix 3 Band Dynamics Node"
 // MPropertyDescription = "This is a multi-band dynamics processor.  First the signal is split into low/mid/high bands, then each band is routed through two compressors providing upward and downward compression to each band.  Input & Output gain can also be adjusted."
+// MHasKV3TransferPolymorphicClassname
 class CMixDynamics3Band : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Channels"

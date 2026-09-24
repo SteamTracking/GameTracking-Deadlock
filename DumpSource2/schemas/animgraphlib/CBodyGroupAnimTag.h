@@ -5,7 +5,7 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false,
 //	"m_nPriority": 5,
@@ -14,6 +14,7 @@
 //	]
 //}
 // MPropertyFriendlyName = "Body Group Tag"
+// MHasKV3TransferPolymorphicClassname
 class CBodyGroupAnimTag : public CAnimTagBase
 {
 	// MPropertyFriendlyName = "Priority"

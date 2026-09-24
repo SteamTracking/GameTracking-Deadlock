@@ -17,6 +17,7 @@
 //	"m_sModelName": "",
 //	"m_DeathParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_NeutralBugVData : public CEntitySubclassVDataBase
 {
 	int32 m_iGoldReward;

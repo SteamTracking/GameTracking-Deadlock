@@ -443,6 +443,7 @@
 //	"m_CastParticle": "",
 //	"m_strDamageTarget": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelAbilityHealingSlashVData : public CCitadelYamatoBaseVData
 {
 	float32 m_flEffectSize;

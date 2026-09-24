@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_flMoveSpeedBoost": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_SpeedBoostVData : public CCitadelModifierVData
 {
 	float32 m_flMoveSpeedBoost;

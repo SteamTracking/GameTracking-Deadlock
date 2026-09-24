@@ -9,11 +9,11 @@
 //	},
 //	"m_srcState":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_destState":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_sComment": "",
 //	"m_bDisabled": false,
@@ -24,7 +24,7 @@
 //		"m_paramName": "",
 //		"m_paramID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_eSource": "Constant"
 //	},
@@ -37,7 +37,7 @@
 //		"m_paramName": "",
 //		"m_paramID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_eSource": "Constant"
 //	},
@@ -47,6 +47,7 @@
 //		"m_flControlPoint2": 1.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_NodeStateTransition : public CAnimGraphDoc_StateTransition
 {
 	// MPropertyFriendlyName = "Blend Duration"

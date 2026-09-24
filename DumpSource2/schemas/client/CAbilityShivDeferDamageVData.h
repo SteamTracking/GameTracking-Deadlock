@@ -430,6 +430,7 @@
 //	"m_ActiveCastParticle": "",
 //	"m_flDeferredDamageApplicationInterval": 0.200000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityShivDeferDamageVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

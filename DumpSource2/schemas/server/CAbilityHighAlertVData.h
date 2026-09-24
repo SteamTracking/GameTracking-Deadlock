@@ -431,6 +431,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityHighAlertVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

@@ -428,6 +428,7 @@
 //		"m_bIsSeasonal": false
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilitySummonGangsterVData : public CitadelAbilityVData
 {
 };

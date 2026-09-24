@@ -144,6 +144,7 @@
 //	},
 //	"m_ExplodeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_SpiritBurnEnemyTrackerVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Modifiers"

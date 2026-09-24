@@ -455,6 +455,7 @@
 //	"m_PurgeCastParticle": "",
 //	"m_PurgeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItemCapacitorVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

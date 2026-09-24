@@ -139,6 +139,7 @@
 //	"m_AmberEffectToTitan": "",
 //	"m_SapphEffectToTitan": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierPowerGeneratorVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

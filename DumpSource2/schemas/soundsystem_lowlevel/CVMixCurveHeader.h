@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
-//	"m_nControlPointCount": <HIDDEN FOR DIFF>,
-//	"m_nControlPointStart": <HIDDEN FOR DIFF>,
+//	"m_nControlPointCount": 0,
+//	"m_nControlPointStart": 0
 //}
 class CVMixCurveHeader
 {

@@ -153,6 +153,7 @@
 //	"m_GrabSound": "",
 //	"m_ThrowSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Wrecker_UltimateVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

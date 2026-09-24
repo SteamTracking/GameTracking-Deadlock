@@ -464,13 +464,14 @@
 //	"m_flCollideRadius": 80.000000,
 //	"m_flMaxTurnAmount": 90.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityLashDownStrikeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_TargetPreviewParticle;
-	// MPropertyLeafSuggestionProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyLeafSuggestionProviderFn
 	CGlobalSymbol m_strGroundCastAnimGraphParam;
-	// MPropertyLeafSuggestionProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyLeafSuggestionProviderFn
 	CGlobalSymbol m_strAirCastAnimGraphParam;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_StompParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_StompLineParticle;

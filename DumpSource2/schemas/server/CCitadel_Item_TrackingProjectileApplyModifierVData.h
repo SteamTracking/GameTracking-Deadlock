@@ -459,6 +459,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_TrackingProjectileApplyModifierVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

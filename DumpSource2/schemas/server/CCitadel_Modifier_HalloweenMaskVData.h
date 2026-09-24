@@ -139,6 +139,7 @@
 //	"m_nNumMasks": 0,
 //	"m_HalloweenMask": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_HalloweenMaskVData : public CCitadelModifierVData
 {
 	int32 m_nNumMasks;

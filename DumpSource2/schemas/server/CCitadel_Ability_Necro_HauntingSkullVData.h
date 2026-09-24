@@ -505,6 +505,7 @@
 //	"m_flPriorityTargetLingerDuration": 0.300000,
 //	"m_flSkullMeleeRange": 150.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Necro_HauntingSkullVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

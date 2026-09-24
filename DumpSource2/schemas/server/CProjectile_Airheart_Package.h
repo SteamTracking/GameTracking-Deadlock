@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CProjectile_Airheart_Package : public CBaseAnimGraph
 {
 	Vector m_vVelocity;

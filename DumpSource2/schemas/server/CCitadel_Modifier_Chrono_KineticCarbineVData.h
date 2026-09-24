@@ -141,6 +141,7 @@
 //	"m_strFullyCharged": "",
 //	"m_strShotSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Chrono_KineticCarbineVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

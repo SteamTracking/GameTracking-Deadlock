@@ -142,6 +142,7 @@
 //	"m_HealParticle": "",
 //	"m_strHealSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_PatronsBlessingEnemyTrackerVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

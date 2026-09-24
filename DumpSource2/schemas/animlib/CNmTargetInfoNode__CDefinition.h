@@ -5,6 +5,7 @@
 //	"m_infoType": "Distance",
 //	"m_bIsWorldSpaceTarget": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmTargetInfoNode::CDefinition : public CNmFloatValueNode::CDefinition
 {
 	int16 m_nInputValueNodeIdx;

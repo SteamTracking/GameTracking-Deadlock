@@ -148,6 +148,7 @@
 //	"m_strArmedSound": "",
 //	"m_strHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierChronoPulseGrenadePulseAreaVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

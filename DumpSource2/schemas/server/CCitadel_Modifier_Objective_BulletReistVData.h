@@ -139,6 +139,7 @@
 //	"m_BulletResist": 40.000000,
 //	"m_BulletResistReductionPerHero": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Objective_BulletReistVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Objective Bullet Resist"

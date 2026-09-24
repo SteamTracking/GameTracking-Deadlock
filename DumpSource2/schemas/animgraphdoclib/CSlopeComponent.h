@@ -3,7 +3,7 @@
 //	"m_group": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bStartEnabled": true,
 //	"m_nPriority": 100,
@@ -11,29 +11,30 @@
 //	"m_flTraceDistance": 36.000000,
 //	"m_slopeAngleID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_slopeHeadingID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_slopeAngleSideID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_slopeAngleFrontID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_slopeNormalID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_slopeNormal_WorldSpaceID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CSlopeComponent : public CAnimGraphDoc_Component
 {
 	// MPropertyFriendlyName = "Trace Distance"

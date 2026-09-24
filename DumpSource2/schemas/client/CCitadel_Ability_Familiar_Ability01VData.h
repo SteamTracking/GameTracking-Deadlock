@@ -498,6 +498,7 @@
 //	"m_WakeUpDamageParticle": "",
 //	"m_SleepHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Familiar_Ability01VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

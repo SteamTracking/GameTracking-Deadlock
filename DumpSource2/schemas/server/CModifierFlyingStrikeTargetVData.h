@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_GrappleRopeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierFlyingStrikeTargetVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

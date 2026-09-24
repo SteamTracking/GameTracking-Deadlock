@@ -491,6 +491,7 @@
 //	"m_strAddPendingBulletSound": "",
 //	"m_strFirePendingBulletSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_FamiliarAltWeaponVData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -433,6 +433,7 @@
 //	},
 //	"m_ExplosionSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_IceGrenadeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

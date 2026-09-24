@@ -434,6 +434,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_NPCAbility_Vanguard_AOEBuff_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -433,6 +433,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityRiotProtocolVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

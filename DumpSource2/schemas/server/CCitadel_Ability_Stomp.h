@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Stomp : public CCitadelBaseAbility
 {
 	Vector m_vStompPos;

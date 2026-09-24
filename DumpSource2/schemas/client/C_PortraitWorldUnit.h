@@ -1,4 +1,5 @@
 // MEntityAllowsPortraitWorldSpawn
+// MClassHasEntityLimitedDataDesc
 class C_PortraitWorldUnit : public C_BaseCombatCharacter
 {
 	bool m_bSuppressIntroEffects;

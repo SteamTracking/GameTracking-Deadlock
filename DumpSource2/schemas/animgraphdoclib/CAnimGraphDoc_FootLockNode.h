@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,11 +16,11 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_items":
@@ -82,6 +82,7 @@
 //	"m_flMinRootHeightOffset": -100.000000
 //}
 // MPropertyFriendlyName = "Stride Retargeting"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_FootLockNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField
@@ -104,15 +105,15 @@ class CAnimGraphDoc_FootLockNode : public CAnimGraphDoc_Node
 	IKSolverType m_ikSolverType;
 	// MPropertyFriendlyName = "Always use fallback hinge"
 	// MPropertyGroupName = "IK"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bAlwaysUseFallbackHinge;
 	// MPropertyFriendlyName = "Limit Leg Twist"
 	// MPropertyGroupName = "IK"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bApplyLegTwistLimits;
 	// MPropertyFriendlyName = "Max Leg Twist Angle"
 	// MPropertyGroupName = "IK"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flMaxLegTwist;
 	// MPropertyFriendlyName = "Curve Foot Paths"
 	// MPropertyGroupName = "Curve Paths"
@@ -131,11 +132,11 @@ class CAnimGraphDoc_FootLockNode : public CAnimGraphDoc_Node
 	bool m_bModulateStepHeight;
 	// MPropertyFriendlyName = "Height Increase Scale"
 	// MPropertyGroupName = "Step Height"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flStepHeightIncreaseScale;
 	// MPropertyFriendlyName = "Height Decrease Scale"
 	// MPropertyGroupName = "Step Height"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flStepHeightDecreaseScale;
 	// MPropertyFriendlyName = "Enable Hip Shift"
 	// MPropertyGroupName = "Hip Shift"
@@ -182,24 +183,24 @@ class CAnimGraphDoc_FootLockNode : public CAnimGraphDoc_Node
 	// MPropertyFriendlyName = "Angle Traces with Slope"
 	// MPropertyGroupName = "Ground IK"
 	// MPropertyAttributeRange = "0 1"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flTraceAngleBlend;
 	// MPropertyFriendlyName = "Apply Hip Drop"
 	// MPropertyGroupName = "Ground IK"
 	// MPropertyAutoRebuildOnChange
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bApplyHipDrop;
 	// MPropertyFriendlyName = "Max Foot Lift"
 	// MPropertyGroupName = "Ground IK"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flMaxFootHeight;
 	// MPropertyFriendlyName = "Leg Extension Scale"
 	// MPropertyGroupName = "Ground IK"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flExtensionScale;
 	// MPropertyFriendlyName = "Hip Damping"
 	// MPropertyGroupName = "Ground IK"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CAnimInputDamping m_hipDampingSettings;
 	// MPropertyFriendlyName = "Enable Root Height Damping"
 	// MPropertyGroupName = "Root Height Damping"
@@ -207,14 +208,14 @@ class CAnimGraphDoc_FootLockNode : public CAnimGraphDoc_Node
 	bool m_bEnableRootHeightDamping;
 	// MPropertyFriendlyName = "Damping Settings"
 	// MPropertyGroupName = "Root Height Damping"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	CAnimInputDamping m_rootHeightDamping;
 	// MPropertyFriendlyName = "Max Offset"
 	// MPropertyGroupName = "Root Height Damping"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flMaxRootHeightOffset;
 	// MPropertyFriendlyName = "Min Offset"
 	// MPropertyGroupName = "Root Height Damping"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flMinRootHeightOffset;
 };

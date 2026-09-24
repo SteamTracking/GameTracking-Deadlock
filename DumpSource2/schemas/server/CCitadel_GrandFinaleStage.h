@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_GrandFinaleStage : public CBaseAnimGraph
 {
 	Vector m_vStartPos;

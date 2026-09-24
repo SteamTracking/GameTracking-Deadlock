@@ -7,6 +7,7 @@
 //	"m_easingOp": "Linear",
 //	"m_bUseStartValue": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFloatEaseNode::CDefinition : public CNmFloatValueNode::CDefinition
 {
 	float32 m_flEaseTime;

@@ -354,6 +354,7 @@
 //	"m_VaultLightHitWindow": "",
 //	"m_VaultWheelSuccessDing": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_NeutralSinnerSacrificeVData : public CNPC_TrooperNeutralVData
 {
 	// MPropertyStartGroup = "Retaliation Attack"

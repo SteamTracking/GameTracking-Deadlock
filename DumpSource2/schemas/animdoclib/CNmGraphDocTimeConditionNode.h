@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocTimeConditionNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,7 +13,7 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Time Value (optional)",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -23,7 +23,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Bool",
 //			"m_bIsDynamicPin": false,
@@ -34,6 +34,7 @@
 //	"m_type": "ElapsedTime",
 //	"m_operator": "LessThan"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocTimeConditionNode : public CNmGraphDocFlowNode
 {
 	float32 m_flComparand;

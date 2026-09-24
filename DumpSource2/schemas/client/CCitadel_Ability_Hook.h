@@ -3,6 +3,7 @@
 // MNetworkVarNames = "GameTime_t m_flCancelHookTime"
 // MNetworkVarNames = "GameTime_t m_flBeginReelHookTime"
 // MNetworkVarNames = "GameTime_t m_flBulletShouldExpireTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Hook : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

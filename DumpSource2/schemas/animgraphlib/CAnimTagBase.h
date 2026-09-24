@@ -5,10 +5,11 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimTagBase
 {
 	// MPropertyFriendlyName = "Name"

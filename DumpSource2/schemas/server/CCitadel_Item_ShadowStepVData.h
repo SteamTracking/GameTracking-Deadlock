@@ -461,6 +461,7 @@
 //	"m_iMaxGroundIterations": 20,
 //	"m_flVelocityScale": 0.750000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_ShadowStepVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -163,6 +163,7 @@
 //	"m_ShotVictimSound": "",
 //	"m_ShotConfirmationSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_EmpowerBulletVData : public CCitadel_Modifier_BaseBulletPreRollProcVData
 {
 	// MPropertyStartGroup = "Modifiers"

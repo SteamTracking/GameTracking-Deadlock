@@ -1,4 +1,5 @@
 // MNetworkVarNames = "GameTime_t m_tRecastEndTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Fencer_ThrowBlade : public C_CitadelBaseAbility
 {
 	Vector m_vCastPosition;

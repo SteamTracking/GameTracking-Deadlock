@@ -5,6 +5,7 @@
 //	"m_flPanel1": null,
 //	"m_flVelocity": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_TeslaCoil_GraphController : public CNPC_SimpleAnimatingAI_GraphController
 {
 	CAnimGraphParamRef< float32 > m_flPanel1;

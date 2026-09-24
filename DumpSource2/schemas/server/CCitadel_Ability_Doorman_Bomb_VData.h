@@ -462,6 +462,7 @@
 //	"m_flShakeFreq": 5.000000,
 //	"m_flShakeDuration": 2.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Doorman_Bomb_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

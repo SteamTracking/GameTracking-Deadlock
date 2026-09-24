@@ -22,6 +22,7 @@
 //		"m_flWidth": 0.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CVMixDelayProcessorDesc : public CVMixBaseProcessorDesc
 {
 	VMixDelayDesc_t m_desc;

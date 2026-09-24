@@ -24,6 +24,7 @@
 //}
 // MPropertyFriendlyName = "VMix Blend VSnds to Impulse Response Node"
 // MPropertyDescription = "Blends up to 8 vsnds to an impulse response."
+// MHasKV3TransferPolymorphicClassname
 class CMixBlendVsndsToImpulseResponse : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Weight:0"

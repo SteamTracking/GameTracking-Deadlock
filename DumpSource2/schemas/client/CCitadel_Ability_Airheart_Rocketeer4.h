@@ -3,6 +3,7 @@
 // MNetworkVarNames = "Vector m_vThrustingVelocity"
 // MNetworkVarNames = "GameTime_t m_tStateEnterTime"
 // MNetworkVarNames = "ERocketeerState m_eState"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Airheart_Rocketeer4 : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

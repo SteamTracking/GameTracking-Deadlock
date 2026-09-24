@@ -1,6 +1,7 @@
 // MNetworkVarNames = "float m_flRangeAtCast"
 // MNetworkVarNames = "bool m_bArmed"
 // MNetworkVarNames = "bool m_bMoving"
+// MClassHasEntityLimitedDataDesc
 class CProjectile_Priest_SlideTrap_Projectile : public CCitadelProjectile
 {
 	// MNetworkEnable

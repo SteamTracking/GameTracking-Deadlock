@@ -147,6 +147,7 @@
 //	"m_strDomeEndSound": "",
 //	"m_strTargetLoopingSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_IceDomeVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

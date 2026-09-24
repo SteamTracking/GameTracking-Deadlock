@@ -436,6 +436,7 @@
 //	"m_strDaggerHitSound": "",
 //	"m_strDaggerExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_ViperHookBladeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

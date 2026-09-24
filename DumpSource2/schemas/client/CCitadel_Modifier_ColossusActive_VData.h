@@ -141,6 +141,7 @@
 //	},
 //	"m_ShieldParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ColossusActive_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

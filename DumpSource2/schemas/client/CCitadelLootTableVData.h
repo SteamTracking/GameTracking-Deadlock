@@ -7,6 +7,7 @@
 // MVDataRoot
 // MVDataAssociatedFile = "scripts/loot_tables.vdata"
 // MVDataOverlayType = 1
+// MHasKV3TransferPolymorphicClassname
 class CCitadelLootTableVData : public CEntitySubclassVDataBase
 {
 	// MPropertyAutoExpandSelf

@@ -2,6 +2,7 @@
 // MNetworkVarNames = "GameTime_t m_flHookEndTime"
 // MNetworkVarNames = "float m_flBombBonusHits"
 // MNetworkVarNames = "float m_flBombBonusKills"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_StickyBomb : public CCitadelBaseAbility
 {
 	// MNetworkEnable

@@ -148,6 +148,7 @@
 //	"m_strOwnerExpiredSound": "",
 //	"m_flTraceLengthMin": 20.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_VeilWalkerWatcherVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

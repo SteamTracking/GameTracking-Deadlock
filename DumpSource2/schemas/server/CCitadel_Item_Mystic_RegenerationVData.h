@@ -460,6 +460,7 @@
 //		"m_nPriority": 0
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_Mystic_RegenerationVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

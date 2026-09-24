@@ -162,6 +162,7 @@
 //	"m_flGravityForce": 0.000000,
 //	"m_flDampingForce": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_SwingLine_SwingingVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Gameplay"

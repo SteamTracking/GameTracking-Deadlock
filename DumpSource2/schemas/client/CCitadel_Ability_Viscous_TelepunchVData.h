@@ -451,6 +451,7 @@
 //	"m_flGroundTraceOnPlayerHitDistance": 200.000000,
 //	"m_flPlayerCheckSphereRadius": 20.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Viscous_TelepunchVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

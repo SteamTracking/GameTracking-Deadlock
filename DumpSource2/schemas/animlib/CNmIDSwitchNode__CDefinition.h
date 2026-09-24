@@ -7,6 +7,7 @@
 //	"m_falseValue": "",
 //	"m_trueValue": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmIDSwitchNode::CDefinition : public CNmIDValueNode::CDefinition
 {
 	int16 m_nSwitchValueNodeIdx;

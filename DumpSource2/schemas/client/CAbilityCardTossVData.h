@@ -466,6 +466,7 @@
 //	],
 //	"m_strNewCardActionName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityCardTossVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

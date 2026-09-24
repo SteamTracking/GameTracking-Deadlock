@@ -5,7 +5,7 @@
 //	"m_group": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_componentName": "",
 //	"m_bNetworkingRequested": false,
@@ -19,6 +19,7 @@
 //	"m_defaultValue": ""
 //}
 // MPropertyFriendlyName = "Symbol Parameter"
+// MHasKV3TransferPolymorphicClassname
 class CSymbolAnimParameter : public CConcreteAnimParameter
 {
 	// MPropertyFriendlyName = "Default Value"

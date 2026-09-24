@@ -142,6 +142,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierQuarantineVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

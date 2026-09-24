@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CnmGraphDocConstFloatNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Value",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -25,6 +25,7 @@
 //	],
 //	"m_flValue": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CnmGraphDocConstFloatNode : public CNmGraphDocFlowNode
 {
 	float32 m_flValue;

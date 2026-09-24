@@ -8,6 +8,7 @@
 //		"m_Outparams": null
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_Inflow_BaseEntrypoint : public CPulseCell_BaseFlow
 {
 	PulseRuntimeChunkIndex_t m_EntryChunk;

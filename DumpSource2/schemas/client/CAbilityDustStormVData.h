@@ -434,6 +434,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityDustStormVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

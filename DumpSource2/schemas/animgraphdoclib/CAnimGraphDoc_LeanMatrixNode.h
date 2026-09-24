@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -18,7 +18,7 @@
 //	"m_paramName": "",
 //	"m_param":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_verticalAxisDirection":
 //	[
@@ -41,6 +41,7 @@
 //	}
 //}
 // MPropertyFriendlyName = "Lean Matrix"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_LeanMatrixNode : public CAnimGraphDoc_Node
 {
 	// MPropertyFriendlyName = "Sequence"

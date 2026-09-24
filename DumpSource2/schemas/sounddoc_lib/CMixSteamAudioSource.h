@@ -12,6 +12,7 @@
 //}
 // MPropertyFriendlyName = "VMix Steam Audio Source Node"
 // MPropertyDescription = "Applies steam audio model for a 3d audio source.  This includes panning and HRTF (head-related transfer function)."
+// MHasKV3TransferPolymorphicClassname
 class CMixSteamAudioSource : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "HRTF Interpolation"

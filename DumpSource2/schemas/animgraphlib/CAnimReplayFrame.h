@@ -28,6 +28,7 @@
 //	],
 //	"m_timeStamp": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimReplayFrame
 {
 	CUtlVector< CUtlBinaryBlock > m_inputDataBlocks;

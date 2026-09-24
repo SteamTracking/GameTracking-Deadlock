@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocFloatCurveEventNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,7 +13,7 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Default",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -23,7 +23,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Value",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -36,6 +36,7 @@
 //	"m_bLimitSearchToSourceState": false,
 //	"m_bIgnoreInactiveBranchEvents": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocFloatCurveEventNode : public CNmGraphDocFlowNode
 {
 	CGlobalSymbol m_matchID;

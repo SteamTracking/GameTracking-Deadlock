@@ -1,5 +1,6 @@
 // MNetworkVarNames = "CUtlString m_strInteractLocString"
 // MNetworkVarNames = "EHideoutButtonAction m_eHideoutAction"
+// MClassHasEntityLimitedDataDesc
 class CCitadelHideoutInteractableTrigger : public CBaseTrigger, public IHideoutInteractable
 {
 	CEntityIOOutput m_OnInteracted;

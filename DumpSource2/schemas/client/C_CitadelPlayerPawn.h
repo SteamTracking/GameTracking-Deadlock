@@ -58,6 +58,7 @@
 // MNetworkVarNames = "GameTime_t m_flForceInCombatAnimsUntilTime"
 // MNetworkVarNames = "uint8 m_nAudioEnclosure"
 // MNetworkVarNames = "bool m_bAudioHasSkyExposure"
+// MClassHasEntityLimitedDataDesc
 class C_CitadelPlayerPawn : public CCitadelPlayerPawnBase
 {
 	CHandle< C_CitadelBaseAbility > m_hAbilityRequiresDebounce;

@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -16,11 +16,11 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_flMinDelayBetweenHits": 0.000000,
@@ -31,23 +31,23 @@
 //	"m_hitStrengthParamName": "",
 //	"m_triggerParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_hitBoneParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_hitOffsetParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_hitDirectionParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_hitStrengthParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_weightListName": "",
 //	"m_hipBoneName": "",
@@ -68,6 +68,7 @@
 //	"m_bResetBase": true
 //}
 // MPropertyFriendlyName = "Procedural Hit Reacts"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_HitReactNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField

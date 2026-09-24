@@ -2,6 +2,7 @@
 // MNetworkVarNames = "GameTime_t m_tTeleportCompletedTime"
 // MNetworkVarNames = "VectorWS m_vTargetPosition"
 // MNetworkVarNames = "QAngle m_vTargetAngles"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Mirage_Teleport : public CCitadelBaseAbility
 {
 	// MNetworkEnable

@@ -10,6 +10,7 @@
 //	"m_nChainLength": 2,
 //	"m_flBlendTimeSeconds": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CnmGraphDocChainLookatNode::CData : public CNmGraphDocVariationDataNode::CData
 {
 	CUtlString m_chainEndBoneName;

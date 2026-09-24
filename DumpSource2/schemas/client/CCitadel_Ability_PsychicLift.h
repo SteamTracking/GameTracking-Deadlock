@@ -1,5 +1,6 @@
 // MNetworkVarNames = "Vector m_vLiftPosition"
 // MNetworkVarNames = "Vector m_vCrashPosition"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_PsychicLift : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

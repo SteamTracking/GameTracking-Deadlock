@@ -9,6 +9,7 @@
 //		"m_flags": 0
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFloatCurveEventNode::CDefinition : public CNmFloatValueNode::CDefinition
 {
 	CGlobalSymbol m_eventID;

@@ -7,6 +7,7 @@
 //	"m_bCountStopped": true
 //}
 // MPropertyFriendlyName = "Limiter"
+// MHasKV3TransferPolymorphicClassname
 class CSosGroupActionLimitSchema : public CSosGroupActionSchema
 {
 	int32 m_nMaxCount;

@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocControlParameterNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -19,6 +19,7 @@
 //	"m_groupName": "",
 //	"m_dictionaryParameterBinding": "00000000-0000-0000-0000-000000000000"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocControlParameterNode : public CNmGraphDocParameterBaseNode
 {
 	V_uuid_t m_dictionaryParameterBinding;

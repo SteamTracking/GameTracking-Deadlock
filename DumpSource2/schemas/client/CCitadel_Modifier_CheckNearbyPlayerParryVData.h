@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_flParryCheckRadius": 40.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_CheckNearbyPlayerParryVData : public CCitadelModifierVData
 {
 	float32 m_flParryCheckRadius;

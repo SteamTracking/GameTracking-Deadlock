@@ -490,6 +490,7 @@
 //	},
 //	"m_flVelocityCarryoverOnMiss": 0.330000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Shiv_KillingBlowVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -37,6 +37,7 @@
 //}
 // MPropertyFriendlyName = "Blender"
 // MPropertyDescription = "Blends two containers."
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerBlender : public CVoiceContainerBase
 {
 	CSoundContainerReference m_firstSound;

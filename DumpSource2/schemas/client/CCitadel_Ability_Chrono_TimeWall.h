@@ -1,4 +1,5 @@
 // MNetworkVarNames = "bool m_bAirCast"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Chrono_TimeWall : public C_CitadelBaseAbility
 {
 	ParticleIndex_t m_hChargingParticle;

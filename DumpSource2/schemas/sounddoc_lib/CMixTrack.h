@@ -15,6 +15,7 @@
 //}
 // MPropertyFriendlyName = "VMix Track Node"
 // MPropertyDescription = "This node creates a track.Voices can be played on a track.  This is the source of audio for your graph."
+// MHasKV3TransferPolymorphicClassname
 class CMixTrack : public CMixPropertyBase
 {
 	// MPropertyDescription = "Leave this as "Automatic" unless you are forcing mono/stereo for some reason.  That way each graph will get configured to match the incoming vsnd (for a voice graph) or the audio device (main mix graph)"

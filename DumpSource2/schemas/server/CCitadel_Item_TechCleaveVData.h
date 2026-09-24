@@ -453,6 +453,7 @@
 //	},
 //	"m_sCleaveProcSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_TechCleaveVData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

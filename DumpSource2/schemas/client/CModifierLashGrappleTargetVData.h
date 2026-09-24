@@ -141,6 +141,7 @@
 //	"m_WarningParticle": "",
 //	"m_strVictimLockonSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierLashGrappleTargetVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

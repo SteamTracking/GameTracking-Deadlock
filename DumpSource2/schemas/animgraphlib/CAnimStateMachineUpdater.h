@@ -8,6 +8,7 @@
 //	],
 //	"m_startStateIndex": -1
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimStateMachineUpdater
 {
 	CUtlVector< CStateUpdateData > m_states;

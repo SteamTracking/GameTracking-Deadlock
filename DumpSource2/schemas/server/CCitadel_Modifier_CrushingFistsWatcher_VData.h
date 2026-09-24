@@ -141,6 +141,7 @@
 //	},
 //	"m_strStackSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_CrushingFistsWatcher_VData : public CCitadel_Modifier_Intrinsic_BaseVData
 {
 	// MPropertyStartGroup = "Modifiers"

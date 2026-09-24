@@ -10,6 +10,7 @@
 //	"m_bIsTargetInWorldSpace": false,
 //	"m_flReferencePoseTwistWeight": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmTwoBoneIKNode::CDefinition : public CNmPassthroughNode::CDefinition
 {
 	CGlobalSymbol m_effectorBoneID;

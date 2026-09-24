@@ -153,6 +153,7 @@
 //	},
 //	"m_sHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ItemPunchable_RejuvVData : public CCitadelModifierVData
 {
 	int32 m_iRejuvBossKill01;

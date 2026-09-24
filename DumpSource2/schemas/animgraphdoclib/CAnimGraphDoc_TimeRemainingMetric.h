@@ -7,6 +7,7 @@
 //	"m_flMinTimeRemaining": 0.300000
 //}
 // MPropertyFriendlyName = "Time Remaining Metric"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_TimeRemainingMetric : public CAnimGraphDoc_MotionMetric
 {
 	// MPropertyFriendlyName = "Match Time Remaining"
@@ -14,12 +15,12 @@ class CAnimGraphDoc_TimeRemainingMetric : public CAnimGraphDoc_MotionMetric
 	// MPropertyAutoRebuildOnChange
 	bool m_bMatchByTimeRemaining;
 	// MPropertyFriendlyName = "Max Time Remaining"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flMaxTimeRemaining;
 	// MPropertyFriendlyName = "Filter By Time Remaining"
 	// MPropertyAutoRebuildOnChange
 	bool m_bFilterByTimeRemaining;
 	// MPropertyFriendlyName = "Min Time Remaining"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flMinTimeRemaining;
 };

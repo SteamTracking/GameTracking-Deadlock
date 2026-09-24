@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -25,13 +25,13 @@
 //	"m_paramNameX": "",
 //	"m_paramX":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_blendSourceY": "Parameter",
 //	"m_paramNameY": "",
 //	"m_paramY":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_eBlendMode": "Blend2DMode_General",
 //	"m_bLoop": true,
@@ -48,6 +48,7 @@
 //	"m_bAnimEventsAndTagsOnMostWeightedOnly": false
 //}
 // MPropertyFriendlyName = "Blend 2D"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_Blend2DNode : public CAnimGraphDoc_Node
 {
 	// MPropertySuppressField
@@ -58,7 +59,7 @@ class CAnimGraphDoc_Blend2DNode : public CAnimGraphDoc_Node
 	CUtlVector< CSmartPtr< CAnimGraphDoc_ParamSpan > > m_paramSpans;
 	// MPropertyFriendlyName = "Horizontal Axis"
 	// MPropertyAutoRebuildOnChange
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimValueSource m_blendSourceX;
 	// MPropertySuppressField
 	CUtlString m_paramNameX;
@@ -67,7 +68,7 @@ class CAnimGraphDoc_Blend2DNode : public CAnimGraphDoc_Node
 	AnimParamID m_paramX;
 	// MPropertyFriendlyName = "Vertical Axis"
 	// MPropertyAutoRebuildOnChange
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimValueSource m_blendSourceY;
 	// MPropertySuppressField
 	CUtlString m_paramNameY;

@@ -160,6 +160,7 @@
 //	},
 //	"m_DestroySound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_GraveStoneVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

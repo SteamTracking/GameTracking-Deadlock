@@ -150,6 +150,7 @@
 //	"m_SwingParticle": "",
 //	"m_HitParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_LifestrikeGauntlets_VData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyStartGroup = "Visuals"

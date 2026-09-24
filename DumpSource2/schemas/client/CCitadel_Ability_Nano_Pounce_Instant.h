@@ -7,6 +7,7 @@
 // MNetworkVarNames = "CCitadelAutoScaledTime m_flArrivalTime"
 // MNetworkVarNames = "bool m_bIsFirstCastCompleted"
 // MNetworkVarNames = "GameTime_t m_tDoubleCastWindow"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Nano_Pounce_Instant : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

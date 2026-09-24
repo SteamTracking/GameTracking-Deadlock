@@ -437,6 +437,7 @@
 //	},
 //	"m_ExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Necro_KillSummonTriggerVData : public CBaseTriggerAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -34,6 +34,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CDestructableBuildingVData : public CEntitySubclassVDataBase
 {
 	float32 m_flEnemyTrooperProtectionRange;

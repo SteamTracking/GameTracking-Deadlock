@@ -3,7 +3,7 @@
 //	"m_group": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bStartEnabled": true,
 //	"m_nPriority": 100,
@@ -13,6 +13,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CRemapValueComponent : public CAnimGraphDoc_Component
 {
 	// MPropertyFriendlyName = "Name"

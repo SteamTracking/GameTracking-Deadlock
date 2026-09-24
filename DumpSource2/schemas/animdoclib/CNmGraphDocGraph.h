@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocGraph",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_nodes":
 //	[
 //	],
@@ -12,6 +12,7 @@
 //	],
 //	"m_flViewZoom": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocGraph
 {
 	V_uuid_t m_ID;

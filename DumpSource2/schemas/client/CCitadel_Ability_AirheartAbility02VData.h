@@ -431,6 +431,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_AirheartAbility02VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

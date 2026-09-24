@@ -439,6 +439,7 @@
 //	"m_flBounceVerticalReductionRatio": 0.500000,
 //	"m_bDebug": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Priest_Flashbang_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

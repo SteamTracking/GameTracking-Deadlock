@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_strSmallIconCssClassMax": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierCadenceGunSpikesVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

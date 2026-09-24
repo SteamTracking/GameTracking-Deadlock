@@ -435,6 +435,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityTrappersBoloVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

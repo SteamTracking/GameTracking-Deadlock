@@ -152,6 +152,7 @@
 //	"m_GroundParticle": "",
 //	"m_GroundParticleFriendly": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ThermalDetonator_ThinkerVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

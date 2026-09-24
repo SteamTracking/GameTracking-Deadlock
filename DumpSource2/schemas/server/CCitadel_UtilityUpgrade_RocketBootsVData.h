@@ -454,6 +454,7 @@
 //	},
 //	"m_flMinHeadClearance": 150.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_UtilityUpgrade_RocketBootsVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

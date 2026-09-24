@@ -5,6 +5,7 @@
 // MNetworkVarNames = "float m_flFinalValue"
 // MNetworkVarNames = "TimelineCompression_t m_nCompressionType"
 // MNetworkVarNames = "bool m_bStopped"
+// MNetworkNoBase
 class CTimeline : public IntervalTimer
 {
 	// MNetworkEnable

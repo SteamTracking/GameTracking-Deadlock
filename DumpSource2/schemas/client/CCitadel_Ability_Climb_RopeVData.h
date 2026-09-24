@@ -459,6 +459,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Climb_RopeVData : public CitadelAbilityVData
 {
 	float32 m_flMinButtonHoldTimeToActivate;

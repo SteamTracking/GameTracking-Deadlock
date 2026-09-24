@@ -3,6 +3,7 @@
 // MNetworkVarNames = "GameTime_t m_flTransformStartTime"
 // MNetworkVarNames = "GameTime_t m_flTransformEndTime"
 // MNetworkVarNames = "float m_flStoredDamageAmp"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Nano_CatForm : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

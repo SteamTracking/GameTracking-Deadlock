@@ -8,6 +8,7 @@
 //	"m_nRTEnvCPComponent": 0,
 //	"m_szModifier": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPrecipitationVData : public CEntitySubclassVDataBase
 {
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_szParticlePrecipitationEffect;

@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityNikumanVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

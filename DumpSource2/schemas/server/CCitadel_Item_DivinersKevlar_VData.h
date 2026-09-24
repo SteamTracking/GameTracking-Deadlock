@@ -455,6 +455,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_DivinersKevlar_VData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

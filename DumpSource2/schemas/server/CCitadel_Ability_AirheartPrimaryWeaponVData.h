@@ -492,6 +492,7 @@
 //	},
 //	"m_ExplosionFX": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_AirheartPrimaryWeaponVData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "Modifiers"

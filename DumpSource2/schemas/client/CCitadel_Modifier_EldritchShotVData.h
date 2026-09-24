@@ -160,6 +160,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_EldritchShotVData : public CCitadel_Modifier_BaseBulletPreRollProcVData
 {
 	// MPropertyStartGroup = "Visuals"

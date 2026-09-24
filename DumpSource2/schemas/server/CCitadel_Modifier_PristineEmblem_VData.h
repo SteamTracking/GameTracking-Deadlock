@@ -141,6 +141,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_PristineEmblem_VData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

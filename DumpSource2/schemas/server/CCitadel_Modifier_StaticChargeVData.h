@@ -141,6 +141,7 @@
 //	"m_strChargeHitSound": "",
 //	"m_strChargeHitOtherSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_StaticChargeVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

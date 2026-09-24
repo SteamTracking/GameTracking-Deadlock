@@ -27,6 +27,7 @@
 //	"m_sourceAudio": ""
 //}
 // MPropertyFriendlyName = "Granulator Container"
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerGranulator : public CVoiceContainerAsyncGenerator
 {
 	float32 m_flGrainLength;

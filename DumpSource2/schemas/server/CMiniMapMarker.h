@@ -1,5 +1,6 @@
 // MNetworkVarNames = "CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent"
 // MNetworkVarNames = "EMiniMapMarkerType_t m_eType"
+// MClassHasEntityLimitedDataDesc
 class CMiniMapMarker : public CPointEntity
 {
 	// MNetworkEnable

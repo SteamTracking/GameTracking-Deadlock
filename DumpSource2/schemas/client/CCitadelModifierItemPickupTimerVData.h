@@ -144,6 +144,7 @@
 //	},
 //	"m_bIsIdolPickup": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierItemPickupTimerVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

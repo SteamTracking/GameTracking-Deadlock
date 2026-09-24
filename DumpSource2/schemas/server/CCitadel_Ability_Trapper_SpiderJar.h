@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Trapper_SpiderJar : public CCitadelBaseAbility
 {
 	VectorWS m_vLaunchPosition;

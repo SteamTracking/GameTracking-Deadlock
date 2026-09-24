@@ -152,6 +152,7 @@
 //	"m_GroundParticle": "",
 //	"m_strPopSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ZombieWallGroundAuraVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

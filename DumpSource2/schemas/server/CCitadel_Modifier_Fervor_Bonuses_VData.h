@@ -139,6 +139,7 @@
 //	"m_BonusesParticle": "",
 //	"m_ActivateBonusesSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Fervor_Bonuses_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

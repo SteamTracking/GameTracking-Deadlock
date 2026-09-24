@@ -142,6 +142,7 @@
 //	"m_AmberBeamPreviewEffect": "",
 //	"m_SapphBeamPreviewEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_T3BossWaveBeamPreviewVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

@@ -12,6 +12,7 @@
 //}
 // MPropertyFriendlyName = "VMix Diffusor Audio Node"
 // MPropertyDescription = "Creates a dense field of delay/feedback/reflections.  This is basically a sequence of allpass filters and short delay lines.  Can be used to create part of a reverb effect."
+// MHasKV3TransferPolymorphicClassname
 class CMixDiffusor : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Size"

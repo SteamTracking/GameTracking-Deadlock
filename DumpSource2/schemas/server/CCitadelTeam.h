@@ -9,6 +9,7 @@
 // MNetworkVarNames = "STeamFOWEntity m_vecFOWEntities"
 // MNetworkVarNames = "int m_nStreetBrawlScore"
 // MNetworkVarNames = "int m_nStreetBrawlScoreLastRound"
+// MClassHasEntityLimitedDataDesc
 class CCitadelTeam : public CTeam
 {
 	// MNetworkEnable

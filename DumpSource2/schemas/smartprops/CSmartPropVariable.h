@@ -3,6 +3,7 @@
 // MVDataNodeType = 1
 // MVDataAnonymousNode
 // MVDataOutlinerNameExpr = "m_VariableName"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropVariable : public CSmartPropParameter
 {
 	CUtlString m_VariableName;

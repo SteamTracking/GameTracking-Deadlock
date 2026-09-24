@@ -3,7 +3,7 @@
 //	"m_nBodyGroupOption": 0
 //}
 // MPropertyFriendlyName = "Body Group Setting"
-// MPropertyElementNameFn (UNKNOWN FOR PARSER)
+// MPropertyElementNameFn
 class CBodyGroupSetting
 {
 	// MPropertyFriendlyName = "BodyGroup"

@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocFloatEaseNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -13,7 +13,7 @@
 //	"m_inputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Value",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -23,7 +23,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
@@ -35,6 +35,7 @@
 //	"m_bUseStartValue": true,
 //	"m_flStartValue": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocFloatEaseNode : public CNmGraphDocFlowNode
 {
 	NmEasingOperation_t m_easing;

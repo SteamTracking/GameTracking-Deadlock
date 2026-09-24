@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class C_Citadel_Projectile_Viscous_GooGrenade : public C_CitadelProjectile
 {
 	int32 m_nBounces;

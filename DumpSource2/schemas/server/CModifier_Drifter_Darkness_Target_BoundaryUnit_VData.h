@@ -140,6 +140,7 @@
 //	"m_strAuraEnterPlayerSound": "",
 //	"m_strAuraEnterNPCSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Drifter_Darkness_Target_BoundaryUnit_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

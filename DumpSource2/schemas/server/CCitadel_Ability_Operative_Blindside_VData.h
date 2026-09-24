@@ -433,6 +433,7 @@
 //	"m_ExplodeParticle": "",
 //	"m_ExplosionSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Operative_Blindside_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

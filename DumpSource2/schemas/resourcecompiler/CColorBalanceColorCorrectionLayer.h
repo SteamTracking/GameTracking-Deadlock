@@ -15,6 +15,7 @@
 //	"m_nBlueYellowBalH": 0,
 //	"m_bPreserveLuminosity": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CColorBalanceColorCorrectionLayer : public CColorCorrectionLayer
 {
 	int32 m_nRedCyanBalS;

@@ -490,6 +490,7 @@
 //	"m_flBeadRadius": 0.000000,
 //	"m_flBeadCount": 8.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Boho_PrimaryWeaponVData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "Gameplay"

@@ -433,6 +433,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Bookworm_KnightBarrierVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

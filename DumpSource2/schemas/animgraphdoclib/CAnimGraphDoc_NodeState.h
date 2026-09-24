@@ -10,7 +10,7 @@
 //	"m_sComment": "",
 //	"m_stateID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_position":
 //	[
@@ -27,16 +27,17 @@
 //	{
 //		"m_nodeID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		},
 //		"m_outputID":
 //		{
-//			"m_id": <HIDDEN FOR DIFF>,
+//			"m_id": 0
 //		}
 //	},
 //	"m_bIsRootMotionExclusive": false,
 //	"m_bIsRootMotionExclusiveFirstFrame": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_NodeState : public CAnimGraphDoc_State
 {
 	// MPropertySuppressField

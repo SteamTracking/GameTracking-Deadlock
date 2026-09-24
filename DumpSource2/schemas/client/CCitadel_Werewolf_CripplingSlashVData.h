@@ -442,6 +442,7 @@
 //	"m_SlashImpactEffect": "",
 //	"m_flSlashForwardOffset": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Werewolf_CripplingSlashVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -485,6 +485,7 @@
 //	"m_flWallJumpReturnToWallBonusAccel": 600.000000,
 //	"m_flSlowedSlideJumpFactor": 0.750000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityJumpVData : public CitadelAbilityVData
 {
 	float32 m_flShootingLockoutAfterJump;

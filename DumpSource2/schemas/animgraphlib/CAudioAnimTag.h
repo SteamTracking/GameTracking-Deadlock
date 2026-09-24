@@ -5,7 +5,7 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false,
 //	"m_clipName": "",
@@ -17,6 +17,7 @@
 //	"m_bPlayOnClient": true
 //}
 // MPropertyFriendlyName = "Audio Tag"
+// MHasKV3TransferPolymorphicClassname
 class CAudioAnimTag : public CAnimTagBase
 {
 	// MPropertyFriendlyName = "Sound Event"

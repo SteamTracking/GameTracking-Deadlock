@@ -1,6 +1,7 @@
 // MNetworkVarNames = "float m_flUpFactor"
 // MNetworkVarNames = "float m_flBounceVelocity"
 // MNetworkVarNames = "GameTime_t m_tDeactivationTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Bounce_Pad : public CCitadelAnimatingModelEntity
 {
 	CHandle< CCitadelBaseAbility > m_hAbility;

@@ -152,6 +152,7 @@
 //	},
 //	"m_ImpactParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_TechDefenderShreddersProcVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyGroupName = "Modifiers"

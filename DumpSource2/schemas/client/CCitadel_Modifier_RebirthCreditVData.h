@@ -143,6 +143,7 @@
 //	"m_flRespawnLifePct": 100.000000,
 //	"m_flRespawnDelay": 5.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_RebirthCreditVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

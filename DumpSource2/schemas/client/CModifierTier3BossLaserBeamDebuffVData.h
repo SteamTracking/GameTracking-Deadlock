@@ -145,6 +145,7 @@
 //	"m_SapphStatusEffect": "",
 //	"m_SapphEffect": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierTier3BossLaserBeamDebuffVData : public CCitadelModifierVData
 {
 	float32 m_flTickRate;

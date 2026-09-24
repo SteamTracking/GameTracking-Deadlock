@@ -434,6 +434,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityLashFlogVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

@@ -151,6 +151,7 @@
 //	"m_bRemoveProvidedModifierOnAuraRemoval": false,
 //	"m_empWaveParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Rutger_Pulse_Aura_VData : public CCitadelModifierAuraVData
 {
 	// MPropertyGroupName = "Visuals"

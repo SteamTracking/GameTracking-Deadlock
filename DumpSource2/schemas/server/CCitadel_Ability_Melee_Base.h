@@ -4,6 +4,7 @@
 // MNetworkVarNames = "GameTime_t m_flLastActivateTime"
 // MNetworkVarNames = "GameTime_t m_flNextAttackAllowedTime"
 // MNetworkVarNames = "GameTime_t m_flAttackTriggeredTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Melee_Base : public CCitadelBaseAbility
 {
 	int32 m_nHitNumber;

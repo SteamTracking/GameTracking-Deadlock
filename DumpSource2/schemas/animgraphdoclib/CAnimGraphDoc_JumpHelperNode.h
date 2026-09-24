@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -24,7 +24,7 @@
 //	"m_targetParamName": "",
 //	"m_targetParamID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_flJumpStartCycle": 0.000000,
 //	"m_flJumpDuration": 0.100000,
@@ -35,6 +35,7 @@
 //	"m_eCorrectionMethod": "ScaleMotion"
 //}
 // MPropertyFriendlyName = "Jump Helper"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_JumpHelperNode : public CAnimGraphDoc_SequenceNode
 {
 	// MPropertySuppressField

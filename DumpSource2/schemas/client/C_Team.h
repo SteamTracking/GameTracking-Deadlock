@@ -3,6 +3,7 @@
 // MNetworkVarNames = "CHandle< C_BasePlayerPawn > m_aPlayers"
 // MNetworkVarNames = "int32 m_iScore"
 // MNetworkVarNames = "char m_szTeamname"
+// MNetworkNoBase
 class C_Team : public C_BaseEntity
 {
 	// MNetworkEnable

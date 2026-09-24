@@ -154,6 +154,7 @@
 //	},
 //	"m_NonEmbeddedModifier": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ApplyDebuff_ProcVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	bool m_bUseNonEmbedded;

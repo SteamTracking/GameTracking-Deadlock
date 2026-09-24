@@ -436,6 +436,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityHornetChainVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

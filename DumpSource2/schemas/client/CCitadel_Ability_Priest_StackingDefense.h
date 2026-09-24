@@ -1,4 +1,5 @@
 // MNetworkVarNames = "float m_flMaxStacksBonusDamage"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Priest_StackingDefense : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

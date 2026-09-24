@@ -154,6 +154,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BulletShredImbue_ProcVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyGroupName = "Modifiers"

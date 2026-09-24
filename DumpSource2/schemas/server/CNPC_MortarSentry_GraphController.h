@@ -58,6 +58,7 @@
 //	"m_bUnpackInstant": null,
 //	"m_flVelocity": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_MortarSentry_GraphController : public CAI_CitadelNPC_GraphController
 {
 	CAnimGraphParamRef< float32 > m_flPanel1;

@@ -465,6 +465,7 @@
 //	"m_flWallPauseTime": 0.300000,
 //	"m_flWallAngleMin": 120.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityViscousBowlingVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"
@@ -475,7 +476,7 @@ class CAbilityViscousBowlingVData : public CitadelAbilityVData
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_GroundImpactParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_JumpParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_DirectionParticle;
-	// MPropertyLeafSuggestionProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyLeafSuggestionProviderFn
 	CGlobalSymbol m_strPopGraphParamter;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_BallJumpSound;

@@ -294,6 +294,7 @@
 //	"m_flActivateDelay": 1.000000
 //}
 // MVDataOverlayType = 1
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Escort_VData : public CAI_CitadelNPCVData
 {
 	// MPropertyStartGroup = "Visuals"

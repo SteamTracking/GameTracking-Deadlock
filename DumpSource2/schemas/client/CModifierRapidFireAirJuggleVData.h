@@ -137,6 +137,7 @@
 //	"m_FootstepAdditional": "",
 //	"m_bRemoveOnInterrupted": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierRapidFireAirJuggleVData : public CCitadelModifierVData
 {
 };

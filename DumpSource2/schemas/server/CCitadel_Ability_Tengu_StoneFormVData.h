@@ -440,6 +440,7 @@
 //	"m_flCollideRadius": 40.000000,
 //	"m_flGroundDetectionFailsafeDelay": 0.100000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Tengu_StoneFormVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

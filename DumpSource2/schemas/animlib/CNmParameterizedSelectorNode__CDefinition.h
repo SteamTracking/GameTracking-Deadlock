@@ -11,6 +11,7 @@
 //	"m_bIgnoreInvalidOptions": false,
 //	"m_bHasWeightsSet": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmParameterizedSelectorNode::CDefinition : public CNmPoseNode::CDefinition
 {
 	CUtlLeanVectorFixedGrowable< int16, 5 > m_optionNodeIndices;

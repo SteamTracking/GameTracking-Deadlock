@@ -151,6 +151,7 @@
 //		"m_bFireUser4": false
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CGameModifier_FireUserEntityIOVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Fire User Entity IO"

@@ -447,6 +447,7 @@
 //	"m_flTrooperHitRadius": 12.000000,
 //	"m_flFriendlyHookIgnoreRange": 300.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityHookVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

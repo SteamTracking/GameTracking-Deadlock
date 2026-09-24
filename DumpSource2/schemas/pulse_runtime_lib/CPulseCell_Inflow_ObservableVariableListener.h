@@ -10,6 +10,7 @@
 //	"m_nBlackboardReference": -1,
 //	"m_bSelfReference": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_Inflow_ObservableVariableListener : public CPulseCell_Inflow_BaseEntrypoint
 {
 	PulseRuntimeBlackboardReferenceIndex_t m_nBlackboardReference;

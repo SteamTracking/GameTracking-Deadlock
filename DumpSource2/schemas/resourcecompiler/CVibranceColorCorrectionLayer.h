@@ -7,6 +7,7 @@
 //	"m_nVibrance": 0,
 //	"m_nSaturation": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CVibranceColorCorrectionLayer : public CColorCorrectionLayer
 {
 	int32 m_nVibrance;

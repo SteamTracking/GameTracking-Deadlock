@@ -433,6 +433,7 @@
 //	"m_strOverheatRed": "",
 //	"m_strOverheatFull": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityTokamakHeatSinksInherentVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

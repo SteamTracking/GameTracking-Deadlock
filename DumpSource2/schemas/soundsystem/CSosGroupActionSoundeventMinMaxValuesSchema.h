@@ -12,6 +12,7 @@
 //	"m_strMaxValueName": "max"
 //}
 // MPropertyFriendlyName = "Soundevent Min/Max Values"
+// MHasKV3TransferPolymorphicClassname
 class CSosGroupActionSoundeventMinMaxValuesSchema : public CSosGroupActionSchema
 {
 	// MPropertyFriendlyName = "Public field name to query."

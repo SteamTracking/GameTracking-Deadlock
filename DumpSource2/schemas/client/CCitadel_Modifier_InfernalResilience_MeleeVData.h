@@ -153,6 +153,7 @@
 //	"m_SwingParticle": "",
 //	"m_HitParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_InfernalResilience_MeleeVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyGroupName = "Modifiers"

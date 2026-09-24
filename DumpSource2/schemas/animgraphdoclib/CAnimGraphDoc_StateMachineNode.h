@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -20,6 +20,7 @@
 //	"m_bResetWhenActivated": false
 //}
 // MPropertyFriendlyName = "State Machine"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_StateMachineNode : public CAnimGraphDoc_Node, public CAnimGraphDoc_StateMachine
 {
 	// MPropertyFriendlyName = "Block Tags from Waning States"

@@ -1,4 +1,5 @@
 // MNetworkVarNames = "EHANDLE m_vecDeployedGravestones"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Necro_GraveStone : public CCitadelBaseAbility
 {
 	// MNetworkEnable

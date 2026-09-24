@@ -2,6 +2,7 @@
 // MNetworkVarNames = "bool m_bToggleDuckActive"
 // MNetworkVarNames = "bool m_bDucked"
 // MNetworkVarNames = "bool m_bInPortalEnvironment"
+// MClassHasEntityLimitedDataDesc
 class CCitadelPlayer_MovementServices : public CPlayer_MovementServices_Humanoid
 {
 	// MNetworkEnable

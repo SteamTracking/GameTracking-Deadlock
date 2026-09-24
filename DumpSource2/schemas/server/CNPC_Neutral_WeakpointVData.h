@@ -11,6 +11,7 @@
 //	"m_DestroyParticle": "",
 //	"m_strDestroySound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Neutral_WeakpointVData : public CEntitySubclassVDataBase
 {
 	float32 m_flBonusDamageMult;

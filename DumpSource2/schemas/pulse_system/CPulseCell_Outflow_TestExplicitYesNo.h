@@ -16,6 +16,7 @@
 //}
 // MPropertyFriendlyName = "[Test] Explicit Yes/No Outflow"
 // MPropertyDescription = "Test node that picks between two outflows as specified in the test domain."
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_Outflow_TestExplicitYesNo : public CPulseCell_BaseFlow
 {
 	// MPropertyFriendlyName = "Yes"

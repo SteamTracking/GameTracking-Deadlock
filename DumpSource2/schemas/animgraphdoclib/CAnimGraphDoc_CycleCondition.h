@@ -7,10 +7,11 @@
 //	"m_comparisonParamName": "",
 //	"m_comparisonParamID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	}
 //}
 // MPropertyFriendlyName = "Cycle Condition"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_CycleCondition : public CAnimGraphDoc_Condition
 {
 	Comparison_t m_comparisonOp;

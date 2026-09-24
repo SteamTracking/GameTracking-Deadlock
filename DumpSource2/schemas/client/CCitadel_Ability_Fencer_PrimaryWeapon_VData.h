@@ -495,6 +495,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Fencer_PrimaryWeapon_VData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "Visuals"

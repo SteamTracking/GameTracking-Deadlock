@@ -149,6 +149,7 @@
 //		"m_flTransitionOutDuration": 0.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_HideoutIntroVData : public CCitadelModifierVData
 {
 	CameraEntityOverride_t m_preIntroCamera;

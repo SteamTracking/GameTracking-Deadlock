@@ -139,6 +139,7 @@
 //	"m_TrailParticle": "",
 //	"m_DirectionParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ViscousBallVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

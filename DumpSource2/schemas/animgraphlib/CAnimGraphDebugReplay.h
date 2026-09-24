@@ -6008,6 +6008,7 @@
 //	"m_writeIndex": 0,
 //	"m_frameCount": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDebugReplay
 {
 	CUtlString m_animGraphFileName;

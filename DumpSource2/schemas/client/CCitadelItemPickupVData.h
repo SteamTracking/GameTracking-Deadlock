@@ -2,6 +2,7 @@
 //	"_class": "CCitadelItemPickupVData",
 //	"m_AmbientParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelItemPickupVData : public CEntitySubclassVDataBase
 {
 	// MPropertyGroupName = "Visuals"

@@ -6,6 +6,7 @@
 // MNetworkVarNames = "GameTime_t m_flCloseEnoughStartTime"
 // MNetworkVarNames = "GameTime_t m_flStuckStartTime"
 // MNetworkVarNames = "GameTime_t m_flReelStartTime"
+// MClassHasEntityLimitedDataDesc
 class CAbility_Fathom_ReefdwellerHarpoon : public C_CitadelBaseAbility
 {
 	bool m_bHitTarget;

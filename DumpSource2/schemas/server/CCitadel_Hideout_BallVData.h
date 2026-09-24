@@ -61,6 +61,7 @@
 //	"m_hModel": "",
 //	"m_AmbientParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Hideout_BallVData : public CEntitySubclassVDataBase
 {
 	float32 m_flModelScale;

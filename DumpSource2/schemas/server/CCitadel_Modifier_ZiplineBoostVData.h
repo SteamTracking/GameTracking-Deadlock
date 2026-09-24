@@ -161,6 +161,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ZiplineBoostVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Gameplay"

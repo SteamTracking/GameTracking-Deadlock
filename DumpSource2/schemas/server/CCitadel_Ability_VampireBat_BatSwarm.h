@@ -3,6 +3,7 @@
 // MNetworkVarNames = "float m_flChannelTime"
 // MNetworkVarNames = "bool m_bPauseChannel"
 // MNetworkVarNames = "float m_flLastRemainingChannelTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_VampireBat_BatSwarm : public CCitadelBaseAbility
 {
 	// MNetworkEnable

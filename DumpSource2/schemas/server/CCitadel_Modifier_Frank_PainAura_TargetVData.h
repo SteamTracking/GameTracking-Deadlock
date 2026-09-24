@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_DrainParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Frank_PainAura_TargetVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

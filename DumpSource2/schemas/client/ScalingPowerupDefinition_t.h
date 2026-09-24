@@ -4,6 +4,7 @@
 //	"m_valueMin": 0.000000,
 //	"m_valueMax": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class ScalingPowerupDefinition_t
 {
 	EModifierValue m_eModifierValue;

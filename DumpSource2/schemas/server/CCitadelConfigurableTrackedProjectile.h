@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadelConfigurableTrackedProjectile : public CCitadelProjectile
 {
 	ETrackedProjectileTarget_t m_eTrackedTargetType;

@@ -57,6 +57,7 @@
 //	"m_eBaseAction": null,
 //	"m_bNewTarget": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_NecroSkele_GraphController : public CAI_CitadelNPC_GraphController
 {
 	CAnimGraph2ParamOptionalRef< CGlobalSymbol > m_eBaseAction;

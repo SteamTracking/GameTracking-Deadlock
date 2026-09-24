@@ -2,10 +2,11 @@
 //	"_class": "CAnimGraphDoc_ToggleComponentAction",
 //	"m_componentID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bSetEnabled": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_ToggleComponentAction : public CAnimGraphDoc_Action
 {
 	// MPropertyFriendlyName = "Component"

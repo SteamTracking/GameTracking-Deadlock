@@ -139,6 +139,7 @@
 //}
 // MPropertySuppressBaseClassField = "m_nDisableGroupsMask"
 // MPropertySuppressBaseClassField = "m_sEndSound"
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierVData : public CModifierVData
 {
 	bool m_bIsBuildup;

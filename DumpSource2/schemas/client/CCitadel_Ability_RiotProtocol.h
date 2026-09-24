@@ -1,4 +1,5 @@
 // MNetworkVarNames = "bool m_bActive"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_RiotProtocol : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_FullyChargedParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Frank_ShockFullyChargedVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

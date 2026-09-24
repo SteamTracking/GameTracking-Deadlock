@@ -23,6 +23,7 @@
 //		"m_flMaxHighlightLum": 8.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CToneMappingLayer : public CColorCorrectionLayer
 {
 	PostProcessingTonemapParameters_t m_params;

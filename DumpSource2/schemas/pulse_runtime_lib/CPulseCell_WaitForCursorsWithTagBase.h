@@ -10,6 +10,7 @@
 //	}
 //}
 // MPulseEditorCanvasItemSpecKV3 = "{ className = 'IsControlFlowNode' }"
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_WaitForCursorsWithTagBase : public CPulseCell_BaseYieldingInflow
 {
 	// MPropertyDescription = "Any extra waiting cursors will be terminated. -1 for infinite cursors."

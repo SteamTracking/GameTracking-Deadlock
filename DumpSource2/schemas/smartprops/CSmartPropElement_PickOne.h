@@ -33,6 +33,7 @@
 //}
 // MPropertyFriendlyName = "Select Single Child"
 // MPropertyDescription = "An element which selects a single choice from its set of child choices."
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropElement_PickOne : public CSmartPropElement_Group
 {
 	// MPropertyDescription = "Specifies how the initial selection of a choice should be handled."

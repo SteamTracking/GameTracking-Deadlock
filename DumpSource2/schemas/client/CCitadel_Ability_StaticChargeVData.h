@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_StaticChargeVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

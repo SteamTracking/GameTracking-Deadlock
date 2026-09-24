@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_SatchelParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Synth_Pulse_Escape_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

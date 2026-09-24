@@ -440,6 +440,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Frank_ShockTarget2VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Sounds"

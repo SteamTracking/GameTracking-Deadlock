@@ -461,6 +461,7 @@
 //	},
 //	"m_PurgeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Mirage_Tornado_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -440,6 +440,7 @@
 //	"m_flSlowFallElevationStart": 0.000000,
 //	"m_flSlowFallElevationEnd": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_AirheartUltVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

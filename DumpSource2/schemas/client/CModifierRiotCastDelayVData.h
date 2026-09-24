@@ -140,6 +140,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierRiotCastDelayVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Modifiers"

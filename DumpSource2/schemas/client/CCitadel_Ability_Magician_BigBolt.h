@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Magician_BigBolt : public C_CitadelBaseAbility
 {
 	GameTime_t m_flNextShootTime;

@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CAbility_Drifter_BloodBlast : public C_CitadelBaseAbility
 {
 	ParticleIndex_t m_SandEffect;

@@ -453,6 +453,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_DPS_Aura_VData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

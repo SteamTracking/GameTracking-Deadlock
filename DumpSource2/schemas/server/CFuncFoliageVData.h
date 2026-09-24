@@ -3,6 +3,7 @@
 //	"m_BulletImpactParticle": "",
 //	"m_BulletExitParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CFuncFoliageVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Visuals"

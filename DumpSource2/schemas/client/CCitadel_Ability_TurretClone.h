@@ -2,6 +2,7 @@
 // MNetworkVarNames = "int m_iCurrentSwapCount"
 // MNetworkVarNames = "GameTime_t m_flTurretExpireTime"
 // MNetworkVarNames = "EHANDLE m_pActiveTurret"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_TurretClone : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

@@ -500,6 +500,7 @@
 //	"m_flKillCheckWindow": 3.000000,
 //	"m_flWorldCollideGraceWindow": 0.300000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityGuidedArrowVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Camera"

@@ -140,6 +140,7 @@
 //	"m_flTickRate": 0.500000,
 //	"m_flHeight": 80.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_SpilledBloodThinkerVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

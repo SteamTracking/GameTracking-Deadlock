@@ -433,6 +433,7 @@
 //	"bTriggerOnDeselect": true,
 //	"m_strCastStartSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Drifter_StalkersMark_Teleport_VData : public CBaseTriggerAbilityVData
 {
 	// MPropertyStartGroup = "Sounds"

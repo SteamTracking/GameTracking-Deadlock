@@ -1,5 +1,6 @@
 // MNetworkVarNames = "GameTime_t m_flDomeStartTime"
 // MNetworkVarNames = "GameTime_t m_flDomeEndTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_IceDome : public CCitadelBaseAbility
 {
 	// MNetworkEnable

@@ -431,6 +431,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityGangActivityVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

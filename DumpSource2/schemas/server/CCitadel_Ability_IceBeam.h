@@ -1,5 +1,6 @@
 // MNetworkVarNames = "bool m_bIceBeaming"
 // MNetworkVarNames = "CCitadelAbilityBeam_t m_beam"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_IceBeam : public CCitadelBaseAbility
 {
 	// MNetworkEnable

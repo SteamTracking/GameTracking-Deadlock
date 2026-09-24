@@ -3,6 +3,7 @@
 //	"m_clip": "",
 //	"m_variationTimeValue": -1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocAnimationPoseNode::CData : public CNmGraphDocVariationDataNode::CData
 {
 	// MPropertyAttributeEditor = "AssetBrowse( vnmclip, *requiredoubleclick )"

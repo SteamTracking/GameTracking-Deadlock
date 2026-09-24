@@ -8,6 +8,7 @@
 // MPropertyFriendlyName = "Save Direction Vector"
 // MPropertyDescription = "Save the specified direction vector to a specified variable, in the requested coordinate space"
 // MVDataClassGroup = "State"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_SaveDirection : public CSmartPropOperation
 {
 	// MPropertyDescription = "Specifies which direction vector to save."

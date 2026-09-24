@@ -16,6 +16,7 @@
 //	"m_flNeutralTakeDamageMulti": 1.500000,
 //	"m_flNotifyEventTime": 1.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_FieldSentryVData : public CNPC_SimpleAnimatingAIVData
 {
 	// MPropertyStartGroup = "Visuals"

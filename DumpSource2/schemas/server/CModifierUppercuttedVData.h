@@ -146,6 +146,7 @@
 //	},
 //	"m_flEnemyNoAirDashDuration": 2.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierUppercuttedVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

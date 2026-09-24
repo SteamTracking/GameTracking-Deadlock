@@ -12,6 +12,7 @@
 // MNetworkVarNames = "int m_nJumpsThisSlideSession"
 // MNetworkVarNames = "GameTime_t m_flOnGroundStartTime"
 // MNetworkVarNames = "GameTime_t m_flDashSlideStartTime"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Slide : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

@@ -114,6 +114,7 @@
 //}
 // MPropertyFriendlyName = "Parameter Blender"
 // MPropertyDescription = "Blends two containers according to parameter curves."
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerParameterBlender : public CVoiceContainerBase
 {
 	// MPropertyFriendlyName = "First Sound"

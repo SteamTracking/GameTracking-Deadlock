@@ -10,6 +10,7 @@
 //	"m_bDestroyed": null,
 //	"m_flExposedDurationFraction": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Destroyable_Building_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< bool > m_bHitTrigger;

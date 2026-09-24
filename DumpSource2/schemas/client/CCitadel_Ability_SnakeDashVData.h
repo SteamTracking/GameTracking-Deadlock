@@ -430,6 +430,7 @@
 //	"m_strBaseSlideAbility": "",
 //	"m_strViperSlideAbility": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_SnakeDashVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Gameplay"

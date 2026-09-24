@@ -431,6 +431,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilitySpiderShieldVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

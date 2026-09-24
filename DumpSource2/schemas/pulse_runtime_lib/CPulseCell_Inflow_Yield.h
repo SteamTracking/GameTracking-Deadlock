@@ -8,6 +8,7 @@
 //		"m_nInstruction": -1
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CPulseCell_Inflow_Yield : public CPulseCell_BaseYieldingInflow
 {
 	CPulse_ResumePoint m_UnyieldResume;

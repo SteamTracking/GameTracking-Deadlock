@@ -140,6 +140,7 @@
 //	"m_nMaxHealth": 0,
 //	"m_flModelScale": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Tier2EmpoweredVData : public CCitadelModifierVData
 {
 	float32 m_flTransitionDuration;

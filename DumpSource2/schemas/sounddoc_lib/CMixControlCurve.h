@@ -51,6 +51,7 @@
 //}
 // MPropertyFriendlyName = "VMix Control Curve Node"
 // MPropertyDescription = "Remap a control variable through a curve that you define."
+// MHasKV3TransferPolymorphicClassname
 class CMixControlCurve : public CMixPropertyBase
 {
 	float32 m_flInputMin;

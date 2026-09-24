@@ -12,6 +12,7 @@
 //	},
 //	"m_IsFrozenParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelItemPickupRejuvHeroTestVData : public CCitadelItemPickupRejuvVData
 {
 };

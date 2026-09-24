@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_FakeFamiliarParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Familiar_AttachHostVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

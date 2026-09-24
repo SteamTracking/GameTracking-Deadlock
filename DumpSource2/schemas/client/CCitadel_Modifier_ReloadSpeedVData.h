@@ -139,6 +139,7 @@
 //	"m_flReloadSpeedPercent": 0.000000,
 //	"m_bDestroyAfterReload": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ReloadSpeedVData : public CCitadelModifierVData
 {
 	float32 m_flReloadSpeedPercent;

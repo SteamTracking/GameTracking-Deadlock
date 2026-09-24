@@ -6,6 +6,7 @@
 // MNetworkVarNames = "bool m_bAttackStartedWhileSliding"
 // MNetworkVarNames = "GameTime_t m_flLightChainEndTime"
 // MNetworkVarNames = "int m_nLightChainCount"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_HoldMelee : public CCitadel_Ability_Melee_Base
 {
 	// MNetworkEnable

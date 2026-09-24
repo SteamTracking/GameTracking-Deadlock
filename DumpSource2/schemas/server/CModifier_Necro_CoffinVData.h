@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_SatchelParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Necro_CoffinVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

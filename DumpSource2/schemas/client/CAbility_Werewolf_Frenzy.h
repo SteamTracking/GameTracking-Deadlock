@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CAbility_Werewolf_Frenzy : public C_CitadelBaseAbility
 {
 	ParticleIndex_t m_SandEffect;

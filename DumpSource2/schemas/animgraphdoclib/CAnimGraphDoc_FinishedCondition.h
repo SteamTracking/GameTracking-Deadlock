@@ -4,6 +4,7 @@
 //	"m_bIsFinished": true
 //}
 // MPropertyFriendlyName = "Finished Condition"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_FinishedCondition : public CAnimGraphDoc_Condition
 {
 	FinishedConditionOption m_option;

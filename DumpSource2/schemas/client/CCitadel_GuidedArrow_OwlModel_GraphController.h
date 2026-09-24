@@ -5,6 +5,7 @@
 //	"m_flPitch": null,
 //	"m_bFast": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_GuidedArrow_OwlModel_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraph2ParamOptionalRef< float32 > m_flRoll;

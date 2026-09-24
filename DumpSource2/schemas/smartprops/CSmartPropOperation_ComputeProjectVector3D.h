@@ -22,6 +22,7 @@
 // MPropertyFriendlyName = "Project Vector"
 // MPropertyDescription = "Project Vector A onto Vector B"
 // MVDataClassGroup = "Compute"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_ComputeProjectVector3D : public CSmartPropOperation
 {
 	// MPropertyFriendlyName = "Output Variable"

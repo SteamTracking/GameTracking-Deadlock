@@ -139,6 +139,7 @@
 //	"m_flHideDuration": 1.000000,
 //	"m_flRevealDuration": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierDruidInvisVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

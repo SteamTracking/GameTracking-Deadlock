@@ -3,7 +3,7 @@
 //	"m_group": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bStartEnabled": false,
 //	"m_nPriority": 100,
@@ -55,6 +55,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CDemoSettingsComponent : public CAnimGraphDoc_Component
 {
 	// MPropertyFriendlyName = "Settings"

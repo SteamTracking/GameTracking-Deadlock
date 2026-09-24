@@ -435,6 +435,7 @@
 //	"m_flSearchUpDistance": 2000.000000,
 //	"m_flSearchDownDistance": 2000.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Bookworm_AOEMagicVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

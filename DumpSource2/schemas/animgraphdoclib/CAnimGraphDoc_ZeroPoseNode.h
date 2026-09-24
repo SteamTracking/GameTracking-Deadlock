@@ -8,12 +8,13 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative"
 //}
 // MPropertyFriendlyName = "Zero Pose"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_ZeroPoseNode : public CAnimGraphDoc_Node
 {
 };

@@ -9,6 +9,7 @@
 //	"m_nInputValueNodeIdx": -1,
 //	"m_bIsInclusiveCheck": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFloatRangeComparisonNode::CDefinition : public CNmBoolValueNode::CDefinition
 {
 	Range_t m_range;

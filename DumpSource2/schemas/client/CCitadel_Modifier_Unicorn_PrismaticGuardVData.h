@@ -187,6 +187,7 @@
 //	"m_ExplodeParticle": "",
 //	"m_ShieldParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Unicorn_PrismaticGuardVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

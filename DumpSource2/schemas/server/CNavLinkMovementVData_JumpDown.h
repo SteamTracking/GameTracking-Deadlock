@@ -15,6 +15,7 @@
 //	},
 //	"m_bAlignWithExitDirectionDuringFall": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNavLinkMovementVData_JumpDown : public CNavLinkMovementVData
 {
 	CNavLinkMetrics_JumpDown m_metrics;

@@ -150,6 +150,7 @@
 //	"m_flGroundOffset": 0.000000,
 //	"m_BombParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_StickyBombOnGroundVData : public CCitadel_Modifier_StickyBombAttachedVData
 {
 	float32 m_flGroundOffset;

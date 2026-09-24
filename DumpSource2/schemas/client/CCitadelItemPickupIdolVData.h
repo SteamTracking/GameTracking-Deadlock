@@ -8,6 +8,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelItemPickupIdolVData : public CCitadelItemPickupVData
 {
 	// MPropertyStartGroup = "Modifiers"

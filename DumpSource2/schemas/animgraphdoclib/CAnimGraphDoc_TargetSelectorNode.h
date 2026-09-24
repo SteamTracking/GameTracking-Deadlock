@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -19,26 +19,27 @@
 //	"m_eAngleMode": "eFacingHeading",
 //	"m_moveHeadingParamID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_desiredMoveHeadingParamID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_targetPositionParamID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bTargetPositionIsWorldSpace": false,
 //	"m_targetFacePositionParamID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bTargetFacePositionIsWorldSpace": false,
 //	"m_bEnablePhaseMatching": false,
 //	"m_flPhaseMatchingMaxRootMotionSkip": 0.400000
 //}
 // MPropertyFriendlyName = "Target Selector"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_TargetSelectorNode : public CAnimGraphDoc_Node
 {
 	CUtlVector< CTargetSelectorChild > m_children;
@@ -55,10 +56,10 @@ class CAnimGraphDoc_TargetSelectorNode : public CAnimGraphDoc_Node
 	AnimParamID m_desiredMoveHeadingParamID;
 	// MPropertyFriendlyName = "Target Position"
 	// MPropertyAttributeChoiceName = "VectorParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_targetPositionParamID;
 	// MPropertyFriendlyName = "Target Position Is World Space"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bTargetPositionIsWorldSpace;
 	// MPropertyFriendlyName = "Target Face Position"
 	// MPropertyAttributeChoiceName = "VectorParameter"

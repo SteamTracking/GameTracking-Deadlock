@@ -34,6 +34,7 @@
 //}
 // MPropertyFriendlyName = "VSND Enum"
 // MPropertyDescription = "Switches between a selection of vsnds based on a provided index."
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerEnum : public CVoiceContainerBase
 {
 	// MPropertyFriendlyName = "Sounds To Play"

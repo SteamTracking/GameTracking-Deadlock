@@ -139,6 +139,7 @@
 //	"m_FireOnAdded": "",
 //	"m_FireOnRemoved": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CGameModifier_FireConCommandVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Fire Con Command"

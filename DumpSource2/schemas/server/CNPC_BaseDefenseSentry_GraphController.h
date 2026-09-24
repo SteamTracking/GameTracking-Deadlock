@@ -7,6 +7,7 @@
 //	"m_flVelocity": null,
 //	"m_bAlert": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_BaseDefenseSentry_GraphController : public CNPC_SimpleAnimatingAI_GraphController
 {
 	CAnimGraphParamRef< float32 > m_flPanel1;

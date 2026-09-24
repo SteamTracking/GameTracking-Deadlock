@@ -462,6 +462,7 @@
 //	"m_BlinkEndFinalSound": "",
 //	"m_strWhizbySound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_VampireBat_BatBlinkVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

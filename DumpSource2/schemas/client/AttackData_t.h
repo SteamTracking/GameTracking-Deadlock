@@ -84,6 +84,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class AttackData_t
 {
 	// MPropertyDescription = "When this attack is used, pause weapon reloads for this long"

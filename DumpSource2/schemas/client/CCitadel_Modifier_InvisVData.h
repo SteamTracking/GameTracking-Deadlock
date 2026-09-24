@@ -148,6 +148,7 @@
 //	"m_flMinCloak": 0.700000,
 //	"m_flMaxCloak": 0.990000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_InvisVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

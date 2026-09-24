@@ -440,6 +440,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityBouncePadVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

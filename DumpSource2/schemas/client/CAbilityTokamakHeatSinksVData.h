@@ -431,6 +431,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityTokamakHeatSinksVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

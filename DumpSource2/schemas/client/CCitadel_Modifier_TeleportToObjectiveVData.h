@@ -142,6 +142,7 @@
 //	"m_TeleportCompleteSound": "",
 //	"m_TeleportArriveSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_TeleportToObjectiveVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

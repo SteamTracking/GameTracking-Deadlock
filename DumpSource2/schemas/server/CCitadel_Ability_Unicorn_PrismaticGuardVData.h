@@ -435,6 +435,7 @@
 //	},
 //	"m_CastParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Unicorn_PrismaticGuardVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

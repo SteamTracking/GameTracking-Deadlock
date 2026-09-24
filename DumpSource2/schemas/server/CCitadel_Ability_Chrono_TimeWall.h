@@ -1,4 +1,5 @@
 // MNetworkVarNames = "bool m_bAirCast"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Chrono_TimeWall : public CCitadelBaseAbility
 {
 	CHandle< CCitadelBulletTimeWarp > m_hWall;

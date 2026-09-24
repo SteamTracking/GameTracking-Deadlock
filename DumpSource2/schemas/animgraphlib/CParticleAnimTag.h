@@ -5,7 +5,7 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false,
 //	"m_hParticleSystem": "",
@@ -21,6 +21,7 @@
 //	"m_attachmentCP1Type": "PATTACH_INVALID"
 //}
 // MPropertyFriendlyName = "Particle Tag"
+// MHasKV3TransferPolymorphicClassname
 class CParticleAnimTag : public CAnimTagBase
 {
 	// MPropertySuppressField

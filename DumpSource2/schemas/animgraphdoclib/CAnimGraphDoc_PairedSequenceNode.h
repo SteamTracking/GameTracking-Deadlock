@@ -8,7 +8,7 @@
 //	],
 //	"m_nNodeID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bDebugThisNode": false,
 //	"m_networkMode": "ServerAuthoritative",
@@ -18,6 +18,7 @@
 //	"m_bLoop": false
 //}
 // MPropertyFriendlyName = "Paired Animation Clip"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_PairedSequenceNode : public CAnimGraphDoc_Node
 {
 	// MPropertyFriendlyName = "Paired Role"

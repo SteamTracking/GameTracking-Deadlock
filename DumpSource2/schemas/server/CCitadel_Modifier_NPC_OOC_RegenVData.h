@@ -139,6 +139,7 @@
 //	"m_flOOCRegen": 0.000000,
 //	"m_flTimeToOOC": 2.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_NPC_OOC_RegenVData : public CCitadelModifierVData
 {
 	float32 m_flOOCRegen;

@@ -8,6 +8,7 @@
 //	],
 //	"m_rbfParameters": "[BINARY BLOB]"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CBoneConstraintRbf : public CBoneConstraintBase
 {
 	CUtlVector< std::pair< CUtlString, uint32 > > m_inputBones;

@@ -143,6 +143,7 @@
 //	"m_DebuffParticle": "",
 //	"m_strDamageSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Chrono_TimeWall_EffectVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

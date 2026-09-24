@@ -2,6 +2,7 @@
 //	"_class": "CCitadelBulletRedirectVolumeVData",
 //	"m_RedirectParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelBulletRedirectVolumeVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Visuals"

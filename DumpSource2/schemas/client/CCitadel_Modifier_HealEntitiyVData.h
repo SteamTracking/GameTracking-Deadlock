@@ -139,6 +139,7 @@
 //	"m_flMaxHealthHeal": 0.000000,
 //	"m_flFlatHeal": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_HealEntitiyVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Heal Info"

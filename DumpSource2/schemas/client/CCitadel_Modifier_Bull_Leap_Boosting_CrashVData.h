@@ -142,6 +142,7 @@
 //	"m_CrashTrailParticle": "",
 //	"m_flCollideRadius": 100.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Bull_Leap_Boosting_CrashVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

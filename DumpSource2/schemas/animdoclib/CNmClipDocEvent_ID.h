@@ -2,9 +2,10 @@
 //	"_class": "CNmClipDocEvent_ID",
 //	"m_flStartTime": 0.000000,
 //	"m_flDuration": 0.000000,
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_secondaryID": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipDocEvent_ID : public CNmClipDocEvent
 {
 	CGlobalSymbol m_ID;

@@ -1,6 +1,7 @@
 // MNetworkVarNames = "EHANDLE m_hTeleportTarget"
 // MNetworkVarNames = "bool m_bTeleported"
 // MNetworkVarNames = "QAngle m_qPostTeleportAngles"
+// MClassHasEntityLimitedDataDesc
 class CAbility_Drifter_ShadowMark : public CCitadelBaseAbility
 {
 	Vector m_vLastValidTeleportPosition;

@@ -148,6 +148,7 @@
 //	},
 //	"m_SelfModifierDurationAbilityProp": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierApplyModifierOnDamageTakenVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "OnDamage Settings"

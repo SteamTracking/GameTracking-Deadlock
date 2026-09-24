@@ -434,6 +434,7 @@
 //	"m_flBallSpeed": 800.000000,
 //	"m_flBallTraceRadius": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityRollingFireBallVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

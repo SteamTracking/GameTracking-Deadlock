@@ -1,5 +1,6 @@
 // MNetworkVarNames = "ECatStatueState_t m_eState"
 // MNetworkVarNames = "EHANDLE m_hStatue"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_ProximityRitual : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

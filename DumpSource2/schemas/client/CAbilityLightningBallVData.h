@@ -439,6 +439,7 @@
 //	"m_flHitSpeed": 80.000000,
 //	"m_flNonHeroHitSpeed": 56.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityLightningBallVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

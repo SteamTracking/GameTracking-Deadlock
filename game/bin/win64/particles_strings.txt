@@ -56,7 +56,6 @@ $SFXDetailBlendMode
 (min=%g max=%g)
 *** Test failure: "%s"
 ,m_nStride=%d m_pData=%p )
--1 for all asleep, 1 for all awake
 -BfF
 .?AV<lambda_1>@?$PulseBindingResourceHandleTraits_t@V?$CWeakHandle@UInfoForResourceTypeCModel@@@@@@
 .?AV<lambda_1>@?1???$ScaleMatrix@$00VCVariableMatrix@@@MatrixMath@@YAXAEAVCVariableMatrix@@M@Z@
@@ -955,7 +954,6 @@ $SFXDetailBlendMode
 .?AVISceneObjectDesc@@
 .?AVISceneObjectListener@@
 .?AVISequence@@
-0=don't clear particle attrs at init 1=clear to zero 2=clear to 0xdb -1=clear to zero at first sim
 2\vpT
 33S@ff
 3E"F
@@ -992,7 +990,6 @@ $SFXDetailBlendMode
 ?expf
 ?t$7?t$7?t$7?t$7?
 @fff>fff>fff>fff>
-A minimum on particle simulation time, particle simulation happening more frequently than this will lerp.
 A string associated with this Cursor, to use later for remote Kill or Wait requests. Cursors can have any number of Tags associated with them.
 A#B7
 A#Bg
@@ -1016,7 +1013,6 @@ Alpha fade in random
 Alpha fade in simple
 Alpha fade out random
 Alpha fade out simple
-Amount of simulation time that can elapse before new systems start falling back to cheaper versions
 And R%d <- R%d && R%d
 Any Other Cursors Have Tag
 Aq?S
@@ -1067,7 +1063,6 @@ Bad reinterpret on ArrayAppend
 Bad reinterpret on ArrayInsert
 Bad reinterpret on ArrayRemoveElementMatching
 Bad sequence in GetSequenceActivityName() for model '%s'!\n
-Base for falling back to cheaper effects under load.
 Base-10 logarithm
 Base-2 logarithm
 BaseTexture
@@ -1270,7 +1265,6 @@ Can NOT
 Cancel
 Cancel observing.
 Cannot allocate abstract class
-Causes all single-fire particle assertions to trigger once more.
 Ceiling - round float up to nearest integer)
 Ceiling Float
 Check Requirement
@@ -1318,7 +1312,6 @@ Copy R%d <- R%d
 Cosine of angle. Input in radians, output in radians
 Cp to Radial direction of Screen Space
 Create External Particle Impulse
-Create and destroy N particle systems for every one created normally
 Create vortices from parent particles
 CreateParticleCollection
 Creating collection: 
@@ -1357,13 +1350,11 @@ DepthMap
 Desired Kill Priority
 Detach R%d
 Diffuse particle attributes
-Disable to get a better look at what's happening offscreen
 DisableSorting
 Div R%d <- R%d / R%d
 Domain: %s\n
 Dot Product Vector
 Dot Product of Vector a 
-Draw particle children with parents (-1=use gameinfo, 0=no, 1=yes)
 Drive CP from global sound float
 ERROR: SweepRenderer::render_slices got into an infinite loop!\n
 Elapsed time = %f\n
@@ -1373,9 +1364,7 @@ Emit instantaneously
 Emit noise
 Emit to maintain count
 Enable children from parent particle count
-Enable input path in particle ops
 EnableParticleShaderFeatureBranching
-Enables/Disables Particle Simulation
 Endcap timed system freeze
 EntityName
 Eq R%d <- R%d == R%d
@@ -1483,7 +1472,6 @@ Hit maximum implicit index buffer size of %u, desired %u\n
 Hit maximum implicit vertex buffer size of %u, desired %u\n
 Hitbox Index
 Hitbox Offset Position
-How aggressive the switch to fallbacks will be depending on how far over the cl_particle_sim_fallback_threshold_ms the sim time is.  Higher numbers are more aggressive.
 IKV3TransferInterface_ResourceSave
 IKV3TransferInterface_UtlSymbolLarge
 IS_EFFECTS_LAYER
@@ -1580,7 +1568,6 @@ Lifetime pre-age noise
 LightmapUV
 LightmapUVW
 Lightning Snapshot Generator
-Limit debug visualizations to substring match of effect name
 Line length constraint
 LoadKV3ObjectInPlace error: %s\n
 Local acceleration force
@@ -1681,7 +1668,6 @@ Movement skin to bones
 Movement skin to bones rigid
 Mul R%d <- R%d * R%d
 Multi-Segment Display Snapshot Generator
-Multiplier for falling back to cheaper effects under load.
 NI>R
 NONE/Disabled
 NULL CELL 
@@ -1747,7 +1733,6 @@ Particle System Perf
 Particle effect %s setting count to %d\n
 Particle initializers always run. Previously, some initializers would silently be skipped.\n
 Particle needs recompiling: '%s'\nBrowse to the particle in asset browser, right click and select Full Recompile.
-Particle systems larger than this in every dimension skip culling to save CPU.  They will be drawn anyway.
 ParticleParamID_t
 ParticleSystem
 ParticleSystemRequiredResources
@@ -1765,9 +1750,7 @@ Particles/MixedResoluion/Slices
 Particles/ParticleTextureBaseSlot
 Particles/ParticleTraceOffsetOnlyHit
 ParticlesFoggedByDefault
-ParticlesLib
 Pass Outflow
-Pause particle simulation
 Per-Particle Force
 PerVertexLighting
 Pin Particle to control point
@@ -1803,17 +1786,12 @@ Position within sphere random
 PostSimulate
 Prevent passing through a plane
 Prevent passing through static part of world
-Print debug message every time a particle collection is created
-Print out information on existing particle systems
 Problem loading error.vpcf, please validate your game install\n
 Process Selector
 Profile Point 1
 Profile Point 2
 Profile Point 3
 Profile Point 4
-Profile particle
-Profile particle filter
-Profile particle spike
 PropWorldOrigin
 Pull towards control point
 Pulse domain which enables particle content to query leaf code to introspect game state.
@@ -1944,7 +1922,6 @@ Render blobs
 Render client physics radial impulse
 Render cloth force
 Render deferred light
-Render each particle system N times for perf testing
 Render light beam
 Render lights
 Render material attribute proxy
@@ -2010,8 +1987,6 @@ ScaleMatrix
 Scene Object Pointer
 SceneDepth
 SceneSystem/DrawParticleChildrenSeparateFromParents
-SceneSystem/Particles/Debug Visualizer
-SceneSystem/Particles/Draw Particles
 SceneSystem/PerObjectLightingSetup
 SceneSystem/RenderMeshlets
 Scratch Float 1
@@ -2079,10 +2054,6 @@ Set vector from control point
 SetBlackboardReference BR%d (%s) <- R%d 
 SetVar V%d (%s) <- R%d
 SetVarArrayElement1D V%d (%s) [ R%d ] <- R%d R%d
-Show all used controlpoints
-Show rope segments when debugging particle systems - specify a number to isolate to that segment id
-Show specific attribute when debugging particle systems
-Show the sorting position when debugging particle systems
 Sign Float
 Sign Int
 Signature hook to fill out arguments for OnInterval
@@ -2118,9 +2089,6 @@ Start a timer with the specified duration, fire the OnInterval output
 Stop Timer
 Stop any active timers - the completed outflow will still fire
 Stop effect after duration
-Stops all particle systems currently playing
-Stops all particle systems that don't match specified name
-Stops all particle systems that match specified name
 Strings Are Equal Case Sensitive
 Sub Graph
 Sub R%d <- R%d - R%d
@@ -2142,10 +2110,7 @@ TextureLayer1
 TextureLayer2
 TextureLayer3
 TextureLayer4
-The maximum detail level of particle to create
-The maximum distance that particles will render
 There should be no key duplication in the cache hashing scheme
-Threshold to warn about when rendering particles.
 Time since the start of the timer
 Time varying force
 TintColor
@@ -2167,8 +2132,6 @@ Update lights
 Usage: particle_profile <'systems'|'operators'> <num_frames>\n
 Usage: particle_profile_spike <'systems'|'operators'> <spike_threshold_ms>\n
 Use Random Children in Group
-Use fixed seeds for easier debugging
-Use random seeds in debug
 Used to flag a test as having failed.
 User Event States
 Value 0-1 how far along duration (always 0 if duration is -1)
@@ -2281,10 +2244,6 @@ cables.vfx
 cablevertices
 cache.Find( nKey ) == cache.InvalidIndex()
 can't solve quadratic for light %f %f\n
-cl_max_particle_pvs_aabb_edge_length
-cl_particle_create_duplicate_work_for_profiling
-cl_particle_log_creates
-cl_particle_newinit
 clamp
 compressedtangentframe
 con_command
@@ -2298,7 +2257,6 @@ default_sort
 deg2rad
 densityVolume.InterpolatedVoxel( 0, Vector( 0.f, 0.f, 0.f ) )=%?
 domain_scope
-dumpparticlelist
 element
 endFrame
 endTile
@@ -2429,16 +2387,6 @@ particle.collection_name
 particle.particle_count
 particle.renderer
 particle_id
-particle_layer_id_whitelist
-particle_powsimd_random_range_exp
-particle_profile
-particle_profile_filter
-particle_profile_spike
-particle_reset_assertions
-particle_snapshot_allow_combined_models
-particle_stop_all
-particle_stop_specified
-particle_stop_unspecified
 particle_system
 particlebatching.collection_count
 particlebatching.definition
@@ -2464,57 +2412,11 @@ pvec_color_white
 quX?
 qu{bK
 r\vpT
-r_draw_particle_children_with_parents
-r_drawparticles
-r_particle_allowprerender
-r_particle_batch_collections
-r_particle_cables_cast_shadows
-r_particle_cables_culling
-r_particle_cables_culling_bounds_scale
-r_particle_cables_dynamic_roundness
-r_particle_cables_dynamic_roundness_threshold
-r_particle_cables_render
-r_particle_cables_render_meshlets
-r_particle_cables_visualize_roundness
-r_particle_debug_filter
-r_particle_debug_force_simulation
-r_particle_debug_randomseeds
-r_particle_debug_show_attribute
-r_particle_debug_show_control_points
-r_particle_debug_show_rope_segments
-r_particle_debug_show_sort_position
-r_particle_enable_fastpath
-r_particle_explicit_fetch
-r_particle_fixedrandomseeds
-r_particle_gpu_implicit
-r_particle_gpu_implicit_cull_columns
-r_particle_gpu_implicit_debug_bricks
-r_particle_gpu_implicit_debug_stats
-r_particle_gpu_implicit_debug_wireframe
-r_particle_gpu_implicit_lds_cache
-r_particle_max_draw_distance
-r_particle_max_size_cull
-r_particle_max_texture_layers
-r_particle_min_timestep
-r_particle_mixed_resolution_viewstart
-r_particle_model_new
-r_particle_model_new8
-r_particle_model_per_thread_count
-r_particle_multiplier
-r_particle_newinput
-r_particle_render_refreshes_sleep_timer
-r_particle_render_test
-r_particle_skip_postsim
-r_particle_testbuffers
-r_particle_warn_threshold_ms
-r_particles_memset_at_init
-r_physics_particle_op_spawn_scale
 rad2deg
 random_position
 read attribute from neighboring particle
 remap
 remap vector component to scalar
-render particles 100 times and show perf
 report_columns
 report_info
 report_rows
@@ -2529,7 +2431,6 @@ rotation_speed
 round
 rsqrt
 saturate
-sc_particle_debug_visualizer
 scratch_float
 scratch_vec
 self
@@ -2567,7 +2468,6 @@ total_render
 total_sim
 trail_length
 translucent
-turn on optimized particle init
 vForward
 vMins=%?
 vecValue

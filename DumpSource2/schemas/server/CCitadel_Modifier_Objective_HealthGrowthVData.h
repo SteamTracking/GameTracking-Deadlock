@@ -140,6 +140,7 @@
 //	"m_flTickRate": 60.000000,
 //	"m_iGrowthStartTimeInMinutes": 20
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Objective_HealthGrowthVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Objective Health Growth"

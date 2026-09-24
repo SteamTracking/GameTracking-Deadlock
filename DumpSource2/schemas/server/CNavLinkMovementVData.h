@@ -11,6 +11,7 @@
 // MVDataRoot
 // MVDataNodeType = 1
 // MVDataOverlayType = 1
+// MHasKV3TransferPolymorphicClassname
 class CNavLinkMovementVData
 {
 	// MPropertyDescription = "Model used by the tools only to populate comboboxes for things like animgraph parameter pickers"

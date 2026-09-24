@@ -3,7 +3,7 @@
 //	"m_name": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_tags":
 //	[
@@ -11,6 +11,7 @@
 //	"m_hSequence": -1,
 //	"m_flPlaybackSpeed": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CMotionNodeSequence : public CMotionNode
 {
 	CUtlVector< TagSpan_t > m_tags;

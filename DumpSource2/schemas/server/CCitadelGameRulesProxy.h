@@ -1,4 +1,5 @@
 // MNetworkVarNames = "CCitadelGameRules * m_pGameRules"
+// MNetworkNoBase
 class CCitadelGameRulesProxy : public CGameRulesProxy
 {
 	// MNetworkEnable

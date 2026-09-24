@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_PrepareParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierChargedTacklePrepareVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Visuals"

@@ -141,6 +141,7 @@
 //	"m_ClientsideDamageParticle": "",
 //	"m_strDamageRecievedSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_RadianceVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -12,6 +12,7 @@
 //}
 // MPropertyFriendlyName = "VMix Control Input Node"
 // MPropertyDescription = "Define a control variable that can be set by code or an operator stack."
+// MHasKV3TransferPolymorphicClassname
 class CMixControlInput : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Default Value"

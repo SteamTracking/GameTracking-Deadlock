@@ -435,6 +435,7 @@
 //	"m_strSlashSound": "",
 //	"m_strHitConfirmSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Boho_DoubleHitVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

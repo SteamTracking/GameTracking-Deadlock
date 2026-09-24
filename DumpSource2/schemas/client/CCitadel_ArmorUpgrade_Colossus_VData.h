@@ -452,6 +452,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_ArmorUpgrade_Colossus_VData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

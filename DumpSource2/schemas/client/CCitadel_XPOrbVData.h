@@ -48,6 +48,7 @@
 //	"m_flKillerPlaneLaunchDelay": -1.000000,
 //	"m_flOrbClaimWindow": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_XPOrbVData : public CEntitySubclassVDataBase
 {
 	bool m_bIsObjective;

@@ -1,4 +1,5 @@
 // MNetworkVarNames = "float m_flTotalPendingDamage"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Shiv_Defer_Damage : public CCitadelBaseShivAbility
 {
 	// MNetworkEnable

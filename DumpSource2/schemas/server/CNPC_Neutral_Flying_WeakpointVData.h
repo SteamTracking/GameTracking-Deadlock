@@ -17,6 +17,7 @@
 //	"m_flOrbitRadius": 80.000000,
 //	"m_flOffSetScaler": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Neutral_Flying_WeakpointVData : public CNPC_Neutral_WeakpointVData
 {
 	float32 m_flFrequencyY;

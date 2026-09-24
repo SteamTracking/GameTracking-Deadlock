@@ -1,4 +1,5 @@
 // MNetworkVarNames = "int8 m_iCurrentMaxRagdollCount"
+// MNetworkNoBase
 class CRagdollManager : public CBaseEntity
 {
 	// MNetworkEnable

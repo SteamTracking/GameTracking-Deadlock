@@ -451,6 +451,7 @@
 //	"m_ElectricParticle": "",
 //	"m_strProcSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_Electric_SlippersVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

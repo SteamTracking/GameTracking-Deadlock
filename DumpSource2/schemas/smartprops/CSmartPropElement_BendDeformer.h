@@ -37,6 +37,7 @@
 //}
 // MPropertyFriendlyName = "Bend Deformer"
 // MPropertyDescription = "Creates a bend deformer that is applied to child elements. The deformation bends the local space x-axis around the local space z-axis. The Angles property can be used to rotate the local axis to change the direction of deformation."
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropElement_BendDeformer : public CSmartPropElement_Deformer
 {
 	// MPropertyFriendlyName = "Deformation Enabled"

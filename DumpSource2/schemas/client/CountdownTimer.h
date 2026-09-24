@@ -2,6 +2,7 @@
 // MNetworkVarNames = "GameTime_t m_timestamp"
 // MNetworkVarNames = "float32 m_timescale"
 // MNetworkVarNames = "WorldGroupId_t m_nWorldGroupId"
+// MNetworkNoBase
 class CountdownTimer
 {
 	// MNetworkEnable

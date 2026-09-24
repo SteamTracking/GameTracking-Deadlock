@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocCurrentSyncEventIDNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "ID",
 //			"m_bIsDynamicPin": false,
@@ -24,6 +24,7 @@
 //		}
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocCurrentSyncEventIDNode : public CNmGraphDocFlowNode
 {
 };

@@ -145,6 +145,7 @@
 //	"m_flStartTickRate": 1.500000,
 //	"m_flEndTickRate": 0.300000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Tier3_DamagePulseVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

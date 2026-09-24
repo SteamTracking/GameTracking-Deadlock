@@ -443,6 +443,7 @@
 //	"m_CastDelayParticle": "",
 //	"m_HitConfirmSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Drifter_Darkness_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

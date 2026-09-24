@@ -9,15 +9,16 @@
 //	},
 //	"m_srcState":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_destState":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_sComment": "",
 //	"m_bDisabled": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_ComponentStateTransition : public CAnimGraphDoc_StateTransition
 {
 };

@@ -200,7 +200,8 @@
 // MVDataRoot
 // MVDataAssociatedFile = "scripts/heroes.vdata"
 // MVDataOverlayType = 1
-// MVDataOutlinerLeafNameFn (UNKNOWN FOR PARSER)
+// MVDataOutlinerLeafNameFn
+// MHasKV3TransferPolymorphicClassname
 class CitadelHeroData_t
 {
 	CUtlVector< HeroAnimGraphDefaultValueOverride_t > m_vecAnimGraphDefaultValueOverrides;
@@ -318,11 +319,11 @@ class CitadelHeroData_t
 	EHeroType m_eHeroType;
 	CUtlString m_strRosterBackgroundLayout;
 	CUtlString m_strHideoutRichPresence;
-	// MPropertyMapKeyLeafChoiceProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyMapKeyLeafChoiceProviderFn
 	CUtlOrderedMap< CUtlString, float32 > m_mapItemDraftCounterWeights;
 	CUtlOrderedMap< EModifierValue, float32 > m_mapStandardLevelUpUpgrades;
 	CUtlOrderedMap< int32, HeroLevel_t > m_mapLevelInfo;
 	CUtlOrderedMap< EItemSlotTypes_t, CUtlVector< HeroPurchaseBonus_t > > m_mapPurchaseBonuses;
-	// MPropertyMapKeyLeafChoiceProviderFn (UNKNOWN FOR PARSER)
+	// MPropertyMapKeyLeafChoiceProviderFn
 	CUtlOrderedMap< CUtlString, ItemDraftWeight_t > m_mapItemDraftBucketing;
 };

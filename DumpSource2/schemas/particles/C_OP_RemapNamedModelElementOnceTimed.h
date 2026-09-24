@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class C_OP_RemapNamedModelElementOnceTimed : public CParticleFunctionOperator
 {
 	CStrongHandle< InfoForResourceTypeCModel > m_hModel;

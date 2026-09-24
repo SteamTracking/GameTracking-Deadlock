@@ -443,6 +443,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityImmobilizeTrapVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

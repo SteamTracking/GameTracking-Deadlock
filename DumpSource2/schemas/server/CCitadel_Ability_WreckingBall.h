@@ -1,4 +1,5 @@
 // MNetworkVarNames = "bool m_bHoldingBall"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_WreckingBall : public CCitadelBaseAbility
 {
 	ParticleIndex_t m_nBallParticle;

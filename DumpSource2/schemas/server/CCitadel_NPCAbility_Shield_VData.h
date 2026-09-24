@@ -430,6 +430,7 @@
 //	"m_flShieldOffset": 250.000000,
 //	"m_flShieldScale": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_NPCAbility_Shield_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Gameplay"

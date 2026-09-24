@@ -445,6 +445,7 @@
 //	"m_TrailParticle": "",
 //	"m_CastParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityHornetLeapVData : public CitadelAbilityVData
 {
 	float32 m_flChannelingAirDrag;

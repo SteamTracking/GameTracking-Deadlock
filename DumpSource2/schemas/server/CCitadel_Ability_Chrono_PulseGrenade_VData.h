@@ -433,6 +433,7 @@
 //	"m_strHitSound": "",
 //	"m_strDebuffStatName": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Chrono_PulseGrenade_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

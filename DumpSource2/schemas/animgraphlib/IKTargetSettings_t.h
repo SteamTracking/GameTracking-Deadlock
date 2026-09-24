@@ -4,17 +4,17 @@ class IKTargetSettings_t
 	// MPropertyAutoRebuildOnChange
 	IKTargetSource m_TargetSource;
 	// MPropertyFriendlyName = "Bone"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	IKBoneNameAndIndex_t m_Bone;
 	// MPropertyFriendlyName = "Animgraph Position Parameter"
 	// MPropertyAttributeChoiceName = "VectorParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_AnimgraphParameterNamePosition;
 	// MPropertyFriendlyName = "Animgraph Orientation Parameter"
 	// MPropertyAttributeChoiceName = "QuaternionParameter"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	AnimParamID m_AnimgraphParameterNameOrientation;
 	// MPropertyFriendlyName = "Target Coords"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	IKTargetCoordinateSystem m_TargetCoordSystem;
 };

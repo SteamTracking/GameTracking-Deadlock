@@ -453,6 +453,7 @@
 //	},
 //	"m_ChargeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Unicorn_DazzlingOrbVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Gameplay"

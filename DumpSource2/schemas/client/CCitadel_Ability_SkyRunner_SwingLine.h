@@ -3,6 +3,7 @@
 // MNetworkVarNames = "GameTime_t m_SwingEndTime"
 // MNetworkVarNames = "Vector m_vecSwingPoint"
 // MNetworkVarNames = "float m_flIdealSpringLength"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_SkyRunner_SwingLine : public C_CitadelBaseAbility
 {
 	// MNetworkEnable

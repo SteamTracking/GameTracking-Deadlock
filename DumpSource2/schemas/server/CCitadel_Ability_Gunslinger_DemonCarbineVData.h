@@ -456,6 +456,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Gunslinger_DemonCarbineVData : public CitadelAbilityVData
 {
 	float32 m_flShotTimeScaleLingerDuration;

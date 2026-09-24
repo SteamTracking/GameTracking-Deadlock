@@ -6,6 +6,6 @@
 class CNmBlendSpace1D
 {
 	// MPropertyAutoExpandSelf
-	// MPropertyResizable (UNKNOWN FOR PARSER)
+	// MPropertyResizable = 0
 	CUtlVector< CNmBlendSpace1D::Point_t > m_points;
 };

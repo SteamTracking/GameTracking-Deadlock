@@ -11,6 +11,7 @@
 //	"m_nFallbackNodeIdx": -1,
 //	"m_bIgnoreInvalidOptions": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmIDBasedClipSelectorNode::CDefinition : public CNmClipReferenceNode::CDefinition
 {
 	CUtlLeanVectorFixedGrowable< int16, 5 > m_optionNodeIndices;

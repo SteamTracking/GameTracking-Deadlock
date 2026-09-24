@@ -165,6 +165,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_VoidSphereVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

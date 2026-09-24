@@ -442,6 +442,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_HealthSwapVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

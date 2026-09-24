@@ -1,5 +1,6 @@
 // MNetworkVarNames = "GameTime_t m_flDashCastStartTime"
 // MNetworkVarNames = "Vector m_vDashCastDir"
+// MClassHasEntityLimitedDataDesc
 class CCitadelBaseDashCastAbility : public CCitadelBaseAbility
 {
 	CHandle< CCitadelBaseAbility > m_hAbilityToTrigger;

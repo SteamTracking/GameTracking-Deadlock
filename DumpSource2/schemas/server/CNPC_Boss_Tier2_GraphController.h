@@ -80,6 +80,7 @@
 //	"m_BossAction": null,
 //	"m_eTurn": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_Boss_Tier2_GraphController : public CAI_CitadelNPC_GraphController
 {
 	CAnimGraphParamRef< char* > m_pszActivity;

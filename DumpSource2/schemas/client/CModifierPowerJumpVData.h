@@ -142,6 +142,7 @@
 //	"m_flVerticalCameraOffsetLerpTime": 0.100000,
 //	"m_flVerticalCameraOffsetBias": 0.800000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierPowerJumpVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

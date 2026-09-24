@@ -436,6 +436,7 @@
 //	"m_AoEPlayerParticle": "",
 //	"m_AoEParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityIntimidateVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

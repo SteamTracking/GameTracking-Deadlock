@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Priest_Flashbang : public CCitadelBaseAbility
 {
 	ShotID_t m_tInitialShotID;

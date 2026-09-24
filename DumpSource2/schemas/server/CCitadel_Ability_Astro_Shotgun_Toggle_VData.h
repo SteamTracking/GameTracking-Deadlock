@@ -431,6 +431,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Astro_Shotgun_Toggle_VData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

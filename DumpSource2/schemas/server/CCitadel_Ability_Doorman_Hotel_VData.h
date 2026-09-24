@@ -470,6 +470,7 @@
 //	"m_flDoormanFallSpeedMax": 5.000000,
 //	"m_flDoormanAirDrag": 3.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Doorman_Hotel_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

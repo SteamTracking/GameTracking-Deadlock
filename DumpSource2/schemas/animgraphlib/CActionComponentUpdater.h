@@ -3,7 +3,7 @@
 //	"m_name": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_networkMode": "ServerAuthoritative",
 //	"m_bStartEnabled": false,
@@ -11,6 +11,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CActionComponentUpdater : public CAnimComponentUpdater
 {
 	CUtlVector< CSmartPtr< CAnimActionUpdater > > m_actions;

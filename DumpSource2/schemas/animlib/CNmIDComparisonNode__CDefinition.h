@@ -7,6 +7,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmIDComparisonNode::CDefinition : public CNmBoolValueNode::CDefinition
 {
 	int16 m_nInputValueNodeIdx;

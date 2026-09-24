@@ -139,6 +139,7 @@
 //	"m_BuffParticle": "",
 //	"m_strFlyingSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_IcarusWingsVData : public CCitadel_Modifier_Intrinsic_BaseVData
 {
 	// MPropertyStartGroup = "Visuals"

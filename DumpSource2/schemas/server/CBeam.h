@@ -4,7 +4,7 @@
 // MNetworkIncludeByName = "m_nRenderMode"
 // MNetworkIncludeByName = "m_clrRender"
 // MNetworkIncludeByName = "CGameSceneNode::m_hParent"
-// MNetworkOverride = "m_clrRender"
+// MNetworkOverride = "CBaseModelEntity::m_clrRender"
 // MNetworkVarNames = "float32 m_flFrameRate"
 // MNetworkVarNames = "float32 m_flHDRColorScale"
 // MNetworkVarNames = "uint8 m_nNumBeamEnts"
@@ -25,6 +25,7 @@
 // MNetworkVarNames = "BeamClipStyle_t m_nClipStyle"
 // MNetworkVarNames = "bool m_bTurnedOff"
 // MNetworkVarNames = "VectorWS m_vecEndPos"
+// MNetworkNoBase
 class CBeam : public CBaseModelEntity
 {
 	// MNetworkEnable

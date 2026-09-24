@@ -5,7 +5,7 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false,
 //	"m_AttributeName": "",
@@ -19,6 +19,7 @@
 //	]
 //}
 // MPropertyFriendlyName = "Material Attribute Tag"
+// MHasKV3TransferPolymorphicClassname
 class CMaterialAttributeAnimTag : public CAnimTagBase
 {
 	// MPropertyFriendlyName = "Attribute Name"
@@ -27,9 +28,9 @@ class CMaterialAttributeAnimTag : public CAnimTagBase
 	// MPropertyAutoRebuildOnChange
 	MatterialAttributeTagType_t m_AttributeType;
 	// MPropertyFriendlyName = "Value"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flValue;
 	// MPropertyFriendlyName = "Color"
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	Color m_Color;
 };

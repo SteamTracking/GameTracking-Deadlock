@@ -139,6 +139,7 @@
 //	"m_ImpactParticle": "",
 //	"m_strAttackerHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BulletFlurryVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

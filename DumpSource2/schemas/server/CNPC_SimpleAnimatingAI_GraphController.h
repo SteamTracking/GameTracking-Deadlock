@@ -3,6 +3,7 @@
 //	"m_hExternalGraph": 4294967295,
 //	"m_bHasTarget": null
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_SimpleAnimatingAI_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< bool > m_bHasTarget;

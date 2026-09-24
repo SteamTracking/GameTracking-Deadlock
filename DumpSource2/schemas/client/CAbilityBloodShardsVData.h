@@ -432,6 +432,7 @@
 //	},
 //	"m_ImpactParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityBloodShardsVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

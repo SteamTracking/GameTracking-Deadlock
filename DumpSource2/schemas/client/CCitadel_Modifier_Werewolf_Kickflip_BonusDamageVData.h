@@ -139,6 +139,7 @@
 //	"m_strOnBulletHitDamageSound": "",
 //	"m_DamageFX": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Werewolf_Kickflip_BonusDamageVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

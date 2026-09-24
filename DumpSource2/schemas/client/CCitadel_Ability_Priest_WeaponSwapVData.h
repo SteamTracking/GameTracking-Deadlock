@@ -459,6 +459,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Priest_WeaponSwapVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

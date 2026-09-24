@@ -459,6 +459,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Synth_PlasmaFlux_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

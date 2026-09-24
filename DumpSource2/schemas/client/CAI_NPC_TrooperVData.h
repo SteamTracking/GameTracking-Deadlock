@@ -526,6 +526,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAI_NPC_TrooperVData : public CAI_CitadelNPCVData
 {
 	TrooperType_t m_TrooperType;

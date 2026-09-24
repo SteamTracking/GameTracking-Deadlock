@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocSelectorConditionNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -18,6 +18,7 @@
 //	],
 //	"m_resultType": "Special"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocSelectorConditionNode : public CNmGraphDocResultNode
 {
 };

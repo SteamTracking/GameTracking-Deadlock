@@ -152,6 +152,7 @@
 //	"m_SelfParticle": "",
 //	"m_strAmbientLoopingLocalPlayerSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierNikumanVData : public CCitadelModifierAuraVData
 {
 	// MPropertyStartGroup = "Visuals"

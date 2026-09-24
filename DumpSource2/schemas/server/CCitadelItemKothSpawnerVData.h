@@ -3,6 +3,7 @@
 //	"m_AmbientParticle": "",
 //	"m_OnGroundTouchParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelItemKothSpawnerVData : public CCitadelItemPickupVData
 {
 	// MPropertyGroupName = "Visuals"

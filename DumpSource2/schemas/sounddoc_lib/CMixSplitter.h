@@ -16,6 +16,7 @@
 //}
 // MPropertyFriendlyName = "VMix Splitter Audio Node"
 // MPropertyDescription = "Create multiple copies of a track at different volumes for processing or mixing separately."
+// MHasKV3TransferPolymorphicClassname
 class CMixSplitter : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Volume1"

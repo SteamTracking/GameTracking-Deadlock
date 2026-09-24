@@ -24,6 +24,7 @@
 //}
 // MPropertyFriendlyName = "TESTBED: Decaying Sine Wave Container"
 // MPropertyDescription = "Only text params, renders in real time"
+// MHasKV3TransferPolymorphicClassname
 class CVoiceContainerDecayingSineWave : public CVoiceContainerGenerator
 {
 	// MPropertyFriendlyName = "Frequency (Hz)"

@@ -13,6 +13,7 @@
 //		"m_flLocalContrastVignetteBlur": 0.000000
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CLocalContrastLayer : public CColorCorrectionLayer
 {
 	PostProcessingLocalContrastParameters_t m_params;

@@ -6,6 +6,7 @@
 //	"m_bSolo": false,
 //	"m_bEditProperties": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CMixPropertyBase
 {
 	// MPropertyDescription = "Node name"

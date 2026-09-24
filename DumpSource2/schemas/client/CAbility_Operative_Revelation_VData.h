@@ -431,6 +431,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbility_Operative_Revelation_VData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Modifiers"

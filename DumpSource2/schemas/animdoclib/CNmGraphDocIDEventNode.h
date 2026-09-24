@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocIDEventNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Result",
 //			"m_type": "ID",
 //			"m_bIsDynamicPin": false,
@@ -28,6 +28,7 @@
 //	"m_priorityRule": "HighestWeight",
 //	"m_bIgnoreInactiveBranchEvents": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocIDEventNode : public CNmGraphDocFlowNode
 {
 	CGlobalSymbol m_defaultValue;

@@ -1,5 +1,6 @@
 // MNetworkVarNames = "CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent"
 // MNetworkVarNames = "string_t m_iszSoundName"
+// MClassHasEntityLimitedDataDesc
 class CTriggerItemShop : public CBaseTrigger
 {
 	// MNetworkEnable

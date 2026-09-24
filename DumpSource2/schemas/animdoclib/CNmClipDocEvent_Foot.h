@@ -4,6 +4,7 @@
 //	"m_flDuration": 0.000000,
 //	"m_phase": "LeftFootDown"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipDocEvent_Foot : public CNmClipDocEvent
 {
 	NmFootPhase_t m_phase;

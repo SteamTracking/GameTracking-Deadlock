@@ -440,6 +440,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Unicorn_LuminousStrikeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

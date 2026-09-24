@@ -1,4 +1,21 @@
-// MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MGetKV3ClassDefaults = {
+//	"m_vRayStart":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000
+//	],
+//	"m_vRayDelta":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000
+//	],
+//	"m_flRadius": 0.000000,
+//	"m_flMaxFraction": 0.000000,
+//	"m_flScale": 0.000000,
+//	"m_pHull": null
+//}
 class CastSphereSATParams_t
 {
 	Vector m_vRayStart;

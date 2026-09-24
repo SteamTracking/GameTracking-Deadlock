@@ -431,6 +431,7 @@
 //	"m_HealTargetParticle": "",
 //	"m_strHealCastSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityMedicHealVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

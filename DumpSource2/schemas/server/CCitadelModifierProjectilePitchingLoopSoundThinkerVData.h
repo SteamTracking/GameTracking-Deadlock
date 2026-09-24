@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_speedToPitchRemap": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelModifierProjectilePitchingLoopSoundThinkerVData : public CCitadelModifierVData
 {
 	// MPropertyGroupName = "Audio"

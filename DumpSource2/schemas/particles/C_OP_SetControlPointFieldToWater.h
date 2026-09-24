@@ -14,7 +14,7 @@
 //		"m_flRandomMin": 0.000000,
 //		"m_flRandomMax": 1.000000,
 //		"m_bHasRandomSignFlip": false,
-//		"m_nRandomSeed": <HIDDEN FOR DIFF>,
+//		"m_nRandomSeed": 0,
 //		"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
 //		"m_strSnapshotSubset": "",
 //		"m_flLOD0": 0.000000,
@@ -96,6 +96,7 @@
 //	"m_nDestCP": 0,
 //	"m_nCPField": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class C_OP_SetControlPointFieldToWater : public CParticleFunctionPreEmission
 {
 	// MPropertyFriendlyName = "source CP"

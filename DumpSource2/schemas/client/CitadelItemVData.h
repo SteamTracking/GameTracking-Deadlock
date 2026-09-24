@@ -449,6 +449,7 @@
 //	[
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CitadelItemVData : public CitadelAbilityVData
 {
 	EModTier_t m_iItemTier;

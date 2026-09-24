@@ -11,15 +11,16 @@
 //	"m_anticipationPosParamName": "",
 //	"m_anticipationPosParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_anticipationHeadingParamName": "",
 //	"m_anticipationHeadingParam":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	}
 //}
 // MPropertyFriendlyName = "Player Input Motor"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_PlayerInputMotor : public CAnimGraphDoc_Motor
 {
 	// MPropertyFriendlyName = "Sample Times"

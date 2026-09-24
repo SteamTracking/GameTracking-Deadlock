@@ -452,6 +452,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_BaseProjectileAOEModifierVData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Modifiers"

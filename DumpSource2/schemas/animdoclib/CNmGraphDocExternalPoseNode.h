@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocExternalPoseNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "External Pose",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -16,7 +16,7 @@
 //	"m_outputPins":
 //	[
 //		{
-//			"m_ID": <HIDDEN FOR DIFF>,
+//			"m_ID": "",
 //			"m_name": "Pose",
 //			"m_type": "Pose",
 //			"m_bIsDynamicPin": false,
@@ -25,6 +25,7 @@
 //	],
 //	"m_bShouldSampleRootMotion": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocExternalPoseNode : public CNmGraphDocFlowNode
 {
 	bool m_bShouldSampleRootMotion;

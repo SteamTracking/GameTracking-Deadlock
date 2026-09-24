@@ -494,6 +494,7 @@
 //	],
 //	"m_flCenterBulletRadiusOverride": 6.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Drifter_PrimaryWeapon_VData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "Visuals"

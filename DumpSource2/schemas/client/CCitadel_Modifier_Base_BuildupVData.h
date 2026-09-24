@@ -143,6 +143,7 @@
 //	"m_bBuildupAffectedByEffectiveness": true,
 //	"m_bPassBuildupEffectivenessToFillModifier": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Base_BuildupVData : public CCitadelModifierVData
 {
 	bool m_bUseBaseWeaponCycleTimeForDelay;

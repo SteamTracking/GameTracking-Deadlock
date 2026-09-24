@@ -458,6 +458,7 @@
 //	"m_flBombDropDist": 300.000000,
 //	"m_flWarningOffset": 64.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Tier3Boss_DropBombsVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

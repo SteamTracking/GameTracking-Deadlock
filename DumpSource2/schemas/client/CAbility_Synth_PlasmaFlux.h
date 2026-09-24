@@ -1,4 +1,5 @@
 // MNetworkVarNames = "EHANDLE m_hActiveProjectile"
+// MClassHasEntityLimitedDataDesc
 class CAbility_Synth_PlasmaFlux : public C_CitadelBaseAbility
 {
 	bool m_bTeleported;

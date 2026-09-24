@@ -437,6 +437,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Necro_HauntingSpiritsVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

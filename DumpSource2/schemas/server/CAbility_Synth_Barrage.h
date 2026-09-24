@@ -1,4 +1,5 @@
 // MNetworkVarNames = "GameTime_t m_flNextShootTime"
+// MClassHasEntityLimitedDataDesc
 class CAbility_Synth_Barrage : public CCitadelBaseAbility
 {
 	ShotID_t m_tLastShotID;

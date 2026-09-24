@@ -430,6 +430,7 @@
 //	"m_HitParticle": "",
 //	"m_ExplodeParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Swan_FeatherBoomerangVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

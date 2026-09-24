@@ -7,6 +7,7 @@
 //	"m_flTimeToEndScale": 50.000000,
 //	"m_flMaxScale": 2.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_BaseDefenseSentryVData : public CNPC_SimpleAnimatingAIVData
 {
 	CSubclassName< 4 > m_AbilityWeapon;

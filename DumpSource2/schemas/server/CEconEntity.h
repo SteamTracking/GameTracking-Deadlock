@@ -1,4 +1,5 @@
 // MNetworkVarNames = "CAttributeContainer m_AttributeManager"
+// MClassHasEntityLimitedDataDesc
 class CEconEntity : public CBaseFlex, public IHasAttributes
 {
 	// MNetworkEnable

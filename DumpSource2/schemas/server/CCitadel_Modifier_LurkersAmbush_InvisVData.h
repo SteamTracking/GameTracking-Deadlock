@@ -152,6 +152,7 @@
 //	"m_flInvisBias": 0.700000,
 //	"m_flSpottedMinTimeToStart": 0.500000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_LurkersAmbush_InvisVData : public CCitadel_Modifier_InvisVData
 {
 	// MPropertyStartGroup = "+Properties"

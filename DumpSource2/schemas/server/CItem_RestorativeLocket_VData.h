@@ -454,6 +454,7 @@
 //	"m_strMaxStackSound": "",
 //	"m_strTargetHealSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItem_RestorativeLocket_VData : public CitadelItemVData
 {
 	// MPropertyStartGroup = "Visuals"

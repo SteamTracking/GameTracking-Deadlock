@@ -12,6 +12,7 @@
 //	"m_bClientOnly": false,
 //	"m_phase": "LeftFootDown"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFootEvent : public CNmEvent
 {
 	NmFootPhase_t m_phase;

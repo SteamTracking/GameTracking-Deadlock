@@ -9,7 +9,7 @@
 //	]
 //}
 // MPropertyFriendlyName = "Item"
-// MPropertyElementNameFn (UNKNOWN FOR PARSER)
+// MPropertyElementNameFn
 class CFootStepTriggerItem
 {
 	// MPropertyFriendlyName = "Foot"

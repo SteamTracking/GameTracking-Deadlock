@@ -1,3 +1,4 @@
+// MClassHasEntityLimitedDataDesc
 class CTriggerObscuredVolume : public CBaseTrigger
 {
 	CUtlSymbolLarge m_iszModifierName;

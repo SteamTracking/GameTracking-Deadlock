@@ -5,11 +5,12 @@
 //	"m_group": "",
 //	"m_tagID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_bIsReferenced": false
 //}
 // MPropertyFriendlyName = "Internal Tag"
+// MHasKV3TransferPolymorphicClassname
 class CStringAnimTag : public CAnimTagBase
 {
 };

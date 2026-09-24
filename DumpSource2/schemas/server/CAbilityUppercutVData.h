@@ -535,6 +535,7 @@
 //	"m_flMaxPitchUp": -60.000000,
 //	"m_flDamageTriggerTime": 0.235000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityUppercutVData : public CAbilityMeleeVData
 {
 	AttackData_t m_UppercutAttackData;

@@ -4,6 +4,7 @@
 // MNetworkVarNames = "int m_nActivelyCapturingTeam"
 // MNetworkVarNames = "int m_nActiveCapturers"
 // MNetworkVarNames = "uint8 m_nEnableState"
+// MClassHasEntityLimitedDataDesc
 class CCitadelTriggerCapturePoint : public C_BaseTrigger
 {
 	CCitadelInWorldEventTimer* m_pUIWorldEventTimer;

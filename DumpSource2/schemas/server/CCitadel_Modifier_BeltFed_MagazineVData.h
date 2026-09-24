@@ -140,6 +140,7 @@
 //	"m_SpinDownSound": "",
 //	"m_SpinLoopSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BeltFed_MagazineVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

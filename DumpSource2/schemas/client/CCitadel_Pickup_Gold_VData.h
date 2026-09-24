@@ -137,6 +137,7 @@
 //	"m_flGoldAmount": 0.000000,
 //	"m_flGoldPerMinuteAmount": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Pickup_Gold_VData : public CCitadel_Pickup_VData
 {
 	float32 m_flGoldAmount;

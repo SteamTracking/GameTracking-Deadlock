@@ -5,7 +5,7 @@
 //	"m_group": "",
 //	"m_id":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_componentName": "",
 //	"m_bNetworkingRequested": false,
@@ -19,6 +19,7 @@
 //	"m_bDefaultValue": false
 //}
 // MPropertyFriendlyName = "Bool Parameter"
+// MHasKV3TransferPolymorphicClassname
 class CBoolAnimParameter : public CConcreteAnimParameter
 {
 	// MPropertyFriendlyName = "Default Value"

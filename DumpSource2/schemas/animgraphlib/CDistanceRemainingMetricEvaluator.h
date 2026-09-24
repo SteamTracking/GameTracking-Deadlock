@@ -16,6 +16,7 @@
 //	"m_bFilterGoalDistance": false,
 //	"m_bFilterGoalOvershoot": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CDistanceRemainingMetricEvaluator : public CMotionMetricEvaluator
 {
 	float32 m_flMaxDistance;

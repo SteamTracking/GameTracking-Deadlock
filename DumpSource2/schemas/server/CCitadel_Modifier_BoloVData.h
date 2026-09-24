@@ -143,6 +143,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_BoloVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

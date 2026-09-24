@@ -435,6 +435,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Bebop_StickyBomb2VData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

@@ -432,6 +432,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityDistruptiveChargeVData : public CitadelAbilityVData
 {
 	// MPropertyGroupName = "Visuals"

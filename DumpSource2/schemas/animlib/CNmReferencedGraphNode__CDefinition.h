@@ -4,6 +4,7 @@
 //	"m_nReferencedGraphIdx": -1,
 //	"m_nFallbackNodeIdx": -1
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmReferencedGraphNode::CDefinition : public CNmPoseNode::CDefinition
 {
 	int16 m_nReferencedGraphIdx;

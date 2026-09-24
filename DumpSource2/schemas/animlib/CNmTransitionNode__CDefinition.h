@@ -19,6 +19,7 @@
 //	"m_blendWeightEasing": "Linear",
 //	"m_rootMotionBlend": "Blend"
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmTransitionNode::CDefinition : public CNmPoseNode::CDefinition
 {
 	int16 m_nTargetStateNodeIdx;

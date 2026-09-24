@@ -149,6 +149,7 @@
 //	"m_nRequiredDamageFlags": "",
 //	"m_TracerParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ViperVenomProcWatcherVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyGroupName = "Visuals"

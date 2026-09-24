@@ -15,6 +15,7 @@
 //	"m_nConfigCount": -1,
 //	"m_bLoop": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CMotionGraph
 {
 	CParamSpanUpdater m_paramSpans;

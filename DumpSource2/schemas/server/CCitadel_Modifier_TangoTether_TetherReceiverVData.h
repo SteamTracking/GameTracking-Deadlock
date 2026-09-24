@@ -139,6 +139,7 @@
 //	"m_strAttackBuffParticle": "",
 //	"m_sBuffLoopingSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_TangoTether_TetherReceiverVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

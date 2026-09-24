@@ -472,6 +472,7 @@
 //	"m_strWallBeamPointEndLoopSound": "",
 //	"m_strWallBeamPointClosestLoopSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Necro_ZombieWallVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

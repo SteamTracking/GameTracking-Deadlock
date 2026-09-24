@@ -30,6 +30,7 @@
 // MPropertyFriendlyName = "Transform: Trace In Direction"
 // MPropertyDescription = "Perform a trace in a direction from a specified origin and stop when a surface is hit."
 // MVDataClassGroup = "Transform"
+// MHasKV3TransferPolymorphicClassname
 class CSmartPropOperation_TraceInDirection : public CSmartPropOperation_Trace
 {
 	// MPropertyStartGroup = "+Trace Direction"

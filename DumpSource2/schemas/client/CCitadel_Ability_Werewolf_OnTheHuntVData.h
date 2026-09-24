@@ -433,6 +433,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Werewolf_OnTheHuntVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

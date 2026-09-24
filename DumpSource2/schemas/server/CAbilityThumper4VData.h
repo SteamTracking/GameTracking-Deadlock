@@ -431,6 +431,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAbilityThumper4VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

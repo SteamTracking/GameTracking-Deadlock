@@ -510,6 +510,7 @@
 //	"m_flMaxVelocityDampening": 0.500000,
 //	"m_flMinButtonHoldTimeToPlaySound": 0.100000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Unicorn_PrimaryWeaponVData : public CCitadel_Ability_PrimaryWeaponVData
 {
 	// MPropertyStartGroup = "Visual"

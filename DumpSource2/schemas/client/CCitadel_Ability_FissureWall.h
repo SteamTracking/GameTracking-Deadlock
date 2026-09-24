@@ -7,6 +7,7 @@
 // MNetworkVarNames = "float m_Length"
 // MNetworkVarNames = "bool m_bTraveling"
 // MNetworkVarNames = "bool m_bPreview"
+// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_FissureWall : public C_CitadelBaseAbility
 {
 	CUtlVector< ParticleIndex_t > m_vecWallPreviewParticles;

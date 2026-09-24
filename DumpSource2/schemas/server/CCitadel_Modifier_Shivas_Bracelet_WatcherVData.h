@@ -144,6 +144,7 @@
 //	},
 //	"m_ProcParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Shivas_Bracelet_WatcherVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

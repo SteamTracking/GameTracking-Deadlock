@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_flAirDrag": 1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierRapidFireChannelVData : public CCitadelModifierVData
 {
 	float32 m_flAirDrag;

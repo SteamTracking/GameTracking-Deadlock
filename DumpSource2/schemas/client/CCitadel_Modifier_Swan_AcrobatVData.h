@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_StackBuffParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Swan_AcrobatVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

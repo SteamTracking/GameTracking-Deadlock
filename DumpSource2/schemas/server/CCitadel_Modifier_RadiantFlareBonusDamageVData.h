@@ -139,6 +139,7 @@
 //	"m_strOnBulletHitDamageSound": "",
 //	"m_DamageFX": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_RadiantFlareBonusDamageVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"

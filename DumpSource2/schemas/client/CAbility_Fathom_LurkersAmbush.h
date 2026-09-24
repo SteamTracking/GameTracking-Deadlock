@@ -1,5 +1,6 @@
 // MNetworkVarNames = "bool m_bIsVisibleOnMinimap"
 // MNetworkVarNames = "GameTime_t m_flStoppedMovingStartTime"
+// MClassHasEntityLimitedDataDesc
 class CAbility_Fathom_LurkersAmbush : public C_CitadelBaseAbility
 {
 	CModifierHandleTyped< CCitadelModifier > m_hRegenModifier;

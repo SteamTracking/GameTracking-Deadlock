@@ -12,6 +12,7 @@
 //	],
 //	"m_flBlendTimeSeconds": 0.100000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmBoneMaskSelectorNode::CDefinition : public CNmBoneMaskValueNode::CDefinition
 {
 	int16 m_defaultMaskNodeIdx;

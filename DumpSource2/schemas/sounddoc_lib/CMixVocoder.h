@@ -18,6 +18,7 @@
 //}
 // MPropertyFriendlyName = "VMix Vocoder Audio Node"
 // MPropertyDescription = "Applies multi-band modulation to a carrier signal, based on the multi-band envelope of a modulator signal.  Modulation bands can be configured to a certain number of bands or range of frequencies."
+// MHasKV3TransferPolymorphicClassname
 class CMixVocoder : public CMixPropertyBase
 {
 	// MPropertyFriendlyName = "Vocoder Band Count"

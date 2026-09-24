@@ -435,6 +435,7 @@
 //	"m_MuzzleFlashParticle": "",
 //	"m_bGrantAmmoOnCast": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Werewolf_UnloadGunVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

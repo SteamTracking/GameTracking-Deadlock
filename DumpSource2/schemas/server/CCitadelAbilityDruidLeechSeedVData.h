@@ -432,6 +432,7 @@
 //	},
 //	"m_ImpactParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelAbilityDruidLeechSeedVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

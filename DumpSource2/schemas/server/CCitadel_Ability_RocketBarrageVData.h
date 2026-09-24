@@ -461,6 +461,7 @@
 //	"m_flMoveSpeedReductionPct": 54.000000,
 //	"m_flHeightTestDistance": 240.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_RocketBarrageVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

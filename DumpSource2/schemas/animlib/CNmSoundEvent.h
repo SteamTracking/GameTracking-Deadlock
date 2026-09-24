@@ -18,6 +18,7 @@
 //	"m_bContinuePlayingSoundAtDurationEnd": false,
 //	"m_flDurationInterruptionThreshold": 0.900000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmSoundEvent : public CNmEvent
 {
 	CNmEventRelevance_t m_relevance;

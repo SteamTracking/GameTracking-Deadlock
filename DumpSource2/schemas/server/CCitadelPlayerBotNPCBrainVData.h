@@ -313,6 +313,7 @@
 //	"m_flDisengageFromEnemyToLaneDist": 1200.000000,
 //	"m_flDefendBaseSearchRadius": 2000.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelPlayerBotNPCBrainVData : public CAI_CitadelNPCVData
 {
 	// MPropertyStartGroup = "Movement"

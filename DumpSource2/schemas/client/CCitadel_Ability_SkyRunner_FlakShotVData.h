@@ -430,6 +430,7 @@
 //	"m_ExplodeParticle": "",
 //	"m_ExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_SkyRunner_FlakShotVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

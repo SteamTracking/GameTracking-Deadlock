@@ -1,6 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CNmGraphDocCommentNode",
-//	"m_ID": <HIDDEN FOR DIFF>,
+//	"m_ID": "",
 //	"m_name": "",
 //	"m_floatingComment": "",
 //	"m_position":
@@ -24,6 +24,7 @@
 //		76
 //	]
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmGraphDocCommentNode : public CNmGraphDocNode
 {
 	Vector2D m_size;

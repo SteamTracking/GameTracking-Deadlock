@@ -139,6 +139,7 @@
 //	"m_BeamParticle": "",
 //	"m_ImpactParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_RescueBeamVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

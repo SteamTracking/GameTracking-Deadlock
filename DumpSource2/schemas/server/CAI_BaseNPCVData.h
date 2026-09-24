@@ -47,6 +47,7 @@
 //	"m_flThreatTemperature": 20.000000,
 //	"m_flFlashpoint": -1.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAI_BaseNPCVData : public CEntitySubclassVDataBase
 {
 	// MPropertyGroupName = "Visuals"

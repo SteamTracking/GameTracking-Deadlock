@@ -141,6 +141,7 @@
 //	"m_BleedParticle": "",
 //	"m_RangeIndicatorParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_PunkgoatTetheredVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

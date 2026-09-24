@@ -451,6 +451,7 @@
 //	"m_flCastDelayMaxDist": 20.000000,
 //	"m_flPostCastCooldown": 2.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_ProximityRitual_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -452,6 +452,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_ArmorUpgrade_SpiritBubbleVData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

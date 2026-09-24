@@ -138,6 +138,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_HeadShotParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Headshot_Damage_DebuffVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

@@ -142,6 +142,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifierGravityLassoEnemyVData : public CCitadel_Modifier_LinkVData
 {
 	// MPropertyStartGroup = "Visuals"

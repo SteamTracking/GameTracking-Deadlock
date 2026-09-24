@@ -22,6 +22,7 @@
 //	],
 //	"m_nUpType": 0
 //}
+// MHasKV3TransferPolymorphicClassname
 class CAimConstraint : public CBaseConstraint
 {
 	Quaternion m_qAimOffset;

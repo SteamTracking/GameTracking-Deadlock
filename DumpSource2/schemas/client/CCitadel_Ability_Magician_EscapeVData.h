@@ -455,6 +455,7 @@
 //		]
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Magician_EscapeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Modifiers"

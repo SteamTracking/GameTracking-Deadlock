@@ -10,12 +10,13 @@
 //	"m_attachmentName": "",
 //	"m_tags": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmClipDocEvent_Sound : public CNmClipDocEvent
 {
 	CNmEventRelevance_t m_relevance;
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	bool m_bContinuePlayingSoundAtDurationEnd;
-	// MPropertyAttrStateCallback (UNKNOWN FOR PARSER)
+	// MPropertyAttrStateCallback
 	float32 m_flDurationInterruptionThreshold;
 	// MPropertyStartGroup = "+Sound"
 	// MPropertyAttributeEditor = "SoundPicker()"

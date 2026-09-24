@@ -8,6 +8,7 @@
 //	"m_operator": "Add",
 //	"m_flValueB": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmFloatMathNode::CDefinition : public CNmFloatValueNode::CDefinition
 {
 	int16 m_nInputValueNodeIdxA;

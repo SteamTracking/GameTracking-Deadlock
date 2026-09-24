@@ -140,6 +140,7 @@
 //	"m_SpiritBulletTracerParticle": "",
 //	"m_strSpiritBulletHitSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Drifter_Darkness_Caster_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

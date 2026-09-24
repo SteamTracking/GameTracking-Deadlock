@@ -5,6 +5,7 @@
 //	"m_nLumMaskShape": 0,
 //	"m_bInverted": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class CLayerMask
 {
 	int32 m_nLumMaskCenter;

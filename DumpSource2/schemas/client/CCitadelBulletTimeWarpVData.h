@@ -3,6 +3,7 @@
 //	"m_TimeWallHitParticle": "",
 //	"m_TimeWallHitTimerParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelBulletTimeWarpVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Visuals"

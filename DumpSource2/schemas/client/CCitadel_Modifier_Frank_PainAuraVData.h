@@ -141,6 +141,7 @@
 //	},
 //	"m_AuraParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Frank_PainAuraVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

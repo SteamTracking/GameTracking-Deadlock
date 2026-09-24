@@ -141,6 +141,7 @@
 //	},
 //	"m_LiftParticle": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CModifier_Mirage_Tornado_Lift_VData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

@@ -5,6 +5,7 @@
 //	"m_triggerMode": "ExactlyAtEventIndex",
 //	"m_syncEventIdx": -1
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNmSyncEventIndexConditionNode::CDefinition : public CNmBoolValueNode::CDefinition
 {
 	int16 m_nSourceStateNodeIdx;

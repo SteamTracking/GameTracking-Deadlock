@@ -455,6 +455,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CItem_FleetfootBoots_VData : public CitadelItemVData
 {
 	// MPropertyGroupName = "Modifiers"

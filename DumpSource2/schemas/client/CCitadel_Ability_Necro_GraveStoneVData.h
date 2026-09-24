@@ -450,6 +450,7 @@
 //	"m_flNavMeshSearchRadius": 10.000000,
 //	"m_bAllowStackingDamageFromGun": true
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_Necro_GraveStoneVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Visuals"

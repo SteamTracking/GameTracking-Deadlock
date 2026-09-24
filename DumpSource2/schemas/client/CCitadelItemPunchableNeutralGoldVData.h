@@ -10,6 +10,7 @@
 //	{
 //	}
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadelItemPunchableNeutralGoldVData : public CCitadelItemPickupVData
 {
 	float32 m_flGroundOffset;

@@ -21,6 +21,7 @@
 // MNetworkVarNames = "uint8 m_nChangeCount"
 // MNetworkVarNames = "float32 m_Width"
 // MNetworkVarNames = "bool m_bConstrainBetweenEndpoints"
+// MNetworkNoBase
 class C_RopeKeyframe : public C_BaseModelEntity
 {
 	// MNotSaved

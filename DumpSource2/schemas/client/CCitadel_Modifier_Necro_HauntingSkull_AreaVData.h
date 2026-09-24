@@ -152,6 +152,7 @@
 //	"m_flInitialRandomVariance": 0.300000,
 //	"m_flSpawnPositionNavMeshSearchRange": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Necro_HauntingSkull_AreaVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Modifiers"

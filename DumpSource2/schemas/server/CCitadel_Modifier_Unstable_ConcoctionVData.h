@@ -143,6 +143,7 @@
 //	},
 //	"m_ExplodeSound": ""
 //}
+// MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Unstable_ConcoctionVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"

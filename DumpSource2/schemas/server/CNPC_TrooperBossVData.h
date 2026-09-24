@@ -309,6 +309,7 @@
 //	"m_flPlayerDPS": 0.000000,
 //	"m_flDPSPctGrowthPerMinute": 0.000000
 //}
+// MHasKV3TransferPolymorphicClassname
 class CNPC_TrooperBossVData : public CAI_CitadelNPCVData
 {
 	bool m_bMitigateDamageFromPlayers;

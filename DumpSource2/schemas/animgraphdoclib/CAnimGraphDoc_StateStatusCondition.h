@@ -7,11 +7,12 @@
 //	"m_comparisonParamName": "",
 //	"m_comparisonParamID":
 //	{
-//		"m_id": <HIDDEN FOR DIFF>,
+//		"m_id": 0
 //	},
 //	"m_comparisonOp": "COMPARISON_EQUALS"
 //}
 // MPropertyFriendlyName = "State Status Condition"
+// MHasKV3TransferPolymorphicClassname
 class CAnimGraphDoc_StateStatusCondition : public CAnimGraphDoc_Condition
 {
 	StateValue m_sourceValue;

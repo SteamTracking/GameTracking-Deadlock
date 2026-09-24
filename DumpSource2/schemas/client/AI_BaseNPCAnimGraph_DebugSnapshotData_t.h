@@ -5,6 +5,7 @@
 //	"e_movement_type_desired": "",
 //	"b_movement_type_restart": false
 //}
+// MHasKV3TransferPolymorphicClassname
 class AI_BaseNPCAnimGraph_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
 {
 	CGlobalSymbol e_action_desired;
