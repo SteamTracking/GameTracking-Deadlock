@@ -1,33 +1,15 @@
-// MNetworkVarNames = "CNetworkOriginQuantizedVector m_vTop"
-// MNetworkVarNames = "CNetworkOriginQuantizedVector m_vBottom"
-// MNetworkVarNames = "bool m_bRequestStopClimbing"
-// MNetworkVarNames = "bool m_bRequestJumpToRoof"
-// MNetworkVarNames = "GameTime_t m_flMoveDownStartTime"
-// MNetworkVarNames = "EClimbRopeState_t m_eClimbState"
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Climb_Rope : public CCitadelBaseAbility
 {
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
-	CNetworkOriginQuantizedVector m_vTop;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
-	CNetworkOriginQuantizedVector m_vBottom;
+	CNetworkOriginQuantizedVectorWS m_vTop;
+	CNetworkOriginQuantizedVectorWS m_vBottom;
 	GameTime_t m_flActivatePressTime;
 	GameTime_t m_flDisconnectTime;
 	GameTime_t m_flClimbStartTime;
 	bool m_bNoDelayNeeded;
 	bool m_bMouseWheelBind;
-	Vector m_vLastPos;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
+	VectorWS m_vLastPos;
 	bool m_bRequestStopClimbing;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
 	bool m_bRequestJumpToRoof;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
 	GameTime_t m_flMoveDownStartTime;
-	// MNetworkEnable
 	EClimbRopeState_t m_eClimbState;
 };

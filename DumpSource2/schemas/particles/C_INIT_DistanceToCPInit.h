@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -166,7 +167,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flInputMax":
 //	{
@@ -241,7 +243,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flOutputMin":
 //	{
@@ -316,7 +319,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flOutputMax":
 //	{
@@ -391,7 +395,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nStartCP": 0,
 //	"m_bLOS": false,
@@ -470,7 +475,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flLOSScale": 0.000000,
 //	"m_nSetMethod": "PARTICLE_SET_REPLACE_VALUE",

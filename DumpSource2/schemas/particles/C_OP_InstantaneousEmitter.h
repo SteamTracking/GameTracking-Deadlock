@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -165,7 +166,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flStartTime":
 //	{
@@ -240,7 +242,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flInitFromKilledParentParticles": 0.000000,
 //	"m_nEventType": "PARTICLE_EVENT_TYPE_MASK_KILLED",
@@ -317,11 +320,13 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nMaxEmittedPerFrame": -1,
 //	"m_nSnapshotControlPoint": -1,
-//	"m_strSnapshotSubset": ""
+//	"m_strSnapshotSubset": "",
+//	"m_bResetSnapshotIndexOnChanges": false
 //}
 // MHasKV3TransferPolymorphicClassname
 class C_OP_InstantaneousEmitter : public CParticleFunctionEmitter
@@ -330,6 +335,7 @@ class C_OP_InstantaneousEmitter : public CParticleFunctionEmitter
 	// MPropertyAttributeRange = "1 1000"
 	CParticleCollectionFloatInput m_nParticlesToEmit;
 	// MPropertyFriendlyName = "emission start time"
+	// MPropertySuppressExpr = "m_bResetSnapshotIndexOnChanges == true"
 	CParticleCollectionFloatInput m_flStartTime;
 	// MPropertyFriendlyName = "emission scale from parent particle events"
 	float32 m_flInitFromKilledParentParticles;
@@ -345,4 +351,7 @@ class C_OP_InstantaneousEmitter : public CParticleFunctionEmitter
 	// MPropertyFriendlyName = "snapshot subset"
 	// MPropertySuppressExpr = "m_nSnapshotControlPoint < 0"
 	CUtlString m_strSnapshotSubset;
+	// MPropertyFriendlyName = "re-emit on snapshot changes"
+	// MPropertySuppressExpr = "m_nSnapshotControlPoint < 0"
+	bool m_bResetSnapshotIndexOnChanges;
 };

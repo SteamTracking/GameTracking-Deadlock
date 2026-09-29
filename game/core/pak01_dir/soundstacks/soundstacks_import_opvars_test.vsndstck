@@ -1475,4 +1475,137 @@
 			},
 		]
 	}
+	no_scope_inner = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					global_opvar_names = 
+					{
+						soundevent_data = "true"
+						data_type = "string"
+						value = "min_vol_inverse_val"
+						_system_properties = 
+						{
+							display_group = "normal"
+							property_group = "Opvars"
+							property_help = "List of opvars whose values influence the volume/filter values of the sound"
+						}
+					}
+					opvars_use_namespace = 
+					{
+						data_type = "bool"
+						value = "true"
+					}
+				}
+			},
+			{
+				name = "scoped_opvars"
+				operator = "util_null"
+				operator_variables = 
+				{
+					min_vol_inverse_val = 
+					{
+						data_type = "float"
+						value = "150.00"
+					}
+				}
+			},
+			{
+				name = "get_opvar_name"
+				operator = "opvar_get_string"
+				input_execute = "1.0"
+				check_event_data = "true"
+				input_operator_name = "public"
+				input_field_name = "global_opvar_names"
+				input_use_namespace = "@public.opvars_use_namespace"
+				array_selection_type = "index"
+				input_index = "0"
+			},
+			{
+				name = "get_scoped_opvar_1"
+				operator = "opvar_get_float"
+				input_operator_name = "scoped_opvars"
+				input_field_name = "@get_opvar_name.output"
+				input_use_namespace = "@public.opvars_use_namespace"
+			},
+			{
+				name = "set_scoped_opvar"
+				operator = "opvar_set_float"
+				input_operator_name = "scoped_opvars"
+				input_field_name = "@get_opvar_name.output"
+				input_use_namespace = "@public.opvars_use_namespace"
+				input = "200.0"
+			},
+			{
+				name = "get_scoped_opvar_2"
+				operator = "opvar_get_float"
+				input_operator_name = "scoped_opvars"
+				input_field_name = "@get_opvar_name.output"
+				input_use_namespace = "@public.opvars_use_namespace"
+			},
+			{
+				name = "opvar_name"
+				operator = "util_print_string"
+				input = "@get_opvar_name.output"
+			},
+		]
+	}
+	no_scope_outer = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					no_scope_inner = 
+					{
+						data_type = "public_opvar"
+						value = "no_scope_inner"
+						use_public_opvar_scope = "true"
+					}
+				}
+			},
+			{
+				name = "no_scope_inner"
+				operator = "sos_import_stack"
+				import_stack = "no_scope_inner"
+				auto_connect_public_fields = "true"
+				auto_connect_field_scope = "no_scope_inner"
+				operator_variables = 
+				{
+				}
+			},
+		]
+	}
+	no_scope_main = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					no_scope_outer = 
+					{
+						data_type = "public_opvar"
+						value = "no_scope_outer"
+					}
+				}
+			},
+			{
+				name = "no_scope_outer"
+				operator = "sos_import_stack"
+				import_stack = "no_scope_outer"
+				auto_connect_public_fields = "true"
+			},
+		]
+	}
 }

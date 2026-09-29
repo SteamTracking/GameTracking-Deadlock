@@ -1,3 +1,0 @@
-class CCitadelItemMetal : public CBaseAnimGraph
-{
-};

@@ -1,0 +1,3 @@
+class CVsndInputNodeDesc : public CVNodeTypeDesc
+{
+};

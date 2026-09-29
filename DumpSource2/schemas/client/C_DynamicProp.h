@@ -1,17 +1,15 @@
 // MEntityAllowsPortraitWorldSpawn
-// MNetworkVarNames = "bool m_bUseHitboxesForRenderBox"
-// MNetworkVarNames = "bool m_bUseAnimGraph"
 class C_DynamicProp : public C_BreakableProp
 {
-	// MNetworkEnable
+	bool m_bGraphControllerEnabled;
 	bool m_bUseHitboxesForRenderBox;
-	// MNetworkEnable
 	bool m_bUseAnimGraph;
 	CEntityIOOutput m_pOutputAnimBegun;
 	CEntityIOOutput m_pOutputAnimOver;
 	CEntityIOOutput m_pOutputAnimLoopCycleOver;
 	CEntityIOOutput m_OnAnimReachedStart;
 	CEntityIOOutput m_OnAnimReachedEnd;
+	CEntityIOOutput[5] m_OnScriptFireEvent;
 	CUtlSymbolLarge m_iszIdleAnim;
 	AnimLoopMode_t m_nIdleAnimLoopMode;
 	bool m_bRandomizeCycle;
@@ -19,6 +17,7 @@ class C_DynamicProp : public C_BreakableProp
 	bool m_bFiredStartEndOutput;
 	// MNotSaved
 	bool m_bForceNpcExclude;
+	bool m_bCreateMovableSurfaceGraph;
 	// MNotSaved
 	bool m_bCreateNonSolid;
 	// MNotSaved

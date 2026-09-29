@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_type": "PANNER_TYPE_EQUAL_POWER",
 //	"m_flStrength": 1.000000
 //}

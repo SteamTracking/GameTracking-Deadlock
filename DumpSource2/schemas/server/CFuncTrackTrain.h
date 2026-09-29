@@ -4,10 +4,11 @@ class CFuncTrackTrain : public CBaseModelEntity
 	float32 m_length;
 	Vector m_vPosPrev;
 	QAngle m_angPrev;
+	float32 m_flSpeed;
 	Vector m_controlMins;
 	Vector m_controlMaxs;
 	// MNotSaved
-	Vector m_lastBlockPos;
+	VectorWS m_lastBlockPos;
 	// MNotSaved
 	int32 m_lastBlockTick;
 	float32 m_flVolume;
@@ -17,11 +18,11 @@ class CFuncTrackTrain : public CBaseModelEntity
 	float32 m_height;
 	float32 m_maxSpeed;
 	float32 m_dir;
-	CUtlSymbolLarge m_iszSoundMove;
-	CUtlSymbolLarge m_iszSoundMovePing;
-	CUtlSymbolLarge m_iszSoundStart;
-	CUtlSymbolLarge m_iszSoundStop;
-	CUtlSymbolLarge m_strPathTarget;
+	CGameSoundEventName m_iszSoundMove;
+	CGameSoundEventName m_iszSoundMovePing;
+	CGameSoundEventName m_iszSoundStart;
+	CGameSoundEventName m_iszSoundStop;
+	CGameSoundEventName m_strPathTarget;
 	float32 m_flMoveSoundMinDuration;
 	float32 m_flMoveSoundMaxDuration;
 	GameTime_t m_flNextMoveSoundTime;

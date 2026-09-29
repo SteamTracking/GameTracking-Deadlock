@@ -6,7 +6,7 @@
 			name = "GpuLightBinnerStartupManifest"
 			group = "GpuLightBinnerManifest"
 			source_file = "src/scenesystem/lightbinner_gpu.cpp"
-			source_line = 62
+			source_line = 65
 			resources = 
 			[
 				resource_name:"materials/dev/compute_tile_cullbits.vmat",
@@ -18,7 +18,7 @@
 			name = "WindControllerManifest"
 			group = ""
 			source_file = "src/scenesystem/utils/windcontroller.cpp"
-			source_line = 26
+			source_line = 37
 			resources = 
 			[
 				resource_name:"materials/dev/wind_update_cs.vmat",
@@ -37,8 +37,19 @@
 			]
 		},
 		{
+			name = "VirtualTextureMgrManifest"
+			group = ""
+			source_file = "src/scenesystem/utils/virtualtexturemanager.cpp"
+			source_line = 16
+			resources = 
+			[
+				resource_name:"materials/dev/vt_cs.vmat",
+				resource_name:"materials/dev/vt_debug_imgui.vmat",
+			]
+		},
+		{
 			name = "SSAOManifest"
-			group = "GameStartup_SM40"
+			group = "GameStartup"
 			source_file = "src/scenesystem/utils/scalable_ambient_obscurance.cpp"
 			source_line = 32
 			resources = 
@@ -70,7 +81,7 @@
 			name = "CharacterDecalRendererManifest"
 			group = "GameStartup"
 			source_file = "src/scenesystem/utils/characterdecalrenderer.cpp"
-			source_line = 23
+			source_line = 24
 			resources = 
 			[
 				resource_name:"materials/dev/generate_decal_normals.vmat",
@@ -80,7 +91,7 @@
 			name = "SparseShadowTreeManifest"
 			group = ""
 			source_file = "src/scenesystem/sparseshadowtree.cpp"
-			source_line = 66
+			source_line = 68
 			resources = 
 			[
 				resource_name:"materials/dev/sst_cs.vmat",
@@ -89,7 +100,7 @@
 		},
 		{
 			name = ""
-			group = "GameStartup_SM50"
+			group = "GameStartup"
 			source_file = "src/scenesystem/scenelpvdebuggrid.cpp"
 			source_line = 22
 			resources = 
@@ -101,7 +112,7 @@
 			name = "SubsurfaceProfilesManifest"
 			group = "SubsurfaceProfilesManifest"
 			source_file = "src/scenesystem/scenegfxresources.cpp"
-			source_line = 486
+			source_line = 479
 			resources = 
 			[
 				resource_name:"materials/subsurface_profiles.vdata",
@@ -111,7 +122,7 @@
 			name = ""
 			group = "ToolsStartup_RayTracing"
 			source_file = "src/scenesystem/scenegfxresources.cpp"
-			source_line = 477
+			source_line = 470
 			resources = 
 			[
 				resource_name:"materials/dev/rtx/binlights.vmat",
@@ -124,39 +135,21 @@
 		},
 		{
 			name = ""
-			group = "GameStartup_SM50"
-			source_file = "src/scenesystem/scenegfxresources.cpp"
-			source_line = 467
-			resources = 
-			[
-				resource_name:"VolumetricFogManifest",
-				resource_name:"WindControllerManifest",
-				resource_name:"materials/dev/skinning_cs.vmat",
-				resource_name:"materials/dev/compute_smooth_normals_cs.vmat",
-				resource_name:"materials/dev/cs_parallel_sort.vmat",
-				resource_name:"materials/dev/cs_parallel_sort_onesweep.vmat",
-			]
-		},
-		{
-			name = ""
 			group = "GameStartup"
 			source_file = "src/scenesystem/scenegfxresources.cpp"
-			source_line = 460
+			source_line = 456
 			resources = 
 			[
 				resource_name:"TonemapManifest",
+				resource_name:"VolumetricFogManifest",
+				resource_name:"WindControllerManifest",
+				resource_name:"materials/dev/skinning_cs.vmat",
+				resource_name:"materials/dev/meshlet_refit_cs.vmat",
+				resource_name:"materials/dev/compute_smooth_normals_cs.vmat",
+				resource_name:"materials/dev/cs_parallel_sort.vmat",
+				resource_name:"materials/dev/cs_parallel_sort_onesweep.vmat",
 				resource_name:"materials/tools/copy_texture_with_gamma.vmat",
 				resource_name:"materials/rendertargetops/copydepth.vmat",
-			]
-		},
-		{
-			name = "SceneSystemInitSM50"
-			group = "GameStartup_SM50"
-			source_file = "src/scenesystem/scenegfxresources.cpp"
-			source_line = 447
-			resources = 
-			[
-				resource_name:"materials/dev/luminaire.vmat",
 			]
 		},
 		{
@@ -183,11 +176,12 @@
 				resource_name:"materials/dev/primary_white_trans.vmat",
 				resource_name:"materials/dev/reflectivity_90.vmat",
 				resource_name:"materials/dev/generalfilter.vmat",
+				resource_name:"materials/dev/luminaire.vmat",
 			]
 		},
 		{
 			name = "RenderingPipelineForwardManifest"
-			group = "GameStartup_SM40"
+			group = "GameStartup"
 			source_file = "src/scenesystem/renderingpipelineforward.cpp"
 			source_line = 42
 			resources = 
@@ -206,10 +200,20 @@
 			]
 		},
 		{
+			name = "BaseSceneObjectManifest"
+			group = ""
+			source_file = "src/scenesystem/sceneobjectdescs.cpp"
+			source_line = 60
+			resources = 
+			[
+				resource_name:"materials/dev/cull_scene_objects.vmat",
+			]
+		},
+		{
 			name = "InstancedMeshSceneObjectManifest"
-			group = "GameStartup_SM50"
+			group = "GameStartup"
 			source_file = "src/scenesystem/instancedmeshdesc.cpp"
-			source_line = 66
+			source_line = 67
 			resources = 
 			[
 				resource_name:"materials/dev/cull_instanced_meshes.vmat",
@@ -220,20 +224,29 @@
 			name = "AoProxyManifest"
 			group = ""
 			source_file = "src/scenesystem/ambientocclusionproxy.cpp"
-			source_line = 24
+			source_line = 32
 			resources = 
 			[
 				resource_name:"materials/dev/aoproxy_splat.vmat",
 			]
 		},
 		{
-			name = "AggregateSceneObjectManifest"
-			group = "GameStartup_SM50"
-			source_file = "src/scenesystem/aggregatedesc.cpp"
-			source_line = 39
+			name = "AggregateRTProxySceneObjectManifest"
+			group = "GameStartup"
+			source_file = "src/scenesystem/aggregatertproxydesc.cpp"
+			source_line = 36
 			resources = 
 			[
-				resource_name:"materials/dev/generate_aggregate_cull_requests.vmat",
+				resource_name:"materials/dev/visualize_rtproxy.vmat",
+			]
+		},
+		{
+			name = "AggregateSceneObjectManifest"
+			group = "GameStartup"
+			source_file = "src/scenesystem/aggregatedesc.cpp"
+			source_line = 38
+			resources = 
+			[
 				resource_name:"materials/dev/cull_aggregate_fragments.vmat",
 				resource_name:"materials/dev/compact_indirect_draws.vmat",
 				resource_name:"materials/dev/sum_aggregate_cull_stats.vmat",

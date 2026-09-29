@@ -56,12 +56,13 @@
 //	"m_defaultResourceName": "",
 //	"m_bIsTargetInWorldSpace": false,
 //	"m_blendMode": "Effector",
-//	"m_flReferencePoseTwistWeight": 0.000000
+//	"m_flChainRotationWeight": 0.000000
 //}
 // MHasKV3TransferPolymorphicClassname
 class CnmGraphDocTwoBoneIKNode : public CNmGraphDocVariationDataNode
 {
 	bool m_bIsTargetInWorldSpace;
 	NmIKBlendMode_t m_blendMode;
-	float32 m_flReferencePoseTwistWeight;
+	// MPropertyDescription = "ChainRotationWeight - this controls how we solve for effector rotations, 0.0f will try to fully rotate the effector, 1.0f will try to solve the rotation by rotating the IK chain"
+	float32 m_flChainRotationWeight;
 };

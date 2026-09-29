@@ -20,6 +20,9 @@ enum EItemSlotTypes_t : uint8_t
 	// MPropertyFriendlyName = "Favorites"
 	// MPropertySuppressEnumerator
 	EItemSlotType_Favorites = 6,
+	// MPropertyFriendlyName = "Ability"
 	// MPropertySuppressEnumerator
-	EMaxItemSlotTypes = 7,
+	EItemSlotType_Ability = 7,
+	// MPropertySuppressEnumerator
+	EMaxItemSlotTypes = 8,
 };

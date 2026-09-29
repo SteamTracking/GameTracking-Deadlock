@@ -75,13 +75,34 @@
 		vsnd_files = "sounds/environmental_hazard/zap_trigger_charged_loop.vsnd"
 		vsnd_duration = 87.0
 	}
-	BouncePad.Activate = 
+	amb.BouncePad.Lp = 
 	{
 		base = "Base.World"
-		volume = 2.0
+		volume_hideout_offset_db = -6.0
+		volume = -8.0
+		volume_fade_in = 1.0
+		volume_fade_out = 1.0
+		cull_at_distance = 2200.0
+		volume_falloff_max = 2000.0
+		volume_falloff_min = 400.0
+		occlusion_scale = 1.0
+		delay_rand_min = -2.0
+		vsnd_files = "sounds/ambient/soundscapes/world/windpad_lp.vsnd"
+		vsnd_duration = 13.855873
+	}
+	BouncePad.Activate = 
+	{
+		base = "Base.Ability"
+		volume = -2.0
 		volume_fade_out = 0.1
-		vsnd_files = "sounds/gameplay/jump_pad/jump_pad_wind_01.vsnd"
-		vsnd_duration = 3.46
+		block_duration = 0.5
+		vsnd_files = 
+		[
+			"sounds/gameplay/jump_pad/jump_pad_wind_01.vsnd",
+			"sounds/gameplay/jump_pad/jump_pad_wind_02.vsnd",
+			"sounds/gameplay/jump_pad/jump_pad_wind_03.vsnd",
+		]
+		vsnd_duration = 3.045488
 	}
 	Teleport.Enter = 
 	{
@@ -165,6 +186,67 @@
 		volume = -6.0
 		vsnd_files = "sounds/ambient/soundscapes/entities/shop_open_merchantrise.vsnd"
 		vsnd_duration = 1.079524
+	}
+	World.SoulDealer.Securing.Souls.Lp = 
+	{
+		base = "Base.Ability.StatusEffect"
+		volume = -1.0
+		delay_rand_min = -10.0
+		volume_fade_in = 0.5
+		volume_fade_out = 0.35
+		param_envelope_enabled = 1.0
+		pitch_envelope_scale_min = 0.9
+		pitch_envelope_scale_max = 1.1
+		vsnd_files = "sounds/world/soul_dealer/soul_dealer_securing_souls_lp.vsnd"
+		vsnd_duration = 14.483719
+	}
+	World.SoulDealer.Securing.Souls.Start = 
+	{
+		base = "Base.Ability.StatusEffect"
+		volume = 3.0
+		block_opponent = 1.0
+		block_team = 1.0
+		vsnd_files = 
+		[
+			"sounds/world/soul_dealer/soul_dealer_securing_souls_start_01.vsnd",
+			"sounds/world/soul_dealer/soul_dealer_securing_souls_start_02.vsnd",
+			"sounds/world/soul_dealer/soul_dealer_securing_souls_start_03.vsnd",
+		]
+		vsnd_duration = 2.068322
+	}
+	World.SoulDealer.Securing.Souls.End = 
+	{
+		base = "Base.Ability.StatusEffect"
+		volume = 3.0
+		block_opponent = 1.0
+		block_team = 1.0
+		vsnd_files = 
+		[
+			"sounds/world/soul_dealer/soul_dealer_securing_souls_end_01.vsnd",
+			"sounds/world/soul_dealer/soul_dealer_securing_souls_end_02.vsnd",
+			"sounds/world/soul_dealer/soul_dealer_securing_souls_end_03.vsnd",
+		]
+		vsnd_duration = 2.01415
+	}
+	World.SoulDealer.Gold.Tick = 
+	{
+		base = "Player.GetGold"
+		block_duration = 0.32
+		volume = -4.0
+		position_force_from_input = false
+	}
+	World.SoulDealer.Gold.Finish = 
+	{
+		base = "World.SoulDealer.Gold.Tick"
+		volume = -1.0
+		vsnd_files = 
+		[
+			"sounds/ui/ui_get_gold_large_01.vsnd",
+			"sounds/ui/ui_get_gold_large_02.vsnd",
+			"sounds/ui/ui_get_gold_large_03.vsnd",
+			"sounds/ui/ui_get_gold_large_04.vsnd",
+		]
+		vsnd_duration = 2.286485
 	}
 	Soul.Urn.Spawn = 
 	{

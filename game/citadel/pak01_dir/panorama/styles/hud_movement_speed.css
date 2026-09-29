@@ -7,9 +7,9 @@ CitadelHudMovementSpeed
 	transition-timing-function: ease-in-out;
 	horizontal-align: right;
 	vertical-align: bottom;
-	flow-children: left;
-	margin-bottom: 35px;
-	width: 200px;
+	flow-children: down;
+	margin-bottom: 20px;
+	width: 300px;
 	visibility: collapse;
 }
 
@@ -18,12 +18,81 @@ CitadelHudMovementSpeed.showMovespeed
 	visibility: visible;
 }
 
+CitadelHudMovementSpeed.showMovespeed.gShopOpen
+{
+	visibility: collapse;
+}
+
+.SpeedometerEnabled CitadelHudMovementSpeed
+{
+	visibility: visible;
+	margin-right: 20px;
+	margin-bottom: 40px;
+}
+
+.SpeedometerEnabled CitadelHudMovementSpeed .movementSpeedGraphRow
+{
+	visibility: collapse;
+}
+
+.SpeedometerEnabled CitadelHudMovementSpeed.gShopOpen
+{
+	visibility: collapse;
+}
+
+.connectedToHeroTesting.SpeedometerEnabled CitadelHudMovementSpeed.showMovespeed .movementSpeedGraphRow
+{
+	visibility: visible;
+}
+
 #MovementSpeed
 {
-	width: 100%;
+	horizontal-align: right;
+	width: 80px;
 	height: 10px;
 	overflow: clip;
 	background-color: #00000050;
+}
+
+.movementSpeedGraphRow
+{
+	flow-children: right;
+	width: 100%;
+	height: 80px;
+	margin-top: 4px;
+}
+
+#MovementSpeedGraphAxis
+{
+	width: 44px;
+	height: 100%;
+}
+
+#MovementSpeedGraphAxis .axisLabel
+{
+	font-family: sans;
+	font-size: 11px;
+	color: #FFFFFFAA;
+	horizontal-align: right;
+	margin-right: 4px;
+}
+
+.axisLabelTop
+{
+	vertical-align: top;
+}
+
+.axisLabelBottom
+{
+	vertical-align: bottom;
+}
+
+#MovementSpeedGraph
+{
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
+	background-color: #00000050;
+	border: 1px solid #FFFFFF22;
 }
 
 #MovementSpeed .ProgressBarLeft
@@ -43,9 +112,9 @@ CitadelHudMovementSpeed.showMovespeed
 
 #MovementSpeedCurrent,#MovementSpeedLabel
 {
+	font-family: block;
 	color: white;
-	font-size: 16px;
-	text-transform: uppercase;
+	font-size: 14px;
 }
 
 .isNegative #MovementSpeedLabel
@@ -73,11 +142,16 @@ CitadelHudMovementSpeed.showMovespeed
 .movementSpeedContainer
 {
 	flow-children: right;
-	horizontal-align: center;
+	horizontal-align: right;
 	text-align: center;
-	margin-bottom: -5px;
-	width: 170px;
-	visibility: collapse;
+	width: 80px;
+}
+
+.movementSpeedContainer Label
+{
+	horizontal-align: center;
+	font-weight: bold;
+	font-family: block;
 }
 
 #BaseMovementSpeedPanel

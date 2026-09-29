@@ -1,3 +1,4 @@
+// MModifierDynamicValuesSuppressCache
 class CCitadel_Modifier_Doorman_DimishingTimestop : public CCitadelModifier
 {
 	float32 m_flSlowPercent;

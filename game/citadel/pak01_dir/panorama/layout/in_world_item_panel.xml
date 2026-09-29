@@ -1,12 +1,23 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/in_world_item_panel.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/in_world_item_panel.vcss" />
 	</styles>
 	<Panel class="WindowRoot" hittest="false">
 		<Panel id="UnitStatus" hittest="false">
-			<Label class="name" text="{s:name}" />
+			<Panel class="NormalContents">
+				<Image id="icon" />
+				<Label class="name" text="{s:name}" />
+			</Panel>
+			<Panel id="GoldReward">
+				<Panel class="icon_souls" />
+				<Label text="{i:gold_reward}" />
+			</Panel>
+		</Panel>
+		<Panel class="LeftRightFlow AlignHorizontalCenter" id="cost">
+			<Panel id="soulIcon" class="goldIcon" />
+			<Label id="gold" text="{d:gold}" />
 		</Panel>
 	</Panel>
 </root>

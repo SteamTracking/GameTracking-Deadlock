@@ -41,7 +41,8 @@
 //		{
 //		},
 //		"m_nPriority": 1,
-//		"m_strHOTToppedOff": ""
+//		"m_strHOTToppedOff": "",
+//		"m_strHighThresholdOneshot": ""
 //	},
 //	"m_DamageIndicatorSounds":
 //	{
@@ -54,25 +55,13 @@
 //	},
 //	"m_strExitCombatSound": "",
 //	"m_ShoppingEffect": "",
-//	"m_MinimapZiplinesParticle": "",
 //	"m_KillStreakFireParticle": "",
 //	"m_MidbossIndicatorRespawningParticle": "",
 //	"m_MidbossIndicatorSpawnedParticle": "",
-//	"m_MinimapTeamRebelsColor":
-//	[
-//		0,
-//		0,
-//		0,
-//		0
-//	],
-//	"m_MinimapTeamCombineColor":
-//	[
-//		0,
-//		0,
-//		0,
-//		0
-//	],
 //	"m_MiniMapOffsets":
+//	[
+//	],
+//	"m_MapDistrictLocalization":
 //	[
 //	],
 //	"m_OutlineColorFriend":
@@ -117,11 +106,19 @@
 //		0,
 //		0
 //	],
+//	"m_OutlineColorHighlight":
+//	[
+//		0,
+//		255,
+//		255
+//	],
+//	"m_flOutlineWidthHighlight": 6.000000,
 //	"m_LaneInfo":
 //	[
 //		{
 //			"m_strLaneName": "",
 //			"m_strCSSClass": "",
+//			"m_bIsEnemyLane": false,
 //			"m_Color":
 //			[
 //				0,
@@ -129,14 +126,7 @@
 //				0,
 //				0
 //			],
-//			"m_MinimapZiplineColorOverride":
-//			[
-//				0,
-//				0,
-//				0,
-//				0
-//			],
-//			"m_ObjectiveColor":
+//			"m_MinimapColor":
 //			[
 //				0,
 //				0,
@@ -147,6 +137,7 @@
 //		{
 //			"m_strLaneName": "",
 //			"m_strCSSClass": "",
+//			"m_bIsEnemyLane": false,
 //			"m_Color":
 //			[
 //				0,
@@ -154,14 +145,7 @@
 //				0,
 //				0
 //			],
-//			"m_MinimapZiplineColorOverride":
-//			[
-//				0,
-//				0,
-//				0,
-//				0
-//			],
-//			"m_ObjectiveColor":
+//			"m_MinimapColor":
 //			[
 //				0,
 //				0,
@@ -172,6 +156,7 @@
 //		{
 //			"m_strLaneName": "",
 //			"m_strCSSClass": "",
+//			"m_bIsEnemyLane": false,
 //			"m_Color":
 //			[
 //				0,
@@ -179,14 +164,7 @@
 //				0,
 //				0
 //			],
-//			"m_MinimapZiplineColorOverride":
-//			[
-//				0,
-//				0,
-//				0,
-//				0
-//			],
-//			"m_ObjectiveColor":
+//			"m_MinimapColor":
 //			[
 //				0,
 //				0,
@@ -197,6 +175,7 @@
 //		{
 //			"m_strLaneName": "",
 //			"m_strCSSClass": "",
+//			"m_bIsEnemyLane": false,
 //			"m_Color":
 //			[
 //				0,
@@ -204,14 +183,7 @@
 //				0,
 //				0
 //			],
-//			"m_MinimapZiplineColorOverride":
-//			[
-//				0,
-//				0,
-//				0,
-//				0
-//			],
-//			"m_ObjectiveColor":
+//			"m_MinimapColor":
 //			[
 //				0,
 //				0,
@@ -222,6 +194,7 @@
 //		{
 //			"m_strLaneName": "",
 //			"m_strCSSClass": "",
+//			"m_bIsEnemyLane": false,
 //			"m_Color":
 //			[
 //				0,
@@ -229,14 +202,7 @@
 //				0,
 //				0
 //			],
-//			"m_MinimapZiplineColorOverride":
-//			[
-//				0,
-//				0,
-//				0,
-//				0
-//			],
-//			"m_ObjectiveColor":
+//			"m_MinimapColor":
 //			[
 //				0,
 //				0,
@@ -247,6 +213,7 @@
 //		{
 //			"m_strLaneName": "",
 //			"m_strCSSClass": "",
+//			"m_bIsEnemyLane": false,
 //			"m_Color":
 //			[
 //				0,
@@ -254,14 +221,7 @@
 //				0,
 //				0
 //			],
-//			"m_MinimapZiplineColorOverride":
-//			[
-//				0,
-//				0,
-//				0,
-//				0
-//			],
-//			"m_ObjectiveColor":
+//			"m_MinimapColor":
 //			[
 //				0,
 //				0,
@@ -272,6 +232,7 @@
 //		{
 //			"m_strLaneName": "",
 //			"m_strCSSClass": "",
+//			"m_bIsEnemyLane": false,
 //			"m_Color":
 //			[
 //				0,
@@ -279,14 +240,26 @@
 //				0,
 //				0
 //			],
-//			"m_MinimapZiplineColorOverride":
+//			"m_MinimapColor":
+//			[
+//				0,
+//				0,
+//				0,
+//				0
+//			]
+//		},
+//		{
+//			"m_strLaneName": "",
+//			"m_strCSSClass": "",
+//			"m_bIsEnemyLane": false,
+//			"m_Color":
 //			[
 //				0,
 //				0,
 //				0,
 //				0
 //			],
-//			"m_ObjectiveColor":
+//			"m_MinimapColor":
 //			[
 //				0,
 //				0,
@@ -295,40 +268,28 @@
 //			]
 //		}
 //	],
-//	"m_NoLaneZip":
-//	{
-//		"m_strLaneName": "",
-//		"m_strCSSClass": "",
-//		"m_Color":
-//		[
-//			0,
-//			0,
-//			0,
-//			0
-//		],
-//		"m_MinimapZiplineColorOverride":
-//		[
-//			0,
-//			0,
-//			0,
-//			0
-//		],
-//		"m_ObjectiveColor":
-//		[
-//			0,
-//			0,
-//			0,
-//			0
-//		]
-//	},
-//	"m_enemyZiplineColor":
+//	"m_ColorFriend":
 //	[
 //		0,
 //		0,
 //		0,
 //		0
 //	],
-//	"m_enemyObjectivesColor":
+//	"m_ColorEnemy":
+//	[
+//		0,
+//		0,
+//		0,
+//		0
+//	],
+//	"m_ColorTeam1":
+//	[
+//		0,
+//		0,
+//		0,
+//		0
+//	],
+//	"m_ColorTeam2":
 //	[
 //		0,
 //		0,
@@ -395,6 +356,23 @@
 //		0,
 //		0
 //	],
+//	"m_nItemCorruptionPricePerTier":
+//	[
+//		0,
+//		0,
+//		0,
+//		0,
+//		0,
+//		0
+//	],
+//	"m_vecCorruptedPenaltyDefs":
+//	[
+//	],
+//	"m_flNeutralCampRespawnTimerShowDistance": 15.000000,
+//	"m_flMidBossRespawnTimerShowDistance": 30.000000,
+//	"m_flNeutralCampRespawnTimerHeight": 2.500000,
+//	"m_flPickupGainedEffectStaggerInterval": 1.500000,
+//	"m_flPermanentPickupTextDuration": 3.000000,
 //	"m_flTrooperKillGoldShareFrac":
 //	[
 //		0.000000,
@@ -490,6 +468,13 @@
 //		"m_nPatronPhase1GoldKill": 0,
 //		"m_nPatronPhase1GoldOrbs": 0
 //	},
+//	"m_BreakablePowerupLootParams":
+//	{
+//		"m_iLootListDeckSize": 1,
+//		"m_mapPickupsByMatchTimeMins":
+//		{
+//		}
+//	},
 //	"m_BreakableSpawnTimeDesc":
 //	[
 //	],
@@ -584,6 +569,7 @@
 //		"m_flZipBoostCooldownOnStart": 20.000000,
 //		"m_flBuyTimeGracePeriod": 15.000000,
 //		"m_iUltimateUnlockRound": 0,
+//		"m_iCorruptItemRound": 0,
 //		"m_flTier1MaxResistTime": 4.000000,
 //		"m_flTier2MaxResistTime": 4.000000
 //	}
@@ -601,14 +587,12 @@ class CitadelGenericData_t
 	CSoundEventName m_strExitCombatSound;
 	// MPropertyStartGroup = "Particles and Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ShoppingEffect;
-	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_MinimapZiplinesParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_KillStreakFireParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_MidbossIndicatorRespawningParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_MidbossIndicatorSpawnedParticle;
 	// MPropertyStartGroup = "MiniMap"
-	Color m_MinimapTeamRebelsColor;
-	Color m_MinimapTeamCombineColor;
 	CUtlVector< MinimapOffsetDesc_t > m_MiniMapOffsets;
+	CUtlVector< MapDistrictDesc_t > m_MapDistrictLocalization;
 	// MPropertyStartGroup = "Outline Colors"
 	// MPropertyColorPlusAlpha
 	Color m_OutlineColorFriend;
@@ -622,13 +606,39 @@ class CitadelGenericData_t
 	Color m_OutlineColorTeam2;
 	// MPropertyColorPlusAlpha
 	Color m_OutlineColorNeutral;
+	// MPropertyColorPlusAlpha
+	Color m_OutlineColorHighlight;
+	float32 m_flOutlineWidthHighlight;
+	// MPropertyStartGroup = "Ziplines"
+	LaneDesc_t[8] m_LaneInfo;
+	// MPropertyStartGroup = "Team Colors"
+	Color m_ColorFriend;
+	Color m_ColorEnemy;
+	Color m_ColorTeam1;
+	Color m_ColorTeam2;
 	// MPropertyStartGroup = ""
-	LaneDesc_t[7] m_LaneInfo;
-	LaneDesc_t m_NoLaneZip;
-	Color m_enemyZiplineColor;
-	Color m_enemyObjectivesColor;
 	NewPlayerMetrics_t[4] m_NewPlayerMetrics;
 	int32[6] m_nItemPricePerTier;
+	// MPropertyDescription = "Souls charged to corrupt an owned item of each tier.  Items can override this with m_nSoulCostOverride."
+	int32[6] m_nItemCorruptionPricePerTier;
+	// MPropertyStartGroup = "Corrupted Items"
+	// MPropertyDescription = "Downsides rolled onto every corruptible item at match start.  The networked id is the index into this list, so only ever append."
+	CUtlVector< CorruptedPenaltyDef_t > m_vecCorruptedPenaltyDefs;
+	// MPropertyStartGroup = ""
+	// MPropertyStartGroup = "Neutral Camps"
+	// MPropertyDescription = "Meters from a neutral camp within which its respawn timer is shown in the world."
+	float32 m_flNeutralCampRespawnTimerShowDistance;
+	// MPropertyDescription = "Meters from the mid boss within which its respawn timer is shown in the world."
+	float32 m_flMidBossRespawnTimerShowDistance;
+	// MPropertyDescription = "Meters above the camp origin that the respawn timer floats."
+	float32 m_flNeutralCampRespawnTimerHeight;
+	// MPropertyStartGroup = ""
+	// MPropertyStartGroup = "Pickups"
+	// MPropertyDescription = "Seconds between consecutive overhead buff models on the same player, so buffs gained together play one after another instead of on top of each other."
+	float32 m_flPickupGainedEffectStaggerInterval;
+	// MPropertyDescription = "Seconds each stat line from a permanent buff pickup stays on screen."
+	float32 m_flPermanentPickupTextDuration;
+	// MPropertyStartGroup = ""
 	float32[6] m_flTrooperKillGoldShareFrac;
 	float32[6] m_flHeroKillGoldShareFrac;
 	DOFDesc_t m_DefaultDOF;
@@ -637,6 +647,7 @@ class CitadelGenericData_t
 	KothParams_t m_KothParams;
 	TeleporterParams_t m_TeleporterParams;
 	ObjectivesParams_t m_ObjectiveParams;
+	BreakablePowerupLootParams_t m_BreakablePowerupLootParams;
 	CUtlVector< BreakableSpawnTimeDesc_t > m_BreakableSpawnTimeDesc;
 	CUtlOrderedMap< EStatsType, CUtlString > m_mapStatTypeImages;
 	// MPropertyDescription = "Remap camera angle delta to aim spring strength"
@@ -648,6 +659,7 @@ class CitadelGenericData_t
 	CUtlVector< ShopGroups_t > m_vecWeaponGroups;
 	CUtlVector< ShopGroups_t > m_vecArmorGroups;
 	CUtlVector< ShopGroups_t > m_vecSpiritGroups;
+	// MPropertyFlattenIntoParentRow
 	// MPropertyStartGroup = "Street Brawl"
 	GameModeStreetBrawl_t m_StreetBrawl;
 };

@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Bookworm_DragonFire : public C_CitadelBaseAbility
 {
 	VectorWS m_vLaunchPosition;

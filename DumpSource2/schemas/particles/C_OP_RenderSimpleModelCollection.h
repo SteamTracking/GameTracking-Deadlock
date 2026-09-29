@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -114,7 +115,6 @@
 //		"m_bRightEye": false
 //	},
 //	"m_bCannotBeRefracted": true,
-//	"m_bSkipRenderingOnMobile": false,
 //	"m_bCenterOffset": false,
 //	"m_hModel": "",
 //	"m_modelInput":
@@ -196,7 +196,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_bDisableShadows": false,
 //	"m_bDisableMotionBlur": false,
@@ -274,7 +275,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nAngularVelocityField": 19
 //}

@@ -1,9 +1,10 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/base.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/hero_testing_menu.vcss_c" />
+		<include src="s2r://panorama/styles/base.vcss" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/settings_keybinder.vcss" />
+		<include src="s2r://panorama/styles/hero_testing_menu.vcss" />
 	</styles>
 	<CitadelHudHeroTesting class="hud_hero_testing_root">
 		<GlobalClassListener classes="gScoreboardOpen gShopOpen" />
@@ -18,127 +19,717 @@
 			</Panel>
 			<Panel id="hero_testing_tabs" class="tab_selector">
 				<Panel class="LeftRightFlow tab_wrapper">
-					<RadioButton group="HeroTestingTabButtons" class="hero_testing_tab" selected="true" onactivate="HeroTestingSelectTab(&apos;hero_tools&apos;);" id="hero_tools_button" text="#HeroTesting_HeroTools" />
+					<RadioButton group="HeroTestingTabButtons" class="hero_testing_tab" selected="true" onactivate="HeroTestingSelectTab(&apos;hero_tools&apos;);" id="hero_tools_button" text="#HeroTesting_GeneralControls" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_GeneralControls_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
 				</Panel>
 				<Panel class="LeftRightFlow tab_wrapper">
-					<RadioButton group="HeroTestingTabButtons" class="hero_testing_tab" onactivate="HeroTestingSelectTab(&apos;game_rules&apos;);" id="game_rules_button" text="#HeroTesting_GameRules" />
+					<RadioButton group="HeroTestingTabButtons" class="hero_testing_tab" onactivate="HeroTestingSelectTab(&apos;bot_control&apos;);" id="bot_control_button" text="#HeroTesting_BotControl" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotControl_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
 				</Panel>
 				<Panel class="LeftRightFlow tab_wrapper">
-					<RadioButton group="HeroTestingTabButtons" class="hero_testing_tab" onactivate="HeroTestingSelectTab(&apos;hero_control&apos;);" id="hero_control_button" text="#HeroTesting_HeroControl" />
+					<RadioButton group="HeroTestingTabButtons" class="hero_testing_tab" onactivate="HeroTestingSelectTab(&apos;map_control&apos;);" id="map_control_button" text="#HeroTesting_MapControl" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_MapControl_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="LeftRightFlow tab_wrapper">
+					<RadioButton group="HeroTestingTabButtons" class="hero_testing_tab" onactivate="HeroTestingSelectTab(&apos;misc_control&apos;);" id="misc_control_button" text="#HeroTesting_Misc" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Misc_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
 				</Panel>
 			</Panel>
 			<Panel id="hero_tools" class="nav_menu_tab_contents">
 				<Panel class="nav_menu_item_header">
 					<Label text="#HeroTesting_HeroTools" />
-					<Panel class="dash" />
 				</Panel>
 				<Panel class="nav_menu_item_container">
-					<Button class="nav_menu_item small_text half_width" onactivate="HeroTestingChangeHero()">
+					<Button class="nav_menu_item small_text half_width" onactivate="HeroTestingChangeHero()" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ChangeHero_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_ChangeHero" />
 					</Button>
-					<Button class="nav_menu_item small_text half_width" onactivate="HeroTestingChangeTeam();">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;changeteam&apos; )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ChangeTeam_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_ChangeTeam" />
 					</Button>
 				</Panel>
 				<Panel class="nav_menu_item_container">
-					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;resetme&apos; ); PlaySoundEffect( Stinger.LevelUp )">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;resetme&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ResetHero_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_ResetHero" />
 					</Button>
-				</Panel>
-				<Panel class="nav_menu_item_container">
-					<Button class="small_text nav_menu_item half_width" onactivate="CitadelConCommand( &apos;givelevelupgold 1&apos; ); PlaySoundEffect( Stinger.LevelUp )">
-						<Label text="#HeroTesting_LevelUp" />
-					</Button>
-					<Button class="small_text nav_menu_item half_width" onactivate="CitadelConCommand( &apos;givelevelupgold 36&apos; ); PlaySoundEffect( Stinger.LevelUp )">
-						<Label text="#HeroTesting_MaxLevel" />
-					</Button>
-				</Panel>
-				<Panel class="nav_menu_item_container">
-					<Button class="small_text nav_menu_item half_width" onactivate="CitadelConCommand( &apos;healthpct 50&apos; ); PlaySoundEffect( Stinger.LevelUp )">
-						<Label text="#HeroTesting_HalfHealth" />
-					</Button>
-					<Button class="small_text nav_menu_item half_width" onactivate="CitadelConCommand( &apos;healthpct 100&apos; ); PlaySoundEffect( Stinger.LevelUp )">
-						<Label text="#HeroTesting_FullHealth" />
-					</Button>
-				</Panel>
-				<Panel class="nav_menu_item_container">
-					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;lethaldamageme&apos; ); PlaySoundEffect( Stinger.LevelUp )">
-						<Label text="#HeroTesting_KillHero" />
-					</Button>
-					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;giveallupgrades&apos; ); PlaySoundEffect( Stinger.LevelUp )">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;giveallupgrades&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_AllPerks_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_AllPerks" />
 					</Button>
 				</Panel>
 				<Panel class="nav_menu_item_container">
-					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_spawn_nearby_neutrals&apos; ); PlaySoundEffect( Stinger.LevelUp )">
-						<Label text="#HeroTesting_SpawnCamp" />
+					<Button class="small_text nav_menu_item half_width" onactivate="CitadelConCommand( &apos;givelevelupgold 1&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_LevelUp_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_LevelUp" />
+					</Button>
+					<Button class="small_text nav_menu_item half_width" onactivate="CitadelConCommand( &apos;givelevelupgold 36&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_MaxLevel_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_MaxLevel" />
 					</Button>
 				</Panel>
-				<Panel class="nav_menu_item_header hideout_btns">
+				<Panel class="nav_menu_item_container row_gap">
+					<Button class="small_text nav_menu_item half_width" onactivate="CitadelConCommand( &apos;healthpct 50&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_HalfHealth_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_HalfHealth" />
+					</Button>
+					<Button class="small_text nav_menu_item half_width" onactivate="CitadelConCommand( &apos;healthpct 100&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_FullHealth_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_FullHealth" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container">
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="HeroTestingRunAmountCommand( &apos;HealAmountEntry&apos;, &apos;addhealth&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Heal_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_Heal" />
+						</Button>
+						<Panel class="dummy_stat_input">
+							<TextEntry id="HealAmountEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Heal_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Panel class="dummy_stat_spinner">
+								<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustAmount( &apos;HealAmountEntry&apos;, 50 )">
+									<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+								<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustAmount( &apos;HealAmountEntry&apos;, -50 )">
+									<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="HeroTestingRunAmountCommand( &apos;SetHealthAmountEntry&apos;, &apos;sethealth&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SetHealth_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_SetHealth" />
+						</Button>
+						<Panel class="dummy_stat_input">
+							<TextEntry id="SetHealthAmountEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SetHealth_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Panel class="dummy_stat_spinner">
+								<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustAmount( &apos;SetHealthAmountEntry&apos;, 100 )">
+									<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+								<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustAmount( &apos;SetHealthAmountEntry&apos;, -100 )">
+									<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="nav_menu_item_container">
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="HeroTestingRunAmountCommand( &apos;DamageAmountEntry&apos;, &apos;dealdamage&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DealDamage_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_DealDamage" />
+						</Button>
+						<Panel class="dummy_stat_input">
+							<TextEntry id="DamageAmountEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DealDamage_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Panel class="dummy_stat_spinner">
+								<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustAmount( &apos;DamageAmountEntry&apos;, 100 )">
+									<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+								<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustAmount( &apos;DamageAmountEntry&apos;, -100 )">
+									<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;lethaldamageme&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_KillHero_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_KillHero" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container">
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="HeroTestingRunAmountCommand( &apos;SoulsAmountEntry&apos;, &apos;givegold&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_GiveGold_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_GiveGold" />
+						</Button>
+						<Panel class="dummy_stat_input">
+							<TextEntry id="SoulsAmountEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_GiveGold_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Panel class="dummy_stat_spinner">
+								<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustAmount( &apos;SoulsAmountEntry&apos;, 200 )">
+									<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+								<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustAmount( &apos;SoulsAmountEntry&apos;, -200 )">
+									<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="HeroTestingRunAmountCommand( &apos;BuffsAmountEntry&apos;, &apos;citadel_give_permanent_buffs&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_GiveBuffs_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_GiveBuffs" />
+						</Button>
+						<Panel class="dummy_stat_input">
+							<TextEntry id="BuffsAmountEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_GiveBuffs_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Panel class="dummy_stat_spinner">
+								<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustAmount( &apos;BuffsAmountEntry&apos;, 1 )">
+									<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+								<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustAmount( &apos;BuffsAmountEntry&apos;, -1 )">
+									<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="menu_divider" />
+				<Panel class="nav_menu_item_container">
+					<Button class="nav_menu_item small_text half_width highlight_item" onactivate="CitadelToggleCombatLog()" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ToggleCombatLog_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_ToggleCombatLog" />
+						<Image id="combat_log_icon" class="highlight_icon" src="s2r://panorama/images/icons/icon_combat_log.vsvg" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_header hideout_btns section_gap">
 					<Label text="#HeroTesting_GameRules" />
-					<Panel class="dash" />
 				</Panel>
 				<Panel class="nav_menu_item_container hideout_btns">
-					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" id="DisableDeathCheckbox" text="#HeroTesting_NoDeath" onactivate="HeroTestingUpdateDisableDeath(); PlaySoundEffect( Stinger.LevelUp )" />
-					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" id="EnableUnlimitedAmmoCheckbox" text="#HeroTesting_UnlimitedAmmo" onactivate="HeroTestingUpdateEnableUnlimitedAmmo()" />
+					<CitadelSettingsCheckbox convar="buddha" text="#HeroTesting_NoDeath" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NoDeath_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="sv_infinite_ammo" text="#HeroTesting_UnlimitedAmmo" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_UnlimitedAmmo_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
 				</Panel>
 				<Panel class="nav_menu_item_container hideout_btns">
-					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" id="DisableCooldownCheckbox" text="#HeroTesting_NoCooldown" onactivate="HeroTestingUpdateDisableCooldowns()" />
-					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" id="EnableFastStaminaCheckbox" text="#HeroTesting_FastStamina" onactivate="HeroTestingUpdateEnableFastStamina()" />
+					<CitadelSettingsCheckbox convar="citadel_ability_cooldown_max" text="#HeroTesting_NoCooldown" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NoCooldown_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="citadel_rapid_stamina_regen" text="#HeroTesting_FastStamina" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_FastStamina_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
 				</Panel>
-				<Panel class="nav_menu_item_container hide_in_coop">
-					<Button class="small_text nav_menu_item third_width" onactivate="CitadelConCommand( &apos;host_timescale_dec&apos; ); PlaySoundEffect( Stinger.LevelUp )">
+				<Panel class="nav_menu_item_container">
+					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" id="AvoidTargetingCheckbox" text="#HeroTesting_NoTarget" onactivate="CitadelConCommand( &apos;notarget&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NoTarget_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" id="FastMovespeedCheckbox" text="#HeroTesting_FastMovespeed" onactivate="CitadelConCommand( &apos;fastmovespeed&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_FastMovespeed_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container row_gap hide_in_coop">
+					<Button class="small_text nav_menu_item third_width" onactivate="CitadelConCommand( &apos;host_timescale_dec&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpeedDown_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_SpeedDown" />
 					</Button>
-					<Button class="small_text nav_menu_item third_width" onactivate="CitadelConCommand( &apos;host_timescale 1.0&apos; ); PlaySoundEffect( Stinger.LevelUp )">
+					<Button class="small_text nav_menu_item third_width" onactivate="CitadelConCommand( &apos;host_timescale 1.0&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpeedNormal_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_SpeedNormal" />
 					</Button>
-					<Button class="small_text nav_menu_item third_width" onactivate="CitadelConCommand( &apos;host_timescale_inc&apos; ); PlaySoundEffect( Stinger.LevelUp )">
+					<Button class="small_text nav_menu_item third_width" onactivate="CitadelConCommand( &apos;host_timescale_inc&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpeedUp_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_SpeedUp" />
 					</Button>
 				</Panel>
-				<Panel class="nav_menu_item_header">
+				<Panel class="nav_menu_item_header section_gap">
 					<Label text="#HeroTesting_HeroControl" />
-					<Panel class="dash" />
 				</Panel>
 				<Panel class="nav_menu_item_container">
-					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_assume_pawn_control&apos; );">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_assume_pawn_control&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_TakeControl_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_TakeControl" />
 					</Button>
-					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_kick_all&apos; );">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_kick_all&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_RemoveBots_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_RemoveBots" />
 					</Button>
 				</Panel>
-				<Panel class="nav_menu_item_container">
+				<Panel class="nav_menu_item_container spawn_hero_block">
 					<Panel class="nav_menu_item_container vertical_item">
-						<Panel class="small_text full_width">
+						<Panel class="small_text full_width spawn_hero_label">
 							<Label text="#HeroTesting_HeroToSpawn" />
 						</Panel>
-						<Button class="nav_menu_item small_text full_width" onactivate="HeroTestingSpawnBotHero(&apos;enemy&apos;)">
+						<Button class="nav_menu_item small_text full_width" onactivate="HeroTestingSpawnBotHero(&apos;enemy&apos;)" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpawnEnemy_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 							<Label text="#HeroTesting_SpawnEnemy" />
 						</Button>
-						<Button class="nav_menu_item small_text full_width" onactivate="HeroTestingSpawnBotHero(&apos;friend&apos;)">
+						<Button class="nav_menu_item small_text full_width" onactivate="HeroTestingSpawnBotHero(&apos;friend&apos;)" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpawnFriendly_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 							<Label text="#HeroTesting_SpawnFriendly" />
 						</Button>
 					</Panel>
-					<CitadelHeroCard id="SpawnBotCard" onactivate="HeroTestingChangeSelectedBot()" />
+					<CitadelHeroCard id="SpawnBotCard" onactivate="HeroTestingChangeSelectedBot()" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpawnBotCard_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
 				</Panel>
 				<Panel class="nav_menu_item_container hide_in_coop">
-					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_mimic_target&apos; );">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_mimic_target&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_MakeMimic_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_MakeMimic" />
 					</Button>
-					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_puppet_target&apos; );">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_puppet_target&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_MakePuppet_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_MakePuppet" />
 					</Button>
 				</Panel>
 				<Panel class="nav_menu_item_container hide_in_coop">
-					<Button class="nav_menu_item small_text full_width" onactivate="CitadelConCommand( &apos;bot_mimic 0&apos; ); CitadelConCommand( &apos; bot_puppet 0&apos; );">
+					<Button class="nav_menu_item small_text full_width" onactivate="CitadelConCommand( &apos;bot_mimic 0&apos; ); CitadelConCommand( &apos; bot_puppet 0&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ClearFollow_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 						<Label text="#HeroTesting_ClearFollow" />
 					</Button>
 				</Panel>
 			</Panel>
+			<Panel id="bot_control" class="nav_menu_tab_contents">
+				<Panel class="nav_menu_item_header">
+					<Label text="#HeroTesting_HeroControl" />
+				</Panel>
+				<Panel class="nav_menu_item_container">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_assume_pawn_control&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_TakeControl_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_TakeControl" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_kick_all&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_RemoveBots_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_RemoveBots" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container spawn_hero_block">
+					<Panel class="nav_menu_item_container vertical_item">
+						<Panel class="small_text full_width spawn_hero_label">
+							<Label text="#HeroTesting_HeroToSpawn" />
+						</Panel>
+						<Button class="nav_menu_item small_text full_width" onactivate="HeroTestingSpawnBotHero(&apos;enemy&apos;)" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpawnEnemy_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_SpawnEnemy" />
+						</Button>
+						<Button class="nav_menu_item small_text full_width" onactivate="HeroTestingSpawnBotHero(&apos;friend&apos;)" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpawnFriendly_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_SpawnFriendly" />
+						</Button>
+					</Panel>
+					<CitadelHeroCard id="BotsSpawnBotCard" onactivate="HeroTestingChangeSelectedBot()" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpawnBotCard_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_mimic_target&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_MakeMimic_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_MakeMimic" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_puppet_target&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_MakePuppet_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_MakePuppet" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text full_width" onactivate="CitadelConCommand( &apos;bot_mimic 0&apos; ); CitadelConCommand( &apos; bot_puppet 0&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ClearFollow_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_ClearFollow" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container row_gap hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_command_target givelevelupgold 1&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ReticleTarget_BotLevelUp_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_ReticleTarget_BotLevelUp" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_command_target resetme&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ReticleTarget_BotReset_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_ReticleTarget_BotReset" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container">
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="HeroTestingRunAmountCommand( &apos;BotHealAmountEntry&apos;, &apos;bot_command_target addhealth&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotHeal_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_BotHeal" />
+						</Button>
+						<Panel class="dummy_stat_input">
+							<TextEntry id="BotHealAmountEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotHeal_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Panel class="dummy_stat_spinner">
+								<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustAmount( &apos;BotHealAmountEntry&apos;, 50 )">
+									<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+								<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustAmount( &apos;BotHealAmountEntry&apos;, -50 )">
+									<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="HeroTestingRunAmountCommand( &apos;BotSetHealthAmountEntry&apos;, &apos;bot_command_target sethealth&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SetBotHealth_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_SetBotHealth" />
+						</Button>
+						<Panel class="dummy_stat_input">
+							<TextEntry id="BotSetHealthAmountEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SetBotHealth_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Panel class="dummy_stat_spinner">
+								<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustAmount( &apos;BotSetHealthAmountEntry&apos;, 100 )">
+									<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+								<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustAmount( &apos;BotSetHealthAmountEntry&apos;, -100 )">
+									<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+							</Panel>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="nav_menu_item_container">
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="HeroTestingRunAmountCommand( &apos;BotDamageAmountEntry&apos;, &apos;bot_command_target dealdamage&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DealBotDamage_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_DealBotDamage" />
+						</Button>
+						<Panel class="dummy_stat_input">
+							<TextEntry id="BotDamageAmountEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DealBotDamage_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Panel class="dummy_stat_spinner">
+								<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustAmount( &apos;BotDamageAmountEntry&apos;, 100 )">
+									<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+								<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustAmount( &apos;BotDamageAmountEntry&apos;, -100 )">
+									<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
+							</Panel>
+						</Panel>
+					</Panel>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;bot_command_target lethaldamageme&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_KillBot_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_KillBot" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_BotBehavior" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<CitadelSettingsCheckbox convar="citadel_bot_zig_zag" text="#HeroTesting_BotMoveLeftRight" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotMoveLeftRight_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="citadel_bot_forward_back" text="#HeroTesting_BotMoveForwardBack" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotMoveForwardBack_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<CitadelSettingsCheckbox convar="citadel_bot_crouch" text="#HeroTesting_BotCrouch" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotCrouch_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="citadel_bot_jump" text="#HeroTesting_BotJump" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotJump_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<CitadelSettingsCheckbox convar="citadel_bot_shoot" text="#HeroTesting_BotShoot" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotShoot_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="citadel_bot_parry" text="#HeroTesting_BotParry" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotParry_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" id="BotLightMeleeCheckbox" text="#HeroTesting_BotLightMelee" onactivate="HeroTestingSetBotMelee( 1 )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotLightMelee_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" id="BotHeavyMeleeCheckbox" text="#HeroTesting_BotHeavyMelee" onactivate="HeroTestingSetBotMelee( 2 )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotHeavyMelee_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_BotAbilities" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop tile_row">
+					<Label class="tile_row_label" text="#HeroTesting_BotCastAbilities" />
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_bot_use_ability 1&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotAbility_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotAbility1" />
+					</Button>
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_bot_use_ability 2&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotAbility_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotAbility2" />
+					</Button>
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_bot_use_ability 3&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotAbility_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotAbility3" />
+					</Button>
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_bot_use_ability 4&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotAbility_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotAbility4" />
+					</Button>
+					<Button class="action_tile tile_stop" onactivate="CitadelConCommand( &apos;citadel_bot_use_ability 0&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotAbilityStop_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotAbilityStop" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop tile_row">
+					<Label class="tile_row_label" text="#HeroTesting_BotCastItems" />
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_bot_use_item_ability 1&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotItem_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotItem1" />
+					</Button>
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_bot_use_item_ability 2&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotItem_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotItem2" />
+					</Button>
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_bot_use_item_ability 3&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotItem_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotItem3" />
+					</Button>
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_bot_use_item_ability 4&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotItem_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotItem4" />
+					</Button>
+					<Button class="action_tile tile_stop" onactivate="CitadelConCommand( &apos;citadel_bot_use_item_ability 0&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotItemStop_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotAbilityStop" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<CitadelSettingsCheckbox convar="citadel_bot_use_ability_repeated" text="#HeroTesting_BotUseAbilityRepeated" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotUseAbilityRepeated_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_bot_give_all_abilities&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotGiveAllAbilities_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotGiveAllAbilities" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_BotRecording" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="CitadelConCommand( &apos;bot_record_target&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotRecordTarget_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_StartRecord" />
+						</Button>
+						<Panel class="hotkey_input">
+							<CitadelSettingsKeyBinder id="BotRecordBinder" class="hero_testing_keybinder" bind="BotRecord" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Hotkey_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Label id="BotRecordHotkeyHint" class="hotkey_hint" text="#HeroTesting_HotkeyHint" hittest="false" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="CitadelConCommand( &apos;citadel_bot_recordstop&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotRecordStop_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_StopRecord" />
+						</Button>
+						<Panel class="hotkey_input">
+							<CitadelSettingsKeyBinder id="BotRecordStopBinder" class="hero_testing_keybinder" bind="BotRecordStop" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Hotkey_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Label id="BotRecordStopHotkeyHint" class="hotkey_hint" text="#HeroTesting_HotkeyHint" hittest="false" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Panel class="input_control">
+						<Button class="nav_menu_item small_text" onactivate="CitadelConCommand( &apos;citadel_bot_playrecording&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotPlayback_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#citadel_keybind_botrecord_playback" />
+						</Button>
+						<Panel class="hotkey_input">
+							<CitadelSettingsKeyBinder id="BotRecordPlaybackBinder" class="hero_testing_keybinder" bind="BotRecordPlayback" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Hotkey_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Label id="BotRecordPlaybackHotkeyHint" class="hotkey_hint" text="#HeroTesting_HotkeyHint" hittest="false" />
+						</Panel>
+					</Panel>
+					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" text="#HeroTesting_BotRecordLoop" onactivate="CitadelConCommand( &apos;toggle citadel_bot_record_loop&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotRecordLoop_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button id="BotRecordCopyButton" class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_bot_copyrecording&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotRecordCopy_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotRecordCopy" />
+					</Button>
+					<Button id="BotRecordPasteButton" class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_bot_pasterecording&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BotRecordPaste_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_BotRecordPaste" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel id="map_control" class="nav_menu_tab_contents">
+				<Panel class="nav_menu_item_header">
+					<Label text="#HeroTesting_NPC_Spawn" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<CitadelSettingsCheckbox convar="citadel_trooper_spawn_enabled" text="#HeroTesting_Troopers" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Troopers_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="citadel_neutral_spawn_enabled" text="#HeroTesting_Neutrals" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Neutrals_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<CitadelSettingsCheckbox convar="citadel_crate_spawn_enabled" text="#HeroTesting_Urn" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_UrnEnabled_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="citadel_koth_enabled" text="#HeroTesting_Rift" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_RiftEnabled_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<CitadelSettingsCheckbox convar="citadel_breakable_prop_breakable_enabled" text="#HeroTesting_Breakables" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BreakablesEnabled_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="citadel_pickup_spawner_enabled" text="#HeroTesting_HealingSnacks" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_HealingSnacksEnabled_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_NPC_ForceSpawn" />
+				</Panel>
+				<Panel class="nav_menu_item_container">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_spawn_nearby_neutrals&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpawnCamp_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_SpawnCamp" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_spawn_all_neutrals&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpawnAllNeutrals_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_SpawnAllNeutrals" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_respawn_all_breakables&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceSpawnBreakables_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_Breakables" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_spawn_all_pickup_spawners&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceSpawnHealingSnacks_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_HealingSnacks" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_force_spawn_idol&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceSpawnUrn_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_Urn" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_force_koth_spawn&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceSpawnRift_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_Rift" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_respawn_boss_t1&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NPC_SpawnT1_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_NPC_SpawnT1" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_respawn_boss_t2&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NPC_SpawnT2_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_NPC_SpawnT2" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_respawn_boss_barracks&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NPC_SpawnBarracks_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_NPC_SpawnBarracks" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_respawn_boss_shrines&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NPC_SpawnShrines_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_NPC_SpawnShrines" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_spawn_trooper_wave&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_SpawnTrooperWave_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_SpawnTrooperWave" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_NPC_ForceKill" />
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_force_kill neutrals&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceKillNeutrals_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_Neutrals" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_force_kill troopers&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceKillTroopers_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_Troopers" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_force_kill guardians&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceKillGuardians_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_NPC_SpawnT1" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_force_kill walkers&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceKillWalkers_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_NPC_SpawnT2" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_force_kill base_guardians&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceKillBaseGuardians_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_NPC_SpawnBarracks" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_force_kill shrines&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceKillShrines_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_NPC_SpawnShrines" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container hide_in_coop">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_force_kill breakables&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceKillBreakables_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_Breakables" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_force_kill healing_snacks&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ForceKillHealingSnacks_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_HealingSnacks" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_NPC_SpawnTrooper" />
+				</Panel>
+				<Panel class="nav_menu_item_container tile_row trooper_row">
+					<Label class="tile_row_label" text="#HeroTesting_TrooperFriendly" />
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_spawn_trooper&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NPC_SpawnTrooperNormalFriendly_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_TrooperNormal" />
+					</Button>
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_spawn_trooper medic&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NPC_SpawnTrooperMedicFriendly_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_TrooperMedic" />
+					</Button>
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_spawn_trooper melee&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NPC_SpawnTrooperMeleeFriendly_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_TrooperMelee" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_container tile_row trooper_row">
+					<Label class="tile_row_label" text="#HeroTesting_TrooperEnemy" />
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_spawn_trooper enemy&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NPC_SpawnTrooperNormalEnemy_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_TrooperNormal" />
+					</Button>
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_spawn_trooper medic enemy&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NPC_SpawnTrooperMedicEnemy_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_TrooperMedic" />
+					</Button>
+					<Button class="action_tile" onactivate="CitadelConCommand( &apos;citadel_spawn_trooper melee enemy&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_NPC_SpawnTrooperMeleeEnemy_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_TrooperMelee" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_ReticleTarget" />
+				</Panel>
+				<Panel class="nav_menu_item_container">
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;ent_kill&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_KillTarget_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_KillTarget" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelConCommand( &apos;citadel_heal_target&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_HealTarget_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_HealTarget" />
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel id="misc_control" class="nav_menu_tab_contents">
+				<Panel class="nav_menu_item_header">
+					<Label text="#HeroTesting_ExtraOptions" />
+				</Panel>
+				<Panel class="nav_menu_item_container hideout_btns">
+					<CitadelSettingsCheckbox convar="citadel_hero_testing_infinite_money" text="#HeroTesting_InfiniteMoney" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_InfiniteMoney_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hideout_btns">
+					<CitadelSettingsCheckbox convar="citadel_hud_visible" invert="true" text="#HeroTesting_HideUI" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_HideUI_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="cl_lock_camera" text="#HeroTesting_LockCamera" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_LockCamera_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hideout_btns">
+					<CitadelSettingsCheckbox convar="citadel_hud_hide_own_health" text="#HeroTesting_HideOwnHealth" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_HideOwnHealth_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="citadel_unit_status_enabled" invert="true" text="#HeroTesting_HideHealthBars" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_HideHealthBars_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container">
+					<Panel class="input_control">
+						<ToggleButton class="nav_menu_item CitadelSettingsCheckbox" id="NoclipCheckbox" text="#citadel_keybind_noclip" onactivate="CitadelConCommand( &apos;noclip&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Noclip_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+						<Panel class="hotkey_input">
+							<CitadelSettingsKeyBinder id="NoclipBinder" class="hero_testing_keybinder" bind="Noclip" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Hotkey_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Label id="NoclipHotkeyHint" class="hotkey_hint" text="#HeroTesting_HotkeyHint" hittest="false" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="nav_menu_item_container hideout_btns">
+					<Button class="nav_menu_item small_text half_width highlight_item" onactivate="CitadelConCommand( &apos;toggle citadel_show_movespeed_on_hud&apos; )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ToggleSpeedGraph_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_ToggleSpeedGraph" />
+						<Image id="speed_graph_icon" class="highlight_icon" src="s2r://panorama/images/icons/icon_speed_graph.vsvg" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_Overlays" />
+				</Panel>
+				<Panel class="nav_menu_item_container hideout_btns">
+					<CitadelSettingsCheckbox convar="citadel_hero_distance_guides" text="#HeroTesting_ToggleDistanceGuides" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ToggleDistanceGuides_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hideout_btns">
+					<CitadelSettingsCheckbox convar="citadel_hero_falloff_guides" text="#HeroTesting_ToggleFalloffGuides" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ToggleFalloffGuides_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="citadel_damage_text_show_effectiveness" text="#HeroTesting_BulletRange" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_BulletRange_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_DPSMeter" />
+				</Panel>
+				<Panel class="nav_menu_item_container">
+					<Button class="nav_menu_item small_text half_width highlight_item" onactivate="CitadelConCommand( &apos;toggle hud_damagemeter&apos; )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ShowDPSMeter_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_ShowDPSMeter" />
+						<Image id="dps_meter_icon" class="highlight_icon" src="s2r://panorama/images/icons/icon_dps_meter.vsvg" />
+					</Button>
+					<Button class="nav_menu_item small_text half_width" onactivate="CitadelHudDamageMeterReset(); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ResetDPSMeter_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+						<Label text="#HeroTesting_ResetDPSMeter" />
+					</Button>
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap hide_in_coop" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DummyStats_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+					<Label text="#HeroTesting_DummyStats" />
+				</Panel>
+				<Panel class="dummy_stat_row hide_in_coop">
+					<Label class="dummy_stat_label" text="#HeroTesting_DummyBulletResist" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DummyBulletResist_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<Panel class="dummy_stat_input">
+						<TextEntry id="DummyBulletResistEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DummyBulletResist_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+						<Panel class="dummy_stat_spinner">
+							<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustDummyStat( &apos;DummyBulletResistEntry&apos;, 1 )">
+								<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Button>
+							<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustDummyStat( &apos;DummyBulletResistEntry&apos;, -1 )">
+								<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Button>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="dummy_stat_row hide_in_coop">
+					<Label class="dummy_stat_label" text="#HeroTesting_DummySpiritResist" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DummySpiritResist_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<Panel class="dummy_stat_input">
+						<TextEntry id="DummySpiritResistEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DummySpiritResist_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+						<Panel class="dummy_stat_spinner">
+							<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustDummyStat( &apos;DummySpiritResistEntry&apos;, 1 )">
+								<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Button>
+							<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustDummyStat( &apos;DummySpiritResistEntry&apos;, -1 )">
+								<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Button>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="dummy_stat_row hide_in_coop">
+					<Label class="dummy_stat_label" text="#HeroTesting_DummyDebuffResist" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DummyDebuffResist_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<Panel class="dummy_stat_input">
+						<TextEntry id="DummyDebuffResistEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DummyDebuffResist_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+						<Panel class="dummy_stat_spinner">
+							<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustDummyStat( &apos;DummyDebuffResistEntry&apos;, 1 )">
+								<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Button>
+							<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustDummyStat( &apos;DummyDebuffResistEntry&apos;, -1 )">
+								<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Button>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="dummy_stat_row hide_in_coop">
+					<Label class="dummy_stat_label" text="#HeroTesting_DummyHealthRegen" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DummyHealthRegen_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<Panel class="dummy_stat_input">
+						<TextEntry id="DummyHealthRegenEntry" class="dummy_stat_entry" textmode="numeric" maxchars="6" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_DummyHealthRegen_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+						<Panel class="dummy_stat_spinner">
+							<Button class="dummy_stat_spin_button dummy_stat_spin_up" onactivate="HeroTestingAdjustDummyStat( &apos;DummyHealthRegenEntry&apos;, 1 )">
+								<Image src="s2r://panorama/images/icons/carat_up.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Button>
+							<Button class="dummy_stat_spin_button dummy_stat_spin_down" onactivate="HeroTestingAdjustDummyStat( &apos;DummyHealthRegenEntry&apos;, -1 )">
+								<Image src="s2r://panorama/images/icons/carat_down.vsvg" scaling="stretch-to-fit-preserve-aspect" />
+							</Button>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_SectionStreetBrawl" />
+				</Panel>
+				<Panel class="nav_menu_item_container hideout_btns">
+					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" text="#HeroTesting_ToggleEnhancedItems" onactivate="CitadelConCommand( &apos;toggle citadel_item_purchases_force_enhanced; toggle citadel_shop_items_appear_enhanced&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ToggleEnhancedItems_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" id="ToggleStreetBrawlPropertyValuesCheckbox" text="#HeroTesting_ToggleStreetBrawlPropertyValues" onactivate="HeroTestingToggleStreetBrawlPropertyValues()" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ToggleStreetBrawl_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_container hideout_btns">
+					<CitadelSettingsCheckbox convar="citadel_hero_testing_legendary_items" text="#HeroTesting_LegendaryItems" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_LegendaryItems_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+				<Panel class="nav_menu_item_header section_gap">
+					<Label text="#HeroTesting_SectionCorruptedItems" />
+				</Panel>
+				<Panel class="nav_menu_item_container hideout_btns">
+					<Panel class="input_control wide_input">
+						<Button class="nav_menu_item small_text" onactivate="CitadelConCommand( &apos;citadel_reroll_corrupted_items&apos; ); PlaySoundEffect( Stinger.LevelUp )" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_RerollCorruptedItems_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+							<Label text="#HeroTesting_RerollCorruptedItems" />
+						</Button>
+						<Panel class="hotkey_input">
+							<CitadelSettingsKeyBinder id="RerollCorruptedBinder" class="hero_testing_keybinder" bind="RerollCorruptedItems" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Hotkey_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+							<Label id="RerollCorruptedHotkeyHint" class="hotkey_hint" text="#HeroTesting_HotkeyHint" hittest="false" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel class="nav_menu_item_container hideout_btns">
+					<ToggleButton class="nav_menu_item CitadelSettingsCheckbox half_width" text="#HeroTesting_ToggleCorruptedItems" onactivate="CitadelConCommand( &apos;toggle citadel_item_purchases_force_corrupted; toggle citadel_shop_items_appear_corrupted&apos; );" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ToggleCorruptedItems_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+					<CitadelSettingsCheckbox convar="citadel_corrupted_items_force_variance" text="#HeroTesting_ShowCorruptedVariance" class="nav_menu_item small_text half_width" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_ShowCorruptedVariance_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				</Panel>
+			</Panel>
 			<Panel id="collapse_menu_panel">
-				<Button id="collapse_button" class="nav_menu_item_small_text" onactivate="HeroTestingToggleMenuExpanded();">
+				<Button id="pin_button" onactivate="HeroTestingTogglePinned();" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Pin_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+					<Label class="pin_label" text="#HeroTesting_PinOpen" />
+					<Label class="unpin_label" text="#HeroTesting_Unpin" />
+					<Image id="pin_icon" src="s2r://panorama/images/icons/icon_pin.vsvg" />
+				</Button>
+				<Button id="free_cursor_button" onactivate="HeroTestingToggleFreeCursor();" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_FreeCursor_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
+					<Label class="free_cursor_label" text="#HeroTesting_FreeCursor" />
+					<Label class="lock_cursor_label" text="#HeroTesting_LockCursor" />
+					<Image id="free_cursor_icon" src="s2r://panorama/images/icons/icon_cursor.vsvg" />
+				</Button>
+				<Button id="collapse_button" class="nav_menu_item_small_text" onactivate="HeroTestingToggleMenuExpanded();" onmouseover="CitadelUIShowTextTooltip( &apos;#HeroTesting_Collapse_Desc&apos; )" onmouseout="CitadelUIHideTextTooltip()">
 					<Label class="expand_label" text="#DevMenu_Expand" />
 					<Label class="collapse_label" text="#DevMenu_Collapse" />
 					<Image id="collapse_icon" src="s2r://panorama/images/icons/icon_carat.vsvg" />
@@ -152,7 +743,6 @@
 				<Label class="lane_challenge" text="#HeroTesting_OrbsSecured" />
 				<Label class="lane_challenge" text="#HeroTesting_OrbsDenied" />
 			</Panel>
-			<Panel id="game_rules" class="nav_menu_tab_contents" />
 		</Panel>
 	</CitadelHudHeroTesting>
 </root>

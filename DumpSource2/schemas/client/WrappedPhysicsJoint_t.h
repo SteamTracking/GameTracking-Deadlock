@@ -1,3 +1,5 @@
+// MGetKV3ClassDefaults = {
+//}
 class WrappedPhysicsJoint_t
 {
 	// MPhysPtr

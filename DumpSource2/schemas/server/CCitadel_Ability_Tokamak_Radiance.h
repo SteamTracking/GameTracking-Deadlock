@@ -1,4 +1,0 @@
-// MClassHasEntityLimitedDataDesc
-class CCitadel_Ability_Tokamak_Radiance : public CCitadelBaseAbility
-{
-};

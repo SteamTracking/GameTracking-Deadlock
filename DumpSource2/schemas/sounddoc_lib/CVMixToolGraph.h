@@ -1,22 +1,24 @@
 // MGetKV3ClassDefaults = {
-//	"m_graphDescData":
-//	{
-//		"Name": "",
-//		"m_nGraphOutputChannels": -1,
-//		"m_bIsMainGraph": false
-//	},
-//	"m_editorNodes":
+//	"Name": "",
+//	"m_nGraphOutputChannels": -1,
+//	"m_bIsMainGraph": false,
+//	"m_nPreviewNode": 0,
+//	"m_EditorNodes":
 //	[
 //	],
-//	"m_editorEdges":
+//	"m_EditorEdges":
 //	[
-//	],
-//	"m_nPreviewNode": 0
+//	]
 //}
 class CVMixToolGraph
 {
-	CVMixGraphDescData m_graphDescData;
-	CUtlVector< CVMixEditorNode > m_editorNodes;
-	CUtlVector< CVMixEditorEdge > m_editorEdges;
+	// MKV3TransferName = "Name"
+	CUtlString m_name;
+	int32 m_nGraphOutputChannels;
+	bool m_bIsMainGraph;
 	int32 m_nPreviewNode;
+	// MKV3TransferName = "m_EditorNodes"
+	CUtlVector< CVMixEditorNode > m_editorNodes;
+	// MKV3TransferName = "m_EditorEdges"
+	CUtlVector< CVMixEditorEdge > m_editorEdges;
 };

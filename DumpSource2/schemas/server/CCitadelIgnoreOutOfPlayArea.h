@@ -1,0 +1,3 @@
+class CCitadelIgnoreOutOfPlayArea : public CTriggerModifier
+{
+};

@@ -51,6 +51,28 @@ CitadelModIcon.newSlotUnlocked
 	visibility: visible;
 }
 
+#Corrupted
+{
+	width: 100%;
+	height: 100%;
+	vertical-align: bottom;
+	horizontal-align: left;
+	visibility: collapse;
+	opacity: 1;
+	background-image: url("s2r://panorama/images/shop/corrupted_items/item_frame_corrupted_psd.vtex");
+	background-size: 100% 100%;
+}
+
+.isActiveItem #Corrupted
+{
+	background-image: url("s2r://panorama/images/shop/corrupted_items/item_frame_corrupted_active_psd.vtex");
+}
+
+.isCorrupted #Corrupted
+{
+	visibility: visible;
+}
+
 @keyframes 'FlexSlotUnlocked'
 {
 	0%
@@ -150,6 +172,11 @@ CitadelHudTopBarPlayer:selected CitadelModIcon
 	visibility: collapse;
 }
 
+.isActiveItem #ModIconImage
+{
+	border-radius: 50px;
+}
+
 .hasAbility #ModIconImage
 {
 	visibility: visible;
@@ -226,23 +253,6 @@ CitadelHudTopBarPlayer:selected CitadelModIcon
 #PlayersContainer CitadelHudTopBarPlayer .unowned.mod_icon_single_container
 {
 	background-color: #00000099;
-}
-
-.isWeapon .mod_icon_single_container
-{
-	background-color: #DD9541;
-	background-color: courageLightColor;
-}
-
-.isArmor .mod_icon_single_container
-{
-	background-color: fortitudeBrightColor;
-	background-color: fortitudeLightColor;
-}
-
-.isTech .mod_icon_single_container
-{
-	background-color: spiritLightColor;
 }
 
 .isTier5 .mod_icon_single_container

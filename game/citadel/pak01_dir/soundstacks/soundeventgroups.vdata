@@ -90,7 +90,7 @@
 		[
 			{
 				_class = "CSosGroupActionSetSoundeventParameterSchema"
-				m_nMaxCount = 5
+				m_nMaxCount = 2
 				m_flMinValue = 0.0
 				m_flMaxValue = 1.0
 				m_opvarName = "group_pause"
@@ -224,6 +224,33 @@
 				_class = "CSosGroupActionOcclusionSchema"
 				m_flRadius = 150.0
 				m_flOcclusionMax = 1.0
+			},
+		]
+	}
+	blocking_group = 
+	{
+		m_vActions = 
+		[
+			{
+				_class = "CSosGroupActionSoundeventMinMaxValuesSchema"
+				m_strQueryPublicFieldName = "blocking_group_priority"
+				m_bExcludSoundsAboveThreshold = true
+				m_flExcludeSoundsMaxThresholdValue = 9999.0
+				m_flExcludeSoundsMinThresholdValue = -1.0
+				m_bExcludeStoppedSounds = true
+				m_bExcludeDelayedSounds = false
+			},
+		]
+		m_Behavior_EventName = "kIgnore"
+		m_Behavior_String = "kBranch"
+	}
+	steamaudio_dimension_probes = 
+	{
+		m_Behavior_EntIndex = "kBranch"
+		m_vActions = 
+		[
+			{
+				_class = "CSosGroupActionSteamAudioDimensionProbeSchema"
 			},
 		]
 	}

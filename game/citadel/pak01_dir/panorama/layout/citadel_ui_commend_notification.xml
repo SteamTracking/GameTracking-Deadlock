@@ -1,17 +1,19 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_ui_commend_notification.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_ui_commend_notification.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="Player">
 			<Panel class="Player">
 				<Panel class="ThumbsUp" />
+				<CitadelHeroImage id="CommenderHeroImage" heroimagestyle="minimap_icon" />
+				<Panel class="ReturnedBadge" />
 			</Panel>
 		</snippet>
 	</snippets>
-	<Panel class="CommendToast" hittest="false" toast_appear_sound="UI.CommendToast">
+	<Panel class="CommendToast" hittest="true" toast_appear_sound="UI.CommendToast">
 		<ParticleScenePanel id="CommendFXPersist" particleonly="false" particleName="particles/ui/ui_commend_persistent.vpcf" fov="20" cameraOrigin="200 0 0" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" />
 		<Panel class="CommendTypeContainer">
 			<Label class="CommendTypeName" text="#Citadel_CommendNotification_Nice" />

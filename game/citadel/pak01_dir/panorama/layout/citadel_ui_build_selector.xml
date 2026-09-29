@@ -1,8 +1,8 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_ui_build_selector.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_ui_build_selector.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="HeroBuildListItem">
@@ -10,38 +10,41 @@
 				<ProgressBarWithMiddle id="BuildPreviewProgressBar" />
 				<Panel id="BuildNameArea">
 					<Panel class="nameRow">
-						<CitadelAvatarImage id="AuthorAvatar" />
+						<Panel class="BuildTagContainer">
+							<CitadelBuildTag class="BuildTag Small" id="BuildTag1" />
+							<CitadelBuildTag class="BuildTag Small" id="BuildTag2" />
+							<CitadelBuildTag class="BuildTag Small" id="BuildTag3" />
+						</Panel>
+						<Panel class="PopularityContainer">
+							<Panel id="DailyFavorite" class="PopularityTag" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_DailyFavorite_Tooltip )" onmouseout="UIHideTextTooltip()">
+								<Label id="DailyLabel" text="#Citadel_HeroBuilds_DailyFavorite" />
+							</Panel>
+							<Panel id="WeeklyFavorite" class="PopularityTag" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_WeeklyFavorite_Tooltip )" onmouseout="UIHideTextTooltip()">
+								<Label id="WeeklyLabel" text="#Citadel_HeroBuilds_WeeklyFavorite" />
+							</Panel>
+							<Panel id="AllTimeFavorite" class="PopularityTag">
+								<Label id="AllTimeLabel" text="#Citadel_HeroBuilds_AllTimeFavorite" />
+							</Panel>
+						</Panel>
 						<Label class="BuildName" text="#Citadel_HeroBuilds_BuildName" html="true" />
 						<Label id="OldIcon" class="InfoIcon" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_OldButtonTooltip )" onmouseout="UIHideTextTooltip()" />
 					</Panel>
-					<Label class="ActiveBuild" text="#Citadel_HeroBuilds_CurrenclyActive" />
-					<Panel class="PopularityContainer">
-						<Panel id="DailyFavorite" class="PopularityTag" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_DailyFavorite_Tooltip )" onmouseout="UIHideTextTooltip()">
-							<Label id="DailyLabel" text="#Citadel_HeroBuilds_DailyFavorite" />
-						</Panel>
-						<Panel id="WeeklyFavorite" class="PopularityTag" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_WeeklyFavorite_Tooltip )" onmouseout="UIHideTextTooltip()">
-							<Label id="WeeklyLabel" text="#Citadel_HeroBuilds_WeeklyFavorite" />
-						</Panel>
-						<Panel id="AllTimeFavorite" class="PopularityTag">
-							<Label id="AllTimeLabel" text="#Citadel_HeroBuilds_AllTimeFavorite" />
-						</Panel>
+					<Label class="SelectedBuild" text="#Citadel_HeroBuilds_Selected" />
+					<CitadelButton class="Small" text="Use Build" onactivate="CitadelBuildBrowserPopupConfirmBuild()" />
+					<Panel id="SelectedBuildIndicator">
+						<Panel class="tag_backer" />
+						<Label text="#Citadel_HeroBuilds_Selected" />
 					</Panel>
 				</Panel>
 				<Panel id="RightPanel">
-					<Panel class="BuildTagContainer">
-						<CitadelBuildTag class="BuildTag Small" id="BuildTag1" />
-						<CitadelBuildTag class="BuildTag Small" id="BuildTag2" />
-						<CitadelBuildTag class="BuildTag Small" id="BuildTag3" />
-					</Panel>
 					<Panel class="InfoContainer">
-						<Panel class="Fill" />
 						<Panel class="ProgressBarContainer">
 							<ProgressBar id="WeaponProgressBar" />
 							<ProgressBar id="VitalityProgressBar" />
 							<ProgressBar id="SpiritProgressBar" />
 						</Panel>
-						<Label id="FavoriteCount" text="#Citadel_HeroBuilds_FavoriteCount" />
 						<Panel id="FavoriteIcon" class="HeroBuildTypeIcon" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_FavoriteButtonTooltip )" onmouseout="UIHideTextTooltip()" />
+						<CitadelAvatarImage id="AuthorAvatar" />
 					</Panel>
 				</Panel>
 			</Panel>
@@ -70,9 +73,13 @@
 			</Panel>
 			<Panel class="HeroSelectorTabContainer">
 				<Panel class="MyBuilds HeroSelectorTab" onactivate="CitadelBuildBrowserSetTabFilter(1)">
+					<Panel class="tab_bg" />
+					<Panel class="tab_icon" />
 					<Label class="TabLabel" text="#Citadel_HeroBuilds_Tab_MyBuilds" />
 				</Panel>
 				<Panel class="PublicBuilds HeroSelectorTab" onactivate="CitadelBuildBrowserSetTabFilter(2)">
+					<Panel class="tab_bg" />
+					<Panel class="tab_icon" />
 					<Label class="TabLabel" text="#Citadel_HeroBuilds_Tab_PublicBuilds" />
 				</Panel>
 			</Panel>

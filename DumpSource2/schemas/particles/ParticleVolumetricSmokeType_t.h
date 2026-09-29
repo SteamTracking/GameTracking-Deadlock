@@ -6,4 +6,6 @@ enum ParticleVolumetricSmokeType_t : uint32_t
 	PARTICLE_VOLUMETRIC_SMOKE_TYPE_SINK = 1,
 	// MPropertyFriendlyName = "Repel"
 	PARTICLE_VOLUMETRIC_SMOKE_TYPE_REPEL = 2,
+	// MPropertyFriendlyName = "Trace"
+	PARTICLE_VOLUMETRIC_SMOKE_TYPE_TRACE = 3,
 };

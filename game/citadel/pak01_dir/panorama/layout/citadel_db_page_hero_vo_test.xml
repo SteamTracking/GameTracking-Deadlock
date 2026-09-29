@@ -1,0 +1,92 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_db_page_shared.vcss" />
+		<include src="s2r://panorama/styles/citadel_db_page_hero_vo_test.vcss" />
+	</styles>
+	<snippets>
+		<snippet name="RosterHero">
+			<Panel class="RosterEntry">
+				<CitadelHeroImage id="HeroImage" class="RosterEntryImage" heroimagestyle="hero_card" hittest="false" />
+				<Panel class="RosterEntryShade" hittest="false" />
+				<Panel class="RosterEntryFrame" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="RosterPatron">
+			<Panel class="RosterEntry RosterPatron">
+				<Image id="RosterPatronImage" class="RosterEntryImage" scaling="stretch-to-cover-preserve-aspect" hittest="false" />
+				<Panel class="RosterEntryShade" hittest="false" />
+				<Label class="RosterPatronName" text="{s:patron_name}" hittest="false" />
+				<Panel class="RosterEntryFrame" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="CategoryTab">
+			<Panel class="CategoryTab">
+				<Label class="CategoryName" text="{s:category_name}" hittest="false" />
+				<Label class="CategoryCount" text="{d:category_count}" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="VoiceLine">
+			<Panel class="VoiceLine">
+				<Panel class="VoiceLinePlay" hittest="false">
+					<Panel class="VoiceLinePlayIcon" hittest="false" />
+				</Panel>
+				<Panel class="VoiceLineBody" hittest="false">
+					<Label class="VoiceLineCategory" text="{s:category_name}" hittest="false" />
+					<Label class="VoiceLineText" text="{s:line_text}" hittest="false" />
+					<Panel id="ConversationLines" class="ConversationLines" hittest="false" />
+				</Panel>
+				<CitadelHeroImage id="RelatedHero" class="VoiceLineRelatedHero" heroimagestyle="small" hittest="false" />
+			</Panel>
+		</snippet>
+		<snippet name="ConversationLine">
+			<Panel class="ConversationLine" hittest="false">
+				<CitadelHeroImage id="Speaker" class="ConversationLineSpeaker" heroimagestyle="small" hittest="false" />
+				<Label class="ConversationLineText" text="{s:line_text}" hittest="false" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<CitadelHeroVOTestPage class="DashboardPage" oncancel="CitadelNavigateBack();">
+		<Panel class="PageBackground" hittest="false" />
+		<Panel class="MainContents">
+			<Panel class="PageHeader">
+				<Label class="VoiceLinesTitle" text="#menu_voiceacting_title" />
+			</Panel>
+			<Panel class="Columns">
+				<Panel class="RosterColumn">
+					<Label class="SectionLabel" text="#citadel_voicelines_heroes" />
+					<Panel id="Roster" class="RosterGrid" />
+					<Label class="SectionLabel" text="#citadel_voicelines_patrons" />
+					<Panel id="PatronRoster" class="RosterGrid" />
+					<Label class="SectionLabel" text="#citadel_voicelines_others" />
+					<Panel id="OtherRoster" class="RosterGrid" />
+				</Panel>
+				<Panel class="SpeakerColumn">
+					<CitadelHeroScenePanelNew id="HeroScenePanel" heroscenestyle="Shop" rotate="MouseInteract" acceleration="0.75" rotation_entity_name="hero" />
+					<Image id="PatronImage" scaling="stretch-to-cover-preserve-aspect" hittest="false" />
+					<Panel class="SpeakerShade" hittest="false" />
+					<Panel class="SpeakerInfo">
+						<Label class="SpeakerName" text="{s:speaker_name}" />
+						<Label class="SpeakerLineCount" text="#citadel_voicelines_line_count" />
+						<CitadelButton id="RandomButton" class="CTA Medium" text="#citadel_voicelines_play_random" imagesrc="s2r://panorama/images/control_icons/shuffle_psd.vtex" onactivate="CitadelVoiceLinesPlayRandom()" />
+					</Panel>
+				</Panel>
+				<Panel class="LinesColumn">
+					<Panel id="SearchBox">
+						<TextEntry id="SearchTextEntry" placeholder="#citadel_voicelines_search_placeholder" />
+						<Image id="SearchIcon" src="s2r://panorama/images/control_icons/24px/search.vsvg" texturewidth="48px" textureheight="48px" scaling="stretch-to-fit-preserve-aspect" hittest="false" />
+						<Button id="SearchClearButton" onactivate="CitadelVoiceLinesClearSearch()" />
+					</Panel>
+					<Panel id="Categories" class="Categories" />
+					<Panel class="LinesDivider" hittest="false" />
+					<Panel id="VoiceLines" class="VoiceLines" />
+					<Panel class="EmptyState" hittest="false">
+						<Label class="EmptyNoLines" text="#citadel_voicelines_empty" />
+						<Label class="EmptyNoMatches" text="#citadel_voicelines_empty_search" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</CitadelHeroVOTestPage>
+</root>

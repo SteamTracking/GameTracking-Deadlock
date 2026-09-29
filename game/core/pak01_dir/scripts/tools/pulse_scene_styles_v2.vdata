@@ -428,6 +428,28 @@
 		{
 			Visibility = "VISIBLE"
 		}
+		.ValueOuterSelectionBorder = 
+		{
+			PaintLayer = "SELECTION_OVERLAY"
+			Positioning = "INSIDE_PARENT"
+			VAlign = "STRETCH"
+			HAlign = "STRETCH"
+			Border = "1px Inside"
+			Visibility = "HIDDEN"
+			BorderRadius_TopLeft = "7px"
+			BorderRadius_TopRight = "7px"
+			BorderRadius_BottomLeft = "19px"
+			BorderRadius_BottomRight = "19px"
+		}
+		"&:hover-custom-a" = 
+		{
+			.ValueOuterSelectionBorder = 
+			{
+				Visibility = "VISIBLE"
+				Border = "2px Outside DotLine $TealBright"
+				Border_FixedScreenWidth = true
+			}
+		}
 		.NodeRows = 
 		{
 			.RowSeparatorLine = 
@@ -450,6 +472,72 @@
 			{
 				Visibility = "HIDDEN"
 			}
+		}
+	}
+	.LocalNameReferenceContainer = 
+	{
+		Positioning = "OUTSIDE_PARENT"
+		LayoutChildren = "HBOX"
+		Margin_Left = 12
+		VAlign = "CENTER"
+		HAlign = "RIGHT"
+	}
+	.LocalNameReferenceFromThis = 
+	{
+		FixedSizeX = 18
+		FixedSizeY = 18
+		BackgroundImage = "tools/images/pulse_editor/namereference_from_this.png"
+		ImageTint = "#777"
+		InteractionPriority = "BASE"
+		"&:hover" = 
+		{
+			ImageTint = "$GreyBright_Hover"
+		}
+	}
+	.LocalNameReferenceUsedHere = 
+	{
+		FixedSizeX = 18
+		FixedSizeY = 18
+		BackgroundImage = "tools/images/pulse_editor/namereference_used.png"
+		ImageTint = "#777"
+		InteractionPriority = "BASE"
+		"&:hover" = 
+		{
+			ImageTint = "$GreyBright_Hover"
+		}
+	}
+	.LocalNameMultiReference = 
+	{
+		FixedSizeX = 18
+		FixedSizeY = 18
+		BackgroundImage = "tools/images/pulse_editor/multinamereference_from_this.png"
+		ImageTint = "#777"
+		InteractionPriority = "BASE"
+		"&:hover" = 
+		{
+			ImageTint = "$GreyBright_Hover"
+		}
+	}
+	.PortLabelIcon = 
+	{
+		MinSizeX = 18
+		MinSizeY = 18
+		InteractionPriority = "ADD_FLOW"
+		"&.ValueType_Bool" = 
+		{
+			ImageTint = "$data_type_bool"
+		}
+		"&.ValueType_Number" = 
+		{
+			ImageTint = "$data_type_number"
+		}
+		"&.ValueType_String" = 
+		{
+			ImageTint = "$data_type_string"
+		}
+		"&.ValueType_Other" = 
+		{
+			ImageTint = "$data_type_other"
 		}
 	}
 	.BaseConnection = 
@@ -833,7 +921,7 @@
 	}
 	.HeaderText.SubHeaderText = 
 	{
-		Font = "Dinish,10,-1,5,50,0,0,0,0,0,Italic"
+		Font = "Dinish,11,-1,5,50,0,0,0,0,0,Regular"
 	}
 	".ValueWithoutPortLabels .SubHeaderText" = 
 	{
@@ -1207,6 +1295,13 @@
 		{
 			LayoutGrowFactor = 1
 			Margin_Right = 30
+			"&.FirstFlowPortGrow" = 
+			{
+				"&:first-child" = 
+				{
+					LayoutGrowFactor = 1
+				}
+			}
 			.InflowPortPlugSpacer = 
 			{
 				FixedSizeY = 12
@@ -1227,6 +1322,20 @@
 				.InflowPortPlugSpacer = 
 				{
 					Visibility = "VISIBLE"
+				}
+			}
+			"&.FixedSizeFlowPort" = 
+			{
+				LayoutGrowFactor = 0
+				FixedSizeX = 40
+				Margin_Right = 0
+				.InflowPortPlugSpacer = 
+				{
+					Visibility = "COLLAPSE"
+				}
+				"&:last-child" = 
+				{
+					FixedSizeX = 25
 				}
 			}
 			.PortPlugCtn = 
@@ -1268,6 +1377,19 @@
 			"&:first-child" = 
 			{
 				LayoutGrowFactor = 0
+				"&.FirstFlowPortGrow" = 
+				{
+					LayoutGrowFactor = 1
+					.PortPlugCtn = 
+					{
+						HAlign = "LEFT"
+					}
+				}
+			}
+			"&.FixedSizeFlowPort" = 
+			{
+				LayoutGrowFactor = 0
+				FixedSizeX = 40
 			}
 			.PortPlugCtn = 
 			{
@@ -1674,9 +1796,21 @@
 	{
 		BackgroundImage = "tools/images/pulse_editor/remoteflow_continue_loop.png"
 	}
+	.RemoteFlowIndicator.BREAK_LOOP = 
+	{
+		BackgroundImage = "tools/images/pulse_editor/remoteflow_break_loop.png"
+	}
+	.RemoteFlowIndicator.BRANCH_AFTER = 
+	{
+		BackgroundImage = "tools/images/pulse_editor/remoteflow_branch_after.png"
+	}
 	.RemoteFlowIndicator.CONTINUE_SEQUENCE = 
 	{
 		BackgroundImage = "tools/images/pulse_editor/remoteflow_continue_sequence.png"
+	}
+	.RemoteFlowIndicator.MULTIPLE_TYPES = 
+	{
+		BackgroundImage = "tools/images/pulse_editor/remoteflow_collapsed_multitype.png"
 	}
 	.RemoteFlowIndicatorsContainer = 
 	{
@@ -1693,6 +1827,94 @@
 	{
 		Padding_Top = 15
 		VAlign = "BOTTOM"
+	}
+	.BreakpointContainerPort = 
+	{
+		Positioning = "OUTSIDE_PARENT"
+		LayoutChildren = "VBOX"
+	}
+	.BreakpointContainer_Port_Inflow = 
+	{
+		Margin_Bottom = 0
+		VAlign = "TOP"
+		HAlign = "CENTER"
+	}
+	.BreakpointContainer_Port_Outflow = 
+	{
+		Margin_Bottom = -22
+		VAlign = "TOP"
+		HAlign = "CENTER"
+	}
+	.BreakpointContainer_Header = 
+	{
+		Positioning = "OUTSIDE_PARENT"
+		LayoutChildren = "VBOX"
+		VAlign = "BOTTOM"
+		HAlign = "CENTER"
+	}
+	.BreakpointContainer_Header_Inflow = 
+	{
+		Positioning = "OUTSIDE_PARENT"
+		LayoutChildren = "VBOX"
+		VAlign = "BOTTOM"
+		HAlign = "CENTER"
+		Margin_Top = -39
+	}
+	.BreakpointContainer_Header_Outflow = 
+	{
+		Positioning = "OUTSIDE_PARENT"
+		LayoutChildren = "VBOX"
+		VAlign = "BOTTOM"
+		HAlign = "CENTER"
+		Margin_Top = -8
+	}
+	.BreakpointContainer_FlowRail_Inflow = 
+	{
+		Positioning = "OUTSIDE_PARENT"
+		LayoutChildren = "VBOX"
+		Margin_Top = -39
+		VAlign = "BOTTOM"
+		HAlign = "CENTER"
+	}
+	.BreakpointContainer_FlowRail_Outflow = 
+	{
+		Positioning = "OUTSIDE_PARENT"
+		LayoutChildren = "VBOX"
+		Margin_Top = -6
+		VAlign = "BOTTOM"
+		HAlign = "CENTER"
+	}
+	.BreakpointIndicator = 
+	{
+		FixedSizeX = 12
+		FixedSizeY = 12
+		InteractionPriority = "PORT"
+		PropagateClicksToNonOverlappingAncestors = true
+		"&:hover" = 
+		{
+			FixedSizeX = 16
+			FixedSizeY = 16
+		}
+		"&.ActiveBreakpoint" = 
+		{
+			BackgroundImage = "tools/images/pulse_editor/debugger_breakpoint.png"
+		}
+		"&.InactiveBreakpoint" = 
+		{
+			BackgroundImage = "tools/images/pulse_editor/debugger_breakpoint_disabled.png"
+		}
+		"&.NodeInGroup" = 
+		{
+			FixedSizeY = 8
+			"&.ActiveBreakpoint" = 
+			{
+				BackgroundImage = "tools/images/pulse_editor/debugger_breakpoint_half.png"
+			}
+			"&.InactiveBreakpoint" = 
+			{
+				BackgroundImage = "tools/images/pulse_editor/debugger_breakpoint_half_disabled.png"
+			}
+		}
 	}
 	.ReturnFlowIndicatorsContainer = 
 	{
@@ -1726,6 +1948,17 @@
 		InteractionPriority = "BASE"
 		BackgroundImage = "tools/images/pulse_editor/caller_indicator.png"
 	}
+	.CallerIndicatorMultiReference = 
+	{
+		HAlign = "LEFT"
+		FixedSizeX = 20
+		FixedSizeY = 20
+		Margin_Top = 0
+		Margin_Bottom = 0
+		Margin_Left = 10
+		InteractionPriority = "BASE"
+		BackgroundImage = "tools/images/pulse_editor/caller_indicator_multiref.png"
+	}
 	.CallerIndicator.SyncCall_SyncMethod = 
 	{
 		ImageTint = "#777"
@@ -1752,7 +1985,6 @@
 	}
 	.Cursor = 
 	{
-		PaintLayer = "HOVER_OVERLAY"
 		InteractionPriority = "ANCHOR"
 		FixedSizeX = 40
 		FixedSizeY = 40
@@ -1761,16 +1993,34 @@
 		"&.SelectedInstance" = 
 		{
 			BackgroundImage = "tools/images/pulse_editor/yielded_cursor.png"
+			"&.ActiveDebuggerCursor" = 
+			{
+				BackgroundImage = "tools/images/pulse_editor/debugger_broken.png"
+			}
+		}
+		"&.ActiveDebuggerCursor" = 
+		{
+			BackgroundImage = "tools/images/pulse_editor/debugger_broken_other.png"
+			Padding_Left = -3
 		}
 		"&.CallstackCursor" = 
 		{
-			FixedSizeX = 20
-			FixedSizeY = 20
-			BackgroundImage = "tools/images/pulse_editor/yielded_cursor.png"
+			FixedSizeX = 40
+			FixedSizeY = 40
+			BackgroundImage = "tools/images/pulse_editor/yielded_cursor_instack.png"
 			Visibility = "COLLAPSE"
 			"&.SelectedInstance" = 
 			{
 				Visibility = "VISIBLE"
+				"&.ActiveDebuggerCursor" = 
+				{
+					BackgroundImage = "tools/images/pulse_editor/debugger_broken_instack.png"
+				}
+			}
+			"&.ActiveDebuggerCursor" = 
+			{
+				BackgroundImage = "tools/images/pulse_editor/debugger_broken_instack_other.png"
+				Padding_Left = 0
 			}
 		}
 		"&.DeadCursor" = 
@@ -1834,6 +2084,21 @@
 			Margin_Top = 5
 		}
 	}
+	.TempVarCurrentValue = 
+	{
+		VAlign = "CENTER"
+		HAlign = "LEFT"
+		Positioning = "OUTSIDE_PARENT"
+		LayoutChildren = "HBOX"
+		Border = "1px $GreyMid"
+		Background_Color = "$Beige"
+		.TempVarCurrentValueText = 
+		{
+			Font = "$BaseFont"
+			Foreground_Color = "$Black"
+			Margin = "1px 4px"
+		}
+	}
 	.HasSpecialMultipleOutflowsSection = 
 	{
 		.NodeRow = 
@@ -1877,6 +2142,12 @@
 			{
 				BorderRadius_BottomRight = 0
 			}
+		}
+		.OutflowRowRightHandSideGrowSpacer = 
+		{
+			HAlign = "STRETCH"
+			LayoutGrowFactor = 1
+			MinSizeX = 25
 		}
 		.SpecialMultipleOutflowsSectionPortChild = 
 		{
@@ -1930,7 +2201,7 @@
 			BorderRadius_TopRight = 5
 			Margin_Right = 40
 		}
-		".OutflowPort:first-child, .OutflowPort:last-child" = 
+		".OutflowPort:first-child" = 
 		{
 			Margin_Top = "unset"
 			.PortEventOptionalSpacer = 
@@ -1969,7 +2240,7 @@
 				Visibility = "COLLAPSE"
 			}
 		}
-		"&.WaitForCompletion" = 
+		"&.WaitForCompletion &.IsTimelineNode" = 
 		{
 			.OutflowPortsLayout = 
 			{
@@ -2101,6 +2372,10 @@
 	{
 		Visibility = "COLLAPSE"
 	}
+	.MultipleOutflowsSectionBarLeadIn = 
+	{
+		Visibility = "COLLAPSE"
+	}
 	.IsConditionalBranch = 
 	{
 		.SpecialMultipleOutflowsSection = 
@@ -2120,6 +2395,53 @@
 		.MultipleOutflowsSectionBar = 
 		{
 			LayoutGrowFactor = 1
+		}
+		.OutflowPortsLayout = 
+		{
+			.OutflowPort = 
+			{
+				.SpecialMultipleOutflowsSectionPortChild = 
+				{
+					.PortEvent = 
+					{
+						.PortEventOptionalSpacer = 
+						{
+							Visibility = "HIDDEN"
+						}
+					}
+				}
+			}
+		}
+	}
+	.IsConditionalBranchAfter = 
+	{
+		.SpecialMultipleOutflowsSection = 
+		{
+			LayoutChildren = "HBOX"
+		}
+		.OutflowSectionLabelContainer = 
+		{
+			Visibility = "VISIBLE"
+			HAlign = "LEFT"
+			Margin_Left = 2
+			.OutflowSectionLabelText = 
+			{
+				Font = "$BaseFont"
+			}
+			"&.OutflowSectionLabelRight" = 
+			{
+				HAlign = "RIGHT"
+				Margin_Left = 0
+				Margin_Right = 8
+			}
+		}
+		.MultipleOutflowsSectionBar = 
+		{
+			LayoutGrowFactor = 1
+			"&.MultipleOutflowsSectionBarLeadIn" = 
+			{
+				Visibility = "VISIBLE"
+			}
 		}
 		.OutflowPortsLayout = 
 		{
@@ -2286,8 +2608,30 @@
 			Foreground_Color = "$colorBase"
 			"&.SubHeaderText" = 
 			{
-				Font = "Dinish,10,-1,5,50,0,0,0,0,0,Italic"
+				Font = "Dinish,14,-1,5,100,0,0,0,0,0,Italic"
 				Foreground_Color = "$colorBase"
+			}
+		}
+		.HeaderTextAdditionalIcon = 
+		{
+			MinSizeX = 18
+			MinSizeY = 18
+			InteractionPriority = "ADD_FLOW"
+			"&.ValueType_Bool" = 
+			{
+				ImageTint = "$data_type_bool"
+			}
+			"&.ValueType_Number" = 
+			{
+				ImageTint = "$data_type_number"
+			}
+			"&.ValueType_String" = 
+			{
+				ImageTint = "$data_type_string"
+			}
+			"&.ValueType_Other" = 
+			{
+				ImageTint = "$data_type_other"
 			}
 		}
 		"&.Skipped, &.Unreachable" = 
@@ -2421,6 +2765,22 @@
 				Foreground_Color = "$colorBase"
 			}
 		}
+		.OutflowPort.FireAndForget = 
+		{
+			Foreground_Color = "$GreenBright"
+			.PortPlug = 
+			{
+				Background_Color = "$GreenBright"
+			}
+		}
+		.OutflowPort.WaitForCompletion = 
+		{
+			Foreground_Color = "$YellowBright"
+			.PortPlug = 
+			{
+				Background_Color = "$YellowBright"
+			}
+		}
 		"&.HasSpecialMultipleOutflowsSection" = 
 		{
 			"&.IsSelectorNode" = 
@@ -2458,22 +2818,6 @@
 				.PortEventOptionalSpacer = 
 				{
 					Background_Color = "$flowColor"
-				}
-			}
-			"&.WaitForCompletion .OutflowPort.Port:nth-child(n+2), .OutflowPort.WaitForCompletion" = 
-			{
-				Foreground_Color = "$YellowBright"
-				.PortPlug = 
-				{
-					Background_Color = "$YellowBright"
-				}
-			}
-			"&.FireAndForget .OutflowPort.Port:nth-child(n+2), .OutflowPort.FireAndForget" = 
-			{
-				Foreground_Color = "$GreenBright"
-				.PortPlug = 
-				{
-					Background_Color = "$GreenBright"
 				}
 			}
 			.OutflowSectionLabelContainer = 
@@ -2639,25 +2983,10 @@
 	"@Palette Palette_statecell" = 
 	{
 		Base_Palette = "Palette_yielding"
-		colors = 
-		{
-			"$flowColor" = "$GreyLight"
-			"$flowColorAccessory" = "$White"
-			"$iconColor" = "$GreyLight"
-			"$bgColorBase" = "$BrownLeather"
-			"$bgColorHover" = "$BrownLeather_Hover"
-			"$dragColorBase" = "$GreyLight"
-			"$dragColorHover" = "$GreyLight"
-		}
 	}
 	"@Palette Palette_statecell_active" = 
 	{
 		Base_Palette = "Palette_statecell"
-		colors = 
-		{
-			"$bgColorBase" = "$RedMid"
-			"$bgColorHover" = "$RedMid_Hover"
-		}
 	}
 	"@Palette Palette_value" = 
 	{

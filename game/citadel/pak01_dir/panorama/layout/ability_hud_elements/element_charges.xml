@@ -1,51 +1,19 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/ability_hud_elements/element_common.vcss_c" />
-		<include src="s2r://panorama/styles/ability_hud_elements/element_charges.vcss_c" />
+		<include src="s2r://panorama/styles/ability_hud_elements/element_common.vcss" />
+		<include src="s2r://panorama/styles/ability_hud_elements/element_charges.vcss" />
 	</styles>
-	<Citadel_AbilityHUDElement_Progress class="ability_element_charges">
-		<Panel id="charges_container" context="charge_container" update_classes="1">
-			<Panel id="charge1" class="charge" context="charge1" update_classes="1">
+	<snippets>
+		<snippet name="Charge">
+			<Panel class="charge">
 				<Panel class="charge_bg" />
-				<Panel class="charge_fg" context="charge1" progress="radial_cw" />
+				<Panel id="progress" class="charge_fg" />
 				<Panel class="charge_drained" />
 			</Panel>
-			<Panel id="charge2" class="charge" context="charge2" update_classes="1">
-				<Panel class="charge_bg" />
-				<Panel class="charge_fg" context="charge2" progress="radial_cw" />
-				<Panel class="charge_drained" />
-			</Panel>
-			<Panel id="charge3" class="charge" context="charge3" update_classes="1">
-				<Panel class="charge_bg" />
-				<Panel class="charge_fg" context="charge3" progress="radial_cw" />
-				<Panel class="charge_drained" />
-			</Panel>
-			<Panel id="charge4" class="charge" context="charge4" update_classes="1">
-				<Panel class="charge_bg" />
-				<Panel class="charge_fg" context="charge4" progress="radial_cw" />
-				<Panel class="charge_drained" />
-			</Panel>
-			<Panel id="charge5" class="charge" context="charge5" update_classes="1">
-				<Panel class="charge_bg" />
-				<Panel class="charge_fg" context="charge5" progress="radial_cw" />
-				<Panel class="charge_drained" />
-			</Panel>
-			<Panel id="charge6" class="charge" context="charge6" update_classes="1">
-				<Panel class="charge_bg" />
-				<Panel class="charge_fg" context="charge6" progress="radial_cw" />
-				<Panel class="charge_drained" />
-			</Panel>
-			<Panel id="charge7" class="charge" context="charge7" update_classes="1">
-				<Panel class="charge_bg" />
-				<Panel class="charge_fg" context="charge7" progress="radial_cw" />
-				<Panel class="charge_drained" />
-			</Panel>
-			<Panel id="charge8" class="charge" context="charge8" update_classes="1">
-				<Panel class="charge_bg" />
-				<Panel class="charge_fg" context="charge8" progress="radial_cw" />
-				<Panel class="charge_drained" />
-			</Panel>
-		</Panel>
-	</Citadel_AbilityHUDElement_Progress>
+		</snippet>
+	</snippets>
+	<Citadel_AbilityHUDElement_Dash class="ability_element_charges">
+		<Panel id="charges_container" />
+	</Citadel_AbilityHUDElement_Dash>
 </root>

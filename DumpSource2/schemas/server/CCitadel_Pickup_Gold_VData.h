@@ -16,23 +16,35 @@
 //		0
 //	],
 //	"m_hModel": "",
+//	"m_bShowModelOverhead": true,
 //	"m_sDefaultMaterialGroupName": "",
+//	"m_sVacuumAttachmentTarget": "ability_apply",
 //	"m_sNameLocString": "",
 //	"m_nNameOffset": 60,
 //	"m_bShowOnMinimap": false,
 //	"m_bIsPermanentPickup": false,
+//	"m_sBuffTypeLocString": "",
+//	"m_BuffTypeGraphColor":
+//	[
+//		0,
+//		0,
+//		0,
+//		0
+//	],
+//	"m_eBuffTypeValueUnit": "Flat",
 //	"m_iTempParticleSheetIndex": -1,
 //	"m_flParticleRadius": 80.000000,
-//	"m_vecMinimapCssClasses":
-//	[
-//	],
+//	"m_strMinimapClass": "",
+//	"m_strPingIcon": "",
 //	"m_sPickupSound": "",
+//	"m_strGainedSound": "",
 //	"m_sSpawnSound": "",
 //	"m_sBecomeInteractiveSound": "",
 //	"m_strVacuumStartSound": "",
 //	"m_sAmbientSound": "",
 //	"m_sHitSound": "",
 //	"m_eCollectionMethod": "Touch",
+//	"m_bGiveToWholeTeam": false,
 //	"m_flPickupRadius":
 //	{
 //		"m_flBase": 0.000000,
@@ -40,6 +52,7 @@
 //		"m_flStartMinute": 0.000000,
 //		"m_flMaxValue": 0.000000
 //	},
+//	"m_bLosCheckOnTouchRadius": false,
 //	"m_bPickupExpires": true,
 //	"m_flPickupExpirationDuration":
 //	{
@@ -135,11 +148,14 @@
 //	{
 //	},
 //	"m_flGoldAmount": 0.000000,
-//	"m_flGoldPerMinuteAmount": 0.000000
+//	"m_flGoldPerMinuteAmount": 0.000000,
+//	"m_bUseLabelPanel": true
 //}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Pickup_Gold_VData : public CCitadel_Pickup_VData
 {
 	float32 m_flGoldAmount;
 	float32 m_flGoldPerMinuteAmount;
+	// MPropertyDescription = "When false, this pickup shows no in-world panel at all - no reward amount and no name."
+	bool m_bUseLabelPanel;
 };

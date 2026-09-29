@@ -1,33 +1,24 @@
-class CAI_Path
+// MGetKV3ClassDefaults = null
+// MHasKV3TransferPolymorphicClassname
+class CAI_Path : public IAI_Path
 {
-	// MSaveOpsForField = "GetWaypointListSaveRestoreOps"
 	CAI_WaypointList m_Waypoints;
-	VectorWS m_vPrevWaypoint;
-	VectorWS m_vPrevWaypointBase;
-	// MSaveOpsForField = "GetWaypointListSaveRestoreOps"
+	CRelativeLocation m_vPrevWaypoint;
 	CAI_WaypointList m_WaypointsLocal;
 	uint32 m_nLocalPathHash;
-	CHandle< CBaseEntity > m_hTarget;
-	Vector m_vTargetOffset;
-	bool m_bGoalPosSet;
-	VectorWS m_vGoalActualPos;
-	VectorWS m_vGoalBasePos;
-	VectorWS m_vGoalActualPos_Initial;
-	VectorWS m_vGoalBasePos_Initial;
-	VectorWS m_vGoalPosBlocked;
-	NavGravity_t m_GravityAtGoalPos;
-	bool m_bGoalTypeSet;
-	NavGoalType_t m_goalType;
-	AI_NavGoalFlags_t m_goalFlags;
-	GameTime_t m_flGoalChangeTime;
-	GameTime_t m_flPathChangeTime;
-	float32 m_flDistAdvancedToCurWaypoint;
-	bool m_bOnMovableNavMesh;
-	uint32 m_unGoalActualMovableMeshId;
-	uint32 m_unGoalBaseMovableMeshId;
-	uint32 m_unPrevWaypointMovableMeshId;
-	uint32 m_unPrevWaypointBaseMovableMeshId;
-	uint32 m_unGoalActualMovableMeshId_Initial;
-	uint32 m_unGoalBaseMovableMeshId_Initial;
-	uint32 m_unGoalPosBlockedMovableMeshId;
+	AI_PathGoal_t m_goal;
+	uint32 m_nSerialNumber;
+	AI_TaskFailureCode_t m_nFailureCode;
+	CHandle< CBaseEntity > m_hBlockingEntity;
+	bool m_bSuppressRepathing;
+	bool m_bUnbuilt;
+	bool m_bSuccess;
+	bool m_bNeedsRebuild;
+	bool m_bOwnsCoverLocation;
+	bool m_bCanRepathFromGoalMovement;
+	CRelativeLocation m_vGoalActualPos_Initial;
+	CRelativeLocation m_vGoalBasePos_Initial;
+	CRelativeLocation m_vGoalActualPos_ForClipping;
+	GameTime_t m_flPathCreationTime;
+	NavHull_t m_nNavHullIdx;
 };

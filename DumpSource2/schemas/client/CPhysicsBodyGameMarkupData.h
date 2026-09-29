@@ -7,5 +7,5 @@
 class CPhysicsBodyGameMarkupData
 {
 	// MPropertyDescription = "Physics Body Data By Bone Name"
-	CUtlOrderedMap< CUtlString, CPhysicsBodyGameMarkup > m_PhysicsBodyMarkupByBoneName;
+	CUtlDict< CPhysicsBodyGameMarkup > m_PhysicsBodyMarkupByBoneName;
 };

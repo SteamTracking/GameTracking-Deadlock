@@ -1,0 +1,3 @@
+class CNavAttribute : public CNavFlags
+{
+};

@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -172,8 +173,10 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
+//	"m_bResetSnapshotIndexOnChanges": false,
 //	"m_nManualSnapshotIndex":
 //	{
 //		"m_nType": "PF_TYPE_LITERAL",
@@ -247,11 +250,13 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nRandomSeed": 0,
 //	"m_bLocalSpaceAngles": false
 //}
+// MGPUParticleFunction
 // MHasKV3TransferPolymorphicClassname
 class C_INIT_InitFromCPSnapshot : public CParticleFunctionInitializer
 {
@@ -276,6 +281,8 @@ class C_INIT_InitFromCPSnapshot : public CParticleFunctionInitializer
 	// MPropertyFriendlyName = "Snapshot increment amount"
 	// MPropertySuppressExpr = "m_bRandom == true"
 	CParticleCollectionFloatInput m_nSnapShotIncrement;
+	// MPropertyFriendlyName = "reset starting index on snapshot changes"
+	bool m_bResetSnapshotIndexOnChanges;
 	// MPropertyFriendlyName = "Manual Snapshot Index"
 	// MPropertySuppressExpr = "m_bRandom == true"
 	CPerParticleFloatInput m_nManualSnapshotIndex;

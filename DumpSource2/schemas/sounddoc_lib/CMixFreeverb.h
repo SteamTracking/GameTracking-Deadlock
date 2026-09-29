@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_flRoomSize": 0.500000,
 //	"m_flDamp": 0.500000,
 //	"m_flWidth": 0.500000,

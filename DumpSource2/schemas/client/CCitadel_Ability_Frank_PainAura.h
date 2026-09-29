@@ -1,7 +1,4 @@
-// MNetworkVarNames = "GameTime_t m_ToggleOnTime"
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Frank_PainAura : public C_CitadelBaseAbility
 {
-	// MNetworkEnable
 	GameTime_t m_ToggleOnTime;
 };

@@ -10,6 +10,12 @@ CitadelKeyboardGlyph
 	horizontal-align: center;
 }
 
+CitadelKeyboardGlyph.InlineKeyGlyph
+{
+	horizontal-align: left;
+	vertical-align: top;
+}
+
 .MouseButtonGlyphContainer,.KeyboardKeyGlyphContainer
 {
 	flow-children: none;
@@ -54,14 +60,20 @@ CitadelKeyboardGlyph
 	vertical-align: middle;
 	horizontal-align: center;
 	font-size: 16px;
-	line-height: 0px;
+	line-height: normal;
 	text-shadow: none;
 	color: magenta;
 	text-align: center;
 	text-transform: uppercase;
+	text-overflow: shrink;
 	padding: 4px 6px 2px 6px;
 	font-family: block;
 	font-weight: bold;
+}
+
+.ModifierCombinerContainer Label.KeepCase,.KeyboardKeyGlyphContainer Label.KeepCase,.UnboundGlyph Label.KeepCase
+{
+	text-transform: none;
 }
 
 .ModifierCombinerContainer Label.ModifierCombinerLabel
@@ -152,6 +164,14 @@ CitadelKeyboardGlyph
 	padding: 1px;
 }
 
+.ModifierGlyphContainer,.MainGlyphContainer
+{
+	width: fit-children;
+	height: fit-children;
+	vertical-align: middle;
+	horizontal-align: center;
+}
+
 .ModifierCombinerContainer
 {
 	width: 20px;
@@ -159,6 +179,12 @@ CitadelKeyboardGlyph
 	vertical-align: middle;
 	margin-left: 2px;
 	margin-right: 2px;
+	visibility: collapse;
+}
+
+CitadelKeyboardGlyph.HasModifierKey .ModifierCombinerContainer
+{
+	visibility: visible;
 }
 
 .light .MouseGlyphBackground
@@ -284,6 +310,114 @@ CitadelMatchInProgressStatus.StatusNotification .Details .Desc .light .KeyboardK
 	color: ominousGreen;
 }
 
+.KeybindMapKey CitadelKeyboardGlyph,.KeybindMapKey CitadelKeyboardGlyph .MainGlyphContainer,.KeybindMapKey CitadelKeyboardGlyph .KeyboardKeyGlyphContainer
+{
+	width: 100%;
+	height: 100%;
+	min-width: 0px;
+	min-height: 0px;
+}
+
+.KeybindMapKey CitadelKeyboardGlyph .ModifierGlyphContainer,.KeybindMapKey CitadelKeyboardGlyph .ModifierCombinerContainer
+{
+	visibility: collapse;
+}
+
+.KeybindMapKey CitadelKeyboardGlyph.dark .KeyboardKeyGlyphContainer
+{
+	background-color: transparent;
+	border-radius: 0px;
+}
+
+.KeybindMapKey CitadelKeyboardGlyph.dark .KeyboardKeyGlyphContainer Label
+{
+	width: 100%;
+	horizontal-align: center;
+	text-align: center;
+	font-size: 14px;
+	padding: 2px 3px 0px 3px;
+	text-overflow: shrink min(5px);
+	color: offWhite&aa;
+}
+
+.KeybindMapKey CitadelKeyboardGlyph.dark .KeyboardButtonGlyph
+{
+	width: 20px;
+	height: 20px;
+	wash-color: offWhite&aa;
+}
+
+.KeybindMapKey.Bound CitadelKeyboardGlyph.dark .KeyboardKeyGlyphContainer Label
+{
+	color: offBlack;
+}
+
+.KeybindMapKey.Bound CitadelKeyboardGlyph.dark .KeyboardButtonGlyph
+{
+	wash-color: offBlack;
+}
+
+.KeybindMapKey.Reserved CitadelKeyboardGlyph.dark .KeyboardKeyGlyphContainer Label
+{
+	color: offWhite&22;
+}
+
+.KeybindMapKey.Reserved CitadelKeyboardGlyph.dark .KeyboardButtonGlyph
+{
+	wash-color: offWhite&22;
+}
+
+.ShowingChords #ShowChordsHint CitadelKeyboardGlyph .KeyboardKeyGlyphContainer
+{
+	background-color: brandGreen;
+}
+
+CitadelKeyboardGlyph.KeybindMapTooltipChord .KeyboardKeyGlyphContainer Label,CitadelKeyboardGlyph.KeybindMapTooltipChord .ModifierCombinerContainer Label
+{
+	font-size: 13px;
+}
+
+CitadelKeyboardGlyph.KeybindMapTooltipChord.ConflictingBind .KeyboardKeyGlyphContainer,CitadelKeyboardGlyph.KeybindMapTooltipChord.ConflictingBind .MouseGlyphBackground
+{
+	background-color: warningRed;
+}
+
+CitadelKeyboardGlyph.KeybindMapTooltipChord.ConflictingBind .MouseGlyphBackground
+{
+	wash-color: none;
+}
+
+CitadelKeyboardGlyph.KeybindMapTooltipChord.ConflictingBind .KeyboardKeyGlyphContainer Label
+{
+	color: offBlack;
+}
+
+.BindKeyRadio #RadioGlyph,#SelectedCommandBinds CitadelKeyboardGlyph
+{
+	horizontal-align: left;
+	vertical-align: center;
+}
+
+.BindKeyLeftUnbound .MouseGlyphBackground,.BindKeyKeepsOtherBind .MouseGlyphBackground
+{
+	wash-color: none;
+}
+
+.BindKeyLeftUnbound Label,.BindKeyKeepsOtherBind Label
+{
+	color: offBlack;
+}
+
+.BindKeyLeftUnbound .KeyboardKeyGlyphContainer,.BindKeyLeftUnbound .MouseGlyphBackground
+{
+	background-color: warningRed;
+}
+
+.BindKeyKeepsOtherBind .KeyboardKeyGlyphContainer,.BindKeyKeepsOtherBind .MouseGlyphBackground
+{
+	background-color: darkorange;
+}
+
 @define inviteColor: #48D595;
 @define declineColor: #9C3333;
 .InviteHotkeyAccept .ModifierCombinerContainer Label,.InviteHotkeyAccept .KeyboardKeyGlyphContainer Label
@@ -335,5 +469,39 @@ CitadelMatchInProgressStatus.StatusNotification .Details .Desc .light .KeyboardK
 .AlreadyBound Label
 {
 	color: offBlack;
+}
+
+CitadelKeyboardBinding.Compact CitadelKeyboardGlyph.HasModifierKey
+{
+	flow-children: down;
+}
+
+CitadelKeyboardBinding.Compact CitadelKeyboardGlyph.HasModifierKey .ModifierGlyphContainer
+{
+	z-index: 1;
+	margin-bottom: -4px;
+}
+
+CitadelKeyboardBinding.Compact CitadelKeyboardGlyph.HasModifierKey .ModifierGlyphContainer .KeyboardKeyGlyphContainer
+{
+	min-width: 0px;
+	min-height: 13px;
+	border-radius: 3px;
+	background-color: offBlack;
+}
+
+CitadelKeyboardBinding.Compact CitadelKeyboardGlyph.HasModifierKey .ModifierGlyphContainer .KeyboardKeyGlyphContainer Label
+{
+	font-size: 12px;
+	padding: 2px 4px 1px 4px;
+	color: keybindBGColor;
+}
+
+CitadelKeyboardBinding.Compact CitadelKeyboardGlyph.HasModifierKey .ModifierCombinerContainer
+{
+	ignore-parent-flow: true;
+	visibility: collapse;
+	vertical-align: center;
+	horizontal-align: center;
 }
 

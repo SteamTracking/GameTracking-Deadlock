@@ -1,0 +1,201 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+@define Center: 50% 50%;
+@define RingInner: 0.10;
+@define RingInnerEdge: 0.0998;
+@define RingOuter: 0.24;
+@define RingOuterEdge: 0.242;
+@define RingFade: 0.44;
+@define RadialPanelSize: 300px;
+@define RingIconRadiusGap: 8px;
+@define RingIconAngularGap: 4px;
+@define cppRadialDeadzoneRadius_Inner: 0.10;
+@define MinimapRadialBigBackgroundRadialGradientColor: rgba(28, 28, 28, 0.8);
+@define MinimapRadialBigBackgroundRadialGradient: gradient( radial, 50% 50%, 0% 0%, 100% 100%, from( rgba( 0, 0, 0, 0 ) ), color-stop( RingInnerEdge, rgba(0, 0, 0, 0) ), color-stop( RingInner, MinimapRadialBigBackgroundRadialGradientColor ), color-stop( RingOuter, MinimapRadialBigBackgroundRadialGradientColor ), color-stop( RingFade, rgba(0, 0, 0, 0) ), to( rgba( 0, 0, 0, 0 ) ) );
+@define MinimapRadialBigBackgroundRadialGradientColor: rgba(28, 28, 28, 0.8);
+@define MinimapRadialBigBackgroundRadialGradient_Clear: gradient( radial, 50% 50%, 0% 0%, 100% 100%, from( rgba( 0, 0, 0, 0 ) ), color-stop( RingInnerEdge, rgba(0, 0, 0, 0) ), color-stop( RingInner, rgba(0, 0, 0, 0) ), color-stop( RingOuter, rgba(0, 0, 0, 0) ), color-stop( RingFade, rgba(0, 0, 0, 0) ), to( rgba( 0, 0, 0, 0 ) ) );
+#RadialPanel
+{
+	width: RadialPanelSize;
+	height: RadialPanelSize;
+	background-color: MinimapRadialBigBackgroundRadialGradient_Clear;
+}
+
+.radial_open #RadialPanel
+{
+	background-color: MinimapRadialBigBackgroundRadialGradient;
+}
+
+.radial_open.bIsEmptyRadial #RadialPanel
+{
+	background-color: MinimapRadialBigBackgroundRadialGradient_Clear;
+}
+
+@define BGRingBGColor: rgba(217, 217, 217, 0.03);
+@define OuterRingSegmentGradient: gradient( radial, 50% 50%, 0% 0%, 100% 100%, from( rgba( 0, 0, 0, 0 ) ), color-stop( RingInnerEdge, rgba(0, 0, 0, 0) ), color-stop( RingInner, BGRingBGColor ), color-stop( RingOuter, BGRingBGColor ), color-stop( RingOuterEdge, rgba(0, 0, 0, 0) ), to( rgba( 0, 0, 0, 0 ) ) );
+@define OuterRingSegmentGradient_Clear: gradient( radial, 50% 50%, 0% 0%, 100% 100%, from( rgba( 0, 0, 0, 0 ) ), color-stop( RingInnerEdge, rgba(0, 0, 0, 0) ), color-stop( RingInner, rgba(0, 0, 0, 0) ), color-stop( RingOuter, rgba(0, 0, 0, 0) ), color-stop( RingOuterEdge, rgba(0, 0, 0, 0) ), to( rgba( 0, 0, 0, 0 ) ) );
+.RadialBackgroundsContainer
+{
+	background-color: OuterRingSegmentGradient_Clear;
+}
+
+.radial_open .RadialBackgroundsContainer
+{
+	background-color: OuterRingSegmentGradient;
+}
+
+.radial_open.bIsEmptyRadial .RadialBackgroundsContainer
+{
+	background-color: OuterRingSegmentGradient_Clear;
+}
+
+@define RingBGColor: #ffffff10;
+@define InnerRingSegmentGradient_Clear: gradient( radial, 50% 50%, 0% 0%, 100% 100%, from( rgba(0, 0, 0, 0) ), color-stop( RingInnerEdge, rgba(0, 0, 0, 0) ), color-stop( RingInner, rgba(0, 0, 0, 0) ), color-stop( RingOuter, rgba(0, 0, 0, 0) ), color-stop( RingOuterEdge, rgba(0, 0, 0, 0) ), to( rgba(0, 0, 0, 0) ) );
+@define InnerRingSegmentGradient: gradient( radial, 50% 50%, 0% 0%, 100% 100%, from( rgba(0, 0, 0, 0) ), color-stop( RingInnerEdge, rgba(0, 0, 0, 0) ), color-stop( RingInner, RingBGColor ), color-stop( RingOuter, RingBGColor ), color-stop( RingOuterEdge, rgba(0, 0, 0, 0) ), to( rgba(0, 0, 0, 0) ) );
+@define RingBGColor_Hover: offWhite;
+@define InnerRingSegmentGradient_Hover: gradient( radial, 50% 50%, 0% 0%, 100% 100%, from( rgba(0, 0, 0, 0) ), color-stop( RingInnerEdge, rgba(0, 0, 0, 0) ), color-stop( RingInner, RingBGColor_Hover ), color-stop( RingOuter, RingBGColor_Hover ), color-stop( RingOuterEdge, rgba(0, 0, 0, 0) ), to( rgba(0, 0, 0, 0) ) );
+@define RingBGColor_Select: white;
+@define InnerRingSegmentGradient_Select: gradient( radial, 50% 50%, 0% 0%, 100% 100%, from( rgba(0, 0, 0, 0) ), color-stop( RingInnerEdge, rgba(0, 0, 0, 0) ), color-stop( RingInner, RingBGColor_Select ), color-stop( RingOuter, RingBGColor_Select ), color-stop( RingOuterEdge, rgba(0, 0, 0, 0) ), to( rgba(0, 0, 0, 0) ) );
+.RadialBackground
+{
+	background-color: InnerRingSegmentGradient_Clear;
+}
+
+.radial_open .RadialBackground
+{
+	background-color: InnerRingSegmentGradient;
+}
+
+.RadialBackground.SegmentHover
+{
+	background-color: InnerRingSegmentGradient_Hover;
+}
+
+.RadialBackground.SegmentSelected
+{
+	background-color: InnerRingSegmentGradient_Hover;
+}
+
+.RadialBackgroundsContainer .RadialBackground.SegmentSelected
+{
+	animation-name: OnSelected_Segment;
+	background-color: InnerRingSegmentGradient_Select;
+}
+
+@keyframes 'OnSelected_Segment'
+{
+	0%
+	{
+		background-color: InnerRingSegmentGradient;
+	}
+	
+	49%
+	{
+		background-color: InnerRingSegmentGradient;
+	}
+	
+	50%
+	{
+		background-color: InnerRingSegmentGradient_Hover;
+	}
+	
+	99%
+	{
+		background-color: InnerRingSegmentGradient_Hover;
+	}
+	
+	100%
+	{
+		background-color: InnerRingSegmentGradient_Clear;
+	}
+	
+}
+
+.radial_open.bIsEmptyRadial .RadialContentContainer
+{
+	background-color: OuterRingSegmentGradient_Clear;
+}
+
+.SubjectContainer
+{
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition-property: opacity;
+	transition-timing-function: ease-out;
+	transition-duration: 0.125s;
+	transition-delay: 0.0s;
+}
+
+.radial_open .SubjectContainer
+{
+	opacity: 1;
+}
+
+.SubjectContainer .Subject
+{
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.SubjectContainer .Subject #SubjectImage
+{
+	width: 48px;
+	height: 48px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-size: auto 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.SubjectContainer .Subject #SubjectName
+{
+	visibility: collapse;
+	padding: 1px;
+	border-radius: RadialTextCapsuleRadius;
+	background-color: offWhite;
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-top: 38px;
+	text-align: center;
+	background-color: offWhite;
+	color: #000000ff;
+	text-shadow: none;
+}
+
+.friend #SubjectImage
+{
+	img-shadow: 0px 0px 0px 2.0 offWhite&ff;
+}
+
+.friend.ability #SubjectImage
+{
+	wash-color: offBlack;
+	img-shadow: 0px 0px 0px 2.0 offWhite&ff;
+}
+
+.friend.item #SubjectImage
+{
+	img-shadow: 0px 0px 0px 2.0 offWhite&ff;
+}
+
+.enemy #SubjectImage
+{
+	img-shadow: 0px 0px 0px 2.0 #FF5656ff;
+}
+
+.SegmentHover.bIsEmptySegment.RadialBackground,.SegmentSelected.bIsEmptySegment.RadialBackground
+{
+	background-color: InnerRingSegmentGradient;
+}
+
+.HoverLabel
+{
+	transform: translateY( 110px );
+}
+

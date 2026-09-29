@@ -1,0 +1,3 @@
+class CAudioEffectChainNodeDesc : public CVAudioNodeBaseDesc
+{
+};

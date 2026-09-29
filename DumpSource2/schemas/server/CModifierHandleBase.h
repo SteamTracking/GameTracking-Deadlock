@@ -1,8 +1,9 @@
-// MNetworkVarNames = "uint64 m_hStableHandle"
+// MGetKV3ClassDefaults = {
+//	"_class": "CModifierHandleBase"
+//}
+// MHasKV3TransferPolymorphicClassname
 class CModifierHandleBase
 {
-	// MNetworkEnable
-	// MNetworkSerializer = "modifier_handle"
 	// MNotSaved
 	uint64 m_hStableHandle;
 };

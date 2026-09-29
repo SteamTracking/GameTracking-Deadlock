@@ -1,6 +1,5 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_MobileResupply : public CCitadelBaseAbility
 {
-	Vector m_vDeployPosition;
+	VectorWS m_vDeployPosition;
 	QAngle m_angDeploy;
 };

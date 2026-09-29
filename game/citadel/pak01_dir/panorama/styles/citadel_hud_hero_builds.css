@@ -1,19 +1,20 @@
 /* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
 
-@import url("s2r://panorama/styles/citadel_hero_builds_shared.vcss_c");
+@import url("s2r://panorama/styles/citadel_hero_builds_shared.vcss");
 CitadelHudHeroBuilds
 {
 	vertical-align: bottom;
-	margin-bottom: 100px;
-	margin-left: 10px;
+	margin-bottom: 60px;
+	margin-left: 20px;
 	visibility: collapse;
 	flow-children: down;
 	vertical-align: bottom;
-	width: 100%;
+	padding-top: 40px;
+	width: 520px;
 	height: 100%;
 }
 
-CitadelHudHeroBuilds.gEditingBuilds,CitadelHudHeroBuilds.DashboardBuilds
+CitadelHudHeroBuilds.gEditingBuilds
 {
 	visibility: visible;
 }
@@ -123,7 +124,7 @@ CitadelHudHeroBuilds.gEditingBuilds,CitadelHudHeroBuilds.DashboardBuilds
 	vertical-align: top;
 	width: 500px;
 	height: fit-children;
-	margin: 5px 10px;
+	margin: 5px 0px;
 	padding: 10px 20px;
 	background-color: offBlack&90;
 	border-radius: 5px;
@@ -133,21 +134,6 @@ CitadelHudHeroBuilds.gEditingBuilds,CitadelHudHeroBuilds.DashboardBuilds
 .gEditingBuilds .BuildEditSection
 {
 	visibility: visible;
-}
-
-.DashboardBuilds .BuildEditSection
-{
-	margin-top: 0px;
-}
-
-#EditBuildSection
-{
-	margin-top: 75px;
-}
-
-.DashboardBuilds #EditBuildSection
-{
-	margin-top: 50px;
 }
 
 .VerticalFill
@@ -174,18 +160,26 @@ CitadelHudHeroBuilds.gEditingBuilds,CitadelHudHeroBuilds.DashboardBuilds
 	font-size: 16px;
 }
 
-#EditTagsSection .TagList
+.TagList
 {
-	horizontal-align: center;
+	horizontal-align: left;
 	flow-children: right;
 }
 
 .EditSectionTitle
 {
-	vertical-align: top;
-	horizontal-align: center;
+	horizontal-align: left;
 	font-weight: bold;
+	font-family: block;
 	margin-bottom: 10px;
+	text-transform: uppercase;
+	color: buildsColor;
+}
+
+.EditSectionTitle.page_title
+{
+	font-size: 30px;
+	horizontal-align: center;
 }
 
 .FocusedMod #EditCategorySection
@@ -203,6 +197,9 @@ CitadelHudHeroBuilds.gEditingBuilds,CitadelHudHeroBuilds.DashboardBuilds
 {
 	width: 100%;
 	margin-bottom: 5px;
+	background-color: offBlack&90;
+	border: 1px solid offBlack;
+	padding: 8px 10px;
 }
 
 #SellPriorityTextEntry
@@ -243,11 +240,6 @@ CitadelHudHeroBuilds.gEditingBuilds,CitadelHudHeroBuilds.DashboardBuilds
 	vertical-align: center;
 }
 
-.DashboardBuilds #EditModSection .SetImbueTargetContainer
-{
-	visibility: collapse;
-}
-
 .ShowImbueButton #EditModSection .SetImbueTargetContainer
 {
 	opacity: 1;
@@ -271,7 +263,12 @@ CitadelHudHeroBuilds.gEditingBuilds,CitadelHudHeroBuilds.DashboardBuilds
 {
 	horizontal-align: left;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 16px;
+	margin-top: 8px;
+	margin-bottom: 5px;
+	font-family: block;
+	text-transform: uppercase;
+	opacity: 0.9;
 }
 
 #BuildDescriptionTextEntry
@@ -285,5 +282,17 @@ CitadelHudHeroBuilds.gEditingBuilds,CitadelHudHeroBuilds.DashboardBuilds
 #ImbueTargetAbilityIcon
 {
 	ui-scale: 60%;
+}
+
+#SaveChangesSection
+{
+	flow-children: right;
+	background-color: offBlack;
+	padding: 10px;
+}
+
+#SaveChangesSection CitadelButton
+{
+	margin-right: 10px;
 }
 

@@ -23,6 +23,10 @@ class CBaseTrailRenderer : public CBaseRendererSource2
 	// MPropertyFriendlyName = "end fade and cull screen-size"
 	// MPropertySortPriority = 900
 	CParticleCollectionRendererFloatInput m_flEndFadeSize;
+	// MPropertyFriendlyName = "sub-pixel AA scale"
+	// MPropertySuppressExpr = "mod != hlx"
+	// MPropertySortPriority = 1000
+	CParticleCollectionRendererFloatInput m_flSubPixelAAScale;
 	// MPropertyStartGroup = "Trail UV Controls"
 	// MPropertyFriendlyName = "Clamp Non-Sheet texture V coords"
 	// MPropertySortPriority = 800

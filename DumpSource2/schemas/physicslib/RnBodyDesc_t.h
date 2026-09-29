@@ -1,11 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"m_sDebugName": "",
-//	"m_vPosition":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
+//	"m_vPosition": null,
 //	"m_qOrientation":
 //	[
 //		0.000000,
@@ -97,7 +92,7 @@
 class RnBodyDesc_t
 {
 	CUtlString m_sDebugName;
-	Vector m_vPosition;
+	VectorWS m_vPosition;
 	QuaternionStorage m_qOrientation;
 	Vector m_vLinearVelocity;
 	Vector m_vAngularVelocity;

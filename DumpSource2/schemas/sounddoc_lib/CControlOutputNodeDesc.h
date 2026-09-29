@@ -1,0 +1,3 @@
+class CControlOutputNodeDesc : public CVControlNodeBaseDesc
+{
+};

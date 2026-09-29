@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -141,6 +144,7 @@
 //	"m_bCanProcMultipleTimesOnOneTarget": true,
 //	"m_bCanProcByOtherObjects": false,
 //	"m_bCanProcFromItems": true,
+//	"m_bProcOnFriendlyBulletHits": false,
 //	"m_nAbilityTargetTypes": "",
 //	"m_nAbilityTargetFlags": "",
 //	"m_vecProcDamageTypes":
@@ -150,13 +154,18 @@
 //	"m_SlowModifier":
 //	{
 //	},
-//	"m_strWeaponShootSound": ""
+//	"m_ImpactParticle": "",
+//	"m_strWeaponShootSound": "",
+//	"m_strAttackerHitSound": ""
 //}
 // MHasKV3TransferPolymorphicClassname
 class CModifierAirRaidVData : public CCitadel_Modifier_BaseEventProcVData
 {
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_SlowModifier;
+	// MPropertyStartGroup = "Visuals"
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ImpactParticle;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strWeaponShootSound;
+	CSoundEventName m_strAttackerHitSound;
 };

@@ -1,3 +1,0 @@
-class CAI_BaseNPCAPI
-{
-};

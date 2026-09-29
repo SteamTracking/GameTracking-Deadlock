@@ -1,0 +1,11 @@
+enum NavType_t : uint32_t
+{
+	AI_NAV_NONE = -1,
+	AI_NAV_GROUND = 0,
+	AI_NAV_JUMP = 1,
+	AI_NAV_FLY = 2,
+	AI_NAV_CLIMB = 3,
+	AI_NAV_NAVLINK = 4,
+	AI_NAV_TRANSITION = 5,
+	AI_NAV_ORIENTED = 6,
+};

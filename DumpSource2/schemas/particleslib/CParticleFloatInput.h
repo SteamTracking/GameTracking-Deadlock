@@ -70,7 +70,8 @@
 //			0.000000,
 //			0.000000
 //		]
-//	}
+//	},
+//	"m_flCompareValue": 0.000000
 //}
 // MCustomFGDMetadata = "{ SkipImprintFGDClassOnKV3 = true SkipRemoveKeysInKV3AtFGDDefault = true KV3DefaultTestFnName = 'CParticleFloatInputDefaultTestFunc' }"
 class CParticleFloatInput : public CParticleInput
@@ -124,4 +125,5 @@ class CParticleFloatInput : public CParticleInput
 	ParticleFloatBiasType_t m_nBiasType;
 	float32 m_flBiasParameter;
 	CPiecewiseCurve m_Curve;
+	float32 m_flCompareValue;
 };

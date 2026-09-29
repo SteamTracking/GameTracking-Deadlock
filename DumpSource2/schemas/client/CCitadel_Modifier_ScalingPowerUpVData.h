@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -139,13 +142,29 @@
 //	"m_vecModifierValues":
 //	[
 //	],
+//	"m_eValueScaling": "MatchTime",
 //	"m_flTimeMin": 10.000000,
-//	"m_flTimeMax": 40.000000
+//	"m_flTimeMax": 40.000000,
+//	"m_BuffParticle": "",
+//	"m_Color":
+//	[
+//		0,
+//		0,
+//		0,
+//		0
+//	]
 //}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ScalingPowerUpVData : public CCitadelModifierVData
 {
 	CUtlVector< ScalingPowerupDefinition_t > m_vecModifierValues;
+	// MPropertyDescription = "What drives each value between its min and max.  Flat holds them at their min and ignores the window below."
+	EPowerupValueScaling m_eValueScaling;
+	// MPropertySuppressExpr = "m_eValueScaling != MatchTime"
 	float32 m_flTimeMin;
+	// MPropertySuppressExpr = "m_eValueScaling != MatchTime"
 	float32 m_flTimeMax;
+	// MPropertyStartGroup = "Visuals"
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_BuffParticle;
+	Color m_Color;
 };

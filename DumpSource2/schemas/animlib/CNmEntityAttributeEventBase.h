@@ -9,11 +9,12 @@
 //		"m_flValue": 0.000000
 //	},
 //	"m_syncID": "",
-//	"m_bClientOnly": false,
+//	"m_target": "Self",
 //	"m_attributeName": ""
 //}
 // MHasKV3TransferPolymorphicClassname
 class CNmEntityAttributeEventBase : public CNmEvent
 {
+	CNmEventTargetEntity_t m_target;
 	CUtlString m_attributeName;
 };

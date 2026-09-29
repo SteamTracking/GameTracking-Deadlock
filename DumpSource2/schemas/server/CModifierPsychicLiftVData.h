@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -148,6 +151,7 @@
 //	},
 //	"m_LiftParticle": "",
 //	"m_ImpactParticle": "",
+//	"m_CastParticle": "",
 //	"m_strImpactSound": "",
 //	"m_flOccilateMaxDistance": 100.000000,
 //	"m_flOccilateDegreesPerSecond": 360.000000,
@@ -171,6 +175,7 @@ class CModifierPsychicLiftVData : public CCitadel_Modifier_StunnedVData
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_LiftParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ImpactParticle;
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_CastParticle;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strImpactSound;
 	// MPropertyStartGroup = "Gameplay"

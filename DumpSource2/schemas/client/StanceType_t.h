@@ -1,6 +1,6 @@
 enum StanceType_t : uint32_t
 {
-	// MPropertySuppressEnumerator
+	// MPropertyFriendlyName = "Current"
 	STANCE_CURRENT = -1,
 	// MPropertyFriendlyName = "Default"
 	STANCE_DEFAULT = 0,

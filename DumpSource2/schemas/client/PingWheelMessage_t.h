@@ -8,8 +8,10 @@
 //	"m_ePingMarkerInfo": "k_EPingMarkerInfo_HideMarkerAndSound",
 //	"m_eRecipientsType": "k_ECitadelRecipients_GlobalFriendlyTeam",
 //	"m_eLaneColor": "k_ELaneColor_Invalid",
-//	"m_strLabelToken": "",
+//	"m_strCommsWheelLabelToken": "",
 //	"m_strMessageToken": "",
+//	"m_strDropDownLabelToken": "",
+//	"m_strSelfMessageToken": "",
 //	"m_strSound": "",
 //	"m_strIcon": "",
 //	"m_ePingWheelSoundType": "CITADEL_PING_WHEEL_SOUND_NONE",
@@ -18,11 +20,12 @@
 //	"m_vecSubnavMessageNames":
 //	[
 //	],
+//	"m_bSubnavsReadLeftToRight": false,
 //	"m_vecRespondsToConcepts":
 //	[
 //	],
-//	"m_bBindable": false,
-//	"m_bPingWheelBindable": false,
+//	"m_bCommsWheelBindable": false,
+//	"m_bKeybindable": false,
 //	"m_vecChatTextTriggers":
 //	[
 //	]
@@ -44,18 +47,22 @@ class PingWheelMessage_t
 	// MPropertySuppressExpr = "m_bIsSubnavMessage == true"
 	// MPropertyDescription = "Which recipients do you want this ping message sent to?"
 	ECitadelPingMessageRecipients_t m_eRecipientsType;
-	// MPropertySuppressExpr = "m_ePingConcept != CITADEL_PING_HEADING_TO_LANE && m_ePingConcept != CITADEL_PING_PUSH_LANE && m_ePingConcept != CITADEL_PING_DEFEND_LANE"
+	// MPropertySuppressExpr = "m_ePingConcept != CITADEL_PING_HEADING_TO_LANE && m_ePingConcept != CITADEL_PING_PUSH_LANE && m_ePingConcept != CITADEL_PING_DEFEND_LANE && m_ePingConcept != CITADEL_PING_PUSH_GUARDIAN && m_ePingConcept != CITADEL_PING_DEFEND_GUARDIAN && m_ePingConcept != CITADEL_PING_GUARDIAN_NEEDS_HELP && m_ePingConcept != CITADEL_PING_PUSH_WALKER && m_ePingConcept != CITADEL_PING_DEFEND_WALKER && m_ePingConcept != CITADEL_PING_PUSH_BASE_GUARDIAN && m_ePingConcept != CITADEL_PING_DEFEND_BASE_GUARDIAN"
 	// MPropertyDescription = "Lane Color for certain pings that require a line color."
 	CMsgLaneColor m_eLaneColor;
-	// MPropertyDescription = "This is the Loc String that displays as a Ping Wheel Option."
-	CUtlString m_strLabelToken;
+	// MPropertyDescription = "This is the shortform label on the comms wheel."
+	CUtlString m_strCommsWheelLabelToken;
 	// MPropertyDescription = "This is the Loc String that shows in the chat area when you use this Ping Option."
 	CUtlString m_strMessageToken;
+	// MPropertyDescription = "This points to the label in the dropdown menus. If it is not defined, the dropdown label uses m_strMessageToken. Needed because some m_strMessageToken have dialog variables that aren't defined until they're used."
+	CUtlString m_strDropDownLabelToken;
+	// MPropertyDescription = "Optional. Used instead of the message token when the ping's subject is the pinging player, so a self-ping can read "My Ultimate is ready" rather than naming the speaker in the third person."
+	CUtlString m_strSelfMessageToken;
 	// MPropertySuppressExpr = "m_bIsSubnavMessage == true"
 	// MPropertyDescription = "Sound that Plays when you use this Ping Option"
 	CUtlString m_strSound;
 	// MPropertySuppressExpr = "m_bIsSubnavMessage == true"
-	// MPropertyDescription = "Icon that displays on the Ping Wheel"
+	// MPropertyDescription = "Icon that displays on the Ping Wheel. Leave empty to use the generic ping icon"
 	CUtlString m_strIcon;
 	// MPropertySuppressExpr = "m_bIsSubnavMessage == true"
 	// MPropertyDescription = "What type of sound should this Ping Option play when used?"
@@ -69,12 +76,15 @@ class PingWheelMessage_t
 	// MPropertyDescription = "Is this a parent message that has subnav messages? i.e. Heading to Lane has subnav messages Heading to Yellow, Heading to Blue, etc."
 	CUtlVector< CUtlString > m_vecSubnavMessageNames;
 	// MPropertySuppressExpr = "m_bIsSubnavMessage == true"
+	// MPropertyDescription = "Do the subnavs name a row of places, left to right? Lane sets do. The radial then reverses them on the bottom half of the wheel, so they still read left to right on screen. East and west keep the clockwise order, since neither is more left than the other."
+	bool m_bSubnavsReadLeftToRight;
+	// MPropertySuppressExpr = "m_bIsSubnavMessage == true"
 	// MPropertyDescription = "Is this message a response to other concepts? i.e. Yes, No, and On My Way are all responses to other messages. This message will appear in the Contextual Ping Wheel Slot if one of these concepts is used by another player."
 	CUtlVector< CitadelPingWheelConcept_t > m_vecRespondsToConcepts;
-	// MPropertyDescription = "Should this message be bindable via Keybinds?"
-	bool m_bBindable;
-	// MPropertyDescription = "Should this message be bindable on the Ping Wheel?"
-	bool m_bPingWheelBindable;
+	// MPropertyDescription = "Can players put this message in a comms wheel slot?"
+	bool m_bCommsWheelBindable;
+	// MPropertyDescription = "Can players bind this message to a quick ping key?"
+	bool m_bKeybindable;
 	// MPropertyDescription = "Chat text messages that trigger the concept associated with this message"
 	CUtlVector< CUtlString > m_vecChatTextTriggers;
 };

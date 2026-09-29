@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -137,7 +140,8 @@
 //	"m_FootstepAdditional": "",
 //	"m_bRemoveOnInterrupted": false,
 //	"m_BeamParticle": "",
-//	"m_ImpactParticle": ""
+//	"m_ImpactParticle": "",
+//	"m_bBreakOnRangeLoss": true
 //}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_RescueBeamVData : public CCitadelModifierVData
@@ -145,4 +149,6 @@ class CCitadel_Modifier_RescueBeamVData : public CCitadelModifierVData
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_BeamParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ImpactParticle;
+	// MPropertyStartGroup = "Gameplay"
+	bool m_bBreakOnRangeLoss;
 };

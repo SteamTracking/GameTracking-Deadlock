@@ -1,0 +1,918 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+@define PhysicalColor: #C0673B;
+@define MagicColor: #B377E3;
+@define DefenseColor: #28AE4E;
+@define MobilityColor: #30ACE6;
+@define DisruptionColor: #E3B018;
+@define MiscColor: #B38763;
+CitadelShopFilters
+{
+	flow-children: none;
+	horizontal-align: left;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+}
+
+CitadelShopFilters .Header
+{
+	flow-children: right;
+}
+
+CitadelShopFilters .Header Label
+{
+	text-overflow: shrink;
+	max-height: 60px;
+	font-family: oracle;
+	color: offWhite;
+	font-size: 20px;
+	opacity: 0.3;
+	vertical-align: middle;
+}
+
+CitadelShopFilters.AndMode #ActiveFiltersContainer #FilterAndOrSwitch #FilterAnd,CitadelShopFilters:not(.AndMode) #ActiveFiltersContainer #FilterAndOrSwitch #FilterOr
+{
+	background-color: black;
+}
+
+CitadelShopFilters.AndMode #ActiveFiltersContainer #FilterAndOrSwitch #FilterAnd Label,CitadelShopFilters:not(.AndMode) #ActiveFiltersContainer #FilterAndOrSwitch #FilterOr Label
+{
+	color: offWhite;
+	font-weight: bold;
+}
+
+CitadelShopFilters.AndMode #ActiveFiltersContainer #Breadcrumbs .BreadcrumbOuter:not(.LastBreadcrumb) .BreadcrumbSeparator.And
+{
+	visibility: visible;
+}
+
+CitadelShopFilters:not(.AndMode) #ActiveFiltersContainer #Breadcrumbs .BreadcrumbOuter:not(.LastBreadcrumb) .BreadcrumbSeparator.Or
+{
+	visibility: visible;
+}
+
+.filter_backer
+{
+	background-image: url("s2r://panorama/images/shop/catalog/filters/filter_nav_backer_psd.vtex");
+	background-size: cover;
+	background-position: top;
+	width: 100%;
+	height: 78px;
+	background-repeat: no-repeat;
+	vertical-align: top;
+	ignore-parent-flow: true;
+}
+
+.SwitchContainer
+{
+	vertical-align: center;
+	flow-children: right;
+	height: 80%;
+	border-radius: 5px;
+	box-shadow: 4px 4px 0px offBlack&50;
+	transform: rotateZ(-0.5deg);
+	margin: 1px;
+}
+
+.SwitchContainer .SwitchButton
+{
+	border-top: 2px solid offBlack&50;
+	border-left: 2px solid offBlack&50;
+	border-bottom: 2px solid offBlack&50;
+	background-color: #765e41;
+	padding: 6px;
+	flow-children: right;
+	height: 100%;
+}
+
+.SwitchContainer Label
+{
+	vertical-align: center;
+	text-overflow: shrink;
+	font-family: oracle;
+	color: offBlack;
+	font-weight: medium;
+	font-size: 20px;
+	text-shadow: 0px 0px 0px 1.0 offBlack;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+#ActiveFiltersContainer
+{
+	horizontal-align: left;
+	vertical-align: bottom;
+	flow-children: right;
+	width: 100%;
+	padding: 10px;
+	padding-left: 20px;
+	padding-bottom: 30px;
+	background-color: offWhite&99;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.12s;
+	transition-timing-function: ease-in-out;
+}
+
+.FiltersActive #ActiveFiltersContainer
+{
+	opacity: 1;
+}
+
+#ActiveFiltersContainer .FiltersActiveLabel
+{
+	text-overflow: shrink;
+	max-height: 60px;
+	font-family: oracle;
+	color: offBlack;
+	font-size: 20px;
+	margin-left: 10px;
+	opacity: 1;
+	vertical-align: middle;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters
+{
+	visibility: collapse;
+	vertical-align: center;
+	flow-children: right;
+	height: 46px;
+	border-radius: 5px;
+	box-shadow: 4px 4px 0px offBlack&50;
+	transform: rotateZ(-0.5deg);
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .CategoryButton
+{
+	width: 46px;
+	height: 46px;
+	flow-children: none;
+	vertical-align: center;
+	background-color: #765e41;
+	border-top: 2px solid offBlack&50;
+	border-left: 2px solid offBlack&50;
+	border-bottom: 2px solid offBlack&50;
+	transition-property: background-color, brightness;
+	transition-duration: 0.12s;
+	transition-timing-function: ease-in-out;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .CategoryButton:nth-child(1)
+{
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .CategoryButton:nth-child(4)
+{
+	border-right: 2px solid offBlack&50;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .CategoryButton:hover
+{
+	brightness: 1.3;
+	sound: soundMainMenuHover;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .CategoryButton .TickBox
+{
+	visibility: collapse;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .CategoryButton .CategoryIcon
+{
+	width: 28px;
+	height: 28px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity: 0.75;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .CategoryButton:selected .CategoryIcon
+{
+	opacity: 1;
+	wash-color: offBlack;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .All
+{
+	width: 50px;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .All .CategoryLabel
+{
+	horizontal-align: center;
+	vertical-align: center;
+	font-family: oracle;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-overflow: shrink;
+	color: offWhite;
+	opacity: 0.75;
+	margin-left: 5px;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .All:selected
+{
+	background-color: offWhite;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .All:selected .CategoryLabel
+{
+	color: offBlack;
+	opacity: 1;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .Weapon .CategoryIcon
+{
+	background-image: url("s2r://panorama/images/hud/core/core_weapon_icon_psd.vtex");
+	wash-color: courageBrightColor;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .Weapon:selected
+{
+	background-color: courageBrightColor;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .Spirit .CategoryIcon
+{
+	background-image: url("s2r://panorama/images/hud/core/core_spirit_icon_psd.vtex");
+	wash-color: spiritBrightColor;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .Spirit:selected
+{
+	background-color: spiritBrightColor;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .Vitality .CategoryIcon
+{
+	background-image: url("s2r://panorama/images/hud/core/core_armor_icon_psd.vtex");
+	wash-color: fortitudeBrightColor;
+}
+
+#ActiveFiltersContainer #ItemCategoryFilters .Vitality:selected
+{
+	background-color: fortitudeBrightColor;
+}
+
+#ActiveFiltersContainer .WidthFill
+{
+	width: fill-parent-flow(1.0);
+}
+
+#ActiveFiltersContainer .ClearFiltersButton
+{
+	margin-top: 25px;
+	margin-right: 25px;
+	horizontal-align: right;
+	vertical-align: center;
+}
+
+#ActiveFiltersContainer #FilterAndOrSwitch
+{
+	visibility: collapse;
+}
+
+#ActiveFiltersContainer #FilterAndOrSwitch .SwitchButton
+{
+	vertical-align: center;
+	margin-bottom: 4px;
+	height: fit-children;
+	padding: 2px;
+}
+
+#ActiveFiltersContainer #FilterAndOrSwitch .SwitchButton Label
+{
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+#ActiveFiltersContainer #Breadcrumbs
+{
+	vertical-align: center;
+	flow-children: right;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .BreadcrumbOuter
+{
+	flow-children: right;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .BreadcrumbOuter .BreadcrumbSeparator
+{
+	vertical-align: center;
+	visibility: collapse;
+	text-overflow: shrink;
+	font-family: oracle;
+	color: offBlack;
+	font-weight: bold;
+	font-size: 16px;
+	margin-left: 4px;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb
+{
+	flow-children: right;
+	margin: 5px;
+	margin-left: 2px;
+	border-radius: 50px;
+	vertical-align: center;
+	box-shadow: 3px 4px 0px offBlack&50;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/filter_backer_dot_pattern_psd.vtex");
+	background-img-opacity: 0.9;
+	padding: 3px;
+	padding-left: 10px;
+	pre-transform-scale2d: 0.98;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb:hover
+{
+	brightness: 1.5;
+	pre-transform-scale2d: 1;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb.ToggleDisabled
+{
+	opacity: 0.5;
+	saturation: 0.7;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb #BreadcrumbLabel
+{
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb.PopularBreadcrumb
+{
+	visibility: collapse;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb.FilterGroupPhysical
+{
+	background-color: PhysicalColor;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb.FilterGroupSpirit
+{
+	background-color: MagicColor;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb.FilterGroupDefense
+{
+	background-color: DefenseColor;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb.FilterGroupMobility
+{
+	background-color: MobilityColor;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb.FilterGroupDisruption
+{
+	background-color: DisruptionColor;
+}
+
+#ActiveFiltersContainer #Breadcrumbs .Breadcrumb.FilterGroupMisc
+{
+	background-color: MiscColor;
+}
+
+#ActiveFiltersContainer #Breadcrumbs #CloseButton
+{
+	width: 26px;
+	height: 26px;
+	margin-right: 5px;
+	wash-color: offBlack;
+	vertical-align: middle;
+	horizontal-align: right;
+	background-size: auto 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/icons/icon_x.vsvg");
+	opacity: 0.4;
+	transition-property: wash-color, transform, pre-transform-scale2d;
+	transition-duration: 0.1s;
+}
+
+#ActiveFiltersContainer #Breadcrumbs #CloseButton:hover
+{
+	wash-color: colorEnemy;
+	wash-color: #dc4a4a;
+	transform: rotateZ(-10deg);
+	opacity: 1;
+	pre-transform-scale2d: 1.4;
+}
+
+#ActiveFiltersContainer #Breadcrumbs:hover #CloseButton
+{
+	width: 26px;
+	height: 26px;
+}
+
+.recommendatations_hero_bg
+{
+	background-image: url("s2r://panorama/images/shop/catalog/backer_star_test_png.vtex");
+	horizontal-align: center;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	brightness: 3;
+	box-shadow: 0px 0px 10px offBlack&30;
+	visibility: collapse;
+	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_weapon_psd.vtex");
+	opacity-mask: url("s2r://panorama/images/shop/catalog/backer_star_test_png.vtex");
+}
+
+#FilterContainer
+{
+	vertical-align: top;
+	padding: 10px;
+	padding-left: 15px;
+	margin-left: 20px;
+	margin-top: 7px;
+	flow-children: down;
+	width: 100%;
+}
+
+#FilterContainer #FilterList
+{
+	horizontal-align: left;
+	flow-children: right;
+}
+
+#FilterContainer #FilterMenus
+{
+	margin-top: -5px;
+	flow-children: none;
+	width: 100%;
+	height: 800px;
+}
+
+#FilterContainer .FilterControlContainer
+{
+	flow-children: right;
+	padding: 8px 30px 4px 6px;
+}
+
+#FilterContainer .FilterExpand
+{
+	width: 30px;
+	height: 30px;
+	vertical-align: center;
+	margin-left: 10px;
+	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown_png.vtex");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 32px 32px;
+	box-shadow: #00000055 0px 0px 1px 3px ;
+	transform: rotateZ(90deg);
+	visibility: collapse;
+}
+
+#FilterContainer .FilterCategory
+{
+	flow-children: down;
+	background-repeat: no-repeat;
+	margin-right: 3px;
+	tooltip-position: bottom;
+	overflow: noclip;
+	tooltip-body-position: 0% 0%;
+}
+
+#FilterContainer .FilterCategory .top_filter_bg
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	background-img-opacity: 0.1;
+	background-size: 100% 100%;
+}
+
+#FilterContainer .FilterCategory .top_filter_img
+{
+	width: 30px;
+	height: 45px;
+	ignore-parent-flow: true;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	vertical-align: middle;
+	opacity: 2;
+	transition-property: pre-transform-scale2d, transform;
+	transition-duration: 0.15s;
+}
+
+#FilterContainer .FilterCategory.FilterCategory.Physical:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Spirit:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Defense:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Mobility:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Disruption:hover .top_filter_img
+{
+	pre-transform-scale2d: 1.4;
+	transform: rotateZ(-5deg);
+}
+
+#FilterContainer .FilterCategory:hover .top_filter_bg
+{
+	background-image: url("s2r://panorama/images/shop/catalog/filters/top_level_filter_fill.vsvg");
+	background-img-opacity: 1;
+	background-size: 100% 100%;
+}
+
+#FilterContainer .FilterGroup
+{
+	flow-children: down;
+	min-width: 400px;
+	padding-left: 10px;
+	margin-bottom: 4px;
+	background-img-opacity: 0.8;
+}
+
+#FilterContainer .FilterGroup.TopLevel
+{
+	padding: 12px 0px;
+}
+
+#FilterContainer .FilterGroup ToggleButton
+{
+	width: 100%;
+	padding: 0px 12px;
+}
+
+#FilterContainer .FilterGroup .MenuSeparator
+{
+	border: 1px solid black;
+	width: 100%;
+	height: 2px;
+}
+
+#FilterContainer .FilterToggle
+{
+	tooltip-position: left;
+}
+
+#FilterContainer .FilterToggle:hover
+{
+	background-color: offWhite&20;
+	width: 100%;
+}
+
+#FilterContainer .FilterGroupControl.TopLevel.ChildSelected:not(:selected) .TickBox
+{
+	background-color: none;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/icon_dash.vsvg");
+	background-img-opacity: 0.9;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#FilterContainer .FilterToggle.ParentSelected:not(:selected) .TickBox,#FilterContainer .FilterGroupControl.ParentSelected:not(:selected) .TickBox
+{
+	background-color: none;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/icon_dash.vsvg");
+	background-img-opacity: 0.5;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.FilterGroup.TopLevel
+{
+	visibility: collapse;
+	margin-left: 0px;
+	box-shadow: 0px 0px 50px offBlack&60;
+}
+
+#FilterGroupPhysical
+{
+	background-color: PhysicalColor;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/filter_backer_dot_pattern_psd.vtex");
+}
+
+#FilterGroupSpirit
+{
+	background-color: MagicColor;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/filter_backer_dot_pattern_psd.vtex");
+}
+
+#FilterGroupDefense
+{
+	background-color: DefenseColor;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/filter_backer_dot_pattern_psd.vtex");
+}
+
+#FilterGroupMobility
+{
+	background-color: MobilityColor;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/filter_backer_dot_pattern_psd.vtex");
+}
+
+#FilterGroupDisruption
+{
+	background-color: DisruptionColor;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/filter_backer_dot_pattern_psd.vtex");
+}
+
+#FilterGroupMisc
+{
+	background-color: MiscColor;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/filter_backer_dot_pattern_psd.vtex");
+}
+
+.FilterCategory.Physical:hover .top_filter_bg
+{
+	wash-color: PhysicalColor;
+}
+
+.FilterCategory.Spirit:hover .top_filter_bg
+{
+	wash-color: MagicColor;
+}
+
+.FilterCategory.Defense:hover .top_filter_bg
+{
+	wash-color: DefenseColor;
+}
+
+.FilterCategory.Mobility:hover .top_filter_bg
+{
+	wash-color: MobilityColor;
+}
+
+.FilterCategory.Disruption:hover .top_filter_bg
+{
+	wash-color: DisruptionColor;
+}
+
+.FilterCategory.Misc:hover .top_filter_bg
+{
+	wash-color: MiscColor;
+}
+
+.FilterCategory.Physical .top_filter_img
+{
+	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_physical_psd.vtex");
+}
+
+.FilterCategory.Spirit .top_filter_img
+{
+	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_magic_psd.vtex");
+}
+
+.FilterCategory.Defense .top_filter_img
+{
+	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_defense_psd.vtex");
+}
+
+.FilterCategory.Mobility .top_filter_img
+{
+	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_mobility_psd.vtex");
+}
+
+.FilterCategory.Disruption .top_filter_img
+{
+	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_disruption_psd.vtex");
+}
+
+.FilterCategory.Misc .top_filter_img
+{
+	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_misc_psd.vtex");
+}
+
+.SearchEnabled #SearchContainer #SearchTextEntry > #PlaceholderText
+{
+	visibility: collapse;
+}
+
+#SearchContainer
+{
+	margin-top: 25px;
+	margin-right: 15px;
+	horizontal-align: right;
+	vertical-align: top;
+	flow-children: down;
+	z-index: 99;
+	background-color: #CBBCA6;
+	width: 150px;
+	border-radius: 0px;
+	background-color: none;
+}
+
+#SearchContainer #SearchBox
+{
+	padding: 0px;
+}
+
+#SearchContainer #SearchTextEntry
+{
+	text-align: center;
+	background-color: #333;
+	border-radius: 3px;
+	border: 3px solid silvered&20;
+	height: 40px;
+	padding: 7px 0px 7px 7px;
+	width: 150px;
+	font-size: 14px;
+}
+
+#SearchContainer #SearchTextEntry > #PlaceholderText
+{
+	vertical-align: middle;
+	font-weight: medium;
+	margin-top: 0px;
+	font-weight: semi-bold;
+	text-overflow: shrink;
+	width: 75%;
+	height: 80px;
+}
+
+#SearchContainer #ClearSearchButton
+{
+	width: 24px;
+	height: 24px;
+	vertical-align: middle;
+	visibility: collapse;
+	visibility: visible;
+	background-size: auto 50%;
+	background-position: center;
+	margin-right: 5px;
+	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/icons/icon_x.vsvg");
+	horizontal-align: right;
+	opacity: 0.3;
+	transition-property: opacity, pre-transform-scale2d;
+	transition-duration: 0.3s;
+}
+
+#SearchContainer #ClearSearchButton:hover
+{
+	opacity: 0.7;
+	pre-transform-scale2d: 1.2;
+}
+
+#SearchContainer .ShowSearchResults #ClearSearchButton
+{
+	visibility: visible;
+}
+
+.ShowPhysical #FilterGroupPhysical
+{
+	visibility: visible;
+}
+
+.ShowPhysical #FilterContainer .FilterExpand.Physical
+{
+	transform: none;
+}
+
+.ShowSpirit #FilterGroupSpirit
+{
+	visibility: visible;
+}
+
+.ShowSpirit #FilterContainer .FilterExpand.Spirit
+{
+	transform: none;
+}
+
+.ShowDefense #FilterGroupDefense
+{
+	visibility: visible;
+}
+
+.ShowDefense #FilterContainer .FilterExpand.Defense
+{
+	transform: none;
+}
+
+.ShowMobility #FilterGroupMobility
+{
+	visibility: visible;
+}
+
+.ShowMobility #FilterContainer .FilterExpand.Mobility
+{
+	transform: none;
+}
+
+.ShowDisruption #FilterGroupDisruption
+{
+	visibility: visible;
+}
+
+.ShowDisruption #FilterContainer .FilterExpand.Disruption
+{
+	transform: none;
+}
+
+.ShowMisc #FilterGroupMisc
+{
+	visibility: visible;
+}
+
+.ShowMisc #FilterContainer .FilterExpand.Misc
+{
+	transform: none;
+}
+
+ToggleButton Label
+{
+	text-overflow: shrink;
+	font-family: oracle;
+	color: offBlack;
+	font-weight: medium;
+	font-size: 18px;
+	padding: 4px 0px;
+	margin-left: 12px;
+	text-shadow: 0px 0px 0px 1.0 offBlack;
+}
+
+.Header ToggleButton Label,#Breadcrumbs ToggleButton Label
+{
+	font-weight: bold;
+	text-shadow: none;
+}
+
+ToggleButton.ParentSelected Label
+{
+	font-weight: medium;
+	font-style: italic;
+	opacity: 0.7;
+}
+
+ToggleButton.ParentSelected.FilterGroupControl Label
+{
+	font-weight: bold;
+	font-style: italic;
+	opacity: 1;
+}
+
+ToggleButton .TickBox
+{
+	width: 18px;
+	height: 18px;
+	vertical-align: center;
+	border-radius: 2px;
+	background-color: none;
+	border: 2px solid offBlack&89;
+	pre-transform-scale2d: 1;
+	transition-property: brightness, pre-transform-scale2d, border, background-image;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in-out;
+}
+
+ToggleButton:selected .TickBox
+{
+	border: 2px solid offBlack;
+	background-color: none;
+	background-image: url("s2r://panorama/images/icons/checkbox_check.vsvg");
+	background-size: 18px;
+	background-texture-size: 18px;
+	background-repeat: no-repeat;
+	background-position: center;
+	box-shadow: brandGreen&11 0px 0px 12px 0px ;
+	brightness: 1;
+	pre-transform-scale2d: 1;
+}
+
+ToggleButton #filter_icon
+{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	margin-left: 10px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	wash-color: offBlack;
+	opacity: 0.9;
+}
+
+ToggleButton.TopLevel .TickBox
+{
+	opacity: 0;
+}
+
+.tutorial_hint
+{
+	background-color: offBlack&40;
+	width: 100%;
+	padding: 5px 20px;
+}
+
+.tutorial_hint Label
+{
+	color: offBlack;
+	font-weight: semi-bold;
+	line-height: 200%;
+	ui-scale: 70%;
+	opacity: 0.8;
+}
+

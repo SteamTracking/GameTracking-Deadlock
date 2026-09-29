@@ -1,8 +1,8 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/hud_damage_impact.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/hud_damage_impact.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="ImpactDamage">
@@ -35,6 +35,10 @@
 					<Label class="killLabel" text="#Citadel_HUD_Impact_Kill" />
 					<Label class="assistLabel" html="true" text="#Citadel_HUD_Impact_Assist" />
 					<Label class="playerName" text="{s:damagedPlayerName}" />
+					<Panel class="bountyContainer">
+						<Panel class="soul_icon" />
+						<Label class="soul_amount" text="{d:gold}" />
+					</Panel>
 				</Panel>
 				<Panel class="statusEffectIcon statusEffectDisplay" />
 				<Label class="statusEffectLabel statusEffectDisplay" text="{s:status_effect}" />

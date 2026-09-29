@@ -13,8 +13,8 @@ DraggableAbilityIcon
 	tooltip-position: right;
 	transition-property: transform, wash-color, margin;
 	transition-duration: 0.2s;
-	margin-left: 8px;
-	margin-right: 8px;
+	margin-left: 4px;
+	margin-right: 4px;
 }
 
 DraggableAbilityIcon.readonly
@@ -57,7 +57,7 @@ DraggableAbilityIcon.NoAbility
 
 .button_container
 {
-	width: 60px;
+	width: 58px;
 	height: 60px;
 	vertical-align: center;
 	margin-top: 0px;
@@ -70,9 +70,6 @@ DraggableAbilityIcon.NoAbility
 	background-size: cover;
 	visibility: collapse;
 	wash-color: keybindBGColor;
-	background-image: url("s2r://panorama/images/hud/core/ability_static_frame_icon_tex_png.vtex");
-	background-image: url("s2r://panorama/images/hud/core/ability_static_frame_icon.vsvg");
-	background-image: url("s2r://panorama/images/hud/core/ability_frame_0.vsvg");
 }
 
 .cooling_down .ability_bg,.ability_not_ready .ability_bg
@@ -201,13 +198,14 @@ DraggableAbilityIcon.NoAbility
 	height: fit-children;
 	padding-top: 0px;
 	font-size: 14px;
+	ui-scale: 80%;
 	font-weight: bold;
 	horizontal-align: left;
 	text-overflow: shrink;
 	color: offBlack;
 	text-align: center;
 	border-radius: 2px;
-	z-index: -1;
+	z-index: 1;
 	text-transform: uppercase;
 	horizontal-align: middle;
 	vertical-align: bottom;
@@ -500,13 +498,6 @@ Label.ability_key
 	wash-color: #ffffff;
 }
 
-.ability_image
-{
-	height: 50%;
-	margin-top: 0px;
-	width: height-percentage( 100% );
-}
-
 .cooling_down .ability_image
 {
 	wash-color: offBlack;
@@ -517,14 +508,27 @@ Label.ability_key
 	wash-color: offBlack&30;
 }
 
+.iconContainer
+{
+	horizontal-align: center;
+	margin-top: 6px;
+}
+
 .image_container .ability_image
 {
 	opacity: 0.9;
 	horizontal-align: center;
-	width: 100%;
-	wash-color: offBlack;
+	vertical-align: top;
+	width: 48px;
 	height: 48px;
-	margin-top: 6px;
+	wash-color: offBlack;
+	border-radius: 50px;
+	margin-top: 0px;
+}
+
+.item_seasonal .image_container .ability_image
+{
+	border-radius: 0px;
 }
 
 .image_container .ability_image
@@ -532,12 +536,27 @@ Label.ability_key
 	wash-color: none;
 }
 
+.corruptedBorder
+{
+	width: 48px;
+	height: 48px;
+	visibility: collapse;
+	background-size: 100% 100%;
+	background-image: url("s2r://panorama/images/shop/corrupted_items/item_frame_corrupted_active_psd.vtex");
+}
+
+.isCorrupted .corruptedBorder
+{
+	visibility: visible;
+}
+
 .ability_bg
 {
-	background-color: white;
-	border-radius: 4px;
+	border-radius: 2px;
 	visibility: visible;
-	height: 60px;
+	height: 28px;
+	vertical-align: bottom;
+	margin-bottom: 12px;
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: bottom;
@@ -551,7 +570,8 @@ Label.ability_key
 
 .cooling_down .image_container .ability_image
 {
-	opacity: 0.5;
+	opacity: 0.3;
+	saturation: 0.5;
 	background-color: #00000090;
 }
 
@@ -573,7 +593,7 @@ Label.ability_key
 	padding: 0px 3px;
 	text-overflow: shrink;
 	margin-bottom: 78px;
-	font-family: oracle;
+	font-family: numericOracle;
 	border-radius: 3px 3px 0px 0px;
 }
 
@@ -619,6 +639,11 @@ Label.ability_key
 {
 	width: 100%;
 	height: 100%;
+	width: 48px;
+	height: 48px;
+	border-radius: 50px;
+	horizontal-align: middle;
+	margin-top: 6px;
 	background-color: offBlack&ee;
 	opacity: 0.90;
 }
@@ -634,7 +659,6 @@ Label.ability_key
 
 #cooldown_mask
 {
-	opacity-mask: url("s2r://panorama/images/hud/core/ability_active_backer.vsvg");
 	height: 57px;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -741,7 +765,7 @@ Label.ability_key
 	visibility: collapse;
 	text-overflow: shrink;
 	font-weight: semi-bold;
-	font-family: oracle;
+	font-family: numericOracle;
 	text-shadow: 0px 0px 0px 5.0 offBlack;
 	font-size: 18px;
 	vertical-align: bottom;
@@ -879,22 +903,11 @@ Label.ability_key
 	color: white;
 }
 
-.ability_image
-{
-	height: 60%;
-	width: height-percentage( 100% );
-	vertical-align: top;
-	horizontal-align: center;
-	opacity: 0.95;
-	wash-color: offWhite;
-	margin-top: 0px;
-}
-
 .cooldown_timer
 {
 	font-size: 22px;
 	vertical-align: top;
-	margin-top: 12px;
+	margin-top: 16px;
 	font-weight: semi-bold;
 }
 

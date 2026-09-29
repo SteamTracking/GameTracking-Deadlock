@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -137,6 +140,9 @@
 //	"m_FootstepAdditional": "",
 //	"m_bRemoveOnInterrupted": false,
 //	"m_StunnedParticle": "particles/modifiers/stunned.vpcf",
+//	"m_AttachModifier":
+//	{
+//	},
 //	"m_flTargetPosDistance": 120.000000,
 //	"m_flTargetPosRange": 40.000000,
 //	"m_flPullSpeedMin": 300.000000,
@@ -147,6 +153,8 @@
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_UltCombo_TargetVData : public CCitadel_Modifier_StunnedVData
 {
+	// MPropertyStartGroup = "Modifiers"
+	CEmbeddedSubclass< CCitadelModifier > m_AttachModifier;
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flTargetPosDistance;
 	float32 m_flTargetPosRange;

@@ -1,0 +1,539 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+@define paperTile01: url("s2r://panorama/images/textures/paper_tile_1k_01_psd.vtex");
+@define bindKeyLostDefaultColor: darkorange;
+@define bindKeyShipsUnboundColor: #C6E287;
+@define bindKeyCategoryWidth: 270px;
+@define bindKeyCommandWidth: 390px;
+@define bindKeyChordWidth: 300px;
+@define bindKeyContentWidth: 1008px;
+@define bindKeyListHeight: 420px;
+PopupBindKey.PopupPanel
+{
+	width: fit-children;
+	padding: 0px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 32px 0px;
+	border-radius: 4px;
+	border: 0px;
+	background-color: none;
+	overflow: noclip;
+	opacity-mask: url("s2r://panorama/images/buttons/button_nav_mask_threshold_psd.vtex");
+	opacity-mask-threshold: 0% 2%;
+	animation-name: PopupBackgroundTransitionOn;
+	animation-duration: 0.25s;
+	animation-iteration-count: 1;
+}
+
+PopupBindKey.PopupPanel .PopupBackground
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	background-image: paperTile01;
+	brightness: 1.25;
+	saturation: 1.25;
+	opacity-mask: url("s2r://panorama/images/buttons/button_nav_mask_threshold_psd.vtex");
+	opacity-mask-threshold: 2% 2%;
+	animation-name: PopupBackgroundTransitionOn;
+	animation-duration: 0.25s;
+	animation-iteration-count: 1;
+}
+
+PopupBindKey.PopupPanel .PopupBackgroundShadow
+{
+	overflow: noclip;
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	position: 0px 8px 0px;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity-mask: url("s2r://panorama/images/buttons/button_nav_mask_threshold_psd.vtex");
+	opacity-mask-threshold: 2% 2%;
+	animation-name: PopupBackgroundTransitionOn;
+	animation-duration: 0.25s;
+	animation-iteration-count: 1;
+}
+
+PopupBindKey.PopupPanel .PopupContent
+{
+	flow-children: down;
+	width: fit-children;
+	height: fit-children;
+	padding: 24px 48px;
+}
+
+PopupBindKey.PopupPanel .Header
+{
+	width: bindKeyContentWidth;
+}
+
+PopupBindKey.PopupPanel #TitleRow
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-bottom: 24px;
+	padding-top: 24px;
+}
+
+PopupBindKey.PopupPanel #TitleRow #ScopeIcon
+{
+	width: 36px;
+	height: 36px;
+	vertical-align: center;
+	margin-right: 12px;
+	img-shadow: 0px 0px 16px #000000aa;
+	visibility: collapse;
+}
+
+PopupBindKey.PopupPanel #TitleRow #ScopeIcon.DefaultHeroIcon
+{
+	wash-color: offWhite;
+}
+
+PopupBindKey.PopupPanel.HeroSettingsEnabled #TitleRow #ScopeIcon
+{
+	visibility: visible;
+}
+
+PopupBindKey.PopupPanel .Title
+{
+	vertical-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: offWhite&88;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+PopupBindKey.PopupPanel #NothingToBindLabel
+{
+	visibility: collapse;
+	width: bindKeyContentWidth;
+	margin: 48px 0px;
+	text-align: center;
+	font-size: 18px;
+	color: offWhite&88;
+}
+
+PopupBindKey.PopupPanel.NothingToBind #NothingToBindLabel
+{
+	visibility: visible;
+}
+
+PopupBindKey.PopupPanel.NothingToBind #BindKeyColumns,PopupBindKey.PopupPanel.NothingToBind #SelectedCommand
+{
+	visibility: collapse;
+}
+
+PopupBindKey.PopupPanel #BindKeyColumns
+{
+	flow-children: right;
+	width: bindKeyContentWidth;
+	height: fit-children;
+}
+
+PopupBindKey.PopupPanel .BindKeyColumn
+{
+	flow-children: down;
+	height: fit-children;
+}
+
+PopupBindKey.PopupPanel #CategoryColumn
+{
+	width: bindKeyCategoryWidth;
+}
+
+PopupBindKey.PopupPanel #CommandColumn
+{
+	width: bindKeyCommandWidth;
+	margin: 0px 24px;
+}
+
+PopupBindKey.PopupPanel #ChordColumn
+{
+	width: bindKeyChordWidth;
+}
+
+PopupBindKey.PopupPanel .BindKeyColumnTitle
+{
+	width: 100%;
+	margin-bottom: 8px;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: offWhite&66;
+	white-space: nowrap;
+	text-overflow: shrink;
+}
+
+PopupBindKey.PopupPanel .BindKeyColumnHeader
+{
+	width: 100%;
+	flow-children: right;
+	margin-bottom: 8px;
+}
+
+PopupBindKey.PopupPanel .BindKeyColumnHeader .BindKeyColumnTitle
+{
+	width: fill-parent-flow( 1.0 );
+	vertical-align: center;
+	margin-bottom: 0px;
+}
+
+PopupBindKey.PopupPanel .BindKeyInfoIcon
+{
+	vertical-align: center;
+	margin-left: 8px;
+	width: 18px;
+	height: 18px;
+	background-image: url("s2r://panorama/images/profile/info.vsvg");
+	background-size: contain;
+	wash-color: offWhite;
+	opacity: 0.35;
+	transition-property: opacity;
+	transition-duration: 0.15s;
+}
+
+PopupBindKey.PopupPanel .BindKeyInfoIcon:hover
+{
+	opacity: 0.9;
+}
+
+PopupBindKey.PopupPanel .BindKeyList
+{
+	width: 100%;
+	height: bindKeyListHeight;
+	flow-children: down;
+	overflow: squish scroll;
+	padding: 4px;
+	background-color: #00000033;
+	border: 1px solid offWhite&11;
+	border-radius: 3px;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow
+{
+	width: 100%;
+	flow-children: right;
+	padding: 5px 10px;
+	margin-bottom: 1px;
+	border-radius: 3px;
+	transition-property: background-color;
+	transition-duration: 0.1s;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow #RowScopeIcon
+{
+	width: 22px;
+	height: 22px;
+	vertical-align: center;
+	margin-right: 8px;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow #RowScopeIcon.DefaultHeroIcon
+{
+	wash-color: offWhite;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow #RowLabel
+{
+	width: fill-parent-flow( 1.0 );
+	vertical-align: center;
+	font-size: 18px;
+	color: offWhite&aa;
+	white-space: nowrap;
+	text-overflow: shrink;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow:hover
+{
+	sound: "UI.Settings.Hover";
+	background-color: offWhite&0c;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow:hover #RowLabel
+{
+	color: offWhite;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow.Selected
+{
+	background-color: brandGreen&26;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow.Selected #RowLabel
+{
+	color: offWhite;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow.UnboundCritical #RowLabel
+{
+	color: warningRed;
+	font-weight: bold;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow.UnboundLostDefault #RowLabel
+{
+	color: bindKeyLostDefaultColor;
+}
+
+PopupBindKey.PopupPanel .BindKeyRow.UnboundShipsUnbound #RowLabel
+{
+	color: bindKeyShipsUnboundColor;
+}
+
+PopupBindKey.PopupPanel .BindKeyRadios
+{
+	width: 100%;
+	flow-children: down;
+}
+
+PopupBindKey.PopupPanel RadioButton.BindKeyRadio
+{
+	width: 100%;
+	flow-children: right;
+	margin-bottom: 6px;
+	padding: 6px 8px;
+	border-radius: 3px;
+	transition-property: background-color, opacity;
+	transition-duration: 0.1s;
+}
+
+PopupBindKey.PopupPanel RadioButton.BindKeyRadio .RadioBox
+{
+	vertical-align: center;
+	margin-right: 12px;
+}
+
+PopupBindKey.PopupPanel RadioButton.BindKeyRadio #RadioGlyph
+{
+	vertical-align: center;
+}
+
+PopupBindKey.PopupPanel RadioButton.BindKeyRadio:hover
+{
+	sound: "UI.Settings.Hover";
+	background-color: offWhite&0c;
+}
+
+PopupBindKey.PopupPanel RadioButton.BindKeyRadio:selected
+{
+	background-color: brandGreen&1a;
+}
+
+PopupBindKey.PopupPanel RadioButton.BindKeyRadio:disabled
+{
+	visibility: collapse;
+}
+
+PopupBindKey.PopupPanel RadioButton.BindKeyTextRadio Label
+{
+	width: fill-parent-flow( 1.0 );
+	vertical-align: center;
+	padding-right: 0px;
+	font-size: 16px;
+	color: offWhite&aa;
+	white-space: nowrap;
+	text-overflow: shrink;
+}
+
+PopupBindKey.PopupPanel RadioButton.BindKeyTextRadio:selected Label
+{
+	color: offWhite;
+	brightness: 1;
+	opacity: 1;
+	opacity-mask: none;
+}
+
+PopupBindKey.PopupPanel #ExistingBindSection
+{
+	margin-top: 12px;
+}
+
+PopupBindKey.PopupPanel #ReplaceSection
+{
+	width: 100%;
+	flow-children: down;
+	margin-top: 18px;
+}
+
+PopupBindKey.PopupPanel #SelectedCommand
+{
+	width: bindKeyContentWidth;
+	height: 68px;
+	flow-children: right;
+	margin-top: 20px;
+	padding: 10px 14px;
+	background-color: #00000033;
+	border: 1px solid offWhite&11;
+	border-radius: 3px;
+}
+
+PopupBindKey.PopupPanel #SelectedCommand.NoCommand
+{
+	visibility: collapse;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandNameArea
+{
+	width: 380px;
+	height: 100%;
+	flow-children: right;
+	padding-right: 12px;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandIconSlot
+{
+	width: 36px;
+	height: 26px;
+	vertical-align: center;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandScopeIcon
+{
+	width: 26px;
+	height: 26px;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandScopeIcon.DefaultHeroIcon
+{
+	wash-color: offWhite;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandNameColumn
+{
+	width: fill-parent-flow( 1.0 );
+	flow-children: down;
+	vertical-align: center;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandScope
+{
+	visibility: collapse;
+	margin-bottom: 2px;
+}
+
+PopupBindKey.PopupPanel.HeroSettingsEnabled #SelectedCommandScope
+{
+	visibility: visible;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandName
+{
+	width: 100%;
+	font-size: 20px;
+	font-weight: semi-bold;
+	color: offWhite;
+	white-space: nowrap;
+	text-overflow: shrink;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandName.UnboundCritical
+{
+	color: warningRed;
+	font-weight: bold;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandName.UnboundLostDefault
+{
+	color: bindKeyLostDefaultColor;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandName.UnboundShipsUnbound
+{
+	color: bindKeyShipsUnboundColor;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandBinds
+{
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
+	flow-children: right;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandBindsLabel
+{
+	max-width: 200px;
+	vertical-align: center;
+	margin-right: 12px;
+	font-size: 16px;
+	color: offWhite&88;
+	white-space: nowrap;
+	text-overflow: shrink;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandUnbound
+{
+	max-width: 200px;
+	vertical-align: center;
+	font-size: 16px;
+	color: offWhite&66;
+	white-space: nowrap;
+	text-overflow: shrink;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandBindConjunction
+{
+	vertical-align: center;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: offWhite&33;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandUnbound
+{
+	visibility: collapse;
+	font-style: italic;
+}
+
+PopupBindKey.PopupPanel #SelectedCommandBindConjunction
+{
+	visibility: collapse;
+	margin: 0px 8px;
+}
+
+PopupBindKey.PopupPanel #SelectedCommand.Unbound #SelectedCommandUnbound,PopupBindKey.PopupPanel #SelectedCommand.TwoBinds #SelectedCommandBindConjunction
+{
+	visibility: visible;
+}
+
+PopupBindKey.PopupPanel .ButtonRow
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 20px;
+}
+
+PopupBindKey.PopupPanel .ButtonRow CitadelButton
+{
+	margin: 0px 8px;
+}
+
+PopupBindKey.PopupPanel #DeleteBindingButton:disabled
+{
+	opacity: 0;
+}
+
+PopupBindKey.PopupPanel #EscapeButton
+{
+	visibility: collapse;
+}
+
+@keyframes 'PopupBackgroundTransitionOn'
+{
+	0%
+	{
+		opacity-mask: url("s2r://panorama/images/buttons/button_nav_mask_threshold_psd.vtex");
+		opacity-mask-threshold: 100% 2%;
+	}
+	
+	100%
+	{
+		opacity-mask: url("s2r://panorama/images/buttons/button_nav_mask_threshold_psd.vtex");
+		opacity-mask-threshold: 2% 2%;
+	}
+	
+}
+

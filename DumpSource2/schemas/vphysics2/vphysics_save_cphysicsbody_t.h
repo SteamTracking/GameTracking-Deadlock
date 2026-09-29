@@ -1,11 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"m_sDebugName": "",
-//	"m_vPosition":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
+//	"m_vPosition": null,
 //	"m_qOrientation":
 //	[
 //		0.000000,

@@ -1,7 +1,3 @@
-// MNetworkVarNames = "AbilityID_t m_unItemID"
-// MClassHasEntityLimitedDataDesc
-class CCitadel_Pickup_Item : public CCitadel_Pickup
+class CCitadel_Pickup_Item : public CCitadel_Pickup_Ability
 {
-	// MNetworkEnable
-	CUtlStringToken m_unItemID;
 };

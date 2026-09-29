@@ -5,7 +5,12 @@
 //		"m_nAmbisonicsOrderInsideSizeField": 0,
 //		"m_flOutsideThreshold": 0.000000,
 //		"m_flSizeThreshold": 0.000000,
-//		"m_flInsideThreshold": 0.000000
+//		"m_flInsideThreshold": 0.000000,
+//		"m_nInOutMode": 0,
+//		"m_nNumRays": 32768,
+//		"m_nInOutMaxBounces": 4,
+//		"m_flInOutMaxPathLength": 8000.000000,
+//		"m_flInOutBounceLoss": 0.250000
 //	},
 //	"m_probes":
 //	{

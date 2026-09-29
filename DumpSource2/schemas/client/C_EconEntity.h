@@ -1,8 +1,5 @@
-// MNetworkVarNames = "CAttributeContainer m_AttributeManager"
-// MClassHasEntityLimitedDataDesc
-class C_EconEntity : public C_BaseFlex, public IHasAttributes
+class C_EconEntity : public CBaseAnimGraph, public IHasAttributes
 {
-	// MNetworkEnable
 	CAttributeContainer m_AttributeManager;
 	bool m_bClientside;
 	EconEntityParticleDisableMode_t m_nDisableMode;
@@ -14,5 +11,4 @@ class C_EconEntity : public C_BaseFlex, public IHasAttributes
 	bool m_bAttachmentDirty;
 	style_index_t m_iOldStyle;
 	CHandle< C_BaseEntity > m_hOldProvidee;
-	CUtlVector< C_EconEntity::AttachedModelData_t > m_vecAttachedModels;
 };

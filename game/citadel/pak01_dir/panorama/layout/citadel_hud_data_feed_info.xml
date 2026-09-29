@@ -1,25 +1,54 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_hud_data_feed_info.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_hud_data_feed_info.vcss" />
 	</styles>
 	<CitadelHudInfoFeed hittest="false">
 		<Panel id="TextContainer">
-			<Panel class="killerContainer">
-				<Label class="killerInfo personaName" text="{s:killer_name}" />
+			<Panel id="KillerContainer" class="killerContainer">
+				<Panel class="unit_bg" />
+				<ParticleScenePanel id="KillStreakParticlePanel" particleonly="false" particleName="particles/ui/ui_topbar_killstreak_stylized.vpcf" fov="23" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" />
 				<Panel class="killerImageContainer">
-					<CitadelHeroImage id="KillerImage" />
+					<CitadelHeroImage id="KillerImage" scaling="stretch-to-fit-x-preserve-aspect" />
+				</Panel>
+				<Panel class="unit_background">
+					<Panel class="unit_primary">
+						<Label class="killerInfo personaName" text="{s:killer_name}" />
+						<Panel class="unit_secondary">
+							<Panel id="AssistsContainer" />
+							<Panel class="gold">
+								<Panel class="gold_icon" />
+								<Label class="gold" text="{d:gold}" />
+							</Panel>
+						</Panel>
+					</Panel>
 				</Panel>
 			</Panel>
-			<Panel id="AssistsContainer" />
-			<Panel class="crosshairImage" />
-			<Panel class="arrowImage" />
-			<Panel class="victimContainer">
+			<Panel class="kill_detail_icons">
+				<Image id="AbilityImage" class="abilityImage" />
+				<Panel class="crosshairImage" />
+				<Panel class="arrowImage" />
+			</Panel>
+			<Panel id="VictimContainer" class="victimContainer">
+				<Panel class="unit_bg" />
+				<Panel class="unit_background">
+					<Panel class="unit_primary">
+						<Panel class="soulBagAmount">
+							<Panel class="gold_icon" />
+							<Label class="gold" text="{d:gold}" />
+						</Panel>
+						<Panel class="bossLaneIcon" />
+						<Label class="victimInfo personaName" text="{s:victim_name}" />
+					</Panel>
+					<Panel class="unit_secondary">
+						<Label class="soulBagStolen" text="#Citadel_HUD_SoulBagPickup_Stolen" />
+						<CitadelHeroImage id="SoulBagVictim" class="soulBagTarget" heroimagestyle="minimap_icon" />
+					</Panel>
+				</Panel>
 				<Panel class="victimImageContainer">
 					<CitadelHeroImage id="VictimImage" />
 				</Panel>
-				<Label class="victimInfo personaName" text="{s:victim_name}" />
 			</Panel>
 		</Panel>
 	</CitadelHudInfoFeed>

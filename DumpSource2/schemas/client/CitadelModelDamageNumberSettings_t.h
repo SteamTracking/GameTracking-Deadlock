@@ -5,6 +5,7 @@
 //	"m_flHeightOffsetNear": 90.000000,
 //	"m_flHeightOffsetFar": 90.000000
 //}
+// MPropertyFriendlyName = "Citadel Damage Numbers Settings"
 class CitadelModelDamageNumberSettings_t
 {
 	// MPropertyDescription = "How far offset to the left and right will damage numbers be when this model takes damage and is near the camera"

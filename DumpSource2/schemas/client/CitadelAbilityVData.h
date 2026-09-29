@@ -20,7 +20,9 @@
 //	"m_bCollectNearbyTargetsWithCone": false,
 //	"m_flNearbySweepOffset": -59.000000,
 //	"m_flNearbySweepRadius": 78.000000,
+//	"m_bTargetingPreviewDesaturatesScreen": true,
 //	"m_eAbilityActivation": "CITADEL_ABILITY_ACTIVATION_NONE",
+//	"m_flToggleOffDelay": 0.000000,
 //	"m_TriggerButtonPreReqButton": "",
 //	"m_TriggerButtonOverride": "",
 //	"m_eAbilitySpectatePriority": "CITADELTV_ABILITY_SPECTATE_PRIORITY_NONE",
@@ -33,7 +35,7 @@
 //	},
 //	"m_nAbilityTargetTypes": "",
 //	"m_nAbilityTargetFlags": "",
-//	"m_eTargettingLOSCheck": "ELOSCheck_Bounds",
+//	"m_eTargettingLOSCheck": "Bounds",
 //	"m_bitsPreCastEnabledStateMask": "",
 //	"m_bitsChannelEnabledStateMask": "",
 //	"m_bitsPostCastEnabledStateMask": "",
@@ -41,151 +43,8 @@
 //	"m_flBossDamageScale": 1.000000,
 //	"m_bShowTargetingPreviewWhileChanneling": false,
 //	"m_bShowTargetingPreviewWhileCasting": false,
-//	"m_WeaponInfo":
+//	"m_mapWeaponInfos":
 //	{
-//		"m_flBulletDamage": 0.000000,
-//		"m_eDamageType": "CITADEL_DAMAGETYPE_BULLET",
-//		"m_iBullets": 1,
-//		"m_iSplitShotsMax": -1,
-//		"m_flSplitShotAngles": -1.000000,
-//		"m_bExpressShotDisabled": false,
-//		"m_bHitOnceAcrossAllBullets": false,
-//		"m_iBulletsToFullyClaimOrb": 1,
-//		"m_flExplosionRadius": 0.000000,
-//		"m_flExplosionDamageScaleAtMaxRadius": 0.300000,
-//		"m_bAllowExplosionToCollectGold": false,
-//		"m_iClipSize": 0,
-//		"m_flCycleTime": 0.150000,
-//		"m_flBulletCreationDelay": 0.000000,
-//		"m_iBurstShotCount": 1,
-//		"m_flIntraBurstCycleTime": 0.000000,
-//		"m_iAmmoConsumedPerShot": 1,
-//		"m_flRange": 8192.000000,
-//		"m_flRangeWhileZoomed": 0.000000,
-//		"m_flDamageFalloffStartRange": 0.000000,
-//		"m_flDamageFalloffEndRange": 900.000000,
-//		"m_flDamageFalloffBias": 0.500000,
-//		"m_flDamageFalloffStartScale": 1.000000,
-//		"m_flDamageFalloffEndScale": 0.000000,
-//		"m_bDontPassThroughPortals": false,
-//		"m_bPlayImpactEffectsOnTeammates": false,
-//		"m_flPenetrationPercent": 0.000000,
-//		"m_flIronSightsTime": 0.100000,
-//		"m_reloadDuration": 0.000000,
-//		"m_bReloadUseActiveWeaponInfoDuration": false,
-//		"m_bReloadSingleBullets": false,
-//		"m_bReloadSingleBulletsAllowCancel": false,
-//		"m_flReloadSingleBulletsInitialDelay": 0.000000,
-//		"m_bCanCrit": true,
-//		"m_flCritBonusStartRange": 0.000000,
-//		"m_flCritBonusEndRange": 0.000000,
-//		"m_flCritBonusStart": 1.000000,
-//		"m_flCritBonusEnd": 1.000000,
-//		"m_flCritBonusAgainstNPCs": 0.200000,
-//		"m_eCritFilter": "CITADEL_UNIT_TARGET_ALL",
-//		"m_eCritAlwaysFilter": "",
-//		"m_bSpinsUp": false,
-//		"m_flMaxSpinCycleTime": -1.000000,
-//		"m_flSpinIncreaseRate": 0.000000,
-//		"m_flSpinDecayRate": 0.000000,
-//		"m_flBuildUpRate": -1.000000,
-//		"m_bIsSemiAuto": false,
-//		"m_flBulletSpeed": 1000.000000,
-//		"m_flBulletSpeedRandomFactor": 0.000000,
-//		"m_flBulletGravityScale": 1.000000,
-//		"m_flBulletRadius": 0.000000,
-//		"m_flBulletRadiusVsWorld": 0.000000,
-//		"m_flBulletLifetime": 0.000000,
-//		"m_flVerticalAimBias": 0.000000,
-//		"m_flBulletInheritShooterVelocityScale": 0.000000,
-//		"m_bCanZoom": true,
-//		"m_flZoomFOV": 70.000000,
-//		"m_flZoomFOV_Relative": -5.000000,
-//		"m_flZoomMoveSpeedPercent": 0.750000,
-//		"m_flShootMoveSpeedPercent": 0.750000,
-//		"m_flReloadMoveSpeedPercent": 1.000000,
-//		"m_bUsesSpreadPattern": true,
-//		"m_Spread": 0.200000,
-//		"m_bFirstShotPerfectAccuracy": false,
-//		"m_AimingShootSpreadPenalty": 0.000000,
-//		"m_flScatterYawScale": 1.000000,
-//		"m_flShootSpreadPenaltyPerShot": 0.000000,
-//		"m_ShootSpreadPenaltyPerShotNormalization":
-//		{
-//			"m_bNormalizeSpreadPerShot": false,
-//			"m_FireRatePctRange":
-//			[
-//				0.000000,
-//				100.000000
-//			],
-//			"m_SpreadPerShotFactor": 1.000000
-//		},
-//		"m_flShootSpreadPenaltyDecayDelay": -1.000000,
-//		"m_flShootSpreadPenaltyDecay": 1.000000,
-//		"m_flSpreadPenaltyDecay": 3.000000,
-//		"m_flShootingUpSpreadPenalty": 0.000000,
-//		"m_flAutoReplenishClip": 0.000000,
-//		"m_NpcAimingSpread": 0.000000,
-//		"m_vecScatterOffsets":
-//		[
-//		],
-//		"m_flPelletScatterFactor": 1.000000,
-//		"m_flPelletScatterSpreadFactor": 0.500000,
-//		"m_bApplySpreadToFirstPellet": false,
-//		"m_vecOriginOffsets":
-//		[
-//		],
-//		"m_flVerticalPunch": 1.000000,
-//		"m_flHorizontalPunch": 0.500000,
-//		"m_HorizontalRecoil":
-//		{
-//			"m_Range": 0.000000,
-//			"m_flBurstSlope": 0.000000,
-//			"m_flBurstExponent": 1.000000,
-//			"m_flBurstConstant": 0.000000
-//		},
-//		"m_VerticallRecoil":
-//		{
-//			"m_Range": 0.000000,
-//			"m_flBurstSlope": 0.000000,
-//			"m_flBurstExponent": 1.000000,
-//			"m_flBurstConstant": 0.000000
-//		},
-//		"m_flRecoilSpeed": 1.000000,
-//		"m_flRecoilRecoveryDelayFactor": 1.000000,
-//		"m_flRecoilRecoverySpeed": 1.000000,
-//		"m_flRecoilShotIndexRecoveryTimeFactor": 0.250000,
-//		"m_nRecoilSeed": 0,
-//		"m_szBulletTravelTracerParticle": "particles/weapon_fx/default_tracer.vpcf",
-//		"m_szSelfBulletTravelTracerParticle": "",
-//		"m_szBulletLinkParticle": "",
-//		"m_bUseDesatForFriendlyNonHeroTracer": true,
-//		"m_eAttachmentSourceType": "EAttachmentSource_WeaponMuzzles",
-//		"m_strCustomAttachmentSource": "ability_cast",
-//		"m_szMuzzleFlashEffectName": "",
-//		"m_strWeaponImpactEffect": "",
-//		"m_mapImpactEffects":
-//		{
-//		},
-//		"m_bUseWeaponAbilityName": false,
-//		"m_flDamageForce": 50.000000,
-//		"m_strShootSound": "",
-//		"m_strFirstShotSound": "",
-//		"m_strShotReleaseSound": "",
-//		"m_strBulletLoopingSound": "",
-//		"m_strBulletWhizSound": "",
-//		"m_strBulletImpactSound": "",
-//		"m_flBulletWhizDistance": 150.000000,
-//		"m_strReloadSound": "",
-//		"m_strReloadEndSound": "",
-//		"m_strLocalPlayerBulletImpactSound": "",
-//		"m_strLocalPlayerBulletImpactHeavySound": "",
-//		"m_strZoomInSound": "",
-//		"m_strZoomOutSound": "",
-//		"m_strSpinUpSound": "",
-//		"m_strSpinDownSound": "",
-//		"m_strSpinUpLoopSound": "",
-//		"m_flMaxLagCompensation": 340282346638528859811704183484516925440.000000
 //	},
 //	"m_projectileInfo":
 //	{
@@ -197,6 +56,8 @@
 //		"m_flUpSpeed": 100.000000,
 //		"m_flMaxLinearRange": 0.000000,
 //		"m_flVerticalAimBias": 0.000000,
+//		"m_flNoCollisionDuration": 0.000000,
+//		"m_bAllowMotionDuringNoCollisionDuration": false,
 //		"m_eProjectileShape": "Sphere",
 //		"m_flTriggerRadius": 1.500000,
 //		"m_flPhysicsRadius": 1.500000,
@@ -275,15 +136,13 @@
 //	"m_vecAbilityUpgrades":
 //	[
 //	],
-//	"m_strCastAnimGraphParam": "",
-//	"m_strSelectionNameOverride": "",
-//	"m_strCastAnimSequenceName": "",
 //	"m_bSuppressOutOfCombatOnCast": true,
 //	"m_bSuppressOutOfCombatWhileChanneling": true,
 //	"m_strAG2SourceName": "",
 //	"m_strAG2CastingAction": "casting",
 //	"m_strAG2ChannelingAction": "channeling",
 //	"m_strAG2CastCompletedAction": "cast_completed",
+//	"m_strAG2CastFailedAction": "",
 //	"m_AbilityTooltipDetails":
 //	{
 //		"m_vecAbilityInfoSections":
@@ -295,7 +154,6 @@
 //	},
 //	"m_strCSSClass": "",
 //	"m_strAbilityImage": "",
-//	"m_strMoviePreviewPath": "",
 //	"m_HUDPanel":
 //	{
 //		"m_vecHUDElements":
@@ -313,6 +171,10 @@
 //	"m_strFlyUpLocString": "",
 //	"m_strFlyDownLocString": "",
 //	"m_strSubCastUICSSClass": "",
+//	"m_sCustomStackLabel": "",
+//	"m_HudSharedStyle": "",
+//	"m_sCustomTooltipID": "",
+//	"m_bCustomTooltipInteractive": false,
 //	"m_additionalAbilities":
 //	{
 //		"m_strTitle": "",
@@ -388,19 +250,19 @@
 //		]
 //	},
 //	"m_bEndChannelStartSequenceOnChannelComplete": true,
-//	"m_flCameraPreviewOffset": -1.000000,
-//	"m_flCameraPreviewDistance": -1.000000,
-//	"m_flCameraPreviewSpeed": -1.000000,
 //	"m_previewParticle": "",
 //	"m_strPreviewParticleEffectConfig": "",
 //	"m_PreviewPathParticle": "",
+//	"m_bUseSatShapesOnPreview": true,
+//	"m_AOEPreviewParticleOverride": "",
+//	"m_ConePreviewParticleOverride": "",
+//	"m_LinePreviewParticleOverride": "",
 //	"m_mapCastEventParticles":
 //	{
 //	},
 //	"m_skillshotHitParticle": "",
 //	"m_skillshotMissParticle": "",
 //	"m_TargetingPreviewParticle": "",
-//	"m_HudSharedStyle": "",
 //	"m_strSelectedSound": "",
 //	"m_strUnselectedSound": "",
 //	"m_strSelectedLoopSound": "",
@@ -425,8 +287,11 @@
 //	],
 //	"m_cosmeticInfo":
 //	{
-//		"m_bIsSeasonal": false
-//	}
+//		"m_strTooltipCSSClass": ""
+//	},
+//	"m_vecTooltipSectionInfo":
+//	[
+//	]
 //}
 // MVDataOverlayType = 2
 // MVDataOutlinerLeafNameFn
@@ -468,7 +333,10 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	float32 m_flNearbySweepOffset;
 	// MPropertySuppressExpr = "m_bCollectNearbyTargetsWithCone == false"
 	float32 m_flNearbySweepRadius;
+	// MPropertyDescription = "When false, the targeting preview draws its shape but leaves the rest of the screen alone."
+	bool m_bTargetingPreviewDesaturatesScreen;
 	EAbilityActivation_t m_eAbilityActivation;
+	float32 m_flToggleOffDelay;
 	// MPropertyDescription = "If set, this button must be down in addition to our trigger button (be default the slot button) in order to activate this ability."
 	InputBitMask_t m_TriggerButtonPreReqButton;
 	// MPropertyDescription = "If set, this is the button requierd to be pressed to activate this ability."
@@ -492,22 +360,18 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	bool m_bShowTargetingPreviewWhileChanneling;
 	bool m_bShowTargetingPreviewWhileCasting;
 	// MPropertyStartGroup = ""
-	// MPropertyFriendlyName = "Weapon Info"
-	CCitadelWeaponInfo m_WeaponInfo;
+	// MPropertyFriendlyName = "Weapon Infos"
+	// MPropertyDescription = "Weapon infos keyed by context. The "primary" context is what GetWeaponInfoVData() returns by default."
+	CUtlOrderedMap< CGlobalSymbol, CCitadelWeaponInfo > m_mapWeaponInfos;
 	// MPropertyFriendlyName = "Projectile Info"
 	ProjectileInfo_t m_projectileInfo;
 	// MPropertyFriendlyName = "Deployment Info"
 	DeploymentInfo_t m_deploymentInfo;
 	// MPropertyStartGroup = ""
-	CUtlOrderedMap< CUtlString, CitadelAbilityProperty_t > m_mapAbilityProperties;
+	CUtlDict< CitadelAbilityProperty_t > m_mapAbilityProperties;
 	// MPropertyMapKeyLeafChoiceProviderFn
 	CUtlOrderedMap< CSubclassName< 4 >, AbilityDependencyDescription_t > m_mapDependentAbilities;
 	CUtlVector< AbilityUpgrade_t > m_vecAbilityUpgrades;
-	// MPropertyStartGroup = "AnimGraph1"
-	CGlobalSymbol m_strCastAnimGraphParam;
-	// MPropertyDescription = "If set, this will be the value passed to the animgraph when this ability is selected instead of the ability name."
-	CUtlString m_strSelectionNameOverride;
-	CUtlString m_strCastAnimSequenceName;
 	// MPropertyStartGroup = "AnimGraph2"
 	// MPropertyDescription = "When true, suppress the out of combat anim state for 2s on cast."
 	bool m_bSuppressOutOfCombatOnCast;
@@ -525,12 +389,14 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	// MPropertyFriendlyName = "Cast Completed "hero_action" value"
 	// MPropertyDescription = "Value to set "hero_action" to when casting completes. "hero_action_source" will be set to this ability's name"
 	CGlobalSymbol m_strAG2CastCompletedAction;
+	// MPropertyFriendlyName = "Cast Fail "hero_action" value"
+	// MPropertyDescription = "Value to set "hero_action" to when casting fails for any reason. "hero_action_source" will be set to this ability's name"
+	CGlobalSymbol m_strAG2CastFailedAction;
 	// MPropertyStartGroup = "UI"
 	// MPropertySuppressExpr = "m_bIsSignatureAbility == false"
 	AbilityTooltipDetails_t m_AbilityTooltipDetails;
 	CUtlString m_strCSSClass;
 	CPanoramaImageName m_strAbilityImage;
-	CUtlString m_strMoviePreviewPath;
 	CitadelAbilityHUDPanel_t m_HUDPanel;
 	bool m_bShowInPassiveItemsArea;
 	bool m_bForceHideHUDPanel;
@@ -540,6 +406,14 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	CUtlString m_strFlyDownLocString;
 	// MPropertyDescription = "Subcast UI will have this class set"
 	CUtlString m_strSubCastUICSSClass;
+	// MPropertyFriendlyName = "Custom Stacks Label"
+	CUtlString m_sCustomStackLabel;
+	// MPropertyDescription = "CSS stylesheet included in the HUD elements created by this ability"
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCPanoramaStyle > > m_HudSharedStyle;
+	// MPropertyFriendlyName = "Custom Layout Tooltip ID"
+	CUtlString m_sCustomTooltipID;
+	// MPropertyFriendlyName = "Custom Layout Tooltip Is Interactive"
+	bool m_bCustomTooltipInteractive;
 	// MPropertyFriendlyName = "Additional Abilities"
 	AdditionalAbilities_t m_additionalAbilities;
 	CUtlString m_strSecondaryStatName;
@@ -558,9 +432,6 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	CitadelCameraOperationsSequence_t m_cameraSequenceChannelStart;
 	// MPropertyDescription = "By default, we stop the sequence from 'Sequence Channel Start' once the channel completes successfully.  Un-check this to allow it to continue past the channel duration."
 	bool m_bEndChannelStartSequenceOnChannelComplete;
-	float32 m_flCameraPreviewOffset;
-	float32 m_flCameraPreviewDistance;
-	float32 m_flCameraPreviewSpeed;
 	// MPropertyStartGroup = "Visuals"
 	// MPropertyDescription = "Preview particle attaching to the caster before cast"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_previewParticle;
@@ -568,6 +439,14 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	CUtlString m_strPreviewParticleEffectConfig;
 	// MPropertyDescription = "Preview path particle shows ability's custom path"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_PreviewPathParticle;
+	// MPropertyDescription = "Whether or not our preview particles also use their corresponding sat shape."
+	bool m_bUseSatShapesOnPreview;
+	// MPropertyDescription = "The preview used for AOE's. CP0 = effect position, CP1.X = aoe radius, CP15 = color Defaults if unset."
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_AOEPreviewParticleOverride;
+	// MPropertyDescription = "The preview used for cone targeting. CP0 = effect position, CP1 = cone left, CP2 = cone right, CP3 = cone center, CP15 = color. Defaults if unset."
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ConePreviewParticleOverride;
+	// MPropertyDescription = "The preview used for line-shaped abilities. CP0 = effect position, CP1 = end position, CP2.X = line radius. Defaults if unset."
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_LinePreviewParticleOverride;
 	// MPropertyDescription = "Particle attaching to the caster on cast event"
 	CUtlOrderedMap< AbilityCastEvent_t, CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > > m_mapCastEventParticles;
 	// MPropertyDescription = "Trace particle when hit an enemy with targeted ability"
@@ -576,8 +455,6 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_skillshotMissParticle;
 	// MPropertyDescription = "Preview particle on attaching to targets of this ability"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_TargetingPreviewParticle;
-	// MPropertyDescription = "CSS stylesheet included in the HUD elements created by this ability"
-	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCPanoramaStyle > > m_HudSharedStyle;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strSelectedSound;
 	CSoundEventName m_strUnselectedSound;
@@ -600,4 +477,7 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	CUtlVector< CEmbeddedSubclass< CBaseModifier > > m_AutoIntrinsicModifiers;
 	// MPropertySuppressExpr = "m_eAbilityType != EAbilityType_Cosmetic"
 	AbilityCosmeticInfo_t m_cosmeticInfo;
+	// MPropertySuppressExpr = "m_eAbilityType != EAbilityType_Cosmetic && m_eAbilityType != EAbilityType_Item"
+	// MPropertyFriendlyName = "Item Tooltips"
+	CUtlVector< ItemSectionInfo_t > m_vecTooltipSectionInfo;
 };

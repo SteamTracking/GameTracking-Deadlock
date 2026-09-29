@@ -4,6 +4,7 @@
 //	"m_nElementSizeInBytes": 0,
 //	"m_bMeshoptCompressed": false,
 //	"m_bMeshoptIndexSequence": false,
+//	"m_nMeshoptMeshletEncodeVersion": -1,
 //	"m_bCompressedZSTD": false,
 //	"m_bCreateBufferSRV": false,
 //	"m_bCreateBufferUAV": false,
@@ -21,11 +22,12 @@ class ModelMeshBufferData_t
 	uint32 m_nElementSizeInBytes;
 	bool m_bMeshoptCompressed;
 	bool m_bMeshoptIndexSequence;
+	int8 m_nMeshoptMeshletEncodeVersion;
 	bool m_bCompressedZSTD;
 	bool m_bCreateBufferSRV;
 	bool m_bCreateBufferUAV;
 	bool m_bCreateRawBuffer;
 	bool m_bCreatePooledBuffer;
-	uint8 m_nBufferUsage;
+	uint16 m_nBufferUsage;
 	CUtlVector< RenderInputLayoutField_t > m_inputLayoutFields;
 };

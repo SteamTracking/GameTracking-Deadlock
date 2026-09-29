@@ -1,0 +1,3 @@
+class CAudioTrackNodeDesc : public CVNodeTypeDesc
+{
+};

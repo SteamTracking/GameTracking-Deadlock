@@ -1,17 +1,29 @@
 /* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
 
-@import url("s2r://panorama/styles/citadel_hero_builds_shared.vcss_c");
+@import url("s2r://panorama/styles/citadel_hero_builds_shared.vcss");
 CitadelBuildDetails
 {
 	flow-children: down;
 	width: 600px;
 	height: 100%;
-	background-color: buildsDarkColor;
 }
 
-CitadelBuildDetails.DashboardBuilds
+#Background
 {
-	visibility: visible;
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	opacity-mask: url("s2r://panorama/images/textures/paper_tile_1k_02_dark_psd.vtex");
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	margin: 0px 4px;
+	background-repeat: repeat;
+	background-size: 1024px;
+	opacity-mask: url("s2r://panorama/images/masks/rough_edge_02_png.vtex");
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: 0.2s;
 }
 
 .HeroBuildsExtraInfo
@@ -31,23 +43,31 @@ CitadelBuildDetails.DashboardBuilds
 {
 	width: 100%;
 	flow-children: down;
-	padding-bottom: 0px;
+	padding: 20px 30px 20px 40px;
+}
+
+.HideMods .HeroBuildsExtraInfo
+{
+	height: fit-children;
+}
+
+.HideMods .HeroBuildsExtraInfo #BuildInfo
+{
+	padding: 10px 20px 10px 20px;
 }
 
 .HeroBuildsExtraInfo .BuildName
 {
-	margin-left: 4px;
-	margin-bottom: 4px;
 	font-weight: bold;
-	font-size: 32px;
+	font-size: 30px;
 	height: 48px;
 	text-overflow: shrink;
 	vertical-align: center;
+	font-family: oracle;
 }
 
 .HeroBuildsExtraInfo .LastUpdated
 {
-	margin: 4px;
 	font-size: 16px;
 	font-weight: medium;
 	overflow: squish scroll;
@@ -55,28 +75,77 @@ CitadelBuildDetails.DashboardBuilds
 	max-width: 500px;
 }
 
-.HeroBuildsExtraInfo .BuildDescription
+.HeroBuildsExtraInfo #BuildDetails
+{
+	margin-top: 20px;
+	flow-children: down;
+	width: 100%;
+	height: fit-children;
+}
+
+.HeroBuildsExtraInfo #BuildDetails #DetailsTop
+{
+	flow-children: right;
+	width: 100%;
+	border-bottom: 3px solid deadlockGreen;
+}
+
+.HeroBuildsExtraInfo #BuildDetails #DetailsTop .TagList
+{
+	horizontal-align: right;
+	flow-children: right;
+	margin-bottom: 4px;
+	max-height: 40px;
+}
+
+.HeroBuildsExtraInfo #BuildDetails #BuildDetailsTabs
+{
+	flow-children: right;
+	padding: 10px 0px 0px 0px;
+}
+
+.HeroBuildsExtraInfo #BuildDetails #BuildDetailsTabs .details_tab
+{
+	margin-right: 10px;
+}
+
+.HeroBuildsExtraInfo #BuildDetails #BuildDetailsTabs .details_tab .tab_bg
+{
+	width: 100%;
+	height: 100%;
+}
+
+.HeroBuildsExtraInfo #BuildDetails #BuildDetailsTabs .details_tab Label
+{
+	font-family: block;
+	font-size: 16px;
+	text-transform: uppercase;
+	padding: 4px 10px;
+	opacity: 0.7;
+}
+
+.HeroBuildsExtraInfo #BuildDetails_Overview
+{
+	flow-children: down;
+	width: 100%;
+	background-color: offBlack&90;
+	padding: 10px;
+	overflow: squish scroll;
+}
+
+.HeroBuildsExtraInfo #BuildDetails_Overview .BuildDescription
 {
 	margin: 4px;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: semi-bold;
-	opacity: 0.8;
-	overflow: squish scroll;
-	height: 130px;
-	width: 500px;
+	opacity: 0.7;
+	font-family: sans;
+	width: 100%;
 }
 
 .NoLastUpdatedTime .HeroBuildsExtraInfo .LastUpdated
 {
 	opacity: 0;
-}
-
-.HeroBuildsExtraInfo .TagList
-{
-	horizontal-align: left;
-	flow-children: right;
-	margin-bottom: 4px;
-	max-height: 40px;
 }
 
 .HeroBuildsExtraInfo .AuthoringInfo
@@ -87,8 +156,8 @@ CitadelBuildDetails.DashboardBuilds
 
 .HeroBuildsExtraInfo #AuthorAvatar
 {
-	width: 48px;
-	height: 48px;
+	width: 36px;
+	height: 36px;
 	vertical-align: top;
 	margin: 3px;
 	margin-left: 3px;
@@ -105,40 +174,76 @@ CitadelBuildDetails.DashboardBuilds
 	visibility: visible;
 }
 
-.HeroBuildsExtraInfo .ExtraInfo
+.HeroBuildsExtraInfo #BuildMetaData
+{
+	margin-left: 5px;
+}
+
+.HeroBuildsExtraInfo #ControlArea
+{
+	width: 100%;
+}
+
+.HeroBuildsExtraInfo #ControlArea .ExtraInfo
 {
 	flow-children: right;
 }
 
-.HeroBuildsExtraInfo .ExtraInfo Label
+.HeroBuildsExtraInfo #ControlArea .ExtraInfo Label
 {
 	vertical-align: center;
 	font-weight: semi-bold;
 	font-size: 16px;
 }
 
-.HeroBuildsExtraInfo .ExtraInfo .buildIDbox
+.HeroBuildsExtraInfo #ControlArea .ExtraInfo .buildIDbox
 {
 	vertical-align: middle;
 	margin-left: 10px;
+}
+
+.HeroBuildsExtraInfo #ControlArea .ExtraInfo .BuildID
+{
 	border-bottom: 2px solid #ffffff20;
 }
 
-.HeroBuildsExtraInfo .ExtraInfo .BuildID:hover
+.HeroBuildsExtraInfo #ControlArea .ExtraInfo .BuildID:hover
 {
 	brightness: 1.5;
 }
 
-.HeroBuildsExtraInfo .ExtraInfo .CopiedToClipboard
+.HeroBuildsExtraInfo #ControlArea .ExtraInfo .CopiedToClipboard
 {
-	margin-left: 20px;
+	margin-left: 10px;
 	font-weight: bold;
+	font-size: 12px;
 	visibility: collapse;
+	wash-color: deadlockGreen;
 }
 
-.TextCopied .HeroBuildsExtraInfo .ExtraInfo .CopiedToClipboard
+.TextCopied .HeroBuildsExtraInfo #ControlArea .ExtraInfo .CopiedToClipboard
 {
 	visibility: visible;
+}
+
+.HeroBuildsExtraInfo #ControlArea #BuildControls
+{
+	horizontal-align: right;
+	width: 220px;
+}
+
+.HeroBuildsExtraInfo #ControlArea #BuildControls .NEWDropdown
+{
+	background-color: #333;
+	border: 2px solid offWhite&30;
+	border-radius: 3px;
+}
+
+.HeroBuildsExtraInfo #ControlArea #BuildControls .NEWDropdown Label
+{
+	font-size: 16px;
+	font-weight: semi-bold;
+	opacity: 0.6;
 }
 
 .ButtonItems
@@ -243,11 +348,6 @@ CitadelBuildDetails.DashboardBuilds
 	height: fit-children;
 	margin-left: 10px;
 	margin-top: 80px;
-}
-
-.DashboardBuilds .HeroBuildNav
-{
-	margin-top: 0px;
 }
 
 .NavContainer
@@ -439,44 +539,86 @@ CitadelBuildDetails.DashboardBuilds
 	flow-children: right;
 }
 
-#ManageBuildControls
-{
-	padding: 0px;
-}
-
-#ManageBuildControls #AuthorControls
+#BuildOptionButton
 {
 	flow-children: right;
+	background-color: black;
+	padding: 3px;
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+#BuildOptionButton .DropdownArrow
+{
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin: 6px;
+	padding: 8px;
+	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-img-opacity: 0.7;
+	transition-property: opacity, pre-transform-scale2d;
+	transition-duration: 0.1s;
+}
+
+.ShowBuildControlsContainer #BuildOptionButton .DropdownArrow
+{
+	transform: rotateZ(-90deg);
+}
+
+.HideMods #BuildOptionButton
+{
+	visibility: collapse;
+}
+
+#BuildOptionButton:hover,.ShowBuildControlsContainer #BuildOptionButton
+{
+	pre-transform-scale2d: 1.05;
+	brightness: 1.1;
+}
+
+#BuildControlsContainer
+{
+	width: 220px;
+	ignore-parent-flow: true;
+	flow-children: down;
+	transition-property: opacity,transform;
+	transition-duration: 0.1s;
+	opacity: 0;
+	vertical-align: top;
+	horizontal-align: right;
+	margin-top: 100px;
+	margin-right: 30px;
+	background-color: black;
+	padding: 10px;
+}
+
+.ShowBuildControlsContainer #BuildControlsContainer
+{
+	opacity: 1;
+}
+
+#BuildControlsContainer #AuthorControls
+{
+	width: 100%;
+	flow-children: down;
 	horizontal-align: left;
 	visibility: collapse;
 	vertical-align: center;
 }
 
-#ManageBuildControls #AuthorControls .SecondaryButton
+#BuildControlsContainer TextButton
 {
-	max-width: 100px;
+	width: 100%;
+	margin: 2px;
 }
 
-#ManageBuildControls #RevertBuildButton
+#BuildControlsContainer TextButton:hover
 {
-	tooltip-position: top;
-	visibility: collapse;
-}
-
-#ManageBuildControls #DeleteBuildButton
-{
-	horizontal-align: right;
-}
-
-#ManageBuildControls #ValveBuildButton
-{
-	visibility: collapse;
-	padding: 6px;
-}
-
-#ManageBuildControls #ValveBuildButton Label
-{
-	font-size: 14px;
+	background-color: lightgrey;
 }
 
 .selectedIcon
@@ -507,13 +649,9 @@ CitadelBuildDetails.DashboardBuilds
 	visibility: collapse;
 }
 
-#CopyBuildButton
+#CopyBuildButton,#ValveBuildButton,#RevertBuildButton
 {
 	visibility: collapse;
-	vertical-align: bottom;
-	horizontal-align: left;
-	max-width: 160px;
-	max-height: 45px;
 }
 
 .CanEditBuild #CopyBuildButton,.CanCopyBuild #CopyBuildButton
@@ -521,17 +659,17 @@ CitadelBuildDetails.DashboardBuilds
 	visibility: visible;
 }
 
-.CanEditBuild #ManageBuildControls #AuthorControls
+.CanEditBuild #BuildControlsContainer #AuthorControls
 {
 	visibility: visible;
 }
 
-.CanRevertBuild #ManageBuildControls #RevertBuildButton
+.CanRevertBuild #BuildControlsContainer #RevertBuildButton
 {
 	visibility: visible;
 }
 
-.CanBeValveBuild #ManageBuildControls #ValveBuildButton
+.CanBeValveBuild #BuildControlsContainer #ValveBuildButton
 {
 	visibility: visible;
 }
@@ -589,13 +727,27 @@ CitadelBuildDetails.DashboardBuilds
 .ModListContainer
 {
 	flow-children: right;
+	visibility: collapse;
+}
+
+#ShopModsBuild
+{
+	margin-top: 10px;
+	ui-scale: 63%;
+	height: fit-children;
+	overflow: clip;
+}
+
+#ShopModsBuild #CategoryContainer
+{
+	overflow: squish;
 }
 
 .ModList
 {
 	width: 205px;
 	height: 120px;
-	margin-right: 0px;
+	margin: 0px;
 }
 
 .ModList CitadelModIcon

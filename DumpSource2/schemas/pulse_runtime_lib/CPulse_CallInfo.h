@@ -8,7 +8,9 @@
 //	},
 //	"m_CallMethodID": -1,
 //	"m_nSrcChunk": -1,
-//	"m_nSrcInstruction": -1
+//	"m_nSrcInstruction": -1,
+//	"m_nBreakDestChunk": -1,
+//	"m_nBreakDestInstruction": -1
 //}
 class CPulse_CallInfo
 {
@@ -18,4 +20,6 @@ class CPulse_CallInfo
 	PulseDocNodeID_t m_CallMethodID;
 	PulseRuntimeChunkIndex_t m_nSrcChunk;
 	int32 m_nSrcInstruction;
+	PulseRuntimeChunkIndex_t m_nBreakDestChunk;
+	int32 m_nBreakDestInstruction;
 };

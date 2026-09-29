@@ -1,25 +1,9 @@
-// MNetworkVarNames = "Vector m_vStartPosition"
-// MNetworkVarNames = "Vector m_vDashDirection"
-// MNetworkVarNames = "Vector m_vecLastPosition"
-// MNetworkVarNames = "EFencerUltState_t m_eUltState"
-// MNetworkVarNames = "GameTime_t m_flStateStartTime"
-// MClassHasEntityLimitedDataDesc
 class CAbility_Fencer_Ultimate : public C_CitadelBaseAbility
 {
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
-	Vector m_vStartPosition;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
+	VectorWS m_vStartPosition;
 	Vector m_vDashDirection;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
-	Vector m_vecLastPosition;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
+	VectorWS m_vecLastPosition;
 	EFencerUltState_t m_eUltState;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
 	GameTime_t m_flStateStartTime;
 	bool m_bHitSomeone;
 	CUtlVector< CHandle< C_BaseEntity > > m_vecHitEnemies;

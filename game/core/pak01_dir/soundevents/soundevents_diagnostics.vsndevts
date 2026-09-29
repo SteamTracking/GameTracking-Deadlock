@@ -16,6 +16,30 @@
 		volume = 1.0
 		vsnd_files = "sounds/diagnostics/beep.vsnd"
 	}
+	Diagnostic.1k_long = 
+	{
+		type = "core_start_simple_oneshot"
+		volume = 1.0
+		vsnd_files = "sounds/diagnostics/sin_1k_0p1_oneshot-01.vsnd"
+	}
+	Diagnostic.1k_short = 
+	{
+		type = "core_start_simple_oneshot"
+		volume = 1.0
+		vsnd_files = "sounds/diagnostics/sin_1k_0p005_oneshot.vsnd"
+	}
+	Diagnostic.2k_short = 
+	{
+		type = "core_start_simple_oneshot"
+		volume = 1.0
+		vsnd_files = "sounds/diagnostics/sqr_2k_0p005_oneshot-01.vsnd"
+	}
+	Diagnostic.one_2sec_loop = 
+	{
+		type = "core_start_simple_oneshot"
+		volume = 1.0
+		vsnd_files = "sounds/diagnostics/beep.vsnd"
+	}
 	Diagnostic.simple_click_encoded_loop = 
 	{
 		type = "update_test_vsnd_simple_loop"
@@ -359,17 +383,24 @@
 		track = "track_1"
 		priority = 1
 		pitch = 0.95
+		priority_override = 1.0
 		sync_track = "track_1"
 		sync_field = "public.sync_points"
 		start_point = 1.0
 		end_point = 8.0
-		sync_points = [ 10000.0 ]
+		sync_points = 
+		[
+			1.0, 2.0, 3.0, 4.0,
+			5.0, 6.0, 7.0, 8.0,
+			9.0, 10.0, 11.0, 12.0,
+		]
 	}
 	Diagnostic.test_beep_on_track_priority_2 = 
 	{
 		base = "Diagnostic.test_beep_on_track_priority_1"
 		track = "track_1"
 		priority = 2.0
+		priority_override = 0.0
 		pitch = 1.0
 		start_point = 1.0
 		end_point = 8.0
@@ -377,6 +408,7 @@
 		[
 			1.0, 2.0, 3.0, 4.0,
 			5.0, 6.0, 7.0, 8.0,
+			9.0, 10.0, 11.0, 12.0,
 		]
 	}
 	Diagnostic.test_beep_on_track_priority_3 = 
@@ -384,6 +416,7 @@
 		base = "Diagnostic.test_beep_on_track_priority_1"
 		track = "track_1"
 		priority = 3.0
+		priority_override = 0.0
 		pitch = 1.05
 		start_point = 1.0
 		end_point = 8.0
@@ -391,6 +424,7 @@
 		[
 			1.0, 2.0, 3.0, 4.0,
 			5.0, 6.0, 7.0, 8.0,
+			9.0, 10.0, 11.0, 12.0,
 		]
 	}
 	Diagnostic.test_beep_on_track_priority_1_override = 
@@ -454,10 +488,37 @@
 	Diagnostic.test_vsnd_on_track_priority_1 = 
 	{
 		type = "test_vsnd_on_track"
+		track = "track_1"
+		start_point = 0.0
+		end_point = 24.0
+		sync_points = [ 10 ]
 		priority = 1.0
-		block_equal_priority = 1.0
-		pitch = 1.15
-		vsnd_files = "sounds/diagnostics/ambient/random_amb_sfx/forest_bird01.vsnd"
+		priority_override = 1.0
+		use_queue = 1.0
+		wait_for_track = 0.0
+		sync_track = "track_1"
+		sync_field = "public.sync_points"
+		vsnd_files = "sounds/diagnostics/one_2sec_lp.vsnd"
+	}
+	Diagnostic.test_vsnd_on_track_priority_2 = 
+	{
+		base = "Diagnostic.test_vsnd_on_track_priority_1"
+		start_point = 0.0
+		end_point = 24.0
+		sync_points = [ 10 ]
+		priority = 2.0
+		priority_override = 0.0
+		vsnd_files = "sounds/diagnostics/two_2sec_lp.vsnd"
+	}
+	Diagnostic.test_vsnd_on_track_priority_3 = 
+	{
+		base = "Diagnostic.test_vsnd_on_track_priority_1"
+		start_point = 0.0
+		end_point = 24.0
+		sync_points = [ 10 ]
+		priority = 3.0
+		priority_override = 0.0
+		vsnd_files = "sounds/diagnostics/three_2sec_lp.vsnd"
 	}
 	Diagnostic.test_vsnd_on_track2_priority_1 = 
 	{
@@ -466,7 +527,7 @@
 		block_equal_priority = 1.0
 		pitch = 1.15
 		track = "test_02"
-		vsnd_files = "sounds/diagnostics/ambient/random_amb_sfx/forest_bird01.vsnd"
+		vsnd_files = "sounds/diagnostics/two_2sec_lp.vsnd"
 	}
 	Diagnostic.test_vsnd_on_track_priority_1_sync = 
 	{
@@ -477,7 +538,7 @@
 		sync_track = "track_1"
 		sync_field = "public.sync_points"
 		track = "default_track"
-		vsnd_files = "sounds/diagnostics/ambient/random_amb_sfx/forest_bird01.vsnd"
+		vsnd_files = "sounds/diagnostics/one_2sec_lp.vsnd"
 	}
 	Diagnostic.test_vsnd_NO_track_priority_1_sync = 
 	{
@@ -487,7 +548,7 @@
 		pitch = 1.15
 		sync_track = "track_1"
 		sync_field = "public.sync_points"
-		vsnd_files = "sounds/diagnostics/ambient/random_amb_sfx/forest_bird01.vsnd"
+		vsnd_files = "sounds/diagnostics/one_2sec_lp.vsnd"
 	}
 	Diagnostic.test_vsnd_on_track_no_end = 
 	{
@@ -495,7 +556,7 @@
 		track = "track_1"
 		sync_track = "track_1"
 		priority = 1.0
-		vsnd_files = "sounds/diagnostics/ambient/random_amb_sfx/forest_bird01.vsnd"
+		vsnd_files = "sounds/diagnostics/one_2sec_lp.vsnd"
 	}
 	Diagnostic.test_vsnd_on_track_no_end2 = 
 	{
@@ -503,7 +564,7 @@
 		track = "track_1"
 		sync_track = "track_1"
 		priority = 1.0
-		vsnd_files = "sounds/diagnostics/ambient/random_amb_sfx/forest_bird01.vsnd"
+		vsnd_files = "sounds/diagnostics/two_2sec_lp.vsnd"
 	}
 	Diagnostic.test_stop_default_track = 
 	{
@@ -550,7 +611,7 @@
 	{
 		type = "test_vmix_voice_sends"
 		volume = 0.1
-		vgraph = "test.voice_sends"
+		vgraph = "test_voice_sends"
 		track1 = "t1"
 		track2 = "g2"
 		vsnd_files1 = "sounds/diagnostics/bell.vsnd"
@@ -561,7 +622,7 @@
 	{
 		type = "test_vmix_8track"
 		volume = 0.1
-		vgraph = "test.mix8"
+		vgraph = "test_mix8"
 		track1 = "t1"
 		track2 = "t2"
 		track3 = "t3"
@@ -785,16 +846,6 @@
 	Diagnostic.TestSoundEventGroupPersist = 
 	{
 		type = "test_groups_persist"
-	}
-	Diagnostic.arrangement_diagnostic_testtonelp_01 = 
-	{
-		type = "core_start_arrangement"
-		arrangement = "arrangement_diagnostic_testtonelp_01"
-	}
-	Diagnostic.arrangement_diagnostic_test_01 = 
-	{
-		type = "core_start_arrangement"
-		arrangement = "arrangement_diagnostic_test_01"
 	}
 	Diagnostic.TestLFO = 
 	{
@@ -1062,6 +1113,11 @@
 	{
 		type = "test_vsnd_loop_xfade"
 		in_vsnd = "sounds/containers/test_loop_xfade.vsnd"
+	}
+	Diagnostic.test_start_vsnd_tracks = 
+	{
+		_builtins._voicegraph = "test_mix8"
+		type = "update_test_start_vsnd_tracks"
 	}
 	_auto_calc_vnsd_duration_ = "false"
 }

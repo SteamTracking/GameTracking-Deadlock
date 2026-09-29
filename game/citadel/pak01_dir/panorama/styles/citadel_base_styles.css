@@ -1,12 +1,14 @@
 /* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
 
-@define sans: Retail Demo, Noto Sans, sans-serif;
+@define sans: Radiance, Retail Demo, Noto Sans, sans-serif;
 @define sansMono: Retail Text Demo, Noto Sans;
 @define serif: Reaver, serif;
 @define block: VALVEPulp, Noto Sans, sans-serif;
 @define oracle: VALVEOracle, Reaver, sans-serif;
-@define numericSans: MingLiu, Retail Demo, Noto Sans, sans-serif;
-@define numericOracle: Gulim, VALVEOracle, Reaver, sans-serif;
+@define catalogFont: Jost, Retail Demo, Noto Sans, sans-serif;
+@define numericSans: Radiance, Retail Demo, Noto Sans, sans-serif;
+@define numericOracle: Gulim, VALVEOracle, Reaver, Noto Sans, sans-serif;
+@define numericBlock: MingLiu, VALVEPulp, Noto Sans, sans-serif;
 @define baseText: #FFEFD7;
 @define baseBorder: #444444ff;
 @define selectedTextBackgroundColor: #66666633;
@@ -24,6 +26,10 @@
 @define chalkWhite: #FFFFFF;
 @define chalkYellow: #f0de8d;
 @define chalkBlue: #c3e8e8;
+@define deadlockGreenLight: #A8FFC9;
+@define deadlockGreen: #69e799;
+@define deadlockGreenDark: #47A36C;
+@define deadlockGreenDarker: #2B7047;
 @define soulColor: #70F8C1;
 @define shardColor: #99FFD6;
 @define brandGreen: #5FE69E;
@@ -47,6 +53,14 @@
 @define team2ColorDark: #4156A0;
 @define team2ColorDarker: #243265;
 @define team2ColorNeutral: #54596C;
+@define teamFriendlyColor: #FFEFD7;
+@define teamEnemyColor: #D73232;
+@define CBneutralColor: #76A4DC;
+@define CBgreenLaneColor: #A658CA;
+@define laneYellowColor: #F9D506;
+@define laneBlueColor: #1F5FCE;
+@define lanePurpleColor: #C241A8;
+@define laneGreenColor: #70DB32;
 @define team1Color: #D4860B;
 @define team1Foreground: #201500;
 @define team2Color: #4D75C3;
@@ -73,6 +87,12 @@
 @define enhancedColorBright: #3FDCFF;
 @define enhancedColorDark: #0E8FAC;
 @define enhancedColorDarker: #112179;
+@define corruptedColorLight: #F3FFAA;
+@define corruptedColorBright: #D8EC57;
+@define corruptedColorDark: #6A1FA8;
+@define corruptedColorDarker: #6A1FA8;
+@define corruptedPenaltyColor: #FF8F8F;
+@define corruptedPenaltyColorBright: #FF6232;
 @define ingameHudBlur: gaussian(2,2,2);
 @define menuBlur: mipmapgaussian( 4, 4, 4);
 @define weaponColor: #E58A00;
@@ -149,10 +169,12 @@
 @define wraithColor: #944D78;
 @define wreckerColor: #7F2DB1;
 @define yamatoColor: #625789;
-@define laneYellowColor: #F9D506;
-@define laneBlueColor: #437CDC;
-@define lanePurpleColor: #C241A8;
-@define laneGreenColor: #309746;
+@define nurseColor: #f55e20;
+@define ratkingColor: #733033;
+@define babaColor: #2E865A;
+@define artistColor: #653cbc;
+@define chessmasterColor: #AA9E7E;
+@define deadpackColor: #CE8D2A;
 @define akimboColor: #C7B4AB;
 @define ballistaColor: #BD63A4;
 @define kaliColor: #D7AE61;
@@ -195,6 +217,7 @@
 @define stunnedColor: #5e3a3a;
 Label
 {
+	font-family: sans;
 	color: offWhite;
 	font-size: 18px;
 }
@@ -236,7 +259,12 @@ Label
 
 .display
 {
-	font-family: serif;
+	font-family: oracle;
+}
+
+.block
+{
+	font-family: block;
 }
 
 .silvered
@@ -259,6 +287,7 @@ Label
 {
 	font-size: 70px;
 	font-weight: bold;
+	font-family: oracle;
 }
 
 .h2
@@ -267,6 +296,7 @@ Label
 	font-weight: bold;
 	font-family: block;
 	color: offWhite&88;
+	font-family: oracle;
 }
 
 .h3
@@ -305,11 +335,6 @@ Label
 	font-size: 16px;
 	font-weight: medium;
 	opacity: 0.6;
-}
-
-Label
-{
-	font-family: sans;
 }
 
 #TitleLabel
@@ -2198,6 +2223,50 @@ Button:active
 	color: offWhite;
 }
 
+@keyframes 'UIGroove1'
+{
+	0%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	26%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	51%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	76%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+}
+
 @keyframes 'UIGroove'
 {
 	0%
@@ -2746,7 +2815,8 @@ TextEntry.ThinTextEntry
 .DropDownNew
 {
 	flow-children: right;
-	width: 320px;
+	max-width: 320px;
+	width: fill-parent-flow(1);
 	height: fit-children;
 	vertical-align: center;
 	border-radius: 8px;
@@ -2830,7 +2900,7 @@ TextEntry.ThinTextEntry
 	color: offWhite;
 }
 
-DropDown,CitadelSettingsEnumDropDown
+DropDown
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #292e2e ), to( #191e1e ) );
 	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown_png.vtex");
@@ -2849,7 +2919,7 @@ DropDown,CitadelSettingsEnumDropDown
 	transition-timing-function: linear;
 }
 
-DropDown.NEWDropdown,CitadelSettingsEnumDropDown.NEWDropdown
+DropDown.NEWDropdown
 {
 	width: 100%;
 	height: fit-children;
@@ -2862,41 +2932,71 @@ DropDown.NEWDropdown,CitadelSettingsEnumDropDown.NEWDropdown
 	box-shadow: none;
 }
 
-DropDown.NEWDropdown Label,CitadelSettingsEnumDropDown.NEWDropdown Label
+DropDown.NEWDropdown Label
 {
 	width: fit-children;
 	margin: 0px;
 	padding: 8px 8px 8px 16px;
 }
 
-DropDown.NEWDropdown:hover,CitadelSettingsEnumDropDown.NEWDropdown:hover
+.customPingBound DropDown.NEWDropdown Label
+{
+	color: brandGreen&cc;
+}
+
+.customPingBound DropDown.NEWDropdown Label:hover
+{
+	color: brandGreen;
+}
+
+DropDown.NEWDropdown:hover
 {
 	background-color: none;
 }
 
-DropDown.NEWDropdown:focus,CitadelSettingsEnumDropDown.NEWDropdown:focus
+DropDown.NEWDropdown:focus
 {
 	background-image: none;
 }
 
-DropDown.NEWDropdown:disabled,CitadelSettingsEnumDropDown.NEWDropdown:disabled
+DropDown.NEWDropdown:disabled
 {
 	border: 0px;
 	background-color: offBlack&cc;
 	background-image: none;
 }
 
-DropDown.NEWDropdown:disabled Label,CitadelSettingsEnumDropDown.NEWDropdown:disabled Label
+DropDown.NEWDropdown:disabled Label
 {
 	color: offWhite&06;
 }
 
-DropDown:enabled:hover,CitadelSettingsEnumDropDown:enabled:hover
+DropDown.NEWDropdown.NotDefaultValue Label
+{
+	color: brandGreen&cc;
+}
+
+DropDown.NEWDropdown.NotDefaultValue:hover Label
+{
+	color: brandGreen;
+}
+
+DropDown.NEWDropdown.NotDefaultValue:disabled Label
+{
+	color: offWhite&06;
+}
+
+DropDown.NEWDropdown.NotDefaultValue:disabled:hover Label
+{
+	color: offWhite&06;
+}
+
+DropDown:enabled:hover
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #393e3e ), to( #292e2e ) );
 }
 
-DropDown:focus .TickBox,CitadelSettingsEnumDropDown:focus .TickBox
+DropDown:focus .TickBox
 {
 	text-overflow: clip;
 	white-space: nowrap;
@@ -2909,12 +3009,12 @@ DropDown:disabled
 	background-image: url("s2r://panorama/images/control_icons/arrow_dropdown_disabled_png.vtex");
 }
 
-DropDown.DropDownMenuVisible:focus,CitadelSettingsEnumDropDown.DropDownMenuVisible:focus
+DropDown.DropDownMenuVisible:focus
 {
 	animation-name: none;
 }
 
-DropDown Label,CitadelSettingsEnumDropDown Label
+DropDown Label
 {
 	width: 100%;
 	margin: 0px 29px 0px 6px;
@@ -2925,7 +3025,7 @@ DropDown Label,CitadelSettingsEnumDropDown Label
 	transition-timing-function: linear;
 }
 
-DropDown:focus Label,CitadelSettingsEnumDropDown:focus Label
+DropDown:focus Label
 {
 	color: white;
 }
@@ -2935,9 +3035,14 @@ DropDown:disabled Label
 	color: #444444;
 }
 
-DropDown.DropDownMenuVisible:focus Label,CitadelSettingsEnumDropDown.DropDownMenuVisible:focus Label
+DropDown.DropDownMenuVisible:focus Label
 {
 	color: white;
+}
+
+DropDown.DropDownMenuVisible.NotDefaultValue:focus Label
+{
+	color: brandGreen;
 }
 
 DropDownMenu
@@ -2945,7 +3050,8 @@ DropDownMenu
 	z-index: 0;
 	flow-children: down;
 	overflow: squish scroll;
-	width: 352px;
+	max-width: 320px;
+	width: fill-parent-flow(1);
 	border-radius: 4px;
 	background-color: #393731;
 	background-image: url("s2r://panorama/images/textures/paper_tile_1k_01_psd.vtex");
@@ -2996,6 +3102,11 @@ DropDownMenu Label:active
 	color: brandGreen;
 }
 
+DropDownMenu Label.Selected
+{
+	color: brandGreen;
+}
+
 DropDownMenu.DropDownMenuVisible
 {
 	opacity: 1.0;
@@ -3029,11 +3140,6 @@ CitadelSettingsToggle.RightLeftFlow
 CitadelSettingsToggle.RightLeftFlow .SwitchButton
 {
 	margin-right: 16px;
-}
-
-CitadelSettingsToggle.RightLeftFlow.ToggleOn .SettingLabel
-{
-	color: brandGreen;
 }
 
 CitadelSettingsToggle Label
@@ -4794,7 +4900,7 @@ CitadelHTMLPanel TextTooltip
 .InlineAttributeIcon.DamageAmp
 {
 	background-image: url("s2r://panorama/images/damage_psd.vtex");
-	wash-color: offWhite;
+	wash-color: colorEnemy;
 }
 
 .InlineAttributeIcon.SpiritDamage,.InlineAttributeIcon.BonusSpiritDamage,.InlineAttributeIcon.SpiritDPS,.InlineAttributeIcon.SpiritIcon
@@ -4832,7 +4938,7 @@ CitadelHTMLPanel TextTooltip
 	wash-color: armorColor;
 }
 
-.InlineAttributeIcon.WeaponDamage,.InlineAttributeIcon.BonusWeaponDamage,.InlineAttributeIcon.BulletDamage
+.InlineAttributeIcon.WeaponDamage,.InlineAttributeIcon.BonusWeaponDamage,.InlineAttributeIcon.WeaponDPS,.InlineAttributeIcon.BulletDamage
 {
 	background-image: url("s2r://panorama/images/icons/properties/damage_bullet_color.vsvg");
 }
@@ -4891,6 +4997,18 @@ CitadelHTMLPanel TextTooltip
 	wash-color: spiritBrightColor;
 }
 
+.InlineAttributeIcon.Curse
+{
+	background-image: url("s2r://panorama/images/icons/properties/condition_curse.vsvg");
+	wash-color: colorEnemy;
+}
+
+.InlineAttributeIcon.AbilityCooldown
+{
+	background-image: url("s2r://panorama/images/icons/properties/cooldown.vsvg");
+	wash-color: white;
+}
+
 .InlineAttributeName
 {
 	font-weight: semi-bold;
@@ -4936,7 +5054,7 @@ CitadelHTMLPanel TextTooltip
 	color: #99f051;
 }
 
-.InlineAttributeName.MeleeDamage,.InlineAttributeName.WeaponDamage,.InlineAttributeName.BonusWeaponDamage,.InlineAttributeName.BulletResist,.InlineAttributeName.BulletDamage
+.InlineAttributeName.MeleeDamage,.InlineAttributeName.WeaponDamage,.InlineAttributeName.WeaponDPS,.InlineAttributeName.BonusWeaponDamage,.InlineAttributeName.BulletResist,.InlineAttributeName.BulletDamage
 {
 	color: courageBrightColor;
 }
@@ -4959,6 +5077,11 @@ CitadelHTMLPanel TextTooltip
 .InlineAttributeName.Silence
 {
 	color: #e1a0ff;
+}
+
+.InlineAttributeName.AbilityCooldown
+{
+	color: offWhite;
 }
 
 .InlineHeroIcon
@@ -5203,7 +5326,45 @@ NumberEntry .ChangeValueButtons .ChangeValueButton .ChangeValueButtonLabel
 	
 }
 
-@import url("s2r://panorama/styles/split_label.vcss_c");
+@keyframes 'DefaultAnimX'
+{
+	0%
+	{
+		transform: translateX( 1px );
+	}
+	
+	50%
+	{
+		transform: translateY( 1px );
+	}
+	
+	100%
+	{
+		transform: translateX( -1px );
+	}
+	
+}
+
+@keyframes 'DefaultAnimY'
+{
+	0%
+	{
+		transform: translateY( 1px );
+	}
+	
+	50%
+	{
+		transform: translateX( 1px );
+	}
+	
+	100%
+	{
+		transform: translateY( -1px );
+	}
+	
+}
+
+@import url("s2r://panorama/styles/split_label.vcss");
 @keyframes 'Groove1'
 {
 	0%
@@ -5267,7 +5428,7 @@ CitadelButton .Bottom
 	wash-color: offWhite;
 	brightness: 0.75;
 	saturation: 2;
-	opacity: 0.15;
+	opacity: 0.6;
 	transition-property: opacity;
 	transition-duration: 0.2s;
 }
@@ -5284,7 +5445,7 @@ CitadelButton .Top
 	wash-color: offWhite;
 	brightness: 0.75;
 	saturation: 2;
-	opacity: 0.5;
+	opacity: 1;
 	opacity-mask: url("s2r://panorama/images/buttons/button_mask_threshold_psd.vtex");
 	opacity-mask-threshold: 100% 2%;
 	transition-property: opacity-mask;
@@ -5306,7 +5467,7 @@ CitadelButton .Content .ButtonImage
 	width: height-percentage( 65% );
 	height: 32px;
 	wash-color: offWhite;
-	opacity: 0.7;
+	opacity: 0.9;
 }
 
 CitadelButton .Content .ButtonLabel
@@ -5315,12 +5476,16 @@ CitadelButton .Content .ButtonLabel
 	vertical-align: center;
 	text-align: center;
 	font-family: oracle, block, sans;
-	font-size: 18px;
+	font-size: 20px;
 	font-weight: bold;
 	color: offWhite&aa;
-	text-shadow: 0px 0px 12px rgba(0, 0, 0, 0.75);
 	transition-property: color, brightness;
 	transition-duration: 0.2s;
+}
+
+CitadelButton .Content .ButtonLabel:not(.Language_english)
+{
+	text-overflow: shrink;
 }
 
 CitadelButton.HasImage:not(.HasText)
@@ -5360,19 +5525,26 @@ CitadelButton:hover:enabled
 	sound: "UI.MainMenu.Hover";
 }
 
+CitadelButton:hover:enabled .ButtonLabel
+{
+	color: offBlack;
+}
+
 CitadelButton:hover:enabled .Bottom
 {
 	opacity: 0;
+	wash-color: deadlockGreen;
 	transition-duration: 0.3s;
 }
 
 CitadelButton:hover:enabled .Top
 {
 	wash-color: offWhite;
+	wash-color: deadlockGreen;
 	opacity-mask: url("s2r://panorama/images/buttons/button_mask_threshold_psd.vtex");
 	opacity-mask-threshold: 2% 2%;
 	opacity: 0.5;
-	transition-property: opacity-mask;
+	transition-property: opacity-mask, wash-color;
 	transition-duration: 0.3s;
 }
 
@@ -5385,6 +5557,32 @@ CitadelButton:hover:enabled Label
 {
 	color: offWhite;
 	color: offBlack;
+}
+
+CitadelButton.Fill .Bottom
+{
+	border-image: url("s2r://panorama/images/buttons/button_border_fill_psd.vtex");
+}
+
+CitadelButton.Fill .Content Label
+{
+	color: offBlack;
+}
+
+CitadelButton.Fill.Dark Label
+{
+	color: offWhite&ee;
+}
+
+CitadelButton.Fill.Dark .Bottom
+{
+	border-color: offBlack&22;
+	opacity: 0.9;
+}
+
+CitadelButton.Fill.Dark:hover Label
+{
+	color: offWhite;
 }
 
 CitadelButton.CTA .Bottom
@@ -5400,7 +5598,7 @@ CitadelButton.CTA .Top
 	opacity: 1;
 }
 
-CitadelButton.CTA Label
+CitadelButton.CTA .Content Label
 {
 	color: offWhite&aa;
 	transition-property: color;
@@ -5476,10 +5674,10 @@ CitadelButton.Dark .Top
 	opacity: 1;
 }
 
-CitadelButton.Dark Label
+CitadelButton.Dark .Content Label
 {
-	color: offBlack;
 	text-shadow: none;
+	color: offBlack;
 }
 
 CitadelButton.Dark:hover Label
@@ -5488,23 +5686,7 @@ CitadelButton.Dark:hover Label
 	brightness: 1;
 }
 
-CitadelButton.Fill .Bottom
-{
-	border-image: url("s2r://panorama/images/buttons/button_border_fill_psd.vtex");
-}
-
-CitadelButton.Fill.Dark Label
-{
-	color: offWhite&66;
-}
-
-CitadelButton.Fill.Dark .Bottom
-{
-	border-color: offBlack&22;
-	opacity: 0.5;
-}
-
-CitadelButton.Fill.Dark:hover Label
+CitadelButton.Dark.Fill .Content Label
 {
 	color: offWhite;
 }

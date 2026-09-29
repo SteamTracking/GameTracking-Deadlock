@@ -7,12 +7,12 @@ enum AI_FacingTargetRequestSource_t : uint32_t
 	eChoreo = 1,
 	// MPropertyFriendlyName = "LevelScript"
 	eLevelScript = 2,
-	// MPropertyFriendlyName = "SmartGoal"
-	eSmartGoal = 3,
 	// MPropertyFriendlyName = "Schedule"
-	eSchedule = 4,
-	// MPropertyFriendlyName = "MoveStrategy"
-	eMoveStrategy = 5,
+	eSchedule = 3,
+	// MPropertyFriendlyName = "Movement"
+	eMovement = 4,
+	// MPropertyFriendlyName = "Strategy"
+	eStrategy = 5,
 	// MPropertyFriendlyName = "Navigator"
 	eNavigator = 6,
 	// MPropertyFriendlyName = "NPC"

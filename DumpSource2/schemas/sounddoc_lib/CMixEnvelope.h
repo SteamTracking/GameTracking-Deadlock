@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_flAttackTime": 300.000000,
 //	"m_flHoldTime": 500.000000,
 //	"m_flReleaseTime": 300.000000

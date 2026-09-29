@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -138,6 +141,7 @@
 //	"m_bRemoveOnInterrupted": false,
 //	"m_StunParticle": "",
 //	"m_strStunSound": "",
+//	"m_strExplodeHitSound": "",
 //	"m_NoExplodeModifier":
 //	{
 //	},
@@ -153,6 +157,7 @@ class CModifierUppercuttedVData : public CCitadelModifierVData
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_StunParticle;
 	// MPropertyGroupName = "Sounds"
 	CSoundEventName m_strStunSound;
+	CSoundEventName m_strExplodeHitSound;
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_NoExplodeModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_ExplodeDebuffModifier;

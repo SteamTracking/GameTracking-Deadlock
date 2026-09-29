@@ -8,6 +8,7 @@
 //	"m_AttachmentType": "PATTACH_INVALID",
 //	"m_strAttachmentName": ""
 //}
+// MPropertyFriendlyName = "Citadel Team Relative Particle Settings"
 class CitadelTeamRelativeParticleSettings_t
 {
 	CStrongHandle< InfoForResourceTypeIParticleSystemDefinition > m_strFriendlyParticle;

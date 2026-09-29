@@ -42,8 +42,10 @@
 	{
 		base = "Base.Stingers.2d"
 		mixer_mixgroup = "Music-KS"
-		volume = 2.0
-		delay = 0.1
+		send_name = "music-ks"
+		volume = 1.0
+		delay = 0.2
+		volume_fade_out = 0.3
 	}
 	Music.MainMenu = 
 	{
@@ -296,7 +298,7 @@
 	{
 		type = "citadel_music_postgame"
 		mixer_mixgroup = "Music-GameOver"
-		volume = 4.0
+		volume = 2.0
 		event_voice_layer = "ui"
 		event_use_music_convar = true
 		volume_fade_out = 2.0
@@ -318,32 +320,35 @@
 	Stinger.Respawn = 
 	{
 		base = "Base.Stingers.2d"
-		volume = -3.0
+		volume = -2.0
+		volume_fade_out = 1
 		vsnd_files = 
 		[
 			"sounds/music/music_stinger_player_respawn.vsnd",
 		]
-		vsnd_duration = 7.174535
+		vsnd_duration = 10.000362
 	}
 	Stinger.Respawn.Countdown = 
 	{
 		base = "Base.Stingers.2d"
-		volume = -3.0
+		volume = 0.0
+		volume_fade_out = 1
 		vsnd_files = 
 		[
 			"sounds/music/music_stinger_player_respawn_countdown.vsnd",
 		]
-		vsnd_duration = 7.523401
+		vsnd_duration = 7.671882
 	}
 	Stinger.Death = 
 	{
 		base = "Base.Stingers.2d"
 		volume = 3.0
+		volume_fade_out = 1
 		vsnd_files = 
 		[
 			"sounds/music/music_stinger_player_death.vsnd",
 		]
-		vsnd_duration = 6.586894
+		vsnd_duration = 10.159909
 	}
 	Stinger.Rejuvinator.Claimed.Friendly = 
 	{
@@ -528,7 +533,6 @@
 		volume = 0.0
 		volume_fade_in = 0.1
 		max_fade_distance = 3200.0
-		filter_speed = 2.0
 		vsnd_files = 
 		[
 			"sounds/music/music_idol_carry_lp_141bpm.vsnd",
@@ -623,6 +627,16 @@
 		]
 		vsnd_duration = 6.808504
 	}
+	Stinger.CorruptedShop.Announce = 
+	{
+		base = "Base.Stingers.2d"
+		volume = 2.0
+		vsnd_files = 
+		[
+			"sounds/music/music_corrupted_shop_announce.vsnd",
+		]
+		vsnd_duration = 7.99254
+	}
 	Music.Koth.Capture.Lp = 
 	{
 		type = "citadel_music_koth_capture"
@@ -673,23 +687,15 @@
 		]
 		vsnd_duration = 7.662245
 	}
-	Stinger.KillStreak = 
-	{
-		base = "Base.Stingers.KillStreaks.2d"
-		vsnd_files = 
-		[
-			"sounds/music/music_stringer_kill_streak.vsnd",
-		]
-		vsnd_duration = 4.388571
-	}
 	Stinger.KillStreak.FirstBlood = 
 	{
 		base = "Base.Stingers.KillStreaks.2d"
+		volume = 0.0
 		vsnd_files = 
 		[
 			"sounds/music/music_stinger_first_blood.vsnd",
 		]
-		vsnd_duration = 5.567165
+		vsnd_duration = 4.773401
 	}
 	Stinger.KillStreak_01 = 
 	{
@@ -698,7 +704,7 @@
 		[
 			"sounds/music/music_stinger_ks_01.vsnd",
 		]
-		vsnd_duration = 6.748866
+		vsnd_duration = 5.911157
 	}
 	Stinger.KillStreak_02 = 
 	{
@@ -707,7 +713,7 @@
 		[
 			"sounds/music/music_stinger_ks_02.vsnd",
 		]
-		vsnd_duration = 6.935669
+		vsnd_duration = 6.163877
 	}
 	Stinger.KillStreak_03 = 
 	{
@@ -716,7 +722,7 @@
 		[
 			"sounds/music/music_stinger_ks_03.vsnd",
 		]
-		vsnd_duration = 8.721519
+		vsnd_duration = 6.152426
 	}
 	Stinger.KillStreak_04 = 
 	{
@@ -725,7 +731,7 @@
 		[
 			"sounds/music/music_stinger_ks_04.vsnd",
 		]
-		vsnd_duration = 9.052767
+		vsnd_duration = 5.131247
 	}
 	Stinger.KillStreak_05 = 
 	{
@@ -734,7 +740,7 @@
 		[
 			"sounds/music/music_stinger_ks_05.vsnd",
 		]
-		vsnd_duration = 9.243629
+		vsnd_duration = 5.905079
 	}
 	Stinger.KillStreak_06 = 
 	{
@@ -743,7 +749,7 @@
 		[
 			"sounds/music/music_stinger_ks_06.vsnd",
 		]
-		vsnd_duration = 8.344082
+		vsnd_duration = 5.732177
 	}
 	Stinger.KillStreak_07 = 
 	{
@@ -752,7 +758,7 @@
 		[
 			"sounds/music/music_stinger_ks_07.vsnd",
 		]
-		vsnd_duration = 7.412472
+		vsnd_duration = 5.193265
 	}
 	Stinger.KillStreak_08 = 
 	{
@@ -761,7 +767,7 @@
 		[
 			"sounds/music/music_stinger_ks_08.vsnd",
 		]
-		vsnd_duration = 9.260544
+		vsnd_duration = 5.186962
 	}
 	Stinger.KillStreak_09 = 
 	{
@@ -770,7 +776,7 @@
 		[
 			"sounds/music/music_stinger_ks_09.vsnd",
 		]
-		vsnd_duration = 10.876667
+		vsnd_duration = 5.40585
 	}
 	Stinger.KillStreak_10 = 
 	{
@@ -779,7 +785,7 @@
 		[
 			"sounds/music/music_stinger_ks_10.vsnd",
 		]
-		vsnd_duration = 9.56127
+		vsnd_duration = 6.912086
 	}
 	Stinger.RevealRank_01 = 
 	{
@@ -788,7 +794,7 @@
 		[
 			"sounds/music/music_stinger_ks_01.vsnd",
 		]
-		vsnd_duration = 6.748866
+		vsnd_duration = 5.911157
 	}
 	Stinger.RevealRank_02 = 
 	{
@@ -797,7 +803,7 @@
 		[
 			"sounds/music/music_stinger_ks_01.vsnd",
 		]
-		vsnd_duration = 6.748866
+		vsnd_duration = 5.911157
 	}
 	Stinger.RevealRank_03 = 
 	{
@@ -806,7 +812,7 @@
 		[
 			"sounds/music/music_stinger_ks_02.vsnd",
 		]
-		vsnd_duration = 6.935669
+		vsnd_duration = 6.163877
 	}
 	Stinger.RevealRank_04 = 
 	{
@@ -815,7 +821,7 @@
 		[
 			"sounds/music/music_stinger_ks_03.vsnd",
 		]
-		vsnd_duration = 8.721519
+		vsnd_duration = 6.152426
 	}
 	Stinger.RevealRank_05 = 
 	{
@@ -824,7 +830,7 @@
 		[
 			"sounds/music/music_stinger_ks_04.vsnd",
 		]
-		vsnd_duration = 9.052767
+		vsnd_duration = 5.131247
 	}
 	Stinger.RevealRank_06 = 
 	{
@@ -833,7 +839,7 @@
 		[
 			"sounds/music/music_stinger_ks_05.vsnd",
 		]
-		vsnd_duration = 9.243629
+		vsnd_duration = 5.905079
 	}
 	Stinger.RevealRank_07 = 
 	{
@@ -842,7 +848,7 @@
 		[
 			"sounds/music/music_stinger_ks_06.vsnd",
 		]
-		vsnd_duration = 8.344082
+		vsnd_duration = 5.732177
 	}
 	Stinger.RevealRank_08 = 
 	{
@@ -851,7 +857,7 @@
 		[
 			"sounds/music/music_stinger_ks_07.vsnd",
 		]
-		vsnd_duration = 7.412472
+		vsnd_duration = 5.193265
 	}
 	Stinger.RevealRank_09 = 
 	{
@@ -860,7 +866,7 @@
 		[
 			"sounds/music/music_stinger_ks_08.vsnd",
 		]
-		vsnd_duration = 9.260544
+		vsnd_duration = 5.186962
 	}
 	Stinger.RevealRank_10 = 
 	{
@@ -869,7 +875,7 @@
 		[
 			"sounds/music/music_stinger_ks_09.vsnd",
 		]
-		vsnd_duration = 10.876667
+		vsnd_duration = 5.40585
 	}
 	Stinger.RevealRank_11 = 
 	{
@@ -878,7 +884,7 @@
 		[
 			"sounds/music/music_stinger_ks_10.vsnd",
 		]
-		vsnd_duration = 9.56127
+		vsnd_duration = 6.912086
 	}
 	Stinger.Tutorial.Complete = 
 	{
@@ -896,7 +902,7 @@
 		[
 			"sounds/music/music_stinger_first_blood.vsnd",
 		]
-		vsnd_duration = 5.567165
+		vsnd_duration = 4.773401
 	}
 	Music.Shop.Silence = 
 	{
@@ -939,9 +945,8 @@
 		base = "Music.Shop"
 		volume = -2.0
 		delay_rand_min = 0.0
-		cull_at_distance = 6000.0
+		cull_at_distance = 3000.0
 		delay_rand_max = 0.0
-		pitch = 1.0
 		volume_falloff_max = 1400.0
 		occlusion_max_velocity = 0.9
 		occlusion_min = 0.4
@@ -960,7 +965,7 @@
 		[
 			"sounds/music/music_stinger_ks_03.vsnd",
 		]
-		vsnd_duration = 8.721519
+		vsnd_duration = 6.152426
 	}
 	Stinger.Brawl.Overtime.Announce = 
 	{

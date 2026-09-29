@@ -70,7 +70,8 @@
 //			0.000000,
 //			0.000000
 //		]
-//	}
+//	},
+//	"m_flCompareValue": 0.000000
 //}
 // MPropertyCustomEditor = "PerParticleFloatInput()"
 class CPerParticleFloatInput : public CParticleFloatInput

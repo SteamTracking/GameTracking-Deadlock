@@ -20,7 +20,9 @@
 //	"m_bCollectNearbyTargetsWithCone": false,
 //	"m_flNearbySweepOffset": -59.000000,
 //	"m_flNearbySweepRadius": 78.000000,
+//	"m_bTargetingPreviewDesaturatesScreen": true,
 //	"m_eAbilityActivation": "CITADEL_ABILITY_ACTIVATION_NONE",
+//	"m_flToggleOffDelay": 0.000000,
 //	"m_TriggerButtonPreReqButton": "",
 //	"m_TriggerButtonOverride": "",
 //	"m_eAbilitySpectatePriority": "CITADELTV_ABILITY_SPECTATE_PRIORITY_NONE",
@@ -33,7 +35,7 @@
 //	},
 //	"m_nAbilityTargetTypes": "",
 //	"m_nAbilityTargetFlags": "",
-//	"m_eTargettingLOSCheck": "ELOSCheck_Bounds",
+//	"m_eTargettingLOSCheck": "Bounds",
 //	"m_bitsPreCastEnabledStateMask": "",
 //	"m_bitsChannelEnabledStateMask": "",
 //	"m_bitsPostCastEnabledStateMask": "",
@@ -41,151 +43,8 @@
 //	"m_flBossDamageScale": 1.000000,
 //	"m_bShowTargetingPreviewWhileChanneling": false,
 //	"m_bShowTargetingPreviewWhileCasting": false,
-//	"m_WeaponInfo":
+//	"m_mapWeaponInfos":
 //	{
-//		"m_flBulletDamage": 0.000000,
-//		"m_eDamageType": "CITADEL_DAMAGETYPE_BULLET",
-//		"m_iBullets": 1,
-//		"m_iSplitShotsMax": -1,
-//		"m_flSplitShotAngles": -1.000000,
-//		"m_bExpressShotDisabled": false,
-//		"m_bHitOnceAcrossAllBullets": false,
-//		"m_iBulletsToFullyClaimOrb": 1,
-//		"m_flExplosionRadius": 0.000000,
-//		"m_flExplosionDamageScaleAtMaxRadius": 0.300000,
-//		"m_bAllowExplosionToCollectGold": false,
-//		"m_iClipSize": 0,
-//		"m_flCycleTime": 0.150000,
-//		"m_flBulletCreationDelay": 0.000000,
-//		"m_iBurstShotCount": 1,
-//		"m_flIntraBurstCycleTime": 0.000000,
-//		"m_iAmmoConsumedPerShot": 1,
-//		"m_flRange": 8192.000000,
-//		"m_flRangeWhileZoomed": 0.000000,
-//		"m_flDamageFalloffStartRange": 0.000000,
-//		"m_flDamageFalloffEndRange": 900.000000,
-//		"m_flDamageFalloffBias": 0.500000,
-//		"m_flDamageFalloffStartScale": 1.000000,
-//		"m_flDamageFalloffEndScale": 0.000000,
-//		"m_bDontPassThroughPortals": false,
-//		"m_bPlayImpactEffectsOnTeammates": false,
-//		"m_flPenetrationPercent": 0.000000,
-//		"m_flIronSightsTime": 0.100000,
-//		"m_reloadDuration": 0.000000,
-//		"m_bReloadUseActiveWeaponInfoDuration": false,
-//		"m_bReloadSingleBullets": false,
-//		"m_bReloadSingleBulletsAllowCancel": false,
-//		"m_flReloadSingleBulletsInitialDelay": 0.000000,
-//		"m_bCanCrit": true,
-//		"m_flCritBonusStartRange": 0.000000,
-//		"m_flCritBonusEndRange": 0.000000,
-//		"m_flCritBonusStart": 1.000000,
-//		"m_flCritBonusEnd": 1.000000,
-//		"m_flCritBonusAgainstNPCs": 0.200000,
-//		"m_eCritFilter": "CITADEL_UNIT_TARGET_ALL",
-//		"m_eCritAlwaysFilter": "",
-//		"m_bSpinsUp": false,
-//		"m_flMaxSpinCycleTime": -1.000000,
-//		"m_flSpinIncreaseRate": 0.000000,
-//		"m_flSpinDecayRate": 0.000000,
-//		"m_flBuildUpRate": -1.000000,
-//		"m_bIsSemiAuto": false,
-//		"m_flBulletSpeed": 1000.000000,
-//		"m_flBulletSpeedRandomFactor": 0.000000,
-//		"m_flBulletGravityScale": 1.000000,
-//		"m_flBulletRadius": 0.000000,
-//		"m_flBulletRadiusVsWorld": 0.000000,
-//		"m_flBulletLifetime": 0.000000,
-//		"m_flVerticalAimBias": 0.000000,
-//		"m_flBulletInheritShooterVelocityScale": 0.000000,
-//		"m_bCanZoom": true,
-//		"m_flZoomFOV": 70.000000,
-//		"m_flZoomFOV_Relative": -5.000000,
-//		"m_flZoomMoveSpeedPercent": 0.750000,
-//		"m_flShootMoveSpeedPercent": 0.750000,
-//		"m_flReloadMoveSpeedPercent": 1.000000,
-//		"m_bUsesSpreadPattern": true,
-//		"m_Spread": 0.200000,
-//		"m_bFirstShotPerfectAccuracy": false,
-//		"m_AimingShootSpreadPenalty": 0.000000,
-//		"m_flScatterYawScale": 1.000000,
-//		"m_flShootSpreadPenaltyPerShot": 0.000000,
-//		"m_ShootSpreadPenaltyPerShotNormalization":
-//		{
-//			"m_bNormalizeSpreadPerShot": false,
-//			"m_FireRatePctRange":
-//			[
-//				0.000000,
-//				100.000000
-//			],
-//			"m_SpreadPerShotFactor": 1.000000
-//		},
-//		"m_flShootSpreadPenaltyDecayDelay": -1.000000,
-//		"m_flShootSpreadPenaltyDecay": 1.000000,
-//		"m_flSpreadPenaltyDecay": 3.000000,
-//		"m_flShootingUpSpreadPenalty": 0.000000,
-//		"m_flAutoReplenishClip": 0.000000,
-//		"m_NpcAimingSpread": 0.000000,
-//		"m_vecScatterOffsets":
-//		[
-//		],
-//		"m_flPelletScatterFactor": 1.000000,
-//		"m_flPelletScatterSpreadFactor": 0.500000,
-//		"m_bApplySpreadToFirstPellet": false,
-//		"m_vecOriginOffsets":
-//		[
-//		],
-//		"m_flVerticalPunch": 1.000000,
-//		"m_flHorizontalPunch": 0.500000,
-//		"m_HorizontalRecoil":
-//		{
-//			"m_Range": 0.000000,
-//			"m_flBurstSlope": 0.000000,
-//			"m_flBurstExponent": 1.000000,
-//			"m_flBurstConstant": 0.000000
-//		},
-//		"m_VerticallRecoil":
-//		{
-//			"m_Range": 0.000000,
-//			"m_flBurstSlope": 0.000000,
-//			"m_flBurstExponent": 1.000000,
-//			"m_flBurstConstant": 0.000000
-//		},
-//		"m_flRecoilSpeed": 1.000000,
-//		"m_flRecoilRecoveryDelayFactor": 1.000000,
-//		"m_flRecoilRecoverySpeed": 1.000000,
-//		"m_flRecoilShotIndexRecoveryTimeFactor": 0.250000,
-//		"m_nRecoilSeed": 0,
-//		"m_szBulletTravelTracerParticle": "particles/weapon_fx/default_tracer.vpcf",
-//		"m_szSelfBulletTravelTracerParticle": "",
-//		"m_szBulletLinkParticle": "",
-//		"m_bUseDesatForFriendlyNonHeroTracer": true,
-//		"m_eAttachmentSourceType": "EAttachmentSource_WeaponMuzzles",
-//		"m_strCustomAttachmentSource": "ability_cast",
-//		"m_szMuzzleFlashEffectName": "",
-//		"m_strWeaponImpactEffect": "",
-//		"m_mapImpactEffects":
-//		{
-//		},
-//		"m_bUseWeaponAbilityName": false,
-//		"m_flDamageForce": 50.000000,
-//		"m_strShootSound": "",
-//		"m_strFirstShotSound": "",
-//		"m_strShotReleaseSound": "",
-//		"m_strBulletLoopingSound": "",
-//		"m_strBulletWhizSound": "",
-//		"m_strBulletImpactSound": "",
-//		"m_flBulletWhizDistance": 150.000000,
-//		"m_strReloadSound": "",
-//		"m_strReloadEndSound": "",
-//		"m_strLocalPlayerBulletImpactSound": "",
-//		"m_strLocalPlayerBulletImpactHeavySound": "",
-//		"m_strZoomInSound": "",
-//		"m_strZoomOutSound": "",
-//		"m_strSpinUpSound": "",
-//		"m_strSpinDownSound": "",
-//		"m_strSpinUpLoopSound": "",
-//		"m_flMaxLagCompensation": 340282346638528859811704183484516925440.000000
 //	},
 //	"m_projectileInfo":
 //	{
@@ -197,6 +56,8 @@
 //		"m_flUpSpeed": 100.000000,
 //		"m_flMaxLinearRange": 0.000000,
 //		"m_flVerticalAimBias": 0.000000,
+//		"m_flNoCollisionDuration": 0.000000,
+//		"m_bAllowMotionDuringNoCollisionDuration": false,
 //		"m_eProjectileShape": "Sphere",
 //		"m_flTriggerRadius": 1.500000,
 //		"m_flPhysicsRadius": 1.500000,
@@ -275,15 +136,13 @@
 //	"m_vecAbilityUpgrades":
 //	[
 //	],
-//	"m_strCastAnimGraphParam": "",
-//	"m_strSelectionNameOverride": "",
-//	"m_strCastAnimSequenceName": "",
 //	"m_bSuppressOutOfCombatOnCast": true,
 //	"m_bSuppressOutOfCombatWhileChanneling": true,
 //	"m_strAG2SourceName": "",
 //	"m_strAG2CastingAction": "casting",
 //	"m_strAG2ChannelingAction": "channeling",
 //	"m_strAG2CastCompletedAction": "cast_completed",
+//	"m_strAG2CastFailedAction": "",
 //	"m_AbilityTooltipDetails":
 //	{
 //		"m_vecAbilityInfoSections":
@@ -295,7 +154,6 @@
 //	},
 //	"m_strCSSClass": "",
 //	"m_strAbilityImage": "",
-//	"m_strMoviePreviewPath": "",
 //	"m_HUDPanel":
 //	{
 //		"m_vecHUDElements":
@@ -313,6 +171,10 @@
 //	"m_strFlyUpLocString": "",
 //	"m_strFlyDownLocString": "",
 //	"m_strSubCastUICSSClass": "",
+//	"m_sCustomStackLabel": "",
+//	"m_HudSharedStyle": "",
+//	"m_sCustomTooltipID": "",
+//	"m_bCustomTooltipInteractive": false,
 //	"m_additionalAbilities":
 //	{
 //		"m_strTitle": "",
@@ -388,19 +250,19 @@
 //		]
 //	},
 //	"m_bEndChannelStartSequenceOnChannelComplete": true,
-//	"m_flCameraPreviewOffset": -1.000000,
-//	"m_flCameraPreviewDistance": -1.000000,
-//	"m_flCameraPreviewSpeed": -1.000000,
 //	"m_previewParticle": "",
 //	"m_strPreviewParticleEffectConfig": "",
 //	"m_PreviewPathParticle": "",
+//	"m_bUseSatShapesOnPreview": true,
+//	"m_AOEPreviewParticleOverride": "",
+//	"m_ConePreviewParticleOverride": "",
+//	"m_LinePreviewParticleOverride": "",
 //	"m_mapCastEventParticles":
 //	{
 //	},
 //	"m_skillshotHitParticle": "",
 //	"m_skillshotMissParticle": "",
 //	"m_TargetingPreviewParticle": "",
-//	"m_HudSharedStyle": "",
 //	"m_strSelectedSound": "",
 //	"m_strUnselectedSound": "",
 //	"m_strSelectedLoopSound": "",
@@ -425,23 +287,42 @@
 //	],
 //	"m_cosmeticInfo":
 //	{
-//		"m_bIsSeasonal": false
+//		"m_strTooltipCSSClass": ""
 //	},
-//	"m_iItemTier": "EModTier_Invalid",
-//	"m_nUpgradeSlotCost": 0,
-//	"m_bWarnIfNoAffectedAbilities": false,
-//	"m_bShowTextDescription": true,
-//	"m_eShopFilters": "",
-//	"m_eAbilityRequirements": "",
-//	"m_strShopIconLarge": "",
-//	"m_strLocSearchString": "",
 //	"m_vecTooltipSectionInfo":
 //	[
 //	],
-//	"m_sCustomTooltipID": "",
-//	"m_bCustomTooltipInteractive": false,
+//	"m_iItemTier": "EModTier_Invalid",
+//	"m_nShopPriceOverride": -1,
+//	"m_bWarnIfNoAffectedAbilities": false,
+//	"m_bShowTextDescription": true,
+//	"m_eDisableShopFilters": "",
+//	"m_eAdditionalShopFilters": "",
+//	"m_eGeneratedShopFilters": "",
+//	"m_eAbilityRequirements": "",
+//	"m_strShopIconLarge": "",
+//	"m_strLocSearchString": "",
+//	"m_nShopVersion": 0,
+//	"m_strDisableItemTarget": "",
+//	"m_strOverrideDisplayNameLocToken": "",
 //	"m_bDisabledForBots": false,
-//	"m_sCustomStackLabel": "",
+//	"m_bAllowItemStacking": true,
+//	"m_CorruptedItemInfo":
+//	{
+//		"m_nSoulCostOverride": -1,
+//		"m_Upgrade":
+//		{
+//			"m_vecPropertyUpgrades":
+//			[
+//			]
+//		},
+//		"m_vecIntrinsicModifiers":
+//		[
+//		],
+//		"m_vecExcludedPenalties":
+//		[
+//		]
+//	},
 //	"m_vecComponentItems":
 //	[
 //	],
@@ -453,7 +334,12 @@
 //	},
 //	"m_PullModifier":
 //	{
-//	}
+//	},
+//	"m_AfterChannelModifier":
+//	{
+//	},
+//	"m_bHealCaster": true,
+//	"m_bAllowPull": true
 //}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Item_RescueBeamVData : public CitadelItemVData
@@ -461,4 +347,8 @@ class CCitadel_Item_RescueBeamVData : public CitadelItemVData
 	// MPropertyGroupName = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_DispelAndHealModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_PullModifier;
+	CEmbeddedSubclass< CCitadelModifier > m_AfterChannelModifier;
+	// MPropertyStartGroup = "Gameplay"
+	bool m_bHealCaster;
+	bool m_bAllowPull;
 };

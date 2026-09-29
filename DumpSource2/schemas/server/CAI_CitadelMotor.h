@@ -1,3 +1,3 @@
-class CAI_CitadelMotor : public CAI_Motor
+class CAI_CitadelMotor : public IAI_Motor
 {
 };

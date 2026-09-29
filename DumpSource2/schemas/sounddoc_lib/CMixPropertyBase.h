@@ -4,7 +4,8 @@
 //	"m_Comment": "",
 //	"m_bActive": true,
 //	"m_bSolo": false,
-//	"m_bEditProperties": false
+//	"m_bEditProperties": false,
+//	"m_nGenerationId": 0
 //}
 // MHasKV3TransferPolymorphicClassname
 class CMixPropertyBase
@@ -25,4 +26,7 @@ class CMixPropertyBase
 	// MPropertySortPriority = -1
 	// MPropertyHideField
 	bool m_bEditProperties;
+	// MPropertySortPriority = -1
+	// MPropertyHideField
+	int32 m_nGenerationId;
 };

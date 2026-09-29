@@ -1,3 +1,4 @@
+// MEnumFlagsWithOverlappingBits
 enum AI_VolumetricEventTypeMask_t : uint64_t
 {
 	// MEnumeratorIsNotAFlag
@@ -14,6 +15,5 @@ enum AI_VolumetricEventTypeMask_t : uint64_t
 	eWarnFriends = 512,
 	eGunfire = 1024,
 	eExplosion = 2048,
-	// MEnumeratorIsNotAFlag
 	eAll = -1,
 };

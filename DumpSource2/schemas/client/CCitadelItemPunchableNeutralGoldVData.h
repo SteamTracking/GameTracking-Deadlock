@@ -1,6 +1,8 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CCitadelItemPunchableNeutralGoldVData",
+//	"m_flPhysicsRadius": 60.000000,
 //	"m_AmbientParticle": "",
+//	"m_nSpawnMusicState": "k_EMusicQueue_Invalid",
 //	"m_flGroundOffset": 40.000000,
 //	"m_flSpinRate": 10.000000,
 //	"m_flBobHeight": 40.000000,

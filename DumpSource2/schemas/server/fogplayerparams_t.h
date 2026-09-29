@@ -1,8 +1,7 @@
-// MNetworkVarNames = "CHandle< CFogController> m_hCtrl"
+// MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class fogplayerparams_t
 {
-	// MNetworkEnable
-	// MNetworkUserGroup = "PlayerFogController"
 	CHandle< CFogController > m_hCtrl;
 	float32 m_flTransitionTime;
 	Color m_OldColor;

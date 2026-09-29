@@ -59,6 +59,7 @@
 .?AVIKV3ResourceAllocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0HDHEGOGFHG@UPermEntityLumpData_t@@@@
 .?AVIKV3ResourceDeallocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0GEGPGOHHHG@UWorldNode_t@@@@
 .?AVIKV3ResourceDeallocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0HDHEGOGFHG@UPermEntityLumpData_t@@@@
+.?AVIKV3TransferInterface_ResourceLoad@@
 .?AVIResourceTypeManager@@
 .?AVISceneObjectDesc@@
 .?AVISequence@@
@@ -70,6 +71,7 @@
 <<NULL ENTITY LUMP>>
 <no classname>
 <no targetname>
+<non-RTTI type>
 ?expf
 AggregateInstanceStream
 AggregateRTProxyDesc
@@ -79,6 +81,7 @@ AllocateAndLoad failed for '%s' (%s)\n
 AllocateAndLoad failed for '%s'\n
 AllocateResource: Cannot find DATA block in resource %s!\n
 AllocateResource: Cannot find VXVS data in resource %s!\n
+Amodellib
 B\vp\n0
 Bad KV3 data for resource '%s': %s\n
 C:\buildworker\citadel_rel_win64\build\_build_\worldrenderer\_vpc_worldrenderer\default\win64\_msvc_\Retail\worldrenderer.pdb
@@ -88,22 +91,22 @@ C:\buildworker\citadel_rel_win64\build\src\worldrenderer\grasstilesceneobject.cp
 C:\buildworker\citadel_rel_win64\build\src\worldrenderer\worldrenderermgr.cpp
 CEntityKeyValues::LegacyUnserialize
 CEntityKeyValues::LegacyUnserialize: Unable to read from a text-based utlbuffer!\n
+CEntityKeyValues::LegacyUnserializeKeys - Unrecognized key type (%d)!\n
 CEntityKeyValues::LoadFromContext: Invalid version! Expected %d, encountered %d!\n
 CEntityKeyValues::LoadFromKV3
 CEntityKeyValues::Unserialize: Invalid version! Expected %d, encountered %d!\n
-CEntityKeyValues::Unserialize: Unsupported keyvalue variant type (%d)!\n
 CGrassTileObjectDesc
-CGrassTileObjectDesc::CreateGrass(1349): 
+CGrassTileObjectDesc::CreateGrass(1338): 
 CSemiAutoRWLockT<class CThreadRWLock_FastRead>::LockForRead
 CStrongHandle
 CStrongHandleCopyable
 CUtlBinaryBlock
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct EntityKeyValueData_t,int,class CMemAllocAllocator>,struct EntityKeyValueData_t,int>::InsertBeforeGetPtr
-CUtlRBTree<struct CUtlOrderedMapBase<unsigned __int64,struct WorldTraversal_t *,class CDefLess<unsigned __int64>,int>::Node_t,class CUtlOrderedMapBase<unsigned __int64,struct WorldTraversal_t *,class CDefLess<unsigned __int64>,int>::CKeyLess,int,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<unsigned __int64,struct WorldTraversal_t *,class CDefLess<unsigned __int64>,int>::Node_t,int>,int,class CMemAllocAllocator> >::Insert
+CUtlStringToken
 CWorld::CacheNodes
-CWorldNode::CreateExtraVertexStreams(350): 
+CWorldNode::CreateExtraVertexStreams(406): 
 CWorldNode::GrassFileCreateManifest
-CWorldNode::HandleThrottledGrassTileLoading(1382): 
+CWorldNode::HandleThrottledGrassTileLoading(1506): 
 CWorldRendererMgr::CreateWorld
 CWorldRendererMgr::CreateWorld_Internal( %s ):  Blocking load because marked for deletion during load\n
 CWorldRendererMgr::ServiceWorldRequests long frame: %fms\n
@@ -113,15 +116,12 @@ Class does not allow allocation from its schema binding
 ClutterSceneObjectDesc
 Couldn't ReadTexturePixels when creating grass.\n
 CreateAggregateRTProxySceneObjects
-Creating %i scene objects for node %i\n
-D_VERTEX_LIGHTING
+Creating %i scene objects for world node\n
 Data_Branch1xy
 Data_Branch1zBranch2x
 Data_Branch2yz
 Deletion List:\n
-DensityArray
-FadeParams
-Failed to allocate an instance of a class
+Failed to allocate an instance of a class of type '%s'
 Failed to call CBaseIntrospectedToKV3TypeManager::Init
 Failed to load geometry for level %s\n
 Failed to load nested keys: %s\n
@@ -132,8 +132,6 @@ FoliageAnimation
 GenerateGrassTexture
 GenerateGrassTexture failed for albedo!\n
 GenerateGrassTexture failed for specular!\n
-GetProfile_ultrafast
-GrassCopyTexture.vtex
 GrassDensity.vtex
 GrassDepth.vtex
 GrassObject
@@ -149,6 +147,7 @@ GrassTileVB
 GrassTint.vtex
 Hitbox indexing is incorrect for set %s, hitbox %s. Hitboxes will not be setup properly.\n
 IKV3TransferInterface_AllowRawStringTokenTransfer
+IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
 Inconsistent treatment of '%s' (existing key is %s)!\n
 KV3 load transfer failed for resource '%s': %s
@@ -164,9 +163,9 @@ No DATA block for resource '%s'\n
 No DATA block for resource\n
 Not safe to 'new' this class due to alignment requirements
 OverlayProjectionDirection
-PackedBlobNormal
 PerVertexLighting
 PivotPaint
+PooledLayout
 PropWorldOrigin
 PushCurrentSkewBrightnessValuesToSceneObject
 RESOURCE_TYPE_ENTITY_LUMP
@@ -176,10 +175,11 @@ RESOURCE_TYPE_WORLD_VIS
 RSDSyj
 RTProxyGeometry
 RTProxyUniqueAlbedo
-R\vpT
+RTProxyUniqueEmissive
 ResourceCompiler/BakedLighting/Version
 ResourceCompiler/DefaultMapBuilders/bakedlighting
 ResourceCompiler/DefaultMapBuilders/dontrequirebakedlighting
+ShapeOffset
 TanFrameQuat
 Tried to load resource reference '%s' from a value without a resource reference specific type.
 Trying to find a flex controller (%s) that doesn't actually exist in the model.\n
@@ -198,7 +198,6 @@ WARNING: Failed to convert introspected block for file: %s\n
 WARNING: Invalid resource version (%d): %s\n
 WARNING: Invalid worldnode version '%d' for file: %s\n
 Warning: Error resource loaded for level %s\n
-WindOffset
 World '%s' Lump '%s' 
 World '%s' layer '%s' 
 WorldExtraVertexStream
@@ -207,11 +206,12 @@ WorldRenderer/GrassCastsShadows
 WorldRenderer/GrassDilateColors
 WorldRenderer/GrassNoHalfTexel
 WorldRenderer/GrassQuadSize
+[m_pSemanticName
 \nLoaded List:\n
 \nPending List:\n
 \tWorld: %s
 \t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\v\n\v\n\v\n\v\n\v\n\v\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\f\r\f\r\f\r\f\r\f\r\f\r\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
-\t\t\tNodes Loaded: %d / %d\n
+\t\t\tWorld Node Loaded: %s\n
 an attr
 ati_compress_wrapper.dll
 attributes
@@ -222,13 +222,18 @@ blendweight
 blendweights
 compressedtangentframe
 curvature
+debug_chart_color
 default_ents
+direct_light_shadows
+directional_irradiance
 directional_irradiance_sh2_b
+directional_irradiance_sh2_dc
 directional_irradiance_sh2_g
 directional_irradiance_sh2_r
 ekv_%08x
 entity_lump_spew %s %s
 fast
+irradiance
 keyValues3Data
 kv 0x%p AddRef refcount == %d\n
 lightmaps
@@ -237,16 +242,6 @@ lowprecisionuv1
 m_Format
 m_InstanceOrientations32
 m_VisClusterMemberBits
-m_bBakedTwoSided
-m_bCanBatchWithDynamicShaderConstants
-m_bDrawLast
-m_bHasBakedLightingFromLightMap
-m_bHasBakedLightingFromVertexStream
-m_bIsNotMatchedToMaterial
-m_bNoShadow
-m_bOnlyShadow
-m_bUseCompressedNormalTangent
-m_bUseShadowFastPath
 mapUsageType
 maps/%s/world.vrman
 maps/%s/world.vwrld
@@ -257,7 +252,6 @@ matrix3x4_t
 medium
 optionallycompressedtangentframe
 posxyz
-r\fpT
 resourcesystem
 slow
 standard
@@ -269,7 +263,6 @@ values
 very_fast
 vmap
 vpk:%s:
-w8#o
 world renderer - 
 world_layer_base
 world_layer_set_visible %s %s false

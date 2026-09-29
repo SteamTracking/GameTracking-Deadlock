@@ -1,0 +1,42 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
+		<include src="s2r://panorama/styles/citadel_keybind_map_view.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_keybind_map.vcss" />
+	</styles>
+	<PopupKeybindMap class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel class="PopupBackgroundShadow" />
+		<Panel class="PopupBackground" />
+		<Panel class="PopupContent">
+			<Panel id="TitleSection" class="Header">
+				<Panel id="TitleRow">
+					<Image id="ScopeIcon" scaling="stretch-to-fit-preserve-aspect" />
+					<Label class="Title" text="#citadel_keybind_map_title" />
+				</Panel>
+			</Panel>
+			<Panel id="KeybindMapInfoRow">
+				<Label id="KeybindMapHint" text="#citadel_keybind_map_hint" html="true" />
+				<Panel id="KeyboardShapeSection">
+					<Panel id="KeyboardShapeControls">
+						<Label id="KeyboardShapeLabel" text="#citadel_keybind_map_keyboard_layout" />
+						<CitadelDropDown id="KeyboardShapeDropDown" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<CitadelKeybindMapView id="KeybindMapView" />
+			<Panel id="KeybindMapFooter">
+				<Panel id="ShowChordsHint" onmouseover="UIShowTextTooltipStyled( #citadel_keybind_map_show_chords_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+					<CitadelKeyboardGlyph id="ShowChordsGlyph" />
+					<Label id="ShowChordsLabel" text="#citadel_keybind_map_show_chords" />
+				</Panel>
+				<Panel class="ButtonRow">
+					<CitadelBindingButton id="EscapeButton" action="MenuBack" text="#Close" onactivate="UIPopupButtonClicked()" />
+					<CitadelButton id="CloseButton" class="Medium Fill" text="#Close" onactivate="UIPopupButtonClicked()" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</PopupKeybindMap>
+</root>

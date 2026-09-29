@@ -7,7 +7,7 @@
 			{
 				name = "_builtins"
 				operator = "sos_builtins"
-				_voicegraph = "citadel.weapons"
+				_voicegraph = "citadel_weapons"
 			},
 			{
 				name = "public"
@@ -103,6 +103,16 @@
 							display_group = "locked"
 							property_group = "citadel_weapons"
 							property_help = "set by code"
+						}
+					}
+					last_shot_enabled = 
+					{
+						data_type = "bool"
+						value = "true"
+						_system_properties = 
+						{
+							display_group = "advanced"
+							property_group = "citadel_weapons"
 						}
 					}
 					is_sliding = 
@@ -340,7 +350,7 @@
 							display_group = "advanced"
 							display_edit_type = "field_curve_2d_editor"
 							property_group = "Volume"
-							property_help = "Maps enclosure ( 0-255 ) to tail volume offset"
+							property_help = "Maps enclosure ( 0-1 ) to tail volume offset"
 						}
 					}
 					tail_interior_enclosure_vol_offset_db = 
@@ -357,7 +367,7 @@
 							display_group = "advanced"
 							display_edit_type = "field_curve_2d_editor"
 							property_group = "Volume"
-							property_help = "Maps enclosure ( 0-255 ) to tail volume offset"
+							property_help = "Maps enclosure ( 0-1 ) to tail volume offset"
 						}
 					}
 					transient_target_offset_db = 
@@ -372,13 +382,10 @@
 				}
 			},
 			{
-				name = "source_info"
-				operator = "game_get_source_info"
-			},
-			{
-				name = "citadel_entity_info"
-				operator = "citadel_entity_info"
-				input_entity_index = "@source_info.output_entity_index"
+				name = "globals"
+				operator = "get_system_globals"
+				input_execute = "1.0"
+				input_listener_index = "0"
 			},
 			{
 				name = "voicegraph_send"
@@ -417,86 +424,9 @@
 				input12 = "0.0"
 			},
 			{
-				name = "remap_enclosure_tail_volume_offset"
-				operator = "math_curve_2d"
-				execute_once = 1.0
-				input = "@citadel_entity_info.output_enclosure"
-				public_field_name = "public.tail_enclosure_vol_offset_db"
-			},
-			{
-				name = "math_add_tail_volume"
-				operator = "math_float"
-				execute_once = 1.0
-				apply = "add"
-				input1 = "@remap_enclosure_tail_volume_offset.output"
-				input2 = "@public.tail_vol_offset_db"
-			},
-			{
-				name = "math_floor_tail_exterior_volume"
-				operator = "math_float"
-				execute_once = 1.0
-				apply = "max"
-				input1 = "@public.tail_exterior_sky_exposure_floor_db"
-				input2 = "@math_add_tail_volume.output"
-			},
-			{
-				name = "ctrl_switch_tail_min_volume"
-				execute_once = 1.0
-				operator = "ctrl_switch_float"
-				input_switch = "@citadel_entity_info.output_has_sky_exposure"
-				input1 = "@math_add_tail_volume.output"
-				input2 = "@math_floor_tail_exterior_volume.output"
-			},
-			{
-				name = "volume_exterior_remap_db_to_gain"
-				operator = "math_db_to_gain"
-				input = "@remap_enclosure_tail_volume_offset.output"
-			},
-			{
-				name = "math_crossfade_interior_tail_vol"
-				operator = "math_float"
-				execute_once = 1.0
-				apply = "sub"
-				input1 = "1.0"
-				input2 = "@volume_exterior_remap_db_to_gain.output"
-			},
-			{
-				name = "volume_interior_tail_public_offset_to_gain"
-				operator = "math_db_to_gain"
-				input = "@public.tail_interior_vol_offset_db"
-			},
-			{
-				name = "math_mult_interior_tail"
-				operator = "math_float"
-				execute_once = 1.0
-				apply = "mult"
-				input1 = "@math_crossfade_interior_tail_vol.output"
-				input2 = "@volume_interior_tail_public_offset_to_gain.output"
-			},
-			{
-				name = "volume_interior_tail_crossfade"
-				operator = "math_gain_to_db"
-				input = "@math_mult_interior_tail.output"
-			},
-			{
-				name = "remap_enclosure_tail_interior_volume_offset"
-				operator = "math_curve_2d"
-				execute_once = 1.0
-				input = "@citadel_entity_info.output_enclosure"
-				public_field_name = "public.tail_interior_enclosure_vol_offset_db"
-			},
-			{
-				name = "math_tail_interior_volume"
-				operator = "math_float"
-				execute_once = 1.0
-				apply = "add"
-				input1 = "@volume_interior_tail_crossfade.output"
-				input2 = "@remap_enclosure_tail_interior_volume_offset.output"
-			},
-			{
 				name = "math_clip_amount_min"
 				operator = "math_float"
-				execute_once = 1.0
+				execute_once = "1.0"
 				apply = "min"
 				input1 = "@public.clip_amount"
 				input2 = "@public.low_ammo_threshold"
@@ -504,7 +434,7 @@
 			{
 				name = "math_low_ammo_progress"
 				operator = "math_float"
-				execute_once = 1.0
+				execute_once = "1.0"
 				apply = "div"
 				input1 = "@math_clip_amount_min.output"
 				input2 = "@public.low_ammo_threshold"
@@ -512,7 +442,7 @@
 			{
 				name = "math_invert_low_ammo_progress"
 				operator = "math_float"
-				execute_once = 1.0
+				execute_once = "1.0"
 				apply = "sub"
 				input1 = "1.0"
 				input2 = "@math_low_ammo_progress.output"
@@ -520,7 +450,7 @@
 			{
 				name = "math_invert_is_sliding"
 				operator = "math_float"
-				execute_once = 1.0
+				execute_once = "1.0"
 				apply = "sub"
 				input1 = "1.0"
 				input2 = "@public.is_sliding"
@@ -528,7 +458,7 @@
 			{
 				name = "math_disable_low_ammo_for_sliding"
 				operator = "math_float"
-				execute_once = 1.0
+				execute_once = "1.0"
 				apply = "mult"
 				input1 = "@math_invert_low_ammo_progress.output"
 				input2 = "@math_invert_is_sliding.output"
@@ -536,14 +466,14 @@
 			{
 				name = "remap_low_ammo_offset"
 				operator = "math_curve_2d"
-				execute_once = 1.0
+				execute_once = "1.0"
 				input = "@math_disable_low_ammo_for_sliding.output"
 				public_field_name = "public.low_ammo_progress_offset_db"
 			},
 			{
 				name = "math_low_ammo_volume"
 				operator = "math_float"
-				execute_once = 1.0
+				execute_once = "1.0"
 				apply = "add"
 				input1 = "@remap_low_ammo_offset.output"
 				input2 = "@public.low_ammo_vol_offset_db"
@@ -551,18 +481,26 @@
 			{
 				name = "math_play_last_shot"
 				operator = "math_float"
-				execute_once = 1.0
-				apply = "equal"
+				execute_once = "1.0"
+				apply = "less_than_or_equal"
 				input1 = "@public.clip_amount"
 				input2 = "@public.last_shot_clip_value"
 			},
 			{
 				name = "math_disable_last_shot_for_sliding"
 				operator = "math_float"
-				execute_once = 1.0
+				execute_once = "1.0"
 				apply = "mult"
 				input1 = "@math_invert_is_sliding.output"
 				input2 = "@math_play_last_shot.output"
+			},
+			{
+				name = "math_enable_last_shot"
+				operator = "math_float"
+				execute_once = "1.0"
+				apply = "mult"
+				input1 = "@math_disable_last_shot_for_sliding.output"
+				input2 = "@public.last_shot_enabled"
 			},
 			{
 				name = "citadel_find_perspective"
@@ -576,6 +514,142 @@
 				input_switch = "@citadel_find_perspective::output.perspective_is_player"
 				input1 = ".03"
 				input2 = "@public.volume_fade_out"
+			},
+			{
+				name = "volume_interior_tail_public_offset_to_gain"
+				operator = "math_db_to_gain"
+				input = "@public.tail_interior_vol_offset_db"
+			},
+			{
+				name = "source_info"
+				operator = "game_get_source_info"
+				execute_once = "1.0"
+			},
+			{
+				name = "print_dimension_tails"
+				operator = "util_print_string"
+				execute_once = "1.0"
+				input_execute = "0.0"
+				input = "USING DIMENSION PROBE WEAPON TAILS"
+			},
+			{
+				name = "get_entity_info"
+				operator = "game_entity_info"
+				input_default_world_position = "@public.position"
+				input_default_local_position = "@globals.output_listener_front"
+				input_hold_position_on_deleted_entity = "true"
+				use_world_position = "@public.position_force_from_input"
+				attachment = "@public.attachment"
+			},
+			{
+				name = "add_position_offset"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@get_entity_info.output_position"
+				input2 = "@public.position_offset"
+			},
+			{
+				name = "import_steamaudio_dimension_probes"
+				operator = "sos_import_stack"
+				import_stack = "citadel_steamaudio_dimension_probes"
+				operator_variables = 
+				{
+					input_steamaudio_dimension_probes_entity_index = 
+					{
+						data_type = "float"
+						value = "@source_info.output_entity_index"
+					}
+				}
+			},
+			{
+				name = "normalize_room_size_to_enclosure"
+				operator = "math_float"
+				execute_once = "1.0"
+				apply = "div"
+				input1 = "@import_steamaudio_dimension_probes::output.dimension_size"
+				input2 = "2500"
+			},
+			{
+				name = "remap_enclosure_tail_volume_offset_probe"
+				operator = "math_curve_2d"
+				execute_once = "1.0"
+				input = "@normalize_room_size_to_enclosure.output"
+				public_field_name = "public.tail_enclosure_vol_offset_db"
+			},
+			{
+				name = "math_add_tail_volume_probe"
+				operator = "math_float"
+				execute_once = "1.0"
+				apply = "add"
+				input1 = "@remap_enclosure_tail_volume_offset_probe.output"
+				input2 = "@public.tail_vol_offset_db"
+			},
+			{
+				name = "math_floor_tail_exterior_volume_probe"
+				operator = "math_float"
+				execute_once = "1.0"
+				apply = "max"
+				input1 = "@public.tail_exterior_sky_exposure_floor_db"
+				input2 = "@math_add_tail_volume_probe.output"
+			},
+			{
+				name = "math_inout_probe_is_outside"
+				operator = "math_float"
+				execute_once = "1.0"
+				apply = "greater_than_or_equal"
+				input1 = "@import_steamaudio_dimension_probes::output.dimension_inout"
+				input2 = "0.02"
+			},
+			{
+				name = "ctrl_switch_tail_min_volume_probe"
+				operator = "ctrl_switch_float"
+				execute_once = "1.0"
+				input_switch = "@math_inout_probe_is_outside.output"
+				input1 = "@math_add_tail_volume_probe.output"
+				input2 = "@math_floor_tail_exterior_volume_probe.output"
+			},
+			{
+				name = "volume_exterior_remap_db_to_gain_probe"
+				operator = "math_db_to_gain"
+				execute_once = "1.0"
+				input = "@remap_enclosure_tail_volume_offset_probe.output"
+			},
+			{
+				name = "math_crossfade_interior_tail_vol_probe"
+				operator = "math_float"
+				execute_once = "1.0"
+				apply = "sub"
+				input1 = "1.0"
+				input2 = "@volume_exterior_remap_db_to_gain_probe.output"
+			},
+			{
+				name = "math_mult_interior_tail_probe"
+				operator = "math_float"
+				execute_once = "1.0"
+				apply = "mult"
+				input1 = "@math_crossfade_interior_tail_vol_probe.output"
+				input2 = "@volume_interior_tail_public_offset_to_gain.output"
+			},
+			{
+				name = "volume_interior_tail_crossfade_probe"
+				operator = "math_gain_to_db"
+				execute_once = "1.0"
+				input = "@math_mult_interior_tail_probe.output"
+			},
+			{
+				name = "remap_tail_interior_volume_offset_probe"
+				operator = "math_curve_2d"
+				execute_once = "1.0"
+				input = "@normalize_room_size_to_enclosure.output"
+				public_field_name = "public.tail_interior_enclosure_vol_offset_db"
+			},
+			{
+				name = "math_tail_interior_volume_probe"
+				operator = "math_float"
+				execute_once = "1.0"
+				apply = "add"
+				input1 = "@volume_interior_tail_crossfade_probe.output"
+				input2 = "@remap_tail_interior_volume_offset_probe.output"
 			},
 			{
 				name = "citadel_perspective_default"
@@ -642,7 +716,7 @@
 					track_3.vsnd_track_vol_offset_db = 
 					{
 						data_type = "float"
-						value = "@ctrl_switch_tail_min_volume.output"
+						value = "@ctrl_switch_tail_min_volume_probe.output"
 					}
 					track_3.vsnd_files_track_name = 
 					{
@@ -662,7 +736,7 @@
 					track_4.vsnd_track_vol_offset_db = 
 					{
 						data_type = "float"
-						value = "@math_tail_interior_volume.output"
+						value = "@math_tail_interior_volume_probe.output"
 					}
 					track_4.vsnd_files_track_name = 
 					{
@@ -674,6 +748,11 @@
 						data_type = "string"
 						value = "vsnd_files_last_shot"
 					}
+					track_5.vsnd_start_track = 
+					{
+						data_type = "bool"
+						value = "@math_enable_last_shot.output"
+					}
 					track_5.volume_fade_in_track = 
 					{
 						data_type = "float"
@@ -684,27 +763,20 @@
 						data_type = "float"
 						value = "@public.last_shot_vol_offset_db"
 					}
-					track_5.vsnd_start_track = 
-					{
-						data_type = "bool"
-						value = "@math_disable_last_shot_for_sliding.output"
-					}
 				}
 			},
 			{
-				name = "send_enclosure_param"
-				input_execute = "1"
+				name = "citadel_entity_info"
+				operator = "citadel_entity_info"
 				execute_once = "1.0"
-				operator = "vmix_voicegraph_input"
-				input_name = "enclosure"
-				input = "@citadel_entity_info.output_enclosure"
+				input_entity_index = "@source_info.output_entity_index"
 			},
 			{
 				name = "math_mult_targeting_offset"
 				operator = "math_float"
 				execute_once = "1.0"
 				apply = "mult"
-				input1 = "@citadel_entity_info.output_enemy_is_targeting_local_player"
+				input1 = "@citadel_entity_info.output_enemy_is_primary_targeting_local_player"
 				input2 = "@public.transient_target_offset_db"
 			},
 			{
@@ -718,12 +790,6 @@
 				operator = "vmix_voicegraph_input"
 				input_name = "enemy_target_gain"
 				input = "@enemy_targeting_offset_to_gain.output"
-			},
-			{
-				name = "globals"
-				operator = "get_system_globals"
-				input_execute = "1.0"
-				input_listener_index = "0"
 			},
 			{
 				name = "math_dot_product_listener_right"

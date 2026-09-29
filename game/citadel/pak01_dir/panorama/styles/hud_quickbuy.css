@@ -1,12 +1,13 @@
 /* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
 
-@import url("s2r://panorama/styles/citadel_base_styles.vcss_c");
-@import url("s2r://panorama/styles/ability_icons.vcss_c");
+@import url("s2r://panorama/styles/citadel_base_styles.vcss");
+@import url("s2r://panorama/styles/ability_icons.vcss");
 @keyframes 'quickbuy_pulse'
 {
 	0%
 	{
 		brightness: 0.9;
+		opacity: 0.6;
 		pre-transform-scale2d: 1;
 		box-shadow: 0px 0px 10px 3.0 shardColor;
 	}
@@ -14,6 +15,7 @@
 	50%
 	{
 		brightness: 1.1;
+		opacity: 1;
 		pre-transform-scale2d: 1.05;
 		box-shadow: 0px 0px 30px 3.0 shardColor;
 	}
@@ -21,6 +23,7 @@
 	100%
 	{
 		brightness: 0.9;
+		opacity: 0.6;
 		pre-transform-scale2d: 1;
 		box-shadow: 0px 0px 10px 3.0 shardColor;
 	}
@@ -82,8 +85,8 @@
 {
 	vertical-align: bottom;
 	horizontal-align: left;
-	margin-left: 454px;
-	margin-bottom: 20px;
+	margin-left: 390px;
+	margin-bottom: 0px;
 	border-radius: 4px;
 }
 
@@ -126,11 +129,9 @@
 #HudMini
 {
 	opacity: 0.2;
-	width: 70px;
-	height: 70px;
+	width: 74px;
+	height: 94px;
 	vertical-align: bottom;
-	border: 3px solid offWhite&30;
-	border-radius: 5px;
 }
 
 .viewing_as_player.dead #HudMini
@@ -143,21 +144,28 @@
 	visibility: collapse;
 }
 
-.ItemsReady #HudMini
+#HudMini #HudMiniContents
 {
-	opacity: 0.5;
-	border: 3px solid #ffffff50;
-	background-color: #ffffff10;
-	border: 3px solid shardColor;
-	background-color: shardColor&60;
+	width: 70px;
+	height: 70px;
+	border: 3px solid offWhite&30;
+	border-radius: 5px;
+	margin: 4px;
 }
 
-.ItemsReady.InShopZone #HudMini
+.ItemsReady #HudMini #HudMiniContents
 {
-	opacity:1;
+	opacity: 1;
+	border: 3px solid shardColor;
+	background-color: shardColor&60;
 	animation-name: quickbuy_pulse;
 	animation-duration: 1.3s;
 	animation-iteration-count: infinite;
+}
+
+.ItemsReady #HudMini
+{
+	opacity: 1;
 }
 
 .purchasingDisabled #HudMini
@@ -261,16 +269,36 @@ Label.instructionalText .rightClick
 	background-color: blue;
 }
 
-#QuickbuyShopSummary
+.QuickbuyShopSummaryContainer
+{
+	margin-top: 32px;
+	flow-children: right;
+	margin-left: 90px;
+}
+
+#QuickbuySellSummary
+{
+	opacity: 0;
+}
+
+.SellQueueEmpty #QuickbuySellSummary
+{
+	opacity: 0;
+}
+
+#QuickbuySellSummary .ItemsReadyLabel
+{
+	wash-color: red;
+}
+
+.QuickbuyShopSummary
 {
 	background-color: #888888aa;
 	width: 191px;
 	height: 65px;
 	padding: 6px 10px;
-	margin-left: 320px;
 	flow-children: right;
 	border-radius: 3px;
-	margin-top: 32px;
 	background-color: #cdcdcd10;
 	border: 2px solid #ffffff10;
 	world-blur: ingameHudBlur;
@@ -278,38 +306,38 @@ Label.instructionalText .rightClick
 	pre-transform-scale2d: 1;
 }
 
-.gShopOpen #QuickbuyShopSummary
+.gShopOpen .QuickbuyShopSummary
 {
 	visibility: visible;
 }
 
-#QuickbuyShopSummary #QuickbuyShopSummaryModIcon
+.QuickbuyShopSummary .QuickbuyShopSummaryModIcon
 {
 	vertical-align: center;
 	margin-right: 10px;
 }
 
-.Empty #QuickbuyShopSummary
+.Empty .QuickbuyShopSummary
 {
 	opacity: 0.2;
 }
 
-.Empty #QuickbuyShopSummary .Labels
+.Empty .QuickbuyShopSummary .Labels
 {
 	horizontal-align: center;
 }
 
-.Empty #QuickbuyShopSummary #QuickbuyShopSummaryModIcon
+.Empty .QuickbuyShopSummary .QuickbuyShopSummaryModIcon
 {
 	visibility: collapse;
 }
 
-.item_draft_enabled #QuickbuyShopSummary
+.gStreetBrawl .QuickbuyShopSummary
 {
 	visibility: collapse;
 }
 
-#QuickbuyShopSummary .ItemsReadyLabel
+.QuickbuyShopSummary .ItemsReadyLabel
 {
 	font-weight: bold;
 	font-size: 16px;
@@ -319,19 +347,19 @@ Label.instructionalText .rightClick
 	opacity: 0.6;
 }
 
-#QuickbuyShopSummary .Labels
+.QuickbuyShopSummary .Labels
 {
 	vertical-align: center;
 	flow-children: down;
 }
 
-#QuickbuyShopSummary .BindingLabel
+.QuickbuyShopSummary .BindingLabel
 {
 	flow-children: right;
 	vertical-align: center;
 }
 
-#QuickbuyShopSummary .ShopSummaryLabel
+.QuickbuyShopSummary .ShopSummaryLabel
 {
 	font-weight: bold;
 	font-size: 16px;
@@ -339,17 +367,17 @@ Label.instructionalText .rightClick
 	max-height: 20px;
 }
 
-#QuickbuyShopSummary CitadelKeyboardGlyph
+.QuickbuyShopSummary CitadelKeyboardGlyph
 {
 	margin-left: 0px;
 }
 
-#QuickbuyShopSummary:active
+.QuickbuyShopSummary:active
 {
 	sound: soundMainMenuActivate;
 }
 
-#QuickbuyShopSummary:hover
+.QuickbuyShopSummary:hover
 {
 	brightness: 1.1;
 	opacity: 1;
@@ -386,8 +414,11 @@ Label.instructionalText .rightClick
 	flow-children: down;
 	vertical-align: bottom;
 	margin-left: 60px;
+	opacity: 0;
 	border-radius: 3px 0px 3px 3px;
 	world-blur: ingameHudBlur;
+	transition-property: opacity;
+	transition-duration: 0.2s;
 }
 
 .ShowQueue .QuickbuyQueueOuter
@@ -398,17 +429,18 @@ Label.instructionalText .rightClick
 
 .gShopOpen .QuickbuyQueueOuter
 {
-	visibility: collapse;
-	margin-left: 127px;
+	visibility: visible;
+	margin-left: 90px;
 	margin-top: 100px;
+	opacity: 0;
 	padding: 15px;
 	flow-children: down;
-	max-height: 680px;
+	max-height: 600px;
 }
 
-.gShopOpen #CitadelHudQuickbuy.QuickbuyShopShowQueue .QuickbuyQueueOuter
+.gShopOpen #CitadelHudQuickbuy.gQuickbuyShopShowQueue .QuickbuyQueueOuter
 {
-	visibility: visible;
+	opacity: 1;
 }
 
 .QuickbuyQueueOuter .BuildOrderLabel
@@ -453,15 +485,15 @@ Label.instructionalText .rightClick
 #AutoQueueToggleButton
 {
 	margin-bottom: 8px;
-	margin-left: 5px;
 	max-width: 100%;
+	visibility: collapse;
 }
 
 #ToggleAutoBuyContainer
 {
-	horizontal-align: center;
 	vertical-align: bottom;
 	flow-children: right;
+	visibility: collapse;
 }
 
 .infiniteMoney #ToggleAutoBuyContainer
@@ -472,6 +504,7 @@ Label.instructionalText .rightClick
 #ToggleAutoBuyContainer #AutoBuyToggleButton
 {
 	max-width: 100%;
+	horizontal-align: left;
 }
 
 #ToggleAutoBuyContainer #AutoBuyToggleButton:active
@@ -671,14 +704,13 @@ ToggleButton Label
 #KeyboardHints
 {
 	vertical-align: bottom;
-	margin-left: 510px;
-	margin-bottom: 27px;
+	horizontal-align: middle;
+	transform: translateY(-8px);
 	flow-children: down;
-	opacity: 0.2;
-	max-width: 180px;
+	opacity: 0;
+	margin-left: 365px;
 	transition-property: opacity;
 	transition-duration: 0.2s;
-	visibility: collapse;
 }
 
 #KeyboardHints .itemName
@@ -706,6 +738,7 @@ ToggleButton Label
 .InShopZone.ItemsReady #KeyboardHints
 {
 	visibility: visible;
+	opacity: 1;
 }
 
 .gShopOpen #KeyboardHints,.gShopOpen .InShopZone.ItemsReady #KeyboardHints
@@ -721,17 +754,6 @@ ToggleButton Label
 .Empty #KeyboardHints .itemName,.Empty #KeyboardHints .buyKey
 {
 	visibility: collapse;
-}
-
-#KeyboardHints .buyKey
-{
-	background-color: shardColor;
-	border-radius: 3px;
-	padding: 2px 6px 2px 6px;
-	color: offBlack&ee;
-	font-weight: bold;
-	margin-top: 2px;
-	opacity: 1;
 }
 
 #KeyboardHints .shopKey
@@ -770,11 +792,6 @@ ToggleButton Label
 .purchasingDisabled #KeyboardHints .buyKey,.purchasingDisabled #KeyboardHints .shopKey
 {
 	visibility: collapse;
-}
-
-.ItemsReady #KeyboardHints,.ItemsReady #KeyboardHints .buyKey,.ItemsReady #KeyboardHints .shopKey
-{
-	opacity: 1;
 }
 
 .PurchaseDisabledContainer
@@ -829,5 +846,194 @@ VerticalScrollBar
 {
 	margin: 0px;
 	width: 15px;
+}
+
+#QuickbuyShopSummary
+{
+	background-color: #888888aa;
+	width: 191px;
+	height: 65px;
+	padding: 6px 10px;
+	flow-children: right;
+	border-radius: 3px;
+	background-color: #cdcdcd10;
+	border: 2px solid #ffffff10;
+	world-blur: ingameHudBlur;
+	visibility: collapse;
+	pre-transform-scale2d: 1;
+}
+
+.gShopOpen #QuickbuyShopSummary
+{
+	visibility: visible;
+}
+
+#QuickbuyShopSummary #QuickbuyShopSummaryModIcon
+{
+	vertical-align: center;
+	margin-right: 10px;
+}
+
+#QuickbuyShopSummary .quickbuy_details
+{
+	flow-children: right;
+}
+
+#QuickbuyShopSummary .quickbuy_details .ItemsForSell
+{
+	flow-children: right;
+	wash-color: rgb(255, 124, 124);
+	visibility: visible;
+}
+
+.SellQueueEmpty #QuickbuyShopSummary .quickbuy_details .ItemsForSell
+{
+	visibility: collapse;
+}
+
+#QuickbuyShopSummary .quickbuy_details .ItemsForSell .sell_icon
+{
+	background-image: url("s2r://panorama/images/icons/icon_trash.vsvg");
+	width: 12px;
+	height: 12px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+	vertical-align: middle;
+	margin-right: 3px;
+	margin-bottom: 1px;
+}
+
+.Empty #QuickbuyShopSummary
+{
+	opacity: 0.2;
+}
+
+.Empty #QuickbuyShopSummary .Labels
+{
+	horizontal-align: center;
+}
+
+.Empty #QuickbuyShopSummary #QuickbuyShopSummaryModIcon
+{
+	visibility: collapse;
+}
+
+.gStreetBrawl #QuickbuyShopSummary
+{
+	visibility: collapse;
+}
+
+#QuickbuyShopSummary .ItemsReadyLabel,#QuickbuyShopSummary .ItemsSellLabel
+{
+	font-weight: bold;
+	font-size: 16px;
+	text-transform: uppercase;
+	text-overflow: shrink;
+	max-height: 20px;
+	opacity: 0.6;
+}
+
+#QuickbuyShopSummary .Labels
+{
+	vertical-align: center;
+	flow-children: down;
+}
+
+#QuickbuyShopSummary .BindingLabel
+{
+	flow-children: right;
+	vertical-align: center;
+}
+
+#QuickbuyShopSummary .ShopSummaryLabel
+{
+	font-weight: bold;
+	font-size: 16px;
+	text-overflow: shrink;
+	max-height: 20px;
+}
+
+#QuickbuyShopSummary CitadelKeyboardGlyph
+{
+	margin-left: 0px;
+}
+
+#QuickbuyShopSummary:active
+{
+	sound: soundMainMenuActivate;
+}
+
+#QuickbuyShopSummary:hover
+{
+	brightness: 1.1;
+	opacity: 1;
+	pre-transform-scale2d: 1.02;
+	transition-property: brigtness,pre-transform-scale2d;
+	transition-duration: 0.05s;
+}
+
+#QuickbuyShopSummary .quickbuy_icon
+{
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-right: 5px;
+	opacity: 0.7;
+	background-image: url("s2r://panorama/images/icons/icon_quickbuy.vsvg");
+	background-size: contain;
+}
+
+#QuickBuyQueueContainer
+{
+	padding-bottom: 110px;
+	vertical-align: bottom;
+}
+
+.Empty #QuickBuyQueueContainer
+{
+	visibility: collapse;
+}
+
+.gShopOpen #QuickBuyQueueContainer
+{
+	vertical-align: top;
+	horizontal-align: left;
+	visibility: visible;
+}
+
+#QuickbuyQueueBuild
+{
+	height: 65px;
+	margin-left: 260px;
+	flow-children: right;
+	margin-top: 32px;
+	visibility: collapse;
+	opacity: 0.2;
+}
+
+.gShopOpen #QuickbuyQueueBuild
+{
+	visibility: visible;
+}
+
+#QuickbuyQueueBuild CitadelButton
+{
+	vertical-align: middle;
+}
+
+.Empty #QuickbuyQueueBuild
+{
+	opacity: 1;
+}
+
+.gStreetBrawl #QuickbuyQueueBuild
+{
+	visibility: collapse;
+}
+
+#QuickbuyQueueBuild:active
+{
+	sound: soundMainMenuActivate;
 }
 

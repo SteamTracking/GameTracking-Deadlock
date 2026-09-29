@@ -39,6 +39,89 @@
 	ignore-parent-flow: true;
 }
 
+@keyframes 'full_heat'
+{
+	0%
+	{
+		border: 5px solid rgba(0, 0, 0, 0 );
+	}
+	
+	50%
+	{
+		border: 5px solid rgba(255, 0, 0, 1);
+	}
+	
+	100%
+	{
+		border: 5px solid rgba(0, 0, 0, 0 );
+	}
+	
+}
+
+.resource_container.heat
+{
+	margin-top: 38px;
+	width: 330px;
+	height: 20px;
+	visibility: collapse;
+}
+
+.resource_container.heat.isFull
+{
+	border-radius: 5px;
+	animation-name: full_heat;
+	animation-duration: 0.4s;
+	animation-iteration-count: infinite;
+}
+
+.heat #ability_resource_progress
+{
+	width: 330px;
+	height: 20px;
+	border: 2px solid #00000030;
+	border-radius: 50px;
+}
+
+.heat #type_label
+{
+	font-size: 16px;
+	font-weight: semi-bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	vertical-align: bottom;
+	z-index: 1;
+	margin-top: -1px;
+	opacity: 0.7;
+	horizontal-align: center;
+	vertical-align: middle;
+	text-shadow: 0px 0px 3px #00000090;
+	ignore-parent-flow: true;
+}
+
+.ink #ability_resource_progress
+{
+	width: 330px;
+	height: 20px;
+	border: 2px solid #00000030;
+	border-radius: 50px;
+}
+
+.ink #type_label
+{
+	font-size: 16px;
+	font-weight: semi-bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	vertical-align: bottom;
+	z-index: 1;
+	margin-top: -1px;
+	opacity: 0.7;
+	horizontal-align: center;
+	vertical-align: middle;
+	text-shadow: 0px 0px 3px #00000090;
+	ignore-parent-flow: true;
+}
+
 #ability_resource_progress .ProgressBarLeft
 {
 	background-image: url("s2r://panorama/images/hud/custom_abilities/shiv_rage_progress_color_png.vtex");

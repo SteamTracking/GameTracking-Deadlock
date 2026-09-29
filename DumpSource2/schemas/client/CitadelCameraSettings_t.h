@@ -14,6 +14,7 @@
 //		10.000000
 //	]
 //}
+// MPropertyFriendlyName = "Citadel Camera Settings"
 class CitadelCameraSettings_t
 {
 	float32 m_flCameraSideOffset;

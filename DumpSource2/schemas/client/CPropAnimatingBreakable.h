@@ -1,5 +1,3 @@
-// MNetworkIncludeByName = "m_iMaxHealth"
-// MNetworkIncludeByName = "m_iHealth"
 class CPropAnimatingBreakable : public CBaseAnimGraph
 {
 	CBreakableStageHelper m_stages;

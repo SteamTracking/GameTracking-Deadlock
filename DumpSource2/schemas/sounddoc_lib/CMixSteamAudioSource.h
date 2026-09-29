@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_nInterpolation": "SA_HRTFINTEROP_BILINEAR",
 //	"m_flDirectMixLevel": 1.000000,
 //	"m_bEnablePerspectiveCorrection": false,

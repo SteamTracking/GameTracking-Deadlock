@@ -1,12 +1,9 @@
-// MNetworkVarNames = "int m_iShotsToCreate"
-// MNetworkVarNames = "bool m_bIsInExpressShot"
-// MClassHasEntityLimitedDataDesc
 class CCitadel_WeaponUpgrade_ExpressShot : public CCitadel_Item
 {
-	// MNetworkEnable
 	int32 m_iShotsToCreate;
-	// MNetworkEnable
 	bool m_bIsInExpressShot;
+	bool m_bProcShotCharged;
+	float32 m_flProcChargeBonusDamage;
 	GameTime_t m_tNextShotTime;
 	bool m_bIsPrimaryProc;
 };

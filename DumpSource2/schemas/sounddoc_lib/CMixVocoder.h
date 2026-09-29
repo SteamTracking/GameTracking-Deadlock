@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_nBandCount": 6,
 //	"m_flBandwidth": 1.000000,
 //	"m_fldBModGain": 12.000000,

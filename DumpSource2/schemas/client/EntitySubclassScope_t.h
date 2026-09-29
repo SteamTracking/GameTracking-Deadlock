@@ -19,8 +19,8 @@ enum EntitySubclassScope_t : uint32_t
 	// MPropertyFriendlyName = "ScaleFunctions"
 	// MEntitySubclassScopeFile = "scripts/scale_functions.vdata"
 	SUBCLASS_SCOPE_SCALE_FUNCTIONS = 5,
-	// MPropertyFriendlyName = "Loot Tables"
-	// MEntitySubclassScopeFile = "scripts/loot_tables.vdata"
-	SUBCLASS_SCOPE_LOOT_TABLES = 6,
+	// MPropertyFriendlyName = "Econ Items"
+	// MEntitySubclassScopeFile = ""
+	SUBCLASS_SCOPE_ECON_ITEMS = 6,
 	SUBCLASS_SCOPE_COUNT = 7,
 };

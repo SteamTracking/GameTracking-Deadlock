@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -114,7 +115,6 @@
 //		"m_bRightEye": false
 //	},
 //	"m_bCannotBeRefracted": true,
-//	"m_bSkipRenderingOnMobile": false,
 //	"m_flRadiusScale":
 //	{
 //		"m_nType": "PF_TYPE_LITERAL",
@@ -188,7 +188,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flAlphaScale":
 //	{
@@ -263,7 +264,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_vecColorScale":
 //	{
@@ -382,7 +384,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentY":
 //		{
@@ -457,7 +460,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentZ":
 //		{
@@ -532,7 +536,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatInterp":
 //		{
@@ -607,7 +612,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_flInterpInput0": 0.000000,
 //		"m_flInterpInput1": 1.000000,
@@ -718,7 +724,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flTextureRepeatsCircumference":
 //	{
@@ -793,7 +800,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flColorMapOffsetV":
 //	{
@@ -868,7 +876,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flColorMapOffsetU":
 //	{
@@ -943,7 +952,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flNormalMapOffsetV":
 //	{
@@ -1018,7 +1028,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flNormalMapOffsetU":
 //	{
@@ -1093,7 +1104,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_bDrawCableCaps": false,
 //	"m_flCapRoundness": 1.000000,
@@ -1103,6 +1115,7 @@
 //	"m_nMaxTesselation": 128,
 //	"m_nRoundness": 1,
 //	"m_nForceRoundnessFixed": false,
+//	"m_bOnlyRenderInEffectsBloomPass": false,
 //	"m_LightingTransform":
 //	{
 //		"m_nType": "PT_TYPE_INVALID",
@@ -1174,6 +1187,9 @@ class C_OP_RenderCables : public CParticleFunctionRenderer
 	int32 m_nRoundness;
 	// MPropertyFriendlyName = "force roundness factor fixed"
 	bool m_nForceRoundnessFixed;
+	// MPropertyFriendlyName = "Only Render in effects bloom pass"
+	// MPropertySortPriority = 1100
+	bool m_bOnlyRenderInEffectsBloomPass;
 	// MPropertyFriendlyName = "diffuse lighting origin"
 	// MParticleInputOptional
 	CParticleTransformInput m_LightingTransform;

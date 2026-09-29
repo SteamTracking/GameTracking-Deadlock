@@ -14,6 +14,7 @@
 //	"m_flMinPlayerHeavyMeleeForce": 100.000000,
 //	"m_flForceMultPlayer": 2.000000,
 //	"m_flInheritPlayerSpeedMultiplier": 0.125000,
+//	"m_flVPhysicsForceMul": 0.000000,
 //	"m_ForceVSCameraPitch":
 //	{
 //		"m_spline":
@@ -87,6 +88,8 @@ class CCitadel_Hideout_BallVData : public CEntitySubclassVDataBase
 	float32 m_flForceMultPlayer;
 	// MPropertyDescription = "Proportion of player's speed inherited directly from the player."
 	float32 m_flInheritPlayerSpeedMultiplier;
+	// MPropertyDescription = "When > 0, then damage applies more physics impulses based on positions."
+	float32 m_flVPhysicsForceMul;
 	// MPropertyDescription = "Looking at your feet vs looking at the horizon creates a multiplier to the kick - aim up to lob/shoot, aim down to dribble."
 	CPiecewiseCurve m_ForceVSCameraPitch;
 	// MPropertyStartGroup = "Misc Juggle Minigame"
@@ -103,6 +106,7 @@ class CCitadel_Hideout_BallVData : public CEntitySubclassVDataBase
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_JuggleRunEnded;
 	CSoundEventName m_strJuggleRunEnded;
 	// MPropertyStartGroup = "Visuals"
+	// MPropertyDescription = "Model"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_hModel;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_AmbientParticle;
 };

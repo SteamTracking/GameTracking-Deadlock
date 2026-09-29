@@ -9,17 +9,21 @@ CitadelTooltipModDetails
 	margin-bottom: 10px;
 	padding: 15px;
 	z-index: 2;
+	transition-property: opacity;
+	transition-duration: 0.15s;
+	transition-delay: 0.1s;
+	transition-timing-function: ease-in-out;
+}
+
+CitadelTooltipModDetails.TooltipVisible
+{
+	transition-delay: 0.0s;
 }
 
 #PrimaryTooltipContainer
 {
 	flow-children: left;
 	horizontal-align: right;
-}
-
-.usingComponentGrouping #PrimaryTooltipContainer,.usingComponentGrouping CitadelTooltipModDetails.TooltipPositionRight #PrimaryTooltipContainer,.usingComponentGrouping CitadelTooltipModDetails.TooltipPositionLeft #PrimaryTooltipContainer
-{
-	flow-children: down;
 }
 
 CitadelTooltipModDetails.TooltipPositionRight #PrimaryTooltipContainer
@@ -34,63 +38,79 @@ CitadelTooltipModDetails.TooltipPositionLeft #PrimaryTooltipContainer
 	margin-right: 10px;
 }
 
-.usingComponentGrouping CitadelTooltipModDetails.HasModifiedAbilities
-{
-	width: 450px;
-}
-
 CitadelTooltipModDetails.HasModifiedAbilities
 {
 	width: 840px;
 }
 
-CitadelTooltipModDetails.HasModifiedAbilities.gScoreboardOpen:not(.gShopOpen)
+#TooltipMainColumn
 {
-	width: 450px;
-}
-
-.item_draft_enabled CitadelTooltipModDetails.HasModifiedAbilities.gScoreboardOpen:not(.gShopOpen)
-{
-	width: 840px;
+	flow-children: down;
 }
 
 #ModTooltipContainer
 {
 	flow-children: down;
 	width: 450px;
-	border-radius: 8px;
-	box-shadow: 0px 0px 20px #00000060;
+	img-shadow: 0px 0px 10px 3.0 #000000;
 	z-index: 2;
 	background-size: cover;
+	background-size: 100% 100%;
+	padding-bottom: 30px;
 }
 
-.availableAsComponent #ModTooltipContainer,.hasComponents #ModTooltipContainer
+.WeaponMod #ModTooltipContainer
 {
-	border-radius: 8px 8px 0px 0px;
+	background-image: url("s2r://panorama/images/tooltips/items/tooltip_backer_weapon_color_psd.vtex");
+	background-image: url("s2r://panorama/images/tooltips/items/tooltip_backer_weapon_psd.vtex");
+	opacity-mask: url("s2r://panorama/images/tooltips/items/tooltip_backer_weapon_mask_psd.vtex");
+}
+
+.ArmorMod #ModTooltipContainer
+{
+	background-image: url("s2r://panorama/images/tooltips/items/tooltip_backer_vitality_color_psd.vtex");
+	background-image: url("s2r://panorama/images/tooltips/items/tooltip_backer_vitality_psd.vtex");
+	opacity-mask: url("s2r://panorama/images/tooltips/items/tooltip_backer_vitality_mask_psd.vtex");
+}
+
+.TechMod #ModTooltipContainer
+{
+	background-image: url("s2r://panorama/images/tooltips/items/tooltip_backer_spirit_color_psd.vtex");
+	background-image: url("s2r://panorama/images/tooltips/items/tooltip_backer_spirit_psd.vtex");
+	opacity-mask: url("s2r://panorama/images/tooltips/items/tooltip_backer_spirit_mask_psd.vtex");
+}
+
+.AbilityMod #ModTooltipContainer
+{
+	background-image: url("s2r://panorama/images/tooltips/items/tooltip_backer_spirit_psd.vtex");
+}
+
+.IsCorrupted.WeaponMod #ModTooltipContainer
+{
+	background-image: url("s2r://panorama/images/tooltips/items/tooltip_backer_weapon_corrupted_psd.vtex");
+}
+
+.IsCorrupted.ArmorMod #ModTooltipContainer
+{
+	background-image: url("s2r://panorama/images/tooltips/items/tooltip_backer_vitality_corrupted_psd.vtex");
+}
+
+.IsCorrupted.TechMod #ModTooltipContainer
+{
+	background-image: url("s2r://panorama/images/tooltips/items/tooltip_backer_spirit_corrupted_psd.vtex");
 }
 
 .AttributesContainer
 {
-	background-color: #000000;
 	background-img-opacity: 0.8;
 }
 
-.WeaponMod .AttributesContainer
-{
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_bg_weapon_psd.vtex");
-}
-
-.ArmorMod .AttributesContainer
-{
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_bg_vitality_psd.vtex");
-}
-
-.TechMod .AttributesContainer
-{
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_bg_spirit_psd.vtex");
-}
-
 .IsCosmetic .AttributesContainer
+{
+	background-color: rgb(54, 71, 100);
+}
+
+.IsCosmetic.CosmeticSnowball .AttributesContainer
 {
 	background-color: rgb(54, 71, 100);
 	background-image: url("s2r://panorama/images/seasonal/2025/snowball_tooltip_bg_psd.vtex");
@@ -107,6 +127,37 @@ CitadelTooltipModDetails.TooltipVisible
 	width: 100%;
 	min-height: 96px;
 	height: fit-children;
+	padding: 20px 25px;
+}
+
+.WeaponMod .HeaderContainer
+{
+	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_weapon_psd.vtex");
+}
+
+.ArmorMod .HeaderContainer
+{
+	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_vitality_psd.vtex");
+}
+
+.ArmorMod .HeaderContainer.IsCorrupted
+{
+	background-color: #00000000;
+}
+
+.TechMod .HeaderContainer
+{
+	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_spirit_psd.vtex");
+}
+
+.IsCorrupted.WeaponMod .HeaderContainer
+{
+	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_weapon_corrupted_psd.vtex");
+}
+
+.IsCorrupted.ArmorMod .HeaderContainer,.IsCorrupted.TechMod .HeaderContainer
+{
+	background-color: #00000000;
 }
 
 #HeaderBGOverlay
@@ -172,7 +223,6 @@ CitadelTooltipModDetails.TooltipVisible
 #HeaderContents
 {
 	flow-children: right;
-	padding: 0px 20px;
 	vertical-align: middle;
 }
 
@@ -186,30 +236,6 @@ CitadelTooltipModDetails.TooltipVisible
 {
 	vertical-align: center;
 	background-size: cover;
-}
-
-.WeaponMod .HeaderContainer
-{
-	background-color: weaponColorMedium;
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_weapon_psd.vtex");
-}
-
-.ArmorMod .HeaderContainer
-{
-	background-color: fortitudeColor;
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_vitality_psd.vtex");
-}
-
-.TechMod .HeaderContainer
-{
-	background-color: spiritColor;
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_spirit_psd.vtex");
-}
-
-.IsCosmetic .HeaderContainer
-{
-	background-color: cornflowerblue;
-	background-image: url("s2r://panorama/images/seasonal/2025/snowball_tooltip_header_psd.vtex");
 }
 
 .PassiveTierBonus
@@ -271,7 +297,12 @@ CitadelTooltipModDetails.TooltipVisible
 
 #AbilityTypeSection
 {
-	padding: 8px 14px 12px 14px;
+	padding: 0px 14px 12px 0px;
+}
+
+#AbilityTypeSection .AppliedAttributesContainer:nth-child(n+2)
+{
+	margin-top: 10px;
 }
 
 .AppliedAttributesContainer
@@ -282,7 +313,7 @@ CitadelTooltipModDetails.TooltipVisible
 .StatsAppliedBackground
 {
 	width: 100%;
-	margin-top: 15px;
+	margin-top: 10px;
 	flow-children: right;
 	min-height: 80px;
 }
@@ -410,7 +441,7 @@ CitadelTooltipModDetails.TooltipVisible
 	margin-right: 8px;
 	font-weight: bold;
 	vertical-align: middle;
-	margin-left: 20px;
+	margin-left: 10px;
 	margin-bottom: 2px;
 }
 
@@ -521,10 +552,24 @@ CitadelTooltipModDetails.TooltipVisible
 	wash-color: spiritBrightColor&ea;
 }
 
+#ModLevel
+{
+	padding-left: 8px;
+	font-weight: bold;
+	font-size: 20px;
+	text-shadow: 2px 2px 0px #00000030;
+	text-overflow: shrink;
+	vertical-align: middle;
+	wash-color: armorColor;
+	font-family: block;
+	visibility: collapse;
+}
+
 .ModName
 {
 	font-weight: bold;
-	font-size: 28px;
+	font-family: oracle;
+	font-size: 36px;
 	text-shadow: 2px 2px 0px #00000030;
 	text-overflow: shrink;
 }
@@ -559,11 +604,77 @@ CitadelTooltipModDetails.TooltipVisible
 	visibility: visible;
 }
 
+#CorruptedIndicator
+{
+	visibility: collapse;
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: top;
+	margin: 40px 0px 0px 10px;
+	padding: 3px 8px;
+	flow-children: right;
+	transform: rotateZ(-2deg);
+	ui-scale: 100%;
+}
+
+#CorruptedIndicator Label
+{
+	color: corruptedColorLight;
+	text-shadow: 0px 0px 4.0 corruptedDarkColor;
+	font-size: 14px;
+	font-weight: bold;
+	font-family: oracle;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+.IsCorrupted #CorruptedIndicator
+{
+	visibility: visible;
+}
+
+#CorruptedLabel Label
+{
+	font-family: oracle;
+	font-size: 26px;
+	font-weight: bold;
+	color: corruptedColorBright;
+	text-transform: uppercase;
+	color: offWhite;
+	horizontal-align: center;
+	color: corruptedColorLight;
+	font-size: 22px;
+	font-weight: bold;
+	font-family: oracle;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+#CorruptedLabel Image
+{
+	animation-name: DefaultAnimY;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-frame-time: 300ms;
+}
+
+#CorruptedLabel Image:nth-child(odd)
+{
+	animation-direction: alternate-reverse;
+}
+
+#CorruptedLabel Image:nth-child(even)
+{
+	animation-direction: alternate;
+}
+
 .ModCost
 {
 	font-weight: bold;
 	font-size: 20px;
 	color: shardColor;
+	font-family: block;
 	vertical-align: middle;
 }
 
@@ -591,8 +702,8 @@ CitadelTooltipModDetails.TooltipVisible
 {
 	font-weight: bold;
 	font-size: 20px;
-	color: #000000aa;
-	margin-right: 3px;
+	color: shardColor&90;
+	margin-right: 5px;
 	vertical-align: middle;
 }
 
@@ -776,18 +887,14 @@ CitadelAltInfoPanel
 .AffectedAbilitiesContainer
 {
 	width: 350px;
-	border-radius: 0px 8px 8px 0px;
-	margin-top: 9px;
+	margin-top: 26px;
+	margin-left: -15px;
 }
 
-CitadelTooltipModDetails.gScoreboardOpen:not(.gShopOpen) .AffectedAbilitiesContainer
+.TooltipPositionLeft .AffectedAbilitiesContainer
 {
-	visibility: collapse;
-}
-
-.item_draft_enabled CitadelTooltipModDetails.gScoreboardOpen:not(.gShopOpen) .AffectedAbilitiesContainer
-{
-	visibility: visible;
+	margin-left: 0px;
+	margin-right: -2px;
 }
 
 .HeaderAttributesContainer
@@ -807,15 +914,9 @@ CitadelTooltipModDetails.gScoreboardOpen:not(.gShopOpen) .AffectedAbilitiesConta
 	box-shadow: 0px 0px 20px #00000060;
 }
 
-.gScoreboardOpen.HasModifiedAbilities .AffectedAbilitiesTogglePanel
+.gDetailView.HasModifiedAbilities .AffectedAbilitiesTogglePanel
 {
 	visibility: visible;
-}
-
-.usingComponentGrouping .AffectedAbilitiesContainer
-{
-	horizontal-align: center;
-	margin-top: 10px;
 }
 
 #ViewImpactBox
@@ -826,12 +927,24 @@ CitadelTooltipModDetails.gScoreboardOpen:not(.gShopOpen) .AffectedAbilitiesConta
 	horizontal-align: right;
 	vertical-align: center;
 	border: 2px solid #00000070;
-	padding: 10px 10px;
+	padding: 10px 10px 10px 20px;
 	height: 80px;
 	background-color: offBlack;
 	animation-name: viewDetailsFlash;
 	animation-iteration-count: infinite;
 	animation-duration: 2s;
+}
+
+.TooltipPositionLeft #ViewImpactBox
+{
+	padding: 10px 20px 10px 10px;
+}
+
+.gradient_overlay
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #00000000 ), to( #00000090 ) );
 }
 
 @keyframes 'viewDetailsFlash'
@@ -863,12 +976,12 @@ CitadelTooltipModDetails.gScoreboardOpen:not(.gShopOpen) .AffectedAbilitiesConta
 	font-size: 16px;
 	margin-bottom: 2px;
 	text-shadow: 0px 0px 3px #000000;
+	font-family: oracle;
 }
 
 .TooltipPositionRight #ViewImpactBox
 {
 	horizontal-align: left;
-	border-radius: 0px 8px 8px 0px;
 }
 
 .impactBinding
@@ -881,14 +994,9 @@ CitadelTooltipModDetails.gScoreboardOpen:not(.gShopOpen) .AffectedAbilitiesConta
 	visibility: visible;
 }
 
-.gScoreboardOpen.HasModifiedAbilities #ViewImpactBox
+.gDetailView.HasModifiedAbilities #ViewImpactBox
 {
 	visibility: collapse;
-}
-
-.TooltipPositionLeft .AffectedAbilitiesContainer
-{
-	border-radius: 8px 0px 0px 8px;
 }
 
 CitadelTooltipModDetails.WeaponMod .AffectedAbilitiesTogglePanel
@@ -900,7 +1008,8 @@ CitadelTooltipModDetails.WeaponMod .AffectedAbilitiesTogglePanel
 
 .WeaponMod #ViewImpactBox
 {
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_modifies_header_weapon_psd.vtex");
+	background-color: courageDarkColor;
+	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_weapon_psd.vtex");
 }
 
 CitadelTooltipModDetails.ArmorMod .AffectedAbilitiesTogglePanel
@@ -913,19 +1022,19 @@ CitadelTooltipModDetails.ArmorMod .AffectedAbilitiesTogglePanel
 .ArmorMod #ViewImpactBox
 {
 	background-color: fortitudeDarkColor;
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_modifies_header_vitality_psd.vtex");
+	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_vitality_psd.vtex");
 }
 
 CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 {
-	background-color: spiritDarkColor;
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_bg_modifies_spirit_psd.vtex");
+	background-color: spiritDarkerColor;
 	background-size: cover;
 }
 
 .TechMod #ViewImpactBox
 {
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_modifies_header_spirit_psd.vtex");
+	background-color: spiritDarkerColor;
+	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_spirit_psd.vtex");
 	brightness: 1.5;
 }
 
@@ -936,10 +1045,10 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 
 .HasModifiedAbilities .AffectedAbilitiesContainer
 {
-	z-index: 1;
+	z-index: -1;
 }
 
-.gScoreboardOpen .HasModifiedAbilities .AffectedAbilitiesContainer
+.gDetailView .HasModifiedAbilities .AffectedAbilitiesContainer
 {
 	opacity: 1;
 }
@@ -954,6 +1063,12 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	background-color: #00000060;
 	vertical-align: center;
 	width: 100%;
+}
+
+#TierBonusContainer.Corrupted,.ImportantStatBox.Corrupted,.StatusEffectBox.Corrupted
+{
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( corruptedColorBright&ee ), to( corruptedColorBright ) );
+	background-color: corruptedColorBright&20;
 }
 
 .HasFourImportantProperties .ImportantStatBox
@@ -1083,9 +1198,10 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 {
 	horizontal-align: right;
 	vertical-align: top;
-	margin-right: 3px;
 	ignore-parent-flow: true;
 	ui-scale: 80%;
+	margin-top: -2px;
+	overflow: noclip;
 }
 
 .HideImportantAttribute #ImportantAttributeContainer
@@ -1152,7 +1268,7 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	visibility: visible;
 }
 
-.IsPurchased .ModCostContainer,.usedAsComponent .ModCostContainer,.item_draft_enabled .ModCostContainer,.IsCosmetic .ModCostContainer
+.IsPurchased .ModCostContainer,.usedAsComponent .ModCostContainer,.gStreetBrawl .ModCostContainer,.IsCosmetic .ModCostContainer
 {
 	visibility: collapse;
 }
@@ -1167,7 +1283,7 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	visibility: collapse;
 }
 
-.IsCosmetic .snowball_level
+.IsCosmetic.CosmeticSnowball .snowball_level
 {
 	visibility: visible;
 }
@@ -1182,6 +1298,16 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	font-weight: medium;
 	max-height: 40px;
 	text-overflow: shrink;
+}
+
+.Corrupted .ImportantStatType
+{
+	color: white;
+}
+
+#ImportantAttribute.Corrupted .ImportantStatType
+{
+	color: white;
 }
 
 .StatusEffectType
@@ -1208,7 +1334,7 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	font-weight: semi-bold;
 }
 
-.prop_tech_damage .ImportantStatType
+.prop_tech_damage .ImportantStatType,.StatusEffectEMP .ImportantStatType
 {
 	color: spiritBrightColor;
 	font-weight: semi-bold;
@@ -1239,6 +1365,7 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	text-align: center;
 	opacity: 0.3;
 	text-overflow: shrink;
+	visibility: collapse;
 }
 
 .HideStatLabel .ImportantStatLabel
@@ -1261,11 +1388,13 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 {
 	width: 100%;
 	height: fit-children;
+	margin: 1px;
 }
 
 .AttributesContainer
 {
 	flow-children: down;
+	padding: 10px 20px 0px 20px;
 }
 
 .HideStatsApplied .AttributesContainer
@@ -1280,6 +1409,7 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	flow-children: down;
 	z-index: 100;
 	horizontal-align: right;
+	padding: 0px 20px;
 	visibility: collapse;
 }
 
@@ -1296,7 +1426,7 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 .componentsSection .componentGroup
 {
 	flow-children: down;
-	width: fill-parent-flow( 1.0 );
+	width: 100%;
 }
 
 .componentsSection .componentGroup .componentsLabel
@@ -1306,26 +1436,11 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	font-weight: bold;
 	text-transform: uppercase;
 	vertical-align: middle;
-	background-color: offBlack;
+	background-color: offBlack&ea;
 	background-img-opacity: 0.5;
 	padding: 4px 10px 2px 10px;
 	width: 100%;
 	text-align: left;
-}
-
-.WeaponMod .componentsSection .componentGroup .componentsLabel
-{
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_bg_modifies_weapon_psd.vtex");
-}
-
-.ArmorMod .componentsSection .componentGroup .componentsLabel
-{
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_bg_modifies_vitality_psd.vtex");
-}
-
-.TechMod .componentsSection .componentGroup .componentsLabel
-{
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_bg_modifies_spirit_psd.vtex");
 }
 
 .componentsSection .componentGroup .componentsList
@@ -1334,24 +1449,9 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	flow-children: right-wrap;
 	horizontal-align: left;
 	padding: 0px 5px 5px 10px;
-	background-color: offBlack;
+	background-color: offBlack&70;
 	background-img-opacity: 0.5;
 	border-radius: 0px 0px 5px 5px;
-}
-
-.WeaponMod .componentsSection .componentGroup .componentsList
-{
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_bg_modifies_weapon_psd.vtex");
-}
-
-.ArmorMod .componentsSection .componentGroup .componentsList
-{
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_bg_modifies_vitality_psd.vtex");
-}
-
-.TechMod .componentsSection .componentGroup .componentsList
-{
-	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_bg_modifies_spirit_psd.vtex");
 }
 
 #ComponentsContainer
@@ -1481,23 +1581,66 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	margin-left: 15px;
 }
 
+#PopularityContainer
+{
+	visibility: collapse;
+	flow-children: right;
+	width: 100%;
+	horizontal-align: center;
+	padding: 5px 20px;
+	flow-children: right;
+	border-radius: 0px 0px 5px 5px;
+}
+
+.PopularItem #PopularityContainer
+{
+	visibility: visible;
+}
+
+.IsCorrupted #PopularityContainer,.gStreetBrawl #PopularityContainer
+{
+	visibility: collapse;
+}
+
+#PopularityContainer #PopularityHeroImage
+{
+	width: 30px;
+	height: 30px;
+	vertical-align: middle;
+}
+
+#PopularityContainer .popularityLabel
+{
+	margin: 8px;
+	margin-left: 10px;
+	font-size: 16px;
+	vertical-align: center;
+	color: brandGreen;
+	font-style: italic;
+	font-family: oracle;
+	font-weight: medium;
+	visibility: collapse;
+}
+
+.PopularEarly #PopularityContainer .popularityLabel.Early,.PopularMid #PopularityContainer .popularityLabel.Mid,.PopularLate #PopularityContainer .popularityLabel.Late
+{
+	visibility: visible;
+}
+
 .BuildInfoContainer
 {
 	visibility: collapse;
-	margin-left: 4px;
-	width: 450px;
-	padding: 5px;
-	background-color: buildsDarkColor;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( buildsColor ), to( buildsDarkColor&ee ) );
-	border: 2px solid buildsLightColor&50;
+	width: 100%;
+	horizontal-align: center;
+	padding: 5px 8px;
+	background-color: buildsLightColor;
 	flow-children: right;
-	border-radius: 5px;
+	margin-top: 3px;
 }
 
 .TooltipPositionLeft .BuildInfoContainer
 {
 	horizontal-align: right;
-	margin-right: 10px;
 }
 
 .TooltipPositionRight .BuildInfoContainer
@@ -1522,8 +1665,8 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 {
 	horizontal-align: left;
 	vertical-align: center;
-	width: 32px;
-	height: 32px;
+	width: 22px;
+	height: 22px;
 	margin: 3px;
 	margin-right: 8px;
 }
@@ -1537,10 +1680,11 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	horizontal-align: left;
 	vertical-align: center;
 	color: offWhite;
-	font-weight: semi-bold;
+	font-weight: bold;
 	font-size: 16px;
+	font-family: oracle;
 	text-overflow: shrink;
-	text-shadow: 0px 0px 3px #00000090;
+	color: offBlack;
 }
 
 .HasAnnotation .ModifiesLabel
@@ -1673,5 +1817,107 @@ CitadelTooltipModDetails.TechMod .AffectedAbilitiesTogglePanel
 	color: silvered;
 	opacity: 0.6;
 	font-style: italic;
+}
+
+#TierContainer
+{
+	width: 28px;
+	height: 28px;
+	ignore-parent-flow: true;
+	vertical-align: top;
+	horizontal-align: right;
+	ui-scale: 200%;
+	visibility: collapse;
+}
+
+.isTier5 #TierContainer
+{
+	visibility: collapse;
+}
+
+.tier_bg
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: right;
+	background-image: url("s2r://panorama/images/shop/tier_corner_cap.vsvg");
+	background-size: 22px;
+	background-repeat: no-repeat;
+	background-position: right 0px;
+	img-shadow: -2px 0px 0px #00000060;
+}
+
+.WeaponMod .tier_bg
+{
+	wash-color: courageBrightColor;
+}
+
+.ArmorMod .tier_bg
+{
+	wash-color: fortitudeBrightColor;
+}
+
+.TechMod .tier_bg
+{
+	wash-color: spiritBrightColor;
+}
+
+#mod_tier_label
+{
+	horizontal-align: right;
+	margin-top: 0px;
+	height: 8px;
+	background-size: 100% 100%;
+	margin-top: 3px;
+	margin-right: 0px;
+	z-index: 2;
+	wash-color: offBlack;
+	opacity: 1;
+}
+
+.HideModTierLabel #mod_tier_label
+{
+	visibility: collapse;
+}
+
+#PurchaseItemIcon #mod_tier_label
+{
+	ignore-parent-flow: true;
+	vertical-align: top;
+}
+
+.Tier1 #mod_tier_label
+{
+	background-image: url("s2r://panorama/images/upgrades/tier_numbers_small_01.vsvg");
+	width: 5px;
+	margin-right: 4px;
+}
+
+.Tier2 #mod_tier_label
+{
+	background-image: url("s2r://panorama/images/upgrades/tier_numbers_small_02.vsvg");
+	width: 7px;
+	margin-right: 3px;
+}
+
+.Tier3 #mod_tier_label
+{
+	background-image: url("s2r://panorama/images/upgrades/tier_numbers_small_03.vsvg");
+	width: 9px;
+	margin-right: 2px;
+}
+
+.Tier4 #mod_tier_label
+{
+	background-image: url("s2r://panorama/images/upgrades/tier_numbers_small_04.vsvg");
+	width: 11px;
+	margin-right: 1px;
+}
+
+.Tier5 #mod_tier_label
+{
+	background-image: url("s2r://panorama/images/upgrades/tier_numbers_small_05.vsvg");
+	width: 12px;
+	margin-right: 1px;
 }
 

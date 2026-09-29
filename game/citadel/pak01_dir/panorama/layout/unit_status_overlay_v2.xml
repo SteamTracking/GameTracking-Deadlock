@@ -1,7 +1,7 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/unit_status_v2.vcss_c" />
+		<include src="s2r://panorama/styles/unit_status_v2.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="StatusPanelSnippet">
@@ -10,18 +10,6 @@
 				<Label id="stacks" text="{i:stacks}" />
 				<Panel id="status_duration_bg">
 					<Panel id="status_duration" />
-				</Panel>
-			</Panel>
-		</snippet>
-		<snippet name="UnitInfoPanelSnippet">
-			<Panel class="unit_info_panel">
-				<Panel id="unit_info_bg">
-					<Image id="unit_ult_ready_icon" />
-					<Image id="unit_info_icon" />
-					<Panel id="state_container">
-						<Image id="state_icon" />
-						<Panel id="state_progressbar" />
-					</Panel>
 				</Panel>
 			</Panel>
 		</snippet>
@@ -42,52 +30,62 @@
 				<Panel class="StaminaPipIcon" />
 			</Panel>
 		</snippet>
-		<snippet name="UnitHealthBar">
-			<Panel id="UnitHealthbarContainer">
-				<Panel id="unit_healthbar_bg" />
-				<Panel id="unit_healthbar_border_parent">
-					<Panel id="unit_healthbar_active_parent">
-						<Panel id="unit_healthbar_lagging" />
-						<Label id="unit_healthbar_pip_label" text="{s:pip_text}" />
-						<Panel id="unit_healthbar_healing" />
-						<Panel id="unit_healthbar_delta" />
-						<Panel id="unit_healthbar_bullet_shield" />
-						<Panel id="unit_healthbar_tech_shield" />
-						<Panel class="healthbar_border" />
-					</Panel>
-				</Panel>
-			</Panel>
-		</snippet>
 	</snippets>
 	<Panel class="WindowRoot" hittest="false">
 		<Label id="name" text="{s:name}" />
+		<Panel id="NeutralBounty">
+			<Panel id="TierContainer">
+				<Panel class="difficulty_icon" />
+			</Panel>
+			<Panel id="BountyContainer">
+				<Panel class="icon_souls" />
+				<Label text="{i:neutral_bounty}" />
+			</Panel>
+		</Panel>
 		<CitadelStatusEffect id="StatusEffects" />
 		<Panel id="TargetableIndicator" />
-		<Panel id="StaminaContainer" />
 		<Panel id="UnitStatus" hittest="false">
 			<Panel id="InfoHealthContainer">
-				<Panel id="UnitInfoContainer" />
-				<Panel id="UnitHealthbarsContainer" />
-				<Panel id="UnitHealthbarContainer" class="old_bar">
-					<Panel id="unit_healthbar_bg">
-						<Panel id="unit_healthbar_missing">
-							<Panel id="unit_healthbar_active_parent">
-								<Panel id="unit_healthbar_lagging">
-									<Panel class="healthbar_border" />
-								</Panel>
-								<Label id="unit_healthbar_pip_label" text="{s:pip_text}" />
-								<Panel id="unit_healthbar_healing" />
-								<Panel id="unit_healthbar_delta" />
-								<Panel id="unit_healthbar_bullet_shield" />
-								<Panel id="unit_healthbar_tech_shield" />
-							</Panel>
+				<Panel id="UnitHealthbarsContainer">
+					<Panel id="UnitHealthbar" class="UnitHealthbarContainer">
+						<Panel id="UnitHealthbarInner">
+							<Panel id="unit_healthbar_lagging" class="HealthAmount" />
+							<Panel id="unit_healthbar_deferred" class="HealthAmount" />
+							<Panel id="unit_healthbar_healing" class="HealthAmount" />
+							<Panel id="unit_healthbar_bullet_shield" class="HealthAmount" />
+							<Panel id="unit_healthbar_ratking_armor" class="HealthAmount" />
+							<Panel id="unit_healthbar_delta" class="HealthAmount" />
+						</Panel>
+						<Panel id="UnitHealthbarLines" />
+					</Panel>
+					<Panel id="UnitShieldbar" class="UnitHealthbarContainer">
+						<Panel id="UnitHealthbarInner">
+							<Panel id="unit_healthbar_bullet_shield" class="HealthAmount" />
 						</Panel>
 					</Panel>
 				</Panel>
+				<Panel class="unit_info_panel">
+					<Panel id="unit_info_bg">
+						<Image id="unit_ult_ready_icon" />
+					</Panel>
+				</Panel>
+				<Label id="UnitHealthbarValue" text="{d:health}" />
+				<Label id="UnitShieldbarValue" text="{d:health}" />
 			</Panel>
 		</Panel>
+		<Panel id="KillStreakIndicator">
+			<Panel class="KSImage" />
+		</Panel>
+		<Panel id="StaminaContainer" />
+		<Panel id="RejuvenatorActive" />
 		<Panel id="CriticalIndicator">
 			<Label text="#Citadel_Hud_Critical" />
+		</Panel>
+		<Panel id="AssassinateIndicator">
+			<Label text="#Citadel_Hud_Assassinate" />
+		</Panel>
+		<Panel id="UnkillableIndicator">
+			<Label text="#Citadel_Hud_Unkillable" />
 		</Panel>
 	</Panel>
 </root>

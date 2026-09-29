@@ -1,0 +1,3 @@
+class CDelayImpulseResponseNodeDesc : public CVNodeTypeDesc
+{
+};

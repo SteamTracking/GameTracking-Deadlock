@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -165,7 +166,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flMaxTraceLength":
 //	{
@@ -240,7 +242,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_vecTraceDir":
 //	{
@@ -359,7 +362,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentY":
 //		{
@@ -434,7 +438,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentZ":
 //		{
@@ -509,7 +514,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatInterp":
 //		{
@@ -584,7 +590,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_flInterpInput0": 0.000000,
 //		"m_flInterpInput1": 1.000000,
@@ -632,6 +639,7 @@
 //	"m_nPreserveOffsetCP": -1,
 //	"m_nIgnoreCP": -1
 //}
+// MGPUParticleFunction
 // MHasKV3TransferPolymorphicClassname
 class C_INIT_PositionPlaceOnGround : public CParticleFunctionInitializer
 {
@@ -642,6 +650,7 @@ class C_INIT_PositionPlaceOnGround : public CParticleFunctionInitializer
 	// MPropertyFriendlyName = "trace direction"
 	CPerParticleVecInput m_vecTraceDir;
 	// MPropertyFriendlyName = "collision group"
+	// MPropertySuppressExpr = "is_gpu_particle_system"
 	char[128] m_CollisionGroupName;
 	// MPropertyFriendlyName = "Trace Set"
 	ParticleTraceSet_t m_nTraceSet;
@@ -663,12 +672,15 @@ class C_INIT_PositionPlaceOnGround : public CParticleFunctionInitializer
 	// MPropertySuppressExpr = "!m_bSetNormal"
 	ParticleAttributeIndex_t m_nGroundNormalAttribute;
 	// MPropertyFriendlyName = "Offset only if trace hit"
+	// MPropertySuppressExpr = "is_gpu_particle_system"
 	bool m_bOffsetonColOnly;
 	// MPropertyFriendlyName = "offset final position by this fraction of the particle radius"
+	// MPropertySuppressExpr = "is_gpu_particle_system"
 	float32 m_flOffsetByRadiusFactor;
 	// MPropertyFriendlyName = "preserve initial Z-offset relative to cp"
+	// MPropertySuppressExpr = "is_gpu_particle_system"
 	int32 m_nPreserveOffsetCP;
 	// MPropertyFriendlyName = "CP Entity to Ignore for Collisions"
-	// MPropertySuppressExpr = "m_nTraceSet == PARTICLE_TRACE_SET_STATIC"
+	// MPropertySuppressExpr = "is_gpu_particle_system || m_nTraceSet == PARTICLE_TRACE_SET_STATIC"
 	int32 m_nIgnoreCP;
 };

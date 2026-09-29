@@ -1,3 +1,3 @@
-class CAI_CitadelPlayerBotMotor : public CAI_Motor
+class CAI_CitadelPlayerBotMotor : public IAI_Motor
 {
 };

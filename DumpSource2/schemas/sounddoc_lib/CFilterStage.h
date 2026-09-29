@@ -4,6 +4,7 @@
 //	"m_flQ": 0.707000,
 //	"m_fldbGain": 1.000000,
 //	"m_nFilterSlope": "FILTER_SLOPE_12dB",
+//	"m_nChannelSet": "FILTER_ALL_CHANNELS",
 //	"m_bEnable": true
 //}
 class CFilterStage
@@ -22,6 +23,8 @@ class CFilterStage
 	float32 m_fldbGain;
 	// MPropertyFriendlyName = "Slope"
 	VMixFilterSlope_t m_nFilterSlope;
+	// MPropertyFriendlyName = "Channel Set"
+	VMixFilterChannelSet_t m_nChannelSet;
 	// MPropertyFriendlyName = "Enabled"
 	bool m_bEnable;
 };

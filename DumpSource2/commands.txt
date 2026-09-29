@@ -10,20 +10,11 @@
 +chatwheel (clientdll release)
 	Opens chatwheel menu while held
 
-+chatwheel_pingwheel (clientdll release)
-	Opens the second chatwheel menu while held
-
 +citadel_swtich_player_cam (clientdll release)
 	Player Cam switching button pressed
 
-+herochatwheel (clientdll release)
-	Opens hero chatwheel menu while held
-
 +in_ability_ping (clientdll release)
 	Ping button pressed
-
-+show_ability_upgrade_radial (developmentonly clientdll)
-	Opens radial abilities menu while held
 
 -bugvoice (developmentonly dontrecord defensive)
 	Finish recording bug voice attachment.
@@ -37,20 +28,11 @@
 -chatwheel (clientdll release)
 	Executes the highlighted chatwheel menu item
 
--chatwheel_pingwheel (clientdll release)
-	Executes the highlighted chatwheel menu item
-
 -citadel_swtich_player_cam (clientdll release)
 	Player Cam switching button released
 
--herochatwheel (clientdll release)
-	Executes the highlighted hero chatwheel menu item
-
 -in_ability_ping (clientdll release)
 	Ping button released
-
--show_ability_upgrade_radial (developmentonly clientdll)
-	Closest radial abilities menu on release
 
 StackStats_Dump (developmentonly)
 	Dump a named stackstats structure to disk. Usage: stackstats_dump "structname" ["filename"]
@@ -170,15 +152,6 @@ animevents_dump (gamedll cheat)
 animgraph_dump_update_list (developmentonly gamedll)
 	Displays stats about which animations are updating
 
-announce_create (clientdll release)
-	<title> <message> <URL> [Priority] Create a new announcement with the specified title, message, and URL. use empty quotes if you want to skip message or URL
-
-announce_delete (clientdll release)
-	<ID> Deletes the specified announcement ID
-
-announce_update (clientdll release)
-	<ID> <title> <message> <URL> [Priority] Create a new announcement with the specified title, message, and URL. use empty quotes if you want to skip message or URL
-
 assetsystem_clear_thumbnail_cache (developmentonly defensive)
 	Clear thumbnail cache
 
@@ -224,6 +197,9 @@ blink (developmentonly dontrecord defensive)
 
 bot_command (developmentonly gamedll defensive)
 	<bot name> <command string...>. Sends specified command to one or more player bots: [all], [east/west], [bot name]
+
+bot_command_target (gamedll cheat release)
+	Sends specified command to target bot under reticle
 
 bot_force_zipline (developmentonly gamedll defensive)
 	Make all the bots get on nearby ziplines
@@ -316,18 +292,6 @@ cast_sphere (gamedll cheat)
 cc_emit (developmentonly clientdll defensive)
 	Emits a closed caption
 
-cc_findsound (developmentonly clientdll defensive)
-	Searches for soundname which emits specified text.
-
-cc_flush (developmentonly clientdll defensive)
-	Flushes async'd captions.
-
-cc_random (developmentonly clientdll defensive)
-	Emits a random caption
-
-cc_showblocks (developmentonly clientdll defensive)
-	Toggles showing which blocks are pending/loaded async.
-
 changelevel (release)
 	changelevel <mapname> :Multiplayer change level.
 
@@ -348,6 +312,18 @@ citadel_FindUnitsInRadius (developmentonly gamedll)
 
 citadel_abandon_match (developmentonly clientdll defensive)
 	Force abandons current match
+
+citadel_ability_active_report (developmentonly gamedll cheat)
+	Print per-ability active window transition counts and dwell times. Use citadel_ability_active_reset_stats to clear.
+
+citadel_ability_active_reset_stats (developmentonly gamedll cheat)
+	Clear the counters printed by citadel_ability_active_report.
+
+citadel_ability_activeness_report (developmentonly gamedll defensive)
+	Print ability MODIFIER_VALUE contributions recorded while the ability was untrained or inactive. Use citadel_ability_activeness_reset_stats to clear.
+
+citadel_ability_activeness_reset_stats (developmentonly gamedll defensive)
+	Clear the counters printed by citadel_ability_activeness_report.
 
 citadel_ability_damage_vdata_tweak (developmentonly clientdll)
 	Command to tweak base damage from abilities. 
@@ -397,14 +373,20 @@ citadel_book_xp (developmentonly clientdll)
 citadel_boss_tier_3_testing_reset (gamedll cheat)
 	Respawns the boss
 
+citadel_bot_copyrecording (gamedll cheat client_can_execute)
+	Copy a bot's recorded commands to the clipboard as a share code (aim at the bot, or the first bot with a recording)
+
 citadel_bot_force_abandon (developmentonly gamedll defensive)
 	Force bot into the abandon state
 
-citadel_bot_give_all_abilities (developmentonly gamedll defensive)
+citadel_bot_give_all_abilities (gamedll cheat release)
 	Gives all bots all abilities.  Use with citadel_bot_use_ability 1-4
 
 citadel_bot_give_all_abilities_base (developmentonly gamedll defensive)
 	Gives all bots all abilities without perks.  Use with citadel_bot_use_ability 1-4
+
+citadel_bot_give_all_bots_all_items (developmentonly gamedll defensive)
+	Gives all bots all items. Not limited by slot count (last I checked, this resulted in ~200 items being added to every bot)
 
 citadel_bot_give_team_gold (gamedll cheat)
 	Give all bots on a particular team gold
@@ -418,11 +400,17 @@ citadel_bot_list_ents (gamedll cheat)
 citadel_bot_list_objectives_ent (gamedll cheat)
 	List all entities that are associated with a Citadel Game Objective
 
+citadel_bot_pasterecording (gamedll cheat client_can_execute)
+	Load a bot recording share code from the clipboard. Aim at a bot to load it into that bot as the recorded hero, otherwise a new bot of that hero is spawned
+
 citadel_bot_playrecording (gamedll cheat client_can_execute)
 	Play back commands recorded via 'citadel_bot_record'
 
 citadel_bot_purchase_random_draft_option (developmentonly gamedll defensive)
 	Makes the bots purchase a random draft option
+
+citadel_bot_recordstop (gamedll cheat client_can_execute)
+	Stop bot recording and any bot recording playback
 
 citadel_bot_run_dps_test (developmentonly gamedll)
 	Run a gun DPS test and record the results
@@ -445,17 +433,41 @@ citadel_buttons_tweak (developmentonly clientdll)
 citadel_cancel_hero_draft (developmentonly gamedll defensive)
 	Ends hero draft mode and goes straight to playing the game
 
+citadel_catapult_draw_preview_paths (developmentonly clientdll)
+	Debug draw every catapult's predicted launch path for x seconds (default 5)
+
+citadel_catapult_respawn_pickup_trails (gamedll cheat release)
+	Re-lays the pickup trail on every catapult that has one, clearing the old pickups first
+
 citadel_clear_all_post_process_effects (developmentonly clientdll defensive)
 	Clear all post process effects that are active, and spew their state
 
 citadel_clear_killstreak (developmentonly gamedll defensive)
 	citadel_clear_killstreak [player_slot]
 
+citadel_combatlog_scan (developmentonly clientdll defensive)
+	Scans for fights
+
+citadel_combatlog_size (developmentonly clientdll defensive)
+	Calculates the total allocations for a combatlog
+
+citadel_combatlog_size_server (developmentonly gamedll defensive)
+	<no description>
+
+citadel_combatlog_update (gamedll client_can_execute)
+	Send combat log to a client
+
+citadel_combatlog_write_test (developmentonly clientdll defensive)
+	Writes combatlog to disk if you have citadel_combatlog_file set
+
 citadel_commend_fake_received (clientdll release)
 	<no description>
 
 citadel_commend_player (clientdll release)
 	<target account id> [match id] [hero_id]
+
+citadel_commend_player_clear (clientdll release)
+	Reset the commend notification UI, discarding any commends it has accumulated
 
 citadel_complete_new_player (clientdll release)
 	[flag] Marks the new player state as complete
@@ -472,8 +484,14 @@ citadel_convert_tight_camera_settings (developmentonly clientdll)
 citadel_cooldown_scaling_vdata_tweak (developmentonly clientdll)
 	Command to tweak all ability cooldowns, including ability upgrades.  Pass in scale factor (with 1.0 being no change), and a min delta.
 
+citadel_cooldown_scaling_vdata_tweak_ult (developmentonly clientdll)
+	Command to tweak all ultimate ability cooldowns, including ability upgrades.  Pass in scale factor (with 1.0 being no change), and a min delta.
+
 citadel_create_unit (gamedll vconsole_fuzzy_matching client_can_execute)
 	[hero_name | none] [team] - Creates an unit.  Pass 'my_hero' as hero_name to use your current hero
+
+citadel_debug_equip_econ_item (developmentonly clientdll)
+	Equip an econ item <item_id> <hero_id> <slot_id>
 
 citadel_decrease_replay_speed (clientdll release)
 	Decrease the Replay speed while watching a replay
@@ -493,21 +511,6 @@ citadel_dev_test_endgame_server_cmd (gamedll cheat release client_can_execute)
 citadel_disable_duplicate_heroes (gamedll cheat release client_can_execute)
 	Disable usage of Duplicate Heroes
 
-citadel_disable_fast_cooldowns (gamedll cheat client_can_execute)
-	Disable fast cooldowns
-
-citadel_disable_fast_stamina (gamedll cheat client_can_execute)
-	Disable fast stamina
-
-citadel_disable_no_hero_death (gamedll cheat client_can_execute)
-	Make heroes able to die
-
-citadel_disable_unlimited_ammo (gamedll cheat client_can_execute)
-	Disable unlimited ammo
-
-citadel_draw_cover_points (developmentonly gamedll defensive)
-	visualizes all the trooper cover points
-
 citadel_draw_trooper_path (developmentonly gamedll defensive)
 	Draws a path between two coordinates
 
@@ -516,6 +519,12 @@ citadel_dump_build_tags (developmentonly clientdll)
 
 citadel_dump_bullets (developmentonly gamedll client_can_execute)
 	dump all bullet info to the console
+
+citadel_dump_corrupted_overrides (gamedll release)
+	Dumps every corrupted item's penalty exclusions, fixed bonuses and integer-rounded bonuses
+
+citadel_dump_corrupted_penalties (developmentonly gamedll defensive)
+	Dumps the corrupted item penalty rolled for every corruptible item this match
 
 citadel_dump_deleted_entity_counts (developmentonly clientdll defensive)
 	Displays counts of which kinds of entities have been deleted since map started
@@ -535,20 +544,8 @@ citadel_dump_rank_data (developmentonly clientdll defensive)
 citadel_enable_duplicate_heroes (gamedll cheat release client_can_execute)
 	Enable usage of Duplicate Heroes
 
-citadel_enable_fast_cooldowns (gamedll cheat client_can_execute)
-	Enables fast cooldowns
-
-citadel_enable_fast_stamina (gamedll cheat client_can_execute)
-	Enables fast stamina
-
 citadel_enable_nearby_capture_point (gamedll cheat release)
 	Enables the first capture point found within 20m
-
-citadel_enable_no_hero_death (gamedll cheat client_can_execute)
-	Make heroes unable to die
-
-citadel_enable_unlimited_ammo (gamedll cheat client_can_execute)
-	Enables unlimited ammo
 
 citadel_exonerate_account (clientdll release)
 	<Account ID> Clear recent cheat reports on this account.
@@ -559,7 +556,13 @@ citadel_fetch_cheat_reports (clientdll release)
 citadel_fibonacci_sphere_trace (gamedll cheat)
 	Draws the LOS check generated by our fibonacci sphere trace algorithm
 
-citadel_force_koth_spawn (developmentonly gamedll)
+citadel_flame_graph_request (gamedll cheat release client_can_execute)
+	Request a flame graph dump
+
+citadel_force_kill (gamedll cheat release)
+	Kill every unit of one type: troopers, neutrals, breakables, healing_snacks, guardians, walkers, base_guardians, shrines
+
+citadel_force_koth_spawn (gamedll cheat release client_can_execute)
 	Force Spawning Koth Capture point with Warning
 
 citadel_force_on_upgrade_for_all_abilities (developmentonly gamedll defensive)
@@ -578,7 +581,10 @@ citadel_get_rp (developmentonly clientdll)
 	Retrieves the rich presence of the user (leave blank for local or specify user with SteamID.Render() format).
 
 citadel_give_gold (gamedll cheat client_can_execute)
-	<gold> Give gold value to all players
+	<gold> [unsecure=0|1] Give gold value to all players
+
+citadel_give_permanent_buffs (gamedll cheat release)
+	Gives you N random breakable permanent buffs at once, the same way a Sinner's Sacrifice jackpot does. Usage: citadel_give_permanent_buffs <count>
 
 citadel_give_player_gold (gamedll cheat client_can_execute)
 	<player name> <gold> Gives the specified player gold
@@ -594,8 +600,20 @@ citadel_gun_boon_growth_vdata_tweak (developmentonly clientdll)
 	** Usage
 	- arg1 - Scale Value 1.0 being no change.
 
+citadel_heal_target (gamedll cheat release)
+	Restore the unit under your crosshair to full health
+
 citadel_hero_lock_all (developmentonly clientdll)
 	Relocks all heroes for this account
+
+citadel_hero_release_vote_clear_all_submitted (developmentonly clientdll)
+	<no description>
+
+citadel_hero_release_vote_clear_submitted (developmentonly clientdll)
+	<no description>
+
+citadel_hero_release_vote_fake_received (developmentonly clientdll)
+	[count] [delay seconds] [delay random extra seconds]
 
 citadel_hero_unlock (developmentonly clientdll)
 	<Hero ID> Unlocks the specified hero
@@ -699,6 +717,12 @@ citadel_open_modeldoc_to_model (clientdll cheat)
 citadel_open_vdata_file_to_node (clientdll cheat)
 	Open the VData editor to a specified file and node
 
+citadel_orbit_camera_in (clientdll release)
+	Move in the hideout zone camera
+
+citadel_orbit_camera_out (clientdll release)
+	Move in the hideout zone camera
+
 citadel_pause (clientdll release)
 	Send a game pause request.
 
@@ -735,8 +759,8 @@ citadel_pregame_hero_draft_test (developmentonly clientdll cheat)
 citadel_purchase_quickbuy (clientdll release)
 	Purchase the next quickbuy item
 
-citadel_record_hero_animgraph (gamedll cheat)
-	Record the animgraph for a specified hero
+citadel_radial_toggle_prop_open (developmentonly clientdll defensive)
+	Toggle propping radial menus open. While on, an opened radial stays up and will not fire until toggled off again.
 
 citadel_reload_rank_data (developmentonly clientdll defensive)
 	Request rank confidence score from GC.
@@ -747,11 +771,38 @@ citadel_render_minimap (clientdll release)
 citadel_replay_toggle_pause (clientdll release)
 	Toggle a replay being paused
 
+citadel_reroll_corrupted_items (gamedll cheat client_can_execute)
+	[seed] Rerolls the random penalty and stat variance of every corrupted item.  Omit the seed or pass 0 for a random one.
+
+citadel_reset_gold (gamedll cheat client_can_execute)
+	Reset gold for all players
+
 citadel_reset_new_player (clientdll release)
 	Resets the new player experience back to the initial state
 
 citadel_reset_survey_responses (developmentonly clientdll)
 	Clears out all survey questions from this account and resets the state
+
+citadel_respawn_all_breakables (gamedll cheat release)
+	Force Spawns every breakable on the map
+
+citadel_respawn_boss_barracks (gamedll cheat release)
+	<no description>
+
+citadel_respawn_boss_shrines (gamedll cheat release)
+	<no description>
+
+citadel_respawn_boss_t1 (gamedll cheat release)
+	<no description>
+
+citadel_respawn_boss_t2 (gamedll cheat release)
+	<no description>
+
+citadel_respawn_nearby_breakables (gamedll cheat release)
+	Force Spawns any nearby breakables
+
+citadel_rootme (developmentonly gamedll defensive)
+	Root the local player
 
 citadel_set_mmr (developmentonly clientdll)
 	<Account ID> <MMR> Sets the MMR of the specified account
@@ -765,17 +816,32 @@ citadel_settings_reset_dismissed_settings (developmentonly clientdll defensive)
 citadel_settings_show_popup (developmentonly clientdll defensive)
 	<no description>
 
+citadel_show_combatlog (developmentonly clientdll defensive)
+	<no description>
+
 citadel_show_hero_debut_popup (developmentonly clientdll)
 	[hero id] [allow swap]
 
+citadel_show_hero_release_vote_page (developmentonly clientdll)
+	<no description>
+
 citadel_show_hero_select_popup (developmentonly clientdll)
 	<no description>
+
+citadel_show_hero_vo_test_page (clientdll release)
+	Open the Voice Lines page
 
 citadel_show_ranked_history_page (developmentonly clientdll)
 	<no description>
 
 citadel_show_ranked_season_page (developmentonly clientdll)
 	<no description>
+
+citadel_show_reporter_updates_popup (clientdll release)
+	Shows the popup for a report you filed that we took action on, if there is one
+
+citadel_show_reporter_updates_popup_fake (developmentonly clientdll)
+	[report type] - Shows the reporter updates popup filled in with a fake update
 
 citadel_show_roster_select_popup (developmentonly clientdll)
 	<no description>
@@ -786,23 +852,44 @@ citadel_show_seasonal_kill_toast (developmentonly clientdll)
 citadel_shuffle_draft_order (developmentonly gamedll defensive)
 	Shuffles the order in which players are drafting heroes
 
+citadel_silenceme (developmentonly gamedll defensive)
+	Silence the local player
+
+citadel_sleepme (developmentonly gamedll defensive)
+	Sleep the local player
+
 citadel_spawn_all_heroes_in_a_line (gamedll cheat)
 	Spawn all of the heroes as bots in a line in front of you
+
+citadel_spawn_all_neutrals (gamedll cheat release)
+	Spawns every neutral camp on the map
+
+citadel_spawn_all_pickup_spawners (gamedll cheat release)
+	Spawns the pickup of every citadel_pickup_spawner (healing snacks) now
 
 citadel_spawn_escort (gamedll cheat release)
 	Spawns the escort with an optional delay
 
+citadel_spawn_midboss_breakables (gamedll cheat release)
+	Force spawns the breakables above the mid boss that normally first appear at 10 minutes
+
 citadel_spawn_nearby_neutrals (gamedll cheat release)
 	Spawns any neutral camps within 800 units (~20m)
+
+citadel_spawn_pickup (developmentonly gamedll defensive)
+	Spawns a pickup using a pickup subclass
 
 citadel_spawn_pickup_item (developmentonly gamedll defensive)
 	Spawns an item pickup for a specific item. You can specify the item, or else you'll get a random one
 
-citadel_spawn_trooper (developmentonly gamedll defensive)
+citadel_spawn_trooper (gamedll cheat release)
 	Creates a new trooper NPC and spawn them in front of the player
 
 citadel_spawn_trooper_grid (developmentonly gamedll defensive)
 	Creates a NxN trooper grid in front of the player. Supports same trooper types as citadel_spawn_trooper
+
+citadel_spawn_trooper_wave (gamedll cheat release)
+	Spawns one trooper wave in every lane, even while trooper spawning is off
 
 citadel_spawn_trooper_zipline (developmentonly gamedll defensive)
 	Spawn a trooper on a zipline
@@ -816,6 +903,9 @@ citadel_spectate_account_id (developmentonly clientdll)
 citadel_spectate_lobby_id (developmentonly clientdll)
 	[lobby id] Attempts to spectate the specified lobby ID
 
+citadel_spectate_topbar_player (clientdll release)
+	While spectating, switch to the Nth hero on the top bar, numbered 1-12 from left to right
+
 citadel_spectator_voice_mode_toggle (clientdll release)
 	Toggle the value of citadel_spectator_voice_mode
 
@@ -825,8 +915,17 @@ citadel_spew_active_movement_controller (developmentonly clientdll defensive)
 citadel_spew_player_modifiers (developmentonly clientdll defensive)
 	Spews all modifiers on the local player
 
+citadel_start_local_bot_match (gamedll release client_can_execute)
+	<hex setup> Hosts a client provided bot match on this listen server
+
 citadel_start_new_player_placement_bot_match (developmentonly clientdll defensive)
 	Starts a new_player_placement match
+
+citadel_stat_cache_dump_deps (developmentonly gamedll cheat)
+	Dump the full stat dependency graph for an entity. Usage: citadel_stat_cache_dump_deps [entindex/name]
+
+citadel_stat_cache_report (developmentonly gamedll cheat)
+	Print per-EStatsType cache statistics sorted by query volume. Use stat_cache_reset_stats to clear.
 
 citadel_street_brawl_advance_state (developmentonly gamedll defensive)
 	Advance the state of a street brawl game
@@ -870,9 +969,6 @@ citadel_test_hud_game_announcement (developmentonly clientdll defensive)
 citadel_test_level_up_msg (developmentonly clientdll defensive)
 	Draws a test level up message
 
-citadel_test_pause_msg (developmentonly clientdll defensive)
-	Draws a test pause message: citadel_test_team_msg <Message ID> <Value>
-
 citadel_test_player_ping (developmentonly clientdll defensive)
 	Test pinging a player
 
@@ -888,8 +984,8 @@ citadel_test_streetbrawl_scoring_message (developmentonly clientdll defensive)
 citadel_test_survey_popup (clientdll cheat)
 	Tests bringing up the survey popup
 
-citadel_test_team_msg (developmentonly gamedll defensive)
-	Draws a test team message: citadel_test_team_msg <EVENT_TYPE> <ISPOSITIVE> <LANECOLOR> <TEAM_NUMBER> <PLAYER_SLOT>
+citadel_toggle_combatlog (developmentonly clientdll defensive)
+	<no description>
 
 citadel_toggle_mute (clientdll release)
 	Toggles muting/unmuting the audio.
@@ -915,8 +1011,20 @@ citadel_tweak_hero_level_boons_health (developmentonly clientdll)
 citadel_tweak_weights (developmentonly clientdll)
 	Tweaks the hero item bucketing.
 
+citadel_unit_query_benchmark (developmentonly gamedll cheat)
+	Runs UnitQueries and physics queries and prints time spent: citadel_unit_query_benchmark [queries] [repetitions]
+
+citadel_unit_query_registry_report (developmentonly gamedll cheat)
+	Print a per-bucket classname list of the unit query registry
+
+citadel_unit_query_test_randomized (developmentonly gamedll cheat)
+	Fire randomized unit queries through the cached and physics paths and compare results
+
 citadel_unlock_flex_slots (gamedll cheat client_can_execute)
 	<team number> - Unlock the flex slots for a team (or both teams if you omit the team number)
+
+citadel_vdata_update_popular_items (developmentonly clientdll)
+	Command to update popular items in hero vdata.
 
 citadel_zip_debug (developmentonly gamedll)
 	Prints debug info about the closest zip line node
@@ -951,20 +1059,47 @@ cl_break_on_missing_resource (developmentonly)
 cl_checkdeclareclasses (cheat)
 	Check game code serializers
 
+cl_citadel_ability_active_report (developmentonly clientdll cheat)
+	Print per-ability active window transition counts and dwell times. Use citadel_ability_active_reset_stats to clear.
+
+cl_citadel_ability_active_reset_stats (developmentonly clientdll cheat)
+	Clear the counters printed by citadel_ability_active_report.
+
+cl_citadel_ability_activeness_report (developmentonly clientdll defensive)
+	Print ability MODIFIER_VALUE contributions recorded while the ability was untrained or inactive. Use citadel_ability_activeness_reset_stats to clear.
+
+cl_citadel_ability_activeness_reset_stats (developmentonly clientdll defensive)
+	Clear the counters printed by citadel_ability_activeness_report.
+
 cl_citadel_dump_bullets (developmentonly clientdll client_can_execute)
 	dump all bullet info to the console
+
+cl_citadel_dump_corrupted_overrides (clientdll release)
+	Dumps every corrupted item's penalty exclusions, fixed bonuses and integer-rounded bonuses
+
+cl_citadel_dump_corrupted_penalties (developmentonly clientdll defensive)
+	Dumps the corrupted item penalty rolled for every corruptible item this match
 
 cl_citadel_force_on_upgrade_for_all_abilities (developmentonly clientdll defensive)
 	Force all abilities to call OnUpgrade()
 
-cl_citadel_forceangles (developmentonly clientdll defensive)
+cl_citadel_forceangles (clientdll cheat)
 	Force third person camera angles
 
-cl_citadel_record_hero_animgraph (clientdll cheat)
-	Record the animgraph for a specified hero
+cl_citadel_stat_cache_dump_deps (developmentonly clientdll cheat)
+	Dump the full stat dependency graph for an entity. Usage: citadel_stat_cache_dump_deps [entindex/name]
+
+cl_citadel_stat_cache_report (developmentonly clientdll cheat)
+	Print per-EStatsType cache statistics sorted by query volume. Use stat_cache_reset_stats to clear.
+
+cl_citadel_unit_query_registry_report (developmentonly clientdll cheat)
+	Print a per-bucket classname list of the unit query registry
 
 cl_citadel_zipline_rebuildpaths (developmentonly clientdll)
 	Rebuilds all zipline splines
+
+cl_cleardraw (clientdll cheat)
+	Clears all lines drawn by drawline and drawcross
 
 cl_debugoverlay_cycle_domain (clientdll cheat)
 	Toggles visibility of the debug overlay system.
@@ -1025,11 +1160,6 @@ cl_ent_animgraph2_record (clientdll cheat)
 
 cl_ent_animgraph_debug (clientdll cheat)
 	Displays debug draws about the given entity(ies) animgraph
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
-
-cl_ent_animgraph_record (clientdll cheat)
-	Toggles recording of animgraph replay of the given entity(s)
-	Arguments: entityName automaticallyOpenInAnimgraphEditor
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 
 cl_ent_attachments (clientdll cheat)
@@ -1198,6 +1328,12 @@ cl_in_forcebuttonstate (developmentonly clientdll vconsole_fuzzy_matching)
 cl_interp (clientdll release)
 	Read the effective client simulation interpolation amount in terms of time.
 
+cl_modifier_cache_report (developmentonly clientdll defensive)
+	Print per-EModifierValue cache statistics sorted by query volume. Use modifier_cache_reset_stats to clear.
+
+cl_modifier_cache_reset_stats (developmentonly clientdll defensive)
+	Reset modifier value cache statistics.
+
 cl_modifier_dump (clientdll cheat)
 	Display all modifiers for the unit: <entityindex/name>
 
@@ -1282,7 +1418,7 @@ cl_pred_track_off (developmentonly clientdll defensive)
 	clear field track changes.
 
 cl_predictioncopy_describe (developmentonly clientdll defensive)
-	Describe datamap_t for entindex
+	Describe PredictionMap_t for entindex
 
 cl_predictioncopy_print (developmentonly clientdll defensive)
 	Print simple description of prediction copy fields for entindex
@@ -1316,13 +1452,6 @@ cl_resetfps (developmentonly clientdll defensive)
 
 cl_rr_dump_rules (clientdll cheat)
 	Print all response rules
-
-cl_rr_reloadresponsesystems (clientdll cheat)
-	Reload all response system scripts.
-
-cl_save_animgraph_recording (clientdll cheat)
-	Saves all active animgraph recordings to disk
-	Arguments: automaticallyOpenInAnimgraphEditor
 
 cl_scale_function_dump (clientdll cheat)
 	Print out all scale functions.
@@ -1414,6 +1543,9 @@ cl_spewworldgroups (developmentonly)
 cl_ss_origin (developmentonly clientdll defensive)
 	print origin in script format
 
+cl_stat_cache_reset_stats (developmentonly clientdll cheat)
+	Reset stat value cache statistics.
+
 cl_test_list_entities (clientdll cheat)
 	test-list entities
 
@@ -1428,6 +1560,9 @@ clear (dontrecord release)
 
 clearall (dontrecord release)
 	Clear console output from all views.
+
+cleardraw (gamedll cheat)
+	Clears all lines drawn by drawline and drawcross
 
 cli_ent_attachments (clientdll cheat)
 	Displays the interpolated attachment points on an entity.
@@ -1511,8 +1646,8 @@ crash_job (cheat)
 crash_thread (cheat)
 	Cause the engine to crash in a brand new non-main thread (Debug!!)
 
-create_flare (developmentonly gamedll defensive)
-	Create a flare on the local player's team
+create_explosion_damage (gamedll cheat)
+	Explosion where you're looking, or at x y z, with a real explosion's physics force (unlike create_radius_damage).
 
 create_orb (developmentonly gamedll defensive)
 	Create an orb on the local player's team
@@ -1728,15 +1863,6 @@ ent_animgraph_debug (gamedll cheat)
 	Displays debug draws about the given entity(ies) animgraph
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 
-ent_animgraph_record (gamedll cheat)
-	Toggles recording of animgraph replay of the given entity(s)
-	Arguments: entityName automaticallyOpenInAnimgraphEditor
-	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
-
-ent_animgraph_setvar (gamedll cheat)
-	Sets a variable on the animgraph of the given entity(s)
-	Arguments:   <varname>=<value>	<{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}>
-
 ent_attachments (gamedll cheat)
 	Displays the attachment points on an entity.
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
@@ -1783,11 +1909,19 @@ ent_find_index (gamedll cheat)
 
 ent_fire (gamedll cheat vconsole_fuzzy_matching)
 	Usage:
-	   ent_fire <target> [action] [value] [delay]
+	   ent_fire <target> [action] [value0] [value1] ... [valueN]
+
+ent_fire_delay (gamedll cheat vconsole_fuzzy_matching)
+	Usage:
+	   ent_fire_delay <target> [action] [value0] [value1] ... [valueN] [delay]
 
 ent_fire_output (gamedll cheat vconsole_fuzzy_matching)
 	Usage:
-	   ent_fire_output <target> [output name] [value] [delay]
+	   ent_fire_output <target> [output name] [value0] [value1] ... [valueN]
+
+ent_fire_output_delay (gamedll cheat vconsole_fuzzy_matching)
+	Usage:
+	   ent_fire_output_delay <target> [output name] [value0] [value1] ... [valueN] [delay]
 
 ent_gib (gamedll cheat)
 	Gibs the given entity(s)
@@ -1963,6 +2097,27 @@ ents (developmentonly gamedll defensive)
 escape (release clientcmd_can_execute)
 	Escape key pressed.
 
+event_grant_points (developmentonly clientdll)
+	Reset all state on your account relating to the given event id
+
+event_override_clear (developmentonly clientdll)
+	<event id> - Clear any clientside overrides for an event
+
+event_override_owned (developmentonly clientdll)
+	<event id> [owned] - Set a clientside override of whether an event is owned. -1 for not owned, 1 for owned, 0 for no override.
+
+event_override_points (developmentonly clientdll)
+	<event id> [points] - Set a clientside override of the point value for an event
+
+event_override_premium_points (developmentonly clientdll)
+	<event id> [premium points] - Set a clientside override of the premium points for an event. -1 to remove the override.
+
+event_reload_schema (linked_concommand developmentonly gamedll clientdll defensive)
+	<no description>
+
+event_reset_state (developmentonly clientdll)
+	Reset all state on your account relating to the given event id
+
 exec (dontrecord release execute_immediately)
 	Execute a cfg file
 
@@ -2008,9 +2163,6 @@ force_fatal_error (developmentonly)
 force_floating_point_exceptions (developmentonly)
 	Enable floating point exceptions to find bugs
 
-force_hibernate (developmentonly)
-	Force toggle hibernation state
-
 fp_trace (developmentonly defensive)
 	Toggle field path tracing to file
 
@@ -2022,6 +2174,15 @@ fs_dump_open_duplicate_times (developmentonly defensive)
 
 fs_spew_readfieldlist (cheat)
 	index <threshold bytes>: spew changes to ent index, optionally only spewing if update is > than threshold bytes
+
+func_mover_count (gamedll cheat)
+	<no description>
+
+func_mover_enable_debug_all (gamedll cheat)
+	<no description>
+
+func_mover_step_movement (gamedll cheat)
+	<no description>
 
 game_particle_manager_dump_requeue (developmentonly clientdll)
 	Dump contents of particle manager requeue
@@ -2318,6 +2479,12 @@ instant_replay_timescale (developmentonly defensive)
 instant_replay_togglepause (developmentonly defensive)
 	Toggles instant replay.
 
+internal_bot_test_private (developmentonly clientdll)
+	[difficulty = 1-4] Starts a private internal bot test
+
+internal_bot_test_queue_mm (developmentonly clientdll)
+	Queues for internal bot test using matchmaking
+
 iv_debug (developmentonly clientdll defensive)
 	Spew interpolated var info for entity.
 
@@ -2481,6 +2648,12 @@ mat_print_materials_unused (developmentonly defensive)
 mat_print_modes (developmentonly defensive)
 	Print supported rendering modes.
 
+mat_print_non_virtual_textures (developmentonly defensive)
+	Print textures that are neither procedural nor virtual, i.e. the ones the mip streaming system manages, in alphabetical order. Takes an optional substring as an argument.
+
+mat_print_procedural_textures (developmentonly defensive)
+	Print procedural textures ( render targets, UAVs, atlases and other textures created by code ) in ascending in memory size order. Takes an optional substring as an argument.
+
 mat_print_shader_info (developmentonly defensive)
 	Print detailed info about a single shader. Takes a shader name (hero.vfx) as an argument.
 
@@ -2526,6 +2699,9 @@ memory (developmentonly defensive)
 memory_check_limit (developmentonly)
 	Assert if peak memory use is over the limit.
 
+mesh_trace_data_memory_report (developmentonly defensive)
+	Logs information about memory consumption by TraceDataForDraw_t/ToolsTraceData
+
 minimap_zoom_in (clientdll release)
 	Ping button pressed
 
@@ -2543,6 +2719,12 @@ model_dump_convert_info (linked_concommand developmentonly gamedll clientdll def
 
 modifier_broadcast_event (developmentonly gamedll)
 	Debug broadcasts an event will all empty fields
+
+modifier_cache_report (developmentonly gamedll defensive)
+	Print per-EModifierValue cache statistics sorted by query volume. Use modifier_cache_reset_stats to clear.
+
+modifier_cache_reset_stats (developmentonly gamedll defensive)
+	Reset modifier value cache statistics.
 
 modifier_create (gamedll cheat vconsole_fuzzy_matching)
 	Creates a test modifier on unit: modifier_create <entityindex> <modifiername> <duration>
@@ -2682,9 +2864,6 @@ nav_switch (developmentonly gamedll defensive)
 nav_test_level_hull (gamedll cheat)
 	Find entities that intrude into the nav mesh.  List those entities in console output, and display bounding boxes around them for a while.
 
-nav_test_level_hull_move (gamedll cheat)
-	<no description>
-
 nav_toggle_deselecting (gamedll cheat)
 	Start or stop continuously removing from the selected set.
 
@@ -2733,6 +2912,9 @@ net_messageinfo (cheat)
 net_option (release)
 	Get or set SteamNetworkingSockets options such as fake packet lag and loss
 
+net_permutation_info (cheat vconsole_fuzzy_matching)
+	show permutation information for serializer
+
 net_print_sdr_ping_times (release)
 	Print current ping times to SDR points of presence, and selected route
 
@@ -2778,6 +2960,10 @@ npc_ability_range_debug (gamedll cheat vconsole_fuzzy_matching)
 
 npc_bodylocations (gamedll cheat vconsole_fuzzy_matching)
 	Displays labelled body locations of NPCs.
+	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
+
+npc_buddha (gamedll cheat)
+	Tag an NPC so they don't die or become incapacitated
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 
 npc_cancel_handshake (developmentonly gamedll vconsole_fuzzy_matching)
@@ -2843,6 +3029,14 @@ npc_go_update_path (gamedll cheat)
 	Selected NPC(s) will go to the location that the player is looking (shown with a purple box), WITHOUT CHANGING SCHEDULE!
 	Arguments: [dest_fly]
 
+npc_god (gamedll cheat)
+	Tag an NPC so they don't take damage
+	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
+
+npc_handshakes_text (gamedll cheat vconsole_fuzzy_matching)
+	Outputs text debugging information to the console about the Animation handshaking in the NPC's AI
+	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
+
 npc_heal (developmentonly gamedll defensive)
 	Heals the target back to full health
 
@@ -2855,6 +3049,10 @@ npc_kill (gamedll cheat vconsole_fuzzy_matching)
 
 npc_kill_unselected (gamedll cheat)
 	Properly kills all NPCs from the universe that aren't currently selected
+
+npc_pathquery_text (gamedll cheat vconsole_fuzzy_matching)
+	Outputs text debugging information to the console about the NPC's path query processing
+	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 
 npc_relationships (gamedll cheat vconsole_fuzzy_matching)
 	Displays the relationships between this NPC and all others.
@@ -2887,13 +3085,13 @@ npc_sethealth (developmentonly gamedll defensive)
 	Sets the target's health, even above max. Optionally matches based on npc name to set multiple npc's health.
 	Args: [npc] <amount>
 
-npc_speakall (developmentonly gamedll defensive)
-	Force the npc to try and speak all their responses
-
 npc_squads (gamedll cheat)
 	Obsolete.  Replaced by npc_combat
 
-npc_start_handshake (developmentonly gamedll vconsole_fuzzy_matching)
+npc_start_handshake_full_body (developmentonly gamedll vconsole_fuzzy_matching)
+	<no description>
+
+npc_start_handshake_upper_body (developmentonly gamedll vconsole_fuzzy_matching)
 	<no description>
 
 npc_steering (gamedll cheat vconsole_fuzzy_matching)
@@ -2932,11 +3130,18 @@ open_asset (developmentonly defensive)
 open_current_map_in_hammer (developmentonly)
 	opens the current map in hammer.
 
+open_current_map_pulse_in_tool (developmentonly vconsole_fuzzy_matching)
+	Opens the specified pulse used in this map in the editor.
+	Arguments: <pulse_file>
+
 p2p_listpeers (developmentonly defensive)
 	List currently known peers.
 
 p2p_ping (developmentonly clientdll defensive)
 	Ping a peer.
+
+panorama_console_reset_size_and_position (linked_concommand developmentonly clientdll hidden defensive)
+	Resets the panorama console to its default size and position
 
 panorama_dispatch_event (developmentonly defensive)
 	Dispatch the event defined by the argument string. No creating panel is specified.
@@ -2972,7 +3177,7 @@ particle_stop_unspecified (developmentonly clientdll cheat)
 	Stops all particle systems that don't match specified name
 
 particle_test_create (gamedll cheat)
-	Creates the named particle system where the player is looking.
+	Creates the named particle system where the player is looking.  Can be used on an entity if pointed at the entity.  Optionally takes a particle config name.
 	Arguments:   	{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 
 particle_test_destroy (gamedll cheat)
@@ -3085,6 +3290,9 @@ playcast (release)
 
 playdemo (release)
 	Play a recorded demo file (.dem ).
+
+player_test_prediction_smoothing (gamedll cheat)
+	Teleport the player on the server, use with cl_smooth_root_infiniteteleporttolerance
 
 playsound (developmentonly defensive)
 	playsound <soundname>
@@ -3199,6 +3407,9 @@ r_toggleviewportsize (developmentonly defensive)
 r_viewport (developmentonly defensive)
 	Slams viewport size to a specified value.
 
+r_vulkan_print_pipeline_compile_times (developmentonly defensive)
+	Prints out information on pipeline compile times.
+
 ragdoll_cleanup_all (linked_concommand gamedll clientdll cheat)
 	Cleans up all ragdolls.
 
@@ -3304,9 +3515,6 @@ rr_forceconcept (gamedll cheat)
 	USAGE: rr_forceconcept <target name or index> <concept> "criteria1:value1,criteria2:value2,..."
 	criteria values are optional.
 
-rr_reloadresponsesystems (gamedll cheat)
-	Reload all response system scripts.
-
 rs_dump_stats (developmentonly)
 	rs_dump_stats - Dump resourcesystem stats.
 
@@ -3315,10 +3523,6 @@ run_perftest (cheat dontrecord)
 
 save (developmentonly gamedll dontrecord defensive)
 	Save Game
-
-save_animgraph_recording (gamedll cheat)
-	Saves all active animgraph recordings to disk
-	Arguments: automaticallyOpenInAnimgraphEditor
 
 save_clear_subdirectory (developmentonly gamedll replicated defensive)
 	<no description>
@@ -3350,6 +3554,9 @@ say_chat_team (clientdll release)
 say_team (gamedll client_can_execute)
 	Display player message to team
 
+sc_cycleclassdebuglevel (cheat)
+	Increment the debug level associated with an object class. sc_CycleClassDebugLevel <classname> <optional: max level>
+
 sc_dumpworld (cheat)
 	Dump a list of the objects in a sceneworld (Usage: sc_dumpworld <world_index>)
 
@@ -3370,9 +3577,6 @@ sc_showclasses (cheat)
 
 scale_function_dump (gamedll cheat)
 	Print out all scale functions.
-
-scene_coordinator_add_request (developmentonly gamedll defensive)
-	Add a request to the scene coordinator
 
 scene_playvcd (gamedll cheat)
 	Play the given VCD as an instanced scripted scene.
@@ -3558,8 +3762,8 @@ showtriggers_toggle (gamedll cheat)
 snapto (developmentonly clientdll defensive)
 	<no description>
 
-snd_arrangement_start (cheat)
-	Starts the specified arrangement.
+snd__beatpattern_stop_track (cheat)
+	Stops the specified track
 
 snd_async_flush (developmentonly defensive)
 	Flush all unlocked async audio data
@@ -3572,6 +3776,24 @@ snd_async_showmem_music (developmentonly defensive)
 
 snd_async_showmem_summary (developmentonly defensive)
 	Show brief async memory stats
+
+snd_beatpattern_flush (cheat)
+	Purge and reload all beat pattern data and files.
+
+snd_beatpattern_print_activetracks (cheat)
+	List all active tracks
+
+snd_beatpattern_print_patterns (cheat)
+	List all available beat patterns
+
+snd_beatpattern_set_track_bpm (cheat)
+	Sets the tempo of the specified track
+
+snd_beatpattern_set_track_transpose (cheat)
+	Sets the transposition of the specified track
+
+snd_beatpattern_stop_all_tracks (cheat)
+	Stops all currently playing patterns
 
 snd_cast (cheat)
 	Casts a ray and starts a sound event where the ray hits. The sound event will retrigger periodically if cl_snd_cast_retrigger is set. The sound event will clear previous snd_cast events if cl_snd_cast_clear is set. Usage: snd_cast <eventname> [<retrigger time>] [<max distance>]. Arguments that are specified will become defaults for the remainder of the session.
@@ -3606,20 +3828,11 @@ snd_list_soundevents (developmentonly cheat)
 snd_list_soundevents_by_stack (developmentonly cheat)
 	List all available soundevents using specified stack name
 
-snd_print_activetracks (cheat)
-	List all active tracks
-
-snd_print_arrangements (cheat)
-	List all available sequence arrangments
-
 snd_print_current_mixer_mixgroup (developmentonly defensive)
 	Get data related to mix group matching string
 
 snd_print_samplers (cheat)
 	List all available samplers
-
-snd_print_sequences (cheat)
-	List all available midi sequences
 
 snd_print_soundevent (developmentonly vconsole_fuzzy_matching vconsole_set_focus)
 	Print the data associated with the specified soundevent.
@@ -3650,18 +3863,6 @@ snd_samplers_play_note (cheat)
 
 snd_samplers_stop_note (cheat)
 	Stop a note from a specified sampler
-
-snd_sequence_set_track_bpm (cheat)
-	Sets the tempo of the specified track
-
-snd_sequence_set_track_transpose (cheat)
-	Sets the transposition of the specified track
-
-snd_sequence_stop_all_tracks (cheat)
-	Stops all currently playing sequences
-
-snd_sequence_stop_track (cheat)
-	Stops the specified track
 
 snd_set_physics_surface_properties (cheat)
 	Set physics surface properties for materials. Usage: <heuristic #> <commit>
@@ -3828,9 +4029,6 @@ snd_surround_speaker_pan_exponent (developmentonly defensive)
 snd_surround_speaker_pan_radial_weight (developmentonly defensive)
 	Apply cos(angle) * weight before pan law
 
-snd_vmidi_flush (cheat)
-	Purge and reload all vmidi data and files.
-
 sndplaydelay (developmentonly defensive)
 	<no description>
 
@@ -3855,14 +4053,14 @@ spawn_citadel_tutorial_controller (gamedll release client_can_execute)
 spawn_hero_testing_controller (gamedll release client_can_execute)
 	Spawns an entity that activates sandbox mode controls.
 
-spec_chase (clientdll release)
-	Changes the spectate mode to chase
+spec_dolly_in (clientdll release)
+	Moves the spectator camera position toward target. At zero, this will switch to in eye mode.
+
+spec_dolly_out (clientdll release)
+	Moves the spectator camera position away from target target. This is otherwise known as Chase Mode.
 
 spec_goto (clientdll release)
-	Changes the spectate mode to roaming and go to the location
-
-spec_in_eye (clientdll release)
-	Changes the spectate mode to in-eye
+	Changes the spectate mode to roaming and go to the location: spec_goto x y z <pitch yaw optional>
 
 spec_lock_to_current_player (developmentonly clientdll)
 	As an observer, lock the spectator target to the currently observed target
@@ -3881,6 +4079,15 @@ spec_pos (clientdll cheat)
 
 spec_prev (clientdll clientcmd_can_execute)
 	Spectate previous player
+
+spec_setang (clientdll release)
+	Points the spectator camera: spec_setang pitch yaw
+
+spec_setpos (clientdll release)
+	Changes the spectate mode to roaming and moves the spectator camera: spec_setpos x y <z optional>
+
+spec_stopsound (clientdll release)
+	(Spectators only) Stop all sounds
 
 spec_target (clientdll release)
 	Changes the target being spectated
@@ -3906,11 +4113,17 @@ ss_remove (developmentonly defensive)
 ss_teleport (developmentonly clientdll cheat)
 	Teleport other splitscreen player to my location.
 
+start_rec_mic (linked_concommand developmentonly defensive)
+	Start recording to a desired wav.
+
 startdemos (release)
 	Play demos in demo sequence.
 
 startmovie (developmentonly dontrecord defensive)
 	Start recording movie frames.
+
+stat_cache_reset_stats (developmentonly gamedll cheat)
+	Reset stat value cache statistics.
 
 stats (developmentonly defensive)
 	Prints server performance variables
@@ -3932,6 +4145,12 @@ steamvrevent_quit (developmentonly gamedll hidden defensive)
 
 stop (release)
 	Finish recording demo.
+
+stop_rec_mic (linked_concommand developmentonly defensive)
+	Stop recording to a desired wav.
+
+stop_rec_mic_all (linked_concommand developmentonly defensive)
+	Stop recording all mic streams.
 
 stopdemos (release)
 	Stop looping demos (current demo will complete).

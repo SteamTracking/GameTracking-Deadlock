@@ -3,122 +3,186 @@
 //	"m_bBreakOnDodgeTouch": false,
 //	"m_bRenderAfterDeath": false,
 //	"m_bSolidAfterDeath": false,
-//	"m_bIsPermanent": false,
+//	"m_bDieOnBreak": true,
+//	"m_strDeathSequenceName": "",
+//	"m_strHitSequenceName": "",
+//	"m_flLootDelay": 0.000000,
 //	"m_bDamagedByBullets": false,
 //	"m_bDamagedByMelee": false,
+//	"m_bHeavyMeleeOnly": false,
 //	"m_bDamagedByAbilities": false,
+//	"m_bDamagedBySlide": false,
+//	"m_bDamagedByPlayersOnly": false,
+//	"m_iHealth": 0,
+//	"m_nMeleeHitsToBreak": 0,
+//	"m_nHeavyMeleeHitCount": 2,
+//	"m_bNoMeleeCleave": false,
+//	"m_bIsMantleable": false,
+//	"m_bRequireFullCostToBreak": true,
+//	"m_flOutlineRadius": 0.000000,
+//	"m_bRequireVisibleOnMinimapForOutline": false,
+//	"m_colorOutline":
+//	[
+//		0,
+//		0,
+//		0,
+//		0
+//	],
 //	"m_hModel": "",
-//	"m_sAnimgraphParamDamageReceived": "",
-//	"m_sAnimgraphParamOnHit": "",
-//	"m_sAnimgraphParamOnRespawn": "",
+//	"m_flModelScale": 1.000000,
+//	"m_sMaterialGroupName": "",
+//	"m_ambientParticle": "",
+//	"m_breakParticle": "",
+//	"m_breakRollFailParticle": "",
 //	"m_sBreakSound": "",
 //	"m_sSpawnSound": "",
-//	"m_sDamageSound": "",
-//	"m_sHeavyDamageSound": "",
-//	"m_sHitIndicatorSound": "",
-//	"m_iHealth": 0,
+//	"m_sBreakRollFailSound": "",
+//	"m_sMeleeDamageSound": "",
+//	"m_sOtherDamageSound": "",
+//	"m_sMeleeRejectSound": "",
+//	"m_OtherRejectSound": "",
+//	"m_sAmbientSound": "",
 //	"m_flInitialSpawnTime": 180.000000,
-//	"m_flRespawnTime": 180.000000,
 //	"m_flInitialSpawnTimeTest": 1.000000,
+//	"m_flRespawnTime": 180.000000,
 //	"m_flRespawnTimeTest": 10.000000,
-//	"m_bIsMantleable": false,
-//	"m_flPrimaryDropChance": 0.000000,
+//	"m_strMinimapCSSClassAlive": "",
+//	"m_strMinimapCSSClassDead": "",
+//	"m_flMinDistanceToRevealOnMinimap": 0.000000,
+//	"m_strLayoutFile": "",
+//	"m_flPanelHeightOffset": 0.000000,
+//	"m_flPanelDrawDistance": 0.000000,
+//	"m_strInWorldCSSClasses": "",
+//	"m_flPanelWidth": 1500.000000,
+//	"m_flPanelHeight": 1500.000000,
+//	"m_flPowerupDropChance": 0.000000,
 //	"m_eRollType": "ECitadelRandomRoll_BreakableGoldPickup",
-//	"m_vecPrimaryPickups":
-//	[
-//	],
-//	"m_iMatchTimeMinsForLevel2Pickups": 10,
-//	"m_vecPickups_lv2":
-//	[
-//	],
-//	"m_iMatchTimeMinsForLevel3Pickups": 25,
-//	"m_vecPickups_lv3":
-//	[
-//	],
-//	"m_iLootListDeckSize": 1
+//	"m_mapPickupChances":
+//	{
+//	}
 //}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 {
-	// MPropertyGroupName = "Behavior"
+	// MPropertyStartGroup = "Behavior"
 	// MPropertyDescription = "Should this breakable break if a player rolls or dodges into it?"
 	// MPropertyFriendlyName = "Break On Dodge?"
 	bool m_bBreakOnDodgeTouch;
-	// MPropertyGroupName = "Behavior"
 	// MPropertyDescription = "If checked, this breakble will stay after destroyed, rather than stop rendering. (useful for animating breakables that might want to stay in a final pose."
 	// MPropertyFriendlyName = "Render while dead?"
 	bool m_bRenderAfterDeath;
-	// MPropertyGroupName = "Behavior"
 	// MPropertyDescription = "If checked, this breakble will stay solid after death. (useful for animating breakables that might want to stay in a final pose."
 	// MPropertyFriendlyName = "Solid while dead?"
 	bool m_bSolidAfterDeath;
-	// MPropertyGroupName = "Behavior"
-	// MPropertyDescription = "If checked, will fire damage events to animgraph, but will not take damage, so it can't die."
-	// MPropertyFriendlyName = "Is Permanent?"
-	bool m_bIsPermanent;
-	// MPropertyGroupName = "Behavior"
-	// MPropertyDescription = "If checked, this breakble will takes damage from Bullets."
+	// MPropertyDescription = "If checked, this breakable will immediately die upon prop break."
+	// MPropertyFriendlyName = "Die on Break?"
+	bool m_bDieOnBreak;
+	CUtlString m_strDeathSequenceName;
+	// MPropertyDescription = "Optional one-off animation played when this takes damage without breaking. Ignored if the model has no sequence with this name, so it is safe to set on a shared base."
+	// MPropertyFriendlyName = "Hit Sequence"
+	CUtlString m_strHitSequenceName;
+	float32 m_flLootDelay;
+	// MPropertyDescription = "If checked, this breakble will take damage from Bullets."
 	// MPropertyFriendlyName = "Damaged by Bullets?"
 	bool m_bDamagedByBullets;
-	// MPropertyGroupName = "Behavior"
-	// MPropertyDescription = "If checked, this breakble will takes damage from Melee."
+	// MPropertyDescription = "If checked, this breakble will take damage from Melee."
 	// MPropertyFriendlyName = "Damaged by Melee?"
 	bool m_bDamagedByMelee;
-	// MPropertyGroupName = "Behavior"
-	// MPropertyDescription = "If checked, this breakble will takes damage from Abilities."
+	// MPropertySuppressExpr = "m_bDamagedByMelee == false"
+	bool m_bHeavyMeleeOnly;
+	// MPropertyDescription = "If checked, this breakble will take damage from Abilities."
 	// MPropertyFriendlyName = "Damaged by Abilities?"
 	bool m_bDamagedByAbilities;
+	// MPropertyDescription = "If checked, this breakble will take damage from Abilities."
+	// MPropertyFriendlyName = "Damaged by Slide?"
+	bool m_bDamagedBySlide;
+	// MPropertyDescription = "If checked, only player pawns can damage this. Use for props that exist purely to be interacted with, so NPCs and world damage can never consume them."
+	// MPropertyFriendlyName = "Damaged by Players Only?"
+	bool m_bDamagedByPlayersOnly;
+	// MPropertyDescription = "Health. Used by bullet and ability damage. Melee uses Melee Hits To Break instead, when that is set."
+	int32 m_iHealth;
+	// MPropertyDescription = "If > 0, melee ignores health and damage entirely and this breaks after this many melee hits, so melee damage scaling can never change how many hits it takes. Only deliberate melee attacks count, never dashes or slides."
+	// MPropertyFriendlyName = "Melee Hits To Break"
+	// MPropertySuppressExpr = "m_bDamagedByMelee == false"
+	int32 m_nMeleeHitsToBreak;
+	// MPropertyDescription = "How many hits a heavy melee counts as. 2 means one heavy opens a two-hit prop."
+	// MPropertyFriendlyName = "Heavy Melee Hit Count"
+	// MPropertySuppressExpr = "m_nMeleeHitsToBreak <= 0"
+	int32 m_nHeavyMeleeHitCount;
+	// MPropertyDescription = "If checked, a single melee swing can only hit one of these. When several are in the swing, only the nearest is hit, so they cannot be cleaved together."
+	// MPropertyFriendlyName = "No Melee Cleave"
+	// MPropertySuppressExpr = "m_bDamagedByMelee == false"
+	bool m_bNoMeleeCleave;
+	// MPropertyDescription = "Can be mantled?"
+	bool m_bIsMantleable;
+	bool m_bRequireFullCostToBreak;
+	// MPropertyDescription = "Glow when within this range"
+	float32 m_flOutlineRadius;
+	// MPropertyDescription = "Also require being visible on the minimap"
+	// MPropertySuppressExpr = "m_flOutlineRadius <= 0"
+	bool m_bRequireVisibleOnMinimapForOutline;
+	// MPropertyDescription = "What color to glow"
+	// MPropertySuppressExpr = "m_flOutlineRadius <= 0"
+	Color m_colorOutline;
 	// MPropertyStartGroup = "Visuals"
 	// MPropertyDescription = "Model"
 	// MPropertyProvidesEditContextString = "ToolEditContext_ID_VMDL"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_hModel;
-	// MPropertyFriendlyName = "Damage Received AnimGraph Parameter"
-	// MPropertyDescription = "The animgraph parameter that's  describes how much damage the breakable has received. From 0 to 1 (no damage to dead)."
-	// MPropertyAttributeEditor = "AnimGraphParam()"
-	CGlobalSymbol m_sAnimgraphParamDamageReceived;
-	// MPropertyFriendlyName = "On Hit AnimGraph Parameter"
-	// MPropertyDescription = "The animgraph parameter that is set to true when damage the breakable was hit."
-	// MPropertyAttributeEditor = "AnimGraphParam()"
-	CGlobalSymbol m_sAnimgraphParamOnHit;
-	// MPropertyFriendlyName = "On Respawn AnimGraph Parameter"
-	// MPropertyDescription = "The animgraph parameter that is set to true the brekable is respawned."
-	// MPropertyAttributeEditor = "AnimGraphParam()"
-	CGlobalSymbol m_sAnimgraphParamOnRespawn;
-	// MPropertyGroupName = "Audio"
+	float32 m_flModelScale;
+	// MPropertyFriendlyName = "Material Group"
+	CModelMaterialGroupName m_sMaterialGroupName;
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ambientParticle;
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_breakParticle;
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_breakRollFailParticle;
+	// MPropertyStartGroup = "Audio"
 	// MPropertyDescription = "3D Sound of the prop breaking"
 	CSoundEventName m_sBreakSound;
 	CSoundEventName m_sSpawnSound;
-	// MPropertyGroupName = "Audio"
+	CSoundEventName m_sBreakRollFailSound;
 	// MPropertyDescription = "3D Sound of the prop taking damage"
-	CSoundEventName m_sDamageSound;
-	CSoundEventName m_sHeavyDamageSound;
-	// MPropertyGroupName = "Audio"
-	// MPropertyDescription = "Hit Indicator Sound. 2D Sound played to attacker and observers to indicate a hit."
-	CSoundEventName m_sHitIndicatorSound;
-	// MPropertyGroupName = "Attributes"
-	// MPropertyDescription = "Health"
-	int32 m_iHealth;
-	// MPropertyStartGroup = "Attributes"
-	// MPropertyDescription = "Respawn time"
+	CSoundEventName m_sMeleeDamageSound;
+	CSoundEventName m_sOtherDamageSound;
+	// MPropertyDescription = "3D Sound of a hit this prop refuses to take damage from. Deliberately melee-only, bullets fire too fast to give each rejected shot a sound"
+	CSoundEventName m_sMeleeRejectSound;
+	CSoundEventName m_OtherRejectSound;
+	// MPropertyDescription = "3D ambient sound that plays while the prop is alive"
+	CSoundEventName m_sAmbientSound;
+	// MPropertyStartGroup = "Respawn Behavior"
 	float32 m_flInitialSpawnTime;
-	float32 m_flRespawnTime;
+	// MPropertyDescription = "In test maps, use this as our initial spawn time"
 	float32 m_flInitialSpawnTimeTest;
+	// MPropertyDescription = "Respawn time"
+	float32 m_flRespawnTime;
+	// MPropertyDescription = "In test maps, use this as our respawn time"
 	float32 m_flRespawnTimeTest;
-	// MPropertyDescription = "Can be mantled?"
-	bool m_bIsMantleable;
+	// MPropertyStartGroup = "UI"
+	// MPropertyDescription = "CSS class to apply to this breakable's minimap icon while alive"
+	CUtlString m_strMinimapCSSClassAlive;
+	// MPropertyDescription = "CSS class to apply to this breakable's minimap icon while dead"
+	CUtlString m_strMinimapCSSClassDead;
+	// MPropertyDescription = "If > 0, this breakable will not appear on the minimap until a player gets this close"
+	float32 m_flMinDistanceToRevealOnMinimap;
+	// MPropertyStartGroup = "In-World Panel Settings"
+	// MPropertyCustomFGDType = "panorama_layout"
+	CUtlString m_strLayoutFile;
+	// MPropertySuppressExpr = "m_strLayoutFile == """
+	float32 m_flPanelHeightOffset;
+	// MPropertySuppressExpr = "m_strLayoutFile == """
+	float32 m_flPanelDrawDistance;
+	// MPropertyDescription = "CSS class to apply to in-world panel"
+	// MPropertySuppressExpr = "m_strLayoutFile == """
+	CUtlString m_strInWorldCSSClasses;
+	// MPropertySuppressExpr = "m_strLayoutFile == """
+	float32 m_flPanelWidth;
+	// MPropertySuppressExpr = "m_strLayoutFile == """
+	float32 m_flPanelHeight;
+	// MPropertyStartGroup = "Powerup Settings"
 	// MPropertyDescription = "Chance for this to drop a primary reward, 0 - 100%, this rolls first"
-	float32 m_flPrimaryDropChance;
+	float32 m_flPowerupDropChance;
 	// MPropertyDescription = "Category for the random roller"
 	ECitadelRandomRollTypes m_eRollType;
-	// MPropertyStartGroup = "Level 1 Pickup rewards"
-	// MPropertyDescription = "Primary Pickups are rolled first."
-	CUtlVector< BreakablePowerupDropDefinition_t > m_vecPrimaryPickups;
-	// MPropertyDescription = "Level 2 Rewards"
-	int32 m_iMatchTimeMinsForLevel2Pickups;
-	CUtlVector< BreakablePowerupDropDefinition_t > m_vecPickups_lv2;
-	// MPropertyDescription = "Level 3 Rewards"
-	int32 m_iMatchTimeMinsForLevel3Pickups;
-	CUtlVector< BreakablePowerupDropDefinition_t > m_vecPickups_lv3;
-	// MPropertyDescription = "How many times each entry should be in the 'card deck'"
-	int32 m_iLootListDeckSize;
+	// MPropertyDescription = "What this prop can drop."
+	// MPropertyFriendlyName = "Rewards"
+	// MPropertySuppressExpr = "m_eRollType == ECitadelRandomRoll_BreakablePowerupPickup"
+	CUtlOrderedMap< CSubclassName< 0 >, float32 > m_mapPickupChances;
 };

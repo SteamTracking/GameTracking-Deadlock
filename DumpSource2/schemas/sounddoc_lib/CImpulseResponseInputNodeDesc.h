@@ -1,0 +1,3 @@
+class CImpulseResponseInputNodeDesc : public CVNodeTypeDesc
+{
+};

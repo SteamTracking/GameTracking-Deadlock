@@ -1,11 +1,15 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/ability_icons.vcss_c" />
-		<include src="s2r://panorama/styles/hud_ability_icon.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/ability_icons.vcss" />
+		<include src="s2r://panorama/styles/hud_ability_icon.vcss" />
 	</styles>
 	<CitadelAbilityIcon class="ability_container">
+		<Panel id="KeyboardHint">
+			<CitadelKeyboardGlyph id="Mouse2" buttoncode="mouse2" />
+			<Label text="#Citadel_HUD_AbilityUpgradeUndo" />
+		</Panel>
 		<Panel id="button_container" class="button_container">
 			<Panel class="ability_bg" />
 			<Panel class="ability_ring" />
@@ -17,14 +21,17 @@
 				<Panel id="cooldown_mask" />
 			</Panel>
 			<Panel class="ability_key_container">
-				<CitadelBinding id="ability_binding_component" show_single_bind="true" />
-				<CitadelBinding id="ability_upgrade_binding_component" show_single_bind="true" />
+				<CitadelBinding id="ability_binding_component" show_single_bind="true" compact="true" />
+				<CitadelBinding id="ability_upgrade_binding_component" show_single_bind="true" compact="true" />
 			</Panel>
 			<Label class="unlockProgress" text="{i:unlockProgress}%" />
 			<Label class="cooldown_timer" text="{s:cooldown_sec}" />
 			<Panel id="SubAbility" onmouseover="CitadelSubAbilityMouseOver()" onmouseout="AsyncEvent( 0.0, CitadelSubAbilityMouseOut() )">
 				<Image id="SubAbilityImage" scaling="contain" />
 			</Panel>
+		</Panel>
+		<Panel id="AbilityLevelContainer">
+			<Label class="abilityLevelCounter" text="+{i:ability_level}" />
 		</Panel>
 		<Panel id="BonusContainer">
 			<Panel class="bonusBG" />

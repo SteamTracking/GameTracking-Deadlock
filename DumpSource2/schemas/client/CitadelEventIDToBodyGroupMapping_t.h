@@ -4,6 +4,7 @@
 //	{
 //	}
 //}
+// MPropertyFriendlyName = "AG2 Bodygroup Settings"
 class CitadelEventIDToBodyGroupMapping_t
 {
 	// MPropertyDescription = "Maps event IDs to bodygrup settings"

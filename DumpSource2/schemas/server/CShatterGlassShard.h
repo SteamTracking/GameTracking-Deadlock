@@ -1,3 +1,38 @@
+// MGetKV3ClassDefaults = {
+//	"_class": "CShatterGlassShard",
+//	"m_hShardHandle": 0,
+//	"m_hPhysicsEntity": null,
+//	"m_hParentPanel": null,
+//	"m_hParentShard": 0,
+//	"m_ShatterStressType": "SHATTERGLASS_BLUNT",
+//	"m_vecStressVelocity":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000
+//	],
+//	"m_nOnFrameEdge": "ONFRAME_UNKNOWN",
+//	"m_nSubShardGeneration": 0,
+//	"m_vecPanelSpaceStressPositionA":
+//	[
+//		0.000000,
+//		0.000000
+//	],
+//	"m_vecPanelSpaceStressPositionB":
+//	[
+//		0.000000,
+//		0.000000
+//	],
+//	"m_bStressPositionAIsValid": false,
+//	"m_bStressPositionBIsValid": false,
+//	"m_bFlaggedForRemoval": false,
+//	"m_flPhysicsEntitySpawnedAtTime": null,
+//	"m_hEntityHittingMe": null,
+//	"m_vecNeighbors":
+//	[
+//	]
+//}
+// MHasKV3TransferPolymorphicClassname
 class CShatterGlassShard
 {
 	uint32 m_hShardHandle;

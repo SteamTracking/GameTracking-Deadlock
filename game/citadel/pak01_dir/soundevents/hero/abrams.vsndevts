@@ -111,7 +111,7 @@
 	}
 	Abrams.Charge.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 5.0
 		vsnd_files = "sounds/abilities/abrams/abrams_a2_charge_cast_01.vsnd"
 		vsnd_duration = 4.47542
@@ -129,16 +129,16 @@
 			"sounds/abilities/abrams/a2_charge/abrams_charge_hero_impact_02.vsnd",
 			"sounds/abilities/abrams/a2_charge/abrams_charge_hero_impact_03.vsnd",
 		]
-		vsnd_duration = 1.919116
+		vsnd_duration = 1.481791
 	}
 	Abrams.Charge.Wall.Impact = 
 	{
 		base = "Base.Ability.Hit"
 		filter_include_others = true
-		volume = 3.0
+		volume = 2.0
 		volume_offset_victim_db = 2.0
 		vsnd_files = "sounds/abilities/abrams/a2_charge/abrams_a2_charge_wall_impact.vsnd"
-		vsnd_duration = 2.982676
+		vsnd_duration = 2.187075
 	}
 	Ability.Abrams.Charge.Step = 
 	{
@@ -161,7 +161,7 @@
 	}
 	Abrams.A1.SiphonLife.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 1.0
 		vsnd_files = "sounds/abilities/abrams/abrams_a1_siphonlife_cast.vsnd"
 		vsnd_duration = 2.971814
@@ -189,7 +189,7 @@
 	}
 	Abrams.A4.Leap.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 2.0
 		mono_downmix_min_distance = 300.0
 		vsnd_files = "sounds/abilities/abrams/a4_leap/abrams_a4_slam_cast.vsnd"
@@ -299,73 +299,29 @@
 	}
 	Abrams.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
-		vsnd_duration = 1.062208
+		base = "Hero.Default.Melee.Swing"
+		volume = 0.0
+		volume_offset_opponent = -5.0
 	}
 	Abrams.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
+		base = "Hero.Default.Melee.Charged"
+		track_2.track_vsnd_files = 
 		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
+			"sounds/player/movement/abrams/abrams_movement_foley_short_01.vsnd",
+			"sounds/player/movement/abrams/abrams_movement_foley_short_02.vsnd",
+			"sounds/player/movement/abrams/abrams_movement_foley_short_03.vsnd",
+			"sounds/player/movement/abrams/abrams_movement_foley_short_04.vsnd",
+			"sounds/player/movement/abrams/abrams_movement_foley_short_05.vsnd",
+			"sounds/player/movement/abrams/abrams_movement_foley_short_06.vsnd",
+			"sounds/player/movement/abrams/abrams_movement_foley_short_07.vsnd",
+			"sounds/player/movement/abrams/abrams_movement_foley_short_08.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	Atlas.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "atlas"
+		context_name = "hero_atlas"
 		vsnd_files = 
 		[
 			"sounds/vo/atlas/atlas_win_01.vsnd",
@@ -381,7 +337,7 @@
 	Atlas.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "atlas"
+		context_name = "hero_atlas"
 		vsnd_files = 
 		[
 			"sounds/vo/atlas/atlas_lose_01.vsnd",

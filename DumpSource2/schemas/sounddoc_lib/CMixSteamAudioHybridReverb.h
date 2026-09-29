@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_flReverbTimeLow": 0.100000,
 //	"m_flReverbTimeMid": 0.100000,
 //	"m_flReverbTimeHigh": 0.100000,

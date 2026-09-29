@@ -1,0 +1,52 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
+		<include src="s2r://panorama/styles/citadel_keybind_map_view.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings_share_preview.vcss" />
+	</styles>
+	<PopupSettingsSharePreview class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel class="PopupBackgroundShadow" />
+		<Panel class="PopupBackground" />
+		<Panel id="PreviewScopeRow">
+			<CitadelButton id="PrevScopeButton" class="Medium ScopeStepButton" imagesrc="s2r://panorama/images/icons/arrow_west.vsvg" onactivate="CitadelSettingsSharePreviewStep( -1 )" />
+			<Panel class="PopupContent">
+				<Panel id="TitleSection" class="Header">
+					<Panel id="TitleRow">
+						<Image id="ScopeIcon" scaling="stretch-to-fit-preserve-aspect" />
+						<Label id="PreviewTitle" class="Title" />
+					</Panel>
+					<Label id="PreviewCaption" text="#citadel_settings_share_preview_caption" />
+				</Panel>
+				<Panel id="PreviewKeybinds" class="PreviewSection">
+					<Label class="PreviewSectionTitle" text="#citadel_settings_share_apply_keybinds" />
+					<CitadelKeybindMapView id="PreviewKeybindMap" />
+					<Panel id="PreviewKeybindsFooter">
+						<Panel id="ShowChordsHint" onmouseover="UIShowTextTooltipStyled( #citadel_keybind_map_show_chords_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelKeyboardGlyph id="ShowChordsGlyph" />
+							<Label id="ShowChordsLabel" text="#citadel_keybind_map_show_chords" />
+						</Panel>
+						<Panel id="KeyboardShapeControls">
+							<Label id="KeyboardShapeLabel" text="#citadel_keybind_map_keyboard_layout" />
+							<CitadelDropDown id="KeyboardShapeDropDown" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="PreviewReticle" class="PreviewSection">
+					<Label class="PreviewSectionTitle" text="#citadel_settings_share_apply_reticle" />
+					<Panel id="PreviewReticleContainer">
+						<Image src="s2r://panorama/images/buttons/temp_preview_panel_reticle_png.vtex" />
+						<Citadel_AbilityHUDElement_Gun id="PreviewReticleGun" is_reticle_preview="true" />
+					</Panel>
+				</Panel>
+				<Panel class="ButtonRow">
+					<CitadelBindingButton id="EscapeButton" action="MenuBack" text="#Close" onactivate="UIPopupButtonClicked()" />
+					<CitadelButton id="CloseButton" class="Medium Fill" text="#Close" onactivate="UIPopupButtonClicked()" />
+				</Panel>
+			</Panel>
+			<CitadelButton id="NextScopeButton" class="Medium ScopeStepButton" imagesrc="s2r://panorama/images/icons/arrow_east.vsvg" onactivate="CitadelSettingsSharePreviewStep( 1 )" />
+		</Panel>
+	</PopupSettingsSharePreview>
+</root>

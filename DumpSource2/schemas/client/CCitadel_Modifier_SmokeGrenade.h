@@ -5,5 +5,5 @@ class CCitadel_Modifier_SmokeGrenade : public CCitadelModifier
 	CHandle< CPointModifierThinker > m_hEnemyAura;
 	ParticleIndex_t m_nParticleIndex;
 	GameTime_t m_flStartTime;
-	Vector m_vOrigin;
+	VectorWS m_vOrigin;
 };

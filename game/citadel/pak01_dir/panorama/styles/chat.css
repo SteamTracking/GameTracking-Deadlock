@@ -165,6 +165,7 @@ CitadelChat.ChatExpanded .ChatMessage
 	border-radius: 8px;
 	padding: 2px 8px;
 	vertical-align: bottom;
+	flow-children: right;
 }
 
 .ChatMessage .MessageBody #MessageContents.Ping Label
@@ -173,6 +174,22 @@ CitadelChat.ChatExpanded .ChatMessage
 	color: black;
 	font-weight: bold;
 	font-style: italic;
+	vertical-align: center;
+}
+
+.ChatMessage .MessageBody #MessageContents.Ping #TargetHeroImage
+{
+	width: 20px;
+	height: 20px;
+	vertical-align: center;
+	horizontal-align: left;
+	margin-right: 6px;
+	visibility: collapse;
+}
+
+.ChatMessage .MessageBody #MessageContents.Ping #TargetHeroImage.IsHeroPing
+{
+	visibility: visible;
 }
 
 .ChatMessage.ShowSource

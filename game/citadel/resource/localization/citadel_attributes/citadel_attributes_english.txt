@@ -52,6 +52,7 @@
 		"Citadel_StatusEffectUnstoppable"		"Unstoppable"
 		"Citadel_StatusEffectDisplacement"		"Displacement"
 		"Citadel_StatusEffectSilence"			"Silence"
+		"Citadel_StatusEffectCurse"				"Curse"
 
 		//"modifier_citadel_in_shop"				"In Shop"	
 		"modifier_citadel_in_fountain"			"Home Base"
@@ -86,6 +87,7 @@
 		"modifier_citadel_tech_shield"		"Spirit Shield"
 		"modifier_citadel_revealed_on_map"		"Revealed"
 		"modifier_citadel_cursed"				"Cursed"
+		"modifier_citadel_feared"				"Feared"
 
 		"modifier_item_disarmed"				"Disarmed"
 		"modifier_citadel_disarm_proc"			"Disarmed"
@@ -110,8 +112,14 @@
 		// Ability Property Text
 		//-----------------------------------------------------------------------------
 		"Citadel_AbilityProperty_OnHit"			"On Hit:"
-		"Citadel_AbilityProperty_OnExplode"	"On Explode:"
-		"Citadel_AbilityProperty_OnAttach"	"On Attach:"
+		"Citadel_AbilityProperty_OnExplode"		"On Explode:"
+		"Citadel_AbilityProperty_OnAttach"		"On Attach:"
+		"Citadel_AbilityProperty_BulletBuildup"	"Bullet Buildup:"
+		"Citadel_AbilityProperty_OnPickup"		"On Pickup:"
+		"Citadel_AbilityProperty_Withdrawals"	"Withdrawals:"
+		"Citadel_AbilityProperty_OnHitEnemy"	"On Hit Enemy:"
+		"Citadel_AbilityProperty_OnHitFriendly"	"On Hit Friendly:"
+		"Citadel_AbilityProperty_OnCursedCast"	"On Cursed Cast:"
 
 
 		//-----------------------------------------------------------------------------
@@ -259,8 +267,8 @@
 		"StatDesc_DebuffResist"							"Debuff Resist"
 		"StatDesc_DebuffResist_postvalue_label"							"Debuff Resist"
 		"StatDesc_DebuffResist_postfix"					"%"
-		"StatDesc_HealingOutput"						"Heal Amp"
-		"StatDesc_HealingOutput_postvalue_label"						"Heal Amp"
+		"StatDesc_HealingOutput"						"Outgoing Healing"
+		"StatDesc_HealingOutput_postvalue_label"						"Outgoing Healing"
 		"StatDesc_HealingOutput_postfix"				"%"
 		"StatDesc_CritDamageBonusScale"					"Crit Bonus Scale"
 		"StatDesc_CritDamageBonusScale_postvalue_label"					"Crit Bonus Scale"
@@ -567,17 +575,17 @@
 		//"BonusHealthRegenOutOfCombat_label"			"Health Regen Out of Combat"
 
 		"ExternalBonusHealthRegen_prefix"				"{s:sign}"
-		"ExternalBonusHealthRegen_postfix"				"/sec"
+		"ExternalBonusHealthRegen_postfix"				"/s"
 		"ExternalBonusHealthRegen_label"				"Health Regen"
 		"ExternalBonusHealthRegen_postvalue_label"				"Health Regen"
 
 		"MODIFIER_VALUE_EXTERNAL_HEALTH_REGEN_PER_SECOND_prefix"				"{s:sign}"
-		"MODIFIER_VALUE_EXTERNAL_HEALTH_REGEN_PER_SECOND_postfix"				"/sec"
+		"MODIFIER_VALUE_EXTERNAL_HEALTH_REGEN_PER_SECOND_postfix"				"/s"
 		"MODIFIER_VALUE_EXTERNAL_HEALTH_REGEN_PER_SECOND_label"				"Health Regen"
 		"MODIFIER_VALUE_EXTERNAL_HEALTH_REGEN_PER_SECOND_postvalue_label"				"Health Regen"
 
 		"ActiveHealthRegenBoost_prefix"					"{s:sign}"
-		//"ActiveHealthRegenBoost_postfix"				"hp/sec"
+		//"ActiveHealthRegenBoost_postfix"				"hp/s"
 		"ActiveHealthRegenBoost_label"				"Health Regen"
 
 		"ActiveHealthRegenBoost_postvalue_label"				"Health Regen"
@@ -981,7 +989,7 @@
 		"DotHealthPercent_label"						"Bleed Damage"
 
 		"DotHealthPercent_postvalue_label"						"Bleed Damage"
-		"DotHealthPercent_postfix"						"%/sec"
+		"DotHealthPercent_postfix"						"% DPS"
 
 		"CurrentHealthPercent_label"					"Current Health"
 
@@ -1124,18 +1132,10 @@
 		"FervorStatusResistancePercent_postvalue_label"				"Debuff Resist"
 		"FervorStatusResistancePercent_postfix"				"%"
 
-		"ActiveStatusResistancePercent_postfix"			"%"
-		"ActiveStatusResistancePercent_label"			"Debuff Reduction"
-		"ActiveStatusResistancePercent_postvalue_label"			"Debuff Reduction"
-
 		"MODIFIER_VALUE_STATUS_RESISTANCE_prefix"				"{s:sign}"
 		"MODIFIER_VALUE_STATUS_RESISTANCE_label"				"Debuff Resist"
 		"MODIFIER_VALUE_STATUS_RESISTANCE_postvalue_label"				"Debuff Resist"
 		"MODIFIER_VALUE_STATUS_RESISTANCE_postfix"				"%"
-
-		"ActiveMODIFIER_VALUE_STATUS_RESISTANCE_postfix"			"%"
-		"ActiveMODIFIER_VALUE_STATUS_RESISTANCE_label"			"Debuff Reduction"
-		"ActiveMODIFIER_VALUE_STATUS_RESISTANCE_postvalue_label"			"Debuff Reduction"
 
 		"StatusResistanceDuration_label"				"Duration"
 
@@ -1270,7 +1270,8 @@
 		//"SlowSpeedLimit_label"						"Speed Reduced To"
 
 		"HealAmpReceivePercent_prefix"					"{s:sign}"
-		//"HealAmpReceivePercent_label"					"Healing Received Boost"
+		"HealAmpReceivePercent_label"					"Healing Received Boost"
+		"HealAmpReceivePercent_postvalue_label"			"Healing Received Boost"
 		"HealAmpReceivePercent_postfix"					"%"
 
 		"MODIFIER_VALUE_HEAL_AMP_RECEIVE_PERCENT_prefix"					"{s:sign}"
@@ -1278,13 +1279,13 @@
 		"MODIFIER_VALUE_HEAL_AMP_RECEIVE_PERCENT_postfix"					"%"
 
 		"HealAmpCastPercent_prefix"					"{s:sign}"
-		"HealAmpCastPercent_label"					"Healing Effectiveness"
-		"HealAmpCastPercent_postvalue_label"					"Healing Effectiveness"
+		"HealAmpCastPercent_label"					"Outgoing Healing"
+		"HealAmpCastPercent_postvalue_label"					"Outgoing Healing"
 		"HealAmpCastPercent_postfix"					"%"
 		
 		"MODIFIER_VALUE_HEAL_AMP_CAST_PERCENT_prefix"					"{s:sign}"
-		"MODIFIER_VALUE_HEAL_AMP_CAST_PERCENT_label"					"Healing Effectiveness"
-		"MODIFIER_VALUE_HEAL_AMP_CAST_PERCENT_postvalue_label"					"Healing Effectiveness"
+		"MODIFIER_VALUE_HEAL_AMP_CAST_PERCENT_label"					"Outgoing Healing"
+		"MODIFIER_VALUE_HEAL_AMP_CAST_PERCENT_postvalue_label"					"Outgoing Healing"
 		"MODIFIER_VALUE_HEAL_AMP_CAST_PERCENT_postfix"					"%"
 
 		"HealAmpRegenPercent_prefix"					"{s:sign}"
@@ -1299,23 +1300,22 @@
 		//"HealAmpRegenMultiplierOutOfCombat_label"		"Health Regen Multiplier"
 		"HealAmpRegenMultiplierOutOfCombat_postfix"			"x"
 
-		"HealAmpReceivePenaltyPercent_label"		"Healing Reduction"
+		"HealAmpReceivePenaltyPercent_label"		"Incoming Healing"
 
-		"HealAmpReceivePenaltyPercent_postvalue_label"		"Healing Reduction"
+		"HealAmpReceivePenaltyPercent_postvalue_label"		"Incoming Healing"
 		"HealAmpReceivePenaltyPercent_prefix" ""
 		"HealAmpReceivePenaltyPercent_postfix"			"%"
 		
-		"HealAmpRegenPenaltyPercent_label"		"Healing Reduction"
+		"HealAmpRegenPenaltyPercent_label"		"Incoming Healing"
 		
-		"HealAmpRegenPenaltyPercent_postvalue_label"		"Healing Reduction"
+		"HealAmpRegenPenaltyPercent_postvalue_label"		"Incoming Healing"
 		"HealAmpRegenPenaltyPercent_postfix"	"%"
+		"HealingEffectiveness_label"		"Healing Effectiveness"
+		"HealingEffectiveness_postvalue_label"		"Healing Effectiveness"
+		"HealingEffectiveness_postfix"	"%"
 		"PercentHealthHealing_label" "Health Healed"
 		"PercentHealthHealing_postvalue_label" "Health Healed"
 		"PercentHealthHealing_postfix" "%"
-		"DegenResistance_label"						"Healing Reduction Resist"
-		"DegenResistance_postvalue_label"						"Healing Reduction Resist"
-		"DegenResistance_postfix"					"%"
-		"DegenResistance_prefix"					"{s:sign}"
 
 		"ProcChance_label"							"Proc Chance"
 
@@ -1812,8 +1812,8 @@
 
 		"MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGE_prefix"					"{s:sign}"
 		"MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGE_label"						"Zipline Speed"
-		"MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGEt_postvalue_label"						"Zipline Speed"
-		"MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGEt_postfix"					"%"
+		"MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGE_postvalue_label"						"Zipline Speed"
+		"MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGE_postfix"					"%"
 	
 		//"ZiplineJumpBonusDuration_label"					"Jump Off Duration"
 		"ZiplineJumpBonusDuration_postfix"					"s"
@@ -1835,6 +1835,7 @@
 
 		//"TackleDurationMax_label"						"Max Tackle Duration"
 
+		"MoveSpeed_postfix"								"m"
 		"MoveSpeedBonus_prefix"							"{s:sign}"
 		"MoveSpeedBonus_label"							"Move Speed"
 		"MoveSpeedBonus_postvalue_label"							"Move Speed"
@@ -2491,7 +2492,7 @@
 		"ActiveHealthRegen_prefix"			"{s:sign}"
 		"ActiveHealthRegen_label"			"Health Regen"
 		"ActiveHealthRegen_postvalue_label"			"Health Regen"
-		"ActiveHealthRegen_postfix"			"hp/sec"
+		"ActiveHealthRegen_postfix"			"hp/s"
 
 		"ActiveBonusFireRate_label"			"Fire Rate"
 
@@ -2870,6 +2871,10 @@
 		"ActiveReloadPercent_postfix"				"%"
 		"ActiveReloadPercent_prefix"				"+"
 
+		"ImbuedCooldownMultiplier_label"			"Imbued Ability Cooldown"
+		"ImbuedCooldownMultiplier_postvalue_label"			"Imbued Ability Cooldown"
+		"ImbuedCooldownMultiplier_postfix"			"%"
+
 		"RespawnHealthPercent_label"				"Rebirth Health"
 
 		"RespawnHealthPercent_postvalue_label"				"Rebirth Health"
@@ -2971,7 +2976,6 @@
 		"ExplodeDamage_postvalue_label"				"Explode Damage"
 
 		"StaminaRegenPercent_label"			"Stamina Regen"
-
 		"StaminaRegenPercent_postvalue_label"			"Stamina Regen"
 		"StaminaRegenPercent_postfix"		"%"
 
@@ -2990,10 +2994,10 @@
 		"GroundDashReductionPercent_postvalue_label"	"Dash Distance"
 		"GroundDashReductionPercent_postfix"	"%"
 		
-		"ActivePlayerStats_Percentage"		"<span class=\"statNumber\">{s:value}</span><span class=\"statPostfix\">%</span>"
-		"ActivePlayerStats_PercentageNum"	"<span class=\"statNumber\">{d:value}</span><span class=\"statPostfix\">%</span>"
-		"ActivePlayerStats_MoveSpeed"		"<span id=\"speedDisplayMS\" class=\"statNumber\">{s:value}</span><span id=\"speedDisplayPostfix\" class=\"statPostfix\">m/s</span>"
-		"ActivePlayerStats_Regen"			"<span class=\"statNumber\">{s:value}</span><span class=\"statPostfix\"> /sec</span>"
+		"ActivePlayerStats_Percentage"		"%"
+		"ActivePlayerStats_MoveSpeed"		"m"
+		"ActivePlayerStats_Regen"			"HP"
+		"ActivePlayerStats_Health"			"HP"
 
 		"TechDamageReduction_label"			"Spirit Damage Reduction"
 
@@ -3032,6 +3036,9 @@
 		"MODIFIER_VALUE_MOVEMENT_SLOW_RESISTANCE_label" "Slow Resistance"
 		"MODIFIER_VALUE_MOVEMENT_SLOW_RESISTANCE_postvalue_label" "Slow Resistance"
 		"MODIFIER_VALUE_MOVEMENT_SLOW_RESISTANCE_postfix" "%"
+
+		"MODIFIER_VALUE_STAMINA_REGEN_PER_SECOND_PERCENTAGE_postvalue_label" "Stamina Recovery"
+		"MODIFIER_VALUE_STAMINA_REGEN_PER_SECOND_PERCENTAGE_postfix" "%"
 
 		"CooldownReductionPerHit_label" "Cooldown Reduction per Hit"
 
@@ -3223,8 +3230,8 @@
 		"StatDesc_MoveSpeedDesc"				"<b>Move Speed</b> - Your current movement speed."
 		"StatDesc_SpiritResistDesc"				"<b>Spirit Armor</b> - Your resistance to incoming Spirit Damage"
 		"StatDesc_WeaponResistDesc"				"<b>Bullet Armor</b> - Your resistance to incoming Bullet Damage"
-		"StatDesc_HealingBoostDesc"				"<b>Healing Effectiveness</b> - Percentage modification to the effectiveness of your healing abilities"
-		"StatDesc_HealingAmpDesc"				"<b>Healing Amplification</b> - Percentage modification of healing received"
+		"StatDesc_HealingBoostDesc"				"<b>Outgoing Healing</b> - Percentage modification to the output of your healing abilities"
+		"StatDesc_HealingAmpDesc"				"<b>Incoming Healing</b> - Percentage modification of healing received"
 		"StatDesc_AmmoDesc"						"<b>Ammo</b> - The number of shots in your gun before requiring a reload"
 		"StatDesc_FireRateDesc"					"<b>Fire Rate</b> - Percentage modification to your gun's rate of fire"
 		"StatDesc_SpiritLifestealDesc"			"<b>Spirit Lifesteal</b> - Amount of health you regain from dealing Spirit Damage"
@@ -3246,7 +3253,9 @@
 		"InlineAttribute_DamageAmp"		"increased damage"
 		"InlineAttribute_SpiritDamage"	"spirit damage"
 		"InlineAttribute_SpiritDPS"	"spirit damage over time"
+		"InlineAttribute_WeaponDPS"	"weapon damage over time"
 		"InlineAttribute_BonusSpiritDamage"	"bonus spirit damage"
+		"InlineAttribute_AbilityCooldown"	"cooldown"
 		"InlineAttribute_Stun"	"stun"
 		"InlineAttribute_Heal"	"heal"
 		"InlineAttribute_Heals"	"heals"

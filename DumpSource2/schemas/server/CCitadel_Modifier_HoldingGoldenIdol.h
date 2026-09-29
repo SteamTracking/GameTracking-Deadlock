@@ -1,3 +1,4 @@
+// MModifierDynamicValuesSuppressCache
 class CCitadel_Modifier_HoldingGoldenIdol : public CCitadelModifier
 {
 	ParticleIndex_t m_iIdolParticle;

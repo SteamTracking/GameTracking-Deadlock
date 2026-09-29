@@ -28,15 +28,7 @@
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_02.vsnd",
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
 		]
-		vsnd_duration = 2.23195
-	}
-	Props.Vault.Destruction = 
-	{
-		base = "Base.World"
-		volume = 5.0
-		pitch = 0.8
-		vsnd_files = "sounds/npc/neutrals/vaults/vault_payout.vsnd"
-		vsnd_duration = 2.767256
+		vsnd_duration = 1.696735
 	}
 	Vault.Active_Lp = 
 	{
@@ -67,13 +59,6 @@
 		track_2.track_vsnd_files = "sounds/common/null.vsnd"
 		vsnd_duration = 0.910816
 	}
-	Vault.Start_Critical = 
-	{
-		base = "Base.World"
-		volume = 1.0
-		vsnd_files = "sounds/abilities/astro/a2_bounce_pad/expire.vsnd"
-		vsnd_duration = 1.632917
-	}
 	Vault.Light = 
 	{
 		base = "Base.World"
@@ -91,12 +76,42 @@
 		vsnd_files = "sounds/mods/weapon/active_reload/item_active_reload_window_entered.vsnd"
 		vsnd_duration = 2.188481
 	}
-	Vault.HitSuccess = 
+	Vault.Fast.Light.Flash = 
 	{
 		base = "Base.World"
-		volume = 5.0
+		volume = -18.0
+		pitch = 1.75
+		vsnd_files = "sounds/npc/neutrals/vaults/vault_fast_flash.vsnd"
+		vsnd_duration = 1.695487
+	}
+	Vault.HitSuccess.Light = 
+	{
+		base = "Base.World"
+		volume = 6.0
+		track_1.vsnd_track_vol_offset_db = 2.0
 		vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_05.vsnd"
 		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_payout.vsnd"
+		track_3.track_vsnd_files = 
+		[
+			"sounds/npc/neutrals/vaults/vault_hit_heavy_01.vsnd",
+			"sounds/npc/neutrals/vaults/vault_hit_heavy_02.vsnd",
+			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
+		]
+		vsnd_duration = 3.195442
+	}
+	Vault.HitSuccess.Heavy = 
+	{
+		base = "Base.World"
+		volume = 6.0
+		track_1.vsnd_track_vol_offset_db = 2.0
+		vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_05.vsnd"
+		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_payout_heavy.vsnd"
+		track_3.track_vsnd_files = 
+		[
+			"sounds/npc/neutrals/vaults/vault_hit_heavy_01.vsnd",
+			"sounds/npc/neutrals/vaults/vault_hit_heavy_02.vsnd",
+			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
+		]
 		vsnd_duration = 3.195442
 	}
 	Vault.HitFail = 
@@ -110,6 +125,9 @@
 	{
 		base = "Base.World"
 		volume = 5.0
+		pitch = 1.2
+		pitch_increment_count_max = 2.0
+		incremental_pitch_offset = 0.25
 		vsnd_files = 
 		[
 			"sounds/mods/weapon/lucky/lucky_proc_01.vsnd",
@@ -118,10 +136,43 @@
 		]
 		vsnd_duration = 0.910816
 	}
+	Vault.Destroyed = 
+	{
+		base = "Base.World"
+		volume = 8.0
+		vsnd_files = 
+		[
+			"sounds/npc/neutrals/vaults/vault_destroy_01.vsnd",
+			"sounds/npc/neutrals/vaults/vault_destroy_02.vsnd",
+			"sounds/npc/neutrals/vaults/vault_destroy_03.vsnd",
+		]
+		vsnd_duration = 2.565646
+	}
+	Vault.Powerup.Gained.Light = 
+	{
+		base = "Base.Pickup"
+		volume = 2.0
+		pitch_rand_min = -0.1
+		pitch_rand_max = 0.1
+		delay = 0.1
+		vsnd_files = "sounds/npc/neutrals/vaults/vault_powerup_gained_light.vsnd"
+		vsnd_duration = 3.363152
+	}
+	Vault.Powerup.Gained.Heavy = 
+	{
+		base = "Base.Pickup"
+		volume = 2.0
+		pitch_rand_min = -0.1
+		pitch_rand_max = 0.1
+		delay = 0.1
+		vsnd_files = "sounds/npc/neutrals/vaults/vault_powerup_gained_heavy.vsnd"
+		vsnd_duration = 3.363152
+	}
 	Vault.Impact.Stinger_01 = 
 	{
 		base = "Base.World"
-		volume = 2.0
+		volume = 3.0
+		track_1.vsnd_track_vol_offset_db = 3.0
 		track_2.vsnd_track_vol_offset_db = 5.0
 		vsnd_files = 
 		[
@@ -130,12 +181,13 @@
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
 		]
 		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_01.vsnd"
-		vsnd_duration = 2.23195
+		vsnd_duration = 1.696735
 	}
 	Vault.Impact.Stinger_02 = 
 	{
 		base = "Base.World"
-		volume = 2.0
+		volume = 3.0
+		track_1.vsnd_track_vol_offset_db = 3.0
 		track_2.vsnd_track_vol_offset_db = 5.0
 		vsnd_files = 
 		[
@@ -144,12 +196,13 @@
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
 		]
 		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_02.vsnd"
-		vsnd_duration = 2.23195
+		vsnd_duration = 1.696735
 	}
 	Vault.Impact.Stinger_03 = 
 	{
 		base = "Base.World"
-		volume = 2.0
+		volume = 3.0
+		track_1.vsnd_track_vol_offset_db = 3.0
 		track_2.vsnd_track_vol_offset_db = 5.0
 		vsnd_files = 
 		[
@@ -158,13 +211,14 @@
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
 		]
 		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_03.vsnd"
-		vsnd_duration = 2.23195
+		vsnd_duration = 1.696735
 	}
 	Vault.Impact.Stinger_04 = 
 	{
 		base = "Base.World"
-		volume = 2.0
-		track_2.vsnd_track_vol_offset_db = 5.0
+		volume = 3.0
+		track_1.vsnd_track_vol_offset_db = 3.0
+		track_2.vsnd_track_vol_offset_db = 6.5
 		vsnd_files = 
 		[
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_01.vsnd",
@@ -172,12 +226,13 @@
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
 		]
 		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_04.vsnd"
-		vsnd_duration = 2.23195
+		vsnd_duration = 1.696735
 	}
 	Vault.Impact.Stinger_05 = 
 	{
 		base = "Base.World"
-		volume = -5.0
+		volume = -2.0
+		track_1.vsnd_track_vol_offset_db = 3.0
 		track_2.vsnd_track_vol_offset_db = 5.0
 		vsnd_files = 
 		[
@@ -186,12 +241,13 @@
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
 		]
 		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_05.vsnd"
-		vsnd_duration = 2.23195
+		vsnd_duration = 1.696735
 	}
 	Vault.Impact.Stinger_01b = 
 	{
 		base = "Base.World"
-		volume = 0.0
+		volume = 3.0
+		track_1.vsnd_track_vol_offset_db = 3.0
 		track_2.vsnd_track_vol_offset_db = 5.0
 		vsnd_files = 
 		[
@@ -200,12 +256,13 @@
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
 		]
 		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_01b.vsnd"
-		vsnd_duration = 2.23195
+		vsnd_duration = 1.696735
 	}
 	Vault.Impact.Stinger_02b = 
 	{
 		base = "Base.World"
-		volume = 0.0
+		volume = 3.0
+		track_1.vsnd_track_vol_offset_db = 3.0
 		track_2.vsnd_track_vol_offset_db = 5.0
 		vsnd_files = 
 		[
@@ -214,12 +271,13 @@
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
 		]
 		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_02b.vsnd"
-		vsnd_duration = 2.23195
+		vsnd_duration = 1.696735
 	}
 	Vault.Impact.Stinger_03b = 
 	{
 		base = "Base.World"
-		volume = 0.0
+		volume = 3.0
+		track_1.vsnd_track_vol_offset_db = 3.0
 		track_2.vsnd_track_vol_offset_db = 5.0
 		vsnd_files = 
 		[
@@ -228,14 +286,14 @@
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
 		]
 		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_03b.vsnd"
-		vsnd_duration = 2.23195
+		vsnd_duration = 1.696735
 	}
 	Vault.Impact.Stinger_04b = 
 	{
 		base = "Base.World"
 		volume = 3.0
-		track_2.vsnd_track_vol_offset_db = 5.0
-		track_3.vsnd_track_vol_offset_db = 4.0
+		track_1.vsnd_track_vol_offset_db = 3.0
+		track_2.vsnd_track_vol_offset_db = 1.0
 		vsnd_files = 
 		[
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_01.vsnd",
@@ -243,30 +301,28 @@
 			"sounds/npc/neutrals/vaults/vault_hit_heavy_03.vsnd",
 		]
 		track_2.track_vsnd_files = "sounds/npc/neutrals/vaults/vault_hit_stinger_04b.vsnd"
-		track_3.track_vsnd_files = "sounds/abilities/mokrill/a1_scorn/cast_dive.vsnd"
-		vsnd_duration = 2.23195
+		vsnd_duration = 1.696735
 	}
 	Vault.Idle_Lp = 
 	{
-		type = "citadel_diagetic_music"
+		base = "Base.World"
 		volume_max_gain_change_per_second = 10.0
 		mixer_mixgroup = "Music-World"
-		volume = -2.0
+		volume = 0.0
 		occlusion_volume_blend_distance_min = 250.0
 		occlusion_volume_blend_distance_max = 500.0
-		occlusion_min = 0.2
+		occlusion_min = 0.0
 		occlusion_max = 1.0
 		occlusion_scale = 1.0
 		occlusion_radius = 100.0
-		volume_falloff_max = 800.0
+		volume_falloff_max = 700.0
 		volume_falloff_min = 100.0
 		volume_falloff_curve_amount = 0.3
 		spread_min_value = 0.0
 		spread_max_value = 0.5
 		volume_fade_out = 0.5
 		cull_at_distance = 2000.0
-		block_distance = 20.0
 		vsnd_files = "sounds/npc/neutrals/vaults/vault_music.vsnd"
-		vsnd_duration = 13.150681
+		vsnd_duration = 13.150658
 	}
 }

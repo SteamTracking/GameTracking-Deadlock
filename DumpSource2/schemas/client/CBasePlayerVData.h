@@ -1,6 +1,7 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CBasePlayerVData",
 //	"m_sModelName": "",
+//	"m_sModelNameAg2Override": "",
 //	"m_vecIntrinsicModifiers":
 //	[
 //	],
@@ -23,6 +24,8 @@ class CBasePlayerVData : public CEntitySubclassVDataBase
 {
 	// MPropertyProvidesEditContextString = "ToolEditContext_ID_VMDL"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_sModelName;
+	// MPropertyProvidesEditContextString = "ToolEditContext_ID_VMDL"
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_sModelNameAg2Override;
 	CUtlVector< CEmbeddedSubclass< CCitadelModifier > > m_vecIntrinsicModifiers;
 	CSkillFloat m_flHeadDamageMultiplier;
 	CSkillFloat m_flChestDamageMultiplier;

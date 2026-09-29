@@ -71,6 +71,7 @@
 //	"m_flZipBoostCooldownOnStart": 20.000000,
 //	"m_flBuyTimeGracePeriod": 15.000000,
 //	"m_iUltimateUnlockRound": 0,
+//	"m_iCorruptItemRound": 0,
 //	"m_flTier1MaxResistTime": 4.000000,
 //	"m_flTier2MaxResistTime": 4.000000
 //}
@@ -122,6 +123,8 @@ class GameModeStreetBrawl_t
 	float32 m_flZipBoostCooldownOnStart;
 	float32 m_flBuyTimeGracePeriod;
 	int32 m_iUltimateUnlockRound;
+	// MPropertyDescription = "Round whose buy phase lets every player corrupt one non-enhanced item.  1 = first round, 0 = never."
+	int32 m_iCorruptItemRound;
 	float32 m_flTier1MaxResistTime;
 	float32 m_flTier2MaxResistTime;
 };

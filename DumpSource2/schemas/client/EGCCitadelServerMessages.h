@@ -24,4 +24,9 @@ enum EGCCitadelServerMessages : uint32_t
 	k_EMsgServerToGCRequestPlayerHeroDataResponse = 10045,
 	k_EMsgGCToServerAllocateForHideout = 10046,
 	k_EMsgGCToServerAllocateForHideoutResponse = 10047,
+	k_EMsgServerToGCInternalMatchStats = 10048,
+	k_EMsgGCToServerRequestPlayerChatLog = 10049,
+	k_EMsgGCToServerRequestPlayerChatLogResponse = 10050,
+	k_EMsgGCToServerToxicChatEvaluationResult = 10051,
+	k_EMsgServerToGCTestToxicChatEval = 10052,
 };

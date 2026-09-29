@@ -1,10 +1,8 @@
-// MNetworkVarNames = "Vector m_vLookTarget"
-// MClassHasEntityLimitedDataDesc
+// MAbilityDynamicValuesSuppressCacheWhileActive
 class CCitadel_Ability_Doorman_Hotel : public CCitadelBaseAbility
 {
 	CHandle< CBaseEntity > m_hHotelStart;
 	CHandle< CBaseEntity > m_hStartRelay;
 	bool m_bSpendCooldown;
-	// MNetworkEnable
-	Vector m_vLookTarget;
+	VectorWS m_vLookTarget;
 };

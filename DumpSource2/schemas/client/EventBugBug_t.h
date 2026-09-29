@@ -1,0 +1,3 @@
+class EventBugBug_t
+{
+};

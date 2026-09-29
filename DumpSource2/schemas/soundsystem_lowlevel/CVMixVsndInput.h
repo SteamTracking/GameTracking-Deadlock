@@ -1,10 +1,7 @@
 // MGetKV3ClassDefaults = {
-//	"m_name": "GameInput",
-//	"m_defaultValue": "",
-//	"m_nProcessor": -1
+//	"m_defaultValue": ""
 //}
-class CVMixVsndInput : public CVMixInputBase
+class CVMixVsndInput
 {
 	CUtlString m_defaultValue;
-	int32 m_nProcessor;
 };

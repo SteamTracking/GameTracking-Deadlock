@@ -1,0 +1,261 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+@import url("s2r://panorama/styles/citadel_base_styles.vcss");
+CitadelHudCombatLog
+{
+	width: 800px;
+	height: 540px;
+	margin-top: 10px;
+	margin-left: 15px;
+	vertical-align: top;
+	horizontal-align: left;
+	background-size: 100%;
+	visibility: visible;
+	background-color: #2E2E2Ef8;
+	padding: 3px;
+	border-radius: 10px;
+}
+
+CitadelHudCombatLog.Closed
+{
+	visibility: collapse;
+}
+
+CitadelHudCombatLog.gShopOpen
+{
+	visibility: collapse;
+}
+
+#DragHandle
+{
+	margin-top: 2px;
+	margin-left: 5px;
+	width: 24px;
+	height: 24px;
+	background-image: url("s2r://panorama/images/control_icons/move_png.vtex");
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#CombatLogSpinner
+{
+	horizontal-align: center;
+	vertical-align: center;
+	visibility: collapse;
+}
+
+.UpdatePending #CombatLogSpinner
+{
+	visibility: visible;
+}
+
+#CombatLogInset
+{
+	width: 780px;
+	height: 370px;
+	margin: 12px;
+	margin-top: 30px;
+	background-color: #000000CC;
+	background-size: 100%;
+}
+
+#CombatLogLinesContainer
+{
+	width: 100%;
+	height: 100%;
+	overflow: squish scroll;
+	flow-children: down;
+	padding: 4px;
+}
+
+.UpdatePending #CombatLogLinesContainer
+{
+	visibility: collapse;
+}
+
+#CombatLogControls
+{
+	width: 100%;
+	height: 140px;
+	vertical-align: bottom;
+	margin-left: 15px;
+	padding-top: 12px;
+}
+
+#CombatLogDropdownContainer
+{
+	height: 100%;
+	width: 35%;
+}
+
+.CombatLogDropdown
+{
+	width: 200px;
+	margin: 10px;
+	horizontal-align: right;
+}
+
+#CombatLogIntervalLabel,#CombatLogIntervalTimeLabel,.CombatLogControlsLabel
+{
+	color: white;
+	vertical-align: center;
+	width: 70px;
+	text-align: center;
+	text-overflow: shrink;
+}
+
+.CombatLogControlsLabel
+{
+	text-align: center;
+}
+
+#CombatLogTickBoxesContainer
+{
+	height: 100%;
+	flow-children: right;
+	margin-left: 10px;
+	max-width: 370px;
+}
+
+.TickBoxesColumn
+{
+	flow-children: down;
+	margin-left: 10px;
+}
+
+.CombatLogTickBox
+{
+	horizontal-align: left;
+}
+
+.CombatLogTickBox Label
+{
+	text-align: center;
+	color: white;
+	vertical-align: center;
+	font-size: 16px;
+	margin: 4px;
+	text-overflow: shrink;
+	max-height: 20px;
+}
+
+.CombatLogTickBox
+{
+	margin: 5px;
+	horizontal-align: left;
+}
+
+#CombatLogMessageControls
+{
+	height: 100%;
+	margin-right: 20px;
+	flow-children: down;
+	width: fill-parent-flow(1.0);
+}
+
+#CombatLogMessageControls .ClearButton
+{
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+#CombatLogMessageControls .PrimaryButton
+{
+	background-size: cover;
+	border: 10px solid #C6C6C600;
+	border-image: url("s2r://panorama/images/global/btn_primary_frame.vsvg");
+	border-image-slice: 20px fill;
+	border-image-width: 20;
+	border-image-outset: 8px;
+	border-image-repeat: repeat;
+	padding: 0px 0px;
+	height: 40px;
+}
+
+#CombatLogMessageControls .PrimaryButton Label
+{
+	font-size: 16px;
+	margin-bottom: 0px;
+	text-overflow: shrink;
+}
+
+#CombatLogRefreshControls
+{
+	height: 100%;
+	width: 25%;
+	margin-top: 10px;
+	visibility: collapse;
+}
+
+#CombatLogIntervalSlider
+{
+	margin-top: 10px;
+	width: 180px;
+}
+
+#CombatLogIntervalTimeLabel
+{
+	text-align: left;
+	horizontal-align: left;
+}
+
+#CombatLogRefreshButton
+{
+	height: 22px;
+	width: 22px;
+	vertical-align: middle;
+	visibility: collapse;
+}
+
+#CombatLogHeader
+{
+	width: 100%;
+}
+
+#CombatLogTitle
+{
+	margin-left: 8px;
+	margin-top: 3px;
+	vertical-align: middle;
+	font-size: 16px;
+	letter-spacing: 1px;
+	font-weight: bold;
+	color: white;
+	text-shadow: 0px 0px 3px 2.0 #000000;
+}
+
+#CombatLogCloseButton
+{
+	margin-right: 10px;
+	height: 25px;
+	width: 25px;
+}
+
+.LogEntry
+{
+	width: 100%;
+	text-overflow: shrink;
+	font-family: monospaceNumbersFont;
+	opacity: 0.8;
+}
+
+.CloseButton
+{
+	width: 36px;
+	height: 36px;
+	vertical-align: middle;
+	horizontal-align: right;
+	background-size: auto 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/icons/icon_x.vsvg");
+	transition-property: pre-transform-scale2d;
+	transition-duration: 0.2s;
+}
+
+.CloseButton:hover
+{
+	pre-transform-scale2d: 1.2;
+}
+

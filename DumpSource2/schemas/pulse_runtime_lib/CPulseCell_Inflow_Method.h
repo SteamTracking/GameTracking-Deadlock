@@ -10,8 +10,10 @@
 //	"m_MethodName": "",
 //	"m_Description": "",
 //	"m_bIsPublic": false,
-//	"m_ReturnType": "PVAL_VOID",
 //	"m_Args":
+//	[
+//	],
+//	"m_ReturnValues":
 //	[
 //	]
 //}
@@ -21,6 +23,6 @@ class CPulseCell_Inflow_Method : public CPulseCell_Inflow_BaseEntrypoint
 	PulseSymbol_t m_MethodName;
 	CUtlString m_Description;
 	bool m_bIsPublic;
-	CPulseValueFullType m_ReturnType;
 	CUtlLeanVector< CPulseRuntimeMethodArg > m_Args;
+	CUtlLeanVector< CPulseRuntimeMethodArg > m_ReturnValues;
 };

@@ -5,7 +5,7 @@
 //	"m_vFacingTarget": null,
 //	"m_sMovementStrafingState": null,
 //	"m_sFacingReason": null,
-//	"m_sFacingModeUsePath": "Entity_Facing_Mode_Use_Path"
+//	"m_sFacingModeUsePath": ""
 //}
 // MHasKV3TransferPolymorphicClassname
 class CFacingServices_GraphController : public CAnimGraphControllerBase

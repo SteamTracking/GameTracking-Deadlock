@@ -88,6 +88,24 @@
 							property_group = "VSND Files"
 						}
 					}
+					vsnd_track_volume_rand_min = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							property_group = "VSND Files"
+						}
+					}
+					vsnd_track_volume_rand_max = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							property_group = "VSND Files"
+						}
+					}
 					track_percent_chance_to_play = 
 					{
 						data_type = "float"
@@ -184,9 +202,24 @@
 				operator = "soundevent_get_info"
 			},
 			{
+				name = "volume_random"
+				operator = "math_randomize_float"
+				execute_once = "true"
+				input = "0"
+				input_rand_min = "@public.vsnd_track_volume_rand_min"
+				input_rand_max = "@public.vsnd_track_volume_rand_max"
+			},
+			{
+				name = "math_add_volume"
+				operator = "math_float"
+				apply = "add"
+				input1 = "@public.vsnd_track_vol_offset_db"
+				input2 = "@volume_random.output"
+			},
+			{
 				name = "volume_db_to_gain_track"
 				operator = "math_db_to_gain"
-				input = "@public.vsnd_track_vol_offset_db"
+				input = "@math_add_volume.output"
 			},
 			{
 				name = "volume_fade_in"

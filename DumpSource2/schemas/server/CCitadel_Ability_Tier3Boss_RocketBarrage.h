@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Tier3Boss_RocketBarrage : public CTier3BossAbility
 {
 	int32 m_nGrenadeIndex;

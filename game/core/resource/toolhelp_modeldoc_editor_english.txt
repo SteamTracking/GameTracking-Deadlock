@@ -231,15 +231,14 @@ table {
 
 <p> This only makes sense in large systems because in small systems the spring will be solved the very first time, and solving it again won't change any behavior. You can only observe the difference in behavior in a large system, where there are many other springs tugging on cloth so that it makes sense to re-solve this spring after those other springs had the chance to move the joint</p>
 
-<p><b>Use with caution</b>: this will affect performance if used a lot, and you get most of the benefits, if any, with very small numbers like 1 or 2. Usually setting it to higher number makes no difference but costs CPU. But in general, solving springs is very cheap and won't cost any CPU if just used sparingly here and there</p>"
+<p><b>Use with caution</b>: this will affect performance if used a lot, and you get most of the benefits, if any, with very small numbers like 1 or 2. Usually setting it to higher number makes no difference but costs CPU. But in general, solving springs is very cheap and won't cost any CPU if just used sparingly here and there</p>
+
+<p>Solver runs on ticks, so if the game renders faster, it won't change stiffness. But more iterations = more stiffness</p>"
 		"clothchain.stray_box:help"		"The same as stray radius, but keeps the node inside a box (rather than sphere)
 Enter x y z like: 1 0 0 will allow the node to slide along X axis -1 to 1, and will not allow it to slide along Y and Z axes"
-
-
 		"Element.CDestructiblePart:name_ref"		"CDestructiblePart"
 		"Element.CDestructiblePart:help_ref"		"CDestructiblePart"
 		"Element.CDestructiblePart:help"		"Tie a hitgroup to a set of 'parts' that each have a pool of health, that can shatter breakable parts at certain thresholds, toggling body groups and do things like pass on damage to the base entity, cause death, etc."
-
 		"modeldocnode.BreakPieceSimpleParticles:name_ref"		"BreakPieceSimpleParticles"
 		"modeldocnode.BreakPieceSimpleParticles:help_ref"		"Spawn particle meshes when this prop breaks. (Automatically creates a helper model with a bodygroup choice for each particle, a snapshot that positions them in the appropriate places, and a breakcommand that spawns a particlesystem driven by the model and vsnaps.)"
 		"modeldocnode.BreakPieceSimpleParticles:help"		"Spawn particle meshes when this prop breaks. (Automatically creates a helper model with a bodygroup choice for each particle, a snapshot that positions them in the appropriate places, and a breakcommand that spawns a particlesystem driven by the model and vsnaps.)
@@ -262,12 +261,12 @@ However, sometimes it's useful to do the opposite and animate the cloth spring l
 		"modeldocattr.ClothParams.immovable:help"		"Check this hint if the model is not supposed to move, like a plant on a map that doesn't move.
 The only thing this affects is how cloth state is streated: when you look away, cloth stops simulating. When you look at the object again, cloth state is reset and cloth simulates from initial state. This is undesirable in some cases, as it resets cloth that otherwise should be still, like a plant in a corner of a room. Setting this hint will not reset cloth state.
 The danger is that if you animate this model, look away and then back at it, the cloth will jump from the state previously seen to the current state, and it can be jarring for moving characters"
-		"modeldocattr.MeshSimplify.visualizeEdges:name_ref"		"(Debug) Visualize Simplification Edges"
-		"modeldocattr.MeshSimplify.visualizeEdges:help"		"Visualizes edges that have an impact on simplification.<br><br>
-<b>Red</b> lines & vertices are a LOCKED vertex/edge and not allowed to be removed.  These will impact simplification the most.<br>
-<b>Green</b> lines are on border with an attribute seam (two seam edges).<br>
-<b>Blue</b> edges are on a border (two open edges) but do not have attribute seams.<br>
-<b>Magenta</b> are \"complex\".<br>
+		"modeldocattr.CRenderMeshSimplifyParams.visualizeEdges:name_ref"		"[DEBUG] Visualize Simplification Edges"
+		"modeldocattr.CRenderMeshSimplifyParams.visualizeEdges:help"		"Visualizes edges that have an impact on simplification.<br><br>
+<b><font color=\"red\">Red</font></b> lines & vertices are a LOCKED vertex/edge and not allowed to be removed.  These will impact simplification the most.<br>
+<b><font color=\"green\">Green</font></b> lines are on border with an attribute seam (two seam edges).<br>
+<b><font color=\"#3333ff\">Blue</font></b> edges are on a border (two open edges) but do not have attribute seams.<br>
+<b><font color=\"magenta\">Magenta</font></b> are \"complex\".<br>
 "
 		"modeldocattr.CRenderMeshSimplifyParams.targetError:name_ref"		"Maximum Error Percent"
 		"modeldocattr.CRenderMeshSimplifyParams.targetError:help"		"The error threshold where simplification will stop (computed as a function of changes in vertex positions, and changes in vertex attributes when \"Attribute-Aware Simplification\" is enabled).
@@ -293,9 +292,9 @@ This only applies for skinned meshes."
 		"modeldocattr.CRenderMeshSimplifyParams.recomputeVertices:help"		"Recomputes the values of vertex positions and attributes after simplification, to attempt to reduce errors in shading, silhouette, etc.
 
 Generally improves results, especially normal mapping.  With extreme simplification levels, may not be worthwhile or do some harm."
-		"modeldocattr.CRenderMeshSimplifyParams.permissive:name_ref"		"[experimental] Permissive of Facets"
+		"modeldocattr.CRenderMeshSimplifyParams.permissive:name_ref"		"[ADVANCED] Simplify Across Seams"
 		"modeldocattr.CRenderMeshSimplifyParams.permissive:help"		"Allows simplifying across seams in the mesh.  Generally only useful for poor content with lots of hard edges, uv shells, etc which would otherwise prevent simplification."
-		"modeldocattr.CRenderMeshSimplifyParams.lockBorder:name_ref"		"Lock Border"
+		"modeldocattr.CRenderMeshSimplifyParams.lockBorder:name_ref"		"[ADVANCED] Lock Border"
 		"modeldocattr.CRenderMeshSimplifyParams.lockBorder:help"		"Locks the border (open edges) of the mesh.
 Generally not useful, avoid using."
 		"modeldocattr.CRenderMeshSimplifyParams.prune:name_ref"		"Prune pieces < error threshold"
@@ -310,7 +309,6 @@ Generally advised to enable this for lower LODs to remove small details that wou
 This should generally be enabled - it will fix small seams in the input model that otherwise might not be noticed, but would otherwise lead to gaps in the mesh as each side of the seam is simplified independenly."
 		"modeldocattr.CRenderMeshSimplifyParams.weldPositionTolerance:name_ref"		"Weld Position Tolerance"
 		"modeldocattr.CRenderMeshSimplifyParams.weldPositionTolerance:help"		"Tolerance used for \"Weld Vertices before Simplifying\""
-
 		"modeldocattr.ClothEffectWind.local_space:name_ref"		"Local Space"
 		"modeldocattr.ClothEffectWind.local_space:help"		"Generally wind is computed from the entity motion plus effect wind . So even with wind = 0 there will still be wind if the hero is on a zipline or running.
 When you set Local Space to 1, the oncoming wind will be excluded (wind from animation will be included, e.g. when waving a flag in animation without moving a hero, the flag will still be affected by the oncoming wind from animtion)
@@ -325,6 +323,83 @@ You can blend it, too, between 0 and 1"
 		"modeldocattr.ClothEffectWind.vortex_cell_size:help"		"The size of every vortex, in inches. Smaller size means it will reach into smaller region. Imagine real vortices, how small do you want them to be?"
 		"modeldocattr.ClothEffectWind.vortex_choppiness:name_ref"		"Variety, Hz"
 		"modeldocattr.ClothEffectWind.vortex_choppiness:help"		"How many times per second vortex will change"
-	
+		"modeldocattr.CModelDocClothParams.default_stretch:name_ref"		"Stretchiness"
+		"modeldocattr.CModelDocClothParams.default_stretch:help"		"Range: 0..1 <BR>
+Cloth is simulated with springs, and solver tries to make those springs hard. Extra stretchiness adds bounce to the simulation, which is normally not desirable, so by default it's 0"
+		"modeldocattr.CModelDocClothParams.additional_shear_stretch:name_ref"		"Shear Stretch"
+		"modeldocattr.CModelDocClothParams.additional_shear_stretch:help"		"Range:-inf..inf<BR>
+
+Quads diagonal springs are called shear springs and resist shear. By default, there's some softness in them. Negative additional Shear Stretch will make them more rigid, positive more soft (so shearing will be easier)"
+		"modeldocattr.CModelDocClothParams.extra_iterations:name_ref"		"Extra Iterations"
+		"modeldocattr.CModelDocClothParams.extra_iterations:help"		"Range: 0..inf
+Normally cloth does 1 iteration over all constraints. Doing some extra iterations is costly but is an easy way to make cloth stiffer. This is additional iterations after the first one (which is absolutely necessary)"
+		"modeldocattr.CModelDocClothParams.extra_goal_iterations:name_ref"		"Extra Goal Iterations"
+		"modeldocattr.CModelDocClothParams.extra_goal_iterations:help"		"Range: 0..inf<BR>
+Besides iterating constraints, solver attracts vertices to animation goals. Sometimes with extra iterations you might need extra attraction to the animated goals "
+		"modeldocattr.CModelDocClothParams.extra_pressure_iterations:name_ref"		"Extra Pressure Iterations"
+		"modeldocattr.CModelDocClothParams.extra_pressure_iterations:help"		"Range: 0..inf<BR>
+Pressure iterations are used for wind and internal pressure (like baloon)."
+		"modeldocattr.CModelDocClothParams.goal_strength_bias:name_ref"		"Goal Strength Bias"
+		"modeldocattr.CModelDocClothParams.goal_strength_bias:help"		"Range: -1..1<BR>
+This is added to the goal_strength attribute across the whole cloth"
+		"modeldocattr.CModelDocClothParams.default_vel_air_drag:name_ref"		"Fast Drag"
+		"modeldocattr.CModelDocClothParams.default_vel_air_drag:help"		"Range: 0..1<BR>
+Drag applied to the fast moving particles, simulates viscous drag common in liquids like air or water (yes, air is a liquid)."
+		"modeldocattr.CModelDocClothParams.default_exp_air_drag:name_ref"		"Slow Drag"
+		"modeldocattr.CModelDocClothParams.default_exp_air_drag:help"		"Range: 0..1<BR>
+Drag applied to slow-moving particles. Simluates dry friction, like between two rigid bodies, only applies uniformly, so it's like friction with ether or space itself."
+		"modeldocattr.CModelDocClothParams.velocity_smooth_rate:name_ref"		"Smooth Rate"
+		"modeldocattr.CModelDocClothParams.velocity_smooth_rate:help"		"Range: 0..1 <BR>
+Special filter that smoothes velocity field. Very subtle"
+		"modeldocattr.CModelDocClothParams.internal_pressure:name_ref"		"Internal Pressure"
+		"modeldocattr.CModelDocClothParams.internal_pressure:help"		"Range:-inf..inf<BR>
+Additional internal pressure acting on the back side of all the triangles. Experiment to test baloons. Never been used in production."
+		"modeldocattr.CModelDocClothParams.windage:name_ref"		"Windage Normal"
+		"modeldocattr.CModelDocClothParams.windage:help"		"Range: 0..1<BR>
+How \"porous\" or \"sailable\" the surface of the triangles are when applying wind and pressure to it. 1 means the surface is fully solid like plastic, and wind affects it fully. Smaller values (0.1) work like it's a mesh, such that gusts of wind will go through it easily, affecting it little. 0 will mean wind goes through it in normal direction without any effect. Works in conjunction with Windage Tangent"
+		"modeldocattr.CModelDocClothParams.wind_drag:name_ref"		"Windage Tangent"
+		"modeldocattr.CModelDocClothParams.wind_drag:help"		"Range: 0..1<BR>
+When wind hits a triangle in tangent direction, there's still some drag that wind effects on the surface. 0 means there's no drag, the triangle is so smooth that wind slides along without friction or viscous effects. 1 means full effect."
+		"modeldocattr.CModelDocClothParams.velocity_smooth_iterations:name_ref"		"Smooth Iterations"
+		"modeldocattr.CModelDocClothParams.velocity_smooth_iterations:help"		"Range:0..inf<BR>
+How many smooth iterations are made. Works in conjunction with Smooth Rate and Smooth Iterations"
+		"modeldocattr.CModelDocClothParams.default_ground_friction:name_ref"		"Ground Friction"
+		"modeldocattr.CModelDocClothParams.default_ground_friction:help"		"Range: 0..1<BR>
+Cloth sometimes drags along the ground plane (floor), this is how much ground pulls on it along tangents."
+		"modeldocattr.CModelDocClothParams.default_world_collision_penetration:name_ref"		"World Collision Penetration"
+		"modeldocattr.CModelDocClothParams.default_world_collision_penetration:help"		"Range: -inf..inf<BR>
+How much to allow vertices penetrate ground or world "
+		"modeldocattr.CModelDocClothParams.add_world_collision_radius:name_ref"		"Add World Collision Radius"
+		"modeldocattr.CModelDocClothParams.add_world_collision_radius:help"		"Range:0..inf<BR>
+When colliding with the ground or world, this is the additional radius added to particles."
+		"modeldocattr.CModelDocClothParams.add_curvature:name_ref"		"Minimal Bend"
+		"modeldocattr.CModelDocClothParams.add_curvature:help"		"Range:0..1<BR>
+Allowed (min) bend along cloth edges. 0 does nothing, allowing full bend. 0.5 starts resisting bend after reaching 90 degree bend. 0.75 starts resisting at 45 degree from flat surface. 1 tries to resist any bend ."
+		"modeldocattr.CModelDocClothParams.local_drag1:name_ref"		"Local Drag"
+		"modeldocattr.CModelDocClothParams.local_drag1:help"		"Experimental: how much applied drag must be applied in Entity's local space, so that the entity motion doesn't affect drag. Not yet fully implemented."
+		"modeldocattr.CModelDocClothParams.follow_the_lead:name_ref"		"Follow the Lead"
+		"modeldocattr.CModelDocClothParams.follow_the_lead:help"		"Source 1 cloth: every link of cloth starting from static anchors simulates separate from everything and as if the previous link was completely rigid (infinite mass) and all the subsequent (downstream) link were weightless. This is not physical and leads to weird behavior, but may be very useful for simulating very rigid high-natural-frequency objects like long antennae"
+		"modeldocattr.CModelDocClothParams.force_world_collision_on_all_nodes:name_ref"		"Force World Collision On All Nodes"
+		"modeldocattr.CModelDocClothParams.force_world_collision_on_all_nodes:help"		"Experimental, not fully implemented: make cloth collide with the world capsules and spheres and some hulls"
+		"modeldocattr.CModelDocClothParams.can_collide_with_world_hulls:name_ref"		"Collide With World Hulls"
+		"modeldocattr.CModelDocClothParams.can_collide_with_world_hulls:help"		"Experimental: try to collide with rigid physics hulls "
+		"modeldocattr.CModelDocClothParams.can_collide_with_world_meshes:name_ref"		"Collide With World Meshes"
+		"modeldocattr.CModelDocClothParams.can_collide_with_world_meshes:help"		"Experimental: try to collide with rigid physics meshes "
+		"modeldocattr.CModelDocClothParams.can_collide_with_world_capsule_and_spheres:name_ref"		"Collide With World Capsules And Spheres"
+		"modeldocattr.CModelDocClothParams.can_collide_with_world_capsule_and_spheres:help"		"Experimental: try to collide with rigid physics capsules and spheres "
+		"modeldocattr.CModelDocClothParams.add_stiffness_rods:name_ref"		"Bend-and-Stretch Springs"
+		"modeldocattr.CModelDocClothParams.add_stiffness_rods:help"		"Bend spring do a double duty as structural spring but not only resisting bend (contraction) but also resisting elongation. When this is checked, they will not resist stretch. This may help in some very rigid cases of very small cloth setups that vibrate."
+		"modeldocattr.CModelDocClothParams.rigid_edge_hinges:name_ref"		"Rigid Edge Hinges"
+		"modeldocattr.CModelDocClothParams.rigid_edge_hinges:help"		"Use an algorithm that resists bending better than bend springs, especially when the cloth has high curvature."
+		"modeldocattr.CModelDocClothParams.add_bend_only_rods:name_ref"		"Bend-only Springs"
+		"modeldocattr.CModelDocClothParams.add_bend_only_rods:help"		"Add structural (diagonal) springs"
+		"modeldocattr.CModelDocClothParams.immovable:name_ref"		"Immovable model (hint)"
+		"modeldocattr.CModelDocClothParams.immovable:help"		"a hint that the model may not move (e.g. houseplant), which means cloth doesn't have to reset when you look away. 
+Cloth doesn't simulate when you don't look at it, so if you move the entity around and then look at it, it may stretch or pop momentarily when you look back"
+		"clothchain.antishrink:help"		"springs can stretch and compress.
+normally they aren't allowed to stretch past their default length, but they may be allowed to contract.
+0 = springs are allowed to contract to 0
+0.5 = springs are allowed to contract to 0.5 of their length
+1 = springs are not allowed to contract, they're rigid rods"
 	}
 }

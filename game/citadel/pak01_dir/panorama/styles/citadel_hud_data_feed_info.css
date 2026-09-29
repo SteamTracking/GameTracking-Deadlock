@@ -1,18 +1,28 @@
 /* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
 
-@define team1Color: #BF9A53;
-@define team1ColorBright: #FBDCA0;
-@define team1ColorDark: #937600;
-@define team2Color: #5B79E6;
-@define team2ColorBright: #BDCBFF;
-@define team2ColorDark: #4156A0;
-CitadelHudInfoFeed
+CitadelHudInfoFeed,CitadelHudBossKilled
 {
 	height: fit-children;
 	width: fit-children;
-	margin-left: 10px;
-	margin-top: 4px;
-	margin-bottom: 4px;
+	margin: 5px 0px -5px 0px;
+	overflow: render;
+	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_fill_texture_png.vtex") 0.9;
+}
+
+CitadelHudInfoFeed.hasGold,CitadelHudInfoFeed.hasAssists,CitadelHudInfoFeed.bossDied,CitadelHudInfoFeed.enemyDied,CitadelHudBossKilled.hasGold,CitadelHudBossKilled.hasAssists,CitadelHudBossKilled.bossDied,CitadelHudBossKilled.enemyDied
+{
+	margin-bottom: -20px;
+	margin-top: 5px;
+}
+
+CitadelHudInfoFeed.bossDied,CitadelHudBossKilled.bossDied
+{
+	margin: 5px 0px -5px 0px;
+}
+
+CitadelHudInfoFeed.SoulBagPickup,CitadelHudBossKilled.SoulBagPickup
+{
+	margin: 5px 0px -5px 0px;
 }
 
 @keyframes 'PlayerKilled'
@@ -35,17 +45,8 @@ CitadelHudInfoFeed
 {
 	transition-property: background-color, transform;
 	transition-timing-function: ease-out;
-	animation-name: PlayerKilled;
 	animation-duration: 0.5s;
 	animation-iteration-count: 1;
-}
-
-.killerContainer
-{
-	z-index: 2;
-	margin-right: 5px;
-	flow-children: right;
-	border-radius: 3px;
 }
 
 .noKiller .killerContainer
@@ -53,9 +54,25 @@ CitadelHudInfoFeed
 	visibility: collapse;
 }
 
-.hasAssists .killerContainer
+.killerContainer
 {
-	margin-right: 3px;
+	margin-right: -10px;
+	z-index: 1;
+}
+
+.teammateDied .killerContainer,.killedSelf .killerContainer,.enemyDied .killerContainer,.bossDied .killerContainer
+{
+	margin-right: -50px;
+}
+
+.victimContainer
+{
+	margin-left: -10px;
+}
+
+.enemyDied .victimContainer,.teammateDied .victimContainer,.killedSelf .victimContainer,.bossDied .victimContainer
+{
+	margin-left: -30px;
 }
 
 #TextContainer
@@ -64,12 +81,212 @@ CitadelHudInfoFeed
 	flow-children: right;
 }
 
-Label
+.unit_background
 {
-	font-size: 13px;
-	color: white;
-	text-shadow: 0px 0px 10px #000000;
+	flow-children: down;
 	vertical-align: bottom;
+}
+
+.unit_primary
+{
+	flow-children: down;
+	overflow: noclip;
+	min-width: 130px;
+	min-height: 30px;
+	width: fit-children;
+}
+
+.hasAssists .unit_primary,.hasGold .unit_primary
+{
+	margin-top: 20px;
+}
+
+.victimContainer .unit_primary
+{
+	padding: 5px 36px 0px 24px;
+	min-width: 80px;
+}
+
+.enemyDied .victimContainer .unit_primary,.teammateDied .victimContainer .unit_primary,.killedSelf .victimContainer .unit_primary
+{
+	padding: 5px 42px 0px 40px;
+}
+
+.bossDied .victimContainer .unit_primary
+{
+	padding: 0px 50px 0px 40px;
+}
+
+.IdolPickedUp .victimContainer .unit_primary
+{
+	min-width: 30px;
+}
+
+.SoulBagPickup .victimContainer .unit_primary
+{
+	flow-children: right;
+	padding: 5px 16px 0px 24px;
+}
+
+.bossDied .victimContainer .unit_primary
+{
+	flow-children: right;
+}
+
+.isRejuvenatorPickup .victimContainer .unit_primary
+{
+	min-width: 60px;
+}
+
+.noKiller.IdolReturned .victimContainer .unit_primary
+{
+	opacity-mask: url("s2r://panorama/images/hud/kill_feed/feed_killer_bg.vsvg");
+}
+
+.unit_bg
+{
+	width: 100%;
+	height: 36px;
+	margin-top: 16px;
+	background-color: offBlack;
+	ignore-parent-flow: true;
+	padding: 5px 10px 0px 66px;
+}
+
+.IdolPickedUp .unit_bg
+{
+	height: 36px;
+}
+
+.isRejuvenatorPickup .unit_bg
+{
+	padding-left: 30px;
+}
+
+.killerContainer .unit_bg
+{
+	opacity-mask: url("s2r://panorama/images/hud/kill_feed/feed_killer_bg.vsvg");
+}
+
+.victimContainer .unit_bg
+{
+	opacity-mask: url("s2r://panorama/images/hud/kill_feed/feed_victim_bg.vsvg");
+}
+
+.killerContainer.noKiller.KothCompleted .unit_bg
+{
+	opacity-mask: url("s2r://panorama/images/hud/kill_feed/feed_killer_bg.vsvg");
+}
+
+.hasGold #KillerContainer .unit_bg,.hasAssists #KillerContainer .unit_bg
+{
+	height: 42px;
+}
+
+.SoulBagPickup #KillerContainer .unit_bg
+{
+	height: 36px;
+}
+
+.victimContainer .unit_bg
+{
+	height: 36px;
+}
+
+.team_1 .unit_bg
+{
+	background-color: team1Color;
+}
+
+.team_2 .unit_bg
+{
+	background-color: team2Color;
+}
+
+.enemy .unit_bg
+{
+	background-color: teamEnemyColor;
+}
+
+.friendly .unit_bg
+{
+	background-color: teamFriendlyColor;
+}
+
+.unit_secondary
+{
+	flow-children: right;
+	vertical-align: bottom;
+	margin-top: -6px;
+	z-index: 5;
+	height: 30px;
+	width: fit-children;
+	horizontal-align: left;
+	visibility: collapse;
+}
+
+.enemyDied .unit_secondary,.teammateDied .unit_secondary,.killedSelf .unit_secondary,.bossDied .unit_secondary
+{
+	margin-left: 44px;
+	padding-right: 30px;
+}
+
+.hasGold .unit_secondary,.hasAssists .unit_secondary
+{
+	visibility: visible;
+	margin-left: 44px;
+	padding-right: 30px;
+}
+
+.SoulBagPickup .unit_secondary
+{
+	horizontal-align: right;
+	vertical-align: top;
+	ignore-parent-flow: true;
+	padding-right: 0px;
+}
+
+.SoulBagPickup .killerContainer .unit_secondary
+{
+	opacity: 0;
+}
+
+.gold
+{
+	visibility: collapse;
+	color: offBlack;
+	font-weight: bold;
+	font-family: block;
+	font-size: 13px;
+	vertical-align: top;
+	margin-top: 3px;
+	flow-children: right;
+	background-color: shardColor&ee;
+	padding: 0px 3px;
+	border-radius: 2px;
+}
+
+.hasAssists .gold
+{
+	margin-top: 2px;
+}
+
+.hasGold .gold
+{
+	visibility: visible;
+}
+
+.gold_icon
+{
+	width: 10px;
+	height: 15px;
+	background-image: url("s2r://panorama/images/hud/icons/icon_soul.vsvg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: middle;
+	wash-color: offBlack;
+	margin-right: 0px;
 }
 
 .dataFeedClass
@@ -82,86 +299,22 @@ Label
 	visibility: collapse;
 }
 
-.goldIcon
-{
-	background-repeat: no-repeat;
-	background-image: url("s2r://panorama/images/hud/orb_icon_png.vtex");
-	background-size: contain;
-	height: 12px;
-	width: 12px;
-	vertical-align: bottom;
-	margin-bottom: 8px;
-}
-
 .victimContainer
 {
 	flow-children: right;
 	horizontal-align: right;
-	margin-left: 5px;
-	border-radius: 3px;
+	vertical-align: bottom;
 }
 
-.killerTeam1 .killerContainer,.team1Died .victimContainer,.team2Died .killerContainer
+.killedSelf .victimContainer
 {
-	background-color: team1Color;
+	margin-left: 0px;
 }
 
-.killerTeam2 .killerContainer,.team1Died .killerContainer,.team2Died .victimContainer
+.IdolPickedUp .victimImageContainer,.IdolReturned .victimImageContainer,.KothCompleted .victimImageContainer,.isRejuvenator .victimImageContainer,.isRejuvenatorPickup .victimImageContainer,.isRejuvenatorUsed .victimImageContainer
 {
-	background-color: team2Color;
-}
-
-.enemyDied .victimContainer,.teammateDied .killerContainer,.killedSelf .victimContainer
-{
-	background-color: #FF5656;
-}
-
-.enemyDied .killerContainer,.teammateDied .victimContainer
-{
-	background-color: #FFEFD7;
-}
-
-.enemyDied .killerContainer Label,.teammateDied .victimContainer Label
-{
-	color: #000000;
-	text-shadow: none;
-}
-
-.team1Died .victimImageContainer,.team2Died .killerImageContainer
-{
-	background-color: team1ColorDark;
-}
-
-.team1Died .killerImageContainer,.team2Died .victimImageContainer
-{
-	background-color: team2ColorDark;
-}
-
-.enemyDied .killerImageContainer,.teammateDied .victimImageContainer
-{
-	background-color: #bdae97;
-}
-
-.enemyDied .victimImageContainer,.teammateDied .killerImageContainer,.killedSelf .victimImageContainer
-{
-	background-color: #820000;
-}
-
-.isRejuvenator .victimContainer,.isRejuvenatorPickup .victimContainer,.IdolPickedUp .victimContainer,.IdolReturned .victimContainer,.KothCompleted .victimContainer
-{
-	background-color: #999999;
-}
-
-.isRejuvenator .victimImageContainer,.isRejuvenatorPickup .victimImageContainer,.IdolPickedUp .victimImageContainer,.IdolReturned .victimImageContainer,.KothCompleted .victimImageContainer
-{
-	background-color: #ffcc00;
-}
-
-.IdolPickedUp .victimImageContainer,.IdolReturned .victimImageContainer,.KothCompleted .victimImageContainer
-{
-	background-color: #ffcc00;
-	height: 28px;
-	width: 28px;
+	height: 38px;
+	width: 38px;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -174,7 +327,20 @@ Label
 
 .IdolPickedUp .victimImageContainer,.IdolReturned .victimImageContainer
 {
-	background-image: url("s2r://panorama/images/hud/data_feed_golden_idol_png.vtex");
+	background-image: url("s2r://panorama/images/minimap/soul_jar_marker_psd.vtex");
+	animation-name: UIGroove1;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.5s;
+}
+
+.IdolPickedUp .victimImageContainer,.IdolReturned .victimImageContainer
+{
+	ui-scale: 120%;
+	animation-name: UIGroove1;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.5s;
 }
 
 .IdolPickedUp #VictimImage,.IdolReturned #VictimImage,.KothCompleted #VictimImage
@@ -182,32 +348,92 @@ Label
 	visibility: collapse;
 }
 
-.isRejuvenator #VictimImage,.isRejuvenatorPickup #VictimImage
+.isRejuvenator #VictimImage,.isRejuvenatorPickup #VictimImage,.isRejuvenatorUsed #VictimImage
 {
-	wash-color: black;
+	wash-color: gold;
+	background-image: url("s2r://panorama/images/hud/icons/rejuvenator.vsvg");
+	width: 100%;
+	height: 100%;
+	height: 32px;
+	width: 32px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	animation-name: UIGroove1;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.5s;
 }
 
 .victimImageContainer,.killerImageContainer
 {
 	vertical-align: center;
-	margin: 2px;
+	ignore-parent-flow: true;
+	z-index: 1;
+}
+
+.victimImageContainer CitadelHeroImage,.killerImageContainer CitadelHeroImage
+{
+	vertical-align: bottom;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.5s;
+}
+
+.hasAssists .victimImageContainer,.hasGold .victimImageContainer,.hasAssists .killerImageContainer,.hasGold .killerImageContainer
+{
+	margin-bottom: 0px;
+}
+
+.SoulBagPickup .victimImageContainer,.SoulBagPickup .killerImageContainer
+{
+	margin-top: 10px;
+}
+
+.victimImageContainer
+{
+	horizontal-align: right;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.5s;
 }
 
 CitadelHeroImage
 {
-	height: 28px;
-	width: 28px;
+	height: 38px;
+	vertical-align: bottom;
+	max-width: 38px;
 }
 
-.killerInfo,.victimInfo
+.kill_detail_icons
 {
-	max-width: 180px;
-	text-overflow: ellipsis;
+	flow-children: right;
+	horizontal-align: right;
+	vertical-align: middle;
+	transform: translateX(15px);
+	z-index: 100;
+	margin-bottom: 10px;
+	visibility: collapse;
+}
+
+.enemyDied .kill_detail_icons,.teammateDied .kill_detail_icons,.killedSelf .kill_detail_icons,.bossDied .kill_detail_icons
+{
+	visibility: visible;
+}
+
+.bossDied .kill_detail_icons
+{
+	margin-bottom: 0px;
+}
+
+.bossDied.hasGold .kill_detail_icons,.bossDied.hasAssists .kill_detail_icons
+{
+	margin-bottom: 10px;
 }
 
 .isRejuvenator .victimInfo,.isRejuvenatorPickup .victimInfo,.IdolPickedUp .victimInfo,.IdolReturned .victimInfo,.KothCompleted .victimInfo
 {
-	color: black;
+	color: offWhite;
 	text-shadow: none;
 }
 
@@ -225,8 +451,129 @@ CitadelHeroImage
 {
 	vertical-align: center;
 	text-transform: uppercase;
-	margin: 3px 10px 5px 10px;
+	font-size: 16px;
 	font-weight: bold;
+	font-family: block;
+	font-family: oracle;
+	color: offWhite;
+	min-width: 30px;
+	max-width: 200px;
+	max-height: 20px;
+	text-overflow: shrink;
+	transform: rotateZ(1deg);
+	padding-right: 30px;
+}
+
+.team_1 .personaName
+{
+	color: offBlack;
+	text-shadow: 0px 0px 0px 1.0 offBlack;
+}
+
+.team_2 .personaName
+{
+	color: offWhite;
+	text-shadow: 2px 1px 0px offBlack&90;
+}
+
+.enemy .personaName
+{
+	color: offWhite;
+	text-shadow: 2px 1px 0px offBlack&90;
+}
+
+.bossDied .enemy .personaName
+{
+	color: offWhite;
+	text-shadow: 2px 1px 0px offBlack&90;
+}
+
+.friendly .personaName
+{
+	color: offBlack;
+	text-shadow: 0px 0px 0px 1.0 offBlack;
+}
+
+.soulBagAmount .personaName
+{
+	color: shardColor;
+}
+
+.victimContainer .personaName
+{
+	transform: rotateZ(-1deg) translateY(-2px);
+	padding-right: 0px;
+	padding-left: 10px;
+}
+
+.SoulBagPickup .victimContainer .personaName
+{
+	padding-left: 5px;
+}
+
+.IdolPickedUp .victimContainer .personaName,.isRejuvenatorPickup .victimContainer .personaName
+{
+	visibility: collapse;
+}
+
+.personaName.killerInfo
+{
+	margin: 3px 6px 5px 50px;
+}
+
+.soulBagAmount
+{
+	visibility: collapse;
+	flow-children: right;
+	margin-top: 3px;
+}
+
+.SoulBagPickup .soulBagAmount
+{
+	visibility: visible;
+	margin-top: 0px;
+}
+
+.bossLaneIcon
+{
+	width: 20px;
+	height: 20px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	visibility: collapse;
+	margin-right: -5px;
+	margin-left: 10px;
+	margin-top: 3px;
+}
+
+.k_ELaneColor_Blue .bossLaneIcon
+{
+	background-image: url("s2r://panorama/images/hud/icon_lane_blue.vsvg");
+}
+
+.k_ELaneColor_Yellow .bossLaneIcon
+{
+	background-image: url("s2r://panorama/images/hud/icon_lane_yellow.vsvg");
+}
+
+.k_ELaneColor_Green .bossLaneIcon
+{
+	background-image: url("s2r://panorama/images/hud/icon_lane_green.vsvg");
+}
+
+.k_ELaneColor_Purple .bossLaneIcon
+{
+	background-image: url("s2r://panorama/images/hud/icon_lane_green.vsvg");
+}
+
+.bossDied .bossLaneIcon
+{
+	visibility: visible;
+}
+
+.bossDied.midBoss .bossLaneIcon
+{
+	visibility: collapse;
 }
 
 .crosshairImage
@@ -238,6 +585,12 @@ CitadelHeroImage
 	background-image: url("s2r://panorama/images/hud/kill_feed_crosshair_png.vtex");
 	background-size: contain;
 	z-index: 3;
+	wash-color: offBlack;
+}
+
+.midBoss .crosshairImage
+{
+	opacity: 0;
 }
 
 .noKiller .crosshairImage
@@ -272,7 +625,13 @@ CitadelHeroImage
 	background-size: contain;
 	margin-left: -10px;
 	z-index: 2;
+	wash-color: offBlack;
 	margin-right: 3px;
+}
+
+.midBoss .arrowImage
+{
+	opacity: 0;
 }
 
 .noKiller .arrowImage
@@ -292,38 +651,118 @@ CitadelHeroImage
 
 #AssistsContainer
 {
-	height: 100%;
-	width: fit-children;
 	margin-right: 3px;
 	flow-children: right;
 }
 
-CitadelHeroImage.assister
+CitadelHeroImage.assister,CitadelHeroImage.soulBagTarget
 {
 	height: 100%;
-	width: 20px;
-	border: 2px solid #FFEFD790;
-	background-color: #FFEFD730;
+	width: 24px;
+	height: 24px;
+	border-radius: 50px;
+	padding: 2px;
 	margin-right: 3px;
 }
 
-.team2Died CitadelHeroImage.assister
+.team_2 CitadelHeroImage.assister,.team_2 CitadelHeroImage.soulBagTarget
 {
-	border: 2px solid team1Color;
+	background-color: team2Color;
 }
 
-.team1Died CitadelHeroImage.assister
+.team_1 CitadelHeroImage.assister,.team_1 CitadelHeroImage.soulBagTarget
 {
-	border: 2px solid team2Color;
+	background-color: team1Color;
 }
 
-.teammateDied CitadelHeroImage.assister
+.enemy CitadelHeroImage.assister,.enemy CitadelHeroImage.soulBagTarget
 {
-	border: 2px solid #FF5656;
+	background-color: teamEnemyColor;
 }
 
-.enemyDied CitadelHeroImage.assister
+.friendly CitadelHeroImage.assister,.friendly CitadelHeroImage.soulBagTarget
 {
-	border: 2px solid #FFEFD790;
+	background-color: teamFriendlyColor;
+}
+
+.SoulBagPickup .friendly CitadelHeroImage.assister,.SoulBagPickup .friendly CitadelHeroImage.soulBagTarget
+{
+	background-color: teamEnemyColor;
+}
+
+.SoulBagStolen .enemy CitadelHeroImage.assister,.SoulBagStolen .enemy CitadelHeroImage.soulBagTarget
+{
+	background-color: teamFriendlyColor;
+}
+
+.abilityImage
+{
+	width: 18px;
+	height: 18px;
+	margin-right: 3px;
+	wash-color: gray;
+	opacity: 1;
+}
+
+.abilityImage.is_item
+{
+	wash-color: none;
+}
+
+.teammateDied .abilityImage
+{
+	wash-color: offWhite;
+}
+
+.soulBagTarget
+{
+	visibility: collapse;
+}
+
+.SoulBagPickup .soulBagTarget
+{
+	visibility: visible;
+}
+
+.soulBagStolen
+{
+	font-size: 11px;
+	font-family: block;
+	color: teamEnemyColor;
+	text-transform: uppercase;
+	vertical-align: top;
+	margin-top: 14px;
+	text-shadow: 0px 0px 0px 3.0 offBlack;
+	animation-name: UIGroove1;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.5s;
+	visibility: collapse;
+}
+
+.SoulBagStolen .soulBagStolen
+{
+	visibility: visible;
+}
+
+#KillStreakParticlePanel
+{
+	height: 100%;
+	width: 90px;
+	opacity: 1.5;
+	pre-transform-scale2d: 1;
+	transform: rotateZ(-90deg);
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: middle;
+	margin-bottom: 1px;
+	margin-right: 0px;
+	opacity-brush: gradient( linear, 0% 0%, 0% 100%, from( #ffffff00 ), to( #ffffff ) );
+	visibility: collapse;
+}
+
+.has_killstreak #KillStreakParticlePanel
+{
+	visibility: visible;
 }
 

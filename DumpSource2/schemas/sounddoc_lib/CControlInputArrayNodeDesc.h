@@ -1,0 +1,3 @@
+class CControlInputArrayNodeDesc : public CVNodeTypeDesc
+{
+};

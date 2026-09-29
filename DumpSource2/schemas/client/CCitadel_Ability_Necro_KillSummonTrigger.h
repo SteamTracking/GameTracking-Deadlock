@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Necro_KillSummonTrigger : public CCitadelBaseTriggerAbility
 {
 	VectorWS m_vLaunchPosition;

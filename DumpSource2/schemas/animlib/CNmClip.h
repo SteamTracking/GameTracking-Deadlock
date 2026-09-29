@@ -9,19 +9,10 @@
 //	"m_compressedPoseOffsets":
 //	[
 //	],
-//	"m_floatCurveIDs":
-//	[
-//	],
-//	"m_floatCurveDefs":
-//	[
-//	],
-//	"m_compressedFloatCurveData":
-//	[
-//	],
-//	"m_compressedFloatCurveOffsets":
-//	[
-//	],
 //	"m_secondaryAnimations":
+//	[
+//	],
+//	"m_floatChannelData":
 //	[
 //	],
 //	"m_syncTrack":
@@ -81,11 +72,8 @@ class CNmClip
 	CUtlBinaryBlock m_compressedPoseData;
 	CUtlVector< NmCompressionSettings_t > m_trackCompressionSettings;
 	CUtlVector< uint32 > m_compressedPoseOffsets;
-	CUtlVector< CGlobalSymbol > m_floatCurveIDs;
-	CUtlVector< NmFloatCurveCompressionSettings_t > m_floatCurveDefs;
-	CUtlVector< uint16 > m_compressedFloatCurveData;
-	CUtlVector< uint32 > m_compressedFloatCurveOffsets;
 	CUtlVectorFixedGrowable< CNmClip*, 1 > m_secondaryAnimations;
+	CUtlVectorFixedGrowable< CNmFloatChannelData*, 2 > m_floatChannelData;
 	CNmSyncTrack m_syncTrack;
 	CNmRootMotionData m_rootMotion;
 	bool m_bIsAdditive;

@@ -1,6 +1,8 @@
 class CInfoTrooperNeutralSpawn : public CServerOnlyPointEntity
 {
-	int32 m_iCoverGroupID;
+	CEntityIOOutput m_OnNeutralKilled;
 	CUtlSymbolLarge m_iszSquadName;
-	ENeutralTrooperType m_eTrooperType;
+	ENeutralNPCType m_eNeutralNPCType;
+	CUtlSymbolLarge m_iszNeutralSubclass;
+	CEntityIOOutput m_OnNeutralTakeDamage;
 };

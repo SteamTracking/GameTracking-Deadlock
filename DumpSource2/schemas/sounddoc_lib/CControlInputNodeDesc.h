@@ -1,0 +1,3 @@
+class CControlInputNodeDesc : public CVControlNodeBaseDesc
+{
+};

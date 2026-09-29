@@ -399,7 +399,7 @@
 	font-weight: bold;
 }
 
-#shield_bar,#tech_shield_bar
+#shield_bar
 {
 	background-color: rgba(0, 0, 0, 0.6);
 	border: 2px solid offBlack;
@@ -413,56 +413,37 @@
 	margin-top: 30px;
 }
 
-.shieldActive #shield_bar
-{
-	visibility: visible;
-}
-
-.shieldActive #tech_shield_bar
-{
-	margin-right: 12px;
-}
-
-.techShieldActive #tech_shield_bar
-{
-	visibility: visible;
-}
-
 #shield_bar .ProgressBarLeft
 {
 	background-color: courageBrightColor;
 	background-color: #4bdc68;
+	background-color: #2ddbf1;
 }
 
-#tech_shield_bar .ProgressBarLeft
-{
-	background-color: spiritBrightColor;
-}
-
-#shield_bar .ProgressBarMiddle,#tech_shield_bar .ProgressBarMiddle
+#shield_bar .ProgressBarMiddle
 {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-#shield_bar .ProgressBarRight,#tech_shield_bar .ProgressBarRight
+#shield_bar .ProgressBarRight
 {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-#shield_bar .progress_bar_current,#tech_shield_bar .progress_bar_current
+#shield_bar .progress_bar_current
 {
 	font-size: 14px;
 	line-height: 14px;
 	margin-top: 1px;
 }
 
-#shield_bar .progress_bar_divider,#tech_shield_bar .progress_bar_divider
+#shield_bar .progress_bar_divider
 {
 	font-size: 14px;
 	line-height: 14px;
 }
 
-#shield_bar .progress_bar_max,#tech_shield_bar .progress_bar_max
+#shield_bar .progress_bar_max
 {
 	font-size: 12px;
 	line-height: 14px;
@@ -504,6 +485,48 @@
 }
 
 #pending_incoming_heal .ProgressBarLeft,#pending_incoming_heal .ProgressBarRight
+{
+	opacity: 0;
+}
+
+#shield_bar_2
+{
+	width: 65px;
+	height: 212px;
+	margin: 4px 0px 1px 1px;
+	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_mask.vsvg");
+}
+
+#shield_bar_2 .ProgressBarMiddle
+{
+	background-color: #9cd8e0;
+}
+
+#shield_bar_2 .ProgressBarLeft,#shield_bar_2 .ProgressBarRight
+{
+	opacity: 0;
+}
+
+#ratking_armor_bar
+{
+	width: 65px;
+	height: 212px;
+	margin: 4px 0px 1px 1px;
+	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_mask.vsvg");
+	visibility: collapse;
+}
+
+.ratKingArmorActive #ratking_armor_bar
+{
+	visibility: visible;
+}
+
+#ratking_armor_bar .ProgressBarMiddle
+{
+	background-color: #c8a165;
+}
+
+#ratking_armor_bar .ProgressBarLeft,#ratking_armor_bar .ProgressBarRight
 {
 	opacity: 0;
 }
@@ -559,6 +582,30 @@
 	background-color: #f6805f;
 }
 
+#healthLines
+{
+	width: 66px;
+	height: 212px;
+	margin: 4px 0px 1px 1px;
+	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_mask.vsvg");
+}
+
+#healthLines .line_large
+{
+	width: 100%;
+	height: 3px;
+	background-color: offBlack;
+	opacity: 0.7;
+}
+
+#healthLines .line_small
+{
+	width: 30%;
+	height: 3px;
+	background-color: offBlack;
+	opacity: 0.7;
+}
+
 #healthBottomEdge
 {
 	width: 100%;
@@ -568,13 +615,6 @@
 	vertical-align: middle;
 	z-index: 10;
 	visibility: collapse;
-}
-
-#healthBottomEdge .tick
-{
-	width: 2px;
-	background-color: rgba(0, 0, 0, 0.521);
-	height: 4px;
 }
 
 .healthMid #healthBottomEdge

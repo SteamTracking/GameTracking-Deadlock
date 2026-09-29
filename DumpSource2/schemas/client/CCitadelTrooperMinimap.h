@@ -1,14 +1,7 @@
-// MNetworkVarNames = "GameTime_t m_timeLastUpdate"
-// MNetworkVarNames = "STrooperFOWEntity m_vecFOWEntities"
 // MNetworkNoBase
 class CCitadelTrooperMinimap : public C_BaseEntity
 {
-	// MNetworkEnable
-	// MNetworkPriority = 32
-	// MNotSaved
-	GameTime_t m_timeLastUpdate;
-	// MNetworkEnable
-	// MNetworkPriority = 32
+	float32 m_flUpdateInterval;
 	// MNotSaved
 	C_UtlVectorEmbeddedNetworkVar< STrooperFOWEntity > m_vecFOWEntities;
 };

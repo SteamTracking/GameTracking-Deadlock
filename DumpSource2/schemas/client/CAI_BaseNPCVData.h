@@ -10,21 +10,17 @@
 //	"m_vecIntrinsicModifiers":
 //	[
 //	],
+//	"m_vecIntrinsicModifiersByName":
+//	[
+//	],
 //	"m_statusEffectMap":
 //	{
 //	},
 //	"m_vecAttachments":
 //	[
 //	],
-//	"m_flHeadDamageMultiplier": 1.500000,
-//	"m_flChestDamageMultiplier": 1.000000,
-//	"m_flStomachDamageMultiplier": 1.000000,
-//	"m_flArmDamageMultiplier": 1.000000,
-//	"m_flLegDamageMultiplier": 1.000000,
-//	"m_nMaxAdditionalAmmoBalancingShots": 0,
 //	"m_bTakesDamage": true,
 //	"m_strDamagedEffect": "",
-//	"m_bLightsFiresWhenDamaged": false,
 //	"m_nRagdollHealth": 0,
 //	"m_flImpactEnergyScale": 1.000000,
 //	"m_bAllowNonZUpMovement": false,
@@ -36,16 +32,13 @@
 //	[
 //	],
 //	"m_sPlayerKilledNpcSound": "",
-//	"m_sCustomDeathHandshake": "",
 //	"m_sDefaultMovementSettings": "",
 //	"m_mappedMovementSettings":
 //	[
 //	],
 //	"m_bEnableCodeDrivenAnimgraphMovement": false,
 //	"m_bEnableAnimgraphTagDrivenStrafing": true,
-//	"m_flMassOverride": -1.000000,
-//	"m_flThreatTemperature": 20.000000,
-//	"m_flFlashpoint": -1.000000
+//	"m_flMassOverride": -1.000000
 //}
 // MHasKV3TransferPolymorphicClassname
 class CAI_BaseNPCVData : public CEntitySubclassVDataBase
@@ -62,21 +55,15 @@ class CAI_BaseNPCVData : public CEntitySubclassVDataBase
 	float32 m_flAimConeAngle;
 	int32 m_nMaxHealth;
 	CUtlVector< CEmbeddedSubclass< CCitadelModifier > > m_vecIntrinsicModifiers;
+	CUtlVector< CSubclassName< 2 > > m_vecIntrinsicModifiersByName;
 	// MPropertyFriendlyName = "Status Effects"
 	// MPropertyDescription = "List of the status effects this NPC cares about"
 	NPCStatusEffectMap_t m_statusEffectMap;
 	CUtlVector< NPCAttachmentDesc_t > m_vecAttachments;
 	// MPropertyStartGroup = "Damage"
-	CSkillFloat m_flHeadDamageMultiplier;
-	CSkillFloat m_flChestDamageMultiplier;
-	CSkillFloat m_flStomachDamageMultiplier;
-	CSkillFloat m_flArmDamageMultiplier;
-	CSkillFloat m_flLegDamageMultiplier;
-	CSkillInt m_nMaxAdditionalAmmoBalancingShots;
 	bool m_bTakesDamage;
 	// MPropertyDescription = "Damaged Effect"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_strDamagedEffect;
-	bool m_bLightsFiresWhenDamaged;
 	// MPropertyDescription = "Amount of health to grant to a ragdoll before the ragdoll is destroyed."
 	int32 m_nRagdollHealth;
 	// MPropertyDescription = "Scale on the energy used to look up into the damage tables for physics impacts (including vehicle impacts)."
@@ -100,8 +87,6 @@ class CAI_BaseNPCVData : public CEntitySubclassVDataBase
 	// MPropertyStartGroup = "Sounds"
 	// MPropertyDescription = "Player Killed NPC Sound"
 	CSoundEventName m_sPlayerKilledNpcSound;
-	// MPropertyStartGroup = "Death"
-	CGlobalSymbol m_sCustomDeathHandshake;
 	// MPropertyStartGroup = "Movement"
 	// MPropertyFriendlyName = "Default Movement Settings"
 	// MPropertyAttributeEditor = "VDataChoice( scripts/basenpc_movementsettings.vdata )"
@@ -113,6 +98,4 @@ class CAI_BaseNPCVData : public CEntitySubclassVDataBase
 	// MPropertyDescription = "If true, the NPC will request strafing if it is supported by the animgraph. Can still be overriden by schedules."
 	bool m_bEnableAnimgraphTagDrivenStrafing;
 	float32 m_flMassOverride;
-	float32 m_flThreatTemperature;
-	float32 m_flFlashpoint;
 };

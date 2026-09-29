@@ -119,6 +119,8 @@ $\f?focusNextPrevChild@QWidget@@MEAA_N_N@Z
 .R?matches@QKeyEvent@@QEBA_NW4StandardKey@QKeySequence@@@Z
 .\r?hideEvent@QMenu@@MEAAXPEAVQHideEvent@@@Z
 1ClearSolo()
+1OnExecTableContextMenu( const QPoint& )
+1OnHistoryTableContextMenu( const QPoint& )
 1OnSoloButtonChanged( int )
 1PlayExecSelected( int, int )
 1PlaySelected( int, int )
@@ -138,10 +140,10 @@ $\f?focusNextPrevChild@QWidget@@MEAA_N_N@Z
 2\f?focusOutEvent@QLabel@@MEAAXPEAVQFocusEvent@@@Z
 2\r?hideEvent@QWidget@@MEAAXPEAVQHideEvent@@@Z
 2\v?event@QAction@@MEAA_NPEAVQEvent@@@Z
-2\vpTO
 2cellClicked( int, int )
 2clicked( bool )
 2currentChanged( int )
+2customContextMenuRequested( const QPoint& )
 2itemChanged( QTableWidgetItem * )
 2mapped(int)
 2stateChanged( int )
@@ -164,6 +166,7 @@ $\f?focusNextPrevChild@QWidget@@MEAA_N_N@Z
 ??0QColor@@QEAA@HHHH@Z
 ??0QColor@@QEAA@W4GlobalColor@Qt@@@Z
 ??0QColor@@QEAA@XZ
+??0QContextMenuEvent@@QEAA@W4Reason@0@AEBVQPoint@@1@Z
 ??0QFont@@QEAA@AEBVQString@@HH_N@Z
 ??0QFont@@QEAA@XZ
 ??0QFontMetrics@@QEAA@AEBVQFont@@@Z
@@ -205,6 +208,7 @@ $\f?focusNextPrevChild@QWidget@@MEAA_N_N@Z
 ??1QBrush@@QEAA@XZ
 ??1QByteArray@@QEAA@XZ
 ??1QCheckBox@@UEAA@XZ
+??1QContextMenuEvent@@UEAA@XZ
 ??1QFont@@QEAA@XZ
 ??1QFontMetrics@@QEAA@XZ
 ??1QGridLayout@@UEAA@XZ
@@ -291,7 +295,6 @@ $\f?focusNextPrevChild@QWidget@@MEAA_N_N@Z
 ?closeEvent@QWidget@@MEAAXPEAVQCloseEvent@@@Z
 ?column@QTableWidgetItem@@QEBAHXZ
 ?commitData@QAbstractItemView@@MEAAXPEAVQWidget@@@Z
-?contentsRect@QWidget@@QEBA?AVQRect@@XZ
 ?contextMenuEvent@QAbstractScrollArea@@MEAAXPEAVQContextMenuEvent@@@Z
 ?contextMenuEvent@QLabel@@MEAAXPEAVQContextMenuEvent@@@Z
 ?contextMenuEvent@QLineEdit@@MEAAXPEAVQContextMenuEvent@@@Z
@@ -352,7 +355,7 @@ $\f?focusNextPrevChild@QWidget@@MEAA_N_N@Z
 ?leaveEvent@QMenu@@MEAAXPEAVQEvent@@@Z
 ?leaveEvent@QToolButton@@MEAAXPEAVQEvent@@@Z
 ?leaveEvent@QWidget@@MEAAXPEAVQEvent@@@Z
-?mapFromGlobal@QWidget@@QEBA?AVQPoint@@AEBV2@@Z
+?mapToGlobal@QWidget@@QEBA?AVQPoint@@AEBV2@@Z
 ?maximumSize@QBoxLayout@@UEBA?AVQSize@@XZ
 ?maximumSize@QGridLayout@@UEBA?AVQSize@@XZ
 ?metaObject@QAction@@UEBAPEBUQMetaObject@@XZ
@@ -503,6 +506,7 @@ $\f?focusNextPrevChild@QWidget@@MEAA_N_N@Z
 ?resizeEvent@QTabWidget@@MEAAXPEAVQResizeEvent@@@Z
 ?resizeEvent@QWidget@@MEAAXPEAVQResizeEvent@@@Z
 ?row@QTableWidgetItem@@QEBAHXZ
+?rowAt@QTableView@@QEBAHH@Z
 ?rowCount@QTableWidget@@QEBAHXZ
 ?rowsAboutToBeRemoved@QAbstractItemView@@MEAAXAEBVQModelIndex@@HH@Z
 ?rowsAboutToBeRemoved@QTreeView@@MEAAXAEBVQModelIndex@@HH@Z
@@ -517,7 +521,6 @@ $\f?focusNextPrevChild@QWidget@@MEAA_N_N@Z
 ?selectAll@QTreeView@@UEAAXXZ
 ?selectedIndexes@QTableView@@MEBA?AV?$QList@VQModelIndex@@@@XZ
 ?selectedIndexes@QTreeView@@MEBA?AV?$QList@VQModelIndex@@@@XZ
-?selectedItems@QTableWidget@@QEBA?AV?$QList@PEAVQTableWidgetItem@@@@XZ
 ?selectedItems@QTreeWidget@@QEBA?AV?$QList@PEAVQTreeWidgetItem@@@@XZ
 ?selectionChanged@QTableView@@MEAAXAEBVQItemSelection@@0@Z
 ?selectionChanged@QTreeView@@MEAAXAEBVQItemSelection@@0@Z
@@ -708,10 +711,9 @@ CQSoundTableWidget
 CQSoundTableWrapperWidget
 CQSoundToolWidget
 CQTracksWidget
-CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<__int64,class QString,class CDefEquals<__int64>,struct HashMapFunctor_t<__int64>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<__int64,class QString,class CDefEquals<__int64>,struct HashMapFunctor_t<__int64>,int>::HashBucket_t,int>::AddMultipleToTail
-CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<unsigned __int64,class CQSortableTreeWidgetItem *,class CDefEquals<unsigned __int64>,struct HashMapFunctor_t<unsigned __int64>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<unsigned __int64,class CQSortableTreeWidgetItem *,class CDefEquals<unsigned __int64>,struct HashMapFunctor_t<unsigned __int64>,int>::HashBucket_t,int>::AddMultipleToTail
-CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<unsigned int,struct SoundInfo_t,class CDefEquals<unsigned int>,struct HashMapFunctor_t<unsigned int>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<unsigned int,struct SoundInfo_t,class CDefEquals<unsigned int>,struct HashMapFunctor_t<unsigned int>,int>::HashBucket_t,int>::AddMultipleToTail
-CUtlRBTree<struct CUtlOrderedMapBase<class IVConsoleDevice *,class CQSoundToolWidget *,class CDefLess<class IVConsoleDevice *>,int>::Node_t,class CUtlOrderedMapBase<class IVConsoleDevice *,class CQSoundToolWidget *,class CDefLess<class IVConsoleDevice *>,int>::CKeyLess,int,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class IVConsoleDevice *,class CQSoundToolWidget *,class CDefLess<class IVConsoleDevice *>,int>::Node_t,int>,int,class CMemAllocAllocator> >::Insert
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<__int64,class QString,class CDefEquals<__int64>,struct DefaultHashFunctor<__int64>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<__int64,class QString,class CDefEquals<__int64>,struct DefaultHashFunctor<__int64>,int>::HashBucket_t,int>::AddMultipleToTail
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<unsigned __int64,class CQSortableTreeWidgetItem *,class CDefEquals<unsigned __int64>,struct DefaultHashFunctor<unsigned __int64>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<unsigned __int64,class CQSortableTreeWidgetItem *,class CDefEquals<unsigned __int64>,struct DefaultHashFunctor<unsigned __int64>,int>::HashBucket_t,int>::AddMultipleToTail
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<unsigned int,struct SoundInfo_t,class CDefEquals<unsigned int>,struct DefaultHashFunctor<unsigned int>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<unsigned int,struct SoundInfo_t,class CDefEquals<unsigned int>,struct DefaultHashFunctor<unsigned int>,int>::HashBucket_t,int>::AddMultipleToTail
 CVMixViewer
 Cache
 Cache Miss
@@ -746,7 +748,6 @@ L\r?hitButton@QToolButton@@MEBA_NAEBVQPoint@@@Z
 Largest Free Block:
 Listener: %8.1f, %8.1f, %8.1f
 Memory : %.1f%% used.  %s total, %s used.
-Meters
 Mix Inputs
 MixChanged
 Mute
@@ -755,7 +756,10 @@ N?height@QFontMetrics@@QEBAHXZ
 N\v?event@QMainWindow@@MEAA_NPEAVQEvent@@@Z
 No Samples.
 OnChannelNameChanged
+OnEditingFinished
+OnExecTableContextMenu
 OnFocusOut
+OnHistoryTableContextMenu
 OnMaxPeakPressed
 OnMixChanged
 OnPaused
@@ -774,7 +778,6 @@ Qt5Widgets.dll
 RSDSL
 Removed
 Removed Events
-Reset
 Reset Max
 ResetMaxVoiceCount
 Resume History
@@ -801,7 +804,6 @@ TEST
 ToggleVisualization
 Total Free:
 Total Used:
-Tracks
 UpdateExpandAll
 UpdateFilter
 V?redF@QColor@@QEBANXZ
@@ -844,7 +846,6 @@ Z?setPen@QPainter@@QEAAXW4PenStyle@Qt@@@Z
 \n?blueF@QColor@@QEBANXZ
 \n?boundingRect@QFontMetrics@@QEBA?AVQRect@@AEBVQString@@@Z
 \n?constData@QByteArray@@QEBAPEBDXZ
-\n?contains@QRect@@QEBA_NAEBVQPoint@@_N@Z
 \n?devType@QWidget@@UEBAHXZ
 \n?dragMoveEvent@QLineEdit@@MEAAXPEAVQDragMoveEvent@@@Z
 \n?dragMoveEvent@QTreeView@@MEAAXPEAVQDragMoveEvent@@@Z

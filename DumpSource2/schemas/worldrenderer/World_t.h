@@ -16,7 +16,8 @@
 //			"m_bHasLightmaps": false,
 //			"m_bBakedShadowsGamma20": false,
 //			"m_bCompressionEnabled": false,
-//			"m_bSHLightmaps": false,
+//			"m_nLPVEncoding": -1,
+//			"m_nLightmapEncoding": -1,
 //			"m_nChartPackIterations": 0,
 //			"m_nVradQuality": 0,
 //			"m_lightMaps":
@@ -44,7 +45,8 @@
 //		"m_bHasLightmaps": false,
 //		"m_bBakedShadowsGamma20": false,
 //		"m_bCompressionEnabled": false,
-//		"m_bSHLightmaps": false,
+//		"m_nLPVEncoding": -1,
+//		"m_nLightmapEncoding": -1,
 //		"m_nChartPackIterations": 0,
 //		"m_nVradQuality": 0,
 //		"m_lightMaps":

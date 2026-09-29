@@ -147,7 +147,7 @@
 	}
 	Chrono.Pulse.Grenade.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 2.0
 		volume_offset_opponent = 6.0
 		vsnd_files = 
@@ -162,6 +162,7 @@
 	{
 		base = "Base.Ability.Detached"
 		volume = 2.0
+		volume_offset_opponent = 3.0
 		vsnd_files = 
 		[
 			"sounds/abilities/chrono/paradox_pulse_grenade_proj_impact_01.vsnd",
@@ -173,7 +174,7 @@
 	Chrono.Pulse.Grenade.Proj.Lp = 
 	{
 		base = "Base.Ability.Projectile"
-		volume = -4.0
+		volume = -2.0
 		volume_fade_in = 0.1
 		volume_fade_out = 0.25
 		volume_offset_player = -4.0
@@ -184,6 +185,7 @@
 	{
 		base = "Base.Ability.Detached"
 		volume = -1.0
+		volume_offset_opponent = 3.0
 		vsnd_files = 
 		[
 			"sounds/abilities/chrono/paradox_pulse_grenade_armed_01.vsnd",
@@ -203,10 +205,10 @@
 	Chrono.Pulse.Grenade.Hit = 
 	{
 		base = "Base.Ability.Hit"
-		volume = 2.0
+		volume = 3.0
 		limiter_max = 1.0
 		limiter_match_entity = 0.0
-		volume_offset_attacker_db = 3.0
+		volume_offset_attacker_db = 2.0
 		vsnd_files = 
 		[
 			"sounds/abilities/chrono/paradox_pulse_grenade_hit_01.vsnd",
@@ -217,7 +219,7 @@
 	}
 	Chrono.Time.Wall.Cast.Delay = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 2.0
 		vsnd_files = "sounds/abilities/chrono/paradox_time_wall_cast_delay.vsnd"
 		vsnd_duration = 1.239955
@@ -240,7 +242,6 @@
 		pitch_envelope_scale_max = 1.6
 		pitch_envelope_scale_min = 0.8
 		vsnd_files = "sounds/abilities/chrono/a4_chrono_sphere/lp.vsnd"
-		vsnd_duration = 6.285438
 	}
 	Chrono.Time.Wall.Hit = 
 	{
@@ -261,9 +262,65 @@
 		vsnd_files = "sounds/abilities/chrono/paradox_time_wall_expire.vsnd"
 		vsnd_duration = 1.754036
 	}
+	Chrono.Time.Wall.Bullet.Impact = 
+	{
+		base = "Base.Ability.Detached"
+		volume = -4.0
+		pitch_rand_min = -0.125
+		pitch_rand_max = 0.125
+		max_distance_recipient_filter = 1600.0
+		volume_falloff_max = 1500.0
+		limiter_on = 1.0
+		limiter_max = 5.0
+		instance_attenuator_enabled = 1.0
+		vsnd_files = 
+		[
+			"sounds/abilities/chrono/paradox_time_wall_projectile_impact_01.vsnd",
+			"sounds/abilities/chrono/paradox_time_wall_projectile_impact_02.vsnd",
+			"sounds/abilities/chrono/paradox_time_wall_projectile_impact_03.vsnd",
+			"sounds/abilities/chrono/paradox_time_wall_projectile_impact_04.vsnd",
+			"sounds/abilities/chrono/paradox_time_wall_projectile_impact_05.vsnd",
+			"sounds/abilities/chrono/paradox_time_wall_projectile_impact_06.vsnd",
+		]
+		instance_count_offset_amount_db = 
+		[
+			[
+				0.0, 0.0, 0.0, 0.0,
+				0.0, 0.0,
+			],
+			[
+				1.0, 0.0, 0.0, -2.296429,
+				0.0, 0.0,
+			],
+			[
+				4.0, -4.5, -2.296429, 0.0,
+				0.0, 0.0,
+			],
+			[
+				8.0, -12.0, -2.296429, 0.0,
+				0.0, 0.0,
+			],
+		]
+		volume_falloff_curve_db = 
+		[
+			[
+				0.0, 0.0, 1.083, 1.083,
+				2.0, 3.0,
+			],
+			[
+				0.5, -5.0, 0.0, -0.203542,
+				0.0, 0.0,
+			],
+			[
+				1.0, -14.0, -0.203542, 0.0,
+				0.0, 0.0,
+			],
+		]
+		vsnd_duration = 1.0
+	}
 	Chrono.KineticCarbine.Cast = 
 	{
-		base = "Base.Ability.Telegraph"
+		base = "Base.Ability.Cast"
 		volume = 1.0
 		vsnd_files = "sounds/abilities/chrono/chrono_kinetic_carbine_fire_01.vsnd"
 		vsnd_duration = 5.761406
@@ -301,32 +358,33 @@
 		vsnd_files = "sounds/abilities/chrono/chrono_kinetic_carbine_charge_expire.vsnd"
 		vsnd_duration = 5.852354
 	}
-	Ability.TimeBank.GoFast = 
-	{
-		base = "Base.Ability"
-		volume = -8.0
-		vsnd_files = "sounds/abilities/chrono/a3_time_bank/accel.vsnd"
-		vsnd_duration = 3.273021
-	}
-	Ability.TimeBank.GoSlow = 
+	Chrono.KineticCarbine.InAir.Zoom = 
 	{
 		base = "Base.Ability"
 		volume = -9.0
-		volume_fade_out = 0.5
-		vsnd_files = "sounds/abilities/chrono/a3_time_bank/slow.vsnd"
-		vsnd_duration = 2.381208
+		pitch_rand_min = -0.05
+		pitch_rand_max = 0.15
+		block_opponent = 1.0
+		block_team = 1.0
+		block_duration = 0.75
+		vsnd_files = "sounds/abilities/chrono/paradox_kinetic_carbine_slow_down.vsnd"
+		vsnd_duration = 1.613084
 	}
-	Ability.TimeBank.Full = 
+	Chrono.KineticCarbine.Hit = 
 	{
-		base = "Base.Ability"
-		volume = -1.0
-		pitch = 1.01
-		vsnd_files = "sounds/abilities/chrono/a3_time_bank/slow.vsnd"
-		vsnd_duration = 2.381208
+		base = "Base.Ability.Hit"
+		volume = 3.0
+		vsnd_files = 
+		[
+			"sounds/abilities/chrono/paradox_kinetic_carbine_hit_01.vsnd",
+			"sounds/abilities/chrono/paradox_kinetic_carbine_hit_02.vsnd",
+			"sounds/abilities/chrono/paradox_kinetic_carbine_hit_03.vsnd",
+		]
+		vsnd_duration = 3.039751
 	}
 	Chrono.Swap.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 6.0
 		pitch_rand_max = 0.05
 		pitch_rand_min = -0.05
@@ -482,34 +540,7 @@
 	}
 	Paradox.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
+		base = "Hero.Default.Melee.Swing"
 		track_2.track_vsnd_files = 
 		[
 			"sounds/player/movement/chrono/chrono_foley_long_01.vsnd",
@@ -518,39 +549,10 @@
 			"sounds/player/movement/chrono/chrono_foley_long_04.vsnd",
 			"sounds/player/movement/chrono/chrono_foley_long_05.vsnd",
 		]
-		vsnd_duration = 1.062208
 	}
 	Paradox.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
+		base = "Hero.Default.Melee.Charged"
 		track_2.track_vsnd_files = 
 		[
 			"sounds/player/movement/chrono/chrono_foley_long_01.vsnd",
@@ -559,7 +561,6 @@
 			"sounds/player/movement/chrono/chrono_foley_long_04.vsnd",
 			"sounds/player/movement/chrono/chrono_foley_long_05.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	Chrono.Footstep.Hourglass = 
 	{
@@ -591,7 +592,7 @@
 	Chrono.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "chrono"
+		context_name = "hero_chrono"
 		vsnd_files = 
 		[
 			"sounds/vo/chrono/chrono_kill_anyhero_09.vsnd",
@@ -604,7 +605,7 @@
 	Chrono.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "chrono"
+		context_name = "hero_chrono"
 		vsnd_files = 
 		[
 			"sounds/vo/chrono/chrono_near_miss_04.vsnd",

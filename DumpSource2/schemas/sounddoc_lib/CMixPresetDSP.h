@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": true,
+//	"m_nGenerationId": 0,
 //	"m_nChannels": -1,
 //	"m_effectName": "core.null",
 //	"m_flXFade": 0.100000

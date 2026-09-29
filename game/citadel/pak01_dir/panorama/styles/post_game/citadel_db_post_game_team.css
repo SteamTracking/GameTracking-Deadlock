@@ -130,197 +130,6 @@ CitadelPostGameTeam.IsWinningTeam .VictoryLabel,.DefeatLabel
 	text-shadow: 0px 0px 10px team2Color;
 }
 
-.Player
-{
-	width: 284px;
-	height: 900px;
-	ui-scale: 90%;
-	margin-right: -4px;
-	margin-left: -4px;
-	overflow: noclip;
-	background-repeat: no-repeat;
-}
-
-.Player .PlayerCard
-{
-	width: 100%;
-	height: 100%;
-	transition-property: transform;
-	transition-duration: 0.25s;
-}
-
-.Player.CommendHover .PlayerCard
-{
-	transform: translateY(-10px);
-}
-
-.Player.CommendTrigger .PlayerCard
-{
-	animation-name: CommendTrigger;
-	animation-duration: .24s;
-	animation-timing-function: ease-in-out;
-}
-
-.Player .HeroScenePanelBackground
-{
-	width: 100%;
-	height: 800px;
-	background-color: offBlack;
-	background-position: center;
-	background-image: url("s2r://panorama/images/post_game/card_hero_back_06_png.vtex");
-	background-size: cover;
-}
-
-.Player CitadelHeroScenePanelNew
-{
-	width: 100%;
-	height: 800px;
-	opacity-mask-scale: 100% 100%;
-	opacity-mask-position: 0px 0px;
-	saturation: 0.75;
-	opacity: 0.0;
-	transition-property: opacity;
-	transition-duration: 0.5s;
-}
-
-.Player CitadelHeroScenePanelNew.SceneLoaded
-{
-	opacity: 1.0;
-}
-
-.Player .HeroScenePanelTint
-{
-	width: 100%;
-	height: 800px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #00000000 ), color-stop( 0.76, #00000033 ), color-stop( 0.84, #000000cc ), to( #000000 ) );
-	opacity-mask-scale: 100% 100%;
-	background-position: center;
-	opacity-mask-position: 0px 0px;
-}
-
-.Player .CardBottom
-{
-	vertical-align: bottom;
-	width: 100%;
-	margin-bottom: 188px;
-	flow-children: down;
-}
-
-.Player .CardBottom #HeroLogo
-{
-	visibility: collapse;
-	ui-scale: 32%;
-	margin-bottom: 12px;
-	margin-top: 8px;
-	horizontal-align: center;
-	vertical-align: bottom;
-	pre-transform-rotate2d: -3deg;
-	opacity-mask: url("s2r://panorama/images/post_game/hero_logo_mask_psd.vtex") 0.5;
-	opacity-mask-scale: 100% 100%;
-}
-
-.Player .CardBottom #AwardsContainer
-{
-	width: 100%;
-	flow-children: up;
-	vertical-align: bottom;
-	margin: 0px 8px 0px 28px;
-	overflow: noclip;
-}
-
-.Player.MVP_Rank1 CitadelHeroScenePanelNew,.Player.MVP_Rank2 CitadelHeroScenePanelNew,.Player.MVP_Rank3 CitadelHeroScenePanelNew,.IsLocalPlayer CitadelHeroScenePanelNew
-{
-	saturation: 1;
-}
-
-.Player .HeroMaskPanel
-{
-	width: 100%;
-	height: 800px;
-}
-
-.Player.Left3 .HeroMaskPanel
-{
-	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_01_png.vtex");
-}
-
-.Player.Left2 .HeroMaskPanel
-{
-	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_02_png.vtex");
-}
-
-.Player.Left1 .HeroMaskPanel
-{
-	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_03_png.vtex");
-}
-
-.Player.Right1 .HeroMaskPanel
-{
-	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_04_png.vtex");
-}
-
-.Player.Right2 .HeroMaskPanel
-{
-	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_05_png.vtex");
-}
-
-.Player.Right3 .HeroMaskPanel
-{
-	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_06_png.vtex");
-}
-
-.PlayerBorder
-{
-	width: 100%;
-	height: 800px;
-	background-img-opacity: 0.6;
-	background-size: cover;
-	background-repeat: no-repeat;
-	wash-color: #302f2e;
-}
-
-#Team1 .Player.IsLocalPlayer .PlayerBorder
-{
-	wash-color: team1Color&33;
-	img-shadow: 0px 0px 20px team1Color&22;
-}
-
-#Team2 .Player.IsLocalPlayer .PlayerBorder
-{
-	wash-color: team2Color&33;
-	img-shadow: 0px 0px 20px team2Color&22;
-}
-
-.Player.Left3 .PlayerBorder
-{
-	background-image: url("s2r://panorama/images/post_game/card_back_01.vsvg");
-}
-
-.Player.Left2 .PlayerBorder
-{
-	background-image: url("s2r://panorama/images/post_game/card_back_02.vsvg");
-}
-
-.Player.Left1 .PlayerBorder
-{
-	background-image: url("s2r://panorama/images/post_game/card_back_03.vsvg");
-}
-
-.Player.Right1 .PlayerBorder
-{
-	background-image: url("s2r://panorama/images/post_game/card_back_04.vsvg");
-}
-
-.Player.Right2 .PlayerBorder
-{
-	background-image: url("s2r://panorama/images/post_game/card_back_05.vsvg");
-}
-
-.Player.Right3 .PlayerBorder
-{
-	background-image: url("s2r://panorama/images/post_game/card_back_06.vsvg");
-}
-
 .Player.IsLocalPlayer .PlayerBorder
 {
 	opacity-mask: url("s2r://panorama/images/post_game/hero_logo_mask_psd.vtex") 0.4;
@@ -354,6 +163,13 @@ CitadelPostGameTeam.IsWinningTeam .VictoryLabel,.DefeatLabel
 .Player.MVP_Rank1 .PlayerCard,.Player.MVP_Rank2 .PlayerCard,.Player.MVP_Rank3 .PlayerCard
 {
 	pre-transform-scale2d: 1.015;
+}
+
+.Player.MVP_Rank1.CommendedPlayer .PlayerBorder,.Player.MVP_Rank2.CommendedPlayer .PlayerBorder,.Player.MVP_Rank3.CommendedPlayer .PlayerBorder
+{
+	wash-color: #314945;
+	opacity-mask: url("s2r://panorama/images/post_game/hero_logo_mask_psd.vtex") 0;
+	brightness: 1;
 }
 
 .MVPContainer
@@ -441,6 +257,225 @@ CitadelPostGameTeam.IsWinningTeam .VictoryLabel,.DefeatLabel
 	ui-scale: 70%;
 }
 
+.Player
+{
+	width: 284px;
+	height: 900px;
+	ui-scale: 90%;
+	margin-right: -4px;
+	margin-left: -4px;
+	overflow: noclip;
+	background-repeat: no-repeat;
+	transition-property: pre-transform-scale2d;
+	transition-duration: 0.08s;
+	transition-timing-function: ease-in-out;
+}
+
+.Player.CommendedPlayer .PlayerBorder
+{
+	wash-color: #314945;
+}
+
+.Player .PlayerCard
+{
+	width: 100%;
+	height: 100%;
+	transition-property: pre-transform-scale2d;
+	transition-duration: 0.08s;
+	transition-timing-function: ease-in-out;
+}
+
+.Player.CommendHover .PlayerCard
+{
+	pre-transform-scale2d: 1.02;
+}
+
+.Player.CommendHover .HeroScenePanelBackground
+{
+	wash-color: #3cf0cf;
+	brightness: 3.2;
+}
+
+.Player.CommendHover CitadelHeroScenePanelNew
+{
+	saturation: 1;
+}
+
+.Player.CommendHover .PlayerBorder
+{
+	brightness: 1.8;
+	wash-color: #428d5f;
+	opacity-mask: url("s2r://panorama/images/post_game/hero_logo_mask_psd.vtex") 0;
+}
+
+.Player.CommendTrigger .PlayerCard
+{
+	animation-name: CommendTrigger;
+	animation-duration: .24s;
+	animation-timing-function: ease-in-out;
+}
+
+.Player .HeroScenePanelBackground
+{
+	width: 100%;
+	height: 800px;
+	background-color: offBlack;
+	background-position: center;
+	background-image: url("s2r://panorama/images/post_game/card_hero_back_06_png.vtex");
+	background-size: cover;
+	transition-property: wash-color, brightness;
+	transition-duration: 0.08s;
+	transition-timing-function: ease-in-out;
+}
+
+.Player CitadelHeroScenePanelNew
+{
+	width: 100%;
+	height: 800px;
+	opacity-mask-scale: 100% 100%;
+	opacity-mask-position: 0px 0px;
+	saturation: 0.85;
+	opacity: 0.0;
+	transition-property: opacity, saturation;
+	transition-duration: 0.08s;
+}
+
+.Player CitadelHeroScenePanelNew.SceneLoaded
+{
+	opacity: 1.0;
+}
+
+.Player .HeroScenePanelTint
+{
+	width: 100%;
+	height: 800px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #00000000 ), color-stop( 0.76, #00000033 ), color-stop( 0.84, #000000cc ), to( #000000 ) );
+	opacity-mask-scale: 100% 100%;
+	background-position: center;
+	opacity-mask-position: 0px 0px;
+}
+
+.Player .CardBottom
+{
+	vertical-align: bottom;
+	width: 100%;
+	margin-bottom: 188px;
+	flow-children: down;
+}
+
+.Player .CardBottom #HeroLogo
+{
+	visibility: collapse;
+	ui-scale: 32%;
+	margin-bottom: 12px;
+	margin-top: 8px;
+	horizontal-align: center;
+	vertical-align: bottom;
+	pre-transform-rotate2d: -3deg;
+	opacity-mask: url("s2r://panorama/images/post_game/hero_logo_mask_psd.vtex") 0.5;
+	opacity-mask-scale: 100% 100%;
+}
+
+.Player .CardBottom #AwardsContainer
+{
+	width: 100%;
+	flow-children: up;
+	vertical-align: bottom;
+	margin: 0px 8px 0px 28px;
+	overflow: noclip;
+}
+
+.Player .HeroMaskPanel
+{
+	width: 100%;
+	height: 800px;
+}
+
+.Player.Left3 .HeroMaskPanel
+{
+	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_01_png.vtex");
+}
+
+.Player.Left2 .HeroMaskPanel
+{
+	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_02_png.vtex");
+}
+
+.Player.Left1 .HeroMaskPanel
+{
+	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_03_png.vtex");
+}
+
+.Player.Right1 .HeroMaskPanel
+{
+	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_04_png.vtex");
+}
+
+.Player.Right2 .HeroMaskPanel
+{
+	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_05_png.vtex");
+}
+
+.Player.Right3 .HeroMaskPanel
+{
+	opacity-mask: url("s2r://panorama/images/post_game/card_hero_mask_06_png.vtex");
+}
+
+.PlayerBorder
+{
+	width: 100%;
+	height: 800px;
+	background-img-opacity: 0.6;
+	background-size: cover;
+	background-repeat: no-repeat;
+	wash-color: #302f2e;
+	transition-property: wash-color, brightness;
+	transition-duration: 0.08s;
+	transition-timing-function: ease-in-out;
+}
+
+#Team1 .Player.IsLocalPlayer .PlayerBorder
+{
+	wash-color: team1Color&33;
+	img-shadow: 0px 0px 20px team1Color&22;
+}
+
+#Team2 .Player.IsLocalPlayer .PlayerBorder
+{
+	wash-color: team2Color&33;
+	img-shadow: 0px 0px 20px team2Color&22;
+}
+
+.Player.Left3 .PlayerBorder
+{
+	background-image: url("s2r://panorama/images/post_game/card_back_01.vsvg");
+}
+
+.Player.Left2 .PlayerBorder
+{
+	background-image: url("s2r://panorama/images/post_game/card_back_02.vsvg");
+}
+
+.Player.Left1 .PlayerBorder
+{
+	background-image: url("s2r://panorama/images/post_game/card_back_03.vsvg");
+}
+
+.Player.Right1 .PlayerBorder
+{
+	background-image: url("s2r://panorama/images/post_game/card_back_04.vsvg");
+}
+
+.Player.Right2 .PlayerBorder
+{
+	background-image: url("s2r://panorama/images/post_game/card_back_05.vsvg");
+}
+
+.Player.Right3 .PlayerBorder
+{
+	background-image: url("s2r://panorama/images/post_game/card_back_06.vsvg");
+}
+
 .Player.Left3 .MVPContainer
 {
 	margin-top: 0px;
@@ -503,15 +538,7 @@ CitadelPostGameTeam.IsWinningTeam .VictoryLabel,.DefeatLabel
 	visibility: visible;
 }
 
-#CommendPlayerButton
-{
-	vertical-align: bottom;
-	tooltip-position: bottom;
-	background-color: offWhite&05;
-	margin-left: 28px;
-}
-
-#CommendPlayerButton:active
+#HeroScenePanelMask:active
 {
 	sound: "UI.CommendConfirmation";
 }
@@ -546,29 +573,70 @@ CitadelPostGameTeam.IsWinningTeam .VictoryLabel,.DefeatLabel
 	flow-children: right;
 	horizontal-align: center;
 	vertical-align: bottom;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.18s;
+	transition-timing-function: ease-in-out;
 }
 
-#ShowPlayerContextMenuButton
+.Player:hover .PlayerActionContainer
 {
-	width: 24px;
-	height: 24px;
+	opacity: 1;
+}
+
+.PlayerActionButton
+{
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	margin: 0px 3px;
 	vertical-align: center;
-	margin-left: 4px;
-	background-image: url("s2r://panorama/images/icons/icon_chevron_down.vsvg");
-	background-size: contain;
+	tooltip-position: bottom;
+	background-color: offWhite&04;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 60%;
+	background-img-opacity: 0.8;
 	wash-color: offWhite;
-	opacity: 0.08;
-	context-menu-position: bottom;
 	img-shadow: 1px 1px 12px #00000033;
-	transition-property: pre-transform-scale2d;
+	transition-property: pre-transform-scale2d, brightness;
 	transition-duration: 0.08s;
 	transition-timing-function: ease-in-out;
 	pre-transform-scale2d: 0.9;
 }
 
-#ShowPlayerContextMenuButton:hover
+.PlayerActionButton:hover
 {
 	pre-transform-scale2d: 1;
+	brightness: 1.3;
+}
+
+.PlayerActionButton:disabled
+{
+	opacity: 0.15;
+}
+
+#ViewProfileButton
+{
+	background-image: url("s2r://panorama/images/icons/view_profile.vsvg");
+}
+
+#AddToFriendsButton
+{
+	background-image: url("s2r://panorama/images/icons/add_friend.vsvg");
+}
+
+#AddToFriendsButton:disabled
+{
+	visibility: collapse;
+}
+
+#ReportButton
+{
+	background-image: url("s2r://panorama/images/icons/report.vsvg");
+	wash-color: #ee5945;
+	background-color: #ee594512;
+	background-size: 44%;
 }
 
 #HeroBadgeIcon.PostGame
@@ -671,42 +739,33 @@ CitadelPostGameTeam.IsWinningTeam .VictoryLabel,.DefeatLabel
 	
 }
 
-#CitadelPostGameNew:not(.CanCommendPlayers) #CommendPlayerButton
-{
-	visibility: collapse;
-}
-
-.Player.CommendedPlayer #CommendPlayerButton,.Player.IsLocalPlayer #CommendPlayerButton
-{
-	visibility: collapse;
-}
-
-#CitadelPostGameNew:not(.CanCommendPlayers) #ShowPlayerContextMenuButton
-{
-	visibility: collapse;
-}
-
-.Player.CommendedPlayer #CommendPlayerButton,.Player.IsLocalPlayer #ShowPlayerContextMenuButton
+#CitadelPostGameNew:not(.CanCommendPlayers) .PlayerActionButton,.Player.IsLocalPlayer .PlayerActionButton
 {
 	visibility: collapse;
 }
 
 .Player.CommendedPlayer .GotCommendedIcon
 {
-	width: 48px;
-	height: 48px;
-	background-image: url("s2r://panorama/images/icons/icon_thumbsup.vsvg");
+	visibility: visible;
+}
+
+.GotCommendedIcon
+{
+	width: 100px;
+	height: 100px;
+	background-image: url("s2r://panorama/images/post_game/cursor_commend_psd.vtex");
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 50% 50%;
-	horizontal-align: center;
-	vertical-align: center;
-	opacity: 0.2;
-	visibility: visible;
-	margin-right: -12px;
+	background-size: 100% 100%;
+	horizontal-align: right;
+	vertical-align: top;
 	animation-name: CommendPulse;
 	animation-duration: 1.3s;
 	animation-iteration-count: infinite;
+	margin-left: -12px;
+	margin-top: 60px;
+	visibility: collapse;
+	wash-color: #C2F4D5;
 }
 
 @keyframes 'CommendPulse'
@@ -714,48 +773,33 @@ CitadelPostGameTeam.IsWinningTeam .VictoryLabel,.DefeatLabel
 	0%
 	{
 		pre-transform-scale2d: 0.85;
-		opacity: 0.4;
 	}
 	
 	50%
 	{
 		pre-transform-scale2d: 1;
-		opacity: 0.9;
 	}
 	
 	100%
 	{
 		pre-transform-scale2d: 0.85;
-		opacity: 0.4;
 	}
 	
 }
 
-#Team1 .GotCommendedIcon
-{
-	wash-color: soulColor;
-	img-shadow: 0px 0px 6px #000000cc;
-}
-
-#Team2 .GotCommendedIcon
-{
-	wash-color: soulColor;
-	img-shadow: 0px 0px 6px #000000cc;
-}
-
-.Player .GotCommendedIcon
+.Player .GotCommendedIndicator
 {
 	visibility: collapse;
 }
 
-.MainBranch #CommendFX
+#CommendFX
 {
 	width: 600px;
 	height: 1200px;
 	z-index: 0;
 	opacity-mask: url("s2r://panorama/images/post_game/card_fx_mask_psd.vtex") 1;
 	opacity-mask-scale: 180% 100%;
-	opacity: 0;
+	opacity: 1;
 	vertical-align: center;
 	horizontal-align: center;
 	transition-property: opacity;
@@ -764,7 +808,7 @@ CitadelPostGameTeam.IsWinningTeam .VictoryLabel,.DefeatLabel
 	overflow: noclip;
 }
 
-.MainBranch .Player.CommendedPlayer #CommendFX
+.Player.CommendedPlayer #CommendFX
 {
 	opacity: 1;
 }

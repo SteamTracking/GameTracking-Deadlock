@@ -59,12 +59,13 @@
 {
 	width: 100%;
 	height: 100%;
-	background-color: rgba(25, 25, 25, 0.7);
+	width: 360px;
+	height: 360px;
 	transition-property: width, height, transform, ui-scale;
 	transition-duration: 0.12s;
-	border-radius: 50%;
 	vertical-align: center;
 	horizontal-align: center;
+	overflow: render;
 }
 
 .useZoomedMinimap #hud_minimap
@@ -163,7 +164,7 @@
 	height: 100%;
 	z-index: -2;
 	overflow: noclip;
-	opacity: 0.35;
+	opacity: 0;
 }
 
 #MinimapBackgroundTest
@@ -206,40 +207,53 @@
 	overflow: noclip;
 }
 
-.NewMinimapBackgroundsContainer,.HideOldZiplines #canvas,#MinimapParticleScenePanel
+.NewMinimapBackgroundsContainer,.HideOldZiplines #canvas
 {
 	visibility: collapse;
 }
 
-.ShowNewMinimap .NewMinimapBackgroundsContainer,.ShowNewZiplines #MinimapParticleScenePanel
+.ShowNewMinimap .NewMinimapBackgroundsContainer
 {
 	visibility: visible;
 }
 
-.NewMinimapBackgroundsContainer,#MinimapParticleScenePanel
+.NewMinimapBackgroundsContainer
 {
 	height: 100%;
 	width: 100%;
 }
 
-#MinimapParticleScenePanel
+.backgroundImage1,.backgroundImage2,.backgroundImage3
 {
-	transform: rotateZ( 180deg );
-	z-index: -1;
-}
-
-.newMinimapBackground
-{
-	height: 100%;
 	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
 	background-size: 100% 100%;
+	background-position: center;
+	z-index: -3;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+	opacity: 1.0;
 }
 
-.backgroundImage
+.dl_midtown .backgroundImage2,.dl_midtown .backgroundImage3
 {
-	background-image: url("s2r://panorama/images/minimap/base/minimap_bg_psd.vtex");
-	z-index: -3;
-	visibility: collapse;
+	opacity: 0.0;
+}
+
+.dl_midtown.is_underground .backgroundImage1,.dl_midtown.in_tunnels .backgroundImage1
+{
+	opacity: 0.0;
+}
+
+.dl_midtown.is_underground .backgroundImage2
+{
+	opacity: 1.0;
+}
+
+.dl_midtown.in_tunnels .backgroundImage3
+{
+	opacity: 1.0;
 }
 
 #CastRange
@@ -249,69 +263,6 @@
 	background-size: 100% 100%;
 	z-index: -3;
 	visibility: collapse;
-}
-
-.newMinimapBackground.midImage
-{
-	width: 100%;
-	height: 100%;
-	background-size: 100% 100%;
-	overflow: noclip;
-	visibility: collapse;
-}
-
-.useZoomedMinimap .newMinimapBackground.midImage
-{
-	visibility: visible;
-}
-
-.topImage
-{
-	background-image: url("s2r://panorama/images/minimap/base/minimap_frame_psd.vtex");
-}
-
-.NewMinimapZiplinesContainer
-{
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-}
-
-.ziplineYellowLane
-{
-	background-image: url("s2r://panorama/images/minimap/base/minimap_lane_1_psd.vtex");
-	wash-color: laneYellowColor;
-	wash-color: #B6AC3C;
-	opacity: 0.2;
-}
-
-.ziplineGreenLane
-{
-	background-image: url("s2r://panorama/images/minimap/base/minimap_lane_2_psd.vtex");
-	wash-color: laneGreenColor;
-	wash-color: #61C579;
-	opacity: 0.2;
-}
-
-.ziplineBlueLane
-{
-	background-image: url("s2r://panorama/images/minimap/base/minimap_lane_3_psd.vtex");
-	wash-color: laneBlueColor;
-	wash-color: #2DA0CA;
-	opacity: 0.2;
-}
-
-.ziplinePurpleLane
-{
-	background-image: url("s2r://panorama/images/minimap/base/minimap_lane_4_psd.vtex");
-	wash-color: lanePurpleColor;
-	wash-color: #A05ED7;
-	opacity: 0.2;
-}
-
-.is_underground #map_render
-{
-	opacity: 0;
 }
 
 .button_image
@@ -326,7 +277,7 @@
 	height: 7%;
 	opacity: 0.0;
 	transition-property: opacity, transform, width, height, pre-transform-scale2d;
-	transition-duration: 0.1s;
+	transition-duration: 0.05s;
 	pre-transform-scale2d: 1;
 	z-index: 0;
 	overflow: noclip;
@@ -454,6 +405,13 @@
 	opacity: 1;
 }
 
+.map_button.powerup_souls
+{
+	background-image: url("s2r://panorama/images/minimap/powerup_souls_png.vtex");
+	wash-color: shardColor;
+	opacity: 1;
+}
+
 .map_button.powerup_survival
 {
 	background-image: url("s2r://panorama/images/minimap/powerup_health.vsvg");
@@ -473,26 +431,6 @@
 	background-image: url("s2r://panorama/images/minimap/powerup_movement.vsvg");
 	wash-color: #99FFDD;
 	opacity: 1;
-}
-
-.map_button.shop_tunnel
-{
-	width: 1024px;
-	height: 1024px;
-	background-repeat: no-repeat;
-	background-image: url("s2r://panorama/images/minimap/base/minimap_midtown_mid_tunnels_psd.vtex");
-	background-size: 100% 100%;
-	background-position: center;
-	opacity: 0;
-	z-index: -1;
-	transition-property: opacity;
-	transition-duration: 0.5s;
-}
-
-.map_button.shop_tunnel.is_visible
-{
-	visibility: visible;
-	opacity: 1.0;
 }
 
 .map_button.shop_tunnel_exit.is_visible
@@ -857,6 +795,21 @@
 	transform: rotateZ(0deg);
 }
 
+.map_button.trigger_secure_souls
+{
+	visibility: collapse;
+	width: 14px;
+	height: 14px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/hud/icons/icon_corrupted_souls.vsvg");
+	wash-color: shardColor;
+	wash-color: rgb(171, 49, 49);
+	opacity: 0.8;
+	z-index: ZIndexTeleporter;
+}
+
 .map_button.idol_dropping
 {
 	background-image: url("s2r://panorama/images/minimap/soul_jar_marker_psd.vtex");
@@ -1040,8 +993,8 @@
 	background-position: center;
 	img-shadow: 0px 0px 8px 1 black;
 	z-index: ZIndexT1Shop;
-	width: 32px;
-	height: 32px;
+	width: 36px;
+	height: 36px;
 }
 
 .map_button.guided_arrow
@@ -1077,6 +1030,15 @@
 	background-repeat: no-repeat;
 }
 
+.map_button.nurse_revival_target
+{
+	background-image: url("s2r://panorama/images/minimap/necro_gravestone_psd.vtex");
+	background-size: 100% 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	wash-color: orange;
+}
+
 .map_button.doorman_doorway
 {
 	width: 50%;
@@ -1096,6 +1058,89 @@
 	border-radius: 500px;
 	box-shadow: inset 0px 0px 60px offWhite&05;
 	visibility: visible;
+}
+
+.map_button.chesspiece_bishop
+{
+	width: 40%;
+	height: 40%;
+	background-image: url("s2r://panorama/images/minimap/chessmaster_bishop_psd.vtex");
+	background-size: 10% 10%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.map_button.chesspiece_queen
+{
+	width: 50%;
+	height: 50%;
+	background-image: url("s2r://panorama/images/minimap/chessmaster_queen_psd.vtex");
+	background-size: 10% 10%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
+.map_button.chesspiece_pawn #CastRange
+{
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0.1;
+	border: 2px solid offWhite&90;
+	border-radius: 500px;
+	box-shadow: inset 0px 0px 20px offWhite&05;
+	visibility: visible;
+}
+
+.map_button.corrupted_item_shop
+{
+	width: 16px;
+	height: 16px;
+	background-image: url("s2r://panorama/images/minimap/minimap_icon_broker.vsvg");
+	background-size: 100%;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	opacity-brush: gradient( linear, 0% 0%, 0% 80%, from( corruptedColorBright ), to( corruptedPenaltyColor ) );
+	border-radius: 50px;
+	opacity: 0.2;
+	saturation: 0;
+}
+
+.map_button.corrupted_item_shop.canPurchaseItem
+{
+	animation-name: corrupted_available;
+	animation-duration: 1.5s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+	opacity: 1;
+	saturation: 1;
+}
+
+@keyframes 'corrupted_available'
+{
+	0%
+	{
+		brightness: 1;
+		pre-transform-scale2d: 1;
+		opacity: 1;
+		saturation: 0.5;
+	}
+	
+	50%
+	{
+		brightness: 3;
+		pre-transform-scale2d: 1.2;
+		saturation: 1;
+		opacity: 1;
+	}
+	
+	100%
+	{
+		brightness: 1;
+		pre-transform-scale2d: 1;
+		opacity: 1;
+		saturation: 0.5;
+	}
+	
 }
 
 .map_button.capture_point
@@ -1346,6 +1391,11 @@
 	visibility: collapse;
 }
 
+.ping_panel
+{
+	z-index: ZIndexPingObjective;
+}
+
 .map_button.friend.spectate,.map_button.enemy.spectate,.map_button.friend.spectate.arrowUp,.map_button.enemy.spectate.arrowUp,.map_button.friend.spectate.arrowDown,.map_button.enemy.spectate.arrowDown,.map_button.localplayer.spectate
 {
 	z-index: ZIndexSpectatedPlayer;
@@ -1377,23 +1427,11 @@
 	animation-iteration-count: infinite;
 }
 
-.button_image,.NeutralCampImage,#NeturalImagesContainer
+.button_image,.NeutralCampImage
 {
 	width: 100%;
 	height: 100%;
 	border: 8px solid red;
-}
-
-#NeturalImagesContainer
-{
-	z-index: 9999;
-	opacity: 0.3;
-	visibility: collapse;
-}
-
-#NeturalImagesContainer .CampHidden
-{
-	opacity: 0;
 }
 
 .SmallNeutralCamp
@@ -1420,14 +1458,12 @@
 	height: 85%;
 	vertical-align: middle;
 	horizontal-align: middle;
-	img-shadow: 0px 0px 8px 2 black;
 }
 
 .player.localplayer #MainImage
 {
 	width: 110%;
 	height: 110%;
-	img-shadow: 0px 0px 12px 6 black;
 }
 
 .player.localplayer .button_image
@@ -1666,15 +1702,34 @@
 	width: 100%;
 }
 
+.hover_panel_accurate
+{
+	vertical-align: center;
+	horizontal-align: center;
+	width: 24px;
+	height: 24px;
+	z-index: 10;
+	transform: rotateZ( 45deg );
+	margin: 2px;
+	border-radius: 50%;
+}
+
+.boss_icon_t3 .hover_panel_accurate
+{
+	width: 36px;
+	height: 36px;
+}
+
 .hover_panel
 {
 	vertical-align: center;
 	horizontal-align: center;
-	width: 70%;
-	height: 70%;
-	z-index: 99;
+	width: 32px;
+	height: 32px;
+	z-index: 9;
 	transform: rotateZ( 45deg );
 	margin: 2px;
+	border-radius: 50%;
 }
 
 .idol_return_enemy .hover_panel,.idol_return_friendly .hover_panel
@@ -1767,11 +1822,23 @@
 .enlarge_entry
 {
 	z-index: 100;
+	sound: soundMainMenuHover;
+}
+
+.enlarge_entry .boss_image
+{
+	img-shadow: 0px 0px 0px 1.0 offWhite&ff;
+}
+
+.enlarge_entry.tier1_shop
+{
+	img-shadow: 0px 0px 0px 1.0 offWhite&ff;
 }
 
 .map_button.enlarge_entry
 {
 	transform: scaleY(1.2) scaleX(1.2);
+	brightness: 2.0;
 }
 
 .invert_map .map_button.enlarge_entry

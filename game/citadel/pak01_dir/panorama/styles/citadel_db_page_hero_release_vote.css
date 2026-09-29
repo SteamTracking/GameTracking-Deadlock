@@ -121,10 +121,58 @@ CitadelHeroReleaseVotePage
 	margin-bottom: 15px;
 }
 
+.VoteStatus
+{
+	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/text_backer_box_alt_psd.vtex");
+	background-size: 100% 100%;
+	padding: 5px 20px;
+	horizontal-align: center;
+	text-align: center;
+	font-size: 26px;
+	font-family: block;
+	transform: rotateZ( -2deg );
+	margin-left: 170px;
+	margin-top: -6px;
+	visibility: collapse;
+}
+
+.DisplayOnly .VoteInstructions
+{
+	visibility: visible;
+}
+
+.HasRemainingVotes .VoteAction
+{
+	visibility: visible;
+}
+
+.VoteAlreadySubmitted .VoteSubmitted
+{
+	visibility: visible;
+}
+
+.VoteRules
+{
+	horizontal-align: center;
+	text-align: center;
+	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/text_backer_box_small_psd.vtex");
+	background-size: 100% 100%;
+	font-size: 14px;
+	font-family: sans;
+	font-style: italic;
+	padding: 8px 25px;
+	padding-top: 6px;
+	transform: rotateZ( -.3deg );
+	margin-top: -2px;
+	margin-left: 480px;
+	margin-bottom: 15px;
+}
+
 #HeroReleaseVoteOptions
 {
 	width: fit-children;
 	horizontal-align: center;
+	flow-children: right;
 	padding-top: 40px;
 	padding: 0px 400px;
 	overflow: noclip;
@@ -134,6 +182,7 @@ CitadelHeroReleaseVotePage
 {
 	width: 190px;
 	height: 520px;
+	margin: 0px 12px;
 	transition-property: pre-transform-scale2d, border, box-shadow, brightness, transform, wash-color;
 	transition-duration: .1s;
 }
@@ -173,6 +222,16 @@ CitadelHeroReleaseVotePage
 .HeroReleaseVoteOption.Released #Background
 {
 	wash-color: #00000000;
+}
+
+.HeroReleaseVoteOption.OptionPicked #Background
+{
+	brightness: 2.5;
+}
+
+.VoteAlreadySubmitted .HeroReleaseVoteOption:not(.OptionPicked)
+{
+	brightness: 0.4;
 }
 
 .HeroReleaseVoteOption .LockIconContainer
@@ -405,192 +464,186 @@ CitadelHeroReleaseVotePage
 	visibility: visible;
 }
 
-#UnicornPanel
+#RatkingPanel
 {
-	x: 205px;
 	transform: rotateZ(-1deg) translateY(-0px) translateX(-0px);
 }
 
-#UnicornPanel:hover:not(:disabled)
+#RatkingPanel:hover:not(:disabled)
 {
 	transform: rotateZ(1deg) translateY(-0px) translateX(-0px);
 }
 
-#UnicornPanel:active
+#RatkingPanel:active
 {
 	brightness: 4;
 	wash-color: #ffffff;
 }
 
-#UnicornPanel .LockIcon
+#RatkingPanel .LockIcon
 {
 	animation-name: VoteGroove;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 }
 
-#UnicornPanel.Released .LockIconContainer
+#RatkingPanel.Released .LockIconContainer
 {
 	visibility: collapse;
 }
 
-#UnicornPanel .HeroBakedName
+#RatkingPanel .HeroBakedName
 {
-	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_unicorn_name_psd.vtex");
+	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_ratking_name_psd.vtex");
 	background-size: 100% 100%;
 }
 
-#WerewolfPanel
-{
-	x: 820px transform: rotateZ(-1deg) translateY(-0px) translateX(-0px);
-}
-
-#WerewolfPanel:hover:not(:disabled)
+#BabaPanel
 {
 	transform: rotateZ(-1deg) translateY(-0px) translateX(-0px);
 }
 
-#WerewolfPanel .LockIcon
+#BabaPanel:hover:not(:disabled)
+{
+	transform: rotateZ(-1deg) translateY(-0px) translateX(-0px);
+}
+
+#BabaPanel .LockIcon
 {
 	animation-name: VoteGroove;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 }
 
-#WerewolfPanel:active
+#BabaPanel:active
 {
 	brightness: 4;
 	wash-color: #ffffff;
 }
 
-#WerewolfPanel .HeroBakedName
+#BabaPanel .HeroBakedName
 {
-	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_werewolf_name_psd.vtex");
+	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_baba_name_psd.vtex");
 	background-size: 100% 100%;
 }
 
-#PriestPanel
+#ArtistPanel
 {
-	x: 1025px;
 	transform: rotateZ(1deg) translateY(-0px) translateX(-0px);
 }
 
-#PriestPanel:hover:not(:disabled)
+#ArtistPanel:hover:not(:disabled)
 {
 	transform: rotateZ(3deg) translateY(-0px) translateX(-0px);
 }
 
-#PriestPanel:active
+#ArtistPanel:active
 {
 	brightness: 4;
 	wash-color: #ffffff;
 }
 
-#PriestPanel .LockIcon
+#ArtistPanel .LockIcon
 {
 	animation-name: VoteGroove2;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 }
 
-#PriestPanel .HeroBakedName
+#ArtistPanel .HeroBakedName
 {
-	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_priest_name_psd.vtex");
+	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_artist_name_psd.vtex");
 	background-size: 100% 100%;
 }
 
-#NecroPanel
+#NursePanel
 {
-	x: 410px;
 	transform: rotateZ(.5deg) translateY(-0px) translateX(-0px);
 }
 
-#NecroPanel:hover:not(:disabled)
+#NursePanel:hover:not(:disabled)
 {
 	transform: rotateZ(-4deg) translateY(-0px) translateX(-0px);
 }
 
-#NecroPanel .LockIcon
+#NursePanel .LockIcon
 {
 	animation-name: VoteGroove3;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 }
 
-#NecroPanel:active
+#NursePanel:active
 {
 	brightness: 4;
 	wash-color: #ffffff;
 }
 
-#NecroPanel .HeroBakedName
+#NursePanel .HeroBakedName
 {
-	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_necro_name_psd.vtex");
+	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_nurse_name_psd.vtex");
 	background-size: 100% 100%;
 }
 
-#FamiliarPanel
+#ChessmasterPanel
 {
-	x: 615px;
 	transform: rotateZ(1deg) translateY(-0px) translateX(-0px);
 }
 
-#FamiliarPanel:hover:not(:disabled)
+#ChessmasterPanel:hover:not(:disabled)
 {
 	transform: rotateZ(2deg) translateY(-0px) translateX(-0px);
 }
 
-#FamiliarPanel .LockIcon
+#ChessmasterPanel .LockIcon
 {
 	animation-name: VoteGroove;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 }
 
-#FamiliarPanel:active
+#ChessmasterPanel:active
 {
 	brightness: 4;
 	wash-color: #ffffff;
 }
 
-#FamiliarPanel .HeroBakedName
+#ChessmasterPanel .HeroBakedName
 {
-	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_familiar_name_psd.vtex");
+	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_chessmaster_name_psd.vtex");
 	background-size: 100% 100%;
 }
 
-#FencerPanel
+#DeadpackPanel
 {
-	x: 1025px;
-	x: 0px;
 	transform: rotateZ(1deg) translateY(-0px) translateX(-0px);
 }
 
-#FencerPanel:hover:not(:disabled)
+#DeadpackPanel:hover:not(:disabled)
 {
 	transform: rotateZ(3deg) translateY(-0px) translateX(-0px);
 }
 
-#FencerPanel .LockIcon
+#DeadpackPanel .LockIcon
 {
 	animation-name: VoteGroove2;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 }
 
-#FencerPanel:active
+#DeadpackPanel:active
 {
 	brightness: 4;
 	wash-color: #ffffff;
 }
 
-#FencerPanel .HeroBakedName
+#DeadpackPanel .HeroBakedName
 {
-	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_fencer_name_psd.vtex");
+	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/hero_deadpack_name_psd.vtex");
 	background-size: 100% 100%;
 }
 
-#UnicornPanel.Released,#WerewolfPanel.Released,#PriestPanel.Released,#NecroPanel.Released,#FamiliarPanel.Released,#FencerPanel.Released
+#RatkingPanel.Released,#BabaPanel.Released,#ArtistPanel.Released,#NursePanel.Released,#ChessmasterPanel.Released,#DeadpackPanel.Released
 {
 	brightness: 1.25;
 	pre-transform-scale2d: 1.06;

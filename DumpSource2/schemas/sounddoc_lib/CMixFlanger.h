@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_flDelay": 8.000000,
 //	"m_flFeedback": -40.000000,
 //	"m_flFeedfoward": 0.500000,

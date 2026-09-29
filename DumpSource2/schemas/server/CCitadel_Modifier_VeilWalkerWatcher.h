@@ -1,4 +1,4 @@
 class CCitadel_Modifier_VeilWalkerWatcher : public CCitadelModifier
 {
-	Vector m_vPreviousPos;
+	VectorWS m_vPreviousPos;
 };

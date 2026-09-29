@@ -14,6 +14,7 @@
 //			0.000000
 //		],
 //		"m_flMaxAngularRadius": 0.000000,
+//		"m_flMinCentroidRadius": 0.000000,
 //		"m_Bounds":
 //		{
 //			"m_vMinBounds":

@@ -1,34 +1,19 @@
-// MNetworkVarNames = "HModelStrong m_hModel"
-// MNetworkVarNames = "Vector m_vRootBoneOffset"
-// MNetworkVarNames = "uint8 m_nRootBoneOffsetResetSerialNumber"
-// MNetworkVarNames = "bool m_bClientClothCreationSuppressed"
-// MNetworkVarNames = "MeshGroupMask_t m_MeshGroupMask"
-// MNetworkVarNames = "int32 m_nBodyGroupChoices"
-// MNetworkVarNames = "int8 m_nIdealMotionType"
+// MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CModelState
 {
-	// MNetworkEnable
-	// MNetworkChangeCallback = "skeletonModelChanged"
 	CStrongHandle< InfoForResourceTypeCModel > m_hModel;
 	CUtlSymbolLarge m_ModelName;
 	// MPhysPtr
 	IPhysAggregateInstance* m_pVPhysicsAggregate;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnRootBoneOffsetChanged"
-	Vector m_vRootBoneOffset;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnRootBoneOffsetResetChanged"
+	float32 m_flRootBoneOffset_x;
+	float32 m_flRootBoneOffset_y;
+	float32 m_flRootBoneOffset_z;
 	uint8 m_nRootBoneOffsetResetSerialNumber;
-	// MNetworkEnable
 	bool m_bClientClothCreationSuppressed;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "skeletonMeshGroupMaskChanged"
+	uint8 m_nAnimStateNoInterpSerialNumber;
 	uint64 m_MeshGroupMask;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "bodyGroupChoiceChanged"
 	C_NetworkUtlVectorBase< int32 > m_nBodyGroupChoices;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "skeletonMotionTypeChanged"
 	int8 m_nIdealMotionType;
 	int8 m_nForceLOD;
 	int8 m_nClothUpdateFlags;

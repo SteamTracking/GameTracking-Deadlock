@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_flPrefilter": 0.500000,
 //	"m_flInputDiffusion1": 0.500000,
 //	"m_flInputDiffusion2": 0.500000,

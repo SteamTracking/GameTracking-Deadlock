@@ -1,3 +1,0 @@
-class CAnimEventListener : public CAnimEventListenerBase
-{
-};

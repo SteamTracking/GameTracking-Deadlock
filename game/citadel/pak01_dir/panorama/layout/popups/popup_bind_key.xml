@@ -1,0 +1,75 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_bind_key.vcss" />
+	</styles>
+	<PopupBindKey class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel class="PopupBackgroundShadow" />
+		<Panel class="PopupBackground" />
+		<Panel class="PopupContent">
+			<Panel id="TitleSection" class="Header">
+				<Panel id="TitleRow">
+					<Image id="ScopeIcon" scaling="stretch-to-fit-preserve-aspect" />
+					<Label class="Title" text="#citadel_bind_key_title" />
+				</Panel>
+			</Panel>
+			<Label id="NothingToBindLabel" text="#citadel_bind_key_nothing_to_bind" />
+			<Panel id="BindKeyColumns">
+				<Panel id="CategoryColumn" class="BindKeyColumn">
+					<Panel class="BindKeyColumnHeader">
+						<Label class="BindKeyColumnTitle" text="#citadel_bind_key_categories" />
+						<Panel id="CategoryInfoIcon" class="BindKeyInfoIcon" />
+					</Panel>
+					<Panel id="CategoryList" class="BindKeyList" />
+				</Panel>
+				<Panel id="CommandColumn" class="BindKeyColumn">
+					<Panel class="BindKeyColumnHeader">
+						<Label class="BindKeyColumnTitle" text="#citadel_bind_key_commands" />
+						<Panel id="CommandInfoIcon" class="BindKeyInfoIcon" />
+					</Panel>
+					<Panel id="CommandList" class="BindKeyList" />
+				</Panel>
+				<Panel id="ChordColumn" class="BindKeyColumn">
+					<Label class="BindKeyColumnTitle" text="#citadel_bind_key_bind_as" />
+					<Panel id="ChordRadios" class="BindKeyRadios" />
+					<Panel id="ExistingBindSection" class="BindKeyRadios">
+						<Label class="BindKeyColumnTitle" text="#citadel_bind_key_binding_method" />
+						<RadioButton id="ReplaceExistingBind" class="BindKeyRadio BindKeyTextRadio" group="BindKeyExistingBind" text="#citadel_bind_key_replace_existing" onactivate="CitadelBindKeyExistingBindActivated(1)" />
+						<RadioButton id="AddAsNewBind" class="BindKeyRadio BindKeyTextRadio" group="BindKeyExistingBind" text="#citadel_bind_key_add_new" onactivate="CitadelBindKeyExistingBindActivated(0)" />
+					</Panel>
+					<Panel id="ReplaceSection">
+						<Label class="BindKeyColumnTitle" text="#citadel_bind_key_replace" />
+						<Panel id="ReplaceRadios" class="BindKeyRadios" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="SelectedCommand">
+				<Panel id="SelectedCommandNameArea">
+					<Panel id="SelectedCommandIconSlot">
+						<Image id="SelectedCommandScopeIcon" scaling="stretch-to-fit-preserve-aspect" />
+					</Panel>
+					<Panel id="SelectedCommandNameColumn">
+						<Label id="SelectedCommandScope" class="BindKeyColumnTitle" />
+						<Label id="SelectedCommandName" />
+					</Panel>
+				</Panel>
+				<Panel id="SelectedCommandBinds">
+					<Label id="SelectedCommandBindsLabel" />
+					<Label id="SelectedCommandUnbound" text="#citadel_bind_key_unbound" />
+					<CitadelKeyboardGlyph id="SelectedCommandBind0" />
+					<Label id="SelectedCommandBindConjunction" text="#citadel_settings_keybind_conjunction_or" />
+					<CitadelKeyboardGlyph id="SelectedCommandBind1" />
+				</Panel>
+			</Panel>
+			<Panel class="ButtonRow">
+				<CitadelBindingButton id="EscapeButton" action="MenuBack" text="#Close" onactivate="UIPopupButtonClicked()" />
+				<CitadelButton id="CancelButton" class="Medium Fill" text="#citadel_keybind_popup_cancel" onactivate="UIPopupButtonClicked()" />
+				<CitadelButton id="DeleteBindingButton" class="Warning Medium Fill" text="#citadel_bind_key_delete" onactivate="CitadelBindKeyDeleteBinding()" />
+				<CitadelButton id="ApplyBindButton" class="Medium Fill CTA" text="#citadel_bind_key_apply" onactivate="CitadelBindKeyApplyBind()" />
+			</Panel>
+		</Panel>
+	</PopupBindKey>
+</root>

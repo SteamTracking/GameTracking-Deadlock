@@ -1,3 +1,0 @@
-class FakeEntityDerivedB_tAPI
-{
-};

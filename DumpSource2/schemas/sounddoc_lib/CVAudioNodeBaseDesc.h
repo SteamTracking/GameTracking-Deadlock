@@ -1,0 +1,3 @@
+class CVAudioNodeBaseDesc : public CVNodeTypeDesc
+{
+};

@@ -112,12 +112,13 @@
 	}
 	Pocket.Barrage.Fire = 
 	{
-		base = "Base.Ability"
-		volume = 2.0
+		base = "Base.Ability.Cast"
+		volume = 1.0
 		pitch = 1.2
 		pitch_rand_min = 0.13
 		pitch_rand_max = -0.12
 		volume_enemy_targeting_boost = 7.0
+		block_duration = 0.25
 		vsnd_files = 
 		[
 			"sounds/abilities/pocket/pocket_a1_barrage_cast_01.vsnd",
@@ -129,11 +130,28 @@
 		]
 		vsnd_duration = 2.378753
 	}
+	Pocket.Barrage.Hit = 
+	{
+		base = "Base.Ability.Hit"
+		volume = 5.0
+		volume_offset_attacker_db = 3.0
+		pitch_rand_min = -0.05
+		pitch_rand_max = 0.05
+		vsnd_files = 
+		[
+			"sounds/abilities/pocket/pocket_barrage_hit_01.vsnd",
+			"sounds/abilities/pocket/pocket_barrage_hit_02.vsnd",
+			"sounds/abilities/pocket/pocket_barrage_hit_03.vsnd",
+			"sounds/abilities/pocket/pocket_barrage_hit_04.vsnd",
+		]
+		vsnd_duration = 1.437664
+	}
 	Pocket.Barrage.Proj.Impact = 
 	{
 		base = "Base.Ability.Detached"
 		volume = 0.0
-		volume_offset_opponent = 6.0
+		volume_offset_opponent = 4.0
+		pitch = 1.25
 		vsnd_files = 
 		[
 			"sounds/abilities/pocket/pocket_a1_barrage_impact_01.vsnd",
@@ -143,9 +161,38 @@
 		]
 		vsnd_duration = 0.810181
 	}
+	Pocket.Barrage.Proj.Lp = 
+	{
+		base = "Base.Ability.Projectile"
+		volume = -6.0
+		pitch = 1.4
+		pitch_rand_min = -0.15
+		pitch_rand_max = 0.15
+		volume_fade_in = 0.15
+		volume_fade_out = 0.3
+		delay_rand_min = -10.0
+		doppler_factor = 2.0
+		vsnd_files = "sounds/abilities/pocket/pocket_barrage_proj_lp.vsnd"
+		vsnd_duration = 10.598866
+	}
+	Pocket.Barrage.Proj.Whizby = 
+	{
+		base = "Base.Bullet.Whizby"
+		volume = 1.0
+		pitch = 1.6
+		vsnd_files = 
+		[
+			"sounds/abilities/pocket/pocket_barrage_whizby_01.vsnd",
+			"sounds/abilities/pocket/pocket_barrage_whizby_02.vsnd",
+			"sounds/abilities/pocket/pocket_barrage_whizby_03.vsnd",
+			"sounds/abilities/pocket/pocket_barrage_whizby_04.vsnd",
+			"sounds/abilities/pocket/pocket_barrage_whizby_05.vsnd",
+		]
+		vsnd_duration = 1.651156
+	}
 	Pocket.Barrage.Start = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 6.0
 		pitch_rand_min = 0.13
 		pitch_rand_max = -0.12
@@ -154,7 +201,7 @@
 	}
 	Pocket.Cloak.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 2.0
 		volume_enemy_targeting_boost = 6.0
 		vsnd_files = 
@@ -168,27 +215,32 @@
 	Pocket.Cloak.Caster.Lp = 
 	{
 		base = "Base.Ability"
-		volume = -15.0
+		volume = -18.0
 		volume_fade_in = 0.5
 		volume_fade_out = 0.3
 		pitch = 0.95
-		vsnd_files = "sounds/abilities/synth/a2_flying_cloak/player_cloak_lp.vsnd"
+		vsnd_files = "sounds/abilities/pocket/player_cloak_lp.vsnd"
 		vsnd_duration = 5.896417
 	}
 	Pocket.Cloak.Expire = 
 	{
 		base = "Base.Ability.Detached"
-		volume = 5.0
-		vsnd_files = "sounds/abilities/pocket/pocket_a2_cloak_end.vsnd"
-		vsnd_duration = 0.965147
+		volume = 3.0
+		vsnd_files = "sounds/abilities/pocket/pocket_cloak_expire.vsnd"
+		vsnd_duration = 1.696417
 	}
 	Pocket.Cloak.Arrive = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 2.0
 		volume_offset_opponent = 5.0
-		vsnd_files = "sounds/abilities/pocket/pocket_a2_cloak_warp.vsnd"
-		vsnd_duration = 1.763946
+		vsnd_files = 
+		[
+			"sounds/abilities/pocket/pocket_cloak_teleport_01.vsnd",
+			"sounds/abilities/pocket/pocket_cloak_teleport_02.vsnd",
+			"sounds/abilities/pocket/pocket_cloak_teleport_03.vsnd",
+		]
+		vsnd_duration = 1.55322
 	}
 	Pocket.Cloak.Hit = 
 	{
@@ -206,32 +258,11 @@
 		]
 		vsnd_duration = 1.427438
 	}
-	Pocket.Cloak.Buff.Start = 
-	{
-		base = "Base.Ability"
-		volume = 0.0
-		vsnd_files = "sounds/abilities/synth/a1_plasma_flux/t3_mod_start.vsnd"
-		vsnd_duration = 1.173458
-	}
-	Pocket.Cloak.Buff.Lp = 
-	{
-		base = "Base.Ability"
-		volume = -18.0
-		pitch = 1.2
-		vsnd_files = "sounds/abilities/synth/a1_plasma_flux/t3_mod_lp.vsnd"
-		vsnd_duration = 7.590375
-	}
-	Pocket.Cloak.Buff.End = 
-	{
-		base = "Base.Ability"
-		vsnd_files = "sounds/abilities/synth/a1_plasma_flux/t3_mod_end.vsnd"
-		vsnd_duration = 0.933625
-	}
 	Pocket.Cloak.Proj.Lp = 
 	{
 		base = "Base.Ability.Projectile"
 		volume = 0.0
-		volume_fade_in = 0.5
+		volume_fade_in = 0.4
 		volume_fade_out = 0.2
 		delay_rand_min = -3.0
 		vsnd_files = "sounds/abilities/pocket/pocket_a2_cloak_lp.vsnd"
@@ -259,11 +290,11 @@
 		pitch_envelope_scale_max = 1.3
 		volume_offset_player = -4.0
 		vsnd_files = "sounds/abilities/pocket/pocket_a3_pulse_delay.vsnd"
-		vsnd_duration = 3.419887
+		vsnd_duration = 3.080159
 	}
 	Pocket.Satchel.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 4.0
 		vsnd_files = "sounds/abilities/pocket/pocket_a3_pulse_cast.vsnd"
 		vsnd_duration = 2.13195
@@ -271,13 +302,26 @@
 	Pocket.Satchel.Explode = 
 	{
 		base = "Base.Ability"
-		volume = 0.0
-		vsnd_files = "sounds/abilities/pocket/pocket_a3_pulse_explode.vsnd"
-		vsnd_duration = 2.298254
+		volume = 3.0
+		vsnd_files = "sounds/abilities/pocket/pocket_satchel_explode.vsnd"
+		vsnd_duration = 1.913719
+	}
+	Pocket.Satchel.Hit = 
+	{
+		base = "Base.Ability.Hit"
+		volume = 3.0
+		volume_offset_attacker_db = 3.0
+		vsnd_files = 
+		[
+			"sounds/abilities/pocket/pocket_satchel_hit_01.vsnd",
+			"sounds/abilities/pocket/pocket_satchel_hit_02.vsnd",
+			"sounds/abilities/pocket/pocket_satchel_hit_03.vsnd",
+		]
+		vsnd_duration = 1.297302
 	}
 	Pocket.Affliction.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 2.0
 		delay = 0.1
 		vsnd_files = "sounds/abilities/pocket/pocket_a4_affliction_full.vsnd"
@@ -446,73 +490,25 @@
 	}
 	Pocket.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
-		vsnd_duration = 1.062208
+		base = "Hero.Default.Melee.Swing"
 	}
 	Pocket.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
+		base = "Hero.Default.Melee.Charged"
+		track_2.track_percent_chance_to_play = 0.33
+		track_2.track_vsnd_files = 
 		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
+			"sounds/player/footsteps/pocket/pocket_footstep_frog_01.vsnd",
+			"sounds/player/footsteps/pocket/pocket_footstep_frog_02.vsnd",
+			"sounds/player/footsteps/pocket/pocket_footstep_frog_03.vsnd",
+			"sounds/player/footsteps/pocket/pocket_footstep_frog_04.vsnd",
+			"sounds/player/footsteps/pocket/pocket_footstep_frog_05.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	Synth.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "synth"
+		context_name = "hero_synth"
 		vsnd_files = 
 		[
 			"sounds/vo/synth/synth_kill_anyhero_08.vsnd",
@@ -524,7 +520,7 @@
 	Synth.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "synth"
+		context_name = "hero_synth"
 		vsnd_files = 
 		[
 			"sounds/vo/synth/synth_unselect_02.vsnd",
@@ -533,34 +529,5 @@
 			"sounds/vo/synth/synth_unselect_08.vsnd",
 		]
 		vsnd_duration = 3.003537
-	}
-	Synth.A2.Grasp.Cast = 
-	{
-		base = "Base.Ability"
-		volume = 1.0
-		pitch = 0.9
-		vsnd_files = "sounds/abilities/synth/a2_grasp/cast.vsnd"
-		vsnd_duration = 2.524833
-	}
-	Synth.A2.Grasp.Target.Lock = 
-	{
-		base = "Base.Ability"
-		volume = -1.0
-		vsnd_files = "sounds/abilities/synth/a2_grasp/target_lock_start.vsnd"
-		vsnd_duration = 1.431813
-	}
-	Synth.A2.Grasp.Expire = 
-	{
-		base = "Base.Ability"
-		volume = -9.0
-		vsnd_files = "sounds/abilities/synth/a2_grasp/target_lock_expire.vsnd"
-		vsnd_duration = 0.553625
-	}
-	Synth.A3.Blitz = 
-	{
-		base = "Base.Ability"
-		volume = 0.0
-		vsnd_files = "sounds/abilities/synth/a3_blitz/cast.vsnd"
-		vsnd_duration = 4.301813
 	}
 }

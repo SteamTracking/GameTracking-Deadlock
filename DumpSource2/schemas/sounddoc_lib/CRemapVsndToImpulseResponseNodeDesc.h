@@ -1,0 +1,3 @@
+class CRemapVsndToImpulseResponseNodeDesc : public CVNodeTypeDesc
+{
+};

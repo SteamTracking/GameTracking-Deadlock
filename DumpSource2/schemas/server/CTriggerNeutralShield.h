@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CTriggerNeutralShield : public CBaseTrigger
 {
 	// MNotSaved

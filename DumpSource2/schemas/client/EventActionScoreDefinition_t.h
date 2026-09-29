@@ -1,0 +1,31 @@
+// MGetKV3ClassDefaults = {
+//	"unActionScore": 0,
+//	"unActionScoreRepeatInterval": 0,
+//	"strRewardName": "",
+//	"strRewardDescription": "",
+//	"strRewardImage": "",
+//	"strRewardClass": "",
+//	"strAchievementCategory": "",
+//	"bIsAchievement": false,
+//	"bShowAchievementQuantity": false,
+//	"vecRewards":
+//	[
+//	],
+//	"vecRelatedActions":
+//	[
+//	]
+//}
+class EventActionScoreDefinition_t
+{
+	uint32 unActionScore;
+	uint32 unActionScoreRepeatInterval;
+	CUtlString strRewardName;
+	CUtlString strRewardDescription;
+	CUtlString strRewardImage;
+	CUtlString strRewardClass;
+	CUtlString strAchievementCategory;
+	bool bIsAchievement;
+	bool bShowAchievementQuantity;
+	CUtlVector< EventGrantDefinition_t* > vecRewards;
+	CUtlVector< EventActionScoreDefinition_t::RelatedAction_t > vecRelatedActions;
+};

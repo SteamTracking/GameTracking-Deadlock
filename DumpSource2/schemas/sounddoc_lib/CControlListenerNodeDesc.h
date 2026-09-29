@@ -1,0 +1,3 @@
+class CControlListenerNodeDesc : public CVNodeTypeDesc
+{
+};

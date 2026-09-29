@@ -4,6 +4,12 @@
 //}
 class HeroScalingStat_t
 {
+	// MPropertyFlattenIntoParentRow
+	// MPropertyFlattenStretchFactor = 1
+	// MPropertyFlattenIncludeLabel
 	EStatsType eScalingStat;
+	// MPropertyFlattenIntoParentRow
+	// MPropertyFlattenStretchFactor = 1
+	// MPropertyFlattenIncludeLabel
 	float32 flScale;
 };

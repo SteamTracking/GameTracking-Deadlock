@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -142,11 +145,18 @@
 //		"m_sLoopSound": "",
 //		"m_sEndSound": "",
 //		"m_nPriority": 0
-//	}
+//	},
+//	"m_bSnapshotRegen": false,
+//	"m_strRegenAbilityPropertyName": "",
+//	"m_strExternalRegenAbilityPropertyName": ""
 //}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Basic_HealthRegenVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Sounds"
 	HealingOverTimeLoopSoundOverride_t m_HealingLoopSoundOverride;
+	// MPropertyStartGroup = "Gameplay"
+	bool m_bSnapshotRegen;
+	CUtlString m_strRegenAbilityPropertyName;
+	CUtlString m_strExternalRegenAbilityPropertyName;
 };

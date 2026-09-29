@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Fortuna_Ability02 : public C_CitadelBaseAbility
 {
 };

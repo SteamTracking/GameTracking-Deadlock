@@ -1,264 +1,196 @@
-// MNetworkVarNames = "Color m_Color"
-// MNetworkVarNames = "Color m_SecondaryColor"
-// MNetworkVarNames = "float m_flBrightness"
-// MNetworkVarNames = "float m_flBrightnessScale"
-// MNetworkVarNames = "float m_flBrightnessMult"
-// MNetworkVarNames = "float m_flRange"
-// MNetworkVarNames = "float m_flFalloff"
-// MNetworkVarNames = "float m_flAttenuation0"
-// MNetworkVarNames = "float m_flAttenuation1"
-// MNetworkVarNames = "float m_flAttenuation2"
-// MNetworkVarNames = "float m_flTheta"
-// MNetworkVarNames = "float m_flPhi"
-// MNetworkVarNames = "HRenderTextureStrong m_hLightCookie"
-// MNetworkVarNames = "int m_nCascades"
-// MNetworkVarNames = "int m_nCastShadows"
-// MNetworkVarNames = "int m_nShadowWidth"
-// MNetworkVarNames = "int m_nShadowHeight"
-// MNetworkVarNames = "bool m_bRenderDiffuse"
-// MNetworkVarNames = "int m_nRenderSpecular"
-// MNetworkVarNames = "bool m_bRenderTransmissive"
-// MNetworkVarNames = "float m_flOrthoLightWidth"
-// MNetworkVarNames = "float m_flOrthoLightHeight"
-// MNetworkVarNames = "int m_nStyle"
-// MNetworkVarNames = "CUtlString m_Pattern"
-// MNetworkVarNames = "int m_nCascadeRenderStaticObjects"
-// MNetworkVarNames = "float m_flShadowCascadeCrossFade"
-// MNetworkVarNames = "float m_flShadowCascadeDistanceFade"
-// MNetworkVarNames = "float m_flShadowCascadeDistance0"
-// MNetworkVarNames = "float m_flShadowCascadeDistance1"
-// MNetworkVarNames = "float m_flShadowCascadeDistance2"
-// MNetworkVarNames = "float m_flShadowCascadeDistance3"
-// MNetworkVarNames = "int m_nShadowCascadeResolution0"
-// MNetworkVarNames = "int m_nShadowCascadeResolution1"
-// MNetworkVarNames = "int m_nShadowCascadeResolution2"
-// MNetworkVarNames = "int m_nShadowCascadeResolution3"
-// MNetworkVarNames = "bool m_bUsesBakedShadowing"
-// MNetworkVarNames = "int m_nShadowPriority"
-// MNetworkVarNames = "int m_nBakedShadowIndex"
-// MNetworkVarNames = "int32 m_nLightPathUniqueId"
-// MNetworkVarNames = "int32 m_nLightMapUniqueId"
-// MNetworkVarNames = "bool m_bRenderToCubemaps"
-// MNetworkVarNames = "bool m_bAllowSSTGeneration"
-// MNetworkVarNames = "int m_nDirectLight"
-// MNetworkVarNames = "int m_nIndirectLight"
-// MNetworkVarNames = "bool m_bDynamicBounce"
-// MNetworkVarNames = "float m_flFadeMinDist"
-// MNetworkVarNames = "float m_flFadeMaxDist"
-// MNetworkVarNames = "float m_flShadowFadeMinDist"
-// MNetworkVarNames = "float m_flShadowFadeMaxDist"
-// MNetworkVarNames = "bool m_bEnabled"
-// MNetworkVarNames = "bool m_bFlicker"
-// MNetworkVarNames = "bool m_bPrecomputedFieldsValid"
-// MNetworkVarNames = "Vector m_vPrecomputedBoundsMins"
-// MNetworkVarNames = "Vector m_vPrecomputedBoundsMaxs"
-// MNetworkVarNames = "Vector m_vPrecomputedOBBOrigin"
-// MNetworkVarNames = "QAngle m_vPrecomputedOBBAngles"
-// MNetworkVarNames = "Vector m_vPrecomputedOBBExtent"
-// MNetworkVarNames = "float m_flPrecomputedMaxRange"
-// MNetworkVarNames = "int m_nFogLightingMode"
-// MNetworkVarNames = "float m_flFogContributionStength"
-// MNetworkVarNames = "float m_flNearClipPlane"
-// MNetworkVarNames = "Color m_SkyColor"
-// MNetworkVarNames = "float m_flSkyIntensity"
-// MNetworkVarNames = "Color m_SkyAmbientBounce"
-// MNetworkVarNames = "bool m_bUseSecondaryColor"
-// MNetworkVarNames = "bool m_bMixedShadows"
-// MNetworkVarNames = "GameTime_t m_flLightStyleStartTime"
-// MNetworkVarNames = "float m_flCapsuleLength"
-// MNetworkVarNames = "float m_flMinRoughness"
+// MGetKV3ClassDefaults = {
+//	"_class": "CLightComponent",
+//	"m_Color":
+//	[
+//		0,
+//		0,
+//		0,
+//		0
+//	],
+//	"m_SecondaryColor":
+//	[
+//		0,
+//		0,
+//		0,
+//		0
+//	],
+//	"m_flBrightness": 0.000000,
+//	"m_flBrightnessScale": 1.000000,
+//	"m_flBrightnessMult": 1.000000,
+//	"m_flRange": 0.000000,
+//	"m_flFalloff": 0.000000,
+//	"m_flAttenuation0": 0.000000,
+//	"m_flAttenuation1": 0.000000,
+//	"m_flAttenuation2": 0.000000,
+//	"m_flTheta": 0.000000,
+//	"m_flPhi": 0.000000,
+//	"m_hLightCookie": "",
+//	"m_nCascades": 0,
+//	"m_nCastShadows": 0,
+//	"m_nShadowWidth": 0,
+//	"m_nShadowHeight": 0,
+//	"m_bRenderDiffuse": true,
+//	"m_nRenderSpecular": 1,
+//	"m_bRenderTransmissive": true,
+//	"m_flOrthoLightWidth": 0.000000,
+//	"m_flOrthoLightHeight": 0.000000,
+//	"m_nStyle": 0,
+//	"m_Pattern": "",
+//	"m_nCascadeRenderStaticObjects": -1,
+//	"m_flShadowCascadeCrossFade": 0.000000,
+//	"m_flShadowCascadeDistanceFade": 0.000000,
+//	"m_flShadowCascadeDistance0": 0.000000,
+//	"m_flShadowCascadeDistance1": 0.000000,
+//	"m_flShadowCascadeDistance2": 0.000000,
+//	"m_flShadowCascadeDistance3": 0.000000,
+//	"m_nShadowCascadeResolution0": 0,
+//	"m_nShadowCascadeResolution1": 0,
+//	"m_nShadowCascadeResolution2": 0,
+//	"m_nShadowCascadeResolution3": 0,
+//	"m_bUsesBakedShadowing": false,
+//	"m_nShadowPriority": -1,
+//	"m_nBakedShadowIndex": -1,
+//	"m_nLightPathUniqueId": 0,
+//	"m_nLightMapUniqueId": 0,
+//	"m_bRenderToCubemaps": true,
+//	"m_bAllowSSTGeneration": true,
+//	"m_nDirectLight": 0,
+//	"m_nBounceLight": 0,
+//	"m_flBounceScale": 0.000000,
+//	"m_flFadeMinDist": 0.000000,
+//	"m_flFadeMaxDist": 0.000000,
+//	"m_flShadowFadeMinDist": 0.000000,
+//	"m_flShadowFadeMaxDist": 0.000000,
+//	"m_bEnabled": false,
+//	"m_bFlicker": false,
+//	"m_bPrecomputedFieldsValid": false,
+//	"m_vPrecomputedBoundsMins":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000
+//	],
+//	"m_vPrecomputedBoundsMaxs":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000
+//	],
+//	"m_vPrecomputedOBBOrigin":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000
+//	],
+//	"m_vPrecomputedOBBAngles":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000
+//	],
+//	"m_vPrecomputedOBBExtent":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000
+//	],
+//	"m_flPrecomputedMaxRange": 0.000000,
+//	"m_nFogLightingMode": 0,
+//	"m_flFogContributionStength": 1.000000,
+//	"m_flNearClipPlane": 1.000000,
+//	"m_SkyColor":
+//	[
+//		0,
+//		0,
+//		0,
+//		0
+//	],
+//	"m_flSkyIntensity": 0.000000,
+//	"m_SkyAmbientBounce":
+//	[
+//		0,
+//		0,
+//		0,
+//		0
+//	],
+//	"m_bUseSecondaryColor": false,
+//	"m_flLightStyleStartTime": null,
+//	"m_flCapsuleLength": 0.000000,
+//	"m_flMinRoughness": 0.000000
+//}
+// MHasKV3TransferPolymorphicClassname
 class CLightComponent : public CEntityComponent
 {
 	// MNotSaved
 	CNetworkVarChainer __m_pChainEntity;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	Color m_Color;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	Color m_SecondaryColor;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flBrightness;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flBrightnessScale;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flBrightnessMult;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flRange;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flFalloff;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flAttenuation0;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flAttenuation1;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flAttenuation2;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flTheta;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flPhi;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	CStrongHandle< InfoForResourceTypeCTextureBase > m_hLightCookie;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nCascades;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nCastShadows;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nShadowWidth;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nShadowHeight;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	bool m_bRenderDiffuse;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nRenderSpecular;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	bool m_bRenderTransmissive;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flOrthoLightWidth;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flOrthoLightHeight;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nStyle;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	CUtlString m_Pattern;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nCascadeRenderStaticObjects;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flShadowCascadeCrossFade;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flShadowCascadeDistanceFade;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flShadowCascadeDistance0;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flShadowCascadeDistance1;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flShadowCascadeDistance2;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flShadowCascadeDistance3;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nShadowCascadeResolution0;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nShadowCascadeResolution1;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nShadowCascadeResolution2;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nShadowCascadeResolution3;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
-	// MNetworkAlias = "m_bUsesIndexedBakedLighting"
 	bool m_bUsesBakedShadowing;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nShadowPriority;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nBakedShadowIndex;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nLightPathUniqueId;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	int32 m_nLightMapUniqueId;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	bool m_bRenderToCubemaps;
-	// MNetworkEnable
 	bool m_bAllowSSTGeneration;
-	// MNetworkEnable
 	int32 m_nDirectLight;
-	// MNetworkEnable
-	int32 m_nIndirectLight;
-	// MNetworkEnable
-	bool m_bDynamicBounce;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
+	int32 m_nBounceLight;
+	float32 m_flBounceScale;
 	float32 m_flFadeMinDist;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flFadeMaxDist;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flShadowFadeMinDist;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flShadowFadeMaxDist;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	bool m_bEnabled;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	bool m_bFlicker;
-	// MNetworkEnable
 	bool m_bPrecomputedFieldsValid;
-	// MNetworkEnable
 	Vector m_vPrecomputedBoundsMins;
-	// MNetworkEnable
 	Vector m_vPrecomputedBoundsMaxs;
-	// MNetworkEnable
 	Vector m_vPrecomputedOBBOrigin;
-	// MNetworkEnable
 	QAngle m_vPrecomputedOBBAngles;
-	// MNetworkEnable
 	Vector m_vPrecomputedOBBExtent;
-	// MNetworkEnable
 	float32 m_flPrecomputedMaxRange;
-	// MNetworkEnable
 	int32 m_nFogLightingMode;
-	// MNetworkEnable
 	float32 m_flFogContributionStength;
-	// MNetworkEnable
 	float32 m_flNearClipPlane;
-	// MNetworkEnable
 	Color m_SkyColor;
-	// MNetworkEnable
 	float32 m_flSkyIntensity;
-	// MNetworkEnable
 	Color m_SkyAmbientBounce;
-	// MNetworkEnable
 	bool m_bUseSecondaryColor;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "MixedShadowsChanged"
 	// MNotSaved
 	bool m_bMixedShadows;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	GameTime_t m_flLightStyleStartTime;
-	// MNetworkEnable
 	float32 m_flCapsuleLength;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "LightRenderingChanged"
 	float32 m_flMinRoughness;
 };

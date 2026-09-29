@@ -113,7 +113,7 @@
 	}
 	Doorman.CallBell.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = 
 		[
@@ -199,7 +199,7 @@
 	}
 	Doorman.LuggageCart.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = 
 		[
@@ -308,7 +308,7 @@
 	}
 	Doorman.Doorway.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = 
 		[
@@ -432,7 +432,7 @@
 	}
 	Doorman.Hotel.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 2.0
 		vsnd_files = 
 		[
@@ -516,8 +516,8 @@
 		delay = 0.2
 		volume_fade_in = 0.1
 		volume_fade_out = 0.1
-		block_opponent = true
-		block_team = true
+		volume_offset_opponent = -99.0
+		volume_offset_team = -99.0
 		vsnd_files = "sounds/abilities/doorman/doorman_hotel_victim_lp_01.vsnd"
 		vsnd_duration = 15.96093
 	}
@@ -533,223 +533,429 @@
 	Doorman.JumpLand = 
 	{
 		base = "Base.Footsteps.JumpLand"
-		volume = -1.0
-		track_2.vsnd_track_vol_offset_db = -7.0
+		track_1.vsnd_track_vol_offset_db = -9.0
+		track_2.vsnd_track_vol_offset_db = -15.0
+		track_2.vsnd_track_volume_rand_min = -4.0
+		track_3.vsnd_track_vol_offset_db = -7.0
+		track_3.vsnd_track_volume_rand_min = -1.0
 		vsnd_files = 
 		[
-			"sounds/player/footsteps/mirage/mirage_footstep_01.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_02.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_03.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_04.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_05.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_06.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_07.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_08.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_09.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_10.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_11.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_12.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_13.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_14.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_15.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_jumpland_01.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_jumpland_02.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_jumpland_03.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_jumpland_04.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_jumpland_05.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_jumpland_06.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_jumpland_07.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_jumpland_08.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_jumpland_09.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_jumpland_10.vsnd",
 		]
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/generic/foley_light/default_foley_01.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_02.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_03.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_04.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_05.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_06.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_07.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_08.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_09.vsnd",
 		]
-		vsnd_duration = 1.641474
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_01.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_02.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_03.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_04.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_05.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_06.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_07.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_08.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_09.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_10.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_11.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_12.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_13.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_14.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_15.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_16.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_17.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_18.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_19.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_20.vsnd",
+		]
+		vsnd_duration = 0.601542
 	}
 	Doorman.Movement.Short = 
 	{
 		base = "Base.Movement"
-		volume = -10.0
+		track_1.vsnd_track_vol_offset_db = -10.0
+		track_2.vsnd_track_vol_offset_db = -20.0
+		track_2.vsnd_track_volume_rand_min = -4.0
+		track_3.vsnd_track_vol_offset_db = -12.0
+		track_3.vsnd_track_volume_rand_min = -10.0
 		vsnd_files = 
 		[
-			"sounds/player/movement/mirage/mirage_movement_foley_short_01.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_02.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_03.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_04.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_05.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_06.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_07.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_08.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_09.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_10.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_11.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_12.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_13.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_14.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_15.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_01.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_02.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_03.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_04.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_05.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_06.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_07.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_08.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_09.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_10.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_11.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_12.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_13.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_14.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_15.vsnd",
 		]
-		vsnd_duration = 1.645306
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_10.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_11.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_12.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_13.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_14.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_15.vsnd",
+		]
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_01.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_02.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_03.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_04.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_05.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_06.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_07.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_08.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_09.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_10.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_11.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_12.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_13.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_14.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_15.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_16.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_17.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_18.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_19.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_20.vsnd",
+		]
+		vsnd_duration = 0.453265
 	}
 	Doorman.Movement.Long = 
 	{
 		base = "Base.Movement"
+		track_1.vsnd_track_vol_offset_db = -12.0
+		track_2.vsnd_track_vol_offset_db = -14.0
+		track_2.vsnd_track_volume_rand_min = -8.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_08.vsnd",
+		]
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_01.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_02.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_03.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_04.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_05.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_06.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_07.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_08.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_09.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_10.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_11.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_12.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_13.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_14.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_15.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_16.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_17.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_18.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_19.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_20.vsnd",
+		]
+		vsnd_duration = 1.179252
 	}
 	Doorman.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
+		base = "Hero.Default.Melee.Swing"
 		track_2.vsnd_track_vol_offset_db = -12.0
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
+		track_2.vsnd_track_volume_rand_min = -4.0
+		track_3.vsnd_track_vol_offset_db = -8.0
+		track_3.vsnd_track_volume_rand_min = -4.0
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/mirage/mirage_movement_foley_short_01.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_02.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_03.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_04.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_05.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_06.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_07.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_08.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_09.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_10.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_11.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_12.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_13.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_14.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_15.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_09.vsnd",
 		]
-		vsnd_duration = 1.062208
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_01.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_02.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_03.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_04.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_05.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_06.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_07.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_08.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_09.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_10.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_11.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_12.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_13.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_14.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_15.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_16.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_17.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_18.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_19.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_20.vsnd",
+		]
 	}
 	Doorman.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		track_2.vsnd_track_vol_offset_db = -12.0
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
+		base = "Hero.Default.Melee.Charged"
+		track_2.vsnd_track_vol_offset_db = -5.0
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/mirage/mirage_movement_foley_short_01.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_02.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_03.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_04.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_05.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_06.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_07.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_08.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_09.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_10.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_11.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_12.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_13.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_14.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_15.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_01.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_02.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_03.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_04.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_05.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_06.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_07.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_08.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_09.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_10.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_11.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_12.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_13.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_14.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_15.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_16.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_17.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_18.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_19.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_20.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	Doorman.Footstep = 
 	{
 		base = "Base.Footsteps"
-		track_1.vsnd_track_vol_offset_db = -8.0
-		track_2.vsnd_track_vol_offset_db = -28.0
+		track_1.vsnd_track_vol_offset_db = -6.0
+		track_2.vsnd_track_vol_offset_db = -19.0
+		track_2.vsnd_track_volume_rand_min = -6.0
+		track_3.vsnd_track_vol_offset_db = -17.0
+		track_3.vsnd_track_volume_rand_min = -15.0
 		vsnd_files = 
 		[
-			"sounds/player/footsteps/mirage/mirage_footstep_01.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_02.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_03.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_04.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_05.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_06.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_07.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_08.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_09.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_10.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_11.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_12.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_13.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_14.vsnd",
-			"sounds/player/footsteps/mirage/mirage_footstep_15.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_01.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_02.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_03.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_04.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_05.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_06.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_07.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_08.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_09.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_10.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_11.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_12.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_13.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_14.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_15.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_16.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_17.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_18.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_19.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_20.vsnd",
 		]
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/mirage/mirage_movement_foley_short_01.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_02.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_03.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_04.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_05.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_06.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_07.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_08.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_09.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_10.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_11.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_12.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_13.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_14.vsnd",
-			"sounds/player/movement/mirage/mirage_movement_foley_short_15.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_10.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_11.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_12.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_13.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_14.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_15.vsnd",
 		]
-		vsnd_duration = 1.641474
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_01.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_02.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_03.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_04.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_05.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_06.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_07.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_08.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_09.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_10.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_11.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_12.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_13.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_14.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_15.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_16.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_17.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_18.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_19.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_20.vsnd",
+		]
+		vsnd_duration = 0.462948
 	}
 	Doorman.Mantle = 
 	{
 		base = "Base.Movement"
-		volume = -3.0
+		track_1.vsnd_track_vol_offset_db = -8.0
+		track_2.vsnd_track_vol_offset_db = -10.0
+		track_2.vsnd_track_volume_rand_min = -6.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_08.vsnd",
+		]
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_01.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_02.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_03.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_04.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_05.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_06.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_07.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_08.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_09.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_10.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_11.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_12.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_13.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_14.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_15.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_16.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_17.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_18.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_19.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_20.vsnd",
+		]
+		vsnd_duration = 1.179252
+	}
+	Doorman.Dash = 
+	{
+		base = "Base.Footsteps"
+		track_1.vsnd_track_vol_offset_db = -6.0
+		track_2.vsnd_track_vol_offset_db = -10.0
+		track_2.vsnd_track_volume_rand_min = -4.0
+		track_3.vsnd_track_vol_offset_db = -9.0
+		track_3.vsnd_track_volume_rand_min = -3.0
+		vsnd_files = 
+		[
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_01.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_02.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_03.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_04.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_05.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_06.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_07.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_08.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_09.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_10.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_11.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_12.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_13.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_14.vsnd",
+			"sounds/player/footsteps/doorman/doorman_footstep_sprint_15.vsnd",
+		]
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_09.vsnd",
+		]
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_01.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_02.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_03.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_04.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_05.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_06.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_07.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_08.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_09.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_10.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_11.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_12.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_13.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_14.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_15.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_16.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_17.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_18.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_19.vsnd",
+			"sounds/player/movement/doorman/doorman_foley_key_mvmt_short_20.vsnd",
+		]
+		vsnd_duration = 0.453265
 	}
 	Doorman.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "doorman"
+		context_name = "hero_doorman"
 		vsnd_files = 
 		[
 			"sounds/vo/doorman/ping/doorman_ping_post_game_01.vsnd",

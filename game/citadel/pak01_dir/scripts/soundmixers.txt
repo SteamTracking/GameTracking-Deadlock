@@ -1497,6 +1497,45 @@
 			duck_to_percent = 100
 			ducker_threshold = 20
 		},
+		{
+			name = "VisualNovel"
+			path_substring = ""
+			class_substring = ""
+			chan_type = ""
+			sndlvl_min = 0
+			sndlvl_max = 20
+			priority = 60
+			is_ducked = 0
+			causes_ducking = 0
+			duck_to_percent = 100
+			ducker_threshold = 20
+		},
+		{
+			name = "UI-Death"
+			path_substring = ""
+			class_substring = ""
+			chan_type = ""
+			sndlvl_min = 0
+			sndlvl_max = 20
+			priority = 60
+			is_ducked = 0
+			causes_ducking = 0
+			duck_to_percent = 100
+			ducker_threshold = 20
+		},
+		{
+			name = "Hit-Attacker-NPC"
+			path_substring = ""
+			class_substring = ""
+			chan_type = ""
+			sndlvl_min = 0
+			sndlvl_max = 20
+			priority = 60
+			is_ducked = 0
+			causes_ducking = 0
+			duck_to_percent = 100
+			ducker_threshold = 20
+		},
 	]
 	SoundMixers = 
 	{
@@ -1516,7 +1555,7 @@
 				solo = 0.0
 				mute = 0.0
 				lvl = 1.0
-				dsp = 0.0
+				dsp = 0.25
 			},
 			{
 				mixgroup = "Announcer"
@@ -1800,7 +1839,7 @@
 			},
 			{
 				mixgroup = "Ambience-Bed"
-				vol = 0.6
+				vol = 0.65
 				solo = 0.0
 				mute = 0.0
 				lvl = 1.0
@@ -1988,7 +2027,7 @@
 				solo = 0.0
 				mute = 0.0
 				lvl = 1.0
-				dsp = 0.0
+				dsp = 0.45
 			},
 			{
 				mixgroup = "UI-Health"
@@ -2112,7 +2151,7 @@
 			},
 			{
 				mixgroup = "Music-KS"
-				vol = 0.5
+				vol = 0.7
 				solo = 0.0
 				mute = 0.0
 				lvl = 1.0
@@ -2240,7 +2279,7 @@
 			},
 			{
 				mixgroup = "NPC-Troop-Neu"
-				vol = 0.25
+				vol = 0.5
 				solo = 0.0
 				mute = 0.0
 				lvl = 1.0
@@ -2248,7 +2287,7 @@
 			},
 			{
 				mixgroup = "NPC-Troop-Tea"
-				vol = 0.05
+				vol = 0.5
 				solo = 0.0
 				mute = 0.0
 				lvl = 1.0
@@ -2256,11 +2295,11 @@
 			},
 			{
 				mixgroup = "NPC-Troop-Opp"
-				vol = 0.4
+				vol = 0.5
 				solo = 0.0
 				mute = 0.0
 				lvl = 1.0
-				dsp = 0.0
+				dsp = 0.35
 			},
 			{
 				mixgroup = "NPC-Neutral"
@@ -2417,6 +2456,30 @@
 			{
 				mixgroup = "UI-Brawl-Legendary"
 				vol = 1.0
+				solo = 0.0
+				mute = 0.0
+				lvl = 1.0
+				dsp = 0.0
+			},
+			{
+				mixgroup = "VisualNovel"
+				vol = 1.0
+				solo = 0.0
+				mute = 0.0
+				lvl = 1.0
+				dsp = 0.0
+			},
+			{
+				mixgroup = "UI-Death"
+				vol = 0.75
+				solo = 0.0
+				mute = 0.0
+				lvl = 1.0
+				dsp = 0.0
+			},
+			{
+				mixgroup = "Hit-Attacker-NPC"
+				vol = 0.5
 				solo = 0.0
 				mute = 0.0
 				lvl = 1.0
@@ -2939,6 +3002,22 @@
 					mute = 0.0
 					vol = 0.75
 				},
+				{
+					mixgroup = "Mods-Tea"
+					lvl = 0.0
+					dsp = 1.0
+					solo = 0.0
+					mute = 0.0
+					vol = 0.5
+				},
+				{
+					mixgroup = "Movement-Tea"
+					lvl = 0.0
+					dsp = 1.0
+					solo = 0.0
+					mute = 0.0
+					vol = 0.498
+				},
 			]
 			Triggers = [  ]
 		}
@@ -3221,6 +3300,14 @@
 					solo = 0.0
 					mute = 0.0
 					vol = 0.85
+				},
+				{
+					mixgroup = "Hit-Attacker-NPC"
+					lvl = 0.0
+					dsp = 1.0
+					solo = 0.0
+					mute = 0.0
+					vol = 0.1
 				},
 			]
 			Triggers = 
@@ -3572,7 +3659,7 @@
 				{
 					trigger = "UltCC-Neu"
 					threshold = 0.1
-					mixamount = 1.0
+					mixamount = 0.75
 					attack = 0.0
 					release = 0.2
 					use_trigger_amount = false
@@ -3580,7 +3667,7 @@
 				{
 					trigger = "UltCC-Tea"
 					threshold = 0.1
-					mixamount = 1.0
+					mixamount = 0.5
 					attack = 0.0
 					release = 0.2
 					use_trigger_amount = false
@@ -3588,7 +3675,7 @@
 				{
 					trigger = "UltCC-Pla"
 					threshold = 0.1
-					mixamount = 1.0
+					mixamount = 0.5
 					attack = 0.0
 					release = 0.2
 					use_trigger_amount = false
@@ -3596,7 +3683,7 @@
 				{
 					trigger = "UltCC-Opp"
 					threshold = 0.1
-					mixamount = 1.0
+					mixamount = 0.5
 					attack = 0.0
 					release = 0.2
 					use_trigger_amount = false
@@ -3959,6 +4046,14 @@
 					mute = 0.0
 					vol = 0.25
 				},
+				{
+					mixgroup = "Movement-Pla"
+					lvl = 0.0
+					dsp = 1.0
+					solo = 0.0
+					mute = 0.0
+					vol = 0.75
+				},
 			]
 			Triggers = 
 			[
@@ -4161,7 +4256,7 @@
 				},
 				{
 					trigger = "Music-Objective"
-					threshold = 0.01
+					threshold = 0.1
 					mixamount = 1.0
 					attack = 0.1
 					release = 0.1
@@ -4197,6 +4292,224 @@
 					mixamount = 1.0
 					attack = 0.05
 					release = 0.05
+				},
+			]
+		}
+		"ml-visual-novel" = 
+		{
+			Mixers = 
+			[
+				{
+					mixgroup = "VisualNovel"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 1.0
+				},
+				{
+					mixgroup = "UI"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 1.0
+				},
+			]
+			Triggers = [  ]
+		}
+		"ml-game-internal-temp" = 
+		{
+			Mixers = [  ]
+			Triggers = [  ]
+		}
+		"ml-kills" = 
+		{
+			Mixers = 
+			[
+				{
+					mixgroup = "Music-KS"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "Announcer"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "VO-Hero-Pla"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "VO-Hero-Death"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "UI"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "VO-Hero-Ping"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.6
+				},
+				{
+					mixgroup = "Ability-Tea"
+					lvl = 0.0
+					dsp = 1.0
+					solo = 0.0
+					mute = 0.0
+					vol = 0.5
+				},
+				{
+					mixgroup = "Movement-Tea"
+					lvl = 0.0
+					dsp = 1.0
+					solo = 0.0
+					mute = 0.0
+					vol = 0.0
+				},
+				{
+					mixgroup = "VO-Hero-Tea"
+					lvl = 0.0
+					dsp = 1.0
+					solo = 0.0
+					mute = 0.0
+					vol = 0.0
+				},
+				{
+					mixgroup = "Weapons-Tea"
+					lvl = 0.0
+					dsp = 1.0
+					solo = 0.0
+					mute = 0.0
+					vol = 0.5
+				},
+				{
+					mixgroup = "UltCC-Pla"
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.0
+					vol = 0.6
+				},
+				{
+					mixgroup = "Hit-Attacker"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "Death-Hero-Pla"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "Death-Hero-Tea"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "Death-Hero-Opp"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "UI-Death"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "Currency"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "Hit-Victim"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+				{
+					mixgroup = "Dmg-Victim"
+					vol = 1.0
+					lvl = 0.0
+					dsp = 1.0
+					mute = 0.0
+					solo = 0.7
+				},
+			]
+			Triggers = 
+			[
+				{
+					trigger = "Music-KS"
+					threshold = 0.3
+					mixamount = 1.0
+					attack = 0.1
+					release = 0.1
+					use_trigger_amount = false
+				},
+				{
+					trigger = "UI-Death"
+					threshold = 0.2
+					mixamount = 0.6
+					attack = 0.1
+					release = 0.1
+				},
+				{
+					trigger = "Death-Hero-Opp"
+					threshold = 0.3
+					mixamount = 1.0
+					attack = 0.1
+					release = 0.1
+				},
+				{
+					trigger = "Death-Hero-Pla"
+					threshold = 0.3
+					mixamount = 1.0
+					attack = 0.1
+					release = 0.1
 				},
 			]
 		}

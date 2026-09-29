@@ -1,0 +1,44 @@
+// MGetKV3ClassDefaults = null
+// MHasKV3TransferPolymorphicClassname
+class CAI_MotorGroundAnimGraph_GraphController : public CAnimGraphControllerBase
+{
+	CRelativeTransform m_stopTarget;
+	CRelativeTransform m_idleTurnTarget;
+	float32 m_flSpeed;
+	CAnimGraph2ParamOptionalRef< CTransform > m_tStopTarget;
+	CAnimGraph2ParamOptionalRef< CTransform > m_tIdleTurnTarget;
+	CAnimGraph2ParamOptionalRef< CTransform > m_tCustomTarget;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementStopType;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementState;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementPoseTransition;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementStrafeDirection;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementStrafeDirectionCurrent;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementStrafeTransitionDirection;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementCustom;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementCustomShared;
+	CAnimGraphParamRef< Vector > m_vMovementDirection;
+	CAnimGraphParamRef< Vector > m_vMovementDirectionCurrent;
+	CAnimGraphParamRef< Vector > m_vMovementPlantedTurnDirection;
+	CAnimGraphParamRef< float32 > m_flMovementCurrentSpeed;
+	CAnimGraphParamRef< float32 > m_flMovementCurrentSpeedSlow;
+	CAnimGraphParamRef< float32 > m_flMovementCurrentSpeedMedium;
+	CAnimGraphParamRef< float32 > m_flMovementCurrentSpeedFast;
+	CAnimGraphParamRef< float32 > m_flMovementCurrentSpeedVeryFast;
+	CAnimGraphParamRef< float32 > m_flMovementLean;
+	CAnimGraphParamRef< float32 > m_flMovementStrafeAngleForward;
+	CAnimGraphParamRef< float32 > m_flMovementStrafeAngleBackward;
+	CAnimGraphParamRef< float32 > m_flDistanceToStop;
+	CAnimGraphParamRef< bool > m_bMovementCustomFromMovement;
+	CAnimGraphParamAutoResetRef m_bMovementStateRestart;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementGaitSetNext;
+	CAnimGraphParamRef< CGlobalSymbol > m_sNextStance;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementGait;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementGaitSet;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementGaitPrevious;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementGaitSetPrevious;
+	CAnimGraphParamRef< CGlobalSymbol > m_sCurrentStance;
+	CAnimGraphParamRef< CGlobalSymbol > m_sPreviousStance;
+	CAnimGraphParamRef< CGlobalSymbol > m_sCustomMovementGait;
+	CAnimGraphParamRef< bool > m_bWalking;
+	CAnimGraphTagOptionalRef m_sMovementDisableStateTimeout;
+};

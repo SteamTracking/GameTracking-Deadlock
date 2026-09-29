@@ -32,7 +32,7 @@ CitadelStatScalingLabel.HasScalingStats
 
 CitadelTooltipModDetails .ScalingStatValue
 {
-	margin-left: -5px;
+	margin-left: 0px;
 }
 
 .hero_stats .ScalingStatValue
@@ -57,6 +57,7 @@ CitadelTooltipModDetails .ScalingStatValue
 	background-repeat: no-repeat;
 	background-position: center;
 	vertical-align: center;
+	horizontal-align: right;
 	z-index: 2;
 }
 
@@ -67,23 +68,23 @@ CitadelTooltipModDetails .ScalingStatValue
 
 .AbilityPanelStat .ScalingStatImage
 {
-	width: 40px;
-	height: 30px;
-	margin-right: 0px;
+	width: 36px;
+	height: 27px;
+	margin-right: 1px;
+	margin-top: 2px;
 	background-position: right;
 }
 
-.gDetailView .HeaderContainer .AbilityPanelStat .ScalingStatImage,.gScoreboardOpen .HeaderContainer .AbilityPanelStat .ScalingStatImage
+.HeaderContainer .AbilityPanelStat .ScalingAmount Label
 {
-	pre-transform-scale2d: 0.6;
-	margin-top: -6px;
-	margin-bottom: -4px;
+	font-size: 10px;
 }
 
 #HeaderAttributesContainer .AbilityPanelStat .ScalingStatImage
 {
-	width: 30px;
-	height: 26px;
+	width: 20px;
+	height: 16px;
+	margin-right: 6px;
 }
 
 .ScalingStat_BaseWeaponDamage .ScalingStatImage,.ScalingStat_WeaponPower .ScalingStatImage
@@ -132,12 +133,18 @@ CitadelTooltipModDetails .ScalingStatValue
 
 .AbilityPanelStat
 {
-	flow-children: down;
+	flow-children: left;
+	width: 48px;
+}
+
+#ImageAndMultiplierContainer
+{
+	horizontal-align: right;
 }
 
 CitadelTooltipModDetails .AbilityPanelStat
 {
-	flow-children: right;
+	flow-children: left;
 }
 
 .ScalingStatAltMultiply
@@ -217,17 +224,19 @@ CitadelTooltipModDetails Label.ScalingStatCurrentValue
 {
 	flow-children: right;
 	z-index: 2;
-	visibility: collapse;
 	text-align: right;
 	vertical-align: middle;
-	horizontal-align: right;
-	margin-right: 3px;
-	margin-top: 15px;
+	horizontal-align: center;
+	margin-top: -5px;
+	margin-left: 4px;
+	margin-right: 1px;
+	overflow: noclip;
 }
 
 .ScalingAmount Label
 {
 	text-shadow: 0px 0px 3.0 offBlack;
+	text-overflow: shrink;
 }
 
 .HeaderContainer .ScalingAmount
@@ -237,14 +246,9 @@ CitadelTooltipModDetails Label.ScalingStatCurrentValue
 	margin-right: 1px;
 }
 
-.gDetailView .ScalingAmount,.gScoreboardOpen .ScalingAmount
+.ScalingStat_WeaponPower Label,.ScalingStat_BaseWeaponDamage Label,.ScalingStat_LightMeleeDamage Label,.ScalingStat_HeavyMeleeDamage Label
 {
-	visibility: visible;
-}
-
-.ScalingStat_WeaponPower Label,.ScalingStat_LightMeleeDamage Label,.ScalingStat_HeavyMeleeDamage Label
-{
-	color: courageBrightColor;
+	color: courageLightColor;
 }
 
 .ScalingStat_LevelUpBoons Label
@@ -254,12 +258,12 @@ CitadelTooltipModDetails Label.ScalingStatCurrentValue
 
 .ScalingStat_ArmorPower Label
 {
-	color: fortitudeBrightColor;
+	color: fortitudeLightColor;
 }
 
 .ScalingStat_TechPower Label
 {
-	color: spiritBrightColor;
+	color: spiritLightColor;
 }
 
 .BaseLabel,.ModsLabel
@@ -316,6 +320,7 @@ CitadelTooltipModDetails.HasNoPlayer .gScoreboardOpen .ScalingStatCurrentValue,C
 AbilityPropertyPanel .ScalingStatValue
 {
 	margin-left: 0px;
+	font-family: numericBlock;
 }
 
 #HeroImage

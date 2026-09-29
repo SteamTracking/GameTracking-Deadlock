@@ -48,15 +48,10 @@
 //		]
 //	},
 //	"m_flProceduralIdleTurnSpeed": 180.000000,
-//	"m_heading":
-//	{
-//		"m_eMode": "eContinuous",
-//		"m_bUseBadZones": true,
-//		"m_badZones":
-//		[
-//		],
-//		"m_flPredictionLookAhead": 0.000000
-//	},
+//	"m_eStrafeMode": "eContinuous",
+//	"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//	"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//	"m_flStrafeTransitionMinPathLength": 60.000000,
 //	"m_flMaxIdleTurnScaleUp": 0.200000,
 //	"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //	"m_flBashStartDistance": 0.000000,
@@ -67,6 +62,8 @@
 //		4.000000
 //	],
 //	"m_flMantleStartDistance": 50.000000,
+//	"m_flLeanCalculationLookAheadDistance": 50.000000,
+//	"m_flLeanSmoothingFactor": 0.050000,
 //	"m_bEnabled": true,
 //	"m_sGaitId": ""
 //}

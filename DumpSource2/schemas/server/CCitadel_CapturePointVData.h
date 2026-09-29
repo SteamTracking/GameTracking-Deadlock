@@ -23,6 +23,7 @@
 //	"m_remapCapturersToCaptureTime": 0.000000,
 //	"m_flEnemyProgressRemoveScale": 3.000000,
 //	"m_flTotalHealthToCapture": 50.000000,
+//	"m_bDestroyNearbyNeutrals": false,
 //	"m_flInitialEnableTimeInSeconds": 0.000000,
 //	"m_flPreEnableWindowInSeconds": 10.000000,
 //	"m_flRespawnRangeInSeconds": 0.000000
@@ -63,6 +64,8 @@ class CCitadel_CapturePointVData : public CEntitySubclassVDataBase
 	float32 m_flEnemyProgressRemoveScale;
 	// MPropertyDescription = "How much health will be taken from each player over a full capture."
 	float32 m_flTotalHealthToCapture;
+	// MPropertyDescription = "Kill nearby neutrals."
+	bool m_bDestroyNearbyNeutrals;
 	// MPropertyStartGroup = "Match Settings"
 	// MPropertyDescription = "Time in the match this capture point can first become enabled."
 	CRangeFloat m_flInitialEnableTimeInSeconds;

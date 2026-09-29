@@ -1,3 +1,12 @@
+// MGetKV3ClassDefaults = {
+//	"m_Type": 0,
+//	"m_szResponseName": "",
+//	"m_Params":
+//	{
+//		"odds": 100,
+//		"flags": 0
+//	}
+//}
 class CRR_Response
 {
 	uint8 m_Type;

@@ -1,0 +1,189 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+.MaskTestContainer
+{
+	flow-children: down;
+	width: 100%;
+	height: 100%;
+	border: 12px solid gray;
+}
+
+.MaskTestContainer Label
+{
+	horizontal-align: center;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 48px;
+	text-shadow: 0px 0px 4px 5 black;
+	margin-top: 12px;
+	animation-name: WiggleUpDown;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.MaskTestContainer .MaskTest
+{
+	width: 100%;
+	height: 100%;
+	margin-right: 32px;
+	background-color: black;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity-mask: url("s2r://panorama/images/masks/wipe_alpha_test_01_white_png.vtex");
+	opacity-mask-threshold: 0% 20%;
+	transition-property: opacity-mask;
+	transition-duration: 1s;
+}
+
+.MaskTestContainer .MaskTest:hover
+{
+	opacity-mask-threshold: 100% 20%;
+}
+
+.SignAnimContainer
+{
+	animation-name: Spin;
+	animation-duration: 24s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.MaskTestSignAnim
+{
+	width: 1024px;
+	height: 1024px;
+	margin-right: 32px;
+	background-image: url("s2r://panorama/images/masks/magic_signage_transition_test_01_psd.vtex");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	opacity-mask: url("s2r://panorama/images/masks/magic_signage_transition_test_mask_01_psd.vtex");
+	opacity-mask-threshold: 0% 4%;
+	transition-property: opacity-mask;
+	transition-duration: .5s;
+	blur: gaussian( 10 );
+	animation-name: MaskSignBasic;
+	animation-duration: 6s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+}
+
+.MaskTestSignAnim:hover
+{
+	opacity-mask-threshold: 100% 0%;
+}
+
+@keyframes 'MaskSignBasic'
+{
+	0%
+	{
+		brightness: 1;
+		blur: gaussian(10);
+		transform: rotateZ( -10deg );
+		opacity-mask: url("s2r://panorama/images/masks/magic_signage_transition_test_mask_01_psd.vtex") 1;
+		opacity-mask-threshold: 10% 10%;
+	}
+	
+	6%
+	{
+		brightness: 1;
+		blur: gaussian(10);
+		transform: rotateZ(-10deg );
+		opacity-mask: url("s2r://panorama/images/masks/magic_signage_transition_test_mask_01_psd.vtex") 1;
+		opacity-mask-threshold: 10% 10%;
+	}
+	
+	12%
+	{
+		brightness: 10;
+		blur: gaussian(10);
+		transform: rotateZ( -.1deg );
+		opacity-mask: url("s2r://panorama/images/masks/magic_signage_transition_test_mask_01_psd.vtex") 1;
+		opacity-mask-threshold: 75% 10%;
+	}
+	
+	40%
+	{
+		brightness: 1;
+		blur: gaussian(10);
+		transform: rotateZ( .05deg );
+		opacity-mask: url("s2r://panorama/images/masks/magic_signage_transition_test_mask_01_psd.vtex") 1;
+		opacity-mask-threshold: 70% 20%;
+	}
+	
+	60%
+	{
+		brightness: 1;
+		transform: rotateZ( 0deg );
+		opacity-mask: url("s2r://panorama/images/masks/magic_signage_transition_test_mask_01_psd.vtex") 1;
+		opacity-mask-threshold: 60% 20%;
+	}
+	
+	96%
+	{
+		brightness: 1;
+		transform: rotateZ( -1.05deg );
+		opacity-mask: url("s2r://panorama/images/masks/magic_signage_transition_test_mask_01_psd.vtex") 1;
+		opacity-mask-threshold: 70% 10%;
+	}
+	
+	100%
+	{
+		brightness: .5;
+		transform: rotateZ( 10deg );
+		opacity-mask: url("s2r://panorama/images/masks/magic_signage_transition_test_mask_01_psd.vtex") 1;
+		opacity-mask-threshold: 10% 10%;
+	}
+	
+}
+
+@keyframes 'WiggleUpDown'
+{
+	0%
+	{
+		transform: rotateZ( 2.0deg );
+	}
+	
+	50%
+	{
+		transform: rotateZ( -2.0deg );
+	}
+	
+	100%
+	{
+		transform: rotateZ( 2.0deg );
+	}
+	
+}
+
+@keyframes 'Spin'
+{
+	0%
+	{
+		transform: rotateZ( 0.0deg );
+	}
+	
+	25%
+	{
+		transform: rotateZ( 90.0deg );
+	}
+	
+	50%
+	{
+		transform: rotateZ( 180.0deg );
+	}
+	
+	75%
+	{
+		transform: rotateZ( 270.0deg );
+	}
+	
+	100%
+	{
+		transform: rotateZ( 360.0deg );
+	}
+	
+}
+

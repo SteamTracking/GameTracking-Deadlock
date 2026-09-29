@@ -14,4 +14,12 @@ enum ParticleAttrBoxFlags_t : uint32_t
 	PARTICLE_ATTR_BOX_FLAGS_FROZEN = 16,
 	// MPropertyFriendlyName = "Timed Decay"
 	PARTICLE_ATTR_BOX_FLAGS_TIMED_DECAY = 32,
+	// MPropertyFriendlyName = "Disable Non-Static Collision"
+	PARTICLE_ATTR_BOX_FLAGS_DISABLE_NONSTATIC_COLLISION = 64,
+	// MPropertyFriendlyName = "Decay From Wake"
+	PARTICLE_ATTR_BOX_FLAGS_WAKE_DECAY = 128,
+	// MPropertyFriendlyName = "Motion Disabled"
+	PARTICLE_ATTR_BOX_FLAGS_MOTION_DISABLED = 256,
+	// MPropertyFriendlyName = "Zero Gravity"
+	PARTICLE_ATTR_BOX_FLAGS_ZERO_GRAVITY = 512,
 };

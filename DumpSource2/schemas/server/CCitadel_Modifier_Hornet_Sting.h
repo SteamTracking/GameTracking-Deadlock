@@ -1,4 +1,3 @@
-class CCitadel_Modifier_Hornet_Sting : public CCitadelModifier
+class CCitadel_Modifier_Hornet_Sting : public CCitadelModifier_BleedBase
 {
-	GameTime_t m_flLastTickTime;
 };

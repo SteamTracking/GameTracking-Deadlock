@@ -1,0 +1,3 @@
+class CAudioPitchShiftNodeDesc : public CVAudioNodeBaseDesc
+{
+};

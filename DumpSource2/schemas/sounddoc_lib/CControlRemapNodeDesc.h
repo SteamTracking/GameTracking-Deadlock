@@ -1,0 +1,3 @@
+class CControlRemapNodeDesc : public CVNodeTypeDesc
+{
+};

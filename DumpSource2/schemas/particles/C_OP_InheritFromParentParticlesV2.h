@@ -74,7 +74,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -165,7 +166,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nFieldOutput": 3,
 //	"m_nIncrement":
@@ -241,8 +243,10 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
+//	"m_bSubSample": false,
 //	"m_bRandomDistribution": false,
 //	"m_bReverse": false,
 //	"m_nMissingParentBehavior": "MISSING_PARENT_DO_NOTHING",
@@ -319,7 +323,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	}
 //}
 // MHasKV3TransferPolymorphicClassname
@@ -332,6 +337,8 @@ class C_OP_InheritFromParentParticlesV2 : public CParticleFunctionOperator
 	ParticleAttributeIndex_t m_nFieldOutput;
 	// MPropertyFriendlyName = "particle increment amount"
 	CPerParticleFloatInput m_nIncrement;
+	// MPropertyFriendlyName = "sub-sample parent particles"
+	bool m_bSubSample;
 	// MPropertyFriendlyName = "random parent particle distribution"
 	bool m_bRandomDistribution;
 	// MPropertyFriendlyName = "start at last parent particle in reverse"

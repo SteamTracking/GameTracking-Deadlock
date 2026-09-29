@@ -1,13 +1,13 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/hud_common.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_hud_top_bar.vcss_c" />
-		<include src="s2r://panorama/styles/unit_status_icons.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/hud_common.vcss" />
+		<include src="s2r://panorama/styles/citadel_hud_top_bar.vcss" />
+		<include src="s2r://panorama/styles/unit_status_icons.vcss" />
 	</styles>
 	<CitadelHudTopBar hittest="false">
-		<GlobalClassListener classes="gDetailView gScoreboardOpen" />
+		<GlobalClassListener classes="gDetailView gShopOpen gScoreboardOpen gStreetBrawl gPVE" />
 		<Panel id="GradientBacker" />
 		<Panel class="GameClock">
 			<Label class="GameTime" id="GameTime" text="{s:game_clock}" />
@@ -61,6 +61,7 @@
 					<Image id="StatusEffectImage" />
 					<Panel class="statusEffectImage" />
 				</Panel>
+				<Label id="MidbossTimerLabel" class="midbossTimerLabel" text="{s:midboss_timer}" />
 			</Panel>
 			<Panel id="RejuvenatorEnemy">
 				<Panel class="rejuvIcon" />

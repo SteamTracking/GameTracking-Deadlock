@@ -46,6 +46,7 @@
 //	],
 //	"m_offsetType": "RelativeToCharacter",
 //	"m_samplingMode": "WorldSpace",
+//	"m_alignmentMode": "MovementDirection",
 //	"m_bWarpTranslation": false
 //}
 // MHasKV3TransferPolymorphicClassname
@@ -53,6 +54,7 @@ class CNmGraphDocOrientationWarpNode : public CNmGraphDocFlowNode
 {
 	CNmGraphDocOrientationWarpNode::OffsetType_t m_offsetType;
 	CNmRootMotionData::SamplingMode_t m_samplingMode;
+	CNmOrientationWarpNode::AlignmentMode_t m_alignmentMode;
 	// MPropertyGroupName = "Experimental"
 	// MPropertyDescription = "Should the translation curve change as the orientation is being warped?"
 	bool m_bWarpTranslation;

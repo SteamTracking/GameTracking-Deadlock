@@ -278,6 +278,7 @@
 	Dynamo.JumpLand = 
 	{
 		base = "Base.Footsteps.JumpLand"
+		volume = -3.0
 		track_2.vsnd_track_vol_offset_db = -4.0
 		vsnd_files = 
 		[
@@ -313,79 +314,22 @@
 	}
 	Dynamo.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
-		vsnd_duration = 1.062208
+		base = "Hero.Default.Melee.Swing"
 	}
 	Dynamo.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
-		vsnd_duration = 1.399792
+		base = "Hero.Default.Melee.Charged"
 	}
 	Dynamo.A1.Stomp.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 1.0
 		vsnd_files = "sounds/abilities/dynamo/dynamo_a1_stomp_cast.vsnd"
 		vsnd_duration = 1.933674
 	}
 	Dynamo.A1.Stomp.PreCast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 1.0
 		vsnd_files = "sounds/abilities/dynamo/dynamo_a1_stomp_prestomp.vsnd"
 		vsnd_duration = 0.377075
@@ -403,9 +347,19 @@
 		]
 		vsnd_duration = 1.842562
 	}
+	Dynamo.A1.Stomp.Proj.Lp = 
+	{
+		base = "Base.Ability.Projectile"
+		volume = -1.0
+		volume_fade_out = 0.6
+		volume_fade_in = 0.1
+		delay_rand_min = -4.0
+		vsnd_files = "sounds/abilities/dynamo/dynamo_stomp_proj_lp_01.vsnd"
+		vsnd_duration = 4.687619
+	}
 	Dynamo.A3.Heal.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 6.0
 		vsnd_files = "sounds/abilities/dynamo/a3_heal/dynamo_a3_heal_cast_01.vsnd"
 		vsnd_duration = 2.989751
@@ -437,7 +391,7 @@
 	}
 	Dynamo.A4.Singularity.End = 
 	{
-		base = "Base.Ability.Ult.CC"
+		base = "Base.Ability.Ult"
 		volume = 0.0
 		vsnd_files = "sounds/abilities/dynamo/dynamo_singularity_end.vsnd"
 		vsnd_duration = 5.539909
@@ -458,7 +412,7 @@
 	}
 	Dynamo.A2.Quantum.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		volume_offset_opponent = -3.0
 		vsnd_files = "sounds/abilities/dynamo/dyanmo_a2_quantum_cast.vsnd"
@@ -488,7 +442,7 @@
 	Dynamo.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "dynamo"
+		context_name = "hero_dynamo"
 		vsnd_files = 
 		[
 			"sounds/vo/dynamo/dynamo_win_01.vsnd",
@@ -512,7 +466,7 @@
 	Dynamo.Progession.Page.Lose.VO = 
 	{
 		base = "Base.HeroPick.VO.2d"
-		context_name = "dynamo"
+		context_name = "hero_dynamo"
 		vsnd_files = 
 		[
 			"sounds/vo/dynamo/dynamo_lose_01.vsnd",

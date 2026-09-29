@@ -11,6 +11,7 @@
 //	"m_flPrimaryMuzzleResetTime": 0.500000,
 //	"m_flSecondaryMuzzleResetTime": 0.500000
 //}
+// MPropertyFriendlyName = "Citadel Muzzle Settings"
 class CitadelMuzzleSettings_t
 {
 	CUtlVector< CitadelMuzzle_t > m_vecPrimaryMuzzles;

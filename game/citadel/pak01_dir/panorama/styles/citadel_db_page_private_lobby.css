@@ -7,7 +7,7 @@ CitadelPrivateLobbyPage
 	background-size: 100% 100%;
 	flow-children: right;
 	background-color: #000000;
-	background-image: url("s2r://panorama/images/main_menu/background_nyc_cityscape_bw_psd.vtex");
+	background-color: gray;
 	background-img-opacity: 0.2;
 	background-size: cover;
 	background-position: left;
@@ -65,7 +65,7 @@ CitadelPrivateLobbyPage
 	horizontal-align: center;
 	flow-children: right;
 	margin-top: 40px;
-	height: 610px;
+	height: 530px;
 }
 
 .GameModeBrawl .TeamContainer
@@ -73,13 +73,24 @@ CitadelPrivateLobbyPage
 	height: 420px;
 }
 
+#CorruptedItemShopSpawnTimeSubSection
+{
+	visibility: collapse;
+}
+
+.GameModeNormal #CorruptedItemShopSpawnTimeSubSection
+{
+	visibility: visible;
+}
+
 .OthersContainer
 {
 	margin-top: 5px;
-	height: fit-children;
+	height: fill-parent-flow(1.0);
 	horizontal-align: center;
 	flow-children: down;
 	width: 100%;
+	margin-bottom: 10px;
 }
 
 .LobbyButtons
@@ -120,7 +131,7 @@ CitadelPrivateLobbyPage
 
 .TeamListing
 {
-	height: fill-parent-flow(1.0);
+	height: fit-children;
 	overflow: squish scroll;
 	width: 100%;
 	flow-children: down;
@@ -320,7 +331,7 @@ CitadelPrivateLobbyPage
 	background-size: contain;
 }
 
-.EvaluationBranch #ServerRegionDropdownSubSection
+.IsSteamChina #ServerRegionDropdownSubSection
 {
 	visibility: collapse;
 }

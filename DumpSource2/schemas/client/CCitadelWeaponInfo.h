@@ -1,4 +1,5 @@
 // MGetKV3ClassDefaults = {
+//	"m_eBulletHandlerType": "EBulletHandler_Standard",
 //	"m_flBulletDamage": 0.000000,
 //	"m_eDamageType": "CITADEL_DAMAGETYPE_BULLET",
 //	"m_iBullets": 1,
@@ -46,6 +47,16 @@
 //	"m_flSpinDecayRate": 0.000000,
 //	"m_flBuildUpRate": -1.000000,
 //	"m_bIsSemiAuto": false,
+//	"m_bSemiAutoFireOnRelease": false,
+//	"m_bChargesUp": false,
+//	"m_bChargeWaitForInputRelease": false,
+//	"m_flChargeUpTime": 0.000000,
+//	"m_flChargedBulletDamage": 0.000000,
+//	"m_flChargedExplosionRadius": 0.000000,
+//	"m_flChargedBulletGravityScale": 0.000000,
+//	"m_flChargedBulletSpeed": 0.000000,
+//	"m_flFireAtChargePercent": 0.000000,
+//	"m_iChargedAmmoConsumedPerShot": 0,
 //	"m_flBulletSpeed": 1000.000000,
 //	"m_flBulletSpeedRandomFactor": 0.000000,
 //	"m_flBulletGravityScale": 1.000000,
@@ -54,6 +65,27 @@
 //	"m_flBulletLifetime": 0.000000,
 //	"m_flVerticalAimBias": 0.000000,
 //	"m_flBulletInheritShooterVelocityScale": 0.000000,
+//	"m_bUseBulletGravityScaleCurve": false,
+//	"m_flBulletGravityScaleOverDistance":
+//	{
+//		"m_spline":
+//		[
+//		],
+//		"m_tangents":
+//		[
+//		],
+//		"m_vDomainMins":
+//		[
+//			0.000000,
+//			0.000000
+//		],
+//		"m_vDomainMaxs":
+//		[
+//			0.000000,
+//			0.000000
+//		]
+//	},
+//	"m_flCurveTime": 1.000000,
 //	"m_bCanZoom": true,
 //	"m_flZoomFOV": 70.000000,
 //	"m_flZoomFOV_Relative": -5.000000,
@@ -114,7 +146,9 @@
 //	"m_nRecoilSeed": 0,
 //	"m_szBulletTravelTracerParticle": "particles/weapon_fx/default_tracer.vpcf",
 //	"m_szSelfBulletTravelTracerParticle": "",
+//	"m_flRecycleTime": 0.500000,
 //	"m_szBulletLinkParticle": "",
+//	"m_szChargedBulletTravelTracerParticle": "",
 //	"m_bUseDesatForFriendlyNonHeroTracer": true,
 //	"m_eAttachmentSourceType": "EAttachmentSource_WeaponMuzzles",
 //	"m_strCustomAttachmentSource": "ability_cast",
@@ -145,6 +179,8 @@
 //}
 class CCitadelWeaponInfo
 {
+	// MPropertyDescription = "Bullet Handler Type"
+	EBulletHandlerType_t m_eBulletHandlerType;
 	// MPropertyStartGroup = "Firing Behavior"
 	// MPropertyDescription = "Bullet Damage"
 	float32 m_flBulletDamage;
@@ -258,6 +294,28 @@ class CCitadelWeaponInfo
 	// MPropertyStartGroup = "Firing Behavior/SemiAuto"
 	// MPropertyDescription = "Does this weapon function as semi-auto, i.e you have to release the key to fire again"
 	bool m_bIsSemiAuto;
+	// MPropertyDescription = "If semi auto, does this weapon fire on release?"
+	bool m_bSemiAutoFireOnRelease;
+	// MPropertyStartGroup = "Firing Behavior/Charge"
+	// MPropertyDescription = "Does the weapon charge up as the button is held and fire on release?"
+	bool m_bChargesUp;
+	// MPropertySuppressExpr = "m_bChargesUp == false"
+	bool m_bChargeWaitForInputRelease;
+	// MPropertySuppressExpr = "m_bChargesUp == false"
+	float32 m_flChargeUpTime;
+	// MPropertySuppressExpr = "m_bChargesUp == false"
+	float32 m_flChargedBulletDamage;
+	// MPropertySuppressExpr = "m_bChargesUp == false"
+	float32 m_flChargedExplosionRadius;
+	// MPropertySuppressExpr = "m_bChargesUp == false"
+	float32 m_flChargedBulletGravityScale;
+	// MPropertySuppressExpr = "m_bChargesUp == false"
+	float32 m_flChargedBulletSpeed;
+	// MPropertySuppressExpr = "m_bChargesUp == false"
+	float32 m_flFireAtChargePercent;
+	// MPropertySuppressExpr = "m_bChargesUp == false"
+	// MPropertyDescription = "Additional ammo consumed when firing a fully charged shot."
+	int32 m_iChargedAmmoConsumedPerShot;
 	// MPropertyStartGroup = "Bullet Travel"
 	float32 m_flBulletSpeed;
 	float32 m_flBulletSpeedRandomFactor;
@@ -268,6 +326,12 @@ class CCitadelWeaponInfo
 	float32 m_flVerticalAimBias;
 	// MPropertyDescription = "Scale of how much of the owner's currenty velocity to apply to the bullet (think Tribes discs)"
 	float32 m_flBulletInheritShooterVelocityScale;
+	// MPropertyDescription = "If true, bullet will use this curve to determine its gravity instead of m_flBulletGravityScale"
+	bool m_bUseBulletGravityScaleCurve;
+	// MPropertySuppressExpr = "m_bUseBulletGravityScaleCurve == false"
+	CPiecewiseCurve m_flBulletGravityScaleOverDistance;
+	// MPropertyDescription = "Curved Bullets - How long (seconds) until fully directed at target"
+	float32 m_flCurveTime;
 	// MPropertyStartGroup = "Zoom"
 	// MPropertyDescription = "Do we zoom on right-click?"
 	bool m_bCanZoom;
@@ -339,7 +403,10 @@ class CCitadelWeaponInfo
 	// MPropertyDescription = "Effect to actually fire into the world from this weapon. CP3.X = radius, CP3.Y = fire rate, CP3.Z = DPS."
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_szBulletTravelTracerParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_szSelfBulletTravelTracerParticle;
+	// MPropertyDescription = "Seconds after a bullet stops updating before its tracer can be recycled for a new bullet. Should cover how long the tracer effect lingers after it stops emitting."
+	float32 m_flRecycleTime;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_szBulletLinkParticle;
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_szChargedBulletTravelTracerParticle;
 	bool m_bUseDesatForFriendlyNonHeroTracer;
 	// MPropertyDescription = "What attachments to use when shooting this weapon.  By default we use the gun muzzles of the model.  Change to 'Custom' to allow specifying a custom attachment."
 	EAttachmentSourceType m_eAttachmentSourceType;

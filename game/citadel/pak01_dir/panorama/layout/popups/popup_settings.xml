@@ -1,9 +1,9 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
-		<include src="s2r://panorama/styles/popups/popup_settings.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="SettingsSectionNavigationButton">
@@ -36,6 +36,7 @@
 				<RadioButton id="SearchResultButton" class="SettingSearchResult" group="SearchResults">
 					<Panel class="Background" />
 					<Panel id="SearchResultVisibilityIcon" class="HiddenSettingSearchResultIcon" />
+					<Panel id="SearchResultBaseSettingIcon" class="BaseSettingSearchResultIcon" />
 					<Panel id="NewSettingIndicator" class="SettingsNavigationButtonIndicator" />
 					<Label id="SearchResultName" class="SearchResultButtonText" text="{s:result_name}" html="true" />
 				</RadioButton>
@@ -43,10 +44,10 @@
 		</snippet>
 		<snippet name="NewSettings">
 			<Panel class="SettingsSectionColumn NewSettings">
-				<Panel class="SettingsRow">
+				<Panel class="SettingsRow" acceptsinput="true">
 					<Panel class="SettingsRowBackground Shadow" />
 					<Panel class="SettingsRowBackground NewSetting" />
-					<Panel class="SettingContent">
+					<Panel class="SettingContent" acceptsinput="true">
 						<Panel class="NewSetting">
 							<Panel class="NewSettingIcon" />
 							<Panel class="NewSettingInfo">
@@ -57,13 +58,7 @@
 								<Label class="NewSettingBadge" text="{s:badge_text}" />
 								<Label class="NewSettingDateAdded" text="{s:date}" />
 							</Panel>
-							<Button id="NewSettingDismissButton" class="InputButton Fill IconOnly" onactivate="" onmouseover="UIShowTextTooltipStyled( #citadel_settings_dismiss, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<Panel class="Bottom" />
-								<Panel class="Top" />
-								<Panel class="Content">
-									<Image class="NewSettingDismissIcon" texturewidth="24px" textureheight="24px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/control_icons/24px/x_close.vsvg" />
-								</Panel>
-							</Button>
+							<CitadelButton id="NewSettingDismissButton" class="Medium Fill" imagesrc="s2r://panorama/images/control_icons/24px/x_close.vsvg" onactivate="" onmouseover="UIShowTextTooltipStyled( #citadel_settings_dismiss, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
 						</Panel>
 					</Panel>
 				</Panel>
@@ -75,14 +70,7 @@
 				<Panel id="SectionTitleContainer" class="SettingsSectionTitleContainer LeftRightFlow">
 					<Label class="SettingsSectionTitle" text="{s:section_name}" />
 					<Panel id="ResetButtonPanel" class="ResetButtonContainer">
-						<Button id="ResetSectionButton" class="InputButton Fill Small ResetButton" onmouseout="UIHideTextTooltip()">
-							<Panel class="Bottom" />
-							<Panel class="Top" />
-							<Panel class="Content">
-								<Image class="IconLeft" texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/reset.vsvg" />
-								<Label text="#citadel_settings_reset" />
-							</Panel>
-						</Button>
+						<CitadelButton id="ResetSectionButton" class="Small Fill ResetButton" text="#citadel_settings_reset" imagesrc="s2r://panorama/images/icons/reset.vsvg" onmouseout="UIHideTextTooltip()" />
 					</Panel>
 				</Panel>
 			</Panel>
@@ -93,13 +81,7 @@
 				<Panel class="SettingsSubsectionTitleContainer LeftRightFlow">
 					<Label class="SettingsSectionSubtitle" text="{s:subsection_name}" />
 					<Panel id="ResetButtonPanel" class="ResetButtonContainer">
-						<Button id="ResetSectionButton" class="InputButton Fill Small ResetButton IconOnly" onmouseout="UIHideTextTooltip()">
-							<Panel class="Bottom" />
-							<Panel class="Top" />
-							<Panel class="Content">
-								<Image class="IconCenter" texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/reset.vsvg" />
-							</Panel>
-						</Button>
+						<CitadelButton id="ResetSectionButton" class="Small Fill ResetButton" imagesrc="s2r://panorama/images/icons/reset.vsvg" onmouseout="UIHideTextTooltip()" />
 					</Panel>
 				</Panel>
 				<Panel id="SettingsSubsectionContent" class="SettingsSectionColumnContainer">
@@ -112,17 +94,20 @@
 				<Panel class="HR1px" />
 				<Panel class="SettingsRowBackground Shadow" />
 				<Panel class="SettingsRowBackground" />
+				<Panel id="NewSettingIndicator" class="SettingsRowIndicator" />
 				<Panel id="SettingsRowContent" />
+				<CitadelButton class="XSmall Fill ResetButton SettingsRowResetButton" imagesrc="s2r://panorama/images/icons/reset.vsvg" onmouseover="UIShowTextTooltipStyled( #citadel_settings_reset_row_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
 			</Panel>
 		</snippet>
-		<snippet name="SettingsDropDown">
-			<Panel class="DropDownNew">
-				<Panel id="SettingsDropDownContent" class="DropDownContent NEWDropdown">
-					<Panel class="Background" />
-					<Panel class="Border" />
-					<Panel class="Arrow" />
-					<DropDown class="SettingsDropDown NEWDropdown" />
-				</Panel>
+		<snippet name="HeroSelectorRow">
+			<Panel class="HeroSelectorRow" />
+		</snippet>
+		<snippet name="HeroSelectorButton">
+			<Panel class="HeroButtonPanel">
+				<RadioButton id="HeroButton" class="RadioButtonHero" />
+				<Panel id="UnitHasBindsIndicator" />
+				<Image id="HeroButtonIcon" hittest="false" />
+				<Label id="HeroButtonHeroName" />
 			</Panel>
 		</snippet>
 		<snippet name="ChatWheelMessage">
@@ -137,73 +122,82 @@
 	<PopupSettings class="Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()" onmovedown="CitadelSettingsOnMoveDown()" onmoveup="CitadelSettingsOnMoveUp()">
 		<Panel class="PopupBackground" />
 		<Panel id="SettingsContainer" class="SettingsContainer">
+			<Panel class="WarningMessage LeftRightFlow" id="MissingRequiredKeybindMessage" onmouseover="UIShowTextTooltipStyled( #Hideout_required_keybind_missing_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+				<Image id="MissingRequiredKeybindIcon" texturewidth="24px" textureheight="24px" src="s2r://panorama/images/icons/notification_alert.vsvg" />
+				<Label id="MissingRequiredKeybindTitle" text="#Hideout_required_keybind_missing" />
+			</Panel>
 			<PopupSettingsNavigationContainer id="SettingsNavigationContainer">
-				<Panel id="SettingsNavigationSearchBox">
-					<TextEntry id="SettingsNavigationSearchTextEntry" placeholder="#citadel_settings_search" />
-					<Image id="SettingsNavigationSearchIcon" src="s2r://panorama/images/control_icons/24px/search.vsvg" texturewidth="48px" textureheight="48px" scaling="stretch-to-fit-preserve-aspect" />
-					<Button id="SettingsNavigationSearchClearButton" onactivate="CitadelSettingsClearSearch()" />
+				<Panel id="SettingsNavigationTopRow">
+					<Panel id="SettingsNavigationSearchBox">
+						<TextEntry id="SettingsNavigationSearchTextEntry" placeholder="#citadel_settings_search" />
+						<Image id="SettingsNavigationSearchIcon" src="s2r://panorama/images/control_icons/24px/search.vsvg" texturewidth="48px" textureheight="48px" scaling="stretch-to-fit-preserve-aspect" />
+						<Button id="SettingsNavigationSearchClearButton" onactivate="CitadelSettingsClearSearch()" />
+					</Panel>
+					<Button id="SettingsNavigationShareButton" onactivate="CitadelShowSettingsSharePopup()" new-setting-index="18" onmouseover="UIShowTextTooltipStyled( #citadel_settings_share_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+						<Image id="SettingsNavigationShareIcon" class="IconLeft" texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/share.vsvg" />
+					</Button>
+					<Button id="SettingsNavigationResetPopupButton" onactivate="CitadelShowSettingsResetPopup()" new-setting-index="8">
+						<Image id="SettingsNavigationGlobalResetIcon" class="IconLeft" texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/reset.vsvg" />
+					</Button>
 				</Panel>
+				<PopupSettingsHeroSelector id="SettingsHeroSelectorContainer">
+					<Panel id="SelectedHeroRow">
+						<Panel id="HeroSelectorBanner" hittest="false" />
+						<Panel id="SelectedHeroButtonContainer" class="HeroFilters" onmouseover="UIShowTextTooltipStyled( #citadel_settings_hero_selector_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<Image id="GlobalSettingOverlay" hittest="false" />
+						</Panel>
+						<Panel id="SelectedHeroDetails">
+							<Panel id="HeroSelectorViewMode" hittest="false">
+								<Label id="HeroSelectorViewModeTitle" text="#citadel_settings_view_mode" />
+								<Label id="HeroSelectorViewModeScope" text="{s:selected_hero_name}" />
+							</Panel>
+							<Panel id="HeroSelectorResetContainer" class="ResetButtonContainer">
+								<CitadelButton id="ResetHeroSettingsButton" class="Small Fill ResetButton" imagesrc="s2r://panorama/images/icons/reset.vsvg" onactivate="CitadelClearHeroSettings();" onmouseover="UIShowTextTooltipStyled( #citadel_confirm_reset_keybindings_for_either, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="HeroSelectorExpandPanel">
+						<Panel id="HeroSelectorHeader">
+							<Button id="HeroSelectorCollapseButton" onactivate="CitadelSettingsToggleHeroSelector();" onmouseover="UIShowTextTooltipStyled( #citadel_settings_hero_selector_collapse_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<Image id="HeroSelectorCollapseIcon" hittest="false" scaling="stretch" src="s2r://panorama/images/icons/icon_chevron_down.vsvg" />
+							</Button>
+						</Panel>
+						<Panel id="HeroSelectorScrollPanel">
+							<Panel id="HeroSelector" class="HeroFilters TopBottomFlow" />
+						</Panel>
+					</Panel>
+				</PopupSettingsHeroSelector>
 				<Panel id="SettingsNavigationButtonsContainer" />
 				<Panel id="NoSearchResultsContainer">
-					<Image id="NoSearchResultsImage" scaling="stretch-to-fit-preserve-aspect" />
 					<Label id="NoSearchResultsText" text="{s:no_result}" />
 				</Panel>
-				<Button id="ReloadPageButton" class="DebugButton" onactivate="CitadelReloadSettingsPage()">
-					<Image src="s2r://panorama/images/control_icons/24px/refresh.vsvg" texturewidth="48px" textureheight="48px" scaling="stretch-to-fit-preserve-aspect" />
-					<Label text="Reload Settings" />
-				</Button>
 			</PopupSettingsNavigationContainer>
-			<PopupSettingsSettingsBody id="SettingsBody" acceptsfocus="true">
+			<PopupSettingsSettingsBody id="SettingsBody" acceptsfocus="true" paintfullscrollarea="1">
 				<Panel id="NewSection" class="SettingsSectionContainer AlwaysActiveSection" section="#citadel_settings_new" icon="s2r://panorama/images/control_icons/24px/new_setting.vsvg" exclude_navigation="false">
-					<Panel class="SettingsSectionTitleContainer LeftRightFlow">
+					<Panel class="SettingsSectionTitleContainer LeftRightFlow" acceptsinput="true">
 						<Label class="SettingsSectionTitle" text="#citadel_settings_new" />
+						<Panel id="ResetButtonPanel" class="ResetButtonContainer">
+							<CitadelButton class="Small Fill ResetButton" text="#citadel_settings_clear_all" imagesrc="s2r://panorama/images/control_icons/24px/x_close.vsvg" onactivate="CitadelSettingsClearAllNewSettings()" />
+						</Panel>
 					</Panel>
 					<Panel id="NEWSettings" class="SettingsSectionContainer" section="NEW">
-						<Panel class="SettingsSubsectionContainer">
-							<Panel class="SubsectionBackground NewSettings" />
+						<Panel class="SettingsSubsectionContainer" acceptsinput="true">
+							<Panel class="SubsectionBackground NewSettings" acceptsinput="true" />
 							<Panel class="SettingsSectionColumnContainer NewSettings">
 								<Panel id="NewSettingsContainer" class="SettingsSectionColumn" />
-							</Panel>
-							<Panel class="SectionActions">
-								<Panel class="SettingContent">
-									<Button class="InputButton Fill" onactivate="CitadelSettingsClearAllNewSettings()">
-										<Panel class="Bottom" />
-										<Panel class="Top" />
-										<Panel class="Content">
-											<Label text="#citadel_settings_clear_all" />
-										</Panel>
-									</Button>
-								</Panel>
 							</Panel>
 						</Panel>
 					</Panel>
 				</Panel>
 				<PopupSettingsSettingsSection id="citadel_settings_hotkeys">
-					<PopupSettingsSettingsSubsection id="citadel_settings_hero_specific_hotkeys">
-						<PopupSettingsSettingsRow id="KeybindsSettingsContainer" onmouseover="UIShowTextTooltipStyled( #citadel_Hotkeys_Tooltip_PerUnitHotkeys, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle class="CheckBox RightLeftFlow" id="PerUnitHotkeysCheckBox" text="#citadel_settings_per_unit_hotkeys" onactivate="CitadelSetPerUnitHotKeys();" convar="citadel_per_unit_hotkeys_checked" />
-						</PopupSettingsSettingsRow>
-						<Panel class="SettingsGroup" id="UnitSpecificHotkeys">
-							<PopupSettingsSettingsRow class="RowMedium">
-								<Panel id="HeroSelector" class="HeroFilters TopBottomFlow" />
-							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow>
-								<Image id="SelectedHeroImage" />
-								<Button id="ClearHeroAbilityBindings" class="InputButton Fill" onactivate="CitadelClearHeroHotkeyBindings();" onmouseover="UIShowTextTooltipStyled( #citadel_confirm_reset_keybindings_for_either, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
-									<Panel class="Bottom" />
-									<Panel class="Top" />
-									<Panel class="Content">
-										<Image class="IconLeft" texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/reset.vsvg" />
-										<Label text="#citadel_ClearHeroHotkeyBindings" searchable="true" />
-									</Panel>
-								</Button>
-							</PopupSettingsSettingsRow>
-						</Panel>
-					</PopupSettingsSettingsSubsection>
+					<Button id="KeybindMapButton" class="SectionTitleButton" onactivate="CitadelShowKeybindMapPopup()" new-setting-index="19">
+						<Image id="KeybindMapButtonIcon" texturewidth="80px" textureheight="80px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/keyboard.vsvg" />
+						<Label id="KeybindMapButtonLabel" text="#citadel_keybind_map_button" />
+					</Button>
 					<PopupSettingsSettingsSubsection id="citadel_settings_abilitieskeybinds">
-						<PopupSettingsSettingsRow class="GlobalQuickCastContainer" onmouseover="UIShowTextTooltipStyled( #citadel_settings_quick_cast_global_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+						<PopupSettingsSettingsRow class="DefaultQuickCastContainer" onmouseover="UIShowTextTooltipStyled( #citadel_settings_quick_cast_default_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<Label id="QuickCastDescription" class="SettingLabel AlignVerticalCenter" text="#citadel_settings_quick_cast_global" searchable="true" />
-							<PopupSettingsDropDown id="GlobalQuickCastMode" />
+							<CitadelEnumDropDown id="GlobalQuickCastMode" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="Ability1Binder" bind="Ability1" />
@@ -237,38 +231,31 @@
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_mode_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_alt_cast_mode" searchable="true" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown id="ModeDropDownAltCast" class="NEWDropdown" convar="cl_citadel_ability_alt_cast_mode" onmouseout="UIHideTextTooltip()">
-										<Label text="#citadel_settings_alt_cast_press_and_hold" id="hold" value="0" onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_press_and_hold_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
-										<Label text="#citadel_settings_alt_cast_double_tap" id="doubletap" value="1" onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_double_tap_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
-										<Label text="#citadel_settings_alt_cast_key" id="modifier" value="2" onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_key_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
-									</CitadelSettingsEnumDropDown>
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="ModeDropDownAltCast" onmouseout="UIHideTextTooltip()">
+								<Label text="#citadel_settings_alt_cast_press_and_hold" id="0" value="0" onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_press_and_hold_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+								<Label text="#citadel_settings_alt_cast_double_tap" id="1" value="1" onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_double_tap_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+								<Label text="#citadel_settings_alt_cast_key" id="2" value="2" onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_key_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+							</CitadelEnumDropDown>
 						</PopupSettingsSettingsRow>
 						<Panel id="AltCastSettings" class="SettingsGroup">
-							<PopupSettingsSettingsRow id="AltCastHoldTimeSlider" onmouseover="UIShowTextTooltipStyled( #ccitadel_settings_alt_cast_hold_time_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsSlider text="#citadel_settings_alt_cast_hold_time" convar="cl_citadel_ability_alt_cast_hold_time" min="0.015" max="0.3" percentage="false" displayprecision="2" textentry="true" />
+							<PopupSettingsSettingsRow id="AltCastHoldTimeSlider" hidden-by="ModeDropDownAltCast" onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_hold_time_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsSlider text="#citadel_settings_alt_cast_hold_time" convar="cl_citadel_ability_alt_cast_hold_time" min="0.02" max="0.3" snap="0.01" percentage="false" postfix="#citadel_settings_seconds_postfix" displayprecision="2" textentry="true" />
 							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow id="AltCastDoubleTapWindowSlider" onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_double_tap_window_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsSlider text="#citadel_settings_alt_cast_double_tap_window" convar="cl_citadel_ability_alt_cast_instant_cast_double_tap_timeout" min="0.015" max="0.3" percentage="false" displayprecision="2" textentry="true" />
+							<PopupSettingsSettingsRow id="AltCastDoubleTapWindowSlider" hidden-by="ModeDropDownAltCast" onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_double_tap_window_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsSlider text="#citadel_settings_alt_cast_double_tap_window" convar="cl_citadel_ability_alt_cast_instant_cast_double_tap_timeout" min="0.02" max="0.3" snap="0.01" percentage="false" postfix="#citadel_settings_seconds_postfix" displayprecision="2" textentry="true" />
 							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow id="AltCastKey">
+							<PopupSettingsSettingsRow id="AltCastKey" hidden-by="ModeDropDownAltCast" onmouseover="UIShowTextTooltipStyled( #citadel_settings_alt_cast_key_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 								<CitadelSettingsKeyBinder bind="AltCast" />
 							</PopupSettingsSettingsRow>
 						</Panel>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_itemkeybinds">
-						<PopupSettingsSettingsRow id="ItemQuickCastDropDownContainer">
+						<PopupSettingsSettingsRow id="ItemQuickCastDropDownContainer" onmouseover="UIShowTextTooltipStyled( #citadel_settings_quick_cast_items_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<Panel class="LeftRightFlow SettingLabel">
 								<Image id="ItemQuickCastHeroIcon" />
 								<Label class="AlignVerticalCenter" text="#citadel_settings_quick_cast_items_desc" searchable="true" />
 							</Panel>
-							<PopupSettingsDropDown id="ItemQuickCastDropDown" onmouseout="UIHideTextTooltip()" />
+							<CitadelEnumDropDown id="ItemQuickCastDropDown" onmouseout="UIHideTextTooltip()" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="Item1Binder" bind="Item1" />
@@ -311,10 +298,10 @@
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="CrouchToggleBinder" bind="CrouchToggle" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_move_up, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="MoveUpBinder" bind="MoveUp" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_move_down, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="MoveDownBinder" bind="MoveDown" />
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
@@ -331,7 +318,7 @@
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="MeleeBinder" bind="AbilityMelee" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_held_item, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="HeldItemBinder" bind="HeldItem" />
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
@@ -339,17 +326,20 @@
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="OpenHeroSheetBinder" bind="OpenHeroSheet" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_interact, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="InteractBinder" bind="Interact" new-setting-index="5" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_purchase_quickbuy, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="PurchaseQuickbuyBinder" bind="PurchaseQuickbuy" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_scoreboard, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder text="#citadel_keybind_scoreboard_sheet" id="ScoreboardSheetBinder" bind="Scoreboard" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_extra_info, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="ExtraInfoBinder" bind="ExtraInfo" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_avoid_hero, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="CursorMiddleBinder" bind="CursorMiddle" />
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_communicationkeybinds">
@@ -359,26 +349,90 @@
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="ChatTeamBinder" bind="ChatTeam" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsKeyBinder id="PingBinder" bind="Ping" />
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="PingBinder" bind="Ping" class="ChatWheelBind" new-setting-index="10" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_chat_wheel, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="ChatWheelBinder" bind="MouseWheel" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsPingKeyBinder id="ChatWheelOption1" bind="PingOption1" />
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption1" bind="PingOption1" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption2" bind="PingOption2" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption3" bind="PingOption3" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption4" bind="PingOption4" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption5" bind="PingOption5" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption6" bind="PingOption6" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption7" bind="PingOption7" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption8" bind="PingOption8" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption9" bind="PingOption9" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption10" bind="PingOption10" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption11" bind="PingOption11" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_quick_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsPingKeyBinder id="ChatWheelOption12" bind="PingOption12" new-setting-index="11" />
+						</PopupSettingsSettingsRow>
+					</PopupSettingsSettingsSubsection>
+					<PopupSettingsSettingsSubsection id="citadel_settings_audiokeybinds">
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_togglemute, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="MuteConsoleBinder" bind="ToggleMute" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_chatvoiceteam, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="PushToTalkBinder" bind="PushToTalk" search-alias="citadel_keybind_push_to_talk_search" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_chatvoiceparty, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="PushToTalkPartyBinder" bind="PushToTalkParty" search-alias="citadel_keybind_push_to_talk_party_search" />
+						</PopupSettingsSettingsRow>
+					</PopupSettingsSettingsSubsection>
+					<PopupSettingsSettingsSubsection id="citadel_settings_misckeybinds">
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_pause, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="PauseConsoleBinder" bind="Pause" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_replay_death, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ToggleSpectatorReplayDeathBinder" bind="ReplayDeath" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_teammate_camera, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SwitchPlayerCam1Binder" bind="SwitchPlayerCam1" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_teammate_camera, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SwitchPlayerCam2Binder" bind="SwitchPlayerCam2" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_teammate_camera, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SwitchPlayerCam3Binder" bind="SwitchPlayerCam3" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_teammate_camera, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SwitchPlayerCam4Binder" bind="SwitchPlayerCam4" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_teammate_camera, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SwitchPlayerCam5Binder" bind="SwitchPlayerCam5" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_cosmetic1, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="CosmeticMenuBinder" bind="CosmeticMenu" search-alias="#citadel_keybind_cosmetic1_search" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_reset_camera, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ResetCameraBinder" bind="ResetCamera" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
-							<CitadelSettingsPingKeyBinder id="ChatWheelOption2" bind="PingOption2" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsPingKeyBinder id="ChatWheelOption3" bind="PingOption3" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsPingKeyBinder id="ChatWheelOption4" bind="PingOption4" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsPingKeyBinder id="ChatWheelOption5" bind="PingOption5" />
+							<CitadelSettingsKeyBinder id="DevConsoleBinder" bind="DevConsole" />
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_hideoutkeybinds">
@@ -394,46 +448,13 @@
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="HideoutRejectRequestBinder" bind="HideoutRejectRequest" />
 						</PopupSettingsSettingsRow>
-					</PopupSettingsSettingsSubsection>
-					<PopupSettingsSettingsSubsection id="citadel_settings_audiokeybinds">
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_togglemute, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsKeyBinder id="MuteConsoleBinder" bind="ToggleMute" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_chatvoiceteam, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsKeyBinder id="PushToTalkBinder" bind="PushToTalk" search-alias="citadel_keybind_push_to_talk_search" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_chatvoiceparty, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsKeyBinder id="PushToTalkPartyBinder" bind="PushToTalkParty" search-alias="citadel_keybind_push_to_talk_party_search" />
-						</PopupSettingsSettingsRow>
-					</PopupSettingsSettingsSubsection>
-					<PopupSettingsSettingsSubsection id="citadel_settings_misckeybinds">
 						<PopupSettingsSettingsRow>
-							<CitadelSettingsKeyBinder id="DevConsoleBinder" bind="DevConsole" />
+							<CitadelSettingsKeyBinder id="HideoutCameraInBinder" bind="HideoutCameraIn" new-setting-index="7" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
-							<CitadelSettingsKeyBinder id="PauseConsoleBinder" bind="Pause" />
+							<CitadelSettingsKeyBinder id="HideoutCameraOutBinder" bind="HideoutCameraOut" new-setting-index="7" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsKeyBinder id="ToggleSpectatorReplayDeathBinder" bind="ReplayDeath" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsKeyBinder id="SwitchPlayerCam1Binder" bind="SwitchPlayerCam1" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsKeyBinder id="SwitchPlayerCam2Binder" bind="SwitchPlayerCam2" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsKeyBinder id="SwitchPlayerCam3Binder" bind="SwitchPlayerCam3" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsKeyBinder id="SwitchPlayerCam4Binder" bind="SwitchPlayerCam4" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsKeyBinder id="SwitchPlayerCam5Binder" bind="SwitchPlayerCam5" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsKeyBinder id="ResetCameraBinder" bind="ResetCamera" />
-						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow />
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_spectatorkeybinds">
 						<PopupSettingsSettingsRow>
@@ -442,10 +463,10 @@
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="ToggleSpectatorPrevTargetBinder" bind="SpectatorPrevTarget" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spec_switch_team, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="ToggleSpectatorTeamBinder" bind="ToggleSpectatorTeam" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spec_camera_mode, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="ToggleSpectatorCameraBinder" bind="ToggleSpectatorCamera" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
@@ -460,20 +481,56 @@
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="ToggleSpectatorChaseBinder" bind="SpectatorChase" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spec_free_cursor, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="ToggleFreeCursor" bind="SpectatorToggleFreeCursor" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_minimap_view_both, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="SpectatorFOWTeamBoth" bind="SpectatorFOWTeamBoth" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_minimap_view_amber, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="SpectatorFOWTeamAmber" bind="SpectatorFOWTeamAmber" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_minimap_view_sapphire, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="SpectatorFOWTeamSapphire" bind="SpectatorFOWTeamSapphire" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_minimap_view_target, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="SpectatorFOWTeamTarget" bind="SpectatorFOWTeamTarget" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer1Binder" bind="SpectatorPlayer1" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer2Binder" bind="SpectatorPlayer2" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer3Binder" bind="SpectatorPlayer3" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer4Binder" bind="SpectatorPlayer4" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer5Binder" bind="SpectatorPlayer5" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer6Binder" bind="SpectatorPlayer6" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer7Binder" bind="SpectatorPlayer7" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer8Binder" bind="SpectatorPlayer8" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer9Binder" bind="SpectatorPlayer9" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer10Binder" bind="SpectatorPlayer10" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer11Binder" bind="SpectatorPlayer11" new-setting-index="22" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_spectate_player, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="SpectatorPlayer12Binder" bind="SpectatorPlayer12" new-setting-index="22" />
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_replaykeybinds">
@@ -512,70 +569,63 @@
 							<CitadelSettingsCheckbox class="CommunicationToggle" text="#citadel_settings_communication_allow_text" convar="citadel_allow_spectated_text" />
 							<CitadelSettingsCheckbox class="CommunicationToggle" text="#citadel_settings_communication_allow_pings" convar="citadel_allow_spectated_pings" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow id="SteamTextFilterSection">
+						<PopupSettingsSettingsRow id="SteamTextFilterSection" onmouseover="UIShowTextTooltipStyled( #citadel_settings_steam_text_filter_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_steam_text_filter_title" searchable="true" />
-							<Button class="InputButton Fill" onactivate="CitadelShowSteamTextFilterSettings()">
-								<Panel class="Bottom" />
-								<Panel class="Top" />
-								<Panel class="Content">
-									<Image class="IconLeft" texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/settings_shortcut.vsvg" />
-									<Label text="#citadel_settings_steam_text_filter_new" searchable="true" onactivate="CitadelShowSteamTextFilterSettings()" />
-								</Panel>
-							</Button>
+							<CitadelButton class="Medium Fill" onactivate="CitadelShowSteamTextFilterSettings()">
+								<Image class="ButtonImage IconLeft" texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/settings_shortcut.vsvg" />
+								<Label class="ButtonLabel" text="#citadel_settings_steam_text_filter_new" searchable="true" onactivate="CitadelShowSteamTextFilterSettings()" />
+							</CitadelButton>
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_chatwheel" search-alias="#citadel_settings_chatwheel_search">
 						<PopupSettingsSettingsRow>
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_ping_wheel_slot1" searchable="true" />
-							<PopupSettingsDropDown id="ChatWheelPhraseDropDown0" />
+							<CitadelEnumDropDown id="ChatWheelPhraseDropDown0" convar="ping_wheel_phrase_0" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_ping_wheel_slot2" searchable="true" />
-							<PopupSettingsDropDown id="ChatWheelPhraseDropDown1" />
+							<CitadelEnumDropDown id="ChatWheelPhraseDropDown1" convar="ping_wheel_phrase_1" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_ping_wheel_slot3" searchable="true" />
-							<PopupSettingsDropDown id="ChatWheelPhraseDropDown2" />
+							<CitadelEnumDropDown id="ChatWheelPhraseDropDown2" convar="ping_wheel_phrase_2" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_ping_wheel_slot4" searchable="true" />
-							<PopupSettingsDropDown id="ChatWheelPhraseDropDown3" />
+							<CitadelEnumDropDown id="ChatWheelPhraseDropDown3" convar="ping_wheel_phrase_3" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_ping_wheel_context_slot5_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle id="PingWheelContextualCheckbox" convar="citadel_use_contextual_ping_wheel_option" text="#citadel_settings_ping_wheel_context_slot5" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_ping_wheel_slot5" searchable="true" />
-							<PopupSettingsDropDown id="ChatWheelPhraseDropDown4" />
+							<CitadelEnumDropDown id="ChatWheelPhraseDropDown4" convar="ping_wheel_phrase_4" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_ping_wheel_slot6" searchable="true" />
-							<PopupSettingsDropDown id="ChatWheelPhraseDropDown5" />
+							<CitadelEnumDropDown id="ChatWheelPhraseDropDown5" convar="ping_wheel_phrase_5" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_ping_wheel_slot7" searchable="true" />
-							<PopupSettingsDropDown id="ChatWheelPhraseDropDown6" />
+							<CitadelEnumDropDown id="ChatWheelPhraseDropDown6" convar="ping_wheel_phrase_6" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_ping_wheel_slot8" searchable="true" />
-							<PopupSettingsDropDown id="ChatWheelPhraseDropDown7" />
+							<CitadelEnumDropDown id="ChatWheelPhraseDropDown7" convar="ping_wheel_phrase_7" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_invert_ping_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle id="InvertPings" text="#citadel_settings_chat_invert_ping" convar="citadel_invert_ping_type" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_enable_ping_indicator_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle text="#citadel_enable_ping_indicator" id="HUDPingIndicator" convar="player_ping_indicator_enabled" />
 						</PopupSettingsSettingsRow>
 						<Panel class="SettingsSectionColumnGap" />
 						<Panel class="SettingsSectionColumn ">
 							<Panel id="TopChatWheelPanel">
-								<Button class="ChatWheelButton" id="ChatWheelButton0">
+								<Panel class="ChatWheelButton" id="ChatWheelButton0" acceptsinput="true">
 									<Panel class="ChatWheelButtonContents TopBottomFlow">
 										<Panel class="ChatWheelSoundIcon" />
 										<Label class="SlotNum" text="#citadel_settings_ping_wheel_slot1" />
 										<Label text="{s:chat_wheel_label}" html="true" />
 									</Panel>
-								</Button>
+								</Panel>
 							</Panel>
 							<Panel id="MiddleChatWheelPanel">
 								<Panel class="ChatWheelCompass">
@@ -586,7 +636,7 @@
 									<Panel id="ChatWheelIcon" class="ChatDialogButtonImage" />
 								</Panel>
 								<Panel id="LeftChatWheelContents">
-									<Button class="ChatWheelButton" id="ChatWheelButton7">
+									<Panel class="ChatWheelButton" id="ChatWheelButton7" acceptsinput="true">
 										<Panel class="Border" />
 										<Panel class="Background" />
 										<Panel class="ChatWheelButtonContents">
@@ -594,60 +644,60 @@
 											<Label class="SlotNum" text="#citadel_settings_ping_wheel_slot8" />
 											<Label text="{s:chat_wheel_label}" html="true" />
 										</Panel>
-									</Button>
-									<Button class="ChatWheelButton" id="ChatWheelButton6">
+									</Panel>
+									<Panel class="ChatWheelButton" id="ChatWheelButton6" acceptsinput="true">
 										<Panel class="ChatWheelButtonContents">
 											<Panel class="ChatWheelSoundIcon" />
 											<Label class="SlotNum" text="#citadel_settings_ping_wheel_slot7" />
 											<Label text="{s:chat_wheel_label}" html="true" />
 										</Panel>
-									</Button>
-									<Button class="ChatWheelButton" id="ChatWheelButton5">
+									</Panel>
+									<Panel class="ChatWheelButton" id="ChatWheelButton5" acceptsinput="true">
 										<Panel class="ChatWheelButtonContents">
 											<Panel class="ChatWheelSoundIcon" />
 											<Label class="SlotNum" text="#citadel_settings_ping_wheel_slot6" />
 											<Label text="{s:chat_wheel_label}" html="true" />
 										</Panel>
-									</Button>
+									</Panel>
 								</Panel>
 								<Panel id="RightChatWheelContents">
-									<Button class="ChatWheelButton" id="ChatWheelButton1">
+									<Panel class="ChatWheelButton" id="ChatWheelButton1" acceptsinput="true">
 										<Panel class="ChatWheelButtonContents">
 											<Panel class="ChatWheelSoundIcon" />
 											<Label class="SlotNum" text="#citadel_settings_ping_wheel_slot2" />
 											<Label text="{s:chat_wheel_label}" html="true" />
 										</Panel>
-									</Button>
-									<Button class="ChatWheelButton" id="ChatWheelButton2">
+									</Panel>
+									<Panel class="ChatWheelButton" id="ChatWheelButton2" acceptsinput="true">
 										<Panel class="ChatWheelButtonContents">
 											<Panel class="ChatWheelSoundIcon" />
 											<Label class="SlotNum" text="#citadel_settings_ping_wheel_slot3" />
 											<Label text="{s:chat_wheel_label}" html="true" />
 										</Panel>
-									</Button>
-									<Button class="ChatWheelButton" id="ChatWheelButton3">
+									</Panel>
+									<Panel class="ChatWheelButton" id="ChatWheelButton3" acceptsinput="true">
 										<Panel class="ChatWheelButtonContents">
 											<Panel class="ChatWheelSoundIcon" />
 											<Label class="SlotNum" text="#citadel_settings_ping_wheel_slot4" />
 											<Label text="{s:chat_wheel_label}" html="true" />
 										</Panel>
-									</Button>
+									</Panel>
 								</Panel>
 							</Panel>
 							<Panel id="BottomChatWheelPanel">
-								<Button class="ChatWheelButton NonContextualPingButton" id="ChatWheelButton4">
+								<Panel class="ChatWheelButton NonContextualPingButton" id="ChatWheelButton4" acceptsinput="true">
 									<Panel class="ChatWheelButtonContents">
 										<Panel class="ChatWheelSoundIcon" />
 										<Label class="SlotNum" text="Slot 5" />
 										<Label text="{s:chat_wheel_label}" html="true" />
 									</Panel>
-								</Button>
-								<Button class="ChatWheelButton ContextualPingButton" id="ChatWheelButtonEmpty">
+								</Panel>
+								<Panel class="ChatWheelButton ContextualPingButton" id="ChatWheelButtonEmpty" acceptsinput="true">
 									<Panel class="ChatWheelButtonContents">
-										<Label class="SlotNum" text="Slot 5" />
+										<Label class="SlotNum" text="#citadel_settings_ping_wheel_slot5" />
 										<Label text="#citadel_settings_contextual_slot" html="true" />
 									</Panel>
-								</Button>
+								</Panel>
 							</Panel>
 						</Panel>
 					</PopupSettingsSettingsSubsection>
@@ -656,10 +706,10 @@
 					<PopupSettingsSettingsSubsection id="citadel_settings_display">
 						<PopupSettingsSettingsRow>
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_display_device" searchable="true" />
-							<PopupSettingsDropDown id="DisplayDropDown" />
+							<CitadelDropDown id="DisplayDropDown" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
-							<CitadelSettingsToggle id="CustomResolutionToggle" class="RightLeftFlow" onactivate="CitadelToggleCustomResolution();" text="#citadel_settings_customresolution" />
+							<CitadelSettingsToggle id="CustomResolutionToggle" class="RightLeftFlow" onactivate="CitadelToggleCustomResolution();" text="#citadel_settings_customresolution" defaultvalue="false" />
 						</PopupSettingsSettingsRow>
 						<Panel class="SettingsGroup" id="CustomVideoResolution">
 							<PopupSettingsSettingsRow>
@@ -672,46 +722,42 @@
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow id="ResolutionPanel">
 								<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_resolution_size" searchable="true" />
-								<PopupSettingsDropDown id="ResolutionDropDown" />
+								<CitadelDropDown id="ResolutionDropDown" />
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow id="DisplayModePanel">
 								<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_resolution_display_mode" searchable="true" />
-								<PopupSettingsDropDown id="DisplayModeDropDown">
+								<CitadelDropDown id="DisplayModeDropDown">
 									<Label id="fullscreen" text="#citadel_settings_fullscreen" Fullscreen="1" />
 									<Label id="coop_fullscreen" text="#citadel_settings_coop_fullscreen" CoopFullscreen="1" />
 									<Label id="window" text="#citadel_settings_window" />
 									<Label id="no_border" text="#citadel_settings_borderless" NoBorder="1" />
-								</PopupSettingsDropDown>
+								</CitadelDropDown>
 							</PopupSettingsSettingsRow>
 						</Panel>
-						<PopupSettingsSettingsRow id="FullscreenBrightness">
-							<CitadelSettingsSlider convar="r_fullscreen_gamma" min="1.6" max="2.6" percentage="true" mindisplaypercentage="50" invert="true" text="#citadel_settings_fullscreenbrightness" />
+						<PopupSettingsSettingsRow id="FullscreenBrightness" hidden-by="DisplayModeDropDown">
+							<CitadelSettingsSlider convar="r_fullscreen_gamma" min="1.6" max="2.6" percentage="true" mindisplaypercentage="50" invert="true" text="#citadel_settings_fullscreenbrightness" textentry="true" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow>
-							<Button id="ApplyResolutionButton" class="InputButton Fill" onactivate="CitadelApplyResolutionChoice()">
-								<Panel class="Bottom" />
-								<Panel class="Top" />
-								<Panel class="Content">
-									<Label text="#citadel_settings_apply" searchable="true" />
-								</Panel>
-							</Button>
+							<CitadelButton id="ApplyResolutionButton" class="Medium Fill" onactivate="CitadelApplyResolutionChoice()">
+								<Label class="ButtonLabel" text="#citadel_settings_apply" searchable="true" />
+							</CitadelButton>
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_rendering" search-alias="#citadel_settings_rendering_search">
 						<PopupSettingsSettingsRow>
-							<CitadelSettingsToggle id="CustomGraphicsToggle" class="RightLeftFlow" onactivate="CitadelToggleCustomGraphics();" text="#citadel_settings_advancedvideosettings" />
+							<CitadelSettingsToggle id="CustomGraphicsToggle" class="RightLeftFlow" onactivate="CitadelToggleCustomGraphics();" text="#citadel_settings_advancedvideosettings" defaultvalue="false" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow id="BasicVideo">
-							<CitadelSettingsEnum class="HorizontalEnum" convar="citadel_video_preset" text="#citadel_settings_videopreset" id="VideoPresets" onactivate="CitadelSetGraphicsLevel();">
+						<PopupSettingsSettingsRow id="BasicVideo" hidden-by="CustomGraphicsToggle">
+							<CitadelSettingsEnum class="HorizontalEnum VideoPreview" convar="citadel_video_preset" text="#citadel_settings_videopreset" id="VideoPresets" onactivate="CitadelSetGraphicsLevel();">
 								<RadioButton text="#citadel_settings_videopreset_low" value="0" class="EnumButton" id="PresetLow" group="videopreset" />
 								<RadioButton text="#citadel_settings_videopreset_med" value="1" class="EnumButton" id="PresetMedium" group="videopreset" />
 								<RadioButton text="#citadel_settings_videopreset_high" value="2" class="EnumButton" id="PresetHigh" group="videopreset" />
 								<RadioButton text="#citadel_settings_videopreset_ultra" value="3" class="EnumButton" id="PresetUltra" group="videopreset" />
 							</CitadelSettingsEnum>
 						</PopupSettingsSettingsRow>
-						<Panel id="AdvancedVideo" class="SettingsGroup">
-							<PopupSettingsSettingsRow id="AdvancedVideo" onmouseover="UIShowTextTooltipStyled( #citadel_settings_upscaling_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsEnum class="HorizontalEnum" convar="r_citadel_upscaling" text="#citadel_settings_upscaling" id="UpscalingTechnologyEnum" onactivate="CitadelUpscalingValueChanged();">
+						<Panel id="AdvancedVideo" class="SettingsGroup" hidden-by="CustomGraphicsToggle">
+							<PopupSettingsSettingsRow id="AdvancedVideo" hidden-by="CustomGraphicsToggle" onmouseover="UIShowTextTooltipStyled( #citadel_settings_upscaling_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsEnum class="HorizontalEnum VideoPreview" convar="r_citadel_upscaling" text="#citadel_settings_upscaling" id="UpscalingTechnologyEnum" onactivate="CitadelUpscalingValueChanged();">
 									<RadioButton text="#citadel_settings_upscaling_none" value="0" class="EnumButton" id="UpscalingNone" group="upscaling" />
 									<RadioButton text="#citadel_settings_upscaling_fsr" value="1" class="EnumButton" id="UpscalingFSR" group="upscaling" />
 									<RadioButton text="#citadel_settings_upscaling_fsr2" value="2" class="EnumButton" id="UpscalingFSR2" group="upscaling" />
@@ -719,19 +765,19 @@
 									<RadioButton text="#citadel_settings_upscaling_dlss" value="4" class="EnumButton" id="UpscalingDLSS" group="upscaling" />
 								</CitadelSettingsEnum>
 							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_renderquality_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsSlider id="RenderQuality" convar="mat_viewportscale" min="0.4" max="1.0" percentage="true" text="#citadel_settings_renderquality" textentry="true" />
+							<PopupSettingsSettingsRow hidden-by="UpscalingTechnologyEnum" onmouseover="UIShowTextTooltipStyled( #citadel_settings_renderquality_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsSlider id="RenderQuality" class="VideoPreview" convar="mat_viewportscale" min="0.4" max="1.0" snap="0.01" percentage="true" text="#citadel_settings_renderquality" textentry="true" />
 							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_fsr2scaling_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsEnum class="HorizontalEnum" convar="mat_viewportscale" text="#citadel_settings_fsr2scaling" id="RenderQualityFSR2Enum">
+							<PopupSettingsSettingsRow hidden-by="UpscalingTechnologyEnum" onmouseover="UIShowTextTooltipStyled( #citadel_settings_fsr2scaling_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsEnum class="HorizontalEnum VideoPreview" convar="mat_viewportscale" text="#citadel_settings_fsr2scaling" id="RenderQualityFSR2Enum">
 									<RadioButton text="#citadel_settings_fsr2scaling_native" value="1.000000" class="EnumButton" id="Fsr2ScalingNative" group="renderqualityfsr2" />
 									<RadioButton text="#citadel_settings_fsr2scaling_quality" value="0.666667" class="EnumButton" id="Fsr2ScalingQuality" group="renderqualityfsr2" />
 									<RadioButton text="#citadel_settings_fsr2scaling_balanced" value="0.588235" class="EnumButton" id="Fsr2ScalingBalanced" group="renderqualityfsr2" />
 									<RadioButton text="#citadel_settings_fsr2scaling_performance" value="0.500000" class="EnumButton" id="Fsr2ScalingPerformance" group="renderqualityfsr2" />
 								</CitadelSettingsEnum>
 							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_dlssscaling_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsEnum class="HorizontalEnum" convar="r_citadel_dlss_settings_mode" text="#citadel_settings_dlssscaling" id="RenderQualityDLSSEnum" onactivate="CitadelUpscalingValueChanged();">
+							<PopupSettingsSettingsRow hidden-by="UpscalingTechnologyEnum" onmouseover="UIShowTextTooltipStyled( #citadel_settings_dlssscaling_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsEnum class="HorizontalEnum VideoPreview" convar="r_citadel_dlss_settings_mode" text="#citadel_settings_dlssscaling" id="RenderQualityDLSSEnum" onactivate="CitadelUpscalingValueChanged();">
 									<RadioButton text="#citadel_settings_dlssscaling_DLAA" value="4" class="EnumButton" id="DLSSScalingDLAA" group="renderqualitydlss" />
 									<RadioButton text="#citadel_settings_dlssscaling_quality" value="3" class="EnumButton" id="DLSSScalingQuality" group="renderqualitydlss" />
 									<RadioButton text="#citadel_settings_dlssscaling_balanced" value="2" class="EnumButton" id="DLSSScalingBalanced" group="renderqualitydlss" />
@@ -739,26 +785,26 @@
 									<RadioButton text="#citadel_settings_dlssscaling_auto" value="0" class="EnumButton" id="DLSSScalingAuto" group="renderqualitydlss" />
 								</CitadelSettingsEnum>
 							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_dlsstechnology_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsEnum class="HorizontalEnum" convar="r_dlss_preset" text="#citadel_settings_dlsstechnology" id="RenderQualityDLSSTechnology">
+							<PopupSettingsSettingsRow hidden-by="UpscalingTechnologyEnum" onmouseover="UIShowTextTooltipStyled( #citadel_settings_dlsstechnology_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsEnum class="HorizontalEnum VideoPreview" convar="r_dlss_preset" text="#citadel_settings_dlsstechnology" id="RenderQualityDLSSTechnology">
 									<RadioButton text="#citadel_settings_dlsstechnology_cnn" value="6" class="EnumButton" id="DLSSTechnologyCNN" group="dlsstechnology" />
 									<RadioButton text="#citadel_settings_dlsstechnology_transformer" value="10" class="EnumButton" id="DLSSTechnologyTransformer" group="dlsstechnology" />
 								</CitadelSettingsEnum>
 							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_fsr_rcas_sharpness_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsSlider id="FsrRcasSharpness" convar="r_citadel_fsr_rcas_sharpness" min="0.0" max="1.0" percentage="true" text="#citadel_settings_fsr_rcas_sharpness" textentry="true" />
+							<PopupSettingsSettingsRow hidden-by="UpscalingTechnologyEnum" onmouseover="UIShowTextTooltipStyled( #citadel_settings_fsr_rcas_sharpness_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsSlider id="FsrRcasSharpness" class="VideoPreview" convar="r_citadel_fsr_rcas_sharpness" min="0.0" max="1.0" snap="0.01" percentage="true" text="#citadel_settings_fsr_rcas_sharpness" textentry="true" />
 							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_fsr2_sharpness_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsSlider id="Fsr2Sharpness" convar="r_citadel_fsr2_sharpness" min="0.0" max="1.0" percentage="true" text="#citadel_settings_fsr2_sharpness" textentry="true" />
+							<PopupSettingsSettingsRow hidden-by="UpscalingTechnologyEnum" onmouseover="UIShowTextTooltipStyled( #citadel_settings_fsr2_sharpness_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsSlider id="Fsr2Sharpness" class="VideoPreview" convar="r_citadel_fsr2_sharpness" min="0.0" max="1.0" snap="0.01" percentage="true" text="#citadel_settings_fsr2_sharpness" textentry="true" />
 							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_antialiasing_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsEnum class="HorizontalEnum" convar="r_citadel_antialiasing" text="#citadel_settings_antialiasing" id="AntiAliasingEnum">
+							<PopupSettingsSettingsRow hidden-by="UpscalingTechnologyEnum" onmouseover="UIShowTextTooltipStyled( #citadel_settings_antialiasing_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsEnum class="HorizontalEnum VideoPreview" convar="r_citadel_antialiasing" text="#citadel_settings_antialiasing" id="AntiAliasingEnum">
 									<RadioButton text="#citadel_settings_antialiasing_none" value="0" class="EnumButton" id="AntialiasingNone" group="antialiasing" />
 									<RadioButton text="#citadel_settings_antialiasing_fxaa" value="1" class="EnumButton" id="AntialiasingFXAA" group="antialiasing" />
 								</CitadelSettingsEnum>
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_ssao_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsEnum class="HorizontalEnum" convar="r_citadel_ssao_quality" text="#citadel_settings_ssao" id="SsaoQualityEnum">
+								<CitadelSettingsEnum class="HorizontalEnum VideoPreview" convar="r_citadel_ssao_quality" text="#citadel_settings_ssao" id="SsaoQualityEnum">
 									<RadioButton text="#citadel_settings_ssao_quality_off" value="0" id="SSaoQualityOff" group="ssaoquality" />
 									<RadioButton text="#citadel_settings_ssao_quality_low" value="1" id="SsaoQualityLow" group="ssaoquality" />
 									<RadioButton text="#citadel_settings_ssao_quality_med" value="2" id="SsaoQualityMed" group="ssaoquality" />
@@ -766,15 +812,8 @@
 									<RadioButton text="#citadel_settings_ssao_quality_ultra" value="4" id="SsaoQualityUltra" group="ssaoquality" />
 								</CitadelSettingsEnum>
 							</PopupSettingsSettingsRow>
-							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_dfao_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsEnum class="HorizontalEnum" convar="r_citadel_distancefield_ao_quality" text="#citadel_settings_dfao" id="DfaoQualityEnum">
-									<RadioButton text="#citadel_settings_dfao_quality_off" value="0" class="EnumButton" id="DfaoQualityOff" group="dfaoquality" />
-									<RadioButton text="#citadel_settings_dfao_quality_low" value="1" class="EnumButton" id="DfaoQualityLow" group="dfaoquality" />
-									<RadioButton text="#citadel_settings_dfao_quality_high" value="2" class="EnumButton" id="DfaoQualityHigh" group="dfaoquality" />
-								</CitadelSettingsEnum>
-							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_shadow_quality_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsEnum class="HorizontalEnum" convar="r_citadel_shadow_quality" text="#citadel_settings_shadow_quality" id="ShadowQualityEnum">
+								<CitadelSettingsEnum class="HorizontalEnum VideoPreview" convar="r_citadel_shadow_quality" text="#citadel_settings_shadow_quality" id="ShadowQualityEnum">
 									<RadioButton text="#citadel_settings_shadow_quality_low" value="0" class="EnumButton" id="ShadowQualityLow" group="shadowquality" />
 									<RadioButton text="#citadel_settings_shadow_quality_med" value="1" class="EnumButton" id="ShadowQualityMed" group="shadowquality" />
 									<RadioButton text="#citadel_settings_shadow_quality_high" value="2" class="EnumButton" id="ShadowQualityHigh" group="shadowquality" />
@@ -782,35 +821,35 @@
 								</CitadelSettingsEnum>
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_fogquality_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsEnum class="HorizontalEnum" convar="r_citadel_fog_quality" text="#citadel_settings_fogquality" id="FogEnum">
+								<CitadelSettingsEnum class="HorizontalEnum VideoPreview" convar="r_citadel_fog_quality" text="#citadel_settings_fogquality" id="FogEnum">
 									<RadioButton text="#citadel_settings_fogquality_low" value="0" class="EnumButton" id="TextureQualityLow" group="fogquality" />
 									<RadioButton text="#citadel_settings_fogquality_high" value="1" class="EnumButton" id="TextureQualityHigh" group="fogquality" />
 								</CitadelSettingsEnum>
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_texturequality_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsEnum class="HorizontalEnum" convar="r_texture_stream_mip_bias" text="#citadel_settings_texturequality" id="TextureEnum">
+								<CitadelSettingsEnum class="HorizontalEnum VideoPreview" convar="r_texture_stream_mip_bias" text="#citadel_settings_texturequality" id="TextureEnum">
 									<RadioButton text="#citadel_settings_texturequality_low" value="2" class="EnumButton" id="TextureQualityLow" group="texturequality" />
 									<RadioButton text="#citadel_settings_texturequality_med" value="1" class="EnumButton" id="TextureQualityMed" group="texturequality" />
 									<RadioButton text="#citadel_settings_texturequality_high" value="0" class="EnumButton" id="TextureQualityHigh" group="texturequality" />
 								</CitadelSettingsEnum>
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_post_bloom_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsToggle convar="r_post_bloom" text="#citadel_settings_post_bloom" />
+								<CitadelSettingsToggle class="VideoPreview" convar="r_post_bloom" text="#citadel_settings_post_bloom" />
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_effects_bloom_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsToggle convar="r_effects_bloom" text="#citadel_settings_effects_bloom" />
+								<CitadelSettingsToggle class="VideoPreview" convar="r_effects_bloom" text="#citadel_settings_effects_bloom" />
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_vsync_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsToggle class="CheckBox" id="VSyncToggle" text="#citadel_settings_vsync" onactivate="CitadelSetVSync();" />
+								<CitadelSettingsToggle class="CheckBox VideoPreview" id="VSyncToggle" text="#citadel_settings_vsync" onactivate="CitadelSetVSync();" />
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_area_lights_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsToggle convar="r_arealights" text="#citadel_settings_area_lights" />
+								<CitadelSettingsToggle class="VideoPreview" convar="r_arealights" text="#citadel_settings_area_lights" />
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_depth_of_field_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsToggle convar="r_depth_of_field" text="#citadel_settings_depth_of_field" />
+								<CitadelSettingsToggle class="VideoPreview" convar="r_depth_of_field" text="#citadel_settings_depth_of_field" />
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_fps_max_tip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsSlider id="FpsMaxSlider" convar="fps_max" min="60" max="1000" snap="1" disableifoutofrange="true" text="#citadel_settings_fps_max" textentry="true" />
+								<CitadelSettingsSlider id="FpsMaxSlider" convar="fps_max" min="60" max="1000" snap="1" disableifoutofrange="true" postfix="#citadel_settings_fps_postfix" text="#citadel_settings_fps_max" textentry="true" />
 							</PopupSettingsSettingsRow>
 						</Panel>
 					</PopupSettingsSettingsSubsection>
@@ -818,168 +857,113 @@
 						<PopupSettingsSettingsRow class="SettingsRowInfo" onmouseover="UIShowTextTooltipStyled( #citadel_settings_render_system_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_render_system" searchable="true" />
 							<Label class="SettingLabel AlignVerticalCenter" id="RenderSystemCurrent" searchable="true" />
-							<Panel class="DropDownNew" id="RenderSystemOptions">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<DropDown class="NEWDropdown" id="RenderSystemDropDown" />
-								</Panel>
-							</Panel>
+							<CitadelDropDown id="RenderSystemOptions" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow id="LowLatencyPanel" onmouseover="UIShowTextTooltipStyled( #citadel_settings_low_latency_tip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" id="LowLatencyLabel" text="#citadel_settings_low_latency" searchable="true" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown id="LowLatencyDropDown" class="NEWDropdown" convar="r_low_latency">
-										<Label text="#citadel_settings_lowlatency_off" id="off" value="0" onmouseover="UIShowTextTooltipStyled( #citadel_settings_low_latency_tooltip_off, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()" />
-										<Label text="#citadel_settings_lowlatency_on" id="on" value="1" onmouseover="UIShowTextTooltipStyled( #citadel_settings_low_latency_tooltip_on, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()" />
-										<Label text="#citadel_settings_lowlatency_boost" id="boost" value="2" onmouseover="UIShowTextTooltipStyled( #citadel_settings_low_latency_tooltip_boost, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()" />
-									</CitadelSettingsEnumDropDown>
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="LowLatencyDropDown" convar="r_low_latency">
+								<Label text="#citadel_settings_lowlatency_off" id="off" value="0" onmouseover="UIShowTextTooltipStyled( #citadel_settings_low_latency_tooltip_off, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()" />
+								<Label text="#citadel_settings_lowlatency_on" id="on" value="1" onmouseover="UIShowTextTooltipStyled( #citadel_settings_low_latency_tooltip_on, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()" />
+								<Label text="#citadel_settings_lowlatency_boost" id="boost" value="2" onmouseover="UIShowTextTooltipStyled( #citadel_settings_low_latency_tooltip_boost, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()" />
+							</CitadelEnumDropDown>
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow id="GSyncPanel" class="SettingsRowInfo" onmouseover="UIShowTextTooltipStyled( #citadel_settings_gsync_info, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" searchable="true">
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_gsync" searchable="true" />
 							<Label class="SettingLabel AlignVerticalCenter" id="GSyncStatus" />
 						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow id="21x9HUDClampRow" hidden-by="21x9Button" onmouseover="UIShowTextTooltipStyled( #citadel_settings_219_clamp_HUD_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle id="21x9HUDClamp" text="#citadel_settings_219_clamp_HUD" convar="citadel_21x9_clamp_hud" onactivate="CitadelSetHUDClampingBehavior();" new-setting-index="12" />
+						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_fullscreen_focus_behavior_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle id="FullscreenFocusBehaviorButton" class="CheckBox Hide" text="#citadel_settings_fullscreen_focus_behavior" onactivate="CitadelSetFullscreenFocusBehavior();" />
+							<CitadelSettingsToggle id="FullscreenFocusBehaviorButton" text="#citadel_settings_fullscreen_focus_behavior" onactivate="CitadelSetFullscreenFocusBehavior();" defaultvalue="false" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_light_sensitivity_mode_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle convar="r_light_sensitivity_mode" text="#citadel_settings_light_sensitivity_mode" search-alias="#citadel_settings_light_sensitivity_mode_search" />
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_video_preview_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle id="PreviewVideoChangesButton" convar="citadel_preview_video_settings_changes" text="#citadel_settings_video_preview" onactivate="CitadelTogglePreviewVideoChanges()" new-setting-index="6" />
 						</PopupSettingsSettingsRow>
+						<Panel class="SettingsGroup" id="DurationSliderPanel">
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_video_preview_time_desc, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsSlider id="ChangePreviewDurationSlider" convar="citadel_preview_video_settings_duration" min="2" max="10.0" snap="0.1" displayprecision="1" disableifoutofrange="true" postfix="#citadel_settings_seconds_postfix" text="#citadel_settings_video_preview_time" textentry="true" />
+							</PopupSettingsSettingsRow>
+						</Panel>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_fps_max_ui_tip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsSlider id="FpsMaxUISlider" convar="fps_max_ui" min="60" max="1000" snap="1" class="compressed" disableifoutofrange="true" text="#citadel_settings_fps_max_ui" textentry="true" />
+							<CitadelSettingsSlider id="FpsMaxUISlider" convar="fps_max_ui" min="60" max="1000" snap="1" class="compressed" disableifoutofrange="true" postfix="#citadel_settings_fps_postfix" text="#citadel_settings_fps_max_ui" textentry="true" />
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="Citadel_Settings_Telemetry_SectionHeader">
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #Citadel_Settings_HudTelemetry_FrameTime_Info , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#Citadel_Settings_HudTelemetry_FrameTime" searchable="true" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown class="NEWDropdown" convar="cl_hud_telemetry_frametime_show">
-										<Label id="hudtelemetryshowframetime0" value="0" text="#Citadel_Settings_HudTelemetry_Show_Never" />
-										<Label id="hudtelemetryshowframetime1" value="1" text="#Citadel_Settings_HudTelemetry_Show_OnlyInPoorConditions" />
-										<Label id="hudtelemetryshowframetime2" value="2" text="#Citadel_Settings_HudTelemetry_Show_Always" />
-									</CitadelSettingsEnumDropDown>
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="TelemetryFrameTimeDropDown" convar="cl_hud_telemetry_frametime_show">
+								<Label id="hudtelemetryshowframetime0" value="0" text="#Citadel_Settings_HudTelemetry_Show_Never" />
+								<Label id="hudtelemetryshowframetime1" value="1" text="#Citadel_Settings_HudTelemetry_Show_OnlyInPoorConditions" />
+								<Label id="hudtelemetryshowframetime2" value="2" text="#Citadel_Settings_HudTelemetry_Show_Always" />
+							</CitadelEnumDropDown>
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #Citadel_Settings_HudTelemetry_FrameTimePoor_Info , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsSlider id="TelemetryFrametimePoor" text="#Citadel_Settings_HudTelemetry_FrameTimePoor" convar="cl_hud_telemetry_frametime_poor" max="100" min="1" displayprecision="0" textentry="true" />
+							<CitadelSettingsSlider id="TelemetryFrametimePoor" text="#Citadel_Settings_HudTelemetry_FrameTimePoor" convar="cl_hud_telemetry_frametime_poor" max="100" min="1" postfix="#citadel_settings_milliseconds_postfix" displayprecision="0" textentry="true" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #Citadel_Settings_HudTelemetry_Ping_Info , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#Citadel_Settings_HudTelemetry_Ping" searchable="true" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown class="NEWDropdown" convar="cl_hud_telemetry_ping_show">
-										<Label id="hudtelemetryshowping0" value="0" text="#Citadel_Settings_HudTelemetry_Show_Never" />
-										<Label id="hudtelemetryshowping1" value="1" text="#Citadel_Settings_HudTelemetry_Show_OnlyInPoorConditions" />
-										<Label id="hudtelemetryshowping2" value="2" text="#Citadel_Settings_HudTelemetry_Show_Always" />
-									</CitadelSettingsEnumDropDown>
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="TelemetryPingDropDown" convar="cl_hud_telemetry_ping_show">
+								<Label id="hudtelemetryshowping0" value="0" text="#Citadel_Settings_HudTelemetry_Show_Never" />
+								<Label id="hudtelemetryshowping1" value="1" text="#Citadel_Settings_HudTelemetry_Show_OnlyInPoorConditions" />
+								<Label id="hudtelemetryshowping2" value="2" text="#Citadel_Settings_HudTelemetry_Show_Always" />
+							</CitadelEnumDropDown>
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #Citadel_Settings_HudTelemetry_NetworkMissedTicks_Info , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#Citadel_Settings_HudTelemetry_NetworkMissedTicks" searchable="true" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown class="NEWDropdown" convar="cl_hud_telemetry_net_misdelivery_show">
-										<Label id="hudtelemetryshowmissedticks0" value="0" text="#Citadel_Settings_HudTelemetry_Show_Never" />
-										<Label id="hudtelemetryshowmissedticks1" value="1" text="#Citadel_Settings_HudTelemetry_Show_OnlyInPoorConditions" />
-										<Label id="hudtelemetryshowmissedticks2" value="2" text="#Citadel_Settings_HudTelemetry_Show_Always" />
-									</CitadelSettingsEnumDropDown>
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="TelemetryNetMisdeliveryDropDown" convar="cl_hud_telemetry_net_misdelivery_show">
+								<Label id="hudtelemetryshowmissedticks0" value="0" text="#Citadel_Settings_HudTelemetry_Show_Never" />
+								<Label id="hudtelemetryshowmissedticks1" value="1" text="#Citadel_Settings_HudTelemetry_Show_OnlyInPoorConditions" />
+								<Label id="hudtelemetryshowmissedticks2" value="2" text="#Citadel_Settings_HudTelemetry_Show_Always" />
+							</CitadelEnumDropDown>
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #Citadel_Settings_HudTelemetry_NetworkMissedTicksPoor_Info , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsSlider id="TelemetryNetworkMissedTicksPoor" text="#Citadel_Settings_HudTelemetry_NetworkMissedTicksPoor" convar="cl_hud_telemetry_net_misdelivery_poor" max="2" min="0" displayprecision="1" textentry="true" />
+							<CitadelSettingsSlider id="TelemetryNetworkMissedTicksPoor" text="#Citadel_Settings_HudTelemetry_NetworkMissedTicksPoor" convar="cl_hud_telemetry_net_misdelivery_poor" max="2" min="0" postfix="#citadel_settings_slider_percentage" displayprecision="1" textentry="true" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #Citadel_Settings_HudTelemetry_NetworkQualityGraph_Info , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#Citadel_Settings_HudTelemetry_NetworkQualityGraph" searchable="true" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown class="NEWDropdown" convar="cl_hud_telemetry_net_quality_graph_show">
-										<Label id="hudtelemetryshownetqualitygraph0" value="0" text="#Citadel_Settings_HudTelemetry_Show_Never" />
-										<Label id="hudtelemetryshownetqualitygraph1" value="1" text="#Citadel_Settings_HudTelemetry_Show_OnlyInPoorConditions" />
-										<Label id="hudtelemetryshownetqualitygraph2" value="2" text="#Citadel_Settings_HudTelemetry_Show_Always" />
-									</CitadelSettingsEnumDropDown>
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="TelemetryNetQualityGraphDropDown" convar="cl_hud_telemetry_net_quality_graph_show">
+								<Label id="hudtelemetryshownetqualitygraph0" value="0" text="#Citadel_Settings_HudTelemetry_Show_Never" />
+								<Label id="hudtelemetryshownetqualitygraph1" value="1" text="#Citadel_Settings_HudTelemetry_Show_OnlyInPoorConditions" />
+								<Label id="hudtelemetryshownetqualitygraph2" value="2" text="#Citadel_Settings_HudTelemetry_Show_Always" />
+							</CitadelEnumDropDown>
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #Citadel_Settings_HudTelemetry_NetworkQualityDetailed_Info , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#Citadel_Settings_HudTelemetry_NetworkQualityDetailed" searchable="true" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown class="NEWDropdown telemetryBottomMargin" convar="cl_hud_telemetry_net_detailed">
-										<Label id="hudtelemetryshownetqualitygraph0" value="0" text="#Citadel_Settings_HudTelemetry_Show_Never" />
-										<Label id="hudtelemetryshownetqualitygraph1" value="1" text="#Citadel_Settings_HudTelemetry_Show_OnlyInPoorConditions" />
-										<Label id="hudtelemetryshownetqualitygraph2" value="2" text="#Citadel_Settings_HudTelemetry_Show_Always" />
-									</CitadelSettingsEnumDropDown>
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="TelemetryNetDetailedDropDown" class="telemetryBottomMargin" convar="cl_hud_telemetry_net_detailed">
+								<Label id="hudtelemetryshownetqualitygraph0" value="0" text="#Citadel_Settings_HudTelemetry_Show_Never" />
+								<Label id="hudtelemetryshownetqualitygraph1" value="1" text="#Citadel_Settings_HudTelemetry_Show_OnlyInPoorConditions" />
+								<Label id="hudtelemetryshownetqualitygraph2" value="2" text="#Citadel_Settings_HudTelemetry_Show_Always" />
+							</CitadelEnumDropDown>
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 				</PopupSettingsSettingsSection>
 				<PopupSettingsSettingsSection id="citadel_settings_audio" search-alias="#citadel_settings_audio_search">
 					<PopupSettingsSettingsSubsection id="citadel_settings_volume">
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_mastervolume_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsSlider id="MasterVolume" text="#citadel_settings_mastervolume" class="volumeSlider" convar="volume" min="0.0" max="1.0" percentage="true" updateonvaluechange="true" textentry="true" />
+							<CitadelSettingsSlider id="MasterVolume" text="#citadel_settings_mastervolume" class="volumeSlider" convar="volume" min="0.0" max="1.0" percentage="true" snap="0.01" updateonvaluechange="true" textentry="true" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_gamevolume_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsSlider class="suboption volumeSlider" id="SoundGameVolume" text="#citadel_settings_gamevolume" convar="snd_gamevolume" min="0.0" max="1.0" percentage="true" textentry="true" search-alias="#citadel_settings_gamevolume_search" />
+							<CitadelSettingsSlider class="suboption volumeSlider" id="SoundGameVolume" text="#citadel_settings_gamevolume" convar="snd_gamevolume" min="0.0" max="1.0" snap="0.01" percentage="true" textentry="true" search-alias="#citadel_settings_gamevolume_search" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_musicvolume_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsSlider class="suboption volumeSlider" id="SoundMusicVolume" text="#citadel_settings_musicvolume" convar="snd_musicvolume" min="0.0" max="1.0" percentage="true" textentry="true" />
+							<CitadelSettingsSlider class="suboption volumeSlider" id="SoundMusicVolume" text="#citadel_settings_musicvolume" convar="snd_musicvolume" min="0.0" max="1.0" snap="0.01" percentage="true" textentry="true" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_voicevolume_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsSlider class="suboption volumeSlider" id="SoundVoiceVolume" text="#citadel_settings_voicevolume" convar="snd_voipvolume" min="0.0" max="2.0" percentage="true" textentry="true" search-alias="#citadel_settings_voicevolume_search" />
+							<CitadelSettingsSlider class="suboption volumeSlider" id="SoundVoiceVolume" text="#citadel_settings_voicevolume" convar="snd_voipvolume" min="0.0" max="2.0" snap="0.02" percentage="true" textentry="true" search-alias="#citadel_settings_voicevolume_search" />
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_audio_output">
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_sounddevice_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_sounddevice" searchable="true" search-alias="#citadel_settings_sounddevice_search" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown class="NEWDropdown" id="SoundDeviceDropDown" convar="sound_device_override" />
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="SoundDeviceDropDown" convar="sound_device_override" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_speakerconfig_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_speakerconfig" searchable="true" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown class="NEWDropdown" id="SpeakerConfig" convar="speaker_config">
-										<Label text="#citadel_settings_headphones" id="headphones" value="0" />
-										<Label text="#citadel_settings_2speakers" id="twospeakers" value="2" />
-									</CitadelSettingsEnumDropDown>
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="SpeakerConfig" convar="speaker_config">
+								<Label text="#citadel_settings_headphones" id="headphones" value="0" />
+								<Label text="#citadel_settings_2speakers" id="twospeakers" value="2" />
+							</CitadelEnumDropDown>
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_playsoundinbackground_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle text="#citadel_settings_playsoundinbackground" convar="snd_mute_losefocus" invert="true" />
@@ -988,134 +972,67 @@
 					<PopupSettingsSettingsSubsection id="citadel_settings_voice" search-alias="#citadel_settings_voice_search">
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_voice_sounddevice_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_voice_sounddevice" searchable="true" search-alias="#citadel_settings_voice_sounddevice_search" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown class="NEWDropdown" id="VoiceDeviceDropDown" convar="voice_device_override" />
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="VoiceDeviceDropDown" convar="voice_device_override" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_voice_level_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_voice_level" searchable="true" search-alias="#citadel_settings_voice_level_search" />
 							<ProgressBar id="CurrentMicLevel" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_openmicthreshold_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsSlider convar="voice_threshold" id="VoiceThreshold" text="#citadel_settings_openmicthreshold" min="-120.0" max="0" percentage="true" />
+							<CitadelSettingsSlider convar="voice_threshold" id="VoiceThreshold" text="#citadel_settings_openmicthreshold" min="-120.0" max="0" percentage="true" textentry="true" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_monitor_mic_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle id="MonitorMic" text="#citadel_settings_monitor_mic" onactivate="CitadelMonitorMicChanged()" />
+							<CitadelSettingsToggle id="MonitorMic" text="#citadel_settings_monitor_mic" onactivate="CitadelMonitorMicChanged()" defaultvalue="false" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_streamlined_mic_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle id="StreamlinedMic" text="#citadel_settings_streamlined_mic" onactivate="CitadelStreamlinedMicChanged()" />
+							<CitadelSettingsToggle id="StreamlinedMic" text="#citadel_settings_streamlined_mic" onactivate="CitadelStreamlinedMicChanged()" defaultvalue="false" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_chat_openmic_team_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle id="TeamOpenMicCheckbox" text="#citadel_settings_chat_openmic_team" onactivate="CitadelOpenMicSettingChanged()" />
+							<CitadelSettingsToggle id="TeamOpenMicCheckbox" text="#citadel_settings_chat_openmic_team" onactivate="CitadelOpenMicSettingChanged()" defaultvalue="false" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_chat_openmic_party_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle id="PartyOpenMicCheckbox" text="#citadel_settings_chat_openmic_party" onactivate="CitadelOpenMicSettingChanged()" />
+							<CitadelSettingsToggle id="PartyOpenMicCheckbox" text="#citadel_settings_chat_openmic_party" onactivate="CitadelOpenMicSettingChanged()" defaultvalue="false" />
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 				</PopupSettingsSettingsSection>
 				<PopupSettingsSettingsSection id="citadel_settings_game">
-					<PopupSettingsSettingsSubsection id="citadel_settings_crosshair" search-alias="#citadel_settings_crosshair_search" new-setting-index="2">
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_crosshair_custom_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle id="CrosshairCustom" text="#citadel_settings_crosshair_custom" invert="true" convar="citadel_crosshair_disable_hero_specific_crosshairs" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_crosshair_static_pip_gap_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle id="CrosshairStaticPipGap" text="#citadel_settings_crosshair_static_pip_gap" invert="true" convar="citadel_crosshair_pip_gap_static" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairPipWidth" text="#citadel_settings_crosshair_pip_width" convar="citadel_crosshair_pip_width" min="1" max="50" percentage="false" displayprecision="0" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairPipHeight" text="#citadel_settings_crosshair_pip_height" convar="citadel_crosshair_pip_height" min="1" max="50" percentage="false" displayprecision="0" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairPipGap" text="#citadel_settings_crosshair_pip_gap" convar="citadel_crosshair_pip_gap" min="0" max="50" percentage="false" displayprecision="0" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairPipOpacity" text="#citadel_settings_crosshair_pip_opacity" convar="citadel_crosshair_pip_opacity" min="0" max="1" percentage="true" displayprecision="2" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairPipOutlineBorder" text="#citadel_settings_crosshair_pip_outline_border" convar="citadel_crosshair_pip_outline_border" min="0" max="10" percentage="false" displayprecision="0" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairPipOutlineGap" text="#citadel_settings_crosshair_pip_outline_gap" convar="citadel_crosshair_pip_outline_gap" min="0" max="100" percentage="false" displayprecision="0" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairPipOutlineOpacity" text="#citadel_settings_crosshair_pip_outline_opacity" convar="citadel_crosshair_pip_outline_opacity" min="0" max="1" percentage="true" displayprecision="2" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairDotSize" text="#citadel_settings_crosshair_dot_size" convar="citadel_crosshair_dot_size" min="1" max="100" percentage="false" displayprecision="0" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairDotOpacity" text="#citadel_settings_crosshair_dot_opacity" convar="citadel_crosshair_dot_opacity" min="0" max="1" percentage="true" displayprecision="2" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairDotOutlineBorder" text="#citadel_settings_crosshair_dot_outline_border" convar="citadel_crosshair_dot_outline_border" min="0" max="10" percentage="false" displayprecision="0" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairDotOutlineGap" text="#citadel_settings_crosshair_dot_outline_gap" convar="citadel_crosshair_dot_outline_gap" min="0" max="100" percentage="false" displayprecision="0" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairDotOutlineOpacity" text="#citadel_settings_crosshair_dot_outline_opacity" convar="citadel_crosshair_dot_outline_opacity" min="0" max="1" percentage="true" displayprecision="2" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairColorRed" text="#citadel_settings_crosshair_color_r" convar="citadel_crosshair_color_r" min="0" max="255" percentage="false" displayprecision="0" textentry="true" search-alias="#citadel_settings_crosshair_color_search" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairColorGreen" text="#citadel_settings_crosshair_color_g" convar="citadel_crosshair_color_g" min="0" max="255" percentage="false" textentry="true" search-alias="#citadel_settings_crosshair_color_search" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairColorBlue" text="#citadel_settings_crosshair_color_b" convar="citadel_crosshair_color_b" min="0" max="255" percentage="false" displayprecision="0" textentry="true" search-alias="#citadel_settings_crosshair_color_search" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairOutlineColorRed" text="#citadel_settings_crosshair_outline_color_r" convar="citadel_crosshair_outline_color_r" min="0" max="255" percentage="false" displayprecision="0" textentry="true" search-alias="#citadel_settings_crosshair_color_search" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairOutlineColorGreen" text="#citadel_settings_crosshair_outline_color_g" convar="citadel_crosshair_outline_color_g" min="0" max="255" percentage="false" textentry="true" search-alias="#citadel_settings_crosshair_color_search" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="CrosshairOutlineColorBlue" text="#citadel_settings_crosshair_outline_color_b" convar="citadel_crosshair_outline_color_b" min="0" max="255" percentage="false" displayprecision="0" textentry="true" search-alias="#citadel_settings_crosshair_color_search" />
-						</PopupSettingsSettingsRow>
-						<Panel class="SettingsSectionColumnGap" />
-						<Panel class="SettingsSectionColumn SettingsPreview">
-							<Panel class="SettingsPreviewContainer">
-								<Image src="s2r://panorama/images/buttons/temp_preview_panel_reticle_png.vtex" />
-								<Citadel_AbilityHUDElement_Gun id="ReticlePreview" is_reticle_preview="true" />
-							</Panel>
-						</Panel>
-					</PopupSettingsSettingsSubsection>
-					<PopupSettingsSettingsSubsection id="citadel_settings_camera">
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_camera_pitch_inverted_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle text="#citadel_camera_pitch_inverted" convar="citadel_camera_pitch_inverted" search-alias="#citadel_camera_pitch_inverted_search" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="MouseSensitivity" text="#citadel_settings_mousesensitivity" convar="sensitivity" min="0.05" max="8.0" percentage="false" displayprecision="2" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow>
-							<CitadelSettingsSlider id="MouseSensitivityYScale" text="#citadel_settings_mousesensitivity_y_scale" convar="sensitivity_y_scale" min="0.0" max="2.0" percentage="false" displayprecision="2" textentry="true" search-alias="#citadel_settings_mousesensitivity_y_scale_search" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_mousezoomsensitivity_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsSlider id="MouseSensitivityZoom" text="#citadel_settings_mousezoomsensitivity" convar="zoom_sensitivity_ratio" min="0.03" max="3.0" percentage="false" displayprecision="2" textentry="true" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_camera_zoom_is_toggle_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle text="#citadel_camera_zoom_is_toggle" convar="cl_citadel_zoom_is_toggle" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_camera_hero_fov_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsSlider id="CameraFOV" convar="citadel_camera_hero_fov" min="75" max="90" percentage="false" displayprecision="1" text="#citadel_camera_hero_fov" textentry="true" new-setting-index="1" />
-						</PopupSettingsSettingsRow>
-					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_shop">
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_active_item_slot_popup, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_show_active_slot_popup" convar="citadel_show_active_slot_popup" />
 						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_auto_buy_items_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_auto_buy_items" convar="citadel_quickbuy_auto_buy_default" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_auto_queue_build_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_auto_queue_build" convar="citadel_auto_queue_build" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_shop_search_use_name_only_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" id="SearchUsesItemNameOnlyCheckbox" text="#citadel_settings_shop_search_use_name_only" convar="citadel_shop_search_use_name_only" new-setting-index="15" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_shop_open_focus_search_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_shop_open_focus_search" convar="citadel_shop_open_focus_search" new-setting-index="15" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_shop_scroll_snap_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_shop_scroll_snap" convar="citadel_shop_scroll_snap_to_tiers" new-setting-index="15" />
+						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_interface">
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_enable_console_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle class="CheckBox" id="EnableConsoleCheckbox" text="#citadel_settings_enable_console" onactivate="CitadelUpdateEnableConsole();" />
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_unit_status_show_health_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_unit_status_show_health" convar="citadel_unit_status_show_health_value" new-setting-index="17" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_unit_status_show_ally_health_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_unit_status_show_ally_health" convar="citadel_unit_status_show_ally_health_value" search-alias="#citadel_settings_unit_status_show_ally_health_search" new-setting-index="17" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_unit_status_show_critical_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_unit_status_show_critical" convar="citadel_unit_status_show_critical_state" new-setting-index="17" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_damage_text_cumulative_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_damage_text_cumulative" searchable="true" new-setting-index="17" />
+							<CitadelEnumDropDown id="DamageTextCumulativeModeDropDown" convar="citadel_damage_text_cumulative_mode" onmouseout="UIHideTextTooltip()">
+								<Label id="damagetextcumulativemode0" value="0" text="#citadel_settings_damage_text_cumulative_off" onmouseover="UIShowTextTooltipStyled( #citadel_settings_damage_text_cumulative_off_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+								<Label id="damagetextcumulativemode1" value="1" text="#citadel_settings_damage_text_cumulative_running" onmouseover="UIShowTextTooltipStyled( #citadel_settings_damage_text_cumulative_running_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+								<Label id="damagetextcumulativemode2" value="2" text="#citadel_settings_damage_text_cumulative_final" onmouseover="UIShowTextTooltipStyled( #citadel_settings_damage_text_cumulative_final_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+							</CitadelEnumDropDown>
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_active_window_unpause_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle class="focusWindowUnpauseCheckbox" text="#citadel_settings_active_window_unpause" convar="citadel_activate_window_on_unpause" />
@@ -1123,23 +1040,115 @@
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_streamer_mode_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle class="streamerModeCheckbox extraTopMargin" text="#citadel_settings_streamer_mode" convar="citadel_streaming_mode_enabled" search-alias="#citadel_settings_streamer_mode_search" />
 						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_speedometer_ui_enable_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_speedometer_ui_enable" convar="speedometer_ui_enable" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_enable_console_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" id="EnableConsoleCheckbox" text="#citadel_settings_enable_console" onactivate="CitadelUpdateEnableConsole();" defaultvalue="false" />
+						</PopupSettingsSettingsRow>
+					</PopupSettingsSettingsSubsection>
+					<PopupSettingsSettingsSubsection id="citadel_settings_crosshair" search-alias="#citadel_settings_crosshair_search" new-setting-index="2">
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairPipWidth" text="#citadel_settings_crosshair_pip_width" convar="citadel_crosshair_pip_width" min="1" max="50" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairPipHeight" text="#citadel_settings_crosshair_pip_height" convar="citadel_crosshair_pip_height" min="1" max="50" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairPipGap" text="#citadel_settings_crosshair_pip_gap" convar="citadel_crosshair_pip_gap" min="-40" max="50" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairPipOpacity" text="#citadel_settings_crosshair_pip_opacity" convar="citadel_crosshair_pip_opacity" min="0" max="1" percentage="true" snap="0.01" displayprecision="2" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairPipOutlineBorder" text="#citadel_settings_crosshair_pip_outline_border" convar="citadel_crosshair_pip_outline_border" min="0" max="10" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairPipOutlineGap" text="#citadel_settings_crosshair_pip_outline_gap" convar="citadel_crosshair_pip_outline_gap" min="0" max="100" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairPipOutlineOpacity" text="#citadel_settings_crosshair_pip_outline_opacity" convar="citadel_crosshair_pip_outline_opacity" min="0" max="1" snap="0.01" percentage="true" displayprecision="2" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairDotSize" text="#citadel_settings_crosshair_dot_size" convar="citadel_crosshair_dot_size" min="1" max="100" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairDotOpacity" text="#citadel_settings_crosshair_dot_opacity" convar="citadel_crosshair_dot_opacity" min="0" max="1" percentage="true" snap="0.01" displayprecision="2" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairDotOutlineBorder" text="#citadel_settings_crosshair_dot_outline_border" convar="citadel_crosshair_dot_outline_border" min="0" max="10" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairDotOutlineGap" text="#citadel_settings_crosshair_dot_outline_gap" convar="citadel_crosshair_dot_outline_gap" min="0" max="100" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="CrosshairDotOutlineOpacity" text="#citadel_settings_crosshair_dot_outline_opacity" convar="citadel_crosshair_dot_outline_opacity" min="0" max="1" snap="0.01" percentage="true" displayprecision="2" textentry="true" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsColorSlider id="CrosshairColor" text="#citadel_settings_crosshair_fill_color" convar="citadel_crosshair_color" search-alias="#citadel_settings_crosshair_color_search" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsColorSlider id="CrosshairOutlineColor" text="#citadel_settings_crosshair_border_color" convar="citadel_crosshair_outline_color" search-alias="#citadel_settings_crosshair_color_search" />
+						</PopupSettingsSettingsRow>
+						<Panel class="SettingsSectionColumnGap" />
+						<Panel class="SettingsSectionColumn SettingsPreview">
+							<Panel class="SettingsGroup" id="ThemedReticleGroup">
+								<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_crosshair_custom_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+									<CitadelSettingsToggle id="CrosshairCustom" text="#citadel_settings_crosshair_custom" invert="true" convar="citadel_crosshair_disable_hero_specific_crosshairs" />
+								</PopupSettingsSettingsRow>
+							</Panel>
+							<Panel class="SettingsGroup" id="ReticleMotionGroup">
+								<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_crosshair_static_pip_gap_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+									<CitadelSettingsToggle id="CrosshairStaticPipGap" text="#citadel_settings_crosshair_static_pip_gap" invert="true" convar="citadel_crosshair_pip_gap_static" />
+								</PopupSettingsSettingsRow>
+							</Panel>
+							<Panel id="ReticlePreviewContainer" class="SettingsPreviewContainer">
+								<Image src="s2r://panorama/images/buttons/temp_preview_panel_reticle_png.vtex" />
+								<Citadel_AbilityHUDElement_Gun id="ReticlePreview" is_reticle_preview="true" />
+								<Label id="ReticleCodeCopiedToast" class="ReticleCodeToast" text="#citadel_settings_crosshair_code_copied" />
+								<Label id="ReticleCodePastedToast" class="ReticleCodeToast" text="#citadel_settings_crosshair_code_pasted" />
+								<Label id="ReticleCodeFailedToast" class="ReticleCodeToast Failed" text="#citadel_settings_crosshair_code_paste_failed" />
+								<Label id="ReticleCodeMultipleToast" class="ReticleCodeToast Failed" text="#citadel_settings_crosshair_code_paste_multiple" />
+							</Panel>
+							<Panel id="ReticleCodeButtons" class="ReticleCodeButtons" acceptsinput="true">
+								<CitadelButton id="ReticleCopyCodeButton" class="Medium Fill" text="#citadel_settings_crosshair_copy_code" onactivate="CitadelSettingsCopyReticleCode()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_crosshair_copy_code_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+								<CitadelButton id="ReticlePasteCodeButton" class="Medium Fill" text="#citadel_settings_crosshair_paste_code" onactivate="CitadelSettingsPasteReticleCode()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_crosshair_paste_code_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+								<Panel class="ResetButtonContainer ReticleUndoPasteContainer">
+									<CitadelButton id="ReticleUndoPasteButton" class="Small Fill ResetButton" imagesrc="s2r://panorama/images/icons/reset.vsvg" onactivate="CitadelSettingsUndoReticlePaste()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_crosshair_undo_paste_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+								</Panel>
+							</Panel>
+						</Panel>
+					</PopupSettingsSettingsSubsection>
+					<PopupSettingsSettingsSubsection id="citadel_settings_camera" search-alias="#citadel_settings_camera_search">
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_camera_hero_fov_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider id="CameraFOV" class="VideoPreview" convar="citadel_camera_hero_fov" min="75" max="90" snap="1" percentage="false" displayprecision="1" text="#citadel_camera_hero_fov" postfix="#citadel_settings_degrees_postfix" textentry="true" search-alias="#citadel_settings_camera_fov_search" new-setting-index="1" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_camera_pitch_inverted_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle text="#citadel_camera_pitch_inverted" convar="citadel_camera_pitch_inverted" search-alias="#citadel_camera_pitch_inverted_search" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_camera_zoom_is_toggle_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle text="#citadel_camera_zoom_is_toggle" convar="cl_citadel_zoom_is_toggle" search-alias="citadel_camera_zoom_is_toggle_search" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_shake_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle convar="citadel_reduce_camera_shake" text="#citadel_settings_camera_shake" search-alias="#citadel_settings_camera_shake_search" new-setting-index="20" />
+						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 				</PopupSettingsSettingsSection>
-				<PopupSettingsSettingsSection id="citadel_settings_language" search-alias="#citadel_settings_language_search">
-					<PopupSettingsSettingsSubsection id="citadel_settings_language_options">
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_ui_language_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
-							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_ui_language" searchable="true" />
-							<PopupSettingsDropDown id="UILanguage" />
+				<PopupSettingsSettingsSection id="citadel_settings_mouse">
+					<PopupSettingsSettingsSubsection id="citadel_settings_mouse_options" new-setting-index="9">
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_mousecursorscale_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider id="MouseCursorSize" text="#citadel_settings_mousecursorscale" convar="citadel_mouse_cursor_scale" min="0.5" max="4.0" snap="0.1" percentage="false" displayprecision="1" postfix="#citadel_settings_multiplier_postfix" textentry="true" new-setting-index="9" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow id="SecondaryLanguageBuildsBlock" onmouseover="UIShowTextTooltipStyled( #citadel_settings_secondary_language_builds_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<Label class="SettingLabel" text="#citadel_settings_secondary_language_builds" searchable="true" />
-							<PopupSettingsDropDown id="UISecondaryLanguageBuilds" />
+					</PopupSettingsSettingsSubsection>
+					<PopupSettingsSettingsSubsection id="citadel_settings_mouse_sensitivity">
+						<PopupSettingsSettingsRow>
+							<CitadelSettingsSlider id="MouseSensitivity" text="#citadel_settings_mousesensitivity" convar="sensitivity" min="0.05" max="8.0" snap="0.01" percentage="false" displayprecision="2" textentry="true" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_english_hero_names_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle text="#citadel_settings_english_hero_names" convar="citadel_english_hero_names" onactivate="CitadelShowClientRestartPopup()" />
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_mousesensitivity_y_scale_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider id="MouseSensitivityYScale" text="#citadel_settings_mousesensitivity_y_scale" convar="sensitivity_y_scale" min="0.0" max="2.0" snap="0.01" percentage="false" displayprecision="2" textentry="true" search-alias="#citadel_settings_mousesensitivity_y_scale_search" />
 						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_english_mod_names_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle text="#citadel_settings_english_mod_names" convar="citadel_english_mod_names" onactivate="CitadelShowClientRestartPopup()" />
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_mousezoomsensitivity_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider id="MouseSensitivityZoom" text="#citadel_settings_mousezoomsensitivity" convar="zoom_sensitivity_ratio" min="0.03" max="3.0" snap="0.01" percentage="false" displayprecision="2" textentry="true" />
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 				</PopupSettingsSettingsSection>
@@ -1154,44 +1163,247 @@
 								<Image id="ControllerIcon" class="IconLeft" texturewidth="24px" textureheight="24px" src="s2r://panorama/images/icons/controller.vsvg" />
 								<Panel class="TopBottomFlow">
 									<Label id="" class="InfoLabel" text="#citadel_settings_steam_input_config:f" />
-									<Label id="" class="SettingSubLabel" text="Connected" />
+									<Label id="" class="SettingSubLabel" text="#citadel_settings_steaminput_connected" />
 								</Panel>
 							</Panel>
-							<Button class="InputButton Fill" onactivate="CitadelOpenSteamInputConfigurator()">
-								<Panel class="Bottom" />
-								<Panel class="Top" />
-								<Panel class="Content">
-									<Image class="IconLeft" texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/settings_shortcut.vsvg" />
-									<Label text="#citadel_settings_steam_input_open_configurator" />
-								</Panel>
-							</Button>
+							<CitadelButton class="Medium Fill" onactivate="CitadelOpenSteamInputConfigurator()">
+								<Image class="ButtonImage IconLeft" texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/settings_shortcut.vsvg" />
+								<Label class="ButtonLabel" text="#citadel_settings_steam_input_open_configurator" searchable="true" />
+							</CitadelButton>
 						</Panel>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_glyph_lock_mode_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<Label id="SteamInputGlyphLockModeLabel" class="SettingLabel AlignVerticalCenter" text="#citadel_settings_glyph_lock_mode" searchable="true" search-alias="#citadel_settings_glyph_lock_mode_search" />
-							<Panel class="DropDownNew">
-								<Panel class="DropDownContent NEWDropdown">
-									<Panel class="Background" />
-									<Panel class="Border" />
-									<Panel class="Arrow" />
-									<CitadelSettingsEnumDropDown class="NEWDropdown" convar="steam_inputhandler_glyph_lock_mode" text="#citadel_settings_glyph_lock_mode">
-										<Label text="#citadel_settings_glyph_lock_mode_off" id="off" value="0" />
-										<Label text="#citadel_settings_glyph_lock_mode_kbm" id="on" value="1" />
-										<Label text="#citadel_settings_glyph_lock_mode_gamepad" id="boost" value="2" />
-									</CitadelSettingsEnumDropDown>
-								</Panel>
-							</Panel>
+							<CitadelEnumDropDown id="GlyphModeDropDown" convar="steam_inputhandler_glyph_lock_mode" text="#citadel_settings_glyph_lock_mode">
+								<Label text="#citadel_settings_glyph_lock_mode_off" id="off" value="0" />
+								<Label text="#citadel_settings_glyph_lock_mode_kbm" id="on" value="1" />
+								<Label text="#citadel_settings_glyph_lock_mode_gamepad" id="boost" value="2" />
+							</CitadelEnumDropDown>
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_glyph_universal_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle text="#citadel_settings_glyph_universal_toggle" convar="steaminput_glyph_use_universal_face_buttons" search-alias="#citadel_settings_glyph_universal_toggle_search" />
 						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 				</PopupSettingsSettingsSection>
-				<Panel id="SettingsFooter" />
+				<PopupSettingsSettingsSection id="citadel_settings_language" search-alias="#citadel_settings_language_search">
+					<PopupSettingsSettingsSubsection id="citadel_settings_language_options">
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_ui_language_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_ui_language" searchable="true" />
+							<CitadelDropDown id="UILanguage" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow id="SecondaryLanguageBuildsBlock" onmouseover="UIShowTextTooltipStyled( #citadel_settings_secondary_language_builds_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<Label class="SettingLabel" text="#citadel_settings_secondary_language_builds" searchable="true" />
+							<CitadelEnumDropDown id="UISecondaryLanguageBuilds" convar="citadel_secondary_language_builds" />
+						</PopupSettingsSettingsRow>
+						<Panel class="SettingsGroup" id="EnglishNameOptions" hidden-by="UILanguage">
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_english_hero_names_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsToggle text="#citadel_settings_english_hero_names" convar="citadel_english_hero_names" onactivate="CitadelShowClientRestartPopup()" />
+							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_english_mod_names_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsToggle text="#citadel_settings_english_mod_names" convar="citadel_english_mod_names" onactivate="CitadelShowClientRestartPopup()" />
+							</PopupSettingsSettingsRow>
+						</Panel>
+					</PopupSettingsSettingsSubsection>
+				</PopupSettingsSettingsSection>
+				<PopupSettingsSettingsSection id="citadel_settings_accessibility">
+					<PopupSettingsSettingsSubsection id="citadel_settings_accessibility_options" new-setting-index="16">
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_showsubtitles_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle id="ShowSubtitlesToggle" text="#citadel_settings_showsubtitles" convar="closecaption" search-alias="#citadel_settings_showsubtitles_search" new-setting-index="13" />
+						</PopupSettingsSettingsRow>
+						<Panel class="SettingsGroup" id="CustomSubtitlesOption">
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_custom_style_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsToggle id="CustomSubtitlesToggle" class="RightLeftFlow" text="#citadel_settings_subtitles_custom_style" convar="citadel_subtitles_custom_style" search-alias="#citadel_settings_subtitles_search" />
+							</PopupSettingsSettingsRow>
+						</Panel>
+						<Panel class="SettingsGroup" id="SubtitleOptions" hidden-by="CustomSubtitlesToggle">
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_font_size_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsSlider id="SubtitlesFontSize" text="#citadel_settings_subtitles_font_size" convar="citadel_subtitles_font_size" min="12" max="28" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" search-alias="#citadel_settings_subtitles_search" />
+							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_text_color_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsColorSlider id="SubtitlesTextColor" text="#citadel_settings_subtitles_text_color" convar="citadel_subtitles_text_color" search-alias="#citadel_settings_subtitles_search" />
+							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_background_color_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsColorSlider id="SubtitlesBackgroundColor" text="#citadel_settings_subtitles_background_color" convar="citadel_subtitles_background_color" search-alias="#citadel_settings_subtitles_search" />
+							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow id="SubtitlesFontRow" onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_font_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_subtitles_font" searchable="true" search-alias="#citadel_settings_subtitles_search" />
+								<CitadelEnumDropDown id="SubtitlesFontDropDown" convar="citadel_subtitles_font">
+									<Label id="subtitlesfont_default" value="0" text="#citadel_settings_subtitles_font_default" />
+									<Label id="subtitlesfont_block" value="1" text="#citadel_settings_subtitles_font_block" />
+									<Label id="subtitlesfont_stylized" value="2" text="#citadel_settings_subtitles_font_stylized" />
+								</CitadelEnumDropDown>
+							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_bold_font_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsToggle id="SubtitlesBoldFont" text="#citadel_settings_subtitles_bold_font" convar="citadel_subtitles_bold_font" search-alias="#citadel_settings_subtitles_search" />
+							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow id="SubtitlesAllCapsRow" onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_all_caps_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsToggle id="SubtitlesAllCaps" text="#citadel_settings_subtitles_all_caps" convar="citadel_subtitles_all_caps" search-alias="#citadel_settings_subtitles_search" />
+							</PopupSettingsSettingsRow>
+						</Panel>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_custom_ui_colors_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle id="CustomUIColorsToggle" class="RightLeftFlow" convar="citadel_custom_ui_colors" text="#citadel_settings_custom_ui_colors" search-alias="#citadel_settings_custom_ui_colors_search" new-setting-index="16" />
+						</PopupSettingsSettingsRow>
+						<Panel class="SettingsGroup" id="CustomUIColorOptions" hidden-by="CustomUIColorsToggle">
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_enemy_ui_color_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsColorSlider id="EnemyUIColor" text="#citadel_settings_enemy_ui_color" convar="citadel_enemy_ui_color" search-alias="#citadel_settings_enemy_ui_color_search" />
+							</PopupSettingsSettingsRow>
+						</Panel>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_light_sensitivity_mode_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle convar="r_light_sensitivity_mode" text="#citadel_settings_light_sensitivity_mode" search-alias="#citadel_settings_light_sensitivity_mode_search" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_auto_fire_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle convar="cl_citadel_auto_fire" text="#citadel_settings_auto_fire" search-alias="#citadel_settings_auto_fire_search" new-setting-index="16" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_auto_move_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle convar="cl_citadel_auto_move" text="#citadel_settings_auto_move" search-alias="#citadel_settings_auto_move_search" new-setting-index="16" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_auto_mantle_forward_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle convar="cl_citadel_auto_mantle_forward" text="#citadel_settings_auto_mantle_forward" search-alias="#citadel_settings_auto_mantle_forward_search" new-setting-index="16" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_auto_mantle_backward_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle convar="cl_citadel_auto_mantle_backward" text="#citadel_settings_auto_mantle_backward" search-alias="#citadel_settings_auto_mantle_backward_search" new-setting-index="16" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_auto_mantle_in_air_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle convar="cl_citadel_auto_mantle_in_air" text="#citadel_settings_auto_mantle_in_air" search-alias="#citadel_settings_auto_mantle_in_air_search" new-setting-index="16" />
+						</PopupSettingsSettingsRow>
+						<Panel class="SettingsSectionColumnGap" />
+						<Panel id="AccessibilityPreviewColumn" class="SettingsSectionColumn SettingsPreview">
+							<Panel id="AccessibilityPreviewContainer" class="SettingsPreviewContainer">
+								<Image src="s2r://panorama/images/buttons/temp_preview_panel_subtitles_png.vtex" scaling="stretch-to-cover-preserve-aspect" />
+								<CitadelHudSubtitles id="SubtitlePreview" is_preview="true" />
+								<Panel id="EnemyHealthbarPreviewContainer" hittest="false">
+									<Panel id="EnemyHealthbarPreviewScale" hittest="false">
+										<Panel id="EnemyHealthbarPreview" hittest="false" />
+									</Panel>
+								</Panel>
+							</Panel>
+						</Panel>
+					</PopupSettingsSettingsSubsection>
+				</PopupSettingsSettingsSection>
+				<PopupSettingsSettingsSection id="citadel_settings_advanced">
+					<PopupSettingsSettingsSubsection id="citadel_settings_hero_specific" new-setting-index="14" class="ExcludeFromBulkReset">
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_Hotkeys_Tooltip_PerUnitHotkeys, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" id="PerUnitHotkeysCheckBox" text="#citadel_settings_per_unit_hotkeys" onactivate="CitadelSetPerUnitSettings();" convar="citadel_per_unit_hotkeys_checked" new-setting-index="14" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow id="AlwaysShowAllSettingsRow" hidden-by="PerUnitHotkeysCheckBox" onmouseover="UIShowTextTooltipStyled( #citadel_settings_always_show_all_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" id="AlwaysShowAllSettingsCheckBox" text="#citadel_settings_always_show_all" onactivate="CitadelSettingsAlwaysShowAllChanged();" convar="citadel_settings_always_show_all_settings" />
+						</PopupSettingsSettingsRow>
+					</PopupSettingsSettingsSubsection>
+					<PopupSettingsSettingsSubsection id="citadel_settings_spectator_camera" search-alias="#citadel_settings_spectator_camera_search">
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_spectator_auto_target_view_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_spectator_auto_target_view" convar="citadel_camera_spectator_auto_target_view" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_fade_viewed_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_fade_viewed_near_opacity" convar="citadel_camera_fade_viewed_near_opacity" min="0" max="1" snap="0.01" percentage="true" displayprecision="2" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_fade_viewed_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_fade_viewed_far_dist" convar="citadel_camera_fade_viewed_far_dist" min="0" max="300" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_fade_viewed_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_fade_viewed_near_dist" convar="citadel_camera_fade_viewed_near_dist" min="0" max="300" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_fade_other_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_fade_other_near_opacity" convar="citadel_camera_fade_other_near_opacity" min="0" max="1" snap="0.01" percentage="true" displayprecision="2" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_fade_other_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_fade_other_far_dist" convar="citadel_camera_fade_other_far_dist" min="0" max="300" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_fade_other_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_fade_other_near_dist" convar="citadel_camera_fade_other_near_dist" min="0" max="300" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_overrides_enabled_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_camera_overrides_enabled" convar="citadel_camera_overrides_enabled" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_pivot_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_pivot_x" convar="citadel_camera_override_pivot_x_offset" min="-100" max="100" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_pivot_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_pivot_y" convar="citadel_camera_override_pivot_y_offset" min="-100" max="100" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_pivot_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_pivot_z" convar="citadel_camera_override_pivot_z_offset" min="0" max="200" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_pivot_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_pivot_x_crouching" convar="citadel_camera_override_pivot_x_offset_crouching" min="-100" max="100" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_pivot_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_pivot_y_crouching" convar="citadel_camera_override_pivot_y_offset_crouching" min="-100" max="100" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_pivot_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_pivot_z_crouching" convar="citadel_camera_override_pivot_z_offset_crouching" min="0" max="200" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_offset_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_x" convar="citadel_camera_override_x_offset" min="-400" max="100" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_offset_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_y" convar="citadel_camera_override_y_offset" min="-150" max="150" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_offset_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_z" convar="citadel_camera_override_z_offset" min="-150" max="150" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_worst_case_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_worst_case_x" convar="citadel_camera_override_x_worst_case_offset" min="-100" max="100" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_worst_case_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_worst_case_y" convar="citadel_camera_override_y_worst_case_offset" min="-100" max="100" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_worst_case_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_worst_case_z" convar="citadel_camera_override_z_worst_case_offset" min="-100" max="100" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_ads_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_ads_x" convar="citadel_camera_override_ads_x_offset" min="-400" max="100" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_ads_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_ads_y" convar="citadel_camera_override_ads_y_offset" min="-150" max="150" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_ads_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_ads_z" convar="citadel_camera_override_ads_z_offset" min="-150" max="150" snap="1" percentage="false" displayprecision="0" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_fov_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_fov" convar="citadel_camera_override_fov" min="50" max="150" snap="1" percentage="false" displayprecision="0" postfix="#citadel_settings_degrees_postfix" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_camera_override_fov_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsSlider text="#citadel_settings_camera_override_ads_fov" convar="citadel_camera_override_ads_fov" min="20" max="120" snap="1" percentage="false" displayprecision="0" postfix="#citadel_settings_degrees_postfix" textentry="true" new-setting-index="21" />
+						</PopupSettingsSettingsRow>
+					</PopupSettingsSettingsSubsection>
+				</PopupSettingsSettingsSection>
+				<Panel id="SettingsFooter" acceptsinput="true" />
 			</PopupSettingsSettingsBody>
+			<Panel id="SettingsBodyMarginOverlay" hittest="false">
+				<Panel id="SettingsBodyMarginMainRow" hittest="false">
+					<Panel class="SettingsBodyMarginNavSpacer" hittest="false" />
+					<InputForwardingPanel id="SettingsBodyLeftMargin" targetid="SettingsBody" />
+					<Panel class="SettingsBodyMarginContentSpacer" hittest="false" />
+					<InputForwardingPanel id="SettingsBodyRightMargin" targetid="SettingsBody" />
+					<Panel class="SettingsBodyMarginScrollBarSpacer" hittest="false" />
+				</Panel>
+				<Panel id="SettingsBodyMarginBottomRow" hittest="false">
+					<Panel class="SettingsBodyMarginNavSpacer" hittest="false" />
+					<InputForwardingPanel id="SettingsBodyBottomMargin" targetid="SettingsBody" />
+					<Panel class="SettingsBodyMarginScrollBarSpacer" hittest="false" />
+				</Panel>
+			</Panel>
 		</Panel>
-		<Button class="EscapeButton light" onactivate="UIPopupButtonClicked()">
-			<CitadelBinding id="BackBinding" action="MenuBack" />
-			<Label class="FooterCommandLabel" text="#menu_exit_db_page" />
-		</Button>
+		<Panel class="SettingsFooterButtons">
+			<Button class="FooterButton light" onactivate="UIPopupButtonClicked()">
+				<CitadelBinding id="BackBinding" action="MenuBack" />
+				<Label class="FooterCommandLabel" text="#menu_exit_db_page" />
+			</Button>
+			<Button id="HistoryBackButton" class="FooterButton HistoryNavButton light" onactivate="CitadelNavigateBack()">
+				<Panel class="HistoryNavGlyph light">
+					<Panel class="HistoryNavGlyphImage HistoryNavGlyphBack" />
+				</Panel>
+				<Label class="FooterCommandLabel" text="#citadel_settings_history_prev" />
+			</Button>
+			<Button id="HistoryForwardButton" class="FooterButton HistoryNavButton light" onactivate="CitadelNavigateForward()">
+				<Label class="FooterCommandLabel HistoryForwardLabel" text="#citadel_settings_history_next" />
+				<Panel class="HistoryNavGlyph light">
+					<Panel class="HistoryNavGlyphImage HistoryNavGlyphForward" />
+				</Panel>
+			</Button>
+			<Button id="HeroSpecificHighlightButton" class="FooterButton HighlightButton light" onmouseover="UIShowTextTooltipStyled( #citadel_settings_highlight_hero_specific_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+				<CitadelKeyboardGlyph class="light" buttoncode="TAB" />
+				<Label class="FooterCommandLabel" text="#citadel_settings_highlight_hero_specific" />
+			</Button>
+		</Panel>
 	</PopupSettings>
 </root>

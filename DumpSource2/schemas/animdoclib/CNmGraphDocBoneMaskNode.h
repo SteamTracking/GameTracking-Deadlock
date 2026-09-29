@@ -23,11 +23,23 @@
 //			"m_bAllowMultipleOutConnections": true
 //		}
 //	],
-//	"m_maskID": ""
+//	"m_pDefaultVariationData":
+//	{
+//		"_class": "CNmGraphDocBoneMaskNode::CData",
+//		"m_overrideMaskID": ""
+//	},
+//	"m_overrides":
+//	[
+//	],
+//	"m_defaultResourceName": "",
+//	"m_maskID": "",
+//	"m_bIsOptionalMask": false
 //}
 // MHasKV3TransferPolymorphicClassname
-class CNmGraphDocBoneMaskNode : public CNmGraphDocFlowNode
+class CNmGraphDocBoneMaskNode : public CNmGraphDocVariationDataNode
 {
 	// MPropertyAttributeEditor = "BoneMaskID()"
 	CGlobalSymbol m_maskID;
+	// MPropertyDescription = "Should we check at compile time that this is an optional mask?"
+	bool m_bIsOptionalMask;
 };

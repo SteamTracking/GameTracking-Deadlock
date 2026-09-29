@@ -1,0 +1,782 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+CitadelHeroVOTestPage
+{
+	width: 100%;
+	height: 100%;
+	background-color: #050605f2;
+}
+
+.PageBackground
+{
+	width: 100%;
+	height: 100%;
+	background-color: gradient( radial, 50% 35%, 0% 0%, 75% 75%, from( #1b2621 ), to( #05060500 ) );
+	opacity: 0.8;
+}
+
+.MainContents
+{
+	width: 1680px;
+	height: 900px;
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: down;
+}
+
+.PageHeader
+{
+	width: 100%;
+	flow-children: down;
+	margin: 0px 0px 18px 4px;
+}
+
+.VoiceLinesTitle
+{
+	font-family: oracle;
+	font-size: 56px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: gradient( linear, 0% 0%, 0% 100%, from( offWhite ), to( #cbbfa9 ) );
+	opacity-mask: url("s2r://panorama/images/main_menu/text_speckle_mask_main_psd.vtex") 0.7;
+	opacity-mask-scale: 100% 200%;
+	pre-transform-rotate2d: -1deg;
+}
+
+.VoiceLinesSubtitle
+{
+	margin: -6px 0px 0px 6px;
+	font-size: 17px;
+	font-style: italic;
+	color: offWhite&55;
+}
+
+.Columns
+{
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	flow-children: right;
+}
+
+.RosterColumn,.LinesColumn
+{
+	height: 100%;
+	flow-children: down;
+	border-radius: 6px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #12151199 ), to( #0a0c09cc ) );
+	border: 1px solid offWhite&08;
+	box-shadow: #00000080 0px 8px 24px 0px;
+}
+
+.SectionLabel
+{
+	margin: 0px 0px 10px 2px;
+	font-family: block;
+	font-size: 15px;
+	text-transform: uppercase;
+	color: offWhite&66;
+}
+
+.RosterColumn
+{
+	width: 372px;
+	padding: 18px 10px 12px 18px;
+	overflow: squish scroll;
+}
+
+.RosterColumn #VerticalScrollBar
+{
+	opacity: 0.5;
+}
+
+.RosterGrid
+{
+	width: 100%;
+	flow-children: right-wrap;
+	margin-bottom: 14px;
+}
+
+.RosterEntry
+{
+	width: 62px;
+	height: 96px;
+	margin: 0px 6px 6px 0px;
+	border-radius: 4px;
+	background-color: #1a1c19;
+	saturation: 0.35;
+	brightness: 0.65;
+	transition-property: saturation, brightness, pre-transform-scale2d, box-shadow;
+	transition-duration: 0.12s;
+	transition-timing-function: ease-out;
+}
+
+.RosterEntry:hover
+{
+	sound: soundMainMenuHover;
+	saturation: 1;
+	brightness: 1.1;
+	pre-transform-scale2d: 1.05;
+	z-index: 10;
+}
+
+.RosterEntry:active
+{
+	sound: soundMainMenuActivate;
+	pre-transform-scale2d: 0.97;
+}
+
+.RosterEntry:selected
+{
+	saturation: 1;
+	brightness: 1;
+	box-shadow: brandGreen&55 0px 0px 14px 0px;
+}
+
+.RosterPatron
+{
+	width: 165px;
+}
+
+.RosterEntryImage
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+}
+
+.RosterPatronName
+{
+	width: 100%;
+	vertical-align: center;
+	text-align: center;
+	padding: 0px 8px;
+	font-family: oracle;
+	font-size: 20px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: offWhite&cc;
+	visibility: collapse;
+}
+
+.RosterNameOnly .RosterPatronName
+{
+	visibility: visible;
+}
+
+.RosterNameOnly .RosterEntryImage,.RosterNameOnly .RosterEntryShade
+{
+	visibility: collapse;
+}
+
+.RosterEntry.RosterNameOnly:selected .RosterPatronName
+{
+	color: offWhite;
+}
+
+.RosterEntryShade
+{
+	width: 100%;
+	height: 45%;
+	vertical-align: bottom;
+	border-radius: 0px 0px 4px 4px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #00000000 ), to( #000000aa ) );
+}
+
+.RosterEntryFrame
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 4px;
+	border: 2px solid offWhite&10;
+	transition-property: border;
+	transition-duration: 0.12s;
+}
+
+.RosterEntry:hover .RosterEntryFrame
+{
+	border: 2px solid offWhite&44;
+}
+
+.RosterEntry:selected .RosterEntryFrame
+{
+	border: 2px solid brandGreen;
+}
+
+.ConversationRoster .RosterEntry.NoConversation
+{
+	opacity: 0.2;
+}
+
+.RosterEntry.IsConversationPartner
+{
+	saturation: 1;
+	brightness: 1;
+	box-shadow: goldColor&55 0px 0px 14px 0px;
+}
+
+.RosterEntry.IsConversationPartner .RosterEntryFrame
+{
+	border: 2px solid goldColor;
+}
+
+.SpeakerColumn
+{
+	width: 480px;
+	height: 100%;
+	margin: 0px 16px;
+	border-radius: 6px;
+	background-color: gradient( radial, 50% 40%, 0% 0%, 80% 80%, from( #2a2f2b ), to( #0b0d0a ) );
+	border: 1px solid offWhite&08;
+	box-shadow: #00000080 0px 8px 24px 0px;
+}
+
+#HeroScenePanel
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+}
+
+#PatronImage
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 6px;
+	visibility: collapse;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+}
+
+.SpeakerIsPatron #HeroScenePanel
+{
+	visibility: collapse;
+}
+
+.SpeakerIsPatron #PatronImage
+{
+	visibility: visible;
+	opacity: 1;
+}
+
+.SpeakerHasNoImage #PatronImage
+{
+	visibility: collapse;
+}
+
+.SpeakerShade
+{
+	width: 100%;
+	height: 50%;
+	vertical-align: bottom;
+	border-radius: 0px 0px 6px 6px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #00000000 ), to( #000000ee ) );
+}
+
+.SpeakerInfo
+{
+	width: 100%;
+	vertical-align: bottom;
+	flow-children: down;
+	padding: 0px 24px 28px 24px;
+}
+
+.SpeakerName
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	font-size: 52px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	color: offWhite;
+	text-shadow: 0px 2px 12px 2 #000000cc;
+}
+
+.SpeakerLineCount
+{
+	horizontal-align: center;
+	margin-top: -4px;
+	font-family: block;
+	font-size: 16px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: brandGreen&cc;
+}
+
+#RandomButton
+{
+	horizontal-align: center;
+	margin-top: 18px;
+}
+
+.LinesColumn
+{
+	width: 796px;
+	padding: 18px 12px 0px 18px;
+}
+
+#SearchBox
+{
+	width: 100%;
+	margin-right: 6px;
+}
+
+#SearchBox #SearchIcon
+{
+	vertical-align: center;
+	width: 24px;
+	height: 24px;
+	margin: 8px 10px;
+	wash-color: offWhite;
+	opacity: 0.5;
+}
+
+#SearchBox #SearchTextEntry
+{
+	width: 100%;
+	height: 44px;
+	border-radius: 6px;
+	border: 2px solid offWhite&08;
+	background-color: offWhite&04;
+	padding-left: 42px;
+	padding-top: 8px;
+	padding-right: 48px;
+	font-size: 18px;
+	transition-duration: 0.1s;
+	transition-property: border, background-color;
+}
+
+#SearchBox #SearchTextEntry:hover
+{
+	border: 2px solid offWhite&16;
+}
+
+#SearchBox #SearchTextEntry:focus
+{
+	animation-name: VoiceLinesSearchGlow;
+	animation-duration: 1s;
+	animation-delay: 0.1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+#SearchBox #SearchTextEntry:focus #PlaceholderText
+{
+	opacity: 0;
+}
+
+#SearchBox #SearchClearButton
+{
+	width: 40px;
+	height: 40px;
+	horizontal-align: right;
+	vertical-align: center;
+	margin-right: 4px;
+	visibility: collapse;
+	background-image: url("s2r://panorama/images/icons/icon_x.vsvg");
+	background-size: 14px 14px;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: offWhite;
+	opacity: 0.4;
+	transition-property: opacity, pre-transform-scale2d;
+	transition-duration: 0.1s;
+}
+
+#SearchBox #SearchClearButton:hover
+{
+	opacity: 0.9;
+	pre-transform-scale2d: 1.15;
+}
+
+.HasSearchQuery #SearchClearButton
+{
+	visibility: visible;
+}
+
+@keyframes 'VoiceLinesSearchGlow'
+{
+	0%
+	{
+		box-shadow: 0px 0px 24px offWhite&06;
+		border: 2px solid offWhite&11;
+	}
+	
+	100%
+	{
+		box-shadow: 0px 0px 24px offWhite&0a;
+		border: 2px solid offWhite&66;
+	}
+	
+}
+
+.Categories
+{
+	width: 100%;
+	flow-children: right-wrap;
+	margin-top: 14px;
+}
+
+.CategoryTab
+{
+	flow-children: right;
+	height: 34px;
+	padding: 0px 8px 0px 14px;
+	margin: 0px 8px 8px 0px;
+	border-radius: 17px;
+	background-color: offWhite&08;
+	border: 1px solid offWhite&0c;
+	transition-property: background-color, border, opacity;
+	transition-duration: 0.12s;
+}
+
+.CategoryTab:hover
+{
+	sound: soundMainMenuHover;
+	background-color: offWhite&16;
+	border: 1px solid offWhite&22;
+}
+
+.CategoryTab:active
+{
+	sound: soundMainMenuActivate;
+}
+
+.CategoryTab:selected
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #A6FFB5 ), to( brandGreen ) );
+	border: 1px solid brandGreen;
+}
+
+.CategoryTab.NoMatches
+{
+	opacity: 0.35;
+}
+
+.CategoryName
+{
+	vertical-align: center;
+	font-family: block;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: offWhite&aa;
+}
+
+.CategoryCount
+{
+	vertical-align: center;
+	margin-left: 8px;
+	padding: 1px 7px 0px 7px;
+	border-radius: 9px;
+	font-size: 13px;
+	font-weight: bold;
+	color: offWhite&66;
+	background-color: #00000066;
+}
+
+.CategoryTab:hover .CategoryName
+{
+	color: offWhite;
+}
+
+.CategoryTab:selected .CategoryName
+{
+	color: offBlack;
+}
+
+.CategoryTab:selected .CategoryCount
+{
+	color: offBlack&cc;
+	background-color: #00000022;
+}
+
+.LinesDivider
+{
+	width: 100%;
+	height: 1px;
+	margin: 6px 6px 0px 0px;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( offWhite&00 ), color-stop( 0.5, offWhite&18 ), to( offWhite&00 ) );
+}
+
+.VoiceLines
+{
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	flow-children: down;
+	overflow: squish scroll;
+	padding: 10px 12px 18px 0px;
+}
+
+.VoiceLines #VerticalScrollBar
+{
+	margin: 10px 0px 18px 0px;
+	opacity: 0.6;
+}
+
+.VoiceLine
+{
+	width: 100%;
+	min-height: 54px;
+	flow-children: right;
+	padding: 10px 14px 10px 12px;
+	margin-bottom: 4px;
+	border-radius: 5px;
+	background-color: offWhite&05;
+	transition-property: background-color, pre-transform-scale2d;
+	transition-duration: 0.12s;
+}
+
+.VoiceLine:hover
+{
+	background-color: offWhite&10;
+}
+
+.VoiceLine:active
+{
+	sound: soundMainMenuActivate;
+	pre-transform-scale2d: 0.995;
+}
+
+.VoiceLine.IsPlaying
+{
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( brandGreen&30 ), to( brandGreen&06 ) );
+}
+
+.VoiceLinePlay
+{
+	width: 34px;
+	height: 34px;
+	vertical-align: center;
+	margin-right: 16px;
+	border-radius: 50%;
+	border: 2px solid offWhite&33;
+	background-color: #00000044;
+	transition-property: border, background-color;
+	transition-duration: 0.12s;
+}
+
+.VoiceLinePlayIcon
+{
+	width: 12px;
+	height: 12px;
+	horizontal-align: center;
+	vertical-align: center;
+	margin-left: 2px;
+	background-image: url("s2r://panorama/images/icons/icon_play.vsvg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: offWhite&bb;
+}
+
+.VoiceLine:hover .VoiceLinePlay
+{
+	border: 2px solid offWhite&aa;
+	background-color: offWhite&14;
+}
+
+.VoiceLine:hover .VoiceLinePlayIcon
+{
+	wash-color: offWhite;
+}
+
+.VoiceLine.IsPlaying .VoiceLinePlay
+{
+	border: 2px solid brandGreen;
+	background-color: brandGreen;
+	animation-name: VoiceLinePlayingPulse;
+	animation-duration: 1.6s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.VoiceLine.IsPlaying .VoiceLinePlayIcon
+{
+	width: 18px;
+	height: 18px;
+	margin-left: 0px;
+	background-image: url("s2r://panorama/images/icons/icon_sound_on.vsvg");
+	wash-color: offBlack;
+}
+
+@keyframes 'VoiceLinePlayingPulse'
+{
+	0%
+	{
+		box-shadow: fill brandGreen&22 0px 0px 6px 1px;
+	}
+	
+	50%
+	{
+		box-shadow: fill brandGreen&66 0px 0px 16px 3px;
+	}
+	
+	100%
+	{
+		box-shadow: fill brandGreen&22 0px 0px 6px 1px;
+	}
+	
+}
+
+.VoiceLineBody
+{
+	width: fill-parent-flow( 1.0 );
+	vertical-align: center;
+	flow-children: down;
+}
+
+.VoiceLineCategory
+{
+	margin-bottom: 2px;
+	font-family: block;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: offWhite&55;
+	visibility: collapse;
+}
+
+.ShowAllCategories .VoiceLineCategory
+{
+	visibility: visible;
+}
+
+.VoiceLineText
+{
+	width: 100%;
+	font-size: 19px;
+	color: offWhite&cc;
+	transition-property: color;
+	transition-duration: 0.12s;
+}
+
+.VoiceLine:hover .VoiceLineText
+{
+	color: offWhite;
+}
+
+.VoiceLine.IsPlaying .VoiceLineText
+{
+	color: #C9FFD9;
+}
+
+.VoiceLineRelatedHero
+{
+	width: 34px;
+	height: 34px;
+	vertical-align: center;
+	margin-left: 14px;
+	border-radius: 50%;
+	border: 2px solid offWhite&18;
+	visibility: collapse;
+	opacity: 0.85;
+}
+
+.VoiceLine.HasRelatedHero .VoiceLineRelatedHero
+{
+	visibility: visible;
+}
+
+.VoiceLine.IsConversation .VoiceLineText,.VoiceLine.IsConversation .VoiceLineRelatedHero
+{
+	visibility: collapse;
+}
+
+.ConversationLines
+{
+	width: 100%;
+	flow-children: down;
+	visibility: collapse;
+}
+
+.VoiceLine.IsConversation .ConversationLines
+{
+	visibility: visible;
+}
+
+.ConversationLine
+{
+	width: 100%;
+	flow-children: right;
+	padding: 3px 0px;
+}
+
+.ConversationLineSpeaker
+{
+	width: 28px;
+	height: 28px;
+	margin-right: 12px;
+	border-radius: 50%;
+	border: 2px solid offWhite&18;
+	transition-property: border;
+	transition-duration: 0.12s;
+}
+
+.ConversationLineText
+{
+	width: fill-parent-flow( 1.0 );
+	vertical-align: center;
+	font-size: 17px;
+	color: offWhite&aa;
+	transition-property: color;
+	transition-duration: 0.12s;
+}
+
+.VoiceLine:hover .ConversationLineText
+{
+	color: offWhite&dd;
+}
+
+.VoiceLine.IsPlaying .ConversationLineText
+{
+	color: offWhite&55;
+}
+
+.VoiceLine.IsPlaying .ConversationLine.IsSpeaking .ConversationLineText
+{
+	color: #C9FFD9;
+}
+
+.VoiceLine.IsPlaying .ConversationLine.IsSpeaking .ConversationLineSpeaker
+{
+	border: 2px solid brandGreen;
+}
+
+.EmptyState
+{
+	width: 100%;
+	height: 100%;
+	ignore-parent-flow: true;
+	visibility: collapse;
+}
+
+.NoVoiceLines .EmptyState
+{
+	visibility: visible;
+}
+
+.EmptyState Label
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-size: 20px;
+	font-style: italic;
+	color: offWhite&44;
+}
+
+.EmptyNoMatches,.HasSearchQuery .EmptyNoLines
+{
+	visibility: collapse;
+}
+
+.HasSearchQuery .EmptyNoMatches
+{
+	visibility: visible;
+}
+

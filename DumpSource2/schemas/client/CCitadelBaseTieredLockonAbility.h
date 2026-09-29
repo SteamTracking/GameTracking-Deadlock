@@ -1,0 +1,3 @@
+class CCitadelBaseTieredLockonAbility : public CCitadelBaseLockonAbility
+{
+};

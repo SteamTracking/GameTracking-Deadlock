@@ -7,226 +7,13 @@
 // outdoors
 //
 
-// random traffic events
-"amb.random.traffic.oneshots"
-{
-	"playevent"
-	{
-		"event" "amb.Outdoors.Traffic.Brakes"
-	}
-
-	"playevent"
-	{
-		"event" "amb.Outdoors.Traffic.Bys"
-	}
-
-	"playevent"
-	{
-		"event" "amb.Outdoors.Traffic.Honks"
-	}
-}
-
-"amb.random.traffic.distant.oneshots"
-{
-	"playevent"
-	{
-		"event" "amb.Outdoors.Traffic.Bys_Deep"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Traffic.Brakes"
-	}
-
-	"playevent"
-	{
-		"event" "amb.Outdoors.Traffic.Bys"
-	}
-
-	"playevent"
-	{
-		"event" "amb.Outdoors.Traffic.Honks"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Wind_Lp"
-	}
-
-}
-
-// random urban nature events and wind
-"amb.random.nature.oneshots"
-{
-	"playevent"
-	{
-		"event" "amb.Outdoors.Wind_Gusts"
-		"traveler" "WindGusts"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Birds_Sparse"
-		"traveler" "BirdsSparse"
-	}
-
-	"playevent"
-	{
-		"event" "amb.Outdoors.Wind_Lp"
-	}
-}
-
-// random outdoor events
-"amb.random.outdoors.oneshots"
-{
-	"playsoundscape"
-	{
-		"name"				"amb.random.traffic.oneshots"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Thunder"
-		"traveler" "Thunder"
-	}
-
-	"playevent"
-	{
-		"event" "amb.Outdoors.Pianostring_Swells"
-		"traveler" "Pianostring"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.DogBarks"
-		"traveler" "Dog"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Plane"
-		"traveler" "Plane"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Crow"
-		"traveler" "Crow"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Construction"
-	}
-}
-
-"amb.random.outdoors.midlane.oneshots"
-{
-	"playsoundscape"
-	{
-		"name"				"amb.random.traffic.distant.oneshots"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Thunder"
-		"traveler" "Thunder"
-	}
-
-	"playevent"
-	{
-		"event" "amb.Outdoors.Pianostring_Swells"
-		"traveler" "Pianostring"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Plane"
-		"traveler" "Plane"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Crow"
-		"traveler" "Crow"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Construction"
-	}
-	
-}
-
-"amb.random.outdoors.covered.oneshots"
-{
-	"playsoundscape"
-	{
-		"name"				"amb.random.traffic.oneshots"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Indoors.Thunder_Distant"
-	}
-}
-
-"amb.random.alley.oneshots"
-{
-	"playsoundscape"
-	{
-		"name"				"amb.random.traffic.oneshots"
-	}
-	
-	"playsoundscape"
-	{
-		"name"				"amb.random.outdoors.oneshots"
-	}
-
-	// "playevent"
-	// {
-		// "event" "amb.Indoors.Air_Deep"
-		// "traveler" "DeepAir"
-	// }
-	
-	"playevent"
-	{
-		"event" "amb.Magic.Creatures"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Alley.Bangs"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Alley.Swells"
-	}
-	
-}
-
 // generic outdoors area
 "amb.generic.outdoors"
 {
-	"playsoundscape"
-	{
-		"name"				"amb.Park"
-	}
-}
-
-// outdoors magic
-"amb.generic.outdoors.magic"
-{
-	// "playevent"
-	// {
-		// "event"				"amb.Magic.Deep_Lp"
-		// "traveler" "magic"
-	// }
-	
 	"playevent"
 	{
-		"event"				"amb.Magic.Creatures"
+		"event"				"Amb.Bed.Lanes.Blue"
+		"traveler"			"BlueLane"
 	}
 }
 
@@ -235,53 +22,26 @@
 // indoors
 //
 
-// random indoor events
-"amb.random.indoors.oneshots"
-{	
+"amb.generic.indoors"
+{
+	"dsp" "20"
+	"fadetime" "1.5"
+
 	"playevent"
 	{
-		"event" "amb.Indoors.Thunder_Distant"
+		"event"				"Amb.Bed.Indoors"
+		"traveler" "Indoors"
 	}
 }
 
 // generic alley area
 "amb.generic.alley"
 {	
-	"playsoundscape"
-	{
-		"name"				"amb.random.alley.oneshots"
-	}
-
 	"playevent"
 	{
-		"event" "amb.Outdoors.Alley.Lp"
+		"event" "Amb.Bed.Alley"
+		"traveler" "AlleyLoop"
 	}
-}
-
-// generic indoor area
-"amb.generic.indoors"
-{
-	"playsoundscape"
-	{
-		"name"				"amb.random.indoors.oneshots"
-	}
-	// "playevent"
-	// {
-		// "event" "amb.Indoors.General.Lp"
-		// "traveler" "Indoors"
-	// }
-	
-	// "playevent"
-	// {
-		// "event" "amb.Indoors.General.Outdoors_Lp"
-		// "traveler" "IndoorsExterior"
-	// }
-	
-	// "playevent"
-	// {
-		// "event" "amb.Outdoors.Construction_Lp"
-		// "traveler" "IndoorConstruction"
-	// }
 }
 
 //			     //
@@ -292,61 +52,34 @@
 	"dsp" "20"
 	"fadetime" "1.5"
 
-	// "playevent"
-	// {
-		// "event" "amb.HomeBase.General_Lp"
-	// }
-	
-	"playsoundscape"
+	"playevent"
 	{
-		"name"				"amb.random.outdoors.oneshots"
+		"event"				"Amb.Bed.Base.South"
+		"traveler" "BaseSouth"
 	}
-	
-	// "playevent"
-	// {
-		// "event" "amb.Outdoors.Walla"
-	// }
+}
+
+"amb.homebase.north"
+{
+	"dsp" "20"
+	"fadetime" "1.5"
 
 	"playevent"
 	{
-		"event" "amb.Outdoors.Yells"
+		"event"				"Amb.Bed.Base.North"
+		"traveler" "BaseNorth"
 	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Alley.Swells"
-	}	
-	
-	"playsoundscape"
-	{
-		"name"				"amb.generic.outdoors.magic"
-	}
-	
-	// "playevent"
-	// {
-		// "event" "amb.Base.Binaural_9hz"
-		// "traveler" "BinauralBase"
-	// }
-	
-	// "playevent"
-	// {
-		// "event" "amb.Outdoors.Construction_Lp"
-		// "traveler" "BaseConstruction"
-	// }
 }
 
 "amb.rooftop"
 {
 	"dsp" "20"
 	"fadetime" "1.5"
-	// "playevent"
-	// {
-		// "event" "amb.Outdoors.Wind_Elevated"
-	// }
-	
-	"playsoundscape"
+
+	"playevent"
 	{
-		"name"				"amb.generic.alley"
+		"event" "Amb.Bed.Rooftops"
+		"traveler" "Rooftops"
 	}
 }
 
@@ -360,14 +93,10 @@
 	"dsp" "20"
 	"fadetime" "1.5"
 	
-	"playsoundscape"
+	"playevent"
 	{
-		"name"				"amb.random.outdoors.oneshots"
-	}
-	
-	"playsoundscape"
-	{
-		"name"				"amb.random.nature.oneshots"
+		"event"				"Amb.Bed.Lanes.Yellow"
+		"traveler" "YellowLane"
 	}
 }
 
@@ -376,46 +105,38 @@
 	"dsp" "20"
 	"fadetime" "1.5"
 	
-	"playsoundscape"
-	{
-		"name"				"amb.random.outdoors.midlane.oneshots"
-	}
-	
 	"playevent"
 	{
-		"event" "amb.Outdoors.Alley.Lp"
-		"traveler" "AlleyLoop"
+		"event"				"Amb.Bed.Lanes.Blue"
+		"traveler" "BlueLane"
 	}
 }
 
 //------------------------------------------------------------------------------------------
 //
-// purple lane
+// green lane
 //
-"amb.lane.purple.outdoors"
+"amb.lane.green.outdoors"
 {
 	"dsp" "20"
 	"fadetime" "1.5"
 
-	"playsoundscape"
+	"playevent"
 	{
-		"name"				"amb.outerlane.generic"
+		"event"				"Amb.Bed.Lanes.Green"
+		"traveler" "GreenLane"
 	}
 }
 
-"amb.lane.purple.indoors"
+"amb.lane.green.indoors"
 {
 	"dsp" "20"
 	"fadetime" "1.5"
-	"playsoundscape"
+	"playevent"
 	{
-		"name"				"amb.generic.indoors"
+		"event"				"Amb.Bed.Indoors"
+		"traveler" "Indoors"
 	}
-	
-	"playsoundscape"
-	{
-		"name"				"amb.random.indoors.oneshots"
-	}	
 }
 
 //------------------------------------------------------------------------------------------
@@ -424,9 +145,10 @@
 //
 "amb.lane.blue.outdoors"
 {
-	"playsoundscape"
+	"playevent"
 	{
-		"name"				"amb.midlane.generic"
+		"event"				"Amb.Bed.Lanes.Blue"
+		"traveler" "BlueLane"
 	}
 }
 
@@ -434,44 +156,10 @@
 {
 	"dsp" "20"
 	"fadetime" "1.5"
-	"playsoundscape"
+	"playevent"
 	{
-		"name"				"amb.generic.indoors"
-	}
-	
-	"playsoundscape"
-	{
-		"name"				"amb.random.indoors.oneshots"
-	}
-}
-
-//------------------------------------------------------------------------------------------
-//
-// orange lane
-//
-"amb.lane.orange.outdoors"
-{
-	"dsp" "20"
-	"fadetime" "1.5"
-	
-	"playsoundscape"
-	{
-		"name"				"amb.midlane.generic"
-	}
-}
-
-"amb.lane.orange.indoors"
-{
-	"dsp" "20"
-	"fadetime" "1.5"
-	"playsoundscape"
-	{
-		"name"				"amb.generic.indoors"
-	}
-	
-	"playsoundscape"
-	{
-		"name"				"amb.random.indoors.oneshots"
+		"event"				"Amb.Bed.Indoors"
+		"traveler" "Indoors"
 	}
 }
 
@@ -484,9 +172,10 @@
 	"dsp" "20"
 	"fadetime" "1.5"
 
-	"playsoundscape"
+	"playevent"
 	{
-		"name"				"amb.outerlane.generic"
+		"event"				"Amb.Bed.Lanes.Yellow"
+		"traveler" "YellowLane"
 	}
 }
 
@@ -494,14 +183,10 @@
 {
 	"dsp" "20"
 	"fadetime" "1.5"
-	"playsoundscape"
+	"playevent"
 	{
-		"name"				"amb.generic.indoors"
-	}
-	
-	"playsoundscape"
-	{
-		"name"				"amb.random.indoors.oneshots"
+		"event"				"Amb.Bed.Indoors"
+		"traveler" "Indoors"
 	}
 }
 
@@ -514,21 +199,11 @@
 {
 	"dsp" "20"
 	"fadetime" "1.5"
-	"playsoundscape"
+	"playevent"
 	{
-		"name"				"amb.generic.indoors"
+		"event"				"Amb.Bed.Indoors"
+		"traveler" "Indoors"
 	}
-	
-	"playsoundscape"
-	{
-		"name"				"amb.random.indoors.oneshots"
-	}
-	
-	// "playevent"
-	// {
-		// "event" "amb.Outdoors.Construction_Lp"
-		// "traveler" "WarehouseConstruction"
-	// }
 }
 
 // mid temple
@@ -536,14 +211,16 @@
 {
 	"playevent"
 	{
-		"event" "amb.Indoors.Temple.Lp"
+		"event" "Amb.Bed.Midboss"
 		"traveler" "Temple"
 	}
-	
+}
+
+"amb.baroness"
+{
 	"playevent"
 	{
-		"event" "amb.Indoors.General.Outdoors_Lp"
-		"traveler" "IndoorsExterior"
+		"event" "Amb.Bed.Midboss"
 	}
 }
 
@@ -553,48 +230,9 @@
 	
 	"playevent"
 	{
-		"event" "amb.Indoors.Underground.Lp"
+		"event" "Amb.Bed.Underground"
 		"traveler" "UndergroundLoop"
 	}
-	
-	// "playevent"
-	// {
-		// "event" "amb.Indoors.Air_Deep"
-		// "traveler" "DeepAir"
-	// }
-	
-	// "playevent"
-	// {
-		// "event" "amb.Outdoors.Construction_Lp"
-		// "traveler" "UndergroundConstruction"
-	// }
-}
-
-// underpass
-"amb.underpass"
-{
-	"playsoundscape"
-	{
-		"name"				"amb.random.outdoors.covered.oneshots"
-	}
-	
-	// "playevent"
-	// {
-		// "event" "amb.Outdoors.General.Far_Lp"
-		// "traveler" "generaloutdoorsfar"
-	// }
-	
-	// "playevent"
-	// {
-		// "event" "amb.Indoors.Air_Deep"
-		// "traveler" "DeepAir"
-	// }
-	
-	// "playevent"
-	// {
-		// "event" "amb.Outdoors.Construction_Lp"
-		// "traveler" "UnderpassConstruction"
-	// }
 }
 
 // tunnel
@@ -602,52 +240,28 @@
 {
 	"playevent"
 	{
-		"event" "amb.Indoors.Tunnel.Lp"
-		"traveler" "TunnelLoop"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Indoors.Underground.Lp"
+		"event" "Amb.Bed.Underground"
 		"traveler" "UndergroundLoop"
 	}
-
-	// "playevent"
-	// {
-		// "event" "amb.Base.Binaural_9hz"
-		// "traveler" "BinauralTunnel"
-	// }
-
-	"playevent"
-	{
-		"event" "amb.Tunnel.Swells"
-	}
-
-	"playevent"
-	{
-		"event" "amb.Outdoors.Alley.Swells"
-	}
-	
-	// "playevent"
-	// {
-		// "event" "amb.Outdoors.Construction_Lp"
-		// "traveler" "TunnelConstruction"
-	// }
 }
 
 // spawn
-"amb.spawn"
+"amb.spawn.south"
 {
-	"playsoundscape"
+	"playevent"
 	{
-		"name"				"amb.homebase.south"
+		"event"				"Amb.Bed.Base.South"
+		"traveler" "BaseSouth"
 	}
-	
-	// "playevent"
-	// {
-		// "event" "amb.Indoors.Air_Deep"
-		// "traveler" "DeepAir"
-	// }
+}
+
+"amb.spawn.north"
+{
+	"playevent"
+	{
+		"event"				"Amb.Bed.Base.North"
+		"traveler" "BaseNorth"
+	}
 }
 
 //			     //
@@ -657,32 +271,10 @@
 // park
 "amb.park"
 {
-	"playsoundscape"
-	{
-		"name"				"amb.random.outdoors.oneshots"
-	}
-	
 	"playevent"
 	{
-		"event" "amb.Outdoors.Birds"
-	}
-	
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.LoudBirds"
-		"traveler" "LoudBirds"
-	}
-
-	"playevent"
-	{
-		"event" "amb.Outdoors.Songbird"
-		"traveler" "SongBirds"
-	}
-	
-	"playevent"
-	{
-		"event" "amb.Outdoors.Park_Walla_Lp"
+		"event"				"Amb.Bed.Lanes.Green"
+		"traveler" "GreenLane"
 	}
 }
 

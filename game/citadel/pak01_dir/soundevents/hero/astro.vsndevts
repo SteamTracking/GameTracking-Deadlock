@@ -147,29 +147,42 @@
 		]
 		vsnd_duration = 0.364989
 	}
-	Astro.ExplosiveBarrel.Cast = 
-	{
-		base = "Base.Ability"
-		volume = -1.0
-		vsnd_files = "sounds/abilities/astro/a1_exp_barrels/launch.vsnd"
-		vsnd_duration = 2.492625
-	}
-	Ability.Astro.ExpBarrels.Explode = 
+	Astro.ExpBarrels.Explode = 
 	{
 		base = "Base.Ability.Detached"
 		volume = -2.5
-		pitch_rand_min = -0.2
-		pitch_rand_max = 0.2
+		pitch_rand_min = -0.1
+		pitch_rand_max = 0.1
 		limiter_on = 1.0
 		limiter_max = 2.0
 		limiter_stop_oldest = true
-		vsnd_files = "sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_explode.vsnd"
+		vsnd_files = 
+		[
+			"sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_explode_01.vsnd",
+			"sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_explode_02.vsnd",
+			"sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_explode_03.vsnd",
+		]
+		vsnd_duration = 2.376961
+	}
+	Astro.ExpBarrels.Hit = 
+	{
+		base = "Base.Ability.Hit"
+		volume = 3.0
+		volume_offset_attacker_db = 3.0
+		pitch_rand_min = -0.075
+		pitch_rand_max = 0.075
+		vsnd_files = 
+		[
+			"sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_hit_01.vsnd",
+			"sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_hit_02.vsnd",
+			"sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_hit_03.vsnd",
+		]
 		vsnd_duration = 2.376961
 	}
 	Astro.A1.Barrel.Armed = 
 	{
-		base = "Base.Ability.Projectile"
-		volume = -4.5
+		base = "Base.Ability.Detached"
+		volume = -3.5
 		vsnd_files = "sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_armed.vsnd"
 		vsnd_duration = 2.982018
 	}
@@ -177,9 +190,9 @@
 	{
 		base = "Base.Ability.Projectile"
 		volume = -5.0
-		delay_rand_min = -0.5
-		delay_rand_max = 0.1
-		volume_fade_in = 0.05
+		volume_offset_opponent = 3.0
+		delay_rand_min = -3.0
+		volume_fade_in = 0.1
 		volume_fade_out = 0.1
 		vsnd_files = "sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_lp.vsnd"
 		vsnd_duration = 3.8478
@@ -187,18 +200,17 @@
 	Astro.A1.Barrel.MeleeHit = 
 	{
 		base = "Base.Ability"
-		volume = 2.0
-		volume_offset_player = 4.0
+		volume = 4.0
 		volume_enemy_targeting_boost = 4.0
 		pitch = 1.0
 		vsnd_files = "sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_melee.vsnd"
-		vsnd_duration = 2.483356
+		vsnd_duration = 1.801043
 	}
 	Astro.A1.Barrel.Cast = 
 	{
 		base = "Base.Ability"
 		volume = 0.0
-		pitch = 1.2
+		pitch = 1.1
 		vsnd_files = "sounds/abilities/astro/a1_exp_barrels/holliday_a1_barrel_cast.vsnd"
 		vsnd_duration = 2.269728
 	}
@@ -213,7 +225,7 @@
 	}
 	Astro.BouncePad.CastDelay = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = -0.5
 		pitch_rand_max = 0.02
 		pitch_rand_min = -0.05
@@ -295,6 +307,7 @@
 		volume_offset_opponent = 9.0
 		volume_offset_team = -7.5
 		volume_enemy_targeting_boost = 3.0
+		volume_falloff_min_opponent = 430.0
 		volume_fade_in = 0.3
 		volume_fade_out = 0.25
 		vsnd_files = "sounds/abilities/astro/a2_bounce_pad/holliday_a2_mod_travel_lp.vsnd"
@@ -305,19 +318,15 @@
 				0.0, 0.0,
 			],
 			[
-				433.522736, 0.0, 0.0, -0.008466,
-				0.0, 2.0,
-			],
-			[
-				1841.477295, -15.151516, -0.023088, -0.007922,
+				0.5, -15.151516, -0.023088, -0.007922,
 				2.0, 1.0,
 			],
 			[
-				3034.65918, -20.606062, -0.009524, -0.009524,
+				0.85, -20.606062, -0.009524, -0.009524,
 				2.0, 3.0,
 			],
 			[
-				3500.0, -60.0, -0.035318, -0.035318,
+				1.0, -60.0, -0.035318, -0.035318,
 				2.0, 3.0,
 			],
 		]
@@ -375,7 +384,7 @@
 	}
 	Holliday.A4.Lasso.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 2.0
 		vsnd_files = "sounds/abilities/astro/a4_lasso/holliday_a4_lasso_throw.vsnd"
 		vsnd_duration = 3.029592
@@ -393,21 +402,20 @@
 		base = "Base.Ability.Telegraph"
 		volume = -1.0
 		volume_offset_team = -6.0
-		volume_enemy_targeting_boost = 4.0
 		vsnd_files = "sounds/abilities/astro/a3_target_practice/holliday_a3_crackshot_ready.vsnd"
 		vsnd_duration = 1.888322
 	}
 	Holliday.A3.Crackshot.Headshot.Confirm.Player = 
 	{
 		base = "Base.Ability"
-		volume = -4.5
+		volume = -3.5
 		vsnd_files = "sounds/abilities/astro/a3_target_practice/holliday_a3_crackshot_headshot_confirmation_player.vsnd"
 		vsnd_duration = 2.4361
 	}
 	Holliday.A3.Crackshot.Headshot.Confirm.Victim = 
 	{
 		base = "Base.Ability.StatusEffect"
-		volume = -4.5
+		volume = -3.5
 		pitch = 0.9
 		vsnd_files = "sounds/abilities/astro/a3_target_practice/holliday_a3_crackshot_headshot_confirmation_victim.vsnd"
 		vsnd_duration = 2.244014
@@ -544,34 +552,7 @@
 	}
 	Holliday.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
+		base = "Hero.Default.Melee.Swing"
 		track_2.track_vsnd_files = 
 		[
 			"sounds/player/movement/holliday/astro_foley_short_01.vsnd",
@@ -591,39 +572,10 @@
 			"sounds/player/movement/holliday/astro_foley_short_15.vsnd",
 			"sounds/player/movement/holliday/astro_foley_short_16.vsnd",
 		]
-		vsnd_duration = 1.062208
 	}
 	Holliday.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
+		base = "Hero.Default.Melee.Charged"
 		track_2.track_vsnd_files = 
 		[
 			"sounds/player/movement/holliday/astro_foley_short_01.vsnd",
@@ -643,12 +595,11 @@
 			"sounds/player/movement/holliday/astro_foley_short_15.vsnd",
 			"sounds/player/movement/holliday/astro_foley_short_16.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	Astro.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "astro"
+		context_name = "hero_astro"
 		vsnd_files = 
 		[
 			"sounds/vo/astro/astro_kill_anyhero_03.vsnd",
@@ -662,7 +613,7 @@
 	Astro.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "astro"
+		context_name = "hero_astro"
 		vsnd_files = 
 		[
 			"sounds/vo/astro/astro_near_miss_01.vsnd",

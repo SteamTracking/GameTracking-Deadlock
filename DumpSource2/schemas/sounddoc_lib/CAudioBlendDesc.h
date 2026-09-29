@@ -1,0 +1,3 @@
+class CAudioBlendDesc : public CVNodeTypeDesc
+{
+};

@@ -2,26 +2,46 @@
 
 CitadelShopMod
 {
+	height: 114px;
+	width: 76px;
+	margin: 3px;
 	min-height: 80px;
-	height: 125px;
-	width: 80px;
-	margin: 2px;
 	tooltip-position: left;
 	tooltip-body-position: 50% 50%;
-	ui-scale: 100%;
 	box-shadow: 2px 2px 12px #0007;
-	border-radius: 6px;
+	border-radius: 2px;
 	transition-property: pre-transform-scale2d;
 	transition-duration: 0.05s;
-	opacity: 0.8;
-	brightness: 0.5;
-}
-
-CitadelShopMod
-{
 	opacity: 0.5;
 	brightness: 1;
 	wash-color: #e70023ba;
+	overflow: noclip;
+}
+
+CitadelShopMod.isActiveItem
+{
+	border-radius: 50px;
+	border-radius: 50px 50px 2px 2px;
+}
+
+.showingFavorites CitadelShopMod.isActiveItem,.showingSearch CitadelShopMod.isActiveItem,PopupSellMaxItems CitadelShopMod.isActiveItem,CitadelTooltipModHover CitadelShopMod.isActiveItem
+{
+	border-radius: 40px 2px 2px 2px;
+}
+
+CitadelShopMod.isActiveItem.quickbuy
+{
+	border-radius: 2px;
+}
+
+CitadelShopMod.isActiveItem.quickbuy
+{
+	border-radius: 2px 40px 2px 2px;
+}
+
+.showingFavorites CitadelShopMod.isActiveItem.quickbuy,.showingSearch CitadelShopMod.isActiveItem.quickbuy,PopupSellMaxItems CitadelShopMod.isActiveItem.quickbuy,CitadelTooltipModHover CitadelShopMod.isActiveItem.quickbuy
+{
+	border-radius: 2px;
 }
 
 .boldedText
@@ -92,7 +112,7 @@ CitadelShopMod.canAffordMod
 	
 }
 
-CitadelShopMod.canAffordMod,CitadelShopMod.owned,CitadelShopMod.usedAsComponent
+CitadelShopMod.canAffordMod,CitadelShopMod.owned,CitadelShopMod.usedAsComponent,.gEditingBuilds CitadelShopMod
 {
 	wash-color: none;
 	opacity: 1;
@@ -102,16 +122,6 @@ CitadelShopMod.canAffordMod,CitadelShopMod.owned,CitadelShopMod.usedAsComponent
 CitadelShopMod.usedAsComponent,CitadelShopMod.owned
 {
 	opacity: 0.7;
-}
-
-.gEditingBuilds CitadelShopMod.recommended
-{
-	wash-color: buildsLightColor;
-}
-
-.ModTierHovered CitadelShopMod.isActiveItem
-{
-	border-radius: 5px;
 }
 
 .shopClosed CitadelShopMod:hover
@@ -162,12 +172,12 @@ CitadelShopMod.itemDisabled:hover,CitadelShopMod.disabledFromPurchasing:hover
 	pre-transform-scale2d: 1;
 }
 
-.Searching CitadelShopMod
+.FiltersActive .AllowSearch CitadelShopMod,.Searching .AllowSearch CitadelShopMod,#ShopModsRecommended .AllowSearch CitadelShopMod
 {
 	visibility: collapse;
 }
 
-.Searching CitadelShopMod.SearchMatch
+.FiltersActive .AllowSearch CitadelShopMod.SearchMatch,.Searching .AllowSearch CitadelShopMod.SearchMatch,#ShopModsRecommended .AllowSearch CitadelShopMod.SearchMatch
 {
 	visibility: visible;
 }
@@ -202,6 +212,24 @@ CitadelShopMod.itemDisabled:hover,CitadelShopMod.disabledFromPurchasing:hover
 }
 
 .isEnhanced #Enhanced
+{
+	visibility: visible;
+}
+
+#Corrupted
+{
+	width: 100%;
+	height: 100%;
+	vertical-align: bottom;
+	horizontal-align: left;
+	visibility: collapse;
+	opacity: 1;
+	background-image: url("s2r://panorama/images/shop/corrupted_items/item_frame_corrupted_psd.vtex");
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+.isCorrupted #Corrupted
 {
 	visibility: visible;
 }
@@ -260,11 +288,6 @@ CitadelShopMod.canAffordMod:hover .mod_backer,CitadelShopMod.owned:hover .mod_ba
 	wash-color: buildsLightColor&50;
 }
 
-.recommended .recommended_icon
-{
-	visibility: visible;
-}
-
 .quickbuy.recommended .recommended_icon
 {
 	visibility: collapse;
@@ -283,11 +306,6 @@ CitadelShopMod.canAffordMod:hover .mod_backer,CitadelShopMod.owned:hover .mod_ba
 	vertical-align: top;
 	padding: 2px;
 	border-radius: 5px 0px 0px 0px;
-}
-
-.recommended .modStatusCol
-{
-	background-color: buildsColor;
 }
 
 .quickbuy .modStatusCol
@@ -313,6 +331,370 @@ PopupPickEnhanceItem .owned .modStatusCol
 .owned.quickbuy .modStatusCol
 {
 	background-color: colorEnemy;
+}
+
+#ShopModsFiltered .PopularItem .PopularityContainer
+{
+	visibility: visible;
+}
+
+.PopularityContainer
+{
+	visibility: collapse;
+	width: 36px;
+	height: 36px;
+	overflow: noclip;
+	vertical-align: top;
+	horizontal-align: right;
+	margin-top: -2px;
+	margin-right: -2px;
+	ignore-parent-flow: true;
+	animation-name: Groove1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.PopularityContainer .PopularItemContainer
+{
+	width: 100%;
+	height: 100%;
+	ui-scale: 80%;
+}
+
+.PopularityContainer .PopularItemPhase
+{
+	width: 60%;
+	height: 60%;
+	vertical-align: top;
+	horizontal-align: right;
+	margin-right: 5px;
+	margin-top: 3px;
+	opacity: 1;
+}
+
+.PopularityContainer .PopularItemPhase.Early
+{
+	background-image: url("s2r://panorama/images/shop/catalog/filters/icon_early_game_png.vtex");
+	background-size: contain;
+	wash-color: shardColor;
+}
+
+.PopularityContainer .PopularItemPhase.Mid
+{
+	wash-color: #b1beff;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/icon_mid_game_png.vtex");
+	background-size: contain;
+}
+
+.PopularityContainer .PopularItemPhase.Late
+{
+	background-image: url("s2r://panorama/images/icons/icon_time_late.vsvg");
+	background-size: contain;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/icon_late_game_png.vtex");
+	background-size: contain;
+}
+
+.ShowingPopular .PopularItem .PopularityContainer .PopularItemContainer,.showingFavorites .PopularItem .PopularityContainer .PopularItemContainer
+{
+	visibility: collapse;
+}
+
+.ShowingPopular .PopularCurrent .PopularityContainer .PopularItemPhase.Early
+{
+	visibility: visible;
+}
+
+.ShowingPopular .PopularCurrent .PopularityContainer .PopularItemPhase.Mid
+{
+	visibility: visible;
+}
+
+.ShowingPopular .PopularCurrent .PopularityContainer .PopularItemPhase.Late
+{
+	visibility: visible;
+}
+
+.PopularItem .PopularityContainer .PopularItemContainer
+{
+	visibility: visible;
+}
+
+.PopularItem .PopularityContainer .PopularItemPhase
+{
+	visibility: collapse;
+}
+
+.owned.PopularItem .PopularityContainer
+{
+	visibility: collapse;
+}
+
+.PopularityContainer #PopularHeroImage
+{
+	ui-scale: 50%;
+	horizontal-align: center;
+	vertical-align: center;
+	img-shadow: 0px 0px 0px 3.0 offBlack;
+}
+
+.PopularityContainer .recommendatations_hero_bg
+{
+	background-image: url("s2r://panorama/images/shop/catalog/backer_star_test_png.vtex");
+	horizontal-align: center;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	brightness: 3;
+	box-shadow: 0px 0px 10px offBlack&30;
+	opacity-mask: url("s2r://panorama/images/shop/catalog/backer_star_test_png.vtex");
+	visibility: collapse;
+	animation-name: backgroundPulse;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+.hero_atlas .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: abramsColor;
+}
+
+.hero_bebop .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: bebopColor;
+}
+
+.hero_bookworm .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: bookwormColor;
+}
+
+.hero_nano .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: nanoColor;
+}
+
+.hero_doorman .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: doormanColor;
+}
+
+.hero_drifter .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: drifterColor;
+}
+
+.hero_dynamo .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: dynamoColor;
+}
+
+.hero_frank .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: frankColor;
+}
+
+.hero_orion .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: orionColor;
+}
+
+.hero_haze .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: hazeColor;
+}
+
+.hero_astro .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: astroColor;
+}
+
+.hero_inferno .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: infernoColor;
+}
+
+.hero_tengu .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: tenguColor;
+}
+
+.hero_kelvin .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: kelvinColor;
+}
+
+.hero_ghost .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: ghostColor;
+}
+
+.hero_lash .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: lashColor;
+}
+
+.hero_forge .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: forgeColor;
+}
+
+.hero_mirage .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: mirageColor;
+}
+
+.hero_krill .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: krillColor;
+}
+
+.hero_chrono .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: chronoColor;
+}
+
+.hero_synth .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: synthColor;
+}
+
+.hero_priest .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: priestColor;
+}
+
+.hero_punkgoat .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: punkgoatColor;
+}
+
+.hero_gigawatt .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: gigawattColor;
+}
+
+.hero_shiv .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: shivColor;
+}
+
+.hero_magician .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: magicianColor;
+}
+
+.hero_vampirebat .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: vampirebatColor;
+}
+
+.hero_hornet .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: hornetColor;
+}
+
+.hero_viscous .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: viscousColor;
+}
+
+.hero_viper .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: viperColor;
+}
+
+.hero_warden .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: wardenColor;
+}
+
+.hero_wraith .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: wraithColor;
+}
+
+.hero_yamato .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: yamatoColor;
+}
+
+.hero_necro .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: necroColor;
+}
+
+.hero_fencer .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: fencerColor;
+}
+
+.hero_werewolf .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: werewolfColor;
+}
+
+.hero_unicorn .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: unicornColor;
+}
+
+.hero_familiar .PopularityContainer .recommendatations_hero_bg
+{
+	wash-color: familiarColor;
+}
+
+.PopularityContainer .thumb_icon
+{
+	width: 12px;
+	height: 14px;
+	background-image: url("s2r://panorama/images/shop/catalog/filters/icon_recommend_up.vsvg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: armorColor;
+	img-shadow: 0px 0px 0px 4.0 offBlack;
+	horizontal-align: right;
+	vertical-align: bottom;
+	transform: rotateZ(15deg);
+	margin: 0px 2px 7px 0px;
+}
+
+@keyframes 'backgroundPulse'
+{
+	0%
+	{
+		transform: rotateZ(0deg) skew(22deg);
+		pre-transform-scale2d: 1;
+	}
+	
+	20%
+	{
+		pre-transform-scale2d: 0.9;
+	}
+	
+	40%
+	{
+		pre-transform-scale2d: 1.05;
+	}
+	
+	60%
+	{
+		pre-transform-scale2d: 0.9;
+		transform: skew(2deg);
+	}
+	
+	80%
+	{
+		pre-transform-scale2d: 1.05;
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg) skew(22deg);
+		pre-transform-scale2d: 1;
+	}
+	
 }
 
 #ItemCostContainer
@@ -352,10 +734,41 @@ PopupPickEnhanceItem .owned .modStatusCol
 {
 	flow-children: down;
 	height: fit-children;
+	height: 100%;
 	background-image: url("s2r://panorama/images/shop/card_backer_psd.vtex");
 	opacity-mask: url("s2r://panorama/images/shop/card_backer_png.vtex");
 	background-size: cover;
 	width: 100%;
+	width: 80px;
+	horizontal-align: center;
+	vertical-align: top;
+	ignore-parent-flow: true;
+	border-radius: 3px;
+}
+
+.isActiveItem #ModCard
+{
+	border-radius: 50px 50px 2px 2px;
+}
+
+.showingFavorites .isActiveItem #ModCard,.showingSearch .isActiveItem #ModCard,PopupSellMaxItems .isActiveItem #ModCard,CitadelTooltipModHover .isActiveItem #ModCard
+{
+	border-radius: 40px 2px 2px 2px;
+}
+
+.isActiveItem.quickbuy #ModCard
+{
+	border-radius: 2px 40px 2px 2px;
+}
+
+.showingFavorites .isActiveItem.quickbuy #ModCard,.showingSearch .isActiveItem.quickbuy #ModCard,PopupSellMaxItems .isActiveItem.quickbuy #ModCard,CitadelTooltipModHover .isActiveItem.quickbuy #ModCard
+{
+	border-radius: 2px 2px 2px 2px;
+}
+
+.showingFavorites .quickbuy #ModCard,.showingSearch .quickbuy #ModCard,PopupSellMaxItems .quickbuy #ModCard,CitadelTooltipModHover .quickbuy #ModCard
+{
+	border-radius: 2px;
 }
 
 #CardBacker
@@ -456,6 +869,7 @@ PopupPickEnhanceItem .owned .modStatusCol
 {
 	width: 100px;
 	height: 100px;
+	height: 70px;
 	vertical-align: center;
 	horizontal-align: center;
 	opacity: 1;
@@ -463,6 +877,13 @@ PopupPickEnhanceItem .owned .modStatusCol
 	transition-duration: 0.3s;
 	visibility: collapse;
 	margin: 1px;
+	box-shadow: 2px 2px 5px offBlack&60;
+}
+
+.isActiveItem #ModIconImage
+{
+	margin: 1px;
+	border-radius: 50px;
 }
 
 #ShopModsContainer .mod_view:nth-child(3n+1) #ModIconImage
@@ -483,6 +904,11 @@ PopupPickEnhanceItem .owned .modStatusCol
 #ModIconImage
 {
 	visibility: visible;
+}
+
+.isActiveItem #ModIconImage
+{
+	opacity-mask: none;
 }
 
 .mod_icon
@@ -565,7 +991,6 @@ PopupPickEnhanceItem .owned .modStatusCol
 {
 	horizontal-align: center;
 	width: 100%;
-	height: 55px;
 }
 
 .paperTexture
@@ -587,12 +1012,11 @@ PopupPickEnhanceItem .owned .modStatusCol
 	border-top: 1px solid #fc61;
 	-s2-mix-blend-mode: screen;
 	border-radius: 6px;
+	visibility: collapse;
 }
 
 .paperWear
 {
-	width: 100%;
-	height: 100%;
 	ignore-parent-flow: true;
 	background-size: 100% 100%;
 }
@@ -683,11 +1107,7 @@ PopupPickEnhanceItem .owned .modStatusCol
 .modIconContainer
 {
 	height: width-percentage(100%);
-}
-
-.usedAsComponent .modIconContainer,.owned .modIconContainer
-{
-	background-color: offBlack;
+	height: fit-children;
 }
 
 .sellWillDestroyItem.owned #background:hover .mod_icon
@@ -706,6 +1126,11 @@ PopupPickEnhanceItem .owned .modStatusCol
 }
 
 .owned:hover #SellOverlay,.ForceShowSellOverlay:hover #SellOverlay,#CitadelModHoverTooltip.owned #SellOverlay
+{
+	visibility: visible;
+}
+
+#CitadelModHoverTooltip CitadelShopMod.owned #SellOverlay
 {
 	visibility: visible;
 }
@@ -938,6 +1363,11 @@ CitadelShopMod.canAffordMod #CantAfford,CitadelShopMod.owned #CantAfford
 	visibility: visible;
 }
 
+.gEditingBuilds .BuildModEntry.Focused CitadelShopMod
+{
+	ui-scale: 90%;
+}
+
 CitadelShopMod.recommended:hover #AddToBuild,CitadelShopMod.itemDisabled:hover #AddToBuild,#ShopModsSelectedBuild CitadelShopMod:hover #AddToBuild
 {
 	visibility: collapse;
@@ -1021,7 +1451,13 @@ CitadelShopMod.recommended:hover #AddToBuild,CitadelShopMod.itemDisabled:hover #
 	flow-children: down;
 	visibility: visible;
 	opacity: 1;
-	padding: 5px 2px;
+	padding: 2px;
+	visibility: visible;
+	height: 40px;
+	width: 100%;
+	horizontal-align: middle;
+	vertical-align: bottom;
+	ignore-parent-flow: true;
 }
 
 .Language_brazilian .mod_name_area
@@ -1059,9 +1495,14 @@ CitadelShopMod.recommended:hover #AddToBuild,CitadelShopMod.itemDisabled:hover #
 	padding: 4px 0px;
 }
 
-.ModTierHovered .mod_name_area
+CitadelShopMod:hover .mod_name_area
 {
-	opacity: 1;
+	visibility: collapse;
+}
+
+PopupCorruptItem CitadelShopMod:hover .mod_name_area
+{
+	visibility: visible;
 }
 
 .lowResolution .mod_name_area
@@ -1069,30 +1510,50 @@ CitadelShopMod.recommended:hover #AddToBuild,CitadelShopMod.itemDisabled:hover #
 	padding: 4px 0px;
 }
 
-.owned .mod_name_area,.usedAsComponent .mod_name_area
-{
-	background-color: offBlack;
-}
-
 .modName
 {
-	color: offBlack&ff;
+	font-family: oracle;
+	text-align: left;
 	font-size: 15px;
-	font-weight: bold;
-	vertical-align: center;
-	vertical-align: middle;
-	width: 100%;
-	max-height: 50px;
+	line-height: 92%;
+	padding: 0px 2px;
+	max-height: 40px;
+	max-width: 82px;
 	text-overflow: shrink;
-	background-color: none;
-	font-family: sans;
+	vertical-align: middle;
+	horizontal-align: middle;
+	transform: none;
+	color: offBlack;
+	font-weight: bold;
 	text-align: center;
-	padding: 0 4px;
 }
 
 .Language_russian .modName
 {
 	padding: 0 3px;
+}
+
+.Language_japanese .modName
+{
+	font-size: 14px;
+}
+
+.ModTier4.isWeapon .modName
+{
+	color: #d4472f;
+	color: #e4c5a1;
+}
+
+.modName .ModTier4.isArmor #ModCard .modName
+{
+	color: #70a44b;
+	color: #c2e7cd;
+}
+
+.modName .owned.ModTier4.isTech #ModCard .modName
+{
+	color: #895ae2;
+	color: #e3d4f2;
 }
 
 .canAffordMod .modName
@@ -1106,19 +1567,19 @@ CitadelShopMod.recommended:hover #AddToBuild,CitadelShopMod.itemDisabled:hover #
 	text-shadow: 0 0 12px #aa8470;
 }
 
-.ModTier4.isWeapon .modName
+.isWeapon.ModTier4 .modName
 {
 	color: #d4472f;
 	color: #e4c5a1;
 }
 
-.ModTier4.isArmor .modName
+.isArmor.ModTier4 .modName
 {
 	color: #70a44b;
 	color: #c2e7cd;
 }
 
-.ModTier4.isTech .modName
+.isTech.ModTier4 .modName
 {
 	color: #895ae2;
 	color: #e3d4f2;
@@ -1151,7 +1612,7 @@ CitadelShopMod.recommended:hover #AddToBuild,CitadelShopMod.itemDisabled:hover #
 	visibility: collapse;
 }
 
-.showingFavorites #TierContainer,.showingSearch #TierContainer,PopupSellMaxItems #TierContainer,CitadelItemDraftOption #TierContainer,CitadelTooltipModHover #TierContainer
+.showingFavorites #TierContainer,.showingSearch #TierContainer,PopupSellMaxItems #TierContainer,CitadelTooltipModHover #TierContainer
 {
 	visibility: visible;
 }
@@ -1243,7 +1704,6 @@ CitadelShopMod.recommended:hover #AddToBuild,CitadelShopMod.itemDisabled:hover #
 
 .imbue_tag
 {
-	background-color: offBlack;
 	vertical-align: bottom;
 	horizontal-align: middle;
 	ignore-parent-flow: true;
@@ -1278,16 +1738,6 @@ CitadelShopMod.recommended:hover #AddToBuild,CitadelShopMod.itemDisabled:hover #
 	margin-top: 3px;
 }
 
-.imbue_tag
-{
-	background-color: spiritDarkColor;
-}
-
-.isActiveItem .active_tag
-{
-	visibility: visible;
-}
-
 .isImbueItem .imbue_tag
 {
 	visibility: visible;
@@ -1309,12 +1759,14 @@ CitadelShopMod.recommended:hover #AddToBuild,CitadelShopMod.itemDisabled:hover #
 	height: 16px;
 	text-align: center;
 	horizontal-align: center;
+	text-shadow: 0px 0px 0px 4.0 offBlack;
 }
 
 #ImbueTag
 {
 	color: spiritLightColor;
 	text-overflow: shrink;
+	font-style: italic;
 }
 
 #ActiveTag
@@ -1697,6 +2149,26 @@ CitadelShopMod.owned:hover .componentModIconContainer
 	visibility: collapse;
 }
 
+.isActiveItem #Outline
+{
+	border-radius: 50px 50px 2px 2px;
+}
+
+.showingFavorites .isActiveItem #Outline,.showingSearch .isActiveItem #Outline,PopupSellMaxItems .isActiveItem #Outline,CitadelTooltipModHover .isActiveItem #Outline
+{
+	border-radius: 40px 2px 2px 2px;
+}
+
+.isActiveItem.quickbuy #Outline
+{
+	border-radius: 2px 40px 2px 2px;
+}
+
+.showingFavorites .isActiveItem.quickbuy #Outline,.showingSearch .isActiveItem.quickbuy #Outline,PopupSellMaxItems .isActiveItem.quickbuy #Outline,CitadelTooltipModHover .isActiveItem.quickbuy #Outline
+{
+	border-radius: 2px;
+}
+
 .HoveredItemIsComponent #Outline,.HoveredItemIsUpgrade #Outline
 {
 	visibility: visible;
@@ -1991,128 +2463,6 @@ PopupSellMaxItems .owned #Outline
 PopupSellMaxItems #ModIconImage
 {
 	margin: 0px;
-}
-
-CitadelItemDraftPanel CitadelShopMod
-{
-	box-shadow: none;
-	width: 370px;
-	height: 370px;
-	margin-top: 0px;
-}
-
-CitadelItemDraftPanel #ModCard
-{
-	background-image: none;
-	opacity-mask: none;
-	margin-top: 80px;
-}
-
-CitadelItemDraftPanel .BonusItem #ModCard
-{
-	margin-top: 0px;
-}
-
-CitadelItemDraftPanel .modIconContainer
-{
-	width: 140px;
-	border-radius: 8px;
-	border: 3px solid white;
-}
-
-.isWeapon CitadelItemDraftPanel .modIconContainer
-{
-	border-color: courageBrightColor;
-}
-
-.isArmor CitadelItemDraftPanel .modIconContainer
-{
-	border-color: courageBrightColor;
-}
-
-.isTech CitadelItemDraftPanel .modIconContainer
-{
-	border-color: courageBrightColor;
-}
-
-CitadelItemDraftPanel .brawl_hide
-{
-	visibility: collapse;
-}
-
-CitadelItemDraftPanel #background
-{
-	background-color: none;
-}
-
-CitadelItemDraftPanel .mod_name_area
-{
-	margin-bottom: 90px;
-}
-
-CitadelItemDraftPanel .modName,CitadelItemDraftPanel .canAffordMod .modName,CitadelItemDraftPanel .ModTier3.isWeapon .modName,CitadelItemDraftPanel .ModTier4.isWeapon .modName,CitadelItemDraftPanel .ModTier4.isArmor .modName,CitadelItemDraftPanel .ModTier4.isTech .modName
-{
-	font-size: 32px;
-	font-family: oracle;
-	color: offWhite;
-	letter-spacing: 0px;
-	text-shadow: 0px 0px 6.0 offBlack;
-}
-
-CitadelItemDraftPanel .ModTier3 .modName,CitadelItemDraftPanel .ModTier4 .modName,CitadelItemDraftPanel .ModTier5 .modName
-{
-	color: offWhite ;
-	text-shadow: 0px 0px 6.0 offBlack;
-	transform: rotateZ(-2deg);
-	font-size: 50px;
-}
-
-CitadelItemDraftPanel .active_tag
-{
-	margin-bottom: 158px;
-	ui-scale: 130%;
-}
-
-.reveal CitadelItemDraftPanel .modName
-{
-	color: red;
-}
-
-CitadelItemDraftPanel #Outline
-{
-	visibility: collapse;
-}
-
-CitadelItemDraftPanel #ModIconImage
-{
-	margin: 0px;
-	width: 140px;
-	height: 140px;
-}
-
-CitadelItemDraftPanel .componentOwned #Outline
-{
-	visibility: collapse;
-}
-
-.item_draft_enabled .isWeapon .modIconContainer
-{
-	border-color: courageBrightColor;
-}
-
-.item_draft_enabled .isArmor .modIconContainer
-{
-	border-color: fortitudeBrightColor;
-}
-
-.item_draft_enabled .isTech .modIconContainer
-{
-	border-color: spiritBrightColor;
-}
-
-.item_draft_enabled .ModTier5 .modIconContainer
-{
-	border-color: #00000000;
 }
 
 .ModTier5 #TierContainer

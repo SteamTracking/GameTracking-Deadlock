@@ -1,5 +1,5 @@
 class CEntityAttributeTable
 {
-	CUtlOrderedMap< CUtlStringToken, Attribute_t > m_Attributes;
-	CUtlOrderedMap< CUtlStringToken, CUtlString > m_Names;
+	CUtlOrderedMap< CUtlStringTokenNoRegistration, Attribute_t > m_Attributes;
+	CUtlOrderedMap< CUtlStringTokenNoRegistration, CUtlString > m_Names;
 };

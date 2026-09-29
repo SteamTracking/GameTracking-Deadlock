@@ -6,6 +6,7 @@
 //	"m_HeroID": 0,
 //	"m_strHeroSortName": "",
 //	"m_strHeroSearchName": "",
+//	"m_strHeroGender": "",
 //	"m_hDamageTakenParticle": "",
 //	"m_hGroundDamageTakenParticle": "",
 //	"m_hDeathParticle": "",
@@ -16,9 +17,11 @@
 //	"m_strIconHeroCardGloat": "",
 //	"m_strMinimapImage": "",
 //	"m_strTopBarVertical": "",
+//	"m_strVoteSticker": "",
 //	"m_strLogoImageEnglish": "",
 //	"m_strLogoImageLocalized": "",
 //	"m_hRespawnParticle": "",
+//	"m_hVisibilityParticle": "",
 //	"m_colorUI":
 //	[
 //		0,
@@ -35,6 +38,7 @@
 //	"m_strUIShoppingMap": "",
 //	"m_strUITeamRevealMap": "",
 //	"m_strUIPostgamePortraitMap": "",
+//	"m_strUIHeroRevealMap": "",
 //	"m_heroStatsUI":
 //	{
 //		"m_strWeaponNameLocString": "",
@@ -104,24 +108,28 @@
 //	"m_strRosterSelectedSound": "",
 //	"m_strRosterRemovedSound": "",
 //	"m_strRosterAvoidedSound": "",
-//	"m_strVoteRevealSound": "",
+//	"m_strHeroVotedSound": "",
+//	"m_strCharacterRevealDialog": "",
+//	"m_strCharacterRevealSfxStart": "",
+//	"m_strCharacterRevealSfxStop": "",
 //	"m_strLowHealthSound": "",
 //	"m_strHeroSpecificLowHealthSound": "",
 //	"m_strMovementLoop": "",
+//	"m_strMovementLoopStart": "",
+//	"m_strMovementLoopStop": "",
+//	"m_strSlideLoop": "",
 //	"m_strPostGameVictorySound": "",
 //	"m_strPostGameDefeatSound": "",
 //	"m_hGameSoundEventScript": "",
 //	"m_hGeneratedVOEventScript": "",
 //	"m_flStealthSpeedMetersPerSecond": 4.000000,
+//	"m_eHeroDevelopmentState": "EHeroDevState_InDevelopment",
 //	"m_bInDevelopment": false,
-//	"m_bAssignedPlayersOnly": false,
 //	"m_bNewPlayerRecommended": false,
 //	"m_bLaneTestingRecommended": false,
 //	"m_bNeedsTesting": false,
 //	"m_bLimitedTesting": false,
 //	"m_bDisabled": false,
-//	"m_bPlayerSelectable": true,
-//	"m_bPrereleaseOnly": false,
 //	"m_nComplexity": 0,
 //	"m_nAllyBotDifficulty": 0,
 //	"m_nEnemyBotDifficulty": 0,
@@ -164,12 +172,6 @@
 //	"m_mapModCostBonuses":
 //	{
 //	},
-//	"m_mapBoundAbilities":
-//	{
-//	},
-//	"m_mapWIPAbilities":
-//	{
-//	},
 //	"m_mapItemSlotInfo":
 //	{
 //	},
@@ -187,10 +189,23 @@
 //	"m_mapStandardLevelUpUpgrades":
 //	{
 //	},
+//	"m_PopularItems":
+//	{
+//		"m_unTimestamp": 0,
+//		"m_mapManualItemPopularity":
+//		{
+//		},
+//		"m_mapGeneratedItemPopularity":
+//		{
+//		}
+//	},
 //	"m_mapLevelInfo":
 //	{
 //	},
-//	"m_mapPurchaseBonuses":
+//	"m_mapBoundAbilities":
+//	{
+//	},
+//	"m_mapWIPAbilities":
 //	{
 //	},
 //	"m_mapItemDraftBucketing":
@@ -207,6 +222,7 @@ class CitadelHeroData_t
 	HeroID_t m_HeroID;
 	CUtlString m_strHeroSortName;
 	CUtlString m_strHeroSearchName;
+	CUtlString m_strHeroGender;
 	// MPropertyStartGroup = "Screen Space Particle FX"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_hDamageTakenParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_hGroundDamageTakenParticle;
@@ -219,9 +235,11 @@ class CitadelHeroData_t
 	CPanoramaImageName m_strIconHeroCardGloat;
 	CPanoramaImageName m_strMinimapImage;
 	CPanoramaImageName m_strTopBarVertical;
+	CPanoramaImageName m_strVoteSticker;
 	CPanoramaImageName m_strLogoImageEnglish;
 	CPanoramaImageName m_strLogoImageLocalized;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_hRespawnParticle;
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_hVisibilityParticle;
 	Color m_colorUI;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_strModelName;
 	int32 m_nModelSkin;
@@ -240,6 +258,8 @@ class CitadelHeroData_t
 	CUtlString m_strUITeamRevealMap;
 	// MPropertyAttributeEditor = "AssetBrowse( vmap )"
 	CUtlString m_strUIPostgamePortraitMap;
+	// MPropertyAttributeEditor = "AssetBrowse( vmap )"
+	CUtlString m_strUIHeroRevealMap;
 	HeroStatsUI_t m_heroStatsUI;
 	HeroStatsDisplay_t m_heroStatsDisplay;
 	CitadelStatsDisplay_t m_ShopStatDisplay;
@@ -250,10 +270,16 @@ class CitadelHeroData_t
 	CSoundEventName m_strRosterSelectedSound;
 	CSoundEventName m_strRosterRemovedSound;
 	CSoundEventName m_strRosterAvoidedSound;
-	CSoundEventName m_strVoteRevealSound;
+	CSoundEventName m_strHeroVotedSound;
+	CSoundEventName m_strCharacterRevealDialog;
+	CSoundEventName m_strCharacterRevealSfxStart;
+	CSoundEventName m_strCharacterRevealSfxStop;
 	CSoundEventName m_strLowHealthSound;
 	CSoundEventName m_strHeroSpecificLowHealthSound;
 	CSoundEventName m_strMovementLoop;
+	CSoundEventName m_strMovementLoopStart;
+	CSoundEventName m_strMovementLoopStop;
+	CSoundEventName m_strSlideLoop;
 	CSoundEventName m_strPostGameVictorySound;
 	CSoundEventName m_strPostGameDefeatSound;
 	// MPropertyDescription = "Teammate footstep sounds are relative to whoever we're spectating."
@@ -261,15 +287,13 @@ class CitadelHeroData_t
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCVSoundEventScriptList > > m_hGeneratedVOEventScript;
 	float32 m_flStealthSpeedMetersPerSecond;
 	// MPropertyStartGroup = ""
+	EHeroDevelopmentState m_eHeroDevelopmentState;
 	bool m_bInDevelopment;
-	bool m_bAssignedPlayersOnly;
 	bool m_bNewPlayerRecommended;
 	bool m_bLaneTestingRecommended;
 	bool m_bNeedsTesting;
 	bool m_bLimitedTesting;
 	bool m_bDisabled;
-	bool m_bPlayerSelectable;
-	bool m_bPrereleaseOnly;
 	int32 m_nComplexity;
 	// MPropertyDescription = "Minimum bot match difficulty for this hero to appear as an ally bot. -1 = never."
 	// MPropertyAttributeRange = "-1 4"
@@ -309,20 +333,21 @@ class CitadelHeroData_t
 	CUtlOrderedMap< EStatsType, HeroScalingStat_t > m_mapScalingStats;
 	CPiecewiseCurve m_groundDashPositionCurve;
 	CUtlOrderedMap< EItemSlotTypes_t, CUtlVector< ModCostBonuses_t > > m_mapModCostBonuses;
-	CUtlOrderedMap< EAbilitySlots_t, CSubclassName< 4 > > m_mapBoundAbilities;
-	CUtlOrderedMap< EAbilitySlots_t, CSubclassName< 4 > > m_mapWIPAbilities;
 	CUtlOrderedMap< EItemSlotTypes_t, ItemSlotInfo_t > m_mapItemSlotInfo;
 	EAbilityResourceType m_eAbilityResourceType;
 	CUtlString m_strGunTag;
 	CUtlVector< CUtlString > m_vecHeroTags;
 	EHeroType m_eHeroType;
 	CUtlString m_strRosterBackgroundLayout;
+	// MPropertyDescription = "A custom rich presence string to show while in the hideout"
 	CUtlString m_strHideoutRichPresence;
 	// MPropertyMapKeyLeafChoiceProviderFn
-	CUtlOrderedMap< CUtlString, float32 > m_mapItemDraftCounterWeights;
+	CUtlDict< float32 > m_mapItemDraftCounterWeights;
 	CUtlOrderedMap< EModifierValue, float32 > m_mapStandardLevelUpUpgrades;
+	ItemPopularity_t m_PopularItems;
 	CUtlOrderedMap< int32, HeroLevel_t > m_mapLevelInfo;
-	CUtlOrderedMap< EItemSlotTypes_t, CUtlVector< HeroPurchaseBonus_t > > m_mapPurchaseBonuses;
+	CUtlOrderedMap< EAbilitySlots_t, CSubclassName< 4 > > m_mapBoundAbilities;
+	CUtlOrderedMap< EAbilitySlots_t, CSubclassName< 4 > > m_mapWIPAbilities;
 	// MPropertyMapKeyLeafChoiceProviderFn
 	CUtlOrderedMap< CUtlString, ItemDraftWeight_t > m_mapItemDraftBucketing;
 };

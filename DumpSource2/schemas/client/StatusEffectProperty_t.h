@@ -38,8 +38,10 @@ enum StatusEffectProperty_t : uint32_t
 	EStatusEffect_Unstoppable = 17,
 	// MPropertyFriendlyName = "Shows Displacement Status Effect in the Important Box"
 	EStatusEffect_Displacement = 18,
-	// MPropertyFriendlyName = "Shows Displacement Status Effect in the Important Box"
+	// MPropertyFriendlyName = "Shows Silence Status Effect in the Important Box"
 	EStatusEffect_Silence = 19,
+	// MPropertyFriendlyName = "Shows Curse Status Effect in the Important Box"
+	EStatusEffect_Curse = 20,
 	// MPropertySuppressEnumerator
-	EStatusEffect_Count = 20,
+	EStatusEffect_Count = 21,
 };

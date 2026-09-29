@@ -1,0 +1,47 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_hero_settings_notice.vcss" />
+	</styles>
+	<PopupHeroSettingsNotice class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel class="PopupBackgroundShadow" />
+		<Panel class="PopupBackground" />
+		<Panel class="PopupContent">
+			<Panel class="Header">
+				<Image id="HeroIcon" class="Icon" />
+				<Label id="NoticeTitle" class="Title" />
+			</Panel>
+			<Label id="NoticeBody" class="Body" html="true" />
+			<CitadelKeyboardGlyph id="NoticeBinding" />
+			<CitadelSettingsCheckbox id="DontShowAgainCheckbox" class="CheckBox DontShowAgain" text="#citadel_settings_dont_show_again" />
+			<Panel class="ButtonRow">
+				<CitadelBindingButton id="EscapeButton" action="MenuBack" text="#Close" onactivate="UIPopupButtonClicked()" />
+				<Panel class="ButtonWrapper">
+					<Button class="InputButtonBorderRadius Fill CTA" id="OKButton" onactivate="CitadelHeroSettingsNoticeOKClicked()">
+						<Panel class="Bottom">
+							<Panel class="Background" />
+						</Panel>
+						<Panel class="Top">
+							<Panel class="Background" />
+						</Panel>
+						<Panel class="Content">
+							<Label id="OKLabel" text="#OK" />
+						</Panel>
+					</Button>
+				</Panel>
+				<Panel id="NoButtonWrapper" class="ButtonWrapper">
+					<Button class="InputButton Fill" id="NoButton" onactivate="UIPopupButtonClicked()">
+						<Panel class="Bottom" />
+						<Panel class="Top" />
+						<Panel class="Content">
+							<Label text="#UI_No" />
+						</Panel>
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+	</PopupHeroSettingsNotice>
+</root>

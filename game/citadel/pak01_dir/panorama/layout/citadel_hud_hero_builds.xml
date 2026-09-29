@@ -1,9 +1,9 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_hud_hero_builds.vcss_c" />
-		<include src="s2r://panorama/styles/avatar_image.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_hud_hero_builds.vcss" />
+		<include src="s2r://panorama/styles/avatar_image.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="AbilityPipColumn">
@@ -19,31 +19,29 @@
 	</snippets>
 	<CitadelHudHeroBuilds>
 		<GlobalClassListener classes="gShopOpen" />
+		<Label class="EditSectionTitle page_title" text="#Citadel_HeroBuilds_EditBuild" />
 		<Panel id="EditBuildSection" class="BuildEditSection">
-			<Label class="EditSectionTitle" text="#Citadel_HeroBuilds_EditBuild" />
 			<Label class="HeroBuildsSubTitle" text="#Citadel_HeroBuilds_BuildNameTitle" html="true" />
 			<TextEntry id="BuildNameTextEntry" class="EditFieldTextEntry" undohistroy="enabled" maxchars="50" />
 			<Label class="HeroBuildsSubTitle" text="#Citadel_HeroBuilds_BuildDescriptionTitle" />
 			<TextEntry id="BuildDescriptionTextEntry" class="EditFieldTextEntry" undohistroy="enabled" maxchars="512" multiline="true" />
-		</Panel>
-		<Panel id="EditTagsSection" class="BuildEditSection">
-			<Label class="EditSectionTitle" text="#Citadel_HeroBuilds_AssignTags" />
+			<Label class="HeroBuildsSubTitle" text="#Citadel_HeroBuilds_AssignTags" />
 			<Panel class="TagList">
 				<CitadelBuildTag class="BuildTag" id="BuildTag1" onmouseactivate="CitadelHudHeroBuildsAssignBuildTag()" />
 				<CitadelBuildTag class="BuildTag" id="BuildTag2" onmouseactivate="CitadelHudHeroBuildsAssignBuildTag()" />
 				<CitadelBuildTag class="BuildTag" id="BuildTag3" onmouseactivate="CitadelHudHeroBuildsAssignBuildTag()" />
 			</Panel>
 		</Panel>
-		<Panel id="EditCategorySection" class="BuildEditSection">
-			<Label class="EditSectionTitle" text="#Citadel_HeroBuilds_EditCategory" />
+		<Panel id="EditCategorySection" class="BuildEditSection VerticalFill">
+			<Label class="HeroBuildsSubTitle" text="#Citadel_HeroBuilds_EditCategory" />
 			<Label class="EditFieldLabel" text="#Citadel_HeroBuilds_CategoryNameLabel" />
 			<TextEntry id="CategoryNameTextEntry" class="EditFieldTextEntry" />
 			<Label class="EditFieldLabel" text="#Citadel_HeroBuilds_CategoryDescriptionLabel" />
 			<TextEntry id="CategoryDescriptionTextEntry" class="EditFieldTextEntry" />
 			<ToggleButton id="OptionalButton" text="#Citadel_HeroBuilds_OptionalShort" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_Optional )" onmouseout="UIHideTextTooltip()" onactivate="CitadelHudHeroBuildsToggleCategoryOptional()" />
 		</Panel>
-		<Panel id="EditModSection" class="BuildEditSection">
-			<Label class="EditModTitle" text="#Citadel_HeroBuilds_EditMod" />
+		<Panel id="EditModSection" class="BuildEditSection VerticalFill">
+			<Label class="HeroBuildsSubTitle" text="#Citadel_HeroBuilds_EditMod" />
 			<Label class="EditFieldLabel" text="#Citadel_HeroBuilds_ItemAnnotation" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_UpdateAnnotationMessage )" onmouseout="UIHideTextTooltip()" />
 			<TextEntry id="AnnotationTextEntry" class="EditFieldTextEntry" undohistroy="enabled" maxchars="200" />
 			<Label class="EditFieldLabel" text="#Citadel_HeroBuilds_SetSellPriority" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_SellPriorityMessage )" onmouseout="UIHideTextTooltip()" />
@@ -53,7 +51,10 @@
 				<CitadelAbilityIcon class="HideAbilityKey" id="ImbueTargetAbilityIcon" />
 			</Panel>
 		</Panel>
-		<Panel class="VerticalFill" />
 		<CitadelAbilityOrder id="AbilityOrder" />
+		<Panel id="SaveChangesSection" class="BuildEditSection">
+			<CitadelButton class="Medium Fill visibleByDefault EditModeButton" text="#Citadel_HeroBuilds_SaveBuild" onmouseactivate="CitadelHudHeroBuildsSaveEdits()" />
+			<CitadelButton class="Medium Warning visibleByDefault EditModeButton" text="#Citadel_HeroBuilds_CancelChanges" onmouseactivate="CitadelHudHeroBuildsDiscardEdits()" />
+		</Panel>
 	</CitadelHudHeroBuilds>
 </root>

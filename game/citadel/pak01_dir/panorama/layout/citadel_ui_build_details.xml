@@ -1,58 +1,75 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_ui_build_details.vcss_c" />
-		<include src="s2r://panorama/styles/avatar_image.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_ui_build_details.vcss" />
+		<include src="s2r://panorama/styles/avatar_image.vcss" />
 	</styles>
 	<CitadelBuildDetails>
 		<GlobalClassListener classes="gShopOpen" />
 		<Panel class="HeroBuildsExtraInfo">
+			<Panel id="Background" />
 			<Panel id="BuildInfo">
 				<Panel class="AuthoringInfo">
-					<CitadelAvatarImage id="AuthorAvatar" />
 					<Label class="BuildName" text="#Citadel_HeroBuilds_BuildName" html="true" />
 				</Panel>
-				<Panel class="TagList">
-					<CitadelBuildTag class="BuildTag NoHover ShowLabel Small" id="BuildTag1" />
-					<CitadelBuildTag class="BuildTag NoHover ShowLabel Small" id="BuildTag2" />
-					<CitadelBuildTag class="BuildTag NoHover ShowLabel Small" id="BuildTag3" />
-				</Panel>
-				<Panel class="ExtraInfo">
-					<Label class="Version" html="true" text="#Citadel_HeroBuilds_Version" />
-					<Panel class="LeftRightFlow buildIDbox">
-						<Label class="BuildID" text="#Citadel_HeroBuilds_BuildID" onactivate="CitadelCopySelectedBuildIDToClipboard()" />
-						<Label class="CopiedToClipboard" text="#Citadel_HeroBuilds_BuildID_Copied" />
+				<Panel id="ControlArea">
+					<Panel class="ExtraInfo">
+						<CitadelAvatarImage id="AuthorAvatar" />
+						<Panel id="BuildMetaData" class="TopBottomFlow">
+							<Panel id="Versioning" class="LeftRightFlow">
+								<Label class="Version" html="true" text="#Citadel_HeroBuilds_Version" />
+								<Panel class="LeftRightFlow buildIDbox">
+									<Label class="BuildID" text="#Citadel_HeroBuilds_BuildID" onactivate="CitadelCopySelectedBuildIDToClipboard()" />
+									<Label class="CopiedToClipboard" text="#Citadel_HeroBuilds_BuildID_Copied" />
+								</Panel>
+							</Panel>
+							<Panel id="BuildUpdated" class="LeftRightFlow">
+								<Label class="LastUpdated" html="true" text="#Citadel_HeroBuilds_LastUpdatedTime" />
+							</Panel>
+						</Panel>
+					</Panel>
+					<Panel id="BuildControls">
+						<Button />
+						<TextButton id="BuildOptionButton" class="Medium Fill" text="#Citadel_HeroBuilds_BuildOptions" onactivate="$.GetContextPanel().ToggleClass(&apos;ShowBuildControlsContainer&apos;)">
+							<Panel class="DropdownArrow" />
+						</TextButton>
 					</Panel>
 				</Panel>
-				<Label class="LastUpdated" html="true" text="#Citadel_HeroBuilds_LastUpdatedTime" />
-				<Label class="BuildDescription" text="#Citadel_HeroBuilds_BuildDescription" />
-				<Panel class="ModListContainer">
-					<CitadelModsPurchasedPanel id="mod_universal" class="ModList" mod_category="Universal" read_only="true" />
-					<CitadelModsPurchasedPanel id="mod_universal_locked" class="ModList" mod_category="Locked Universal" read_only="true" />
+				<Panel id="BuildDetails">
+					<Panel id="DetailsTop">
+						<Panel id="BuildDetailsTabs">
+							<Panel id="BuildOverviewTab" class="details_tab tab_selected">
+								<Panel class="tab_bg" />
+								<Label class="tab_label" text="Overview" />
+							</Panel>
+						</Panel>
+						<Panel class="TagList">
+							<CitadelBuildTag class="BuildTag NoHover Small" id="BuildTag1" />
+							<CitadelBuildTag class="BuildTag NoHover Small" id="BuildTag2" />
+							<CitadelBuildTag class="BuildTag NoHover Small" id="BuildTag3" />
+						</Panel>
+					</Panel>
+					<Panel id="BuildDetails_Overview">
+						<Label class="BuildDescription" text="#Citadel_HeroBuilds_BuildDescription" />
+						<CitadelShopModsBuild id="ShopModsBuild" />
+						<Panel class="ModListContainer">
+							<CitadelModsPurchasedPanel id="mod_universal" class="ModList" mod_category="Universal" read_only="true" />
+							<CitadelModsPurchasedPanel id="mod_universal_locked" class="ModList" mod_category="Locked Universal" read_only="true" />
+						</Panel>
+						<CitadelAbilityOrder id="AbilityOrder" />
+					</Panel>
 				</Panel>
-				<CitadelAbilityOrder id="AbilityOrder" />
-				<Panel id="ManageBuildControls" class="BuildControls" hittest="false">
-					<Panel id="CopyBuildButton" class="SecondaryButton light fill hasIcon" onmouseactivate="CitadelBuildBrowserPopupConfirmBuild(); CitadelHudHeroBuildsCopyAndEditSelectedBuild()">
-						<Label text="#Citadel_HeroBuilds_CopyBuildLabel" html="true" />
-					</Panel>
-					<Panel id="AuthorControls">
-						<Button id="EditBuildButton" class="SecondaryButton light fill hasIcon" onmouseactivate="CitadelBuildBrowserPopupConfirmBuild(); CitadelHudHeroBuildsEditSelectedBuild();">
-							<Label text="#Citadel_HeroBuilds_EditBuildLabel" html="true" />
-						</Button>
-						<Button id="PublishBuildButton" class="SecondaryButton light fill hasIcon" onmouseactivate="CitadelHudHeroBuildsPublishSelectedBuild()">
-							<Label text="#Citadel_HeroBuilds_PublishBuildLabel" html="true" />
-						</Button>
-						<Button id="RevertBuildButton" class="SecondaryButton fill red hasIcon" onmouseactivate="CitadelHudHeroBuildsRevertSelectedBuild()" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_RevertBuildTooltip)" onmouseout="UIHideTextTooltip()">
-							<Label text="#Citadel_HeroBuilds_RevertBuildLabel" html="true" />
-						</Button>
-						<Button id="DeleteBuildButton" class="SecondaryButton fill red hasIcon" onmouseactivate="CitadelHudHeroBuildsDeleteSelectedBuildPressed(true)">
-							<Label text="#Citadel_HeroBuilds_DeleteBuildLabel" html="true" />
-						</Button>
-						<Button id="ValveBuildButton" class="SecondaryButton fill hasIcon" onmouseactivate="CitadelHudHeroBuildsAddToValveAuthoredBuilds()">
-							<Label text="#Citadel_HeroBuilds_ValveBuildLabel" html="true" />
-						</Button>
-					</Panel>
+			</Panel>
+			<Panel id="BuildControlsContainer">
+				<TextButton id="CopyBuildButton" class="Medium Fill" text="#Citadel_HeroBuilds_CopyBuildLabel" onmouseover="UIShowTextTooltipStyled( #Citadel_HeroBuilds_CopyBuildTooltip, OptionsTooltip)" onmouseout="UIHideTextTooltip()" html="true" onmouseactivate="CitadelBuildBrowserPopupConfirmBuild(); CitadelHudHeroBuildsCopyAndEditSelectedBuild()" />
+				<TextButton id="CopyToClipboardBuildButton" class="Medium Fill" text="#Citadel_HeroBuilds_CopyToClipboard" onmouseover="UIShowTextTooltipStyled( #Citadel_HeroBuilds_CopyToClipboardTooltip, OptionsTooltip)" onmouseout="UIHideTextTooltip()" html="true" onmouseactivate="$.GetContextPanel().RemoveClass(&apos;ShowBuildControlsContainer&apos;); $.DispatchEvent(&apos;CitadelCopySelectedBuildContentsToClipboard&apos;,0)" />
+				<Panel id="AuthorControls">
+					<TextButton id="EditBuildButton" class="Medium Fill" text="#Citadel_HeroBuilds_EditBuildLabel" onmouseover="UIShowTextTooltipStyled( #Citadel_HeroBuilds_EditBuildTooltip, OptionsTooltip)" onmouseout="UIHideTextTooltip()" html="true" onmouseactivate="CitadelBuildBrowserPopupConfirmBuild(); CitadelHudHeroBuildsEditSelectedBuild()" />
+					<TextButton id="PublishBuildButton" class="Medium Fill" text="#Citadel_HeroBuilds_PublishBuildLabel" onmouseover="UIShowTextTooltipStyled( #Citadel_HeroBuilds_PublishBuildTooltip, OptionsTooltip)" onmouseout="UIHideTextTooltip()" html="true" onmouseactivate="$.GetContextPanel().RemoveClass(&apos;ShowBuildControlsContainer&apos;); $.DispatchEvent(&apos;CitadelHudHeroBuildsPublishSelectedBuild&apos;)" />
+					<TextButton id="RevertBuildButton" class="Medium Fill" text="#Citadel_HeroBuilds_RevertBuildLabel" onmouseover="UIShowTextTooltipStyled( #Citadel_HeroBuilds_RevertBuildTooltip, OptionsTooltip)" onmouseout="UIHideTextTooltip()" html="true" onmouseactivate="$.GetContextPanel().RemoveClass(&apos;ShowBuildControlsContainer&apos;); $.DispatchEvent(&apos;CitadelHudHeroBuildsRevertSelectedBuild&apos;)" />
+					<TextButton id="DeleteBuildButton" class="Medium Fill" text="#Citadel_HeroBuilds_DeleteBuildLabel" onmouseover="UIShowTextTooltipStyled( #Citadel_HeroBuilds_DeleteBuildTooltip, OptionsTooltip)" onmouseout="UIHideTextTooltip()" html="true" onmouseactivate="$.GetContextPanel().RemoveClass(&apos;ShowBuildControlsContainer&apos;); $.DispatchEvent(&apos;CitadelHudHeroBuildsDeleteSelectedBuildPressed&apos;,true)" />
+					<TextButton id="ValveBuildButton" class="Medium Fill" text="#Citadel_HeroBuilds_ValveBuildLabel" html="true" onmouseactivate="$.GetContextPanel().RemoveClass(&apos;ShowBuildControlsContainer&apos;); $.DispatchEvent(&apos;CitadelHudHeroBuildsAddToValveAuthoredBuilds&apos;)" />
 				</Panel>
 			</Panel>
 		</Panel>

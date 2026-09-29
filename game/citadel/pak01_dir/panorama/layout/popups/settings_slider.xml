@@ -1,15 +1,18 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/popups/popup_settings.vcss_c" />
-		<include src="s2r://panorama/styles/popups/settings_slider.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
+		<include src="s2r://panorama/styles/popups/settings_slider.vcss" />
 	</styles>
 	<CitadelSettingsSlider>
 		<Panel class="TitleContainer LeftRightFlow">
-			<Label id="Title" class="SettingLabel" />
+			<Label id="Title" class="SettingLabel SliderTitle" />
 		</Panel>
-		<Slider class="HorizontalSlider" direction="horizontal" id="Slider" />
+		<Slider class="HorizontalSlider" direction="horizontal" id="Slider">
+			<Label id="DefaultValueLabel" class="SettingsSliderDefaultValue" />
+			<Panel id="DefaultValuePip" class="SettingsSliderNotch" />
+		</Slider>
 		<TextEntry class="SliderTextEntry" id="Value" />
 	</CitadelSettingsSlider>
 </root>

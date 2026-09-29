@@ -1,0 +1,34 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_shop_mods_filtered.vcss" />
+	</styles>
+	<snippets>
+		<snippet name="ModTier">
+			<Panel class="tierRow">
+				<Panel class="CostSticker" />
+				<Panel class="CostLabel">
+					<Panel class="currencySymbol" />
+					<Label text="{i:r:tier_cost}" />
+				</Panel>
+				<Panel id="ModLists" />
+			</Panel>
+		</snippet>
+		<snippet name="ModList">
+			<Panel class="ModList">
+				<Panel class="mod_list_bg" />
+				<CitadelShopModsTier id="ModList" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<CitadelShopModsFiltered hittest="false" defaultfocus="ModTiers">
+		<Panel id="ModsContainer">
+			<Panel id="TreeHeaders">
+				<Panel class="tree_header_all" />
+			</Panel>
+			<Panel id="ModTiers" />
+			<Panel id="TierSnapTail" />
+		</Panel>
+	</CitadelShopModsFiltered>
+</root>

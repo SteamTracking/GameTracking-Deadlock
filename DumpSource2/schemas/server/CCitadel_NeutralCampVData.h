@@ -4,7 +4,8 @@
 //	"m_iSpawnIntervalInSeconds": 120,
 //	"m_iSpawnIntervalChange": 0,
 //	"m_iSpawnIntervalMin": 300,
-//	"m_eNeutralType": "NEUTRAL_TROOPER_NORMAL",
+//	"m_flNeutralMovementRadius": 1000.000000,
+//	"m_eNeutralType": "NEUTRAL_NPC_NORMAL",
 //	"m_sIdleAmbient": "",
 //	"m_sAlertAmbient": ""
 //}
@@ -16,7 +17,8 @@ class CCitadel_NeutralCampVData : public CEntitySubclassVDataBase
 	int32 m_iSpawnIntervalInSeconds;
 	int32 m_iSpawnIntervalChange;
 	int32 m_iSpawnIntervalMin;
-	ENeutralTrooperType m_eNeutralType;
+	float32 m_flNeutralMovementRadius;
+	ENeutralNPCType m_eNeutralType;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_sIdleAmbient;
 	CSoundEventName m_sAlertAmbient;

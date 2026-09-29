@@ -6,10 +6,12 @@
 //		[
 //		],
 //		"m_bPreviewInGame": false
-//	}
+//	},
+//	"m_previewGraphName": ""
 //}
 class CGraphPreviewList
 {
 	float32 m_flVolume;
 	CPreviewList m_previewList;
+	CUtlString m_previewGraphName;
 };

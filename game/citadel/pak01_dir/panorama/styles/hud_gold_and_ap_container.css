@@ -4,8 +4,8 @@
 {
 	horizontal-align: left;
 	vertical-align: bottom;
-	margin-left: 26px;
-	margin-bottom: 142px;
+	margin-left: 20px;
+	margin-bottom: 140px;
 	margin-top: 30px;
 	ui-scale: 100%;
 	width: 400px;
@@ -18,7 +18,7 @@
 #gold_and_ap_container.gShopOpen
 {
 	margin-left: 20px;
-	margin-bottom: 180px;
+	margin-bottom: 150px;
 	transform: translateX(0px) translateY(0px);
 	visibility: visible;
 }
@@ -38,7 +38,7 @@
 	margin-left: 68px;
 }
 
-.item_draft_enabled #hudGoldContainer
+.gStreetBrawl #hudGoldContainer
 {
 	visibility: collapse;
 }
@@ -376,7 +376,7 @@
 	margin-bottom: -15px;
 }
 
-#hudDealthGoldLabel
+#hudDeathGoldLabel
 {
 	margin-right: 3px;
 }
@@ -385,7 +385,7 @@
 {
 	font-size: 14px;
 	vertical-align: center;
-	color: #ffffff;
+	color: #ff9292;
 	font-weight: semi-bold;
 	font-family: sansMono;
 	text-align: center;
@@ -395,7 +395,30 @@
 
 #hudUnsecuredLabel
 {
+	color: colorEnemy;
 	opacity: 0.2;
+	animation-name: unsecured_pulse;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'unsecured_pulse'
+{
+	0%
+	{
+		color: colorEnemy;
+	}
+	
+	50%
+	{
+		color: shardColor;
+	}
+	
+	100%
+	{
+		color: colorEnemy;
+	}
+	
 }
 
 @keyframes 'death_penalty_danger_pulse'
@@ -626,7 +649,7 @@ CitadelPlayerLevel
 	opacity: 1;
 }
 
-.gamemode_streetbrawl #ToNextPanel
+.gStreetBrawl #ToNextPanel
 {
 	visibility: collapse;
 }

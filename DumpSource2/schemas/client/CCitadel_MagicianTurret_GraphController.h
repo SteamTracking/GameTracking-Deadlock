@@ -1,12 +1,10 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CCitadel_MagicianTurret_GraphController",
 //	"m_hExternalGraph": 4294967295,
-//	"m_flDrainScale": null,
-//	"m_bStartDrain": null
+//	"m_bShoot": null
 //}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_MagicianTurret_GraphController : public CAnimGraphControllerBase
 {
-	CAnimGraphParamRef< float32 > m_flDrainScale;
-	CAnimGraphParamRef< bool > m_bStartDrain;
+	CAnimGraphParamRef< bool > m_bShoot;
 };

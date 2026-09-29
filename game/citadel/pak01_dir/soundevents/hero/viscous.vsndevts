@@ -125,7 +125,7 @@
 	}
 	Viscous.Fire.Alt.Explode = 
 	{
-		base = "Base.Ability.Projectile"
+		base = "Base.Ability.Detached"
 		limiter_max = 0.0
 		volume = -2.0
 		vsnd_files = 
@@ -224,7 +224,7 @@
 	}
 	Viscous.GooBall.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = 
 		[
@@ -306,7 +306,7 @@
 	}
 	Viscous.Telepunch.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 3.0
 		vsnd_files = "sounds/abilities/viscous/viscous_a3_telepunch_delay.vsnd"
 		vsnd_duration = 0.778639
@@ -340,8 +340,6 @@
 		base = "Base.Ability.Detached"
 		volume = 1.0
 		volume_offset_opponent = 4.0
-		hrtf_on_opponent = 0
-		spread_max_value_opponent = 0.2
 		vsnd_files = "sounds/abilities/viscous/viscous_a3_telepunch_portal_01.vsnd"
 		vsnd_duration = 1.857302
 	}
@@ -353,22 +351,22 @@
 		vsnd_files = "sounds/abilities/viscous/viscous_a3_telepunch_select_lp.vsnd"
 		vsnd_duration = 3.328254
 	}
-	Viscous.GooBowlingBall.Movement_Lp = 
+	Viscous.GooBowlingBall.Lp = 
 	{
-		base = "Base.Ability"
-		volume = 1.0
+		base = "Base.Ability.Ult"
+		volume = 0.0
 		volume_fade_in = 0.2
 		volume_fade_out = 0.2
 		doppler_on = 1.0
 		doppler_factor = 5.0
-		volume_offset_opponent = 9.0
+		delay_rand_min = -3.0
 		vsnd_files = "sounds/abilities/viscous/viscous_a4_ball_lp_01.vsnd"
-		vsnd_duration = 22.471724
+		vsnd_duration = 20.224558
 	}
-	Viscous.GooBowlingBall.Impact_Wall = 
+	Viscous.GooBowlingBall.Impact.Wall = 
 	{
 		base = "Base.Ability.Detached"
-		volume = 2.0
+		volume = 0.0
 		pitch_rand_min = -0.1
 		pitch_rand_max = 0.1
 		vsnd_files = 
@@ -381,22 +379,22 @@
 		]
 		vsnd_duration = 1.750408
 	}
-	Viscous.GooBowlingBall.Impact_Hero = 
+	Viscous.GooBowlingBall.Hit = 
 	{
 		base = "Base.Ability.Hit"
-		volume = 2.0
+		volume = 0.0
 		vsnd_files = 
 		[
-			"sounds/abilities/viscous/viscous_a4_ball_impact_hero_01.vsnd",
-			"sounds/abilities/viscous/viscous_a4_ball_impact_hero_03.vsnd",
-			"sounds/abilities/viscous/viscous_a4_ball_impact_hero_04.vsnd",
-			"sounds/abilities/viscous/viscous_a4_ball_impact_hero_05.vsnd",
+			"sounds/abilities/viscous/viscous_a4_gooball_hit_01.vsnd",
+			"sounds/abilities/viscous/viscous_a4_gooball_hit_02.vsnd",
+			"sounds/abilities/viscous/viscous_a4_gooball_hit_03.vsnd",
+			"sounds/abilities/viscous/viscous_a4_gooball_hit_04.vsnd",
 		]
-		vsnd_duration = 1.740363
+		vsnd_duration = 1.87585
 	}
 	Viscous.GooBowlingBall.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 3.0
 		vsnd_files = "sounds/abilities/viscous/viscous_a4_ball_cast.vsnd"
 		vsnd_duration = 2.814399
@@ -410,68 +408,11 @@
 	}
 	Viscous.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
-		vsnd_duration = 1.062208
+		base = "Hero.Default.Melee.Swing"
 	}
 	Viscous.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
-		vsnd_duration = 1.399792
+		base = "Hero.Default.Melee.Charged"
 	}
 	Viscous.Movement.Short = 
 	{
@@ -560,7 +501,7 @@
 	Viscous.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "viscous"
+		context_name = "hero_viscous"
 		vsnd_files = 
 		[
 			"sounds/vo/viscous/viscous_happy_07.vsnd",
@@ -570,7 +511,7 @@
 	Viscous.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "viscous"
+		context_name = "hero_viscous"
 		vsnd_files = 
 		[
 			"sounds/vo/viscous/viscous_near_miss_03.vsnd",

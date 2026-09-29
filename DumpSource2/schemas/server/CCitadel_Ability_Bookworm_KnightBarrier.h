@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Bookworm_KnightBarrier : public CCitadelBaseAbility
 {
 	ParticleIndex_t m_nCastParticleIndex;

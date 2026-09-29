@@ -1,7 +1,7 @@
 // MGetKV3ClassDefaults = {
-//	"m_flAttackTimeMS": "-nan",
-//	"m_flHoldTimeMS": "-nan",
-//	"m_flReleaseTimeMS": "-nan"
+//	"m_flAttackTimeMS": 0.000000,
+//	"m_flHoldTimeMS": 0.000000,
+//	"m_flReleaseTimeMS": 0.000000
 //}
 class VMixEnvelopeDesc_t
 {

@@ -1,64 +1,54 @@
-// MNetworkVarNames = "AnimationAlgorithm_t m_nAnimationAlgorithm"
-// MNetworkVarNames = "CAnimGraphNetworkedVariables m_animGraphNetworkedVars"
-// MNetworkVarNames = "CHandle< CBaseAnimGraph > m_vecSecondarySkeletons"
-// MNetworkVarNames = "int m_nSecondarySkeletonMasterCount"
-// MNetworkVarNames = "HSequence m_hSequence"
-// MNetworkVarNames = "GameTime_t m_flSeqStartTime"
-// MNetworkVarNames = "float m_flSeqFixedCycle"
-// MNetworkVarNames = "AnimLoopMode_t m_nAnimLoopMode"
-// MNetworkVarNames = "CNetworkedQuantizedFloat m_flPlaybackRate"
-// MNetworkVarNames = "HNmGraphDefinitionStrong m_hGraphDefinitionAG2"
-// MNetworkVarNames = "uint8 m_serializedPoseRecipeAG2"
-// MNetworkVarNames = "int m_nSerializePoseRecipeSizeAG2"
-// MNetworkVarNames = "int m_nSerializePoseRecipeVersionAG2"
-// MNetworkVarNames = "int m_nServerGraphInstanceIteration"
-// MNetworkVarNames = "int m_nServerSerializationContextIteration"
-// MNetworkVarNames = "ResourceId_t m_primaryGraphId"
-// MNetworkVarNames = "ResourceId_t m_vecExternalGraphIds"
-// MNetworkVarNames = "ResourceId_t m_vecExternalClipIds"
+// MGetKV3ClassDefaults = {
+//	"m_nAnimationAlgorithm": "eInvalid",
+//	"m_nNextExternalGraphHandle": 0,
+//	"m_vecSecondarySkeletonSlotIDs":
+//	[
+//	],
+//	"m_vecSecondarySkeletons":
+//	[
+//	],
+//	"m_nSecondarySkeletonMasterCount": 0,
+//	"m_flSoundSyncTime": 0.000000,
+//	"m_nActiveIKChainMask": 0,
+//	"m_hSequence": -1,
+//	"m_flSeqStartTime": null,
+//	"m_flSeqFixedCycle": 0.000000,
+//	"m_nAnimLoopMode": "ANIM_LOOP_MODE_USE_SEQUENCE_SETTINGS",
+//	"m_flPlaybackRate": 1.000000,
+//	"m_nNotifyState": "eDoNotNotify",
+//	"m_bNetworkedAnimationInputsChanged": false,
+//	"m_bNetworkedSequenceChanged": false,
+//	"m_bLastUpdateSkipped": false,
+//	"m_bSequenceFinished": false,
+//	"m_nPrevAnimUpdateTick": null,
+//	"m_hGraphDefinitionAG2": "",
+//	"m_nServerGraphInstanceIteration": 0,
+//	"m_nServerSerializationContextIteration": 0,
+//	"m_primaryGraphId": 0,
+//	"m_vecExternalGraphIds":
+//	[
+//	],
+//	"m_vecExternalClipIds":
+//	[
+//	],
+//	"m_sAnimGraph2Identifier": "",
+//	"m_pGraphInstanceAG2": null,
+//	"m_vecExternalGraphs": null,
+//	"m_nPrevAnimationAlgorithm": "eNone"
+//}
 class CBaseAnimGraphController : public CSkeletonAnimationController
 {
-	// MNetworkEnable
-	// MNetworkChangeCallback = "AG2_OnAnimGraphDefinitionOrModeChanged"
 	AnimationAlgorithm_t m_nAnimationAlgorithm;
-	// MNetworkEnable
-	CAnimGraphNetworkedVariables m_animGraphNetworkedVars;
-	// MSaveOpsForField = "GetAnimGraphSaveRestoreOps"
-	CSmartPtr< IAnimationGraphInstance > m_pAnimGraphInstance;
 	ExternalAnimGraphHandle_t m_nNextExternalGraphHandle;
-	CUtlVector< CGlobalSymbol > m_vecSecondarySkeletonNames;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnSecondarySkeletonsChanged"
+	C_NetworkUtlVectorBase< CGlobalSymbol > m_vecSecondarySkeletonSlotIDs;
 	C_NetworkUtlVectorBase< CHandle< CBaseAnimGraph > > m_vecSecondarySkeletons;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "AG2_OnAnimGraphDefinitionOrModeChanged"
 	int32 m_nSecondarySkeletonMasterCount;
 	float32 m_flSoundSyncTime;
 	uint32 m_nActiveIKChainMask;
-	// MNetworkEnable
-	// MNetworkSerializer = "minusone"
-	// MNetworkChangeCallback = "OnNetworkedSequenceChanged"
-	// MNetworkPriority = 32
 	HSequence m_hSequence;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnNetworkedAnimationChanged"
-	// MNetworkPriority = 32
 	GameTime_t m_flSeqStartTime;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnNetworkedAnimationChanged"
-	// MNetworkPriority = 32
 	float32 m_flSeqFixedCycle;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnNetworkedAnimationChanged"
-	// MNetworkPriority = 32
 	AnimLoopMode_t m_nAnimLoopMode;
-	// MNetworkEnable
-	// MNetworkBitCount = 8
-	// MNetworkMinValue = -4.000000
-	// MNetworkMaxValue = 12.000000
-	// MNetworkEncodeFlags = 5
-	// MNetworkChangeCallback = "OnNetworkedAnimationChanged"
-	// MNetworkPriority = 32
 	CNetworkedQuantizedFloat m_flPlaybackRate;
 	SequenceFinishNotifyState_t m_nNotifyState;
 	bool m_bNetworkedAnimationInputsChanged;
@@ -66,35 +56,22 @@ class CBaseAnimGraphController : public CSkeletonAnimationController
 	bool m_bLastUpdateSkipped;
 	bool m_bSequenceFinished;
 	GameTick_t m_nPrevAnimUpdateTick;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "AG2_OnAnimGraphDefinitionOrModeChanged"
 	CStrongHandle< InfoForResourceTypeCNmGraphDefinition > m_hGraphDefinitionAG2;
-	// MNetworkEnable
 	// MNotSaved
-	C_NetworkUtlVectorBase< uint8 > m_serializedPoseRecipeAG2;
-	// MNetworkEnable
+	C_UtlVectorEmbeddedNetworkVar< AnimGraph2SerializedPoseRecipeSlot_t > m_SerializePoseRecipeAG2Slots;
 	// MNotSaved
-	int32 m_nSerializePoseRecipeSizeAG2;
-	// MNetworkEnable
+	C_NetworkUtlVectorBase< uint8 > m_SerializePoseRecipeAG2Dynamic;
+	// MNotSaved
+	uint32 m_nSerializePoseRecipeAG2ActiveSlot;
 	// MNotSaved
 	int32 m_nSerializePoseRecipeVersionAG2;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "AG2_OnAnimGraphSerializationContextInvalidated"
 	int32 m_nServerGraphInstanceIteration;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "AG2_OnAnimGraphSerializationContextInvalidated"
 	int32 m_nServerSerializationContextIteration;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "AG2_OnAnimGraphSerializationContextInvalidated"
 	ResourceId_t m_primaryGraphId;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "AG2_OnAnimGraphSerializationContextInvalidated"
 	C_NetworkUtlVectorBase< ResourceId_t > m_vecExternalGraphIds;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "AG2_OnAnimGraphSerializationContextInvalidated"
 	C_NetworkUtlVectorBase< ResourceId_t > m_vecExternalClipIds;
 	CGlobalSymbol m_sAnimGraph2Identifier;
-	// MSaveOpsForField = "GetExternalAnimGraphSaveRestoreOps"
-	CUtlVector< ExternalAnimGraph_t > m_vecExternalGraphs;
+	CAnimGraph2InstancePtr m_pGraphInstanceAG2;
+	CExternalAnimGraphList m_vecExternalGraphs;
 	AnimationAlgorithm_t m_nPrevAnimationAlgorithm;
 };

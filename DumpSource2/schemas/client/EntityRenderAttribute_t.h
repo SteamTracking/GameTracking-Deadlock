@@ -1,9 +1,17 @@
-// MNetworkVarNames = "CUtlStringToken m_ID"
-// MNetworkVarNames = "Vector4D m_Values"
+// MGetKV3ClassDefaults = {
+//	"_class": "EntityRenderAttribute_t",
+//	"m_ID": "",
+//	"m_Values":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000,
+//		0.000000
+//	]
+//}
+// MHasKV3TransferPolymorphicClassname
 class EntityRenderAttribute_t
 {
-	// MNetworkEnable
 	CUtlStringToken m_ID;
-	// MNetworkEnable
 	Vector4D m_Values;
 };

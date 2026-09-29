@@ -4,6 +4,6 @@ class CMessage : public CPointEntity
 	float32 m_MessageVolume;
 	int32 m_MessageAttenuation;
 	float32 m_Radius;
-	CUtlSymbolLarge m_sNoise;
+	CGameSoundEventName m_sNoise;
 	CEntityIOOutput m_OnShowMessage;
 };

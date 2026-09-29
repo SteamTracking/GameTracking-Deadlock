@@ -131,7 +131,169 @@ function GetTestingProgressDataJSON() {
                     },
                 ],
             },
-        ]
+        ],
+        hero_release_votes: {
+            categories: [
+                {
+                    vote_category: 0 /* EHeroReleaseVoteCategory.k_eMatchCompleted */,
+                    hero_votes: [
+                        {
+                            vote_player_slot: 0,
+                            vote_hero_id: 87,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 1,
+                            vote_hero_id: 78,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 2,
+                            vote_hero_id: 88,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 3,
+                            vote_hero_id: 88,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 0,
+                            vote_hero_id: 86,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 1,
+                            vote_hero_id: 84,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 2,
+                            vote_hero_id: 85,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 3,
+                            vote_hero_id: 85,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 0,
+                            vote_hero_id: 85,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 1,
+                            vote_hero_id: 86,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 2,
+                            vote_hero_id: 84,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 3,
+                            vote_hero_id: 78,
+                            vote_count: 1,
+                        },
+                    ],
+                },
+                {
+                    vote_category: 1 /* EHeroReleaseVoteCategory.k_eMatchWon */,
+                    hero_votes: [
+                        {
+                            vote_player_slot: 0,
+                            vote_hero_id: 87,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 1,
+                            vote_hero_id: 78,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 2,
+                            vote_hero_id: 88,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 3,
+                            vote_hero_id: 88,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 0,
+                            vote_hero_id: 86,
+                            vote_count: 1,
+                        },
+                        {
+                            vote_player_slot: 1,
+                            vote_hero_id: 84,
+                            vote_count: 1,
+                        },
+                    ],
+                },
+                {
+                    vote_category: 2 /* EHeroReleaseVoteCategory.k_eDailyBonus */,
+                    hero_votes: [
+                        {
+                            vote_player_slot: 0,
+                            vote_hero_id: 87,
+                            vote_count: 2,
+                        },
+                        {
+                            vote_player_slot: 1,
+                            vote_hero_id: 78,
+                            vote_count: 2,
+                        },
+                        {
+                            vote_player_slot: 2,
+                            vote_hero_id: 88,
+                            vote_count: 2,
+                        },
+                    ],
+                },
+            ]
+        },
+        all_players: [
+            {
+                player_slot: 0,
+                account_id: 85501006,
+                hero_id: 63,
+                team: 0 /* ECitadelLobbyTeam.k_ECitadelLobbyTeam_Team0 */,
+                mvp_rank: 0,
+                player_match_outcome: 1 /* EPlayerMatchOutcome.k_EPlayerMatchOutcome_Win */,
+                accolades: [],
+            },
+            {
+                player_slot: 1,
+                account_id: 108002,
+                hero_id: 6,
+                team: 0 /* ECitadelLobbyTeam.k_ECitadelLobbyTeam_Team0 */,
+                mvp_rank: 1,
+                player_match_outcome: 1 /* EPlayerMatchOutcome.k_EPlayerMatchOutcome_Win */,
+                accolades: [],
+            },
+            {
+                player_slot: 2,
+                account_id: 85501006,
+                hero_id: 63,
+                team: 1 /* ECitadelLobbyTeam.k_ECitadelLobbyTeam_Team1 */,
+                mvp_rank: 2,
+                player_match_outcome: 1 /* EPlayerMatchOutcome.k_EPlayerMatchOutcome_Win */,
+                accolades: [],
+            },
+            {
+                player_slot: 3,
+                account_id: 85502759,
+                hero_id: 2,
+                team: 0 /* ECitadelLobbyTeam.k_ECitadelLobbyTeam_Team0 */,
+                mvp_rank: 3,
+                player_match_outcome: 1 /* EPlayerMatchOutcome.k_EPlayerMatchOutcome_Win */,
+                accolades: [],
+            },
+        ],
     };
     return JSON.stringify(data);
 }

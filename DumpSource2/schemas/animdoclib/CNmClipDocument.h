@@ -16,6 +16,7 @@
 //	"m_additiveBaseFilename": "",
 //	"m_additiveBaseFrame": "FirstFrame",
 //	"m_nAdditiveBaseFrameIdx": -1,
+//	"m_bUseReferencePoseForSecondaryAnimAdditives": false,
 //	"m_bonesToSampleInModelSpace":
 //	[
 //	]
@@ -46,13 +47,20 @@ class CNmClipDocument : public CNmAnimDocument
 	// MPropertyGroupName = "+Additive"
 	// MPropertyAttributeEditor = "AssetBrowse( dmx, fbx, *requiredoubleclick )"
 	// MPropertyDescription = "The source file to use as the base of the additive"
+	// MPropertyAttrStateCallback
 	CUtlString m_additiveBaseFilename;
 	// MPropertyGroupName = "+Additive"
 	// MPropertyDescription = "The frame to use when generating an additive, if you are generating relative to another animation and this is set to -1, we will extract each frame from it's corresponding frame in the base anim"
+	// MPropertyAttrStateCallback
 	CNmClipDocument::AdditiveBaseFrame_t m_additiveBaseFrame;
 	// MPropertyGroupName = "+Additive"
 	// MPropertyDescription = "The frame to use when generating an additive, only valid for 'RelativeToFrame' and 'RelativeToAnimationFrame' "
+	// MPropertyAttrStateCallback
 	int32 m_nAdditiveBaseFrameIdx;
+	// MPropertyGroupName = "+Additive"
+	// MPropertyDescription = "Should we calculate the additives for the secondary weapons from their reference pose or try to look up a pose in the specified animation"
+	// MPropertyAttrStateCallback
+	bool m_bUseReferencePoseForSecondaryAnimAdditives;
 	// MPropertyGroupName = "Advanced"
 	// MPropertyAutoExpandSelf
 	// MPropertyDescription = "List the set of bones that need to be sampled in model space for sub-frames. Warning! This can be REALLY expensive so be careful with this!"

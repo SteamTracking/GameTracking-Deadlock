@@ -1,0 +1,3 @@
+class CAudioDynamicsLimiterNodeDesc : public CVNodeTypeDesc
+{
+};

@@ -8,4 +8,5 @@ enum ModifierVariantType_t : uint32_t
 	Variant_Vector = 5,
 	Variant_Quaternion = 6,
 	Variant_StructPtr = 7,
+	Variant_VectorWS = 8,
 };

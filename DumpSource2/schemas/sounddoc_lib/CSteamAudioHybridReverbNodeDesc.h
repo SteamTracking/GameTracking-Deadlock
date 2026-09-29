@@ -1,0 +1,3 @@
+class CSteamAudioHybridReverbNodeDesc : public CVAudioNodeBaseDesc
+{
+};

@@ -6,7 +6,7 @@
 			name = "default"
 			description = "Default collision"
 			collision_group = "default"
-			interact_as = []
+			interact_as = [] // Empty for default values set by rubikon/intersectiondictionary.cpp
 			interact_with = []
 			interact_exclude = []
 		},
@@ -68,9 +68,9 @@
 		},
 		{
 			name = "citadel_foliage"
-			description = "spawns FX when shot through - blocks LOS for AI"
+			description = "spawns FX when shot through"
 			collision_group = "ConditionallySolid"
-			interact_as = ["blocklos", "Citadel_Foliage" ]
+			interact_as = [ "Citadel_Foliage" ]
 			interact_with = []
 			interact_exclude = [ "Citadel_Projectile" ]
 		},
@@ -95,6 +95,22 @@
 			description = "the camera can pass through this object and will cause it to dither when between the player and camera"
 			collision_group = "ConditionallySolid"
 			interact_as = [ "solid", "Citadel_Camera_Can_Pass_Through" ]
+			interact_with = []
+			interact_exclude = []
+		},
+		{
+			name = "ping_target"
+			description = "Ping systems will be able to find this object"
+			collision_group = "ConditionallySolid"
+			interact_as = [ "Citadel_Valid_Ping_Target" ]
+			interact_with = []
+			interact_exclude = []
+		},
+		{
+			name = "citadel_npc"
+			description = "Default NPC"
+			collision_group = "NPC"
+			interact_as = [ "npc" ]
 			interact_with = []
 			interact_exclude = []
 		}

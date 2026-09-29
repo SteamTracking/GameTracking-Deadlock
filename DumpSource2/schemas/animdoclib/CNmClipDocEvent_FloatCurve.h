@@ -7,9 +7,29 @@
 //	{
 //		"m_spline":
 //		[
+//			{
+//				"x": 0.000000,
+//				"y": 0.000000,
+//				"m_flSlopeIncoming": 1.000000,
+//				"m_flSlopeOutgoing": 1.000000
+//			},
+//			{
+//				"x": 1.000000,
+//				"y": 1.000000,
+//				"m_flSlopeIncoming": 1.000000,
+//				"m_flSlopeOutgoing": 1.000000
+//			}
 //		],
 //		"m_tangents":
 //		[
+//			{
+//				"m_nIncomingTangent": "CURVE_TANGENT_SPLINE",
+//				"m_nOutgoingTangent": "CURVE_TANGENT_SPLINE"
+//			},
+//			{
+//				"m_nIncomingTangent": "CURVE_TANGENT_SPLINE",
+//				"m_nOutgoingTangent": "CURVE_TANGENT_SPLINE"
+//			}
 //		],
 //		"m_vDomainMins":
 //		[
@@ -18,8 +38,8 @@
 //		],
 //		"m_vDomainMaxs":
 //		[
-//			0.000000,
-//			0.000000
+//			1.000000,
+//			1.000000
 //		]
 //	}
 //}

@@ -121,7 +121,7 @@
 	}
 	Unicorn.Radiant.Flare.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 2.0
 		volume_enemy_targeting_boost = 6.0
 		pitch_rand_min = -0.01
@@ -136,7 +136,7 @@
 	}
 	Unicorn.Radiant.Flare.Cast.Delay = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 2.0
 		pitch_rand_min = -0.01
 		pitch_rand_max = 0.01
@@ -208,7 +208,7 @@
 	}
 	Unicorn.Prismatic.Guard.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 3.0
 		pitch_rand_min = -0.01
 		pitch_rand_max = 0.01
@@ -337,7 +337,7 @@
 	}
 	Unicorn.Dazzling.Orb.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 4.0
 		volume_offset_opponent = 3.0
 		vsnd_files = "sounds/abilities/unicorn/a4/unicorn_dazzling_orb_cast.vsnd"
@@ -345,7 +345,7 @@
 	}
 	Unicorn.Dazzling.Orb.Cast.Delay = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 3.0
 		vsnd_files = "sounds/abilities/unicorn/a4/unicorn_dazzling_orb_cast_delay.vsnd"
 		vsnd_duration = 3.679569
@@ -459,7 +459,7 @@
 	}
 	Unicorn.Luminous.Flux.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 2.0
 		volume_offset_opponent = 3.0
 		vsnd_files = 
@@ -574,6 +574,7 @@
 		track_2.vsnd_track_vol_offset_db = -9.5
 		track_3.vsnd_track_vol_offset_db = -9.0
 		track_2.track_percent_chance_to_play = 0.2
+		velocity_filter_speed = 50.0
 		vsnd_files = 
 		[
 			"sounds/player/footsteps/unicorn/unicorn_footstep_01.vsnd",
@@ -624,6 +625,58 @@
 		]
 		vsnd_duration = 0.352993
 	}
+	Unicorn.Jumpland = 
+	{
+		base = "Base.Footsteps.Jumpland"
+		limiter_max = 3.0
+		track_1.vsnd_track_vol_offset_db = -8.0
+		track_2.vsnd_track_vol_offset_db = -9.5
+		track_3.vsnd_track_vol_offset_db = -9.0
+		track_2.track_percent_chance_to_play = 0.2
+		vsnd_files = 
+		[
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_01.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_02.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_03.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_04.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_05.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_06.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_07.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_08.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_09.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_10.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_11.vsnd",
+			"sounds/player/footsteps/unicorn/unicorn_footstep_jumpland_12.vsnd",
+		]
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_01.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_02.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_03.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_04.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_05.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_06.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_07.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_08.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_09.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_10.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_11.vsnd",
+			"sounds/player/movement/unicorn/unicorn_sparkle_sweetener_12.vsnd",
+		]
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_01.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_02.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_03.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_04.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_05.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_06.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_07.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_08.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_09.vsnd",
+		]
+		vsnd_duration = 0.493152
+	}
 	Unicorn.Movement.Short = 
 	{
 		base = "Base.Movement"
@@ -642,6 +695,25 @@
 			"sounds/player/movement/unicorn/unicorn_foley_short_10.vsnd",
 		]
 		vsnd_duration = 0.527143
+	}
+	Unicorn.Movement.Long = 
+	{
+		base = "Base.Movement"
+		volume = -12.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/unicorn/unicorn_foley_long_01.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_02.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_03.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_04.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_05.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_06.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_07.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_08.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_09.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_10.vsnd",
+		]
+		vsnd_duration = 1.0
 	}
 	Unicorn.Idle.Twirl = 
 	{
@@ -683,48 +755,75 @@
 	}
 	Unicorn.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
+		base = "Hero.Default.Melee.Charged"
 		track_2.vsnd_track_vol_offset_db = 2.0
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
 		track_2.track_vsnd_files = 
 		[
 			"sounds/player/movement/unicorn/unicorn_melee_sweetener_01.vsnd",
 			"sounds/player/movement/unicorn/unicorn_melee_sweetener_02.vsnd",
 			"sounds/player/movement/unicorn/unicorn_melee_sweetener_03.vsnd",
 		]
-		vsnd_duration = 1.399792
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_01.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_02.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_03.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_04.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_05.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_06.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_07.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_08.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_09.vsnd",
+		]
+	}
+	Unicorn.Melee.Swing = 
+	{
+		base = "Hero.Default.Melee.Swing"
+		track_2.vsnd_track_vol_offset_db = 2.0
+		track_3.vsnd_track_vol_offset_db = -12.0
+		track_3.vsnd_track_volume_rand_min = -3.0
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/unicorn/unicorn_melee_sweetener_01.vsnd",
+			"sounds/player/movement/unicorn/unicorn_melee_sweetener_02.vsnd",
+			"sounds/player/movement/unicorn/unicorn_melee_sweetener_03.vsnd",
+		]
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_01.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_02.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_03.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_04.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_05.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_06.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_07.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_08.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_jumpland_09.vsnd",
+		]
+	}
+	Unicorn.Mantle = 
+	{
+		base = "Base.Movement"
+		volume = -12.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/unicorn/unicorn_foley_long_01.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_02.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_03.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_04.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_05.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_06.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_07.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_08.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_09.vsnd",
+			"sounds/player/movement/unicorn/unicorn_foley_long_10.vsnd",
+		]
+		vsnd_duration = 1.0
 	}
 	Unicorn.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "unicorn"
+		context_name = "hero_unicorn"
 		vsnd_files = 
 		[
 			"sounds/vo/unicorn/ping/unicorn_ping_post_game_02.vsnd",

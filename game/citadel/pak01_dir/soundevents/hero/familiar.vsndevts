@@ -69,7 +69,7 @@
 	}
 	Familiar.Pillow.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = 
 		[
@@ -132,7 +132,7 @@
 		base = "Base.Ability.Projectile"
 		volume = 0.0
 		volume_offset_team = 2.0
-		block_player = true
+		volume_offset_player = -99.0
 		delay_rand_min = -5.0
 		volume_fade_in = 0.1
 		volume_fade_out = 0.1
@@ -145,7 +145,7 @@
 	}
 	Familiar.TagAlong.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = -1.0
 		vsnd_files = 
 		[
@@ -157,7 +157,7 @@
 	}
 	Familiar.TagAlong.Cast.Delay = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = -2.0
 		volume_fade_out = 0.1
 		vsnd_files = 
@@ -393,6 +393,7 @@
 		volume = -3.0
 		pitch_rand_min = -0.15
 		pitch_rand_max = 0.15
+		volume_hideout_offset_db = -60.0
 		vsnd_files = 
 		[
 			"sounds/abilities/familiar/familiar_helper_emote_attack_01.vsnd",
@@ -457,14 +458,14 @@
 	}
 	Familiar.Naptime.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 1.0
 		vsnd_files = "sounds/abilities/familiar/familiar_naptime_cast_01.vsnd"
 		vsnd_duration = 2.983129
 	}
 	Familiar.Naptime.Cast.Delay = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 1.0
 		vsnd_files = "sounds/abilities/familiar/familiar_naptime_cast_delay_01.vsnd"
 		vsnd_duration = 1.949751
@@ -528,6 +529,7 @@
 	{
 		base = "Base.Ability.Hit"
 		volume = 3.0
+		filter_include_others = 1.0
 		vsnd_files = "sounds/abilities/familiar/familiar_naptime_aoe_explode_01.vsnd"
 		vsnd_duration = 2.492789
 	}
@@ -561,155 +563,246 @@
 	Familiar.Footstep = 
 	{
 		base = "Base.Footsteps.Soft"
-		track_1.vsnd_track_vol_offset_db = -7.0
+		track_1.vsnd_track_vol_offset_db = -9.0
+		track_2.vsnd_track_vol_offset_db = -17.0
+		track_2.vsnd_track_volume_rand_min = -6.0
 		vsnd_files = 
 		[
-			"sounds/player/footsteps/hornet/vindicta_footstep_01.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_02.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_03.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_04.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_05.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_06.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_07.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_08.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_01.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_02.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_03.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_04.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_05.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_06.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_07.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_08.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_09.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_10.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_11.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_12.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_13.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_14.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_15.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_16.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_17.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_18.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_19.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_sprint_20.vsnd",
 		]
-		vsnd_duration = 0.590068
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_06.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_07.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_08.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_09.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_10.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_11.vsnd",
+		]
+		vsnd_duration = 0.447347
 	}
 	Familiar.JumpLand = 
 	{
 		base = "Base.Footsteps.JumpLand.Soft"
-		volume = -4.0
-		track_2.vsnd_track_vol_offset_db = -5.0
+		volume = 0.0
+		track_2.vsnd_track_vol_offset_db = -2.0
+		track_2.vsnd_track_volume_rand_min = -5.0
+		track_3.vsnd_track_vol_offset_db = -1.0
+		track_3.vsnd_track_volume_rand_min = -4.0
 		vsnd_files = 
 		[
-			"sounds/player/footsteps/hornet/vindicta_footstep_01.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_02.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_03.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_04.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_05.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_06.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_07.vsnd",
-			"sounds/player/footsteps/hornet/vindicta_footstep_08.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_jumpland_01.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_jumpland_02.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_jumpland_03.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_jumpland_04.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_jumpland_05.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_jumpland_06.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_jumpland_07.vsnd",
+			"sounds/player/footsteps/familiar/rem_footstep_jumpland_08.vsnd",
 		]
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/generic/foley_light/default_foley_01.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_02.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_03.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_04.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_05.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_06.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_07.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_08.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_09.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_06.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_07.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_08.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_09.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_10.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_11.vsnd",
 		]
-		vsnd_duration = 0.590068
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/familiar/rem_foley_toy_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_06.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_07.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_08.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_09.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_10.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_11.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_12.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_13.vsnd",
+			"sounds/player/movement/familiar/rem_foley_toy_14.vsnd",
+		]
+		vsnd_duration = 0.518005
 	}
 	Familiar.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
+		base = "Hero.Default.Melee.Swing"
 		track_2.vsnd_track_vol_offset_db = 2.0
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/familiar/familiar_melee_sweetener_01",
-			"sounds/player/movement/familiar/familiar_melee_sweetener_02",
-			"sounds/player/movement/familiar/familiar_melee_sweetener_03",
-			"sounds/player/movement/familiar/familiar_melee_sweetener_04",
+			"sounds/player/movement/familiar/familiar_melee_sweetener_01.vsnd",
+			"sounds/player/movement/familiar/familiar_melee_sweetener_02.vsnd",
+			"sounds/player/movement/familiar/familiar_melee_sweetener_03.vsnd",
+			"sounds/player/movement/familiar/familiar_melee_sweetener_04.vsnd",
 		]
-		vsnd_duration = 1.062208
 	}
 	Familiar.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
+		base = "Hero.Default.Melee.Charged"
+		volume = -8.0
+		track_2.vsnd_track_vol_offset_db = 6.0
+		track_2.track_vsnd_files = 
 		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_06.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_07.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	Familiar.Mantle = 
 	{
 		base = "Base.Movement"
-		volume = -2.0
+		volume = -4.0
+		track_2.vsnd_track_vol_offset_db = -2.0
 		vsnd_files = 
 		[
-			"sounds/player/movement/kali/kali_mantle_01.vsnd",
-			"sounds/player/movement/kali/kali_mantle_02.vsnd",
-			"sounds/player/movement/kali/kali_mantle_03.vsnd",
-			"sounds/player/movement/kali/kali_mantle_04.vsnd",
-			"sounds/player/movement/kali/kali_mantle_05.vsnd",
-			"sounds/player/movement/kali/kali_mantle_06.vsnd",
-			"sounds/player/movement/kali/kali_mantle_07.vsnd",
-			"sounds/player/movement/kali/kali_mantle_08.vsnd",
-			"sounds/player/movement/kali/kali_mantle_09.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_06.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_07.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_08.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_09.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_10.vsnd",
 		]
-		vsnd_duration = 0.754229
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_06.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_07.vsnd",
+		]
+		vsnd_duration = 1.13805
 	}
 	Familiar.Movement.Short = 
 	{
 		base = "Base.Movement"
-		volume = -7.0
+		volume = -3.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_06.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_07.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_08.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_09.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_10.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_short_11.vsnd",
+		]
+		vsnd_duration = 0.645442
 	}
 	Familiar.Movement.Long = 
 	{
 		base = "Base.Movement"
-		volume = -2.0
+		volume = -8.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_06.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_07.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_08.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_09.vsnd",
+			"sounds/player/movement/familiar/rem_foley_mvmt_long_10.vsnd",
+		]
+		vsnd_duration = 1.13805
+	}
+	Familiar.Dash.Bounce = 
+	{
+		base = "Base.Movement"
+		volume = -7.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/familiar/rem_foley_pillow_bounce_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_bounce_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_bounce_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_bounce_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_bounce_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_bounce_06.vsnd",
+		]
+		vsnd_duration = 0.786871
+	}
+	Familiar.Pillow.Toss = 
+	{
+		base = "Base.Movement"
+		volume = -13.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_toss_06.vsnd",
+		]
+		vsnd_duration = 0.569478
+	}
+	Familiar.Pillow.Catch = 
+	{
+		base = "Base.Movement"
+		volume = -12.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/familiar/rem_foley_pillow_catch_01.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_catch_02.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_catch_03.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_catch_04.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_catch_05.vsnd",
+			"sounds/player/movement/familiar/rem_foley_pillow_catch_06.vsnd",
+		]
+		vsnd_duration = 0.691429
 	}
 	Familiar.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "familiar"
+		context_name = "hero_familiar"
 		vsnd_files = 
 		[
 			"sounds/vo/familiar/ping/familiar_ping_pre_game_06.vsnd",

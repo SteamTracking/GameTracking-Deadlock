@@ -7,6 +7,8 @@
 //	"m_flUpSpeed": 100.000000,
 //	"m_flMaxLinearRange": 0.000000,
 //	"m_flVerticalAimBias": 0.000000,
+//	"m_flNoCollisionDuration": 0.000000,
+//	"m_bAllowMotionDuringNoCollisionDuration": false,
 //	"m_eProjectileShape": "Sphere",
 //	"m_flTriggerRadius": 1.500000,
 //	"m_flPhysicsRadius": 1.500000,
@@ -67,6 +69,9 @@ class ProjectileInfo_t
 	float32 m_flUpSpeed;
 	float32 m_flMaxLinearRange;
 	float32 m_flVerticalAimBias;
+	float32 m_flNoCollisionDuration;
+	// MPropertySuppressExpr = "m_flNoCollisionDuration == 0"
+	bool m_bAllowMotionDuringNoCollisionDuration;
 	ProjectileShape_t m_eProjectileShape;
 	// MPropertySuppressExpr = "m_eProjectileShape != Sphere"
 	float32 m_flTriggerRadius;

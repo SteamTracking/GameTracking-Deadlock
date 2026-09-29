@@ -1,0 +1,3 @@
+class CStereoDelayNodeDesc : public CVAudioNodeBaseDesc
+{
+};

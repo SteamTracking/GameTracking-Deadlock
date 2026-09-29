@@ -1,19 +1,8 @@
-// MGetKV3ClassDefaults = {
-//	"m_transform":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000,
-//		1.000000,
-//		0.000000,
-//		0.000000,
-//		0.000000,
-//		1.000000
-//	],
-//	"m_hEntity": null
-//}
+// MGetKV3ClassDefaults = null
 class CRelativeTransform
 {
+	bool m_bTransformIsWorldSpace;
 	CTransform m_transform;
+	CTransformWS m_transformWS;
 	CHandle< CBaseEntity > m_hEntity;
 };

@@ -1,0 +1,3 @@
+class CAudioOutputNodeDesc : public CVNodeTypeDesc
+{
+};

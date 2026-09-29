@@ -1,24 +1,15 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_hud_item_bar_graph.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_hud_item_bar_graph.vcss" />
 	</styles>
 	<snippets />
 	<CitadelHudItemBarGraph hittest="false">
 		<Panel id="BarsContainer">
-			<Panel id="WeaponBarContainer" class="weaponProgressBarContainer progressBarContainer">
-				<Panel id="WeaponProgressBar" class="modsProgressBar" />
-				<Panel id="WeaponImage" class="progressBarImage weaponImage" />
-			</Panel>
-			<Panel id="ArmorBarContainer" class="armorProgressBarContainer progressBarContainer">
-				<Panel id="ArmorProgressBar" class="modsProgressBar" />
-				<Panel id="ArmorImage" class="progressBarImage armorImage" />
-			</Panel>
-			<Panel id="TechBarContainer" class="techProgressBarContainer progressBarContainer">
-				<Panel id="TechProgressBar" class="modsProgressBar" />
-				<Panel id="TechImage" class="progressBarImage techImage" />
-			</Panel>
+			<CitadelHudSingleItemBarGraph slot_type="Weapon" id="WeaponBarContainer" class="weaponProgressBarContainer progressBarContainer" />
+			<CitadelHudSingleItemBarGraph slot_type="Tech" id="TechBarContainer" class="techProgressBarContainer progressBarContainer" />
+			<CitadelHudSingleItemBarGraph slot_type="Armor" id="ArmorBarContainer" class="armorProgressBarContainer progressBarContainer" />
 		</Panel>
 	</CitadelHudItemBarGraph>
 </root>

@@ -20,8 +20,8 @@ class CFuncShatterglass : public CBaseModelEntity
 	CUtlSymbolLarge m_szDamagePositioningEntityName02;
 	CUtlSymbolLarge m_szDamagePositioningEntityName03;
 	CUtlSymbolLarge m_szDamagePositioningEntityName04;
-	CUtlVector< Vector > m_vInitialDamagePositions;
-	CUtlVector< Vector > m_vExtraDamagePositions;
+	CUtlVector< VectorWS > m_vInitialDamagePositions;
+	CUtlVector< VectorWS > m_vExtraDamagePositions;
 	CUtlVector< Vector4D > m_vInitialPanelVertices;
 	CEntityIOOutput m_OnBroken;
 	uint8 m_iSurfaceType;

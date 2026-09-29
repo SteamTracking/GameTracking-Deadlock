@@ -1,3 +1,5 @@
+// MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CBaseModifier
 {
 	ModifierSerialNumber_t m_nSerialNumber;
@@ -19,7 +21,10 @@ class CBaseModifier
 	CUtlVector< GameTime_t >* m_pVecStackDecayTimes;
 	uint8 m_eDestroyReason;
 	bool m_bDisabled;
+	// MNotSaved
 	bool m_bSuppressSendModifier;
+	// MNotSaved
+	bool m_bReadyOnClient;
 	float32 m_flThinkInterval;
 	GameTime_t m_flThinkIntervalStartTime;
 	float32 m_flAsyncThinkInterval;

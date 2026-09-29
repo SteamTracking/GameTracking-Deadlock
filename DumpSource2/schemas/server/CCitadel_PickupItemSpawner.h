@@ -1,9 +1,7 @@
-// MNetworkVarNames = "GameTime_t m_tNextDropTime"
-// MNetworkVarNames = "bool m_bPowerupActive"
 class CCitadel_PickupItemSpawner : public CBaseAnimGraph
 {
-	// MNetworkEnable
 	GameTime_t m_tNextDropTime;
-	// MNetworkEnable
+	GameTime_t m_tNextPingTime;
+	bool m_bPingedPowerup;
 	bool m_bPowerupActive;
 };

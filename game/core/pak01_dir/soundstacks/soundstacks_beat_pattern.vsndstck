@@ -1,0 +1,210 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	core_beatpattern_start_pattern = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					track_01 = 
+					{
+						data_type = "string"
+						value = "main"
+					}
+					pattern_01 = 
+					{
+						data_type = "string"
+						value = "branch_sync"
+					}
+					pattern_01_play_event_type = 
+					{
+						data_type = "enum"
+						enum_field = "beatpattern_pattern_start.play_event_type"
+						value = "invalid"
+					}
+					pattern_01_queue_event_type = 
+					{
+						data_type = "enum"
+						enum_field = "beatpattern_pattern_start.queue_event_type"
+						value = "invalid"
+					}
+					pattern_01_play_mult = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+					pattern_01_queue_mult = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+				}
+			},
+			{
+				name = "get_event_info"
+				operator = "soundevent_get_info"
+			},
+			{
+				name = "start_pattern_01"
+				operator = "beatpattern_pattern_start"
+				execute_once = "false"
+				input_start = "@get_event_info.output_unstopped"
+				input_stop = "@get_event_info.output_stopped"
+				pattern_name = "@public.pattern_01"
+				track_name = "@public.track_01"
+				play_event_type = "@public.pattern_01_play_event_type"
+				input_play_beat_mult = "@public.pattern_01_play_mult"
+				queue_event_type = "@public.pattern_01_queue_event_type"
+				input_queue_beat_mult = "@public.pattern_01_queue_mult"
+			},
+		]
+	}
+	beatpattern_4x4 = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					track_01 = 
+					{
+						data_type = "string"
+						value = "main"
+					}
+					pattern_01 = 
+					{
+						data_type = "string"
+						value = "branch_sync"
+					}
+					pattern_01_play_event_type = 
+					{
+						data_type = "enum"
+						enum_field = "beatpattern_pattern_start.play_event_type"
+						value = "invalid"
+					}
+					pattern_01_queue_event_type = 
+					{
+						data_type = "enum"
+						enum_field = "beatpattern_pattern_start.queue_event_type"
+						value = "invalid"
+					}
+					pattern_01_play_mult = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+					pattern_01_queue_mult = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+					track_02 = 
+					{
+						data_type = "string"
+						value = "main"
+					}
+					pattern_02 = 
+					{
+						data_type = "string"
+						value = "transition_short_sync"
+					}
+					pattern_02_play_event_type = 
+					{
+						data_type = "enum"
+						enum_field = "beatpattern_pattern_start.play_event_type"
+						value = "invalid"
+					}
+					pattern_02_queue_event_type = 
+					{
+						data_type = "enum"
+						enum_field = "beatpattern_pattern_start.queue_event_type"
+						value = "invalid"
+					}
+					pattern_02_play_mult = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+					pattern_02_queue_mult = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+					play_pattern_02 = 
+					{
+						data_type = "bool"
+						value = "false"
+						_system_properties = 
+						{
+							display_edit_type = "field_generic_bool_editor"
+						}
+					}
+				}
+			},
+			{
+				name = "invert_play_pattern_02"
+				operator = "math_float"
+				apply = "sub"
+				input1 = "1.0"
+				input2 = "@public.play_pattern_02"
+			},
+			{
+				name = "get_event_info"
+				operator = "soundevent_get_info"
+			},
+			{
+				name = "start_pattern_01"
+				operator = "beatpattern_pattern_start"
+				execute_once = "false"
+				input_start = "@invert_play_pattern_02.output"
+				input_stop = "@get_event_info.output_stopped"
+				pattern_name = "@public.pattern_01"
+				track_name = "@public.track_01"
+				play_event_type = "@public.pattern_01_play_event_type"
+				input_play_beat_mult = "@public.pattern_01_play_mult"
+				queue_event_type = "@public.pattern_01_queue_event_type"
+				input_queue_beat_mult = "@public.pattern_01_queue_mult"
+			},
+			{
+				name = "start_pattern_02"
+				operator = "beatpattern_pattern_start"
+				execute_once = "false"
+				input_start = "@public.play_pattern_02"
+				input_stop = "@get_event_info.output_stopped"
+				pattern_name = "@public.pattern_02"
+				track_name = "@public.track_02"
+				play_event_type = "@public.pattern_02_play_event_type"
+				input_play_beat_mult = "@public.pattern_02_play_mult"
+				queue_event_type = "@public.pattern_02_queue_event_type"
+				input_queue_beat_mult = "@public.pattern_02_queue_mult"
+			},
+			{
+				name = "sndevt_main_pattern_click"
+				operator = "soundevent_start"
+				execute_once = "false"
+				input_spawn_oneshots = "1"
+				input_execute = "1"
+				input_start = "@start_pattern_01.output_event_happened"
+				soundevent_name = "Diagnostic.2k_short"
+				pass_opvar_args = "true"
+				input_update_opvar_args = "true"
+			},
+			{
+				name = "sndevt_main_pattern_click_02"
+				operator = "soundevent_start"
+				execute_once = "false"
+				input_spawn_oneshots = "1"
+				input_execute = "1"
+				input_start = "@start_pattern_02.output_event_happened"
+				soundevent_name = "Diagnostic.1k_short"
+				pass_opvar_args = "true"
+				input_update_opvar_args = "true"
+			},
+		]
+	}
+}

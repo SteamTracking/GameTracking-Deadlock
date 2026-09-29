@@ -1,5 +1,6 @@
 // MGetKV3ClassDefaults = {
 //	"m_nStartControlPointNumber": 0,
+//	"m_nMidControlPointNumber": -1,
 //	"m_nEndControlPointNumber": 0,
 //	"m_nBulgeControl": 0,
 //	"m_flBulge": 0.000000,
@@ -27,13 +28,18 @@ class CPathParameters
 {
 	// MPropertyFriendlyName = "start control point number"
 	int32 m_nStartControlPointNumber;
+	// MPropertyFriendlyName = "mid control point number"
+	int32 m_nMidControlPointNumber;
 	// MPropertyFriendlyName = "end control point number"
 	int32 m_nEndControlPointNumber;
 	// MPropertyFriendlyName = "bulge control 0=random 1=orientation of start pnt 2=orientation of end point"
+	// MPropertySuppressExpr = "m_nMidControlPointNumber != -1"
 	int32 m_nBulgeControl;
 	// MPropertyFriendlyName = "random bulge"
+	// MPropertySuppressExpr = "m_nMidControlPointNumber != -1"
 	float32 m_flBulge;
 	// MPropertyFriendlyName = "mid point position"
+	// MPropertySuppressExpr = "m_nMidControlPointNumber != -1"
 	float32 m_flMidPoint;
 	// MPropertyFriendlyName = "Offset from curve start point for path start"
 	// MVectorIsCoordinate

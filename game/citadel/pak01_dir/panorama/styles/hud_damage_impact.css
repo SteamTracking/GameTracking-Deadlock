@@ -21,6 +21,7 @@
 	height: fit-children;
 	transition-property: opacity;
 	transition-duration: 1s;
+	overflow: render;
 }
 
 .damageImpactInstance
@@ -34,6 +35,7 @@
 	transition-timing-function: cubic-bezier(.75,1.53,.97,1.4);
 	margin: 10px;
 	overflow: noclip;
+	ui-scale: 80%;
 }
 
 .is_heal .playerName
@@ -52,18 +54,18 @@
 {
 	0%
 	{
-		transform: rotateZ(-83deg) translateX(14px) translateY(10px);
+		transform: rotateZ(-83deg) translateX(20px) translateY(-24px);
 		pre-transform-scale2d: 1.05;
 	}
 	
 	50%
 	{
-		transform: rotateZ(-86deg) translateX(14px) translateY(10px);
+		transform: rotateZ(-86deg) translateX(20px) translateY(-24px);
 	}
 	
 	100%
 	{
-		transform: rotateZ(-83deg) translateX(14px) translateY(10px);
+		transform: rotateZ(-83deg) translateX(20px) translateY(-24px);
 		pre-transform-scale2d: 1.05;
 	}
 	
@@ -72,14 +74,14 @@
 .healthBarContainer
 {
 	width: 90px;
-	height: 30px;
+	height: 26px;
 	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_horiz_mask.vsvg");
 	z-index: 2;
-	transform: rotateZ(-83deg) translateX(14px);
+	transform: rotateZ(-83deg) translateX(0px);
 	vertical-align: top;
-	margin-top: 56px;
+	margin-top: 90px;
 	horizontal-align: right;
-	ui-scale: 80%;
+	ui-scale: 90%;
 	pre-transform-scale2d: 1.2;
 	brightness: 1;
 	animation-name: active_damage_wiggle;
@@ -98,7 +100,7 @@
 	width: 100%;
 	height: 100%;
 	ignore-parent-flow: true;
-	background-color: offBlack&ee;
+	background-color: offBlack;
 }
 
 #healthBar_border
@@ -279,7 +281,6 @@
 {
 	flow-children: down;
 	horizontal-align: middle;
-	pre-transform-rotate2d: -15deg;
 	vertical-align: middle;
 }
 
@@ -302,11 +303,73 @@
 	padding: 0px 3px;
 }
 
+.bountyContainer
+{
+	flow-children: right;
+	vertical-align: bottom;
+	horizontal-align: middle;
+	visibility: collapse;
+	margin-top: 6px;
+}
+
+.bountyContainer .soul_icon
+{
+	width: 16px;
+	height: 26px;
+	background-image: url("s2r://panorama/images/hud/icons/icon_soul.vsvg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	vertical-align: middle;
+	wash-color: shardColor;
+	margin-right: 3px;
+	img-shadow: 0px 0px 0px 4.0 offBlack;
+}
+
+.bountyContainer .soul_amount
+{
+	font-family: block;
+	color: shardColor;
+	text-shadow: 0px 0px 0px 5.0 offBlack;
+	vertical-align: middle;
+	font-size: 24px;
+}
+
+.killed .bountyContainer,.assist .bountyContainer
+{
+	visibility: visible;
+}
+
+.item_draft_enabled .bountyContainer
+{
+	visibility: collapse;
+}
+
 .damageImpactInstance.killed,.damageImpactInstance.assist
 {
-	animation-name: Groove1;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
+	animation-name: KillAppear, Groove1;
+	animation-duration: 0.6s, 2s;
+	animation-iteration-count: 1, infinite;
+}
+
+@keyframes 'KillAppear'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 2;
+		pre-transform-rotate2d: -10deg;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
 }
 
 .killed #heroIconContainer,.assist #heroIconContainer
@@ -322,12 +385,22 @@
 .assist .assistLabel
 {
 	visibility: visible;
+	color: #ffbf00;
+	font-size: 26px;
+}
+
+.killed.assist .killLabel
+{
+	visibility: collapse;
 }
 
 .playerName
 {
 	flow-children: right;
-	font-size: 22px;
+	font-size: 30px;
+	max-width: 150px;
+	text-overflow: shrink;
+	text-align: center;
 	color: offWhite;
 	font-family: oracle;
 	font-weight: bold;
@@ -336,11 +409,6 @@
 	horizontal-align: middle;
 	visibility: collapse;
 	color: offWhite;
-}
-
-.killed .playerName
-{
-	visibility: visible;
 }
 
 .damageImpactInstance.fadeIn.fadeOut
@@ -441,9 +509,13 @@
 .statusEffectLabel
 {
 	margin-top: 124px;
-	width: 120px;
+	padding-left: 3px;
+	padding-right: 3px;
+	width: 114px;
 	text-align: left;
 	text-shadow: 0px 0px 0px 5 black;
+	text-overflow: shrink;
+	overflow: noclip;
 	font-weight: bold;
 	font-size: 20px;
 	transform: rotateZ(7deg) translateX(10px);
@@ -521,6 +593,11 @@
 }
 
 #damage_impact .damageImpactInstance.assist .criticalLabel,#damage_impact .damageImpactInstance.assist .impactStateLabel,#damage_impact .damageImpactInstance.killed .criticalLabel,#damage_impact .damageImpactInstance.killed .impactStateLabel
+{
+	visibility: collapse;
+}
+
+.goldStaged
 {
 	visibility: collapse;
 }

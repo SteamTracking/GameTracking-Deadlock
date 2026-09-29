@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CTriggerModifier : public CBaseTrigger
 {
 	CUtlSymbolLarge m_iszModifierName;

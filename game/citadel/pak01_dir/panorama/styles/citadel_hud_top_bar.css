@@ -11,24 +11,27 @@ CitadelHudTopBar
 	horizontal-align: center;
 	flow-children: none;
 	color: offWhite;
+	z-index: 10;
 }
 
-CitadelHudTopBar.showNewTopbar
-{
-	height: 755px;
-}
-
-.connectedToHideout CitadelHudTopBar
+CitadelHudTopBar .connectedToHideout CitadelHudTopBar
 {
 	visibility: collapse;
 }
 
-#GradientBacker
+CitadelHudTopBar #GradientBacker
 {
 	width: 100%;
-	height: 100px;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #000000aa ), to( #00000000 ) );
+	height: 50%;
+	z-index: -1;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #000000 ), to( #00000000 ) );
 	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( #ffffff00 ), color-stop( 0.2, #ffffff ), color-stop( 0.5, #ffffff ), color-stop( 0.8, #ffffff ), to( #ffffff00 ) );
+	opacity: 0;
+}
+
+.gScoreboardOpen CitadelHudTopBar #GradientBacker
+{
+	opacity: 1;
 }
 
 .spec_mode CitadelHudTopBar
@@ -164,8 +167,30 @@ CitadelHudTopBar.showNewTopbar
 	font-weight: semi-bold;
 	text-align: center;
 	padding: 2px 10px;
-	font-family: block;
+	font-family: numericBlock;
 	margin-top: 1px;
+}
+
+@keyframes 'MidbossAvailablePulse'
+{
+	0%
+	{
+		opacity: 0.6;
+		pre-transform-scale2d: 1;
+	}
+	
+	50%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1.2;
+	}
+	
+	100%
+	{
+		opacity: 0.6;
+		pre-transform-scale2d: 1;
+	}
+	
 }
 
 @keyframes 'TimeLowPulse'
@@ -416,9 +441,9 @@ CitadelHudTopBarPlayer.SpectatorTarget.SpectateHover
 	width: 100%;
 	width: playerDetailsWidth;
 	horizontal-align: middle;
-	height: 230px;
+	height: 180px;
 	z-index: 20;
-	overflow: noclip;
+	overflow: render;
 	transition-property: margin, brightness;
 	transition-duration: 0.2s;
 }
@@ -823,7 +848,7 @@ CitadelHudTopBarPlayer.LocalPlayer.Dead .HeroContentsCoinBackground,CitadelHudTo
 	horizontal-align: center;
 	vertical-align: center;
 	z-index: 3;
-	font-family: oracle;
+	font-family: numericOracle;
 	margin-top: 0px;
 	color: shardColor;
 	color: offWhite;
@@ -1013,7 +1038,7 @@ ProgressBar
 	font-size: 30px;
 	text-shadow: 0px 0px 0px 6.0 #000000;
 	font-weight: semi-bold;
-	font-family: oracle;
+	font-family: numericOracle;
 	color: #25FFAF;
 	vertical-align: top;
 	margin-right: 4px;
@@ -1177,8 +1202,8 @@ ProgressBar
 
 .DeathIcon
 {
-	width: 13px;
-	height: 15px;
+	width: 50px;
+	height: 50px;
 	wash-color: #FF5656;
 	vertical-align: center;
 	margin: 0px;
@@ -1196,16 +1221,26 @@ ProgressBar
 	margin-left: 3px;
 }
 
+.PermaDeath .DeathIcon
+{
+	visibility: visible;
+}
+
 .RespawnTimer
 {
 	color: #FFFFFF30;
 	color: #FE420E;
 	text-shadow: 0px 0px 0px 5.0 offBlack;
 	font-size: 32px;
-	margin-bottom: 1px;
 	font-weight: bold;
 	vertical-align: center;
-	margin-top: 15px;
+	margin-top: 32px;
+	font-family: numericOracle;
+}
+
+.PermaDeath .RespawnTimer
+{
+	visibility: collapse;
 }
 
 .Rejuvenator
@@ -1313,6 +1348,16 @@ ProgressBar
 	visibility: visible;
 }
 
+.Abandoned .NetworkStatus
+{
+	background-color: teamEnemyColor;
+}
+
+.Abandoned .NetworkIcon
+{
+	wash-color: offWhite;
+}
+
 #CriticalIndicator
 {
 	z-index: 10;
@@ -1361,7 +1406,7 @@ ProgressBar
 	margin-top: 125px;
 }
 
-.item_draft_enabled #StatusRow
+.gStreetBrawl #StatusRow
 {
 	margin-top: 110px;
 }
@@ -1446,7 +1491,6 @@ ProgressBar
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
-	img-shadow: 0px 0px 4px 3 black;
 	opacity: 1;
 }
 
@@ -1460,7 +1504,7 @@ ProgressBar
 .UltimateCooldownReady .UltimateStatus
 {
 	background-color: none;
-	box-shadow: none;
+	box-shadow: 0px 0px 4px 3 black;
 	opacity: 1;
 	animation-name: UltimateReady;
 	animation-duration: 0.3s;
@@ -1754,6 +1798,7 @@ CitadelHudTopBar CitadelHudItemBarGraph
 {
 	color: offWhite&4c;
 	font-weight: normal;
+	font-family: numericSans;
 }
 
 .PlayerStat.assists
@@ -1814,7 +1859,7 @@ CitadelHudTopBarPlayer:hover CitadelTopBarPlayerDetails
 	horizontal-align: center;
 }
 
-.gamemode_streetbrawl .TeamNetworth
+.gStreetBrawl .TeamNetworth
 {
 	visibility: collapse;
 }
@@ -1992,9 +2037,19 @@ CitadelHudTopBarPlayer:hover CitadelTopBarPlayerDetails
 	opacity: 1;
 }
 
-#RejuvenatorCharges #RejuvenatorTimer.has_rejuv
+#RejuvenatorCharges #RejuvenatorTimer.has_rejuv,#RejuvenatorCharges #RejuvenatorTimer.midboss_cooldown,#RejuvenatorCharges #RejuvenatorTimer.midboss_available
 {
 	visibility:visible;
+}
+
+#RejuvenatorCharges #RejuvenatorTimer.midboss_available
+{
+	visibility: collapse;
+}
+
+#RejuvenatorCharges #RejuvenatorTimer
+{
+	overflow: noclip;
 }
 
 #RejuvenatorCharges .rejuvTimer
@@ -2023,6 +2078,58 @@ CitadelHudTopBarPlayer:hover CitadelTopBarPlayerDetails
 #RejuvenatorCharges #StatusEffectBorder
 {
 	opacity: 0.3;
+}
+
+#RejuvenatorCharges .midbossTimerLabel
+{
+	visibility: collapse;
+	align: center bottom;
+	margin-bottom: -6px;
+	horizontal-align: center;
+	text-align: center;
+	font-size: 10px;
+	padding: 2px;
+	font-family: block;
+	font-weight: bold;
+	color: offWhite;
+	opacity: 0.3;
+	text-shadow: 0px 0px 0px 3.0 offBlack;
+}
+
+#RejuvenatorCharges .midboss_cooldown .midbossTimerLabel
+{
+	visibility: visible;
+}
+
+#RejuvenatorCharges .midboss_cooldown .statusEffectImage,#RejuvenatorCharges .midboss_available .statusEffectImage
+{
+	background-image: url("s2r://panorama/images/hud/icons/rejuvenator.vsvg");
+	background-size: 80% 80%;
+	wash-color: gold;
+	opacity: 0.8;
+}
+
+#RejuvenatorCharges .midboss_cooldown .statusEffectImage
+{
+	saturation: 0;
+	opacity: 0.3;
+	wash-color: none;
+}
+
+#RejuvenatorCharges .midboss_cooldown #StatusEffectsBorder
+{
+	opacity: 0.15;
+	wash-color: offWhite;
+}
+
+#RejuvenatorCharges .midboss_available .statusEffectImage
+{
+	opacity: 1;
+}
+
+#RejuvenatorCharges .midboss_available #StatusEffectsBorder
+{
+	opacity: 0;
 }
 
 .ArrowPanel
@@ -2136,7 +2243,7 @@ CitadelHudTopBarPlayer:hover CitadelTopBarPlayerDetails
 	opacity: 0.3;
 }
 
-.item_draft_enabled .SoulsValueContainer
+.gStreetBrawl .SoulsValueContainer
 {
 	visibility: collapse;
 }
@@ -2260,7 +2367,7 @@ CitadelHudTopBarPlayer:hover CitadelTopBarPlayerDetails
 {
 	color: offWhite;
 	font-size: 15px;
-	font-family: oracle;
+	font-family: numericOracle;
 	font-weight: bold;
 	vertical-align: center;
 	color: offWhite;
@@ -2397,6 +2504,11 @@ CitadelHudTopBarPlayer .demote
 	width: 159px;
 	height: 40px;
 	margin: 3px 0px;
+}
+
+.TeamAbilityPoints
+{
+	visibility: collapse;
 }
 
 .ScoreNumbers
@@ -2721,6 +2833,219 @@ CitadelHudTopBarPlayer.LaneSwapDefault.LaneNum6 #LaneSwapContainer,CitadelHudTop
 	100%
 	{
 		transform: rotateZ(-1deg);
+	}
+	
+}
+
+.gShopOpen #GradientBacker,.gShopOpen .TeamNetworth,.gShopOpen .GameClock,.gShopOpen #RejuvenatorCharges,.gShopOpen #KothCashInMeter,.gShopOpen CitadelHudTopBarPlayer
+{
+	opacity: 0;
+}
+
+.gShopOpen.gScoreboardOpen #GradientBacker,.gShopOpen.gScoreboardOpen .TeamNetworth,.gShopOpen.gScoreboardOpen .GameClock,.gShopOpen.gScoreboardOpen #RejuvenatorCharges,.gShopOpen.gScoreboardOpen #KothCashInMeter,.gShopOpen.gScoreboardOpen CitadelHudTopBarPlayer
+{
+	opacity: 1;
+}
+
+.gShopOpen CitadelHudTopBarPlayer.ShowingChatMessage
+{
+	opacity: 1;
+}
+
+.PlayerHeroReleaseVote
+{
+	horizontal-align: center;
+	width: playerDetailsWidth;
+	height: playerDetailsWidth;
+	margin-top: 150px;
+	z-index: -1;
+	opacity: 0.0;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.ShowHeroReleaseVote .PlayerHeroReleaseVote
+{
+	opacity: 1.0;
+	animation-name: VoteAppear;
+	animation-duration: 0.3s;
+	animation-iteration-count: 1;
+}
+
+.ShowHeroReleaseVote.ShowingChatMessage .PlayerHeroReleaseVote
+{
+	opacity: 0.4;
+}
+
+.PlayerHeroReleaseVote .Background
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/shop/catalog/backer_star_test_png.vtex");
+	background-size: contain;
+	wash-color: orange;
+	opacity: 0.4;
+}
+
+.PlayerHeroReleaseVote #HeroReleaseVoteHeroImage
+{
+	width: 60%;
+	height: 60%;
+	img-shadow: 0px 0px 10px offBlack;
+	horizontal-align: center;
+	vertical-align: middle;
+	animation-name: UIGroove1;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+	animation-frame-time: 0.5s;
+}
+
+.PlayerHeroReleaseVote .VotedLabel
+{
+	text-transform: uppercase;
+	font-family: block;
+	text-shadow: 0px 0px 0px 5 black;
+	vertical-align: bottom;
+	font-size: 14px;
+	horizontal-align: center;
+	text-overflow: shrink;
+	transform: rotateZ( -8deg );
+	padding: 4px;
+	animation-name: UIGroove1;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.5s;
+}
+
+#BackgroundTexture
+{
+	background-image: url("s2r://panorama/images/shop/catalog/backer_star_test_png.vtex");
+	horizontal-align: center;
+	vertical-align: middle;
+	width: 90%;
+	height: 90%;
+	background-size: cover;
+	brightness: 1.2;
+	-s2-mix-blend-mode: screen;
+	wash-color: deadlockGreen;
+	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_weapon_psd.vtex");
+	opacity-mask: url("s2r://panorama/images/shop/catalog/backer_star_test_png.vtex");
+	animation-name: backgroundPulse;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'backgroundPulse'
+{
+	0%
+	{
+		transform: rotateZ(0deg) skew(22deg);
+		pre-transform-scale2d: 1;
+	}
+	
+	20%
+	{
+		pre-transform-scale2d: 0.9;
+	}
+	
+	40%
+	{
+		pre-transform-scale2d: 1.05;
+	}
+	
+	60%
+	{
+		pre-transform-scale2d: 0.9;
+		transform: skew(2deg);
+	}
+	
+	80%
+	{
+		pre-transform-scale2d: 1.05;
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg) skew(22deg);
+		pre-transform-scale2d: 1;
+	}
+	
+}
+
+#BackgroundTexture2
+{
+	background-image: url("s2r://panorama/images/shop/catalog/backer_star_test_png.vtex");
+	horizontal-align: center;
+	vertical-align: middle;
+	width: 80%;
+	height: 80%;
+	background-size: cover;
+	brightness: 2;
+	wash-color: deadlockGreen;
+	-s2-mix-blend-mode: screen;
+	background-image: url("s2r://panorama/images/shop/catalog/catalog_tooltip_header_weapon_psd.vtex");
+	opacity-mask: url("s2r://panorama/images/shop/catalog/backer_star_test_png.vtex");
+	animation-name: backgroundPulse2;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'backgroundPulse2'
+{
+	0%
+	{
+		transform: rotateZ(0deg) skew(22deg);
+		pre-transform-scale2d: 1;
+	}
+	
+	20%
+	{
+		pre-transform-scale2d: 1.1;
+	}
+	
+	40%
+	{
+		pre-transform-scale2d: 0.9;
+	}
+	
+	60%
+	{
+		pre-transform-scale2d: 1.1;
+		transform: skew(2deg);
+	}
+	
+	80%
+	{
+		pre-transform-scale2d: 0.9;
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg) skew(22deg);
+		pre-transform-scale2d: 1;
+	}
+	
+}
+
+@keyframes 'VoteAppear'
+{
+	0%
+	{
+		opacity: 0;
+		pre-transform-scale2d: 1;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1.4;
+		opacity: 1;
+	}
+	
+	100%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1;
 	}
 	
 }

@@ -16,23 +16,35 @@
 //		0
 //	],
 //	"m_hModel": "",
+//	"m_bShowModelOverhead": true,
 //	"m_sDefaultMaterialGroupName": "",
+//	"m_sVacuumAttachmentTarget": "ability_apply",
 //	"m_sNameLocString": "",
 //	"m_nNameOffset": 60,
 //	"m_bShowOnMinimap": false,
 //	"m_bIsPermanentPickup": false,
+//	"m_sBuffTypeLocString": "",
+//	"m_BuffTypeGraphColor":
+//	[
+//		0,
+//		0,
+//		0,
+//		0
+//	],
+//	"m_eBuffTypeValueUnit": "Flat",
 //	"m_iTempParticleSheetIndex": -1,
 //	"m_flParticleRadius": 80.000000,
-//	"m_vecMinimapCssClasses":
-//	[
-//	],
+//	"m_strMinimapClass": "",
+//	"m_strPingIcon": "",
 //	"m_sPickupSound": "",
+//	"m_strGainedSound": "",
 //	"m_sSpawnSound": "",
 //	"m_sBecomeInteractiveSound": "",
 //	"m_strVacuumStartSound": "",
 //	"m_sAmbientSound": "",
 //	"m_sHitSound": "",
 //	"m_eCollectionMethod": "Touch",
+//	"m_bGiveToWholeTeam": false,
 //	"m_flPickupRadius":
 //	{
 //		"m_flBase": 0.000000,
@@ -40,6 +52,7 @@
 //		"m_flStartMinute": 0.000000,
 //		"m_flMaxValue": 0.000000
 //	},
+//	"m_bLosCheckOnTouchRadius": false,
 //	"m_bPickupExpires": true,
 //	"m_flPickupExpirationDuration":
 //	{
@@ -154,9 +167,12 @@ class CCitadel_Pickup_VData : public CEntitySubclassVDataBase
 	// MPropertyDescription = "Model"
 	// MPropertyProvidesEditContextString = "ToolEditContext_ID_VMDL"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_hModel;
+	bool m_bShowModelOverhead;
 	// MPropertyFriendlyName = "Material group"
 	// MPropertyDescription = "Which material group of the model should be used?"
 	CModelMaterialGroupName m_sDefaultMaterialGroupName;
+	// MPropertyFriendlyName = "VMDL Attachment to Vacuum to"
+	CUtlString m_sVacuumAttachmentTarget;
 	// MPropertyStartGroup = ""
 	// MPropertyFriendlyName = "Pickup Name Loc String"
 	CUtlString m_sNameLocString;
@@ -164,12 +180,28 @@ class CCitadel_Pickup_VData : public CEntitySubclassVDataBase
 	// MPropertyFriendlyName = "Show On Minimap"
 	bool m_bShowOnMinimap;
 	bool m_bIsPermanentPickup;
+	// MPropertyFriendlyName = "Buff Type Loc String"
+	// MPropertyDescription = "Permanent pickups sharing this string are grouped as one buff type in the postgame Permanent Buffs graph"
+	// MPropertySuppressExpr = "m_bIsPermanentPickup == false"
+	CUtlString m_sBuffTypeLocString;
+	// MPropertyFriendlyName = "Buff Type Graph Color"
+	// MPropertyDescription = "Line color for this buff type in the postgame Permanent Buffs graph"
+	// MPropertySuppressExpr = "m_bIsPermanentPickup == false"
+	Color m_BuffTypeGraphColor;
+	// MPropertyFriendlyName = "Buff Type Value Unit"
+	// MPropertyDescription = "How this buff's stat value is displayed in the postgame Permanent Buffs graph. Meters converts from engine units."
+	// MPropertySuppressExpr = "m_bIsPermanentPickup == false"
+	EPermanentBuffValueUnit m_eBuffTypeValueUnit;
 	int32 m_iTempParticleSheetIndex;
 	float32 m_flParticleRadius;
-	CUtlVector< CUtlString > m_vecMinimapCssClasses;
+	CUtlString m_strMinimapClass;
+	// MPropertyFriendlyName = "Ping Icon"
+	// MPropertyDescription = "Icon passed into chat bubble when pinged."
+	CPanoramaImageName m_strPingIcon;
 	// MPropertyStartGroup = "Audio"
 	// MPropertyFriendlyName = "Pickup Sound"
 	CSoundEventName m_sPickupSound;
+	CSoundEventName m_strGainedSound;
 	// MPropertyFriendlyName = "Spawn Sound"
 	CSoundEventName m_sSpawnSound;
 	// MPropertyFriendlyName = "Become Interactive Sound"
@@ -186,8 +218,11 @@ class CCitadel_Pickup_VData : public CEntitySubclassVDataBase
 	// MPropertyStartGroup = ""
 	// MPropertyDescription = "Determines how players collect the rewards from this pickup"
 	EPickupCollectionMethod m_eCollectionMethod;
+	// MPropertyDescription = "When true, everyone on the picker upper's team gets the reward"
+	bool m_bGiveToWholeTeam;
 	// MPropertyFriendlyName = "Pickup Radius"
 	TimeScalingValue_t m_flPickupRadius;
+	bool m_bLosCheckOnTouchRadius;
 	// MPropertyFriendlyName = "Pickup Expiration Duration"
 	bool m_bPickupExpires;
 	TimeScalingValue_t m_flPickupExpirationDuration;

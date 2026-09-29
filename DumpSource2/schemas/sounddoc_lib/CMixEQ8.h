@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_nChannels": -1,
 //	"m_stages":
 //	[
@@ -14,6 +15,7 @@
 //			"m_flQ": 1.000000,
 //			"m_fldbGain": 0.000000,
 //			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+//			"m_nChannelSet": "FILTER_ALL_CHANNELS",
 //			"m_bEnable": true
 //		},
 //		{
@@ -22,6 +24,7 @@
 //			"m_flQ": 3.000000,
 //			"m_fldbGain": 0.000000,
 //			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+//			"m_nChannelSet": "FILTER_ALL_CHANNELS",
 //			"m_bEnable": true
 //		},
 //		{
@@ -30,6 +33,7 @@
 //			"m_flQ": 3.000000,
 //			"m_fldbGain": 0.000000,
 //			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+//			"m_nChannelSet": "FILTER_ALL_CHANNELS",
 //			"m_bEnable": false
 //		},
 //		{
@@ -38,6 +42,7 @@
 //			"m_flQ": 3.000000,
 //			"m_fldbGain": 0.000000,
 //			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+//			"m_nChannelSet": "FILTER_ALL_CHANNELS",
 //			"m_bEnable": true
 //		},
 //		{
@@ -46,6 +51,7 @@
 //			"m_flQ": 3.000000,
 //			"m_fldbGain": 0.000000,
 //			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+//			"m_nChannelSet": "FILTER_ALL_CHANNELS",
 //			"m_bEnable": false
 //		},
 //		{
@@ -54,6 +60,7 @@
 //			"m_flQ": 3.000000,
 //			"m_fldbGain": 0.000000,
 //			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+//			"m_nChannelSet": "FILTER_ALL_CHANNELS",
 //			"m_bEnable": true
 //		},
 //		{
@@ -62,6 +69,7 @@
 //			"m_flQ": 3.000000,
 //			"m_fldbGain": 0.000000,
 //			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+//			"m_nChannelSet": "FILTER_ALL_CHANNELS",
 //			"m_bEnable": false
 //		},
 //		{
@@ -70,6 +78,7 @@
 //			"m_flQ": 1.000000,
 //			"m_fldbGain": 0.000000,
 //			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+//			"m_nChannelSet": "FILTER_ALL_CHANNELS",
 //			"m_bEnable": true
 //		}
 //	]

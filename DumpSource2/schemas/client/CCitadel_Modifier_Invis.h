@@ -1,3 +1,4 @@
+// MModifierDynamicValuesSuppressCache
 class CCitadel_Modifier_Invis : public CCitadelModifier
 {
 	bool m_bInvis;

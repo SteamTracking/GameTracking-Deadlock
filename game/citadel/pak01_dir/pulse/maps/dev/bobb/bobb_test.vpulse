@@ -23,12 +23,6 @@
 				m_nDestChunk = 0
 				m_nInstruction = 4
 			}
-			m_OnCanceled = 
-			{
-				m_SourceOutflowName = ""
-				m_nDestChunk = -1
-				m_nInstruction = -1
-			}
 			m_strEntityOutput = "OnDamaged"
 		},
 	]
@@ -47,8 +41,10 @@
 			m_bIsPublicBlackboardVariable = false
 			m_bIsObservable = false
 			m_nEditorNodeID = 233111767
+			m_Metadata = null
 		},
 	]
+	m_TempVarBanks = [  ]
 	m_Constants = 
 	[
 		{
@@ -159,6 +155,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "GET_DOMAIN_VALUE"
@@ -173,6 +170,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = 0
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "CELL_INVOKE"
@@ -187,6 +185,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "IMMEDIATE_HALT"
@@ -201,6 +200,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "NOP"
@@ -215,6 +215,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "LIBRARY_INVOKE"
@@ -229,6 +230,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "GET_VAR"
@@ -243,6 +245,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "GET_CONST"
@@ -257,6 +260,7 @@
 					m_nConstIdx = 0
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "CONVERT_VALUE"
@@ -271,6 +275,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "ADD"
@@ -285,6 +290,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "LT"
@@ -299,6 +305,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "JUMP_COND"
@@ -308,25 +315,27 @@
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
 					m_nChunk = -1
-					m_nDestInstruction = 16
+					m_nDestInstruction = 14
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
-					m_nCode = "RETURN_VOID"
+					m_nCode = "JUMP"
 					m_nVar = -1
 					m_nReg0 = -1
 					m_nReg1 = -1
 					m_nReg2 = -1
 					m_nInvokeBindingIndex = -1
 					m_nChunk = -1
-					m_nDestInstruction = 0
+					m_nDestInstruction = 21
 					m_nCallInfoIndex = -1
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "IMMEDIATE_HALT"
@@ -341,6 +350,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "NOP"
@@ -355,20 +365,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
-				},
-				{
-					m_nCode = "RETURN_VOID"
-					m_nVar = -1
-					m_nReg0 = -1
-					m_nReg1 = -1
-					m_nReg2 = -1
-					m_nInvokeBindingIndex = -1
-					m_nChunk = -1
-					m_nDestInstruction = 0
-					m_nCallInfoIndex = -1
-					m_nConstIdx = -1
-					m_nDomainValueIdx = -1
-					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "LIBRARY_INVOKE"
@@ -383,6 +380,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "NOT"
@@ -397,6 +395,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "LIBRARY_INVOKE"
@@ -411,6 +410,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "LIBRARY_INVOKE"
@@ -425,6 +425,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "SET_VAR"
@@ -439,6 +440,7 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 				{
 					m_nCode = "RETURN_VOID"
@@ -453,6 +455,37 @@
 					m_nConstIdx = -1
 					m_nDomainValueIdx = -1
 					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "NOP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "RETURN_VOID"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
 				},
 			]
 			m_Registers = 
@@ -510,21 +543,21 @@
 					m_nReg = 7
 					m_Type = "PVAL_BOOL"
 					m_OriginName = "148400045:retval"
-					m_nWrittenByInstruction = 16
+					m_nWrittenByInstruction = 15
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 8
 					m_Type = "PVAL_BOOL"
 					m_OriginName = "354679943:retval"
-					m_nWrittenByInstruction = 17
+					m_nWrittenByInstruction = 16
 					m_nLastReadByInstruction = -1
 				},
 				{
 					m_nReg = 9
 					m_Type = "PVAL_GAMETIME"
 					m_OriginName = "958271551:retval"
-					m_nWrittenByInstruction = 19
+					m_nWrittenByInstruction = 18
 					m_nLastReadByInstruction = -1
 				},
 			]
@@ -537,7 +570,7 @@
 				},
 				{
 					m_nFlowNodeID = 9371199
-					m_nValueNodeID = -1
+					m_nValueNodeID = 9371199
 					m_SequencePointName = "Run"
 				},
 				{
@@ -601,14 +634,9 @@
 					m_SequencePointName = "m_PrimaryPoint"
 				},
 				{
-					m_nFlowNodeID = 9371199
+					m_nFlowNodeID = 572053695
 					m_nValueNodeID = -1
-					m_SequencePointName = "m_OnCanceled"
-				},
-				{
-					m_nFlowNodeID = 9371199
-					m_nValueNodeID = -1
-					m_SequencePointName = "m_OnCanceled"
+					m_SequencePointName = "m_IsTrue"
 				},
 				{
 					m_nFlowNodeID = 125737783
@@ -640,7 +668,18 @@
 					m_nValueNodeID = -1
 					m_SequencePointName = "OutDefault"
 				},
+				{
+					m_nFlowNodeID = 572053695
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_IsFalse"
+				},
+				{
+					m_nFlowNodeID = 572053695
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_IsFalse"
+				},
 			]
+			m_nTempVarBank = -1
 		},
 	]
 }

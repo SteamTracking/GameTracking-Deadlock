@@ -1,3 +1,4 @@
+// MModifierDynamicValuesSuppressCache
 class CCitadel_Modifier_GhostBloodShard : public CCitadelModifier
 {
 	float32 m_flMinSlowAmount;

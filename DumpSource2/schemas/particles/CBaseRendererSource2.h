@@ -173,7 +173,7 @@ class CBaseRendererSource2 : public CParticleFunctionRenderer
 	bool m_bOnlyRenderInEffectsBloomPass;
 	// MPropertyFriendlyName = "Only Render in effects water pass"
 	// MPropertySortPriority = 1050
-	// MPropertySuppressExpr = "mod != csgo"
+	// MPropertySuppressExpr = "mod != csgo && mod != hlx"
 	bool m_bOnlyRenderInEffectsWaterPass;
 	// MPropertyFriendlyName = "Use Mixed Resolution Rendering"
 	// MPropertySortPriority = 1200

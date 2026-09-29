@@ -259,7 +259,7 @@
 	}
 	Viper.Venom.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 1.5
 		volume_offset_opponent = 6.0
 		spread_max_value_opponent = 1.0
@@ -268,7 +268,7 @@
 	}
 	Viper.Petrify.Cast_Delay = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 0.0
 		volume_offset_opponent = 6.0
 		pitch = 0.8
@@ -277,7 +277,7 @@
 	}
 	Viper.Petrify.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 2.0
 		volume_offset_opponent = 3.0
 		pitch = 1.0
@@ -294,12 +294,8 @@
 	}
 	Viper.Petrify.Direct.Hit = 
 	{
-		base = "Base.Ability.Ult.Detached"
+		base = "Base.Ability.Hit"
 		volume = 0.0
-		spread_min_value = 0.25
-		limiter_on = 1.0
-		limiter_stop_oldest = true
-		limiter_max = 0.0
 		vsnd_files = "sounds/abilities/viper/a4_bola/viper_petrifying_bola_direct_hit.vsnd"
 		vsnd_duration = 3.704104
 	}
@@ -368,7 +364,7 @@
 	}
 	Viper.HookBlade.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 2.0
 		volume_offset_opponent = 6.0
 		pitch = 0.95
@@ -453,8 +449,8 @@
 	}
 	Viper.A3.Slide.Lp = 
 	{
-		base = "Base.Movement"
-		volume = -4.0
+		base = "Base.Movement.Slide"
+		volume = -3.0
 		pitch = 1.2
 		delay_rand_min = -1.0
 		volume_fade_out = 0.5
@@ -463,7 +459,7 @@
 	}
 	Viper.A3.Slide.Exit = 
 	{
-		base = "Base.Movement"
+		base = "Base.Movement.Slide"
 		volume = -5.0
 		vsnd_files = 
 		[
@@ -527,68 +523,11 @@
 	}
 	Vyper.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
-		vsnd_duration = 1.062208
+		base = "Hero.Default.Melee.Swing"
 	}
 	Vyper.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
-		vsnd_duration = 1.399792
+		base = "Hero.Default.Melee.Charged"
 	}
 	Vyper.Mantle = 
 	{
@@ -621,7 +560,7 @@
 	Viper.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "viper"
+		context_name = "hero_viper"
 		vsnd_files = 
 		[
 			"sounds/vo/viper/viper_kill_anyhero_01.vsnd",
@@ -641,7 +580,7 @@
 	Viper.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "viper"
+		context_name = "hero_viper"
 		vsnd_files = 
 		[
 			"sounds/vo/viper/viper_unselect_01.vsnd",

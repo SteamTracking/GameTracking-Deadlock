@@ -1,9 +1,3 @@
-// MNetworkVarNames = "AbilityID_t m_unItemID"
-// MClassHasEntityLimitedDataDesc
-class C_Citadel_Pickup_Item : public C_Citadel_Pickup
+class C_Citadel_Pickup_Item : public C_Citadel_Pickup_Ability
 {
-	// MNetworkEnable
-	// MNetworkChangeCallback = "ItemChanged"
-	CUtlStringToken m_unItemID;
-	CitadelItemVData* m_pItemData;
 };

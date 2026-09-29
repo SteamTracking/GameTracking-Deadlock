@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_defaultValue": "sounds/ir/default.vsnd"
 //}
 // MPropertyFriendlyName = "VMix Control Impulse Response Node"

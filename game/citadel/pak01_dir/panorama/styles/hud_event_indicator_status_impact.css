@@ -1,0 +1,181 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+@keyframes 'ShowMessage'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+		transform: rotateZ(0deg);
+		opacity: 0;
+	}
+	
+	20%
+	{
+		opacity: 1;
+	}
+	
+	30%
+	{
+		pre-transform-scale2d: 1.5;
+		transform: rotateZ(-3deg) translateX(0px);
+		opacity: 1;
+	}
+	
+	40%
+	{
+		pre-transform-scale2d: 1.5;
+		transform: rotateZ(-3deg) translateX(0px);
+		opacity: 1;
+	}
+	
+	65%
+	{
+		opacity: 1;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+		transform: rotateZ(0deg);
+		opacity: 0;
+	}
+	
+}
+
+.WindowRoot
+{
+	height: 100px;
+	width: 300px;
+	font-size: 40px;
+	opacity: 1;
+	margin-top: 50px;
+	margin-left: 30px;
+	font-size: 36px;
+}
+
+.HudIndicatorText
+{
+	padding: 10px 5px 10px 40px;
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	color: white;
+	text-shadow: 0px 0px 0px 4.0 black;
+	font-weight: bold;
+	font-style: italic;
+	font-size: 8px;
+	background-size: 16px;
+	background-repeat: no-repeat;
+	background-position: 24px 14px;
+	img-shadow: 0px 0px 0px 4.0 offBlack;
+}
+
+.Immobolized .HudIndicatorText
+{
+	background-image: url("s2r://panorama/images/icons/properties/condition_immobilize.vsvg");
+	wash-color: #349c4c;
+}
+
+.Asleep .HudIndicatorText
+{
+	background-image: url("s2r://panorama/images/icons/properties/condition_sleep.vsvg");
+	wash-color: #729be7;
+}
+
+.Disarmed .HudIndicatorText
+{
+	background-image: url("s2r://panorama/images/icons/properties/condition_disarm.vsvg");
+	wash-color: colorEnemy;
+}
+
+.Silenced .HudIndicatorText
+{
+	background-image: url("s2r://panorama/images/icons/properties/condition_silence.vsvg");
+	wash-color: spiritBrightColor;
+}
+
+.Stunned .HudIndicatorText
+{
+	background-image: url("s2r://panorama/images/icons/properties/condition_stun.vsvg");
+	wash-color: gold;
+}
+
+.HudIndicatorContainer
+{
+	horizontal-align: center;
+	vertical-align: center;
+	height: fit-children;
+	width: fit-children;
+	flow-children: right;
+	z-index: 10;
+	opacity: 0;
+	animation-name: ShowMessage;
+	animation-duration: 1s;
+}
+
+.HudIndicatorIconContainer
+{
+	width: 20px;
+	height: 20px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.is_ability .HudIndicatorIconContainer
+{
+	background-color: offWhite;
+	border-radius: 50px;
+}
+
+.HudIndicatorIcon
+{
+	width: 20px;
+	height: 20px;
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.is_ability .HudIndicatorIcon
+{
+	width: 16px;
+	height: 16px;
+	wash-color: offBlack;
+}
+
+.noItemImage #Image
+{
+	visibility: collapse;
+}
+
+.distance_near .HudIndicatorText
+{
+	text-shadow: 0px 0px 0px 4.0 black;
+	font-size: 22px;
+}
+
+.distance_normal .HudIndicatorText
+{
+	text-shadow: 0px 0px 0px 3.0 black;
+	font-size: 18px;
+}
+
+.distance_far .HudIndicatorText
+{
+	text-shadow: 0px 0px 0px 2.0 black;
+	font-size: 14px;
+}
+
+.distance_very_far .HudIndicatorText
+{
+	text-shadow: 0px 0px 0px 1.0 black;
+	font-size: 12px;
+}
+
+.distance_extremely_far .HudIndicatorText
+{
+	text-shadow: 0px 0px 0px 1.0 black;
+	font-size: 10px;
+}
+

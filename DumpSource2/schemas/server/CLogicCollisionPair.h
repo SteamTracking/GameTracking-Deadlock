@@ -6,4 +6,5 @@ class CLogicCollisionPair : public CLogicalEntity
 	bool m_supportMultipleEntitiesWithSameName;
 	bool m_disabled;
 	bool m_succeeded;
+	bool m_allowMissing;
 };

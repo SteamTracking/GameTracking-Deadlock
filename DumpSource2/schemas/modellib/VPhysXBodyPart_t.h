@@ -15,6 +15,9 @@
 //		"m_meshes":
 //		[
 //		],
+//		"m_compounds":
+//		[
+//		],
 //		"m_CollisionAttributeIndices":
 //		[
 //		]

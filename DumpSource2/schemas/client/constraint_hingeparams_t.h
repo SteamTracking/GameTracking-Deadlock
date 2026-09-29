@@ -1,6 +1,15 @@
+// MGetKV3ClassDefaults = {
+//	"worldPosition": null,
+//	"worldAxisDirection":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000
+//	]
+//}
 class constraint_hingeparams_t
 {
-	Vector worldPosition;
+	VectorWS worldPosition;
 	Vector worldAxisDirection;
 	// MNotSaved
 	constraint_axislimit_t hingeAxis;

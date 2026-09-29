@@ -1,37 +1,16 @@
-// MNetworkVarNames = "bool m_bDamagedAnyHero"
-// MNetworkVarNames = "bool m_bActive"
-// MNetworkVarNames = "bool m_bStartedOnGround"
-// MNetworkVarNames = "bool m_bIsBonusCast"
-// MNetworkVarNames = "Vector m_vStartPosition"
-// MNetworkVarNames = "QAngle m_qCurrentAngles"
-// MNetworkVarNames = "CCitadelAutoScaledTime m_flDepartureTime"
-// MNetworkVarNames = "CCitadelAutoScaledTime m_flArrivalTime"
-// MNetworkVarNames = "GameTime_t m_flDrainSuppressEndTime"
-// MNetworkVarNames = "GameTime_t m_flRecastWindowEnd"
-// MClassHasEntityLimitedDataDesc
+// MModifierDynamicValuesSuppressCache
 class CCitadel_Ability_Shiv_KillingBlow : public CCitadelBaseShivAbility
 {
 	CUtlVector< CHandle< C_BaseEntity > > m_vHitEnts;
-	// MNetworkEnable
 	bool m_bDamagedAnyHero;
-	// MNetworkEnable
 	bool m_bActive;
-	// MNetworkEnable
 	bool m_bStartedOnGround;
-	// MNetworkEnable
 	bool m_bIsBonusCast;
-	// MNetworkEnable
-	Vector m_vStartPosition;
-	// MNetworkEnable
+	VectorWS m_vStartPosition;
 	QAngle m_qCurrentAngles;
-	// MNetworkEnable
 	CCitadelAutoScaledTime m_flDepartureTime;
-	// MNetworkEnable
 	CCitadelAutoScaledTime m_flArrivalTime;
-	Vector m_vLastKnownSafePos;
+	VectorWS m_vLastKnownSafePos;
 	bool m_bMadeSlashParticle;
-	// MNetworkEnable
-	GameTime_t m_flDrainSuppressEndTime;
-	// MNetworkEnable
 	GameTime_t m_flRecastWindowEnd;
 };

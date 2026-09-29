@@ -11,6 +11,8 @@ enum EHideoutButtonAction : uint32_t
 	k_eHeroReleaseVote = 8,
 	k_eFireEntityOutput = 9,
 	k_eSeasonalEvent = 10,
-	k_eWardrobe = 11,
 	k_eRankedHub = 12,
+	k_eServerCallback = 13,
+	k_eHeroReleaseVoteInGame = 18,
+	k_eVoiceLines = 19,
 };

@@ -1,0 +1,3 @@
+class CControlCurveNodeDesc : public CVNodeTypeDesc
+{
+};

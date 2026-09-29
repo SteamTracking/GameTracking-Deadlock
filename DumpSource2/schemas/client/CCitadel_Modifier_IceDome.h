@@ -5,5 +5,6 @@ class CCitadel_Modifier_IceDome : public CCitadelModifier
 	CHandle< CPointModifierThinker > m_hEnemyAura;
 	ParticleIndex_t m_nParticleIndex;
 	GameTime_t m_flStartTime;
-	Vector m_vOrigin;
+	VectorWS m_vOrigin;
+	float32 m_flPrevRadius;
 };

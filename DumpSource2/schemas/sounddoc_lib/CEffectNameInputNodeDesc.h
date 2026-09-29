@@ -1,0 +1,3 @@
+class CEffectNameInputNodeDesc : public CVNodeTypeDesc
+{
+};

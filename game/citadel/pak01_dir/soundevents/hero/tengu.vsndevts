@@ -238,7 +238,7 @@
 	}
 	Ivy.Kudzu.Bomb.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = 
 		[
@@ -290,6 +290,8 @@
 	{
 		base = "Base.Ability.StatusEffect"
 		volume = -1.0
+		volume_fade_in = 0.1
+		volume_fade_out = 0.25
 		vsnd_files = 
 		[
 			"sounds/abilities/tengu/ivy_kudzu_immobilize_buildup_01.vsnd",
@@ -313,7 +315,7 @@
 	}
 	Ivy.Tether.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = 
 		[
@@ -382,7 +384,7 @@
 	}
 	Ivy.StoneForm.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = "sounds/abilities/tengu/a3_stone_form/ivy_a3_stone_form_cast_01.vsnd"
 		vsnd_duration = 4.439093
@@ -407,22 +409,103 @@
 		]
 		vsnd_duration = 2.22415
 	}
-	Ivy.AirDrop.Projectile.Lp = 
+	Ivy.AirDrop.Bomb.Proj.Lp = 
 	{
 		base = "Base.Ability.Projectile"
-		volume = 3.0
+		volume = -2.0
 		volume_fade_out = 0.1
+		volume_fade_in = 0.1
+		delay_rand_min = -4.0
+		vsnd_files = "sounds/abilities/tengu/ivy_airdrop_bomb_proj_lp_01.vsnd"
+		vsnd_duration = 8.367982
+	}
+	Ivy.AirDrop.Bomb.Proj.Ally.Lp = 
+	{
+		base = "Base.Ability.StatusEffect"
+		volume = -2.0
+		volume_fade_out = 0.1
+		volume_fade_in = 0.1
+		delay_rand_min = -4.0
 		doppler_on = 1.0
-		doppler_factor = 5.0
-		vsnd_files = "sounds/abilities/tengu/ivy_stonessquall_projectile_loop.vsnd"
-		vsnd_duration = 5.438209
+		doppler_factor = 4.0
+		vsnd_files = "sounds/abilities/tengu/ivy_airdrop_bomb_proj_lp_01.vsnd"
+		vsnd_duration = 8.367982
+	}
+	Ivy.AirDrop.Bomb.Hold.Lp = 
+	{
+		base = "Base.Ability.Ult"
+		volume = -2.0
+		volume_fade_out = 0.1
+		volume_fade_in = 0.1
+		delay_rand_min = -4.0
+		vsnd_files = "sounds/abilities/tengu/ivy_airdrop_bomb_lp_01.vsnd"
+		vsnd_duration = 8.908118
+	}
+	Ivy.AirDrop.Bomb.Hold.Ally.Lp = 
+	{
+		base = "Base.Ability.StatusEffect"
+		volume = -3.0
+		volume_fade_out = 0.1
+		volume_fade_in = 0.1
+		delay_rand_min = -4.0
+		vsnd_files = "sounds/abilities/tengu/ivy_airdrop_bomb_lp_01.vsnd"
+		track_2.track_vsnd_files = "sounds/abilities/tengu/ivy_airdrop_lp_01.vsnd"
+		vsnd_duration = 8.908118
 	}
 	Ivy.AirDrop.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
+		volume = 2.0
+		vsnd_files = 
+		[
+			"sounds/abilities/tengu/ivy_airdrop_cast_01.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_cast_02.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_cast_03.vsnd",
+		]
+		vsnd_duration = 2.960295
+	}
+	Ivy.AirDrop.Bomb.Launch = 
+	{
+		base = "Base.Ability.Ult.Cast"
+		volume = 2.0
+		vsnd_files = 
+		[
+			"sounds/abilities/tengu/ivy_airdrop_bomb_launch_01.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_bomb_launch_02.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_bomb_launch_03.vsnd",
+		]
+		vsnd_duration = 1.664535
+	}
+	Ivy.AirDrop.Bomb.Launch.Ally = 
+	{
+		base = "Base.Ability.StatusEffect"
 		volume = 0.0
-		vsnd_files = "sounds/abilities/hornet/vindicta_flight_cast.vsnd"
-		vsnd_duration = 4.656236
+		pitch = 1.1
+		block_team = 1.0
+		block_opponent = 1.0
+		block_neutral = 1.0
+		vsnd_files = 
+		[
+			"sounds/abilities/tengu/ivy_airdrop_bomb_launch_01.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_bomb_launch_02.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_bomb_launch_03.vsnd",
+		]
+		vsnd_duration = 1.664535
+	}
+	Ivy.AirDrop.Bomb.Grab.Ally = 
+	{
+		base = "Base.Ability.StatusEffect"
+		volume = 1.0
+		block_team = 1.0
+		block_opponent = 1.0
+		block_neutral = 1.0
+		vsnd_files = 
+		[
+			"sounds/abilities/tengu/ivy_airdrop_grab_ally_01.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_grab_ally_02.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_grab_ally_03.vsnd",
+		]
+		vsnd_duration = 1.924853
 	}
 	Ivy.AirDrop.Fly.Lp = 
 	{
@@ -430,34 +513,55 @@
 		doppler_on = 1.0
 		volume = 0.0
 		volume_fade_out = 0.5
-		volume_fade_in = 0.5
-		delay_rand_min = -9.0
-		vsnd_files = "sounds/abilities/tengu/a4_lightning_crash/travel_lp.vsnd"
-		vsnd_duration = 16.018499
+		volume_fade_in = 0.1
+		delay_rand_min = -7.0
+		vsnd_files = "sounds/abilities/tengu/ivy_airdrop_lp_01.vsnd"
+		vsnd_duration = 8.986372
 	}
 	Ivy.AirDrop.Bomb.Explode = 
 	{
 		base = "Base.Ability.Ult.Detached"
-		vsnd_files = "sounds/mods/tech/stasis_bomb/explode.vsnd"
-		vsnd_duration = 2.505
+		volume = 0.0
+		vsnd_files = 
+		[
+			"sounds/abilities/tengu/ivy_airdrop_bomb_explode_01.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_bomb_explode_02.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_bomb_explode_03.vsnd",
+		]
+		vsnd_duration = 2.666032
 	}
-	Ivy.AirDrop.Silence.Hit = 
+	Ivy.AirDrop.Bomb.Explode.Ally = 
+	{
+		base = "Base.Ability.StatusEffect"
+		volume = 0.0
+		pitch = 1.1
+		block_team = 1.0
+		block_opponent = 1.0
+		block_neutral = 1.0
+		vsnd_files = 
+		[
+			"sounds/abilities/tengu/ivy_airdrop_bomb_explode_01.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_bomb_explode_02.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_bomb_explode_03.vsnd",
+		]
+		vsnd_duration = 2.666032
+	}
+	Ivy.AirDrop.Bomb.Hit = 
 	{
 		base = "Base.Ability.Hit"
-		filter_include_others = true
-		pitch_rand_min = -0.07
-		pitch_rand_max = 0.07
 		volume = 0.0
-		vsnd_files = "sounds/mods/tech/silence_wave/silence_wave_hit.vsnd"
-		vsnd_duration = 2.497075
+		vsnd_files = 
+		[
+			"sounds/abilities/tengu/ivy_airdrop_bomb_hit_01.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_bomb_hit_02.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_bomb_hit_03.vsnd",
+		]
+		vsnd_duration = 2.335215
 	}
 	Ivy.WingFlap.Ult = 
 	{
 		base = "Base.Ability.Ult"
-		pitch_rand_min = -0.1
-		pitch_rand_max = 0.1
-		pitch = 1.2
-		volume = -9.0
+		volume = -7.0
 		vsnd_files = 
 		[
 			"sounds/player/movement/ivy/ivy_wingflap_01.vsnd",
@@ -466,8 +570,21 @@
 			"sounds/player/movement/ivy/ivy_wingflap_04.vsnd",
 			"sounds/player/movement/ivy/ivy_wingflap_05.vsnd",
 			"sounds/player/movement/ivy/ivy_wingflap_06.vsnd",
+			"sounds/player/movement/ivy/ivy_wingflap_07.vsnd",
 		]
-		vsnd_duration = 1.028594
+		vsnd_duration = 1.009229
+	}
+	Ivy.AirDrop.Expire = 
+	{
+		base = "Base.Ability"
+		volume = -2.0
+		vsnd_files = 
+		[
+			"sounds/abilities/tengu/ivy_airdrop_expire_01.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_expire_02.vsnd",
+			"sounds/abilities/tengu/ivy_airdrop_expire_03.vsnd",
+		]
+		vsnd_duration = 1.57873
 	}
 	Ivy.JumpLand = 
 	{
@@ -526,10 +643,7 @@
 	Ivy.WingFlap = 
 	{
 		base = "Base.Movement"
-		pitch_rand_min = -0.1
-		pitch_rand_max = 0.1
-		pitch = 1.2
-		volume = -4.0
+		volume = -5.0
 		vsnd_files = 
 		[
 			"sounds/player/movement/ivy/ivy_wingflap_01.vsnd",
@@ -538,73 +652,51 @@
 			"sounds/player/movement/ivy/ivy_wingflap_04.vsnd",
 			"sounds/player/movement/ivy/ivy_wingflap_05.vsnd",
 			"sounds/player/movement/ivy/ivy_wingflap_06.vsnd",
+			"sounds/player/movement/ivy/ivy_wingflap_07.vsnd",
 		]
-		vsnd_duration = 1.028594
+		vsnd_duration = 1.009229
+	}
+	Ivy.WingFlap.Small = 
+	{
+		base = "Base.Movement"
+		volume = -6.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/ivy/ivy_wingflap_small_01.vsnd",
+			"sounds/player/movement/ivy/ivy_wingflap_small_02.vsnd",
+			"sounds/player/movement/ivy/ivy_wingflap_small_03.vsnd",
+			"sounds/player/movement/ivy/ivy_wingflap_small_04.vsnd",
+			"sounds/player/movement/ivy/ivy_wingflap_small_05.vsnd",
+			"sounds/player/movement/ivy/ivy_wingflap_small_06.vsnd",
+			"sounds/player/movement/ivy/ivy_wingflap_small_07.vsnd",
+		]
+		vsnd_duration = 0.912177
 	}
 	Ivy.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
-		vsnd_duration = 1.062208
+		base = "Hero.Default.Melee.Swing"
 	}
 	Ivy.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
+		base = "Hero.Default.Melee.Charged"
+		track_2.track_vsnd_files = 
 		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_01.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_02.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_03.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_04.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_05.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_06.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_07.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_08.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_09.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_10.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_11.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_12.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_13.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_14.vsnd",
+			"sounds/player/movement/ivy/ivy_movement_foley_short_15.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	Ivy.Footstep = 
 	{
@@ -700,7 +792,7 @@
 	Tengu.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "tengu"
+		context_name = "hero_tengu"
 		vsnd_files = 
 		[
 			"sounds/vo/tengu/tengu_happy_03.vsnd",
@@ -712,7 +804,7 @@
 	Tengu.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "tengu"
+		context_name = "hero_tengu"
 		vsnd_files = 
 		[
 			"sounds/vo/tengu/tengu_concerned_01.vsnd",

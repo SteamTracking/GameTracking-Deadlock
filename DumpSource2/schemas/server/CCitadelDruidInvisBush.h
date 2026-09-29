@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadelDruidInvisBush : public CCitadelAnimatingModelEntity
 {
 	VectorWS m_vStartPos;

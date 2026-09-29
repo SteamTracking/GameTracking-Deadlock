@@ -7,7 +7,9 @@
 //	"m_flReleaseTimeMS": 400.000000,
 //	"m_flRMSTimeMS": 300.000000,
 //	"m_flWetMix": 1.000000,
-//	"m_bPeakMode": false
+//	"m_flSCHighPassFreq": 0.000000,
+//	"m_bPeakMode": false,
+//	"m_bAutoMakeupGain": false
 //}
 class VMixDynamicsCompressorDesc_t
 {
@@ -27,6 +29,10 @@ class VMixDynamicsCompressorDesc_t
 	float32 m_flRMSTimeMS;
 	// MPropertyFriendlyName = "Dry/Wet"
 	float32 m_flWetMix;
+	// MPropertyFriendlyName = "SideChain Highpass"
+	float32 m_flSCHighPassFreq;
 	// MPropertyFriendlyName = "Peak mode"
 	bool m_bPeakMode;
+	// MPropertyFriendlyName = "Auto Make-up Gain"
+	bool m_bAutoMakeupGain;
 };

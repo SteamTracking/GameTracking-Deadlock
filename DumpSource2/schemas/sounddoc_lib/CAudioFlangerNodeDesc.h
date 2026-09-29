@@ -1,0 +1,3 @@
+class CAudioFlangerNodeDesc : public CVAudioNodeBaseDesc
+{
+};

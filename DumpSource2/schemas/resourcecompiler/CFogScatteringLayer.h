@@ -10,7 +10,10 @@
 //		"m_fScale": 0.000000,
 //		"m_fCubemapScale": 1.000000,
 //		"m_fVolumetricScale": 1.000000,
-//		"m_fGradientScale": 1.000000
+//		"m_fGradientScale": 1.000000,
+//		"m_fWaterScale": 0.000000,
+//		"m_fWaterDensity": 0.000000,
+//		"m_fWaterDepthBlurRadius": 0.000000
 //	}
 //}
 // MHasKV3TransferPolymorphicClassname

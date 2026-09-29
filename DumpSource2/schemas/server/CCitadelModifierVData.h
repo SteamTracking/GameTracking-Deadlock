@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -146,6 +149,8 @@ class CCitadelModifierVData : public CModifierVData
 	// MPropertySuppressField
 	bool m_bNetworkValuesForStatsPreview;
 	CUtlVector< CUtlString > m_vecAutoRegisterModifierValueFromAbilityPropertyName;
+	// MPropertyDescription = "Intrinsic modifiers only. When false, the modifier is removed while its owning ability is swapped out of its slot (as in the case with sinclair stealing it, and it going away). True is usually what you want."
+	bool m_bPersistWhileAbilityDormant;
 	// MPropertyStartGroup = "Kill & Assist Credit"
 	bool m_bCasterCountsAsAssister;
 	// MPropertyDescription = "When set, an additional, invisible modifier will be left on the parent when this modifier expires.  This is to aid in giving assist credit for modifiers that deal no damage (ex. Astro's Lasso)"
@@ -184,8 +189,10 @@ class CCitadelModifierVData : public CModifierVData
 	CUtlString m_strHudMessageText;
 	// MPropertyDescription = "When set, the modifier will not be visible overhead of the casting player for the other players"
 	bool m_bIsHiddenOverhead;
-	// MPropertyDescription = "A set of modifier values that will be forced tp show in the UI if they have a value (normally requires a limited duration set)"
+	// MPropertyDescription = "A list of modifier value stats to show in the UI (if empty, will show everything)"
 	CUtlVector< EModifierValue > m_vecAlwaysShowInStatModifierUI;
+	// MPropertyDescription = "When set, this modifier is left out of the active stat rows entirely.  For buffs that already present themselves with their own HUD entry and would otherwise be listed twice."
+	bool m_bHideInStatModifierUI;
 	// MPropertyStartGroup = "Responses"
 	CCitadelModifierResponseRules_t m_OnCreateResponse;
 	// MPropertyStartGroup = "Camera"
@@ -197,6 +204,7 @@ class CCitadelModifierVData : public CModifierVData
 	ModifierBarrierBehavior_t m_BarrierBehavior;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_BarrierCreateParticle;
 	bool m_bSupressDefaultBarrierBreakParticle;
+	bool m_bSuppressBarrierRefreshSound;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_sExpiredSound;
 	// MPropertyDescription = "Overrides the default footstep. The footstep with the greatest Priority is selected. It must have a priority greater than -1 to be selected!"

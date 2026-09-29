@@ -1,0 +1,3 @@
+class CMixGroupBoxDesc : public CVNodeTypeDesc
+{
+};

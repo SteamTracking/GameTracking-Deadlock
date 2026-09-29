@@ -151,7 +151,7 @@ PopupKeybind.PopupPanel .PopupContent
 	color: offWhite&44;
 }
 
-#SingleKeyBindLabel
+#RestrictedBindLabel
 {
 	horizontal-align: center;
 	visibility: collapse;
@@ -160,9 +160,10 @@ PopupKeybind.PopupPanel .PopupContent
 	font-style: italic;
 	color: colorEnemy;
 	opacity: 0.65;
+	max-width: 500px;
 }
 
-.SingleKeyBind #SingleKeyBindLabel
+.RestrictedBind #RestrictedBindLabel
 {
 	visibility: visible;
 }
@@ -176,9 +177,9 @@ PopupKeybind.PopupPanel .PopupContent
 	img-shadow: 0px 0px 16px #000000aa;
 }
 
-#HeroIcon.Hide
+#HeroIcon.DefaultHeroIcon
 {
-	visibility: collapse;
+	wash-color: offWhite;
 }
 
 #BindingNameContainer
@@ -299,16 +300,6 @@ PopupKeybind.PopupPanel .PopupContent
 	background-color: offWhite&11;
 }
 
-#BindingsContainer .Binding.InvalidBinding .InputField .Border
-{
-	wash-color: colorEnemy;
-	opacity: 1;
-	animation-name: InputInvalidBorder;
-	animation-duration: 2s;
-	animation-iteration-count: 1;
-	animation-fill-mode: forwards;
-}
-
 #BindingsContainer .Binding .ButtonWrapper
 {
 	horizontal-align: center;
@@ -363,11 +354,6 @@ PopupKeybind.PopupPanel .PopupContent
 #AddSecondaryBindingPanel.Hide
 {
 	visibility: collapse;
-}
-
-.InputButton.Disabled
-{
-	opacity: 0.2;
 }
 
 #PrimaryBinding,#SecondaryBinding
@@ -427,7 +413,7 @@ PopupKeybind.PopupPanel .PopupContent
 .InvalidBinding #InvalidInput
 {
 	animation-name: AppearAndFade;
-	animation-duration: 2s;
+	animation-duration: 1s;
 	animation-iteration-count: 1;
 }
 
@@ -491,19 +477,14 @@ PopupKeybind.PopupPanel .PopupContent
 	margin-top: 16px;
 }
 
-#ClearBinding1,#ClearBinding2
+.Buttons CitadelButton
 {
-	margin-right: 0px;
+	margin: 0px 8px;
 }
 
 #ResetBinding
 {
 	tooltip-position: left;
-}
-
-.HasBindingConflict #ConfirmBinding
-{
-	background-color: rgb(255, 94, 0);
 }
 
 #EscapeButton
@@ -582,6 +563,11 @@ PopupKeybind.PopupPanel .PopupContent
 	background-position: center;
 	wash-color: offWhite;
 	opacity: 0.025;
+}
+
+.highlight
+{
+	font-weight: bold;
 }
 
 @keyframes 'Blink'

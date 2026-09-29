@@ -1,3 +1,4 @@
+// MGetKV3ClassDefaults = null
 class CAI_ScriptConditionsElement
 {
 	CHandle< CBaseEntity > m_hActor;

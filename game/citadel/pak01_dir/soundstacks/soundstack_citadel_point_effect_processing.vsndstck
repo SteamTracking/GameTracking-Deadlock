@@ -1,0 +1,110 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	citadel_point_effect_processing = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					emitter_location = 
+					{
+						data_type = "float3"
+						value = "[0.0, 0.0, 0.0]"
+					}
+					exclusive_enabled = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+					inclusive_enabled = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+					send_volume = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+					inclusive_send_vol_scale_ls = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+				}
+			},
+			{
+				name = "point_effect_info"
+				operator = "citadel_point_effect_info"
+				input = "@public.emitter_location"
+			},
+			{
+				name = "listener_is_obscured"
+				operator = "math_string"
+				apply = "equal"
+				input1 = "@point_effect_info.output_effect_name"
+				input2 = "obscured"
+			},
+			{
+				name = "math_vol_accum_inclusive_obscured_send_level"
+				operator = "math_accumulate12_float"
+				apply = "mult"
+				input2 = "@public.inclusive_send_vol_scale_ls"
+				input3 = "@public.send_volume"
+				input4 = "@public.inclusive_enabled"
+				input5 = "@listener_is_obscured.output"
+				input6 = "@point_effect_info.output_effect_matches_listener"
+			},
+			{
+				name = "inverse_matches_listener"
+				operator = "math_float"
+				apply = "sub"
+				input1 = "1.0"
+				input2 = "@point_effect_info.output_effect_matches_listener"
+			},
+			{
+				name = "math_vol_accum_exclusive_wet_level"
+				operator = "math_accumulate12_float"
+				apply = "mult"
+				input1 = "@public.send_volume"
+				input2 = "@inverse_matches_listener.output"
+				input3 = "@public.exclusive_enabled"
+			},
+			{
+				name = "max_wet_level"
+				operator = "math_float"
+				apply = "max"
+				input1 = "@math_vol_accum_exclusive_wet_level.output"
+				input2 = "@math_vol_accum_inclusive_obscured_send_level.output"
+			},
+			{
+				name = "vmix_send_effected_wet_vol"
+				input_execute = "1"
+				operator = "vmix_voicegraph_input"
+				input_name = "point_effect_wet_vol"
+				input = "@max_wet_level.output"
+			},
+			{
+				name = "switch_dry_level"
+				operator = "ctrl_switch_float"
+				input_switch = "@public.exclusive_enabled"
+				input1 = "1.0"
+				input2 = "@point_effect_info.output_effect_matches_listener"
+			},
+			{
+				name = "vmix_send_effected_dry_vol"
+				input_execute = "1"
+				operator = "vmix_voicegraph_input"
+				input_name = "point_effect_dry_vol"
+				input = "@switch_dry_level.output"
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "citadel"
+		}
+	}
+}

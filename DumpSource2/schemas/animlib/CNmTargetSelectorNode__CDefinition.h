@@ -8,15 +8,17 @@
 //	"m_flPositionScoreWeight": 1.000000,
 //	"m_parameterNodeIdx": -1,
 //	"m_bIgnoreInvalidOptions": false,
-//	"m_bIsWorldSpaceTarget": true
+//	"m_bIsWorldSpaceTarget": true,
+//	"m_alignmentBoneID": ""
 //}
 // MHasKV3TransferPolymorphicClassname
 class CNmTargetSelectorNode::CDefinition : public CNmClipReferenceNode::CDefinition
 {
-	CUtlLeanVectorFixedGrowable< int16, 5 > m_optionNodeIndices;
+	CUtlLeanVectorFixedGrowable< int16, 8 > m_optionNodeIndices;
 	float32 m_flOrientationScoreWeight;
 	float32 m_flPositionScoreWeight;
 	int16 m_parameterNodeIdx;
 	bool m_bIgnoreInvalidOptions;
 	bool m_bIsWorldSpaceTarget;
+	CGlobalSymbol m_alignmentBoneID;
 };

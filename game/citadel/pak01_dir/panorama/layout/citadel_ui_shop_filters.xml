@@ -1,0 +1,304 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_ui_shop_filters.vcss" />
+		<include src="s2r://panorama/styles/ability_property_icons.vcss" />
+	</styles>
+	<snippets>
+		<snippet name="Breadcrumb">
+			<Panel class="BreadcrumbOuter">
+				<Panel id="Breadcrumb" class="Breadcrumb">
+					<ToggleButton id="FilterToggleButton" class="FilterToggle">
+						<Panel id="filter_icon" />
+					</ToggleButton>
+					<Button id="CloseButton" />
+				</Panel>
+				<Label class="BreadcrumbSeparator And" text="#CitadelShopFilter_FilterAnd" />
+				<Label class="BreadcrumbSeparator Or" text="#CitadelShopFilter_FilterOr" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<CitadelShopFilters hittest="false">
+		<Panel class="filter_backer" />
+		<Panel id="ActiveFiltersContainer">
+			<Panel id="ItemCategoryFilters" hittest="false">
+				<ToggleButton class="CategoryButton All" hittest="true">
+					<Label class="CategoryLabel" text="#CitadelShopFilter_ShowAllItems" />
+				</ToggleButton>
+				<ToggleButton class="CategoryButton Weapon" filter="EShopFilterItemWeapon" hittest="true" onmouseover="UIShowTextTooltip( #EShopFilterItemWeapon )" onmouseout="UIHideTextTooltip()">
+					<Panel class="CategoryIcon" />
+				</ToggleButton>
+				<ToggleButton class="CategoryButton Spirit" filter="EShopFilterItemSpirit" hittest="true" onmouseover="UIShowTextTooltip( #EShopFilterItemSpirit )" onmouseout="UIHideTextTooltip()">
+					<Panel class="CategoryIcon" />
+				</ToggleButton>
+				<ToggleButton class="CategoryButton Vitality" filter="EShopFilterItemVitality" hittest="true" onmouseover="UIShowTextTooltip( #EShopFilterItemVitality )" onmouseout="UIHideTextTooltip()">
+					<Panel class="CategoryIcon" />
+				</ToggleButton>
+			</Panel>
+			<Panel class="TopBottomFlow">
+				<Label class="FiltersActiveLabel" text="#CitadelShopFilter_FiltersActive" />
+				<Panel id="Breadcrumbs" hittest="true" />
+			</Panel>
+			<Panel class="WidthFill" />
+			<CitadelButton class="ClearFiltersButton Medium Dark Fill visibleByDefault" text="#CitadelShopFilter_ClearFilters" onmouseactivate="CitadelShopFilterClearAll()" />
+			<Panel id="FilterAndOrSwitch" class="SwitchContainer" onmouseover="UIShowTextTooltip(#CitadelShopFilter_AndOrSwitchTooltip)" onmouseout="UIHideTextTooltip();">
+				<Panel id="FilterAnd" class="SwitchButton" hittest="true" onactivate="CitadelShopFilterAndMode(true)">
+					<Label text="#CitadelShopFilter_FilterAnd" />
+				</Panel>
+				<Panel id="FilterOr" class="SwitchButton" hittest="true" onactivate="CitadelShopFilterAndMode(false)">
+					<Label text="#CitadelShopFilter_FilterOr" />
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="SearchContainer" onmouseover="CitadelShopFilterShowMenu(&apos;&apos;)">
+			<Panel id="SearchBox">
+				<Panel id="ShopSearchIcon" onactivate="CitadelShopFilterSetSearchFocus();" />
+				<TextEntry id="SearchTextEntry" acceptsfocus="true" acceptsinput="true" placeholder="#CitadelShopFilter_SearchPlaceholder" ontextentrychange="CitadelShopSearchTextEntryChanged()" onfocus="CitadelShopSearchTextEntryChanged()" />
+				<Button id="ClearSearchButton" onactivate="CitadelShopSearchTextEntryClear();" />
+			</Panel>
+		</Panel>
+		<Panel id="FilterContainer" hittest="false" onmouseout="CitadelShopFilterShowMenu(&apos;&apos;)">
+			<Panel class="Header">
+				<Panel id="FilterList" hittest="false">
+					<Panel class="FilterCategory Physical" onmouseover="CitadelShopFilterShowMenu(&apos;Physical&apos;)">
+						<Panel class="top_filter_bg" />
+						<Panel class="top_filter_img" />
+						<Panel class="FilterControlContainer">
+							<ToggleButton class="FilterGroupControl TopLevel" text="#CitadelShopFilterCategory_Physical" filterGroup="FilterGroupPhysical" />
+						</Panel>
+					</Panel>
+					<Panel class="FilterCategory Spirit" onmouseover="CitadelShopFilterShowMenu(&apos;Spirit&apos;)">
+						<Panel class="top_filter_bg" />
+						<Panel class="top_filter_img" />
+						<Panel class="FilterControlContainer">
+							<ToggleButton class="FilterGroupControl TopLevel" text="#CitadelShopFilterCategory_Spirit" filterGroup="FilterGroupSpirit" />
+						</Panel>
+					</Panel>
+					<Panel class="FilterCategory Defense" onmouseover="CitadelShopFilterShowMenu(&apos;Defense&apos;)">
+						<Panel class="top_filter_bg" />
+						<Panel class="top_filter_img" />
+						<Panel class="FilterControlContainer">
+							<ToggleButton class="FilterGroupControl TopLevel" text="#CitadelShopFilterCategory_Defense" filterGroup="FilterGroupDefense" />
+						</Panel>
+					</Panel>
+					<Panel class="FilterCategory Mobility" onmouseover="CitadelShopFilterShowMenu(&apos;Mobility&apos;)">
+						<Panel class="top_filter_bg" />
+						<Panel class="top_filter_img" />
+						<Panel class="FilterControlContainer">
+							<ToggleButton class="FilterGroupControl TopLevel" text="#CitadelShopFilterCategory_Mobility" filterGroup="FilterGroupMobility" />
+						</Panel>
+					</Panel>
+					<Panel class="FilterCategory Disruption" onmouseover="CitadelShopFilterShowMenu(&apos;Disruption&apos;)">
+						<Panel class="top_filter_bg" />
+						<Panel class="top_filter_img" />
+						<Panel class="FilterControlContainer">
+							<ToggleButton class="FilterGroupControl TopLevel" text="#CitadelShopFilterCategory_Disruption" filterGroup="FilterGroupDisruption" />
+						</Panel>
+					</Panel>
+					<Panel class="FilterCategory Misc" onmouseover="CitadelShopFilterShowMenu(&apos;Misc&apos;)">
+						<Panel class="top_filter_bg" />
+						<Panel class="top_filter_img" />
+						<Panel class="FilterControlContainer">
+							<ToggleButton class="FilterGroupControl TopLevel NotClickableGroup" text="#CitadelShopFilterCategory_Misc" filterGroup="FilterGroupMisc" />
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="FilterMenus" hittestchildren="true" hittest="false">
+				<Panel class="FilterGroup TopLevel" id="FilterGroupPhysical" onmouseout="CitadelShopFilterShowMenu(&apos;&apos;)">
+					<ToggleButton class="FilterGroupControl" text="#CitadelShopFilterCategory_GunImprovements" filterGroup="FilterGroupGun" />
+					<Panel class="FilterGroup" id="FilterGroupGun">
+						<ToggleButton class="FilterToggle" filter="EShopFilterWeaponDamage">
+							<Panel id="filter_icon" class="PropertiesIcon Gun" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterWeaponAmmo">
+							<Panel id="filter_icon" class="PropertiesIcon Ammo" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterWeaponFireRate">
+							<Panel id="filter_icon" class="PropertiesIcon FireRate" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterWeaponBulletVelocity">
+							<Panel id="filter_icon" class="PropertiesIcon BulletVelocity" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterWeaponRange">
+							<Panel id="filter_icon" class="PropertiesIcon Range" />
+						</ToggleButton>
+					</Panel>
+					<ToggleButton class="FilterToggle" filter="EShopFilterMelee">
+						<Panel id="filter_icon" class="PropertiesIcon Melee" />
+					</ToggleButton>
+					<ToggleButton class="FilterToggle" filter="EShopFilterPhysicalAdditionalDamage">
+						<Panel id="filter_icon" class="PropertiesIcon DamageWeapon" />
+					</ToggleButton>
+					<Panel class="tutorial_hint">
+						<Label html="true" text="#ShopFilter_HintSecondary" />
+					</Panel>
+				</Panel>
+				<Panel class="FilterGroup TopLevel" id="FilterGroupSpirit" onmouseout="CitadelShopFilterShowMenu(&apos;&apos;)">
+					<ToggleButton class="FilterGroupControl" text="#CitadelShopFilterCategory_AbilityImprovements" filterGroup="FilterGroupAbilityImprovements" />
+					<Panel class="FilterGroup" id="FilterGroupAbilityImprovements">
+						<ToggleButton class="FilterToggle" filter="EShopFilterSpiritDamage">
+							<Panel id="filter_icon" class="PropertiesIcon Spirit" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterSpiritCooldownAndCharges">
+							<Panel id="filter_icon" class="PropertiesIcon Cooldown" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterSpiritDuration">
+							<Panel id="filter_icon" class="PropertiesIcon Duration" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterSpiritRange">
+							<Panel id="filter_icon" class="PropertiesIcon Range" />
+						</ToggleButton>
+					</Panel>
+					<ToggleButton class="FilterGroupControl" text="#CitadelShopFilterCategory_AdditionalDamage" filterGroup="FilterGroupAdditionalDamage" />
+					<Panel class="FilterGroup" id="FilterGroupAdditionalDamage">
+						<ToggleButton class="FilterToggle" filter="EShopFilterSpiritAdditionalDamage">
+							<Panel id="filter_icon" class="PropertiesIcon DamageMagic" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterSpiritAdditionalDamagePct">
+							<Panel id="filter_icon" class="PropertiesIcon DamageOverTime" />
+						</ToggleButton>
+					</Panel>
+					<Panel class="tutorial_hint">
+						<Label html="true" text="#ShopFilter_HintSecondary" />
+					</Panel>
+				</Panel>
+				<Panel class="FilterGroup TopLevel" id="FilterGroupDefense" onmouseout="CitadelShopFilterShowMenu(&apos;&apos;)">
+					<ToggleButton class="FilterGroupControl" text="#CitadelShopFilterCategory_Health" filterGroup="FilterGroupHealth" />
+					<Panel class="FilterGroup" id="FilterGroupHealth">
+						<ToggleButton class="FilterToggle" filter="EShopFilterHP">
+							<Panel id="filter_icon" class="PropertiesIcon Health" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterRegen">
+							<Panel id="filter_icon" class="PropertiesIcon HealthRegen" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterOutOfCombatRegen">
+							<Panel id="filter_icon" class="PropertiesIcon HealthRegenOutOfCombat" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterBarrier">
+							<Panel id="filter_icon" class="PropertiesIcon Barrier" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterHealing">
+							<Panel id="filter_icon" class="PropertiesIcon Heal" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterLifesteal">
+							<Panel id="filter_icon" class="PropertiesIcon HealthSteal" />
+						</ToggleButton>
+					</Panel>
+					<ToggleButton class="FilterGroupControl" text="#CitadelShopFilterCategory_Resistances" filterGroup="FilterGroupResistances" />
+					<Panel class="FilterGroup" id="FilterGroupResistances">
+						<ToggleButton class="FilterToggle" filter="EShopFilterPhysicalResist">
+							<Panel id="filter_icon" class="PropertiesIcon ArmorBullet" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterSpiritResist">
+							<Panel id="filter_icon" class="PropertiesIcon ArmorSpirit" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterMeleeResist">
+							<Panel id="filter_icon" class="PropertiesIcon ArmorMelee" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterDebuffResist">
+							<Panel id="filter_icon" class="PropertiesIcon DebuffRemove" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterSlowResist">
+							<Panel id="filter_icon" class="PropertiesIcon ConditionSlow" />
+						</ToggleButton>
+					</Panel>
+					<ToggleButton class="FilterToggle" filter="EShopFilterAntiCC">
+						<Panel id="filter_icon" class="PropertiesIcon Debuff" />
+					</ToggleButton>
+					<ToggleButton class="FilterToggle" filter="EShopFilterInvulnerability">
+						<Panel id="filter_icon" class="PropertiesIcon Invulnerable" />
+					</ToggleButton>
+					<Panel class="tutorial_hint">
+						<Label html="true" text="#ShopFilter_HintSecondary" />
+					</Panel>
+				</Panel>
+				<Panel class="FilterGroup TopLevel" id="FilterGroupMobility" onmouseout="CitadelShopFilterShowMenu(&apos;&apos;)">
+					<ToggleButton class="FilterGroupControl" text="#CitadelShopFilterCategory_Movement" filterGroup="FilterGroupMovement" />
+					<Panel class="FilterGroup" id="FilterGroupMovement">
+						<ToggleButton class="FilterToggle" filter="EShopFilterMoveSpeed">
+							<Panel id="filter_icon" class="PropertiesIcon MoveSpeed" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterSprint">
+							<Panel id="filter_icon" class="PropertiesIcon MoveSprint" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterStamina">
+							<Panel id="filter_icon" class="PropertiesIcon MoveStamina" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterJumpAndDash">
+							<Panel id="filter_icon" class="PropertiesIcon MoveSlide" />
+						</ToggleButton>
+					</Panel>
+					<ToggleButton class="FilterToggle" filter="EShopFilterTeleport">
+						<Panel id="filter_icon" class="PropertiesIcon Teleport" />
+					</ToggleButton>
+					<ToggleButton class="FilterToggle" filter="EShopFilterStealth">
+						<Panel id="filter_icon" class="PropertiesIcon Visibility" />
+					</ToggleButton>
+					<Panel class="tutorial_hint">
+						<Label html="true" text="#ShopFilter_HintSecondary" />
+					</Panel>
+				</Panel>
+				<Panel class="FilterGroup TopLevel" id="FilterGroupDisruption" onmouseout="CitadelShopFilterShowMenu(&apos;&apos;)">
+					<ToggleButton class="FilterToggle" filter="EShopFilterAntiHeal">
+						<Panel id="filter_icon" class="PropertiesIcon DebuffHealing" />
+					</ToggleButton>
+					<ToggleButton class="FilterToggle" filter="EShopFilterBulletVuln">
+						<Panel id="filter_icon" class="PropertiesIcon DebuffBulletArmor" />
+					</ToggleButton>
+					<ToggleButton class="FilterToggle" filter="EShopFilterSpiritVuln">
+						<Panel id="filter_icon" class="PropertiesIcon DebuffSpiritArmor" />
+					</ToggleButton>
+					<ToggleButton class="FilterGroupControl" text="#CitadelShopFilterCategory_Effectiveness" filterGroup="FilterGroupEffectiveness" />
+					<Panel class="FilterGroup" id="FilterGroupEffectiveness">
+						<ToggleButton class="FilterGroupControl" text="#CitadelShopFilterCategory_GunReductions" filterGroup="FilterGroupGunReductions" />
+						<Panel class="FilterGroup" id="FilterGroupGunReductions">
+							<ToggleButton class="FilterToggle" filter="EShopFilterBulletDamageReduction">
+								<Panel id="filter_icon" class="PropertiesIcon DebuffGun" />
+							</ToggleButton>
+							<ToggleButton class="FilterToggle" filter="EShopFilterFireRateReduction">
+								<Panel id="filter_icon" class="PropertiesIcon DebuffFireRate" />
+							</ToggleButton>
+						</Panel>
+						<ToggleButton class="FilterToggle" filter="EShopFilterSpiritDamageReduction">
+							<Panel id="filter_icon" class="PropertiesIcon DebuffSpirit" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterMobilityReduction">
+							<Panel id="filter_icon" class="PropertiesIcon DebuffMoveSpeed" />
+						</ToggleButton>
+					</Panel>
+					<ToggleButton class="FilterGroupControl" text="#CitadelShopFilterCategory_StatusEffects" filterGroup="FilterGroupStatusEffects" />
+					<Panel class="FilterGroup" id="FilterGroupStatusEffects">
+						<ToggleButton class="FilterToggle" filter="EShopFilterStatus_Stun">
+							<Panel id="filter_icon" class="PropertiesIcon ConditionStun" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterStatus_Disarm">
+							<Panel id="filter_icon" class="PropertiesIcon ConditionDisarm" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterStatus_Silence">
+							<Panel id="filter_icon" class="PropertiesIcon ConditionSilence" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterStatus_Curse">
+							<Panel id="filter_icon" class="PropertiesIcon ConditionCurse" />
+						</ToggleButton>
+						<ToggleButton class="FilterToggle" filter="EShopFilterStatus_Immobilize">
+							<Panel id="filter_icon" class="PropertiesIcon ConditionImmobilize" />
+						</ToggleButton>
+					</Panel>
+					<Panel class="tutorial_hint">
+						<Label html="true" text="#ShopFilter_HintSecondary" />
+					</Panel>
+				</Panel>
+				<Panel class="FilterGroup TopLevel DisableCheckbox" id="FilterGroupMisc" onmouseout="CitadelShopFilterShowMenu(&apos;&apos;)">
+					<ToggleButton class="FilterToggle" filter="EShopFilterActive" />
+					<ToggleButton class="FilterToggle" filter="EShopFilterImbue" />
+					<Panel class="MenuSeparator Hidden" />
+					<ToggleButton class="FilterToggle Hidden" id="FilterShowNamesToggle" text="#CitadelShopFilter_FilterAlwaysShowNames" onactivate="CitadelShopFilterAlwaysShowNames()" />
+					<ToggleButton class="FilterToggle Hidden" id="FilterAndToggle" text="#CitadelShopFilter_FilterAndMode" onactivate="CitadelShopFilterAndMode(true)" onmouseover="UIShowTextTooltip(#CitadelShopFilter_AndTooltip)" onmouseout="UIHideTextTooltip();" />
+					<ToggleButton class="FilterToggle Hidden" id="FilterOrToggle" text="#CitadelShopFilter_FilterOrMode" onactivate="CitadelShopFilterAndMode(false)" onmouseover="UIShowTextTooltip(#CitadelShopFilter_OrTooltip)" onmouseout="UIHideTextTooltip();" />
+				</Panel>
+			</Panel>
+		</Panel>
+	</CitadelShopFilters>
+</root>

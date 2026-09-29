@@ -1,0 +1,116 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/hud_common.vcss" />
+		<include src="s2r://panorama/styles/citadel_hud_player_stats.vcss" />
+		<include src="s2r://panorama/styles/ability_property_icons.vcss" />
+	</styles>
+	<snippets>
+		<snippet name="casterSnippet">
+			<Panel class="casterAndModifiers">
+				<Image id="bonusIcon" />
+				<Image id="heroIcon" />
+				<Panel id="modifierList" />
+			</Panel>
+		</snippet>
+		<snippet name="modifierSnippet">
+			<Panel class="singleModifier">
+				<Image id="abilityIcon" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel>
+		<Panel id="HudStatBlock">
+			<Panel id="CoreStats" class="stat_block">
+				<Panel id="Weapon" class="core_stat">
+					<Panel class="core_bg" />
+					<Panel class="wpn_stat_area">
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label class="demote" text="%" />
+					</Panel>
+				</Panel>
+				<Panel id="Spirit" class="core_stat">
+					<Panel class="core_bg" />
+					<Label id="stat_label" text="{s:value}" html="true" />
+				</Panel>
+				<Panel id="Health" class="core_stat">
+					<Panel class="core_bg" />
+					<Label id="stat_label" text="{s:value}" html="true" />
+					<Label id="delta_label" text="{s:delta}" html="true" />
+				</Panel>
+			</Panel>
+			<Panel id="SubStats" class="stat_block">
+				<Panel class="stat_column weapon">
+					<Panel id="BulletDamage" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon Gun icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+					<Panel id="FireRate" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon FireRate icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label class="demote" text="%" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+					<Panel id="Ammo" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon AmmoClipSize icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+				</Panel>
+				<Panel class="stat_column spirit">
+					<Panel id="CooldownReduction" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon Cooldown icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label class="demote" text="%" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+					<Panel id="AbilityDuration" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon Duration icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label class="demote" text="%" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+					<Panel id="AbilityRange" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon Range icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label class="demote" text="%" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+				</Panel>
+				<Panel class="stat_column armor">
+					<Panel id="Vitality" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon Health icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+					<Panel id="Regen" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon HealthRegen icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label class="demote" text="/s" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+					<Panel id="MoveSpeed" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon MoveSpeed icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label class="demote" text="#MoveSpeed_postfix" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+					<Panel id="WeaponResist" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon ResistBullet icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label class="demote" text="#BulletResist_postfix" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+					<Panel id="SpiritResist" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon ResistSpirit icon" />
+						<Label id="stat_label" text="{s:value}" html="true" />
+						<Label class="demote" text="#TechResist_postfix" />
+						<Label id="delta_label" text="{s:delta}" html="true" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+	</Panel>
+</root>

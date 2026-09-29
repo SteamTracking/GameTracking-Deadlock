@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -184,7 +185,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flBounceAmount":
 //	{
@@ -259,7 +261,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flSlideAmount":
 //	{
@@ -334,7 +337,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flRandomDirScale":
 //	{
@@ -409,11 +413,13 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_bDecayBounce": false,
 //	"m_bKillonContact": false,
 //	"m_flMinSpeed": -1.000000,
+//	"m_bKillonContactBounce": false,
 //	"m_bSetNormal": false,
 //	"m_nStickOnCollisionField": 19,
 //	"m_flStopSpeed":
@@ -489,11 +495,13 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nEntityStickDataField": 19,
 //	"m_nEntityStickNormalField": 19
 //}
+// MGPUParticleFunction
 // MHasKV3TransferPolymorphicClassname
 class C_OP_WorldTraceConstraint : public CParticleFunctionConstraint
 {
@@ -551,6 +559,9 @@ class C_OP_WorldTraceConstraint : public CParticleFunctionConstraint
 	bool m_bKillonContact;
 	// MPropertyFriendlyName = "minimum speed to kill on collision"
 	float32 m_flMinSpeed;
+	// MPropertyFriendlyName = "calculate bounce on killed particles (for child events)"
+	// MPropertySuppressExpr = "m_bKillonContact == false"
+	bool m_bKillonContactBounce;
 	// MPropertyFriendlyName = "Set Normal"
 	bool m_bSetNormal;
 	// MPropertyFriendlyName = "Stick On Collision Cache Field"

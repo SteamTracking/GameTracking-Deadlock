@@ -11,19 +11,19 @@
 				0.0, 0.0,
 			],
 			[
-				55.0, 0.0, 0.0, 0.005,
+				0.22, 0.0, 0.0, 0.005,
 				0.0, 1.0,
 			],
 			[
-				100.0, 0.5, 0.011111, 0.0095,
+				0.44, 0.5, 0.011111, 0.0095,
 				0.0, 1.0,
 			],
 			[
-				160.259628, 1.0, 0.008297, 0.0,
+				0.66, 1.0, 0.008297, 0.0,
 				0.0, 0.0,
 			],
 			[
-				255.0, 1.0, 0.0, 0.0,
+				1.0, 1.0, 0.0, 0.0,
 				0.0, 0.0,
 			],
 		]
@@ -54,6 +54,8 @@
 			},
 		]
 		fade_type = "linear"
+		volume_falloff_floor_enemy_relevance = 0.5
+		max_distance_recipient_filter = 3500.0
 		mix_group_prefix = "Weapons"
 		occlusion_subgroup_name = "weapons"
 		recency_bias_max_scale = 1.0
@@ -66,7 +68,8 @@
 		volume_offset_team = -6.0
 		volume_offset_opponent = -1.0
 		volume_offset_neutral = -4.0
-		volume_enemy_targeting_boost = 2.0
+		transient_target_offset_db = 4.0
+		point_effect_exclusive_processing_enabled_player = 0.0
 		vsnd_files_last_shot = 
 		[
 			"sounds/weapons/geist/geist_wpn_last_shot_01.vsnd",
@@ -93,15 +96,15 @@
 				0.0, 0.0,
 			],
 			[
-				27.704439, -12.857142, -0.019337, 0.249165,
+				0.11, -12.857142, -0.019337, 0.249165,
 				0.0, 1.0,
 			],
 			[
-				49.450935, 0.0, 0.056566, 0.056566,
+				0.22, 0.0, 0.056566, 0.056566,
 				1.0, 1.0,
 			],
 			[
-				255.0, 0.0, 0.0, 0.0,
+				1.0, 0.0, 0.0, 0.0,
 				0.0, 0.0,
 			],
 		]
@@ -124,19 +127,19 @@
 				0.0, 0.0,
 			],
 			[
-				55.706776, -60.0, 0.0, 0.45903,
+				0.22, -60.0, 0.0, 0.45903,
 				0.0, 1.0,
 			],
 			[
-				99.19976, -14.464285, 1.046967, 0.414428,
+				0.44, -14.464285, 1.046967, 0.414428,
 				0.0, 1.0,
 			],
 			[
-				200.484802, 0.0, 0.142808, 0.0,
+				0.88, 0.0, 0.142808, 0.0,
 				0.0, 0.0,
 			],
 			[
-				255.0, 0.0, 0.0, 0.0,
+				1.0, 0.0, 0.0, 0.0,
 				0.0, 0.0,
 			],
 		]
@@ -179,6 +182,7 @@
 		mono_downmix_enabled = 0.0
 		occlusion_scale_non_player = 0.75
 		low_ammo_enabled = false
+		last_shot_enabled = false
 	}
 	Base.Weapon.Beam.ClosestPoint = 
 	{
@@ -213,15 +217,22 @@
 	}
 	Base.NPC.Neutral = 
 	{
-		type = "citadel_default_3d"
+		type = "citadel_perspective_default"
 		base = 
 		[
+			{
+				event_name = "Base.SourceReverb"
+				field_name = "citadel_source_reverb_send"
+			},
 			{
 				event_name = "Volume.Falloff.NPC.Neutral"
 			},
 		]
 		mixer_mixgroup = "NPC-Neutral"
-		max_distance_recipient_filter = 1200.0
+		max_distance_recipient_filter = 1000.0
+		limiter_global_event_distance_on = true
+		limiter_global_event_distance_max = 4.0
+		volume = 0.0
 	}
 	Base.NPC.Trooper = 
 	{
@@ -229,11 +240,18 @@
 		base = 
 		[
 			{
+				event_name = "Base.SourceReverb"
+				field_name = "citadel_source_reverb_send"
+			},
+			{
 				event_name = "Volume.Falloff.NPC.Trooper"
 			},
 		]
 		mix_group_prefix = "NPC-Troop"
 		volume_enemy_targeting_boost = 3.0
+		volume_offset_team = -9.0
+		volume_offset_neutral = -3.0
+		volume_offset_opponent = -1.0
 		volume = -12.0
 		max_distance_recipient_filter = 1000.0
 	}
@@ -257,6 +275,10 @@
 		base = 
 		[
 			{
+				event_name = "Base.SourceReverb"
+				field_name = "citadel_source_reverb_send"
+			},
+			{
 				event_name = "Volume.Falloff.NPC.Guardian"
 			},
 		]
@@ -277,7 +299,6 @@
 				event_name = "Volume.Falloff.NPC.Guardian.Close"
 			},
 		]
-		hpf_non_player_enabled = 0.0
 		lpf_non_player_enabled = 0.0
 	}
 	Base.NPC.Walker = 
@@ -285,6 +306,10 @@
 		type = "citadel_perspective_default"
 		base = 
 		[
+			{
+				event_name = "Base.SourceReverb"
+				field_name = "citadel_source_reverb_send"
+			},
 			{
 				event_name = "Volume.Falloff.NPC.Walker"
 			},
@@ -307,6 +332,10 @@
 		type = "citadel_perspective_default"
 		base = 
 		[
+			{
+				event_name = "Base.SourceReverb"
+				field_name = "citadel_source_reverb_send"
+			},
 			{
 				event_name = "Volume.Falloff.NPC.Walker.Close"
 			},
@@ -430,6 +459,8 @@
 			},
 		]
 		mix_group_prefix = "Ability"
+		volume_falloff_floor_enemy_relevance = 0.5
+		max_distance_recipient_filter = 3500.0
 		position_offset = [ 0.0, 0.0, 50.0 ]
 		block_volume_min = -1.0
 		volume_fade_out = 0.1
@@ -447,12 +478,19 @@
 		param_envelope_duration = -1.0
 		pitch_envelope_scale_min = 0.85
 		pitch_envelope_scale_max = 1.5
+		point_effect_exclusive_processing_enabled_player = 0.0
+	}
+	Base.Ability.Cast = 
+	{
+		base = "Base.Ability"
+		volume_enemy_targeting_boost_disable_update = 1.0
 	}
 	Base.Ability.Detached = 
 	{
 		base = "Base.Ability"
 		play_from_listener_player = 0.0
 		spread_max_value_player = 0.1
+		point_effect_exclusive_processing_enabled_player = 1.0
 	}
 	Base.Ability.Detached.Close = 
 	{
@@ -468,12 +506,14 @@
 		]
 		occlusion_volume_blend_distance_min = 250.0
 		occlusion_volume_blend_distance_max = 500.0
+		max_distance_recipient_filter = 2000.0
 		play_from_listener_player = 0.0
 		occlusion_min = 0.0
 		occlusion_scale_player = 1.0
 		hrtf_on_player = 1.0
 		lpf_player_enabled = 1.0
 		hpf_player_enabled = 1.0
+		point_effect_exclusive_processing_enabled_player = 1.0
 	}
 	Base.Ability.Beam.ClosestPoint = 
 	{
@@ -495,20 +535,25 @@
 		volume_enemy_targeting_boost = 4.0
 		volume_falloff_floor_enemy_targeting = 1.0
 		volume_falloff_floor_enemy_relevance = 1.0
-		hpf_non_player_enabled = 0.0
 	}
-	Base.Ability.Target = 
+	Base.Ability.Target.Beam = 
 	{
-		base = "Base.Ability"
-		volume_falloff_floor_enemy_targeting = 1.0
-		volume_falloff_floor_enemy_relevance = 1.0
-		hpf_non_player_enabled = 0.0
-		lpf_non_player_enabled = 0.0
-		block_player = true
-		block_team = true
-		block_neutral = true
-		volume_offset_opponent = -16.0
-		volume_enemy_targeting_boost = 16.0
+		type = "citadel_closest_point_on_segment"
+		base = 
+		[
+			{
+				event_name = "Base.Ability.Detached"
+				field_name = "citadel_perspective_default"
+			},
+			{
+				event_name = "Volume.Falloff.Ability.Target.Beam"
+				field_name = "citadel_perspective_default"
+			},
+		]
+		volume_offset_player = -99.0
+		volume_offset_team = -99.0
+		volume_offset_neutral = -99.0
+		position_offset = [ 0.0, 0.0, 0.0 ]
 	}
 	Base.Ability.Projectile = 
 	{
@@ -521,25 +566,18 @@
 		volume_offset_team = -6.0
 		volume_offset_player = -3.0
 		max_distance_recipient_filter = -1.0
+		cone_facing_inner_angle = 0.9
+		cone_facing_outer_angle = 0.85
+		cone_facing_enabled = 1.0
+		volume_cone_facing_boost_opponent = 3.0
 	}
 	Base.Ability.StatusEffect = 
 	{
 		base = "Base.Ability"
 		force_entity_perspective_assignment = 1.0
-		volume_fade_out = 0.1
+		volume_falloff_floor_enemy_relevance = 0.0
 		volume = -9.0
-		volume_offset_player = 0.0
-		volume_offset_neutral = 0.0
 		volume_enemy_targeting_boost = 0.0
-		spread_max_value_player = 0.0
-		spread_min_value = 0.0
-		spread_min = 0.0
-		spread_max = 250.0
-		param_envelope_enabled = 0.0
-		param_envelope_duration = -1.0
-		pitch_envelope_scale_min = 0.85
-		pitch_envelope_scale_max = 1.5
-		volume_offset_opponent = 0.0
 	}
 	Base.Ability.Ult = 
 	{
@@ -559,6 +597,13 @@
 		occlusion_volume_blend_distance_min = 1200.0
 		occlusion_volume_blend_distance_max = 2200.0
 		max_distance_recipient_filter = 4000.0
+		hpf_non_player_enabled = 0.0
+		point_effect_exclusive_processing_enabled_player = 0.0
+	}
+	Base.Ability.Ult.Cast = 
+	{
+		base = "Base.Ability.Ult"
+		volume_enemy_targeting_boost_disable_update = 1.0
 	}
 	Base.Ability.Ult.CC = 
 	{
@@ -577,6 +622,7 @@
 		base = "Base.Ability.Ult"
 		play_from_listener_player = 0.0
 		spread_max_value_player = 0.1
+		point_effect_exclusive_processing_enabled_player = 1.0
 	}
 	Base.Ability.Ult.Global = 
 	{
@@ -599,6 +645,7 @@
 		limiter_stop_oldest = true
 		instance_attenuator_enabled = 1.0
 		volume_falloff_max_other = 2200.0
+		spread_value_victim = 1.0
 		instance_count_offset_amount_db = 
 		[
 			[
@@ -671,7 +718,8 @@
 			},
 		]
 		max_distance_recipient_filter = 2200.0
-		enable_velocity_volume_scaling = 1.0
+		volume_falloff_floor_enemy_relevance = 0.5
+		enable_velocity_volume_scaling = true
 		mix_group_prefix = "Movement"
 		occlusion_volume_blend_distance_min = 250.0
 		occlusion_volume_blend_distance_max = 500.0
@@ -695,6 +743,7 @@
 		spread_max_value_opponent = 0.0
 		spread_max_value_neutral = 0.0
 		spread_min_value = 0.0
+		point_effect_exclusive_processing_enabled_player = 0.0
 		vsnd_files_footstep_dirt = 
 		[
 			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_dirt_01.vsnd",
@@ -715,6 +764,25 @@
 			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_dirt_16.vsnd",
 		]
 		vsnd_files_footstep_default = 
+		[
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_01.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_02.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_03.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_04.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_05.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_06.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_07.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_08.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_09.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_10.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_11.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_12.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_13.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_14.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_15.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_16.vsnd",
+		]
+		vsnd_files_footstep_carpet = 
 		[
 			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_01.vsnd",
 			"sounds/player/footsteps/shared/surface_sweeteners/hard_impact/footstep_hard_concrete_02.vsnd",
@@ -991,6 +1059,25 @@
 			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_15.vsnd",
 			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_16.vsnd",
 		]
+		vsnd_files_footstep_carpet = 
+		[
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_01.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_02.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_03.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_04.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_05.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_06.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_07.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_08.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_09.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_10.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_11.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_12.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_13.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_14.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_15.vsnd",
+			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_concrete_16.vsnd",
+		]
 		vsnd_files_footstep_metal_grate = 
 		[
 			"sounds/player/footsteps/shared/surface_sweeteners/soft_impact/footstep_soft_metal_01.vsnd",
@@ -1130,7 +1217,7 @@
 	{
 		base = "Base.Footsteps"
 		volume = 0.0
-		enable_velocity_volume_scaling = 0.0
+		enable_velocity_volume_scaling = false
 		vsnd_files = 
 		[
 			"sounds/player/movement/generic/foley_heavy/default_jump_land_01.vsnd",
@@ -1141,7 +1228,7 @@
 	{
 		base = "Base.Footsteps.Soft"
 		volume = 0.0
-		enable_velocity_volume_scaling = 0.0
+		enable_velocity_volume_scaling = false
 		vsnd_files = 
 		[
 			"sounds/player/movement/generic/foley_heavy/default_jump_land_01.vsnd",
@@ -1161,6 +1248,7 @@
 				event_name = "Volume.Falloff.Hero.Movement"
 			},
 		]
+		point_effect_exclusive_processing_enabled_player = 0.0
 		mix_group_prefix = "Movement"
 		max_distance_recipient_filter = 2200.0
 		occlusion_volume_blend_distance_min = 250.0
@@ -1205,6 +1293,14 @@
 			"sounds/player/movement/generic/foley_light/default_foley_light_09.vsnd",
 		]
 		vsnd_duration = 0.745873
+	}
+	Base.Movement.Slide = 
+	{
+		base = "Base.Movement"
+		enable_velocity_volume_scaling = true
+		velocity_filter_speed = 10.0
+		velocity_min = 150.0
+		velocity_max = 500.0
 	}
 	Base.Weapon.Foley = 
 	{
@@ -1338,12 +1434,12 @@
 		[
 			{
 				event_name = "Volume.Falloff.Bullet.Impact"
-				field_name = "citadel_distance_falloff"
+				field_name = "citadel_perspective_default"
 			},
 		]
-		max_distance_recipient_filter = 600.0
+		max_distance_recipient_filter = 800.0
 		mix_group_prefix = "Proj-Impact"
-		volume = 0.0
+		volume = -8.0
 		limiter_on = 1.0
 		limiter_max = 1.0
 		limiter_match_entity = 0.0
@@ -1617,6 +1713,7 @@
 		event_voice_layer = "ui"
 		volume_falloff_floor = 1.0
 		hrtf_on = 1.0
+		point_effect_exclusive_processing_enabled = 0.0
 	}
 	Base.XP = 
 	{
@@ -1689,8 +1786,10 @@
 	Base.Mod.StatusEffect = 
 	{
 		base = "Base.Mod"
+		volume_falloff_floor_enemy_relevance = 0.0
 		force_entity_perspective_assignment = 1.0
 		volume = -9.0
+		volume_enemy_targeting_boost = 0.0
 		limiter_global_event_distance_on = true
 		limiter_global_event_distance_max = 3.0
 		limiter_global_category_distance_on = true
@@ -1710,7 +1809,7 @@
 		spread_max_value = 0.15
 		spread_min_value = 0.15
 		volume_falloff_floor = 1.0
-		occlusion_scale = 0.5
+		occlusion_scale = 0.2
 		occlusion_radius = 500.0
 		distance_hpf_on = 0.0
 		distance_lpf_on = 1.0
@@ -1736,6 +1835,10 @@
 		base = 
 		[
 			{
+				event_name = "Base.SourceReverb"
+				field_name = "citadel_source_reverb_send"
+			},
+			{
 				event_name = "Volume.Falloff.World"
 			},
 		]
@@ -1752,14 +1855,13 @@
 		base = 
 		[
 			{
+				event_name = "Base.World"
+			},
+			{
 				event_name = "Volume.Falloff.Breakable"
 			},
 		]
-		mixer_mixgroup = "World"
 		max_distance_recipient_filter = 1200.0
-		volume = -6.0
-		limiter_on = 1.0
-		limiter_max = 4.0
 	}
 	Base.Pickup = 
 	{
@@ -1797,6 +1899,12 @@
 				0.0, 0.0,
 			],
 		]
+	}
+	Base.Pickup.Vacuum = 
+	{
+		base = "Base.Pickup.HighFrequency"
+		play_from_listener_player = 0.0
+		spread_max_value_player = 0.1
 	}
 	Base.Urn = 
 	{
@@ -1857,6 +1965,175 @@
 		mono_downmix_max_distance = 1500.0
 		mono_downmix_min_distance = 800.0
 	}
+	Base.Ambience.Bed.Obb = 
+	{
+		type = "citadel_ambience_obb"
+		base = 
+		[
+			{
+				event_name = "Volume.Falloff.Ambience.Bed"
+				field_name = "citadel_distance_falloff"
+			},
+		]
+		mixer_mixgroup = "Ambience-Bed"
+		occlusion_volume_blend_distance_min = 0.0
+		occlusion_volume_blend_distance_max = 0.0
+		use_pawn_as_listener_distance = true
+		mono_downmix_enabled = 0.0
+		delay_rand_min = -60.0
+		volume_fade_in = 1.0
+		volume_fade_out = 1.0
+		spread_min = 500.0
+		spread_max_value = 0.4
+		spread_min_value = 0.165
+		spread_max = 1250.0
+		hrtf_on = 0.0
+		distance_lpf_on = 1.0
+		distance_hpf_on = 0.0
+		occlusion_scale = 1.0
+		occlusion_min = 0.3
+		cull_at_distance = 2500.0
+		rooftop_min_height = 900.0
+		rooftop_max_height = 1350.0
+		interior_vol_offset_db = 
+		[
+			[
+				0.0, -9.0, 0.0, 0.0,
+				0.0, 0.0,
+			],
+			[
+				0.2, -6.0, 0.0, 0.005,
+				0.0, 1.0,
+			],
+			[
+				0.4, -2.0, 0.011111, 0.0095,
+				0.0, 1.0,
+			],
+			[
+				0.7, 0.0, 0.008297, 0.0,
+				0.0, 0.0,
+			],
+			[
+				1.0, 0.0, 0.0, 0.0,
+				0.0, 0.0,
+			],
+		]
+		exterior_high_alt_vol_offset_curve_db = 
+		[
+			[
+				0.080282, 0.0, 0.0, -6.090683,
+				0.0, 0.0,
+			],
+			[
+				0.304171, -1.363636, -3.723482, -3.723482,
+				2.0, 3.0,
+			],
+			[
+				1.0, -3.0, -2.351675, 0.0,
+				0.0, 0.0,
+			],
+		]
+		rooftop_layer_high_alt_vol_offset_curve_db = 
+		[
+			[
+				0.0, -60.0, 55.522606, 55.522606,
+				2.0, 3.0,
+			],
+			[
+				0.181078, -18.757576, 55.522606, 55.522606,
+				2.0, 3.0,
+			],
+			[
+				1.0, -4.0, 14.357388, 0.0,
+				0.0, 0.0,
+			],
+		]
+	}
+	Base.Ambience.Bed.Interior.Bleed.Obb = 
+	{
+		type = "citadel_ambience_obb"
+		base = 
+		[
+			{
+				event_name = "Base.Ambience.Bed.Obb"
+			},
+		]
+		occlusion_scale = 0.85
+		enable_interior_lpf = 0.0
+		distance_hpf_on = 1.0
+		mono_downmix_enabled = 1.0
+		interior_vol_offset_db = 
+		[
+			[
+				0.0, 0.0, 0.0, 0.0,
+				0.0, 0.0,
+			],
+			[
+				0.6, 0.0, 0.0, 0.0,
+				0.0, 0.0,
+			],
+			[
+				1.0, -7.5, 0.0, 0.0,
+				0.0, 0.0,
+			],
+		]
+		exterior_high_alt_vol_offset_curve_db = 
+		[
+			[
+				0.0, 0.0, 0.0, -6.090683,
+				0.0, 0.0,
+			],
+			[
+				1.0, 0.0, -2.351675, 0.0,
+				0.0, 0.0,
+			],
+		]
+	}
+	Base.Ambience.Bed.Obb.Wash = 
+	{
+		base = "Base.Ambience.Bed.Obb"
+		volume_falloff_min = 1200.0
+		volume_falloff_max = 8000.0
+		volume_falloff_curve_db = 
+		[
+			[
+				0.0, 0.0, 1.083, 1.083,
+				2.0, 3.0,
+			],
+			[
+				0.2, 0.0, -0.001169, -0.110411,
+				0.0, 0.0,
+			],
+			[
+				0.7, -6.0, -0.001169, -0.110411,
+				0.0, 0.0,
+			],
+			[
+				1.0, -10.0, -0.110411, 0.0,
+				0.0, 0.0,
+			],
+		]
+		rooftop_layer_high_alt_vol_offset_curve_db = 
+		[
+			[
+				0.0, -60.0, 55.522606, 55.522606,
+				2.0, 3.0,
+			],
+			[
+				0.2, -15.0, 55.522606, 55.522606,
+				2.0, 3.0,
+			],
+			[
+				1.0, -4.0, 22.833086, 0.0,
+				0.0, 0.0,
+			],
+		]
+		cull_at_distance = 8000.0
+		spread_max_value = 0.05
+		spread_min_value = 0.05
+		occlusion_scale = 0.5
+		distance_hpf_on = 1.0
+	}
 	Base.Ambience.Hideout.Emitter.Obb = 
 	{
 		type = "citadel_emitter_obb"
@@ -1905,7 +2182,7 @@
 	Base.Hideout.Toy = 
 	{
 		type = "citadel_default_3d"
-		mixer_mixgroup = "Ambience-Bed"
+		mixer_mixgroup = "Ambience-Details"
 		volume_falloff_min = 500.0
 		volume_falloff_max = 2000.0
 		volume_fade_out = 0.1

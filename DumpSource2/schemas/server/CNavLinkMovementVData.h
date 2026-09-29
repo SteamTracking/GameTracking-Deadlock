@@ -6,7 +6,12 @@
 //	],
 //	"m_vecVariants":
 //	[
-//	]
+//	],
+//	"m_baseMetrics":
+//	{
+//		"m_horizontalRange": null,
+//		"m_verticalRange": null
+//	}
 //}
 // MVDataRoot
 // MVDataNodeType = 1
@@ -22,4 +27,5 @@ class CNavLinkMovementVData
 	// MPropertyAutoExpandSelf
 	CUtlVector< CNavLinkAnimgraphVar > m_vecAnimgraphVars;
 	CUtlVector< CNavLinkMovementVariantDefinition > m_vecVariants;
+	CNavLinkMetrics_Base m_baseMetrics;
 };

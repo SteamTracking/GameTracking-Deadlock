@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadelTrackedProjectile : public CCitadelProjectile
 {
 	ETrackedProjectileTarget_t m_eTrackedTargetType;
@@ -9,5 +8,5 @@ class CCitadelTrackedProjectile : public CCitadelProjectile
 	float32 m_flTrackingDuration;
 	GameTime_t m_flTrackingWindowStart;
 	GameTime_t m_flTrackingWindowEnd;
-	Vector m_vLastValidPosition;
+	VectorWS m_vLastValidPosition;
 };

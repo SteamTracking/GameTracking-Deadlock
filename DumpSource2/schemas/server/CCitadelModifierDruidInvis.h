@@ -1,3 +1,4 @@
+// MModifierDynamicValuesSuppressCache
 class CCitadelModifierDruidInvis : public CCitadelModifier
 {
 	float32 m_flCurrentObscureLevel;

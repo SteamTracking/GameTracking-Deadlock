@@ -39,6 +39,16 @@
 						data_type = "public_opvar"
 						value = "citadel_occlusion"
 					}
+					citadel_cone_attenuation = 
+					{
+						data_type = "public_opvar"
+						value = "citadel_cone_attenuation"
+					}
+					citadel_blocking_group = 
+					{
+						data_type = "public_opvar"
+						value = "citadel_blocking_group"
+					}
 					position = 
 					{
 						data_type = "float3"
@@ -156,6 +166,17 @@
 						{
 							property_group = "Volume"
 							display_group = "advanced"
+						}
+					}
+					volume_offset_game_internal_temp = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							property_group = "Volume"
+							display_group = "Normal"
+							property_help = "Volume offset in db during internal temp mode."
 						}
 					}
 					pitch = 
@@ -722,6 +743,51 @@
 							property_help = "Volume in db to offset sound if in hideout map."
 						}
 					}
+					obb_dist_closest_point = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							property_group = "Culling"
+						}
+					}
+					enable_velocity_volume_scaling = 
+					{
+						data_type = "bool"
+						value = "false"
+						_system_properties = 
+						{
+							property_group = "Movement"
+						}
+					}
+					velocity_filter_speed = 
+					{
+						data_type = "float"
+						value = "500.0"
+						_system_properties = 
+						{
+							property_group = "Movement"
+						}
+					}
+					velocity_max = 
+					{
+						data_type = "float"
+						value = "340.0"
+						_system_properties = 
+						{
+							property_group = "Movement"
+						}
+					}
+					velocity_min = 
+					{
+						data_type = "float"
+						value = "100.0"
+						_system_properties = 
+						{
+							property_group = "Movement"
+						}
+					}
 				}
 			},
 			{
@@ -828,18 +894,18 @@
 				}
 			},
 			{
-				name = "facing_submix_send"
-				operator = "vmix_mixgraph_send"
-				input_execute = "1"
-				input = "0"
-				send_type = "facing"
+				name = "culling_distance_source_switch"
+				operator = "ctrl_switch_float"
+				input_switch = "@public.obb_dist_closest_point"
+				input1 = "@distance_to_source.output"
+				input2 = "@public.obb_dist_closest_point"
 			},
 			{
 				name = "greater_than_cull_distance"
 				operator = "math_float"
 				input_execute = "@public.cull_at_distance"
 				apply = "greater_than"
-				input1 = "@distance_to_source.output"
+				input1 = "@culling_distance_source_switch.output"
 				input2 = "@public.cull_at_distance"
 			},
 			{
@@ -880,7 +946,7 @@
 				name = "calc_culling_think_time"
 				operator = "math_remap_float"
 				input_execute = "@culling_and_unstopped.output"
-				input = "@distance_to_source.output"
+				input = "@culling_distance_source_switch.output"
 				input_min = "@public.cull_at_distance"
 				input_max = "@calc_max_think_time_distance.output"
 				input_map_min = "0.050000"
@@ -911,6 +977,12 @@
 				input_execute = "@culling_and_unstopped.output"
 				execute_once = "false"
 				input_goto_operator = "citadel_base_3d::set_output_opvar_distance"
+			},
+			{
+				name = "citadel_blocking_group"
+				operator = "sos_import_stack"
+				import_stack = "citadel_blocking_group"
+				auto_connect_public_fields = "true"
 			},
 			{
 				name = "soundevent_limit"
@@ -1172,9 +1244,55 @@
 				input = "@math_mult_hideout_offset.output"
 			},
 			{
+				name = "opvar_get_game_mode_internal_temp"
+				operator = "opvar_get_float"
+				input_execute = "1.0"
+				input_stack_name = "citadel_global_opvars"
+				input_operator_name = "opvars"
+				input_field_name = "game_mode_internal_temp"
+			},
+			{
+				name = "math_mult_vol_game_internal_temp_offset"
+				operator = "math_float"
+				apply = "mult"
+				input1 = "@opvar_get_game_mode_internal_temp.output"
+				input2 = "@public.volume_offset_game_internal_temp"
+			},
+			{
+				name = "volume_game_internal_temp_offset_to_gain"
+				operator = "math_db_to_gain"
+				input = "@math_mult_vol_game_internal_temp_offset.output"
+			},
+			{
+				name = "remap_velocity_normalized"
+				operator = "math_remap_float"
+				input_execute = "@public.enable_velocity_volume_scaling"
+				input = "@get_entity_info.output_velocity"
+				input_min = "@public.velocity_min"
+				input_max = "@public.velocity_max"
+				input_map_min = "0.400000"
+				input_map_max = "1.000000"
+				clamp_range = "true"
+			},
+			{
+				name = "velocity_filter"
+				operator = "math_filter_float"
+				input = "@remap_velocity_normalized.output"
+				input_max_velocity = "@public.velocity_filter_speed"
+			},
+			{
+				name = "switch_velocity_volume_scaling_mult"
+				operator = "ctrl_switch_float"
+				input_switch = "@public.enable_velocity_volume_scaling"
+				input1 = "1.0"
+				input2 = "@velocity_filter.output"
+			},
+			{
 				name = "volume_accumulate_pre_reverb"
 				operator = "math_accumulate12_float"
 				apply = "mult"
+				input1 = "@volume_game_internal_temp_offset_to_gain.output"
+				input2 = "@switch_velocity_volume_scaling_mult.output"
 				input3 = "@volume_to_gain.output"
 				input4 = "@citadel_distance_falloff::output.result_vol_linear"
 				input5 = "@volume_fade_in.output"
@@ -1183,6 +1301,7 @@
 				input8 = "@public.volume_mult"
 				input9 = "@volume_atten_override_switch.output"
 				input10 = "@remap_recency_bias_linear_vol.output"
+				input11 = "@citadel_cone_attenuation::output.cone_attenuation_volume_boost"
 				input12 = "@remap_fade_over_time.output"
 			},
 			{
@@ -1335,6 +1454,35 @@
 					{
 						data_type = "float3"
 						value = "@globals.output_listener_position"
+					}
+				}
+			},
+			{
+				name = "citadel_cone_attenuation"
+				operator = "sos_import_stack"
+				import_stack = "citadel_cone_attenuation"
+				auto_connect_public_fields = "true"
+				operator_variables = 
+				{
+					emitter_vector_forward = 
+					{
+						data_type = "float3"
+						value = "@get_entity_info.output_vector_forward"
+					}
+					emitter_vector_output_position = 
+					{
+						data_type = "float3"
+						value = "@get_entity_info.output_position"
+					}
+					emitter_distance = 
+					{
+						data_type = "float"
+						value = "@distance_to_source.output"
+					}
+					emitter_occlusion = 
+					{
+						data_type = "float"
+						value = "@citadel_occlusion::output.filter_amount"
 					}
 				}
 			},

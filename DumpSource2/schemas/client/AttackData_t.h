@@ -6,6 +6,8 @@
 //	"m_flEnemySlowOnHitSpeed": 50.000000,
 //	"bIsHeavyAttack": false,
 //	"m_bCanBeParried": true,
+//	"m_bParryOnlyBlocksParrier": false,
+//	"m_bParryStunsAttacker": true,
 //	"m_flCooldownOnMiss": 0.000000,
 //	"m_flCooldownOnHit": 0.000000,
 //	"m_flTraceConeHalfWidth": 48.000000,
@@ -51,6 +53,7 @@
 //	},
 //	"m_flMovementAcc": 300.000000,
 //	"m_flAttackStateTime": 0.300000,
+//	"m_bWaitForGroundToTrigger": false,
 //	"m_Trigger": "",
 //	"m_strActivateSound": "",
 //	"m_strHitSound": "",
@@ -99,6 +102,10 @@ class AttackData_t
 	bool bIsHeavyAttack;
 	// MPropertyDescription = "When true, this attack can be parried"
 	bool m_bCanBeParried;
+	// MPropertyDescription = "When true, a parry only protects the parrier. The attacker is still parried, but everyone else it caught is hit as normal."
+	bool m_bParryOnlyBlocksParrier;
+	// MPropertyDescription = "When false, a parry still blocks this attack's damage but does not stun the attacker."
+	bool m_bParryStunsAttacker;
 	// MPropertyDescription = "How long after triggering until we can perform another melee attack"
 	float32 m_flCooldownOnMiss;
 	float32 m_flCooldownOnHit;
@@ -116,6 +123,8 @@ class AttackData_t
 	float32 m_flMovementAcc;
 	// MPropertyDescription = "How long to be in the attacking state once the attack triggers"
 	float32 m_flAttackStateTime;
+	// MPropertyDescription = "When true, an attack started in the air holds off triggering until the caster lands. The air dash curve still runs first, so a flat curve gives a wind-up that simply waits for the ground."
+	bool m_bWaitForGroundToTrigger;
 	// MPropertyDescription = "Animgraph trigger parameter for this attack"
 	CGlobalSymbol m_Trigger;
 	// MPropertyStartGroup = "Sounds"

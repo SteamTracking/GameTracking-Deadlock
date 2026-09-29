@@ -1,0 +1,550 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+@define paperTile01: url("s2r://panorama/images/textures/paper_tile_1k_01_psd.vtex");
+@define selectedTextBackgroundColor: #578d5788;
+PopupSettingsShare.PopupPanel
+{
+	width: 720px;
+	padding: 0px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 32px 0px;
+	border-radius: 4px;
+	border: 0px;
+	background-color: none;
+	overflow: noclip;
+	opacity-mask: url("s2r://panorama/images/buttons/button_nav_mask_threshold_psd.vtex");
+	opacity-mask-threshold: 0% 2%;
+	animation-name: PopupBackgroundTransitionOn;
+	animation-duration: 0.25s;
+	animation-iteration-count: 1;
+}
+
+PopupSettingsShare.PopupPanel .PopupBackground
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	background-image: paperTile01;
+	brightness: 1.25;
+	saturation: 1.25;
+	opacity-mask: url("s2r://panorama/images/buttons/button_nav_mask_threshold_psd.vtex");
+	opacity-mask-threshold: 2% 2%;
+	animation-name: PopupBackgroundTransitionOn;
+	animation-duration: 0.25s;
+	animation-iteration-count: 1;
+}
+
+PopupSettingsShare.PopupPanel .PopupBackgroundShadow
+{
+	overflow: noclip;
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	position: 0px 8px 0px;
+	background-color: rgba(0, 0, 0, 0.5);
+	opacity-mask: url("s2r://panorama/images/buttons/button_nav_mask_threshold_psd.vtex");
+	opacity-mask-threshold: 2% 2%;
+	animation-name: PopupBackgroundTransitionOn;
+	animation-duration: 0.25s;
+	animation-iteration-count: 1;
+}
+
+PopupSettingsShare.PopupPanel .PopupContent
+{
+	flow-children: down;
+	width: 100%;
+	height: fit-children;
+	padding: 24px 48px;
+}
+
+PopupSettingsShare.PopupPanel .ModeTabs
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-bottom: 20px;
+}
+
+PopupSettingsShare.PopupPanel .ModeTabs .ModeTab
+{
+	padding: 8px 28px;
+	margin: 0px 4px;
+	border-radius: 4px;
+	background-color: #00000033;
+	border: 1px solid offWhite&22;
+	transition-property: background-color, border;
+	transition-duration: 0.15s;
+}
+
+PopupSettingsShare.PopupPanel .ModeTabs .ModeTab Label
+{
+	color: offWhite&88;
+	font-size: 16px;
+	font-weight: bold;
+	text-overflow: shrink;
+}
+
+PopupSettingsShare.PopupPanel .ModeTabs .ModeTab:hover
+{
+	background-color: #00000055;
+}
+
+PopupSettingsShare.PopupPanel .ModeTabs .ModeTab.Active
+{
+	background-color: #E4D5BF22;
+	border: 1px solid offWhite&66;
+}
+
+PopupSettingsShare.PopupPanel .ModeTabs .ModeTab.Active Label
+{
+	color: offWhite;
+}
+
+PopupSettingsShare.PopupPanel .ShareSection
+{
+	flow-children: down;
+	width: 100%;
+	min-height: 640px;
+	margin-bottom: 12px;
+}
+
+PopupSettingsShare.PopupPanel .ShareSection .SectionDesc
+{
+	color: offWhite&88;
+	font-size: 15px;
+	margin-bottom: 24px;
+}
+
+PopupSettingsShare.PopupPanel .ShareSection .ScopeTitle
+{
+	color: offWhite&88;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 12px;
+	text-overflow: shrink;
+}
+
+PopupSettingsShare.PopupPanel .ShareSection .ScopeSection
+{
+	flow-children: down;
+	width: 100%;
+}
+
+PopupSettingsShare.PopupPanel .ShareSection .ScopeSection #ScopeDropDown
+{
+	width: 100%;
+	margin-bottom: 16px;
+}
+
+PopupSettingsShare.PopupPanel .ShareSection .HR1px
+{
+	margin-bottom: 20px;
+}
+
+PopupSettingsShare.PopupPanel.ModeExport #ImportSection,PopupSettingsShare.PopupPanel.ModeExport #ApplyButtonWrapper,PopupSettingsShare.PopupPanel.ModeExport #PreviewButtonWrapper,PopupSettingsShare.PopupPanel.ModeExport #UndoButtonWrapper,PopupSettingsShare.PopupPanel.ModeExport #StatusRow,PopupSettingsShare.PopupPanel.ModeImport #ExportSection
+{
+	visibility: collapse;
+}
+
+PopupSettingsShare.PopupPanel .ImportOptions
+{
+	flow-children: down;
+	width: 100%;
+}
+
+PopupSettingsShare.PopupPanel .ImportOptions .ShareSummaryBlock
+{
+	flow-children: down;
+	width: 100%;
+	padding-left: 8px;
+	margin-bottom: 8px;
+}
+
+PopupSettingsShare.PopupPanel .ImportOptions .HR1px
+{
+	margin-bottom: 16px;
+}
+
+PopupSettingsShare.PopupPanel .ShareOptions
+{
+	flow-children: down;
+	width: 100%;
+	padding-left: 8px;
+	margin-bottom: 24px;
+}
+
+PopupSettingsShare.PopupPanel .ShareOptions .SubOption
+{
+	margin-left: 32px;
+}
+
+PopupSettingsShare.PopupPanel .ShareOptions CitadelSettingsToggle
+{
+	margin-bottom: 5px;
+}
+
+PopupSettingsShare.PopupPanel .ShareCodeRow
+{
+	flow-children: down;
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+PopupSettingsShare.PopupPanel .ShareCodeRow .ShareCodeEntry
+{
+	width: 100%;
+	height: 101px;
+	font-size: 13px;
+	color: offWhite&CC;
+	background-color: #00000044;
+	border: 1px solid offWhite&22;
+	border-radius: 4px;
+	padding: 8px;
+	white-space: normal;
+	overflow: squish scroll;
+}
+
+PopupSettingsShare.PopupPanel .ShareCodeRow .ShareCodeLabel
+{
+	text-align: left;
+}
+
+PopupSettingsShare.PopupPanel .ShareCodeRow .ShareCodeButtons
+{
+	flow-children: right;
+	width: 100%;
+	margin-top: 8px;
+}
+
+PopupSettingsShare.PopupPanel .ShareCodeRow .ShareCodeButtons .ShareButton
+{
+	horizontal-align: right;
+}
+
+PopupSettingsShare.PopupPanel .ShareHint
+{
+	color: offWhite&88;
+	font-size: 14px;
+	margin-top: 6px;
+}
+
+PopupSettingsShare.PopupPanel .ShareSummary
+{
+	color: offWhite;
+	font-size: 15px;
+	margin-bottom: 4px;
+}
+
+PopupSettingsShare.PopupPanel .ShareSummaryHeader
+{
+	font-weight: bold;
+	text-overflow: shrink;
+}
+
+PopupSettingsShare.PopupPanel .ShareSummaryRow
+{
+	flow-children: right;
+	width: 100%;
+}
+
+PopupSettingsShare.PopupPanel .ShareSummaryRow .ShareCategoryLabel
+{
+	width: 120px;
+	font-weight: bold;
+	text-overflow: shrink;
+}
+
+PopupSettingsShare.PopupPanel .ShareScopeRow
+{
+	flow-children: right;
+	margin-bottom: 8px;
+}
+
+PopupSettingsShare.PopupPanel .ShareScopeRow .ShareSummary
+{
+	margin-bottom: 0px;
+	vertical-align: center;
+}
+
+PopupSettingsShare.PopupPanel .ShareScopeRow .ShareInfoIcon
+{
+	width: 18px;
+	height: 18px;
+	background-image: url("s2r://panorama/images/profile/info.vsvg");
+	background-size: contain;
+	wash-color: offWhite;
+	opacity: 0.35;
+	vertical-align: center;
+	margin-left: 8px;
+	margin-bottom: 2px;
+	transition-property: opacity;
+	transition-duration: 0.15s;
+}
+
+PopupSettingsShare.PopupPanel .ShareScopeRow .ShareInfoIcon:hover
+{
+	opacity: 0.9;
+}
+
+PopupSettingsShare.PopupPanel .ShareHeroIcons
+{
+	flow-children: right-wrap;
+	width: 100%;
+	margin-bottom: 8px;
+}
+
+PopupSettingsShare.PopupPanel .ShareHeroIcons .ShareHeroIcon
+{
+	width: 24px;
+	height: 24px;
+	padding: 2px;
+	margin: 0px 4px 6px 0px;
+	border-radius: 50%;
+	img-shadow: 0px 0px 8px #000000aa;
+	transition-property: brightness, background-color, box-shadow;
+	transition-duration: 0.1s;
+}
+
+PopupSettingsShare.PopupPanel .ShareHeroIcons .ShareHeroIcon:hover
+{
+	brightness: 1.6;
+	background-color: offWhite&30;
+	box-shadow: 0px 0px 10px 2px offWhite&60;
+}
+
+PopupSettingsShare.PopupPanel .ShareHeroIcons .BaseSettingsIcon
+{
+	wash-color: offWhite;
+	padding: 4px;
+}
+
+PopupSettingsShare.PopupPanel .ShareNote
+{
+	color: offWhite&AA;
+	margin-top: 4px;
+}
+
+PopupSettingsShare.PopupPanel .ShareWarning
+{
+	color: warningRed;
+	font-size: 14px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+PopupSettingsShare.PopupPanel .ShareStatus
+{
+	flow-children: down;
+	width: 100%;
+	margin-top: 4px;
+}
+
+PopupSettingsShare.PopupPanel .ShareStatus .ShareStatusLabel
+{
+	color: #8ee08e;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+PopupSettingsShare.PopupPanel .ButtonRow
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-top: 12px;
+}
+
+PopupSettingsShare.PopupPanel .CopiedToast
+{
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	vertical-align: center;
+	color: offWhite;
+	font-weight: bold;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+PopupSettingsShare.PopupPanel #CopyCodeButton.Copied Label
+{
+	opacity: 0;
+}
+
+PopupSettingsShare.PopupPanel #CopyCodeButton.Copied .CopiedToast
+{
+	opacity: 1;
+}
+
+PopupSettingsShare.PopupPanel .highlight
+{
+	font-weight: bold;
+}
+
+PopupSettingsShare.PopupPanel #ImportScopeBase,PopupSettingsShare.PopupPanel #ImportScopeAll,PopupSettingsShare.PopupPanel #ContentsInfoIcon,PopupSettingsShare.PopupPanel #ImportHeroesIgnoredLabel,PopupSettingsShare.PopupPanel #ImportSummaryReticleRow,PopupSettingsShare.PopupPanel #ImportSummaryReticleSame,PopupSettingsShare.PopupPanel #ImportSummaryReticleNone,PopupSettingsShare.PopupPanel #ImportSummaryKeybindsRow,PopupSettingsShare.PopupPanel #ImportSummaryKeybindsSame,PopupSettingsShare.PopupPanel #ImportSummaryKeybindsNone,PopupSettingsShare.PopupPanel #ImportUnbindsRequiredLabel,PopupSettingsShare.PopupPanel #ImportBaseDiffersLabel,PopupSettingsShare.PopupPanel #ImportBaseAsOverridesLabel,PopupSettingsShare.PopupPanel #ImportInvalidLabel,PopupSettingsShare.PopupPanel #ExportEmptyLabel,PopupSettingsShare.PopupPanel #StatusRow,PopupSettingsShare.PopupPanel #AppliedLabel,PopupSettingsShare.PopupPanel #RevertedLabel
+{
+	visibility: collapse;
+}
+
+PopupSettingsShare.PopupPanel.ImportInvalid #ImportInvalidLabel
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.ExportEmpty #ExportEmptyLabel
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.ImportValid:not(.HasHeroes) #ImportScopeBase
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.HasHeroes #ImportScopeAll,PopupSettingsShare.PopupPanel.HasHeroes #ContentsInfoIcon
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.HasReticle #ImportSummaryReticleRow
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.HasKeybinds #ImportSummaryKeybindsRow
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.UnbindsRequired #ImportUnbindsRequiredLabel
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.BaseDiffers #ImportBaseDiffersLabel
+{
+	visibility: visible;
+	color: warningRed;
+	horizontal-align: center;
+	text-align: center;
+}
+
+PopupSettingsShare.PopupPanel.HeroesIgnored #ImportHeroesIgnoredLabel
+{
+	visibility: visible;
+	color: warningRed;
+	horizontal-align: center;
+	text-align: center;
+}
+
+PopupSettingsShare.PopupPanel.HeroesIgnored .ShareScopeRow,PopupSettingsShare.PopupPanel.HeroesIgnored #ContentsHeroIcons
+{
+	visibility: collapse;
+}
+
+PopupSettingsShare.PopupPanel.ReticleNoChanges #ImportSummaryReticle
+{
+	visibility: collapse;
+}
+
+PopupSettingsShare.PopupPanel.ReticleNoChanges:not(.ReticleNoCustomizations) #ImportSummaryReticleSame
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.ReticleNoChanges.ReticleNoCustomizations #ImportSummaryReticleNone
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.BindsNoChanges #ImportSummaryKeybinds
+{
+	visibility: collapse;
+}
+
+PopupSettingsShare.PopupPanel.BindsNoChanges:not(.BindsNoCustomizations) #ImportSummaryKeybindsSame
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.BindsNoChanges.BindsNoCustomizations #ImportSummaryKeybindsNone
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.BaseAsOverrides #ImportBaseAsOverridesLabel
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.Applied #StatusRow,PopupSettingsShare.PopupPanel.Reverted #StatusRow
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.Applied #AppliedLabel
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel.Reverted #RevertedLabel
+{
+	visibility: visible;
+}
+
+PopupSettingsShare.PopupPanel:not(.ImportValid) #ImportOptions
+{
+	visibility: collapse;
+}
+
+.Header
+{
+	width: 100%;
+}
+
+.Title
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: offWhite&88;
+	font-size: 26px;
+	font-weight: bold;
+	margin-bottom: 24px;
+	padding-top: 24px;
+}
+
+#EscapeButton
+{
+	visibility: collapse;
+}
+
+.HR1px
+{
+	width: 100%;
+	height: 4px;
+	margin: 0px;
+	background-color: none;
+	background-image: url("s2r://panorama/images/textures/line_1px_png.vtex");
+	background-repeat: repeat;
+	background-size: contain;
+	background-position: center;
+	wash-color: black;
+	opacity: 0.5;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+@keyframes 'PopupBackgroundTransitionOn'
+{
+	0%
+	{
+		opacity-mask: url("s2r://panorama/images/buttons/button_nav_mask_threshold_psd.vtex");
+		opacity-mask-threshold: 100% 2%;
+	}
+	
+	100%
+	{
+		opacity-mask: url("s2r://panorama/images/buttons/button_nav_mask_threshold_psd.vtex");
+		opacity-mask-threshold: 2% 2%;
+	}
+	
+}
+

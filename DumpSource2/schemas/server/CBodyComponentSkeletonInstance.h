@@ -1,6 +1,6 @@
-// MNetworkVarNames = "CSkeletonInstance m_skeletonInstance"
+// MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CBodyComponentSkeletonInstance : public CBodyComponent
 {
-	// MNetworkEnable
 	CSkeletonInstance m_skeletonInstance;
 };

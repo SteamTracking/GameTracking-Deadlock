@@ -1,3 +1,7 @@
+    %s: %s\n
+  Saved by moving skindata: %s (was %s, now %s of real data)\n
+  Saved by removing VertexPaintBlendParams: %s (was %s, now %s of real data)\n
+  Unused TraceVertex_t field memory:\n
 !!SyncExtref!!%s
 !!SyncExtref_Material!!%s
 %s (Color)
@@ -14,6 +18,7 @@
 %s_hairsim_PosVelQuat
 %s_hairsim_density
 %s_matgrp
+*\tV_ZSTD_decompress
 .?AUAsyncProcessDataResult@CRenderMeshManager@@
 .?AUAsyncProcessResult@CBaseIntrospectedToKV3TypeManager@@
 .?AUCMorphSetData@@
@@ -76,6 +81,7 @@
 .?AVCModelConfigElement_SetMaterialGroupOnAttachedModels@@
 .?AVCModelConfigElement_SetRenderColor@@
 .?AVCModelConfigElement_UserPick@@
+.?AVCModelGamedataModuleMetadataProvider@@
 .?AVCModelTypeManager@@
 .?AVCModel_Imp@@
 .?AVCMorphConstraint@@
@@ -102,11 +108,14 @@
 .?AVIKV3ResourceAllocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0GMGEGNHG@UPermModelData_t@@@@
 .?AVIKV3ResourceDeallocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0GGHCGPGNHG@UCMorphSetData@@@@
 .?AVIKV3ResourceDeallocatorUtils@?$CTypesafeIntrospectedToKV3TypeManager@$0GMGEGNHG@UPermModelData_t@@@@
+.?AVIKV3TransferInterface_ResourceLoad@@
 .?AVIMeshRayTrace@@
 .?AVIMeshSystem@@
 .?AVIMeshUtils@@
 .?AVIPoseAccessor@@
+.?AVIRD_AsyncProcessDataUtils@@
 .?AVIRD_RegisterResourceDataUtils@@
+.?AVIRD_ResourceExtrefUtils@@
 .?AVIResourceTypeManager@@
 .?AVISceneObjectDesc@@
 .?AVISequence@@
@@ -116,13 +125,16 @@
 2_BONE_IK
 7G/S
 8a\v6;
+;1#INF
+<non-RTTI type>
 <pair_a> 
 <pair_b> 
 =3vmdlkeys4
-=CAnimFoot
+=CAnimSkeleton
 ?expf
 A8_UNORM
 ATTACHMENT_INFLUENCE_FLAGS_NONE
+Ainput
 AllocateAndLoad failed for '%s' (%s)\n
 AllocateAndLoad failed for '%s'\n
 AllocateResource: Error creating data for %s!\n
@@ -194,12 +206,11 @@ CModelAnimNameWithDeltas
 CModelAttachmentName
 CModelBodyGroupName
 CModelBoneName
-CModelEmbeddedMesh_t
 CModelMaterialGroupName
 CModelTypeManager::FinalizeResource
-CModelTypeManager::GetErrorResource(117): GetErrorModel() called before error model exists!\n
+CModelTypeManager::GetErrorResource(119): GetErrorModel() called before error model exists!\n
 CParentAttachmentName
-CRenderMesh::CreateBufferResources(1023): 
+CRenderMesh::CreateBufferResources(1214): 
 CStrongHandle
 CStrongHandleCopyable
 CTransform
@@ -224,15 +235,21 @@ CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CSceneObjectData::RTProxyDraw
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<class Vec2D<float>,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<class Vec2D<float>,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<struct CacheOptimizedTriangle_t,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<struct CacheOptimizedTriangle_t,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<struct StoredTriangleVertexPositions_t,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<struct StoredTriangleVertexPositions_t,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct RnCapsuleDesc_t,int,class CMemAllocAllocator>,struct RnCapsuleDesc_t,int>::InsertBeforeGetPtr
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct RnCompoundDesc_t,int,class CMemAllocAllocator>,struct RnCompoundDesc_t,int>::InsertBeforeGetPtr
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct RnHullDesc_t,int,class CMemAllocAllocator>,struct RnHullDesc_t,int>::InsertBeforeGetPtr
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct RnMeshDesc_t,int,class CMemAllocAllocator>,struct RnMeshDesc_t,int>::InsertBeforeGetPtr
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct RnSphereDesc_t,int,class CMemAllocAllocator>,struct RnSphereDesc_t,int>::InsertBeforeGetPtr
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<unsigned short,int,class CMemAllocAllocator>,unsigned short,int>::InsertBeforeGetPtr
 CUtlLeanVectorImpl<class CUtlLeanVectorFixedGrowableBase<class CSceneObjectData,1,int,class CMemAllocAllocator>,class CSceneObjectData,int>::InsertBeforeGetPtr
 CUtlLeanVectorImpl<class CUtlLeanVectorFixedGrowableBase<struct CRenderBufferBinding,2,int,class CMemAllocAllocator>,struct CRenderBufferBinding,int>::AddMultipleToTail
 CUtlMemoryBlockAllocator<class Vec2D<float>,class CMemAllocAllocator>::AddPage
 CUtlMemoryBlockAllocator<struct CacheOptimizedTriangle_t,class CMemAllocAllocator>::AddPage
 CUtlMemoryBlockAllocator<struct StoredTriangleVertexPositions_t,class CMemAllocAllocator>::AddPage
-CUtlRBTree<struct CUtlOrderedMapBase<class CRenderMesh const *,class CMeshRayTrace *,class CDefLess<class CRenderMesh const *>,unsigned short>::Node_t,class CUtlOrderedMapBase<class CRenderMesh const *,class CMeshRayTrace *,class CDefLess<class CRenderMesh const *>,unsigned short>::CKeyLess,unsigned short,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<class CRenderMesh const *,class CMeshRayTrace *,class CDefLess<class CRenderMesh const *>,unsigned short>::Node_t,unsigned short>,unsigned short,class CMemAllocAllocator> >::Insert
 Cables
 Cannot allocate abstract class
 Cannot deallocate abstract class
+Cflags
 Class does not allow allocation from its schema binding
 Class does not allow deallocation from its schema binding
 Control block error for '%s'\n
@@ -247,10 +264,11 @@ Data_Branch2yz
 DisableLODBlending
 DistanceFieldList_t
 DrawIndexedTriangles(145): 
+EnsureCapacity
 Expected an array with two elements when loading a std::pair.
 FORCE_UINT
-Failed to allocate an instance of a class
-Failed to allocate an instance of class '%s'
+Failed to allocate an instance of a class of type '%s'
+Failed to allocate an instance of class '%s' (type '%s')
 Failed to call CBaseIntrospectedToKV3TypeManager::Init
 Failed to load distance field KV3 data.\n
 FoliageAnimation
@@ -258,6 +276,7 @@ ForceZPrepass
 Found translucent and opaque grooms in the same groom group. This is not allowed.\n
 G8R8_G8B8_UNORM
 HELPER_BONE
+IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
 InputLayoutBuilder
 JIGGLE_BONE
@@ -271,7 +290,6 @@ LoadModelSyncNoExtrefs - Load & compile failed.\n
 LoadModelSyncNoExtrefs - Load failed.\n
 LoadModelSyncNoExtrefs - Model is incompatible version\n
 MATERIAL_ATTRIBUTE:
-MAlternateSemanticName
 MAtomicTransfersAsPlainString
 MFgdHelper
 MIsStringAndTokenType
@@ -282,6 +300,7 @@ MPropertyCustomEditor
 MPropertySuppressField
 Mesh needs recompiling: '%s' (invalid version: %d)\nBrowse to the corresponding model in asset browser, right click and select Full Recompile.
 MeshSystem/UseIndexBufferPool
+MeshSystem/UseVertexBufferPool
 Missing buffers for mesh (%s: %d)\n
 Missing data block for mesh (%s: %d)\n
 Missing vbib block for mesh (%s: %d)\n
@@ -306,14 +325,22 @@ ORIENT
 Org(%.3f,%.3f,%.3f) Ang(%.3f,%.3f,%.3f)
 OverlayProjectionDirection
 PARENT
-POINT
+PLUG_TYPE_INPUT
+PLUG_TYPE_OUTPUT
+PLUG_TYPE_RELAY_OMNIDIRECTIONAL_LEGACY
+PLUG_TYPE_RELAY_PREFAB_INBOUND
+PLUG_TYPE_RELAY_PREFAB_LOCAL
+PLUG_TYPE_RELAY_PREFAB_OUTBOUND
+PLUG_TYPE_UNKNOWN
 POSE_SPACE_BONE
 POSE_SPACE_MORPH
-PackedBlobNormal
+Parameters
+ParametersKV3
 ParentAttachmentName()
 PerVertexLighting
 PivotPaint
 PooledLayout
+PosXyz
 ProjectedSceneObjectDesc
 PropWorldOrigin
 QAngle
@@ -370,21 +397,25 @@ R8G8_UNORM
 R8_SINT
 R8_SNORM
 R8_TYPELESS
-R8_UNORM
 R9G9B9E5_SHAREDEXP
 RESOURCE_TYPE_MODEL
 RESOURCE_TYPE_MORPHSET_INTERNAL
 RESOURCE_TYPE_RENDERMESH_INTERNAL
 ROTATION
 RSDS&
+R\vp!c
 RayTracingEnvironment::RefineNode
 RayTracingEnvironment::RefineNodeJob
 Rejecting load for legacy model: '%s'\n
+RelQ0
 SceneSystem/ComputeShaderSkinning
+SegmentLength
 SequenceGroupResourceData_t
+ShapeOffset
 TILT_TWIST
 TWIST
 TanFrameQuat
+TraceData memory (loaded)\n    %s vertex data (%s used, %s wasted on unused TraceVertex_t fields), %s extra attributes\n    %s index, %s remap (%s of it ~identity)\n
 Tried to load a polymorphic pointer with no '%s' key
 Tried to load resource reference '%s' from a value without a resource reference specific type.
 Trying to override a material with an invalid draw call index\n
@@ -392,7 +423,6 @@ Trying to override the same draw call with two different materials!\nOnly the la
 USAGE: print_model_bind_pose <vmdl_name> [bone_name]\n
 Unable to load tools vb block (%s: %d)\n
 Unable to read resource file %s!\n
-Unhandled vertex format %i for vertex attribute %s%i\n
 Untested code path - Morph layers without morphset/flex rules. Will try to map model flex controllers directly to cloth morph layers
 VModelError
 VectorAligned
@@ -413,9 +443,13 @@ acosf
 angularburst
 anim_data_block
 anim_graph_resource
+animgraph2_clip
+animgraph2_graph
+animgraph2_identifier
+animgraph_enum
 bOwnVBAndIB == m_bOwnVBAndIB && m_pFixedMeshDataOverride
 bShaderBlended
-b\vP\n0
+baseclass
 bentnormal
 blendindices
 blendweight
@@ -423,11 +457,19 @@ blendweights
 bodygroup_choice
 bodygroup_driven_morph_list
 bodygroup_name
+bodygroupchoices
 burst
 burstRandomize
+cableclass
 cables_list
 chancetospawn
+choice_group
+choices
+choreoanchorclass
 collision_group_override
+collision_property
+color255
+color255alpha
 compressedtangentframe
 curvature
 data_block
@@ -443,18 +485,48 @@ fademaxdist
 fademindist
 fadetime
 fast
+filterclass
+flagchoices
+floatchoices
 g_hSkeletonMeshLayout
+gameitemclass
+gameunitclass
 group_data_block
 hair
 hairindirectargsbuffer
+inbound
+instance_file
+instance_parm
+instance_variable
+intchoices
 interactive
+intmap
+keyframeclass
+local
+local_point
+localaxis
+localization_required
+lod_level
 lowprecisionuv
 lowprecisionuv1
+m_BaseClasses
+m_Classes
+m_DefaultKV3
 m_Format
+m_HelpContextName
+m_Helpers
+m_Inputs
+m_Items
+m_KV3Metadata
+m_LegacyDefaultStr
+m_LongName
+m_MetaData
+m_PlugType
 m_Stops
 m_attachments
 m_bBakedTwoSided
 m_bCanBatchWithDynamicShaderConstants
+m_bCustom
 m_bDrawLast
 m_bHasBakedLightingFromLightMap
 m_bHasBakedLightingFromVertexStream
@@ -467,6 +539,9 @@ m_bUseCompressedNormalTangent
 m_bUseForCollision
 m_bUseForOcclusion
 m_bUseShadowFastPath
+m_bUsingLegacyDefault
+m_bmaxs
+m_bmins
 m_bounds
 m_distanceFields
 m_eRbfType
@@ -474,15 +549,21 @@ m_flGridCellSize
 m_flMaxQuantizedDistance
 m_flSurfaceBias
 m_hitboxsets
+m_iValue
 m_influenceFlags
 m_morphSet
 m_nBodyGroupIndex
+m_nClassType
+m_nLegacyDefaultInt
 m_nParentBoneNameHash
 m_nResX
 m_nResY
 m_nResZ
+m_pItemSet
 m_quantizedData
 m_rbfParameters
+m_rgbColor
+materialgroup
 materialgroup_driven_morph_list
 materialgroup_name
 materials/tools/show_skeleton.vmat
@@ -491,32 +572,94 @@ matrix3x4a_t
 medium
 mesh_index
 meshsystem.dll
+model_bodygroup
+model_bone
+model_breakpiece
+model_classes
+model_cloth_effect
+model_cloth_node
+model_cloth_vertex_map
+model_morphchannel
+model_physics_shape
+model_runtime_cloth_node
+modelanimevent
+modelbreakcommand
+modelgamedata
 models/
 models/%s
 models/dev/error.vmdl
 models\
+modelstatechoices
 morph_block
 morph_name
 morph_texture
 motiondisabled
+moveclass
+navlinkclass
+node_dest
+node_id
+node_id_List
+npc_ability_name
+npcclass
+omni
 optionallycompressedtangentframe
+outbound
+overrideclass
+panorama_image
+panorama_style
+panorama_video
+parentAttachment
+particle_cfg
 particles_list
+pathclass
+pathnodeclass
 phys_data_block
 placementattachment
 placementbone
+pointclass
+pointentityclass
+polymorphic_class
 posxyz
 projectedDecal
+propdataname
+remove_key
 resourcesystem
 root
+scriptlist
 seqgroup_data_block
+side
+sidelist
 slow
+solidclass
 std::pair
-tBSheetSequenceIntegerId_t
+string_instanced
+stringmap
+struct
+subclass_choice
+suggestions
+suppressed_field
+surface_properties
+tBVsInputSignature_t
+tag_list
+tag_list_dynamic
 tangent
 tangentu_signv
+target_destination
+target_name_or_class
+target_source
 texcoord
-tools.light_volume_boundary
+texcoord0
+texcoord1
+text_block
 tools.reference_notrace
+tools.toolsmaterial
 tools_vb_block
 vbib_block
+vdata
+vdata_choice
+vdataderived
+vecline
 very_fast
+world_angle
+world_point
+world_transform

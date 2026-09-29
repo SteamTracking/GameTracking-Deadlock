@@ -47,15 +47,24 @@
 //	"m_pDefaultVariationData":
 //	{
 //		"_class": "CnmGraphDocChainLookatNode::CData",
-//		"m_chainEndBoneName": "",
-//		"m_chainForwardDir":
+//		"m_endEffectorBoneName": "",
+//		"m_endEffectorForwardAxis":
+//		[
+//			0.000000,
+//			0.000000,
+//			0.000000
+//		],
+//		"m_endEffectorOffset":
 //		[
 //			0.000000,
 //			0.000000,
 //			0.000000
 //		],
 //		"m_nChainLength": 2,
-//		"m_flBlendTimeSeconds": 0.000000
+//		"m_flBlendTimeSeconds": 0.000000,
+//		"m_chainWeights":
+//		[
+//		]
 //	},
 //	"m_overrides":
 //	[

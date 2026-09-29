@@ -1,12 +1,12 @@
 /* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
 
-@import url("s2r://panorama/styles/citadel_base_styles.vcss_c");
-@import url("s2r://panorama/styles/unit_status_icons.vcss_c");
+@import url("s2r://panorama/styles/citadel_base_styles.vcss");
+@import url("s2r://panorama/styles/unit_status_icons.vcss");
 @define Team1Color: #E7B659;
 @define Team2Color: #5B79E6;
 @define TeamNeutralColor: #5befb5;
-@define TeamEnemyColor: #fd4949;
 @define TeamFriendColor: #FFEFD7;
+@define TeamEnemyColor: #fd4949;
 @define Team1DamageDeltaColor: #ffedb8;
 @define Team2DamageDeltaColor: #ffedb8;
 @define TeamNeutralDamageDeltaColor: #f24d4d;
@@ -19,15 +19,9 @@
 @define BulletShieldColor: #fcb43d;
 @define TechShieldColor: #e29afd;
 @define DropshadowColor: #12101880;
-@define HealthbarMinWidth: 195px;
-@define HealthbarStackOffsetX: -40.0;
-@define HealthbarStackOffsetY: 40.0;
-@define HealthbarReorganizeSpeed: 28.0;
-.old_bar
-{
-	visibility: collapse;
-}
-
+@define HealthbarEdgeWidth: 3.0;
+@define health_total_lg_threshold: 4000;
+@define health_total_md_threshold: 2000;
 .WindowRoot
 {
 	width: 100%;
@@ -38,53 +32,39 @@
 {
 	width: fit-children;
 	height: fit-children;
-	width: 1000px;
-	height: 1000px;
-	flow-children: down;
-	vertical-align: bottom;
-	horizontal-align: right;
-	vertical-align: center;
+	width: 100px;
+	height: 40px;
+	horizontal-align: center;
+	margin-top: 65px;
 	padding: 0px;
-	overflow: noclip;
-	margin-top: 200px;
 	transition-property: pre-transform-scale2d, transform;
 	transition-duration: 0.08s;
 }
 
-.boss_tier1 #UnitStatus
+.boss_tier1 #UnitStatus,.boss_tier2 #UnitStatus,.boss_barracks #UnitStatus,.building #UnitStatus,.midboss #UnitStatus
 {
-	margin-left: 900px;
-	margin-top: 1000px;
+	ui-scale: 180%;
 }
 
-.boss_tier2 #UnitStatus
+.midboss #UnitStatus
 {
-	margin-top: 1000px;
+	visibility: collapse;
 }
 
-.building #UnitStatus
+.neutral_normal #UnitStatus,.neutral_weak #UnitStatus
 {
-	margin-top: 1000px;
-}
-
-.friend #UnitStatus
-{
-	margin-left: 0px;
-	margin-right: 800px;
+	ui-scale: 80%;
 }
 
 .active_damage #UnitStatus
 {
-	transform: rotateZ(0deg);
-	pre-transform-scale2d: 1.2;
-	brightness: 1;
 	animation-name: active_damage_wiggle;
 	animation-duration: 0.2s;
 	animation-iteration-count: infinite;
 	animation-timing-function: ease-out;
 }
 
-.boss_barracks.active_damage #UnitStatus,.boss_tier1.active_damage #UnitStatus,.boss_tier2.active_damage #UnitStatus
+.boss_barracks.active_damage #UnitStatus,.boss_tier1.active_damage #UnitStatus,.boss_tier2.active_damage #UnitStatus,.building.active_damage #UnitStatus
 {
 	animation-name: none;
 	pre-transform-scale2d: 1;
@@ -95,18 +75,16 @@
 	0%
 	{
 		transform: rotateZ(0deg);
-		pre-transform-scale2d: 1.05;
 	}
 	
 	50%
 	{
-		transform: rotateZ(4deg) skew(0deg);
+		transform: rotateZ(-3deg) skew(0deg);
 	}
 	
 	100%
 	{
 		transform: rotateZ(0deg);
-		pre-transform-scale2d: 1.05;
 	}
 	
 }
@@ -126,24 +104,37 @@
 	visibility: visible;
 }
 
+.neutral_vault #InfoHealthContainer
+{
+	visibility: collapse;
+}
+
 .health_hidden #InfoHealthContainer,.GameStatePreGame #InfoHealthContainer
 {
 	visibility: collapse;
 }
 
-.health_particle_active #LevelHealthContainer
+.health_particle_active #InfoHealthContainer
 {
 	visibility: collapse;
 }
 
-#UnitInfoContainer.unit_info_panel
+.unit_info_panel
 {
-	width: 300px;
+	width: 22px;
+	height: width-percentage(100%);
 	vertical-align: middle;
-	horizontal-align: right;
-	z-index: 3;
+	horizontal-align: left;
+	margin-top: -14px;
 	flow-children: left;
 	visibility: collapse;
+	z-index: 10;
+	opacity: 1;
+}
+
+.player .unit_info_panel
+{
+	visibility: visible;
 }
 
 #BulletShieldContainer
@@ -171,6 +162,7 @@
 	height: 100%;
 	visibility: visible;
 	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_bg_psd.vtex");
+	background-image: url("s2r://panorama/images/hud/icons/icon_ultimate_off_blk.vsvg");
 	background-size: 100% 100%;
 	horizontal-align: right;
 	vertical-align: middle;
@@ -197,9 +189,15 @@
 	width: 100%;
 	height: 100%;
 	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_ultready_bg_psd.vtex");
+	background-image: url("s2r://panorama/images/hud/icons/icon_ultimate_blk.vsvg");
 	background-size: 100%;
 	visibility: collapse;
 	brightness: 2;
+}
+
+.has_ultimate #unit_ult_ready_icon
+{
+	visibility: visible;
 }
 
 .boss_tier1 #unit_ult_ready_icon
@@ -247,57 +245,6 @@
 	wash-color: TeamFriendColor;
 }
 
-#unit_info_icon
-{
-	width: 100%;
-	height: 100%;
-	horizontal-align: middle;
-	vertical-align: middle;
-	margin-top: -16px;
-	img-shadow: 0px 10px 1.0 1.0 DropshadowColor;
-}
-
-.SuperThreat #unit_info_icon
-{
-	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_superthreat_psd.vtex");
-	background-size: 100%;
-}
-
-#unit_level_label
-{
-	font-size: 120px;
-	color: UnitPowerLevelColor_Default;
-	visibility: visible;
-	text-align: center;
-	font-weight: bold;
-	font-family: sans;
-	text-transform: uppercase;
-	vertical-align: bottom;
-	text-shadow: 0px 0px 10px 12 DropshadowColor;
-	text-align: center;
-	vertical-align: middle;
-	horizontal-align: center;
-	visibility: visible;
-	z-index: 2;
-}
-
-#bounty_gold_label
-{
-	font-size: 100px;
-	color: UnitPowerLevelColor_Default;
-	visibility: visible;
-	color: #46e2ac;
-	font-weight: bold;
-	font-family: sans;
-	text-shadow: 0px 0px 4px 4 DropshadowColor;
-	text-align: center;
-	vertical-align: top;
-	horizontal-align: middle;
-	width: 300px;
-	visibility: visible;
-	z-index: 2;
-}
-
 #unit_resist_container
 {
 	flow-children: down;
@@ -307,176 +254,196 @@
 	horizontal-align: left;
 }
 
-#unit_bullet_resist_image
+.UnitHealthbarContainer
 {
-	height: 90px;
-	width: 90px;
-	background-size: 100%;
-}
-
-#unit_tech_resist_image
-{
-	height: 90px;
-	width: 90px;
-	background-size: 100%;
-}
-
-.bullet_resist_negative
-{
-	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_bullet_resist_negative_psd.vtex");
-}
-
-.tech_resist_negative
-{
-	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_tech_resist_negative_psd.vtex");
-}
-
-.bullet_resist_low
-{
-	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_bullet_resist_low_psd.vtex");
-}
-
-.tech_resist_low
-{
-	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_tech_resist_low_psd.vtex");
-}
-
-.bullet_resist_high
-{
-	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_bullet_resist_high_psd.vtex");
-}
-
-.tech_resist_high
-{
-	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_tech_resist_high_psd.vtex");
-}
-
-#UnitHealthbarContainer
-{
-	vertical-align: middle;
-	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_horiz_mask.vsvg");
-	height: 150px;
-	width: 500px;
-	max-width: 700px;
-	vertical-align: middle;
-	overflow: noclip;
-	margin-left: 200px;
-	margin-bottom: 200px;
+	vertical-align: top;
+	margin-left: 0px;
+	horizontal-align: center;
+	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_horiz_mask_flipped.vsvg");
+	height: 18px;
+	width: 76px;
+	vertical-align: top;
+	margin-bottom: 0px;
 	background-color: rgb(67, 12, 12);
 }
 
-.team1 #UnitHealthbarContainer
+.player .UnitHealthbarContainer
+{
+	margin-left: 17px;
+}
+
+.player.health_critical .ShowCriticalState .UnitHealthbarContainer
+{
+	margin-left: 20px;
+}
+
+.team1 .UnitHealthbarContainer
 {
 	background-color: team1ColorDark;
 }
 
-.team2 #UnitHealthbarContainer
+.team2 .UnitHealthbarContainer
 {
 	background-color: team2ColorDark;
 }
 
-.friend #UnitHealthbarContainer
+.friend .UnitHealthbarContainer
+{
+	background-color: offBlack;
+	background-color: rgb(4, 37, 23);
+}
+
+.team_neutral .UnitHealthbarContainer
 {
 	background-color: offBlack;
 }
 
-.enemy #UnitHealthbarContainer
+.enemy .UnitHealthbarContainer
 {
-	background-color: rgb(64, 8, 8);
+	background-color: #2f0404;
 }
 
-#UnitHealthbarContainer.last_nonempty_bar
+.enemy.health_critical .ShowCriticalState .UnitHealthbarContainer
 {
-	background-color: rgb(67, 12, 12);
+	background-color: rgb(47, 4, 4);
 }
 
-.team1 #UnitHealthbarContainer.last_nonempty_bar
+.UnitHealthbarContainer.health_total_sm
 {
-	background-color: team1ColorDark;
+	ui-scale: 100%;
 }
 
-.team2 #UnitHealthbarContainer.last_nonempty_bar
+#UnitHealthbarInner
 {
-	background-color: team2ColorDark;
+	height: 12px;
+	width: 69px;
+	margin-top: 3.5px;
+	margin-left: 4px;
+	background-color: black;
+	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_horiz_mask_flipped.vsvg");
 }
 
-.friend #UnitHealthbarContainer.last_nonempty_bar
+#UnitHealthbarInner .HealthAmount
 {
-	background-color: offBlack;
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
 }
 
-.enemy #UnitHealthbarContainer.last_nonempty_bar
+#UnitHealthbarInner .HealthAmount.HasHealth
 {
-	background-color: rgb(67, 12, 12);
+	visibility: visible;
+}
+
+.depleted #UnitHealthbarInner .HealthAmount.HasHealth
+{
+	visibility: collapse;
+}
+
+#UnitHealthbarLines
+{
+	height: 18px;
+	width: 74px;
+	margin-top: 2px;
+	margin-left: 2px;
+	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_horiz_mask_flipped.vsvg");
+	opacity: 1;
+}
+
+#UnitHealthbarLines .line_large,#UnitHealthbarLines .line_small
+{
+	background-color: offWhite;
+}
+
+.friend #UnitHealthbarLines .line_large,.team_neutral #UnitHealthbarLines .line_large,.friend #UnitHealthbarLines .line_small,.team_neutral #UnitHealthbarLines .line_small
+{
+	wash-color: offBlack;
+	wash-color: rgb(4, 37, 23);
+	opacity: 0.8;
+}
+
+.enemy #UnitHealthbarLines .line_large,.enemy #UnitHealthbarLines .line_small
+{
+	wash-color: rgb(80, 2, 2);
+	wash-color: rgb(80, 2, 2);
+	opacity: 0.6;
+}
+
+.spectating.team1 #UnitHealthbarLines .line_large,.spectating.team1 #UnitHealthbarLines .line_small
+{
+	wash-color: team1ColorDarker;
+	opacity: 0.8;
+}
+
+.spectating.team2 #UnitHealthbarLines .line_large,.spectating.team2 #UnitHealthbarLines .line_small
+{
+	wash-color: team2ColorDarker;
+	opacity: 0.8;
+}
+
+#UnitHealthbarLines .line_large.line_large,#UnitHealthbarLines .line_small.line_large
+{
+	width: 2px;
+	height: 100px;
+}
+
+.boss_tier1 #UnitHealthbarLines .line_large.line_large,.boss_tier2 #UnitHealthbarLines .line_large.line_large,.barracks #UnitHealthbarLines .line_large.line_large,.building #UnitHealthbarLines .line_large.line_large,.health_total_lg #UnitHealthbarLines .line_large.line_large,.boss_tier1 #UnitHealthbarLines .line_small.line_large,.boss_tier2 #UnitHealthbarLines .line_small.line_large,.barracks #UnitHealthbarLines .line_small.line_large,.building #UnitHealthbarLines .line_small.line_large,.health_total_lg #UnitHealthbarLines .line_small.line_large
+{
+	width: 1.5px;
+}
+
+#UnitHealthbarLines .line_large.line_small,#UnitHealthbarLines .line_small.line_small
+{
+	width: 2px;
+	height: 8px;
+	vertical-align: bottom;
+}
+
+.boss_tier1 #UnitHealthbarLines .line_large.line_small,.boss_tier2 #UnitHealthbarLines .line_large.line_small,.barracks #UnitHealthbarLines .line_large.line_small,.building #UnitHealthbarLines .line_large.line_small,.health_total_lg #UnitHealthbarLines .line_large.line_small,.boss_tier1 #UnitHealthbarLines .line_small.line_small,.boss_tier2 #UnitHealthbarLines .line_small.line_small,.barracks #UnitHealthbarLines .line_small.line_small,.building #UnitHealthbarLines .line_small.line_small,.health_total_lg #UnitHealthbarLines .line_small.line_small
+{
+	width: 1px;
 }
 
 #UnitHealthbarsContainer
 {
-	margin-right: 0px;
-	overflow: noclip;
+	margin-left: 0px;
 	horizontal-align: middle;
-	vertical-align: middle;
+	vertical-align: top;
+	flow-children: down;
 	z-index: 10;
-	pre-transform-rotate2d: -70deg;
-	pre-transform-scale2d: 1.1;
+	width: 100%;
+	height: 100%;
 }
 
-.friend #UnitHealthbarsContainer
+.enemy.health_critical .ShowCriticalState #UnitHealthbarsContainer
 {
-	transform: rotateZ(-40deg) scaleX(1);
-}
-
-.boss_barracks #UnitHealthbarsContainer
-{
-	transform: none;
-	pre-transform-rotate2d: -76deg;
-}
-
-.health_critical #UnitHealthbarsContainer
-{
+	animation-name: healthCritFlash3;
 	animation-duration: 0.3s;
 	animation-iteration-count: infinite;
-	pre-transform-scale2d: 1.3;
+	pre-transform-scale2d: 1.2;
 }
 
-.boss_tier1 #UnitHealthbarsContainer
-{
-	max-width: 1000px;
-}
-
-.front
-{
-	z-index: 11;
-}
-
-#UnitHealthbarContainer.healthbar_empty
+.UnitHealthbarContainer.healthbar_empty
 {
 	opacity: 0.9;
 }
 
-.enemy #UnitHealthbarContainer.healthbar_empty
+.enemy .UnitHealthbarContainer.healthbar_empty
 {
 	opacity: 0.4;
 }
 
-.verticalHealthbars #UnitHealthbarContainer
-{
-	margin-right: 0px;
-}
-
-.boss_tier1 #UnitHealthbarContainer,.boss_tier2 #UnitHealthbarContainer,.boss_tier3 #UnitHealthbarContainer,.building #UnitHealthbarContainer
+.boss_tier1 .UnitHealthbarContainer,.boss_tier2 .UnitHealthbarContainer,.boss_tier3 .UnitHealthbarContainer,.building .UnitHealthbarContainer
 {
 	pre-transform-scale2d: 1;
 }
 
-.sentry #UnitHealthbarContainer,.minion #UnitHealthbarContainer
+.sentry .UnitHealthbarContainer,.minion .UnitHealthbarContainer
 {
-	height: 70px;
-	width: 500px;
-	ui-scale: 200%;
+	ui-scale: 70%;
 }
 
-.CLASS_NECRO_HAUNTINGSKULL #UnitHealthbarContainer
+.CLASS_NECRO_HAUNTINGSKULL .UnitHealthbarContainer
 {
 	visibility: collapse;
 }
@@ -485,32 +452,23 @@
 {
 	0%
 	{
-		pre-transform-scale2d: 1.3;
+		pre-transform-scale2d: 1.1;
+		brightness: 1;
 	}
 	
 	50%
 	{
-		pre-transform-scale2d: 1.5;
+		pre-transform-scale2d: 1.15;
 		transform: rotateY(0deg) rotateX(0deg);
-		transform: rotateY(0deg) rotateX(0deg);
+		brightness: 2;
 	}
 	
 	100%
 	{
-		pre-transform-scale2d: 1.3;
+		pre-transform-scale2d: 1.1;
+		brightness: 1;
 	}
 	
-}
-
-#unit_healthbar_bg
-{
-	width: 100%;
-	height: 100%;
-	horizontal-align: right;
-	vertical-align: middle;
-	visibility: visible;
-	flow-children: right;
-	z-index: 0;
 }
 
 .healthbar_border
@@ -532,7 +490,7 @@
 	background-size: 100% 150px;
 }
 
-.friend .healthbar_border
+.friend .healthbar_border,.team_neutral .healthbar_border
 {
 	wash-color: offBlack;
 }
@@ -540,6 +498,7 @@
 .enemy .healthbar_border
 {
 	wash-color: rgb(80, 2, 2);
+	wash-color: offBlack;
 }
 
 .spectating.friend.team1 .healthbar_border,.spectating.enemy.team1 .healthbar_border
@@ -552,7 +511,7 @@
 	wash-color: team2ColorDarker;
 }
 
-.health_critical .healthbar_border
+.health_critical .ShowCriticalState .healthbar_border
 {
 	wash-color: #b82323;
 }
@@ -565,7 +524,7 @@
 	animation-duration: 2s;
 }
 
-.friend.health_critical .healthbar_border
+.friend.health_critical .ShowCriticalState .healthbar_border
 {
 	wash-color: #383838;
 	animation-name: allyHealthFlash;
@@ -583,6 +542,7 @@
 	50%
 	{
 		wash-color: #b82323;
+		wash-color: #383838;
 	}
 	
 	100%
@@ -609,12 +569,6 @@
 	height: 100%;
 }
 
-.health_critical .last_nonempty_bar #unit_healthbar_border_parent
-{
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-}
-
 @keyframes 'healthCritFlash'
 {
 	0%
@@ -637,7 +591,6 @@
 #unit_healthbar_active_parent
 {
 	height: 100%;
-	width: 100%;
 	width: 100%;
 	horizontal-align: left;
 	flow-children: right;
@@ -666,18 +619,7 @@
 	height: 100%;
 	background-image: url("s2r://panorama/images/hud/world_space/hero_healthbar_fill_center_psd.vtex");
 	background-size: 1024px 128px;
-	border-image-source: url("s2r://panorama/images/hud/world_space/hero_healthbar_bg_psd.vtex");
-	border-image-repeat: round;
-	border-image-slice: 28%;
-	border-width: 10px;
-	border-color: #ffffffff;
 	z-index: 3;
-	wash-color: red;
-	box-shadow: inset DropshadowColor 4px 8px 5px 8px;
-	border-image-source: none;
-	wash-color: none;
-	box-shadow: none;
-	border: 0px solid #00000000;
 }
 
 .team1 #unit_healthbar_lagging
@@ -695,11 +637,6 @@
 	wash-color: TeamEnemyColor;
 }
 
-.enemy .bars_2 #unit_healthbar_lagging
-{
-	wash-color: #bf3333;
-}
-
 .spectating.team1.friend #unit_healthbar_lagging,.spectating.team1.enemy #unit_healthbar_lagging
 {
 	wash-color: team1Color;
@@ -712,24 +649,9 @@
 	background-color: team2Color;
 }
 
-.enemy .bars_3 #unit_healthbar_lagging,.enemy .bars_4 #unit_healthbar_lagging,.enemy .bars_5 #unit_healthbar_lagging,.enemy .bars_6 #unit_healthbar_lagging
-{
-	wash-color: #c13030;
-}
-
 .friend #unit_healthbar_lagging
 {
 	wash-color: TeamFriendColor;
-}
-
-.friend .bars_2 #unit_healthbar_lagging
-{
-	wash-color: #d8d2af;
-}
-
-.friend .bars_3 #unit_healthbar_lagging,.friend .bars_4 #unit_healthbar_lagging,.friend .bars_5 #unit_healthbar_lagging,.friend .bars_6 #unit_healthbar_lagging
-{
-	wash-color: #c7c19d;
 }
 
 .team_neutral #unit_healthbar_lagging,.friend.team_neutral #unit_healthbar_lagging,.enemy.team_neutral #unit_healthbar_lagging
@@ -737,7 +659,7 @@
 	wash-color: TeamNeutralColor;
 }
 
-.health_critical #unit_healthbar_lagging
+.health_critical .ShowCriticalState #unit_healthbar_lagging
 {
 	animation-name: healthCritFlash2;
 	animation-duration: 0.4s;
@@ -753,7 +675,7 @@
 	
 	50%
 	{
-		brightness: 4;
+		brightness: 1.2;
 	}
 	
 	100%
@@ -765,16 +687,9 @@
 
 #unit_healthbar_delta
 {
-	horizontal-align: left;
-	vertical-align: middle;
-	flow-children: right;
-	width: 0%;
-	height: 100%;
 	background-image: url("s2r://panorama/images/hud/world_space/hero_healthbar_fill_center_psd.vtex");
 	background-size: 1024px 128px;
-	wash-color: black;
 	z-index: 5;
-	border: 0px solid #00000000;
 }
 
 .healthbar_empty #unit_healthbar_delta
@@ -804,7 +719,7 @@
 
 .friend #unit_healthbar_delta
 {
-	wash-color: TeamFriendDamageDeltaColor;
+	wash-color: #cc340a;
 }
 
 #unit_healthbar_healing
@@ -818,7 +733,14 @@
 	background-size: 1024px 128px;
 	wash-color: #5fff80;
 	z-index: 5;
-	box-shadow: fill #488e4020 0px 0px 30px 0px;
+}
+
+#unit_healthbar_deferred
+{
+	background-image: url("s2r://panorama/images/hud/world_space/hero_healthbar_fill_center_psd.vtex");
+	background-size: 1024px 128px;
+	wash-color: rgb(232, 127, 61);
+	z-index: 5;
 }
 
 #unit_healthbar_pip_destruction
@@ -842,7 +764,7 @@
 	max-width: 100%;
 	width: 50%;
 	height: 100%;
-	background-color: #ffffff;
+	background-color: orange;
 	background-size: 1024px 128px;
 	box-shadow: inset DropshadowColor 0px 8px 5px 0px;
 }
@@ -859,69 +781,30 @@
 
 .enemy #unit_healthbar_bullet_shield
 {
-	background-color: #b95f5f;
+	background-color: #ff8181;
 }
 
 .friend #unit_healthbar_bullet_shield
 {
-	background-color: #acca91;
+	background-color: #62cd30;
+	background-color: rgb(183, 220, 255);
 }
 
-#unit_healthbar_tech_shield
+#unit_healthbar_ratking_armor
 {
 	min-width: 0%;
 	max-width: 100%;
-	width: 50%;
+	width: 0%;
 	height: 100%;
-	wash-color: TechShieldColor;
-	background-image: url("s2r://panorama/images/hud/world_space/hero_healthbar_fill_shield_psd.vtex");
-	background-size: 1024px 128px;
+	background-color: #c8a165;
 	box-shadow: inset DropshadowColor 0px 8px 5px 0px;
-	visibility: collapse;
-}
-
-#unit_healthbar_pip_label
-{
-	ignore-parent-flow: true;
-	width: 100%;
-	height: fit-children;
-	vertical-align: middle;
-	font-size: 40px;
-	color: #1c2029f5;
-	font-weight: bold;
-	text-align: justify-letter-spacing;
-	letter-spacing: 0px;
-	white-space: nowrap;
-	overflow: clip;
-	z-index: 4;
-	padding-right: -10px;
-	margin-left: 20px;
-	text-shadow: 3px 0px 0px 3 DropshadowColor;
-	pre-transform-scale2d: 1.0, 2.8;
-}
-
-.verticalHealthbars #unit_healthbar_pip_label
-{
-	visibility: collapse;
-}
-
-#unit_healthbar_fg
-{
-	width: 100%;
-	height: 100%;
-	visibility: visible;
-	border-image-source: url("s2r://panorama/images/hud/world_space/hero_healthbar_fg_psd.vtex");
-	border-image-repeat: round round;
-	border-image-slice: 3px 3px 3px 3px fill;
-	border-width: 3px;
-	z-index: 4;
 }
 
 #state_container
 {
 	height: 100%;
 	width: 100%;
-	visibility: visible;
+	visibility: collapse;
 }
 
 #state_icon
@@ -971,51 +854,11 @@
 	wash-color: TeamFriendColor;
 }
 
-.pip_only #healthpips
-{
-	visibility: collapse;
-}
-
-#pip_image
-{
-	horizontal-align: center;
-	width: 50px;
-	height: 50px;
-	wash-color: TeamNeutralColor;
-	opacity: 0.7;
-	visibility: collapse;
-}
-
-.pip_only #pip_image
-{
-	visibility: visible;
-}
-
-.team1 #pip_image
-{
-	wash-color: team1Color;
-}
-
-.team2 #pip_image
-{
-	wash-color: team2Color;
-}
-
-.friend #pip_image
-{
-	wash-color: lightgreen;
-}
-
-.enemy #pip_image
-{
-	wash-color: red;
-}
-
 #bounty,#status,#stacks
 {
 	width: 100%;
 	height: fit-children;
-	font-size: 90px;
+	font-size: 9px;
 	color: #ffffffff;
 	text-align: right;
 	horizontal-align: left;
@@ -1026,22 +869,92 @@
 
 #name
 {
-	width: fit-children;
-	height: 120px;
-	font-size: 80px;
-	color: #ffffff90;
+	color: offWhite;
+	font-size: 14px;
+	margin-top: 47px;
 	text-align: center;
 	font-weight: bold;
-	font-family: sans;
-	text-transform: uppercase;
 	horizontal-align: middle;
-	vertical-align: bottom;
+	font-family: block;
+	font-family: oracle;
+	vertical-align: top;
 	animation: none;
-	background-color: none;
+	text-shadow: 0px 0px 0px 5.0 offBlack&ee;
+	padding: 0px 2px;
+	brightness: 0.8;
+	max-width: 170px;
+	max-height: 20px;
+	transform: rotateZ(-4deg);
 	visibility: collapse;
+	text-overflow: shrink;
 }
 
-.GameStatePreGame.player #name,.player.show_name #name
+.neutral_normal
+{
+	wash-color: shardColor&30;
+}
+
+.enemy #name
+{
+	color: TeamEnemyColor;
+	color: #ff6a6a;
+}
+
+.spectating #name
+{
+	color: offWhite&80;
+}
+
+.team_neutral #name
+{
+	wash-color: shardColor;
+	visibility: visible;
+}
+
+.weak_to_viewer .team_neutral #name
+{
+	wash-color: green;
+}
+
+.normal_to_viewer .team_neutral #name
+{
+	wash-color: yellow;
+}
+
+.strong_to_viewer .team_neutral #name
+{
+	wash-color: red;
+}
+
+.team_neutral.weak_to_viewer #name
+{
+	wash-color: shardColor&90;
+}
+
+.team_neutral.normal_to_viewer #name
+{
+	wash-color: shardColor;
+}
+
+.team_neutral.strong_to_viewer #name
+{
+	wash-color: #e3b6b6;
+}
+
+.neutral_vault #name
+{
+	wash-color: shardColor&90;
+	visibility: visible;
+	transform: none;
+}
+
+.boss_barracks #name,.boss_tier1 #name,.boss_tier2 #name
+{
+	font-size: 18px;
+	visibility: visible;
+}
+
+.GameStatePreGame.player #name,.player #name
 {
 	visibility: visible;
 }
@@ -1051,21 +964,16 @@
 	visibility: collapse;
 }
 
-.GameStatePreGame.player.verticalHealthbars #name,.player.show_name.verticalHealthbars #name
-{
-	visibility: collapse;
-}
-
 #TargetableIndicator
 {
-	width: 160px;
-	height: 160px;
+	width: 16px;
+	height: 16px;
 	background-image: url("s2r://panorama/images/hud/healthbar/target_indicator.vsvg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center center;
 	horizontal-align: middle;
-	margin-top: 760px;
+	margin-top: 76px;
 	visibility: collapse;
 }
 
@@ -1086,26 +994,6 @@
 
 .CLASS_NECRO_HAUNTINGSKULL #TargetableIndicator
 {
-	visibility: visible;
-}
-
-#NameVoiceContainer
-{
-	flow-children: right;
-	horizontal-align: center;
-	height: 25px;
-	overflow: noclip;
-	width: 100%;
-}
-
-.health_hidden #NameVoiceContainer
-{
-	margin-bottom: 40px;
-}
-
-.show_bounty.enemy #bounty
-{
-	color: gold;
 	visibility: visible;
 }
 
@@ -1171,7 +1059,7 @@
 	
 }
 
-.health_critical #unit_healthbar_bg
+.health_critical .ShowCriticalState #unit_healthbar_bg
 {
 	animation-name: healthCritFlash;
 	animation-duration: 2s;
@@ -1203,14 +1091,15 @@
 
 #CriticalIndicator
 {
-	margin-left: 0px;
 	horizontal-align: center;
 	ignore-parent-flow: true;
-	margin-top: 700px;
+	margin-top: 84px;
 	margin-left: 0px;
 	background-image: url("s2r://panorama/images/hud/healthbar/critical_text_png.vtex");
 	background-size: contain;
 	background-repeat: no-repeat;
+	width: 50px;
+	margin-right: 30px;
 	animation-name: TagGroove1;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
@@ -1219,25 +1108,19 @@
 
 #CriticalIndicator Label
 {
-	font-size: 90px;
-	color: rgb(255, 194, 194);
-	color: offWhite;
+	font-size: 13px;
 	font-family: block;
 	text-transform: uppercase;
-	text-shadow: 0px 0px 55.0 colorEnemy;
+	text-shadow: 0px 0px 55.0 #b82323;
 	text-overflow: shrink;
-	margin-left: 24px;
+	margin-left: 2px;
 	opacity: 0;
+	text-shadow: 0px 0px 55.0 offWhite;
+	color: colorEnemy;
 	animation-name: TagGroove1;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 	animation-frame-time: 1s;
-}
-
-.enemy #CriticalIndicator Label
-{
-	margin-left: 0px;
-	margin-right: 20px;
 }
 
 .Language_japanese #CriticalIndicator Label
@@ -1245,7 +1128,45 @@
 	max-height: 18px;
 }
 
-.health_critical #CriticalIndicator
+.health_critical .ShowCriticalState #CriticalIndicator
+{
+	visibility: visible;
+}
+
+#AssassinateIndicator
+{
+	horizontal-align: center;
+	ignore-parent-flow: true;
+	margin-top: 86px;
+	margin-left: 0px;
+	margin-right: 30px;
+	animation-name: TagGroove1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	visibility: collapse;
+}
+
+#AssassinateIndicator Label
+{
+	font-size: 8px;
+	font-family: block;
+	text-transform: uppercase;
+	text-overflow: shrink;
+	margin-left: 2px;
+	text-shadow: 0px 0px 4.0 offBlack;
+	color: white;
+	animation-name: TagGroove1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 1s;
+}
+
+.Language_japanese #AssassinateIndicator Label
+{
+	max-height: 18px;
+}
+
+.health_assassinate #AssassinateIndicator
 {
 	visibility: visible;
 }
@@ -1294,13 +1215,49 @@
 	
 }
 
+#UnkillableIndicator
+{
+	horizontal-align: center;
+	ignore-parent-flow: true;
+	margin-top: 72px;
+	margin-left: 0px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	max-width: 70px;
+	margin-left: 20px;
+	animation-name: TagGroove1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	visibility: collapse;
+}
+
+#UnkillableIndicator Label
+{
+	font-size: 18px;
+	font-family: block;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 3.0 offBlack;
+	text-overflow: shrink;
+	opacity: 1;
+	color: offWhite;
+	animation-name: TagGroove1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 1s;
+}
+
+.unkillable #UnkillableIndicator
+{
+	visibility: visible;
+}
+
 #StaminaContainer
 {
 	flow-children: right;
 	vertical-align: top;
 	horizontal-align: center;
-	margin-top: 460px;
-	margin-right: 50px;
+	margin-top: 8px;
+	margin-right: 5px;
 }
 
 .enemy #StaminaContainer
@@ -1311,7 +1268,7 @@
 .StaminaPip
 {
 	visibility: collapse;
-	margin: 10px;
+	margin: 25px 1px 1px 1px;
 }
 
 .StaminaRecentlyUsed .StaminaPip
@@ -1321,15 +1278,281 @@
 
 .StaminaPip .StaminaPipIcon
 {
-	width: 80px;
-	height: 80px;
-	background-color: white;
-	border-radius: 50%;
-	border: 8px solid white;
+	width: 8px;
+	height: 12px;
+	background-image: url("s2r://panorama/images/hud/healthbar/pip_stamina_filled_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 50% 50%;
 }
 
 .StaminaPip.PipEmpty .StaminaPipIcon
 {
-	background-color: #000000;
+	background-image: url("s2r://panorama/images/hud/healthbar/pip_stamina_filled_png.vtex");
+	wash-color: offBlack;
+}
+
+#UnitHealthbarValue
+{
+	font-family: numericOracle;
+	font-weight: bold;
+	color: offWhite;
+	text-shadow: 0px 0px 0px 5.0 offBlack;
+	z-index: 10;
+	font-size: 18px;
+	padding: 4px;
+	opacity: 0;
+	horizontal-align: right;
+	margin-right: 10px;
+	margin-top: 1px;
+	transform: rotateZ(-3deg);
+	margin-left: 40px;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+	transition-delay: 0s;
+	visibility: collapse;
+}
+
+.ShowHealthValue #UnitHealthbarValue
+{
+	visibility: visible;
+}
+
+.ShowAllyHealthValue #UnitHealthbarValue
+{
+	visibility: visible;
+}
+
+.active_damage_by_local_player #UnitHealthbarValue,.ShowAllyHealthValue.active_damage #UnitHealthbarValue
+{
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: 0.3s;
+	transition-delay: 1.5s;
+}
+
+.spectating #UnitHealthbarValue
+{
+	visibility: collapse;
+}
+
+.friend #UnitHealthbarValue
+{
+	margin-right: 20px;
+}
+
+.enemy #UnitHealthbarValue
+{
+	wash-color: rgb(255, 160, 160);
+}
+
+.team_neutral #UnitHealthbarValue
+{
+	wash-color: rgb(160, 255, 226);
+}
+
+.boss_tier1 #UnitHealthbarValue,.boss_tier2 #UnitHealthbarValue,.boss_barracks #UnitHealthbarValue,.building #UnitHealthbarValue
+{
+	ui-scale: 70%;
+	margin-top: 5px;
+	margin-right: 15px;
+}
+
+.unkillable #UnitHealthbarValue
+{
+	visibility: collapse;
+}
+
+#UnitShieldbarValue
+{
+	font-family: numericOracle;
+	font-weight: bold;
+	color: offWhite;
+	text-shadow: 0px 0px 0px 5.0 offBlack;
+	z-index: 10;
+	font-size: 18px;
+	padding: 4px;
+	horizontal-align: right;
+	margin-right: 10px;
+	margin-top: 20px;
+	transform: rotateZ(-3deg);
+	margin-left: 40px;
+	color: orange;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+	transition-delay: 0s;
+}
+
+#NeutralBounty
+{
+	horizontal-align: middle;
+	visibility: collapse;
+	flow-children: right;
+	ui-scale: 70%;
+	margin-top: 15px;
+}
+
+.team_neutral #NeutralBounty
+{
+	visibility: visible;
+}
+
+.midboss #NeutralBounty
+{
+	visibility: collapse;
+}
+
+#NeutralBounty #TierContainer
+{
+	width: 40px;
+	height: 40px;
+	border-radius: 50px;
+	background-color: offBlack&90;
+	margin-right: 10px;
+	vertical-align: middle;
+	border: 2px solid offWhite&90;
+	opacity: 0.8;
+	horizontal-align: center;
+	padding: 6px;
+	visibility: collapse;
+}
+
+.neutral_weak #NeutralBounty #TierContainer
+{
+	wash-color: shardColor;
+}
+
+.neutral_normal #NeutralBounty #TierContainer
+{
+	wash-color: shardColor&50;
+}
+
+.neutral_strong #NeutralBounty #TierContainer
+{
+	wash-color: rgb(255, 134, 134);
+	opacity: 1;
+}
+
+.neutral_vault #NeutralBounty #TierContainer
+{
+	visibility: collapse;
+}
+
+#NeutralBounty #TierContainer Label
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	color: offWhite&90;
+	font-family: oracle;
+	margin-bottom: 2px;
+	transform: translateY(-4px);
+}
+
+#NeutralBounty #TierContainer .difficulty_icon
+{
+	width: 100%;
+	height: 100%;
+	background-size: contain;
+	horizontal-align: center;
+	vertical-align: center;
+	background-repeat: no-repeat;
+}
+
+.neutral_weak #NeutralBounty #TierContainer .difficulty_icon
+{
+	background-image: url("s2r://panorama/images/main_menu/menu_images/bots_easy_png.vtex");
+}
+
+.neutral_normal #NeutralBounty #TierContainer .difficulty_icon
+{
+	background-image: url("s2r://panorama/images/main_menu/menu_images/bots_med_png.vtex");
+}
+
+.neutral_strong #NeutralBounty #TierContainer .difficulty_icon
+{
+	background-image: url("s2r://panorama/images/main_menu/menu_images/bots_hard_png.vtex");
+}
+
+#NeutralBounty #BountyContainer
+{
+	flow-children: right;
+	background-color: offBlack&90;
+	padding: 0px 8px;
+	border-radius: 10px;
+}
+
+#NeutralBounty .icon_souls
+{
+	width: 16px;
+	height: 20px;
+	vertical-align: middle;
+	background-image: url("s2r://panorama/images/hud/icons/icon_soul.vsvg");
+	wash-color: shardColor;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-right: 3px;
+}
+
+#NeutralBounty Label
+{
+	font-family: numericOracle;
+	font-weight: bold;
+	color: offWhite;
+	font-size: 24px;
+	vertical-align: middle;
+}
+
+#RejuvenatorActive
+{
+	width: 24px;
+	height: 24px;
+	horizontal-align: center;
+	margin-top: 56px;
+	margin-left: 94px;
+	transform: rotateZ(6deg);
+	background-image: url("s2r://panorama/images/hud/healthbar/healthbar_rejuv_png.vtex");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	visibility: collapse;
+}
+
+.has_rejuv #RejuvenatorActive
+{
+	visibility: visible;
+}
+
+#KillStreakIndicator
+{
+	width: 32px;
+	height: 45px;
+	margin-top: 48px;
+	margin-left: 44px;
+	z-index: -1;
+	background-image: url("s2r://panorama/images/hud/healthbar/on_fire1_png.vtex");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	animation-name: TagGroove1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	visibility: collapse;
+}
+
+.has_killstreak #KillStreakIndicator
+{
+	visibility: visible;
+}
+
+#UnitShieldbar,#UnitShieldbarValue
+{
+	visibility: collapse;
+}
+
+.midboss #UnitShieldbar,.midboss #UnitShieldbarValue
+{
+	visibility: visible;
 }
 

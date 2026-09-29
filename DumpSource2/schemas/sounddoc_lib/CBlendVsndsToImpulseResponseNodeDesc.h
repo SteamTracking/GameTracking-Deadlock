@@ -1,0 +1,3 @@
+class CBlendVsndsToImpulseResponseNodeDesc : public CVNodeTypeDesc
+{
+};

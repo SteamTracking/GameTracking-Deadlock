@@ -1,8 +1,8 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/post_game/citadel_db_post_game_scoreboard_new.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/post_game/citadel_db_post_game_scoreboard_new.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="TableHeaderStats">
@@ -33,7 +33,7 @@
 		</snippet>
 		<snippet name="Player">
 			<Panel class="Player">
-				<Button id="CommendPlayerButton" class="CommendColumn" onmouseover="UIShowTextTooltip( #Citadel_MatchDetails_CommendTooltip );" onmouseout="UIHideTextTooltip()">
+				<Button id="CommendPlayerButton" class="CommendColumn" onmouseover="UIShowTextTooltip( #Citadel_MatchDetails_CommendTooltip ); CitadelPostGameCommendHover( true );" onmouseout="UIHideTextTooltip();  CitadelPostGameCommendHover( false );">
 					<Panel id="commendIcon" />
 				</Button>
 				<Panel class="GotCommendedIcon CommendColumn" />

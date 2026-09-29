@@ -22,6 +22,12 @@
 //		0.000000,
 //		0.000000,
 //		-800.000000
+//	],
+//	"m_vecPreviewWind":
+//	[
+//		0.000000,
+//		0.000000,
+//		0.000000
 //	]
 //}
 class ParticlePreviewState_t
@@ -43,4 +49,5 @@ class ParticlePreviewState_t
 	bool m_bAnimationNonLooping;
 	bool m_bSequenceNameIsAnimClipPath;
 	Vector m_vecPreviewGravity;
+	Vector m_vecPreviewWind;
 };

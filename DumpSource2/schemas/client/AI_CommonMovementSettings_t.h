@@ -1,6 +1,4 @@
 // MGetKV3ClassDefaults = {
-//	"m_flSpringConstant": 10.000000,
-//	"m_flMaxSpringTension": 100.000000,
 //	"m_flSharpStartAngle": 180.000000,
 //	"m_flMinIdleTurnAngle": 10.000000,
 //	"m_bUseSmoothPaths": true,
@@ -11,9 +9,6 @@
 //}
 class AI_CommonMovementSettings_t
 {
-	float32 m_flSpringConstant;
-	// MPropertyFriendlyName = "Max Tension"
-	float32 m_flMaxSpringTension;
 	float32 m_flSharpStartAngle;
 	float32 m_flMinIdleTurnAngle;
 	bool m_bUseSmoothPaths;

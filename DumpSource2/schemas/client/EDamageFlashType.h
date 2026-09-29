@@ -6,6 +6,7 @@ enum EDamageFlashType : uint32_t
 	EFlashType_CritDamage = 3,
 	EFlashType_MeleeActivate = 4,
 	EFlashType_PatronHit = 5,
+	EFlashType_GenericDamage = 6,
 	// MPropertySuppressEnumerator
-	EFlshTypeCount = 6,
+	EFlshTypeCount = 7,
 };

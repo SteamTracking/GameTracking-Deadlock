@@ -5,11 +5,13 @@
 //		0.000000,
 //		0.000000
 //	],
-//	"iLane": 0
+//	"iLane": 0,
+//	"bAllLanes": false
 //}
 class MinimapOffsetDesc_t
 {
 	Class_T eEntityClass;
 	Vector2D vOffset2D;
 	int32 iLane;
+	bool bAllLanes;
 };

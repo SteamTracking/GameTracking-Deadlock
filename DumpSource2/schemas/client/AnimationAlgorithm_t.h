@@ -5,6 +5,5 @@ enum AnimationAlgorithm_t : uint8_t
 	eSequence = 1,
 	eAnimGraph2 = 2,
 	eAnimGraph2Secondary = 3,
-	eAnimGraph1 = 4,
-	eCount = 5,
+	eCount = 4,
 };

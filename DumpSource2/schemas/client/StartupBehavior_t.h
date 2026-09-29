@@ -1,5 +1,0 @@
-enum StartupBehavior_t : uint32_t
-{
-	UNIT_STARTUP_BEHAVIOR_DEFAULT = 0,
-	UNIT_STARTUP_BEHAVIOR_TAUNT = 1,
-};

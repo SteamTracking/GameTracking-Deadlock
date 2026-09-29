@@ -14,6 +14,10 @@ enum EventTypeSelection_t : uint32_t
 	PARTICLE_EVENT_TYPE_MASK_COLLISION_STOPPED = 16,
 	// MPropertyFriendlyName = "Killed on Collision"
 	PARTICLE_EVENT_TYPE_MASK_KILLED_ON_COLLISION = 32,
+	// MPropertyFriendlyName = "Killed by Cull"
+	PARTICLE_EVENT_TYPE_MASK_KILLED_ON_CULL = 1024,
+	// MPropertyFriendlyName = "Culled on Spawn"
+	PARTICLE_EVENT_TYPE_MASK_CULLED_ON_SPAWN = 2048,
 	// MPropertyFriendlyName = "User Event 1"
 	PARTICLE_EVENT_TYPE_MASK_USER_1 = 64,
 	// MPropertyFriendlyName = "User Event 2"

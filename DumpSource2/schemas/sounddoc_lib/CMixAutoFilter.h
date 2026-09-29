@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_desc":
 //	{
 //		"m_flEnvelopeAmount": 0.000000,
@@ -12,12 +13,12 @@
 //		"m_flReleaseTimeMS": 200.000000,
 //		"m_filter":
 //		{
-//			"m_nFilterType": "FILTER_LOWPASS",
-//			"m_nFilterSlope": "FILTER_SLOPE_12dB",
-//			"m_bEnabled": true,
 //			"m_fldbGain": 0.000000,
 //			"m_flCutoffFreq": 1000.000000,
-//			"m_flQ": 0.707107
+//			"m_flQ": 0.707107,
+//			"m_nFilterType": "FILTER_LOWPASS",
+//			"m_nFilterSlope": "FILTER_SLOPE_12dB",
+//			"m_bEnabled": true
 //		},
 //		"m_flLFOAmount": 0.000000,
 //		"m_flLFORate": 0.000000,

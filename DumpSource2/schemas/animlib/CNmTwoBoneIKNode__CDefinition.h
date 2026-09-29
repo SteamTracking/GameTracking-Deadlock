@@ -8,7 +8,7 @@
 //	"m_flBlendTimeSeconds": 0.000000,
 //	"m_blendMode": "Effector",
 //	"m_bIsTargetInWorldSpace": false,
-//	"m_flReferencePoseTwistWeight": 0.000000
+//	"m_flChainRotationWeight": 0.000000
 //}
 // MHasKV3TransferPolymorphicClassname
 class CNmTwoBoneIKNode::CDefinition : public CNmPassthroughNode::CDefinition
@@ -19,5 +19,5 @@ class CNmTwoBoneIKNode::CDefinition : public CNmPassthroughNode::CDefinition
 	float32 m_flBlendTimeSeconds;
 	NmIKBlendMode_t m_blendMode;
 	bool m_bIsTargetInWorldSpace;
-	float32 m_flReferencePoseTwistWeight;
+	float32 m_flChainRotationWeight;
 };

@@ -8,6 +8,7 @@ enum EDestructibleParts_DestroyParameterFlags : uint32_t
 	ForceDamageApply = 8,
 	IgnoreKillEntityFlag = 16,
 	IgnoreHealthCheck = 32,
+	ApplyPhysicsForce = 64,
 	// MEnumeratorIsNotAFlag
 	Default = 7,
 };

@@ -1,0 +1,59 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_hud_combat_log.vcss" />
+	</styles>
+	<CitadelHudCombatLog hittest="false" acceptsfocus="false">
+		<GlobalClassListener classes="gScoreboardOpen gShopOpen" />
+		<Panel id="CombatLogHeader" class="LeftRightFlow">
+			<Panel id="DragHandle" acceptsfocus="true" draggable="true" />
+			<Label id="CombatLogTitle" text="#Citadel_CombatLogHeading" />
+			<Panel class="FillWidth" />
+			<Button id="CombatLogCloseButton" class="CloseButton" onactivate="CitadelToggleCombatLog()" />
+		</Panel>
+		<Panel id="CombatLogInset">
+			<Panel id="CombatLogSpinner" class="Spinner" />
+			<Panel id="CombatLogLinesContainer" />
+		</Panel>
+		<Panel id="CombatLogControls" class="LeftRightFlow">
+			<Panel id="CombatLogDropdownContainer" class="TopBottomFlow">
+				<Panel id="CombatLogAttackerSelector" class="LeftRightFlow">
+					<Label id="AttackerLabel" text="#Citadel_CombatLog_Attacker" class="CombatLogControlsLabel" />
+					<DropDown id="AttackerDropdown" class="CombatLogDropdown" />
+				</Panel>
+				<Panel id="CombatLogTargetSelector" class="LeftRightFlow">
+					<Label id="TargetLabel" text="#Citadel_CombatLog_Target" class="CombatLogControlsLabel" />
+					<DropDown id="TargetDropdown" class="CombatLogDropdown" />
+				</Panel>
+			</Panel>
+			<Panel id="CombatLogTickBoxesContainer">
+				<Panel class="TickBoxesColumn">
+					<CitadelSettingsCheckbox id="ToggleDamage" class="CombatLogTickBox" convar="citadel_combat_log_show_damage" text="#Citadel_CombatLog_Damage" />
+					<CitadelSettingsCheckbox id="ToggleHealing" class="CombatLogTickBox" convar="citadel_combat_log_show_healing" text="#Citadel_CombatLog_Healing" />
+					<CitadelSettingsCheckbox id="ToggleModifiers" class="CombatLogTickBox" convar="citadel_combat_log_show_modifiers" text="#Citadel_CombatLog_Modifiers" />
+				</Panel>
+				<Panel class="TickBoxesColumn">
+					<CitadelSettingsCheckbox id="ToggleAbilities" class="CombatLogTickBox" convar="citadel_combat_log_show_abilities" text="#Citadel_CombatLog_Abilities" />
+					<CitadelSettingsCheckbox id="ToggleItems" class="CombatLogTickBox" convar="citadel_combat_log_show_items" text="#Citadel_CombatLog_Items" />
+					<CitadelSettingsCheckbox id="ToggleDeaths" class="CombatLogTickBox" convar="citadel_combat_log_show_deaths" text="#Citadel_CombatLog_Deaths" />
+				</Panel>
+				<Panel class="TickBoxesColumn">
+					<CitadelSettingsCheckbox id="ToggleCompressDamage" class="CombatLogTickBox" convar="citadel_combat_log_compress" text="#Citadel_CombatLog_CompressDamage" />
+					<CitadelSettingsCheckbox id="ToggleHealthDeltas" class="CombatLogTickBox" convar="citadel_combat_log_show_health_deltas" text="#Citadel_CombatLog_HealthDeltas" />
+					<CitadelSettingsCheckbox id="ToggleHiddenModifiers" class="CombatLogTickBox" convar="citadel_combat_log_show_hidden_modifiers" text="#Citadel_CombatLog_HiddenModifiers" />
+				</Panel>
+			</Panel>
+			<Panel id="CombatLogFill" class="TopBottomFlow" />
+			<Panel id="CombatLogMessageControls" class="TopBottomFlow">
+				<TextButton class="PrimaryButton ClearButton" text="#Citadel_CombatLog_Clear" onactivate="CitadelCombatLogClear()" />
+			</Panel>
+			<Panel id="CombatLogRefreshControls" class="TopBottomFlow">
+				<Panel class="LeftRightFlow">
+					<Label id="CombatLogIntervalLabel" text="#Citadel_CombatLog_RebornInterval" />
+					<Label id="CombatLogIntervalTimeLabel" text="#Citadel_CombatLog_RebornIntervalTime" />
+				</Panel>
+				<SlottedSlider id="CombatLogIntervalSlider" notches="4" direction="horizontal" class="HorizontalSlider Horizontal" />
+			</Panel>
+		</Panel>
+	</CitadelHudCombatLog>
+</root>

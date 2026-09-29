@@ -24,6 +24,11 @@
 	visibility: collapse;
 }
 
+.menu_pinned.menu_expanded .hero_testing_header
+{
+	visibility: collapse;
+}
+
 .hero_selection_offset
 {
 	width: 100%;
@@ -61,12 +66,18 @@
 #collapse_menu_panel
 {
 	margin-top: 15px;
-	width: 100%;
+	width: fit-children;
+	flow-children: right;
 	visibility: collapse;
 	horizontal-align: center;
 }
 
 .gScoreboardOpen #collapse_menu_panel
+{
+	visibility: visible;
+}
+
+.menu_pinned #collapse_menu_panel
 {
 	visibility: visible;
 }
@@ -88,6 +99,128 @@
 {
 	text-transform: uppercase;
 	font-weight: bold;
+}
+
+#pin_button
+{
+	vertical-align: center;
+	flow-children: right;
+	margin-right: 24px;
+	opacity: 0.7;
+}
+
+#pin_button:hover
+{
+	opacity: 1;
+}
+
+#pin_button Label
+{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.pin_label
+{
+	visibility: visible;
+}
+
+.unpin_label
+{
+	visibility: collapse;
+}
+
+.menu_pinned .pin_label
+{
+	visibility: collapse;
+}
+
+.menu_pinned .unpin_label
+{
+	visibility: visible;
+}
+
+.menu_pinned #pin_button
+{
+	opacity: 1;
+}
+
+.menu_pinned #pin_button Label
+{
+	color: goldColor;
+}
+
+#pin_icon
+{
+	vertical-align: middle;
+	margin-left: 10px;
+	transform: rotateZ(45deg);
+}
+
+.menu_pinned #pin_icon
+{
+	transform: rotateZ(0deg);
+	wash-color: goldColor;
+}
+
+#free_cursor_button
+{
+	vertical-align: center;
+	flow-children: right;
+	margin-right: 24px;
+	opacity: 0.7;
+}
+
+#free_cursor_button:hover
+{
+	opacity: 1;
+}
+
+#free_cursor_button Label
+{
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.free_cursor_label
+{
+	visibility: visible;
+}
+
+.lock_cursor_label
+{
+	visibility: collapse;
+}
+
+.cursor_freed .free_cursor_label
+{
+	visibility: collapse;
+}
+
+.cursor_freed .lock_cursor_label
+{
+	visibility: visible;
+}
+
+.cursor_freed #free_cursor_button
+{
+	opacity: 1;
+}
+
+.cursor_freed #free_cursor_button Label
+{
+	color: goldColor;
+}
+
+#free_cursor_icon
+{
+	vertical-align: middle;
+	margin-left: 8px;
+}
+
+.cursor_freed #free_cursor_icon
+{
+	wash-color: goldColor;
 }
 
 .expand_label
@@ -130,7 +263,7 @@
 {
 	flow-children: down;
 	x: 0px;
-	y: 50px;
+	y: 10px;
 	horizontal-align: right;
 	visibility: collapse;
 }
@@ -176,19 +309,34 @@
 	visibility: collapse;
 }
 
-.tab_wrapper
+.gScoreboardOpen.menu_expanded .tab_selector
 {
-	max-width: 150px;
+	visibility: visible;
 }
 
-#hero_tools,#game_rules,#hero_control
+.menu_pinned.menu_expanded .tab_selector
+{
+	visibility: visible;
+}
+
+.tab_wrapper
+{
+	max-width: 180px;
+}
+
+#hero_tools,#bot_control,#map_control,#misc_control
 {
 	visibility: collapse;
 }
 
-.gScoreboardOpen.menu_expanded #hero_tools,.gScoreboardOpen.menu_expanded.hero_tools_active #hero_tools,.gScoreboardOpen.menu_expanded.game_rules_active #game_rules,.gScoreboardOpen.menu_expanded.hero_control_active #hero_control
+.gScoreboardOpen.menu_expanded #hero_tools,.gScoreboardOpen.menu_expanded.hero_tools_active #hero_tools,.gScoreboardOpen.menu_expanded.bot_control_active #bot_control,.gScoreboardOpen.menu_expanded.map_control_active #map_control,.gScoreboardOpen.menu_expanded.misc_control_active #misc_control,.menu_pinned.menu_expanded #hero_tools,.menu_pinned.menu_expanded.hero_tools_active #hero_tools,.menu_pinned.menu_expanded.bot_control_active #bot_control,.menu_pinned.menu_expanded.map_control_active #map_control,.menu_pinned.menu_expanded.misc_control_active #misc_control
 {
 	visibility: visible;
+}
+
+.gScoreboardOpen.menu_expanded.hero_tools_active #bot_control,.gScoreboardOpen.menu_expanded.hero_tools_active #map_control,.gScoreboardOpen.menu_expanded.bot_control_active #hero_tools,.gScoreboardOpen.menu_expanded.bot_control_active #map_control,.gScoreboardOpen.menu_expanded.map_control_active #hero_tools,.gScoreboardOpen.menu_expanded.map_control_active #bot_control,.gScoreboardOpen.menu_expanded.misc_control_active #hero_tools,.menu_pinned.menu_expanded.bot_control_active #hero_tools,.menu_pinned.menu_expanded.map_control_active #hero_tools,.menu_pinned.menu_expanded.misc_control_active #hero_tools
+{
+	visibility: collapse;
 }
 
 #hero_testing_stub
@@ -226,7 +374,7 @@
 
 .nav_menu_item
 {
-	flow-children: down;
+	flow-children: right;
 	width: 400px;
 	padding-left: 0px;
 }
@@ -252,6 +400,114 @@
 	padding-right: 10px;
 }
 
+.nav_menu_item:disabled
+{
+	opacity: 0.35;
+}
+
+.tile_row
+{
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+.tile_row_label
+{
+	width: 90px;
+	padding-left: 10px;
+	vertical-align: center;
+	font-size: 18px;
+	color: offWhite&66;
+}
+
+.action_tile
+{
+	width: 44px;
+	height: 30px;
+	margin-right: 6px;
+	vertical-align: center;
+	border: 1px solid #ffefd733;
+	border-radius: 4px;
+	background-color: #00000066;
+	transition-property: background-color, border;
+	transition-duration: 0.1s;
+}
+
+.action_tile Label
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-size: 16px;
+	color: offWhite&aa;
+}
+
+.action_tile:hover
+{
+	border: 1px solid #ffefd766;
+	background-color: #ffefd714;
+}
+
+.action_tile:hover Label
+{
+	color: offWhite;
+}
+
+.action_tile:active
+{
+	background-color: #ffefd733;
+}
+
+.action_tile.tile_stop
+{
+	width: 56px;
+	margin-left: 12px;
+}
+
+.trooper_row .action_tile
+{
+	width: 72px;
+}
+
+.nav_menu_item.fifth_width
+{
+	width: 76px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.nav_menu_item.fifth_width Label
+{
+	padding-right: 0px;
+	text-align: center;
+}
+
+.nav_menu_item.keybind_glyph_width
+{
+	width: 38px;
+	padding-left: 6px;
+	padding-right: 0px;
+}
+
+.nav_menu_item.keybind_glyph_width Label
+{
+	padding-right: 0px;
+	text-align: center;
+}
+
+.nav_menu_item.keybind_label_width
+{
+	width: 150px;
+	padding-left: 6px;
+	padding-right: 6px;
+}
+
+.nav_menu_item.keybind_label_width Label
+{
+	padding-right: 0px;
+	text-align: center;
+}
+
 .nav_menu_item_container
 {
 	flow-children: right;
@@ -261,10 +517,28 @@
 
 .nav_menu_item_container.vertical_item
 {
-	vertical-align: center;
+	vertical-align: top;
 	flow-children: down;
 	width: 200px;
 	padding-left: 0px;
+}
+
+.spawn_hero_label
+{
+	padding-left: 10px;
+}
+
+.nav_menu_item_container.spawn_hero_block
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#SpawnBotCard,#BotsSpawnBotCard
+{
+	width: 60px;
+	height: 100px;
+	margin: 14px 0px 0px 10px;
 }
 
 .nav_menu_item:hover
@@ -302,7 +576,7 @@
 
 .small_text Label
 {
-	padding-right: 32px;
+	padding-right: 8px;
 	padding-bottom: 4px;
 	line-height: 30px;
 	font-size: 18px;
@@ -320,12 +594,17 @@
 	font-size: 16px;
 }
 
+.center_text
+{
+	horizontal-align: center;
+}
+
 .CitadelSettingsCheckbox
 {
 	flow-children: right;
 }
 
-b ToggleButton Label,.CitadelSettingsCheckbox Label
+ToggleButton Label,.CitadelSettingsCheckbox Label
 {
 	padding-right: 16px;
 	padding-bottom: 4px;
@@ -369,6 +648,11 @@ b ToggleButton Label,.CitadelSettingsCheckbox Label
 	visibility: collapse;
 }
 
+.menu_pinned .testing_prompt
+{
+	visibility: collapse;
+}
+
 .nav_menu_item_header
 {
 	padding-left: 10px;
@@ -380,6 +664,16 @@ b ToggleButton Label,.CitadelSettingsCheckbox Label
 	width: 400px;
 }
 
+.nav_menu_item_container.row_gap
+{
+	margin-top: 12px;
+}
+
+.nav_menu_item_header.section_gap
+{
+	margin-top: 14px;
+}
+
 .nav_menu_item_header Label
 {
 	font-style: normal;
@@ -387,9 +681,14 @@ b ToggleButton Label,.CitadelSettingsCheckbox Label
 	line-height: 28px;
 	text-align: left;
 	color: offWhite;
-	max-width: 200px;
+	max-width: 360px;
 	text-overflow: shrink;
 	font-family: block;
+}
+
+.nav_menu_tab_contents .nav_menu_item_header Label
+{
+	text-decoration: underline;
 }
 
 .Language_german .nav_menu_item_header Label,.Language_japanese .nav_menu_item_header Label
@@ -413,15 +712,6 @@ b ToggleButton Label,.CitadelSettingsCheckbox Label
 	max-height: 60px;
 }
 
-.dash
-{
-	background-color: grey;
-	height: 1px;
-	vertical-align: center;
-	width: 40%;
-	x: 210px;
-}
-
 .nav_menu_item:hover Label,.nav_menu_item:active Label
 {
 	color: offWhite&66;
@@ -432,7 +722,190 @@ b ToggleButton Label,.CitadelSettingsCheckbox Label
 	height: 20px;
 }
 
+.input_control
+{
+	width: 200px;
+	flow-children: right;
+}
+
+.input_control.wide_input
+{
+	width: 300px;
+}
+
+.input_control .nav_menu_item
+{
+	width: fill-parent-flow( 1.0 );
+	padding-left: 10px;
+	padding-right: 4px;
+}
+
+.input_control .nav_menu_item Label
+{
+	width: 100%;
+	text-overflow: shrink;
+}
+
+.input_control .dummy_stat_input
+{
+	margin-right: 6px;
+}
+
+.input_control .dummy_stat_entry
+{
+	width: 52px;
+	padding: 2px 6px 0px 6px;
+}
+
+.hotkey_input
+{
+	width: 72px;
+	height: 28px;
+	margin-right: 6px;
+	vertical-align: center;
+	border-radius: 4px;
+	border: 1px solid #ffefd733;
+	background-color: #00000066;
+}
+
+.hotkey_input:hover
+{
+	border: 1px solid #ffefd766;
+}
+
+.hotkey_hint
+{
+	horizontal-align: center;
+	vertical-align: center;
+	font-size: 13px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: offWhite&55;
+}
+
+.nav_menu_item.highlight_item Label,.nav_menu_item.highlight_item:hover Label
+{
+	color: goldColor&cc;
+}
+
+.highlight_icon
+{
+	width: 16px;
+	height: 16px;
+	vertical-align: center;
+	wash-color: goldColor&cc;
+}
+
+#combat_log_icon
+{
+	width: 14px;
+}
+
+.dummy_stat_row
+{
+	width: 380px;
+	height: 36px;
+	margin-left: 10px;
+}
+
+.dummy_stat_label
+{
+	vertical-align: center;
+	font-size: 18px;
+	color: offWhite&66;
+}
+
+.dummy_stat_input
+{
+	horizontal-align: right;
+	vertical-align: center;
+	flow-children: right;
+}
+
+.dummy_stat_entry
+{
+	vertical-align: center;
+	width: 56px;
+	height: 28px;
+	padding: 2px 8px 0px 8px;
+	border-radius: 4px 0px 0px 4px;
+	border: 1px solid #ffefd733;
+	background-color: #00000066;
+	font-size: 18px;
+	text-align: right;
+	color: #8c8a86;
+}
+
+.dummy_stat_entry:hover
+{
+	border: 1px solid #ffefd766;
+}
+
+.dummy_stat_entry:focus
+{
+	border: 1px solid #ffefd7aa;
+	background-color: #000000aa;
+	color: offWhite;
+}
+
+.dummy_stat_spinner
+{
+	flow-children: down;
+	width: 20px;
+	height: 28px;
+	margin-left: -1px;
+}
+
+.dummy_stat_spin_button
+{
+	width: 20px;
+	height: 14px;
+	border: 1px solid #ffefd733;
+	background-color: #ffefd714;
+}
+
+.dummy_stat_spin_button Image
+{
+	width: 8px;
+	height: 8px;
+	horizontal-align: center;
+	vertical-align: center;
+	wash-color: offWhite&99;
+}
+
+.dummy_stat_spin_button:hover
+{
+	background-color: #ffefd733;
+}
+
+.dummy_stat_spin_button:hover Image
+{
+	wash-color: offWhite;
+}
+
+.dummy_stat_spin_button:active
+{
+	background-color: #ffefd755;
+}
+
+.dummy_stat_spin_up
+{
+	border-radius: 0px 4px 0px 0px;
+}
+
+.dummy_stat_spin_down
+{
+	margin-top: -1px;
+	height: 15px;
+	border-radius: 0px 0px 4px 0px;
+}
+
 .coop_sandbox .hide_in_coop
+{
+	visibility: collapse;
+}
+
+.hero_testing_keybinder.hasSecondaryBinding #LabelFXContainer2,.hero_testing_keybinder.hasPrimaryBinding.hasSecondaryBinding .KeybindConjunction
 {
 	visibility: collapse;
 }

@@ -1,0 +1,139 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings_share.vcss" />
+	</styles>
+	<PopupSettingsShare class="PopupPanel Hidden ModeExport" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel class="PopupBackgroundShadow" />
+		<Panel class="PopupBackground" />
+		<Panel class="PopupContent">
+			<Panel id="TitleSection" class="Header">
+				<Label class="Title" text="#citadel_settings_share_popup_title" />
+			</Panel>
+			<Panel id="ModeTabs" class="ModeTabs">
+				<Button id="TabExport" class="ModeTab" onactivate="CitadelSettingsShareSetMode( 0 )">
+					<Label text="#citadel_settings_share_tab_export" />
+				</Button>
+				<Button id="TabImport" class="ModeTab" onactivate="CitadelSettingsShareSetMode( 1 )">
+					<Label text="#citadel_settings_share_tab_import" />
+				</Button>
+			</Panel>
+			<Panel id="ExportSection" class="ShareSection">
+				<Label class="SectionDesc" text="#citadel_settings_share_export_desc" />
+				<Panel id="ScopeSection" class="ScopeSection">
+					<Label class="ScopeTitle" text="#citadel_settings_share_scope_title" />
+					<CitadelDropDown id="ScopeDropDown" onmouseout="UIHideTextTooltip()" />
+					<Panel class="HR1px" />
+				</Panel>
+				<Label class="ScopeTitle" text="#citadel_settings_share_categories_title" />
+				<Panel class="ShareOptions">
+					<CitadelSettingsToggle id="ExportReticle" class="ShareToggle" text="#citadel_settings_share_reticle" onactivate="CitadelSettingsShareExportOptionChanged()" />
+					<CitadelSettingsToggle id="ExportKeybinds" class="ShareToggle" text="#citadel_settings_share_keybinds" onactivate="CitadelSettingsShareExportOptionChanged()" />
+				</Panel>
+				<Panel class="ShareCodeRow">
+					<Label id="ExportCode" class="ShareCodeEntry ShareCodeLabel" allowtextselection="true" />
+					<Label id="ExportEmptyLabel" class="ShareHint" text="#citadel_settings_share_nothing_selected" />
+					<Panel class="ShareCodeButtons">
+						<TextButton id="CopyCodeButton" class="SecondaryButton ShareButton InputButton" text="#citadel_settings_share_copy" onactivate="CitadelSettingsShareCopyCode()">
+							<Label class="CopiedToast" text="#citadel_settings_share_copied" />
+						</TextButton>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="ImportSection" class="ShareSection">
+				<Label class="SectionDesc" text="#citadel_settings_share_import_desc" />
+				<Panel class="ShareCodeRow">
+					<TextEntry id="ImportCode" class="ShareCodeEntry" multiline="true" maxchars="524288" placeholder="#citadel_settings_share_paste_placeholder" />
+					<Panel class="ShareCodeButtons">
+						<TextButton id="PasteCodeButton" class="SecondaryButton ShareButton InputButton" text="#citadel_settings_share_paste_clipboard" onactivate="CitadelSettingsSharePasteClipboard()" />
+					</Panel>
+				</Panel>
+				<Label id="ImportInvalidLabel" class="ShareWarning" text="#citadel_settings_share_invalid_code" />
+				<Panel id="ImportOptions" class="ImportOptions">
+					<Label class="ScopeTitle" text="#citadel_settings_share_contents_title" />
+					<Panel class="ShareSummaryBlock">
+						<Panel class="ShareScopeRow">
+							<Label id="ImportScopeBase" class="ShareSummary ShareSummaryHeader" text="#citadel_settings_share_contents_scope_base" />
+							<Label id="ImportScopeAll" class="ShareSummary ShareSummaryHeader" text="#citadel_settings_share_contents_scope_all:f" />
+							<Panel id="ContentsInfoIcon" class="ShareInfoIcon" />
+						</Panel>
+						<Panel id="ContentsHeroIcons" class="ShareHeroIcons" />
+						<Panel id="ImportSummaryReticleRow" class="ShareSummaryRow">
+							<Label class="ShareSummary ShareCategoryLabel" text="#citadel_settings_share_reticle" />
+							<Label id="ImportSummaryReticle" class="ShareSummary" text="#citadel_settings_share_summary_reticle:f" html="true" />
+							<Label id="ImportSummaryReticleSame" class="ShareSummary" text="#citadel_settings_share_summary_reticle_same:f" />
+							<Label id="ImportSummaryReticleNone" class="ShareSummary" text="#citadel_settings_share_summary_none" />
+						</Panel>
+						<Panel id="ImportSummaryKeybindsRow" class="ShareSummaryRow">
+							<Label class="ShareSummary ShareCategoryLabel" text="#citadel_settings_share_keybinds" />
+							<Label id="ImportSummaryKeybinds" class="ShareSummary" text="#citadel_settings_share_summary_keybinds:f" html="true" />
+							<Label id="ImportSummaryKeybindsSame" class="ShareSummary" text="#citadel_settings_share_summary_keybinds_same:f" />
+							<Label id="ImportSummaryKeybindsNone" class="ShareSummary" text="#citadel_settings_share_summary_none" />
+						</Panel>
+						<Label id="ImportHeroesIgnoredLabel" class="ShareSummary ShareNote" text="#citadel_settings_share_heroes_ignored" html="true" />
+						<Label id="ImportBaseDiffersLabel" class="ShareSummary ShareNote" text="#citadel_settings_share_base_differs" html="true" />
+					</Panel>
+					<Panel class="HR1px" />
+					<Label class="ScopeTitle" text="#citadel_settings_share_apply_title" />
+					<Panel class="ShareOptions">
+						<CitadelSettingsToggle id="ImportReticle" class="ShareToggle" text="#citadel_settings_share_apply_reticle" onactivate="CitadelSettingsShareOptionToggled()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_share_apply_reticle_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+						<CitadelSettingsToggle id="ImportKeybinds" class="ShareToggle" text="#citadel_settings_share_apply_keybinds" onactivate="CitadelSettingsShareOptionToggled()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_share_apply_keybinds_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+						<CitadelSettingsToggle id="ImportBase" class="ShareToggle" text="#citadel_settings_share_apply_base" onactivate="CitadelSettingsShareOptionToggled()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_share_apply_base_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
+						<Label id="ImportBaseAsOverridesLabel" class="ShareHint" text="#citadel_settings_share_base_as_overrides" />
+						<Label id="ImportUnbindsRequiredLabel" class="ShareWarning" text="#citadel_settings_share_warning_unbinds_required" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel id="StatusRow" class="ShareStatus">
+				<Label id="AppliedLabel" class="ShareStatusLabel" text="#citadel_settings_share_applied" />
+				<Label id="RevertedLabel" class="ShareStatusLabel" text="#citadel_settings_share_reverted" />
+			</Panel>
+			<Panel class="ButtonRow">
+				<CitadelBindingButton id="EscapeButton" action="MenuBack" text="#Close" onactivate="UIPopupButtonClicked()" />
+				<Panel class="ButtonWrapper">
+					<Button class="InputButton Fill" id="CloseButton" onactivate="UIPopupButtonClicked()">
+						<Panel class="Bottom" />
+						<Panel class="Top" />
+						<Panel class="Content">
+							<Label text="#Close" />
+						</Panel>
+					</Button>
+				</Panel>
+				<Panel id="UndoButtonWrapper" class="ButtonWrapper">
+					<Button class="InputButton Fill" id="UndoButton" onactivate="CitadelSettingsShareUndo()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_share_undo_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+						<Panel class="Bottom" />
+						<Panel class="Top" />
+						<Panel class="Content">
+							<Label text="#citadel_settings_share_undo" />
+						</Panel>
+					</Button>
+				</Panel>
+				<Panel id="PreviewButtonWrapper" class="ButtonWrapper">
+					<Button class="InputButton Fill" id="PreviewButton" onactivate="CitadelSettingsSharePreviewChanges()">
+						<Panel class="Bottom" />
+						<Panel class="Top" />
+						<Panel class="Content">
+							<Label text="#citadel_settings_share_preview_changes" />
+						</Panel>
+					</Button>
+				</Panel>
+				<Panel id="ApplyButtonWrapper" class="ButtonWrapper">
+					<Button class="InputButtonBorderRadius Fill" id="ApplyButton" onactivate="CitadelSettingsShareApply()">
+						<Panel class="Bottom">
+							<Panel class="Background" />
+						</Panel>
+						<Panel class="Top">
+							<Panel class="Background" />
+						</Panel>
+						<Panel class="Content">
+							<Label text="#citadel_settings_share_apply" />
+						</Panel>
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+	</PopupSettingsShare>
+</root>

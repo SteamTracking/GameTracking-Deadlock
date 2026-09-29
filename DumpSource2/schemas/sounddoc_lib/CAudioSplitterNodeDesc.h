@@ -1,0 +1,3 @@
+class CAudioSplitterNodeDesc : public CVAudioNodeBaseDesc
+{
+};

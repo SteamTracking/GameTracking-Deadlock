@@ -110,7 +110,18 @@
 //		"m_fScale": 0.000000,
 //		"m_fCubemapScale": 1.000000,
 //		"m_fVolumetricScale": 1.000000,
-//		"m_fGradientScale": 1.000000
+//		"m_fGradientScale": 1.000000,
+//		"m_fWaterScale": 0.000000,
+//		"m_fWaterDensity": 0.000000,
+//		"m_fWaterDepthBlurRadius": 0.000000
+//	},
+//	"m_bHasLocalExposureParams": false,
+//	"m_localExposureParams":
+//	{
+//		"m_fShadowOffsetEV": 0.000000,
+//		"m_fHighlightOffsetEV": 0.000000,
+//		"m_fSigma": 0.500000,
+//		"m_fBoostLocalContrast": 0.000000
 //	}
 //}
 class PostProcessingResource_t
@@ -128,4 +139,6 @@ class PostProcessingResource_t
 	bool m_bHasColorCorrection;
 	bool m_bHasFogScatteringParams;
 	PostProcessingFogScatteringParameters_t m_fogScatteringParams;
+	bool m_bHasLocalExposureParams;
+	PostProcessingLocalExposureParameters_t m_localExposureParams;
 };

@@ -38,11 +38,12 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
-//	"m_bDurationReducible": true,
-//	"m_bDurationReducibleByCrowdControlDiminish": true,
+//	"m_bDurationReducible": false,
+//	"m_bDurationReducibleByCrowdControlDiminish": false,
 //	"m_eTimeScaleSource": "MODIFIER_TIME_SCALE_USE_PARENT",
 //	"m_bDurationAffectedByEffectiveness": false,
 //	"m_AG2BaseAction":
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -136,30 +139,32 @@
 //	},
 //	"m_FootstepAdditional": "",
 //	"m_bRemoveOnInterrupted": false,
-//	"m_SlowModifier":
-//	{
-//	},
+//	"m_LinkEffect": "",
+//	"m_eOffsetBasis": "EDragOffset_SourceFacing",
+//	"m_flDragDistance": 40.000000,
+//	"m_flForwardOffset": 0.000000,
+//	"m_flVerticalOffset": 0.000000,
+//	"m_flHorizontalOffset": 0.000000,
+//	"m_ePullModel": "EDragPull_SourceVelocityPlusDistance",
+//	"m_flForceDistScale": 5.000000,
+//	"m_flDampingFactor": 10.000000,
+//	"m_flStuckDistance": 0.000000,
+//	"m_bChaseAtLeastSourceSpeed": true,
+//	"m_bBreakOnParentStunned": true,
+//	"m_bZDownOnly": false,
+//	"m_bLeaveGroundOnlyWhenPullingUp": false,
+//	"m_bApplyDragStateFlagsToEnemies": true,
+//	"m_bZeroVelocityOnEnd": true,
 //	"m_StompIgnoreLingerModifier":
 //	{
 //	},
-//	"m_flForwardOffset": 0.000000,
-//	"m_flVerticalOffset": 0.000000,
-//	"m_flDragDistance": 40.000000,
-//	"m_flForceDistScale": 5.000000,
-//	"m_flWallStunLookAheadDist": 80.000000,
 //	"m_flStompIgnoreLingerDuration": 0.500000
 //}
 // MHasKV3TransferPolymorphicClassname
-class CCitadel_Modifier_LuggageDragVData : public CCitadelModifierVData
+class CCitadel_Modifier_LuggageDragVData : public CCitadel_Modifier_DragVData
 {
 	// MPropertyStartGroup = "Modifiers"
-	CEmbeddedSubclass< CCitadelModifier > m_SlowModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_StompIgnoreLingerModifier;
 	// MPropertyStartGroup = "Gameplay"
-	float32 m_flForwardOffset;
-	float32 m_flVerticalOffset;
-	float32 m_flDragDistance;
-	float32 m_flForceDistScale;
-	float32 m_flWallStunLookAheadDist;
 	float32 m_flStompIgnoreLingerDuration;
 };

@@ -1,0 +1,90 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	citadel_steamaudio_dimension_probes = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					input_steamaudio_dimension_probes_entity_index = 
+					{
+						data_type = "float"
+						value = "-1.0"
+					}
+				}
+			},
+			{
+				name = "get_steamaudio_dimension_probes_group_info"
+				operator = "soundevent_group_info"
+				input_group_result = "@join_steamaudio_dimension_probes_group.output_result"
+			},
+			{
+				name = "check_for_updated_entity_index"
+				operator = "math_float"
+				apply = "not_equal"
+				input1 = "@public.input_steamaudio_dimension_probes_entity_index"
+				input2 = "@get_steamaudio_dimension_probes_group_info.output_branch_match_entity_index"
+			},
+			{
+				name = "quit_group"
+				input_execute = "@check_for_updated_entity_index.output"
+				operator = "soundevent_group_quit"
+				input_group_result = "@join_steamaudio_dimension_probes_group.output_result"
+			},
+			{
+				name = "join_steamaudio_dimension_probes_group"
+				input_execute = "@check_for_updated_entity_index.output"
+				operator = "soundevent_group_join"
+				input_group_name = "steamaudio_dimension_probes"
+				input_entity_index = "@public.input_steamaudio_dimension_probes_entity_index"
+			},
+			{
+				name = "get_group_size_value"
+				operator = "soundevent_group_get_float"
+				input_group_result = "@join_steamaudio_dimension_probes_group.output_result"
+				input_name = "dimension_size"
+			},
+			{
+				name = "get_group_inout_value"
+				operator = "soundevent_group_get_float"
+				input_group_result = "@join_steamaudio_dimension_probes_group.output_result"
+				input_name = "dimension_inout"
+			},
+			{
+				name = "get_group_probes_exist_value"
+				operator = "soundevent_group_get_float"
+				input_group_result = "@join_steamaudio_dimension_probes_group.output_result"
+				input_name = "dimension_probes_found"
+			},
+			{
+				name = "output"
+				operator = "util_null"
+				operator_variables = 
+				{
+					dimension_size = 
+					{
+						data_type = "float"
+						value = "@get_group_size_value.output"
+					}
+					dimension_inout = 
+					{
+						data_type = "float"
+						value = "@get_group_inout_value.output"
+					}
+					dimension_probes_found = 
+					{
+						data_type = "float"
+						value = "@get_group_probes_exist_value.output"
+					}
+				}
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "citadel"
+		}
+	}
+}

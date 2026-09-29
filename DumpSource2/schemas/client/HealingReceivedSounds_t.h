@@ -5,7 +5,8 @@
 //	{
 //	},
 //	"m_nPriority": 1,
-//	"m_strHOTToppedOff": ""
+//	"m_strHOTToppedOff": "",
+//	"m_strHighThresholdOneshot": ""
 //}
 class HealingReceivedSounds_t
 {
@@ -19,4 +20,6 @@ class HealingReceivedSounds_t
 	int32 m_nPriority;
 	// MPropertyDescription = "When a HOT has topped off the player"
 	CSoundEventName m_strHOTToppedOff;
+	// MPropertyDescription = "When a HOT occurs over 95% health"
+	CSoundEventName m_strHighThresholdOneshot;
 };

@@ -7,7 +7,7 @@
 			{
 				name = "_builtins"
 				operator = "sos_builtins"
-				_voicegraph = "citadel.hrtf_basic"
+				_voicegraph = "citadel_hrtf_basic"
 			},
 			{
 				name = "public"
@@ -28,6 +28,11 @@
 					{
 						data_type = "public_opvar"
 						value = "citadel_incrementer"
+					}
+					citadel_source_reverb_send = 
+					{
+						data_type = "public_opvar"
+						value = "citadel_source_reverb_send"
 					}
 					pitch_external = 
 					{
@@ -133,6 +138,37 @@
 							property_group = "Volume"
 							display_group = "Normal"
 							property_help = "Options are 'linear' and 'equal_power'."
+						}
+					}
+					line_text = 
+					{
+						data_type = "string"
+						value = "vo_line_goes_here"
+						_system_properties = 
+						{
+							property_group = "citadel_dialog"
+							display_group = "Normal"
+							property_help = "Optional field to allow VO soundevents to be searched by line text string."
+						}
+					}
+					point_effect_exclusive_processing_enabled = 
+					{
+						data_type = "float"
+						value = "1.0"
+						_system_properties = 
+						{
+							property_group = "Point effect processing"
+							property_help = "Processing applied to sounds that are OUTSIDE a dsp volume when a listener is INSIDE, or the other way around."
+						}
+					}
+					point_effect_inclusive_processing_enabled = 
+					{
+						data_type = "float"
+						value = "1.0"
+						_system_properties = 
+						{
+							property_group = "Point effect processing"
+							property_help = "Processing applied to sounds that share a valid dsp processing volume."
 						}
 					}
 				}
@@ -367,6 +403,85 @@
 				operator = "vmix_voicegraph_input"
 				input_name = "facing"
 				input = "@citadel_base_3d::citadel_facing_atten::output.scaled_val"
+			},
+			{
+				name = "get_opvar_is_local_player_obscured"
+				operator = "opvar_get_float"
+				input_execute = "1.0"
+				input_stack_name = "citadel_global_opvars"
+				input_operator_name = "opvars"
+				input_field_name = "is_local_player_obscured"
+				input_use_namespace = "false"
+			},
+			{
+				name = "obscured_filter"
+				operator = "math_filter_float"
+				input = "@get_opvar_is_local_player_obscured.output"
+				input_max_velocity = "4.0"
+			},
+			{
+				name = "is_obscured_voicegraph_send"
+				input_execute = "1"
+				operator = "vmix_voicegraph_input"
+				input_name = "is_local_player_obscured"
+				input = "@obscured_filter.output"
+			},
+			{
+				name = "import_point_effect_processing"
+				operator = "sos_import_stack"
+				import_stack = "citadel_point_effect_processing"
+				operator_variables = 
+				{
+					emitter_location = 
+					{
+						data_type = "float3"
+						value = "@citadel_base_3d::add_position_offset.output"
+					}
+					exclusive_enabled = 
+					{
+						data_type = "float"
+						value = "@public.point_effect_exclusive_processing_enabled"
+					}
+					inclusive_enabled = 
+					{
+						data_type = "float"
+						value = "@public.point_effect_inclusive_processing_enabled"
+					}
+					send_volume = 
+					{
+						data_type = "float"
+						value = "@citadel_base_3d::volume_filter.output"
+					}
+				}
+			},
+			{
+				name = "citadel_source_reverb_send"
+				operator = "sos_import_stack"
+				import_stack = "citadel_source_reverb_send"
+				auto_connect_public_fields = "true"
+				operator_variables = 
+				{
+					source_reverb_emitter_location = 
+					{
+						data_type = "float3"
+						value = "@citadel_base_3d::add_position_offset.output"
+					}
+					source_reverb_distance = 
+					{
+						data_type = "float"
+						value = "@citadel_base_3d::distance_filter.output"
+					}
+					source_reverb_voice_volume = 
+					{
+						data_type = "float"
+						value = "@citadel_base_3d::math_volume_scale_mixer.output"
+					}
+					source_reverb_mixer_dsp = 
+					{
+						data_type = "float"
+						value = "@citadel_base_3d::mixer.output_dsp"
+					}
+				}
 			},
 			{
 				name = "mono_downmix"

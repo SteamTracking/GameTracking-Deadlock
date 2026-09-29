@@ -17,5 +17,19 @@
 		"Attribute.light_environment.skybouncescale:name_ref"		"Sky Indirect Multiplier"
 		"Attribute.light_environment.skybouncescale:help"		"Scale value for indirect illumination from the sky dome only.<br>
 <img src='game:tools/images/common/icon_error_sm.png' /> Values other than 1.0 disrupt the balance between direct and indirect illumination. Use cautiously"
+		"Attribute.light_environment.directlight:name_ref"		"Direct Lighting Type"
+		"Attribute.light_environment.directlight:help_ref"		"How direct lighting should be represented"
+		"Attribute.light_environment.directlight:help"		"How Direct Lighting will be computed / Stored.
+
+Baked = Light fully baked into lightmaps.  Light will have no specular component.
+Stationary = Light computed at runtime, but shadows for static objects are precomputed.
+Dynamic = Light computed at runtime, shadows are fully dynamic (most expensive on CPU and GPU)"
+		"Attribute.light_environment.bouncelight:name_ref"		"Indirect Light Type"
+		"Attribute.light_environment.bouncelight:help_ref"		"How indirect (bounce) light should be computed"
+		"Attribute.light_environment.bouncelight:help"		"Indirect lighting mode.
+
+Default = Automatically based on Direct Lighting mode.  For Baked + Stationary lights, will be Baked.  For Dynamic, will be None.
+Baked = Indirect light will be baked into the lightmap.
+Dynamic = Indirect light will be computed at realtime"
 	}
 }

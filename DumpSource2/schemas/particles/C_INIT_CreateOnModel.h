@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -185,7 +186,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nHitboxValueFromControlPointIndex": -1,
 //	"m_vecHitBoxScale":
@@ -305,7 +307,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentY":
 //		{
@@ -380,7 +383,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentZ":
 //		{
@@ -455,7 +459,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatInterp":
 //		{
@@ -530,7 +535,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_flInterpInput0": 0.000000,
 //		"m_flInterpInput1": 1.000000,
@@ -684,7 +690,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentY":
 //		{
@@ -759,7 +766,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentZ":
 //		{
@@ -834,7 +842,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatInterp":
 //		{
@@ -909,7 +918,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_flInterpInput0": 0.000000,
 //		"m_flInterpInput1": 1.000000,
@@ -948,6 +958,7 @@
 //	"m_bLocalCoords": false,
 //	"m_bUseBones": false,
 //	"m_bUseMesh": false,
+//	"m_flMeshNormalOffset": 0.000000,
 //	"m_flShellSize":
 //	{
 //		"m_nType": "PF_TYPE_LITERAL",
@@ -1021,9 +1032,11 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	}
 //}
+// MGPUParticleFunction
 // MHasKV3TransferPolymorphicClassname
 class C_INIT_CreateOnModel : public CParticleFunctionInitializer
 {
@@ -1033,6 +1046,7 @@ class C_INIT_CreateOnModel : public CParticleFunctionInitializer
 	// MParticleInputOptional
 	CParticleTransformInput m_transformInput;
 	// MPropertyFriendlyName = "force to be inside model"
+	// MPropertySuppressExpr = "is_gpu_particle_system"
 	int32 m_nForceInModel;
 	// MPropertyFriendlyName = "bias box distribution by volume"
 	bool m_bScaleToVolume;
@@ -1050,15 +1064,21 @@ class C_INIT_CreateOnModel : public CParticleFunctionInitializer
 	float32 m_flMaxBoneVelocity;
 	// MPropertyFriendlyName = "direction bias"
 	// MVectorIsCoordinate
+	// MPropertySuppressExpr = "is_gpu_particle_system"
 	CParticleCollectionVecInput m_vecDirectionBias;
 	// MPropertyFriendlyName = "hitbox set"
 	char[128] m_HitboxSetName;
 	// MPropertyFriendlyName = "bias in local space"
 	bool m_bLocalCoords;
 	// MPropertyFriendlyName = "use bones instead of hitboxes"
+	// MPropertySuppressExpr = "is_gpu_particle_system"
 	bool m_bUseBones;
 	// MPropertyFriendlyName = "Use renderable meshes instead of hitboxes"
 	bool m_bUseMesh;
+	// MPropertyFriendlyName = "offset in units following the mesh's normal's direction"
+	// MPropertySuppressExpr = "!m_bUseMesh"
+	float32 m_flMeshNormalOffset;
 	// MPropertyFriendlyName = "hitbox shell thickness"
+	// MPropertySuppressExpr = "is_gpu_particle_system"
 	CParticleCollectionFloatInput m_flShellSize;
 };

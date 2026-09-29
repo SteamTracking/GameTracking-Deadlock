@@ -1,6 +1,6 @@
-// MNetworkVarNames = "CBaseAnimGraphController m_animationController"
+// MGetKV3ClassDefaults = Could not parse KV3 Defaults
+// MHasKV3TransferPolymorphicClassname
 class CBodyComponentBaseAnimGraph : public CBodyComponentSkeletonInstance
 {
-	// MNetworkEnable
 	CBaseAnimGraphController m_animationController;
 };

@@ -4,7 +4,6 @@
 	{
 		base = "Base.Mod"
 		vsnd_files = "sounds/mods/tech/emp_wave/cast_lyr2.vsnd"
-		vsnd_duration = 1.482771
 	}
 	Mods.Tech.Emp.Wave.Impact = 
 	{
@@ -162,17 +161,17 @@
 	Mods.Tech.Decay.Cast = 
 	{
 		base = "Base.Mod"
-		volume = 5.0
+		volume = 2.0
+		volume_enemy_targeting_boost = 3.0
 		vsnd_files = "sounds/mods/tech/rupture/decay_cast.vsnd"
-		vsnd_duration = 2.572426
+		vsnd_duration = 2.669252
 	}
 	Mods.Tech.Decay.Hit = 
 	{
 		base = "Base.Ability.Hit"
-		volume = 5.0
-		volume_offset_victim_db = 3.0
+		volume = 7.0
 		vsnd_files = "sounds/mods/tech/rupture/decay_impact.vsnd"
-		vsnd_duration = 2.577211
+		vsnd_duration = 1.848934
 	}
 	Mods.Tech.Decay.DeBuff.Lp = 
 	{
@@ -190,19 +189,17 @@
 	{
 		base = "Base.Mod.StatusEffect"
 		volume = -4.0
-		pitch = 0.8
 		volume_offset_opponent = -99.0
 		volume_offset_team = -99.0
-		vsnd_files = "sounds/mods/tech/rupture/decay_impact.vsnd"
-		vsnd_duration = 2.577211
+		vsnd_files = "sounds/mods/tech/rupture/decay_expire.vsnd"
+		vsnd_duration = 2.117143
 	}
 	Mods.Tech.Decay.Proj.Lp = 
 	{
 		base = "Base.Ability.Projectile"
-		volume = -6.0
+		volume = 0.0
 		volume_fade_out = 0.1
 		volume_fade_in = 0.3
-		delay = 0.0
 		pitch = 1.2
 		delay_rand_min = -3.0
 		vsnd_files = "sounds/mods/tech/rupture/decay_proj_lp.vsnd"
@@ -211,7 +208,9 @@
 	Mods.Tech.IceBlast.Cast = 
 	{
 		base = "Base.Mod"
-		volume = 2.0
+		volume = 0.0
+		pitch_rand_min = -0.05
+		pitch_rand_max = 0.1
 		spread_min = 200.0
 		spread_max_value_opponent = 0.5
 		spread_max_value_team = 0.5
@@ -219,7 +218,50 @@
 		spread_max = 400.0
 		spread_min_value = 0.0
 		vsnd_files = "sounds/mods/tech/ice_blast/coldfront_cast.vsnd"
-		vsnd_duration = 2.854036
+		vsnd_duration = 3.506032
+	}
+	Mods.Tech.IceBlast.Hit = 
+	{
+		base = "Base.Ability.Hit"
+		volume = 3.0
+		pitch_rand_min = -0.03
+		pitch_rand_max = 0.03
+		vsnd_files = 
+		[
+			"sounds/mods/tech/ice_blast/coldfront_hit_01.vsnd",
+			"sounds/mods/tech/ice_blast/coldfront_hit_02.vsnd",
+			"sounds/mods/tech/ice_blast/coldfront_hit_03.vsnd",
+		]
+		vsnd_duration = 1.551315
+	}
+	Mods.Tech.Mystic.Burst.Uncharged.Proc = 
+	{
+		base = "Base.Ability.Hit"
+		volume = 4.0
+		pitch_rand_min = -0.02
+		pitch_rand_max = 0.02
+		vsnd_files = 
+		[
+			"sounds/mods/tech/mystic_burst/mystic_burst_uncharged_proc_01.vsnd",
+			"sounds/mods/tech/mystic_burst/mystic_burst_uncharged_proc_02.vsnd",
+			"sounds/mods/tech/mystic_burst/mystic_burst_uncharged_proc_03.vsnd",
+		]
+		vsnd_duration = 1.944286
+	}
+	Mods.Tech.Mystic.Burst.Charged.Proc = 
+	{
+		base = "Base.Ability.Hit"
+		volume = 3.0
+		volume_offset_attacker_db = 3.0
+		pitch_rand_min = -0.02
+		pitch_rand_max = 0.02
+		vsnd_files = 
+		[
+			"sounds/mods/tech/mystic_burst/mystic_burst_charged_proc_01.vsnd",
+			"sounds/mods/tech/mystic_burst/mystic_burst_charged_proc_02.vsnd",
+			"sounds/mods/tech/mystic_burst/mystic_burst_charged_proc_03.vsnd",
+		]
+		vsnd_duration = 2.030522
 	}
 	Mods.Tech.Stasis.End = 
 	{
@@ -260,7 +302,7 @@
 	Mods.Tech.Knockdown.Delay = 
 	{
 		base = "Base.Mod.StatusEffect"
-		volume = -4.0
+		volume = -2.0
 		volume_fade_out = 0.2
 		vsnd_files = "sounds/mods/tech/knockdown/delay.vsnd"
 		vsnd_duration = 3.563016
@@ -283,7 +325,7 @@
 	}
 	Mods.Tech.Knockdown.Cast = 
 	{
-		base = "Base.Mod"
+		base = "Base.Ability.Hit"
 		volume = 2.0
 		vsnd_files = "sounds/mods/tech/knockdown/cast.vsnd"
 		vsnd_duration = 1.765896
@@ -583,11 +625,10 @@
 	}
 	Mods.Tech.TormentPulse.Proc = 
 	{
-		base = "Base.Mod"
-		volume = 0.0
-		pitch_rand_min = -0.1
-		pitch_rand_max = 0.1
-		volume_offset_opponent = 3.0
+		base = "Base.Ability.Hit"
+		volume = 7.0
+		pitch_rand_min = -0.05
+		pitch_rand_max = 0.15
 		vsnd_files = 
 		[
 			"sounds/mods/tech/torment_pulse/tormentpulse_proc_01.vsnd",
@@ -601,52 +642,29 @@
 	}
 	Mods.Tech.LightningScroll.Proc = 
 	{
-		base = "Base.Mod.Detached"
-		volume = -3.0
-		pitch_rand_min = -0.025
-		pitch_rand_max = 0.025
-		limiter_on = 1.0
-		limiter_match_entity = 0.0
-		limiter_max = 7.0
+		base = "Base.Ability.Hit"
+		volume = 1.0
+		pitch_rand_min = -0.02
+		pitch_rand_max = 0.02
+		volume_offset_attacker_db = 2.0
 		vsnd_files = 
 		[
 			"sounds/mods/tech/lightning_scroll/lightning_scroll_proc_01.vsnd",
 			"sounds/mods/tech/lightning_scroll/lightning_scroll_proc_02.vsnd",
 			"sounds/mods/tech/lightning_scroll/lightning_scroll_proc_03.vsnd",
 		]
-		instance_attenuator_enabled = 1.0
-		instance_count_offset_amount_db = 
-		[
-			[
-				0.0, 0.0, 1.083, 1.083,
-				2.0, 3.0,
-			],
-			[
-				1.0, 0.0, -0.311869, -0.311869,
-				2.0, 3.0,
-			],
-			[
-				5.0, -3.0, -2.499061, -2.499061,
-				3.0, 1.0,
-			],
-			[
-				7.0, -9.0, -0.485228, -0.485228,
-				1.0, 1.0,
-			],
-		]
 		vsnd_duration = 3.912109
 	}
-	Mods.Tech.LightningScroll.Timer.Lp = 
+	Mods.Tech.LightningScroll.Timer = 
 	{
 		base = "Base.Mod.StatusEffect"
-		volume = 0.0
-		volume_fade_in = 0.1
+		volume = -1.0
+		volume_fade_in = 0.3
 		volume_fade_out = 0.2
-		param_envelope_enabled = 1.0
-		pitch_envelope_scale_min = 0.6
-		pitch_envelope_scale_max = 1.8
-		vsnd_files = "sounds/mods/tech/lightning_scroll/lightning_scroll_timer_lp.vsnd"
-		vsnd_duration = 3.370317
+		volume_offset_opponent = -99.0
+		volume_offset_team = -99.0
+		vsnd_files = "sounds/mods/tech/lightning_scroll/lightning_scroll_timer.vsnd"
+		vsnd_duration = 4.460885
 	}
 	Mods.Tech.Vacuum.Web.Select = 
 	{
@@ -712,7 +730,7 @@
 	{
 		base = "Base.Mod"
 		volume_enemy_targeting_boost = 4.0
-		volume = -2.0
+		volume = 0.0
 		pitch_rand_min = -0.025
 		pitch_rand_max = 0.025
 		vsnd_files = "sounds/mods/tech/silence_wave/silence_wave_cast.vsnd"
@@ -721,7 +739,7 @@
 	Mods.Tech.Silence.Wave.Projectile.Lp = 
 	{
 		base = "Base.Ability.Projectile"
-		volume = -4.0
+		volume = -2.0
 		volume_fade_in = 0.1
 		volume_fade_out = 0.2
 		vsnd_files = "sounds/mods/tech/silence_wave/silence_wave_proj_lp.vsnd"
@@ -735,26 +753,30 @@
 		pitch_rand_max = 0.07
 		volume = 0.0
 		volume_offset_attacker_db = 3.0
-		vsnd_files = "sounds/mods/tech/silence_wave/silence_wave_hit.vsnd"
+		vsnd_files = 
+		[
+			"sounds/mods/tech/silence_wave/silence_wave_hit_01.vsnd",
+			"sounds/mods/tech/silence_wave/silence_wave_hit_02.vsnd",
+			"sounds/mods/tech/silence_wave/silence_wave_hit_03.vsnd",
+		]
 		vsnd_duration = 2.497075
 	}
 	Mods.Tech.Arctic.Blast.Cast = 
 	{
 		base = "Base.Mod"
-		volume = 0.0
+		volume = 1.0
 		pitch_rand_min = -0.05
 		pitch_rand_max = 0.1
 		spread_max_value_opponent = 0.5
 		spread_max_value_team = 0.5
 		spread_max_value_neutral = 0.5
 		vsnd_files = "sounds/mods/tech/arctic_blast/arctic_blast_cast.vsnd"
-		vsnd_duration = 5.211225
+		vsnd_duration = 5.129388
 	}
 	Mods.Tech.Arctic.Blast.Freeze.Proc = 
 	{
 		base = "Base.Ability.Hit"
 		volume = 6.0
-		volume_offset_attacker_db = 2.0
 		pitch_rand_min = -0.05
 		pitch_rand_max = 0.07
 		limiter_on = 1.0

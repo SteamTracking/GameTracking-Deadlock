@@ -52,6 +52,22 @@
 				input_name = "health_delta_effect"
 				input = "@opvar_get_player_health_delta_effect.output"
 			},
+			{
+				name = "opvar_get_game_mode_internal_temp"
+				operator = "opvar_get_float"
+				input_execute = "1.0"
+				input_stack_name = "citadel_global_opvars"
+				input_operator_name = "opvars"
+				input_field_name = "game_mode_internal_temp"
+			},
+			{
+				name = "set_vmix_param_game_mode_internal_temp"
+				operator = "vmix_mixgraph_input"
+				input_execute = "1.0"
+				execute_once = "false"
+				input_name = "game_mode_internal_temp"
+				input = "@opvar_get_game_mode_internal_temp.output"
+			},
 		]
 		_system_properties = 
 		{
@@ -98,6 +114,26 @@
 						}
 					}
 					min_shop_distance = 
+					{
+						data_type = "float"
+						value = "-1.0"
+						_system_properties = 
+						{
+							property_group = "citadel_global_opvars"
+							display_group = "advanced"
+						}
+					}
+					game_mode_internal_temp = 
+					{
+						data_type = "float"
+						value = "-1.0"
+						_system_properties = 
+						{
+							property_group = "citadel_global_opvars"
+							display_group = "advanced"
+						}
+					}
+					is_local_player_obscured = 
 					{
 						data_type = "float"
 						value = "-1.0"

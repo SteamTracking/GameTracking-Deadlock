@@ -40,6 +40,18 @@
 //	"m_SimdTris":
 //	[
 //	],
+//	"m_Prisms":
+//	[
+//	],
+//	"m_PrismVolumes":
+//	[
+//	],
+//	"m_SimdPrisms":
+//	[
+//	],
+//	"m_SimdPrismVolumes":
+//	[
+//	],
 //	"m_SimdRods":
 //	[
 //	],
@@ -62,6 +74,9 @@
 //	[
 //	],
 //	"m_DynKinLinks":
+//	[
+//	],
+//	"m_BoneMergeLinks":
 //	[
 //	],
 //	"m_AntiTunnelProbes":
@@ -273,6 +288,10 @@ class PhysFeModelDesc_t
 	CUtlVector< FeQuad_t > m_Quads;
 	CUtlVector< FeSimdQuad_t > m_SimdQuads;
 	CUtlVector< FeSimdTri_t > m_SimdTris;
+	CUtlVector< FePrism_t > m_Prisms;
+	CUtlVector< float32 > m_PrismVolumes;
+	CUtlVector< FeSimdPrism_t > m_SimdPrisms;
+	CUtlVector< fltx4 > m_SimdPrismVolumes;
 	CUtlVector< FeSimdRodConstraint_t > m_SimdRods;
 	CUtlVector< FeSimdRodConstraintAnim_t > m_SimdRodsAnim;
 	CUtlVector< CTransform > m_InitPose;
@@ -281,6 +300,7 @@ class PhysFeModelDesc_t
 	CUtlVector< FeHingeLimit_t > m_HingeLimits;
 	CUtlVector< uint32 > m_AntiTunnelBytecode;
 	CUtlVector< FeDynKinLink_t > m_DynKinLinks;
+	CUtlVector< FeBoneMergeLink_t > m_BoneMergeLinks;
 	CUtlVector< FeAntiTunnelProbe_t > m_AntiTunnelProbes;
 	CUtlVector< uint16 > m_AntiTunnelTargetNodes;
 	CUtlVector< FeNodeStrayBox_t > m_NodeStrayBoxes;

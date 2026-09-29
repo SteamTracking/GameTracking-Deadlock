@@ -43,11 +43,11 @@ class C_LocalTempEntity : public CBaseAnimGraph
 	// MNotSaved
 	int32 m_iLastCollisionFrame;
 	// MNotSaved
-	Vector m_vLastCollisionOrigin;
+	VectorWS m_vLastCollisionOrigin;
 	// MNotSaved
 	Vector m_vecTempEntVelocity;
 	// MNotSaved
-	Vector m_vecPrevAbsOrigin;
+	VectorWS m_vecPrevAbsOrigin;
 	// MNotSaved
 	Vector m_vecTempEntAcceleration;
 };

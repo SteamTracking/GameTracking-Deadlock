@@ -4,20 +4,14 @@
 //	],
 //	"m_chanceRare":
 //	{
-//		"m_mapOutcomesToWeights":
-//		{
-//		}
 //	},
 //	"m_chanceEnhanced":
 //	{
-//		"m_mapOutcomesToWeights":
-//		{
-//		}
 //	}
 //}
 class StreetBrawlGameRoundDrafts_t
 {
 	CUtlVector< StreetBrawlItemDraftRoundParams_t > m_vecItemDraftRounds;
-	WeightedChance_t m_chanceRare;
-	WeightedChance_t m_chanceEnhanced;
+	CUtlOrderedMap< int32, float32 > m_chanceRare;
+	CUtlOrderedMap< int32, float32 > m_chanceEnhanced;
 };

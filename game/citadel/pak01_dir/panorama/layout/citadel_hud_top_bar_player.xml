@@ -1,24 +1,24 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/hud_common.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_hud_top_bar.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/hud_common.vcss" />
+		<include src="s2r://panorama/styles/citadel_hud_top_bar.vcss" />
 	</styles>
-	<CitadelHudTopBarPlayer>
+	<CitadelHudTopBarPlayer hittest="false">
 		<GlobalClassListener classes="gDetailView" />
 		<Panel id="PauseIndicator">
 			<Panel id="PauseIcon" />
 			<Label text="#Citadel_Notification_Paused_Title" />
 		</Panel>
 		<Panel class="VoiceBar" />
-		<Panel id="PlayerDetailsContainer" hittest="false" onmouseover="CitadelTopDownScoreboardPlayerHovered();">
+		<Panel id="PlayerDetailsContainer" onmouseover="CitadelTopDownScoreboardPlayerHovered();">
 			<Panel id="KillStreakContainer" hittest="false">
 				<ParticleScenePanel id="KillStreakParticlePanel" particleonly="false" particleName="particles/ui/ui_topbar_killstreak_stylized.vpcf" fov="33" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" />
 				<Panel id="KillStreakText">
 					<Label class="KillStreakNum" text="#kill_hype_KillStreak_count" />
 					<Panel class="KillStreakLabelContainer">
-						<Label class="KillStreakLabel SpreeText TopLine" html="true" text="#kill_hype_KillStreak" />
+						<Label class="KillStreakLabel SpreeText TopLine" html="true" text="#kill_hype_KillStreak:f" />
 						<Label class="KillStreakLabel FirstBlood TopLine" html="true" text="#kill_hype_FirstBlood" />
 					</Panel>
 				</Panel>
@@ -117,5 +117,11 @@
 			<Panel id="LaneSwapIcon" />
 		</CitadelHudTopBarLaneSwapContainer>
 		<Panel id="SpectatePlayerButtonPanel" onmouseover="$.GetContextPanel().AddClass(&apos;SpectateHover&apos;)" onmouseout="$.GetContextPanel().RemoveClass(&apos;SpectateHover&apos;)" />
+		<Panel class="PlayerHeroReleaseVote">
+			<Panel id="BackgroundTexture" />
+			<Panel id="BackgroundTexture2" />
+			<CitadelHeroImage id="HeroReleaseVoteHeroImage" heroimagestyle="vote_sticker" />
+			<Label class="VotedLabel" text="#Citadel_HeroReleaseVote_Voted" />
+		</Panel>
 	</CitadelHudTopBarPlayer>
 </root>

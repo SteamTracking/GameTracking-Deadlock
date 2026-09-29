@@ -34,7 +34,6 @@
 			{
 				name = "set_opvar_value"
 				operator = "opvar_set_float"
-				execute_once = "true"
 				input = "@public.value"
 				input_index = "0"
 				input_stack_name = "@public.stack_name"
@@ -99,6 +98,185 @@
 				operator = "vmix_mixgraph_input"
 				input = "@public.value"
 				input_name = "@public.mixgraph_input"
+			},
+		]
+	}
+	core_setter_ramp_to_value_base = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					start_value = 
+					{
+						data_type = "float"
+						value = "0"
+					}
+					end_value = 
+					{
+						data_type = "float"
+						value = "1"
+					}
+					ramp_time = 
+					{
+						data_type = "float"
+						value = "0.000000"
+					}
+					stack_name = 
+					{
+						data_type = "string"
+						value = "core_global_opvars"
+					}
+					operator_name = 
+					{
+						data_type = "string"
+						value = "opvars"
+					}
+					opvar_name = 
+					{
+						data_type = "string"
+						value = "test"
+					}
+				}
+			},
+			{
+				name = "get_event_info"
+				operator = "soundevent_get_info"
+			},
+			{
+				name = "stop_at_time"
+				operator = "soundevent_control"
+				input_stop_at_time = "@public.ramp_time"
+			},
+			{
+				name = "ramp"
+				operator = "math_remap_float"
+				input = "@get_event_info.output_elapsed_time"
+				input_min = "0.000000"
+				input_max = "@public.ramp_time"
+				input_map_min = "@public.start_value"
+				input_map_max = "@public.end_value"
+				default_to_max = "false"
+			},
+			{
+				name = "prevent_stop"
+				operator = "soundevent_control"
+				input_execute = "@get_event_info.output_unstopped"
+				input_add_dependent = "1.000000"
+			},
+		]
+	}
+	core_setter_ramp_to_value_stack_opvar = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					import_public_opvars = 
+					[
+						"core_setter_ramp_to_value_base",
+						"core_setter_stack_opvar",
+					]
+				}
+			},
+			{
+				name = "import_setter_ramp_to_value_base"
+				operator = "sos_import_stack"
+				import_stack = "core_setter_ramp_to_value_base"
+				auto_connect_public_fields = "true"
+			},
+			{
+				name = "import_core_setter_stack_opvar"
+				operator = "sos_import_stack"
+				import_stack = "core_setter_stack_opvar"
+				auto_connect_public_fields = "true"
+				operator_variables = 
+				{
+					value = 
+					{
+						value = "@import_setter_ramp_to_value_base::ramp.output"
+					}
+				}
+			},
+		]
+	}
+	core_setter_ramp_to_value_mixlayer_amount = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					import_public_opvars = 
+					[
+						"core_setter_ramp_to_value_base",
+						"core_setter_mixlayer_amount",
+					]
+				}
+			},
+			{
+				name = "import_setter_ramp_to_value_base"
+				operator = "sos_import_stack"
+				import_stack = "core_setter_ramp_to_value_base"
+				auto_connect_public_fields = "true"
+			},
+			{
+				name = "import_core_setter_mixlayer_amount"
+				operator = "sos_import_stack"
+				import_stack = "core_setter_mixlayer_amount"
+				auto_connect_public_fields = "true"
+				operator_variables = 
+				{
+					value = 
+					{
+						value = "@import_setter_ramp_to_value_base::ramp.output"
+					}
+				}
+			},
+		]
+	}
+	core_setter_ramp_to_value_mixgraph_input = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					import_public_opvars = 
+					[
+						"core_setter_ramp_to_value_base",
+						"core_setter_mixgraph_input",
+					]
+				}
+			},
+			{
+				name = "import_setter_ramp_to_value_base"
+				operator = "sos_import_stack"
+				import_stack = "core_setter_ramp_to_value_base"
+				auto_connect_public_fields = "true"
+			},
+			{
+				name = "import_core_setter_mixgraph_input"
+				operator = "sos_import_stack"
+				import_stack = "core_setter_mixgraph_input"
+				auto_connect_public_fields = "true"
+				operator_variables = 
+				{
+					value = 
+					{
+						value = "@import_setter_ramp_to_value_base::ramp.output"
+					}
+				}
 			},
 		]
 	}

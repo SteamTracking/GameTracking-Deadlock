@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -144,6 +147,9 @@
 //	"m_EnemyAuraModifier":
 //	{
 //	},
+//	"m_EnemyFreezeAuraModifier":
+//	{
+//	},
 //	"m_strDomeEndSound": "",
 //	"m_strTargetLoopingSound": ""
 //}
@@ -156,6 +162,7 @@ class CCitadel_Modifier_IceDomeVData : public CCitadelModifierVData
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_FriendlyAuraModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_EnemyAuraModifier;
+	CEmbeddedSubclass< CCitadelModifier > m_EnemyFreezeAuraModifier;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strDomeEndSound;
 	// MPropertyGroupName = "Sounds"

@@ -24,6 +24,41 @@ CitadelHud
 	opacity: 0.0;
 }
 
+.HudHiddenPanel
+{
+	visibility: collapse;
+	opacity: 0.0;
+}
+
+CitadelHud.HideOwnHealth #health_and_abilities_container
+{
+	visibility: collapse;
+}
+
+.RadialsRoot
+{
+	width: 100%;
+	height: 100%;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+}
+
+.ShowEscapeMenu .RadialsRoot
+{
+	opacity: 0.0;
+}
+
+.HudTakeoverEnabled .RadialsRoot
+{
+	opacity: 0.0;
+}
+
+.HudHidden .RadialsRoot
+{
+	opacity: 0.0;
+	transition-duration: 0.0s;
+}
+
 .HudTakeovers
 {
 	width: 100%;
@@ -42,6 +77,33 @@ CitadelHud
 .ShowEscapeMenu .HudTakeovers
 {
 	opacity: 0.0;
+}
+
+.HudHidden .HudTakeovers
+{
+	opacity: 0.0;
+}
+
+#HudExperimentsContainer
+{
+	width: 100%;
+	height: 100%;
+	visibility: collapse;
+}
+
+.useHudExperiments #HudExperimentsContainer
+{
+	visibility: visible;
+}
+
+#HudExperimentsContainer .Example
+{
+	vertical-align: center;
+	horizontal-align: center;
+	max-width: 300px;
+	background-color: green;
+	padding: 8px;
+	opacity: 0;
 }
 
 #EscapeMenu
@@ -83,8 +145,12 @@ CitadelHud
 	width: 100%;
 	height: 100%;
 	horizontal-align: center;
-	max-width: 2000px;
 	z-index: 100;
+}
+
+.AspectRatio21x9_clampwidth .clamp_width
+{
+	max-width: 1920px;
 }
 
 #HudEventIndicatorsPanel
@@ -339,6 +405,7 @@ Button:hover
 	horizontal-align: center;
 	margin-right: 1290px;
 	flow-children: none;
+	overflow: noclip;
 	transition-property: margin-left, ui-scale;
 	transition-duration: 0.1s;
 }
@@ -349,7 +416,7 @@ Button:hover
 	transition-duration: 0.1s;
 }
 
-.GameStatePreGame #health_and_abilities_container,.GameStatePreGame #gold_and_ap_container,.GameStatePreGame CitadelHudActivePlayerStats,.GameStatePreGame CitadelHudModifiers,.GameStatePreGame Citadel_AbilityHUDPanels,.GameStatePreGame #StatsAndModsContainer,.GameStatePreGameWait #health_and_abilities_container,.GameStatePreGameWait #gold_and_ap_container,.GameStatePreGameWait #APContainer,.GameStatePreGameWait CitadelHudActivePlayerStats,.GameStatePreGameWait CitadelHudModifiers,.GameStatePreGameWait Citadel_AbilityHUDPanels
+.GameStatePreGame #health_and_abilities_container,.GameStatePreGame #gold_and_ap_container,.GameStatePreGame CitadelHudActivePlayerStats,.GameStatePreGame CitadelHudModifiers,.GameStatePreGame Citadel_AbilityHUDPanels,.GameStatePreGame #StatsAndModsContainer,.GameStatePreGameWait #health_and_abilities_container,.GameStatePreGameWait #gold_and_ap_container,.GameStatePreGameWait #APContainer,.GameStatePreGameWait CitadelHudActivePlayerStats,.GameStatePreGameWait CitadelHudModifiers,.GameStatePreGameWait Citadel_AbilityHUDPanels,.GameStatePreGameWait CitadelHudPlayerStats
 {
 	opacity: 0;
 	transition-property: opacity, transform;
@@ -458,7 +525,7 @@ CitadelHudModifierIcons
 	flow-children: right;
 	vertical-align: bottom;
 	horizontal-align: center;
-	margin-bottom: 280px;
+	margin-bottom: 260px;
 	visibility: collapse;
 }
 
@@ -547,68 +614,94 @@ CitadelHudModifierIcons
 	background-color: #ffff4c50;
 }
 
-#zipline_sign
+#zipline_info
 {
+	flow-children: right;
 	horizontal-align: center;
-	width: 160px;
-	height: 120px;
-	margin-bottom: -20px;
-	z-index: 10;
-	background-image: url("s2r://panorama/images/hud/zipline/ui_sign_york_png.vtex");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+	background-color: offBlack&ee;
+	border-radius: 50px;
+	padding: 8px 24px 8px 14px;
+	margin-bottom: 10px;
+	border: 2px solid offBlack&90;
+	min-width: 300px;
 }
 
-.on_cooldown #zipline_sign
+.on_cooldown #zipline_info
 {
+	opacity: 0.3;
+}
+
+.purpleLane #zipline_info
+{
+	border-color: laneGreenColor;
+}
+
+.blueLane #zipline_info
+{
+	border-color: laneBlueColor;
+}
+
+.yellowLane #zipline_info
+{
+	border-color: laneYellowColor;
+}
+
+#zipline_info .zipline_icon
+{
+	width: 50px;
+	height: 50px;
+	background-size: cover;
+}
+
+.purpleLane #zipline_info .zipline_icon
+{
+	background-image: url("s2r://panorama/images/hud/icon_lane_green.vsvg");
+}
+
+.blueLane #zipline_info .zipline_icon
+{
+	background-image: url("s2r://panorama/images/hud/icon_lane_blue.vsvg");
+}
+
+.yellowLane #zipline_info .zipline_icon
+{
+	background-image: url("s2r://panorama/images/hud/icon_lane_yellow.vsvg");
+}
+
+#zipline_info .zipline_text
+{
+	flow-children: down;
+	vertical-align: middle;
+	margin-left: 10px;
+}
+
+#zipline_info .zipline_name
+{
+	font-size: 30px;
+	font-family: block;
+	vertical-align: middle;
+	color: offBlack;
+	color: offWhite;
+}
+
+#zipline_info .zipline_express
+{
+	font-style: italic;
+	font-weight: semi-bold;
+	font-family: block;
+	text-transform: lowercase;
 	opacity: 0.8;
-	wash-color: #721111cb;
+	color: offBlack;
+	text-align: center;
+	horizontal-align: center;
+	letter-spacing: 15px;
+	visibility: collapse;
+	margin-top: -8px;
 }
 
-.noLane #zipline_sign
+.isExpress #zipline_info .zipline_express
 {
-	visibility:collapse;
-}
-
-.yellowLane #zipline_sign
-{
-	background-image: url("s2r://panorama/images/hud/zipline/ui_sign_york_png.vtex");
-}
-
-.greenLane #zipline_sign
-{
-	background-image: url("s2r://panorama/images/hud/zipline/ui_sign_greenwich_png.vtex");
-}
-
-.blueLane #zipline_sign
-{
-	background-image: url("s2r://panorama/images/hud/zipline/ui_sign_broadway_png.vtex");
-}
-
-.purpleLane #zipline_sign
-{
-	background-image: url("s2r://panorama/images/hud/zipline/ui_sign_park_png.vtex");
-}
-
-.yellowLane.isExpress #zipline_sign
-{
-	background-image: url("s2r://panorama/images/hud/zipline/ui_sign_york_express_png.vtex");
-}
-
-.greenLane.isExpress #zipline_sign
-{
-	background-image: url("s2r://panorama/images/hud/zipline/ui_sign_greenwich_express_png.vtex");
-}
-
-.blueLane.isExpress #zipline_sign
-{
-	background-image: url("s2r://panorama/images/hud/zipline/ui_sign_broadway_express_png.vtex");
-}
-
-.purpleLane.isExpress #zipline_sign
-{
-	background-image: url("s2r://panorama/images/hud/zipline/ui_sign_park_express_png.vtex");
+	visibility: visible;
 }
 
 .action_zip_line
@@ -666,7 +759,7 @@ CitadelHudModifierIcons
 #shop_sign
 {
 	horizontal-align: center;
-	width: 280px;
+	width: 380px;
 	margin-bottom: 10px;
 	z-index: 10;
 }
@@ -681,12 +774,12 @@ CitadelHudModifierIcons
 	visibility: visible;
 }
 
-.action_upgrade,.action_zip_line,.gShopOpen .in_shop_zone .action_upgrade
+.action_upgrade,.action_corrupted_shop,.action_zip_line,.gShopOpen .in_shop_zone .action_upgrade
 {
 	visibility: collapse;
 }
 
-.in_shop_zone .action_upgrade,.alive .can_zip_line .action_zip_line
+.in_shop_zone .action_upgrade,.in_corrupted_shop_zone .action_corrupted_shop,.alive .can_zip_line .action_zip_line
 {
 	visibility: visible;
 }
@@ -812,11 +905,10 @@ CitadelHudModifierIcons
 	horizontal-align: center;
 	margin-bottom: 170px;
 	flow-children: down;
-	border-radius: 3px;
-	background-color: #cf0000ac;
-	background-color: offBlack&ea;
-	padding: 8px 15px;
-	border-radius: 5px;
+	background-color: #780202aa;
+	padding: 4px 10px;
+	opacity-mask: url("s2r://panorama/images/main_menu/text_speckle_mask_main_psd.vtex") 0.7;
+	opacity-mask-scale: 100% 100%;
 }
 
 #cast_failed_box.citadel_ability_zip_line
@@ -837,11 +929,35 @@ CitadelHudModifierIcons
 	margin-bottom: 225px;
 }
 
+@keyframes 'invalid_cast_msg_appear'
+{
+	0%
+	{
+		transform: rotateZ(-20deg);
+		background-color: yellow;
+		opacity: 0;
+	}
+	
+	50%
+	{
+		transform: rotateZ(5deg);
+		pre-transform-scale2d: 1.2;
+		opacity: 1;
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+}
+
 #cast_failed_box.cast_failed
 {
 	opacity: 1;
-	transition-property: opacity;
-	transition-duration: 0.2s;
+	animation-name: invalid_cast_msg_appear;
+	animation-duration: 0.3s;
+	animation-iteration-count: 1;
 }
 
 .InHideout #cast_failed_box.cast_failed
@@ -857,12 +973,13 @@ CitadelHudModifierIcons
 
 #invalid_cast_reason
 {
-	color: rgb(255, 73, 73);
-	font-size: 16px;
+	color: offWhite;
+	color: #ff6b6b;
+	font-size: 18px;
 	text-transform: uppercase;
 	font-weight: semi-bold;
 	font-style: italic;
-	font-family: block;
+	font-family: oracle;
 	opacity: 0.7;
 }
 
@@ -1725,7 +1842,7 @@ CitadelHudModifierIcons
 #minimap_persp
 {
 	width: 440px;
-	height: 440px;
+	height: 520px;
 	margin-bottom: 15px;
 	vertical-align: bottom;
 	horizontal-align: right;
@@ -1734,16 +1851,6 @@ CitadelHudModifierIcons
 	transform: translateX(0px);
 	transition-property: width,height;
 	transition-duration: 0.15s;
-}
-
-.gAbilityUpgradeMenu #minimap_persp,#health_and_abilities_container.gAbilityUpgradeMenu,#StatsAndModsContainer.gAbilityUpgradeMenu
-{
-	opacity: 0.1;
-}
-
-.gAbilityUpgradeMenu ActiveAbilitiesMenu
-{
-	opacity: 0.01;
 }
 
 .GameStatePreGame #minimap_persp,.GameStatePreGameWait #minimap_persp
@@ -1755,29 +1862,101 @@ CitadelHudModifierIcons
 	transition-delay: 1s;
 }
 
+#minimap_location
+{
+	vertical-align: bottom;
+	horizontal-align: center;
+	margin-bottom: 45px;
+	margin-left: 240px;
+	z-index: 1;
+	flow-children: right;
+	background-color: offBlack&ee;
+	padding: 3px 10px;
+	border-radius: 2px;
+	visibility: collapse;
+	transform: rotateZ(-30deg);
+}
+
+#minimap_location .location_district
+{
+	font-family: block;
+	color: offWhite;
+	text-transform: uppercase;
+	font-size: 13px;
+	opacity: 0.8;
+}
+
+#minimap_location .location_building
+{
+	font-family: block;
+	color: offWhite;
+	text-transform: lowercase;
+	opacity: 0.5;
+	font-size: 13px;
+}
+
+.in_map_district #minimap_location
+{
+	visibility: visible;
+}
+
+#MinimapRevealNotif
+{
+	visibility: collapse;
+}
+
+#MinimapRevealNotif.revealed
+{
+	visibility: visible;
+}
+
+#minimap_hints
+{
+	margin: 20px 40px 10px 10px;
+	width: 100%;
+	visibility: collapse;
+}
+
+.gScoreboardOpen #minimap_hints
+{
+	visibility: visible;
+}
+
+#minimap_hints Label
+{
+	ui-scale: 80%;
+	opacity: 0.6;
+	line-height: 180%;
+	text-align: right;
+	horizontal-align: right;
+	font-weight: semi-bold;
+}
+
 #minimap_container
 {
-	width: 380px;
-	height: 380px;
+	margin-top: 80px;
+	width: 400px;
+	height: 400px;
 	vertical-align: center;
 	horizontal-align: center;
 	transition-property: width,height;
 	transition-duration: 0.15s;
 	transform: rotateX(0deg);
-	z-index: 999;
-	border-radius: 50%;
 	overflow: clip;
+	ui-scale: 105%;
+}
+
+.no_minimap #minimap_container
+{
+	visibility: collapse;
 }
 
 #HudMinimapContainer
 {
 	width: 105%;
 	height: 105%;
-	background-color: rgba(0, 0, 0, 0.5);
-	border-radius: 50%;
 	vertical-align: center;
 	horizontal-align: center;
-	world-blur: ingameHudBlur;
 }
 
 .useZoomedMinimap #HudMinimapContainer
@@ -1787,15 +1966,18 @@ CitadelHudModifierIcons
 
 #minimap_frame
 {
-	width: 380px;
-	height: 380px;
+	width: 400px;
+	height: 400px;
 	background-image: url("s2r://panorama/images/minimap/base/minimap_frame_psd.vtex");
+	background-image: url("s2r://panorama/images/minimap/compass_frame_psd.vtex");
+	opacity-mask: url("s2r://panorama/images/minimap/compass_frame_mask_psd.vtex");
 	background-size: contain;
 	horizontal-align: center;
 	vertical-align: middle;
 	opacity: 1;
 	transition-property: width,height;
 	transition-duration: 0.15s;
+	world-blur: ingameHudBlur;
 }
 
 #minimap_frame_lanes
@@ -1810,7 +1992,6 @@ CitadelHudModifierIcons
 {
 	width: 100%;
 	height: 100%;
-	background-color: #0000;
 }
 
 #hud_signature
@@ -1824,7 +2005,6 @@ CitadelHudModifierIcons
 	ui-scale: 90%;
 	transition-property: ui-scale, transform, opacity;
 	transition-duration: 0.1s;
-	border-radius: 2px;
 }
 
 .gShopOpen #hud_signature
@@ -1863,17 +2043,26 @@ CitadelHudModifierIcons
 #ActiveAbilitiesMenu
 {
 	horizontal-align: right;
-	margin-right: 80px;
+	margin-right: 100px;
 }
 
 #CosmeticAbilitiesMenu
 {
-	horizontal-align: right;
+	visibility: visible;
+	horizontal-align: center;
+	margin-right: 430px;
+	opacity: 0.3;
 }
 
 .ExperimentalBranch #CosmeticAbilitiesMenu
 {
 	visibility: collapse;
+}
+
+#HeldAbilitiesMenu
+{
+	visibility: collapse;
+	horizontal-align: right;
 }
 
 #hud_innate
@@ -2126,13 +2315,21 @@ CitadelHudModifierIcons
 
 #damage_meter
 {
-	width: 100px;
+	width: 220px;
+	horizontal-align: right;
 	vertical-align: center;
-	horizontal-align: center;
-	color: rgb( 255, 255, 0 );
-	font-size: 20px;
-	margin-left: 250px;
+	margin-right: 24px;
+	y: -80px;
+	flow-children: down;
+	padding: 10px 14px 12px 14px;
+	border-radius: 6px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #1a1a1ae6 ), to( #0d0d0de6 ) );
+	border: 1px solid #ffefd722;
+	box-shadow: #000000aa 0px 2px 12px 0px;
 	visibility: collapse;
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: 0.25s;
 }
 
 .show_dps_meter #damage_meter
@@ -2140,9 +2337,118 @@ CitadelHudModifierIcons
 	visibility: visible;
 }
 
-.out_of_combat #damage_meter
+.show_dps_meter.out_of_combat #damage_meter
 {
-	color: white;
+	opacity: 0.75;
+}
+
+.damage_meter_header
+{
+	width: 100%;
+	height: 20px;
+}
+
+.damage_meter_status_dot
+{
+	width: 8px;
+	height: 8px;
+	border-radius: 4px;
+	vertical-align: center;
+	background-color: #ff5a3c;
+	box-shadow: #ff5a3c88 0px 0px 6px 0px;
+}
+
+.out_of_combat .damage_meter_status_dot
+{
+	background-color: #ffefd755;
+	box-shadow: none;
+}
+
+.damage_meter_title
+{
+	font-family: block;
+	font-size: 16px;
+	color: baseText;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	vertical-align: center;
+	margin-left: 16px;
+}
+
+.damage_meter_state
+{
+	horizontal-align: right;
+	vertical-align: center;
+	font-size: 13px;
+	text-transform: uppercase;
+	color: #ff5a3c;
+}
+
+.out_of_combat .damage_meter_state
+{
+	visibility: collapse;
+}
+
+.damage_meter_dps_row
+{
+	width: 100%;
+	flow-children: right;
+	margin-top: 4px;
+}
+
+.damage_meter_dps_value
+{
+	font-family: numericBlock;
+	font-size: 44px;
+	color: #ffc85a;
+	text-shadow: 0px 0px 6px 1.0 #ff8c0066;
+}
+
+.out_of_combat .damage_meter_dps_value
+{
+	color: baseText;
+	text-shadow: none;
+}
+
+.damage_meter_dps_unit
+{
+	font-family: block;
+	font-size: 18px;
+	color: #ffefd799;
+	vertical-align: bottom;
+	margin-left: 6px;
+	margin-bottom: 8px;
+}
+
+.damage_meter_divider
+{
+	width: 100%;
+	height: 1px;
+	margin: 4px 0px 6px 0px;
+	background-color: #ffefd722;
+}
+
+.damage_meter_stat_row
+{
+	width: 100%;
+	margin-top: 2px;
+}
+
+.damage_meter_stat_label
+{
+	vertical-align: center;
+	font-size: 15px;
+	color: #ffefd799;
+	text-transform: uppercase;
+}
+
+.damage_meter_stat_value
+{
+	horizontal-align: right;
+	vertical-align: center;
+	font-family: numericSans;
+	font-size: 17px;
+	color: baseText;
 }
 
 #mispredict_indicator
@@ -2165,12 +2471,6 @@ CitadelHudModifierIcons
 #hud_signature
 {
 	transition-property: opacity, transform;
-}
-
-.gAbilityUpgradeMenu #hud_signature
-{
-	opacity: 0;
-	transform: translateY(-100px);
 }
 
 .kill_hype
@@ -2376,12 +2676,7 @@ CitadelTooltipManager
 	visibility: collapse;
 }
 
-.unlock_availabl:not(.ability_radial_keybind_found) #APContainer #UnlockBinding_Scoreboard.APUnlockBinding,.upgrade_reminder:not(.ability_radial_keybind_found) #APContainer #UnlockBinding_Scoreboard.APUnlockBinding
-{
-	visibility: visible;
-}
-
-.ability_radial_keybind_found.unlock_available #APContainer #UnlockBinding_AbilityRadial.APUnlockBinding,.ability_radial_keybind_found.upgrade_reminder #APContainer #UnlockBinding_AbilityRadial.APUnlockBinding
+.unlock_available #APContainer #UnlockBinding_Scoreboard.APUnlockBinding,.upgrade_reminder #APContainer #UnlockBinding_Scoreboard.APUnlockBinding
 {
 	visibility: visible;
 }
@@ -2401,11 +2696,6 @@ CitadelTooltipManager
 	visibility: collapse;
 }
 
-.gAbilityUpgradeMenu #APContainer
-{
-	visibility: collapse;
-}
-
 .APCurrencyIcon
 {
 	width: 16px;
@@ -2414,7 +2704,7 @@ CitadelTooltipManager
 	margin-right: 5px;
 	background-image: url("s2r://panorama/images/hud/ap_icon.vsvg");
 	background-size: contain;
-	wash-color: apCurrencyColor;
+	wash-color: deadlockGreen;
 }
 
 .APCurrencyAmount
@@ -2423,7 +2713,7 @@ CitadelTooltipManager
 	font-weight: bold;
 	vertical-align: middle;
 	horizontal-align: left;
-	color: apCurrencyColor;
+	color: deadlockGreen;
 }
 
 .infiniteMoney .APCurrencyAmount
@@ -2434,7 +2724,7 @@ CitadelTooltipManager
 #hudAPInfinite
 {
 	visibility: collapse;
-	wash-color: spiritLightColor&80;
+	wash-color: deadlockGreen&80;
 }
 
 .infiniteMoney #hudAPInfinite
@@ -2584,7 +2874,7 @@ CitadelTooltipManager
 	visibility: collapse;
 	margin-top: 260px;
 	horizontal-align: center;
-	background-color: #b969ff80;
+	background-color: deadlockGreenDark;
 	border-radius: 4px;
 	width: 240px;
 	height: 24px;
@@ -2604,21 +2894,6 @@ CitadelTooltipManager
 	width: fit-children;
 	height: fit-children;
 	horizontal-align: center;
-}
-
-.ability_radial_keybind_found .scoreboardBindMessages
-{
-	visibility: collapse;
-}
-
-.radialBindMessages
-{
-	visibility: collapse;
-}
-
-.ability_radial_keybind_found .radialBindMessages
-{
-	visibility: visible;
 }
 
 .wants_scoreboard .unlockMessage,.wants_scoreboard .upgradeMessage,.gDetailView .unlockMessage,.gDetailView .upgradeMessage
@@ -2674,11 +2949,6 @@ CitadelTooltipManager
 	height: 20px;
 }
 
-.gAbilityUpgradeMenu .unlockMessage,.gAbilityUpgradeMenu .upgradeMessage
-{
-	opacity: 0;
-}
-
 .unlockMessage .keybind,.upgradeMessage .keybind
 {
 	color: #dab0ff;
@@ -2703,19 +2973,19 @@ CitadelTooltipManager
 	0%
 	{
 		pre-transform-scale2d: 1.2;
-		background-color: #b969ff99;
+		background-color: deadlockGreen;
 	}
 	
 	50%
 	{
 		pre-transform-scale2d: 1;
-		background-color: #b969ff30;
+		background-color: deadlockGreenDark;
 	}
 	
 	100%
 	{
 		pre-transform-scale2d: 1.2;
-		background-color: #b969ff99;
+		background-color: deadlockGreen;
 	}
 	
 }
@@ -2937,7 +3207,12 @@ CitadelHudSandboxTutorial
 	transition-timing-function: ease-out;
 }
 
-#StatsAndModsContainer.gEditingBuilds
+#StatsAndModsContainer.gShopOpen,.gShopOpen.wants_scoreboard #StatsAndModsContainer.gShopOpen
+{
+	margin-bottom: 40px;
+}
+
+#StatsAndModsContainer.gEditingBuilds,.wants_scoreboard #StatsAndModsContainer.gEditingBuilds
 {
 	visibility: collapse;
 }
@@ -2950,31 +3225,14 @@ CitadelHudSandboxTutorial
 	height: 100%;
 }
 
-#StatsAndModsContainer.gShopOpen #LowerLeft
+#LowerLeft .gShopOpen
 {
-	transform: translateY(-36px);
-}
-
-#StatsAndModsContainer.gShopOpen #gold_and_ap_container,#StatsAndModsContainer.gShopOpen .ModsContainer
-{
-	ui-scale: 140%;
-}
-
-.AspectRatio16x10 #StatsAndModsContainer.gShopOpen #gold_and_ap_container,.AspectRatio16x10 #StatsAndModsContainer.gShopOpen .ModsContainer
-{
-	ui-scale: 140%;
+	margin-bottom: 20px;
 }
 
 .AspectRatio21x9 #StatsAndModsContainer
 {
-	max-width: 2000px;
 	horizontal-align: center;
-}
-
-.AspectRatio21x9 #StatsAndModsContainer.gShopOpen #LowerLeft
-{
-	transform: translateX(60px) translateY(-10px);
-	max-width: 2000px;
 }
 
 .replay_playback #StatsAndModsContainer
@@ -3003,19 +3261,12 @@ CitadelHudSandboxTutorial
 	horizontal-align: left;
 	vertical-align: bottom;
 	height: 102px;
-	width: 380px;
+	width: fit-children;
 	margin-bottom: 16px;
-	margin-left: 16px;
+	margin-left: 22px;
 	flow-children: right;
 	visibility: visible;
-	ui-scale: 110%;
-}
-
-.ModsContainer CitadelHudModBarGraph
-{
-	vertical-align: middle;
-	horizontal-align: middle;
-	padding: 0px 6px;
+	ui-scale: 120%;
 }
 
 #BarGraphContainer
@@ -3023,7 +3274,7 @@ CitadelHudSandboxTutorial
 	height: 100%;
 	width: 80px;
 	margin: 2px;
-	visibility: visible;
+	visibility: collapse;
 }
 
 .gShopOpen #BarGraphContainer
@@ -3181,24 +3432,25 @@ CitadelZiplineBoostIcon.gShopOpen
 	visibility: collapse;
 }
 
-#hudPlayerStats
+#hudActivePlayerStats
 {
-	vertical-align: bottom;
-	horizontal-align: left;
-	flow-children: down;
-	margin-bottom: 270px;
-	width: 280px;
-	visibility: collapse;
+	width: 100%;
+	height: 100%;
 }
 
-.replay_playback #hudPlayerStats
+.replay_playback #hudActivePlayerStats
 {
-	margin-bottom: 220px;
+	margin-bottom: 56px;
 }
 
-.player_selected #hudPlayerStats
+#hudActivePlayerStats
 {
 	visibility: visible;
+}
+
+#hudActivePlayerStats.gEditingBuilds
+{
+	visibility: collapse;
 }
 
 .deathReplayActive #TopBar,.deathReplayActive #health_and_abilities_container,.deathReplayActive #DataFeed
@@ -3491,14 +3743,14 @@ CitadelHudSoulAPContainer.ShowGoldAndAPOnHud
 	background-image: url("s2r://panorama/images/minimap/objective_icon_t1.vsvg");
 }
 
-#TopBar,#AbilitiesContainer,#health_and_abilities_container,#StatsAndModsContainer,#minimap_container,#crosshair,#CitadelHudDamageReport,#hudPlayerStats,#HudEventIndicatorsPanel,#hud_hero_testing,#ability_resource
+#TopBar,#AbilitiesContainer,#health_and_abilities_container,#StatsAndModsContainer,#minimap_persp,#crosshair,#CitadelHudDamageReport,#hudActivePlayerStats,#HudEventIndicatorsPanel,#hud_hero_testing,#ability_resource,CitadelHudMovementSpeed
 {
 	transition-property: opacity, pre-transform-scale2d, wash-color;
 	transition-duration: .21s;
 	transition-timing-function: ease-in-out;
 }
 
-.InHideout #TopBar,.InHideout #AbilitiesContainer,.InHideout #health_and_abilities_container,.InHideout #StatsAndModsContainer,.InHideout #minimap_container,.InHideout #crosshair,.InHideout #CitadelHudDamageReport,.InHideout #hudPlayerStats,.InHideout #HudEventIndicatorsPanel,.InHideout #hud_hero_testing,.InHideout #ability_resource
+.InHideout #TopBar,.InHideout #AbilitiesContainer,.InHideout #health_and_abilities_container,.InHideout #StatsAndModsContainer,.InHideout #minimap_persp,.InHideout #crosshair,.InHideout #CitadelHudDamageReport,.InHideout #hudActivePlayerStats,.InHideout #HudEventIndicatorsPanel,.InHideout #hud_hero_testing,.InHideout #ability_resource,.InHideout CitadelHudMovementSpeed
 {
 	opacity: 0;
 	pre-transform-scale2d: .9;
@@ -3567,5 +3819,11 @@ CitadelHudSoulAPContainer.ShowGoldAndAPOnHud
 {
 	width: 100%;
 	height: 100%;
+}
+
+#hudPlayerStats
+{
+	vertical-align: bottom;
+	width: 300px;
 }
 

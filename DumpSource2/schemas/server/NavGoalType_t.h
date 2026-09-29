@@ -1,11 +1,9 @@
-enum NavGoalType_t : uint32_t
+enum NavGoalType_t : uint8_t
 {
-	eNone = 0,
-	eEntity = 1,
-	ePathCorner = 2,
-	eLocation = 3,
-	eCover = 4,
-	eLOS = 5,
-	eCount = 6,
-	eInvalid = 7,
+	eDefault = 0,
+	eCover = 1,
+	eLOS = 2,
+	eBackAway = 3,
+	eCount = 4,
+	eInvalid = 5,
 };

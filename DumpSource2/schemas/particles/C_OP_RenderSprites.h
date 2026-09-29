@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -114,7 +115,6 @@
 //		"m_bRightEye": false
 //	},
 //	"m_bCannotBeRefracted": true,
-//	"m_bSkipRenderingOnMobile": false,
 //	"m_flRadiusScale":
 //	{
 //		"m_nType": "PF_TYPE_LITERAL",
@@ -188,7 +188,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flAlphaScale":
 //	{
@@ -263,7 +264,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flRollScale":
 //	{
@@ -338,7 +340,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nAlpha2Field": 16,
 //	"m_vecColorScale":
@@ -458,7 +461,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentY":
 //		{
@@ -533,7 +537,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentZ":
 //		{
@@ -608,7 +613,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatInterp":
 //		{
@@ -683,7 +689,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_flInterpInput0": 0.000000,
 //		"m_flInterpInput1": 1.000000,
@@ -794,7 +801,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flCenterYOffset":
 //	{
@@ -869,7 +877,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flBumpStrength": 1.000000,
 //	"m_nCropTextureOverride": "PARTICLE_SEQUENCE_CROP_OVERRIDE_DEFAULT",
@@ -952,7 +961,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flMotionVectorScaleV":
 //	{
@@ -1027,7 +1037,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flSelfIllumAmount":
 //	{
@@ -1102,7 +1113,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flDiffuseAmount":
 //	{
@@ -1177,7 +1189,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flDiffuseClamp":
 //	{
@@ -1252,7 +1265,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nLightingControlPoint": -1,
 //	"m_nOutputBlendMode": "PARTICLE_OUTPUT_BLEND_MODE_ALPHA",
@@ -1331,7 +1345,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flDesaturation":
 //	{
@@ -1406,7 +1421,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flOverbrightFactor":
 //	{
@@ -1481,7 +1497,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nHSVShiftControlPoint": -1,
 //	"m_nFogType": "PARTICLE_FOG_GAME_DEFAULT",
@@ -1558,7 +1575,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_bTintByFOW": false,
 //	"m_bTintByGlobalLight": false,
@@ -1638,7 +1656,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flSourceAlphaValueToMapToZero":
 //	{
@@ -1713,7 +1732,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flSourceAlphaValueToMapToOne":
 //	{
@@ -1788,7 +1808,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_bRefract": false,
 //	"m_bRefractSolid": false,
@@ -1866,7 +1887,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nRefractBlurRadius": 0,
 //	"m_nRefractBlurType": "BLURFILTER_GAUSSIAN",
@@ -1955,7 +1977,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flFeatheringMaxDist":
 //	{
@@ -2030,7 +2053,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flFeatheringFilter":
 //	{
@@ -2105,7 +2129,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flFeatheringDepthMapFilter":
 //	{
@@ -2180,7 +2205,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flDepthBias":
 //	{
@@ -2255,7 +2281,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nSortMethod": "PARTICLE_SORTING_NEAREST",
 //	"m_bBlendFramesSeq0": true,
@@ -2333,7 +2360,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_bSequenceNumbersAreRawSequenceIndices": false,
 //	"m_nOrientationType": "PARTICLE_ORIENTATION_SCREEN_ALIGNED",
@@ -2412,7 +2440,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flMaxSize":
 //	{
@@ -2487,13 +2516,14 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
-//	"m_flAlphaAdjustWithSizeAdjust":
+//	"m_flSubPixelAAScale":
 //	{
 //		"m_nType": "PF_TYPE_LITERAL",
 //		"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//		"m_flLiteralValue": 0.000000,
+//		"m_flLiteralValue": 1.000000,
 //		"m_NamedValue": "",
 //		"m_nControlPoint": 0,
 //		"m_nScalarAttribute": 3,
@@ -2562,7 +2592,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flStartFadeSize":
 //	{
@@ -2637,7 +2668,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flEndFadeSize":
 //	{
@@ -2712,7 +2744,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flStartFadeDot": 1.000000,
 //	"m_flEndFadeDot": 2.000000,
@@ -2850,7 +2883,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentY":
 //		{
@@ -2925,7 +2959,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentZ":
 //		{
@@ -3000,7 +3035,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatInterp":
 //		{
@@ -3075,7 +3111,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_flInterpInput0": 0.000000,
 //		"m_flInterpInput1": 1.000000,
@@ -3183,7 +3220,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flLightingDirectionality":
 //	{
@@ -3258,995 +3296,13 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_bParticleShadows": false,
-//	"m_flShadowDensity": 1.000000,
-//	"m_replicationParameters":
-//	{
-//		"m_nReplicationMode": "PARTICLE_REPLICATIONMODE_NONE",
-//		"m_bScaleChildParticleRadii": true,
-//		"m_flMinRandomRadiusScale":
-//		{
-//			"m_nType": "PF_TYPE_LITERAL",
-//			"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//			"m_flLiteralValue": 1.000000,
-//			"m_NamedValue": "",
-//			"m_nControlPoint": 0,
-//			"m_nScalarAttribute": 3,
-//			"m_nVectorAttribute": 6,
-//			"m_nVectorComponent": 0,
-//			"m_bReverseOrder": false,
-//			"m_flRandomMin": 0.000000,
-//			"m_flRandomMax": 1.000000,
-//			"m_bHasRandomSignFlip": false,
-//			"m_nRandomSeed": 0,
-//			"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//			"m_strSnapshotSubset": "",
-//			"m_flLOD0": 0.000000,
-//			"m_flLOD1": 0.000000,
-//			"m_flLOD2": 0.000000,
-//			"m_flLOD3": 0.000000,
-//			"m_nNoiseInputVectorAttribute": 0,
-//			"m_flNoiseOutputMin": 0.000000,
-//			"m_flNoiseOutputMax": 1.000000,
-//			"m_flNoiseScale": 0.100000,
-//			"m_vecNoiseOffsetRate":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_flNoiseOffset": 0.000000,
-//			"m_nNoiseOctaves": 1,
-//			"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//			"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//			"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//			"m_flNoiseTurbulenceScale": 1.000000,
-//			"m_flNoiseTurbulenceMix": 0.500000,
-//			"m_flNoiseImgPreviewScale": 1.000000,
-//			"m_bNoiseImgPreviewLive": true,
-//			"m_flNoCameraFallback": 0.000000,
-//			"m_bUseBoundsCenter": false,
-//			"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//			"m_flMultFactor": 1.000000,
-//			"m_flInput0": 0.000000,
-//			"m_flInput1": 1.000000,
-//			"m_flOutput0": 0.000000,
-//			"m_flOutput1": 1.000000,
-//			"m_flNotchedRangeMin": 0.000000,
-//			"m_flNotchedRangeMax": 1.000000,
-//			"m_flNotchedOutputOutside": 0.000000,
-//			"m_flNotchedOutputInside": 1.000000,
-//			"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//			"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//			"m_flBiasParameter": 0.000000,
-//			"m_Curve":
-//			{
-//				"m_spline":
-//				[
-//				],
-//				"m_tangents":
-//				[
-//				],
-//				"m_vDomainMins":
-//				[
-//					0.000000,
-//					0.000000
-//				],
-//				"m_vDomainMaxs":
-//				[
-//					0.000000,
-//					0.000000
-//				]
-//			}
-//		},
-//		"m_flMaxRandomRadiusScale":
-//		{
-//			"m_nType": "PF_TYPE_LITERAL",
-//			"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//			"m_flLiteralValue": 1.000000,
-//			"m_NamedValue": "",
-//			"m_nControlPoint": 0,
-//			"m_nScalarAttribute": 3,
-//			"m_nVectorAttribute": 6,
-//			"m_nVectorComponent": 0,
-//			"m_bReverseOrder": false,
-//			"m_flRandomMin": 0.000000,
-//			"m_flRandomMax": 1.000000,
-//			"m_bHasRandomSignFlip": false,
-//			"m_nRandomSeed": 0,
-//			"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//			"m_strSnapshotSubset": "",
-//			"m_flLOD0": 0.000000,
-//			"m_flLOD1": 0.000000,
-//			"m_flLOD2": 0.000000,
-//			"m_flLOD3": 0.000000,
-//			"m_nNoiseInputVectorAttribute": 0,
-//			"m_flNoiseOutputMin": 0.000000,
-//			"m_flNoiseOutputMax": 1.000000,
-//			"m_flNoiseScale": 0.100000,
-//			"m_vecNoiseOffsetRate":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_flNoiseOffset": 0.000000,
-//			"m_nNoiseOctaves": 1,
-//			"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//			"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//			"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//			"m_flNoiseTurbulenceScale": 1.000000,
-//			"m_flNoiseTurbulenceMix": 0.500000,
-//			"m_flNoiseImgPreviewScale": 1.000000,
-//			"m_bNoiseImgPreviewLive": true,
-//			"m_flNoCameraFallback": 0.000000,
-//			"m_bUseBoundsCenter": false,
-//			"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//			"m_flMultFactor": 1.000000,
-//			"m_flInput0": 0.000000,
-//			"m_flInput1": 1.000000,
-//			"m_flOutput0": 0.000000,
-//			"m_flOutput1": 1.000000,
-//			"m_flNotchedRangeMin": 0.000000,
-//			"m_flNotchedRangeMax": 1.000000,
-//			"m_flNotchedOutputOutside": 0.000000,
-//			"m_flNotchedOutputInside": 1.000000,
-//			"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//			"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//			"m_flBiasParameter": 0.000000,
-//			"m_Curve":
-//			{
-//				"m_spline":
-//				[
-//				],
-//				"m_tangents":
-//				[
-//				],
-//				"m_vDomainMins":
-//				[
-//					0.000000,
-//					0.000000
-//				],
-//				"m_vDomainMaxs":
-//				[
-//					0.000000,
-//					0.000000
-//				]
-//			}
-//		},
-//		"m_vMinRandomDisplacement":
-//		{
-//			"m_nType": "PVEC_TYPE_LITERAL",
-//			"m_vLiteralValue":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_LiteralColor":
-//			[
-//				0,
-//				0,
-//				0
-//			],
-//			"m_NamedValue": "",
-//			"m_bFollowNamedValue": false,
-//			"m_nVectorAttribute": 6,
-//			"m_vVectorAttributeScale":
-//			[
-//				1.000000,
-//				1.000000,
-//				1.000000
-//			],
-//			"m_nControlPoint": 0,
-//			"m_nDeltaControlPoint": 0,
-//			"m_vCPValueScale":
-//			[
-//				1.000000,
-//				1.000000,
-//				1.000000
-//			],
-//			"m_vCPRelativePosition":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_vCPRelativeDir":
-//			[
-//				1.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_FloatComponentX":
-//			{
-//				"m_nType": "PF_TYPE_LITERAL",
-//				"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//				"m_flLiteralValue": 0.000000,
-//				"m_NamedValue": "",
-//				"m_nControlPoint": 0,
-//				"m_nScalarAttribute": 3,
-//				"m_nVectorAttribute": 6,
-//				"m_nVectorComponent": 0,
-//				"m_bReverseOrder": false,
-//				"m_flRandomMin": 0.000000,
-//				"m_flRandomMax": 1.000000,
-//				"m_bHasRandomSignFlip": false,
-//				"m_nRandomSeed": 0,
-//				"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//				"m_strSnapshotSubset": "",
-//				"m_flLOD0": 0.000000,
-//				"m_flLOD1": 0.000000,
-//				"m_flLOD2": 0.000000,
-//				"m_flLOD3": 0.000000,
-//				"m_nNoiseInputVectorAttribute": 0,
-//				"m_flNoiseOutputMin": 0.000000,
-//				"m_flNoiseOutputMax": 1.000000,
-//				"m_flNoiseScale": 0.100000,
-//				"m_vecNoiseOffsetRate":
-//				[
-//					0.000000,
-//					0.000000,
-//					0.000000
-//				],
-//				"m_flNoiseOffset": 0.000000,
-//				"m_nNoiseOctaves": 1,
-//				"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//				"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//				"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//				"m_flNoiseTurbulenceScale": 1.000000,
-//				"m_flNoiseTurbulenceMix": 0.500000,
-//				"m_flNoiseImgPreviewScale": 1.000000,
-//				"m_bNoiseImgPreviewLive": true,
-//				"m_flNoCameraFallback": 0.000000,
-//				"m_bUseBoundsCenter": false,
-//				"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//				"m_flMultFactor": 1.000000,
-//				"m_flInput0": 0.000000,
-//				"m_flInput1": 1.000000,
-//				"m_flOutput0": 0.000000,
-//				"m_flOutput1": 1.000000,
-//				"m_flNotchedRangeMin": 0.000000,
-//				"m_flNotchedRangeMax": 1.000000,
-//				"m_flNotchedOutputOutside": 0.000000,
-//				"m_flNotchedOutputInside": 1.000000,
-//				"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//				"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//				"m_flBiasParameter": 0.000000,
-//				"m_Curve":
-//				{
-//					"m_spline":
-//					[
-//					],
-//					"m_tangents":
-//					[
-//					],
-//					"m_vDomainMins":
-//					[
-//						0.000000,
-//						0.000000
-//					],
-//					"m_vDomainMaxs":
-//					[
-//						0.000000,
-//						0.000000
-//					]
-//				}
-//			},
-//			"m_FloatComponentY":
-//			{
-//				"m_nType": "PF_TYPE_LITERAL",
-//				"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//				"m_flLiteralValue": 0.000000,
-//				"m_NamedValue": "",
-//				"m_nControlPoint": 0,
-//				"m_nScalarAttribute": 3,
-//				"m_nVectorAttribute": 6,
-//				"m_nVectorComponent": 0,
-//				"m_bReverseOrder": false,
-//				"m_flRandomMin": 0.000000,
-//				"m_flRandomMax": 1.000000,
-//				"m_bHasRandomSignFlip": false,
-//				"m_nRandomSeed": 0,
-//				"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//				"m_strSnapshotSubset": "",
-//				"m_flLOD0": 0.000000,
-//				"m_flLOD1": 0.000000,
-//				"m_flLOD2": 0.000000,
-//				"m_flLOD3": 0.000000,
-//				"m_nNoiseInputVectorAttribute": 0,
-//				"m_flNoiseOutputMin": 0.000000,
-//				"m_flNoiseOutputMax": 1.000000,
-//				"m_flNoiseScale": 0.100000,
-//				"m_vecNoiseOffsetRate":
-//				[
-//					0.000000,
-//					0.000000,
-//					0.000000
-//				],
-//				"m_flNoiseOffset": 0.000000,
-//				"m_nNoiseOctaves": 1,
-//				"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//				"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//				"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//				"m_flNoiseTurbulenceScale": 1.000000,
-//				"m_flNoiseTurbulenceMix": 0.500000,
-//				"m_flNoiseImgPreviewScale": 1.000000,
-//				"m_bNoiseImgPreviewLive": true,
-//				"m_flNoCameraFallback": 0.000000,
-//				"m_bUseBoundsCenter": false,
-//				"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//				"m_flMultFactor": 1.000000,
-//				"m_flInput0": 0.000000,
-//				"m_flInput1": 1.000000,
-//				"m_flOutput0": 0.000000,
-//				"m_flOutput1": 1.000000,
-//				"m_flNotchedRangeMin": 0.000000,
-//				"m_flNotchedRangeMax": 1.000000,
-//				"m_flNotchedOutputOutside": 0.000000,
-//				"m_flNotchedOutputInside": 1.000000,
-//				"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//				"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//				"m_flBiasParameter": 0.000000,
-//				"m_Curve":
-//				{
-//					"m_spline":
-//					[
-//					],
-//					"m_tangents":
-//					[
-//					],
-//					"m_vDomainMins":
-//					[
-//						0.000000,
-//						0.000000
-//					],
-//					"m_vDomainMaxs":
-//					[
-//						0.000000,
-//						0.000000
-//					]
-//				}
-//			},
-//			"m_FloatComponentZ":
-//			{
-//				"m_nType": "PF_TYPE_LITERAL",
-//				"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//				"m_flLiteralValue": 0.000000,
-//				"m_NamedValue": "",
-//				"m_nControlPoint": 0,
-//				"m_nScalarAttribute": 3,
-//				"m_nVectorAttribute": 6,
-//				"m_nVectorComponent": 0,
-//				"m_bReverseOrder": false,
-//				"m_flRandomMin": 0.000000,
-//				"m_flRandomMax": 1.000000,
-//				"m_bHasRandomSignFlip": false,
-//				"m_nRandomSeed": 0,
-//				"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//				"m_strSnapshotSubset": "",
-//				"m_flLOD0": 0.000000,
-//				"m_flLOD1": 0.000000,
-//				"m_flLOD2": 0.000000,
-//				"m_flLOD3": 0.000000,
-//				"m_nNoiseInputVectorAttribute": 0,
-//				"m_flNoiseOutputMin": 0.000000,
-//				"m_flNoiseOutputMax": 1.000000,
-//				"m_flNoiseScale": 0.100000,
-//				"m_vecNoiseOffsetRate":
-//				[
-//					0.000000,
-//					0.000000,
-//					0.000000
-//				],
-//				"m_flNoiseOffset": 0.000000,
-//				"m_nNoiseOctaves": 1,
-//				"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//				"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//				"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//				"m_flNoiseTurbulenceScale": 1.000000,
-//				"m_flNoiseTurbulenceMix": 0.500000,
-//				"m_flNoiseImgPreviewScale": 1.000000,
-//				"m_bNoiseImgPreviewLive": true,
-//				"m_flNoCameraFallback": 0.000000,
-//				"m_bUseBoundsCenter": false,
-//				"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//				"m_flMultFactor": 1.000000,
-//				"m_flInput0": 0.000000,
-//				"m_flInput1": 1.000000,
-//				"m_flOutput0": 0.000000,
-//				"m_flOutput1": 1.000000,
-//				"m_flNotchedRangeMin": 0.000000,
-//				"m_flNotchedRangeMax": 1.000000,
-//				"m_flNotchedOutputOutside": 0.000000,
-//				"m_flNotchedOutputInside": 1.000000,
-//				"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//				"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//				"m_flBiasParameter": 0.000000,
-//				"m_Curve":
-//				{
-//					"m_spline":
-//					[
-//					],
-//					"m_tangents":
-//					[
-//					],
-//					"m_vDomainMins":
-//					[
-//						0.000000,
-//						0.000000
-//					],
-//					"m_vDomainMaxs":
-//					[
-//						0.000000,
-//						0.000000
-//					]
-//				}
-//			},
-//			"m_FloatInterp":
-//			{
-//				"m_nType": "PF_TYPE_LITERAL",
-//				"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//				"m_flLiteralValue": 0.000000,
-//				"m_NamedValue": "",
-//				"m_nControlPoint": 0,
-//				"m_nScalarAttribute": 3,
-//				"m_nVectorAttribute": 6,
-//				"m_nVectorComponent": 0,
-//				"m_bReverseOrder": false,
-//				"m_flRandomMin": 0.000000,
-//				"m_flRandomMax": 1.000000,
-//				"m_bHasRandomSignFlip": false,
-//				"m_nRandomSeed": 0,
-//				"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//				"m_strSnapshotSubset": "",
-//				"m_flLOD0": 0.000000,
-//				"m_flLOD1": 0.000000,
-//				"m_flLOD2": 0.000000,
-//				"m_flLOD3": 0.000000,
-//				"m_nNoiseInputVectorAttribute": 0,
-//				"m_flNoiseOutputMin": 0.000000,
-//				"m_flNoiseOutputMax": 1.000000,
-//				"m_flNoiseScale": 0.100000,
-//				"m_vecNoiseOffsetRate":
-//				[
-//					0.000000,
-//					0.000000,
-//					0.000000
-//				],
-//				"m_flNoiseOffset": 0.000000,
-//				"m_nNoiseOctaves": 1,
-//				"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//				"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//				"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//				"m_flNoiseTurbulenceScale": 1.000000,
-//				"m_flNoiseTurbulenceMix": 0.500000,
-//				"m_flNoiseImgPreviewScale": 1.000000,
-//				"m_bNoiseImgPreviewLive": true,
-//				"m_flNoCameraFallback": 0.000000,
-//				"m_bUseBoundsCenter": false,
-//				"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//				"m_flMultFactor": 1.000000,
-//				"m_flInput0": 0.000000,
-//				"m_flInput1": 1.000000,
-//				"m_flOutput0": 0.000000,
-//				"m_flOutput1": 1.000000,
-//				"m_flNotchedRangeMin": 0.000000,
-//				"m_flNotchedRangeMax": 1.000000,
-//				"m_flNotchedOutputOutside": 0.000000,
-//				"m_flNotchedOutputInside": 1.000000,
-//				"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//				"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//				"m_flBiasParameter": 0.000000,
-//				"m_Curve":
-//				{
-//					"m_spline":
-//					[
-//					],
-//					"m_tangents":
-//					[
-//					],
-//					"m_vDomainMins":
-//					[
-//						0.000000,
-//						0.000000
-//					],
-//					"m_vDomainMaxs":
-//					[
-//						0.000000,
-//						0.000000
-//					]
-//				}
-//			},
-//			"m_flInterpInput0": 0.000000,
-//			"m_flInterpInput1": 1.000000,
-//			"m_vInterpOutput0":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_vInterpOutput1":
-//			[
-//				1.000000,
-//				1.000000,
-//				1.000000
-//			],
-//			"m_Gradient":
-//			{
-//				"m_Stops":
-//				[
-//				]
-//			},
-//			"m_vRandomMin":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_vRandomMax":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			]
-//		},
-//		"m_vMaxRandomDisplacement":
-//		{
-//			"m_nType": "PVEC_TYPE_LITERAL",
-//			"m_vLiteralValue":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_LiteralColor":
-//			[
-//				0,
-//				0,
-//				0
-//			],
-//			"m_NamedValue": "",
-//			"m_bFollowNamedValue": false,
-//			"m_nVectorAttribute": 6,
-//			"m_vVectorAttributeScale":
-//			[
-//				1.000000,
-//				1.000000,
-//				1.000000
-//			],
-//			"m_nControlPoint": 0,
-//			"m_nDeltaControlPoint": 0,
-//			"m_vCPValueScale":
-//			[
-//				1.000000,
-//				1.000000,
-//				1.000000
-//			],
-//			"m_vCPRelativePosition":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_vCPRelativeDir":
-//			[
-//				1.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_FloatComponentX":
-//			{
-//				"m_nType": "PF_TYPE_LITERAL",
-//				"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//				"m_flLiteralValue": 0.000000,
-//				"m_NamedValue": "",
-//				"m_nControlPoint": 0,
-//				"m_nScalarAttribute": 3,
-//				"m_nVectorAttribute": 6,
-//				"m_nVectorComponent": 0,
-//				"m_bReverseOrder": false,
-//				"m_flRandomMin": 0.000000,
-//				"m_flRandomMax": 1.000000,
-//				"m_bHasRandomSignFlip": false,
-//				"m_nRandomSeed": 0,
-//				"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//				"m_strSnapshotSubset": "",
-//				"m_flLOD0": 0.000000,
-//				"m_flLOD1": 0.000000,
-//				"m_flLOD2": 0.000000,
-//				"m_flLOD3": 0.000000,
-//				"m_nNoiseInputVectorAttribute": 0,
-//				"m_flNoiseOutputMin": 0.000000,
-//				"m_flNoiseOutputMax": 1.000000,
-//				"m_flNoiseScale": 0.100000,
-//				"m_vecNoiseOffsetRate":
-//				[
-//					0.000000,
-//					0.000000,
-//					0.000000
-//				],
-//				"m_flNoiseOffset": 0.000000,
-//				"m_nNoiseOctaves": 1,
-//				"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//				"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//				"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//				"m_flNoiseTurbulenceScale": 1.000000,
-//				"m_flNoiseTurbulenceMix": 0.500000,
-//				"m_flNoiseImgPreviewScale": 1.000000,
-//				"m_bNoiseImgPreviewLive": true,
-//				"m_flNoCameraFallback": 0.000000,
-//				"m_bUseBoundsCenter": false,
-//				"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//				"m_flMultFactor": 1.000000,
-//				"m_flInput0": 0.000000,
-//				"m_flInput1": 1.000000,
-//				"m_flOutput0": 0.000000,
-//				"m_flOutput1": 1.000000,
-//				"m_flNotchedRangeMin": 0.000000,
-//				"m_flNotchedRangeMax": 1.000000,
-//				"m_flNotchedOutputOutside": 0.000000,
-//				"m_flNotchedOutputInside": 1.000000,
-//				"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//				"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//				"m_flBiasParameter": 0.000000,
-//				"m_Curve":
-//				{
-//					"m_spline":
-//					[
-//					],
-//					"m_tangents":
-//					[
-//					],
-//					"m_vDomainMins":
-//					[
-//						0.000000,
-//						0.000000
-//					],
-//					"m_vDomainMaxs":
-//					[
-//						0.000000,
-//						0.000000
-//					]
-//				}
-//			},
-//			"m_FloatComponentY":
-//			{
-//				"m_nType": "PF_TYPE_LITERAL",
-//				"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//				"m_flLiteralValue": 0.000000,
-//				"m_NamedValue": "",
-//				"m_nControlPoint": 0,
-//				"m_nScalarAttribute": 3,
-//				"m_nVectorAttribute": 6,
-//				"m_nVectorComponent": 0,
-//				"m_bReverseOrder": false,
-//				"m_flRandomMin": 0.000000,
-//				"m_flRandomMax": 1.000000,
-//				"m_bHasRandomSignFlip": false,
-//				"m_nRandomSeed": 0,
-//				"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//				"m_strSnapshotSubset": "",
-//				"m_flLOD0": 0.000000,
-//				"m_flLOD1": 0.000000,
-//				"m_flLOD2": 0.000000,
-//				"m_flLOD3": 0.000000,
-//				"m_nNoiseInputVectorAttribute": 0,
-//				"m_flNoiseOutputMin": 0.000000,
-//				"m_flNoiseOutputMax": 1.000000,
-//				"m_flNoiseScale": 0.100000,
-//				"m_vecNoiseOffsetRate":
-//				[
-//					0.000000,
-//					0.000000,
-//					0.000000
-//				],
-//				"m_flNoiseOffset": 0.000000,
-//				"m_nNoiseOctaves": 1,
-//				"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//				"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//				"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//				"m_flNoiseTurbulenceScale": 1.000000,
-//				"m_flNoiseTurbulenceMix": 0.500000,
-//				"m_flNoiseImgPreviewScale": 1.000000,
-//				"m_bNoiseImgPreviewLive": true,
-//				"m_flNoCameraFallback": 0.000000,
-//				"m_bUseBoundsCenter": false,
-//				"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//				"m_flMultFactor": 1.000000,
-//				"m_flInput0": 0.000000,
-//				"m_flInput1": 1.000000,
-//				"m_flOutput0": 0.000000,
-//				"m_flOutput1": 1.000000,
-//				"m_flNotchedRangeMin": 0.000000,
-//				"m_flNotchedRangeMax": 1.000000,
-//				"m_flNotchedOutputOutside": 0.000000,
-//				"m_flNotchedOutputInside": 1.000000,
-//				"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//				"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//				"m_flBiasParameter": 0.000000,
-//				"m_Curve":
-//				{
-//					"m_spline":
-//					[
-//					],
-//					"m_tangents":
-//					[
-//					],
-//					"m_vDomainMins":
-//					[
-//						0.000000,
-//						0.000000
-//					],
-//					"m_vDomainMaxs":
-//					[
-//						0.000000,
-//						0.000000
-//					]
-//				}
-//			},
-//			"m_FloatComponentZ":
-//			{
-//				"m_nType": "PF_TYPE_LITERAL",
-//				"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//				"m_flLiteralValue": 0.000000,
-//				"m_NamedValue": "",
-//				"m_nControlPoint": 0,
-//				"m_nScalarAttribute": 3,
-//				"m_nVectorAttribute": 6,
-//				"m_nVectorComponent": 0,
-//				"m_bReverseOrder": false,
-//				"m_flRandomMin": 0.000000,
-//				"m_flRandomMax": 1.000000,
-//				"m_bHasRandomSignFlip": false,
-//				"m_nRandomSeed": 0,
-//				"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//				"m_strSnapshotSubset": "",
-//				"m_flLOD0": 0.000000,
-//				"m_flLOD1": 0.000000,
-//				"m_flLOD2": 0.000000,
-//				"m_flLOD3": 0.000000,
-//				"m_nNoiseInputVectorAttribute": 0,
-//				"m_flNoiseOutputMin": 0.000000,
-//				"m_flNoiseOutputMax": 1.000000,
-//				"m_flNoiseScale": 0.100000,
-//				"m_vecNoiseOffsetRate":
-//				[
-//					0.000000,
-//					0.000000,
-//					0.000000
-//				],
-//				"m_flNoiseOffset": 0.000000,
-//				"m_nNoiseOctaves": 1,
-//				"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//				"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//				"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//				"m_flNoiseTurbulenceScale": 1.000000,
-//				"m_flNoiseTurbulenceMix": 0.500000,
-//				"m_flNoiseImgPreviewScale": 1.000000,
-//				"m_bNoiseImgPreviewLive": true,
-//				"m_flNoCameraFallback": 0.000000,
-//				"m_bUseBoundsCenter": false,
-//				"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//				"m_flMultFactor": 1.000000,
-//				"m_flInput0": 0.000000,
-//				"m_flInput1": 1.000000,
-//				"m_flOutput0": 0.000000,
-//				"m_flOutput1": 1.000000,
-//				"m_flNotchedRangeMin": 0.000000,
-//				"m_flNotchedRangeMax": 1.000000,
-//				"m_flNotchedOutputOutside": 0.000000,
-//				"m_flNotchedOutputInside": 1.000000,
-//				"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//				"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//				"m_flBiasParameter": 0.000000,
-//				"m_Curve":
-//				{
-//					"m_spline":
-//					[
-//					],
-//					"m_tangents":
-//					[
-//					],
-//					"m_vDomainMins":
-//					[
-//						0.000000,
-//						0.000000
-//					],
-//					"m_vDomainMaxs":
-//					[
-//						0.000000,
-//						0.000000
-//					]
-//				}
-//			},
-//			"m_FloatInterp":
-//			{
-//				"m_nType": "PF_TYPE_LITERAL",
-//				"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//				"m_flLiteralValue": 0.000000,
-//				"m_NamedValue": "",
-//				"m_nControlPoint": 0,
-//				"m_nScalarAttribute": 3,
-//				"m_nVectorAttribute": 6,
-//				"m_nVectorComponent": 0,
-//				"m_bReverseOrder": false,
-//				"m_flRandomMin": 0.000000,
-//				"m_flRandomMax": 1.000000,
-//				"m_bHasRandomSignFlip": false,
-//				"m_nRandomSeed": 0,
-//				"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//				"m_strSnapshotSubset": "",
-//				"m_flLOD0": 0.000000,
-//				"m_flLOD1": 0.000000,
-//				"m_flLOD2": 0.000000,
-//				"m_flLOD3": 0.000000,
-//				"m_nNoiseInputVectorAttribute": 0,
-//				"m_flNoiseOutputMin": 0.000000,
-//				"m_flNoiseOutputMax": 1.000000,
-//				"m_flNoiseScale": 0.100000,
-//				"m_vecNoiseOffsetRate":
-//				[
-//					0.000000,
-//					0.000000,
-//					0.000000
-//				],
-//				"m_flNoiseOffset": 0.000000,
-//				"m_nNoiseOctaves": 1,
-//				"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//				"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//				"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//				"m_flNoiseTurbulenceScale": 1.000000,
-//				"m_flNoiseTurbulenceMix": 0.500000,
-//				"m_flNoiseImgPreviewScale": 1.000000,
-//				"m_bNoiseImgPreviewLive": true,
-//				"m_flNoCameraFallback": 0.000000,
-//				"m_bUseBoundsCenter": false,
-//				"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//				"m_flMultFactor": 1.000000,
-//				"m_flInput0": 0.000000,
-//				"m_flInput1": 1.000000,
-//				"m_flOutput0": 0.000000,
-//				"m_flOutput1": 1.000000,
-//				"m_flNotchedRangeMin": 0.000000,
-//				"m_flNotchedRangeMax": 1.000000,
-//				"m_flNotchedOutputOutside": 0.000000,
-//				"m_flNotchedOutputInside": 1.000000,
-//				"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//				"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//				"m_flBiasParameter": 0.000000,
-//				"m_Curve":
-//				{
-//					"m_spline":
-//					[
-//					],
-//					"m_tangents":
-//					[
-//					],
-//					"m_vDomainMins":
-//					[
-//						0.000000,
-//						0.000000
-//					],
-//					"m_vDomainMaxs":
-//					[
-//						0.000000,
-//						0.000000
-//					]
-//				}
-//			},
-//			"m_flInterpInput0": 0.000000,
-//			"m_flInterpInput1": 1.000000,
-//			"m_vInterpOutput0":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_vInterpOutput1":
-//			[
-//				1.000000,
-//				1.000000,
-//				1.000000
-//			],
-//			"m_Gradient":
-//			{
-//				"m_Stops":
-//				[
-//				]
-//			},
-//			"m_vRandomMin":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_vRandomMax":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			]
-//		},
-//		"m_flModellingScale":
-//		{
-//			"m_nType": "PF_TYPE_LITERAL",
-//			"m_nMapType": "PF_MAP_TYPE_DIRECT",
-//			"m_flLiteralValue": 10.000000,
-//			"m_NamedValue": "",
-//			"m_nControlPoint": 0,
-//			"m_nScalarAttribute": 3,
-//			"m_nVectorAttribute": 6,
-//			"m_nVectorComponent": 0,
-//			"m_bReverseOrder": false,
-//			"m_flRandomMin": 0.000000,
-//			"m_flRandomMax": 1.000000,
-//			"m_bHasRandomSignFlip": false,
-//			"m_nRandomSeed": 0,
-//			"m_nRandomMode": "PF_RANDOM_MODE_CONSTANT",
-//			"m_strSnapshotSubset": "",
-//			"m_flLOD0": 0.000000,
-//			"m_flLOD1": 0.000000,
-//			"m_flLOD2": 0.000000,
-//			"m_flLOD3": 0.000000,
-//			"m_nNoiseInputVectorAttribute": 0,
-//			"m_flNoiseOutputMin": 0.000000,
-//			"m_flNoiseOutputMax": 1.000000,
-//			"m_flNoiseScale": 0.100000,
-//			"m_vecNoiseOffsetRate":
-//			[
-//				0.000000,
-//				0.000000,
-//				0.000000
-//			],
-//			"m_flNoiseOffset": 0.000000,
-//			"m_nNoiseOctaves": 1,
-//			"m_nNoiseTurbulence": "PF_NOISE_TURB_NONE",
-//			"m_nNoiseType": "PF_NOISE_TYPE_PERLIN",
-//			"m_nNoiseModifier": "PF_NOISE_MODIFIER_NONE",
-//			"m_flNoiseTurbulenceScale": 1.000000,
-//			"m_flNoiseTurbulenceMix": 0.500000,
-//			"m_flNoiseImgPreviewScale": 1.000000,
-//			"m_bNoiseImgPreviewLive": true,
-//			"m_flNoCameraFallback": 0.000000,
-//			"m_bUseBoundsCenter": false,
-//			"m_nInputMode": "PF_INPUT_MODE_CLAMPED",
-//			"m_flMultFactor": 1.000000,
-//			"m_flInput0": 0.000000,
-//			"m_flInput1": 1.000000,
-//			"m_flOutput0": 0.000000,
-//			"m_flOutput1": 1.000000,
-//			"m_flNotchedRangeMin": 0.000000,
-//			"m_flNotchedRangeMax": 1.000000,
-//			"m_flNotchedOutputOutside": 0.000000,
-//			"m_flNotchedOutputInside": 1.000000,
-//			"m_nRoundType": "PF_ROUND_TYPE_NEAREST",
-//			"m_nBiasType": "PF_BIAS_TYPE_STANDARD",
-//			"m_flBiasParameter": 0.000000,
-//			"m_Curve":
-//			{
-//				"m_spline":
-//				[
-//				],
-//				"m_tangents":
-//				[
-//				],
-//				"m_vDomainMins":
-//				[
-//					0.000000,
-//					0.000000
-//				],
-//				"m_vDomainMaxs":
-//				[
-//					0.000000,
-//					0.000000
-//				]
-//			}
-//		}
-//	}
+//	"m_flShadowDensity": 1.000000
 //}
+// MGPUParticleFunction
 // MHasKV3TransferPolymorphicClassname
 class C_OP_RenderSprites : public CBaseRendererSource2
 {
@@ -4276,9 +3332,10 @@ class C_OP_RenderSprites : public CBaseRendererSource2
 	// MPropertyFriendlyName = "maximum visual screen size"
 	// MPropertySortPriority = 1000
 	CParticleCollectionRendererFloatInput m_flMaxSize;
-	// MPropertyFriendlyName = "Factor to map size adjustment to alpha"
+	// MPropertyFriendlyName = "sub-pixel AA scale"
+	// MPropertySuppressExpr = "mod != hlx"
 	// MPropertySortPriority = 1000
-	CParticleCollectionRendererFloatInput m_flAlphaAdjustWithSizeAdjust;
+	CParticleCollectionRendererFloatInput m_flSubPixelAAScale;
 	// MPropertyFriendlyName = "screen size to start fading"
 	// MPropertySortPriority = 1000
 	CParticleCollectionRendererFloatInput m_flStartFadeSize;
@@ -4362,7 +3419,4 @@ class C_OP_RenderSprites : public CBaseRendererSource2
 	// MPropertySortPriority = 400
 	// MPropertySuppressExpr = "!m_bParticleShadows"
 	float32 m_flShadowDensity;
-	// MPropertyStartGroup = "Replication"
-	// MPropertyFriendlyName = "Replication settings"
-	CReplicationParameters m_replicationParameters;
 };

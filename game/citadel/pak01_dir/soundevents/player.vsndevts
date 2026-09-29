@@ -202,47 +202,33 @@
 		volume_offset_opponent = -4.0
 		volume = 0.0
 		vsnd_files = "sounds/gameplay/jump_pad/jump_pad_wind_01.vsnd"
-		vsnd_duration = 3.46
+		vsnd_duration = 3.045488
 	}
-	Player.Melee.Dash = 
+	Player.Melee.Dash.Ground = 
 	{
-		base = "Base.Movement"
-		pitch = 1.07
-		pitch_rand_min = -0.05
+		base = "Base.Movement.Melee"
+		volume = -4.0
+		volume_fade_out = 0.5
+		volume_offset_player = 12.0
 		play_from_listener_player = 1.0
-		pitch_rand_max = 0.05
+		volume_enemy_targeting_boost = 0.0
+		cone_facing_enabled = 1.0
+		volume_cone_facing_boost_opponent = 6.0
+		cone_facing_boost_min_distance = 500.0
+		cone_facing_boost_max_distance = 1000.0
 		vsnd_files = 
 		[
-			"sounds/player/rolljump/whoosh_01.vsnd",
-			"sounds/player/rolljump/whoosh_02.vsnd",
-			"sounds/player/rolljump/whoosh_03.vsnd",
-			"sounds/player/rolljump/whoosh_04.vsnd",
-			"sounds/player/rolljump/whoosh_05.vsnd",
-			"sounds/player/rolljump/whoosh_06.vsnd",
-			"sounds/player/rolljump/whoosh_07.vsnd",
-			"sounds/player/rolljump/whoosh_08.vsnd",
-			"sounds/player/rolljump/whoosh_09.vsnd",
-			"sounds/player/rolljump/whoosh_10.vsnd",
-			"sounds/player/rolljump/whoosh_11.vsnd",
-			"sounds/player/rolljump/whoosh_12.vsnd",
-			"sounds/player/rolljump/whoosh_13.vsnd",
-			"sounds/player/rolljump/whoosh_14.vsnd",
-			"sounds/player/rolljump/whoosh_15.vsnd",
-			"sounds/player/rolljump/whoosh_16.vsnd",
-			"sounds/player/rolljump/whoosh_17.vsnd",
-			"sounds/player/rolljump/whoosh_18.vsnd",
-			"sounds/player/rolljump/whoosh_19.vsnd",
-			"sounds/player/rolljump/whoosh_20.vsnd",
-			"sounds/player/rolljump/whoosh_21.vsnd",
-			"sounds/player/rolljump/whoosh_22.vsnd",
-			"sounds/player/rolljump/whoosh_23.vsnd",
-			"sounds/player/rolljump/whoosh_24.vsnd",
-			"sounds/player/rolljump/whoosh_25.vsnd",
-			"sounds/player/rolljump/whoosh_26.vsnd",
-			"sounds/player/rolljump/whoosh_27.vsnd",
-			"sounds/player/rolljump/whoosh_28.vsnd",
+			"sounds/player/melee/shared/melee_dash_ground_01.vsnd",
+			"sounds/player/melee/shared/melee_dash_ground_02.vsnd",
+			"sounds/player/melee/shared/melee_dash_ground_03.vsnd",
+			"sounds/player/melee/shared/melee_dash_ground_04.vsnd",
+			"sounds/player/melee/shared/melee_dash_ground_05.vsnd",
 		]
-		vsnd_duration = 1.186875
+		vsnd_duration = 1.77746
+	}
+	Player.Melee.Dash.Air = 
+	{
+		base = "Player.Melee.Dash.Ground"
 	}
 	Player.Jump = 
 	{
@@ -281,7 +267,7 @@
 	}
 	Player.Slide.Exit = 
 	{
-		base = "Base.Movement"
+		base = "Base.Movement.Slide"
 		play_from_listener_player = 1.0
 		volume = -15.0
 		vsnd_files = 
@@ -299,7 +285,7 @@
 	}
 	Player.Slide.Lp = 
 	{
-		base = "Base.Movement"
+		base = "Base.Movement.Slide"
 		play_from_listener_player = 1.0
 		volume = 0.0
 		pitch = 1.1
@@ -315,11 +301,12 @@
 		volume = 0.0
 		vsnd_files = 
 		[
-			"sounds/player/melee/shared/default_impact_1.vsnd",
-			"sounds/player/melee/shared/default_impact_2.vsnd",
-			"sounds/player/melee/shared/default_impact_3.vsnd",
+			"sounds/player/melee/shared/melee_impact_default_01.vsnd",
+			"sounds/player/melee/shared/melee_impact_default_02.vsnd",
+			"sounds/player/melee/shared/melee_impact_default_03.vsnd",
+			"sounds/player/melee/shared/melee_impact_default_04.vsnd",
 		]
-		vsnd_duration = 1.269042
+		vsnd_duration = 0.968186
 	}
 	Player.Melee.Parry.Shared = 
 	{
@@ -351,65 +338,90 @@
 	{
 		base = "Base.Ability"
 		block_volume_min = 0.001
-		pitch = 1.0
 		pitch_rand_max = 0.01
 		pitch_rand_min = -0.01
-		volume = 0.0
-		volume_offset_player = -2.5
-		volume_offset_team = -3.0
-		volume_enemy_targeting_boost = 5.0
+		volume = 4.0
+		volume_offset_player = -4.0
+		volume_offset_team = -6.0
+		volume_enemy_targeting_boost = 0.0
+		cone_facing_enabled = 1.0
+		volume_cone_facing_boost_opponent = 7.0
+		cone_facing_boost_min_distance = 500.0
+		cone_facing_boost_max_distance = 1000.0
 		occlusion_min = 0.5
 		vsnd_files = "sounds/player/melee/shared/charged_melee_full.vsnd"
-		vsnd_duration = 1.454966
+		vsnd_duration = 1.559025
 	}
 	Ability.Melee.Impact.Player = 
 	{
 		base = "Base.Ability.Hit"
-		pitch = 1.25
 		volume = 0.0
 		volume_offset_other_db = -6.0
+		pitch_rand_min = -0.05
+		pitch_rand_max = 0.05
+		filter_include_others = true
 		vsnd_files = 
 		[
-			"sounds/hit_indicators/damage_receive_melee_01.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_02.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_03.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_04.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_05.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_06.vsnd",
+			"sounds/hit_indicators/melee_impact_light_01.vsnd",
+			"sounds/hit_indicators/melee_impact_light_02.vsnd",
+			"sounds/hit_indicators/melee_impact_light_03.vsnd",
+			"sounds/hit_indicators/melee_impact_light_04.vsnd",
+			"sounds/hit_indicators/melee_impact_light_05.vsnd",
+			"sounds/hit_indicators/melee_impact_light_06.vsnd",
 		]
-		vsnd_duration = 1.3722
+		vsnd_duration = 1.105986
 	}
 	Ability.Melee.Impact.Heavy.Player = 
 	{
 		base = "Base.Ability.Hit"
-		volume = 0.0
-		volume_offset_other_db = -6.0
+		volume = 1.0
+		volume_offset_attacker_db = 2.0
+		volume_offset_other_db = -3.0
+		pitch_rand_min = -0.025
+		pitch_rand_max = 0.025
+		filter_include_others = true
 		vsnd_files = 
 		[
-			"sounds/hit_indicators/damage_receive_melee_01.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_02.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_03.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_04.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_05.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_06.vsnd",
+			"sounds/hit_indicators/melee_impact_heavy_01.vsnd",
+			"sounds/hit_indicators/melee_impact_heavy_02.vsnd",
+			"sounds/hit_indicators/melee_impact_heavy_03.vsnd",
+			"sounds/hit_indicators/melee_impact_heavy_04.vsnd",
+			"sounds/hit_indicators/melee_impact_heavy_05.vsnd",
+			"sounds/hit_indicators/melee_impact_heavy_06.vsnd",
 		]
-		vsnd_duration = 1.3722
+		vsnd_duration = 1.127438
 	}
 	Ability.Melee.Impact.NPC = 
 	{
 		base = "Base.Ability.Hit"
-		pitch = 2.0
-		volume = -3.0
+		volume = 0.0
+		volume_offset_other_db = -6.0
+		filter_include_others = true
 		vsnd_files = 
 		[
-			"sounds/hit_indicators/damage_receive_melee_01.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_02.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_03.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_04.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_05.vsnd",
-			"sounds/hit_indicators/damage_receive_melee_06.vsnd",
+			"sounds/hit_indicators/melee_impact_light_01.vsnd",
+			"sounds/hit_indicators/melee_impact_light_02.vsnd",
+			"sounds/hit_indicators/melee_impact_light_03.vsnd",
+			"sounds/hit_indicators/melee_impact_light_04.vsnd",
+			"sounds/hit_indicators/melee_impact_light_05.vsnd",
+			"sounds/hit_indicators/melee_impact_light_06.vsnd",
 		]
-		vsnd_duration = 1.3722
+		vsnd_duration = 1.105986
+	}
+	Ability.Melee.Impact.Heavy.NPC = 
+	{
+		base = "Base.Ability.Hit"
+		volume = 1.0
+		volume_offset_other_db = -3.0
+		filter_include_others = true
+		vsnd_files = 
+		[
+			"sounds/hit_indicators/melee_impact_heavy_npc_01.vsnd",
+			"sounds/hit_indicators/melee_impact_heavy_npc_02.vsnd",
+			"sounds/hit_indicators/melee_impact_heavy_npc_03.vsnd",
+			"sounds/hit_indicators/melee_impact_heavy_npc_04.vsnd",
+		]
+		vsnd_duration = 1.347143
 	}
 	Player.Heal.OverTime.Lp = 
 	{
@@ -464,6 +476,14 @@
 		vsnd_files = "sounds/player/healing_overtime_low_priority_start.vsnd"
 		vsnd_duration = 3.949796
 	}
+	Player.Heal.HighHealth.Start = 
+	{
+		base = "Player.Heal.OverTime.Start"
+		volume = 0.0
+		block_duration = 3.0
+		vsnd_files = "sounds/player/healing_high_health_oneshot.vsnd"
+		vsnd_duration = 2.582268
+	}
 	Player.Heal.OverTime.Stop = 
 	{
 		type = "citadel_health_effects"
@@ -484,10 +504,10 @@
 	Player.Heal.OverTime.TopOff = 
 	{
 		base = "Base.Mod"
-		volume = -13.5
-		block_duration = 1.5
+		volume = -10.0
+		block_duration = 3.0
 		vsnd_files = "sounds/player/healing_overtime_topoff.vsnd"
-		vsnd_duration = 4.202268
+		vsnd_duration = 3.119161
 	}
 	Player.Heal.Burst.Small = 
 	{
@@ -537,7 +557,7 @@
 	}
 	Player.Barrier.Activate = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.StatusEffect"
 		volume = -1.0
 		pitch_rand_max = 0.025
 		vsnd_files = 
@@ -561,7 +581,7 @@
 	Ability.BulletEvade = 
 	{
 		base = "Base.Ability.Hit"
-		volume = -3.0
+		volume = -1.0
 		limiter_max = 1.0
 		vsnd_files = 
 		[
@@ -576,5 +596,16 @@
 			"sounds/abilities/shared/bullet_evade_09.vsnd",
 		]
 		vsnd_duration = 1.761973
+	}
+	Player.Bonk = 
+	{
+		base = "Base.Ability"
+		volume = -1.0
+		pitch_rand_max = 0.025
+		vsnd_files = 
+		[
+			"sounds/ambient/hideout/hideout_bonk.vsnd",
+		]
+		vsnd_duration = 0.628776
 	}
 }

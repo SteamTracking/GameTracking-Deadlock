@@ -5,4 +5,5 @@ enum EHeroSceneStyle : uint32_t
 	TeamReveal = 2,
 	Profile = 3,
 	PostGamePortrait = 4,
+	HeroReveal = 5,
 };

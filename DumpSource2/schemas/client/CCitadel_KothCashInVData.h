@@ -50,6 +50,8 @@
 //	"m_strKothGivingUpWarningLoopSound": "",
 //	"m_strKothContestedLoopSound": "",
 //	"m_strKothCaptureStartAnnounce": "",
+//	"m_flPingTargetRadius": 70.000000,
+//	"m_flPingTargetHeightOffset": 200.000000,
 //	"m_flZoneHeightMeters": 25.000000,
 //	"m_flTotalTimeToCaptureFavored": 10.000000,
 //	"m_flTotalTimeToCaptureUnfavored": 15.000000,
@@ -83,6 +85,9 @@ class CCitadel_KothCashInVData : public CCitadel_MultiCapturePointVData
 	CSoundEventName m_strKothGivingUpWarningLoopSound;
 	CSoundEventName m_strKothContestedLoopSound;
 	CSoundEventName m_strKothCaptureStartAnnounce;
+	// MPropertyStartGroup = "Ping"
+	float32 m_flPingTargetRadius;
+	float32 m_flPingTargetHeightOffset;
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flZoneHeightMeters;
 	float32 m_flTotalTimeToCaptureFavored;

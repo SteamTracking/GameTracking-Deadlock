@@ -1,9 +1,9 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_shop_mods_list.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_shop_mods_build.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_shop_mods_list.vcss" />
+		<include src="s2r://panorama/styles/citadel_shop_mods_build.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="FavoriteBuildEntry">
@@ -18,36 +18,27 @@
 		</snippet>
 	</snippets>
 	<CitadelShopModsBuild class="shopModsBuild" hittest="true">
+		<Panel class="BuildBG" hittest="false" />
+		<Panel id="CategoryContainer" />
 		<Panel class="BuildHeader BuildHeaderShared">
 			<Panel class="BuildHeaderContainer" onactivate="CitadelHudHeroBuildsToggleFavoriteSelector();">
-				<Panel class="FavoriteBuildsSelector" />
 				<Panel id="SelectedBuildOuter" />
 			</Panel>
 			<Panel id="ControlButtons">
-				<Panel id="SaveBuildButton" class="BuildHeaderButton TertiaryButton light fill visibleByDefault EditModeButton" onmouseactivate="CitadelHudHeroBuildsSaveEdits()">
-					<Label text="#Citadel_HeroBuilds_SaveBuild" />
-				</Panel>
-				<Panel id="CancelChangesButton" class="BuildHeaderButton TertiaryButton fill red visibleByDefault EditModeButton" onmouseactivate="CitadelHudHeroBuildsDiscardEdits()">
-					<Label text="#Citadel_HeroBuilds_CancelChanges" />
-				</Panel>
-				<Button id="QueueBuildButton" class="BuildHeaderButton TertiaryButton light hasIcon fill" onmouseactivate="CitadelHudHeroBuildsQuickbuyQueueFullBuild();">
-					<Label class="QueueBuild" text="#Citadel_HeroBuilds_QueueFullBuild" />
-				</Button>
-				<Button id="EditHeroBuildButton" class="BuildHeaderButton TertiaryButton light fill" onactivate="CitadelHudHeroBuildsEditSelectedBuild()">
-					<Label class="EditBuild" text="#Citadel_HeroBuilds_EditBuildLabel" />
-				</Button>
-				<Panel id="CopyBuildButton" class="BuildHeaderButton TertiaryButton light fill hasIcon" onactivate="CitadelHudHeroBuildsCopyAndEditSelectedBuild()">
-					<Label text="#Citadel_HeroBuilds_CopyBuildLabel" html="true" />
-				</Panel>
-				<Button id="BrowseBuildsButton" class="BuildHeaderButton TertiaryButton light hasIcon fill">
-					<Label class="BrowseBuilds" text="#Citadel_HeroBuilds_BrowseBuilds" />
-				</Button>
-				<Button class="AddCategoryButton TertiaryButton light hasIcon fill" onactivate="CitadelHudHeroBuildsAddNewCategory()">
-					<Label text="#Citadel_HeroBuilds_AddCategory" />
-				</Button>
+				<Panel class="BuildDetails InfoIcon" onmouseover="UIShowCustomLayoutTooltip( BuildDetailsTooltip, file://{resources}/layout/tooltips/citadel_tooltip_build_details.xml )" onmouseout="UIHideCustomLayoutTooltip( BuildDetailsTooltip )" />
+				<CitadelButton id="PasteFromClipboardButton" class="HasImage Medium Fill Dark" imagesrc="s2r://panorama/images/icons/icon_copy_paste.vsvg" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_PasteFromClipboard )" onmouseout="UIHideTextTooltip()" onmouseactivate="CitadelHudHeroBuildsPasteBuildFromClipboard();" />
+				<CitadelButton id="CopyToClipboardButton" class="HasImage Medium Fill Dark" imagesrc="s2r://panorama/images/icons/icon_copy_plus.vsvg" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_CopyToClipboard )" onmouseout="UIHideTextTooltip()" onmouseactivate="CitadelCopySelectedBuildContentsToClipboard(0);" />
+				<CitadelButton id="EditHeroBuildButton" class="Medium Fill Dark visibleByDefault EditModeButton" text="#Citadel_HeroBuilds_EditBuildLabel" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_EditBuild )" onmouseout="UIHideTextTooltip()" onmouseactivate="CitadelHudHeroBuildsEditSelectedBuild()" />
+				<CitadelButton id="AddToQueueButton" class="HasImage Medium Fill Dark" text="#Citadel_HeroBuilds_AddToQueue" imagesrc="s2r://panorama/images/icons/icon_quickbuy_queue.vsvg" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_QueueFullBuild )" onmouseout="UIHideTextTooltip()" onmouseactivate="CitadelHudHeroBuildsQuickbuyQueueFullBuild();" />
+				<CitadelButton id="BrowseBuildsButton" class="BuildHeaderButton Medium Dark Fill" text="#Citadel_HeroBuilds_BrowseBuilds" />
+				<CitadelButton class="Medium Dark Fill visibleByDefault EditModeButton" text="#Citadel_HeroBuilds_CompactAll" onmouseover="UIShowTextTooltip( #Citadel_HeroBuilds_CompactAllTooltip )" onmouseout="UIHideTextTooltip()" onmouseactivate="CitadelHudHeroBuildsCompactCategory( -1 )" />
+				<CitadelButton class="AddCategoryButton Medium Dark Fill visibleByDefault EditModeButton" text="#Citadel_HeroBuilds_AddCategory" onmouseactivate="CitadelHudHeroBuildsAddNewCategory()" />
 			</Panel>
 		</Panel>
-		<Panel id="CategoryContainer" />
 		<Panel id="FavoriteBuildList" />
+		<Panel class="ClipboardToast TertiaryButton">
+			<Label class="CopyLabel" text="#Citadel_HeroBuilds_CopyToClipboardToast" />
+			<Label class="PasteLabel" text="#Citadel_HeroBuilds_PasteFromClipboardToast" />
+		</Panel>
 	</CitadelShopModsBuild>
 </root>

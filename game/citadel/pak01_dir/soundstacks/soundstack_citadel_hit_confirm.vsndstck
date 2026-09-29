@@ -7,7 +7,7 @@
 			{
 				name = "_builtins"
 				operator = "sos_builtins"
-				_voicegraph = "citadel.hrtf_basic"
+				_voicegraph = "citadel_hrtf_basic"
 			},
 			{
 				name = "public"
@@ -175,12 +175,23 @@
 					spread_value_victim = 
 					{
 						data_type = "float"
-						value = ".1"
+						value = "1.0"
 						_system_properties = 
 						{
 							display_group = "Normal"
 							property_group = "citadel_damage - Spread"
 							property_help = "The value for spread when viewing the victim."
+						}
+					}
+					spread_value_attacker = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "citadel_damage - Spread"
+							property_help = "The value for spread when viewing the attacker."
 						}
 					}
 					volume_offset_attacker_db = 
@@ -330,7 +341,7 @@
 				execute_once = "true"
 				operator = "ctrl_switch3_float"
 				input_index = "@citadel_damage_info::output.damage_index"
-				input0 = "0.0"
+				input0 = "@public.spread_value_attacker"
 				input1 = "@public.spread_value_victim"
 				input2 = "0.0"
 			},
@@ -404,6 +415,15 @@
 				apply = "add"
 				input1 = "@public.volume"
 				input2 = "@math_volume_npc_offset.output"
+			},
+			{
+				name = "switch_point_effect_enabled"
+				execute_once = "true"
+				operator = "ctrl_switch3_float"
+				input_index = "@citadel_damage_info::output.damage_index"
+				input0 = "1.0"
+				input1 = "0.0"
+				input2 = "1.0"
 			},
 			{
 				name = "citadel_default_3d"
@@ -481,6 +501,11 @@
 					{
 						data_type = "string"
 						value = "@switch_vmix_send.output"
+					}
+					point_effect_exclusive_processing_enabled = 
+					{
+						data_type = "float"
+						value = "@switch_point_effect_enabled.output"
 					}
 				}
 			},

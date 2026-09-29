@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_HornetSting : public C_CitadelBaseAbility
 {
 	int32 m_BounceCount;

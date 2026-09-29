@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -145,7 +148,7 @@
 //	"m_strBeamStartSearchPos": "",
 //	"m_BeamPreviewEffect": "",
 //	"m_BeamActiveEffect": "",
-//	"m_BeamLoopSound": "",
+//	"m_BeamClosestPointLoopSound": "",
 //	"m_BeamFireSound": ""
 //}
 // MHasKV3TransferPolymorphicClassname
@@ -162,6 +165,6 @@ class CCitadelModifierTier2BossLaserBeamVData : public CCitadelModifierVData
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_BeamPreviewEffect;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_BeamActiveEffect;
 	// MPropertyStartGroup = "Sounds"
-	CSoundEventName m_BeamLoopSound;
+	CSoundEventName m_BeamClosestPointLoopSound;
 	CSoundEventName m_BeamFireSound;
 };

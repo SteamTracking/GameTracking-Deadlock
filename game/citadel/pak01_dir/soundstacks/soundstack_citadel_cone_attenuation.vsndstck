@@ -1,0 +1,223 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	citadel_cone_attenuation = 
+	{
+		operators = 
+		[
+			{
+				name = "_builtins"
+				operator = "sos_builtins"
+				_voicegraph = "citadel_hrtf_basic"
+			},
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					cone_facing_enabled = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Volume"
+							property_help = "Turn on calculations for emitter facing cone volume attenuation."
+						}
+					}
+					emitter_distance = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Locked"
+							property_group = "Volume"
+							property_help = "Distance to emitter. Set in base_3d."
+						}
+					}
+					emitter_occlusion = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Locked"
+							property_group = "Volume"
+							property_help = "Occlusion value of emitter. Set in base_3d."
+						}
+					}
+					emitter_vector_forward = 
+					{
+						data_type = "float3"
+						value = "[ 0.f, 0.f, 0.f]"
+						_system_properties = 
+						{
+							display_group = "Locked"
+							property_group = "Volume"
+							property_help = "Vector forward position of emitter. Set in base_3d."
+						}
+					}
+					emitter_vector_output_position = 
+					{
+						data_type = "float3"
+						value = "[ 0.f, 0.f, 0.f]"
+						_system_properties = 
+						{
+							display_group = "Locked"
+							property_group = "Normal"
+							property_help = "Vector output position of emitter. Set in base_3d."
+						}
+					}
+					volume_cone_facing_boost = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Volume"
+							property_help = "Volume in db that will boost this sound if its owning entity is facing the local player within the angles of the defined cone."
+						}
+					}
+					cone_facing_boost_min_distance = 
+					{
+						data_type = "float"
+						value = "250.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Volume"
+							property_help = "Distance at which the volume boost doesn't attenuate."
+						}
+					}
+					cone_facing_boost_max_distance = 
+					{
+						data_type = "float"
+						value = "1000.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Volume"
+							property_help = "Distance at which the volume boost is fully attenuated."
+						}
+					}
+					cone_facing_inner_angle = 
+					{
+						data_type = "float"
+						value = "0.9"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Relevance"
+							property_help = "The angle of the inner cone. If the sound is within the inner cone angle, the facing boost is applied."
+						}
+					}
+					cone_facing_outer_angle = 
+					{
+						data_type = "float"
+						value = "0.7"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Relevance"
+							property_help = "The angle of the outer cone. If the sound is between the outer angle and inner angle, the facing boost is attenuated from a scalar of 1-0 for a fade effect."
+						}
+					}
+				}
+			},
+			{
+				name = "opvar_get_viewing_pawn_position"
+				operator = "opvar_get_float3"
+				input_execute = "@public.cone_facing_enabled"
+				input_stack_name = "citadel_relevance_opvars"
+				input_operator_name = "opvars"
+				input_field_name = "viewing_entity_position"
+			},
+			{
+				name = "math_dot_product_source_direction"
+				input_execute = "@public.cone_facing_enabled"
+				operator = "vector_facing_point"
+				input_vec_forward = "@public.emitter_vector_forward"
+				input_listener_position = "@public.emitter_vector_output_position"
+				input_source_position = "@opvar_get_viewing_pawn_position.output"
+			},
+			{
+				name = "remap_outer_cone_scalar"
+				operator = "math_remap_float"
+				input_execute = "@public.cone_facing_enabled"
+				input = "@math_dot_product_source_direction.output"
+				input_min = "@public.cone_facing_outer_angle"
+				input_max = "@public.cone_facing_inner_angle"
+				input_map_min = "0.0"
+				input_map_max = "1.0"
+				default_to_max = "true"
+			},
+			{
+				name = "math_attenuate_volume_boost_by_outer"
+				input_execute = "@public.cone_facing_enabled"
+				operator = "math_float"
+				apply = "mult"
+				input1 = "@public.volume_cone_facing_boost"
+				input2 = "@remap_outer_cone_scalar.output"
+			},
+			{
+				name = "remap_distance_scalar"
+				operator = "math_remap_float"
+				input_execute = "@public.cone_facing_enabled"
+				input = "@public.emitter_distance"
+				input_min = "@public.cone_facing_boost_min_distance"
+				input_max = "@public.cone_facing_boost_max_distance"
+				input_map_min = "1.0"
+				input_map_max = "0.0"
+				default_to_max = "false"
+			},
+			{
+				name = "math_mult_volume_scalars"
+				input_execute = "@public.cone_facing_enabled"
+				operator = "math_float"
+				apply = "mult"
+				input1 = "@math_attenuate_volume_boost_by_outer.output"
+				input2 = "@remap_distance_scalar.output"
+			},
+			{
+				name = "math_check_occlusion"
+				input_execute = "@public.cone_facing_enabled"
+				operator = "math_float"
+				apply = "equal"
+				input1 = "@public.emitter_occlusion"
+				input2 = "1.0"
+			},
+			{
+				name = "math_mult_boost_enabled"
+				input_execute = "@public.cone_facing_enabled"
+				operator = "math_float"
+				apply = "mult"
+				input1 = "@math_check_occlusion.output"
+				input2 = "@math_mult_volume_scalars.output"
+			},
+			{
+				name = "volume_cone_facing_to_gain"
+				input_execute = "@public.cone_facing_enabled"
+				operator = "math_db_to_gain"
+				input = "@math_mult_boost_enabled.output"
+			},
+			{
+				name = "output"
+				operator = "util_null"
+				operator_variables = 
+				{
+					cone_attenuation_volume_boost = 
+					{
+						data_type = "float"
+						value = "@volume_cone_facing_to_gain.output"
+					}
+				}
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "citadel"
+		}
+	}
+}

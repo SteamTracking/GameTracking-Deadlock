@@ -3,6 +3,7 @@
 //	"m_eAttachmentType": "PATTACH_INVALID",
 //	"m_strAttachmentName": ""
 //}
+// MPropertyFriendlyName = "Citadel Ambient Particle Settings"
 class AmbientParticleSettings_t
 {
 	int32 m_nCP;

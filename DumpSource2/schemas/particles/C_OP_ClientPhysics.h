@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -114,7 +115,6 @@
 //		"m_bRightEye": false
 //	},
 //	"m_bCannotBeRefracted": true,
-//	"m_bSkipRenderingOnMobile": false,
 //	"m_strPhysicsType": "",
 //	"m_bStartAsleep": false,
 //	"m_flPlayerWakeRadius":
@@ -190,7 +190,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flVehicleWakeRadius":
 //	{
@@ -265,7 +266,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_bUseHighQualitySimulation": false,
 //	"m_nMaxParticleCount": 25000,
@@ -275,7 +277,9 @@
 //	"m_nControlPoint": 0,
 //	"m_nForcedSimId": -1,
 //	"m_nColorBlendType": "PARTICLE_COLOR_BLEND_MULTIPLY",
-//	"m_nForcedStatusEffects": ""
+//	"m_nForcedStatusEffects": "",
+//	"m_nNoCollisionAttribute": 18,
+//	"m_nZeroGravityAttribute": 26
 //}
 // MHasKV3TransferPolymorphicClassname
 class C_OP_ClientPhysics : public CParticleFunctionRenderer
@@ -311,4 +315,12 @@ class C_OP_ClientPhysics : public CParticleFunctionRenderer
 	ParticleColorBlendType_t m_nColorBlendType;
 	// MPropertyFriendlyName = "forced status effect flags"
 	ParticleAttrBoxFlags_t m_nForcedStatusEffects;
+	// MPropertyFriendlyName = "Disable Non-Static Collision Duration"
+	// MPropertyAttributeChoiceName = "particlefield_scalar"
+	// MPropertySuppressExpr = "m_nForcedStatusEffects == 0"
+	ParticleAttributeIndex_t m_nNoCollisionAttribute;
+	// MPropertyFriendlyName = "Zero Gravity Duration"
+	// MPropertyAttributeChoiceName = "particlefield_scalar"
+	// MPropertySuppressExpr = "m_nForcedStatusEffects == 0"
+	ParticleAttributeIndex_t m_nZeroGravityAttribute;
 };

@@ -1,6 +1,18 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CPulseCell_IntervalTimer",
 //	"m_nEditorNodeID": -1,
+//	"m_BaseFlow_OnAfterCancel":
+//	{
+//		"m_SourceOutflowName": "",
+//		"m_nDestChunk": -1,
+//		"m_nInstruction": -1
+//	},
+//	"m_BaseFlow_WhileActive":
+//	{
+//		"m_SourceOutflowName": "",
+//		"m_nDestChunk": -1,
+//		"m_nInstruction": -1
+//	},
 //	"m_Completed":
 //	{
 //		"m_SourceOutflowName": "",
@@ -17,6 +29,7 @@
 // MPropertyFriendlyName = "Interval Timer"
 // MPropertyDescription = "Wait for a duration, firing a child cursor at regular (or randomized) intervals"
 // MPulseEditorHeaderIcon = "tools/images/pulse_editor/node_timer.png"
+// MPulseEditorCanvasItemSpecKV3 = "{ item_factory = 'IntervalTimer' }"
 // MHasKV3TransferPolymorphicClassname
 class CPulseCell_IntervalTimer : public CPulseCell_BaseYieldingInflow
 {

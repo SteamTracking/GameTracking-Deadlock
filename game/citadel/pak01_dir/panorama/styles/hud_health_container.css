@@ -6,6 +6,7 @@
 	height: 100%;
 	width: 100%;
 	opacity: 1;
+	overflow: noclip;
 }
 
 #hud_health_bars
@@ -35,15 +36,14 @@
 
 #HealthRegenAndTotal
 {
-	width: 115px;
+	width: 250px;
 	height: 254px;
-	horizontal-align: right;
+	horizontal-align: center;
 	ignore-parent-flow: true;
 	vertical-align: top;
-	margin-top: 5px;
-	margin-right: 10px;
 	transform: rotateZ(-10deg);
 	visibility: collapse;
+	overflow: noclip;
 }
 
 .view_is_in_eye.player_selected #HealthRegenAndTotal
@@ -57,6 +57,7 @@
 	vertical-align: top;
 	ignore-parent-flow: true;
 	visibility: collapse;
+	horizontal-align: right;
 }
 
 .healthContainer
@@ -67,7 +68,7 @@
 	z-index: 100;
 	width: 100px;
 	height: 65px;
-	margin-right: 10px;
+	margin-right: 15px;
 	flow-children: down;
 }
 
@@ -95,11 +96,12 @@
 {
 	flow-children: down;
 	horizontal-align: left;
-	margin-left: 35px;
+	margin-left: 0px;
 	visibility: collapse;
 	margin-bottom: 5px;
 	vertical-align: top;
-	margin-top: 30px;
+	margin-top: 50px;
+	margin-left: 165px;
 }
 
 .healCountersActive #RecentHealContainer
@@ -133,8 +135,8 @@
 
 .healCounterIcon
 {
-	width: 16px;
-	height: 16px;
+	width: 14px;
+	height: 14px;
 	margin-right: 5px;
 	vertical-align: center;
 }
@@ -143,16 +145,40 @@
 {
 	flow-children: down;
 	horizontal-align: left;
-	margin-left: 35px;
 	visibility: collapse;
-	margin-bottom: 5px;
 	vertical-align: top;
-	margin-top: 160px;
+	margin-top: 165px;
+	margin-left: 160px;
+}
+
+@keyframes 'dmg_appear'
+{
+	0%
+	{
+		opacity: 0;
+		pre-transform-scale2d: 1;
+	}
+	
+	50%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1.5;
+	}
+	
+	100%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1;
+	}
+	
 }
 
 .damageCountersActive .recentDamageCounters
 {
 	visibility: visible;
+	animation-name: dmg_appear;
+	animation-duration: 0.3s;
+	animation-iteration-count: 1;
 }
 
 .recentDamageCounter
@@ -181,8 +207,8 @@
 
 .damageCounterIcon
 {
-	width: 16px;
-	height: 16px;
+	width: 14px;
+	height: 14px;
 	margin-right: 5px;
 	vertical-align: center;
 }
@@ -193,6 +219,7 @@
 	color: #D74949;
 	font-size: 16px;
 	font-weight: bold;
+	font-family: oracle;
 	text-shadow: 0px 0px 3.0 offBlack;
 }
 
@@ -203,6 +230,7 @@
 	font-size: 12px;
 	font-size: 16px;
 	font-weight: bold;
+	font-family: oracle;
 	text-shadow: 0px 0px 3.0 offBlack;
 }
 
@@ -222,9 +250,19 @@
 	font-family: numericOracle;
 }
 
+.shieldActive .currentHealthLabel
+{
+	color: blue;
+}
+
 .localPlayerMidHealth .currentHealthLabel
 {
 	color: #DDFF56;
+}
+
+.HasBulletShield .currentHealthLabel
+{
+	color: #a1f4ff;
 }
 
 .localPlayerLowHealth .currentHealthLabel,.healthLow .currentHealthLabel
@@ -279,6 +317,8 @@
 	margin-right: 23px;
 	margin-left: 0px;
 	width: 60px;
+	margin-right: 240px;
+	visibility: collapse;
 }
 
 .shield_bar_numbers

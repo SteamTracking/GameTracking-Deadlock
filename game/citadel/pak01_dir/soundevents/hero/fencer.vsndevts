@@ -110,7 +110,7 @@
 	}
 	Fencer.Sigil.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = -8.0
 		pitch_rand_min = -0.02
 		pitch_rand_max = 0.02
@@ -119,7 +119,7 @@
 	}
 	Fencer.Sigil.Cast.Delay = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		volume_offset_opponent = 3.0
 		pitch_rand_min = -0.02
@@ -164,7 +164,7 @@
 	}
 	Fencer.Lunge.Cast.Delay = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 1.0
 		volume_offset_opponent = 3.0
 		vsnd_files = 
@@ -177,7 +177,7 @@
 	}
 	Fencer.Lunge.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 2.0
 		pitch_rand_min = -0.02
 		pitch_rand_max = 0.02
@@ -191,7 +191,7 @@
 	}
 	Fencer.Lunge.MaxHold.Sweetener = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 3.0
 		pitch_rand_min = -0.02
 		pitch_rand_max = 0.02
@@ -258,7 +258,7 @@
 	}
 	Fencer.Riposte.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 3.0
 		volume_offset_opponent = 3.0
 		pitch_rand_min = -0.02
@@ -268,7 +268,7 @@
 	}
 	Fencer.Riposte.Success = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 6.0
 		volume_offset_opponent = 3.0
 		pitch_rand_min = -0.02
@@ -278,7 +278,7 @@
 	}
 	Fencer.Riposte.Counterattack.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 4.0
 		pitch = 1.1
 		vsnd_files = 
@@ -301,14 +301,15 @@
 	Fencer.Riposte.Counterattack.Mod.Lp = 
 	{
 		base = "Base.Ability.StatusEffect"
-		volume = 1.0
+		volume = 2.0
 		volume_fade_in = 0.05
 		volume_fade_out = 0.2
 		delay_rand_min = -4.0
 		volume_offset_team = -6.0
 		param_envelope_enabled = 1.0
-		pitch_envelope_scale_min = 0.5
-		pitch_envelope_scale_max = 1.5
+		param_envelope_duration = 1.0
+		pitch_envelope_scale_min = 0.8
+		pitch_envelope_scale_max = 1.4
 		vsnd_files = "sounds/abilities/fencer/riposte/fencer_riposte_counterattack_mod_lp.vsnd"
 		vsnd_duration = 4.162631
 	}
@@ -316,13 +317,14 @@
 	{
 		base = "Base.Ability.StatusEffect"
 		volume = 2.0
+		volume_offset_opponent = 4.0
 		volume_offset_team = -6.0
 		vsnd_files = "sounds/abilities/fencer/riposte/fencer_riposte_counterattack_mod_expire.vsnd"
 		vsnd_duration = 2.023356
 	}
 	Fencer.Super.Slash.Cast.Delay = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 4.0
 		volume_offset_opponent = 2.0
 		vsnd_files = "sounds/abilities/fencer/super_slash/fencer_super_slash_cast_delay.vsnd"
@@ -330,7 +332,7 @@
 	}
 	Fencer.Super.Slash.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 5.0
 		volume_offset_opponent = 3.0
 		vsnd_files = "sounds/abilities/fencer/super_slash/fencer_super_slash_cast.vsnd"
@@ -458,155 +460,196 @@
 	Fencer.JumpLand = 
 	{
 		base = "Base.Footsteps.JumpLand"
-		volume = -8.0
-		track_2.vsnd_track_vol_offset_db = 6.0
+		volume = -3.0
+		track_1.vsnd_track_volume_rand_min = -5.0
+		track_2.vsnd_track_vol_offset_db = -9.0
+		track_2.vsnd_track_volume_rand_min = -3.0
+		track_3.vsnd_track_vol_offset_db = -7.0
+		track_3.vsnd_track_volume_rand_min = -4.0
 		vsnd_files = 
 		[
-			"sounds/player/footsteps/fencer/fencer_footstep_01.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_02.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_03.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_04.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_05.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_06.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_07.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_08.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_09.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_10.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_11.vsnd",
-			"sounds/player/footsteps/fencer/fencer_footstep_12.vsnd",
+			"sounds/player/footsteps/fencer/fencer_footstep_jumpland_01.vsnd",
+			"sounds/player/footsteps/fencer/fencer_footstep_jumpland_02.vsnd",
+			"sounds/player/footsteps/fencer/fencer_footstep_jumpland_03.vsnd",
+			"sounds/player/footsteps/fencer/fencer_footstep_jumpland_04.vsnd",
+			"sounds/player/footsteps/fencer/fencer_footstep_jumpland_05.vsnd",
+			"sounds/player/footsteps/fencer/fencer_footstep_jumpland_06.vsnd",
+			"sounds/player/footsteps/fencer/fencer_footstep_jumpland_07.vsnd",
+			"sounds/player/footsteps/fencer/fencer_footstep_jumpland_08.vsnd",
 		]
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/holliday/astro_foley_light_01.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_02.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_03.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_04.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_05.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_06.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_07.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_08.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_08.vsnd",
 		]
-		vsnd_duration = 0.295533
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_jumpland_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_jumpland_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_jumpland_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_jumpland_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_jumpland_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_jumpland_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_jumpland_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_jumpland_08.vsnd",
+		]
+		vsnd_duration = 0.295442
 	}
 	Fencer.Movement.Short = 
 	{
 		base = "Base.Movement"
-		volume = -11.0
+		volume = -20.0
+		track_1.vsnd_track_volume_rand_min = -5.0
+		track_2.vsnd_track_vol_offset_db = -6.0
+		track_2.vsnd_track_volume_rand_min = -5.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_10.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_11.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_12.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_13.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_14.vsnd",
+		]
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/holliday/astro_foley_light_01.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_02.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_03.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_04.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_05.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_06.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_07.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_08.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_10.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_11.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_12.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_13.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_14.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_15.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_16.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_17.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_18.vsnd",
 		]
+		vsnd_duration = 0.589751
 	}
 	Fencer.Movement.Long = 
 	{
 		base = "Base.Movement"
-		volume = -9.0
+		volume = -12.0
+		track_1.vsnd_track_volume_rand_min = -5.0
+		track_2.vsnd_track_vol_offset_db = -8.0
+		track_2.vsnd_track_volume_rand_min = -5.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_08.vsnd",
+		]
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_09.vsnd",
+		]
+		vsnd_duration = 1.179252
 	}
 	Fencer.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		track_2.vsnd_track_vol_offset_db = -6.0
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
+		base = "Hero.Default.Melee.Swing"
+		volume = -5.0
+		track_2.vsnd_track_vol_offset_db = -10.0
+		track_3.vsnd_track_vol_offset_db = -7.0
+		track_3.vsnd_track_volume_rand_min = -5.0
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/holliday/astro_foley_light_01.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_02.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_03.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_04.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_05.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_06.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_07.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_08.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_08.vsnd",
 		]
-		vsnd_duration = 1.062208
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_10.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_11.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_12.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_13.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_14.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_15.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_16.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_17.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_18.vsnd",
+		]
 	}
 	Fencer.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
+		base = "Hero.Default.Melee.Charged"
 		track_2.vsnd_track_vol_offset_db = -6.0
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/holliday/astro_foley_light_01.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_02.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_03.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_04.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_05.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_06.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_07.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_08.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_10.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_11.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_12.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_13.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_14.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	Fencer.Footstep = 
 	{
 		base = "Base.Footsteps"
 		track_1.vsnd_track_vol_offset_db = -10.0
-		track_2.vsnd_track_vol_offset_db = -6.0
+		track_2.vsnd_track_vol_offset_db = -20.0
+		track_2.vsnd_track_volume_rand_min = -4.0
+		track_3.vsnd_track_vol_offset_db = -9.0
+		track_3.vsnd_track_volume_rand_min = -6.0
 		vsnd_files = 
 		[
 			"sounds/player/footsteps/fencer/fencer_footstep_01.vsnd",
@@ -624,27 +667,106 @@
 		]
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/holliday/astro_foley_light_01.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_02.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_03.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_04.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_05.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_06.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_07.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_08.vsnd",
-			"sounds/player/movement/holliday/astro_foley_light_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_10.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_11.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_12.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_13.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_short_14.vsnd",
+		]
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_09.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_10.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_11.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_12.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_13.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_14.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_15.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_16.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_17.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_short_18.vsnd",
 		]
 		vsnd_duration = 0.295533
 	}
 	Fencer.Mantle = 
 	{
 		base = "Base.Movement"
-		volume = -3.0
+		volume = -15.0
+		track_1.vsnd_track_volume_rand_min = -4.0
+		track_2.vsnd_track_vol_offset_db = -2.0
+		track_2.vsnd_track_volume_rand_min = -3.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_long_08.vsnd",
+		]
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_08.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_sword_movement_long_09.vsnd",
+		]
+		vsnd_duration = 1.179252
+	}
+	Fencer.Dash = 
+	{
+		base = "Base.Movement"
+		volume = -9.0
+		track_1.vsnd_track_volume_rand_min = -3.0
+		track_2.vsnd_track_vol_offset_db = 4.0
+		track_2.vsnd_track_volume_rand_min = -3.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_01.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_02.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_03.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_04.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_05.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_06.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_07.vsnd",
+			"sounds/player/movement/apollo/apollo_foley_cloth_movement_jumpland_08.vsnd",
+		]
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/apollo/apollo_dash_sweetener_01.vsnd",
+			"sounds/player/movement/apollo/apollo_dash_sweetener_02.vsnd",
+			"sounds/player/movement/apollo/apollo_dash_sweetener_03.vsnd",
+		]
+		vsnd_duration = 0.797778
 	}
 	Fencer.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "fencer"
+		context_name = "hero_fencer"
 		vsnd_files = 
 		[
 			"sounds/vo/fencer/ping/fencer_ping_post_game_02.vsnd",

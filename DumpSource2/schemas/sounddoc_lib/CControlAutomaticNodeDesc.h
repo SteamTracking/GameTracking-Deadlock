@@ -1,0 +1,3 @@
+class CControlAutomaticNodeDesc : public CVNodeTypeDesc
+{
+};

@@ -1,19 +1,27 @@
-// MNetworkVarNames = "Vector localSound"
-// MNetworkVarNames = "int32 soundscapeIndex"
-// MNetworkVarNames = "uint8 localBits"
-// MNetworkVarNames = "int soundscapeEntityListIndex"
-// MNetworkVarNames = "uint32 soundEventHash"
+// MGetKV3ClassDefaults = {
+//	"_class": "audioparams_t",
+//	"localSound":
+//	[
+//		null,
+//		null,
+//		null,
+//		null,
+//		null,
+//		null,
+//		null,
+//		null
+//	],
+//	"soundscapeIndex": 0,
+//	"localBits": 0,
+//	"soundscapeEntityListIndex": 0,
+//	"soundEventHash": 0
+//}
+// MHasKV3TransferPolymorphicClassname
 class audioparams_t
 {
-	// MNetworkEnable
-	// MNetworkEncoder = "coord"
-	Vector[8] localSound;
-	// MNetworkEnable
+	VectorWS[8] localSound;
 	int32 soundscapeIndex;
-	// MNetworkEnable
 	uint8 localBits;
-	// MNetworkEnable
 	int32 soundscapeEntityListIndex;
-	// MNetworkEnable
 	uint32 soundEventHash;
 };

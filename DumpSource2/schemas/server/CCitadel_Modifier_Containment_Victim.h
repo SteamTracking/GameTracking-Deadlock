@@ -6,5 +6,5 @@ class CCitadel_Modifier_Containment_Victim : public CCitadelModifier
 	ParticleIndex_t m_nFXIndexVictim;
 	ParticleIndex_t m_nChainFxIndex;
 	float32 m_flTetherRadius;
-	Vector m_vecOrigin;
+	VectorWS m_vecOrigin;
 };

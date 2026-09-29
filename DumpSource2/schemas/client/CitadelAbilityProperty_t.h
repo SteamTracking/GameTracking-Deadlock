@@ -11,11 +11,12 @@
 //	"m_eApplyFilter": "EApplyFilter_None",
 //	"m_strDisableValue": "",
 //	"m_bDamageAffectedByEffectiveness": false,
-//	"m_bReturnZeroIfUnupgraded": true,
+//	"m_nRequiredUpgradeBits": "ABILITY_UPGRADE_BIT_TRAINED",
 //	"m_eDisplayType": "EStatsCount",
 //	"m_eDisplayUnits": "EDisplayUnit_Normal",
 //	"m_bIsHidden": false,
 //	"m_bIsNegativeAttribute": false,
+//	"m_bIsDetailedOnly": false,
 //	"m_strCSSClass": "",
 //	"m_strLocTokenOverride": "",
 //	"m_bCanSetTokenOverride": false,
@@ -45,8 +46,8 @@ class CitadelAbilityProperty_t
 	CUtlString m_strDisableValue;
 	// MPropertyDescription = "When true, effectiveness (distance falloff) will be applied when looking up this value.  Only works in modifiers for now."
 	bool m_bDamageAffectedByEffectiveness;
-	// MPropertyDescription = "When true, we return zero if the upgrade bits are zero. Otherwise, returns a real value."
-	bool m_bReturnZeroIfUnupgraded;
+	// MPropertyDescription = "If we don't have these bits always return 0. Otherwise, returns a real value."
+	AbilityUpgradeBits_t m_nRequiredUpgradeBits;
 	// MPropertyStartGroup = "UI"
 	// MPropertyDescription = "Set this so we know how to display the ability property (prefix, postfix, and # decimal places)"
 	EStatsType m_eDisplayType;
@@ -55,6 +56,8 @@ class CitadelAbilityProperty_t
 	bool m_bIsHidden;
 	// MPropertyDescription = "When true, we add a different class to show it's a negative attribute."
 	bool m_bIsNegativeAttribute;
+	// MPropertyDescription = "When true, the property will be hidden unless the user is in Detail mode."
+	bool m_bIsDetailedOnly;
 	// MPropertyFriendlyName = "CSS Class"
 	// MPropertyLeafSuggestionProviderFn
 	CUtlString m_strCSSClass;

@@ -6,3 +6,353 @@ CitadelRadial
 	height: 100%;
 }
 
+@define MainDelayedFade: 0.125s;
+@define RadialTextCapsuleColor: offBlack&f0;
+@define RadialTextCapsulePadding: 5px 20px;
+@define RadialTextCapsuleRadius: 15px;
+@define TextAnchorWidth: 400px;
+@define TextAnchorHalfWidth: 200px;
+@define TextAnchorGap: 32px;
+@define TextAnchorHeight: 100px;
+@define MinimapPingAttackColor: #ff5353ff;
+@define MinimapPingGoingColor: #749bffff;
+@define MinimapPingDefendColor: #9ef29dff;
+@define MinimapPingWatchColor: #ffb803ff;
+.CitadelRadialBase
+{
+	width: 100%;
+	height: 100%;
+	flow-children: none;
+	z-index: 10001;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: 0.125s;
+	transition-delay: 0.0s;
+	transition-timing-function: ease-out;
+}
+
+.CitadelRadialBase.radial_open
+{
+	opacity: 1;
+	transition-delay: MainDelayedFade;
+}
+
+#RadialPanel
+{
+	horizontal-align: center;
+	vertical-align: center;
+	transition-property: background-color, opacity;
+	transition-duration: 0.125s;
+	transition-delay: 0.0s;
+	transition-timing-function: ease-out;
+}
+
+.RadialBackgroundsContainer
+{
+	width: 100%;
+	height: width-percentage(100%);
+	horizontal-align: center;
+	vertical-align: center;
+	overflow: noclip;
+	transition-property: background-color;
+	transition-delay: 0.0s;
+	transition-duration: 0.05s;
+	transition-timing-function: ease-out;
+}
+
+.radial_open .RadialBackgroundsContainer
+{
+	transition-delay: 0.125s;
+}
+
+.radial_open.bIsEmptyRadial .RadialBackgroundsContainer
+{
+	visibility: collapse;
+	transition-delay: 0.0s;
+}
+
+.RadialBackground
+{
+	width: 100%;
+	height: 100%;
+	transition-property: background-color, pre-transform-scale2d;
+	transition-delay: 0.0s;
+	transition-duration: 0.05s;
+	transition-timing-function: ease-out;
+}
+
+.RadialBackground.SegmentHover
+{
+	sound: soundMainMenuHover;
+}
+
+.RadialBackground.SegmentSelected
+{
+	transition-delay: MainDelayedFade;
+}
+
+.RadialBackgroundsContainer .RadialBackground.SegmentSelected
+{
+	animation-duration: 0.125s;
+	animation-iteration-count: 1;
+	transition-delay: MainDelayedFade;
+	sound: soundMainMenuActivate;
+}
+
+.RadialBackground.radialDepth1
+{
+	opacity: 0;
+	transition-property: background-color, opacity, pre-transform-scale2d;
+}
+
+.RadialBackground.radialDepth1.bIsRevealedSegment
+{
+	opacity: 1;
+}
+
+.RadialBackground.radialDepth1.SegmentHover
+{
+	sound: soundMainMenuHover;
+}
+
+.RadialBackground.radialDepth1.SegmentSelected
+{
+	transition-delay: MainDelayedFade;
+}
+
+.RadialBackgroundsContainer .RadialBackground.radialDepth1.SegmentSelected
+{
+	animation-duration: 0.125s;
+	animation-iteration-count: 1;
+	transition-delay: MainDelayedFade;
+	sound: soundMainMenuActivate;
+}
+
+.RadialContentContainer
+{
+	width: 100%;
+	height: width-percentage(100%);
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.radial_open.bIsEmptyRadial .RadialContentContainer
+{
+	visibility: collapse;
+}
+
+.RadialSegment
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	vertical-align: center;
+	flow-children: none;
+	overflow: noclip;
+}
+
+.RadialSegment.radialDepth1
+{
+	opacity: 0;
+	transition-property: opacity;
+	transition-timing-function: ease-out;
+	transition-duration: 0.1s;
+	transition-delay: 0.0s;
+}
+
+.RadialSegment.radialDepth1.bIsRevealedSegment
+{
+	opacity: 1;
+}
+
+.MinimapPingAttack #PingIcon
+{
+	wash-color: MinimapPingAttackColor;
+}
+
+.MinimapPingGoing #PingIcon
+{
+	wash-color: MinimapPingGoingColor;
+}
+
+.MinimapPingDefend #PingIcon
+{
+	wash-color: MinimapPingDefendColor;
+}
+
+.MinimapPingWatch #PingIcon
+{
+	wash-color: MinimapPingWatchColor;
+}
+
+#PingIcon
+{
+	horizontal-align: center;
+	vertical-align: center;
+	opacity: 0;
+	wash-color: offWhite;
+	transition-property: pre-transform-scale2d, opacity, wash-color;
+	transition-timing-function: ease-out;
+	transition-duration: 0.1s;
+	transition-delay: 0.0s;
+}
+
+.radial_open #PingIcon
+{
+	pre-transform-scale2d: 1.0;
+	opacity: 1;
+}
+
+.SegmentHover #PingIcon
+{
+	pre-transform-scale2d: 1.2;
+	wash-color: offBlack;
+}
+
+.SegmentSelected #PingIcon
+{
+	animation-name: OnSelected_PingIcon;
+	animation-duration: 0.125s;
+	animation-iteration-count: 4;
+	opacity: 1;
+	transition-delay: 1.0s;
+}
+
+@keyframes 'OnSelected_PingIcon'
+{
+	0%
+	{
+		wash-color: offWhite;
+	}
+	
+	49%
+	{
+		wash-color: offWhite;
+	}
+	
+	50%
+	{
+		wash-color: offBlack;
+	}
+	
+	99%
+	{
+		wash-color: offBlack;
+	}
+	
+	100%
+	{
+		wash-color: transparent;
+	}
+	
+}
+
+#PingDescriptionAnchor
+{
+	visibility: collapse;
+	width: TextAnchorWidth;
+	height: TextAnchorHeight;
+	horizontal-align: center;
+	vertical-align: center;
+	overflow: noclip;
+}
+
+#PingDescription
+{
+	white-space: nowrap;
+	text-overflow: clip;
+	overflow: noclip;
+	vertical-align: center;
+	padding: RadialTextCapsulePadding;
+	background-color: RadialTextCapsuleColor;
+	border-radius: RadialTextCapsuleRadius;
+	opacity: 0;
+	text-align: center;
+	white-space: nowrap;
+	font-family: oracle;
+	color: offWhite;
+	transition-property: opacity, background-color;
+	transition-timing-function: ease-out;
+	transition-duration: 0.125s;
+	transition-delay: 0.0s;
+}
+
+.radialCenter #PingDescription
+{
+	horizontal-align: center;
+	text-align: center;
+}
+
+.radialLeft #PingDescription
+{
+	horizontal-align: right;
+	margin-right: TextAnchorHalfWidth;
+	text-align: right;
+}
+
+.radialRight #PingDescription
+{
+	horizontal-align: left;
+	margin-left: TextAnchorHalfWidth;
+	text-align: left;
+}
+
+.radial_open .SegmentHover #PingDescription
+{
+	opacity: 1;
+}
+
+.SegmentSelected #PingDescription
+{
+	transition-delay: 1s;
+}
+
+.bIsEmptySegment.RadialBackground
+{
+	opacity: 0.25;
+}
+
+.SegmentHover.bIsEmptySegment.RadialBackground,.SegmentSelected.bIsEmptySegment.RadialBackground
+{
+	sound: none;
+}
+
+.bIsEmptySegment #PingIcon,.bIsEmptySegment #PingDescriptionAnchor
+{
+	visibility: collapse;
+}
+
+.HoverLabel
+{
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: center;
+	vertical-align: center;
+	padding: RadialTextCapsulePadding;
+	border-radius: RadialTextCapsuleRadius;
+	background-color: offWhite&90;
+	opacity: 0;
+	transition-property: opacity;
+	transition-timing-function: ease-out;
+	transition-duration: 0.1s;
+	transition-delay: 0.0s;
+}
+
+.radial_open .HoverLabel.bHasHoverLabel
+{
+	opacity: 1;
+}
+
+#HoverLabelText
+{
+	width: fit-children;
+	height: fit-children;
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	white-space: nowrap;
+	font-family: oracle;
+	font-weight: bold;
+	color: offBlack;
+}
+

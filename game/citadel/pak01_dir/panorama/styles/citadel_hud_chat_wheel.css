@@ -16,13 +16,8 @@ CitadelChatWheel
 	vertical-align: middle;
 	opacity: 0;
 	transition-property: opacity;
-	transition-duration: 0.05s;
+	transition-duration: 0.016s;
 	transition-timing-function: ease-out;
-}
-
-CitadelChatWheel.InstantOpen
-{
-	transition-delay: 0.15s;
 }
 
 CitadelChatWheel.ChatWheelOpen
@@ -382,8 +377,33 @@ CitadelChatWheel.ChatWheelOpen
 	height: 20px;
 	width: 20px;
 	background-color: #C4FF47;
+	border: 2px solid #C4FF47;
 	border-radius: 50px;
 	z-index: 9999;
+}
+
+#Bubble.PingAvailableAnimation.InsidePingWindow
+{
+	animation-name: PingAvailableAnim;
+	animation-duration: 0.35s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+}
+
+@keyframes 'PingAvailableAnim'
+{
+	0%
+	{
+		border: 2px solid #C4FF47;
+		background-color: transparent;
+	}
+	
+	100%
+	{
+		border: 20px solid transparent;
+		background-color: #C4FF47;
+	}
+	
 }
 
 #HeroImage

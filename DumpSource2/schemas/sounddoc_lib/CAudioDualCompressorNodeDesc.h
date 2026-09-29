@@ -1,0 +1,3 @@
+class CAudioDualCompressorNodeDesc : public CVNodeTypeDesc
+{
+};

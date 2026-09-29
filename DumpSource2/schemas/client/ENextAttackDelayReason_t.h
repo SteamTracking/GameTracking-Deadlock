@@ -5,5 +5,6 @@ enum ENextAttackDelayReason_t : uint32_t
 	EDelayReason_Disarmed = 2,
 	EDelayReason_Stunned = 3,
 	EDelayReason_BebopSpinUp = 4,
-	EDelayReasonCount = 5,
+	EDelayReason_WeaponSwap = 5,
+	EDelayReasonCount = 6,
 };

@@ -9,7 +9,7 @@
 //	"m_flEndCPGrowthTime": 0.000000
 //}
 // MPropertyCustomEditor = "TransformInput()"
-// MCustomFGDMetadata = "{ KV3DefaultTestFnName = 'CParticleTransformInputDefaultTestFunc' }"
+// MCustomFGDMetadata = "{ SkipImprintFGDClassOnKV3 = true SkipRemoveKeysInKV3AtFGDDefault = true KV3DefaultTestFnName = 'CParticleTransformInputDefaultTestFunc' }"
 class CParticleTransformInput : public CParticleInput
 {
 	ParticleTransformType_t m_nType;

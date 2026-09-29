@@ -176,7 +176,7 @@
 	}
 	Priest.Grenade.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = -1.0
 		vsnd_files = 
 		[
@@ -270,7 +270,7 @@
 	}
 	Priest.Slugshot.Cast.Delay = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = 
 		[
@@ -282,7 +282,7 @@
 	}
 	Priest.Slugshot.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = -1.0
 		vsnd_files = 
 		[
@@ -307,7 +307,7 @@
 	}
 	Priest.Trap.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = -2.0
 		vsnd_files = 
 		[
@@ -394,7 +394,7 @@
 	Priest.Trap.Destroy = 
 	{
 		base = "Base.Ability.Detached"
-		volume = -6.0
+		volume = 1.0
 		vsnd_files = 
 		[
 			"sounds/abilities/priest/priest_trap_destroy_01.vsnd",
@@ -424,7 +424,7 @@
 	}
 	Priest.Witching.Hour.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 0.0
 		vsnd_files = "sounds/abilities/priest/priest_witching_hour_cast_01.vsnd"
 		vsnd_duration = 3.641927
@@ -438,7 +438,7 @@
 	}
 	Priest.Witching.Hour.Aim.Lp = 
 	{
-		base = "Base.Ability.Target"
+		base = "Base.Ability.Target.Beam"
 		volume = 6.0
 		vsnd_files = "sounds/abilities/priest/priest_witching_hour_aim_lp_01.vsnd"
 		vsnd_duration = 14.111542
@@ -463,7 +463,7 @@
 				event_name = "Base.Weapon"
 			},
 			{
-				event_name = "Base.Ability.Ult"
+				event_name = "Base.Ability.Ult.Cast"
 				field_name = "citadel_perspective_default"
 			},
 		]
@@ -604,151 +604,348 @@
 	Priest.Footstep = 
 	{
 		base = "Base.Footsteps"
-		track_1.vsnd_track_vol_offset_db = -9.0
+		track_1.vsnd_track_vol_offset_db = -2.0
+		track_2.vsnd_track_vol_offset_db = -9.0
+		track_2.vsnd_track_volume_rand_min = -3.0
+		track_3.vsnd_track_vol_offset_db = -10.0
+		track_3.vsnd_track_volume_rand_min = -7.0
 		vsnd_files = 
 		[
-			"sounds/player/footsteps/seven/seven_footstep_01.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_02.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_03.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_04.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_05.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_06.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_07.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_08.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_09.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_10.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_11.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_12.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_13.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_14.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_15.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_16.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_17.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_01.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_02.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_03.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_04.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_05.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_06.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_07.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_08.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_09.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_10.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_11.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_12.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_13.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_14.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_15.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_16.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_sprint_17.vsnd",
 		]
-		vsnd_duration = 0.775079
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_10.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_11.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_12.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_13.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_14.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_15.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_16.vsnd",
+		]
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_10.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_11.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_12.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_13.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_14.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_15.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_16.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_17.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_18.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_19.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_20.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_21.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_22.vsnd",
+		]
+		vsnd_duration = 0.527438
 	}
 	Priest.Movement.Long = 
 	{
 		base = "Base.Movement"
-		volume = -4.0
+		track_1.vsnd_track_vol_offset_db = -10.0
+		track_1.vsnd_track_volume_rand_min = -8.0
+		track_2.vsnd_track_vol_offset_db = -9.0
+		track_2.vsnd_track_volume_rand_min = -7.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_10.vsnd",
+		]
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_10.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_11.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_12.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_13.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_14.vsnd",
+		]
+		vsnd_duration = 1.30898
 	}
 	Priest.Movement.Short = 
 	{
 		base = "Base.Movement"
 		volume = -5.0
+		track_2.vsnd_track_vol_offset_db = -10.0
+		track_2.vsnd_track_volume_rand_min = -8.0
+		track_3.vsnd_track_vol_offset_db = -9.0
+		track_3.vsnd_track_volume_rand_min = -7.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_10.vsnd",
+		]
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_10.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_11.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_12.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_13.vsnd",
+		]
+		vsnd_duration = 0.565646
 	}
 	Priest.JumpLand = 
 	{
 		base = "Base.Footsteps.JumpLand"
-		track_2.vsnd_track_vol_offset_db = -5.0
+		volume = -3.0
+		track_2.vsnd_track_vol_offset_db = -6.0
+		track_2.vsnd_track_volume_rand_min = -3.0
+		track_3.vsnd_track_vol_offset_db = -7.0
+		track_3.vsnd_track_volume_rand_min = -4.0
 		vsnd_files = 
 		[
-			"sounds/player/footsteps/seven/seven_footstep_01.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_02.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_03.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_04.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_05.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_06.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_07.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_08.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_09.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_10.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_11.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_12.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_13.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_14.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_15.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_16.vsnd",
-			"sounds/player/footsteps/seven/seven_footstep_17.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_01.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_02.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_03.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_04.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_05.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_06.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_07.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_08.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_09.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_10.vsnd",
+			"sounds/player/footsteps/priest/venator_footstep_jumpland_11.vsnd",
 		]
 		track_2.track_vsnd_files = 
 		[
-			"sounds/player/movement/generic/foley_light/default_foley_01.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_02.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_03.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_04.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_05.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_06.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_07.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_08.vsnd",
-			"sounds/player/movement/generic/foley_light/default_foley_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_10.vsnd",
 		]
-		vsnd_duration = 0.775079
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_10.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_11.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_12.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_jumpland_13.vsnd",
+		]
+		vsnd_duration = 0.6
 	}
 	Priest.Mantle = 
 	{
 		base = "Base.Movement"
-		volume = -4.0
+		track_1.vsnd_track_vol_offset_db = -6.0
+		track_1.vsnd_track_volume_rand_min = -4.0
+		track_2.vsnd_track_vol_offset_db = -8.0
+		track_2.vsnd_track_volume_rand_min = -6.0
+		vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_long_10.vsnd",
+		]
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_10.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_11.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_12.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_13.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_long_14.vsnd",
+		]
+		vsnd_duration = 1.30898
 	}
 	Priest.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
+		base = "Hero.Default.Melee.Swing"
+		volume = -5.0
+		track_2.vsnd_track_vol_offset_db = -10.0
+		track_2.vsnd_track_volume_rand_min = -8.0
+		track_3.vsnd_track_vol_offset_db = -9.0
+		track_3.vsnd_track_volume_rand_min = -7.0
+		track_2.track_vsnd_files = 
 		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_movement_short_10.vsnd",
 		]
-		vsnd_duration = 1.062208
+		track_3.track_vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_10.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_11.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_12.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_13.vsnd",
+		]
 	}
 	Priest.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
+		base = "Hero.Default.Melee.Charged"
+		track_2.vsnd_track_vol_offset_db = -3.0
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_10.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_11.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_12.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_13.vsnd",
+		]
+	}
+	Priest.Dash = 
+	{
+		base = "Base.Movement"
+		track_1.vsnd_track_vol_offset_db = -3.0
+		track_1.vsnd_track_volume_rand_min = -3.0
+		track_2.vsnd_track_vol_offset_db = -9.0
+		track_2.vsnd_track_volume_rand_min = -7.0
 		vsnd_files = 
 		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_cloth_jumpland_10.vsnd",
 		]
-		vsnd_duration = 1.399792
+		track_2.track_vsnd_files = 
+		[
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_01.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_02.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_03.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_04.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_05.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_06.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_07.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_08.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_09.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_10.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_11.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_12.vsnd",
+			"sounds/player/movement/priest/venator_foley_gear_movement_short_13.vsnd",
+		]
+		vsnd_duration = 0.767438
 	}
 	Priest.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "priest"
+		context_name = "hero_priest"
 		vsnd_files = 
 		[
 			"sounds/vo/priest/ping/priest_ping_post_game_01.vsnd",

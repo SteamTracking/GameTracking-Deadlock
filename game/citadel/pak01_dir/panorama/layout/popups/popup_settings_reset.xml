@@ -1,0 +1,60 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings_reset.vcss" />
+	</styles>
+	<snippets>
+		<snippet name="PopupSettingsResetSectionRow">
+			<Panel class="SectionResetRow">
+				<CitadelSettingsToggle id="SettingsSectionToggle" class="ResetToggle" onactivate="CitadelSettingsResetPopupToggleChanged()" />
+				<Panel class="HR1px" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<PopupSettingsReset class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel class="PopupBackgroundShadow" />
+		<Panel class="PopupBackground" />
+		<Panel class="PopupContent">
+			<Panel id="TitleSection" class="Header">
+				<Label class="Title" text="#citadel_settings_reset_popup_title" />
+			</Panel>
+			<Panel id="ScopeRows">
+				<Label class="ScopeTitle" text="#citadel_settings_reset_popup_scope_title" />
+				<CitadelDropDown id="ScopeDropDown" onmouseout="UIHideTextTooltip()" />
+				<Panel class="HR1px" />
+			</Panel>
+			<Panel id="ResetRows">
+				<Label class="ScopeTitle" text="#citadel_settings_reset_popup_sections_title" />
+			</Panel>
+			<CitadelSettingsToggle id="SelectAllCheckbox" class="SelectDeselect" text="#citadel_settings_reset_popup_selectall" onactivate="CitadelSettingsResetPopupToggleSelectAll()" />
+			<Panel class="ButtonRow">
+				<CitadelBindingButton id="EscapeButton" action="MenuBack" text="#Close" onactivate="UIPopupButtonClicked()" />
+				<Panel class="ButtonWrapper">
+					<Button class="InputButton Fill" id="CancelBinding" onactivate="UIPopupButtonClicked()">
+						<Panel class="Bottom" />
+						<Panel class="Top" />
+						<Panel class="Content">
+							<Label text="#citadel_keybind_popup_cancel" />
+						</Panel>
+					</Button>
+				</Panel>
+				<Panel class="ButtonWrapper">
+					<Button class="InputButtonBorderRadius Fill" id="ConfirmReset" onactivate="CitadelResetSettingsClicked()">
+						<Panel class="Bottom">
+							<Panel class="Background" />
+						</Panel>
+						<Panel class="Top">
+							<Panel class="Background" />
+						</Panel>
+						<Panel class="Content">
+							<Label text="#citadel_settings_reset" />
+						</Panel>
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+	</PopupSettingsReset>
+</root>

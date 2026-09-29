@@ -1,0 +1,3 @@
+class CAudioSteamAudioSourceNodeDesc : public CVAudioNodeBaseDesc
+{
+};

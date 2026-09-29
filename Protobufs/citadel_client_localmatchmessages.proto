@@ -1,0 +1,13 @@
+import "citadel_gcmessages_common.proto";
+import "citadel_gcmessages_server.proto";
+
+message CMsgCitadelLocalLobbySetup {
+	optional fixed64 lobby_handshake_id = 1;
+	optional .CSOCitadelLobby lobby = 2;
+	optional .CSOCitadelServerStaticLobby static_lobby = 3;
+}
+
+message CMsgCitadelLocalLobbyReady {
+	optional fixed64 lobby_handshake_id = 1;
+	optional uint32 port = 2;
+}

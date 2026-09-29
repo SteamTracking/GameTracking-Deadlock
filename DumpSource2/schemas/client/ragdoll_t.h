@@ -1,3 +1,16 @@
+// MGetKV3ClassDefaults = {
+//	"list":
+//	[
+//	],
+//	"hierarchyJoints":
+//	[
+//	],
+//	"boneIndex":
+//	[
+//	],
+//	"allowStretch": false,
+//	"unused": false
+//}
 class ragdoll_t
 {
 	CUtlVector< ragdollelement_t > list;

@@ -853,23 +853,27 @@
 	UI.PlayerDeath.Team = 
 	{
 		base = "Base.UI"
+		mixer_mixgroup = "UI-Death"
 		limiter_on = 1.0
 		limiter_max = 0.0
 		limiter_stop_oldest = true
-		volume = -5.0
+		volume = 2.0
 		volume_fade_out = 0.1
+		delay = 0.1
 		vsnd_files = "sounds/ui/ui_player_death_team.vsnd"
 		vsnd_duration = 6.005238
 	}
 	UI.PlayerDeath.Opponent = 
 	{
 		base = "Base.UI"
+		mixer_mixgroup = "UI-Death"
+		delay = 0.1
 		limiter_on = 1.0
 		limiter_max = 0.0
 		limiter_stop_oldest = true
-		volume = -8.0
+		volume = 4.0
 		vsnd_files = "sounds/ui/ui_player_death_opponent.vsnd"
-		vsnd_duration = 4.139683
+		vsnd_duration = 3.902177
 	}
 	UI.FriendsList.Hover = 
 	{
@@ -991,8 +995,8 @@
 	}
 	UI.CommendConfirmation = 
 	{
-		base = "Base.UI"
-		volume = 2.0
+		base = "Base.UI.Duck"
+		volume = 0.0
 		delay = 0.0
 		spread_min_value = 1.0
 		spread_max_value = 1.0
@@ -1010,12 +1014,12 @@
 			"sounds/ui/ui_commend_send_07.vsnd",
 			"sounds/ui/ui_commend_send_08.vsnd",
 		]
-		vsnd_duration = 4.717365
+		vsnd_duration = 2.658458
 	}
 	UI.CommendToast = 
 	{
-		base = "Base.UI"
-		volume = 2.0
+		base = "Base.UI.Duck"
+		volume = 0.0
 		delay = 0.0
 		spread_min_value = 1.0
 		spread_max_value = 1.0
@@ -1034,7 +1038,7 @@
 			"sounds/ui/ui_commend_receive_07.vsnd",
 			"sounds/ui/ui_commend_receive_08.vsnd",
 		]
-		vsnd_duration = 4.498417
+		vsnd_duration = 3.262948
 	}
 	UI.RevealRank = 
 	{
@@ -1518,7 +1522,7 @@
 		hrtf_on = 0.0
 		pitch = 0.85
 		vsnd_files = "sounds/ui/ui_player_death_opponent.vsnd"
-		vsnd_duration = 4.139683
+		vsnd_duration = 3.902177
 	}
 	VisualNovel.PlayAs2D = 
 	{
@@ -1791,5 +1795,57 @@
 			"sounds/ui/ui_meepmop_06.vsnd",
 		]
 		vsnd_duration = 0.96746
+	}
+	UI.Settings.Keybind.Press = 
+	{
+		base = "Base.UI"
+		volume = -3.0
+		vsnd_files = 
+		[
+			"sounds/ui/ui_keybind_press_01.vsnd",
+			"sounds/ui/ui_keybind_press_02.vsnd",
+			"sounds/ui/ui_keybind_press_03.vsnd",
+			"sounds/ui/ui_keybind_press_04.vsnd",
+			"sounds/ui/ui_keybind_press_05.vsnd",
+			"sounds/ui/ui_keybind_press_06.vsnd",
+		]
+		vsnd_duration = 0.282404
+	}
+	UI.Vote.Hero.Tally.Toast = 
+	{
+		base = "Base.UI"
+		volume = 3.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/common/null.vsnd",
+		]
+		vsnd_duration = 0.050023
+	}
+	UI.Vote.Hero.Tally.Lp = 
+	{
+		base = "Base.UI"
+		volume = 1.0
+		limiter_max = 0.0
+		volume_fade_out = 0.1
+		vsnd_files = 
+		[
+			"sounds/ui/ui_hero_voting_tally_lp_01.vsnd",
+		]
+		vsnd_duration = 4.640726
+	}
+	UI.Vote.Hero.Tally.Lp.End = 
+	{
+		base = "Base.UI"
+		volume = 0.0
+		limiter_max = 0.0
+		vsnd_files = 
+		[
+			"sounds/ui/ui_hero_voting_tally_end_01.vsnd",
+			"sounds/ui/ui_hero_voting_tally_end_02.vsnd",
+			"sounds/ui/ui_hero_voting_tally_end_03.vsnd",
+		]
+		vsnd_duration = 0.461066
 	}
 }

@@ -7,7 +7,7 @@
 			{
 				name = "_builtins"
 				operator = "sos_builtins"
-				_voicegraph = "citadel.hrtf_basic"
+				_voicegraph = "citadel_hrtf_basic"
 			},
 			{
 				name = "public"
@@ -29,15 +29,10 @@
 						data_type = "public_opvar"
 						value = "citadel_enemy_audible_sound"
 					}
-					citadel_source_reverb_send = 
-					{
-						data_type = "public_opvar"
-						value = "citadel_source_reverb_send"
-					}
 					mixer_mixlayer_volume_gate = 
 					{
 						data_type = "float"
-						value = ".5"
+						value = ".9"
 						_system_properties = 
 						{
 							property_help = "Override from citadel_base_3d."
@@ -176,9 +171,8 @@
 						soundevent_data = "true"
 						value = 
 						[
-							"[ 0.005714, 0.3, 1.083, 1.083, 2.0, 3.0 ]",
-							"[ 6.619538, 0.0, -0.311869, -0.311869, 2.0, 3.0 ]",
-							"[ 17.077585, -10.603477, -0.127606, -0.127606, 2.0, 3.0 ]",
+							"[ 0.0, 0.3, 1.083, 1.083, 2.0, 3.0 ]",
+							"[ 1.0, -10.603477, -0.127606, -0.127606, 2.0, 3.0 ]",
 						]
 						_system_properties = 
 						{
@@ -193,9 +187,8 @@
 						soundevent_data = "true"
 						value = 
 						[
-							"[ 0.005714, 0.3, 1.083, 1.083, 2.0, 3.0 ]",
-							"[ 6.619538, 0.0, -0.311869, -0.311869, 2.0, 3.0 ]",
-							"[ 17.077585, -10.603477, -0.127606, -0.127606, 2.0, 3.0 ]",
+							"[ 0.0, 0.3, 1.083, 1.083, 2.0, 3.0 ]",
+							"[ 1.0, -10.603477, -0.127606, -0.127606, 2.0, 3.0 ]",
 						]
 						_system_properties = 
 						{
@@ -210,9 +203,8 @@
 						soundevent_data = "true"
 						value = 
 						[
-							"[ 0.005714, 0.3, 1.083, 1.083, 2.0, 3.0 ]",
-							"[ 6.619538, 0.0, -0.311869, -0.311869, 2.0, 3.0 ]",
-							"[ 17.077585, -10.603477, -0.127606, -0.127606, 2.0, 3.0 ]",
+							"[ 0.0, 0.3, 1.083, 1.083, 2.0, 3.0 ]",
+							"[ 1.0, -10.603477, -0.127606, -0.127606, 2.0, 3.0 ]",
 						]
 						_system_properties = 
 						{
@@ -230,6 +222,17 @@
 							display_group = "Normal"
 							property_group = "Perspective - Relevance"
 							property_help = "Volume in db that will boost this sound if its owning entity is targeting the local player."
+						}
+					}
+					volume_enemy_targeting_boost_disable_update = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Relevance"
+							property_help = "Disable updating the volume boost after enemy has been targeted. Useful for oneshots, generally not recommended for loops."
 						}
 					}
 					volume_falloff_min = 
@@ -255,7 +258,7 @@
 					volume_falloff_floor_enemy_relevance = 
 					{
 						data_type = "float"
-						value = "0.5"
+						value = "0.0"
 						_system_properties = 
 						{
 							display_group = "Normal"
@@ -308,6 +311,50 @@
 						}
 					}
 					volume_offset_neutral = 
+					{
+						data_type = "float"
+						value = "0.000000"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Volume Offset"
+							property_help = "Volume offset in db from the base _volume_ parameter for the neutral perspective."
+						}
+					}
+					volume_offset_game_internal_temp_player_db = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Volume Offset"
+							property_help = "Volume offset in db from the base _volume_ parameter for the player perspective."
+						}
+					}
+					volume_offset_game_internal_temp_team_db = 
+					{
+						data_type = "float"
+						value = "5.000000"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Volume Offset"
+							property_help = "Volume offset in db from the base _volume_ parameter for the team perspective."
+						}
+					}
+					volume_offset_game_internal_temp_opponent_db = 
+					{
+						data_type = "float"
+						value = "0.00000"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Volume Offset"
+							property_help = "Volume offset in db from the base _volume_ parameter for the opponent perspective."
+						}
+					}
+					volume_offset_game_internal_temp_neutral_db = 
 					{
 						data_type = "float"
 						value = "0.000000"
@@ -779,6 +826,7 @@
 						{
 							display_group = "normal"
 							property_group = "Perspective"
+							property_help = "Block event from playing for player perspective. Do not set this on loops due to perspective switching in spectate mode."
 						}
 					}
 					block_opponent = 
@@ -789,6 +837,7 @@
 						{
 							display_group = "normal"
 							property_group = "Perspective"
+							property_help = "Block event from playing for opponent perspective. Do not set this on loops due to perspective switching in spectate mode."
 						}
 					}
 					block_team = 
@@ -799,6 +848,7 @@
 						{
 							display_group = "normal"
 							property_group = "Perspective"
+							property_help = "Block event from playing for team perspective. Do not set this on loops due to perspective switching in spectate mode."
 						}
 					}
 					block_neutral = 
@@ -809,6 +859,7 @@
 						{
 							display_group = "normal"
 							property_group = "Perspective"
+							property_help = "Block event from playing for neutral perspective. Do not set this on loops due to perspective switching in spectate mode."
 						}
 					}
 					block_npc_emitter = 
@@ -820,6 +871,98 @@
 							display_group = "normal"
 							property_group = "Perspective"
 						}
+					}
+					volume_cone_facing_boost_player = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Relevance"
+							property_help = "Volume in db that will boost this sound if its owning entity is facing the local player within the angles of the defined cone."
+						}
+					}
+					volume_cone_facing_boost_team = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Relevance"
+							property_help = "Volume in db that will boost this sound if its owning entity is facing the local player within the angles of the defined cone."
+						}
+					}
+					volume_cone_facing_boost_opponent = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Relevance"
+							property_help = "Volume in db that will boost this sound if its owning entity is facing the local player within the angles of the defined cone."
+						}
+					}
+					volume_cone_facing_boost_neutral = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Perspective - Relevance"
+							property_help = "Volume in db that will boost this sound if its owning entity is facing the local player within the angles of the defined cone."
+						}
+					}
+					point_effect_exclusive_processing_enabled_player = 
+					{
+						data_type = "float"
+						value = "1.0"
+						_system_properties = 
+						{
+							property_group = "Point effect processing"
+						}
+					}
+					point_effect_exclusive_processing_enabled_team = 
+					{
+						data_type = "float"
+						value = "1.0"
+						_system_properties = 
+						{
+							property_group = "Point effect processing"
+						}
+					}
+					point_effect_exclusive_processing_enabled_opponent = 
+					{
+						data_type = "float"
+						value = "1.0"
+						_system_properties = 
+						{
+							property_group = "Point effect processing"
+						}
+					}
+					point_effect_exclusive_processing_enabled_neutral = 
+					{
+						data_type = "float"
+						value = "1.0"
+						_system_properties = 
+						{
+							property_group = "Point effect processing"
+						}
+					}
+				}
+			},
+			{
+				name = "private"
+				operator = "util_null"
+				operator_variables = 
+				{
+					enemy_targeting_latch_activated = 
+					{
+						data_type = "float"
+						value = "0.0"
 					}
 				}
 			},
@@ -896,10 +1039,21 @@
 				input_neutral_value = "@public.block_neutral"
 			},
 			{
+				name = "get_event_info"
+				operator = "soundevent_get_info"
+			},
+			{
+				name = "math_check_perspective_block"
+				operator = "math_float"
+				input_execute = "1.0"
+				apply = "mult"
+				input1 = "@perspective_switch_block.output"
+				input2 = "@get_event_info.output_is_first_frame"
+			},
+			{
 				name = "exec_block_perspective"
 				operator = "sos_goto"
-				execute_once = "true"
-				input_execute = "@perspective_switch_block.output"
+				input_execute = "@math_check_perspective_block.output"
 				input_goto_end = "true"
 			},
 			{
@@ -939,6 +1093,15 @@
 				input_neutral_value = "@public.volume_offset_neutral"
 			},
 			{
+				name = "perspective_switch_volume_offset_game_internal_temp"
+				operator = "logic_perspective_switch_float"
+				input_participant_perspective = "@citadel_find_perspective::game_entity_perspective.output"
+				input_player_value = "@public.volume_offset_game_internal_temp_player_db"
+				input_team_value = "@public.volume_offset_game_internal_temp_team_db"
+				input_opponent_value = "@public.volume_offset_game_internal_temp_opponent_db"
+				input_neutral_value = "@public.volume_offset_game_internal_temp_neutral_db"
+			},
+			{
 				name = "math_perspective_volume_offset"
 				input_execute = "1.0"
 				operator = "math_float"
@@ -974,12 +1137,45 @@
 				input_neutral_value = "@public.occlusion_scale_non_player"
 			},
 			{
+				name = "perspective_switch_cone_facing"
+				operator = "logic_perspective_switch_float"
+				input_participant_perspective = "@citadel_find_perspective::game_entity_perspective.output"
+				input_player_value = "@public.volume_cone_facing_boost_player"
+				input_team_value = "@public.volume_cone_facing_boost_team"
+				input_opponent_value = "@public.volume_cone_facing_boost_opponent"
+				input_neutral_value = "@public.volume_cone_facing_boost_neutral"
+			},
+			{
+				name = "math_is_targeting_and_boosted"
+				input_execute = "1.0"
+				operator = "math_float_eval"
+				expression = "( _1 > 0 ) * (_2 > 0 )"
+				input1 = "@public.volume_enemy_targeting_boost"
+				input2 = "@get_citadel_entity_info.output_enemy_is_targeting_local_player"
+			},
+			{
+				name = "math_mult_invert_targeting_boost"
+				input_execute = "1.0"
+				operator = "math_float"
+				apply = "sub"
+				input1 = "1.0"
+				input2 = "@math_is_targeting_and_boosted.output"
+			},
+			{
+				name = "math_is_targeting_or_hpf_disabled"
+				input_execute = "1.0"
+				operator = "math_float"
+				apply = "mult"
+				input1 = "@math_mult_invert_targeting_boost.output"
+				input2 = "@public.hpf_non_player_enabled"
+			},
+			{
 				name = "perspective_switch_distance_hpf_on"
 				operator = "logic_perspective_switch_float"
 				input_participant_perspective = "@citadel_find_perspective::game_entity_perspective.output"
 				input_player_value = "@public.hpf_player_enabled"
 				input_team_value = "@public.hpf_non_player_enabled"
-				input_opponent_value = "@public.hpf_non_player_enabled"
+				input_opponent_value = "@math_is_targeting_or_hpf_disabled.output"
 				input_neutral_value = "@public.hpf_non_player_enabled"
 			},
 			{
@@ -1008,6 +1204,15 @@
 				input_team_value = "@public.volume_falloff_scale_team"
 				input_opponent_value = "@public.volume_falloff_scale_opponent"
 				input_neutral_value = "@public.volume_falloff_scale_neutral"
+			},
+			{
+				name = "perspective_switch_point_processing_enabled"
+				operator = "logic_perspective_switch_float"
+				input_participant_perspective = "@citadel_find_perspective::game_entity_perspective.output"
+				input_player_value = "@public.point_effect_exclusive_processing_enabled_player"
+				input_team_value = "@public.point_effect_exclusive_processing_enabled_team"
+				input_opponent_value = "@public.point_effect_exclusive_processing_enabled_opponent"
+				input_neutral_value = "@public.point_effect_exclusive_processing_enabled_neutral"
 			},
 			{
 				name = "mix_group_suffix_switch"
@@ -1048,11 +1253,36 @@
 				input_entity_index = "@citadel_find_perspective::output.entity_index"
 			},
 			{
+				name = "math_enemy_targeting_updating_check"
+				input_execute = "1.0"
+				operator = "math_float"
+				apply = "equal"
+				input1 = "@public.volume_enemy_targeting_boost_disable_update"
+				input2 = "@get_citadel_entity_info.output_enemy_is_targeting_local_player"
+			},
+			{
+				name = "set_output_opvar_targeting_update_latch"
+				operator = "opvar_set_float"
+				input_execute = "@get_citadel_entity_info.output_enemy_is_targeting_local_player"
+				execute_once = "1.0"
+				input = "@math_enemy_targeting_updating_check.output"
+				input_operator_name = "private"
+				input_field_name = "enemy_targeting_latch_activated"
+				input_use_namespace = "true"
+			},
+			{
+				name = "switch_is_latch_activated"
+				operator = "ctrl_switch_float"
+				input_switch = "@private.enemy_targeting_latch_activated"
+				input1 = "@get_citadel_entity_info.output_enemy_is_targeting_local_player"
+				input2 = "1.0"
+			},
+			{
 				name = "math_enemy_targeting_volume_scalar"
 				input_execute = "1.0"
 				operator = "math_float"
 				apply = "mult"
-				input1 = "@get_citadel_entity_info.output_enemy_is_targeting_local_player"
+				input1 = "@switch_is_latch_activated.output"
 				input2 = "@public.volume_enemy_targeting_boost"
 			},
 			{
@@ -1183,6 +1413,11 @@
 						data_type = "float"
 						value = "@math_solo_owner_or_emitter.output"
 					}
+					volume_offset_game_internal_temp = 
+					{
+						data_type = "float"
+						value = "@perspective_switch_volume_offset_game_internal_temp.output"
+					}
 					volume_falloff_floor = 
 					{
 						data_type = "float"
@@ -1253,34 +1488,15 @@
 						data_type = "float"
 						value = "0.0"
 					}
-				}
-			},
-			{
-				name = "citadel_source_reverb_send"
-				operator = "sos_import_stack"
-				import_stack = "citadel_source_reverb_send"
-				auto_connect_public_fields = "true"
-				operator_variables = 
-				{
-					source_reverb_emitter_location = 
-					{
-						data_type = "float3"
-						value = "@citadel_default_3d::citadel_base_3d::add_position_offset.output"
-					}
-					source_reverb_distance = 
+					volume_cone_facing_boost = 
 					{
 						data_type = "float"
-						value = "@citadel_default_3d::citadel_base_3d::distance_filter.output"
+						value = "@perspective_switch_cone_facing.output"
 					}
-					source_reverb_voice_volume = 
+					point_effect_exclusive_processing_enabled = 
 					{
 						data_type = "float"
-						value = "@citadel_default_3d::citadel_base_3d::math_volume_scale_mixer.output"
-					}
-					source_reverb_mixer_dsp = 
-					{
-						data_type = "float"
-						value = "@citadel_default_3d::citadel_base_3d::mixer.output_dsp"
+						value = "@perspective_switch_point_processing_enabled.output"
 					}
 				}
 			},

@@ -1,11 +1,15 @@
-// MNetworkVarNames = "CHandle< CBaseModelEntity > m_hOwner"
+// MGetKV3ClassDefaults = {
+//	"m_vecDamageTakenByHitGroup":
+//	[
+//	],
+//	"m_hOwner": null,
+//	"m_pAnimGraphDestructibleGraphController": null
+//}
 class CDestructiblePartsComponent
 {
 	// MNotSaved
 	CNetworkVarChainer __m_pChainEntity;
 	CUtlVector< uint16 > m_vecDamageTakenByHitGroup;
-	// MNetworkEnable
 	CHandle< C_BaseModelEntity > m_hOwner;
-	// MSaveOpsForField = "GetAnimGraphControllerPtrSaveRestoreOps"
-	CBaseAnimGraphDestructibleParts_GraphController* m_pAnimGraphDestructibleGraphController;
+	CAnimGraphControllerPtr m_pAnimGraphDestructibleGraphController;
 };

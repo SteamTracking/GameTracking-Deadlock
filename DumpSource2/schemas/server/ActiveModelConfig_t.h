@@ -1,15 +1,27 @@
-// MNetworkVarNames = "ModelConfigHandle_t m_Handle"
-// MNetworkVarNames = "string_t m_Name"
-// MNetworkVarNames = "CHandle< CBaseModelEntity > m_AssociatedEntities"
-// MNetworkVarNames = "string_t m_AssociatedEntityNames"
+// MGetKV3ClassDefaults = {
+//	"_class": "ActiveModelConfig_t",
+//	"m_Handle": 0,
+//	"m_Name": "",
+//	"m_AssociatedEntities":
+//	[
+//	],
+//	"m_AssociatedEntityNames":
+//	[
+//	],
+//	"m_vecAssociatedEntityCollidesWithHierarchy":
+//	[
+//	],
+//	"m_vecAssociatedEntityCollidesOutsideHierarchy":
+//	[
+//	]
+//}
+// MHasKV3TransferPolymorphicClassname
 class ActiveModelConfig_t
 {
-	// MNetworkEnable
 	ModelConfigHandle_t m_Handle;
-	// MNetworkEnable
 	CUtlSymbolLarge m_Name;
-	// MNetworkEnable
 	CNetworkUtlVectorBase< CHandle< CBaseModelEntity > > m_AssociatedEntities;
-	// MNetworkEnable
 	CNetworkUtlVectorBase< CUtlSymbolLarge > m_AssociatedEntityNames;
+	CUtlLeanVector< bool > m_vecAssociatedEntityCollidesWithHierarchy;
+	CUtlLeanVector< bool > m_vecAssociatedEntityCollidesOutsideHierarchy;
 };

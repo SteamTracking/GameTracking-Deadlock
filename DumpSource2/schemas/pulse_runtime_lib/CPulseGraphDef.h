@@ -12,6 +12,9 @@
 //	"m_Vars":
 //	[
 //	],
+//	"m_TempVarBanks":
+//	[
+//	],
 //	"m_PublicOutputs":
 //	[
 //	],
@@ -43,6 +46,7 @@ class CPulseGraphDef
 	CUtlVector< CPulse_Chunk* > m_Chunks;
 	CUtlVector< CPulseCell_Base* > m_Cells;
 	CUtlVector< CPulse_Variable > m_Vars;
+	CUtlVector< CPulse_TempVarBankDefinition* > m_TempVarBanks;
 	CUtlVector< CPulse_PublicOutput > m_PublicOutputs;
 	CUtlVector< CPulse_InvokeBinding* > m_InvokeBindings;
 	CUtlVector< CPulse_CallInfo* > m_CallInfos;

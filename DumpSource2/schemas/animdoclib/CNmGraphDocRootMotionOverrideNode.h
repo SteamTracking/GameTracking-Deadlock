@@ -46,6 +46,13 @@
 //			"m_type": "Float",
 //			"m_bIsDynamicPin": false,
 //			"m_bAllowMultipleOutConnections": false
+//		},
+//		{
+//			"m_ID": "",
+//			"m_name": "Enabled",
+//			"m_type": "Bool",
+//			"m_bIsDynamicPin": false,
+//			"m_bAllowMultipleOutConnections": false
 //		}
 //	],
 //	"m_outputPins":

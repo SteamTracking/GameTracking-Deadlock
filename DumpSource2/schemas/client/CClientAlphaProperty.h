@@ -1,3 +1,18 @@
+// MGetKV3ClassDefaults = {
+//	"_class": "CClientAlphaProperty",
+//	"m_nDistFadeStart": 0,
+//	"m_nDistFadeEnd": 0,
+//	"m_nDesyncOffset": 0,
+//	"m_bAlphaOverride": 0,
+//	"m_bShadowAlphaOverride": 0,
+//	"m_nRenderMode": 0,
+//	"m_nRenderFX": 0,
+//	"m_nAlpha": 255,
+//	"m_flFadeScale": 0.000000,
+//	"m_flRenderFxStartTime": null,
+//	"m_flRenderFxDuration": 0.000000
+//}
+// MHasKV3TransferPolymorphicClassname
 class CClientAlphaProperty : public IClientAlphaProperty
 {
 	uint16 m_nDistFadeStart;

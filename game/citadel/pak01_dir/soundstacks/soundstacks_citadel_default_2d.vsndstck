@@ -19,6 +19,11 @@
 						data_type = "public_opvar"
 						value = "citadel_8track_parameters"
 					}
+					citadel_blocking_group = 
+					{
+						data_type = "public_opvar"
+						value = "citadel_blocking_group"
+					}
 					pitch_external = 
 					{
 						data_type = "float"
@@ -68,7 +73,7 @@
 					voicegraph = 
 					{
 						data_type = "string"
-						value = "citadel.hrtf_basic"
+						value = "citadel_hrtf_basic"
 						_system_properties = 
 						{
 							display_group = "advanced"
@@ -159,6 +164,12 @@
 				input_switch = "@public.cull_at_distance"
 				input1 = "@citadel_base_3d::get_event_info.output_unstopped"
 				input2 = "@not_culling_and_unstopped.output"
+			},
+			{
+				name = "import_vo_group_block"
+				operator = "sos_import_stack"
+				import_stack = "citadel_blocking_group"
+				auto_connect_public_fields = "true"
 			},
 			{
 				name = "set_builtins"

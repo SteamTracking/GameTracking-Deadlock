@@ -1,10 +1,6 @@
-// MNetworkVarNames = "CHandle< CBaseEntity> m_hEntAttached"
-// MNetworkVarNames = "bool m_bCheapEffect"
 class CEntityFlame : public CBaseEntity
 {
-	// MNetworkEnable
 	CHandle< CBaseEntity > m_hEntAttached;
-	// MNetworkEnable
 	bool m_bCheapEffect;
 	float32 m_flSize;
 	// MNotSaved
@@ -16,7 +12,7 @@ class CEntityFlame : public CBaseEntity
 	GameTime_t m_flLifetime;
 	// MNotSaved
 	CHandle< CBaseEntity > m_hAttacker;
-	AI_VolumetricEventHandle_t m_iDangerSound;
+	AI_VolumetricEventHandle_t[2] m_pMoveAwaySound;
 	// MNotSaved
 	float32 m_flDirectDamagePerSecond;
 	// MNotSaved

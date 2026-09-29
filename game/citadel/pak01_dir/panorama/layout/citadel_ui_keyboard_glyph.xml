@@ -1,9 +1,9 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_ui_keyboard_glyph.vcss_c" />
-		<include src="s2r://panorama/styles/popups/popup_settings.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_ui_keyboard_glyph.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="KeyboardLabelSnippet">
@@ -16,11 +16,6 @@
 				<Panel id="KeyboardButtonImage" class="KeyboardButtonGlyph" />
 			</Panel>
 		</snippet>
-		<snippet name="ModifierCombinerSnippet">
-			<Panel id="ModifierCombiner" class="ModifierCombinerContainer">
-				<Label id="ModifierCombinerLabel" class="ModifierCombinerLabel" />
-			</Panel>
-		</snippet>
 		<snippet name="MouseGlyphSnippet">
 			<Panel id="MouseButton" class="MouseButtonGlyphContainer">
 				<Panel id="MouseButtonBG" class="MouseGlyphBackground" />
@@ -28,5 +23,11 @@
 			</Panel>
 		</snippet>
 	</snippets>
-	<Panel class="KeyboardGlyph" />
+	<Panel class="KeyboardGlyph">
+		<Panel id="ModifierGlyph" class="ModifierGlyphContainer" />
+		<Panel id="ModifierCombiner" class="ModifierCombinerContainer">
+			<Label id="ModifierCombinerLabel" class="ModifierCombinerLabel" />
+		</Panel>
+		<Panel id="MainGlyph" class="MainGlyphContainer" />
+	</Panel>
 </root>

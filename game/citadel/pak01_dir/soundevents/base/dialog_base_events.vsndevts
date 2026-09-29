@@ -34,14 +34,19 @@
 		mono_downmix_max_distance = 0.0
 		pitch_shrunken_scalar = 1.4
 		volume_shrunken_offset_db = 2.0
+		point_effect_exclusive_processing_enabled_player = 0.0
+		blocking_group_enable = true
+		blocking_group_priority = 1.0
+		blocking_subgroup_name = "dialog"
 	}
 	Base.Hero.VO.Death = 
 	{
 		type = "citadel_perspective_default"
+		mix_group_prefix = ""
 		mixer_mixgroup = "VO-Hero-Death"
-		delay = 0.1
+		delay = 0.35
 		volume_fade_out = 0.1
-		volume = 3.0
+		volume = 2.0
 		track_1.vsnd_files_track_name = "hero_vo_death"
 		volume_falloff_floor = 1.0
 		play_from_listener_player = 1.0
@@ -63,7 +68,7 @@
 		occlusion_scale_non_player = 0.9
 		occlusion_volume_blend_distance_min = 1200.0
 		occlusion_volume_blend_distance_max = 2500.0
-		_builtins._voicegraph = "citadel.hero_death_vo"
+		_builtins._voicegraph = "citadel_hero_death_vo"
 	}
 	Base.Hero.VO.Zipline = 
 	{
@@ -109,7 +114,7 @@
 		play_from_listener_neutral = 1.0
 		hpf_non_player_enabled = 0.0
 		lpf_non_player_enabled = 0.0
-		_builtins._voicegraph = "citadel.2d_basic"
+		_builtins._voicegraph = "citadel_2d_basic"
 		enable_pre_priority_volume_blocking = false
 	}
 	Base.VO.Announcer = 
@@ -179,6 +184,9 @@
 		delay = 0.3
 		volume_shrunken_offset_db = 4.0
 		block_distance_max = -1.0
+		blocking_group_enable = true
+		blocking_group_priority = 1.0
+		blocking_subgroup_name = "dialog"
 	}
 	Base.Announcer.Tutorial = 
 	{
@@ -192,15 +200,24 @@
 	}
 	Base.HeroPick.VO.2d = 
 	{
-		base = "Base.VO.2d"
+		type = "citadel_default_2d"
 		volume = -3.0
+		position_force_from_player = true
+		volume_fade_out = 0.05
 		mixer_mixgroup = "VO-Hero-Pick"
-		send_name_player = "vo-pick"
-		send_name_team = "vo-pick"
-		send_name_opponent = "vo-pick"
-		send_name_neutral = "vo-pick"
+		send_name = "vo-pick"
+		event_voice_layer = "game"
+		blocking_group_enable = true
+		blocking_group_priority = 2.0
+		blocking_subgroup_name = "dialog"
 	}
 	Base.HeroRemove.VO.2d = 
+	{
+		base = "Base.HeroPick.VO.2d"
+		volume = -3.0
+		mixer_mixgroup = "VO-Hero-Pick"
+	}
+	Base.HeroVoted.VO.2d = 
 	{
 		base = "Base.HeroPick.VO.2d"
 		volume = -3.0
@@ -292,11 +309,22 @@
 	{
 		base = "Base.Hero.VO"
 		enable_combat_blocking = false
-		volume = -10.0
+		volume = -5.0
+		volume_offset_opponent = 4.0
+		low_priority_vol_atten_db = -5.0
 	}
 	Base.Hero.VO.Ping.3d = 
 	{
 		base = "Base.Hero.VO.Ping.2d"
 		enable_combat_blocking = false
+	}
+	Base.VO.VisualNovel = 
+	{
+		type = "citadel_default_2d"
+		volume = 0.0
+		position_force_from_player = true
+		mixer_mixgroup = "UI"
+		event_voice_layer = "game"
+		volume_fade_out = 0.05
 	}
 }

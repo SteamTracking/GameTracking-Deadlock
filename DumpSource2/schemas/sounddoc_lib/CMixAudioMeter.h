@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": true,
+//	"m_nGenerationId": 0,
 //	"m_flLeftLevel": 0.000000,
 //	"m_flLeftPeak": 0.000000,
 //	"m_flRightLevel": 0.000000,

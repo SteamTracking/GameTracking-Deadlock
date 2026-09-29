@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_flFadeStart": 0.000000,
 //	"m_flFadeEnd": 1.000000
 //}

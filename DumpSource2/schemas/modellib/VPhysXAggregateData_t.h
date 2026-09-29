@@ -1,6 +1,7 @@
 // MGetKV3ClassDefaults = {
 //	"m_nFlags": 0,
 //	"m_nRefCounter": 0,
+//	"m_bCompoundsPacked": false,
 //	"m_bonesHash":
 //	[
 //	],
@@ -47,6 +48,7 @@ class VPhysXAggregateData_t
 {
 	uint16 m_nFlags;
 	uint16 m_nRefCounter;
+	bool m_bCompoundsPacked;
 	CUtlVector< uint32 > m_bonesHash;
 	CUtlVector< CUtlString > m_boneNames;
 	CUtlVector< uint16 > m_indexNames;

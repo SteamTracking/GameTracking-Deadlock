@@ -1,6 +1,5 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CVoiceContainerEnvelopeAnalyzer",
-//	"m_bRegenerateCurveOnCompile": false,
 //	"m_curve":
 //	{
 //		"m_spline":

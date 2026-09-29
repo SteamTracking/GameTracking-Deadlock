@@ -2,6 +2,7 @@
 //	"_class": "CBasePlayerWeaponVData",
 //	"m_szClassName": "",
 //	"m_szWorldModel": "",
+//	"m_szWorldModelAg2Override": "",
 //	"m_sToolsOnlyOwnerModelName": "",
 //	"m_bBuiltRightHanded": true,
 //	"m_bAllowFlipping": true,
@@ -13,10 +14,8 @@
 //	"m_flMuzzleSmokeTimeout": 0.250000,
 //	"m_flMuzzleSmokeDecrementRate": 1.000000,
 //	"m_bGenerateMuzzleLight": true,
+//	"m_bShouldAnimateInWorld": false,
 //	"m_bLinkedCooldowns": false,
-//	"m_vecIntrinsicModifiers":
-//	[
-//	],
 //	"m_iFlags": "",
 //	"m_iWeight": 0,
 //	"m_bAutoSwitchTo": true,
@@ -47,6 +46,9 @@ class CBasePlayerWeaponVData
 	// MPropertyDescription = "Model used on the ground or held by an entity"
 	// MPropertyProvidesEditContextString = "ToolEditContext_ID_VMDL"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_szWorldModel;
+	// MPropertyDescription = "Model used on the ground or held by an entity"
+	// MPropertyProvidesEditContextString = "ToolEditContext_ID_VMDL"
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_szWorldModelAg2Override;
 	// MPropertyDescription = "Model used by the tools only to populate comboboxes for things like animgraph parameter pickers"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_sToolsOnlyOwnerModelName;
 	// MPropertyDescription = "Was the weapon was built right-handed?"
@@ -70,10 +72,11 @@ class CBasePlayerWeaponVData
 	// MPropertyDescription = "Barrel smoke decrement rate when not firing"
 	float32 m_flMuzzleSmokeDecrementRate;
 	bool m_bGenerateMuzzleLight;
+	// MPropertyDescription = "Was the weapon was built right-handed?"
+	bool m_bShouldAnimateInWorld;
 	// MPropertyStartGroup = "Behavior"
 	// MPropertyDescription = "Should both primary and secondary attacks be cooled down together (so cooling down primary attack would cooldown both primary + secondary attacks)?"
 	bool m_bLinkedCooldowns;
-	CUtlVector< CEmbeddedSubclass< CCitadelModifier > > m_vecIntrinsicModifiers;
 	ItemFlagTypes_t m_iFlags;
 	// MPropertyDescription = "This value used to determine this weapon's importance in autoselection"
 	int32 m_iWeight;

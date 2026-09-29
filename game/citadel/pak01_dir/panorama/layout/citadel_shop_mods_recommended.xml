@@ -1,0 +1,45 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_shop_mods_recommended.vcss" />
+	</styles>
+	<snippets>
+		<snippet name="ModTier">
+			<Panel class="tierRow">
+				<Panel class="CostSticker" />
+				<Panel class="CostLabel">
+					<Panel class="currencySymbol" />
+					<Label text="{i:r:tier_cost}" />
+				</Panel>
+				<Panel id="ModLists" />
+			</Panel>
+		</snippet>
+		<snippet name="ModList">
+			<Panel class="ModList">
+				<Panel class="mod_list_bg" />
+				<CitadelShopModsTier id="ModList" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<CitadelShopModsRecommended class="ShowingPopular" hittest="false">
+		<Panel id="ModsContainer">
+			<Panel id="PopularItemsHeader">
+				<Panel class="recommendations_header_bg" />
+				<Panel id="HeroHeader">
+					<Panel id="HeroContainer">
+						<Panel class="recommendatations_hero_bg" />
+						<CitadelHeroImage id="HeaderHeroImage" heroimagestyle="minimap_icon" />
+					</Panel>
+					<CitadelHeroLogo id="HeaderHeroLogo" class="DisablePerHeroAdjustments" />
+					<Label id="HeaderLabel" text="#CitadelShopFiltered_PopularItems" />
+					<Panel class="InfoIcon" onmouseover="UIShowTextTooltip( #Citadel_PopularItems_Tooltip )" onmouseout="UIHideTextTooltip()" />
+				</Panel>
+			</Panel>
+			<Panel id="TreeHeaders">
+				<Panel class="tree_header_all" />
+			</Panel>
+			<Panel id="ModTiers" />
+		</Panel>
+	</CitadelShopModsRecommended>
+</root>

@@ -3,37 +3,16 @@
 //	"m_hExternalGraph": 4294967295,
 //	"m_sCurrScheduleName": null,
 //	"m_sCurrTaskName": null,
-//	"m_sMovementBodySection": null,
-//	"m_sActionBodySection": null,
-//	"m_sNavLinkSelection": null,
-//	"m_vecNavLinkTarget": null,
-//	"m_vecNavLinkUp": null,
-//	"m_sMovementTransitionForceFacingDisabled": "Movement_Transition_Disable_Force_Facing",
-//	"m_flEnemyDistance": null,
-//	"m_flEnemyDirection": null,
-//	"m_bCanSeeEnemy": null,
-//	"m_bEnemyFacingMe": null,
-//	"m_bHitTrigger": null,
 //	"m_pszNPCState": null,
-//	"m_bStunned": null,
-//	"m_sBodyIdle": null,
-//	"m_sFlashlightMode": null,
-//	"m_flFlightSpeedNormalized": null,
-//	"m_bMoveSolveNudgeActive": null,
-//	"m_flMoveSolveNudgeYaw": null,
-//	"m_pszDoorOpenAction": null,
-//	"m_flDistanceToDoor": null,
-//	"m_bDoorLeft": null,
-//	"m_bIsNonZUp": null,
-//	"m_bEnemyInVehicle": null,
-//	"m_eVehicleMeleeSide": null,
-//	"m_bEnableMLLocomotion": null,
-//	"m_nNavLinkExternalGraphSlot": 0,
+//	"m_sCurrMovementName": null,
 //	"m_flRandomSeed": null,
 //	"m_flTimeScale": null,
 //	"m_flHealthPct": null,
 //	"m_bHasTarget": null,
 //	"m_bInAir": null,
+//	"m_eMovementBlockedID": null,
+//	"m_eHitReactID": null,
+//	"m_flHitReactDuration": null,
 //	"m_flMoveSpeed": null,
 //	"m_flForwardSpeed": null,
 //	"m_flStrafeSpeed": null,
@@ -45,20 +24,13 @@
 //	"m_bRangedAttack": null,
 //	"m_bKill": null,
 //	"m_eFlinch": null,
-//	"m_nHitLayerTrigger": null,
-//	"m_pszDamageState": null,
-//	"m_flHealth": null,
-//	"m_flTimeScale1": null,
-//	"m_bBeam": null,
-//	"m_bCrouching": null,
-//	"m_bInAir1": null,
-//	"m_bHasTarget1": null,
-//	"m_bReloading": null,
+//	"m_eTurn": null,
 //	"m_bShielded": null,
 //	"m_bAlert": null,
 //	"m_pszAttackLeanPosition": null,
-//	"m_pszOrbDrop": null,
-//	"m_bHeavyMelee": null
+//	"m_eBaseAction": null,
+//	"m_MoveType": null,
+//	"m_eNeutralTurn": null
 //}
 // MHasKV3TransferPolymorphicClassname
 class CNPC_TrooperNeutral_GraphController : public CAI_CitadelNPC_GraphController
@@ -66,6 +38,7 @@ class CNPC_TrooperNeutral_GraphController : public CAI_CitadelNPC_GraphControlle
 	CAnimGraphParamRef< bool > m_bShielded;
 	CAnimGraphParamRef< bool > m_bAlert;
 	CAnimGraphParamRef< char* > m_pszAttackLeanPosition;
-	CAnimGraphParamRef< char* > m_pszOrbDrop;
-	CAnimGraphParamRef< bool > m_bHeavyMelee;
+	CAnimGraph2ParamOptionalRef< CGlobalSymbol > m_eBaseAction;
+	CAnimGraph2ParamOptionalRef< CGlobalSymbol > m_MoveType;
+	CAnimGraph2ParamOptionalRef< CGlobalSymbol > m_eNeutralTurn;
 };

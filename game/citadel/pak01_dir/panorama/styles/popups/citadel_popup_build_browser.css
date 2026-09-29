@@ -3,23 +3,43 @@
 PopupBuildBrowser.PopupPanel
 {
 	flow-children: down;
-	width: 1500px;
-	height: 960px;
+	width: 100%;
+	height: 100%;
 	padding: 0px;
-	vertical-align: center;
+	background-image: none;
+}
+
+#Background
+{
+	width: 100%;
+	height: 100%;
+	background-color: red;
 	horizontal-align: center;
-	border-top: 0px solid #000000000;
-	border-bottom: 0px solid #000000000;
-	border-radius: 10px;
-	background-color: buildsDarkerColor;
+	background-color: buildsDarkerColor&ea;
 	border: 3px solid #ffffff05;
+	ignore-parent-flow: true;
+}
+
+#BuildsContent
+{
+	flow-children: down;
+	width: 100%;
+	height: 100%;
+	margin: 40px;
+	max-width: 1550px;
+	horizontal-align: middle;
 }
 
 #Header
 {
 	width: 100%;
-	height: 80px;
-	padding: 20px 40px;
+	height: 70px;
+	padding: 10px 0px;
+}
+
+#Header Label
+{
+	vertical-align: middle;
 }
 
 #CreateBuildButton
@@ -54,11 +74,12 @@ PopupBuildBrowser.PopupPanel
 {
 	horizontal-align: center;
 	font-family: bold;
-	font-size: 50px;
+	font-size: 56px;
 	font-family: serif;
 	letter-spacing: 0.5px;
 	font-weight: bold;
 	color: offWhite;
+	vertical-align: middle;
 	horizontal-align: center;
 }
 
@@ -69,5 +90,110 @@ PopupBuildBrowser.PopupPanel
 	margin-left: 30px;
 	height: 60px;
 	margin: 10px 30px;
+}
+
+#BackButton
+{
+	width: 230px;
+	height: 80px;
+	vertical-align: bottom;
+	ignore-parent-flow: true;
+	z-index: 100;
+}
+
+CitadelTrainingPage #BackButton,CitadelTrainingPage .APHeader,CitadelTrainingPage .ModsPurchasedContainer,CitadelTrainingPage .HeroStatsContainer,CitadelTrainingPage .InnerAbilitiesRow,CitadelTrainingPage #RecentPurchasesPanel
+{
+	visibility: collapse;
+}
+
+#BackButton .FooterCommand
+{
+	flow-children: right;
+	vertical-align: bottom;
+	margin: 16px;
+	opacity: 0.2;
+	transition-property: brightness;
+	transition-timing-function: ease-in-out;
+	transition-duration: 0.10s;
+}
+
+#BackButton .FooterCommand:hover
+{
+	brightness: 2.0;
+}
+
+#BackButton .FooterCommand > Label
+{
+	margin-left: 6px;
+	font-size: 20px;
+	color: offWhite&88;
+	font-family: block;
+	text-transform: uppercase;
+	vertical-align: center;
+	padding-top: 2px;
+}
+
+#BackButton .FooterCommand > CitadelBinding
+{
+	vertical-align: middle;
+}
+
+.Language_japanese #BackButton .FooterCommand > CitadelBinding
+{
+	margin-top: 1px;
+	margin-bottom: 2px;
+}
+
+.Language_schinese #BackButton .FooterCommand > CitadelBinding
+{
+	margin-top: 2px;
+	margin-bottom: 3px;
+}
+
+.commandPanel
+{
+	vertical-align: bottom;
+}
+
+.FooterCommandLabel
+{
+	margin-left: 4px;
+	font-size: 20px;
+	color: #969087;
+	font-weight: black;
+	text-transform: uppercase;
+	vertical-align: center;
+	margin-top:-2px;
+}
+
+#BackButton .controlKeyBind
+{
+	min-width: 32px;
+	min-height: 28px;
+	margin: 2px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 2px;
+	border-radius: 4px;
+	text-align: center;
+	font-weight: bold;
+	background-color: rgba(240, 233, 231, 0.1);
+}
+
+#LeftCommandPanel
+{
+	horizontal-align: left;
+}
+
+.useDefaultEsc .DefaultESC
+{
+	visibility: visible;
+}
+
+.InlineGlyph
+{
+	height: 34px;
+	width: 34px;
+	background-size: 100% 100%;
 }
 

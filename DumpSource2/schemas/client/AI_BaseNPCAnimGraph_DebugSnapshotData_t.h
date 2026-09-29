@@ -1,15 +1,24 @@
 // MGetKV3ClassDefaults = {
-//	"_class": "AI_BaseNPCAnimGraph_DebugSnapshotData_t",
+//	"ag2_update_id": -1,
 //	"e_action_desired": "",
-//	"b_action_restart": false,
+//	"e_action_handshake_restart": "",
+//	"e_action_handshake_body_authority_current": "",
+//	"e_action_handshake_body_authority_desired": "",
 //	"e_movement_type_desired": "",
-//	"b_movement_type_restart": false
+//	"e_movement_handshake_restart": "",
+//	"e_movement_handshake_body_authority_current": "",
+//	"e_movement_handshake_body_authority_desired": ""
 //}
-// MHasKV3TransferPolymorphicClassname
-class AI_BaseNPCAnimGraph_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
+// MPropertyFriendlyName = "AnimGraph"
+class AI_BaseNPCAnimGraph_DebugSnapshotData_t
 {
+	int32 ag2_update_id;
 	CGlobalSymbol e_action_desired;
-	bool b_action_restart;
+	CGlobalSymbol e_action_handshake_restart;
+	CGlobalSymbol e_action_handshake_body_authority_current;
+	CGlobalSymbol e_action_handshake_body_authority_desired;
 	CGlobalSymbol e_movement_type_desired;
-	bool b_movement_type_restart;
+	CGlobalSymbol e_movement_handshake_restart;
+	CGlobalSymbol e_movement_handshake_body_authority_current;
+	CGlobalSymbol e_movement_handshake_body_authority_desired;
 };

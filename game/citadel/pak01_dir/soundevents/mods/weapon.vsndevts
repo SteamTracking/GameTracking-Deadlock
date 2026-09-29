@@ -34,13 +34,18 @@
 	}
 	Mods.Weapon.Headshot.Booster.Proc = 
 	{
-		base = "Base.Mod"
-		volume = -9.0
-		pitch = 1.5
+		base = "Base.Ability.Hit"
+		volume = -2.0
+		volume_offset_attacker_db = 2.0
 		limiter_on = 1.0
-		limiter_max = 0
-		vsnd_files = "sounds/mods/weapon/leveler/headshot.vsnd"
-		vsnd_duration = 1.303833
+		limiter_max = 0.0
+		vsnd_files = 
+		[
+			"sounds/mods/weapon/leveler/headshot_booster_hit_01.vsnd",
+			"sounds/mods/weapon/leveler/headshot_booster_hit_02.vsnd",
+			"sounds/mods/weapon/leveler/headshot_booster_hit_03.vsnd",
+		]
+		vsnd_duration = 1.314739
 	}
 	Mods.Weapon.BurstFire.Perfect = 
 	{
@@ -53,7 +58,6 @@
 		pitch_modulation_max = 2.0
 		pitch = 0.75
 		vsnd_files = "sounds/guardian/tier1/wpn/whizby_01.vsnd"
-		vsnd_duration = 0.641312
 	}
 	Mods.Weapon.Detention.Rounds.Mod.Start = 
 	{
@@ -501,15 +505,14 @@
 	}
 	Mods.Weapon.Lucky.Bullets.Proc = 
 	{
-		base = "Base.Mod"
+		base = "Base.Ability.Hit"
 		limiter_max = 2.0
 		limiter_on = 1.0
-		volume = -6.0
+		volume = -2.0
+		volume_offset_attacker_db = 4.5
 		pitch = 1.1
 		pitch_rand_min = -0.015
 		pitch_rand_max = 0.015
-		volume_offset_opponent = -6.0
-		volume_offset_team = -4.0
 		vsnd_files = 
 		[
 			"sounds/mods/weapon/lucky/lucky_proc_01.vsnd",
@@ -517,14 +520,6 @@
 			"sounds/mods/weapon/lucky/lucky_proc_03.vsnd",
 		]
 		vsnd_duration = 0.910816
-	}
-	Mods.Weapon.Silencer.Cast = 
-	{
-		base = "Base.Mod"
-		delay = 0.05
-		volume = 0.0
-		vsnd_files = "sounds/mods/weapon/silencer/silence_cast.vsnd"
-		vsnd_duration = 2.488843
 	}
 	Mods.Weapon.Capacitor.Proc = 
 	{
@@ -548,30 +543,12 @@
 		pitch_rand_min = -0.075
 		pitch_rand_max = 0.075
 		max_distance_recipient_filter = 3500.0
+		volume_falloff_max_opponent = 3500.0
 		vsnd_files = 
 		[
 			"sounds/mods/weapon/capacitor/capacitor_cast_01.vsnd",
 			"sounds/mods/weapon/capacitor/capacitor_cast_02.vsnd",
 			"sounds/mods/weapon/capacitor/capacitor_cast_03.vsnd",
-		]
-		volume_falloff_curve_db_opponent = 
-		[
-			[
-				0.0, 0.0, 0.0, 0.0,
-				0.0, 0.0,
-			],
-			[
-				201.149429, 0.0, 0.0, -0.00338,
-				0.0, 0.0,
-			],
-			[
-				2800.0, -6.080357, -0.004735, -0.004735,
-				2.0, 3.0,
-			],
-			[
-				3500.0, -60.0, -0.035318, -0.035318,
-				2.0, 3.0,
-			],
 		]
 		vsnd_duration = 1.792313
 	}
@@ -621,12 +598,11 @@
 	}
 	Mods.Weapon.Crushing.Fists.Stack = 
 	{
-		base = "Base.Mod"
-		volume = -7.5
+		base = "Base.Ability.Hit"
+		volume = -2.0
 		delay = 0.05
-		volume_offset_opponent = 2.0
-		pitch_rand_min = -0.1
-		pitch_rand_max = 0.1
+		pitch_increment_count_max = 6.0
+		incremental_pitch_offset = 0.06
 		vsnd_files = "sounds/mods/weapon/crushing_fists/crushing_fists_stack.vsnd"
 		instance_count_offset_amount_db = 
 		[
@@ -643,7 +619,7 @@
 				0.0, 0.0,
 			],
 		]
-		vsnd_duration = 2.1261
+		vsnd_duration = 1.019388
 	}
 	Mods.Weapon.Crushing.Fists.Stun = 
 	{

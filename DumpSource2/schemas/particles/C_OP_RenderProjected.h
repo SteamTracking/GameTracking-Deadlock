@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -114,7 +115,6 @@
 //		"m_bRightEye": false
 //	},
 //	"m_bCannotBeRefracted": true,
-//	"m_bSkipRenderingOnMobile": false,
 //	"m_bProjectCharacter": false,
 //	"m_bProjectWorld": true,
 //	"m_bProjectWater": true,
@@ -198,7 +198,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flAnimationTimeScale": 1.000000,
 //	"m_bOrientToNormal": false,
@@ -278,7 +279,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flAlphaScale":
 //	{
@@ -353,7 +355,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_flRollScale":
 //	{
@@ -428,7 +431,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nAlpha2Field": 16,
 //	"m_vecColorScale":
@@ -548,7 +552,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentY":
 //		{
@@ -623,7 +628,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentZ":
 //		{
@@ -698,7 +704,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatInterp":
 //		{
@@ -773,7 +780,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_flInterpInput0": 0.000000,
 //		"m_flInterpInput1": 1.000000,

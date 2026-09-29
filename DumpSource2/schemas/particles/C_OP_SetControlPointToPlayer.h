@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -100,7 +101,9 @@
 //		0.000000
 //	],
 //	"m_bOrientToEyes": false,
-//	"m_nPosition": "PARTICLE_WORLDSPACE_CENTER"
+//	"m_nPosition": "PARTICLE_WORLDSPACE_CENTER",
+//	"m_nRadiusCP": 2,
+//	"m_nRadiusCPField": 0
 //}
 // MHasKV3TransferPolymorphicClassname
 class C_OP_SetControlPointToPlayer : public CParticleFunctionPreEmission
@@ -114,4 +117,11 @@ class C_OP_SetControlPointToPlayer : public CParticleFunctionPreEmission
 	bool m_bOrientToEyes;
 	// MPropertyFriendlyName = "position to get"
 	ParticleEntityPos_t m_nPosition;
+	// MPropertyFriendlyName = "flashlight radius CP"
+	// MPropertySuppressExpr = "m_nPosition != PARTICLE_FLASHLIGHT"
+	int32 m_nRadiusCP;
+	// MPropertyFriendlyName = "flashlight radius control point component"
+	// MPropertyAttributeChoiceName = "vector_component"
+	// MPropertySuppressExpr = "m_nPosition != PARTICLE_FLASHLIGHT"
+	int32 m_nRadiusCPField;
 };

@@ -1,10 +1,8 @@
-// MNetworkVarNames = "int32 m_nameStringableIndex"
+// MGetKV3ClassDefaults = Could not parse KV3 Defaults
 class CEntityIdentity
 {
-	// MNetworkEnable
 	// MNotSaved
-	// MNetworkChangeCallback = "entityIdentityNameChanged"
-	int32 m_nameStringableIndex;
+	int32 m_nameStringTableIndex;
 	CUtlSymbolLarge m_name;
 	// MNotSaved
 	CUtlSymbolLarge m_designerName;
@@ -16,7 +14,6 @@ class CEntityIdentity
 	uint32 m_fDataObjectTypes;
 	// MNotSaved
 	ChangeAccessorFieldPathIndex_t m_PathIndex;
-	// MSaveOpsForField = "GetAttributeDictSaveDataOps"
 	CEntityAttributeTable* m_pAttributes;
 	// MNotSaved
 	CEntityIdentity* m_pPrev;

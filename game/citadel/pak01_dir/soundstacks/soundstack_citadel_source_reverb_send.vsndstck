@@ -31,7 +31,7 @@
 						{
 							display_group = "advanced"
 							display_edit_type = "field_curve_2d_editor"
-							property_help = "Maps enclosure ( 0-255 ) to exterior reverb volume. Interior amount will be inverse."
+							property_help = "Maps enclosure ( 0-1 ) to exterior reverb volume. Interior amount will be inverse."
 							property_group = "Source Reverb"
 						}
 					}
@@ -132,6 +132,20 @@
 				}
 			},
 			{
+				name = "source_reverb_disabled"
+				operator = "math_float"
+				apply = "less_than_or_equal"
+				input1 = "@public.source_reverb_level"
+				input2 = "0.0"
+			},
+			{
+				name = "skip_source_reverb_logic"
+				operator = "sos_goto"
+				input_execute = "@source_reverb_disabled.output"
+				use_local_namespace = "true"
+				input_goto_operator = "print_end_source_reverb"
+			},
+			{
 				name = "math_should_update"
 				execute_once = "1.0"
 				operator = "math_float"
@@ -145,41 +159,11 @@
 				operator = "game_get_source_info"
 			},
 			{
-				name = "citadel_entity_info"
+				name = "globals"
 				execute_once = "@math_should_update.output"
-				operator = "citadel_entity_info"
-				input_entity_index = "@source_info.output_entity_index"
-			},
-			{
-				name = "remap_exterior_reverb_level"
-				execute_once = "@math_should_update.output"
-				operator = "math_curve_2d"
-				input = "@citadel_entity_info.output_enclosure"
-				public_field_name = "public.source_reverb_enclosure_exterior_level"
-			},
-			{
-				name = "math_invert_exterior"
-				execute_once = "@math_should_update.output"
-				operator = "math_float"
-				apply = "sub"
-				input1 = "1.0"
-				input2 = "@remap_exterior_reverb_level.output"
-			},
-			{
-				name = "math_reverb_exterior_amount_max"
-				execute_once = "@math_should_update.output"
-				operator = "math_float"
-				apply = "max"
-				input1 = "@remap_exterior_reverb_level.output"
-				input2 = "@public.source_reverb_sky_exposed_exterior_floor"
-			},
-			{
-				name = "ctrl_switch_exterior_amount"
-				execute_once = 1.0
-				operator = "ctrl_switch_float"
-				input_switch = "@citadel_entity_info.output_has_sky_exposure"
-				input1 = "@remap_exterior_reverb_level.output"
-				input2 = "@math_reverb_exterior_amount_max.output"
+				operator = "get_system_globals"
+				input_execute = "1.0"
+				input_listener_index = "0"
 			},
 			{
 				name = "remap_distance_mult"
@@ -203,27 +187,6 @@
 				operator = "vmix_voicegraph_input"
 				input_name = "source_reverb_level"
 				input = "@math_source_reverb_level.output"
-			},
-			{
-				name = "send_exterior_amount"
-				execute_once = "@math_should_update.output"
-				operator = "vmix_voicegraph_input"
-				input_name = "source_reverb_exterior_amount"
-				input = "@ctrl_switch_exterior_amount.output"
-			},
-			{
-				name = "send_interior_amount"
-				execute_once = "@math_should_update.output"
-				operator = "vmix_voicegraph_input"
-				input_name = "source_reverb_interior_amount"
-				input = "@math_invert_exterior.output"
-			},
-			{
-				name = "globals"
-				execute_once = "@math_should_update.output"
-				operator = "get_system_globals"
-				input_execute = "1.0"
-				input_listener_index = "0"
 			},
 			{
 				name = "math_dot_product_listener_right"
@@ -261,12 +224,132 @@
 				input = "@remap_pan_spread.output"
 			},
 			{
-				name = "send_enclosure_param"
-				input_execute = "1"
+				name = "citadel_entity_info"
+				operator = "citadel_entity_info"
 				execute_once = "@math_should_update.output"
+				input_entity_index = "@source_info.output_entity_index"
+			},
+			{
+				name = "print_dimension_reverb"
+				operator = "util_print_string"
+				execute_once = "1.0"
+				input_execute = "0.0"
+				input = "USING DIMENSION PROBE SOURCE REVERB"
+			},
+			{
+				name = "import_steamaudio_dimension_probes"
+				operator = "sos_import_stack"
+				import_stack = "citadel_steamaudio_dimension_probes"
+				operator_variables = 
+				{
+					input_steamaudio_dimension_probes_entity_index = 
+					{
+						data_type = "float"
+						value = "@source_info.output_entity_index"
+					}
+				}
+			},
+			{
+				name = "convar_get_reverb_size_debug"
+				operator = "convar_get"
+				convar = "audio_draw_dimension_probe_debug"
+			},
+			{
+				name = "util_draw_dimension_debug_sphere"
+				operator = "util_draw_debug_sphere"
+				input_execute = "@convar_get_reverb_size_debug.output"
+				input_radius = "@import_steamaudio_dimension_probes::output.dimension_size"
+				input_position = "@public.source_reverb_emitter_location"
+				input_rgb_color = "[255., 38., 38.]"
+				input_show_detailed_info = "1.0"
+				detail_label_1 = "Dimension Size:"
+				detail_value_1 = "@import_steamaudio_dimension_probes::output.dimension_size"
+			},
+			{
+				name = "normalize_room_size_to_enclosure"
+				operator = "math_float"
+				execute_once = "@math_should_update.output"
+				apply = "div"
+				input1 = "@import_steamaudio_dimension_probes::output.dimension_size"
+				input2 = "2500"
+			},
+			{
+				name = "remap_exterior_reverb_level_probe"
+				operator = "math_curve_2d"
+				execute_once = "@math_should_update.output"
+				input = "@normalize_room_size_to_enclosure.output"
+				public_field_name = "public.source_reverb_enclosure_exterior_level"
+			},
+			{
+				name = "math_invert_exterior_probe"
+				operator = "math_float"
+				execute_once = "@math_should_update.output"
+				apply = "sub"
+				input1 = "1.0"
+				input2 = "@remap_exterior_reverb_level_probe.output"
+			},
+			{
+				name = "math_reverb_exterior_amount_max_probe"
+				operator = "math_float"
+				execute_once = "@math_should_update.output"
+				apply = "max"
+				input1 = "@remap_exterior_reverb_level_probe.output"
+				input2 = "@public.source_reverb_sky_exposed_exterior_floor"
+			},
+			{
+				name = "math_inout_probe_is_outside"
+				operator = "math_float"
+				execute_once = "@math_should_update.output"
+				apply = "greater_than_or_equal"
+				input1 = "@import_steamaudio_dimension_probes::output.dimension_inout"
+				input2 = "0.02"
+			},
+			{
+				name = "ctrl_switch_exterior_amount_probe"
+				operator = "ctrl_switch_float"
+				execute_once = "@math_should_update.output"
+				input_switch = "@math_inout_probe_is_outside.output"
+				input1 = "@remap_exterior_reverb_level_probe.output"
+				input2 = "@math_reverb_exterior_amount_max_probe.output"
+			},
+			{
+				name = "send_exterior_amount_probe"
 				operator = "vmix_voicegraph_input"
+				execute_once = "@math_should_update.output"
+				input_name = "source_reverb_exterior_amount"
+				input = "@ctrl_switch_exterior_amount_probe.output"
+			},
+			{
+				name = "send_interior_amount_probe"
+				operator = "vmix_voicegraph_input"
+				execute_once = "@math_should_update.output"
+				input_name = "source_reverb_interior_amount"
+				input = "@math_invert_exterior_probe.output"
+			},
+			{
+				name = "remap_enclosure_zero_to_one_probe"
+				operator = "math_remap_float"
+				execute_once = "@math_should_update.output"
+				input = "@normalize_room_size_to_enclosure.output"
+				input_min = "0.15"
+				input_max = "0.6"
+				input_map_min = "0.0"
+				input_map_max = "1.0"
+				default_to_max = "false"
+			},
+			{
+				name = "send_enclosure_dimension_param"
+				operator = "vmix_voicegraph_input"
+				execute_once = "@math_should_update.output"
 				input_name = "source_reverb_enclosure"
-				input = "@citadel_entity_info.output_enclosure"
+				input = "@remap_enclosure_zero_to_one_probe.output"
+			},
+			{
+				name = "print_end_source_reverb"
+				operator = "util_print_string"
+				execute_once = "1.0"
+				input_execute = "0.0"
+				input = "END_SOURCE_REVERB"
 			},
 		]
 	}

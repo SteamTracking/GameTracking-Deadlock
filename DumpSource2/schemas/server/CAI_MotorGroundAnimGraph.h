@@ -1,36 +1,44 @@
-class CAI_MotorGroundAnimGraph
+class CAI_MotorGroundAnimGraph : public IAI_Motor
 {
-	CAI_MotorGroundAnimGraph_State_Idle m_stateIdle;
-	CAI_MotorGroundAnimGraph_State_IdleTurn m_stateIdleTurn;
-	CAI_MotorGroundAnimGraph_State_Loop m_stateLoop;
-	CAI_MotorGroundAnimGraph_State_Start m_stateStart;
-	CAI_MotorGroundAnimGraph_State_Stop m_stateStop;
-	CAI_MotorGroundAnimGraph_State_InstantStop m_stateInstantStop;
-	CAI_MotorGroundAnimGraph_State_Hop m_stateHop;
-	CAI_MotorGroundAnimGraph_State_Custom m_stateCustom;
-	CAI_MotorGroundAnimGraph_State_CustomMantle m_stateCustomMantle;
-	CAI_MotorGroundAnimGraph_State_PlantedTurn m_statePlantedTurn;
-	CAI_MotorGroundAnimGraph_State_Other m_stateOther;
+	GameTime_t m_flStartWaitingForFacingTime;
+	CGlobalSymbol m_sDesiredMovementGaitSetId;
+	CGlobalSymbol m_sDesiredMovementSettingsId;
+	CAI_MotorGroundAnimGraph::MovementGaitAndSpeed_t m_desiredMovementGait;
+	CGlobalSymbol m_sCurrentMovementGaitSetId;
+	CGlobalSymbol m_sCurrentMovementSettingsId;
+	CAI_MotorGroundAnimGraph::MovementGaitAndSpeed_t m_currentMovementGait;
+	StanceType_t m_nDesiredStance;
+	StanceType_t m_nCurrentStance;
+	CAI_MotorGroundAnimGraph::CState_Idle m_stateIdle;
+	CAI_MotorGroundAnimGraph::CState_IdleTurn m_stateIdleTurn;
+	CAI_MotorGroundAnimGraph::CState_Loop m_stateLoop;
+	CAI_MotorGroundAnimGraph::CState_Start m_stateStart;
+	CAI_MotorGroundAnimGraph::CState_Stop m_stateStop;
+	CAI_MotorGroundAnimGraph::CState_InstantStop m_stateInstantStop;
+	CAI_MotorGroundAnimGraph::CState_Hop m_stateHop;
+	CAI_MotorGroundAnimGraph::CState_Custom m_stateCustom;
+	CAI_MotorGroundAnimGraph::CState_CustomMantle m_stateCustomMantle;
+	CAI_MotorGroundAnimGraph::CState_PlantedTurn m_statePlantedTurn;
+	CAI_MotorGroundAnimGraph::CState_StrafeTransition m_stateStrafeTransition;
+	CAI_MotorGroundAnimGraph::CState_PoseTransition m_statePoseTransition;
+	CAI_MotorGroundAnimGraph::CState_Other m_stateOther;
 	int32 m_nCurrentState;
 	float32 m_flDistanceCoveredInCurrentState;
-	bool m_bEnableStop;
-	bool m_bEnableStart;
-	bool m_bHadPath;
 	bool m_bEnableAdvancedFeatures;
 	bool m_bTeleported;
 	bool m_bAllTransitionsBlocked;
 	bool m_bIsAG2;
+	bool m_bPathIsTooShort;
 	AI_MotorGroundAnimGraph_Flags_t m_eFlags;
 	VectorWS m_vPreviousPosition;
-	Vector m_vPreviousMoveDirection;
 	float32 m_flCurrentLean;
 	float32 m_flCurrentSpeed;
-	float32 m_flMovementDesiredHeading;
-	RotationVector m_vDesiredMovementHeadingChangeVelocity;
-	CFloatExponentialMovingAverage m_smoothedDesiredMoveHeading;
+	Vector m_vPathDirectionLS;
+	float32 m_flCommittedStrafeAngle;
+	float32 m_flAvoidanceSpeedScale;
+	CAI_MotorGroundAnimGraph::MovementGaitAndSpeed_t m_avoidanceMovementGait;
 	CMotionTransform m_proceduralRootMotion;
-	// MSaveOpsForField = "GetAnimGraphControllerPtrSaveRestoreOps"
-	CAI_GroundLocomotion_GraphController* m_pGraphController;
-	// MSaveOpsForField = "GetAnimGraphControllerPtrSaveRestoreOps"
-	CAI_GroundLocomotion_AG1_GraphController* m_pAG1GraphController;
+	CAnimGraphControllerPtr m_pGraphController;
+	CAnimGraphControllerPtr m_pAG1GraphController;
+	Vector m_vPhysicsVelocity;
 };

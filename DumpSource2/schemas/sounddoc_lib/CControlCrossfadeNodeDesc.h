@@ -1,0 +1,3 @@
+class CControlCrossfadeNodeDesc : public CVControlNodeBaseDesc
+{
+};

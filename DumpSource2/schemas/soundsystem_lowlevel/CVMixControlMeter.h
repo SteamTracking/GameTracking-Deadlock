@@ -1,8 +1,13 @@
 // MGetKV3ClassDefaults = {
 //	"m_name": "GameInput",
-//	"m_nValueIndex": 0
+//	"m_nValueIndex":
+//	{
+//		"category": "NULL_POINTER",
+//		"type": "VO_CHAR",
+//		"index": 0
+//	}
 //}
 class CVMixControlMeter : public CVMixInputBase
 {
-	int32 m_nValueIndex;
+	CVMixDataOffset m_nValueIndex;
 };

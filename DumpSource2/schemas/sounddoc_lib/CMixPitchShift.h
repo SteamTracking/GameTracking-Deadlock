@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_nChannels": -1,
 //	"m_flPitchScale": 1.000000,
 //	"m_flGrainMs": 100.000000,

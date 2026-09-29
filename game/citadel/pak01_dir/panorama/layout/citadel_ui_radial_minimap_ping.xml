@@ -1,0 +1,40 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_ui_radial.vcss" />
+		<include src="s2r://panorama/styles/citadel_ui_radial_minimap_ping.vcss" />
+	</styles>
+	<snippets>
+		<snippet name="RadialBackground">
+			<Panel class="RadialBackground" />
+		</snippet>
+		<snippet name="RadialContent">
+			<Panel class="RadialSegment">
+				<Image id="PingIcon" texturewidth="96px" textureheight="96px" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel id="PingDescriptionAnchor">
+					<Label id="PingDescription" text="{s:ping_description}" html="true" />
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="Subject_World">
+			<Panel class="Subject" />
+		</snippet>
+		<snippet name="Subject_Entity">
+			<Panel class="Subject">
+				<Image id="SubjectImage" />
+				<Label id="SubjectName" text="{s:subject_name}" html="true" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="CitadelRadialBase CitadelRadialMinimapPing">
+		<Panel id="RadialPanel">
+			<Panel id="RadialBackgroundsContainer" class="RadialBackgroundsContainer" />
+			<Panel id="RadialContentContainer" class="RadialContentContainer" />
+			<Panel id="SubjectContainer" class="SubjectContainer" />
+		</Panel>
+		<Panel id="HoverLabel" class="HoverLabel">
+			<Label id="HoverLabelText" text="{s:hover_label}" html="true" />
+		</Panel>
+	</Panel>
+</root>

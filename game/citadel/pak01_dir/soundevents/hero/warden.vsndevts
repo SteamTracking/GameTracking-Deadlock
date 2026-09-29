@@ -126,7 +126,7 @@
 	}
 	Warden.Flask.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		volume_offset_opponent = 3.0
 		pitch_rand_min = -0.05
@@ -148,6 +148,7 @@
 		pitch_rand_min = -0.1
 		pitch_rand_max = 0.1
 		volume_offset_opponent = 4.0
+		delay_rand_min = -2.5
 		vsnd_files = "sounds/abilities/warden/warden_a1_flask_proj_lp.vsnd"
 		vsnd_duration = 2.667959
 	}
@@ -184,7 +185,7 @@
 	}
 	Warden.Willpower.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 4.0
 		vsnd_files = "sounds/abilities/warden/warden_willpower_cast.vsnd"
 		vsnd_duration = 2.435555
@@ -220,7 +221,7 @@
 	}
 	Warden.LockDown.CastDelay = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = -2.0
 		vsnd_files = "sounds/abilities/warden/lockdown_cast.vsnd"
 		vsnd_duration = 1.956
@@ -258,14 +259,14 @@
 	}
 	Warden.RiotProtocol.PreCast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 3.0
 		vsnd_files = "sounds/abilities/warden/warden_a4_riot_protocol_precast_01.vsnd"
 		vsnd_duration = 4.264399
 	}
 	Warden.RiotProtocol.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 4.0
 		vsnd_files = "sounds/abilities/warden/warden_last_stand_cast.vsnd"
 		vsnd_duration = 3.165737
@@ -307,34 +308,7 @@
 	}
 	Warden.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
+		base = "Hero.Default.Melee.Swing"
 		track_2.track_vsnd_files = 
 		[
 			"sounds/player/movement/warden/warden_foley_short_01.vsnd",
@@ -347,39 +321,10 @@
 			"sounds/player/movement/warden/warden_foley_short_08.vsnd",
 			"sounds/player/movement/warden/warden_foley_short_09.vsnd",
 		]
-		vsnd_duration = 1.062208
 	}
 	Warden.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
+		base = "Hero.Default.Melee.Charged"
 		track_2.track_vsnd_files = 
 		[
 			"sounds/player/movement/warden/warden_foley_short_01.vsnd",
@@ -392,7 +337,6 @@
 			"sounds/player/movement/warden/warden_foley_short_08.vsnd",
 			"sounds/player/movement/warden/warden_foley_short_09.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	Warden.JumpLand = 
 	{
@@ -515,7 +459,7 @@
 	Warden.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "warden"
+		context_name = "hero_warden"
 		vsnd_files = 
 		[
 			"sounds/vo/warden/warden_killstreak_mid_02.vsnd",
@@ -526,7 +470,7 @@
 	Warden.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "warden"
+		context_name = "hero_warden"
 		vsnd_files = 
 		[
 			"sounds/vo/warden/warden_concerned_10.vsnd",

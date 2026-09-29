@@ -1,0 +1,3 @@
+class CSteamAudioDirectNodeDesc : public CVAudioNodeBaseDesc
+{
+};

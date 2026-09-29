@@ -153,8 +153,8 @@
 		//-----------------------------------------------------------------------------
 		// Hero Cadence
 		//-----------------------------------------------------------------------------
-		//"citadel_weapon_hero_cadence_set"		"Arioso Annihilator"
-		//"citadel_weapon_hero_cadence_set_desc"	"Shoots bursts of 4 bullets that embed a crystal shard in the target. After 1 second, the shards shatter and deal the bullet damage again. Shatter damage is doubled if 5 or more shards are embedded."
+		//"citadel_weapon_cadence_set"		"Arioso Annihilator"
+		//"citadel_weapon_cadence_set_desc"	"Shoots bursts of 4 bullets that embed a crystal shard in the target. After 1 second, the shards shatter and deal the bullet damage again. Shatter damage is doubled if 5 or more shards are embedded."
 
 		//"cadence_ability_anthem"						"Anthem"
 		//"cadence_ability_anthem_quip"					"Lead the charge, inspiring allies in earshot and giving them weapon buffs"
@@ -510,7 +510,7 @@
 		
 		"citadel_ability_chrono_time_wall"		"Time Wall"
 		"citadel_ability_chrono_time_wall_quip"	"Create a wall that greatly slows projectiles"
-		"citadel_ability_chrono_time_wall_desc"	"Create a time warping wall that <span class=\"highlight\">stops time</span> for all <span class=\"highlight\">enemy projectiles and bullets</span> that touch it and increases the <span class=\"highlight\">speed and damage</span> of friendly bullets.  <br><br>Enemies that touch the wall will be briefly <span class=\"highlight\">slowed</span> and <span class=\"highlight\">silenced</span> ."
+		"citadel_ability_chrono_time_wall_desc"	"Create a time warping wall that <span class=\"highlight\">stops time</span> for all <span class=\"highlight\">enemy projectiles and bullets</span> that touch it and increases the <span class=\"highlight\">speed and damage</span> of friendly bullets.  <br><br>Enemies that touch the wall will be briefly <span class=\"highlight\">slowed</span>."
 		//"TargetGameplayTimeScale_label"			"Time Scale"
 		"TargetGameplayTimeScale_postfix"			"%"
 		"TimeWallWidth_label"						"Wall Width"
@@ -549,7 +549,7 @@
 		"modifier_citadel_chrono_time_wall_effect"  "Time Wall"
 		//"citadel_ability_chrono_time_wall_t1_desc"		"The wall speeds up <span class=\"highlight\">Paradox's movement.</span>"
 		"citadel_ability_chrono_time_wall_t1_desc"		"<span class=\"highlight\">+{s:AbilityDuration}s</span> Duration <br><span class=\"highlight\">+{s:TimeWallWidth}m</span> Width<br><span class=\"highlight\">+{s:TimeWallHeight}m</span> Height"
-		"citadel_ability_chrono_time_wall_t2_desc"		"<span class=\"highlight\">{s:TimeWallSilenceDuration}s</span> Silence Duration <br><span class=\"highlight\">+{s:FriendlyBulletDamageBonus}%</span> Weapon Damage"
+		"citadel_ability_chrono_time_wall_t2_desc"		"Silences enemies for <span class=\"highlight\">{s:TimeWallSilenceDuration}s</span><br><span class=\"highlight\">+{s:FriendlyBulletDamageBonus}%</span> Weapon Damage"
 		"citadel_ability_chrono_time_wall_t3_desc"		"<span class=\"highlight\">+2</span> Ability Charges"
 		//"modifier_timewall_damageamp"				"Damage Vulnerability"
 
@@ -945,7 +945,7 @@
 		"DamageBonusFixedPerStack_label"					"Weapon Damage"
 		"DamageBonusFixedPerStack_postvalue_label"					"Weapon Damage"
 		"DamageBonusFixedPerStack_prefix"					"+"
-		"DamageBonusFixedPerStack_postfix"					" per stack"
+		"DamageBonusFixedPerStack_postfix"					"/stack"
 		"ability_stacking_damage/modifier_passive_haze_stacking_damage/slow"			"Slowed"
 
 		"ability_smoke_bomb"			"Smoke Bomb"
@@ -1334,6 +1334,8 @@
 		"citadel_ability_lash_down_strike_desc"		"Stomp the ground beneath you, <span class=\"highlight\">damaging enemies</span> in front of you. If you perform Ground Strike while airborne, you quickly dive towards the ground. Damage grows slower after 25m."
 		"StompDamagePerMeterPrimary_label"					"Damage Per Meter"
 		"StompDamagePerMeterPrimary_postvalue_label"					"Damage Per Meter"
+		"StompDamagePerMeterSecondary_label"					"Damage Per Meter (25m+)"
+		"StompDamagePerMeterSecondary_postvalue_label"					"Damage Per Meter (25m+)"
 		"citadel_ability_lash_down_strike_t2_desc"	"Struck enemies are <span class=\"highlight\">knocked up</span> and slowed by <span class=\"highlight\">{s:EnemySlowPct}%</span> for <span class=\"highlight\">{s:SlowDuration}s</span>"
 		"citadel_ability_lash_down_strike_t3_desc"	"<span class=\"highlight\">Damage Per Meter</span> +120% and improved scaling"
 
@@ -1372,7 +1374,7 @@
 		"WeaponPowerScalingTooltip_postfix"		"%"
 		"TargetingConeAngle_label"				"Attack Angle"
 		"TargetingConeAngle_postvalue_label"				"Attack Angle"
-		"TargetingConeAngle_postfix"				"º"
+		"TargetingConeAngle_postfix"				"°"
 		"ability_lash_flog/modifier_lash_flog_debuff"	"Flog"
 
 		//"citadel_ability_lash_high_explosive"	"High Explosive"
@@ -1595,8 +1597,8 @@
 		
 		"ability_explosive_barrel"					"Powder Keg"
 		"ability_explosive_barrel_quip"				"Throw a barrel that explodes when shot"
-		"ability_explosive_barrel_desc"				"Throw a barrel that explodes after a delay, dealing {g:citadel_inline_attribute:'SpiritDamage'}, <span class=\"highlight\">setting enemies on fire</span> and applying {g:citadel_inline_attribute:'KnockUp'}. <br><br> The barrel can be detonated early by being <span class=\"highlight\">shot</span>, <span class=\"highlight\">melee'd</span>, or <span class=\"highlight\">detonated</span> by another barrel.  <br><br><span class=\"diminish\">The burn stacks, so overlapping barrels burn for their combined damage.<br>Can be Alt-Cast to place the barrel infront of {s:hero_name}.</span>"
-		"ability_explosive_barrel_t3_desc"			"<span class=\"highlight\">+{s:ImpactDamage}</span> Impact Damage<br><span class=\"highlight\">+{s:DPS}</span> Burn Damage per Second<br><span class=\"highlight\">{s:AbilityCooldownBetweenCharge}</span> Charge Time<br><span class=\"highlight\">Improved Spirit Scaling</span>"
+		"ability_explosive_barrel_desc"				"Throw a barrel that explodes after a delay, dealing {g:citadel_inline_attribute:'SpiritDamage'}, <span class=\"highlight\">setting enemies on fire</span> and applying {g:citadel_inline_attribute:'KnockUp'}. <br><br> The barrel can be detonated early by being <span class=\"highlight\">shot</span>, <span class=\"highlight\">melee'd</span>, or <span class=\"highlight\">detonated</span> by another barrel.  <br><br><span class=\"diminish\">The burn stacks, so overlapping barrels burn for their combined damage.<br>Can be Alt-Cast to place the barrel in front of {s:hero_name}.</span>"
+		"ability_explosive_barrel_t3_desc"			"<span class=\"highlight\">+{s:ImpactDamage}</span> Impact Damage<br><span class=\"highlight\">+{s:DPS}</span> Burn Damage per Second<br><span class=\"highlight\">{s:AbilityCooldownBetweenCharge}</span>s Charge Time<br><span class=\"highlight\">Improved Spirit Scaling</span>"
 		"modifier_astro_barrel_burn"					"Powder Burn"
 		//"BarrelLifetime_label"						"Barrel Life Time"
 		"BarrelLifetime_postfix"						"s"
@@ -2126,7 +2128,7 @@
 		"citadel_ability_hornet_sting"			"Crow Familiar"
 		"citadel_ability_hornet_sting_quip"		"Make a target bleed over time"
 		"citadel_ability_hornet_sting_desc"		"Your crow familiar deals <span class=\"highlight\">impact damage</span>, reduces their bullet resist and applies a <span class=\"highlight\">bleed</span> that deals damage based on the <span class=\"highlight\">target's current health</span>."
-		"citadel_ability_hornet_sting_t1_desc"	"Applies <span class=\"highlight\">{s:HealAmpReceivePenaltyPercent}%</span> Healing Reduction"
+		"citadel_ability_hornet_sting_t1_desc"	"Reduces <span class=\"highlight\">Incoming Healing</span> by <span class=\"highlight\">{s:HealAmpReceivePenaltyPercent}%</span>"
 		"citadel_ability_hornet_sting_t2_desc"	"<span class=\"highlight\">+{s:DotHealthPercent}%</span> Bleed Damage <br><span class=\"highlight\">{s:AbilityCooldown}s</span> Cooldown"
 		"citadel_ability_hornet_sting_t3_desc"	"<span class=\"highlight\">+{s:DebuffDuration}s</span> Duration <br><span class=\"highlight\">{s:BulletResistReduction}% Bullet Resist</span> <br><span class=\"highlight\">{s:MagicResistReduction}% Spirit Resist</span>"
 		"citadel_ability_hornet_sting/modifier_citadel_hornet_sting_debuff"		"Crow Familiar"
@@ -2177,6 +2179,8 @@
 		"ability_burrow_desc"		"Burrow underground, <span class=\"highlight\">moving faster,</span> and gaining <span class=\"highlight\">spirit and bullet armor</span>. Damage from enemy heroes will reduce the speed bonus. <br><br>When you jump out, deal {g:citadel_inline_attribute:'SpiritDamage'}, {g:citadel_inline_attribute:'Slow'}, and {g:citadel_inline_attribute:'KnockUp'}."
 		"ability_burrow2_desc"		"Burrow underground, gaining <Panel class=\"AbilityPropertyIcon prop_move_speed\"> <span class=\"highlight\">Movement Speed</span> and <Panel class=\"AbilityPropertyIcon prop_bullet_armor_up\"> <span class=\"highlight\">Armor</span>. Jumping out deals <Panel class=\"AbilityPropertyIcon prop_tech_damage\"> <span class=\"highlight_spirit\">Damage</span> and knocks enemies into the air."
 	
+		"ability_digger_entertunnel" "Digging..."
+
 		"modifier_spin"				"Spin"
 		"SpinDuration_label"		"Spin Duration"
 		"SpinDuration_postvalue_label"		"Spin Duration"
@@ -2184,7 +2188,7 @@
 		"ability_burrow_cancel_channel"	"Unburrow"
 
 		"ability_burrow_t1_desc"	"<span class=\"highlight\">+{s:DPS}</span> Spin DPS"
-		"ability_burrow_t2_desc"	"<span class=\"highlight\">+{s:AbilityChannelTime}s</span> Burrow time and +{s:Radius} radius"
+		"ability_burrow_t2_desc"	"<span class=\"highlight\">+{s:AbilityChannelTime}s</span> Burrow time and +{s:Radius}m radius"
 		"ability_burrow_t3_desc"	"<span class=\"highlight\">{s:AbilityCooldown}</span> Cooldown and <span class=\"highlight\">+{s:BonusMoveSpeed}m/s</span> Move Speed"
 
 		"ability_intimidate"			"Scorn"
@@ -2469,7 +2473,8 @@
 		"mirage_fire_beetles_quip"		"Send out scarabs that steal life from enemies"
 		"mirage_fire_beetles_desc"		"Infest an enemy with fire scarabs, stealing life from them and causing them to deal reduced damage."
 		
-		"mirage_fire_beetles_t2_desc"	"+{s:AbilityCharges} Charge<br>+{s:StealDuration}s Duration"				"mirage_fire_beetles_t3_desc"	"{s:OutgoingDamagePenaltyPercent}% Damage Penalty <br>Increased Spirit scaling"
+		"mirage_fire_beetles_t2_desc"	"+{s:AbilityCharges} Charge<br>+{s:StealDuration}s Duration"
+		"mirage_fire_beetles_t3_desc"	"{s:OutgoingDamagePenaltyPercent}% Damage Penalty <br>Increased Spirit scaling"
 
 		"StatStealDuration_label"		"Health Stealing Duration"
 		"StatStealDuration_postvalue_label"		"Health Steal Duration"
@@ -2642,76 +2647,14 @@
 		//"AirDropBulletShield_postfix"		""
 
 		//-----------------------------------------------------------------------------
-		// Tokamak
-		//-----------------------------------------------------------------------------
-		//"tokamak_hot_shot" "Hot Shot"
-		//"tokamak_hot_shot_desc" "Blast your enemies with a jet of superheated plasma. Deals additional damage when the heat guage is in the red. Triples heat dissipation while active."
-		//"tokamak_hot_shot_t3_desc"	"+{s:NormalDPS} Normal DPS and +{s:NormalDPS_scale} Normal DPS Scale<br>+{s:HotDPS} Hot DPS and +{s:HotDPS_scale} Hot DPS Scale"
-		//"HeatDPS_label"				"Heat Powered DPS"
-		//"NormalDPS_label"			"Normal DPS"
-		//"HotDPS_label"				"Hot DPS"
-		 
-		//"tokamak_breach" "Breach"
-		//"tokamak_breach_desc"		"Explosively decompress a cloud of coolant. Allies inside the cloud are invisible."
-//		"tokamak_breach_t1_desc"	"+{s:BulletResist} Bullet Resist to allies in smoke."
-		//"tokamak_breach_t2_desc"	"Purge Debuffs on Tokamak when cast."
-		//"tokamak_breach_t3_desc"	"Silence Enemies in smoke."
-//		"tokamak_breach_t1_desc"	"+{s:SlowPercent}% Movement Slow and -{s:BulletArmorReduction} Bullet Resist to enemies in smoke."
-//		"tokamak_breach_t3_desc"	"Effects linger for {s:LingerAfterLeavingSmokeDurationPerHeat}s after leaving smoke."
-		//"LingerAfterLeavingSmokeDurationPerHeat_label" "Linger Duration"
-		//"DurationPerHeat_label"		"Heat Powered Duration"
-		"DurationPerHeat_postfix" "s"
-
-		//"tokamak_dying_star" "Dying Star"
-		//"tokamak_dying_star_desc"	"Launch forward damaging all enemies near where you land, knocking them into the air."
-		//"tokamak_dying_star_t3_desc"	"+{s:Damage} Damage and +{s:Damage_scale} Damage Scale"
-		//"HeatDamage_label"				"Heat Powered Damage"
-
-		//"tokamak_heat_sinks"				"Thermal Vault"
-		//"tokamak_heat_sinks_desc"			"Tokamak harnesses more power as they heat up. Tokamak's melee strikes add a {s:MeleeIgniteTime}s burn dealing {s:MeleeBurnDPS} Heat Power DPS."
-		//"tokamak_heat_sinks_t1_desc"		"+{s:MeleeSpeedBonusPercentage}% melee attack speed"
-		//"tokamak_heat_sinks_t3_desc"		"+{s:BaseHeatPower} Base Heat Power, +{s:MaxHeatPower} Max Heat Power"
-		//"MeleeBurnDPS_Label"				"Melee Heat Power DPS"
-
-		//"tokamak_crimson_cannon"		"Pulse Cannon"
-		//"tokamak_crimson_cannon_desc"	"Collect targets until ready to unload. Each shot is {s:DelayBetweenShots}s apart."
-		//"tokamak_crimson_cannon_t2_desc"	"<span class=\"highlight\">+{s:Damage} Damage</span> and <span class=\"highlight\">+{s:Damage_scale}</span> Damage Scale"
-		//"DelayBetweenShots_Label"		"Delay Between Shots"
-		//"tokamak_crimson_cannnon_hint"	"Fire!"
-
-		//"tokamak_radiance"				"Blinding Radiance"
-		//"tokamak_radiance_desc"			"Bring your core to the brink of criticality, blinding and damaging any that look in your direction. Damage increases when enemies look directly at you."
-		//"EvasionChance_Label"			"Bullet Evasion Chance"
-
-		//"modifier_tokamak_radiance"		"Blinding Light"
-		//"modifier_tokamak_ally_in_smoke"	"Hidden In Smoke"
-		//"modifier_tokamak_enemy_in_smoke"	"Peeking In Smoke"
-
-		//"BaseHeatPower_Label"				"Base Heat Power"
-		//"DPSPerHeat_Label"					"Heat Power DPS"
-		//"WeaponDamagePerHeat_Label"			"Courage per Heat Power"
-
-		//"thumper_ability_1"			"Shatter Cannon"
-		//"thumper_ability_1_desc"	"Thumper focuses a high power acoustic wave to reflect off of a hard surface. Blasting shards of material off in the reflected wave."
-
-		//"thumper_ability_2"			"Spike Strip"
-		//"thumper_ability_2_desc"	"Rolls out a spike strip that damage enemies more the further they move through it."
-
-		//"thumper_ability_3"			"Badger Drone"
-		//"thumper_ability_3_desc"	"Sends out a badger drone to harry an enemy and reveal it's position."
-
-		//"thumper_ability_4"			"Vortex"
-		//"thumper_ability_4_desc"	"Blow enemies away with a high powered blast of air."
-
-		//-----------------------------------------------------------------------------
 		// Slork
 		//-----------------------------------------------------------------------------
 
 		//"modifier_slork_gun_poison"		"Slork Poison Sprayer"
 		//"modifier_slork_scald"			"Slork Scalding Spray"
 
-		//"citadel_weapon_hero_slork_set"		"Poison Sprayer"
-		//"citadel_weapon_hero_slork_set_desc"	"Spews a short range toxic cloud that deals double damage to non-hero targets. When aimed, shoots a long range dart that poisons enemies."
+		//"citadel_weapon_slork_set"		"Poison Sprayer"
+		//"citadel_weapon_slork_set_desc"	"Spews a short range toxic cloud that deals double damage to non-hero targets. When aimed, shoots a long range dart that poisons enemies."
 
 		//"slork_scald"			"Scald"
 		//"slork_scald_desc"		"Spray out an arc of superheated water that <span class=\"highlight\">damages enemies over time</span>."
@@ -3139,7 +3082,7 @@
 
 		"citadel_ability_flying_strike"			"Flying Slash"
 		"citadel_ability_flying_strike_quip"	"Fly towards an enemy target"
-		"citadel_ability_flying_strike_desc"	"Throw a grappling hook to <span class=\"highlight\">reel yourself towards an enemy, dealing Light {g:citadel_inline_attribute:'MeleeDamage'} and slowing the target</span> when you arrive."
+		"citadel_ability_flying_strike_desc"	"Throw a grappling hook to <span class=\"highlight\">reel yourself towards an enemy,</span> dealing{g:citadel_inline_attribute:'MeleeDamage'} and <span class=\"highlight\">slowing the target</span> when you arrive."
 		"citadel_ability_flying_strike/slow" "Flying Slash Slow"
 		//"citadel_ability_flying_strike/weapon_buff" "+Weapon Damage"				
 		"citadel_ability_flying_strike_t2_desc" "Gain <span class=\"highlight\">+{s:SpiritBonus}</span> Spirit Power for <span class=\"highlight\">{s:BuffDuration}s</span>"
@@ -3262,7 +3205,7 @@
 		"viscous_goo_grenade_puddle_desc"				"Goo puddles linger on the ground and apply a <span class=\"highlight\">movement slow</span> to enemies walking on them. <br><br><span class=\"diminish\">You and your allies slide faster on goo puddles.</span>"
 		"viscous_goo_grenade/modifier_viscous_goo_grenade_debuff"		"Slowed"
 		"viscous_goo_grenade_t1_desc"					"+{s:Damage} Damage and +{s:Radius}m Radius"
-		"viscous_goo_grenade_t3_desc"					"Bounces {s:MaxBounces} times and improves Spirit Scaling"
+		"viscous_goo_grenade_t3_desc"					"+{s:MaxBounces} Bounces and improved Spirit Scaling"
 		"MaxBounces_label""Bounces"
 		"MaxBounces_postvalue_label""Bounces"
 		"PuddleRadius_label"							"Puddle Radius"
@@ -3298,7 +3241,7 @@
 		"BallRadius_postvalue_label"								"Ball Radius"
 		"BallRadius_postfix"								"m"
 		"viscous_telepunch"								"Puddle Punch"
-		"viscous_telepunch_desc"						"Materialize a fist in the world that punches everyone in the area, applying {g:citadel_inline_attribute:'KnockUp'}. <br><br>Punching an enemy deals {g:citadel_inline_attribute:'MeleeDamage'} and applies {g:citadel_inline_attribute:'Slow'}.<br><br><span class=\"diminish\">You and your allies have increased Air Control.</span>"
+		"viscous_telepunch_desc"						"Materialize a fist in the world that punches everyone in the area, applying {g:citadel_inline_attribute:'KnockUp'}. <br><br>Punching an enemy deals {g:citadel_inline_attribute:'MeleeDamage'} and applies {g:citadel_inline_attribute:'Slow'}. Enemies can <span class=\"highlight\">Parry</span> this attack.<br><br><span class=\"diminish\">You and your allies have increased Air Control.</span>"
 		"viscous_telepunch_quip"						"Punch enemies with a giant fist"
 		"viscous_telepunch_t1_desc"						"+{s:AbilityCharges} Charge and +{s:Damage} Damage"
 		"viscous_telepunch_t2_desc"						"+{s:Radius}m Radius and +{s:LifeStealPercentOnHit}% Lifesteal"
@@ -3572,7 +3515,7 @@
 		"VenomMissingHealthDamagePercentage_postfix"	"%"
 		"ability_viper_venom_quip" "Inject your enemies with a deadly venom"
 		"ability_viper_venom/viper_venom_modifier_subclass" "Lethal Venom"
-		"ability_viper_venom_t2_desc"	"<span class=\"highlight\">{s:HealAmpRegenPenaltyPercent}%</span> Healing Reduction and <span class=\"highlight\">{s:AbilityCooldown}s</span> Cooldown"
+		"ability_viper_venom_t2_desc"	"<span class=\"highlight\">{s:HealAmpRegenPenaltyPercent}%</span> Incoming Healing and <span class=\"highlight\">{s:AbilityCooldown}s</span> Cooldown"
 
 		
 		"ability_viper_ult" "Petrify"
@@ -3676,7 +3619,7 @@
 		"HexMoveSpeedLimit_postfix" "m"
 
 		"ability_magician_animalhexarea" "Rabbit Hex"
-		"ability_magician_animalhexarea_desc" "Hex a target area and transforming all enemies into a <span class=\"highlight\">Rabbit</span> for a limited duration.<br><br> Rabbits are small and <Panel class=\"AbilityPropertyIcon prop_move_speed\"> <span class=\"highlight\">move faster</span>, but take increased <Panel class=\"AbilityPropertyIcon prop_damage\"><span class=\"highlight\">Damage</span> and are <Panel class=\"AbilityPropertyIcon prop_cast\"><span class=\"highlight\">unable to perform most actions</span>.<br><span class=\"diminish\">Hex does not interrupt abilities.</span>"
+		"ability_magician_animalhexarea_desc" "Hex a target area and transform all enemies into a <span class=\"highlight\">Rabbit</span> for a limited duration.<br><br> Rabbits are small and <Panel class=\"AbilityPropertyIcon prop_move_speed\"> <span class=\"highlight\">move faster</span>, but take increased <Panel class=\"AbilityPropertyIcon prop_damage\"><span class=\"highlight\">Damage</span> and are <Panel class=\"AbilityPropertyIcon prop_cast\"><span class=\"highlight\">unable to perform most actions</span>.<br><span class=\"diminish\">Hex does not interrupt abilities.</span>"
 		"ability_magician_animalhexarea_t3_desc" "<span class=\"highlight\">+{s:DamageAmpPercentage}%</span> Damage Amp and <span class=\"highlight\">+{s:Radius}m</span> Radius"
 		"ability_magician_animalhexarea/hexarea_modifier/animalhex_curse_modifier" "Hexed!"
 		"HexDuration_label" "Hex Duration"
@@ -3829,6 +3772,7 @@
 		"ability_vampirebat_batswarm/debuff" "Nox Nostra"
 
 		"BatCount_postvalue_label" "Total Bats Released"
+		"BonusBatsCurrent_label" "Bonus Bats:"
 		"BonusBatsMax_label" "Max Additional Bats"
 		"BonusBatsMax_postvalue_label" "Max Additional Bats"
 		"BonusBatsPerProc_label" "Additional Bats Per Love Bite"
@@ -3846,6 +3790,7 @@
 		"ability_vampirebat_steallife_t3_desc" "<span class=\"highlight\">+{s:MissingHealthDamagePercentage}%</span> Missing health damage and increased Heal per Kill Spirit scaling"
 		"MissingHealthDamagePercentage_postvalue_label" "Missing Health as Damage"
 		"MissingHealthDamagePercentage_postfix" "%"
+		"RakeHealPerKill_label" "Heal Per Kill"
 		"RakeHealPerKill_postvalue_label" "Heal Per Kill"
 
 		"modifier_slork_lastbreath"		"Last Breath"
@@ -3902,6 +3847,7 @@
 		"DurationPerLightMelee_postfix" "s"
 		"MaxDuration_postfix" "s"
 		"MaxDuration_postvalue_label" "Max Duration"
+		"MaxHealthMelee_label" "Melee Bonus Health"
 		"MaxHealthMelee_postvalue_label" "Melee Bonus Health"
 		"BulletDamageAmp_postvalue_label" "Wrecked Bullet Amp"
 		"BulletDamageAmp_postfix" "%"
@@ -4169,7 +4115,7 @@
 		"drifter_shadow_mark_desc"	"Send out a mark that bleeds the first target it hits, dealing {g:citadel_inline_attribute:'SpiritDPS'}.<br><br>While the enemy is bleeding you can re-activate Stalker's Mark to instantly <span class=\"highlight\">appear behind their back.</span>"
 		"drifter_shadow_mark_t1_desc" "<span class=\"highlight\">{s:BulletResistReduction}% Bullet Resist"
 		"drifter_shadow_mark_t2_desc" "<span class=\"highlight\">{s:AbilityCooldown}s Cooldown and +{s:AbilityDuration}s</span> Duration"
-		"drifter_shadow_mark_t3_desc"	"<span class=\"highlight\">+{s:DotHealthPercent}% Bleed</span> and <span class=\"highlight\">{s:HealAmpReceivePenaltyPercent}% Healing Reduction</span>"
+		"drifter_shadow_mark_t3_desc"	"<span class=\"highlight\">+{s:DotHealthPercent}% Bleed</span> and <span class=\"highlight\">{s:HealAmpReceivePenaltyPercent}% Incoming Healing</span>"
 		"drifter_shadow_mark_teleport"	"Ambush"
 		"ability_drifter_stalkers_mark_after_blink_desc"	"After ambushing:"
 		//"TeleportDamage_label"				"Blink Damage"
@@ -4227,7 +4173,7 @@
 
 		"drifter_darkness"			"Eternal Night"
 		"drifter_darkness_desc"		"Surround nearby enemy heroes in darkness, <span class=\"highlight\">severely limiting their vision of other units</span>. Affected enemies are briefly revealed to you and are considered <span class=\"highlight\">isolated</span> for the duration.<br><br>You gain {g:citadel_inline_attribute:'BonusSprintSpeed'}."
-		"drifter_darkness_t3_desc"	"+{s:AbilityDuration}s Duration and +{s:MaxTargets} Max Targets."
+		"drifter_darkness_t3_desc"	"+{s:AbilityDuration}s Duration and +{s:MaxTargets} Max Target."
 		//"VisionDistance_label"					"Vision Range"
 		//"VisionDistance_postvalue_label"		"Vision Range"
 		//"VisionDistance_postfix"				"m"
@@ -4314,39 +4260,6 @@
 		"MaxAmp_prefix" "{s:sign}"
 		"MaxAmpDistance_postvalue_label" "Distance for Max Amp"
 		"MaxAmpDistance_postfix" "m"
-
-		//-----------------------------------------------------------------------------
-		// Boho
-		//-----------------------------------------------------------------------------
-		//Ability 1
-		"ability_boho_bouncyprojectile" "Skipshot"
-		"ability_boho_bouncyprojectile_desc" "Throw a projectile that bounces between targets, dealing {g:citadel_inline_attribute:'SpiritDamage'}. <br><br>If there are no enemies nearby Skipshot will instead bounce off of Boho, <span class=\"highlight\">reducing its cooldown</span>."
-		"CooldownReductionPercentagePerHit_postvalue_label" "Cooldown Reduction per Hit"
-		"CooldownReductionPercentagePerHit_postfix" "%"
-
-		//Ability 2
-		"ability_boho_doublehit" "Swish"
-		"ability_boho_doublehit_desc" "Swing twice, dealing {g:citadel_inline_attribute:'SpiritDamage'} to targets in front. <br><br>Hits against heroes grant {g:citadel_inline_attribute:'BonusMoveSpeed'} and stacking {g:citadel_inline_attribute:'CombatBarrier'}."
-		"ability_boho_doublehit/buff" "Swish"
-		"CombatBarrierPerStack_postvalue_label" "Barrier per Stack"
-
-		//Ability 3
-		"ability_boho_damageshare" "Intertwine"
-		"ability_boho_damageshare_desc" "Enemies hit by {g:citadel_inline_attribute:'SpiritDamage'} are <span class=\"highlight\">linked</span> to other <span class=\"highlight\">linked</span> enemies, sharing a portion of incoming damage as {g:citadel_inline_attribute:'BonusSpiritDamage'}."
-		"ability_boho_damageshare/damageshare" "Weave Fate"
-		"BounceCount_postvalue_label" "Max Bounces"
-		"BounceRadius_label" "Bounce Range"
-		"BounceRadius_postvalue_label" "Bounce Range"
-		"BounceRadius_postfix"	"m"
-		"DamageShareRadius_label" "Link Distance"
-		"DamageShareRadius_postvalue_label" "Link Distance"
-		"DamageShareRadius_postfix" "m"
-		"DamageSharePercentage_label" "Linked Damage"
-		"DamageSharePercentage_postvalue_label" "Linked Damage"
-		"DamageSharePercentage_postfix" "%"
-		"MaxLinks_label" "Max Links"
-		"MaxLinks_postvalue_label" "Max Links"
-
 
 		//-----------------------------------------------------------------------------
 		// Familiar 
@@ -4534,6 +4447,7 @@
 		"ability_necro_fear_desc" "Your weapon steals {g:citadel_inline_attribute:'WeaponDamage'} and {g:citadel_inline_attribute:'SpiritResist'} over time, up to a maximum amount per target."
 		"ability_necro_fear/debuff" "Essence Theft"
 		"ability_necro_fear_t3_desc" "<span class=\"highlight\">+{s:MaxStolenTargets}</span> Max Steal Targets<br>All <span class=\"highlight\">Summons</span> now apply Essence Theft"
+		"MaxStolenAttackDamage_label" "Max Weapon Damage Stolen"
 		"MaxStolenAttackDamage_postvalue_label" "Max Weapon Damage Stolen"
 		"MaxStolenAttackDamage_postfix" "%"
 		"HealPerSecond_postvalue_label" "Heal Per Second"
@@ -4806,7 +4720,7 @@
 		"ability_priest_flashbang" "Consecrating Grenade"
 		"ability_priest_flashbang_desc" "Fire a grenade that bounces before exploding, dealing {g:citadel_inline_attribute:'WeaponDamage'} and setting enemies on fire. <br><br>Burning targets deal <span class=\"highlight\">{g:citadel_inline_attribute:'PureDamage'}</span> to enemies in the area and suffer from <span class=\"highlight\">reduced healing</span>."
 		"ability_priest_flashbang_t2_desc"	"<span class=\"highlight\">+{s:Radius}m</span> Radius & <span class=\"highlight\">+{s:BurnDuration}s</span> Burn Duration"
-		"ability_priest_flashbang_t3_desc"	"<span class=\"highlight\">{s:HealAmpReceivePenaltyPercent}%</span> Healing Reduction and allow Charges"
+		"ability_priest_flashbang_t3_desc"	"<span class=\"highlight\">{s:HealAmpReceivePenaltyPercent}%</span> Incoming Healing and allow Charges"
 		"ability_priest_flashbang_pure" "Consecrating Grenade - Pure"
 		"BurnRadius_postvalue_label" "Burn Radius"
 		"BurnRadius_label" "Burn Radius"
@@ -5027,81 +4941,81 @@
 		"citadel_gun_damage_alt"					"Alt Gun Damage"
 		//"citadel_weapon_combo_melee"				"Melee Combo"
 	
-		"citadel_weapon_hero_yamato_set"			"Sister's Lament"
-		"citadel_weapon_hero_inferno_set"			"Incendiary Remarks"
-		"citadel_weapon_hero_gigawatt_set"			"Cold Calculus"
-		"citadel_weapon_hero_hornet_set"			"Wallflower's Revenge"
-		"citadel_weapon_hero_orion_set"				"The Mourning Comes"
-		"citadel_weapon_hero_ghost_set"				"Johann's Gift"
+		"citadel_weapon_yamato_set"			"Sister's Lament"
+		"citadel_weapon_inferno_set"			"Incendiary Remarks"
+		"citadel_weapon_gigawatt_set"			"Cold Calculus"
+		"citadel_weapon_hornet_set"			"Wallflower's Revenge"
+		"citadel_weapon_orion_set"				"The Mourning Comes"
+		"citadel_weapon_ghost_set"				"Johann's Gift"
 		
-		"citadel_weapon_hero_atlas_set"				"Case Closed"
-		"citadel_weapon_hero_atlas_set_desc"		"Reloads single shells at a time. Can be interrupted"
+		"citadel_weapon_atlas_set"				"Case Closed"
+		"citadel_weapon_atlas_set_desc"		"Reloads single shells at a time. Can be interrupted"
 		
-		"citadel_weapon_hero_wraith_set"			"The Rake"
+		"citadel_weapon_wraith_set"			"The Rake"
 
-		"citadel_weapon_hero_forge_set"				"Services Rendered"
-		"citadel_weapon_hero_forge_set_desc"		"Increases fire rate as the guns spins up"
+		"citadel_weapon_forge_set"				"Services Rendered"
+		"citadel_weapon_forge_set_desc"		"Increases fire rate as the guns spins up"
 		
-		"citadel_weapon_hero_bebop_set"				"Humble Pie"
-		"citadel_weapon_hero_bebop_set_desc"		"Fires a continuous beam with no bullet travel"
+		"citadel_weapon_bebop_set"				"Humble Pie"
+		"citadel_weapon_bebop_set_desc"		"Fires a continuous beam with no bullet travel"
 
-		"citadel_weapon_hero_nano_set"				"Sweetest Lie"
-		"citadel_weapon_hero_dynamo_set"			"The Vonnegun"
-		"citadel_weapon_hero_kelvin_set"			"Expedition's End"
-		"citadel_weapon_hero_viscous_set"			"Deep Sea Interpreter"
-		"citadel_weapon_hero_haze_set"				"Censure & Penance"
-		"citadel_weapon_hero_astro_set"				"Doc's Orders"     
-		"citadel_weapon_hero_chrono_set"			"Trade Secret"
-		"citadel_weapon_hero_shiv_set"				"Busted Flush"		
-		"citadel_weapon_hero_tengu_set"				"Protector's Hand"
-		"citadel_weapon_hero_krill_set"				"Yellow Canary"
-		"citadel_weapon_hero_lash_set"				"Tale of The Tape"
-		"citadel_weapon_hero_warden_set"			"Freedom's Cost"
-		"citadel_weapon_hero_mirage_set"			"Promises Kept"
-		"citadel_weapon_hero_synth_set"				"The Black Sheep"
-		"citadel_weapon_hero_viper_set"				"The Rattler"
-		"citadel_weapon_hero_magician_set"			"The Prestige"
-		"citadel_weapon_hero_slork_set"				"Riptide"
-		"citadel_weapon_hero_trapper_set"			"Civil Servant"
-		"citadel_weapon_hero_wrecker_set"			"The Butcher's Hand"
-		"citadel_weapon_hero_operative_set"			"Umbrella Gun"
-		"citadel_weapon_hero_punkgoat_set"			"Biquette"
-		"citadel_weapon_hero_drifter_set"			"Crimson Grasp"
-		"citadel_weapon_hero_drifter_alt"			"Drifter Alt Weapon"
-		"citadel_weapon_hero_bookworm_set"			"Chapter's End"
-		"citadel_weapon_hero_doorman_set"			"Service With A Smile"
-		"citadel_weapon_hero_frank_set"				"Memento Mori"
-		"citadel_weapon_hero_vampirebat_set"		"New Money"
-		"citadel_weapon_hero_priest_set"			"51:20"
-		"citadel_weapon_hero_unicorn_set"			"Carny Life"
-		"citadel_weapon_hero_opera_set"			"Opera Gun"
-		"citadel_weapon_hero_necro_set"				"The Teacher"
-		"citadel_weapon_hero_werewolf_set"			"Hair of the Dog"
-		"citadel_weapon_hero_werewolf_wolf_set"		"Loose Muzzle"
-		"citadel_weapon_hero_familiar_set"			"Long Night"
-		"citadel_weapon_hero_fencer_set"			"Pride of Ixia"
-		"citadel_weapon_hero_targetdummy_set"		"Dummy Gun"
+		"citadel_weapon_nano_set"				"Sweetest Lie"
+		"citadel_weapon_dynamo_set"			"The Vonnegun"
+		"citadel_weapon_kelvin_set"			"Expedition's End"
+		"citadel_weapon_viscous_set"			"Deep Sea Interpreter"
+		"citadel_weapon_haze_set"				"Censure & Penance"
+		"citadel_weapon_astro_set"				"Doc's Orders"     
+		"citadel_weapon_chrono_set"			"Trade Secret"
+		"citadel_weapon_shiv_set"				"Busted Flush"		
+		"citadel_weapon_tengu_set"				"Protector's Hand"
+		"citadel_weapon_krill_set"				"Yellow Canary"
+		"citadel_weapon_lash_set"				"Tale of The Tape"
+		"citadel_weapon_warden_set"			"Freedom's Cost"
+		"citadel_weapon_mirage_set"			"Promises Kept"
+		"citadel_weapon_synth_set"				"The Black Sheep"
+		"citadel_weapon_viper_set"				"The Rattler"
+		"citadel_weapon_magician_set"			"The Prestige"
+		"citadel_weapon_slork_set"				"Riptide"
+		"citadel_weapon_trapper_set"			"Civil Servant"
+		"citadel_weapon_wrecker_set"			"The Butcher's Hand"
+		"citadel_weapon_operative_set"			"Umbrella Gun"
+		"citadel_weapon_punkgoat_set"			"Biquette"
+		"citadel_weapon_drifter_set"			"Crimson Grasp"
+		"citadel_weapon_drifter_alt"			"Drifter Alt Weapon"
+		"citadel_weapon_bookworm_set"			"Chapter's End"
+		"citadel_weapon_doorman_set"			"Service With A Smile"
+		"citadel_weapon_frank_set"				"Memento Mori"
+		"citadel_weapon_vampirebat_set"		"New Money"
+		"citadel_weapon_priest_set"			"51:20"
+		"citadel_weapon_unicorn_set"			"Carny Life"
+		"citadel_weapon_opera_set"			"Opera Gun"
+		"citadel_weapon_necro_set"				"The Teacher"
+		"citadel_weapon_werewolf_set"			"Hair of the Dog"
+		"citadel_weapon_werewolf_wolf_set"		"Loose Muzzle"
+		"citadel_weapon_familiar_set"			"Long Night"
+		"citadel_weapon_fencer_set"			"Pride of Ixia"
+		"citadel_weapon_targetdummy_set"		"Dummy Gun"
 
-		//"citadel_weapon_hero_duo_set"				"Duo Gun"
-		//"citadel_weapon_hero_heavy_set"				"Heavy Gun"
-		//"citadel_weapon_hero_akimbo_set"			"Akimbo Gun"
-		//"citadel_weapon_hero_gunslinger_set"		"Gunslinger Gun"
-		//"citadel_weapon_hero_yakuza_set"			"Yakuza Boss Gun"
-		//"citadel_weapon_hero_phalanx_set"			"Phalanx Gun"
-		//"citadel_weapon_hero_kali_set"				"Kali Gun"
-		//"citadel_weapon_hero_revenant_set"			"Revenant Gun"
-		//"citadel_weapon_hero_demoman_set"			"Demoman Gun"
-		//"citadel_weapon_hero_hijack_set"			"Hijack Gun"
-		//"citadel_weapon_hero_mechaguy_set"			"Mechaguy Gun"
-		//"citadel_weapon_hero_zealot_set"			"Zealotry Gun"
-		//"citadel_weapon_hero_ballista_set"			"Ballista Gun"
-		//"citadel_weapon_hero_apocalypse_set"		"Apocalypse Gun"
-		//"citadel_weapon_hero_clawdril_set"			"Clawdril Gun"
-		//"citadel_weapon_hero_coldmetal_set"			"Cold Metal Gun"
-		//"citadel_weapon_hero_spade_set"				"Spade Dice Launcher"
-		//"citadel_weapon_hero_rutger_set"			"Rutger Gun"
-		//"citadel_weapon_hero_tokamak_set"			"Curie-ous Times"
-		//"citadel_weapon_hero_tempest_set"			"Tempest Gun"
+		//"citadel_weapon_duo_set"				"Duo Gun"
+		//"citadel_weapon_heavy_set"				"Heavy Gun"
+		//"citadel_weapon_akimbo_set"			"Akimbo Gun"
+		//"citadel_weapon_gunslinger_set"		"Gunslinger Gun"
+		//"citadel_weapon_yakuza_set"			"Yakuza Boss Gun"
+		//"citadel_weapon_phalanx_set"			"Phalanx Gun"
+		//"citadel_weapon_kali_set"				"Kali Gun"
+		//"citadel_weapon_revenant_set"			"Revenant Gun"
+		//"citadel_weapon_demoman_set"			"Demoman Gun"
+		//"citadel_weapon_hijack_set"			"Hijack Gun"
+		//"citadel_weapon_mechaguy_set"			"Mechaguy Gun"
+		//"citadel_weapon_zealot_set"			"Zealotry Gun"
+		//"citadel_weapon_ballista_set"			"Ballista Gun"
+		//"citadel_weapon_apocalypse_set"		"Apocalypse Gun"
+		//"citadel_weapon_clawdril_set"			"Clawdril Gun"
+		//"citadel_weapon_coldmetal_set"			"Cold Metal Gun"
+		//"citadel_weapon_spade_set"				"Spade Dice Launcher"
+		//"citadel_weapon_rutger_set"			"Rutger Gun"
+		//"citadel_weapon_tokamak_set"			"Curie-ous Times"
+		//"citadel_weapon_tempest_set"			"Tempest Gun"
 		
 
 		// Melee names
@@ -5174,6 +5088,30 @@
 		"Citadel_Werewolf_HeroTag_1" "Feral"
 		"Citadel_Werewolf_HeroTag_2" "Hot Mess"
 		"Citadel_Werewolf_HeroTag_3" "Transformation"
+
+		"Citadel_Artist_HeroTag_1" "Ambitious"
+		"Citadel_Artist_HeroTag_2" "Nimble"
+		"Citadel_Artist_HeroTag_3" "Creative"
+
+		"Citadel_Baba_HeroTag_1" "Cackling"
+		"Citadel_Baba_HeroTag_2" "Beady"
+		"Citadel_Baba_HeroTag_3" "Hexing"
+
+		"Citadel_Chessmaster_HeroTag_1" "Strategist"
+		"Citadel_Chessmaster_HeroTag_2" "Sage"
+		"Citadel_Chessmaster_HeroTag_3" "Checkmate"
+
+		"Citadel_Deadpack_HeroTag_1" "Reckless"
+		"Citadel_Deadpack_HeroTag_2" "High-flying"
+		"Citadel_Deadpack_HeroTag_3" "Explosive"
+
+		"Citadel_Nurse_HeroTag_1" "Strict"
+		"Citadel_Nurse_HeroTag_2" "Terrifying"
+		"Citadel_Nurse_HeroTag_3" "Savior"
+
+		"Citadel_Ratking_HeroTag_1" "Scrappy"
+		"Citadel_Ratking_HeroTag_2" "Regal"
+		"Citadel_Ratking_HeroTag_3" "Tenacious"
 
 		"hero_astro_role"				"Bounces about dispensing trick shots"
 		"hero_atlas_role"				"Charges into close combat"

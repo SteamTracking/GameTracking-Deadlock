@@ -1,9 +1,11 @@
-// MNetworkVarNames = "CEntityHandle m_hOwner"
-// MNetworkVarNames = "CUtlStringToken m_name"
+// MGetKV3ClassDefaults = {
+//	"_class": "CGameSceneNodeHandle",
+//	"m_hOwner": null,
+//	"m_name": ""
+//}
+// MHasKV3TransferPolymorphicClassname
 class CGameSceneNodeHandle
 {
-	// MNetworkEnable
 	CEntityHandle m_hOwner;
-	// MNetworkEnable
 	CUtlStringToken m_name;
 };

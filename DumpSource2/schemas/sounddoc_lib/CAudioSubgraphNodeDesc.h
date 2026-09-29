@@ -1,0 +1,3 @@
+class CAudioSubgraphNodeDesc : public CVAudioNodeBaseDesc
+{
+};

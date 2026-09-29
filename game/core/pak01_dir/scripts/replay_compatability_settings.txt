@@ -7,6 +7,12 @@
 		{ m_OldName = "CBasePlayer"			m_NewName = "CBasePlayerPawn" },
 		{ m_OldName = "CBaseAnimating"		m_NewName = "CBaseAnimatingActivity" },
 	]
+
+	// this was an ancient typo, finally getting around to fixing this!
+	m_RenamedFields =
+	[
+		{ m_OldName = "m_nameStringableIndex"			m_NewName = "m_nameStringTableIndex" },
+	]
 	
 	// during CFlattenedSerializer::MatchToSerializerTypesMatch, we check the innermost typename and if they don't match trivially
 	// we allow the following pairs to be considered matches (e.g., if demo was recorded before GameTime_t was introduced then the
@@ -56,6 +62,7 @@
 		{ m_OldName =  "PoseController_FModType_t"		m_NewName = "uint32" },
 		{ m_OldName =  "ShatterPanelMode"				m_NewName = "uint8" },
 		{ m_OldName =  "DecalMode_t"					m_NewName = "DecalRtEncoding_t" },
+		{ m_OldName =  "BeamClipStyle_t"				m_NewName = "int32" },
 	]
 
 	// in CFlattenedSerializer::InitFakeFieldFlattenedSerializer, some fields (e.g. entity components) are accessed

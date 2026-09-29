@@ -24,8 +24,6 @@ class CBaseNPCMaker : public CBaseEntity
 	CHandle< CNPCSpawnDestination > m_hSpawnEntity;
 	CHandle< CAI_BaseNPC > m_hSpawnedNPC;
 	int32 m_nCurrentBatchCount;
-	int32 m_nNumSpawnDestinations;
-	int32 m_nNumValidDestinations;
 	CBaseNPCMaker::VisibilityCriterion_t m_CriterionVisibility;
 	CBaseNPCMaker::ThreeStateDist_t m_CriterionDistance;
 };

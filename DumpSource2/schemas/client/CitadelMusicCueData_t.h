@@ -2,6 +2,7 @@
 //	"m_strSoundEvent": "",
 //	"m_nDeferState": "EMusicState_Invalid",
 //	"m_flBpm": -1.000000,
+//	"m_flExitTimeSeconds": -1.000000,
 //	"m_bInterruptStop": true,
 //	"m_bSetToNoneStateWhenFinished": true,
 //	"m_nSyncMode": "ESyncMode_None",
@@ -21,6 +22,7 @@ class CitadelMusicCueData_t
 	CSoundEventName m_strSoundEvent;
 	EMusicState_t m_nDeferState;
 	float32 m_flBpm;
+	float32 m_flExitTimeSeconds;
 	bool m_bInterruptStop;
 	bool m_bSetToNoneStateWhenFinished;
 	CitadelMusicSyncMode_t m_nSyncMode;

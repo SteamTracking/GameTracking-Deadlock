@@ -6,7 +6,8 @@
 //	"m_nKeysSource": "PRIVATE",
 //	"m_bIsPublicBlackboardVariable": false,
 //	"m_bIsObservable": false,
-//	"m_nEditorNodeID": -1
+//	"m_nEditorNodeID": -1,
+//	"m_Metadata": null
 //}
 class CPulse_Variable
 {
@@ -18,4 +19,5 @@ class CPulse_Variable
 	bool m_bIsPublicBlackboardVariable;
 	bool m_bIsObservable;
 	PulseDocNodeID_t m_nEditorNodeID;
+	KeyValues3 m_Metadata;
 };

@@ -114,6 +114,7 @@
 //	},
 //	"m_type": "BlendTreeState",
 //	"m_cloneSourceStateID": "00000000-0000-0000-0000-000000000000",
+//	"m_cloneStateVersion": "",
 //	"m_stateEvents":
 //	[
 //	],
@@ -147,6 +148,8 @@ class CNmGraphDocStateNode : public CNmGraphDocStateMachineGraphNode
 	CNmGraphDocStateNode::StateType_t m_type;
 	// MPropertySuppressField
 	V_uuid_t m_cloneSourceStateID;
+	// MPropertySuppressField
+	V_uuid_t m_cloneStateVersion;
 	// MPropertyAutoExpandSelf
 	CUtlVector< CNmGraphDocStateNode::StateEvent_t > m_stateEvents;
 	// MPropertyAutoExpandSelf

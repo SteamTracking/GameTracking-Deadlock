@@ -1,11 +1,44 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/map_ping_panel.vcss_c" />
+		<include src="s2r://panorama/styles/map_ping_panel.vcss" />
 	</styles>
-	<Panel class="ping_panel" hittest="false">
-		<Panel id="circle" />
-		<Panel id="center" />
-		<Image id="hero_img" />
-	</Panel>
+	<snippets>
+		<snippet name="MinimapPingDefault">
+			<Panel class="ping_anim">
+				<Panel id="circle" />
+				<Panel id="center" />
+				<Image id="hero_img" />
+			</Panel>
+		</snippet>
+		<snippet name="MinimapPingAttack">
+			<Panel class="ping_anim pingAnimAttack">
+				<Panel id="circle" />
+				<Panel id="center" />
+				<Image id="option_icon" src="s2r://panorama/images/pings/ping_icon_attack.vsvg" texturewidth="64px" textureheight="64px" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+		<snippet name="MinimapPingWatch">
+			<Panel class="ping_anim pingAnimWatch">
+				<Panel id="circle" />
+				<Panel id="center" />
+				<Image id="option_icon" src="s2r://panorama/images/pings/ping_icon_warning.vsvg" texturewidth="64px" textureheight="64px" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+		<snippet name="MinimapPingDefend">
+			<Panel class="ping_anim pingAnimDefend">
+				<Panel id="circle" />
+				<Panel id="center" />
+				<Image id="option_icon" src="s2r://panorama/images/pings/ping_icon_defend.vsvg" texturewidth="64px" textureheight="64px" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+		<snippet name="MinimapPingGoing">
+			<Panel class="ping_anim pingAnimGoing">
+				<Panel id="circle" />
+				<Panel id="center" />
+				<Image id="option_icon" src="s2r://panorama/images/pings/ping_icon_go_here.vsvg" texturewidth="64px" textureheight="64px" scaling="stretch-to-fit-preserve-aspect" />
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class="ping_panel" hittest="false" />
 </root>

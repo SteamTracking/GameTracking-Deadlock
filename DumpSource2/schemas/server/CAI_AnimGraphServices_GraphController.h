@@ -3,10 +3,12 @@
 //	"m_hExternalGraph": 4294967295,
 //	"m_sTaskHandshakeType": null,
 //	"m_sTaskHandshakeTypeShared": null,
-//	"m_bTaskHandshakeRestart": null,
+//	"m_eTaskHandshakeRestart": null,
+//	"m_sTaskHandshakeBodySectionDesired": null,
 //	"m_sMovementHandshakeType": null,
 //	"m_sMovementHandshakeTypeShared": null,
-//	"m_bMovementHandshakeRestart": null,
+//	"m_eMovementHandshakeRestart": null,
+//	"m_sMovementHandshakeBodySectionDesired": null,
 //	"m_sNavLinkType": null,
 //	"m_sNavLinkTypeShared": null,
 //	"m_vecHitDirection": null,
@@ -20,10 +22,12 @@ class CAI_AnimGraphServices_GraphController : public CAnimGraphControllerBase
 {
 	CAnimGraphParamRef< CGlobalSymbol > m_sTaskHandshakeType;
 	CAnimGraphParamRef< CGlobalSymbol > m_sTaskHandshakeTypeShared;
-	CAnimGraphParamRef< bool > m_bTaskHandshakeRestart;
+	CAnimGraphParamRef< CGlobalSymbol > m_eTaskHandshakeRestart;
+	CAnimGraphParamRef< CGlobalSymbol > m_sTaskHandshakeBodySectionDesired;
 	CAnimGraphParamRef< CGlobalSymbol > m_sMovementHandshakeType;
 	CAnimGraphParamRef< CGlobalSymbol > m_sMovementHandshakeTypeShared;
-	CAnimGraphParamRef< bool > m_bMovementHandshakeRestart;
+	CAnimGraphParamRef< CGlobalSymbol > m_eMovementHandshakeRestart;
+	CAnimGraphParamRef< CGlobalSymbol > m_sMovementHandshakeBodySectionDesired;
 	CAnimGraphParamRef< CGlobalSymbol > m_sNavLinkType;
 	CAnimGraphParamRef< CGlobalSymbol > m_sNavLinkTypeShared;
 	CAnimGraphParamRef< Vector > m_vecHitDirection;

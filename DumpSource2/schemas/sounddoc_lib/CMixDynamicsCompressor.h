@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_nChannels": -1,
 //	"m_desc":
 //	{
@@ -16,7 +17,9 @@
 //		"m_flReleaseTimeMS": 400.000000,
 //		"m_flRMSTimeMS": 300.000000,
 //		"m_flWetMix": 1.000000,
-//		"m_bPeakMode": false
+//		"m_flSCHighPassFreq": 0.000000,
+//		"m_bPeakMode": false,
+//		"m_bAutoMakeupGain": false
 //	},
 //	"m_nUIPage": 1,
 //	"m_bIsLimiter": false

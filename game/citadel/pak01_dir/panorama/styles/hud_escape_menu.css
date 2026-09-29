@@ -89,7 +89,7 @@ CitadelHudEscapeMenu
 #ContextualMenu .nav_menu_item
 {
 	background-image: url("s2r://panorama/images/main_menu/nav_bg_01.vsvg");
-	background-img-opacity: 0.7;
+	background-img-opacity: 0.5;
 	background-size: 100%;
 	padding: 8px 32px 6px;
 	margin-bottom: 12px;
@@ -104,9 +104,15 @@ CitadelHudEscapeMenu
 	color: offWhite&cc;
 }
 
-#ContextualMenu .nav_menu_item.endsession
+#ContextualMenu .nav_menu_item.endsession,#ContextualMenu .nav_menu_item.leavequeue
 {
 	background-image: url("s2r://panorama/images/main_menu/nav_bg_red.vsvg");
+}
+
+.CanAbandonWithoutPenalty #ContextualMenu .nav_menu_item.endsession
+{
+	background-image: url("s2r://panorama/images/main_menu/nav_bg_gray.vsvg");
+	background-img-opacity: 0.3;
 }
 
 #ContextualMenu .nav_menu_item:hover Label.menuButtonLabel
@@ -117,7 +123,7 @@ CitadelHudEscapeMenu
 #ContextualMenu .nav_menu_item:hover
 {
 	pre-transform-scale2d: 1;
-	background-img-opacity: 1;
+	background-img-opacity: 0.8;
 }
 
 .nav_menu_item
@@ -374,7 +380,7 @@ CitadelHudEscapeMenu
 {
 	width: 24px;
 	height: 24px;
-	background-image: url("s2r://panorama/images/icons/icon_zoo.vsvg");
+	background-image: url("s2r://panorama/images/icons/icon_zoo_psd.vtex");
 	background-size: contain;
 	opacity: 0.05;
 	wash-color: offWhite;
@@ -529,6 +535,11 @@ CitadelHudEscapeMenu
 {
 	pre-transform-scale2d: 1.1;
 	saturation: 0.8;
+}
+
+.IsSteamChina .FeedbackRow
+{
+	visibility: collapse;
 }
 
 .connectedToHideout #Unstick

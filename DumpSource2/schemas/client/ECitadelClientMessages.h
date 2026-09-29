@@ -22,4 +22,9 @@ enum ECitadelClientMessages : uint32_t
 	CITADEL_CM_PlayerStatsUpdated = 1021,
 	CITADEL_CM_HideoutUpdateHeroReleaseVoteTally = 1022,
 	CITADEL_CM_ExecuteMapPositionAbility = 1023,
+	CITADEL_CM_HeroEconChanged = 1024,
+	CITADEL_CM_RequestBulkCombatLog = 1025,
+	CITADEL_CM_PlayerTyping = 1026,
+	CITADEL_CM_HideoutInteract = 1027,
+	CITADEL_CM_HeroReleaseVote = 1028,
 };

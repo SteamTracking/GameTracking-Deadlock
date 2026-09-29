@@ -45,7 +45,7 @@ CitadelModifiedAttributeLabel#TierBonusValue
 CitadelModifiedAttributeLabel.ShowBonusDiff
 {
 	width: 100%;
-	margin: 2px 0px;
+	margin: 2px;
 }
 
 CitadelModifiedAttributeLabel.Elevated
@@ -67,6 +67,37 @@ CitadelModifiedAttributeLabel.Enhanced
 {
 	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( enhancedColorBright&ee ), to( offWhite ) );
 	ui-scale: 105%;
+}
+
+#StatsAppliedContainer .Corrupted #AdditionalText
+{
+	ui-scale: 105%;
+	margin-bottom: 2px;
+}
+
+CitadelModifiedAttributeLabel.Corrupted
+{
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( corruptedColorBright&ee ), to( corruptedColorBright ) );
+	background-color: corruptedColorBright&20;
+	ui-scale: 100%;
+	padding: 0px 5px;
+}
+
+CitadelModifiedAttributeLabel.Corrupted.isNegative
+{
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( #ff8888ee ), to( #ff8888 ) );
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( colorEnemy&30 ), to( colorEnemy&00 ) );
+	padding: 0px 5px;
+}
+
+#AbilityType_Innate CitadelModifiedAttributeLabel.Corrupted.isNegative
+{
+	width: 100%;
+}
+
+CitadelModifiedAttributeLabel#ImportantStatValue.Corrupted
+{
+	background-color: none;
 }
 
 CitadelModifiedAttributeLabel.PropertySearchMatch
@@ -152,6 +183,7 @@ CitadelModifiedAttributeLabel.PropertySearchMatch
 	font-size: 17px;
 	text-overflow: shrink;
 	height: 23px;
+	text-shadow: 1px 1px 0px offBlack&90;
 	font-size: 18px;
 	font-weight: medium;
 	color: #ffffff;
@@ -213,6 +245,11 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 	flow-children: right;
 }
 
+CitadelTooltipModDetails #ImportantAttributeContainer .HasModifiedValue .LabelsText
+{
+	max-width: 120px;
+}
+
 .LabelsText
 {
 	flow-children: right;
@@ -226,7 +263,7 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 
 #ModifiedLabel
 {
-	font-family: sansMono;
+	font-family: oracle;
 	text-overflow: shrink;
 	max-height: 35px;
 	font-size: 18px;
@@ -236,6 +273,19 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 {
 	text-shadow: 0px 0px 3.0 enhancedColorDarker;
 	color: enhancedColorBright;
+}
+
+.Corrupted #ModifiedLabel
+{
+	text-shadow: 0px 0px 3.0 corruptedColorDarker;
+	color: offWhite;
+	padding: 1px;
+}
+
+.Corrupted.isNegative #ModifiedLabel
+{
+	text-shadow: 0px 0px 3.0 #3a0d0d;
+	color: corruptedPenaltyColor;
 }
 
 .brawl_modifier
@@ -297,7 +347,7 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 	font-size: 22px;
 }
 
-.gDetailView #ImportantStatsContainer .HasScalingStat #ModifiedLabel,.gDetailView #ImportantStatsContainer .HasScalingStat #BaseLabel,.gDetailView #ImportantStatsContainer .HasScalingStat #StatScalingLabel,.gDetailView #ImportantStatsContainer .HasScalingStat #ValueFromModsLabel,.gDetailView #ImportantAttributeContainer .HasScalingStat #ModifiedLabel,.gDetailView #ImportantAttributeContainer .HasScalingStat #BaseLabel,.gDetailView #ImportantAttributeContainer .HasScalingStat #StatScalingLabel,.gDetailView #ImportantAttributeContainer .HasScalingStat #ValueFromModsLabel,.gScoreboardOpen #ImportantStatsContainer .HasScalingStat #ModifiedLabel,.gScoreboardOpen #ImportantStatsContainer .HasScalingStat #BaseLabel,.gScoreboardOpen #ImportantStatsContainer .HasScalingStat #StatScalingLabel,.gScoreboardOpen #ImportantStatsContainer .HasScalingStat #ValueFromModsLabel,.gScoreboardOpen #ImportantAttributeContainer .HasScalingStat #ModifiedLabel,.gScoreboardOpen #ImportantAttributeContainer .HasScalingStat #BaseLabel,.gScoreboardOpen #ImportantAttributeContainer .HasScalingStat #StatScalingLabel,.gScoreboardOpen #ImportantAttributeContainer .HasScalingStat #ValueFromModsLabel
+.gDetailView #ImportantStatsContainer .HasScalingStat #ModifiedLabel,.gDetailView #ImportantStatsContainer .HasScalingStat #BaseLabel,.gDetailView #ImportantStatsContainer .HasScalingStat #StatScalingLabel,.gDetailView #ImportantStatsContainer .HasScalingStat #ValueFromModsLabel,.gDetailView #ImportantAttributeContainer .HasScalingStat #ModifiedLabel,.gDetailView #ImportantAttributeContainer .HasScalingStat #BaseLabel,.gDetailView #ImportantAttributeContainer .HasScalingStat #StatScalingLabel,.gDetailView #ImportantAttributeContainer .HasScalingStat #ValueFromModsLabel
 {
 	font-size: 18px;
 }
@@ -319,23 +369,30 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 
 #BaseLabel
 {
-	font-family: sansMono;
+	font-family: oracle;
 	text-overflow: shrink;
 	max-height: 35px;
+	text-shadow: 1px 1px 0px offBlack&90;
 }
 
-.hero_stats .HasModifiedValue #BaseLabel,.gDetailView .HasScalingStat .HasModifiedValue #BaseLabel,.gScoreboardOpen .HasScalingStat .HasModifiedValue #BaseLabel
+.hero_stats .HasModifiedValue #BaseLabel,.gDetailView .HasScalingStat .HasModifiedValue #BaseLabel
 {
 	text-decoration: none;
 	color: white;
 	margin-right: 0px;
 }
 
-.gDetailView .HasModifiedValue #BaseLabel,.gDetailView .HasModifiedValue.isAbilityUpgradPreview #BaseLabel,.gScoreboardOpen .HasModifiedValue #BaseLabel,.gScoreboardOpen .HasModifiedValue.isAbilityUpgradPreview #BaseLabel,.HasScalingStat .gDetailView .HasModifiedValue #BaseLabel,.HasScalingStat .gScoreboardOpen .HasModifiedValue #BaseLabel
+.gDetailView .HasModifiedValue #BaseLabel,.gDetailView .HasModifiedValue.isAbilityUpgradPreview #BaseLabel,.HasScalingStat .gDetailView .HasModifiedValue #BaseLabel
 {
-	color: #ffffff40;
+	color: #ffffff;
 	text-decoration: line-through;
 	margin-right: 5px;
+	opacity: 0.5;
+}
+
+.Corrupted .gDetailView .HasModifiedValue #BaseLabel,.Corrupted .gDetailView .HasModifiedValue.isAbilityUpgradPreview #BaseLabel,.Corrupted .HasScalingStat .gDetailView .HasModifiedValue #BaseLabel
+{
+	opacity: 1;
 }
 
 #HeroStats .HasModifiedValue #BaseLabel
@@ -351,27 +408,27 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 	visibility: collapse;
 }
 
-.gDetailView .TechMod #ModifiedLabel,.gScoreboardOpen .TechMod #ModifiedLabel
+.gDetailView .TechMod #ModifiedLabel
 {
 	color: spiritBrightColor;
 }
 
-.gDetailView .TechMod .prop_weapon_damage #ModifiedLabel,.gScoreboardOpen .TechMod .prop_weapon_damage #ModifiedLabel
+.gDetailView .TechMod .prop_weapon_damage #ModifiedLabel
 {
 	color: spiritBrightColor;
 }
 
-.gDetailView .WeaponMod #ModifiedLabel,.gScoreboardOpen .WeaponMod #ModifiedLabel
+.gDetailView .WeaponMod #ModifiedLabel
 {
 	color: courageBrightColor;
 }
 
-.gDetailView .WeaponMod .prop_tech_damage #ModifiedLabel,.gScoreboardOpen .WeaponMod .prop_tech_damage #ModifiedLabel
+.gDetailView .WeaponMod .prop_tech_damage #ModifiedLabel
 {
 	color: spiritBrightColor;
 }
 
-.gDetailView .ArmorMod #ModifiedLabel,.gScoreboardOpen .ArmorMod #ModifiedLabel
+.gDetailView .ArmorMod #ModifiedLabel
 {
 	color: fortitudeBrightColor;
 }
@@ -390,11 +447,13 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 .PreBonusValue
 {
 	opacity: 0.5;
+	font-family: sansMono;
 }
 
 .PostBonusValue
 {
 	font-weight: bold;
+	font-family: sansMono;
 }
 
 .TechMod .PostBonusValue
@@ -414,7 +473,7 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 
 .isNegative .PostBonusValue,.isNegative #BaseLabel,.isNegative .PostfixValue
 {
-	color: rgb(255, 106, 106);
+	color: #ff8888;
 }
 
 .GreenUpArrow
@@ -430,9 +489,7 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 	vertical-align: center;
 	margin-left: 3px;
 	wash-color: #00FF99;
-	animation-name: ArrowPulse;
-	animation-duration: 0.4s;
-	animation-iteration-count: infinite;
+	ui-scale: 80%;
 }
 
 .Show2Arrows .GreenUpArrow
@@ -455,6 +512,64 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 	background-image: url("s2r://panorama/images/shop/enhanced_arrow_png.vtex");
 }
 
+.Corrupted .GreenUpArrow
+{
+	visibility: visible;
+	wash-color: #ffffff;
+	width: 30px;
+	height: 30px;
+	margin-left: -6px;
+	margin-top: -4px;
+	z-index: -1;
+	opacity: 1;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/shop/corrupted_items/corrupted_positive_arrow1_png.vtex");
+	animation-name: CorruptedArrowPulseUp;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.3s;
+}
+
+.Corrupted.isNegative .GreenUpArrow
+{
+	animation-name: CorruptedArrowPulseDown;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.3s;
+	background-image: url("s2r://panorama/images/shop/corrupted_items/corrupted_negative_arrow1_png.vtex");
+}
+
+.CorruptedUp2 .GreenUpArrow
+{
+	background-image: url("s2r://panorama/images/shop/corrupted_items/corrupted_positive_arrow2_png.vtex");
+	margin-left: -6px;
+}
+
+.CorruptedUp3 .GreenUpArrow
+{
+	background-image: url("s2r://panorama/images/shop/corrupted_items/corrupted_positive_arrow3_png.vtex");
+	margin-left: -4px;
+}
+
+.CorruptedDown1 .GreenUpArrow
+{
+	background-image: url("s2r://panorama/images/shop/corrupted_items/corrupted_negative_arrow1_png.vtex");
+	margin-left: -6px;
+}
+
+.CorruptedDown2 .GreenUpArrow
+{
+	background-image: url("s2r://panorama/images/shop/corrupted_items/corrupted_negative_arrow2_png.vtex");
+	margin-left: -6px;
+}
+
+.CorruptedDown3 .GreenUpArrow
+{
+	background-image: url("s2r://panorama/images/shop/corrupted_items/corrupted_negative_arrow3_png.vtex");
+	margin-left: -4px;
+}
+
 @keyframes 'ArrowPulse'
 {
 	0%
@@ -464,7 +579,7 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 	
 	50%
 	{
-		pre-transform-scale2d: 1.04;
+		pre-transform-scale2d: 1.1;
 	}
 	
 	100%
@@ -474,12 +589,56 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 	
 }
 
+@keyframes 'CorruptedArrowPulseUp'
+{
+	0%
+	{
+		transform: translateY(0px);
+		brightness: 1;
+	}
+	
+	50%
+	{
+		transform: translateY(-1px);
+		brightness: 1.3;
+	}
+	
+	100%
+	{
+		transform: translateY(0px);
+		brightness: 1;
+	}
+	
+}
+
+@keyframes 'CorruptedArrowPulseDown'
+{
+	0%
+	{
+		transform: translateY(0px);
+		brightness: 1;
+	}
+	
+	50%
+	{
+		transform: translateY(1px);
+		brightness: 1.3;
+	}
+	
+	100%
+	{
+		transform: translateY(0px);
+		brightness: 1;
+	}
+	
+}
+
 #CooldownLabel .GreenUpArrow
 {
 	pre-transform-rotate2d: 180deg;
 }
 
-#TierBonusValue.HasModifiedValue .GreenUpArrow,.isAbilityUpgradPreview .GreenUpArrow,.gDetailView .GreenUpArrow,.gDetailView .HasModifiedValue .GreenUpArrow,.gScoreboardOpen .GreenUpArrow,.gScoreboardOpen .HasModifiedValue .GreenUpArrow,.hero_stats .HasModifiedValue .GreenUpArrow,.gDetailView .HasScalingStat .GreenUpArrow,.gScoreboardOpen .HasScalingStat .GreenUpArrow,.upgradeBeingHovered .HasModifiedValue .GreenUpArrow
+#TierBonusValue.HasModifiedValue .GreenUpArrow,.isAbilityUpgradPreview .GreenUpArrow,.gDetailView .GreenUpArrow,.gDetailView .HasModifiedValue .GreenUpArrow,.hero_stats .HasModifiedValue .GreenUpArrow,.gDetailView .HasScalingStat .GreenUpArrow,.upgradeBeingHovered .HasModifiedValue .GreenUpArrow
 {
 	visibility: collapse;
 }
@@ -508,22 +667,32 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 	visibility: visible;
 }
 
-.gDetailView .hero_stats #AdditionLabel,.gDetailView .hero_stats #ModifiedAdditionLabel,.gScoreboardOpen .hero_stats #AdditionLabel,.gScoreboardOpen .hero_stats #ModifiedAdditionLabel
+.gDetailView .hero_stats #AdditionLabel,.gDetailView .hero_stats #ModifiedAdditionLabel
 {
 	visibility: collapse;
 }
 
-.hero_stats .HasModifiedValue #ModifiedLabel,.gDetailView .HasScalingStat #ModifiedAdditionLabel,.gDetailView .HasScalingStat #AdditionLabel,.gScoreboardOpen .HasScalingStat #AdditionLabel,.gScoreboardOpen .HasScalingStat #ModifiedAdditionLabel
+.hero_stats .HasModifiedValue #ModifiedLabel,.gDetailView .HasScalingStat #ModifiedAdditionLabel,.gDetailView .HasScalingStat #AdditionLabel
 {
 	visibility: visible;
 }
 
-#ModifiedLabel,.gDetailView .HasScalingStat #BaseLabel,.gScoreboardOpen .HasScalingStat #BaseLabel,#StatScalingLabel,.HasModifiedValue #BaseLabel,.HasScalingStat #BaseLabel,.isAbilityUpgradPreview #ModifiedLabel,#ValueFromModsLabel,.gDetailView .HasScalingStat .HasModifiedValue #ModifiedLabel,.gDetailView .HasScalingStat #ModifiedLabel,.gDetailView .HasScalingStat .IsRoundingDown #ValueFromModsLabel,.gDetailView .HasScalingStat .IsRoundingDown #AdditionLabel,.gScoreboardOpen .HasScalingStat .HasModifiedValue #ModifiedLabel,.gScoreboardOpen .HasScalingStat #ModifiedLabel,.gScoreboardOpen .HasScalingStat .IsRoundingDown #ValueFromModsLabel,.gScoreboardOpen .HasScalingStat .IsRoundingDown #AdditionLabel,.HideModsValue #ValueFromModsLabel,.gDetailView .HasScalingStat.HideModsValue #ValueFromModsLabel,.gDetailView .HideModsValue #ValueFromModsLabel,.gScoreboardOpen .HasScalingStat.HideModsValue #ValueFromModsLabel,.gScoreboardOpen .HideModsValue #ValueFromModsLabel,.HideModsValue #AdditionLabel,.gDetailView .HasScalingStat.HideModsValue #AdditionLabel,.gDetailView .HideModsValue #AdditionLabel,.gScoreboardOpen .HasScalingStat.HideModsValue #AdditionLabel,.gScoreboardOpen .HideModsValue #AdditionLabel
+#ModifiedLabel,.gDetailView .HasScalingStat #BaseLabel,#StatScalingLabel,.HasModifiedValue #BaseLabel,.HasScalingStat #BaseLabel,.isAbilityUpgradPreview #ModifiedLabel,#ValueFromModsLabel,.gDetailView .HasScalingStat .HasModifiedValue #ModifiedLabel,.gDetailView .HasScalingStat #ModifiedLabel,.gDetailView .HasScalingStat .IsRoundingDown #ValueFromModsLabel,.gDetailView .HasScalingStat .IsRoundingDown #AdditionLabel,.HideModsValue #ValueFromModsLabel,.gDetailView .HasScalingStat.HideModsValue #ValueFromModsLabel,.gDetailView .HideModsValue #ValueFromModsLabel .HideModsValue #AdditionLabel,.gDetailView .HasScalingStat.HideModsValue #AdditionLabel,.gDetailView .HideModsValue #AdditionLabel
 {
 	visibility: collapse;
 }
 
-.HasModifiedValue #ModifiedLabel,.gDetailView .HasModifiedValue #ModifiedLabel,.gDetailView .HasScalingStat .isAbilityUpgradPreview.HasModifiedValue #ModifiedLabel,.gDetailView .HasScalingStat .isAbilityUpgradPreview #ModifiedLabel,.gScoreboardOpen .HasModifiedValue #ModifiedLabel,.gScoreboardOpen .HasScalingStat .isAbilityUpgradPreview.HasModifiedValue #ModifiedLabel,.gScoreboardOpen .HasScalingStat .isAbilityUpgradPreview #ModifiedLabel,.HasScalingStat #ModifiedLabel,.gDetailView .HasScalingStat #BaseLabel,.gDetailView .HasScalingStat #StatScalingLabel,.gDetailView .HasModifiedValue #BaseLabel,.gDetailView .HasScalingStat #ValueFromModsLabel,.gDetailView .HasScalingStat #ModifiedAdditionLabel,.gDetailView .HasScalingStat #AdditionLabel,.gScoreboardOpen .HasScalingStat #BaseLabel,.gScoreboardOpen .HasScalingStat #StatScalingLabel,.gScoreboardOpen .HasModifiedValue #BaseLabel,.gScoreboardOpen .HasScalingStat #ValueFromModsLabel,.gScoreboardOpen .HasScalingStat #ModifiedAdditionLabel,.gScoreboardOpen .HasScalingStat #AdditionLabel
+.HasModifiedValue #ModifiedLabel,.HasScalingStat #ModifiedLabel
+{
+	visibility: visible;
+}
+
+.gDetailView .HasModifiedValue #ModifiedLabel,.gDetailView .HasScalingStat #ModifiedLabel
+{
+	visibility: collapse;
+}
+
+.gDetailView #BaseLabel
 {
 	visibility: visible;
 }
@@ -535,7 +704,7 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 
 .StatImageArea
 {
-	visibility: collapse;
+	visibility: visible;
 }
 
 .StatImage
@@ -547,6 +716,7 @@ CitadelTooltipModDetails #ImportantAttributeContainer .LabelsText
 	margin-right: 4px;
 	vertical-align: center;
 	opacity: 0.3;
+	visibility: collapse;
 }
 
 .HasStatImage .StatImageArea
@@ -627,5 +797,28 @@ Label.NewOverride
 .Elevated Label
 {
 	font-weight: bold;
+}
+
+.corrupted_rng
+{
+	font-size: 10px;
+	font-family: block;
+	text-transform: uppercase;
+	color: colorEnemy;
+	text-shadow: 0px 0px 0px 3.0 offBlack;
+	vertical-align: middle;
+	horizontal-align: right;
+	padding: 2px;
+	text-overflow: shrink;
+	visibility: collapse;
+	animation-name: UIGroove1;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.5s;
+}
+
+#AbilityType_Innate .isNegative.Corrupted .corrupted_rng
+{
+	visibility: visible;
 }
 

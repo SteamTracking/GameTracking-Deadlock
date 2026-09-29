@@ -10,4 +10,7 @@ enum AbilityDependencyFlags : uint16_t
 	// MPropertyFriendlyName = "Display as Sub-Ability"
 	// MPropertyDescription = "Show this dependant in our ability icons as a sub-ability"
 	DisplayAsSubAbility = 4,
+	// MPropertyFriendlyName = "Assign as Alt-Fire"
+	// MPropertyDescription = "Automatically assigns this ability to the alt-fire slot, rather than invalid"
+	AssignAsAltFire = 8,
 };

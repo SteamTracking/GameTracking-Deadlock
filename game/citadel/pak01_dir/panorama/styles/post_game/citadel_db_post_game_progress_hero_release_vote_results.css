@@ -1,0 +1,279 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+CitadelPostGameProgressHeroReleaseVoteResults
+{
+	width: 100%;
+	height: 100%;
+}
+
+#HeroScenePanelBacker
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: center;
+	opacity: 1;
+	blur: gaussian(2.3px);
+	opacity: .03;
+	opacity-mask: url("s2r://panorama/images/masks/softedge_box_png.vtex");
+	margin-right: -1050px;
+}
+
+.Team1 #HeroScenePanelBacker
+{
+	wash-color: #00000033;
+	opacity: .04;
+}
+
+.Team2 #HeroScenePanelBacker
+{
+	wash-color: #00000033;
+	opacity: .04;
+}
+
+#VoteCategories
+{
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	horizontal-align: center;
+}
+
+#VoteCategories .VoteCategory
+{
+	width: 100%;
+	height: 100%;
+	transition-property: brightness;
+	transition-duration: 0.2s;
+}
+
+#VoteCategories .VoteCategory.Highlighted
+{
+	brightness: 2.0;
+}
+
+#VoteCategories .VoteCategory.Dimmed
+{
+	brightness: 0.2;
+}
+
+@define stickerAreaMinX: 10.0%;
+@define stickerAreaMinY: 20.0%;
+@define stickerAreaMaxX: 90.0%;
+@define stickerAreaMaxY: 75.0%;
+@define stickerRotateMin: -45deg;
+@define stickerRotateMax: 45deg;
+.VoteSticker
+{
+	width: 280px;
+	height: 280px;
+	opacity: 0.0;
+	transform: translate3d( -100px, -100px, 0px ) scale3d( 1.5, 1.5, 0.0 );
+	transition-property: opacity, transform;
+	transition-duration: 0.2s;
+}
+
+.VoteSticker.Appear
+{
+	transform: translate3d( -100px, -100px, 0px );
+	opacity: 1.0;
+	transition-duration: 0.0s;
+}
+
+.VoteSticker.LocalPlayer
+{
+	animation-name: UIGroove1;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.5s;
+}
+
+.VoteSticker #HeroImage
+{
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	horizontal-align: center;
+}
+
+.VoteSticker .VotingPlayer
+{
+	flow-children: right;
+	horizontal-align: left;
+	vertical-align: bottom;
+	margin-bottom: 12px;
+	margin-left: 50px;
+	background-color: deadlockGreen;
+	padding: 4px 4px 4px 4px;
+	border-radius: 50px;
+	opacity: 0.0;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	animation-name: MyStickers;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.VoteSticker .VotingPlayer #PlayerHeroImage
+{
+	width: 36px;
+	height: 36px;
+	vertical-align: middle;
+}
+
+.VoteSticker .VotingPlayer #PlayerName
+{
+	vertical-align: middle;
+	margin-left: 4px;
+	visibility: collapse;
+}
+
+.VoteSticker .VotingPlayer #PlayerName Label
+{
+	font-family: oracle;
+	font-style: italic;
+	color: offBlack;
+}
+
+.VoteSticker .VotingPlayer #PlayerName Label .PersonaName
+{
+	font-weight: bold;
+}
+
+.VoteSticker.LocalPlayer .VotingPlayer
+{
+	opacity: 1.0;
+}
+
+.VoteSticker:hover .VotingPlayer
+{
+	opacity: 1.0;
+}
+
+.mainTitle
+{
+	horizontal-align: center;
+	font-family: block;
+	font-size: 70px;
+	transform: rotateZ(-4deg);
+	background-image: url("s2r://panorama/images/main_menu/hero_release_vote/text_backer_box_psd.vtex");
+	background-size: 100% 100%;
+	padding: 10px 30px;
+	opacity-mask: url("s2r://panorama/images/main_menu/hero_release_vote/text_speckle_mask_psd.vtex");
+	opacity-mask-scale: 96% 96%;
+	text-overflow: shrink;
+	max-height: 100px;
+	margin-top: 80px;
+}
+
+#CategoryInfos
+{
+	horizontal-align: right;
+	margin-top: 60px;
+	margin-right: 70px;
+}
+
+#CategoryInfos .CategoryInfo
+{
+	margin-bottom: 16px;
+	background-color: #0009;
+	padding: 8px 20px;
+	horizontal-align: right;
+	max-width: 450px;
+	transform: translateX( 20px );
+	opacity: 0.0;
+	transition-property: opacity, transform;
+	transition-duration: 0.5s;
+}
+
+#CategoryInfos .CategoryInfo.Appear
+{
+	transform: none;
+	opacity: 0;
+	transition-duration: 0.0s;
+	animation-name: TitleAppear;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+}
+
+#CategoryInfos .CategoryInfo.Appear .CategoryFlavor
+{
+	animation-name: TextAppear;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+
+#CategoryInfos .CategoryInfo .CategoryFlavor
+{
+	horizontal-align: right;
+	text-align: right;
+	font-family: oracle;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 50px;
+	text-overflow: shrink;
+	color: deadlockGreen;
+}
+
+#CategoryInfos .CategoryInfo .CategoryDesc
+{
+	horizontal-align: right;
+	text-align: right;
+	color: #666;
+	font-family: oracle;
+	visibility: collapse;
+}
+
+@keyframes 'TitleAppear'
+{
+	0%
+	{
+		color: offWhite;
+		opacity: 1;
+	}
+	
+	80%
+	{
+		opacity: 1;
+	}
+	
+	100%
+	{
+		color: deadlockGreen;
+		opacity: 0;
+	}
+	
+}
+
+@keyframes 'TextAppear'
+{
+	0%
+	{
+		color: offWhite;
+	}
+	
+	100%
+	{
+		color: deadlockGreen;
+	}
+	
+}
+
+@keyframes 'MyStickers'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	
+	50%
+	{
+		brightness: 2;
+	}
+	
+	100%
+	{
+		brightness: 1;
+	}
+	
+}
+

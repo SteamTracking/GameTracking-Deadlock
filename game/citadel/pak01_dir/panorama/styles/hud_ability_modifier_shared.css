@@ -19,6 +19,16 @@
 	
 }
 
+.modifier_learning_hero_ability #fancy_progress_container
+{
+	visibility: collapse;
+}
+
+.modifier_learning_hero_ability #basic_progress_container
+{
+	visibility: visible;
+}
+
 .silence #fancy_progress_container,.MODIFIER_STATE_SILENCED #fancy_progress_container,.MODIFIER_STATE_MUTED #fancy_progress_container
 {
 	visibility: visible;
@@ -141,6 +151,11 @@
 	wash-color: gold;
 }
 
+.stunned.citadel_nurse_fear_debuff .SplitLabelProgress,.MODIFIER_STATE_COMMAND_RESTRICTED.citadel_nurse_fear_debuff .SplitLabelProgress
+{
+	wash-color: red;
+}
+
 .stunned.dynamo2 .SplitLabelProgressBar,.MODIFIER_STATE_COMMAND_RESTRICTED.dynamo2 .SplitLabelProgressBar
 {
 	ui-scale: 100%;
@@ -149,6 +164,11 @@
 .stunned.dynamo2 .BarAndNameContainer,.MODIFIER_STATE_COMMAND_RESTRICTED.dynamo2 .BarAndNameContainer
 {
 	visibility: visible;
+}
+
+.citadel_nurse_fear_debuff .SplitLabelProgressBar .SplitLabelProgress
+{
+	wash-color: red;
 }
 
 @keyframes 'DisarmAnim'
@@ -489,6 +509,84 @@
 .viper_petrify .SplitLabelProgressBar .SplitLabelProgress
 {
 	wash-color: viperColor;
+}
+
+@keyframes 'SecureSoulsAnim'
+{
+	0%
+	{
+		transform: translateX( 1px );
+	}
+	
+	50%
+	{
+		transform: translateY( 1px );
+	}
+	
+	100%
+	{
+		transform: translateX( -1px );
+	}
+	
+}
+
+.secure_souls #fancy_progress_container
+{
+	visibility: visible;
+}
+
+.secure_souls #basic_progress_container
+{
+	visibility: collapse;
+}
+
+.secure_souls .BarAndNameContainer
+{
+	visibility: collapse;
+}
+
+.secure_souls .ModifierProgressBarContainer
+{
+	visibility: collapse;
+}
+
+.secure_souls .ModifierProgressBar
+{
+	background-color: shardColor;
+}
+
+.secure_souls #SecureSoulsInfo
+{
+	visibility: visible;
+}
+
+.secure_souls .SplitLabelProgressBar
+{
+	visibility: visible;
+}
+
+.secure_souls .SplitLabelProgressBar .SplitLabelName Image
+{
+	animation-name: SecureSoulsAnim;
+	animation-duration: 0.4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-frame-time: 300ms;
+}
+
+.secure_souls .SplitLabelProgressBar .SplitLabelName Image:nth-child(odd)
+{
+	animation-direction: alternate-reverse;
+}
+
+.secure_souls .SplitLabelProgressBar .SplitLabelName Image:nth-child(even)
+{
+	animation-direction: alternate;
+}
+
+.secure_souls .SplitLabelProgressBar .SplitLabelProgress
+{
+	wash-color: shardColor;
 }
 
 @keyframes 'UrnAnim'

@@ -1,0 +1,3 @@
+class CMixEvelopeTriggerDesc : public CVControlNodeBaseDesc
+{
+};

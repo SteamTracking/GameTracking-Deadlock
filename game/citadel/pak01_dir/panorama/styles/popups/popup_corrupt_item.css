@@ -1,0 +1,307 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+PopupCorruptItem.PopupPanel
+{
+	flow-children: down;
+	width: 1300px;
+	height: 950px;
+	padding: 0px;
+	background-color: none;
+	padding: 100px;
+	border: 0px;
+	box-shadow: none;
+	border-radius: 0px;
+	margin-bottom: 30px;
+	background-image: none;
+}
+
+#Background
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	brightness: 1.25;
+	saturation: 1.25;
+	background-image: url("s2r://panorama/images/textures/paper_tile_1k_02_dark_psd.vtex");
+	opacity-mask: url("s2r://panorama/images/buttons/popup_mask_threshold_psd.vtex");
+	opacity-mask-threshold: 2% 2%;
+}
+
+#shop_sign
+{
+	ignore-parent-flow: true;
+	width: 500px;
+	transform: rotateZ(-8deg) translateX(-30px);
+}
+
+#ModsCorruptContainer
+{
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	padding: 40px 0px;
+}
+
+#HeaderContainer
+{
+	width: 52%;
+	horizontal-align: right;
+	flow-children: down;
+	margin-bottom: 20px;
+	margin-right: 60px;
+}
+
+#ImageSlices Image:nth-child(1n)
+{
+	transform: translateY( 0% ) rotateZ(2deg);
+}
+
+#ImageSlices Image:nth-child(2n)
+{
+	transform: translateY( -2% ) rotateZ(-2deg);
+}
+
+#ImageSlices Image:nth-child(3n)
+{
+	transform: translateY( 1% ) skew(6deg);
+}
+
+#HeaderLabel
+{
+	font-family: oracle;
+	font-size: 46px;
+	font-weight: bold;
+	color: corruptedColorBright;
+	text-transform: uppercase;
+	color: offWhite;
+	horizontal-align: left;
+}
+
+#HeaderLabel Label
+{
+	font-family: oracle;
+	font-size: 46px;
+	font-weight: bold;
+	color: corruptedColorBright;
+	text-transform: uppercase;
+	color: offWhite;
+	horizontal-align: center;
+}
+
+#HeaderLabel Image
+{
+	animation-name: DefaultAnim;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-frame-time: 300ms;
+}
+
+#HeaderLabel Image:nth-child(odd)
+{
+	animation-direction: alternate-reverse;
+}
+
+#HeaderLabel Image:nth-child(even)
+{
+	animation-direction: alternate;
+}
+
+@keyframes 'DefaultAnim'
+{
+	0%
+	{
+		transform: translateX( 1px );
+	}
+	
+	50%
+	{
+		transform: translateY( 1px );
+	}
+	
+	100%
+	{
+		transform: translateX( -1px );
+	}
+	
+}
+
+.headerDesc
+{
+	font-size: 18px;
+	color: silvered&cc;
+	horizontal-align: center;
+	text-align: left;
+	font-weight: bold;
+	font-family: oracle;
+}
+
+.headerDesc .negative_label
+{
+	color: corruptedPenaltyColorBright;
+}
+
+.SoulsAvailableRow
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 10px;
+	visibility: collapse;
+}
+
+.SoulsAvailable
+{
+	font-family: block;
+	font-size: 22px;
+	color: shardColor;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+#InventorySlots
+{
+	horizontal-align: middle;
+	background-color: offBlack&70;
+	padding: 20px;
+	ui-scale: 120%;
+}
+
+.NoItemsToCorrupt #InventorySlots
+{
+	visibility: collapse;
+}
+
+#ModsContainer
+{
+	flow-children: down-wrap;
+	max-height: 380px;
+	horizontal-align: center;
+}
+
+#ModView
+{
+	horizontal-align: middle;
+}
+
+#NoItemsLabel
+{
+	visibility: collapse;
+	font-size: 20px;
+	font-family: oracle;
+	color: #ff9494;
+	font-weight: bold;
+	horizontal-align: center;
+	margin-top: 150px;
+}
+
+.NoItemsToCorrupt #NoItemsLabel
+{
+	visibility: visible;
+}
+
+.buttonToCorrupt
+{
+	flow-children: down;
+	margin: 10px;
+}
+
+.buttonToCorrupt:hover
+{
+	pre-transform-scale2d: 1.03;
+}
+
+.buttonToCorrupt.cantAfford
+{
+	opacity: 0.45;
+	saturation: 0.2;
+}
+
+.CorruptCostRow
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 4px;
+	visibility: collapse;
+}
+
+.CorruptCostRow .goldIcon
+{
+	ui-scale: 70%;
+}
+
+.CorruptCost
+{
+	font-family: block;
+	font-size: 18px;
+	color: shardColor;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+
+.cantAfford .CorruptCost
+{
+	color: #ffa1a1;
+}
+
+.CorruptPenaltyRow
+{
+	flow-children: down;
+	horizontal-align: center;
+	margin-top: 2px;
+	max-width: 110px;
+	visibility: collapse;
+}
+
+.CorruptPenaltyLabel
+{
+	vertical-align: middle;
+	font-family: oracle;
+	font-size: 14px;
+	font-weight: bold;
+	color: corruptedPenaltyColor;
+	text-shadow: 0px 0px 3.0 #3a0d0d;
+	text-align: center;
+	horizontal-align: center;
+	text-overflow: shrink;
+}
+
+#ButtonsContainer
+{
+	horizontal-align: center;
+	margin: 18px;
+	flow-children: right;
+	vertical-align: bottom;
+}
+
+#SkipButton,.headerDescStreetBrawl
+{
+	visibility: collapse;
+}
+
+.StreetBrawl #CancelButton,.StreetBrawl #Countdown,.StreetBrawl .headerDesc
+{
+	visibility: collapse;
+}
+
+.StreetBrawl #SkipButton,.StreetBrawl .headerDesc.headerDescStreetBrawl
+{
+	visibility: visible;
+}
+
+#Countdown
+{
+	horizontal-align: center;
+	background-color: offBlack;
+	padding: 10px 20px;
+	transform: rotateZ(-1deg);
+	opacity: 0.5;
+	ignore-parent-flow: true;
+	vertical-align: bottom;
+}
+
+#Countdown Label
+{
+	font-family: block;
+	font-size: 24px;
+}
+

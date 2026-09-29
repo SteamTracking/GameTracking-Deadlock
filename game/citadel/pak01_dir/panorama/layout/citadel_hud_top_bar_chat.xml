@@ -1,8 +1,8 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_hud_top_bar_chat.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/citadel_hud_top_bar_chat.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="ChatMessage">
@@ -12,15 +12,48 @@
 					<Panel class="ChatBubble">
 						<Panel class="TextContainer">
 							<Panel class="bubble_bg" />
-							<Label id="MessageText" />
+							<Panel class="MessageWrapper">
+								<Image id="TargetHeroImage" />
+								<Label id="MessageText" html="true" />
+							</Panel>
 						</Panel>
 						<CitadelHeroImage id="HeroImage" heroimagestyle="small" />
+					</Panel>
+					<Image id="PingStyleIcon" class="PingStyle" />
+					<Panel class="SubjectWrapper">
+						<Panel id="SubjectIconBG" class="IconBG">
+							<Image id="SubjectIcon" />
+							<Panel class="corrupted_frame" />
+						</Panel>
+						<Panel id="CooldownTimer">
+							<Label id="CooldownText" />
+						</Panel>
 					</Panel>
 					<Panel class="ResponsesContainer">
 						<Panel class="ResponsesBackground">
 							<Panel class="ThumbsUpIcon" />
 						</Panel>
 						<Panel id="ResponseHeroes" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+		<snippet name="TypingIndicatorChatMessage">
+			<Panel class="ChatMessage">
+				<Panel id="ChatArrow" />
+				<Panel id="MessageContents">
+					<Panel class="ChatBubble">
+						<Panel class="TextContainer">
+							<Panel class="bubble_bg" />
+							<Panel class="MessageWrapper">
+								<Panel id="TypingAnim">
+									<Panel id="TypingDot1" class="dot" />
+									<Panel id="TypingDot2" class="dot" />
+									<Panel id="TypingDot3" class="dot" />
+								</Panel>
+							</Panel>
+						</Panel>
+						<CitadelHeroImage id="HeroImage" heroimagestyle="small" />
 					</Panel>
 				</Panel>
 			</Panel>

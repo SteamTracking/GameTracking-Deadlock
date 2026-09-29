@@ -1,12 +1,37 @@
 // MGetKV3ClassDefaults = {
 //	"command": "CMD_INVALID",
 //	"paramName": 0,
-//	"outputSubmix": -1,
-//	"inputSubmix0": -1,
-//	"inputSubmix1": -1,
+//	"outputSubmix":
+//	{
+//		"category": "NULL_POINTER",
+//		"type": "VO_CHAR",
+//		"index": 0
+//	},
+//	"inputSubmix0":
+//	{
+//		"category": "NULL_POINTER",
+//		"type": "VO_CHAR",
+//		"index": 0
+//	},
+//	"inputSubmix1":
+//	{
+//		"category": "NULL_POINTER",
+//		"type": "VO_CHAR",
+//		"index": 0
+//	},
 //	"processor": -1,
-//	"inputValue0": -1,
-//	"inputValue1": -1
+//	"m_nInputValue0":
+//	{
+//		"category": "NULL_POINTER",
+//		"type": "VO_CHAR",
+//		"index": 0
+//	},
+//	"m_nInputValue1":
+//	{
+//		"category": "NULL_POINTER",
+//		"type": "VO_CHAR",
+//		"index": 0
+//	}
 //}
 class CVMixCommand
 {
@@ -15,15 +40,13 @@ class CVMixCommand
 	// MKV3TransferName = "paramName"
 	uint32 m_nParameterNameHash;
 	// MKV3TransferName = "outputSubmix"
-	int32 m_nOutputSubmix;
+	CVMixDataOffset m_nOutputSubmix;
 	// MKV3TransferName = "inputSubmix0"
-	int32 m_nInputSubmix0;
+	CVMixDataOffset m_nInputSubmix0;
 	// MKV3TransferName = "inputSubmix1"
-	int32 m_nInputSubmix1;
+	CVMixDataOffset m_nInputSubmix1;
 	// MKV3TransferName = "processor"
 	int32 m_nProcessor;
-	// MKV3TransferName = "inputValue0"
-	int32 m_nInputValue0;
-	// MKV3TransferName = "inputValue1"
-	int32 m_nInputValue1;
+	CVMixDataOffset m_nInputValue0;
+	CVMixDataOffset m_nInputValue1;
 };

@@ -1,32 +1,16 @@
-// MNetworkIncludeByName = "m_bClientSideRagdoll"
-// MNetworkVarNames = "bool m_bInitiallyPopulateInterpHistory"
-// MNetworkVarNames = "bool m_bAnimGraphUpdateEnabled"
-// MNetworkVarNames = "Vector m_vecForce"
-// MNetworkVarNames = "int32 m_nForceBone"
-// MNetworkVarNames = "PhysicsRagdollPose_t m_RagdollPose"
-// MNetworkVarNames = "bool m_bRagdollEnabled"
-// MNetworkVarNames = "bool m_bRagdollClientSide"
 class CBaseAnimGraph : public C_BaseModelEntity
 {
-	// MSaveOpsForField = "GetAnimGraphControllerManagerSaveRestoreOps"
 	CAnimGraphControllerManager m_graphControllerManager;
-	// MSaveOpsForField = "GetAnimGraphControllerPtrSaveRestoreOps"
-	CAnimGraphControllerBase* m_pMainGraphController;
-	// MNetworkEnable
+	CAnimGraphControllerPtr m_pMainGraphController;
 	bool m_bInitiallyPopulateInterpHistory;
 	bool m_bSuppressAnimEventSounds;
-	// MNetworkEnable
+	CEntityOutputTemplate< float32 > m_OnLayerCycleUpdated;
+	CEntityIOOutput m_OnExternalChoreoGraphChanged;
 	bool m_bAnimGraphUpdateEnabled;
-	float32 m_flMaxSlopeDistance;
-	// MNotSaved
-	VectorWS m_vLastSlopeCheckPos;
-	uint32 m_nAnimGraphUpdateId;
 	// MNotSaved
 	bool m_bAnimationUpdateScheduled;
-	// MNetworkEnable
 	// MNotSaved
 	Vector m_vecForce;
-	// MNetworkEnable
 	// MNotSaved
 	int32 m_nForceBone;
 	// MNotSaved
@@ -35,15 +19,11 @@ class CBaseAnimGraph : public C_BaseModelEntity
 	bool m_bBuiltRagdoll;
 	// MPhysPtr
 	IPhysicsRagdollControl* m_pRagdollControl;
-	// MNetworkEnable
 	PhysicsRagdollPose_t m_RagdollPose;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnClientRagdollEnabledChanged"
 	bool m_bRagdollEnabled;
-	// MNetworkEnable
-	// MNetworkChangeCallback = "OnClientRagdollChanged"
 	// MNotSaved
 	bool m_bRagdollClientSide;
+	bool m_bShouldUpdateTransformations;
 	// MNotSaved
 	bool m_bHasAnimatedMaterialAttributes;
 	CUtlHashtable< AnimTagID, CBaseAnimGraph::ModifierHandleVector_t > m_bodyGroupModifiers;

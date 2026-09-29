@@ -1,7 +1,4 @@
-// MNetworkVarNames = "CHandle<CNPC_SimpleAnimatingAI> m_vecDeployedSentries"
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_ShieldedSentry : public CCitadelBaseAbility
 {
-	// MNetworkEnable
-	CNetworkUtlVectorBase< CHandle< CNPC_SimpleAnimatingAI > > m_vecDeployedSentries;
+	CNetworkUtlVectorBase< CHandle< CNPC_ShieldedSentry > > m_vecDeployedSentries;
 };

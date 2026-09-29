@@ -1,32 +1,82 @@
                                 
+                 %s rendertarget binds, %s push-constant sets\n
+                 tiles  %2i%% of atlas   (%s all-lit, %s all-shadow, %s penumbra)\n
+     light objects      env %-3s   lpv  %-3s\n
+    %-12s %12s %12s %12s\n
     %s, 0x%08x+%s
-    empty indirect draws compacted: %i
-   %d initial materials (%d initial depth-only) (%i fast-path depth-only)\n
-   %d material Vfx evals, %d material Vfx rule checks, %i cb updates (%ikb)\n
-   %d material computes, %d full material sets, %d skipped sets, %d partial-skipped sets, %d texture-only sets\n
+    aggregate  %s of %s fragments merged\n
+    clutter    %s instances in %s visible tiles\n
+    instmesh   %s instances (%s LOD) -> %s meshes drawn; shadow %s -> %s\n
+    particles  %s material binds\n
+    reculled but still visible: %s base, %s animated, %s aggregate, %s instmesh\n
+   %8s  %-8s
+   Mip   Resident   Overhead   Overhead %%   256 pages\n
    SST: %.1f MB, uncompressed: %d MB (compression: %.1f%%)\n
    SST: EMPTY (no static geo rendered into any tiles, must be flagged as baked only)\n
-  %s agg [%s fragments (%s merged), %s meshlets (%s recull, %s recull visible)]\n
-  %s base, %s animated\n
-  %s clutter sceneobjects [%s tiles, %s instances]\n
-  %s instmesh [%s draw calls, %s instances, %s drawn (shadow: %s instances, %s drawn), %s recull visible ]\n
+  ! %d leaked drawlists\n
+  %-11s %10s %11s %12s %12s %9s\n
+  %-14s %10s   %s\n
+  %-14s %10s   (%s depth-only, %s fast-path depth-only)\n
+  %-14s %10s   (%s kb)\n
+  %-14s %10s   (%s rule checks)\n
+  %-14s %10s   (%s skipped, %s partial, %s texture-only)\n
+  %-14s %10s builds     (%s tris)\n
+  %-14s %10s builds     (%s tris, %u compactions, %s scratch)\n
+  %-14s %10s instances  (%s geometries, %s size-culled)\n
+  %-14s %10s instances  (%s geometries, %s tris)\n
+  %-14s %10s objects    (%s draws, %s verts)\n
+  %-14s %10s\n
+  %-14s %12s %12s %12s\n
+  %4s   %8d   %8d   %9.1f%%   %9d\n
+  %s empty indirect draws compacted\n
+  %s objects starting to fade\n
+  %s pre-cull   ->   %s tested   ->   %s passing  (%.1f%%)\n
+  Atlas occupancy: %.1f%% now, %.1f%% with 256x256 pages ( capacity %d pages ).\n
+  Atlas: %d 256x256 pages, taking the space of %d pages today ( %.2fx ).\n
   Cache: %.1f MB
+  Meshlets: %.1fK
+  Meshlets: %.1fM
+  Meshlets: %d
+  Nothing resident.\n
+  Tile reads: %d instead of %d ( %.2fx the count, %.2fx the bytes ).\n
   Verts: %.1fK
   Verts: %.1fM
   Verts: %d
   [%i] %s %s %s IndexCount: %d\n
-  cpu culling: [vis %d] [vol %d] [dist %d] [size %d]\n
-  gpu culling: [vis %d] [frust %d] [occ %d] [vol %d] [bface %d] [size %d] [density %d]
+  allocated      %s transforms, %s instances, %s meshlets\n
+  boxes      %s cull boxes, %s objects tested (%lluus) -> %s culled\n
+  draw calls   %12s   + %s meshlet dispatches\n
+  dropped: zero %u, unknown texture %u, missing mip %u, bad coords %u, no page %u
+  fog volumes    %10d   (%d culled: %d frustum, %d dist, %d pvs)\n
+  jobs           %s culling (%.3f ms), %s rendering (%.3f ms), %s used to render\n
+  meshlet bounds %u updates, %s meshlets\n
+  processed %u: requested %u, already requested %u, page accessed %u
+  records name %u textures, %u are off page (0,0). Mip 1..9: %u %u %u %u %u %u %u %u %u
+  scene objs   %12s   drawn\n
+  scratch        %s used (high watermark %s)\n
+  shadow tiles   lights %2i%% of slots   (%s conservative -> %s final)\n
+  shadowed lights      omni %-3s   spot %-3s   barn %-3s   [%s fog only]\n
+  shadowmaps     %10d   (%d dynamic, %d mixed, %d fog-only, %d skipped)\n
+  submission     %s primary contexts, %s display lists, %s resolves\n
+  timing         begin->finish %.3f ms, finish->complete %.3f ms\n
+  triangles    %12s\n
+  unshadowed lights    omni %-3s   spot %-3s   barn %-3s   [%s fog only]\n
+  vertex cache   %u updates in %u dispatches, %s vertices\n
+  vertices     %12s\n
+  views          %s still allocated\n
+  views        %12s   (%s with world traversal)\n
   w/ default threshold: %d,
   w/ default threshold: (%.1f, %.1f)
   w/ large threshold: %d,
   w/ zero threshold: %d,
   w/ zero threshold: (%.1f, %.1f)
- !"#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$8
- %i fog-only.
- %s [%.2f ms]
- (08@HPX`j }
- (08@HPXb` 
+ !"#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+ %s | Flags %lld \n
+ (08@HPX`jP
+ (08@HPXb 
+ (08@HPZP
+ (08@JP
+ (0X`hpz 
  (EXTERN)
  (Frozen)
  (MAYBE DISABLED?!)
@@ -41,6 +91,7 @@
  *CentralNode*
  *Inactive*
  *Unused*
+ + tail
  ; contains 
  BreakOnDelete: 
  BreakOnDraw: 
@@ -115,6 +166,7 @@
  Width=%d
  Window=0x%08X
  Window=0x%08X%n
+ [RE-RENDER: different object flags requested]
  [cur %i, targ %i %s, %.1fs]
  [lod
  ]Asinh
@@ -295,12 +347,15 @@
 #%s/%s/Render2DDebugOverlays
 #%s/%s/Render3DDebugOverlays
 #%s/%s/Resolves
-#%s/AsyncComputeSemaphoreWait
 #%s/IssueViewTimestampQuery
+#%s/SemaphoreWait(%s)
+#%s/SemaphoreWaitOnBuiltInCommandList
 #%s/SetupGpuCull
+#%s/SetupGpuCull-RenderView
 #%s/SetupLightsAndViewConstants
 #%s/SetupView
 #8465
+#=================
 #CLOSE
 #COLLAPSE
 #FLR
@@ -318,6 +373,7 @@
 #UNHIDE
 #WindowMenu
 $153
+$@alpha
 $Rcvt 
 $\nY8O
 $tIP
@@ -330,6 +386,7 @@ $tIP
 %.06f ns
 %.0f (Always)
 %.0f deg
+%.0f us
 %.0fx%.0f
 %.10f
 %.10f grams
@@ -337,11 +394,15 @@ $tIP
 %.1fmb / %.1fmb resident
 %.1fms
 %.1fms culling, %.1fms rendering in %i jobs\n
+%.2f ms
 %.2f px
 %.2f x %.2f
 %.2f\nsec
 %.2fms
+%.3f ms
 %.3f | %i%% %i/%i
+%.3s %s %.*s %s %.3s\n
+%.3s %s %.*s\n
 %0.2f
 %0.3f
 %02X%02X%02X
@@ -358,16 +419,16 @@ $tIP
 %04d: scrollable region
 %08X
 %08dx.geo
+%3.1f%% (%d)
+%4d / %4d (%3.1f%%)
 %ADOBeginFontDict
 %I64d
 %I64u
 %c [%02d] where %03d, insert %03d, delete %03d, char_storage %03d "%.*s"
-%d (%d depth-only
 %d assets
 %d columns
 %d current allocations
 %d past errors skipped.
-%d primary\n
 %d some text
 %d vertices, %d indices (%d triangles)
 %d visible windows, %d current allocations
@@ -377,17 +438,19 @@ $tIP
 %d:%02d%s
 %d:%02d:%02d%s
 %d:%02d:%02d.%03d%s
+%dx%d
 %dx%dTriStrippedVB
 %e grams
 %g dB
 %g ms
 %i The quick brown fox jumps over the lazy dog
 %i The quick brown fox jumps over the lazy dog\n
-%i dynamic, %i cached, %i failed, %i lru'd in %ix%i atlas
+%i dynamic, %i cached, %i failed, %i lru'd in %ix%i atlas | %i requests, %i reused, %i re-renders drawn (%i held)
 %i filtered textures
+%i loaded models, %i allocations.  using %.1f%% of atlas
 %i object%s, %i draw call%s, %s tris
+%i requests, %i reused without re-render%s
 %i resources used
-%i shadowmaps [%i dynamic, %i mixed, %i fog-only]\n
 %i textures
 %i tiles used, %i tiles rendered, %i tiles recycled, %i failed in %ix%i atlas
 %ix%i
@@ -400,33 +463,39 @@ $tIP
 %s (%-14s): FAIL %s\n
 %s (%-14s): FAIL aborted\n
 %s (%-14s): pass\n
+%s - Dynamic Shadow %d
+%s - Mixed Shadow %d
 %s 0x%04X%s: %d windows (vis: '%s')
 %s 0x%04X%s: %s (vis: '%s')
 %s 0x%08X (%d tabs)%s  {
 %s GetOnDiskTextureDesc failed!\n
+%s at ( %.0f %.0f %.0f ) has RT dynamic materials enabled, but %s. It keeps the baked RT proxy colors.\n
 %s has no mip levels of size %dx%d\n
 %s is not a 2D texture!\n
 %s is wrong format %s - expected %s!\n
 %s###Menu_%02d
-%s%d.vtex
+%s##path
 %s, 0x%08x+%s -- Overlaps:
-%s, new
 %s.ini
 %s.log
 %s/%08X
 %s/%s's viewport (%d,%d - %d,%d) extends outside of the framebuffer (%d,%d)
 %s/DockSpace_%08X
 %s: %d entries, %d bytes
+%s: %i dynamic, %i cached, %i failed, %i lru, %i requests, %i reused, %i re-renders (%i held)
+%s: %u tiles, average %4.1fms, median %sms, max %4.1fms
 %s: '%s' %d vtx, %d indices, %d cmds
 %s: 0x%08X (scored %d)
 %s: 0x%08X%s
+%s: FAIL %s\n
+%s: FAIL aborted\n
 %s: NULL
+%s: pass\n
 %s:%s after sort (%s %s)\n
+%sLayer
 %s\n%.0f/%.0f
 %s\nIndex: %d
 %s\nLOD Level: %d Draw Calls: %d Triangles: %d
-%s_%d.vtex
-%s_%d_%d.vtex
 %u ms
 &2&6&:&>&B&F&J&N&R&V0
 &A3\rk
@@ -443,76 +512,83 @@ $tIP
 (%6.1f,%6.1f) (%6.1f,%6.1f) Size (%6.1f,%6.1f) %s
 (%6.1f,%6.1f) (%6.1f,%6.1f) Size (%6.1f,%6.1f) Col %d %s
 (%d,%d,%d,%d)
+(%s depth-only
+(1Wf
 (2) Or right-click this text
 (3) Or click this button
-(5Ma
-(9Da
+(5Gf
+(5Rf
+(5pf
+(9uf
+(9yf
 (<-- right-click here)
-(ASa
-(Aba
 (ActiveIdUsing: AllKeyboardKeys: %d, NavDirMask: 0x%X)
-(Ada
 (Click and drag to scroll)
 (Context Name: "%s")
 (Debug Log: Auto-disabled some ImGuiDebugLogFlags after 2 frames)\n
 (Dock node)
-(Eia
+(Elf
+(Enf
 (Hex)
 (Hold Ctrl to: 
 (Hold Ctrl to: use 
 (Hold Shift to display a dummy viewport)
-(ILa
 (Internal Buffer: TextA Size: %d, Capacity: %d)
-(Iua
 (Left) Using ImGui::PushClipRect():\nWill alter ImGui hit-testing logic + ImDrawList rendering.\n(use this if you want your clipping rectangle to affect interactions)\n\n(Center) Using ImDrawList::PushClipRect():\nWill alter ImDrawList rendering only.\n(use this as a shortcut if you are only using ImDrawList calls)\n\n(Right) Using ImDrawList::AddText() with a fine ClipRect:\nWill alter only this specific ImDrawList::AddText() rendering.\nThis is often used internally to avoid altering the clipping rectangle and minimize draw calls.
-(MPa
+(MLf
+(MMf
 (Main menu bar)
-(Mva
 (Popup)
-(Qta
 (R = radius, N = approx number of segments)
 (SceneWorld 3D Dump contains %d large objects - they are scaled down and will render red.)\n
-(Uea
 (Untitled)
 (Use ImGui::SameLine() to keep adding items to the right of the preceding item)
-(Uza
-(Yxa
+(YUf
+(Yif
+(Yqf
 (Z(^(b(f(j(n(r(v(z1
 (\?=\nW>=\nW>=\nW>
+(a3f
+(aHf
 (also access from 'Examples->Assets Browser' in menu)
 (and more errors)
-(apa
-(ara
 (c) 2014-2025 Omar Cornut
 (demo menu)
 (dump)
 (dump3d)
-(eKa
-(eVa
+(eSf
+(eef
 (except InputRouting which is spammy)
-(f@DU
+(iXf
 (in ChildD: not using same Shortcut)
 (in ChildE: using same Shortcut)
 (in PopupF)
 (in WindowA)
-(mMa
-(mya
+(mjf
+(mpf
+(msf
+(mwf
 (no material)
 (no model)
 (note: some platform backends may not reflect a change of this value for existing viewports, and may need the viewport to be recreated)
+(qEf
 (see Demo->Configuration for details & more)
+(uPf
 (unnamed)
 (void*)0x%p
-(yba
+* = only on some fragments
 ** %d instances of same table! Some data below will refer to last instance.
 **DebugBreak**
 *COPIED*
 *EXPERIMENTAL* Ctrl+C copy the contents of focused window into the clipboard.\n\nExperimental because:\n- (1) has known issues with nested Begin/End pairs.\n- (2) text output quality varies.\n- (3) text output is in submission order rather than spatial order.
 *Missing Text*
 *Unknown item*
+*\tV_ZSTD_decompress
 +Alts
-, %d depth-only alpha-tested
+, %s alpha-tested
+, aliased to the error texture
 , name%Y
+, still streaming
 ,Ncmap
 - First Input that contains the glyph is used.\n- Use ImFontConfig::GlyphExcludeRanges[] to specify ranges to ignore glyph in given Input.\n- Prefer using a small number of ranges as the list is scanned every time a new glyph is loaded,\n  - e.g. GlyphExcludeRanges[] = { ICON_MIN_FA, ICON_MAX_FA, 0 };\n- This tool doesn't cache results and is slow, don't keep it open!
 - Load additional fonts with io.Fonts->AddFontXXX() functions.\n- Read FAQ and docs/FONTS.md for more details.
@@ -528,48 +604,68 @@ $tIP
 ->\n  [%s:%s] %s
 -j'j2j>jU
 .%03d %03d
-..-         -XXXXXXX-    X    -           X           -XXXXXXX          -          XXXXXXX-     XX          - XX       XX ..-         -X.....X-   X.X   -          X.X          -X.....X          -          X.....X-    X..X         -X..X     X..X---         -XXX.XXX-  X...X  -         X...X         -X....X           -           X....X-    X..X         -X...X   X...XX           -  X.X  - X.....X -        X.....X        -X...X            -            X...X-    X..X         - X...X X...X XX          -  X.X  -X.......X-       X.......X       -X..X.X           -           X.X..X-    X..X         -  X...X...X  X.X         -  X.X  -XXXX.XXXX-       XXXX.XXXX       -X.X X.X          -          X.X X.X-    X..XXX       -   X.....X   X..X        -  X.X  -   X.X   -          X.X          -XX   X.X         -         X.X   XX-    X..X..XXX    -    X...X    X...X       -  X.X  -   X.X   -    XX    X.X    XX    -      X.X        -        X.X      -    X..X..X..XX  -     X.X     X....X      -  X.X  -   X.X   -   X.X    X.X    X.X   -       X.X       -       X.X       -    X..X..X..X.X -    X...X    X.....X     -  X.X  -   X.X   -  X..X    X.X    X..X  -        X.X      -      X.X        -XXX X..X..X..X..X-   X.....X   X......X    -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -         X.X   XX-XX   X.X         -X..XX........X..X-  X...X...X  X.......X   -  X.X  -   X.X   -X.....................X-          X.X X.X-X.X X.X          -X...X...........X- X...X X...X X........X  -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -           X.X..X-X..X.X           - X..............X-X...X   X...XX.........X -XXX.XXX-   X.X   -  X..X    X.X    X..X  -            X...X-X...X            -  X.............X-X..X     X..XX..........X-X.....X-   X.X   -   X.X    X.X    X.X   -           X....X-X....X           -  X.............X- XX       XX X......XXXXX-XXXXXXX-   X.X   -    XX    X.X    XX    -          X.....X-X.....X          -   X............X--------------X...X..X    ---------   X.X   -          X.X          -          XXXXXXX-XXXXXXX          -   X...........X -             X..X X..X   -       -XXXX.XXXX-       XXXX.XXXX       -------------------------------------    X..........X -             X.X  X..X   -       -X.......X-       X.......X       -    XX           XX    -           -    X..........X -             XX    X..X  -       - X.....X -        X.....X        -   X.X           X.X   -           -     X........X  -                   X..X  -       -  X...X  -         X...X         -  X..X           X..X  -           -     X........X  -                    XX   -       -   X.X   -          X.X          - X...XXXXXXXXXXXXX...X -           -     XXXXXXXXXX  -             -------------       -    X    -           X           -X.....................X-           -------------------                                 ----------------------------------- X...XXXXXXXXXXXXX...X -                                                                                                 -  X..X           X..X  -                                                                                                 -   X.X           X.X   -                                                                                                 -    XX           XX    -                                           
 ................
-.0HU
-.0PU
+.0mY
+.0oY
+.0zY
 .?AUReadStatsCallback_t@?4??OnBeginSubmitDisplayLists@CInstancedMeshSceneObjectDesc@@UEAAXPEAVIRenderContext@@@Z@
+.?AUReadStatsCallback_t@?8??OnBeginSubmitDisplayLists@CBaseSceneObjectDesc@@UEAAXPEAVIRenderContext@@@Z@
+.?AV<lambda_1>@?1???$DoNotDeleteReadCallback@VIReadBufferCallback@@@@YA?AV?$shared_ptr@VIReadBufferCallback@@@std@@PEAVIReadBufferCallback@@@Z@
 .?AV<lambda_1>@?1??DrawCurrentPrimitives@CRenderBatchList@@AEAAXXZ@
+.?AV<lambda_1>@?1??DrawInstances@CSceneObjectDesc@@IEAAXPEAVIRenderContext@@PEAUPerInstanceParams_t@2@HPEAUCMeshDrawPrimitive_t@@PEBVIMaterial2@@PEAVIMaterialMode@@PEAUMaterialBindState_t@2@_NAEAUSceneSystemPerFrameStats_t@@PEAVISceneLayer@@PEAUPerInstancePackedShaderData_t@@H@Z@
+.?AV<lambda_1>@?1??DrawPrimitive@CAnimatableSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@PEBVIMaterial2@@PEAVIMaterialMode@@AEAUDrawValues_t@@_NAEAUSceneSystemPerFrameStats_t@@PEAVISceneLayer@@@Z@
+.?AV<lambda_1>@?1??DrawPrimitiveMeshlets@CAnimatableSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEBVISceneView@@PEAUCMeshDrawPrimitive_t@@PEBVIMaterial2@@PEAVIMaterialMode@@_NAEAUSceneSystemPerFrameStats_t@@PEAVISceneLayer@@@Z@
 .?AV<lambda_1>@?1??GatherHammerLights@CLightBinnerGPU@@AEAAXXZ@
 .?AV<lambda_1>@?1??GatherIndirectBounceLights@CLightBinnerGPU@@AEAAXXZ@
-.?AV<lambda_1>@?4???R0?1??Thread_RenderViewLayer@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@QEBA@_N@Z@
+.?AV<lambda_1>@?1??GpuCullPrimitivesInView@CAnimatableSceneObjectDesc@@UEAAXW4EGpuCullPhase@@PEAVIRenderContext@@PEBVISceneView@@PEBVISceneLayer@@PEAUCMeshDrawPrimitive_t@@IPEAUSceneSystemPerFrameStats_t@@@Z@
+.?AV<lambda_1>@?3??DrawArrayMeshlets@CBaseSceneObjectDesc@@IEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@
 .?AV<lambda_1>@?4???R0?6??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@QEBA@PEAVCSceneLightProbeVolumeObject@@@Z@
 .?AV<lambda_1>@?4??AddEnvironmentMapsForView@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@
-.?AV<lambda_1>@?4??AddLightProbeVolumesForView@CLightBinnerGPU@@IEAAXPEAVCSceneView@@H@Z@
+.?AV<lambda_1>@?4??AddLightProbeVolumesForView@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_1>@?4??AtFinish@CSceneView@@QEAAXXZ@
+.?AV<lambda_1>@?4??KickoffBatchList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@AEAUDrawListVector_t@@AEAUGeneratePrimitivesArgs_t@ISceneObjectDesc@@_N@Z@
 .?AV<lambda_1>@?5??DrawArray@CAggregateSceneObjectDesc@@UEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@
+.?AV<lambda_1>@?6??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
 .?AV<lambda_1>@?6??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_1>@?6??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@
 .?AV<lambda_1>@?7???R<lambda_2>@?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@QEBA@PEAVCSceneLightProbeVolumeObject@@@Z@
+.?AV<lambda_1>@?8??ReleaseProceduralLayerDependents@CSceneSystem@@QEAAXPEAVCSceneLayer@@@Z@
 .?AV<lambda_1>@?9??DrawArrayMeshlets@CInstancedMeshSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@
-.?AV<lambda_1>@?CD@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@
+.?AV<lambda_1>@?CJ@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@
 .?AV<lambda_1>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@
-.?AV<lambda_1>@?L@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBV?$CUtlVector@PEAVCSceneDrawList@@HV?$CUtlVectorMemory_Growable@PEAVCSceneDrawList@@H$0A@@@@@@Z@
+.?AV<lambda_1>@?L@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBUDrawListVector_t@@@Z@
 .?AV<lambda_2>@?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_2>@?1??DrawCurrentPrimitives@CRenderBatchList@@AEAAXXZ@
+.?AV<lambda_2>@?1??GatherIndirectBounceLights@CLightBinnerGPU@@AEAAXXZ@
 .?AV<lambda_2>@?5??DrawArray@CInstancedMeshSceneObjectDesc@@UEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@
 .?AV<lambda_2>@?9??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@
 .?AV<lambda_2>@?BA@???R0?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@QEBA@PEAVCSceneLightProbeVolumeObject@@@Z@
-.?AV<lambda_2>@?CI@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@
-.?AV<lambda_2>@?DK@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
+.?AV<lambda_2>@?BC@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
+.?AV<lambda_2>@?CO@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@
+.?AV<lambda_2>@?DP@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_2>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@
+.?AV<lambda_2>@?O@??SubmitPendingRequests@CVtTileStreamer@@AEAAXXZ@
 .?AV<lambda_3>@?9??Thread_RenderGpuCullingLayer@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@
-.?AV<lambda_3>@?DO@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
+.?AV<lambda_3>@?BF@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
+.?AV<lambda_3>@?BH@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@
+.?AV<lambda_3>@?ED@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
 .?AV<lambda_3>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@
-.?AV<lambda_3>@?L@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@
-.?AV<lambda_4>@?EC@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
-.?AV<lambda_4>@?L@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@
+.?AV<lambda_3>@?N@??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@
+.?AV<lambda_4>@?BA@??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@
+.?AV<lambda_4>@?BH@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@
+.?AV<lambda_4>@?BL@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
+.?AV<lambda_4>@?EH@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@
+.?AV<lambda_5>@?BO@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
+.?AV<lambda_5>@?CE@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@
+.?AV<lambda_6>@?CB@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@
 .?AV?$CBaseAppSystem@VISceneSystem@@@@
 .?AV?$CBaseAppSystem@VISceneUtils@@@@
 .?AV?$CBaseNonPooledSceneObjectDesc@VC6FaceSkyboxObject@@@@
 .?AV?$CConCommandMemberAccessor@VCSceneSystem@@@@
+.?AV?$CConCommandMemberAccessor@VCVirtualTextureManager@@@@
 .?AV?$CFixedSizeCircularBuffer@VCGPUProfHistoryFrame@@$0IA@H@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1??Thread_CullView@CSceneSystem@@AEAAXPEAVCSceneView@@PEAVCViewDrawList@@@Z@@CParallelProcessLauncher@@
-.?AV?$CParallelLambdaJob@V<lambda_1>@?BL@??GpuCullPrimitivesInView@CAggregateSceneObjectDesc@@UEAAXW4EGpuCullPhase@@PEAVIRenderContext@@PEBVISceneView@@PEBVISceneLayer@@PEAUCMeshDrawPrimitive_t@@IPEAUSceneSystemPerFrameStats_t@@@Z@@CParallelProcessLauncher@@
+.?AV?$CParallelLambdaJob@V<lambda_1>@?BO@??GpuCullPrimitivesInView@CAggregateSceneObjectDesc@@UEAAXW4EGpuCullPhase@@PEAVIRenderContext@@PEBVISceneView@@PEBVISceneLayer@@PEAUCMeshDrawPrimitive_t@@IPEAUSceneSystemPerFrameStats_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?M@???$ParallelFor@$00V<lambda_1>@?1??OnBeginRenderingFrame@CAggregateSceneObjectDesc@@UEAAXXZ@@@YAXHHPEBD$$QEAV1?1??OnBeginRenderingFrame@CAggregateSceneObjectDesc@@UEAAXXZ@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelProcessorAbstract@V?$CParallelProcessor@PEAVCSceneObject@@V?$CFuncJobItemProcessor@PEAVCSceneObject@@@@$00@@@@
 .?AV?$CParallelProcessorAbstract@V?$CParallelProcessor@UGenerateTileWorkUnit_t@@V?$CMemberFuncJobItemProcessor@UGenerateTileWorkUnit_t@@VCBuildSparseShadowTree@@V2@@@$00@@@@
@@ -593,54 +689,80 @@ $tIP
 .?AV?$ISceneObjectDescBase@VCProjectedDecalSceneObject@@@@
 .?AV?$ISceneObjectDescBase@VCSceneBarnLightObject@@@@
 .?AV?$ISceneObjectDescBase@VCSceneDebugTextObject@@@@
+.?AV?$ISceneObjectDescBase@VCSceneFarfieldProbeVolumeObject@@@@
+.?AV?$ISceneObjectDescBase@VCSceneFarfieldSDFVolumeObject@@@@
 .?AV?$ISceneObjectDescBase@VCSceneLPVSampleGridObject@@@@
 .?AV?$ISceneObjectDescBase@VCSceneLightObject@@@@
 .?AV?$ISceneObjectDescBase@VCSceneLightProbeVolumeObject@@@@
 .?AV?$_Func_base@PEAVCDisplayList@@$$V@std@@
-.?AV?$_Func_base@V?$CUtlVector@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_base@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Func_base@XPEAVCEnvMapSceneObject@@@std@@
 .?AV?$_Func_base@XPEAVCSceneBarnLightObject@@@std@@
 .?AV?$_Func_base@XPEAVCSceneLightObject@@@std@@
 .?AV?$_Func_base@XPEAVCSceneLightProbeVolumeObject@@@std@@
 .?AV?$_Func_base@XPEAVCSceneObject@@@std@@
+.?AV?$_Func_base@XPEAVIAsyncResourceDataRequest@@V?$unique_ptr@VIAsyncProcessedDataResult@@U?$default_delete@VIAsyncProcessedDataResult@@@std@@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@P6AXPEAVCSceneObject@@@ZXPEAV1@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??DrawCurrentPrimitives@CRenderBatchList@@AEAAXXZ@V?$CUtlVector@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??DrawCurrentPrimitives@CRenderBatchList@@AEAAXXZ@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??DrawInstances@CSceneObjectDesc@@IEAAXPEAVIRenderContext@@PEAUPerInstanceParams_t@3@HPEAUCMeshDrawPrimitive_t@@PEBVIMaterial2@@PEAVIMaterialMode@@PEAUMaterialBindState_t@3@_NAEAUSceneSystemPerFrameStats_t@@PEAVISceneLayer@@PEAUPerInstancePackedShaderData_t@@H@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??DrawPrimitive@CAnimatableSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@PEBVIMaterial2@@PEAVIMaterialMode@@AEAUDrawValues_t@@_NAEAUSceneSystemPerFrameStats_t@@PEAVISceneLayer@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??DrawPrimitiveMeshlets@CAnimatableSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEBVISceneView@@PEAUCMeshDrawPrimitive_t@@PEBVIMaterial2@@PEAVIMaterialMode@@_NAEAUSceneSystemPerFrameStats_t@@PEAVISceneLayer@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??GatherHammerLights@CLightBinnerGPU@@AEAAXXZ@XPEAVCSceneLightObject@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??GatherIndirectBounceLights@CLightBinnerGPU@@AEAAXXZ@XPEAVCSceneBarnLightObject@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?4???R1?1??Thread_RenderViewLayer@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@QEBA@_N@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??GatherIndirectBounceLights@CLightBinnerGPU@@AEAAXXZ@XPEAVCSceneLightObject@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??GpuCullPrimitivesInView@CAnimatableSceneObjectDesc@@UEAAXW4EGpuCullPhase@@PEAVIRenderContext@@PEBVISceneView@@PEBVISceneLayer@@PEAUCMeshDrawPrimitive_t@@IPEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?3??DrawArrayMeshlets@CBaseSceneObjectDesc@@IEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?4???R1?6??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@QEBA@PEAVCSceneLightProbeVolumeObject@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?4??AddEnvironmentMapsForView@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@XPEAVCEnvMapSceneObject@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?4??AddLightProbeVolumesForView@CLightBinnerGPU@@IEAAXPEAVCSceneView@@H@Z@XPEAVCSceneLightProbeVolumeObject@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?4??AddLightProbeVolumesForView@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@XPEAVCSceneLightProbeVolumeObject@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?4??AtFinish@CSceneView@@QEAAXXZ@PEAVCDisplayList@@$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?5??DrawArray@CAggregateSceneObjectDesc@@UEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?4??KickoffBatchList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@AEAUDrawListVector_t@@AEAUGeneratePrimitivesArgs_t@ISceneObjectDesc@@_N@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?5??DrawArray@CAggregateSceneObjectDesc@@UEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?6??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?6??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@XPEAVCSceneLightProbeVolumeObject@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?6??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@PEAVCDisplayList@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?7???R<lambda_2>@?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@QEBA@PEAVCSceneLightProbeVolumeObject@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?9??DrawArrayMeshlets@CInstancedMeshSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?CD@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?8??ReleaseProceduralLayerDependents@CSceneSystem@@QEAAXPEAVCSceneLayer@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?9??DrawArrayMeshlets@CInstancedMeshSceneObjectDesc@@QEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?CJ@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?L@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBV?$CUtlVector@PEAVCSceneDrawList@@HV?$CUtlVectorMemory_Growable@PEAVCSceneDrawList@@H$0A@@@@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?L@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBUDrawListVector_t@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@XPEAVCSceneLightProbeVolumeObject@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??DrawCurrentPrimitives@CRenderBatchList@@AEAAXXZ@V?$CUtlVector@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_2>@?5??DrawArray@CInstancedMeshSceneObjectDesc@@UEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@PEBDV?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??DrawCurrentPrimitives@CRenderBatchList@@AEAAXXZ@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??GatherIndirectBounceLights@CLightBinnerGPU@@AEAAXXZ@XPEAVCSceneBarnLightObject@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?5??DrawArray@CInstancedMeshSceneObjectDesc@@UEAAXPEAVIRenderContext@@PEAUCMeshDrawPrimitive_t@@HPEBVISceneView@@PEAVISceneLayer@@AEAUSceneSystemPerFrameStats_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?9??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@PEAVCDisplayList@@$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?BA@???R1?1??DebugLightProbeVolumeGrid@CLightBinnerGPU@@IEAAXPEAVCSceneView@@@Z@QEBA@PEAVCSceneLightProbeVolumeObject@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_2>@?CI@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_2>@?DK@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?BC@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?CO@??RenderAView@CSceneSystem@@AEAAXPEAVCSceneView@@M@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?DP@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?O@??SubmitPendingRequests@CVtTileStreamer@@AEAAXXZ@XPEAVIAsyncResourceDataRequest@@V?$unique_ptr@VIAsyncProcessedDataResult@@U?$default_delete@VIAsyncProcessedDataResult@@@std@@@std@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?9??Thread_RenderGpuCullingLayer@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_3>@?DO@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_3>@?BF@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_3>@?BH@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@PEAVCDisplayList@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_3>@?ED@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_3>@?L@??ReleaseLayerDependents@CSceneSystem@@AEAAXAEBV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_3>@?L@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@PEAVCDisplayList@@$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_4>@?EC@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_4>@?L@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@PEAVCDisplayList@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_3>@?N@??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@PEAVCDisplayList@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_4>@?BA@??GenerateVertexCacheUpdateTasks@CSceneSystem@@QEAAXAEAV?$CUtlVector@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@HV?$CUtlVectorMemory_Growable@V?$CSmartPtr@V?$CThreadFuture@PEAVCDisplayList@@@@VCRefCountAccessor@@@@H$0A@@@@@_N1@Z@PEAVCDisplayList@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_4>@?BH@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@PEAVCDisplayList@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_4>@?BL@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_4>@?EH@??Thread_RenderView@CSceneSystem@@AEAAXPEAVCSceneView@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_5>@?BO@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_5>@?CE@??SubmitAllDisplayLists@CSceneSystem@@IEAAXPEAUSwapChainHandle_t__@@@Z@PEAVCDisplayList@@$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_6>@?CB@??CanBatchWithPrevousPrimitive@CRenderBatchList@@AEAA_NPEAUCMeshDrawPrimitive_t@@@Z@V?$CUtlVector@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@HV?$CUtlVectorMemory_Growable@U?$pair@VCUtlString@@V?$variant@_NMH_KVCUtlString@@V?$Vec4D@M@@PEAURenderResourceHandle_t__@@Umonostate@std@@@std@@@std@@H$0A@@@@@$$V@std@@
+.?AV?$_Ref_count_obj2@PEAURenderSemaphoreHandle_t__@@@std@@
 .?AV?$_Ref_count_obj2@UGpuCullingState_t@?2??Thread_RenderGpuCullingLayer@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@@Z@@std@@
 .?AV?$_Ref_count_obj2@UImGuiViewportDrawData@@@std@@
+.?AV?$_Ref_count_obj2@UReadStatsCallback_t@?4??OnBeginSubmitDisplayLists@CInstancedMeshSceneObjectDesc@@UEAAXPEAVIRenderContext@@@Z@@std@@
+.?AV?$_Ref_count_obj2@UReadStatsCallback_t@?8??OnBeginSubmitDisplayLists@CBaseSceneObjectDesc@@UEAAXPEAVIRenderContext@@@Z@@std@@
 .?AV?$_Ref_count_obj2@V?$CUtlVector@UCMeshDrawPrimitive_t@@HV?$CUtlVectorMemory_Growable@UCMeshDrawPrimitive_t@@H$0A@@@@@@std@@
 .?AV?$_Ref_count_obj2@VCRenderGraphBuilder@@@std@@
+.?AV?$_Ref_count_obj2@VCSSTTileGenerationReadTexturePixelsCallback@@@std@@
 .?AV?$_Ref_count_obj2@VCSceneViewDebugOverlays@@@std@@
+.?AV?$_Ref_count_obj2@VCThreadFastSemaphore@@@std@@
 .?AV?$_Ref_count_obj2@VCTonemapSystem@@@std@@
 .?AV?$_Ref_count_obj2@VCViewDrawList@@@std@@
+.?AV?$_Ref_count_resource@PEAVIReadBufferCallback@@V<lambda_1>@?1???$DoNotDeleteReadCallback@VIReadBufferCallback@@@@YA?AV?$shared_ptr@VIReadBufferCallback@@@std@@PEAV1@@Z@@std@@
 .?AV?$enable_shared_from_this@VCRenderGraphBuilder@@@std@@
 .?AVC6FaceSkyboxObject@@
 .?AVC6FaceSkyboxObjectDesc@@
@@ -651,6 +773,8 @@ $tIP
 .?AVCAmbientOcclusionProxySceneObject@@
 .?AVCAmbientOcclusionProxySceneObjectDesc@@
 .?AVCAnimatableSceneObjectDesc@@
+.?AVCAuxBufferReadback@CVirtualTextureManager@@
+.?AVCBLASBuildHelper@@
 .?AVCBarnLightObjectDesc@@
 .?AVCBarnLightObjectDescGPU@@
 .?AVCBaseRenderingPipelineFactory@@
@@ -672,6 +796,10 @@ $tIP
 .?AVCEnvMapLightObjectDesc@@
 .?AVCEnvMapLightObjectDescGPU@@
 .?AVCEnvMapSceneObject@@
+.?AVCFarfieldProbeVolumeObjectDesc@@
+.?AVCFarfieldProbeVolumeObjectDescGPU@@
+.?AVCFarfieldSDFVolumeObjectDesc@@
+.?AVCFarfieldSDFVolumeObjectDescGPU@@
 .?AVCFilterLayerRenderer@@
 .?AVCFullscreenQuadRenderer@@
 .?AVCGPUProfHistory@@
@@ -682,8 +810,7 @@ $tIP
 .?AVCInputLayoutRegistration_sm_hLayout@@
 .?AVCInstancedMeshSceneObject@@
 .?AVCInstancedMeshSceneObjectDesc@@
-.?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_1>@?1??FindVisClustersForMeshlets@CAggregateSceneObject@@AEBA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@AEBV?$CUtlVector@UAABB_t@@HV?$CUtlVectorMemory_Growable@UAABB_t@@H$0A@@@@@AEBUFragmentCullInfo_t@3@AEBUAABB_t@@AEBU?$Mat3x4@M@@PEBVCMeshletDescriptor@@IPEAUPerMeshletData_t@@@Z@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_1>@?1??FindVisClustersForMeshlets@CAggregateSceneObject@@AEBA?AV2@AEBV?$CUtlVector@UAABB_t@@HV?$CUtlVectorMemory_Growable@UAABB_t@@H$0A@@@@@AEBUFragmentCullInfo_t@6@AEBUAABB_t@@AEBU?$Mat3x4@M@@PEBVCMeshletDescriptor@@IPEAUPerMeshletData_t@@@Z@@Z@
-.?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_2>@?P@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBV?$CUtlVector@PEAVCSceneDrawList@@HV?$CUtlVectorMemory_Growable@PEAVCSceneDrawList@@H$0A@@@@@@Z@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_2>@?P@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBV?$CUtlVector@PEAVCSceneDrawList@@HV?$CUtlVectorMemory_Growable@PEAVCSceneDrawList@@H$0A@@@@@@Z@@Z@
+.?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_2>@?P@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBUDrawListVector_t@@@Z@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_2>@?P@??Thread_RenderLayerDrawList@CSceneSystem@@AEAAXV?$shared_ptr@VCViewDrawList@@@std@@PEAVCSceneLayer@@PEAVCRenderBatchList@@W4EBatchStartFlags_t@@AEBUDrawListVector_t@@@Z@@Z@
 .?AVCLightBinnerGPU@@
 .?AVCLightBinnerGPUFactory@@
 .?AVCLightBinnerNull@@
@@ -718,6 +845,8 @@ $tIP
 .?AVCSceneBarnLightObject@@
 .?AVCSceneBufferAllocator@@
 .?AVCSceneDebugTextObject@@
+.?AVCSceneFarfieldProbeVolumeObject@@
+.?AVCSceneFarfieldSDFVolumeObject@@
 .?AVCSceneLPVSampleGridObject@@
 .?AVCSceneLPVSampleGridObjectDescriptor@@
 .?AVCSceneLayer@@
@@ -726,6 +855,7 @@ $tIP
 .?AVCSceneLightProbeVolumeObject@@
 .?AVCSceneMonitorObject@@
 .?AVCSceneObject@@
+.?AVCSceneObjectDesc@@
 .?AVCSceneSkyBoxObject@@
 .?AVCSceneSystem@@
 .?AVCSceneUtils@@
@@ -735,6 +865,7 @@ $tIP
 .?AVCSchemaRegistration_scenesystem@@
 .?AVCShadowAtlas@@
 .?AVCShardedSceneBufferAllocator@@
+.?AVCSignalSemaphoreRenderer@@
 .?AVCSimplePostProcessingLayerRenderer@@
 .?AVCSimpleQuadRenderer@@
 .?AVCSkyBoxObjectDesc@@
@@ -748,6 +879,7 @@ $tIP
 .?AVCUtlGrid@@
 .?AVCUtlMultiJobProcessor@@
 .?AVCVConCommandMessageScene@@
+.?AVCVirtualTextureManager@@
 .?AVCVolumetricFog@@
 .?AVCVolumetricFogRenderer@@
 .?AVCWindController@@
@@ -755,6 +887,7 @@ $tIP
 .?AVClearUAVFloatGraphPass@CRenderGraphBuilder@@
 .?AVClearUAVUintGraphPass@CRenderGraphBuilder@@
 .?AVConstantBufferResourceManager@CRenderGraphBuilder@@
+.?AVCopyTextureGraphPass@CRenderGraphBuilder@@
 .?AVDispatchGraphPass@CRenderGraphBuilder@@
 .?AVFillBufferGraphPass@CRenderGraphBuilder@@
 .?AVFillCBGraphPass@CRenderGraphBuilder@@
@@ -772,6 +905,7 @@ $tIP
 .?AVIPathTraceSceneWorld@@
 .?AVIPipeline@IPathTraceSceneWorld@@
 .?AVIReadBufferCallback@@
+.?AVIRenderDeviceVirtualTextureCallbacks@@
 .?AVIRenderingPipeline@@
 .?AVIRenderingPipelineFactory@@
 .?AVISceneAnimatableProceduralBoneTransforms@@
@@ -807,12 +941,19 @@ $tIP
 .AppleDouble/
 .B.F.J.N.R.V.Z.^2
 .P6AXPEAVCSceneObject@@@Z
-.PGU
+.PbY
+.PeY
+.PlY
+.PtY
 .\v1o0
 .notdef
 .null
-.p4U
-.pGU
+.peY
+.plY
+.pmY
+.psY
+.ptY
+.pwY
 .resource/
 .vtex
 /*\n The Pentium F00F bug, shorthand for F0 0F C7 C8,\n the hexadecimal encoding of one offending instruction,\n more formally, the invalid operand with locked CMPXCHG8B\n instruction bug, is a design flaw in the majority of\n Intel Pentium, Pentium MMX, and Pentium OverDrive\n processors (all in the P5 microarchitecture).\n*/\n\nlabel:\n\tlock cmpxchg8b eax\n
@@ -837,12 +978,11 @@ $tIP
 001.002
 001.003
 050s0
-08@HR }
-08B }
+08@HRP
+08@J 
+08BP
+0:pR(
 0?333?333?333?333?
-0\fQK
-0l9K
-0v\DK
 0x%02X
 0x%04X
 0x%08X
@@ -856,6 +996,7 @@ $tIP
 1. I am selectable
 1.1.4
 1.92.5
+1024
 10646
 123.456
 1234
@@ -866,9 +1007,10 @@ $tIP
 2)202<2U2e2
 2-wide
 2. I am selectable
+2048
 24 Hour Clock
 2C2L
-2\vp\fQK
+2\vpP
 2d arr
 2q2z2
 3 (tab skip)
@@ -876,6 +1018,7 @@ $tIP
 3-wide
 3. I am selectable
 333?
+3<IA><CMI<
 3Z5\nNa
 3h3q
 3ways
@@ -883,10 +1026,11 @@ $tIP
 4%43
 4-wide
 4. I am double clickable
+4096
 4G4Pe
-4a\v6;
 4j4r4}4
 50x50
+54c/#
 575A
 5?PlotX() needs to be called between BeginPlot() and EndPlot()!
 5?q=J?H
@@ -894,32 +1038,27 @@ $tIP
 5_5i5p
 5by Tristan GrimmerRegularTTX ProggyCleanTT2004/
 5gib
-6 6U
 6 PQ
+6 yY
 6&6r6
-60-U
-607U
-60OU
+60]Y
 646.1991
 646B
-6@LU
 6K6S
 6\f%646
-6`4U
-6`IU
+6`nY
 6o6v6
-6p"U
-6p=U
+6p\Y
 797k7
 7F7W7c
 7\n0K0O0S0W0[0_0c0g0k0o0
+8)Nf
 80x80
 8859
 8888
-8AZa
+8@JP
+8B b
 8C3F
-8F@@U
-8YRa
 8\f58
 8\foQS
 8n8y
@@ -942,6 +1081,7 @@ $tIP
 <None>
 <ROOT>
 <UNKNOWN ID: %d>
+<Unknown>
 <b>Viewport X</b>=%d <b>Y</b>=%d <b>Width</b>=%d <b>Height</b>=%d  <b>MinZ</b>=%.3f <b>MaxZ</b>=%.3f
 <font color="red">Display lists discarded</font>
 <hashed>
@@ -954,6 +1094,7 @@ $tIP
 <td>CLEAR_DEPTH</td>
 <td>CLEAR_STENCIL</td>
 <td>LAYERFLAGS_DEBUGDRAW</td>
+<td>LAYERFLAGS_DEBUGDRAW_2D</td>
 <td>LAYERFLAGS_DEBUGDRAW_UI</td>
 <td>LAYERFLAGS_DEBUG_BREAK_ON_RENDERING</td>
 <td>LAYERFLAGS_DEBUG_BREAK_ON_SUBMISSION</td>
@@ -1013,6 +1154,7 @@ $tIP
 >333?333?333?
 >333?ff&?
 >7>Ba
+>\tV_atanf
 >c<yXH?B
 >fff>
 >fff?
@@ -1032,19 +1174,16 @@ $tIP
 ?JA7=
 ?Label1
 ?PUNCTUAL
-?SCENEOBJECT_VIS_NONE
 ?The "Tools" menu above gives access to: Style Editors (ImPlot/ImGui)\nand Metrics (general purpose Dear ImGui debugging tool).
 ?VertexPos_t
 ?XXXXXXXXXXXXXXXX
-?alpha
 ?expf
-?ff&?333?
 ?fff?
 ?fff?333?
 ?fff?fff?fff?
 ?ffffff
+?m_pSemanticName
 ?sqrt
-@08N\DK
 @33333
 @33333#
 @33333'
@@ -1083,6 +1222,10 @@ $tIP
 @33333{
 @33333}
 @33SA
+@6@bY
+@6@eY
+@6p`Y
+@6pbY
 @Hide
 @OS/2
 @fff>fff>fff>fff>
@@ -1127,7 +1270,6 @@ $tIP
 @fffffx
 @fffffz
 @fffff|
-@n\DK
 A Rather Long Title
 A#4A\v
 A*A3
@@ -1145,7 +1287,10 @@ AABB
 ABOUT THIS DEMO:
 ACTION
 ADD_STYLE_NAME
+AE_CL_DISABLE_BODYGROUP
+AE_CL_ENABLE_BODYGROUP
 AEsmall
+AGGREGATE_INSTANCE_STREAM_
 AI\vE
 AJAU
 ALL_GRAPHICS
@@ -1153,7 +1298,6 @@ ALPHA_TESTED
 ALPHA_TEST_ZPREPASS 
 ALT 
 AN?NbX?\f
-AO Proxies: %d (%d drawcalls)\n
 AO*AG
 AOProxies
 ASSETS_BROWSER_ITEMS
@@ -1169,6 +1313,7 @@ About Dear ImGui
 Absquatulate
 Acircumflex
 Acircumflexsmall
+AcquireImGuiLock
 Action
 Active DrawLists in Viewport #%d, ID: 0x%08X
 Active: %d/%d, WriteAccessed: %d, BeginOrderWithinContext: %d
@@ -1193,15 +1338,18 @@ Advanced & Close Button
 Advanced, with Selectable nodes
 After reordering, contents of channel 0 appears below channel 1.
 Ag3l
+Age: %d frames
 Aggregate Debugger
 AggregateDesc
 AggregateRTProxyDesc
+AggregateRTProxySceneObjectManifest
 AggregateSceneObjectDesc
 AggregateSceneObjectManifest
 Agrave
 Agravesmall
 Ai1B
 AiAtA
+Al&----------------
 Align label with current X position
 Align to right edge
 Align to right edge minus 100
@@ -1220,8 +1368,6 @@ Allow Sorting
 Allow box-selection
 Allow dragging an unselected item without altering selection.
 Allow dragging unselected item
-AllowThickHair
-AllowVoxelLod
 Alpha Bar
 Alpha8
 AlphaTest
@@ -1236,11 +1382,6 @@ Always On
 Always On (Advanced)
 Always On (Simple)
 AlwaysAutoResize
-AmbientOcclusionProxyAmbientStrength
-AmbientOcclusionProxyLightConeAngles
-AmbientOcclusionProxyLightPosition_2
-AmbientOcclusionProxyLightPosition_3
-AmbientOcclusionProxyLightStrengths
 Amplitude
 An extra line here.
 And now some textured buttons..
@@ -1248,7 +1389,6 @@ Angled headers
 AnimatableSceneObjectDesc
 Animate
 Animated title %c %d###AnimatedTitle
-AnimatedVertexCache
 Annotation() needs to be called between BeginPlot() and EndPlot()!
 AnnotationPadding
 Annotations
@@ -1256,6 +1396,7 @@ Another bullet point
 Anti-aliased fill
 Anti-aliased lines
 Anti-aliased lines use texture
+Any request for a duplicate dispatch/mesh shader primitive in an outputbuffer must previously set the dispatch buffer
 AnyHit0
 AnyHit1
 AnyHit2
@@ -1289,6 +1430,7 @@ Assert on error recovery
 Assets
 Assets Browser
 Asterisk
+AsyncComputeBLAS
 At least 100x100
 Atilde
 Atildesmall
@@ -1310,7 +1452,7 @@ Auto-scroll
 Auto/Current
 Avail %.2f
 Available
-AvgVoxelSize
+Average block Stream Time: %4.2fms
 Avocado
 Axes
 Axis Constraints
@@ -1329,7 +1471,6 @@ B+6F
 B,\vB8
 B0 Row 0
 B0 Row 1
-B0TW
 B1 Row 0
 B1 Row 1
 B5G5R5A1_UNORM
@@ -1365,24 +1506,23 @@ BFBQB[Bb
 BG/FG draw lists
 BITMAP
 BK!qg\tW
+BLAS
 BLAS %d
 BLAS Compaction
 BLAS build requires %i bytes, we only have %i\n
-BLAS builds: %u (%s triangles); Dynamic builds: %u (%s triangles); %u compactions; %s scratch mem\n
-BRDFLookup
+BLAS dynamic
 BU\vS
 BVH::Build( void (*customGetAABB)( .. ), instCount ), instCount == 0.
 Bachman
 Backend Flags
 Backend does not support ImGuiBackendFlags_RendererHasTextures, and font atlas is not built! Update backend OR make sure you called ImGui_ImplXXXX_NewFrame() function for renderer backend, which should call io.Fonts->GetTexDataAsRGBA32() / GetTexDataAsAlpha8().
 Backend or app forgot to call DestroyPlatformWindows()?
-BackfaceCulling
 Background color
 BackgroundClipRect
 Backslash
 Backspace
 Baked at { %.2fpx, d.%.2f }: %d glyphs%s
-BakedLightingConstantBuffer_t
+Baked lighting info change
 Bamboo Shoots
 Banana
 Bar Group
@@ -1392,17 +1532,18 @@ Bar Plots
 Bar Stacks
 BarnLight
 BarnLightObjectDesc
-BarnLights
 Barrier\n  [%s:%s] %s\n
 Barrier\n  [%s:%s]\n
 Barry
 Bars
 BaseSceneObjectDesc
+BaseSceneObjectManifest
 Baseline of button will look misaligned with text..
 Basic
 Basic Horizontal Layout
 Basic trees
 Basket
+Batch flags changed
 Batches
 Batches: %d
 Batchsort
@@ -1413,7 +1554,6 @@ Beatrice
 Beet
 Beetroot
 Begin has already been called without an intervening render
-Begin to finish rendering views : %f\n
 BeginDragDropSourceItem() needs to be called within an itemized context!
 BeginGroup() basically locks the horizontal position for new line. EndGroup() bundles the whole group so that you can use "item" functions such as IsItemHovered()/IsItemActive() or SameLine() etc. on the whole group.
 BeginLegendPopup() needs to be called within an itemized context!
@@ -1431,7 +1571,6 @@ Bg\vF\r
 BiBr
 Bibi
 Biden
-BindBakedLightingInfoInPerViewLightingConstants
 Bins
 Bitmap
 Bitter Gourd
@@ -1441,7 +1580,6 @@ Blaine
 BlendAxisTypes
 BlendDesignMap
 BlendDesignPositions
-BloodDefaultImpact
 Blue shape is drawn first, into channel 1: appears in front
 Blue shape is drawn first: appears in back
 BlueFuzz
@@ -1453,9 +1591,6 @@ Bobby
 Bok Choy
 Bold
 Bold Italic
-BoneIdxBits
-BoneIdxOffset
-BoneWeightOffset
 Book
 Border
 BorderShadow
@@ -1468,7 +1603,6 @@ Bottom
 Bottom-left
 Bottom-right
 Bound Last Frame
-BoundingBoxBloat
 Box Select
 Box select and left click mouse to create a new query rect.
 BoxSelect ID=0x%08X, Starting = %d, Active %d
@@ -1529,7 +1663,9 @@ C##Instances
 C++ lambdas can be passed as function pointers as well!
 C6FaceSkyboxObjectDesc
 C:\buildworker\citadel_rel_win64\build\_build_\scenesystem\_vpc_scenesystem\default\win64\_msvc_\Retail\scenesystem.pdb
+C:\buildworker\citadel_rel_win64\build\src\public\scenesystem\sceneobject.h
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\aggregatedesc.cpp
+C:\buildworker\citadel_rel_win64\build\src\scenesystem\aggregatertproxydesc.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\ambientocclusionproxy.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\distancefieldscene.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\imgui_render.cpp
@@ -1540,6 +1676,7 @@ C:\buildworker\citadel_rel_win64\build\src\scenesystem\renderingpipelineforward.
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\scenegfxresources.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\scenelpvdebuggrid.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\sceneobject_methods.cpp
+C:\buildworker\citadel_rel_win64\build\src\scenesystem\sceneobjectdescs.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\scenesystem.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\sceneviewdebugoverlays.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\scratchrendertargetsystem.cpp
@@ -1547,6 +1684,7 @@ C:\buildworker\citadel_rel_win64\build\src\scenesystem\sparseshadowtree.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\utils\characterdecalrenderer.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\utils\hairrenderer.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\utils\scalable_ambient_obscurance.cpp
+C:\buildworker\citadel_rel_win64\build\src\scenesystem\utils\virtualtexturemanager.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\utils\volumetricfog.cpp
 C:\buildworker\citadel_rel_win64\build\src\scenesystem\utils\windcontroller.cpp
 C:\buildworker\citadel_rel_win64\build\src\texturelib\extract.cpp
@@ -1558,7 +1696,7 @@ CAP_HEIGHT
 CAST_SHADOWS_ENABLED 
 CAggregateSceneObject
 CAggregateSceneObjectDesc
-CAggregateSceneObjectDesc::GpuCullPrimitivesInView(), C:\buildworker\citadel_rel_win64\build\src\scenesystem\aggregatedesc.cpp:2049
+CAggregateSceneObjectDesc::GpuCullPrimitivesInView(), C:\buildworker\citadel_rel_win64\build\src\scenesystem\aggregatedesc.cpp:2081
 CAmbientOcclusionProxySceneObjectDesc
 CAnimatableSceneObjectDesc
 CAnimationDecodeContext::AddAnimationDecodeDesc ran out of allocator memory (1)\n
@@ -1567,8 +1705,7 @@ CAnimationDecodeContext::AddAnimationDecodeDesc ran out of allocator memory (3)\
 CBarnLightObjectDescGpu
 CBaseSceneObjectDesc
 CBlitTextureToBackBufferLayer
-CBufferUAV
-CBuildSparseShadowTree::GenerateSSTTiles(784): 
+CBuildSparseShadowTree::GenerateSSTTiles(766): 
 CCCC
 CCCCCCCCCCCC
 CCMTAtlasDesc::CreateTexture(116): 
@@ -1580,11 +1717,16 @@ CDirectionalLightObjectDescGpu
 CDistanceFieldInstanceSceneObjectDesc
 CEnvMapLightObjectDesc
 CEnvMapLightObjectDescGpu
+CFarfieldProbeVolumeObjectDesc
+CFarfieldProbeVolumeObjectDescGpu
+CFarfieldSDFVolumeObjectDesc
+CFarfieldSDFVolumeObjectDescGpu
 CG,T
 CHARS
 CHARSET_COLLECTIONS
 CHARSET_ENCODING
 CHARSET_REGISTRY
+CHairRenderManager: missing call to UpdateHairContext() - skipping hair for model '%s' in view '%s' (flags 0x%x, FOV %f), layer '%s'.\n
 CID Type 1
 CIDCount
 CIDFontName
@@ -1608,6 +1750,7 @@ CMTatlastexture_.vtex
 CMesh Cannot create packed input layout, because the bone indices are out of range (0x%X)\n
 CMesh Cannot create packed input layout, too many blend weights per vertex %d, max %d\n
 CMeshBuilderSceneObjectDesc
+CMeshPrimitiveOutputBuffer::Next
 CMonitorObjectDesc
 COLOR_ATTACHMENT_OPTIMAL
 COLOR_ATTACHMENT_OUTPUT
@@ -1629,20 +1772,22 @@ CProjectedDecalSceneObjectDesc::OnAddedToSceneSystem(30):
 CQCtC
 CQuadRenderer
 CQuadRendererLayout
-CRenderMesh::ForceVertexBuffersToVBPool(1234): 
 CSM%d
 CSM%i "%s" (%s)
+CSM%i Skybox "%s"
 CSSTCopyDepthQuadRenderer
-CSceneLPVSampleGridObjectDescriptor::Create(151): 
+CSceneLPVSampleGridObjectDescriptor::Create(156): 
+CSceneObjectDesc
+CSceneSystem::AcquireImGuiLock
 CSceneSystem::ComputeScratchTargetActualSize
 CSceneSystem::CreateStaticShape(322): 
 CSceneSystem::DeleteObjectForReal
 CSceneSystem::DeleteSceneObject
 CSceneSystem::FrameUpdate
-CSceneSystem::GenerateCompositeMorphTextureAtlas(5438): Expecting 1 renderable pass for material "%s" but found %d!\n
+CSceneSystem::GenerateCompositeMorphTextureAtlas(5414): Expecting 1 renderable pass for material "%s" but found %d!\n
 CSceneSystem::InitGfxObjects
-CSceneSystem::InitGfxObjects(976): 
-CSceneSystem::Thread_CullView(), C:\buildworker\citadel_rel_win64\build\src\scenesystem\scenesystem.cpp:3293
+CSceneSystem::InitGfxObjects(969): 
+CSceneSystem::Thread_CullView(), C:\buildworker\citadel_rel_win64\build\src\scenesystem\scenesystem.cpp:3094
 CSceneViewDebugOverlays: Cannot call AddToViewAndRetireStaleOverlays and pass in no abs time unless the overlay was created with the SCENE_VIEW_DEBUG_OVERLAY_TYPE_RELATIVE_TIMING flag!\n
 CSceneViewDebugOverlays::AddToView
 CSceneViewDebugOverlays::AgeList
@@ -1661,12 +1806,15 @@ CScratchRenderTargetSystem::ComputeLayerInfo
 CSimpleQuadRenderer
 CSkyBoxObjectDesc
 CSpotLightObjectDescGpu
+CStrongHandle
 CTRL 
 CTRL+LMB to select more than one frame to compare them.
 CTSQueue<class CSceneDrawList *,0>::Push
 CTSQueue<class CSceneObject *,0>::Push
 CTextureDisplayer
+CULLING
 CURRENTLY APPENDING
+CUtlBinaryBlock
 CUtlBlockVector<class CPackNode,int,class CMemAllocAllocator>::GrowCount
 CUtlLeanVectorBase<struct CUtlMultiListNode_t<class CPixelVisSet,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct CUtlMultiListNode_t<class CPixelVisibilityQuery,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
@@ -1675,20 +1823,19 @@ CUtlLeanVectorBase<struct UtlLinkedListElem_t<class CSceneLightProbeVolumeObject
 CUtlLeanVectorBase<struct UtlLinkedListElem_t<class ISceneLayer *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlLinkedListElem_t<struct CUtlMultiList<class CPixelVisSet,unsigned short>::List_t,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
 CUtlLeanVectorBase<struct UtlLinkedListElem_t<struct CUtlMultiList<class CPixelVisibilityQuery,unsigned short>::List_t,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<class CBitVec<64>,int,class CMemAllocAllocator>,class CBitVec<64>,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CMeshDrawPrimitive_t,int,class CMemAllocAllocator>,struct CMeshDrawPrimitive_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<class CPackNode,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<class CPackNode,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
-CUtlLeanVectorImpl<class CUtlLeanVectorFixedGrowableBase<struct CRenderBufferBinding,2,int,class CMemAllocAllocator>,struct CRenderBufferBinding,int>::AddMultipleToTail
 CUtlMemoryBlockAllocator<class CPackNode,class CMemAllocAllocator>::AddPage
 CUtlMultiList overflow! (exhausted index range)\n
 CUtlMultiList overflow! (exhausted memory allocator)\n
-CUtlRBTree<struct CUtlOrderedMapBase<int,struct SelectHistoryFrame_t,class CDefLess<int>,int>::Node_t,class CUtlOrderedMapBase<int,struct SelectHistoryFrame_t,class CDefLess<int>,int>::CKeyLess,int,class CUtlLeanVector<struct UtlRBTreeNode_t<struct CUtlOrderedMapBase<int,struct SelectHistoryFrame_t,class CDefLess<int>,int>::Node_t,int>,int,class CMemAllocAllocator> >::Insert
+CUtlStringToken
 CW4"
 CWCf
 Cabbage
 Cached Fog
-Cached: %s, LRU %i
-CachedShadowDepthBuffer
-CachedShadowDepthBufferNoCmp
+Cached Light %p (%s): failed to allocate %ix%i shadow from atlas (%i failed this frame, freed %i lru rects)\n
+Cached: %s, LRU %i, Age %i
 Cacute
 Calabash
 Call should only be done while in BeginTable() scope!
@@ -1726,7 +1873,6 @@ Capture/Logging
 Caronsmall
 Carrot
 Cassava
-CastHairShadows
 Category A
 Category B
 Category C
@@ -1747,8 +1893,6 @@ CellPaddingX: %.1f, CellSpacingX: %.1f/%.1f, OuterPaddingX: %.1f
 Centroid
 Change Colormap
 Changing MeshGroupMask when m_bPruneUnusedMeshGroups is set, after the sceneobject has been created (the groups have already been discarded)\n
-Changing sc_layer_batch_threshold from %d -> %d.\n
-Changing sc_layer_batch_threshold_fullsort from %d -> %d.\n
 CharStrings
 CharWidth
 CharacterDecal
@@ -1794,6 +1938,7 @@ Clamp
 Clamp even if min==max==0.0f. Otherwise DragXXX functions don't clamp.
 Clamp integers to 0..50
 Clamp value to min/max bounds when input manually with Ctrl+Click. By default Ctrl+Click allows going out of bounds.
+Class %s set to %d.\n
 ClassId=0x%08X\n
 ClassId=0x%X
 Classic
@@ -1806,7 +1951,7 @@ Clear items
 Clear nodes
 Clear settings
 Clear unused
-ClearTexture
+Clears all virtual texture tile streaming stats
 Click
 Click %s Button to break in debugger! (remap w/ Ctrl+Shift)
 Click and drag column headers to reorder columns.\n\nRight-click on a header to open a context menu.
@@ -1838,8 +1983,6 @@ ClosestHit0
 ClosestHit1
 ClosestHit2
 ClosestHit3
-ClumpExp
-ClumpScale
 ClutterDesc
 ClutterSceneObjectDesc
 Coconut
@@ -1917,8 +2060,8 @@ Commands:
 Compact
 Completion
 Completion, History, Edit Callbacks
-CompressMultiplier
 Compressed texture bits for mip %i are corrupt, decompression error!
+Compute
 Compute Skinning Stats
 Compute Smooth Normals Pass 1
 Compute Smooth Normals Pass 2
@@ -1949,6 +2092,7 @@ Cool
 Copy
 Copy "Hello, world!" to clipboard
 Copy %s
+Copy %s -> %s
 Copy %s->%s
 Copy Link###CopyLink
 Copy as..
@@ -1962,19 +2106,18 @@ CopySSTDepthToCSM_PS
 Corn
 Corniflower
 Coudn't read pixels for texture %s\n
-Could not find custom shadow rendering pipeline "CustomShadowPipeline"!\n
+Could not find game shadow rendering pipeline "Game"!\n
 Could not load font file!
 Couldn't ReadTexturePixels for SST shadow map.\n
 Couldn't load textures/dev/scrambled_halton.vdata
-Courier New
 Course Grade
 Cq\fAI
 Create a docking node and tab-bar on single floating windows.
 CreateBLASForDrawCall
 CreateBLASForRigidPart
 CreateFileMappingW
-CreateManyQuadsIndexBuffer(547): 
-CreateNxNTesselatedIndexBuffer(525): 
+CreateManyQuadsIndexBuffer(540): 
+CreateNxNTesselatedIndexBuffer(518): 
 CreateWindowExW
 Creating VB/IB/BLAS for %d meshes... 
 Creating ray trace scene world with %d instances... 
@@ -2011,22 +2154,8 @@ Ctrl+Z to undo, Ctrl+Y/Ctrl+Shift+Z to redo.
 Cube
 CubeMapDebugColors
 Cucumber
-CullBits
-CullCameraForwardWs
-CullCameraPositionWs
 CullParams_t
-CullRequests
-CullStats
-CullViewIsOrthographic
-CullViewIsShadow
-CullViewOrigin
-CullViewOrthoInvWidth
-CullViewSizeThreshold
-CullViewTanHalfFov
-Culling: %s objects pre-cull (%s tested), %s passing culling\n
 Cumulative
-CurrFrameFromPrevFrame
-Current
 Current mouse cursor = %d: %s
 Currently all this does is to lift the 0..1 limits on dragging widgets.
 Curve Tessellation Tolerance
@@ -2041,8 +2170,8 @@ Custom rendering
 Custom: Always Square
 Custom: Aspect Ratio 16:9
 Custom: Fixed Steps (100)
+CustomTexture0
 CustomTexture1
-CustomTexture2
 D&D4a
 D16_UNORM
 D24_UNORM_S8_UINT
@@ -2083,45 +2212,6 @@ DOES_NOT_ACCEPT_DECALS
 DRAW_INDIRECT
 DWDbDgD
 DWIDTH
-D_16_BIT_KEYS
-D_ALPHATINT
-D_ATTACHED_TO_SURFACE
-D_BAKED_LIGHTING_FROM_PROBE
-D_BLEND_WEIGHT_COUNT
-D_COMPRESSED_NORMALS_AND_TANGENTS
-D_COMPUTE_TENSION
-D_CULL_NON_MOVING_OBJECTS
-D_CUT_HAIR
-D_DEBUG_DRAW_MESHLETS
-D_DEBUG_OUTPUT_STATS
-D_DRAW_QUADS
-D_ENABLE_INDIRECT
-D_ENABLE_VOLUMETRIC_FOG
-D_FLOAT_INTERMEDIATE_TEXTURES
-D_FULL_HAIR_PIPELINE
-D_HAIR_OFFSETS
-D_HAS_ROOT_VIEW
-D_INDIRECT_TRANSMITTANCE
-D_JITTER
-D_LPV_INDIRECT
-D_NO_ZTEST
-D_OCCLUSION_CULLING
-D_OPAQUE_FADE
-D_ORTHOGRAPHIC_VIEW
-D_OUTPUT_MOTION_VECTORS_TRANSFORM
-D_OUTPUT_MOTION_VECTORS_VERTEX_ANIMATION
-D_OVERWRITE_DEPTH
-D_ROUGHNESS_TEXTURE
-D_SELF_SHADOW
-D_SMOOTH_ACROSS_UV_SEAMS
-D_SPECULAR_CUBE_MAP_STATIC
-D_SUBGROUP_SIZE_32
-D_SUPPORTS_MESH_SHADER
-D_VARIANT
-D_VISUALIZE_BOUNDS
-D_VISUALIZE_SCENEOBJECTS
-D_VIS_CULLING
-D_VOLUME_CULLER
 Daikon
 Dark
 Data
@@ -2150,10 +2240,7 @@ Debug details
 Debug draw the light shape
 Debug draw the visclusters the light overlaps - can be used to see why the light is drawing.
 Debug##Default
-DebugDrawAllMeshlets
-DebugMeshletDrawArgs
 DebugText
-DebugVisualizeDispatchIndex
 Decal
 DecalNormals_%d.vtex
 DecalRenderTarget_Staging.vtex
@@ -2179,21 +2266,19 @@ Delete
 Delete %d item(s)###DeleteSelected
 Delete..
 Delete?
-DeltaTime
 Demonstrate mixing table context menu (over header), item context button (over button) and custom per-column context menu (over column body).
 Demonstrate using BeginDisabled()/EndDisabled() across other sections.
-Density
-DensityVolumeTexture
 Depth
-DepthPyramid
-DepthValue
+DepthCopy
 Descender
+Descriptor Changed
 DesignVector
 Destroy cache and custom rectangles.
 Destroyed
 Detail Depth
 Details
 Developed by Omar Cornut and all Dear ImGui contributors.
+Diamond
 Dieresissmall
 Digital Plots
 Digital plots do not respond to Y drag and zoom, so that
@@ -2222,12 +2307,12 @@ Disabled Alpha
 Disabled item
 Disk
 Disk-shaped light
-DispatchArgBuffer
 Display Mode
 Display all characters as '*'.\nDisable clipboard cut and copy.\nDisable logging.\n
 Display headers
 DisplaySafeAreaPadding
 DisplayWindowPadding
+DistanceField Atlas Debugger
 DistanceFieldAtlas.vtex
 Diverging
 DmDs
@@ -2281,7 +2366,6 @@ Drag to reorder items (simple)
 Drag/Slider Flags
 Drag/drop items between plots.
 Drag/drop items from the left column.
-DragCoeff
 DragDrop: %d, SourceId = 0x%08X, Payload "%s" (%d bytes)
 DragDropTarget
 DragDropTargetBg
@@ -2297,7 +2381,6 @@ DragRect() needs to be called between BeginPlot() and EndPlot()!
 Dragging
 Dragging %d objects
 Drags
-Draw Calls
 Draw Channels
 Draw Proxy: qh:%p org:<%d,%d,%d> (frame:%d)\n
 Draw frame with background (e.g. for CollapsingHeader)
@@ -2313,16 +2396,14 @@ DrawLinesToNodes
 DrawList
 DrawLists
 DrawLists (%d)
-DrawMaterialQuad(68): Material %s cannot render in mode %s but is being asked to\n
+DrawMaterialQuad(67): Material %s cannot render in mode %s but is being asked to\n
 DrawShadowMapsForLight
 Drawing aggregates without valid meshlets, please recompile the map!
 Drawing instanced meshes without meshlets, please recompile the map!
+Draws/Dispatches
 Dsmall
-DstBuffer
-DstPayload
 Dummy
 Dynamic Decals
-Dynamic Shadow %d
 Dynamic list with Delete key support.
 E+E\HTH\HfHrH
 E3EAEL
@@ -2338,11 +2419,11 @@ END_SPACE
 ERROR! Cannot load GpuLightBinnerManifest
 ERROR! Cannot load HairRendererManifest resource manifest!\n
 ERROR! Cannot load SubsurfaceProfilesManifest
+ERROR! Cannot load VirtualTextureMgrManifest resource manifest!\n
 ERROR: Docking is not enabled! See Demo > Configuration.
 Eacute
 Eacutesmall
 Earth
-East
 Ecircumflex
 Ecircumflexsmall
 Edieresis
@@ -2357,7 +2438,6 @@ Electrode
 Eliding, Alignment
 Ellipsis character: '%s' (U+%04X)
 Embed everything inside a child window for testing _RootWindow flag.
-EmissiveLightingBoost
 Empirical
 Empty label e.g. Button("") == same ID as parent widget/node. Use Button("##xx") instead!
 EnEyE
@@ -2382,10 +2462,6 @@ Enable scrolling page by page when clicking outside the scrollbar grab.\nWhen di
 Enable turning DragXXX widgets into text input with a simple mouse click-release (without moving).
 Enable various tools calling IM_DEBUG_BREAK().\n\nRequires a debugger being attached, otherwise IM_DEBUG_BREAK() options will appear to crash your application.
 Enable wrapping around from max to min and from min to max (only supported by DragXXX() functions)
-EnableAlphaTint
-EnableSorting
-EnableSunlight
-EnableViewModelSunlight
 EncodeRGBM
 Encoding
 EncodingScheme
@@ -2411,10 +2487,10 @@ Enter
 Enter 'HELP' for help.
 EnumDisplayMonitors
 EnvMap
-EnvironmentMap
 EnvironmentMaps have different textures, lightbinner requires everything to be atlased into an array.  Rebuild your map + cubemaps.\n
 Equal Axes
 Equal constraint applies to axis pairs (e.g ImAxis_X1/Y1, ImAxis_X2/Y2)
+Equivalent Mip-Streamed Texture Size: %7.1f MB
 Error Bars
 Error Handling
 Error loading barn light: %s\n
@@ -2440,6 +2516,7 @@ Esmall
 Ethsmall
 Euro
 Even more contents
+Evicts all virtual texture pages
 Exact
 Example: Assets Browser
 Example: Auto-resizing window
@@ -2472,6 +2549,7 @@ Examples/Simple layout
 Exceeded compacted draws buffer size [buffer %i, used %i], @peted should implement resizing\n
 Exceeded maximum number visible environment maps: %i, %i maximum\n
 Exceeded maximum number visible lpvs: %i, %i maximum\n
+Exceeding maximum number of fog volumes: %i, max %i\n
 Exceeding number of envmaps: MAX %i, found %i\n
 Exclude Outliers
 Exec %i Pass%s
@@ -2485,7 +2563,7 @@ Extensions
 EyeBallDataConstants_t
 EyeShader
 F'F2F>F\Fsa
-F@CU
+F@dY
 FACE_NAME
 FAMILY_NAME
 FC\r4
@@ -2503,8 +2581,8 @@ FONT_DESCENT
 FORCE_UINT
 FORWARD_LAYER_ONLY 
 FOUNDRY
-FP5U
 FRAGMENT_SHADER
+FRAME
 FSType
 FULL_NAME
 Factor
@@ -2517,13 +2595,16 @@ FamilyBlues
 FamilyName
 FamilyOtherBlues
 Fancy
-FarPlaneOverride
+FarfieldProbeVolume
+FarfieldSDFVolume
 Faster lines using texture data. Require backend to render with bilinear filtering (not point/nearest filtering).
 FbFi
 Feature is currently in Beta. Please read comments in imgui.h
 Features:
+Feedback: %u shader writes -> %u unique records (%u readbacks so far)
 File1_a.wav
 File1_b.wav
+Fill
 Fill %s
 Fill Button
 FillAlpha
@@ -2540,20 +2621,16 @@ Filter colors
 Filter usage:\n  ""         display all lines\n  "xxx"      display lines containing "xxx"\n  "xxx,yyy"  display lines containing "xxx" or "yyy"\n  "-xxx"     hide lines containing "xxx"
 Filtered Text Input
 Final Exam
-FindVisClustersForMeshlets
-Finish to complete : %f\n
 FinishRenderingViews has been called without a call to begin!!!
 Fire
 First calls to Begin()/BeginChild() will return false.\n\nTHIS OPTION IS DISABLED because it needs to be set at application boot-time to make sense. Showing the disabled option is a way to make this feature easier to discover.
 First group hovered
-FirstCullRequest
 FitPadding
 Five
 Fixed
 Fixed %d,%d
 Fixed width.
 FixedFit
-FixedKeyCount
 FixedSame
 Fizz
 FizzBuzz
@@ -2569,7 +2646,6 @@ Flags: 0x%08X
 Flags: 0x%08X (%s%s%s%s%s%s%s%s%s..)
 Flamegraph
 Flash given color to identify places where it is used.
-FlipFrustumX
 Float3
 Focus
 Focus from code
@@ -2579,8 +2655,6 @@ Focus on 3
 Focus on X
 Focus on Y
 Focus on Z
-Fog tile: %i since used, %i since rendered
-Fog: %d volumes visible, %d culled [%d frustum, %d dist, %d PVS]\n
 FogTile
 FoliageAnimation
 Font
@@ -2610,7 +2684,6 @@ Force thick hair
 ForceAutoHint
 ForceBold
 ForceBoldThreshold
-ForceShadowsFromNonShadowCastingGeometry
 Forgot to call ImGui::NewFrame()?
 Forgot to shutdown Platform backend?
 Forgot to shutdown Renderer backend?
@@ -2618,13 +2691,7 @@ Format
 ForwardLightSetup
 Four
 FourFourFour
-Fp3U
 Frag
-FragmentBounds
-FragmentDrawArgs
-FragmentDrawCount
-FragmentRecullDrawArgs
-FragmentStats
 Frame %06d: %+3d ( %2d alloc, %2d free )
 Frame Overlay
 Frame Times
@@ -2647,13 +2714,6 @@ Frozen columns
 Frozen rows
 Frust+Illum
 Frustum
-FrustumCulling
-FrustumPlane0
-FrustumPlane1
-FrustumPlane2
-FrustumPlane3
-FrustumPlane4
-FrustumPlane5
 Fsmall
 Full-width:
 FullName
@@ -2674,20 +2734,18 @@ GC now
 GDB3
 GDBytes
 GENERAL
+GEOMETRY
 GGGG
 GLOBAL
 GOOGL
 GO\fQ
 GPGTB
 GPU Animated Vertex Cache allocation too large! Requested: %d, max allowed: %d\nUse smaller draw calls or increase cache buffer block size\n
+GPU Culled Prims
 GPU Instance Mem  : %s allocated, %s written, %s used
-GPU Instance Mem  : %s written, %s used, %s allocated\n
 GPU Memory Size
-GPU Meshlet Mem   : %s written, %s used, %s allocated\n
-GPU Particle Mem   : %s written, %s used, %s allocated\n
 GPU Time: %.2f ms
 GPU Transform Mem : %s allocated, %s written, %s used
-GPU Transform Mem : %s written, %s used, %s allocated\n
 GPUProfiler
 GPUSort
 GW\fI
@@ -2720,7 +2778,6 @@ GamepadRStickRight
 GamepadRStickUp
 GamepadStart
 Gbreve
-GenCullRequests
 Generate Huge Data (~500MB!)
 GenerateCompositeMorphTextureAtlas
 GenerateDecalNormals
@@ -2729,7 +2786,6 @@ Geometry %d
 GetCapture
 GetClipboardData
 GetCursorPos
-GetDC
 GetDeviceCaps
 GetDpiForMonitor
 GetKeyState
@@ -2750,7 +2806,6 @@ Gingrich
 Giving access to some ImGuiStyle value in this demo for convenience.
 Gk\rC
 Global Alpha
-GlobalStats
 Glyph
 Glyphs
 Got request to send CSceneSystemStats to vconsole\n
@@ -2760,7 +2815,6 @@ GpuCull-PrepareReculling
 GpuLightBinnerManifest
 GpuLightBinnerStartupManifest
 GpuRecull
-GpuVolumeCullerPlanes_t
 GrabMinSize
 GrabRounding
 Gradients
@@ -2771,13 +2825,11 @@ Gravesmall
 Greys
 Grid
 Grid Lines
-GroomID
 Groups
 Grow
 Gsmall
 Guide Hair Visualization
 Guide Hair update
-GuideHairDensityBuffer
 H Clinton
 H E Z L O C U S
 H-scrollbar
@@ -2806,20 +2858,8 @@ Haddock
 Hair Cull and Compute Segment Depth For Sort
 Hair Debug Settings
 Hair Sim
-HairAlbedoVolume
-HairAoTexture
-HairColorPalette
-HairColorTexture
-HairDetailScale
-HairDyeColor
-HairFinalComposite
-HairLengthScale
 HairRendererManifest
-HairRoughnessPalette
-HairRoughnessTexture
 HairShadowTileCompute
-HairThickness
-HairVolumeCount
 HairVolumeInfoBuffer
 Half True
 Half of available width.\n(~ right-cursor_pos)\n(works within a column set)
@@ -2863,7 +2903,6 @@ Hide Filtered
 Hide tab bar###HideTabBar
 Hierarchy lines
 High:  $%.2f
-HighPrecisionLightingOffset
 Highlight ID Conflicts
 Highlight and show an error message when multiple items have conflicting identifiers.
 Highlight guide hairs
@@ -2938,6 +2977,7 @@ ID:%08X, used:%d, { w:%3d, h:%3d } { x:%4d, y:%4d }
 ID=0x%08X%n
 IIII
 IIIIIII
+IKV3TransferInterface_ResourceSave
 IMGUI_CONTEXT
 IMM32.dll
 IM_ASSERT() calls assert() by default. Compiling with NDEBUG will usually strip out assert() to nothing, which is NOT recommended because we use asserts to notify of programmer mistakes!
@@ -3199,9 +3239,6 @@ IndentSpacing
 Indented
 Indeterminate
 Indirect Dispatch Args
-IndirectArgsBuffer
-IndirectDispatchArgs
-IndirectDrawBuffer
 Inferred Z order (front-to-back)
 Infinite Joint Weights encountered: Skinning will not work! (At position %.3f %.3f %.3f)\n
 Infinite Lines
@@ -3218,14 +3255,11 @@ Input Map
 Input flags:
 InputFloat
 InputFloat3
-InputIBOffset
-InputIndices
 InputLayoutBuilder
 InputRouting
 InputText
 InputTextCursor
 InputTextMultiline
-InputVertAliasInfo
 Inputs
 Inputs & Focus
 Inputs & Focus/Dragging
@@ -3238,15 +3272,12 @@ Inputs & Focus/Shortcuts
 Inputs & Focus/Tabbing
 Insert
 Instance %d: HoveredRow: %d, LastOuterHeight: %.2f
-InstanceCount
-InstanceData
 Instanced Debugger
 InstancedMesh
 InstancedMesh %s has %i lods and %i meshes, there must be a 1:1 mapping (right now).\n
 InstancedMesh %s has %i meshgroups: only the default will be used.\n
 InstancedMesh %s, mesh %i has %d draws: only the first %d will be drawn.\n
 InstancedMesh %s, mesh %i has %i sceneobjects: only the first will be drawn.\n
-InstancedMesh: resizing cull request buffer from %u -> %u\n
 InstancedMesh: resizing indirect draw buffer %u -> %u\n
 InstancedMeshSceneObjectManifest
 Instances
@@ -3258,8 +3289,6 @@ Interactive Data
 Internal inconsistency between the layout format and attribute is detected.\nTry changing the number of bones per vertex or the skin weighting, and send Sergiy a repro mesh with this error description.\n
 Internal state
 Interpolate sim guide hair verts
-InvDeltaTime
-InvDensityVolumeDim
 Invalid colormap index!
 Invalid flags for IsItemHovered()!
 Invalid flags for IsWindowHovered()!
@@ -3275,7 +3304,6 @@ IsCIDFont
 IsChild
 IsChild=%d
 IsChild=1\n
-IsFirstRender
 IsFixedPitch
 IsFixedV
 IsIconic
@@ -3286,6 +3314,7 @@ IsPlotHovered() needs to be called between BeginPlot() and EndPlot()!
 IsPlotItemHighlight() needs to be called within an itemized context!
 IsPlotSelected() needs to be called between BeginPlot() and EndPlot()!
 IsPlotXAxisHovered() needs to be called between BeginPlot() and EndPlot()!
+IsSceneAnimatableObject
 IsSubplotsHovered() needs to be called between BeginSubplots() and EndSubplots()!
 IsWindowFocused() = %d\nIsWindowFocused(_ChildWindows) = %d\nIsWindowFocused(_ChildWindows|_NoPopupHierarchy) = %d\nIsWindowFocused(_ChildWindows|_DockHierarchy) = %d\nIsWindowFocused(_ChildWindows|_RootWindow) = %d\nIsWindowFocused(_ChildWindows|_RootWindow|_NoPopupHierarchy) = %d\nIsWindowFocused(_ChildWindows|_RootWindow|_DockHierarchy) = %d\nIsWindowFocused(_RootWindow) = %d\nIsWindowFocused(_RootWindow|_NoPopupHierarchy) = %d\nIsWindowFocused(_RootWindow|_DockHierarchy) = %d\nIsWindowFocused(_AnyWindow) = %d\n
 IsWindowFocused: %d
@@ -3387,15 +3416,10 @@ L@33
 LATE_FRAGMENT_TESTS
 LEVERAGE\nBUZZWORD
 LHLQ
+LIGHTING & SHADOWS
 LLLLLLL
 LOD Debugging
 LPVIndex
-LPV_DirectShadows
-LPV_Irradiance
-LPV_SH2_B
-LPV_SH2_DC
-LPV_SH2_G
-LPV_SH2_R
 LU\fF
 LaLj
 Label1
@@ -3430,7 +3454,6 @@ Layout/Scrolling/Vertical
 Layout/Text Baseline Alignment
 Layout/Text Clipping
 Layout/Widgets Width
-Leaked drawlists : %d!!!!!\n
 Left-click drag on axis labels to pan an individual axis.
 Left-click drag within the plot area to pan X and Y axes.
 Left-click while box selecting to cancel the selection.
@@ -3451,25 +3474,19 @@ LegendInnerPadding
 LegendPadding
 LegendSpacing
 LegendText
-LerpAmount
-LerpOsFromWs0
-LerpOsFromWs1
-LerpWsFromOs
 Lettuce
 Liars
 Light
+Light %p: failed to allocate %ix%i shadow %s from atlas (%i failed this frame, freed %i lru rects)\n
 Light Bounds Debugger
 Light Cookies
 LightBinner
-LightBinnerGpuTileSizePixels
 LightHinting
-LightObject
 LightProbeVolume
 LightProbeVolumeDebugColors
 LightProbeVolumeDebugColors_%s
 LightmapUV
 LightmapUVW
-Lights in view (unshadowed+shadowed): %d+%d omni, %d+%d spot, %d+%d barn %d env %d lpv.
 Like this one
 Limits
 Limits Constraints
@@ -3485,8 +3502,6 @@ Line 2
 Line Plot
 Line Plots
 LineWeight
-LinearDamping
-Lines
 Lines Count
 Lines##2
 Link 1
@@ -3521,7 +3536,6 @@ LocalFlags
 LocalFlagsInWindows
 LockDynamicConstantBuffer failed in CAmbientOcclusionProxySceneObjectDesc::DrawArray!!!\n
 LockDynamicConstantBuffer failed in CSceneUtils::FilterTexture!!!\n
-LockDynamicConstantBuffer failed in CSkyBoxObjectDesc::DrawArray!!!\n
 Log Plot
 Log Scale
 Log To Clipboard
@@ -3544,6 +3558,7 @@ Lslashsmall
 Lsmall
 M:0.000
 M:000
+MATERIALS
 MATERIAL_SUPPORTS_SHADOWS 
 MAX_SPACE
 MESSAGE FROM DEAR IMGUI
@@ -3551,14 +3566,10 @@ MIN_SPACE
 MIXED
 MJM|a
 MMMM
-MOD desires lightbinner GPU but is unsupported by HW (SupportsCompute=%i CubeMapArrays=%i)\n
 MOUSE STATE
 MOUSE WHEELING
 MRM\Mc
 MSAAResolve
-MSIndirectDispatchArgs
-MSIndirectDispatchArgsDebug
-MSIndirectDispatchArgsRecull
 MULTISELECT_DEMO_ITEMS
 MY CUSTOM COLOR PICKER WITH AN AMAZING PALETTE!
 MY_DND
@@ -3588,21 +3599,18 @@ Markers
 Markers and Text
 Master disable flag (also hide from context menu)
 Material %s - cannot find raytrace shader!\n
-Material changes: 
+Material change on single-material desc
 Max Height (in Lines)
+Max LRU Age: %4d
 Max Time
 Max: %.1f %%
 Max: %d units
 Max: (%.2f, %.2f)
-MaxAoDensity
-MaxRootBoneAngularSpeed
-MaxRootBoneSpeed
 MaxSize: [%f,%f]
-MaxThreadGroups
 Maybe
 Mc'_A$Cm
 McCain
-MelaninParams
+Median LRU Age: %4d
 Memory allocations
 Memory: %d bytes
 Menu
@@ -3624,13 +3632,13 @@ Mesh <???> destIdx %d
 Mesh contains %d blend weights per vertex;  truncating to %d\n
 Mesh: ElemCount: %d, VtxOffset: +%d, IdxOffset: +%d, Area: ~%0.f px
 MeshBuilderObject
-MeshData
 MeshName
 Meshbuilder2
 Meshbuilder2IndexData
 Meshbuilder2VertexData
 Meshlet
-MeshletData
+MeshletBoundsRefit
+MeshletBoundsRefitContext
 Metrics
 Metrics/Debugger
 MetricsSets
@@ -3653,6 +3661,11 @@ MinorGridSize
 MinorTickLen
 MinorTickSize
 Minus
+Mip 0-1
+Mip 2+
+Mip tail
+Mip: %d
+MipsUsed
 Misc items:
 Misc/Advanced
 Misc:%s%s%s%s%s%s%s
@@ -3681,7 +3694,6 @@ Missing PopItemFlag()
 Missing PopStyleColor()
 Missing PopStyleVar()
 Missing TreePop()
-Mixed Shadow %d
 Mixed items
 MjMs
 ModAlt
@@ -3706,7 +3718,6 @@ More details:
 More spacing: Hello
 More..
 Morph
-MorphTextureAtlasWidth
 Most plotters can also be passed a function pointer for getting data.
 Mostly False
 Mostly True
@@ -3738,6 +3749,7 @@ MouseWheelX
 MouseWheelY
 MouseX1
 MouseX2
+Move
 Move %s
 Move your mouse to change the data!
 MovingWindow: '%s'
@@ -3765,7 +3777,6 @@ Multiple Axes
 Multiple calls to Text(), clipped
 Multiple calls to Text(), not clipped (slow)
 Multiple tables with the same identifier will share their settings, width, visibility, order etc.
-Music
 Must call EndChild() and not End()!
 My Subplots
 MyBool
@@ -3804,9 +3815,11 @@ NI>R
 NORM_SPACE
 NOTICE
 NOT_BATCHABLE
+NOT_BATCHABLE flag change
 NO_MOTION_VECTORS 
 NO_Z_PREPASS 
 NWNb
+N\tV_exp2f
 NaN Values
 Name: %s
 NameOffset: %d
@@ -3885,13 +3898,7 @@ Node##1
 Node##2
 Node%d
 Node%d.%d
-NoiseExp
-NoiseFreq
-NoiseScale
 Normal buttons
-NormalAccumVB
-NormalOffset
-North
 Not Available
 Not Selected
 Not a widget per-se, but ImGuiTextFilter is a helper to perform simple filtering on text strings.
@@ -3903,28 +3910,9 @@ Nsmall
 Ntilde
 Ntildesmall
 Num Dummy Items (Demo Scrolling)
-NumAggregates
-NumCullRequests
-NumFragments
-NumKeysBuffer
-NumKeysIndex
 NumLock
-NumRequests
-Number of contexts created: 
-Number of cull boxes: %d\n
-Number of display lists submitted: 
-Number of jobs used to render: 
 Number of lines
-Number of objects culled by cull boxes: %d\n
-Number of objects starting to fade: 
-Number of objects tested against cull boxes: %d (%lluus)\n
-Number of pushconstant sets: 
-Number of rendertarget binds: 
-Number of resolves: %d\n
 Number of targets (%d) exceeds maximum (%d).  List of targets:\n
-Number of unique materials in the frame: 
-Number of views allocated : %d\n
-Number of views rendered: %d (%d with world traversals)\n
 O5OFO\OgO
 OBJs
 OCCLUSION_RECULLED 
@@ -3997,7 +3985,6 @@ Original
 OrthoAxis: 0x%08X
 OrthoAxis: NULL
 OrthoLight
-OrthographicView
 Oslash
 Oslashsmall
 Osmall
@@ -4013,10 +4000,8 @@ OuterRect: Pos: (%.1f,%.1f) Size: (%.1f,%.1f) Sizing: '%s'
 OuterRectClipped
 Output
 Output flags:
-OutputIndices
 OutputToTTY
 OutputToTestEngine
-OutputVB
 Outputdepth
 Outputs
 Outside
@@ -4028,9 +4013,8 @@ Override ChildBg color
 Override Streaming GPU Memory
 P+\fGj
 P.P5
-P08@J` 
-P08J
-P08N\DK
+P08@J 
+P08Jp
 P3\rA
 P8\nD
 PAPU
@@ -4050,14 +4034,17 @@ POSITION
 PRESSED
 PRE_RASTERIZATION_SHADERS
 PROGRAMMER GUIDE:
-P\fQK
 PackId: 0x%X (%dx%d rect at %d,%d)
 Packed rects: %d, area: about %d px ~%dx%d px
-PackedBlobNormal
 Padding
 Padding:
+Page Residency
+Page Streaming Events In Flight: %d
 PageDown
 PageUp
+Pages
+Pages Accessed Last Frame: %6d
+Pages Used In Last 60 Frames: %d (%3.1f%%), %4.1f MB
 PaintType
 Paired
 Palette
@@ -4067,30 +4054,28 @@ Parent View%s:
 ParentNode
 ParentWindow
 ParentWindowForFocusRoute
-Particle Cloth %s
-Particles: %d systems rendered in %d draw calls, %d meshlets and %d material binds\n
 Pass
 Passing ImGuiHoveredFlags_ForTooltip to IsItemHovered() is the preferred way to standardize tooltip activation details across your application. You may however decide to use custom flags for a specific tooltip instance.
 Password Input
 Paste
 Pastel
 PathTracingShaderBindingTable
-PatternType
 Pauciloquent
 Pause Streaming Activity Graph
 Pear
 Pen Pressure: %.1f
-Per-frame scratch memory used: %s (high watermark %s)\n
 PerVertexLighting
 PerViewLightProbeVolumeConstantBuffer_t
 PerViewLightingConstantBufferGpu_t
 Period
 Perry
+Physical Pages: %5d/%d (%4.1fMB/%4.1fMB) %3.1f%% used
 PiYG
 Picker Mode
 Pie Charts
 Pineapple
 Pink
+Pinned
 PivotPaint
 Pixel vis system using %d sets total (%d in free list), %d queries total (%d in free list)\n
 PixelMax: %f
@@ -4101,7 +4086,6 @@ Pixels visible: %d (qh:%p) (frame:%d)\n
 Pixels visible: %d (qh:%p) Pixels possible: %d (qh:%p) (frame:%d)\n
 Pixels: %f
 PixelsToPlot() needs to be called between BeginPlot() and EndPlot()!
-Pl9K
 Plasma
 Player Overlay
 Please submit feedback:
@@ -4135,7 +4119,6 @@ Plotting
 Plum
 Plus
 PmXh]=b
-PnpLU
 PolitiFact: Who Lies More?
 Pollock
 Pool Mem
@@ -4164,7 +4147,6 @@ PosColorUVNormalTangentVertexLayout
 Position
 Position2D
 PositionDummyVB1
-PositionOffset
 Possible matches:\n
 Post Step (default)
 PostDecalForwardDynamic
@@ -4180,14 +4162,14 @@ Pressing Enter will keep item active and select contents (single-line only).
 Pressing Escape clears focused item.
 Pressing Escape clears focused window.
 PrettyFont:%s:%d:%d
-PrevFrameAnimatedVertexCache
-PrevFrameTransformBuffer
 Preview
 Previous
 Price
 Primitives
 PrintScreen
 Printing unusually long amount of text.
+ProceduralGeometry
+ProceduralGeometry Updates
 Processed
 ProggyClean.ttf
 Programmer error: %d visible items with conflicting ID!
@@ -4207,8 +4189,6 @@ Q)Q7QWQ
 Q8>q=
 Q8?X
 Q=QH
-QCurrFrameFromPrevFrame
-QFullCurrFrameFromPrevFrame
 QUAD
 QUAD_WIDTH
 Q_Qd
@@ -4277,7 +4257,6 @@ R8G8_UNORM
 R8_SINT
 R8_SNORM
 R8_TYPELESS
-R8_UNORM
 R9G9B9E5_SHAREDEXP
 R: %.f\nN: %d
 R: MMM\nN: MMM
@@ -4312,11 +4291,13 @@ RAW_SUPERSCRIPT_Y
 RAW_UNDERLINE_POSITION
 RAW_UNDERLINE_THICKNESS
 RAW_X_HEIGHT
+RAY TRACING
 RAY_TRACING_SHADER
 REACTION
 REFLECTS 
 RELATIVE_SETWIDTH
 RELATIVE_WEIGHT
+RENDER DEVICE
 RESOLUTION
 RESOLUTION_X
 RESOLUTION_Y
@@ -4325,12 +4306,11 @@ RGBA32
 RSDS`r/y
 RTProxy Layout
 RTProxyBLAS
-R\tV_log2f
-R\vp\fQK
+R\vp!G
+R\vpP
 Rand Paul
 Range: [%f,%f]
 RangeSrcItem = %I64d (0x%I64X), RangeSelected = %d
-Ranges
 Raw HSV values
 Ray trace shader material %s - has no default mode!\n
 Ray trace shader material %s has invalid RayTypeCount %d - must be between 1 and %d\n
@@ -4341,17 +4321,14 @@ Read FAQ for more details:
 Read comments in ShowExampleAppDockSpace()
 Read the FAQ at 
 ReadbackBuffer
+Real Update VT Atlas
 Realtime Plots
 Rebuild all
-ReceiveHairShadows
 Recent frames with allocations:
 Rect is %sclicked, %shovered, %sheld
 Rect of child window is: (%.0f,%.0f) (%.0f,%.0f)
 Rects Index
 Rects Index (%d)
-RecullDispatchArgs
-RecullRequestCount
-RecullRequests
 Recurse..
 Red shape is drawn after, into channel 0: appears in back
 Red shape is drawn after: appears in front
@@ -4361,19 +4338,15 @@ Reduce Scratch Buffer
 Reduce hit area to the text label and a bit of margin.
 RefScale=%f
 RefScale=%g\n
-ReflectDynamicObjectsOnly
 Reflection
 Reflection Render View
 ReflectionStencil
 ReflectionTemplate
 Refraction Render View
-RefractionClipPlaneAdjust
-RefractionReflectionAlreadyRendered
-RefractionsFromFramebuffer
 RegisterClassExW
 Registry
+Regular
 ReleaseCapture
-ReleaseDC
 Releases
 Reloaded %s into textureset\n
 Remaining
@@ -4398,13 +4371,11 @@ Render3DSphereOverlays
 Render3DVectorTextOverlays
 RenderLayerDrawListPart
 RenderPipelineAliases
-RenderReflections
-RenderStencilReflection
-RenderUnshadowedIfFailedShadowMapAllocation
 Rendering more items on the same line
 RenderingPipelineForwardManifest
 Reorderable Tabs
 Reorderable, hideable, with headers
+Reports what the current virtual texture residency would cost with 256x256 pages instead of 128x128
 Requested Blend Weight Limit of %d is too large, setting to system max of %d
 Requested split stream input layout from non-split material!
 Requires #define IMGUI_ENABLE_STB_TRUETYPE
@@ -4432,23 +4403,14 @@ ResizeNWSE
 ResizeX 
 ResizeY 
 ResizedColumn: %d, ReorderColumn: %d, HeldHeaderColumn: %d
+Resizing Vertex Cache Buffer from %s -> %s\n
 Resizing lock-free scratch allocation pool to %s.\n
 Resolve vel volume
 ResolveMSAARenderTargetIfNecessary
-ResolveVelocityTexture
-ResolvedHairCombinedDensityTexture
-ResolvedHairCombinedDensityTextureMip1
-ResolvedHairCombinedDensityTextureMip2
-ResolvedHairCombinedDensityTextureMip3
-ResolvedHairCombinedDensityTextureMip4
-ResolvedHairDensityTexture
-ResolvedHairDensityTextureMip1
-ResolvedHairDensityTextureMip2
-ResolvedHairDensityTextureMip3
-ResolvedHairTangentTexture
 Resource %s was created but never accessed\n
 ResourceCompiler/BakedLighting/DisableCullingForShadows
 ResourceCompiler/BakedLighting/LPVAtlas
+ResourceCompiler/WorldRendererBuilder/BakePrecomputedShadows
 ResourceCompiler/WorldRendererBuilder/UseStaticEnvMapForObjectsWithLightingOrigin
 Return to input text into a widget.
 Return value = %d\nIsItemFocused() = %d\nIsItemHovered() = %d\nIsItemHovered(_AllowWhenBlockedByPopup) = %d\nIsItemHovered(_AllowWhenBlockedByActiveItem) = %d\nIsItemHovered(_AllowWhenOverlappedByItem) = %d\nIsItemHovered(_AllowWhenOverlappedByWindow) = %d\nIsItemHovered(_AllowWhenDisabled) = %d\nIsItemHovered(_RectOnly) = %d\nIsItemActive() = %d\nIsItemEdited() = %d\nIsItemActivated() = %d\nIsItemDeactivated() = %d\nIsItemDeactivatedAfterEdit() = %d\nIsItemVisible() = %d\nIsItemClicked() = %d\nIsItemToggledOpen() = %d\nGetItemRectMin() = (%.1f, %.1f)\nGetItemRectMax() = (%.1f, %.1f)\nGetItemRectSize() = (%.1f, %.1f)
@@ -4475,14 +4437,8 @@ Ringsmall
 Roman
 Romney
 Root with Long Name
-RootViewIsOrthographic
-RootViewOrigin
-RootViewOrthoInvWidth
-RootViewSizeThreshold
-RootViewTanHalfFov
 RootWindow
 RootWindowDockTree
-RoughnessTextureCombo
 Rounding
 Row %d
 Row %d Column %d
@@ -4501,6 +4457,7 @@ S%S?a
 S+S6
 S:%0.3f
 S:%3d
+SCENESYSTEM INTERNALS
 SDBytes
 SETWIDTH_NAME
 SHADER_READ_BIT
@@ -4514,29 +4471,13 @@ SLANT
 SLSnSzS
 SMALL_CAP_SIZE
 SPACING
+SPHERE
 SRSd
 SSAOManifest
-SSAOOcclusionFactor
 SSTCopyDepthQuadLayout
 SSTCopyToCSM
-SSTDebugColor
 SSTGeneration
-SSTHeight
-SSTNumTilesX
-SSTNumTilesY
-SSTOutputPixelExcludeEndX
-SSTOutputPixelExcludeEndY
-SSTOutputPixelExcludeStartX
-SSTOutputPixelExcludeStartY
-SSTOutputPixelHeight
-SSTOutputPixelStartOffsetX
-SSTOutputPixelStartOffsetY
-SSTOutputPixelStartX
-SSTOutputPixelStartY
-SSTOutputPixelWidth
 SSTShadowClear
-SSTTileStartX
-SSTTileStartY
 SSTUnpack
 STARTCHAR
 STARTFONT
@@ -4558,8 +4499,6 @@ Same title as another window##1
 Same title as another window##2
 Sample
 Sample count
-SampleHairDensityTexture
-SampleVelocityTexture
 Sampler
 Sanders
 Santorum
@@ -4582,12 +4521,10 @@ Scatter Plot
 Scatter Plots
 Scedilla
 Scene World %3d: 0x%p %40s [%4d objects] 
-SceneDepth
 SceneGfxResources_RayTracing
 SceneLPVDebugGridObjectDesc
 SceneLPVDebugGridObjectVB
 SceneObjects
-SceneObjects drawn: %s in %s draw calls and %s meshlet dispatches\n
 SceneSystem/AssertViewportWithinFramebuffer
 SceneSystem/CMTAtlasHeight
 SceneSystem/CMTAtlasWidth
@@ -4612,8 +4549,6 @@ SceneSystem/GpuLightBinnerBinLPVs
 SceneSystem/GpuLightBinnerSupportViewModelCascade
 SceneSystem/HDRFrameBuffer
 SceneSystem/HairShading
-SceneSystem/LayerBatchThreshold
-SceneSystem/LayerBatchThresholdFullsort
 SceneSystem/LightCookieAllocGranularity
 SceneSystem/LightCookieMinAllocSize
 SceneSystem/MeshletBufferCPUSlotCount
@@ -4630,19 +4565,18 @@ SceneSystem/SkipLoadingRenderingPipelines
 SceneSystem/SparseShadowTrees
 SceneSystem/SubsurfaceProfiles
 SceneSystem/SupportNeedsDynamicShadows
-SceneSystem/SupportsInstancedFade
+SceneSystem/SupportsHybridInstancedFade
 SceneSystem/Tonemapping
 SceneSystem/TransformTextureRowCount
 SceneSystem/TransformTextureRowCountToolsMode
+SceneSystem/VirtualTextures
 SceneSystem/VolumetricFog
 SceneSystem/WellKnownLightCookies
 SceneSystem/WindController
 SceneSystemInit
-SceneSystemInitSM50
 SceneTLAS
 SceneView
 SceneViewDebugOverlays World
-SceneViewDebugOverlaysScreenTextFont
 SceneWorldDump
 Scenesystem render target token too large! Increase MAX_RT_NAME_SIZE in scenesystem/scenesystem.h!\n
 Score
@@ -4652,11 +4586,8 @@ ScrambledHaltonPermutations
 Scratch Buffer
 Scratch Keys
 Scratch Payload
-ScratchBuffer
 Screen-size: %.2f, alpha-fade %.2f, scale %.2f, fog scale %.2f 
-ScreenToClient
 Scroll %.1f/%.1f %.1f/%.1f
-Scroll Offset
 Scroll To Pos
 Scroll from code
 Scroll in the plot area to zoom both X and Y axes.
@@ -4678,7 +4609,6 @@ ScrollingRegion
 Search
 SearchBuffer = "%s"
 Searching..
-SecondaryViewIndex
 Sections below are demonstrating many aspects of the library.
 See "Columns flags" section to configure how indentation is applied to individual columns.
 See ImGui Wiki page 'Image Loading and Displaying Examples'.
@@ -4687,7 +4617,6 @@ See example applications in the examples/ folder.
 See the ShowDemoWindow() code in imgui_demo.cpp. <- you are here!
 See the ShowDemoWindow() code in implot_demo.cpp. <- you are here!
 Seed
-SegmentIndexBuffer
 Select..
 SelectAll
 Selectable
@@ -4711,7 +4640,6 @@ Selection: %d items
 Selection: %d/%d
 Selections can be built using Selectable(), TreeNode() or other widgets. Selection state is owned by application code/data.
 Selectors/Pickers
-SelfShadowStrength
 Semibold
 Semicolon
 Separator
@@ -4788,17 +4716,14 @@ Shaded Plots
 Shaded Plots##
 Shading Atlas
 Shadow
+Shadow Atlas
 Shadow Atlas Debugger
-Shadow strength %.2f, penumbra %.2f, filter radius %i\n
+Shadow strength %.2f (%.2f fog), penumbra %.2f, filter radius %i\n
 ShadowAtlas
 ShadowDepth
-ShadowDepthBuffer
-ShadowDepthBufferNoCmp
 ShadowTile Atlas Debugger
-ShadowTiles: %02i%% lights used, %s conservative, %s final\n
-ShadowTiles: %02i%% tiles used, %s all lit, %s all shadow, %s penumbra\n
-Shape %i\nSpeed Multiplier %.2f
 Shape %i\nStrength %.2f\nExponent %.2f
+ShapeOffset
 Share Items
 Shared FreeType Loader Flags:  0x%08X
 SharedFlags
@@ -4859,7 +4784,6 @@ Signal 1
 Signal 2
 Signal 3
 Sim reset
-SimBuffer
 Simple layout
 Simple overlay
 Simple overlay\n(right-click to change position)
@@ -4886,14 +4810,12 @@ Sizing:
 SkinnedObject
 SkinningCS_Dispatch
 Skip NaN
-SkyAmbientBounce
-SkyBounceScale
-SkyColor
-SkyIBLSource
-SkyTextureScale
+SkyBox
+SkyBox_LightingOnly
 Skybox
 Slant
 Slash
+Slice %d
 Slider
 SliderFloat
 SliderFloat (0 -> 1)
@@ -4907,6 +4829,7 @@ SmallButton
 SmallButton()
 SmoothNormals
 Snickersnee
+Solid Color Textures Resident: %5d (%3.1f%% of pages in use)
 Some %s text %d,%d\nOver two lines..
 Some Document
 Some Selectable
@@ -4923,12 +4846,9 @@ SomeOption
 Sort
 Sort Hair
 Sort=%d%c%n
-SortBuffer
 Sorting
 Sorting:
-SourceBufferOffset
 SourceIdx: %d
-South
 Space
 Space to activate a widget.
 SparseShadowTreeManifest
@@ -4953,7 +4873,6 @@ StartComposites
 StartData
 StartDirection
 StartFontMetrics
-StartIndex
 StartKernData
 StartKernPairs
 StartKernPairs0
@@ -4974,6 +4893,7 @@ Stems 1
 Stems 2
 Stencil Reflection Render View
 Stencil bit allocation failed\n
+Stencil override change
 StencilReflection
 Stock 1
 Stock 2
@@ -4982,15 +4902,14 @@ Stock Prices
 Stop and reset simulation
 Storage
 Strand Cull %%
-StrandThicknessTexture
 Strawberry
 Streamed
 Streamed In: %0.2f MB
 Streamed Out: %0.2f MB:
 Streaming Activity
+Streams
 Stretch + ScrollX
 Stretch Spacing
-StretchMultiplier
 StretchProp
 StretchSame
 Striding is useful for interleaved data (e.g. audio) or plotting structs.
@@ -5018,14 +4937,10 @@ SubsurfaceProfilesConstantBuffer_t
 SubsurfaceProfilesManifest
 Suggested
 Summary
-SunLightMinBrightness
 Super 
 Super+
 Supplement
 Supported features:
-SupportsLineRendering
-SurfaceIB
-SurfaceVertexCacheBuffer
 Swap
 Swap %s
 Swap Cmd<>Ctrl keys, enable various MacOS style behaviors.
@@ -5044,8 +4959,9 @@ TEST
 TEST##1
 TEST##2
 TETNTc
-TLAS: %s instances, %s geometries, %s instances size culled\n
+TLAS
 TOOLSCENE_OVERLAY_LAYER 
+TOOLS_DYNAMIC_IN_GAME 
 TOOLS_UNLIT_LAYER 
 TRANSFER
 TRANSFER_DST_OPTIMAL
@@ -5123,10 +5039,8 @@ TagX() needs to be called between BeginPlot() and EndPlot()!
 TagY() needs to be called between BeginPlot() and EndPlot()!
 Tailor
 TanFrameQuat
-TangentSpaceOffset
 Target RowBg0 to override the alternating odd/even colors,\nTarget RowBg1 to blend with them.
 Tcommaaccent
-TempBufferStartIndex
 Template view factory "%s" was registered twice!\n
 Test how different widgets react and impact the work rectangle growing when horizontal scrolling is enabled.\n\nUse 'Metrics->Tools->Show windows rectangles' to visualize rectangles.
 Test paragraph %d:
@@ -5152,6 +5066,7 @@ TextSelectedBg
 Texture #%03d (%dx%d pixels)
 Texture Area: about %d px ~%dx%d px
 Texture Memory
+Texture Name Filter
 Texture Visualizer
 Thanks for clicking me!
 The "Examples" menu above leads to more demo contents.
@@ -5213,12 +5128,14 @@ Tick Labels
 Tick Marks
 Ticks
 Tildesmall
+Tile Stream Latency, tiles per ms bucket (discarded before hookup: %u)
+TileStreamLatency
 Tilefish
 Time Scale
 Time Series
 TimeSlicedShadow
-TimeSlicedShadowMapRendering
 Timer took %.4f
+Timesliced shadow rendering is enabled for view %s, but no shadow atlas id is set: this will corrupt shadows\n
 Tint
 TinyBVH Fatal Error: %s at %s:%d
 TinyBVHFatalError
@@ -5246,7 +5163,6 @@ Too many cached shadows needed per frame, maximum is %i, failed to allocate %i t
 Too many non-culled draws (alloc %u, need %u), resizing!\n
 Tools/About Dear ImGui
 Tools/Style Editor
-ToolsAmbientLighting
 ToolsUtil
 ToolsUtil Opaque
 ToolsUtil Translucent
@@ -5263,6 +5179,8 @@ Tooltips
 Top-left
 Top-right
 Total : %d (%ukb)\n
+Total Completed Stream Events: %d
+Total Virtual Texture Pages: %7d, %3.2f%% resident
 TouchExtraPadding
 TouchScreen
 TraceRays
@@ -5288,7 +5206,6 @@ TreeNode
 TreeNode (w/ double-click)
 TreeNode() is technically supported but... using this correctly is more complicated (you need some sort of linear/random access to your tree, which is suited to advanced trees setups already implementing filters and clipper. We will work toward simplifying and demoing this.\n\nFor now the tree demo is actually a little bit meaningless because it is an empty tree with only root nodes.
 Trees
-Triangles rendered: %s\n
 Tris
 TrueType
 Trump
@@ -5309,6 +5226,7 @@ UEUeUt
 UG\vHs\vI@
 UID: 0x%08X
 UIDBase
+UNALLOCATED
 UNDEFINED
 UNDERLINE_POSITION
 UNDERLINE_THICKNESS
@@ -5318,6 +5236,7 @@ UNUSED
 UQ\vL
 USER GUIDE:
 USER:\nHold Shift or use mouse to select text.\nCtrl+Left/Right to word jump.\nCtrl+A or Double-Click to select all.\nCtrl+X,Ctrl+C,Ctrl+V for clipboard.\nCtrl+Z to undo, Ctrl+Y/Ctrl+Shift+Z to redo.\nEscape to revert.\n\nPROGRAMMER:\nYou can use the ImGuiInputTextFlags_CallbackResize facility if you need to wire InputText() to a dynamic string type. See misc/cpp/imgui_stdlib.h for an example (this is not demonstrated in imgui_demo.cpp).
+USES_CS_SKINNING
 USES_PAYLOAD
 USES_SHADOW_FAST_PATH
 UTF-8 Encoding viewer
@@ -5333,10 +5252,11 @@ Udieresis
 Udieresissmall
 Ugrave
 Ugravesmall
+Unable to AddTextureToSet( %s ): %s\n
+Unable to AddTextureToSet( %s ): Loading Texture failed\n
 Unable to cycle forground window, '%s' isn't in window list\n
 Unable to reload texture %s into textureset: %s\n
 Unable to reload texture %s into textureset: couldn't load from disk\n
-Unbatchable material draws: 
 Uncertain Data
 UnderlinePosition
 UnderlineThickness
@@ -5358,6 +5278,8 @@ UnregisterClassW
 Unsaved document
 UnsavedMarker
 UpArrow
+Update VT Page Table
+Update VT Texture Info Array
 UpdateAOProxySceneObject
 UpdateBuffers
 UpdateDirtyObjects
@@ -5401,26 +5323,38 @@ V$VYW
 V,V7VB
 V:%0.3f
 V:%3d
-V@GU
 VERTEX_ATTRIBUTE_READ_BIT
 VERTEX_INPUT
 VIEWMODEL_LAYER 
+VPages
+VT Mips
+VT residency as 256x256 pages, over %d textures:\n
+VT tile read failed for "%s": %s\n
+VT: Unsupported texture format %s\n
+VT: Unsupported texture size %s\n
+VT: Unsupported texture size or flags. %s\n
+VT: alloc failed for tex %d, %dx%d fmt %d, aliasing the error texture (%s)\n
+VT: created tex %d, %dx%d, %d mips%s, %d pages (%s)\n
+VT: destroyed tex %d, %d of %d pages were resident%s%s (%s)\n
+VT: no physical pages left for tex %d, sampling the error tile (%s)\n
+VT: tex %d low mips loaded, releasing the load (%s)\n
+VT: tex %d preload to %d, mips 2-%d, %d pages outstanding (%s)\n
+VT: tex %d preload to %d, nothing above the pinned mips, %d pages outstanding (%s)\n
+VTPageAtlas%s
+VTPageAtlasATI2N%s
+VTPageAtlasDXT5%s
 VVector
 Validate
 Value = %.3f <-- (1) right-click this text
+Variables
 Ve\fK
 Vector2f
-VelocityAccumVolume
 Version
 Vert:
-VertAliasBufferOffset
 VertCount
-Vertex Cache: %u updates in %u dispatches updating %u vertices\n
 VertexCache
-VertexCacheVB
 VertexColorPos_t
 VertexColorUVPos_t
-VertexCount
 VertexElementAnnotation
 VertexGenericIntegerData
 VertexPaintBlendParams
@@ -5428,7 +5362,6 @@ VertexPaintBlendParams1
 VertexPaintTintColor
 VertexPosInstanceUV_t
 VertexPostProcess_t
-VertexSize
 VertexUVPosColorNormalAndTangent_t
 VertexUVPos_t
 VertexWireFrame2D_t
@@ -5442,6 +5375,7 @@ View
 View "%s": %d layers\n
 View "%s": %d render target usage\n
 View "%s": %d render targets\n
+View %s: failed to allocate %ix%i CSM %i for %s -- %s\n
 View Profiler
 Viewport
 Viewport #%d, ID: 0x%08X, LastFocused = %08d, PlatformFocused = %s, Window: "%s"
@@ -5454,7 +5388,19 @@ ViewportPos=%d,%d\n
 ViewportPos=%i,%i
 Viewports
 Viewports (%d)
+Views: %d, shadow %d (fog-only %d)  |  CPU: %02.01fms, shadow %02.01fms (fog-only %01.01fms)
 Viridis
+Virtual Texture Debugger
+Virtual Textures: %d
+Virtual texture page atlas: %u -> %u slices, evicting all tiles\n
+Virtual texture page atlas: could not create %u slices, staying at %u\n
+VirtualTextureAuxBuffer
+VirtualTextureCompactUsageBuffer
+VirtualTextureInfo
+VirtualTextureMgrManifest
+VirtualTexturePageTable
+VirtualTexturePatchList
+VirtualTextureUsageBuffer
 Visible: %d
 Visible=%d%n
 VisibleWindow
@@ -5463,13 +5409,13 @@ VisualizeCulled
 Voltage
 VolumeMaxs
 VolumeMins
-VolumetricFogConstantBuffer_t
 VolumetricFogManifest
-VolumetricFogVolumes
-VoxelSpaceFromWorldSpace
 Voxelize Density
 Voxelize Tangents
+Vp^Y
 Vsmall
+VtFrameUpdate
+VtUpdateGPUDataStructures
 W$W>WBWSW
 W,W6
 W?U7
@@ -5489,8 +5435,8 @@ WantDestroy
 WantUpdates
 Warning: Font scaling will NOT be smooth, because\nImGuiBackendFlags_RendererHasTextures is not set!
 Warning: Sizing Constraints won't work if the window is docked!
-Warning: failed to split large node (%i tris).\n
 Warning: owning Window is inactive. This DrawList is not being rendered!
+WaterRTProxy
 Watermelon
 Waves
 We are colorizing cells to B1->C2 here.
@@ -5500,7 +5446,6 @@ We often want outer padding activated when any using features which makes the ed
 Weight=%f%n
 WeightVector
 Welcome to Dear ImGui!
-West
 WheelingAxisAvg[] = { %.3f, %.3f }, Main Axis: %s
 WheelingWindow: '%s'
 WheelingWindowReleaseTimer: %.2f
@@ -5678,6 +5623,7 @@ XInputGetState
 XK+G
 XUID
 X_HEIGHT
+X`hrP
 Xo1 WB
 Xsmall
 Y 3A
@@ -5733,9 +5679,11 @@ Zsmall
 [%s] [%05d] 
 [%s][0x%08X,%d]\n
 [%s][Data]\n
+[..-         -XXXXXXX-    X    -           X           -XXXXXXX          -          XXXXXXX-     XX          - XX       XX ..-         -X.....X-   X.X   -          X.X          -X.....X          -          X.....X-    X..X         -X..X     X..X---         -XXX.XXX-  X...X  -         X...X         -X....X           -           X....X-    X..X         -X...X   X...XX           -  X.X  - X.....X -        X.....X        -X...X            -            X...X-    X..X         - X...X X...X XX          -  X.X  -X.......X-       X.......X       -X..X.X           -           X.X..X-    X..X         -  X...X...X  X.X         -  X.X  -XXXX.XXXX-       XXXX.XXXX       -X.X X.X          -          X.X X.X-    X..XXX       -   X.....X   X..X        -  X.X  -   X.X   -          X.X          -XX   X.X         -         X.X   XX-    X..X..XXX    -    X...X    X...X       -  X.X  -   X.X   -    XX    X.X    XX    -      X.X        -        X.X      -    X..X..X..XX  -     X.X     X....X      -  X.X  -   X.X   -   X.X    X.X    X.X   -       X.X       -       X.X       -    X..X..X..X.X -    X...X    X.....X     -  X.X  -   X.X   -  X..X    X.X    X..X  -        X.X      -      X.X        -XXX X..X..X..X..X-   X.....X   X......X    -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -         X.X   XX-XX   X.X         -X..XX........X..X-  X...X...X  X.......X   -  X.X  -   X.X   -X.....................X-          X.X X.X-X.X X.X          -X...X...........X- X...X X...X X........X  -  X.X  -   X.X   - X...XXXXXX.XXXXXX...X -           X.X..X-X..X.X           - X..............X-X...X   X...XX.........X -XXX.XXX-   X.X   -  X..X    X.X    X..X  -            X...X-X...X            -  X.............X-X..X     X..XX..........X-X.....X-   X.X   -   X.X    X.X    X.X   -           X....X-X....X           -  X.............X- XX       XX X......XXXXX-XXXXXXX-   X.X   -    XX    X.X    XX    -          X.....X-X.....X          -   X............X--------------X...X..X    ---------   X.X   -          X.X          -          XXXXXXX-XXXXXXX          -   X...........X -             X..X X..X   -       -XXXX.XXXX-       XXXX.XXXX       -------------------------------------    X..........X -             X.X  X..X   -       -X.......X-       X.......X       -    XX           XX    -           -    X..........X -             XX    X..X  -       - X.....X -        X.....X        -   X.X           X.X   -           -     X........X  -                   X..X  -       -  X...X  -         X...X         -  X..X           X..X  -           -     X........X  -                    XX   -       -   X.X   -          X.X          - X...XXXXXXXXXXXXX...X -           -     XXXXXXXXXX  -             -------------       -    X    -           X           -X.....................X-           -------------------                                 ----------------------------------- X...XXXXXXXXXXXXX...X -                                                                                                 -  X..X           X..X  -                                                                                                 -   X.X           X.X   -                                                                                                 -    XX           XX    -                                           
 [DUMP: Scene World %d: 0x%p '%s': %d objects]\n
 [Debug] Add 5 entries
 [Experimental] Tree lines may not work in all situations (e.g. using a clipper) and may incurs slight traversal overhead.\n\nImGuiTreeNodeFlags_DrawLinesFull is faster than ImGuiTreeNodeFlags_DrawLinesToNode.
+[\t~~~~~~~~~~~~~~~~~
 [beta] Enable beta multi-viewports support. See ImGuiPlatformIO for details.
 [c0.x0 c0.y0 ... cn.x0 cn.y0 c0.x1 c0.y1 ... cn.x1 cn.y1 ... cn.xm cn.ym]
 [docking] - Tab 0x%08X '%s' Order %d\n
@@ -5828,8 +5776,7 @@ Zsmall
 \fG7+B
 \fPy\vE
 \fT>M-+?#gy?
-\fp\fQK
-\fp\v`l9K
+\n  Overhead: %d extra 128x128 pages dragged in, %.1f%% of the %d resident now.\n
 \n Render %d specific objects
 \n Render world : %s\n
 \n"\n)\n7\nA\nH\nS\nc\np\n|\n
@@ -5838,23 +5785,22 @@ Zsmall
 \n<i>PerViewConstantBuffer_t</i>
 \n<i>Procedural Layer</i>
 \nAM\nA
+\nTNf
 \nYg:a
 \naI1 
 \r%\r1\rB\rQ\rZ\rf\rr\r~\r
-\r`l9K
 \t \t$\t6\tI\tY\th\ts\tz\t
 \tLayer %d "%s": %d inputs, %d outputs\n
 \tLayer %d "%s"\n
 \tRT %dx%d %s %dx MSAA used by %s\n
 \tTarget %d "%s": [FMT-> %s] [MSAA-> %s] [%s size : %d %d]\n
-\tV_exp2f
+\tV_log2f
 \t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\v\n\v\n\v\n\v\n\v\n\v\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\f\r\f\r\f\r\f\r\f\r\f\r\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
 \t\tInputs:\n
 \t\tLayer %d (%32s):\t
 \t\tOutputs:\n
 \t\tRender Attributes:\n
 \t\tRender Target Desc:\n
-\t\tV_atanf
 \t\t\t"%s": msaa = %s\n
 \t\t\tColor Target %d: HRT = %llX, MSAA = %s, Resolve = %llX, Width = %d, Height = %d\n
 \t\t\tDepth Target: HRT = %llX, MSAA = %s, Resolve = %llX, Width = %d, Height = %d\n
@@ -5865,7 +5811,6 @@ Zsmall
 \v"\v,\v9\vE\vR\v[\ve\vr\v
 \vDC\vL
 \vMn1Y?
-\vp\fQK
 \x%02x
 _AngledHeader
 _COL3F
@@ -5907,16 +5852,10 @@ _WidthFixed
 _WidthStretch
 _XFREE86_GLYPH_RANGES
 _atlas
-`6P(U
-`6p U
-`I3a
-`QCa
-`f\DK
-`l9K
-`n\DK
+`6@tY
+`6`lY
 a'aCaYb"b8b
 a-a8
-aBv\DK
 aJ!\vA
 aJaP
 a\ft/tOtet
@@ -5932,27 +5871,50 @@ acosf
 active resources
 active sceneobject: %i clusters
 acute
-additionalExcludedFlags
-additionalRequiredFlags
 adieresis
 adobe
 aeam
+aggregate
+aggregate cullrequests
+aggregate meshlet indirect dispatch
+aggregate meshlet indirect dispatch recull
+aggregate meshlet overflow handling
 aggregate.fragmentCount
+aggregate.material_flags
 aggregate.material_name
 aggregate.meshletCount
 aggregate.model_name
+aggregate.object_flags
 aggregates
 agrave
 ahoj
 aliasing
+allocated
 alphatest
 ampersand
 ampersandsmall
 analog_%d
 analog_0
 analog_1
+animatable meshlet overflow handling
+animatable object cull request
+animatable scene object
+animatable visibility indices
+animatable.gpucull.%d
+animatable.gpucull.%d.blend_weight_count
+animatable.gpucull.%d.curve_basis_count
+animatable.gpucull.%d.dispatch_index
+animatable.gpucull.%d.model_name
+animatable.gpucull.%d.num_meshlets
+animatable.material_name
+animatable.meshletCount
+animatable.model_name
+animatable.object_flags
+animatable.objecttype_flags
+animatable.vertexCache
 another one of those tree node...
 another popup
+ao proxies
 ao_proxy_box_list
 ao_proxy_capsule_list
 apple
@@ -5969,19 +5931,11 @@ b%d (%.02f secs)
 b(b0
 bBbMb
 bDisableDynamicRefractionMap
-bDrawAlphaTested
-bDrawNeedsDynamicShadows
-bDrawTranslucent
-bDrawViewModel
 bNeedsDynamicReflectionMap
-bOpaqueFade
 bReflectDynamicObjectsOnly
-bSSTCables
-bSSTGenerate
 bTbm
-bUseFullSort
-bUseFullsort
 b^be
+backface
 backslash
 bad_weak_ptr
 baked_shadow_index
@@ -5989,15 +5943,28 @@ baked_shadow_light_id
 barn
 barnlightconstants
 bars
+base scene object
+base scene object cull request
+baseobject.material_name
+baseobject.meshletCount
+baseobject.model_name
+basesceneobject meshlet indirect dispatch
+basesceneobject meshlet indirect dispatch debug
+basesceneobject meshlet indirect dispatch recull
+basesceneobject visibility indices
 batchlist
+batchlist.batch_id
 batchlist.descriptor
 batchlist.flags_str
 batchlist.flags_uint
+batchlist.last_batch_break
+batchlist.view_gpu_cull_id
 bbb1.c
 bbb2.cpp
 bbbb
 benb_32028_2897001788_0_expectfail
 bentnormal
+binary
 bip_head
 blah blah
 blas scratch memory
@@ -6006,11 +5973,10 @@ blendweight
 blendweights
 blue
 bmys
+boECdpECdpECdpECdp
+bodygroup
 bonename
 bootstrap
-bounce
-bounce_scale
-bouncelight
 braceleft
 braceright
 bracketleft
@@ -6036,6 +6002,7 @@ canvas
 caron
 cascade %d%s
 casing swap
+cb updates
 ccaron
 ccc1.c
 ccc2.cpp
@@ -6050,14 +6017,18 @@ centsuperior
 cff-load
 cfg/imgui_%s
 cfg_infos
+cfog
+changes
 char*
 checkbox
 cinu
 circumflex
+clamping cascade count
 clap
 click here
 click on a button to set focus
 closefile
+clutter
 coincident
 collinear_mightfail
 collinear_parallel_concave_expectfail
@@ -6084,23 +6055,17 @@ compacted draw count
 compacted drawindirectargs
 compaction requests
 compressedtangentframe
+computes
 concave
 context
 copy_rt
 copyright
 cpop
 created by %s
-csmMaxVisibleDistance
-csmNoViewModel
-csmPushbackDistance
-csmPushbackDistanceViewModel
-csmSplitPlaneDistance0
 cube
 cube arr
-cull requests
 cullbitsbuffer
 cullplanesbuffer
-cullrequests
 cullstats
 currency
 curvature
@@ -6112,6 +6077,7 @@ dagger
 daggerdbl
 darkening-parameters
 data%d
+db/`P
 dcroat
 dddd
 dear imgui says hello! (%s) (%d)
@@ -6140,8 +6106,8 @@ digital_%d
 digital_0
 digital_1
 dimensions
-directlight
 display very important message here!
+dist
 divide
 docs/BACKENDS.md
 dollar
@@ -6175,11 +6141,11 @@ drag u32
 drag u64
 drag u8
 draw2D
-drawShadows
 drawcounts
 drawindirectargs
 drawindirectargs_recull
 drawmaterialquad2
+draws
 drop here##0
 drop here##1
 dsuperior
@@ -6187,7 +6153,8 @@ dual_lobe_roughness_0
 dual_lobe_roughness_1
 dual_lobe_roughness_mix
 dummybuffer
-dynamicbounce
+dummybuffer_r32uint
+dyn materials
 e e%e.e=eM
 eZe}e
 eacute
@@ -6203,6 +6170,7 @@ eightoldstyle
 eightsuperior
 ellipsis
 emdash
+emissive
 emissive_lighting_boost
 endash
 enter text here
@@ -6214,7 +6182,6 @@ exclam
 exclamdown
 exclamdownsmall
 exclamsmall
-excludeStatic
 eye_data_list
 eye_target
 eye_target_bone_index
@@ -6249,7 +6216,6 @@ f(x) = sin(x+.5)*100+200
 f?yu
 fPfo
 fWfc
-f\DK
 fakeview
 fallback-script
 far_blue
@@ -6269,8 +6235,6 @@ fiveeighths
 fiveinferior
 fiveoldstyle
 fivesuperior
-flDepthBiasClamp
-flSlopeScaledDepthBias
 flWaterDepth
 flWaterStart
 flags3
@@ -6291,7 +6255,7 @@ float0
 float1
 florin
 fog volumes
-fog_cached_shadow_atlas
+fog_cached
 font-format
 for_sort_specs_only
 four
@@ -6306,26 +6270,18 @@ freeze_cols
 freeze_rows
 fresnel_exponent
 frustum
+full sets
 fullscreenquad
 func
 g5g>gK
 g?Q1
 gZgnhKhWhci
-g_bEnableDensityCulling
-g_bEnableFrustumCulling
-g_bEnableSizeCulling
-g_consts
-g_flHealBloodAmount
-g_flHealHeightAmount
-g_tFogIndirect
-g_tHeightfield
-g_tLastFrameFogVolume
-g_tMonitorColor
-g_tNoise
-g_tPreviousRT
-g_vDecalCenter
+g_binLightsSet
+g_groomResourcesDescSet
+g_lightBinnerGpuSet
+g_rtxCameraDescSet
+g_sceneDescriptorSet
 gbreve
-generatecullrequests
 germandbls
 global_scale = ~%0.2f
 glyf
@@ -6333,8 +6289,7 @@ glyph
 glyph-dict
 glyph-to-script-map
 glyphs
-gpuPreviewPathTraceLightIndex
-gpuPreviewShadowSlot
+gpu mem
 grave
 greater
 greaterequal
@@ -6342,7 +6297,6 @@ guillemotleft
 guillemotright
 guilsinglleft
 guilsinglright
-h12a
 h>4hp?
 hair
 hairdensityaccumvolume
@@ -6371,9 +6325,10 @@ hitgroup_default_opaque:%d
 hitgroup_default_transparent:%d
 hitgroup_shader_%p
 hl?S
+hm&f
 horizontal
 horizontal split
-hpz` 
+hpz 
 https://github.com/epezent/implot
 https://github.com/ocornut/imgui
 https://github.com/ocornut/imgui/blob/master/docs/BACKENDS.md
@@ -6401,6 +6356,7 @@ id_unused
 idieresis
 ignore
 igrave
+ih> Gl>\f.p>
 illum
 illumfrustum
 illumination_volume
@@ -6420,6 +6376,7 @@ incl. Discarded rects: %d, area: about %d px ~%dx%d px
 increase-x-height
 index
 indexbuffer
+initial
 inner_width
 inner_width (when ScrollX active)
 input double
@@ -6448,19 +6405,22 @@ instance buffer
 instance cull stats
 instance cull stats shadow
 instanced
+instanced mesh cull requests
 instanced mesh data
-instanced meshlet data
 instanced meshlet indirect dispatch
 instanced meshlet indirect dispatch debug
 instanced meshlet indirect dispatch recull
+instanced meshlet overflow handling
 instancedmesh.material_name
 instancedmesh.max_instances
 instancedmesh.model_name
 instancedmesh.models_dispatched
 instancedmesh.models_dispatched_count
+instancedmesh.objectflags
 instanceidbuffer
 instanceidbuffer2
 instances
+instmesh
 integral
 interpreter-version
 io.BackendFlags: 0x%08X
@@ -6539,6 +6499,7 @@ isuperior
 item view
 items_count
 items_type (first column)
+its RT dynamic material draws cannot be computed (texcoord 0 format, or shadow-only draws)
 jDjK
 j[ros
 jasonm_433ce42d
@@ -6566,7 +6527,6 @@ light AABB: %i clusters
 light frustum & illum bounds: %i clusters
 light frustum: %i clusters
 light illum bounds: %i clusters
-lightSetupPass
 light_cookie
 lightbinner
 lighting_array_fog_RT1.vtex
@@ -6591,27 +6551,21 @@ mRmom}m
 mXme
 m\tm9e
 m_Endpoints
+m_Format
+m_InstanceOrientations32
 m_Luminaire
 m_Positions
 m_ScaledTangents
 m_Tangents
-m_bBakedTwoSided
-m_bCanBatchWithDynamicShaderConstants
-m_bDrawLast
-m_bHasBakedLightingFromLightMap
-m_bHasBakedLightingFromVertexStream
-m_bIsNotMatchedToMaterial
+m_VisClusterMemberBits
 m_bLightInsideFrustum
-m_bNoShadow
-m_bOnlyShadow
-m_bUseCompressedNormalTangent
-m_bUseShadowFastPath
 m_flEndcapAreaPercentage
 m_flLightColorToRadiance
 m_mFromClipSpace
 m_mToClipSpace
 m_nCookie
 m_nLuminaireType
+m_pDuplicateDispatchPrimitives != nullptr
 m_vAngleFade
 m_vColor
 m_vDistanceFade
@@ -6633,6 +6587,7 @@ materials/dev/cs_parallel_sort_onesweep.vmat
 materials/dev/cs_volumetric_fog.vmat
 materials/dev/cull_aggregate_fragments.vmat
 materials/dev/cull_instanced_meshes.vmat
+materials/dev/cull_scene_objects.vmat
 materials/dev/debug_show_texture.vmat
 materials/dev/debug_solid.vmat
 materials/dev/debug_ui.vmat
@@ -6641,7 +6596,6 @@ materials/dev/debug_wireframe_2d.vmat
 materials/dev/deferred_hair_shadowtile_compute.vmat
 materials/dev/downsample.vmat
 materials/dev/generalfilter.vmat
-materials/dev/generate_aggregate_cull_requests.vmat
 materials/dev/generate_decal_normals.vmat
 materials/dev/hair_composite.vmat
 materials/dev/hair_noise_lut.vtex
@@ -6653,6 +6607,7 @@ materials/dev/hair_sim_cs.vmat
 materials/dev/imgui.vmat
 materials/dev/lpv_debug_grid.vmat
 materials/dev/luminaire.vmat
+materials/dev/meshlet_refit_cs.vmat
 materials/dev/morphcomposite.vmat
 materials/dev/occlusionproxy.vmat
 materials/dev/occlusionproxy_countdraw.vmat
@@ -6675,12 +6630,16 @@ materials/dev/sum_aggregate_cull_stats.vmat
 materials/dev/visualize_aggregate.vmat
 materials/dev/visualize_depth.vmat
 materials/dev/visualize_instanced.vmat
+materials/dev/visualize_rtproxy.vmat
+materials/dev/vt_cs.vmat
+materials/dev/vt_debug_imgui.vmat
 materials/dev/wind_noise_cs.vmat
 materials/dev/wind_update_cs.vmat
 materials/rendertargetops/copydepth.vmat
 materials/subsurface_profiles.vdata
 materials/tools/copy_texture_with_gamma.vmat
 materials/tools/copy_to_backbuffer.vmat
+matrix3x4_t
 matrix3x4a_t
 mattestquad
 maxdate
@@ -6688,19 +6647,20 @@ maxp
 maxtime
 medium
 mergedindices
+meshlet
 meshlet buffer
 meshlet input layouts
-meshletdata
+meshlet refit requests
+meshlets
 metrics-variations
 min_row_height = %.2f
 mindate
 mintime
 minus
 mixed
+model %s, alloc [%i,%i %ix%i]
 morphcomposite
 msaa copy
-msindirectdispatchargs
-msindirectdispatchargsrecull
 msuperior
 multi-masters
 multiply
@@ -6714,20 +6674,16 @@ mycolumns3
 mypicker
 n r x z o e s c
 n2n?
-nCascade
 nCompressedSize == nUncompressedSize
-nDepthBias
 nIndex < m_RenderTargets.Count()
 nPnq
 nPrevTransformBufferIndex < V_ARRAYSIZE( m_transformBufferSlotsForIndex )
-n\DK
 n^nf
 nan_expectfail
 near_blue
 near_green
 near_red
 near_weight
-new sum
 nine
 nineinferior
 nineoldstyle
@@ -6738,10 +6694,10 @@ no verts
 no-stem-darkening
 nomsaa copy
 nonbreakingspace
+none of its materials support them
 nonmarkingreturn
 not 
 notequal
-np@U
 nsuperior
 ntilde
 numbersign
@@ -6750,6 +6706,7 @@ o O 0
 oEoOoZoaozo
 oacute
 obj %d
+occl
 occlusionproxyvb
 ocircumflex
 odieresis
@@ -6758,7 +6715,6 @@ offset_origin
 ogonek
 ograve
 ohoq
-old sum
 onedotenleader
 oneeighth
 onefitted
@@ -6780,11 +6736,10 @@ outer_size
 overlaps
 p q g j y
 p#p7pP
-p08@H^\DK
-p60JU
-p>\DK
+p0jp
+p2 b
 pCRF
-p\fQK
+pF@dY
 paragraph
 parallel
 parenleft
@@ -6812,11 +6767,9 @@ perthousand
 pervertexlighting
 pfr-metrics
 picker
-pl9K
 plots
 plus
 plusminus
-pn\DK
 pos2Dtex2D
 post
 postscript-cmaps
@@ -6824,7 +6777,6 @@ postscript-font-name
 postscript-info
 posxyz
 prepi
-prev layer not found
 product
 psaux
 pshinter
@@ -6847,7 +6799,6 @@ quoteright
 quotesinglbase
 quotesingle
 r*r4r;
-r0c!
 rQr\
 radical
 radio a
@@ -6860,26 +6811,15 @@ range int (no bounds)
 raster1
 ratio = %.3f
 read FAQ "About ID Stack System"
-recullcounter
+recull
 reculldispatchargs
 recullrequests
-reflection_clip_plane
-reflection_outputcolor
-reflection_outputdepth
-refraction_clip_plane
-refraction_outputcolor
 registered
-renderDecals
-renderSSAO
-renderToCubemap
-renderViewModel
 rendertarget_
 rendertarget_dscratch_%d_%d_%d.vtex
 rendertarget_r11g11b10f_%d_%d
 rendertarget_scratch_16161616F_mip_%d_%d
-rendertarget_ssao_depth_%d_%d
 rendertargets
-requireStatic
 resolved_rt
 resource.frk/
 ride
@@ -6906,6 +6846,7 @@ scedilla
 scene_quadindexbuffer
 scenegfxresources
 sceneinfo_gpu - Load Materials
+sceneobject cull stats
 sceneobject_h
 scenesimpleidx
 scenesimplevb
@@ -6925,6 +6866,7 @@ script_b94a0343
 scroll
 scrolling
 seaborn style
+seen this frame
 semicolon
 set1
 set2
@@ -6939,19 +6881,22 @@ sfnt-table
 sfnts
 shaded pass
 shadow
-shadowFarZ
-shadow_atlas
+shadow_atlas_%dx%d.vtex
 shadowtile_hairvolumeinfo
 shcore.dll
 show_headers
 show_widget_frame_bg
 show_wrapped_text
+shrinking cascade
 sijs
 sixinferior
 sixoldstyle
 sixsuperior
 sizeof(size_t): %d, sizeof(ImDrawIdx): %d, sizeof(ImDrawVert): %d
+skinnedmeshletcache
 skinnedvertexcache
+sky_bounce
+sky_bounce_scale
 slash
 slider angle
 slider double high
@@ -7064,6 +7009,7 @@ tangent
 tangentu_signv
 tcommaaccent
 tesidx
+tested
 tests1
 texcoord
 texture_memory
@@ -7122,33 +7068,36 @@ ucircumflex
 udieresis
 ugrave
 uluzu
+unbatchable
 underscore
 undo_point: %d, redo_point: %d, undo_char_point: %d, redo_char_point: %d
 undopoints
 unicode#0x0001
-uniform_color
+uniform_sky_color
+unique mats
 uppercase
+used
 uvtangent
-v 0U
 v8vUb
-v\DK
 vertex cache
 vertex cache instances
 vertexbuffer
 vertical
 vertical split
 very_fast
+vfx evals
 views
 vnvyv
 void_context
 volumetric fog
 volumetric_fog.vtex
+vt_analyze_256_pages
+vt_evict_all
+vt_stream_latency_reset
 wDwNwYw`wy
 wH>r
 warn
 warping
-waterDepth
-waterStart
 wellknown_black_1x1
 wellknown_black_2x2x2
 wellknown_black_cube_1x1
@@ -7156,6 +7105,8 @@ wellknown_black_cube_array_1x1x1
 wellknown_checker_2x2.vtex
 wellknown_depth_d32_black.vtex
 wellknown_depth_d32_white.vtex
+wellknown_grey_1x1
+wellknown_grey_1x1x1
 wellknown_one_16bit_1x1
 wellknown_one_array_16bit_1x1x1
 wellknown_opaque_black_2x2x2
@@ -7166,6 +7117,7 @@ wellknown_white_1x1
 wellknown_white_1x1x1
 wellknown_white_array_1x1x1
 wellknown_zero_1x1_uint.vtex
+wellknown_zero_1x1x1_uint.vtex
 wgwp
 wind
 wind volumes
@@ -7177,6 +7129,7 @@ window_context
 winfonts
 with Hovering Delay or Stationary test:\nIsItemHovered() = %d\nIsItemHovered(_Stationary) = %d\nIsItemHovered(_DelayShort) = %d\nIsItemHovered(_DelayNormal) = %d\nIsItemHovered(_Tooltip) = %d
 word-wrapping
+written
 x%ixAA
 x-axis
 x=150
@@ -7209,6 +7162,4 @@ zerooldstyle
 zerosuperior
 zezn
 };\nImPlotColormap %s = ImPlot::AddColormap("%s", %s_Data, %d);
-}\r0IU
-}~~~~~~~~~~~~~~~~
 ~wZ\tBu

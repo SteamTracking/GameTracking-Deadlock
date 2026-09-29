@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CProjectile_Rolling_FireBall : public CCitadelProjectile
 {
 	bool m_bHitWorld;

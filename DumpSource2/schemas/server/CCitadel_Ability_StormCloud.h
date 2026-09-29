@@ -1,11 +1,6 @@
-// MNetworkVarNames = "float m_flFloat"
-// MNetworkVarNames = "int m_nLightningStrikesRemaining"
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_StormCloud : public CCitadelBaseAbility
 {
 	ParticleIndex_t m_nTargetingParticleIndex;
-	// MNetworkEnable
 	float32 m_flFloat;
-	// MNetworkEnable
 	int32 m_nLightningStrikesRemaining;
 };

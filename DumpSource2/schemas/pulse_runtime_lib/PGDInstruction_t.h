@@ -10,7 +10,8 @@
 //	"m_nCallInfoIndex": -1,
 //	"m_nConstIdx": -1,
 //	"m_nDomainValueIdx": -1,
-//	"m_nBlackboardReferenceIdx": -1
+//	"m_nBlackboardReferenceIdx": -1,
+//	"m_nTempVarIdx": -1
 //}
 class PGDInstruction_t
 {
@@ -26,4 +27,5 @@ class PGDInstruction_t
 	PulseRuntimeConstantIndex_t m_nConstIdx;
 	PulseRuntimeDomainValueIndex_t m_nDomainValueIdx;
 	PulseRuntimeBlackboardReferenceIndex_t m_nBlackboardReferenceIdx;
+	PulseRuntimeTempVarIndex_t m_nTempVarIdx;
 };

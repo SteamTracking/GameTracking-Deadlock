@@ -1,12 +1,12 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/post_game/citadel_db_post_game_progress_mvp.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/post_game/citadel_db_post_game_progress_mvp.vcss" />
 	</styles>
 	<scripts>
-		<include src="s2r://panorama/scripts/async.vts_c" />
-		<include src="s2r://panorama/scripts/post_game/citadel_db_post_game_progress_mvp.vts_c" />
+		<include src="s2r://panorama/scripts/async.vts" />
+		<include src="s2r://panorama/scripts/post_game/citadel_db_post_game_progress_mvp.vts" />
 	</scripts>
 	<snippets>
 		<snippet name="MVPHonorableMention">
@@ -14,26 +14,25 @@
 				<Panel class="MainContents">
 					<Panel class="HeroFrame">
 						<CitadelHeroScenePanelNew id="HeroScenePanel" heroscenestyle="PostGamePortrait" />
-						<Panel class="KeyPlayerForeground" />
 					</Panel>
-					<Panel class="KeyPlayerIdentity">
+					<Panel class="KeyPlayerIdentity" hittestchildren="false">
 						<Label class="KeyPlayerTitle" text="#Citadel_Post_Game_MVP_HonorableMention" />
 						<CitadelHeroLogo id="HeroLogo" />
 					</Panel>
+					<ParticleScenePanel id="CommendFX" hittest="false" particleonly="false" particleName="particles/ui/ui_commend.vpcf" fov="20" cameraOrigin="200 0 0" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" startActive="false" />
 					<Panel class="Icon" />
 				</Panel>
 				<Panel id="Accolades" />
-				<Panel id="Awards" />
+				<Panel id="Awards" hittestchildren="false" />
 				<Panel class="Footer">
 					<Panel class="HeroNameContainer">
 						<CitadelHeroBadgeIcon id="HeroBadgeIcon" class="PostGame" />
 						<Label class="HeroName" text="{s:hero_name}" />
 					</Panel>
 					<CitadelUserName id="PlayerName" />
-					<Button id="CommendButton" focusonmousedown="false" class="CommendButton" onmouseover="UIShowTextTooltip( &apos;#Citadel_MatchDetails_CommendTooltip&apos; )" onmouseout="UIHideTextTooltip()">
-						<Panel id="commendIcon" />
-					</Button>
 				</Panel>
+				<Panel class="GotCommendedIcon" />
+				<Panel id="HeroScenePanelMask" />
 			</Panel>
 		</snippet>
 	</snippets>
@@ -46,9 +45,10 @@
 			<Label class="KeyPlayerHeader" text="#Citadel_Post_Game_MVP_KeyPlayers" />
 		</Panel>
 		<Panel class="MVPHeroContainer">
-			<CitadelHeroSpotlight id="MVPHeroSpotlight" />
+			<CitadelHeroSpotlight id="MVPHeroSpotlight" heroscenestyle="HeroReveal" />
 		</Panel>
-		<Panel class="MVPDetails">
+		<ParticleScenePanel id="MVPCommendFX" hittest="false" particleonly="false" particleName="particles/ui/ui_commend.vpcf" fov="20" cameraOrigin="200 0 0" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" startActive="false" />
+		<Panel class="MVPDetails Player" hittest="false">
 			<Panel class="MVPTrophySet">
 				<Panel class="Icon" />
 				<Panel class="MVPTrophy" />
@@ -64,9 +64,8 @@
 				<Panel class="PlayerInfo">
 					<Label class="MVPPlayedBy" text="#Citadel_Post_Game_PlayedBy" />
 					<CitadelUserName id="MVPPlayerName" />
-					<Button id="MVPCommendButton" class="CommendButton" focusonmousedown="false" onmouseover="UIShowTextTooltip( &apos;#Citadel_MatchDetails_CommendTooltip&apos; )" onmouseout="UIHideTextTooltip()">
-						<Panel id="commendIcon" />
-					</Button>
+					<Panel class="GotCommendedIcon" />
+					<Panel id="MVPHeroScenePanelMask" hittest="true" />
 				</Panel>
 			</Panel>
 		</Panel>

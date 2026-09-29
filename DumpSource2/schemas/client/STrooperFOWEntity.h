@@ -1,15 +1,7 @@
-// MNetworkVarNames = "CEntityIndex m_nEntIndex"
-// MNetworkVarNames = "int8 m_nTeam"
-// MNetworkVarNames = "uint16 m_nPositionXY"
 // MIgnoreTypeScopeMetaChecks
 class STrooperFOWEntity
 {
-	// MNetworkEnable
-	CEntityIndex m_nEntIndex;
-	// MNetworkEnable
-	int8 m_nTeam;
-	// MNetworkEnable
-	// MNetworkPriority = 32
-	// MNetworkChangeCallback = "OnFieldXYChanged"
-	uint16 m_nPositionXY;
+	uint8 m_nPosX;
+	uint8 m_nPosY;
+	uint8 m_nFlags;
 };

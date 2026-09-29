@@ -5,4 +5,5 @@ class CGameModifier_OverrideTargetIdentifier : public CCitadelModifier
 	EntityAttachmentType_t m_nOriginType;
 	CGlobalSymbol m_sAttachmentName;
 	AttachmentHandle_t m_hAttachment;
+	CRelativeLocation m_relativeLocation;
 };

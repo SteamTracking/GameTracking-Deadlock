@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -114,9 +115,6 @@
 //		"m_bRightEye": false
 //	},
 //	"m_bCannotBeRefracted": true,
-//	"m_bSkipRenderingOnMobile": false,
-//	"m_bUseAlphaTestWindow": false,
-//	"m_bUseTexture": false,
 //	"m_flRadiusScale": 1.000000,
 //	"m_flAlphaScale": 1.000000,
 //	"m_nAlpha2Field": 16,
@@ -237,7 +235,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentY":
 //		{
@@ -312,7 +311,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatComponentZ":
 //		{
@@ -387,7 +387,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_FloatInterp":
 //		{
@@ -462,7 +463,8 @@
 //					0.000000,
 //					0.000000
 //				]
-//			}
+//			},
+//			"m_flCompareValue": 0.000000
 //		},
 //		"m_flInterpInput0": 0.000000,
 //		"m_flInterpInput1": 1.000000,
@@ -498,24 +500,21 @@
 //		]
 //	},
 //	"m_nColorBlendType": "PARTICLE_COLOR_BLEND_MULTIPLY",
+//	"m_bUseTexture": false,
+//	"m_bUseAlphaTestWindow": false,
+//	"m_hTexture": "",
+//	"m_nAlphaTestPointField": 13,
+//	"m_nAlphaTestRangeField": 23,
+//	"m_nAlphaTestSharpnessField": 18,
 //	"m_flLightDistance": 0.000000,
 //	"m_flStartFalloff": 0.250000,
 //	"m_flDistanceFalloff": 0.000000,
 //	"m_flSpotFoV": 60.000000,
-//	"m_nAlphaTestPointField": 13,
-//	"m_nAlphaTestRangeField": 23,
-//	"m_nAlphaTestSharpnessField": 18,
-//	"m_hTexture": "",
 //	"m_nHSVShiftControlPoint": -1
 //}
 // MHasKV3TransferPolymorphicClassname
 class C_OP_RenderDeferredLight : public CParticleFunctionRenderer
 {
-	// MPropertyFriendlyName = "projected texture use alpha test window"
-	// MPropertySuppressExpr = "!m_bUseTexture"
-	bool m_bUseAlphaTestWindow;
-	// MPropertyFriendlyName = "projected texture light"
-	bool m_bUseTexture;
 	// MPropertyStartGroup = "+Renderer Modifiers"
 	// MPropertyFriendlyName = "radius scale"
 	// MPropertySortPriority = 700
@@ -533,6 +532,27 @@ class C_OP_RenderDeferredLight : public CParticleFunctionRenderer
 	// MPropertyFriendlyName = "color blend type"
 	// MPropertySortPriority = 700
 	ParticleColorBlendType_t m_nColorBlendType;
+	// MPropertyStartGroup = "+Projected Texture Light"
+	// MPropertyFriendlyName = "use texture for light"
+	bool m_bUseTexture;
+	// MPropertyFriendlyName = "use alpha test window"
+	// MPropertySuppressExpr = "!m_bUseTexture"
+	bool m_bUseAlphaTestWindow;
+	// MPropertyFriendlyName = "texture"
+	// MPropertySuppressExpr = "!m_bUseTexture"
+	CStrongHandle< InfoForResourceTypeCTextureBase > m_hTexture;
+	// MPropertyFriendlyName = "alpha test point scale field"
+	// MPropertyAttributeChoiceName = "particlefield_scalar"
+	// MPropertySuppressExpr = "!m_bUseTexture"
+	ParticleAttributeIndex_t m_nAlphaTestPointField;
+	// MPropertyFriendlyName = "alpha test range scale field"
+	// MPropertyAttributeChoiceName = "particlefield_scalar"
+	// MPropertySuppressExpr = "!m_bUseTexture"
+	ParticleAttributeIndex_t m_nAlphaTestRangeField;
+	// MPropertyFriendlyName = "alpha test sharpness scale field"
+	// MPropertyAttributeChoiceName = "particlefield_scalar"
+	// MPropertySuppressExpr = "!m_bUseTexture"
+	ParticleAttributeIndex_t m_nAlphaTestSharpnessField;
 	// MPropertyStartGroup = ""
 	// MPropertyFriendlyName = "spotlight distance"
 	float32 m_flLightDistance;
@@ -542,21 +562,6 @@ class C_OP_RenderDeferredLight : public CParticleFunctionRenderer
 	float32 m_flDistanceFalloff;
 	// MPropertyFriendlyName = "spotlight FoV"
 	float32 m_flSpotFoV;
-	// MPropertyFriendlyName = "projected texture alpha test point scale field"
-	// MPropertyAttributeChoiceName = "particlefield_scalar"
-	// MPropertySuppressExpr = "!m_bUseTexture"
-	ParticleAttributeIndex_t m_nAlphaTestPointField;
-	// MPropertyFriendlyName = "projected texture alpha test range scale field"
-	// MPropertyAttributeChoiceName = "particlefield_scalar"
-	// MPropertySuppressExpr = "!m_bUseTexture"
-	ParticleAttributeIndex_t m_nAlphaTestRangeField;
-	// MPropertyFriendlyName = "projected texture alpha test sharpness scale field"
-	// MPropertyAttributeChoiceName = "particlefield_scalar"
-	// MPropertySuppressExpr = "!m_bUseTexture"
-	ParticleAttributeIndex_t m_nAlphaTestSharpnessField;
-	// MPropertyFriendlyName = "texture"
-	// MPropertySuppressExpr = "!m_bUseTexture"
-	CStrongHandle< InfoForResourceTypeCTextureBase > m_hTexture;
 	// MPropertyFriendlyName = "HSV Shift Control Point"
 	int32 m_nHSVShiftControlPoint;
 };

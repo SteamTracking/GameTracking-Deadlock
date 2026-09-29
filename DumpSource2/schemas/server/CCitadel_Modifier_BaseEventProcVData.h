@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -141,6 +144,7 @@
 //	"m_bCanProcMultipleTimesOnOneTarget": true,
 //	"m_bCanProcByOtherObjects": false,
 //	"m_bCanProcFromItems": true,
+//	"m_bProcOnFriendlyBulletHits": false,
 //	"m_nAbilityTargetTypes": "",
 //	"m_nAbilityTargetFlags": "",
 //	"m_vecProcDamageTypes":
@@ -157,6 +161,7 @@ class CCitadel_Modifier_BaseEventProcVData : public CCitadelModifierVData
 	bool m_bCanProcMultipleTimesOnOneTarget;
 	bool m_bCanProcByOtherObjects;
 	bool m_bCanProcFromItems;
+	bool m_bProcOnFriendlyBulletHits;
 	CITADEL_UNIT_TARGET_TYPE m_nAbilityTargetTypes;
 	CITADEL_UNIT_TARGET_FLAGS m_nAbilityTargetFlags;
 	CUtlVector< ECitadelDamageType > m_vecProcDamageTypes;

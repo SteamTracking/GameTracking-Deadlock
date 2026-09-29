@@ -5,6 +5,7 @@
 //	"m_bActive": true,
 //	"m_bSolo": false,
 //	"m_bEditProperties": false,
+//	"m_nGenerationId": 0,
 //	"m_bPhaseInvert": false,
 //	"m_flGlideTime": 150.000000,
 //	"m_flDelay": 500.000000,

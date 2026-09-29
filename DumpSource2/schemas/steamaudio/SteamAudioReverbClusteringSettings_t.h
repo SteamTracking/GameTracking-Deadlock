@@ -1,7 +1,7 @@
 // MGetKV3ClassDefaults = {
-//	"m_bEnableClustering": true,
-//	"m_nCubeMapResolution": -1,
-//	"m_flDepthThreshold": "-nan"
+//	"m_bEnableClustering": false,
+//	"m_nCubeMapResolution": 0,
+//	"m_flDepthThreshold": 0.000000
 //}
 class SteamAudioReverbClusteringSettings_t
 {

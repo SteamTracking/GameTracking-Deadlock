@@ -7,7 +7,7 @@
 			{
 				name = "_builtins"
 				operator = "sos_builtins"
-				_voicegraph = "citadel.hrtf_basic"
+				_voicegraph = "citadel_hrtf_basic"
 			},
 			{
 				name = "public"
@@ -23,33 +23,6 @@
 					{
 						data_type = "public_opvar"
 						value = "citadel_material_response"
-					}
-					enable_velocity_volume_scaling = 
-					{
-						data_type = "bool"
-						value = "true"
-						_system_properties = 
-						{
-							property_group = "Footsteps"
-						}
-					}
-					velocity_max = 
-					{
-						data_type = "float"
-						value = "340.0"
-						_system_properties = 
-						{
-							property_group = "Footsteps"
-						}
-					}
-					velocity_min = 
-					{
-						data_type = "float"
-						value = "100.0"
-						_system_properties = 
-						{
-							property_group = "Footsteps"
-						}
 					}
 					is_crouched = 
 					{
@@ -137,6 +110,20 @@
 						value = "-4.0"
 						_system_properties = 
 						{
+							property_group = "Footsteps"
+						}
+					}
+					vsnd_files_footstep_carpet = 
+					{
+						data_type = "vsnd"
+						soundevent_data = "true"
+						value = 
+						[
+							"sounds/common/null.vsnd",
+						]
+						_system_properties = 
+						{
+							display_group = "advanced"
 							property_group = "Footsteps"
 						}
 					}
@@ -494,62 +481,6 @@
 				input2 = "@math_crouching_volume.output"
 			},
 			{
-				name = "db_to_linear"
-				operator = "math_db_to_gain"
-				input = "@math_quieted_volume.output"
-			},
-			{
-				name = "source_info"
-				operator = "game_get_source_info"
-			},
-			{
-				name = "globals"
-				operator = "get_system_globals"
-				input_execute = "1"
-				input_listener_index = "0"
-			},
-			{
-				name = "get_entity_info"
-				input_execute = "1"
-				operator = "game_entity_info"
-				input_entity_index = "@source_info.output_entity_index"
-				input_default_world_position = "@public.position"
-				input_default_local_position = "@globals.output_listener_front"
-				input_hold_position_on_deleted_entity = "true"
-				use_world_position = "@public.position_force_from_input"
-				attachment = "@public.attachment"
-			},
-			{
-				name = "remap_velocity_normalized"
-				operator = "math_remap_float"
-				input = "@get_entity_info.output_velocity"
-				input_min = "@public.velocity_min"
-				input_max = "@public.velocity_max"
-				input_map_min = "0.400000"
-				input_map_max = "1.000000"
-				clamp_range = "true"
-			},
-			{
-				name = "enable_velocity_scaling"
-				operator = "ctrl_switch_float"
-				input_switch = "@public.enable_velocity_volume_scaling"
-				input1 = "1"
-				input2 = "@remap_velocity_normalized.output"
-			},
-			{
-				name = "mult_volume_by_velocity_scalar"
-				operator = "math_float"
-				execute_once = "false"
-				apply = "mult"
-				input1 = "@db_to_linear.output"
-				input2 = "@enable_velocity_scaling.output"
-			},
-			{
-				name = "linear_to_db"
-				operator = "math_gain_to_db"
-				input = "@mult_volume_by_velocity_scalar.output"
-			},
-			{
 				name = "citadel_perspective_default"
 				operator = "sos_import_stack"
 				import_stack = "citadel_perspective_default"
@@ -559,7 +490,7 @@
 					volume = 
 					{
 						data_type = "float"
-						value = "@linear_to_db.output"
+						value = "@math_quieted_volume.output"
 					}
 					track_4.vsnd_files_field_name = 
 					{

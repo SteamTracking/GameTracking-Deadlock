@@ -1,9 +1,9 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/ability_icons.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_shop_mod_view.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/ability_icons.vcss" />
+		<include src="s2r://panorama/styles/citadel_shop_mod_view.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="ComponentOfModSnippet">
@@ -14,16 +14,15 @@
 		</snippet>
 	</snippets>
 	<CitadelShopMod class="mod_view">
+		<GlobalClassListener classes="gScoreboardOpen gPVE" />
 		<Panel id="background" hittest="false" hittestchildren="false">
-			<Panel id="ItemCostContainer">
-				<Label id="ItemCost" text="{d:item_cost}" />
-			</Panel>
 			<Panel id="ModCard">
-				<Panel id="CardBacker" class="brawl_hide" />
+				<Panel id="CardBacker" />
 				<Panel class="modIconContainer">
 					<Panel class="mod_icon" />
-					<Image id="ModIconImage" />
+					<Image id="ModIconImage" scaling="cover" />
 					<Panel id="Enhanced" />
+					<Panel id="Corrupted" />
 					<Panel id="TierContainer">
 						<Panel class="tier_bg" />
 						<Panel id="mod_tier_label" hittest="false" hittestchildren="false" />
@@ -40,16 +39,10 @@
 						<Image class="componentIcon" src="s2r://panorama/images/upgrades/lock_icon_psd.vtex" />
 					</Panel>
 				</Panel>
-				<Panel class="mod_name_area">
-					<Label class="modName" text="{s:mod_name}" />
-				</Panel>
-				<Panel class="paperWear brawl_hide" />
-				<Panel class="paperTexture brawl_hide" />
-				<Panel class="paperBevel brawl_hide" />
-				<Panel class="active_tag">
-					<Panel class="active_backer" />
-					<Label id="ActiveTag" text="#item_info_active" />
-				</Panel>
+				<Panel id="CorruptedBorder" />
+				<Panel class="paperWear" />
+				<Panel class="paperTexture" />
+				<Panel class="paperBevel" />
 				<Panel id="Outline" />
 				<Panel id="EnhanceOverlay">
 					<Panel class="MessageContent">
@@ -60,34 +53,54 @@
 						<Label class="ItemName" text="{s:mod_name}" />
 					</Panel>
 				</Panel>
-				<Panel id="SellOverlay" class="brawl_hide">
-					<Panel class="MessageContent">
-						<Label class="SellLabel" text="#item_info_sell" />
-						<Label class="ItemName" text="{s:mod_name}" />
-						<Panel class="SellCost">
-							<Image class="goldIcon" />
-							<Label id="SellCostAmount" text="{i:sell_cost}" />
-						</Panel>
+			</Panel>
+			<Panel id="ItemCostContainer">
+				<Label id="ItemCost" text="{d:item_cost}" />
+			</Panel>
+			<Panel class="mod_name_area">
+				<Label class="modName" text="{s:mod_name}" />
+			</Panel>
+			<Panel class="active_tag">
+				<Panel class="active_backer" />
+				<Label id="ActiveTag" text="#item_info_active" />
+			</Panel>
+			<Panel class="PopularityContainer">
+				<Panel class="PopularItemContainer">
+					<Panel class="recommendatations_hero_bg" />
+					<CitadelHeroImage id="PopularHeroImage" heroimagestyle="minimap_icon" />
+					<Panel class="thumb_icon" />
+				</Panel>
+				<Panel class="PopularItemPhase Early" />
+				<Panel class="PopularItemPhase Mid" />
+				<Panel class="PopularItemPhase Late" />
+			</Panel>
+			<Panel id="ComponentsContainer" />
+			<Panel id="SellOverlay">
+				<Panel class="MessageContent">
+					<Label class="SellLabel" text="#item_info_sell" />
+					<Label class="ItemName" text="{s:mod_name}" />
+					<Panel class="SellCost">
+						<Image class="goldIcon" />
+						<Label id="SellCostAmount" text="{i:sell_cost}" />
 					</Panel>
 				</Panel>
 			</Panel>
-			<Panel id="ComponentsContainer" />
-			<Panel id="ReturnToShop" class="brawl_hide">
+			<Panel id="ReturnToShop">
 				<Panel class="MessageContent">
 					<Label class="ReturnLabel" text="#item_info_no_shop" />
 				</Panel>
 			</Panel>
-			<Panel id="PurchasingDisabled" class="brawl_hide">
+			<Panel id="PurchasingDisabled">
 				<Panel class="MessageContent">
 					<Label class="PurchasingDisabledLabel" text="#item_info_purchasing_disabled" />
 				</Panel>
 			</Panel>
-			<Panel id="DisabledForPlaytest" class="brawl_hide">
+			<Panel id="DisabledForPlaytest">
 				<Panel class="MessageContent">
 					<Label class="ItemDisabledLabel" text="#item_disabled_playtest" />
 				</Panel>
 			</Panel>
-			<Panel id="CantAfford" class="brawl_hide">
+			<Panel id="CantAfford">
 				<Panel class="MessageContent">
 					<Label class="CantAffordLabel" text="#item_info_cant_afford" />
 				</Panel>
@@ -103,17 +116,17 @@
 					<Label text="#item_info_component_locked" />
 				</Panel>
 			</Panel>
-			<Panel id="AddToBuild" class="brawl_hide">
+			<Panel id="AddToBuild">
 				<Panel class="MessageContent">
 					<Label class="AddToBuildLabel" text="#Citadel_HeroBuilds_AddItem" />
 				</Panel>
 			</Panel>
-			<Panel id="AlreadyInBuild" class="brawl_hide">
+			<Panel id="AlreadyInBuild">
 				<Panel class="MessageContent">
 					<Label class="AddToBuildLabel" text="#Citadel_HeroBuilds_AlreadyInBuild" />
 				</Panel>
 			</Panel>
-			<Panel id="RemoveFromBuild" class="brawl_hide">
+			<Panel id="RemoveFromBuild">
 				<Panel class="MessageContent">
 					<Label class="AddToBuildLabel" text="#Citadel_HeroBuilds_RemoveItem" />
 				</Panel>

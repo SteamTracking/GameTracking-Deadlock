@@ -1,19 +1,23 @@
 // MGetKV3ClassDefaults = {
-//	"_class": "AI_Navigator_DebugSnapshotData_t",
-//	"s_npc_nav_authority": "",
-//	"goal_actual_pos": null,
-//	"goal_base_pos": null,
+//	"s_movement_id": "",
+//	"s_movement_serial_number": 0,
+//	"s_goal_source_location": "",
+//	"last_waypoint_pos": null,
+//	"goal_location": null,
 //	"waypoints":
 //	[
-//	]
+//	],
+//	"s_arrival_movement_gait_set": ""
 //}
-// MDebugSnapshotDataRenderable
-// MDebugSnapshotDataRenderByDefault
-// MHasKV3TransferPolymorphicClassname
-class AI_Navigator_DebugSnapshotData_t : public DebugSnapshotBaseStructuredData_t
+// MPropertyFriendlyName = "Navigator"
+// MDebugSnapshotDataRenderFn
+class AI_Navigator_DebugSnapshotData_t
 {
-	CGlobalSymbol s_npc_nav_authority;
-	VectorWS goal_actual_pos;
-	VectorWS goal_base_pos;
+	CGlobalSymbol s_movement_id;
+	uint32 s_movement_serial_number;
+	CUtlString s_goal_source_location;
+	VectorWS last_waypoint_pos;
+	VectorWS goal_location;
 	CUtlVector< AI_Navigator_DebugSnapshotData_t::Waypoint_t > waypoints;
+	CGlobalSymbol s_arrival_movement_gait_set;
 };

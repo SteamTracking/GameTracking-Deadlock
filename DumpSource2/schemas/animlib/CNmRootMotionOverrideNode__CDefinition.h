@@ -6,6 +6,7 @@
 //	"m_desiredFacingDirectionNodeIdx": -1,
 //	"m_linearVelocityLimitNodeIdx": -1,
 //	"m_angularVelocityLimitNodeIdx": -1,
+//	"m_enabledNodeIdx": -1,
 //	"m_maxLinearVelocity": -1.000000,
 //	"m_maxAngularVelocityRadians": -1.000000,
 //	"m_overrideFlags":
@@ -20,6 +21,7 @@ class CNmRootMotionOverrideNode::CDefinition : public CNmPassthroughNode::CDefin
 	int16 m_desiredFacingDirectionNodeIdx;
 	int16 m_linearVelocityLimitNodeIdx;
 	int16 m_angularVelocityLimitNodeIdx;
+	int16 m_enabledNodeIdx;
 	float32 m_maxLinearVelocity;
 	float32 m_maxAngularVelocityRadians;
 	CNmBitFlags m_overrideFlags;

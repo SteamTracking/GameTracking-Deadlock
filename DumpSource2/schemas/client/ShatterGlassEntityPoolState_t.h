@@ -1,0 +1,6 @@
+enum ShatterGlassEntityPoolState_t : uint32_t
+{
+	ENTITY_POOL_STATE_INVALID = 0,
+	ENTITY_POOL_STATE_AVAILABLE = 1,
+	ENTITY_POOL_STATE_IN_USE = 2,
+};

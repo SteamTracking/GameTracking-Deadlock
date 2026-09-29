@@ -1,0 +1,226 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+#HudStatBlock
+{
+	vertical-align: bottom;
+	horizontal-align: left;
+	margin-bottom: 20px;
+	flow-children: down;
+	margin-left: 20px;
+	margin-bottom: 220px;
+	width: 100%;
+	visibility: collapse;
+}
+
+#HudStatBlock .stat_column
+{
+	flow-children: down;
+	margin: 10px 0px;
+	width: 80px;
+	max-width: 70px;
+	overflow: noclip;
+}
+
+#HudStatBlock .stat_column.weapon,#HudStatBlock .stat_column.spirit
+{
+	margin: 10px 0px;
+}
+
+#HudStatBlock Label.demote
+{
+	opacity: 0.3;
+	pre-transform-scale2d: 0.8;
+	margin-left: -1px;
+	text-shadow: 0px 0px 0px 0.0 offBlack;
+}
+
+#HudStatBlock .icon
+{
+	width: 12px;
+	height: 12px;
+	margin-right: 6px;
+	vertical-align: middle;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#HudStatBlock #CoreStats
+{
+	width: 100%;
+	flow-children: right;
+	width: 100%;
+}
+
+#HudStatBlock #CoreStats .core_stat
+{
+	width: 80px;
+	height: 80px;
+	margin: 5px;
+}
+
+#HudStatBlock #CoreStats .core_bg
+{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	ignore-parent-flow: true;
+	opacity: 0.3;
+}
+
+#HudStatBlock #CoreStats #Weapon .core_bg
+{
+	background-image: url("s2r://panorama/images/hud/core/core_weapon_icon_psd.vtex");
+	wash-color: courageBrightColor;
+}
+
+#HudStatBlock #CoreStats #Spirit .core_bg
+{
+	background-image: url("s2r://panorama/images/hud/core/core_spirit_icon_psd.vtex");
+	wash-color: spiritBrightColor;
+}
+
+#HudStatBlock #CoreStats #Health .core_bg
+{
+	background-image: url("s2r://panorama/images/hud/core/core_armor_icon_psd.vtex");
+	wash-color: fortitudeBrightColor;
+}
+
+#HudStatBlock #CoreStats .wpn_stat_area
+{
+	flow-children: right;
+	vertical-align: middle;
+	horizontal-align: middle;
+	margin-left: 4px;
+}
+
+#HudStatBlock #CoreStats Label
+{
+	font-size: 24px;
+	text-overflow: shrink;
+	font-family: numericOracle;
+	font-weight: bold;
+	text-shadow: 0px 0px 0px 5.0 offBlack;
+	vertical-align: middle;
+	horizontal-align: middle;
+	margin-top: 5px;
+	margin-right: 0px;
+	text-align: center;
+}
+
+#HudStatBlock #SubStats
+{
+	flow-children: right;
+	overflow: noclip;
+	visibility: collapse;
+}
+
+#HudStatBlock #SubStats .sub_stat
+{
+	padding: 8px 0px;
+	margin: -4px 0px;
+	flow-children: right;
+	overflow: noclip;
+}
+
+#HudStatBlock #SubStats .weapon
+{
+	wash-color: courageBrightColor&60;
+}
+
+#HudStatBlock #SubStats .spirit
+{
+	wash-color: spiritBrightColor&60;
+}
+
+#HudStatBlock #SubStats .armor
+{
+	wash-color: fortitudeBrightColor&60;
+}
+
+#HudStatBlock #SubStats Label
+{
+	font-size: 16px;
+	font-family: numericOracle;
+	font-weight: bold;
+	text-shadow: 0px 0px 0px 3.0 offBlack;
+	vertical-align: middle;
+}
+
+#HudStatBlock #SubStats #delta_label
+{
+	color: rgb(111, 232, 111);
+	text-align: right;
+	min-width: 25px;
+	min-width: 30px;
+	horizontal-align: right;
+	margin-right: 2px;
+	vertical-align: middle;
+	opacity: 0;
+	ignore-parent-flow: true;
+	transform: translateY(-20px) translateX(-60px) rotateZ(-8deg);
+}
+
+#HudStatBlock #SubStats .update_delta #stat_label
+{
+	color: yellow;
+	text-shadow: 0px 0px 0px 2.0 white;
+}
+
+#HudStatBlock #SubStats .show_delta #delta_label
+{
+	opacity: 1;
+}
+
+#HudStatBlock CitadelHudItemBarGraph
+{
+	transform: rotateZ(90deg);
+	height: 54px;
+}
+
+#Vitality,#Regen
+{
+	visibility: collapse;
+}
+
+@keyframes 'backgroundPulse'
+{
+	0%
+	{
+		transform: rotateZ(0deg) skew(22deg);
+		pre-transform-scale2d: 1;
+	}
+	
+	20%
+	{
+		pre-transform-scale2d: 0.9;
+	}
+	
+	40%
+	{
+		pre-transform-scale2d: 1.05;
+	}
+	
+	60%
+	{
+		pre-transform-scale2d: 0.9;
+		transform: skew(2deg);
+	}
+	
+	80%
+	{
+		pre-transform-scale2d: 1.05;
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg) skew(22deg);
+		pre-transform-scale2d: 1;
+	}
+	
+}
+
+#Health #delta_label
+{
+	visibility: collapse;
+}
+

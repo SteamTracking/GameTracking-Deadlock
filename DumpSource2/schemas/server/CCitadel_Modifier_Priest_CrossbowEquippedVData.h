@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -137,8 +140,7 @@
 //	"m_FootstepAdditional": "",
 //	"m_bRemoveOnInterrupted": false,
 //	"m_WeaponBuffParticle": "",
-//	"m_BlessedLoopSound": "",
-//	"m_AimLoopSound": ""
+//	"m_BlessedLoopSound": ""
 //}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_Priest_CrossbowEquippedVData : public CCitadelModifierVData
@@ -147,5 +149,4 @@ class CCitadel_Modifier_Priest_CrossbowEquippedVData : public CCitadelModifierVD
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_WeaponBuffParticle;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_BlessedLoopSound;
-	CSoundEventName m_AimLoopSound;
 };

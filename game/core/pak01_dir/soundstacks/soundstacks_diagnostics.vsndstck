@@ -4055,6 +4055,18 @@
 							"10000.000000",
 						]
 					}
+					start_point = 
+					{
+						soundevent_data = "true"
+						data_type = "float"
+						value = "0.000000"
+					}
+					end_point = 
+					{
+						soundevent_data = "true"
+						data_type = "float"
+						value = "0.000000"
+					}
 					priority = 
 					{
 						data_type = "float"
@@ -4066,6 +4078,11 @@
 						value = "0.000000"
 					}
 					block_equal_priority = 
+					{
+						data_type = "float"
+						value = "0.000000"
+					}
+					use_queue = 
 					{
 						data_type = "float"
 						value = "0.000000"
@@ -4093,6 +4110,7 @@
 				input_sync_track_name = "@public.sync_track"
 				input_sync_field_name = "@public.sync_field"
 				wait_for_track = "@public.wait_for_track"
+				use_queue = "@public.use_queue"
 			},
 			{
 				name = "update_test_start_vsnd_rand_oneshot"
@@ -4284,7 +4302,7 @@
 					vgraph = 
 					{
 						data_type = "string"
-						value = "test.mix8"
+						value = "test_mix8"
 					}
 					track1 = 
 					{
@@ -4398,7 +4416,7 @@
 					vgraph = 
 					{
 						data_type = "string"
-						value = "test.mix8"
+						value = "test_mix8"
 					}
 					input = 
 					{
@@ -6402,7 +6420,10 @@
 				operator = "util_null"
 				operator_variables = 
 				{
-					import_public_opvars = [  ]
+					import_public_opvars = 
+					[
+						"inner_2",
+					]
 					test_opvars = 
 					{
 						soundevent_data = "true"
@@ -6420,7 +6441,7 @@
 				name = "import_inner_2"
 				operator = "sos_import_stack"
 				import_stack = "inner_2"
-				auto_connect_public_fields = true
+				auto_connect_public_fields = "true"
 				operator_variables = 
 				{
 					opvars_use_namespace = 
@@ -6775,5 +6796,1308 @@
 				input_add_dependent = "@get_event_info.output_unstopped"
 			},
 		]
+	}
+	test_ryan_imported = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					global_opvar_names = 
+					{
+						soundevent_data = "true"
+						data_type = "string"
+						value = "min_vol_inverse_val"
+						_system_properties = 
+						{
+							display_group = "normal"
+							property_group = "Opvars"
+							property_help = "List of opvars whose values influence the volume/filter values of the sound"
+						}
+					}
+					opvars_use_namespace = 
+					{
+						data_type = "bool"
+						value = "true"
+					}
+				}
+			},
+			{
+				name = "scoped_opvars"
+				operator = "util_null"
+				operator_variables = 
+				{
+					min_vol_inverse_val = 
+					{
+						data_type = "float"
+						value = "150.00"
+					}
+				}
+			},
+			{
+				name = "get_opvar_name"
+				operator = "opvar_get_string"
+				input_execute = "1.0"
+				check_event_data = "true"
+				input_operator_name = "public"
+				input_field_name = "global_opvar_names"
+				input_use_namespace = "@public.opvars_use_namespace"
+				array_selection_type = "index"
+				input_index = "0"
+			},
+			{
+				name = "get_scoped_opvar_1"
+				operator = "opvar_get_float"
+				input_operator_name = "scoped_opvars"
+				input_field_name = "@get_opvar_name.output"
+				input_use_namespace = "@public.opvars_use_namespace"
+			},
+			{
+				name = "set_scoped_opvar"
+				operator = "opvar_set_float"
+				input_operator_name = "scoped_opvars"
+				input_field_name = "@get_opvar_name.output"
+				input_use_namespace = "@public.opvars_use_namespace"
+				input = "200.0"
+			},
+			{
+				name = "get_scoped_opvar_2"
+				operator = "opvar_get_float"
+				input_operator_name = "scoped_opvars"
+				input_field_name = "@get_opvar_name.output"
+				input_use_namespace = "@public.opvars_use_namespace"
+			},
+			{
+				name = "opvar_name"
+				operator = "util_print_string"
+				input = "@get_opvar_name.output"
+			},
+		]
+	}
+	test_ryan_outer = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					test_ryan_imported = 
+					{
+						data_type = "public_opvar"
+						value = "test_ryan_imported"
+						use_public_opvar_scope = "true"
+					}
+				}
+			},
+			{
+				name = "test_ryan_imported"
+				operator = "sos_import_stack"
+				import_stack = "test_ryan_imported"
+				auto_connect_public_fields = "true"
+				auto_connect_field_scope = "test_ryan_imported"
+				operator_variables = 
+				{
+				}
+			},
+		]
+	}
+	update_test_start_vsnd_tracks = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					vsnd_files = 
+					{
+						data_type = "vsnd"
+						soundevent_data = "true"
+						value = 
+						[
+							"sounds/diagnostics/bell.vsnd",
+						]
+					}
+				}
+			},
+			{
+				name = "get_event_info"
+				operator = "soundevent_get_info"
+			},
+			{
+				name = "LFO"
+				operator = "mod_LFO"
+				wave_type = "sqr"
+				input_frequency = "1"
+				input_scale = "0.5"
+				input_center = "0.5"
+			},
+			{
+				name = "update_test_start_vsnd"
+				operator = "vmix_voice_start"
+				input_track1 = "track_01"
+				input_track2 = "track_02"
+				input_track3 = "track_03"
+				input_track4 = "track_04"
+				input_track5 = "track_05"
+				input_track6 = "track_06"
+				input_track7 = "track_07"
+				input_track8 = "track_08"
+				input_start = "@get_event_info.output_unstopped"
+				input_vsnd1 = "sounds/diagnostics/sin_1k_0p005_lp-01.vsnd"
+				input_start1 = "1"
+				input_speaker_volumes = "[ 1.0, 1.0, 1.0, 1.0, 1.0, 1.0 ]"
+			},
+			{
+				name = "update_prevent_stop"
+				operator = "soundevent_control"
+				input_add_dependent = "@get_event_info.output_unstopped"
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "diagnostics"
+		}
+	}
+	diagnostic.animate_float3_gallery = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					period = 
+					{
+						data_type = "float"
+						value = "6.000000"
+					}
+					revolutions = 
+					{
+						data_type = "float"
+						value = "5.000000"
+					}
+					sphere_radius = 
+					{
+						data_type = "float"
+						value = "7.000000"
+					}
+					bezier_control_offset = 
+					{
+						data_type = "float3"
+						value = "[0.0, -140.0, 0.0]"
+					}
+				}
+			},
+			{
+				name = "globals"
+				operator = "get_system_globals"
+				input_execute = "1"
+				input_listener_index = "0"
+			},
+			{
+				name = "get_event_info"
+				operator = "soundevent_get_info"
+			},
+			{
+				name = "scale_time"
+				operator = "math_float"
+				apply = "div"
+				input1 = "@get_event_info.output_elapsed_time"
+				input2 = "@public.period"
+			},
+			{
+				name = "pct"
+				operator = "math_float"
+				apply = "mod"
+				input1 = "@scale_time.output"
+				input2 = "1.0"
+			},
+			{
+				name = "base_center"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@globals.output_listener_position"
+				input2 = "[0.0, 0.0, 64.0]"
+			},
+			{
+				name = "base_start"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@globals.output_listener_position"
+				input2 = "[96.0, 0.0, 0.0]"
+			},
+			{
+				name = "base_end"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@globals.output_listener_position"
+				input2 = "[-24.0, 0.0, 128.0]"
+			},
+			{
+				name = "bezier_mid"
+				operator = "math_lerp_float3"
+				input_position_a = "@base_start.output"
+				input_position_b = "@base_end.output"
+				input_factor = "0.5"
+			},
+			{
+				name = "bezier_control"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@bezier_mid.output"
+				input2 = "@public.bezier_control_offset"
+			},
+			{
+				name = "anim_lerp"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "lerp"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@base_center.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_lerp"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_lerp.output"
+				input2 = "[-360.0, -480.0, 0.0]"
+			},
+			{
+				name = "draw_lerp"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_lerp.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[230, 230, 230]"
+				input_label = "lerp"
+			},
+			{
+				name = "anim_slerp"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "slerp"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@base_center.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_slerp"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_slerp.output"
+				input2 = "[-360.0, -240.0, 0.0]"
+			},
+			{
+				name = "draw_slerp"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_slerp.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[64, 200, 230]"
+				input_label = "slerp"
+			},
+			{
+				name = "anim_circle"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "circle"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@base_center.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_circle"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_circle.output"
+				input2 = "[-360.0, 0.0, 0.0]"
+			},
+			{
+				name = "draw_circle"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_circle.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[64, 220, 64]"
+				input_label = "circle"
+			},
+			{
+				name = "anim_lerp_bounce"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "lerp_bounce"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@base_center.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_lerp_bounce"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_lerp_bounce.output"
+				input2 = "[-120.0, -480.0, 0.0]"
+			},
+			{
+				name = "draw_lerp_bounce"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_lerp_bounce.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[200, 200, 120]"
+				input_label = "lerp_bounce"
+			},
+			{
+				name = "anim_slerp_bounce"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "slerp_bounce"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@base_center.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_slerp_bounce"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_slerp_bounce.output"
+				input2 = "[-120.0, -240.0, 0.0]"
+			},
+			{
+				name = "draw_slerp_bounce"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_slerp_bounce.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[64, 160, 200]"
+				input_label = "slerp_bounce"
+			},
+			{
+				name = "anim_circle_bounce"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "circle_bounce"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@base_center.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_circle_bounce"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_circle_bounce.output"
+				input2 = "[-120.0, 0.0, 0.0]"
+			},
+			{
+				name = "draw_circle_bounce"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_circle_bounce.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[120, 200, 120]"
+				input_label = "circle_bounce"
+			},
+			{
+				name = "anim_spiral"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "spiral"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@base_center.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_spiral"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_spiral.output"
+				input2 = "[-360.0, 240.0, 0.0]"
+			},
+			{
+				name = "draw_spiral"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_spiral.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[255, 140, 0]"
+				input_label = "spiral"
+			},
+			{
+				name = "anim_spiral_even"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "spiral_even"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@base_center.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_spiral_even"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_spiral_even.output"
+				input2 = "[120.0, 240.0, 0.0]"
+			},
+			{
+				name = "draw_spiral_even"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_spiral_even.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[255, 80, 0]"
+				input_label = "spiral_even"
+			},
+			{
+				name = "anim_spiral_bounce"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "spiral_bounce"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@base_center.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_spiral_bounce"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_spiral_bounce.output"
+				input2 = "[-120.0, 240.0, 0.0]"
+			},
+			{
+				name = "draw_spiral_bounce"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_spiral_bounce.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[255, 190, 90]"
+				input_label = "spiral_bounce"
+			},
+			{
+				name = "anim_spiral_even_bounce"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "spiral_even_bounce"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@base_center.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_spiral_even_bounce"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_spiral_even_bounce.output"
+				input2 = "[360.0, 240.0, 0.0]"
+			},
+			{
+				name = "draw_spiral_even_bounce"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_spiral_even_bounce.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[230, 60, 20]"
+				input_label = "spiral_even_bounce"
+			},
+			{
+				name = "anim_bezier"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "bezier"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@bezier_control.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_bezier"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_bezier.output"
+				input2 = "[-360.0, 480.0, 0.0]"
+			},
+			{
+				name = "draw_bezier"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_bezier.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[200, 80, 255]"
+				input_label = "bezier"
+			},
+			{
+				name = "anim_bezier_even"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "bezier_even"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@bezier_control.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_bezier_even"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_bezier_even.output"
+				input2 = "[120.0, 480.0, 0.0]"
+			},
+			{
+				name = "draw_bezier_even"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_bezier_even.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[255, 80, 200]"
+				input_label = "bezier_even"
+			},
+			{
+				name = "anim_bezier_bounce"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "bezier_bounce"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@bezier_control.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_bezier_bounce"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_bezier_bounce.output"
+				input2 = "[-120.0, 480.0, 0.0]"
+			},
+			{
+				name = "draw_bezier_bounce"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_bezier_bounce.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[160, 110, 255]"
+				input_label = "bezier_bounce"
+			},
+			{
+				name = "anim_bezier_even_bounce"
+				operator = "math_animate_float3"
+				input_execute = "1"
+				anim_type = "bezier_even_bounce"
+				input_animation_pct = "@pct.output"
+				input_float3_start = "@base_start.output"
+				input_float3_end = "@base_end.output"
+				input_float3_center = "@bezier_control.output"
+				input_revolutions = "@public.revolutions"
+				input_distance_scalar = "1.0"
+				input_animation_direction = "0"
+			},
+			{
+				name = "grid_bezier_even_bounce"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@anim_bezier_even_bounce.output"
+				input2 = "[360.0, 480.0, 0.0]"
+			},
+			{
+				name = "draw_bezier_even_bounce"
+				operator = "util_draw_debug_sphere"
+				input_execute = "1"
+				input_position = "@grid_bezier_even_bounce.output"
+				input_radius = "@public.sphere_radius"
+				input_rgb_color = "[255, 60, 140]"
+				input_label = "bezier_even_bounce"
+			},
+			{
+				name = "prevent_stop"
+				operator = "soundevent_control"
+				input_execute = "@get_event_info.output_unstopped"
+				input_add_dependent = "@get_event_info.output_unstopped"
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "diagnostics"
+			display_group = "operators"
+		}
+	}
+	diagnostic.self_exciting_column = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					cell_offset = 
+					{
+						data_type = "float3"
+						value = "[0.0, 0.0, 64.0]"
+					}
+					cluster_period = 
+					{
+						data_type = "float"
+						value = "15.000000"
+					}
+					excite = 
+					{
+						data_type = "float"
+						value = "1.500000"
+					}
+					tau = 
+					{
+						data_type = "float"
+						value = "0.500000"
+					}
+					refractory = 
+					{
+						data_type = "float"
+						value = "0.000000"
+					}
+					mode = 
+					{
+						data_type = "enum"
+						enum_field = "math_random_self_exciting.mode"
+						value = "scheduled"
+					}
+					start_mode = 
+					{
+						data_type = "enum"
+						enum_field = "math_random_self_exciting.start_mode"
+						value = "wait_gap"
+					}
+					tension_max = 
+					{
+						data_type = "float"
+						value = "3.000000"
+					}
+					flash_rgb = 
+					{
+						data_type = "float3"
+						value = "[255, 140, 0]"
+					}
+					label = 
+					{
+						data_type = "string"
+						value = "column"
+					}
+					flash_duration = 
+					{
+						data_type = "float"
+						value = "0.250000"
+					}
+					sphere_radius = 
+					{
+						data_type = "float"
+						value = "12.000000"
+					}
+					spawn_radius_min = 
+					{
+						data_type = "float"
+						value = "40.000000"
+					}
+					spawn_radius_max = 
+					{
+						data_type = "float"
+						value = "140.000000"
+					}
+				}
+			},
+			{
+				name = "globals"
+				operator = "get_system_globals"
+				input_execute = "1"
+				input_listener_index = "0"
+			},
+			{
+				name = "cell"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@globals.output_listener_position"
+				input2 = "@public.cell_offset"
+			},
+			{
+				name = "exciter"
+				operator = "math_random_self_exciting"
+				mode = "@public.mode"
+				start_mode = "@public.start_mode"
+				input_cluster_period = "@public.cluster_period"
+				input_excite = "@public.excite"
+				input_tau = "@public.tau"
+				input_refractory = "@public.refractory"
+			},
+			{
+				name = "pos"
+				operator = "math_random_float3"
+				input_execute = "@exciter.output_trigger"
+				input_position = "@cell.output"
+				input_radius_min = "@public.spawn_radius_min"
+				input_radius_max = "@public.spawn_radius_max"
+				input_force_positive_z = "1"
+			},
+			{
+				name = "latch"
+				operator = "math_float"
+				apply = "set"
+				input1 = "1.0"
+				input_execute = "@exciter.output_trigger"
+			},
+			{
+				name = "flash"
+				operator = "util_interval_timer"
+				input_interval = "@public.flash_duration"
+				input_start = "@exciter.output_trigger"
+				input_start_resets = "1"
+				input_stop_at_interval = "1"
+			},
+			{
+				name = "flash_on"
+				operator = "math_float"
+				apply = "and"
+				input1 = "@latch.output"
+				input2 = "@flash.output_interval_not_elapsed"
+			},
+			{
+				name = "radius"
+				operator = "math_remap_float"
+				input = "@flash.output"
+				input_min = "0.0"
+				input_max = "@public.flash_duration"
+				input_map_min = "@public.sphere_radius"
+				input_map_max = "0.0"
+			},
+			{
+				name = "draw_flash"
+				operator = "util_draw_debug_sphere"
+				input_execute = "@flash_on.output"
+				input_position = "@pos.output"
+				input_radius = "@radius.output"
+				input_rgb_color = "@public.flash_rgb"
+				input_label = "@public.label"
+			},
+			{
+				name = "tension"
+				operator = "math_remap_float"
+				input = "@exciter.output_excitation"
+				input_min = "0.0"
+				input_max = "@public.tension_max"
+				input_map_min = "3.000000"
+				input_map_max = "48.000000"
+			},
+			{
+				name = "dim"
+				operator = "math_scale_float3"
+				input1 = "@public.flash_rgb"
+				input2 = "0.350000"
+			},
+			{
+				name = "draw_tension"
+				operator = "util_draw_debug_sphere"
+				input_position = "@cell.output"
+				input_radius = "@tension.output"
+				input_rgb_color = "@dim.output"
+				input_label = "@public.label"
+				input_show_detailed_info = "1"
+				detail_label_1 = "excite"
+				detail_value_1 = "@exciter.output_excitation"
+				detail_label_2 = "gap"
+				detail_value_2 = "@exciter.output_next_gap"
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "diagnostics"
+			display_group = "utility"
+		}
+	}
+	diagnostic.self_exciting_gallery = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					beep_column = 
+					{
+						data_type = "float"
+						value = "4.000000"
+					}
+					beep_vsnd = 
+					{
+						data_type = "vsnd"
+						value = "sounds/diagnostics/sin_1k_0p005_oneshot.vsnd"
+					}
+				}
+			},
+			{
+				name = "get_event_info"
+				operator = "soundevent_get_info"
+			},
+			{
+				name = "col_poisson"
+				operator = "sos_import_stack"
+				import_stack = "diagnostic.self_exciting_column"
+				operator_variables = 
+				{
+					cell_offset = 
+					{
+						value = "[-480.0, 0.0, 64.0]"
+					}
+					cluster_period = 
+					{
+						value = "3.750000"
+					}
+					excite = 
+					{
+						value = "0.000000"
+					}
+					tau = 
+					{
+						value = "0.500000"
+					}
+					refractory = 
+					{
+						value = "0.000000"
+					}
+					tension_max = 
+					{
+						value = "0.500000"
+					}
+					flash_rgb = 
+					{
+						value = "[230, 230, 230]"
+					}
+					label = 
+					{
+						value = "poisson"
+					}
+				}
+			},
+			{
+				name = "col_bursty"
+				operator = "sos_import_stack"
+				import_stack = "diagnostic.self_exciting_column"
+				operator_variables = 
+				{
+					cell_offset = 
+					{
+						value = "[-240.0, 0.0, 64.0]"
+					}
+					cluster_period = 
+					{
+						value = "15.000000"
+					}
+					excite = 
+					{
+						value = "1.500000"
+					}
+					tau = 
+					{
+						value = "0.500000"
+					}
+					refractory = 
+					{
+						value = "0.000000"
+					}
+					tension_max = 
+					{
+						value = "3.000000"
+					}
+					flash_rgb = 
+					{
+						value = "[255, 140, 0]"
+					}
+					label = 
+					{
+						value = "bursty"
+					}
+				}
+			},
+			{
+				name = "col_long_clusters"
+				operator = "sos_import_stack"
+				import_stack = "diagnostic.self_exciting_column"
+				operator_variables = 
+				{
+					cell_offset = 
+					{
+						value = "[0.0, 0.0, 64.0]"
+					}
+					cluster_period = 
+					{
+						value = "15.000000"
+					}
+					excite = 
+					{
+						value = "0.250000"
+					}
+					tau = 
+					{
+						value = "3.000000"
+					}
+					refractory = 
+					{
+						value = "0.000000"
+					}
+					tension_max = 
+					{
+						value = "0.750000"
+					}
+					flash_rgb = 
+					{
+						value = "[64, 200, 230]"
+					}
+					label = 
+					{
+						value = "long_clusters"
+					}
+				}
+			},
+			{
+				name = "col_refractory"
+				operator = "sos_import_stack"
+				import_stack = "diagnostic.self_exciting_column"
+				operator_variables = 
+				{
+					cell_offset = 
+					{
+						value = "[240.0, 0.0, 64.0]"
+					}
+					cluster_period = 
+					{
+						value = "15.000000"
+					}
+					excite = 
+					{
+						value = "1.7500000"
+					}
+					tau = 
+					{
+						value = "0.7500000"
+					}
+					refractory = 
+					{
+						value = "0.750000"
+					}
+					tension_max = 
+					{
+						value = "3.000000"
+					}
+					flash_rgb = 
+					{
+						value = "[200, 80, 255]"
+					}
+					label = 
+					{
+						value = "refractory"
+					}
+				}
+			},
+			{
+				name = "col_continuous"
+				operator = "sos_import_stack"
+				import_stack = "diagnostic.self_exciting_column"
+				operator_variables = 
+				{
+					cell_offset = 
+					{
+						value = "[480.0, 0.0, 64.0]"
+					}
+					cluster_period = 
+					{
+						value = "15.000000"
+					}
+					excite = 
+					{
+						value = "1.500000"
+					}
+					tau = 
+					{
+						value = "0.500000"
+					}
+					refractory = 
+					{
+						value = "0.000000"
+					}
+					mode = 
+					{
+						value = "continuous"
+					}
+					tension_max = 
+					{
+						value = "3.000000"
+					}
+					flash_rgb = 
+					{
+						value = "[64, 220, 64]"
+					}
+					label = 
+					{
+						value = "continuous"
+					}
+				}
+			},
+			{
+				name = "col_warm"
+				operator = "sos_import_stack"
+				import_stack = "diagnostic.self_exciting_column"
+				operator_variables = 
+				{
+					cell_offset = 
+					{
+						value = "[720.0, 0.0, 64.0]"
+					}
+					cluster_period = 
+					{
+						value = "15.000000"
+					}
+					excite = 
+					{
+						value = "1.500000"
+					}
+					tau = 
+					{
+						value = "0.500000"
+					}
+					refractory = 
+					{
+						value = "0.000000"
+					}
+					mode = 
+					{
+						value = "scheduled"
+					}
+					start_mode = 
+					{
+						value = "simulate_warm"
+					}
+					tension_max = 
+					{
+						value = "3.000000"
+					}
+					flash_rgb = 
+					{
+						value = "[255, 220, 64]"
+					}
+					label = 
+					{
+						value = "warm"
+					}
+				}
+			},
+			{
+				name = "beep_pick"
+				operator = "ctrl_switch12_float"
+				input_index = "@public.beep_column"
+				input0 = "0.0"
+				input1 = "@col_poisson::exciter.output_trigger"
+				input2 = "@col_bursty::exciter.output_trigger"
+				input3 = "@col_long_clusters::exciter.output_trigger"
+				input4 = "@col_refractory::exciter.output_trigger"
+				input5 = "@col_continuous::exciter.output_trigger"
+				input6 = "@col_warm::exciter.output_trigger"
+			},
+			{
+				name = "beep"
+				operator = "sos_import_stack"
+				import_stack = "core_start_oneshot"
+				operator_variables = 
+				{
+					start = 
+					{
+						value = "@beep_pick.output"
+					}
+					volume_min = 
+					{
+						value = "1.000000"
+					}
+					volume_max = 
+					{
+						value = "1.000000"
+					}
+					pitch_min = 
+					{
+						value = "1.000000"
+					}
+					pitch_max = 
+					{
+						value = "1.000000"
+					}
+					vsnd_files = 
+					{
+						value = "@public.beep_vsnd"
+					}
+				}
+			},
+			{
+				name = "prevent_stop"
+				operator = "soundevent_control"
+				input_execute = "@get_event_info.output_unstopped"
+				input_add_dependent = "@get_event_info.output_unstopped"
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "diagnostics"
+			display_group = "operators"
+		}
+	}
+	diagnostic.usable_float_range = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					print_interval = 
+					{
+						data_type = "float"
+						value = "1.000000"
+					}
+					source_min = 
+					{
+						data_type = "float"
+						value = "0.000000"
+					}
+					source_max = 
+					{
+						data_type = "float"
+						value = "1.000000"
+					}
+					percentile_lower = 
+					{
+						data_type = "float"
+						value = "5.000000"
+					}
+					percentile_upper = 
+					{
+						data_type = "float"
+						value = "95.000000"
+					}
+				}
+			},
+			{
+				name = "get_event_info"
+				operator = "soundevent_get_info"
+			},
+			{
+				name = "source"
+				operator = "math_random_float"
+				input_min = "@public.source_min"
+				input_max = "@public.source_max"
+			},
+			{
+				name = "range"
+				operator = "util_usable_float_range"
+				input = "@source.output"
+				input_percentile_lower = "@public.percentile_lower"
+				input_percentile_upper = "@public.percentile_upper"
+			},
+			{
+				name = "print_throttle"
+				operator = "util_interval_timer"
+				input_interval = "@public.print_interval"
+				input_start = "1.000000"
+			},
+			{
+				name = "sample"
+				operator = "util_print_float"
+				input_execute = "@print_throttle.output_interval_elapsed"
+				input = "@source.output"
+			},
+			{
+				name = "abs_min"
+				operator = "util_print_float"
+				input_execute = "@print_throttle.output_interval_elapsed"
+				input = "@range.output_min"
+			},
+			{
+				name = "abs_max"
+				operator = "util_print_float"
+				input_execute = "@print_throttle.output_interval_elapsed"
+				input = "@range.output_max"
+			},
+			{
+				name = "usable_min"
+				operator = "util_print_float"
+				input_execute = "@print_throttle.output_interval_elapsed"
+				input = "@range.output_usable_min"
+			},
+			{
+				name = "usable_max"
+				operator = "util_print_float"
+				input_execute = "@print_throttle.output_interval_elapsed"
+				input = "@range.output_usable_max"
+			},
+			{
+				name = "update_prevent_stop"
+				operator = "soundevent_control"
+				input_execute = "@get_event_info.output_unstopped"
+				input_add_dependent = "@get_event_info.output_unstopped"
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "diagnostics"
+			display_group = "operators"
+		}
 	}
 }

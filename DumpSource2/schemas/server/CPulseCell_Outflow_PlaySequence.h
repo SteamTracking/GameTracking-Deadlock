@@ -1,13 +1,19 @@
 // MGetKV3ClassDefaults = {
 //	"_class": "CPulseCell_Outflow_PlaySequence",
 //	"m_nEditorNodeID": -1,
-//	"m_OnFinished":
+//	"m_BaseFlow_OnAfterCancel":
 //	{
 //		"m_SourceOutflowName": "",
 //		"m_nDestChunk": -1,
 //		"m_nInstruction": -1
 //	},
-//	"m_OnCanceled":
+//	"m_BaseFlow_WhileActive":
+//	{
+//		"m_SourceOutflowName": "",
+//		"m_nDestChunk": -1,
+//		"m_nInstruction": -1
+//	},
+//	"m_OnFinished":
 //	{
 //		"m_SourceOutflowName": "",
 //		"m_nDestChunk": -1,

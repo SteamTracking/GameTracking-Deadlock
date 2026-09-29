@@ -7,7 +7,6 @@ class CCitadel_Modifier_Tier2Boss_LaserBeam : public CCitadelModifier
 	AttachmentHandle_t m_hLaserAttachPoint;
 	AttachmentHandle_t m_hLaserAttachPoint02;
 	AttachmentHandle_t m_hLaserSearchStartPos;
-	GameTime_t m_flSoundStartTime;
 	VectorWS m_vStart;
 	VectorWS m_vEnd;
 	VectorWS m_vPrevEnd;

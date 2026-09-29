@@ -1,9 +1,9 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/base.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/dashboard.vcss_c" />
+		<include src="s2r://panorama/styles/base.vcss" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/dashboard.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="AchievementToast">
@@ -16,21 +16,15 @@
 			</Panel>
 		</snippet>
 	</snippets>
-	<CitadelDB class="dashboard introMovieActive" oncancel="CitadelNavigateBack();">
+	<CitadelDB class="dashboard" oncancel="CitadelNavigateBack();">
 		<Panel class="DashboardMain">
 			<Panel id="BackgroundContainer" class="PopupBackgroundBlur" hittest="false" hittestchildren="false">
-				<CitadelBlurTarget id="DashboardBlur" blurrects="ThreeLaneMapContainer DiscordForumInvite RecommendFriend">
-					<MoviePanel id="dashboard_movie" src="file://{resources}/videos/main_menu/menu_streets_loop2.webm" disableactivatepause="true" scaling="stretch-to-cover-preserve-aspect" repeat="true" disableaudio="true" />
-					<MoviePanel id="intro_movie" src="file://{resources}/videos/main_menu/menu_streets_intro.webm" disableactivatepause="true" scaling="stretch-to-cover-preserve-aspect" repeat="false" autoplay="onload" disableaudio="true" />
-				</CitadelBlurTarget>
 				<Panel id="BGColor" hittest="false" />
 			</Panel>
 			<Panel id="ForegroundContainer" hittest="false">
 				<CitadelFooterBar id="FooterBar" />
 				<PageManager id="DashboardPages" hittest="false" />
 				<Panel id="DashboardContents" hittest="false">
-					<CitadelAnnouncementList id="announcementList" />
-					<CitadelPlayMenu id="PlayMenu" />
 					<Panel id="LeftStripe" hittest="false">
 						<Panel id="LogoArea">
 							<Panel id="GameTitle" />
@@ -98,9 +92,6 @@
 								<Label text="#menu_exit" class="menuButtonLabel" />
 							</Button>
 							<Panel id="SubOptions">
-								<Button id="patch_version" class="nav_menu_item minor" onactivate="CitadelShowLatestPatchNotes()" onmouseover="UIShowTextTooltip( #Citadel_Dashboard_PatchNotesTooltip )" onmouseout="UIHideTextTooltip()">
-									<Label text="Patch Notes - {s:patch_version}" class="menuButtonLabel patch_version_text" />
-								</Button>
 								<Button id="settings" class="nav_menu_item minor" onactivate="CitadelSettings()">
 									<Panel class="smallIcon GearIcon" />
 									<Label text="#menu_settings" class="menuButtonLabel" />
@@ -118,10 +109,6 @@
 					</Panel>
 					<Panel id="StatusIcons">
 						<Panel class="newBadge" />
-						<Panel id="Announcements" onactivate="CitadelToggleViewAnnouncements()">
-							<Panel class="AnnouncementIcon" onmouseover="UIShowTextTooltip( #Citadel_Dashboard_ShowAnnounceTooltip );" onmouseout="UIHideTextTooltip()" />
-							<Panel class="AnnouncementIconClose" onmouseover="UIShowTextTooltip( #Citadel_Dashboard_CloseAnnounceTooltip );" onmouseout="UIHideTextTooltip()" />
-						</Panel>
 					</Panel>
 					<Panel id="party_ctn">
 						<CitadelPartyInviteList id="partyinvites" />

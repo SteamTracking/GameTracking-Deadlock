@@ -1,0 +1,3 @@
+class CMixControlTransientInputDesc : public CVNodeTypeDesc
+{
+};

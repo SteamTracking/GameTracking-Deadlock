@@ -1,8 +1,8 @@
 /* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
 
-@import url("s2r://panorama/styles/citadel_base_styles.vcss_c");
-@define normalDamageInitColor: #FFD18D;
-@define normalDamageColor: #EC9719;
+@import url("s2r://panorama/styles/citadel_base_styles.vcss");
+@define normalDamageInitColor: courageLightColor;
+@define normalDamageColor: courageColor;
 @define abilityDamageInitColor: #E7C8FF;
 @define abilityDamageColor: #CE90FF;
 @define meleeDamageInitColor: #FFD18D;
@@ -11,8 +11,10 @@
 @define pureDamageColor: #FFFFFF;
 @define poisonDamageInitColor: #227031;
 @define poisonDamageColor: #49B960;
-@define critDamageInitColor: rgb(255, 255, 255);
-@define critDamageColor: yellow;
+@define critDamageInitColor: offWhite;
+@define critDamageColor: #ffeb54;
+@define luckyShotDamageInitColor: offWhite;
+@define luckyShotDamageColor: #ff9654;
 @define buffedGunDamageInitColor: rgb(255, 255, 220);
 @define buffedGunDamageColor: orange;
 @define buffedAbilityDamageInitColor: rgb(234, 208, 255);
@@ -23,11 +25,17 @@
 @define buffedPureDamageColor: white;
 @define critPureDamageInitColor: rgb(255, 255, 220);
 @define critPureDamageColor: white;
+@define luckyShotPureDamageInitColor: rgb(255, 255, 220);
+@define luckyShotPureDamageColor: white;
 @define statusEffectInitColor: rgb(79, 50, 50);
 @define statusEffectColor: rgb(255, 255, 255);
 @define numberOffsetX: 40;
 @define cumulativeDamageInitColor: rgb(255, 255, 220);
 @define cumulativeDamageColor: rgb(255, 255, 255);
+@define normalHealingInitColor: fortitudeLightColor;
+@define normalHealingColor: fortitudeColor;
+@define cumulativeHealingInitColor: fortitudeLightColor;
+@define cumulativeHealingColor: fortitudeBrightColor;
 @keyframes 'desc_text'
 {
 	2%
@@ -170,6 +178,20 @@
 	
 }
 
+@keyframes 'healing_color'
+{
+	0%
+	{
+		color: normalHealingInitColor;
+	}
+	
+	100%
+	{
+		color: normalHealingColor;
+	}
+	
+}
+
 @keyframes 'pure_damage_color'
 {
 	0%
@@ -198,114 +220,6 @@
 	
 }
 
-@keyframes 'crit_flash'
-{
-	0%
-	{
-		text-shadow: 0px 0px 4.0 red;
-	}
-	
-	10%
-	{
-		text-shadow: 0px 0px 4.0 red;
-	}
-	
-	100%
-	{
-		text-shadow: 0px 0px 4.0 orange;
-	}
-	
-}
-
-@keyframes 'crit_color_pure'
-{
-	0%
-	{
-		color: critPureDamageInitColor;
-	}
-	
-	100%
-	{
-		color: critPureDamageColor;
-	}
-	
-}
-
-@keyframes 'crit_flash_pure'
-{
-	0%
-	{
-		text-shadow: 0px 0px 4.0 dodgerblue;
-	}
-	
-	10%
-	{
-		text-shadow: 0px 0px 4.0 dodgerblue;
-	}
-	
-	100%
-	{
-		text-shadow: 0px 0px 4.0 aquamarine;
-	}
-	
-}
-
-@keyframes 'buffed_gun_color'
-{
-	0%
-	{
-		color: buffedGunDamageInitColor;
-	}
-	
-	100%
-	{
-		color: buffedGunDamageColor;
-	}
-	
-}
-
-@keyframes 'buffed_ability_color'
-{
-	0%
-	{
-		color: buffedAbilityDamageInitColor;
-	}
-	
-	100%
-	{
-		color: buffedAbilityDamageColor;
-	}
-	
-}
-
-@keyframes 'buffed_pure_color'
-{
-	0%
-	{
-		color: buffedPureDamageInitColor;
-	}
-	
-	100%
-	{
-		color: buffedPureDamageColor;
-	}
-	
-}
-
-@keyframes 'buffed_melee_color'
-{
-	0%
-	{
-		color: buffedMeleeDamageInitColor;
-	}
-	
-	100%
-	{
-		color: buffedMeleeDamageColor;
-	}
-	
-}
-
 @keyframes 'ability_color'
 {
 	0%
@@ -316,34 +230,6 @@
 	100%
 	{
 		color: abilityDamageColor;
-	}
-	
-}
-
-@keyframes 'poison_color'
-{
-	0%
-	{
-		color: poisonDamageInitColor;
-	}
-	
-	100%
-	{
-		color: poisonDamageColor;
-	}
-	
-}
-
-@keyframes 'status_effect_color'
-{
-	0%
-	{
-		color: statusEffectInitColor;
-	}
-	
-	100%
-	{
-		color: statusEffectColor;
 	}
 	
 }
@@ -362,196 +248,18 @@
 	
 }
 
-@keyframes 'rise_and_fade_gun'
+@keyframes 'luckyshot_pop'
 {
 	0%
 	{
-		transform: translateX(100px);
-		opacity: 1;
-	}
-	
-	15%
-	{
-		opacity: 0;
+		pre-transform-scale2d: 1.45;
+		color: luckyShotDamageInitColor;
 	}
 	
 	100%
 	{
-		transform: translateX(100px);
-		opacity: 0;
-	}
-	
-}
-
-@keyframes 'rise_and_fade_gun_batched'
-{
-	0%
-	{
-		pre-transform-scale2d: 1;
-		transform: translateX(100px);
-	}
-	
-	1%
-	{
-		pre-transform-scale2d: 1.3;
-	}
-	
-	3%
-	{
-		pre-transform-scale2d: 1;
-	}
-	
-	35%
-	{
-		opacity: 1;
-	}
-	
-	55%
-	{
-		opacity: 0;
-	}
-	
-	100%
-	{
-		transform: translateX(100px);
-		opacity: 0;
-	}
-	
-}
-
-@keyframes 'rise_and_fade_melee'
-{
-	0%
-	{
-		pre-transform-scale2d: 1;
-		transform: translateY(-40px) translateX(60px);
-	}
-	
-	1%
-	{
-		pre-transform-scale2d: 1.3;
-	}
-	
-	3%
-	{
-		pre-transform-scale2d: 1;
-	}
-	
-	15%
-	{
-		transform: translateY(-40px) translateX(60px);
-	}
-	
-	30%
-	{
-		transform: translateY(-120px) translateX(60px);
-		opacity: 0;
-	}
-	
-	100%
-	{
-		transform: translateY(-120px) translateX(60px);
-		opacity: 0;
-	}
-	
-}
-
-@keyframes 'rise_and_fade_pure'
-{
-	0%
-	{
-		pre-transform-scale2d: 1;
-		transform: translateY(-40px) translateX(60px);
-	}
-	
-	1%
-	{
-		pre-transform-scale2d: 1.3;
-	}
-	
-	3%
-	{
-		pre-transform-scale2d: 1;
-	}
-	
-	15%
-	{
-		transform: translateY(-40px) translateX(60px);
-		opacity: 1;
-	}
-	
-	30%
-	{
-		transform: translateY(-40px) translateX(60px);
-		opacity: 0;
-	}
-	
-	50%
-	{
-		transform: translateY(-50px) translateX(60px);
-	}
-	
-	100%
-	{
-		transform: translateY(-120px) translateX(60px);
-		opacity: 0;
-	}
-	
-}
-
-@keyframes 'rise_and_fade_tech'
-{
-	0%
-	{
-		transform: translateX(50px);
-		opacity: 0.5;
-	}
-	
-	50%
-	{
-		opacity: 0;
-	}
-	
-	100%
-	{
-		transform: translateX(50px);
-		opacity: 0;
-	}
-	
-}
-
-@keyframes 'rise_and_fade_tech_batched'
-{
-	0%
-	{
-		pre-transform-scale2d: 1;
-		transform: translateX(50px);
-	}
-	
-	1%
-	{
-		pre-transform-scale2d: 1.3;
-	}
-	
-	3%
-	{
-		pre-transform-scale2d: 1;
-	}
-	
-	35%
-	{
-		opacity: 0.4;
-	}
-	
-	55%
-	{
-		opacity: 0;
-	}
-	
-	100%
-	{
-		transform: translateX(50px);
-		opacity: 0;
+		pre-transform-scale2d: 1.0;
+		color: luckyShotDamageColor;
 	}
 	
 }
@@ -559,15 +267,13 @@
 .WindowRoot
 {
 	height: 300px;
-	width: 300px;
+	width: 100px;
 	font-size: 30px;
-	flow-children: right;
 	opacity: 1;
 }
 
 .HudIndicatorText
 {
-	padding: 200px 0px 10px 100px;
 	padding: 20px 0px 10px 40px;
 	padding: 10px;
 	width: fit-children;
@@ -577,14 +283,27 @@
 	text-align: center;
 	font-family: sansMono;
 	font-family: oracle;
-	text-shadow: 0px 0px 5.0 black;
+	font-size: 14px;
+	text-shadow: 0px 0px 3.0 black;
+	text-overflow: shrink;
+}
+
+.cumulative.is_yourself .HudIndicatorText
+{
+	padding-top: 50px;
+	wash-color: #ff6161;
+	ui-scale: 130%;
+}
+
+.cumulative.is_yourself.healing .HudIndicatorText
+{
+	wash-color: none;
 }
 
 .HudIndicatorContainer
 {
 	horizontal-align: center;
 	vertical-align: center;
-	flow-children: right;
 	text-align: right;
 	z-index: -1;
 }
@@ -607,83 +326,59 @@
 	animation-duration: 3s;
 }
 
+#GoldPlusPrefix
+{
+	visibility: collapse;
+}
+
 .position_on_hero
 {
 	horizontal-align: center;
 	vertical-align: bottom;
-	x: 0px;
+	x: -50px;
+	y: -200px;
+}
+
+.is_yourself
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	x: -150px;
 	y: -300px;
+	x: -250px;
+	y: -300px;
+	animation-duration: 0.6s;
+	animation-iteration-count: 1;
+	opacity: 0;
 }
 
-.damage_type_gun .HudIndicatorContainer
+.is_yourself.healing
 {
-	horizontal-align: right;
-	vertical-align: center;
-	flow-children: right;
-	z-index: -1;
-	margin-left: 70px;
-	animation-timing-function: linear;
-	animation-name: rise_and_fade_gun;
+	wash-color: none;
+	x: -350px;
+	y: -290px;
 }
 
-.batched.damage_type_gun .HudIndicatorContainer
+@keyframes 'is_yourself_dmg'
 {
-	vertical-align: center;
-	flow-children: right;
-	z-index: 1;
-	animation-name: rise_and_fade_gun_batched;
-}
-
-.batched.crit .HudIndicatorContainer
-{
-	vertical-align: center;
-	flow-children: right;
-	z-index: 1;
-	animation-name: rise_and_fade_gun_batched;
-}
-
-.damage_type_ability .HudIndicatorContainer
-{
-	horizontal-align: left;
-	vertical-align: center;
-	flow-children: right;
-	z-index: -1;
-	animation-name: rise_and_fade_tech;
-}
-
-.batched.damage_type_ability .HudIndicatorContainer
-{
-	vertical-align: center;
-	flow-children: right;
-	z-index: -1;
-	animation-name: rise_and_fade_tech_batched;
-}
-
-.batched.damage_type_melee .HudIndicatorContainer
-{
-	vertical-align: center;
-	flow-children: right;
-	z-index: -1;
-	animation-name: rise_and_fade_melee;
-}
-
-.damage_type_pure .HudIndicatorContainer
-{
-	horizontal-align: right;
-	vertical-align: center;
-	flow-children: right;
-	z-index: -1;
-	margin-left: 70px;
-	animation-timing-function: linear;
-	animation-name: rise_and_fade_pure;
-}
-
-.batched.damage_type_pure .HudIndicatorContainer
-{
-	vertical-align: center;
-	flow-children: right;
-	z-index: -1;
-	animation-name: rise_and_fade_tech_batched;
+	0%
+	{
+		transform: rotateZ(0deg);
+		pre-transform-scale2d: 1;
+	}
+	
+	50%
+	{
+		transform: rotateZ(20deg);
+		pre-transform-scale2d: 2;
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
+		pre-transform-scale2d: 1;
+	}
+	
 }
 
 .gold .HudIndicatorContainer
@@ -692,7 +387,7 @@
 	vertical-align: center;
 	height: fit-children;
 	width: fit-children;
-	flow-children: right;
+	flow-children: left;
 	z-index: 10;
 	animation-name: gold_pop;
 	animation-duration: 3s;
@@ -708,13 +403,18 @@
 	img-shadow: 0px 0px 3px #000000;
 }
 
+.isUnsecured.gold .HudIndicatorIcon,.isUnsecured.gold_small .HudIndicatorIcon
+{
+	wash-color: rgb(255, 109, 109);
+}
+
 .gold_small .HudIndicatorContainer
 {
 	horizontal-align: center;
 	vertical-align: center;
 	height: fit-children;
 	width: fit-children;
-	flow-children: right;
+	flow-children: left;
 	z-index: 10;
 	animation-name: gold_pop;
 	animation-duration: 3s;
@@ -749,225 +449,48 @@
 	visibility: visible;
 }
 
-#Effectiveness
+.cumulative_final.hasEffectiveness #Effectiveness
 {
-	transform: translateX(60px);
-	visibility: collapse;
-}
-
-.hasEffectiveness #Effectiveness
-{
-	font-size: 15px;
+	font-size: 14px;
 	font-weight: semi-bold;
 	color: rgb(179, 179, 179);
 	white-space: nowrap;
 	opacity: 1;
 	visibility: visible;
+	animation-name: pop, fade;
+	animation-duration: 0.1s, 0.5s;
+	animation-fill-mode: forwards;
+	visibility: collapse;
 }
 
-.distance_near .HudIndicatorContainer
+.distance_near .HudIndicatorContainer,.distance_normal .HudIndicatorContainer
 {
-	font-size: 24px;
-	ui-scale: 90%;
-}
-
-.distance_normal .HudIndicatorContainer
-{
-	font-size: 24px;
-	ui-scale: 90%;
+	opacity: 0.8;
 }
 
 .distance_far .HudIndicatorContainer
 {
-	font-size: 16px;
-	ui-scale: 70%;
+	opacity: 0.65;
 }
 
 .distance_very_far .HudIndicatorContainer
 {
-	font-size: 16px;
-	ui-scale: 70%;
+	opacity: 0.5;
 }
 
 .distance_extremely_far .HudIndicatorContainer
 {
-	font-size: 12px;
-	ui-scale: 70%;
-}
-
-.distance_near,.distance_normal
-{
-	opacity: 0.8;
-}
-
-.distance_far
-{
-	opacity: 0.65;
-}
-
-.distance_very_far
-{
-	opacity: 0.5;
-}
-
-.distance_extremely_far
-{
 	opacity: 0.4;
 }
 
-.damage_type_gun .HudIndicatorText
+.gold #GoldPlusPrefix,.gold_small #GoldPlusPrefix
 {
-	opacity: 0.8;
-	text-align: center;
-	color: normalDamageColor;
+	visibility: visible;
 }
 
-.batched.damage_type_gun .HudIndicatorText
+.gold #Value,.gold_small #Value
 {
-	opacity: 1;
-	text-align: center;
-	animation-name: damage_color;
-	animation-duration: 0.3s;
-}
-
-.batched.buffed.damage_type_gun .HudIndicatorText
-{
-	opacity: 1;
-	text-align: center;
-	color: buffedGunDamageColor;
-	animation-name: buffed_gun_color;
-	animation-duration: 0.3s;
-}
-
-.buffed.damage_type_gun .HudIndicatorText
-{
-	opacity: 0.5;
-	text-align: center;
-	color: buffedGunDamageColor;
-	animation-name: buffed_gun_color;
-	animation-duration: 0.3s;
-}
-
-.crit.damage_type_gun .HudIndicatorText
-{
-	opacity: 0.5;
-	color: critDamageColor;
-	text-align: center;
-	text-shadow: 0px 0px 2.0 orange;
-	animation-name: crit_color, crit_flash;
-	animation-duration: 0.3s, 1s;
-}
-
-.batched.crit.damage_type_gun .HudIndicatorText
-{
-	opacity: 1;
-	color: critDamageColor;
-	text-align: center;
-	pre-transform-scale2d: 1.4;
-	animation-name: crit_color, crit_flash;
-	animation-duration: 0.3s, 0.3s;
-}
-
-.damage_type_melee .HudIndicatorText
-{
-	opacity: 1;
-	color: meleeDamageColor;
-	font-size: 60px;
-	text-align: center;
-	text-shadow: 0px 0px 6px 1.5 black;
-}
-
-.buffed.damage_type_melee .HudIndicatorText
-{
-	opacity: 1;
-	font-size: 60px;
-	text-align: center;
-	text-shadow: 0px 0px 6px 1.5 black;
-	color: buffedMeleeDamageColor;
-	animation-name: buffed_melee_color;
-	animation-duration: 0.3s;
-}
-
-.damage_type_pure .HudIndicatorText
-{
-	opacity: 1;
-	color: pureDamageColor;
-	text-align: center;
-	text-shadow: 2px 2px 10px 5.0 black;
-}
-
-.buffed.damage_type_pure .HudIndicatorText
-{
-	opacity: 1;
-	text-align: center;
-	text-shadow: 2px 2px 10px 5.0 black;
-	color: buffedPureDamageColor;
-	animation-name: buffed_pure_color;
-	animation-duration: 0.3s;
-}
-
-.crit.damage_type_pure .HudIndicatorText
-{
-	opacity: 0.5;
-	color: critPureDamageColor;
-	text-align: center;
-	text-shadow: 0px 0px 2.0 aquamarine;
-	animation-name: crit_color_pure, crit_flash_pure;
-	animation-duration: 0.3s, 1s;
-}
-
-.batched.crit.damage_type_pure .HudIndicatorText
-{
-	opacity: 1;
-	color: critPureDamageColor;
-	text-align: center;
-	pre-transform-scale2d: 1.4;
-	animation-name: crit_color_pure, crit_flash_pure;
-	animation-duration: 0.3s, 0.3s;
-}
-
-.damage_type_ability .HudIndicatorText
-{
-	opacity: 0.3;
-	text-align: center;
-	color: abilityDamageColor;
-	animation-name: ability_color;
-	animation-duration: 0.3s;
-}
-
-.batched.damage_type_ability .HudIndicatorText
-{
-	opacity: 1;
-	text-align: center;
-	color: abilityDamageColor;
-	animation-name: ability_color;
-	animation-duration: 0.3s;
-}
-
-.buffed.damage_type_ability .HudIndicatorText
-{
-	opacity: 1;
-	color: buffedAbilityDamageColor;
-	animation-name: buffed_ability_color;
-	animation-duration: 0.3s;
-	text-align: center;
-	text-shadow: 0px 0px 6px 1.5 blue;
-}
-
-.damage.damage_type_poison .HudIndicatorText
-{
-	color: poisonDamageColor;
-	animation-name: poison_color;
-	animation-duration: 0.3s;
-}
-
-.status_effect .HudIndicatorText
-{
-	color: statusEffectColor;
-	animation-name: status_effect_color;
-	animation-duration: 0.3s;
-	text-transform: uppercase;
-	text-shadow: 2px 2px 10px rgb(79, 50, 50);
+	padding-left: 0px;
 }
 
 .gold .HudIndicatorText
@@ -982,6 +505,11 @@
 	font-weight: bold;
 	font-size: 40px;
 	color: #70F8C1;
+}
+
+.isUnsecured .HudIndicatorText
+{
+	color: rgb(255, 150, 150);
 }
 
 .xp .HudIndicatorText
@@ -1047,14 +575,14 @@
 	font-size: 60px;
 }
 
-.crit .HudIndicatorIcon
+.distance_far .HudIndicatorIcon,.distance_very_far .HudIndicatorIcon,.distance_extremely_far .HudIndicatorIcon,.distance_far.crit .HudIndicatorIcon,.distance_very_far.crit .HudIndicatorIcon,.distance_extremely_far.crit .HudIndicatorIcon
 {
-	wash-color: critDamageColor;
-	width: 30px;
-	height: 30px;
+	width: 20px;
+	height: 20px;
+	margin-left: 5px;
 }
 
-.distance_far .HudIndicatorIcon,.distance_very_far .HudIndicatorIcon,.distance_extremely_far .HudIndicatorIcon,.distance_far.crit .HudIndicatorIcon,.distance_very_far.crit .HudIndicatorIcon,.distance_extremely_far.crit .HudIndicatorIcon
+.distance_far.luckyshot .HudIndicatorIcon,.distance_very_far.luckyshot .HudIndicatorIcon,.distance_extremely_far.luckyshot .HudIndicatorIcon
 {
 	width: 20px;
 	height: 20px;
@@ -1232,6 +760,20 @@
 	
 }
 
+@keyframes 'cumulative_healing_color'
+{
+	0%
+	{
+		color: cumulativeHealingInitColor;
+	}
+	
+	100%
+	{
+		color: cumulativeHealingColor;
+	}
+	
+}
+
 @keyframes 'fade'
 {
 	0%
@@ -1244,7 +786,7 @@
 		opacity: 1;
 	}
 	
-	95%
+	75%
 	{
 		opacity: 0;
 	}
@@ -1308,16 +850,73 @@
 	
 }
 
+@keyframes 'cumulative_final_float'
+{
+	0%
+	{
+		opacity: 0;
+		wash-color: cumulativeDamageInitColor;
+	}
+	
+	30%
+	{
+		wash-color: cumulativeDamageColor;
+		opacity: 1;
+	}
+	
+	60%
+	{
+		wash-color: cumulativeDamageColor;
+		opacity: 1;
+	}
+	
+	100%
+	{
+		opacity: 0;
+	}
+	
+}
+
+@keyframes 'number_appear'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1.5;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+}
+
 @keyframes 'fountain1'
 {
 	0%
 	{
 		transform: translateX(0px) translateY(-0px);
+		pre-transform-scale2d: 1;
+	}
+	
+	10%
+	{
+		pre-transform-scale2d: 1.5;
+	}
+	
+	20%
+	{
+		pre-transform-scale2d: 1;
 	}
 	
 	100%
 	{
-		transform: translateX(-20px) translateY(-50px);
+		transform: translateX(-20px) translateY(-80px);
 	}
 	
 }
@@ -1326,12 +925,23 @@
 {
 	0%
 	{
-		transform: translateX(0px) translateY(-0px);
+		transform: translateX(5px) translateY(-0px);
+		pre-transform-scale2d: 1;
+	}
+	
+	10%
+	{
+		pre-transform-scale2d: 1.5;
+	}
+	
+	20%
+	{
+		pre-transform-scale2d: 1;
 	}
 	
 	100%
 	{
-		transform: translateX(-10px) translateY(-50px);
+		transform: translateX(-10px) translateY(-80px);
 	}
 	
 }
@@ -1341,11 +951,22 @@
 	0%
 	{
 		transform: translateX(0px) translateY(-0px);
+		pre-transform-scale2d: 1;
+	}
+	
+	10%
+	{
+		pre-transform-scale2d: 1.5;
+	}
+	
+	20%
+	{
+		pre-transform-scale2d: 1;
 	}
 	
 	100%
 	{
-		transform: translateX(0px) translateY(-50px);
+		transform: translateX(0px) translateY(-80px);
 	}
 	
 }
@@ -1354,12 +975,23 @@
 {
 	0%
 	{
-		transform: translateX(0px) translateY(-0px);
+		transform: translateX(-5px) translateY(-0px);
+		pre-transform-scale2d: 1;
+	}
+	
+	10%
+	{
+		pre-transform-scale2d: 1.5;
+	}
+	
+	20%
+	{
+		pre-transform-scale2d: 1;
 	}
 	
 	100%
 	{
-		transform: translateX(10px) translateY(-50px);
+		transform: translateX(10px) translateY(-80px);
 	}
 	
 }
@@ -1368,12 +1000,23 @@
 {
 	0%
 	{
-		transform: translateX(0px) translateY(-0px);
+		transform: translateX(-10px) translateY(-0px);
+		pre-transform-scale2d: 1;
+	}
+	
+	10%
+	{
+		pre-transform-scale2d: 1.5;
+	}
+	
+	20%
+	{
+		pre-transform-scale2d: 1;
 	}
 	
 	100%
 	{
-		transform: translateX(20px) translateY(-50px);
+		transform: translateX(20px) translateY(-80px);
 	}
 	
 }
@@ -1385,9 +1028,9 @@
 		transform: translateX(0px) translateY(-0px);
 	}
 	
-	30%
+	50%
 	{
-		transform: translateX(-10px) translateY(-50px);
+		transform: translateX(0px) translateY(0px);
 	}
 	
 	100%
@@ -1404,9 +1047,9 @@
 		transform: translateX(0px) translateY(-0px);
 	}
 	
-	30%
+	50%
 	{
-		transform: translateX(-5px) translateY(-50px);
+		transform: translateX(0px) translateY(0px);
 	}
 	
 	100%
@@ -1423,7 +1066,7 @@
 		transform: translateX(0px) translateY(-0px);
 	}
 	
-	30%
+	50%
 	{
 		transform: translateX(0px) translateY(-50px);
 	}
@@ -1442,9 +1085,9 @@
 		transform: translateX(0px) translateY(-0px);
 	}
 	
-	30%
+	50%
 	{
-		transform: translateX(5px) translateY(-50px);
+		transform: translateX(0px) translateY(0px);
 	}
 	
 	100%
@@ -1461,9 +1104,9 @@
 		transform: translateX(0px) translateY(-0px);
 	}
 	
-	30%
+	50%
 	{
-		transform: translateX(10px) translateY(-50px);
+		transform: translateX(0px) translateY(0px);
 	}
 	
 	100%
@@ -1473,18 +1116,50 @@
 	
 }
 
-.trooper .HudIndicatorContainer
+.trooper .HudIndicatorContainer,.healing .HudIndicatorContainer
 {
 	ui-scale: 80%;
 }
 
+.is_yourself .HudIndicatorContainer
+{
+	ui-scale: 140%;
+}
+
+.healing .is_yourself .HudIndicatorContainer .HudIndicatorText
+{
+	wash-color: none;
+}
+
+.is_yourself.healing .HudIndicatorContainer
+{
+	ui-scale: 90%;
+}
+
+@keyframes 'local_player_dmg_wiggle'
+{
+	0%
+	{
+		transform: translateX(-5px);
+	}
+	
+	50%
+	{
+		transform: translateX(0px);
+	}
+	
+	100%
+	{
+		transform: translateX(5px);
+	}
+	
+}
+
 .cumulative .HudIndicatorContainer
 {
-	margin-left: 100px;
-	vertical-align: center;
 	z-index: 1;
 	animation-name: pop, fade;
-	animation-duration: 0.1s, 0.5s;
+	animation-duration: 0.2s, 1.25s;
 	animation-fill-mode: forwards;
 }
 
@@ -1494,7 +1169,7 @@
 	vertical-align: center;
 	z-index: 1;
 	animation-name: pop, fade;
-	animation-duration: 0.2s,1.25s;
+	animation-duration: 0.2s, 1.25s;
 	animation-fill-mode: forwards;
 }
 
@@ -1503,27 +1178,23 @@
 	margin-left: 105px;
 }
 
-.cumulative .HudIndicatorText
+.cumulative_final .HudIndicatorContainer
 {
-	font-size: 24px;
-	font-weight: bold;
-	animation-name: cumulative_damage_color;
-	animation-duration: 0.3s;
+	z-index: 1;
+	animation-name: cumulative_final_float;
+	animation-duration: 1s;
+	animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
 }
 
-.cumulative.emphasize .HudIndicatorText
+.distance_extremely_far.cumulative_final .HudIndicatorContainer
 {
-	font-size: 24px;
-	font-weight: bold;
-	animation-name: cumulative_damage_color;
-	animation-duration: 0.6s;
-	animation-fill-mode: forwards;
+	margin-left: 105px;
 }
 
 .bullet_damage_new .HudIndicatorText
 {
-	font-weight: bold;
+	font-weight: normal;
 	animation-name: damage_color;
 	animation-duration: 0.3s;
 	animation-fill-mode: forwards;
@@ -1532,14 +1203,34 @@
 .bullet_damage_new.crit .HudIndicatorText
 {
 	animation-name: crit_color;
+	animation-duration: 0.3s;
 	font-weight: bold;
-	text-shadow: 0px 0px 4.0 orange;
+	ui-scale: 130%;
+	text-shadow: 0px 0px 3.0 offBlack;
+	animation-fill-mode: forwards;
+}
+
+.bullet_damage_new.luckyshot .HudIndicatorText
+{
+	animation-name: luckyshot_pop;
+	animation-duration: 0.3s;
+	font-weight: bold;
+	ui-scale: 130%;
+	text-shadow: 0px 0px 3.0 offBlack;
+	animation-fill-mode: forwards;
+}
+
+.healing .HudIndicatorText
+{
+	font-weight: normal;
+	animation-name: healing_color;
+	animation-duration: 0.3s;
 	animation-fill-mode: forwards;
 }
 
 .ability_damage_new .HudIndicatorText
 {
-	font-weight: bold;
+	font-weight: normal;
 	animation-name: ability_color;
 	animation-duration: 0.3s;
 	animation-fill-mode: forwards;
@@ -1562,93 +1253,174 @@
 	animation-fill-mode: forwards;
 }
 
+.cumulative .HudIndicatorText
+{
+	font-size: 18px;
+	font-weight: bold;
+	animation-name: cumulative_damage_color;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+}
+
+.cumulative.emphasize .HudIndicatorText
+{
+	font-size: 18px;
+	font-weight: bold;
+	animation-name: cumulative_damage_color;
+	animation-duration: 0.6s;
+	animation-fill-mode: forwards;
+}
+
+.cumulative.healing .HudIndicatorText
+{
+	font-size: 18px;
+	font-weight: bold;
+	animation-name: cumulative_healing_color;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+}
+
+.cumulative.healing.emphasize .HudIndicatorText
+{
+	font-size: 18px;
+	font-weight: bold;
+	animation-name: cumulative_healing_color;
+	animation-duration: 0.6s;
+	animation-fill-mode: forwards;
+}
+
+.cumulative_final .HudIndicatorText
+{
+	font-size: 18px;
+	font-weight: bold;
+	animation-name: cumulative_damage_color;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+}
+
+.cumulative_final.healing .HudIndicatorText
+{
+	font-size: 18px;
+	font-weight: bold;
+	animation-name: cumulative_healing_color;
+	animation-duration: 0.3s;
+	animation-fill-mode: forwards;
+}
+
 .fountain1 .HudIndicatorContainer
 {
-	margin-left: 100px;
 	animation-timing-function: ease-out;
 	animation-name: fountain1, fade;
-	animation-duration: 0.4s;
+	animation-duration: 2s, 1s;
 	animation-fill-mode: forwards;
+}
+
+.ability_damage_new .fountain1 .HudIndicatorContainer
+{
+	animation-delay: 0.1s;
 }
 
 .fountain2 .HudIndicatorContainer
 {
-	margin-left: 100px;
 	animation-timing-function: ease-out;
 	animation-name: fountain2, fade;
-	animation-duration: 0.4s;
+	animation-duration: 2s, 1s;
 	animation-fill-mode: forwards;
 }
 
 .fountain3 .HudIndicatorContainer
 {
-	margin-left: 100px;
 	animation-timing-function: ease-out;
 	animation-name: fountain3, fade;
-	animation-duration: 0.4s;
+	animation-duration: 2s, 1s;
 	animation-fill-mode: forwards;
 }
 
 .fountain4 .HudIndicatorContainer
 {
-	margin-left: 100px;
 	animation-timing-function: ease-out;
 	animation-name: fountain4, fade;
-	animation-duration: 0.4s;
+	animation-duration: 2s, 1s;
 	animation-fill-mode: forwards;
 }
 
 .fountain5 .HudIndicatorContainer
 {
-	margin-left: 100px;
 	animation-timing-function: ease-out;
 	animation-name: fountain5, fade;
-	animation-duration: 0.4s;
+	animation-duration: 2s, 1s;
 	animation-fill-mode: forwards;
 }
 
 .fountain_emphasised1 .HudIndicatorContainer
 {
-	margin-left: 100px;
 	animation-timing-function: ease-out;
 	animation-name: fountain_emphasised1, fade, pop_emphasized;
-	animation-duration: 1.2s, 1.2s, 0.6s;
+	animation-duration: 3s, 1.2s, 0.6s;
 	animation-fill-mode: forwards;
+	ui-scale: 150%;
+	brightness: 2;
 }
 
 .fountain_emphasised2 .HudIndicatorContainer
 {
-	margin-left: 100px;
 	animation-timing-function: ease-out;
 	animation-name: fountain_emphasised2, fade, pop_emphasized;
-	animation-duration: 1.2s, 1.2s, 0.6s;
+	animation-duration: 3s, 1.2s, 0.6s;
 	animation-fill-mode: forwards;
+	ui-scale: 150%;
+	brightness: 2;
 }
 
 .fountain_emphasised3 .HudIndicatorContainer
 {
-	margin-left: 100px;
 	animation-timing-function: ease-out;
 	animation-name: fountain_emphasised3, fade, pop_emphasized;
-	animation-duration: 1.2s, 1.2s, 0.6s;
+	animation-duration: 3s, 1.2s, 0.6s;
 	animation-fill-mode: forwards;
+	ui-scale: 150%;
+	brightness: 2;
 }
 
 .fountain_emphasised4 .HudIndicatorContainer
 {
-	margin-left: 100px;
 	animation-timing-function: ease-out;
 	animation-name: fountain_emphasised4, fade, pop_emphasized;
-	animation-duration: 1.2s, 1.2s, 0.6s;
+	animation-duration: 3s, 1.2s, 0.6s;
 	animation-fill-mode: forwards;
+	ui-scale: 150%;
+	brightness: 2;
 }
 
 .fountain_emphasised5 .HudIndicatorContainer
 {
-	margin-left: 100px;
 	animation-timing-function: ease-out;
 	animation-name: fountain_emphasised5, fade, pop_emphasized;
-	animation-duration: 1.2s, 1.2s, 0.6s;
+	animation-duration: 3s, 1s, 0.6s;
 	animation-fill-mode: forwards;
+	ui-scale: 150%;
+	brightness: 2;
+}
+
+#Effectiveness
+{
+	transform: translateX(10px) translateY(160px);
+	visibility: collapse;
+	font-size: 12px;
+	font-weight: semi-bold;
+	color: rgb(222, 222, 222);
+	animation-name:none;
+	animation-timing-function: none;
+	text-align: center;
+	font-family: sansMono;
+	font-family: oracle;
+	font-size: 14px;
+	text-shadow: 0px 0px 3.0 black;
+	text-overflow: shrink;
+}
+
+.hasEffectiveness #Effectiveness
+{
+	visibility: visible;
 }
 

@@ -1,0 +1,710 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	citadel_ambience_obb = 
+	{
+		operators = 
+		[
+			{
+				name = "_builtins"
+				operator = "sos_builtins"
+				_voicegraph = "citadel_ambience_obb"
+			},
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					citadel_default_3d = 
+					{
+						data_type = "public_opvar"
+						value = "citadel_default_3d"
+					}
+					citadel_ambience_random_panner = 
+					{
+						data_type = "public_opvar"
+						value = "citadel_ambience_random_panner"
+					}
+					obb_mins = 
+					{
+						data_type = "float3"
+						value = "[0.0, 0.0, 0.0]"
+						_system_properties = 
+						{
+							display_group = "locked"
+							property_help = "set in code."
+						}
+					}
+					obb_maxs = 
+					{
+						data_type = "float3"
+						value = "[0.0, 0.0, 0.0]"
+						_system_properties = 
+						{
+							display_group = "locked"
+							property_help = "set in code."
+						}
+					}
+					obb_origin = 
+					{
+						data_type = "float3"
+						value = "[0.0, 0.0, 0.0]"
+						_system_properties = 
+						{
+							display_group = "locked"
+							property_help = "set in code."
+						}
+					}
+					obb_angles = 
+					{
+						data_type = "float3"
+						value = "[0.0, 0.0, 0.0]"
+						_system_properties = 
+						{
+							display_group = "locked"
+							property_help = "set in code."
+						}
+					}
+					interior_vol_offset_db = 
+					{
+						data_type = "float6"
+						soundevent_data = "true"
+						value = 
+						[
+							"[ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]",
+							"[ 1.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]",
+						]
+						_system_properties = 
+						{
+							display_group = "advanced"
+							display_edit_type = "field_curve_2d_editor"
+							property_group = "Ambience"
+							property_help = "Maps enclosure ( 0-1 ) to volume offset for exterior ambience bed and oneshots"
+						}
+					}
+					height_filter_speed = 
+					{
+						data_type = "float"
+						value = "0.575"
+						_system_properties = 
+						{
+							display_group = "Advanced"
+							property_group = "Ambience"
+						}
+					}
+					rooftop_min_height = 
+					{
+						data_type = "float"
+						value = "950.0"
+						_system_properties = 
+						{
+							display_group = "Advanced"
+							property_group = "Ambience"
+							property_help = "The minimum z position / height for rooftop filtering and attenuation to start taking effect. A listener having a z position under this will receive no rooftop filtering and attenuation."
+						}
+					}
+					rooftop_max_height = 
+					{
+						data_type = "float"
+						value = "1030.0"
+						_system_properties = 
+						{
+							display_group = "Advanced"
+							property_group = "Ambience"
+							property_help = "The maximum z position / height for rooftop filtering and attenuation to take effect. A listener having a z position over this will receive full rooftop filtering and attenuation."
+						}
+					}
+					exterior_high_alt_vol_offset_curve_db = 
+					{
+						data_type = "float6"
+						soundevent_data = "true"
+						value = 
+						[
+							"[ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]",
+							"[ 1.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]",
+						]
+						_system_properties = 
+						{
+							display_group = "advanced"
+							display_edit_type = "field_curve_2d_editor"
+							property_group = "Volume"
+							property_help = "Maps height ( 0.0-1.0 ) to a volume offset for the main exterior ambience layer"
+						}
+					}
+					rooftop_layer_high_alt_vol_offset_curve_db = 
+					{
+						data_type = "float6"
+						soundevent_data = "true"
+						value = 
+						[
+							"[ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]",
+							"[ 1.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]",
+						]
+						_system_properties = 
+						{
+							display_group = "advanced"
+							display_edit_type = "field_curve_2d_editor"
+							property_group = "Volume"
+							property_help = "Maps height to a volume offset for the high altitude/rooftop layer"
+						}
+					}
+					enable_interior_lpf = 
+					{
+						data_type = "float"
+						value = "1.0"
+						_system_properties = 
+						{
+							property_group = "Ambience"
+							property_help = "Set to true to enable lowpass filtering on all tracks when listener is in an interior space. Set to false to disable (no filtering difference between interior/exterior)"
+						}
+					}
+					vsnd_files_main_exterior = 
+					{
+						data_type = "vsnd"
+						soundevent_data = "true"
+						value = "sounds/common/null.vsnd"
+						_system_properties = 
+						{
+							property_group = "VSND Files"
+						}
+					}
+					vsnd_files_rooftop_layer = 
+					{
+						data_type = "vsnd"
+						soundevent_data = "true"
+						value = "sounds/common/null.vsnd"
+						_system_properties = 
+						{
+							property_group = "VSND Files"
+						}
+					}
+					vsnd_files_random_01 = 
+					{
+						data_type = "vsnd"
+						soundevent_data = "true"
+						value = "sounds/common/null.vsnd"
+						_system_properties = 
+						{
+							property_group = "VSND Files"
+						}
+					}
+					vsnd_files_random_02 = 
+					{
+						data_type = "vsnd"
+						soundevent_data = "true"
+						value = "sounds/common/null.vsnd"
+						_system_properties = 
+						{
+							property_group = "VSND Files"
+						}
+					}
+					vsnd_files_random_03 = 
+					{
+						data_type = "vsnd"
+						soundevent_data = "true"
+						value = "sounds/common/null.vsnd"
+						_system_properties = 
+						{
+							property_group = "VSND Files"
+						}
+					}
+					vsnd_files_random_04 = 
+					{
+						data_type = "vsnd"
+						soundevent_data = "true"
+						value = "sounds/common/null.vsnd"
+						_system_properties = 
+						{
+							property_group = "VSND Files"
+						}
+					}
+					rooftop_layer_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Volume"
+						}
+					}
+					random_01_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Volume"
+						}
+					}
+					random_02_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Volume"
+						}
+					}
+					random_03_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Volume"
+						}
+					}
+					random_04_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "0.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "Volume"
+						}
+					}
+				}
+			},
+			{
+				name = "opvar_get_viewing_pawn_position"
+				operator = "opvar_get_float3"
+				input_execute = "1.0"
+				input_stack_name = "citadel_relevance_opvars"
+				input_operator_name = "opvars"
+				input_field_name = "viewing_entity_position"
+			},
+			{
+				name = "obb_info"
+				operator = "obb_info"
+				input_obb_origin = "@public.obb_origin"
+				input_obb_angles = "@public.obb_angles"
+				input_obb_bounds_min = "@public.obb_mins"
+				input_obb_bounds_max = "@public.obb_maxs"
+				input_position = "@opvar_get_viewing_pawn_position.output"
+			},
+			{
+				name = "globals"
+				operator = "get_system_globals"
+				input_listener_index = "0"
+			},
+			{
+				name = "source_info"
+				operator = "game_get_source_info"
+			},
+			{
+				name = "get_viewing_entity_index"
+				operator = "opvar_get_float"
+				input_execute = "1.0"
+				input_stack_name = "citadel_relevance_opvars"
+				input_operator_name = "opvars"
+				input_field_name = "viewing_entity_index"
+			},
+			{
+				name = "position_filter"
+				operator = "math_filter_float"
+				input = "@obb_info.output_point_in_obb"
+				input_max_velocity = "5.0"
+			},
+			{
+				name = "listener_position"
+				operator = "math_float3"
+				apply = "add"
+				input1 = "@globals.output_listener_position"
+				input2 = "@globals.output_listener_forward"
+			},
+			{
+				name = "lerp_position"
+				operator = "math_lerp_float3"
+				input_factor = "@position_filter.output"
+				input_position_a = "@obb_info.output_closest_point"
+				input_position_b = "@listener_position.output"
+			},
+			{
+				name = "get_listener_height"
+				operator = "util_elements_float3"
+				input_execute = "@interior_filter.output"
+				execute_once = "false"
+				input = "@opvar_get_viewing_pawn_position.output"
+			},
+			{
+				name = "remap_listener_height"
+				operator = "math_remap_float"
+				input = "@get_listener_height.output_2"
+				input_min = "@public.rooftop_min_height"
+				input_max = "@public.rooftop_max_height"
+				input_map_min = "0.000000"
+				input_map_max = "1.000000"
+				clamp_range = "true"
+			},
+			{
+				name = "rooftop_filter"
+				operator = "math_filter_float"
+				input = "@remap_listener_height.output"
+				input_max_velocity = "@public.height_filter_speed"
+			},
+			{
+				name = "remap_rooftop_exterior_volume_offset"
+				operator = "math_curve_2d"
+				input_execute = "1.0"
+				input = "@rooftop_filter.output"
+				public_field_name = "public.exterior_high_alt_vol_offset_curve_db"
+			},
+			{
+				name = "remap_rooftop_xfade_layer_volume"
+				operator = "math_curve_2d"
+				input_execute = "1.0"
+				input = "@rooftop_filter.output"
+				public_field_name = "public.rooftop_layer_high_alt_vol_offset_curve_db"
+			},
+			{
+				name = "math_add_rooftop_xfade_layer_vol_offset"
+				operator = "math_float"
+				apply = "add"
+				input_execute = "1.0"
+				input1 = "@remap_rooftop_xfade_layer_volume.output"
+				input2 = "@public.rooftop_layer_vol_offset_db"
+			},
+			{
+				name = "send_voicegraph_rooftop_amount"
+				operator = "vmix_voicegraph_input"
+				input_execute = "1.0"
+				execute_once = "false"
+				input_name = "rooftop_filter"
+				input = "@rooftop_filter.output"
+			},
+			{
+				name = "import_steamaudio_dimension_probes"
+				operator = "sos_import_stack"
+				import_stack = "citadel_steamaudio_dimension_probes"
+				operator_variables = 
+				{
+					input_steamaudio_dimension_probes_entity_index = 
+					{
+						data_type = "float"
+						value = "@get_viewing_entity_index.output"
+					}
+				}
+			},
+			{
+				name = "normalize_room_size_to_enclosure"
+				operator = "math_float"
+				apply = "div"
+				input1 = "@import_steamaudio_dimension_probes::output.dimension_size"
+				input2 = "2500"
+			},
+			{
+				name = "interior_filter"
+				operator = "math_filter_float"
+				input = "@normalize_room_size_to_enclosure.output"
+				input_max_velocity = "1.0"
+			},
+			{
+				name = "switch_enable_interior_filtering"
+				operator = "ctrl_switch_float"
+				input_switch = "@public.enable_interior_lpf"
+				input1 = "1.0"
+				input2 = "@interior_filter.output"
+			},
+			{
+				name = "remap_interior_volume_offset"
+				operator = "math_curve_2d"
+				input_execute = "1.0"
+				input = "@interior_filter.output"
+				public_field_name = "public.interior_vol_offset_db"
+			},
+			{
+				name = "math_add_vol_offsets_db"
+				operator = "math_float"
+				input_execute = "1.0"
+				apply = "add"
+				input1 = "@remap_interior_volume_offset.output"
+				input2 = "@remap_rooftop_exterior_volume_offset.output"
+			},
+			{
+				name = "math_volume_offsets_db_to_gain"
+				input_execute = "1.0"
+				operator = "math_db_to_gain"
+				input = "@math_add_vol_offsets_db.output"
+			},
+			{
+				name = "send_voicegraph_interior_amount"
+				operator = "vmix_voicegraph_input"
+				input_execute = "1.0"
+				input_name = "interior_lpf"
+				input = "@switch_enable_interior_filtering.output"
+			},
+			{
+				name = "send_voicegraph_volume_offsets"
+				operator = "vmix_voicegraph_input"
+				input_execute = "1.0"
+				input_name = "rooftop_and_interior_volume_offset"
+				input = "@math_volume_offsets_db_to_gain.output"
+			},
+			{
+				name = "citadel_ambience_random_panner_01"
+				operator = "sos_import_stack"
+				import_stack = "citadel_ambience_random_panner"
+				auto_connect_public_fields = "true"
+				operator_variables = 
+				{
+					vmix_pos_output_name = 
+					{
+						data_type = "string"
+						value = "random_01_pos"
+					}
+					vmix_adjusted_pan_input_name = 
+					{
+						data_type = "string"
+						value = "random_01_adjusted_pan"
+					}
+					listener_is_in_obb = 
+					{
+						data_type = "bool"
+						value = "@obb_info.output_point_in_obb"
+					}
+					obb_closest_point_position = 
+					{
+						data_type = "float3"
+						value = "@obb_info.output_closest_point"
+					}
+					send_listener_forward = 
+					{
+						data_type = "float"
+						value = "1.0"
+					}
+					enclosure_value = 
+					{
+						data_type = "float"
+						value = "@normalize_room_size_to_enclosure.output"
+					}
+				}
+			},
+			{
+				name = "citadel_ambience_random_panner_02"
+				operator = "sos_import_stack"
+				import_stack = "citadel_ambience_random_panner"
+				auto_connect_public_fields = "true"
+				operator_variables = 
+				{
+					vmix_pos_output_name = 
+					{
+						data_type = "string"
+						value = "random_02_pos"
+					}
+					vmix_adjusted_pan_input_name = 
+					{
+						data_type = "string"
+						value = "random_02_adjusted_pan"
+					}
+					listener_is_in_obb = 
+					{
+						data_type = "bool"
+						value = "@obb_info.output_point_in_obb"
+					}
+					obb_closest_point_position = 
+					{
+						data_type = "float3"
+						value = "@obb_info.output_closest_point"
+					}
+					enclosure_value = 
+					{
+						data_type = "float"
+						value = "@normalize_room_size_to_enclosure.output"
+					}
+				}
+			},
+			{
+				name = "citadel_ambience_random_panner_03"
+				operator = "sos_import_stack"
+				import_stack = "citadel_ambience_random_panner"
+				auto_connect_public_fields = "true"
+				operator_variables = 
+				{
+					vmix_pos_output_name = 
+					{
+						data_type = "string"
+						value = "random_03_pos"
+					}
+					vmix_adjusted_pan_input_name = 
+					{
+						data_type = "string"
+						value = "random_03_adjusted_pan"
+					}
+					listener_is_in_obb = 
+					{
+						data_type = "bool"
+						value = "@obb_info.output_point_in_obb"
+					}
+					obb_closest_point_position = 
+					{
+						data_type = "float3"
+						value = "@obb_info.output_closest_point"
+					}
+					enclosure_value = 
+					{
+						data_type = "float"
+						value = "@normalize_room_size_to_enclosure.output"
+					}
+				}
+			},
+			{
+				name = "citadel_ambience_random_panner_04"
+				operator = "sos_import_stack"
+				import_stack = "citadel_ambience_random_panner"
+				auto_connect_public_fields = "true"
+				operator_variables = 
+				{
+					vmix_pos_output_name = 
+					{
+						data_type = "string"
+						value = "random_04_pos"
+					}
+					vmix_adjusted_pan_input_name = 
+					{
+						data_type = "string"
+						value = "random_04_adjusted_pan"
+					}
+					listener_is_in_obb = 
+					{
+						data_type = "bool"
+						value = "@obb_info.output_point_in_obb"
+					}
+					obb_closest_point_position = 
+					{
+						data_type = "float3"
+						value = "@obb_info.output_closest_point"
+					}
+					enclosure_value = 
+					{
+						data_type = "float"
+						value = "@normalize_room_size_to_enclosure.output"
+					}
+				}
+			},
+			{
+				name = "send_voicegraph_falloff_vol_mult"
+				operator = "vmix_voicegraph_input"
+				input_execute = "1.0"
+				input_name = "falloff_vol_mult"
+				input = "@citadel_default_3d::citadel_base_3d::citadel_distance_falloff::output.result_vol_linear"
+			},
+			{
+				name = "citadel_default_3d"
+				operator = "sos_import_stack"
+				import_stack = "citadel_default_3d"
+				auto_connect_public_fields = "true"
+				operator_variables = 
+				{
+					position = 
+					{
+						data_type = "float3"
+						value = "@lerp_position.output"
+					}
+					position_force_from_input = 
+					{
+						data_type = "bool"
+						value = "true"
+					}
+					obb_dist_closest_point = 
+					{
+						data_type = "float"
+						value = "@obb_info.output_dist_closest_point"
+					}
+					track_1.vsnd_track_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "@math_add_vol_offsets_db.output"
+					}
+					vsnd_files_field_name_track_1 = 
+					{
+						data_type = "string"
+						value = "vsnd_files_main_exterior"
+					}
+					track_2.vsnd_files_field_name = 
+					{
+						data_type = "string"
+						value = "vsnd_files_rooftop_layer"
+					}
+					track_2.vsnd_files_track_name = 
+					{
+						data_type = "string"
+						value = "rooftop_layer"
+					}
+					track_2.vsnd_track_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "@math_add_rooftop_xfade_layer_vol_offset.output"
+					}
+					track_3.vsnd_files_field_name = 
+					{
+						data_type = "string"
+						value = "vsnd_files_random_01"
+					}
+					track_3.vsnd_files_track_name = 
+					{
+						data_type = "string"
+						value = "random_01"
+					}
+					track_3.vsnd_track_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "@public.random_01_vol_offset_db"
+					}
+					track_4.vsnd_files_field_name = 
+					{
+						data_type = "string"
+						value = "vsnd_files_random_02"
+					}
+					track_4.vsnd_files_track_name = 
+					{
+						data_type = "string"
+						value = "random_02"
+					}
+					track_4.vsnd_track_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "@public.random_02_vol_offset_db"
+					}
+					track_5.vsnd_files_field_name = 
+					{
+						data_type = "string"
+						value = "vsnd_files_random_03"
+					}
+					track_5.vsnd_files_track_name = 
+					{
+						data_type = "string"
+						value = "random_03"
+					}
+					track_5.vsnd_track_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "@public.random_03_vol_offset_db"
+					}
+					track_6.vsnd_files_field_name = 
+					{
+						data_type = "string"
+						value = "vsnd_files_random_04"
+					}
+					track_6.vsnd_files_track_name = 
+					{
+						data_type = "string"
+						value = "random_04"
+					}
+					track_6.vsnd_track_vol_offset_db = 
+					{
+						data_type = "float"
+						value = "@public.random_04_vol_offset_db"
+					}
+				}
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "citadel"
+		}
+	}
+}

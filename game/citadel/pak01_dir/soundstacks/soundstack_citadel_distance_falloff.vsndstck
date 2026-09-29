@@ -7,7 +7,7 @@
 			{
 				name = "_builtins"
 				operator = "sos_builtins"
-				_voicegraph = "citadel.hrtf_basic"
+				_voicegraph = "citadel_hrtf_basic"
 			},
 			{
 				name = "public"
@@ -31,9 +31,8 @@
 						soundevent_data = "true"
 						value = 
 						[
-							"[ 0.005714, 0.3, 1.083, 1.083, 2.0, 3.0 ]",
-							"[ 6.619538, 0.0, -0.311869, -0.311869, 2.0, 3.0 ]",
-							"[ 17.077585, -10.603477, -0.127606, -0.127606, 2.0, 3.0 ]",
+							"[ 0.0, 0.3, 1.083, 1.083, 2.0, 3.0 ]",
+							"[ 1.0, -10.603477, -0.127606, -0.127606, 2.0, 3.0 ]",
 						]
 						_system_properties = 
 						{
@@ -106,7 +105,7 @@
 						{
 							display_group = "Normal"
 							property_group = "Volume Falloff"
-							property_help = "Enable curve editing. 'volume_falloff_min', 'volume_falloff_max', 'volume_falloff_curve_amount' no longer apply. 'volume_falloff_floor' still applies."
+							property_help = "Enable curve editing. 'volume_falloff_curve_amount' no longer applies. 'volume_falloff_min', 'volume_falloff_max', 'volume_falloff_floor' still applies."
 						}
 					}
 					volume_falloff_scale = 
@@ -186,12 +185,21 @@
 				input_atten = "@public.volume_falloff_scale"
 			},
 			{
+				name = "mult_falloff_scale"
+				input_execute = "1.0"
+				operator = "math_float"
+				apply = "mult"
+				input1 = "@public.volume_falloff_scale"
+				input2 = "@public.volume_falloff_max"
+			},
+			{
 				name = "evaluate_opvar_falloff_curve"
 				operator = "math_curve_2d"
 				input_execute = "@public.volume_falloff_use_curve_editor"
 				input = "@ctrl_switch_distance_pawn_camera.output"
 				public_field_name = "@public.volume_falloff_curve_field_name"
-				input_scale_x = "@public.volume_falloff_scale"
+				input_scale_x = "@mult_falloff_scale.output"
+				input_offset_x = "@public.volume_falloff_min"
 				input_scale_y = "1.0"
 			},
 			{
@@ -224,13 +232,6 @@
 				input2 = "1.0"
 			},
 			{
-				name = "max_distance_switch"
-				operator = "ctrl_switch_float"
-				input_switch = "@public.volume_falloff_use_curve_editor"
-				input1 = "@public.volume_falloff_max"
-				input2 = "@evaluate_opvar_falloff_curve.output_x_max"
-			},
-			{
 				name = "output"
 				operator = "util_null"
 				operator_variables = 
@@ -243,7 +244,7 @@
 					max_distance = 
 					{
 						data_type = "float"
-						value = "@max_distance_switch.output"
+						value = "@public.volume_falloff_max"
 					}
 				}
 			},

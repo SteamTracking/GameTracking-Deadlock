@@ -10,6 +10,8 @@ enum PulseVariableKeysSource_t : uint32_t
 	VMDL = 3,
 	// MPropertyFriendlyName = "Parent XML"
 	XML = 4,
+	// MPropertyFriendlyName = "Parent VData"
+	VDATA = 5,
 	// MPropertySuppressEnumerator
-	COUNT = 5,
+	COUNT = 6,
 };

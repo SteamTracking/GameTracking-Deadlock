@@ -1,3 +1,25 @@
+// MGetKV3ClassDefaults = {
+//	"_class": "CBuoyancyHelper",
+//	"m_nFluidType": "",
+//	"m_flFluidDensity": 1.000000,
+//	"m_flNeutrallyBuoyantGravity": 0.000000,
+//	"m_flNeutrallyBuoyantLinearDamping": 0.000000,
+//	"m_flNeutrallyBuoyantAngularDamping": 0.000000,
+//	"m_bNeutrallyBuoyant": false,
+//	"m_vecFractionOfWheelSubmergedForWheelFriction":
+//	[
+//	],
+//	"m_vecWheelFrictionScales":
+//	[
+//	],
+//	"m_vecFractionOfWheelSubmergedForWheelDrag":
+//	[
+//	],
+//	"m_vecWheelDrag":
+//	[
+//	]
+//}
+// MHasKV3TransferPolymorphicClassname
 class CBuoyancyHelper
 {
 	// MPhysPtr

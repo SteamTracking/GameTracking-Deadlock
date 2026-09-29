@@ -99,17 +99,62 @@
 	vertical-align: center;
 }
 
-#ability_image
+@keyframes 'pulseIcon'
 {
-	width: 0px;
-	height: 0px;
+	0%
+	{
+		pre-transform-scale2d: 1;
+		brightness: 1;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1;
+		brightness: 1.5;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+		brightness: 1;
+	}
+	
 }
 
-#ability_image.has_image
+#icon_container
 {
-	width: 40px;
-	height: 40px;
+	width: fit-children;
+	height: fit-children;
+	border-radius: 50px;
+	margin-bottom: 5px;
+	background-color: offWhite&ee;
+	margin: 5px;
+}
+
+#unit_target_container #icon_container
+{
+	animation-name: pulseIcon;
+	animation-duration: 0.6s;
+	animation-iteration-count: infinite;
+}
+
+#ability_image
+{
+	width: 24px;
+	height: 24px;
 	horizontal-align: center;
+	margin: 4px;
+	wash-color: offBlack;
+	opacity: 1;
+}
+
+.is_item #ability_image
+{
+	wash-color: none;
+	opacity: 1;
+	margin: 0px;
+	width: 32px;
+	height: 32px;
 }
 
 .citadel_ability_zipline_boost #ability_image
@@ -165,5 +210,15 @@
 .in_use .activeNotice
 {
 	visibility: visible;
+}
+
+#unit_target_container .buttonRow,#BottomContainer .buttonRow
+{
+	horizontal-align: middle;
+}
+
+#button_hints_container #ability_image
+{
+	visibility: collapse;
 }
 

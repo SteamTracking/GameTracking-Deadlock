@@ -1,4 +1,0 @@
-// MClassHasEntityLimitedDataDesc
-class CCitadelLootTableBase
-{
-};

@@ -15,7 +15,7 @@
 //	"m_vecPathingDeviation":
 //	[
 //	],
-//	"m_vecReflectionRatio":
+//	"m_vecReflectionEnergy":
 //	[
 //	]
 //}
@@ -25,5 +25,5 @@ class CSteamAudioBakedOcclusionData
 	CSteamAudioProbeData m_probes;
 	CUtlVector< float32 > m_vecPathingRatio;
 	CUtlVector< float32 > m_vecPathingDeviation;
-	CUtlVector< float32 > m_vecReflectionRatio;
+	CUtlVector< float32 > m_vecReflectionEnergy;
 };

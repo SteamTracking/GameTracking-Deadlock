@@ -1,0 +1,3 @@
+class CVControlNodeBaseDesc : public CVNodeTypeDesc
+{
+};

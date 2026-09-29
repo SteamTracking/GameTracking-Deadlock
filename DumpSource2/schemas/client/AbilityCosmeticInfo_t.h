@@ -1,8 +1,8 @@
 // MGetKV3ClassDefaults = {
-//	"m_bIsSeasonal": false
+//	"m_strTooltipCSSClass": ""
 //}
 // MPropertyAutoExpandSelf
 class AbilityCosmeticInfo_t
 {
-	bool m_bIsSeasonal;
+	CUtlString m_strTooltipCSSClass;
 };

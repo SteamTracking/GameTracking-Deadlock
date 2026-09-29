@@ -7,5 +7,5 @@ class CPulse_InstructionDebug
 {
 	PulseDocNodeID_t m_nFlowNodeID;
 	PulseDocNodeID_t m_nValueNodeID;
-	CGlobalSymbol m_SequencePointName;
+	PulseSymbol_t m_SequencePointName;
 };

@@ -24,8 +24,8 @@
 @define clipBonusBulletColor: rgba(255, 232, 107, 1);
 .ability_element_gun
 {
-	height: fit-children;
-	width: fit-children;
+	height: 500px;
+	width: 500px;
 	vertical-align: center;
 	horizontal-align: center;
 }
@@ -66,7 +66,7 @@
 	vertical-align: center_nopixelsnap;
 	height: 500px;
 	width: 500px;
-	opacity: 0.99;
+	opacity: 1;
 	transition-property: opacity;
 	transition-duration: 0.1s;
 }
@@ -882,7 +882,38 @@
 	height: 75%;
 }
 
-.hide_clip_ammo #ammo_panel,.hide_clip_status_and_ammo #ammo_panel,.hide_clip_status_and_ammo #attack_delayed_progress_bar
+#auto_fire_indicator
+{
+	y: 104px;
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: rgba(255, 255, 255, 0.3);
+	visibility: collapse;
+	transition-property: color, opacity, text-shadow;
+	transition-duration: 0.1s;
+}
+
+.auto_fire_enabled #auto_fire_indicator
+{
+	visibility: visible;
+}
+
+.auto_fire_on #auto_fire_indicator
+{
+	color: #80ffd7;
+	text-shadow: 0px 0px 6px #80ffd7;
+}
+
+.auto_fire_paused #auto_fire_indicator
+{
+	opacity: 0.5;
+}
+
+.hide_clip_ammo #auto_fire_indicator,.hide_clip_ammo #ammo_panel,.hide_clip_status_and_ammo #ammo_panel,.hide_clip_status_and_ammo #attack_delayed_progress_bar
 {
 	visibility: collapse;
 }
@@ -913,12 +944,8 @@
 {
 	width: 40px;
 	height: 40px;
-	background-image: url("s2r://panorama/images/hud/modifiers/icon_parry.vsvg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
 	y: 55px;
-	x: 55%;
+	x: 60%;
 	vertical-align: center;
 	wash-color: #e75b5b;
 	visibility: collapse;
@@ -930,6 +957,28 @@
 .parry_on_cooldown #parry_unavailable
 {
 	visibility: visible;
+}
+
+#parry_unavailable #ParryImage
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/hud/modifiers/icon_parry.vsvg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 80%;
+}
+
+#parry_unavailable #ParryCooldownBorder
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/hud/world_space/status_border.vsvg");
+	background-texture-size: 48px;
+	background-size: 100%;
+	z-index: -2;
+	wash-color: offWhite;
 }
 
 @keyframes 'parry_unvailable'

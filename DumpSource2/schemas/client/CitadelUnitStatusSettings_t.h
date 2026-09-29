@@ -1,5 +1,6 @@
 // MModelGameData
 // MGetKV3ClassDefaults = {
+//	"m_strUnitStatusAttachmentName": "",
 //	"m_vUnitStatusOffset":
 //	[
 //		0.000000,
@@ -25,10 +26,13 @@
 //		0.000000
 //	]
 //}
+// MPropertyFriendlyName = "Citadel Unit Status Settings"
 class CitadelUnitStatusSettings_t
 {
 	// MPropertyStartGroup = "Unit Status Overlay"
-	// MPropertyFriendlyName = "Unit Status Offset (from abs origin)"
+	// MPropertyFriendlyName = "Unit Status Attachment Name"
+	CUtlStringTokenWithStorage m_strUnitStatusAttachmentName;
+	// MPropertyFriendlyName = "Unit Status Offset (from attachment)"
 	Vector m_vUnitStatusOffset;
 	// MPropertyStartGroup = "Healthbar"
 	// MPropertyFriendlyName = "Health Bar Offset (from abs origin)"

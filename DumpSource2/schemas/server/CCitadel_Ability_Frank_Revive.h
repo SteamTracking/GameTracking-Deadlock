@@ -1,17 +1,7 @@
-// MNetworkVarNames = "bool m_bReviveIsActive"
-// MNetworkVarNames = "GameTime_t m_TimeOfDeath"
-// MNetworkVarNames = "GameTime_t m_TimeOfRevive"
-// MNetworkVarNames = "float m_flTotalPendingHeal"
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Frank_Revive : public CCitadelBaseAbility
 {
-	// MNetworkEnable
 	bool m_bReviveIsActive;
-	// MNetworkEnable
 	GameTime_t m_TimeOfDeath;
-	// MNetworkEnable
 	GameTime_t m_TimeOfRevive;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
 	float32 m_flTotalPendingHeal;
 };

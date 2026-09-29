@@ -1,0 +1,156 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	citadel_ambience_random_panner = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					listener_is_in_obb = 
+					{
+						data_type = "bool"
+						value = "true"
+					}
+					obb_closest_point_position = 
+					{
+						data_type = "float3"
+						value = "[0.0, 0.0, 0.0]"
+					}
+					enclosure_value = 
+					{
+						data_type = "float"
+						value = "0.0"
+					}
+					vmix_pos_output_name = 
+					{
+						data_type = "string"
+						value = "null"
+					}
+					vmix_adjusted_pan_input_name = 
+					{
+						data_type = "string"
+						value = "null"
+					}
+					send_listener_forward = 
+					{
+						data_type = "float"
+						value = "0.0"
+					}
+					util_draw_debug = 
+					{
+						data_type = "bool"
+						value = "false"
+					}
+				}
+			},
+			{
+				name = "globals"
+				operator = "get_system_globals"
+				input_listener_index = "0"
+			},
+			{
+				name = "get_viewing_entity_index"
+				operator = "opvar_get_float"
+				input_execute = "1.0"
+				input_stack_name = "citadel_relevance_opvars"
+				input_operator_name = "opvars"
+				input_field_name = "viewing_entity_index"
+			},
+			{
+				name = "interior_filter"
+				operator = "math_filter_float"
+				input = "@public.enclosure_value"
+				input_max_velocity = "0.365"
+			},
+			{
+				name = "math_fully_interior"
+				operator = "math_float"
+				input_execute = "@interior_filter.output"
+				apply = "less_than"
+				input1 = "@interior_filter.output"
+				input2 = "0.201"
+			},
+			{
+				name = "get_voicegraph_random_pos"
+				operator = "vmix_voicegraph_output_float"
+				input_execute = "1.0"
+				output_name = "@public.vmix_pos_output_name"
+			},
+			{
+				name = "math_inv_listener_is_in_obb"
+				input_execute = "1.0"
+				operator = "math_float"
+				apply = "sub"
+				input2 = "@public.listener_is_in_obb"
+				input1 = "1.0"
+			},
+			{
+				name = "math_dot_product_listener_right"
+				input_execute = "@math_inv_listener_is_in_obb.output"
+				operator = "vector_facing_point"
+				input_vec_forward = "@globals.output_listener_left"
+				input_listener_position = "@globals.output_listener_position"
+				input_source_position = "@public.obb_closest_point_position"
+			},
+			{
+				name = "math_invert_dot"
+				input_execute = "@interior_filter.output"
+				operator = "math_float"
+				apply = "mult"
+				input1 = "@math_dot_product_listener_right.output_dot_product"
+				input2 = "-1.0"
+			},
+			{
+				name = "panning_filter"
+				operator = "math_filter_float"
+				input = "@math_invert_dot.output"
+				input_max_velocity = "6.0"
+			},
+			{
+				name = "switch_source_position"
+				operator = "ctrl_switch_float"
+				input_switch = "@public.listener_is_in_obb"
+				input1 = "@panning_filter.output"
+				input2 = "@get_voicegraph_random_pos.output"
+			},
+			{
+				name = "remap_pan_interior_collapse"
+				input_execute = "@interior_filter.output"
+				operator = "math_remap_float"
+				input = "@switch_source_position.output"
+				input_min = "-1.0"
+				input_max = "1.0"
+				input_map_min = "-0.250000"
+				input_map_max = "0.250000"
+			},
+			{
+				name = "switch_collapse_random_position_interior"
+				input_switch = "@math_fully_interior.output"
+				operator = "ctrl_switch_float"
+				input1 = "@switch_source_position.output"
+				input2 = "@remap_pan_interior_collapse.output"
+			},
+			{
+				name = "send_voicegraph_adjusted_pan_amount"
+				operator = "vmix_voicegraph_input"
+				input_execute = "1.0"
+				input_name = "@public.vmix_adjusted_pan_input_name"
+				input = "@switch_collapse_random_position_interior.output"
+			},
+			{
+				name = "set_listener_forward"
+				operator = "container_set_param_vector"
+				input_execute = "@public.send_listener_forward"
+				input_vector = "@globals.output_listener_forward"
+				input_name = "ListenerForwardVector"
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "citadel"
+		}
+	}
+}

@@ -14,10 +14,29 @@ CitadelHudAbilityUpgradePips
 	background-color: #222;
 }
 
-.gAbilityUpgradeMenu CitadelHudAbilityUpgradePips
+#RadialAbilitySegment_0 CitadelHudAbilityUpgradePips
 {
-	ui-scale: 80%;
-	padding: 0px 10px;
+	transform: rotateZ(-30deg);
+}
+
+#RadialAbilitySegment_0 CitadelHudAbilityUpgradePips
+{
+	margin-left: 90px;
+}
+
+#RadialAbilitySegment_1 CitadelHudAbilityUpgradePips
+{
+	margin-left: 30px;
+}
+
+#RadialAbilitySegment_2 CitadelHudAbilityUpgradePips
+{
+	margin-right: 30px;
+}
+
+#RadialAbilitySegment_3 CitadelHudAbilityUpgradePips
+{
+	margin-right: 90px;
 }
 
 .hud_abilities CitadelHudAbilityUpgradePips
@@ -76,7 +95,7 @@ CitadelHudAbilityUpgradePips:hover #TrainButton
 	horizontal-align: middle;
 	height: 32px;
 	margin-top: 5px;
-	border-radius: 50px;
+	border-radius: 100px;
 	background-color: rgba(26, 26, 26, 0.8);
 	animation-iteration-count: 0;
 	tooltip-position: left;
@@ -97,7 +116,6 @@ CitadelHudAbilityUpgradePips:hover #TrainButton
 
 .isUnlocked .canAffordUpgrade.abilityUpgradeContainer
 {
-	background-color: offWhite&05;
 	opacity: 1;
 }
 
@@ -128,6 +146,7 @@ CitadelHudAbilityUpgradePips:hover #TrainButton
 	transform: translate3d( 0px, 0px, 0px );
 	border: 0px solid #ffffff00;
 	wash-color: spiritBrightColor;
+	animation-name: IconClickable;
 	animation-duration: 1s;
 	animation-iteration-count: infinite;
 	visibility: visible;
@@ -160,17 +179,17 @@ CitadelHudAbilityUpgradePips:hover #TrainButton
 {
 	0%
 	{
-		wash-color: spiritBrightColor&50;
+		wash-color: deadlockGreen&50;
 	}
 	
 	50%
 	{
-		wash-color: spiritBrightColor;
+		wash-color: deadlockGreen;
 	}
 	
 	100%
 	{
-		wash-color: spiritBrightColor&50;
+		wash-color: deadlockGreen&50;
 	}
 	
 }
@@ -179,17 +198,17 @@ CitadelHudAbilityUpgradePips:hover #TrainButton
 {
 	0%
 	{
-		wash-color: spiritBrightColor;
+		wash-color: deadlockGreen;
 	}
 	
 	50%
 	{
-		wash-color: spiritLightColor;
+		wash-color: deadlockGreen;
 	}
 	
 	100%
 	{
-		wash-color: spiritBrightColor;
+		wash-color: deadlockGreen;
 	}
 	
 }
@@ -229,8 +248,9 @@ CitadelHudAbilityUpgradePips:hover #TrainButton
 {
 	font-weight: black;
 	color: colorEnemy;
-	opacity: 0.1;
-	font-size: 28px;
+	opacity: 0.5;
+	font-size: 22px;
+	font-family: numericOracle;
 }
 
 .hasAbilityUpgrade .abilityUpgradeCostLabel
@@ -280,28 +300,31 @@ CitadelHudAbilityUpgradePips:hover #TrainButton
 
 .isUnlocked .canAffordUpgrade .abilityLevelPip
 {
-	wash-color: spiritBrightColor;
+	wash-color: deadlockGreen;
 	wash-color: offBlack;
 }
 
 .hasAbilityUpgrade.abilityUpgradeContainer,.isReadOnly .hasAbilityUpgrade.abilityUpgradeContainer,.isReadOnly .hasAbilityUpgrade.abilityUpgradeContainer:hover,.isReadOnly .abilityUpgradeContainer
 {
-	background-color: #23003d;
+	background-color: offBlack;
+	background-color: deadlockGreenDarker;
+	opacity: 0.8;
 }
 
 .hasAbilityUpgrade.abilityUpgradeContainer:Hover
 {
-	background-color: colorCommonDarkestGray;
+	wash-color: offBlack&70;
 }
 
 .isUnlocked .hasAbilityUpgrade .abilityLevelPip
 {
-	height: 24px;
-	width: 24px;
-	background-size: 24px 24px;
+	height: 18px;
+	width: 18px;
+	background-size: contain;
 	background-image: url("s2r://panorama/images/hud/ability_upgrade_check_psd.vtex");
-	wash-color: spiritLightColor;
-	opacity: 1;
+	wash-color: deadlockGreenDark;
+	wash-color: offBlack;
+	opacity: 0.5;
 	animation-iteration-count: 0;
 	margin-right: 0px;
 	visibility: visible;

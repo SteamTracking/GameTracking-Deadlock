@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Projectile_DustStorm : public CCitadelProjectile
 {
 	int32 m_cTicksNoMovement;

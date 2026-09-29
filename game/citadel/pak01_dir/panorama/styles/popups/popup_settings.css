@@ -8,7 +8,13 @@
 @define LightGrey: #8B989E;
 @define newSectionGreen: #52B464;
 @define brightPurple: #F1C7FF;
+@define heroSpecificHighlightColor: #F1C7FF;
 @define settingsBodyPaddingLeft: 32px;
+@define SettingsNavColumnWidth: 420px;
+@define SettingsBodyContentWidth: 1240px;
+@define SettingsBodyLeftPadding: 24px;
+@define SettingsBodyBottomDeadBand: 112px;
+@define SettingsBodyScrollBarGutter: 24px;
 @define paperTile01: url("s2r://panorama/images/textures/paper_tile_1k_01_psd.vtex");
 PopupSettings
 {
@@ -17,7 +23,7 @@ PopupSettings
 	width: 100%;
 	height: 100%;
 	transition-property: opacity, transform;
-	transition-duration: 0s;
+	transition-duration: 0.2s;
 }
 
 PopupSettings.Hidden
@@ -36,11 +42,6 @@ PopupSettings Label .SearchedText
 {
 	color: offBlack;
 	background-color: brandGreen;
-}
-
-PopupSettings Label.DropDownChild
-{
-	width: fill-parent-flow(1.0);
 }
 
 PopupSettings .PopupBackground
@@ -81,6 +82,16 @@ CitadelSettingsCheckbox Label
 	width: 280px;
 	margin-left: 0px;
 	padding-right: 16px;
+}
+
+.ShowGameWorld
+{
+	opacity: 0.5;
+}
+
+.ShowGameWorld .PopupBackground
+{
+	opacity: 0;
 }
 
 #HeroScenePanelBacker
@@ -159,6 +170,46 @@ CitadelSettingsCheckbox Label
 	100%
 	{
 		pre-transform-scale2d: 1;
+	}
+	
+}
+
+@keyframes 'HighlightSettingAnimation'
+{
+	0%
+	{
+		border-radius: 10px;
+		pre-transform-scale2d: 1;
+		background-color: newSectionGreen&11;
+	}
+	
+	20%
+	{
+		border-radius: 10px;
+		pre-transform-scale2d: 1.08;
+		background-color: newSectionGreen&66;
+		brightness: 2;
+	}
+	
+	40%
+	{
+		border-radius: 10px;
+		pre-transform-scale2d: 1;
+		background-color: newSectionGreen&11;
+	}
+	
+	60%
+	{
+		border-radius: 10px;
+		pre-transform-scale2d: 1.08;
+		background-color: newSectionGreen&66;
+	}
+	
+	100%
+	{
+		border-radius: 10px;
+		pre-transform-scale2d: 1;
+		background-color: newSectionGreen&11;
 	}
 	
 }
@@ -246,6 +297,25 @@ ProgressBar #CurrentMicLevel .ProgressBarLeft
 	
 }
 
+@keyframes 'SelectedHeroNameAnim'
+{
+	0%
+	{
+		text-shadow: 0px 0px 3.0 brandGreen;
+	}
+	
+	50%
+	{
+		text-shadow: 0px 0px 3.0 #7FFFBE;
+	}
+	
+	100%
+	{
+		text-shadow: 0px 0px 3.0 brandGreen;
+	}
+	
+}
+
 .HeroFilters
 {
 	overflow: noclip;
@@ -262,7 +332,8 @@ ProgressBar #CurrentMicLevel .ProgressBarLeft
 
 .HeroFilters .HeroButtonPanel
 {
-	width: 66px;
+	ui-scale: 130%;
+	width: 70px;
 	height: 64px;
 }
 
@@ -276,6 +347,14 @@ ProgressBar #CurrentMicLevel .ProgressBarLeft
 	brightness: 1.5;
 	background-color: brandGreen&11;
 	border: 3px solid brandGreen;
+}
+
+.HeroFilters .HeroButtonPanel:hover #HeroButtonHeroName
+{
+	font-size: 11px;
+	color: offBlack;
+	text-shadow: 0px 0px 3.0 brandGreen&55;
+	visibility: visible;
 }
 
 .HeroFilters .HeroButtonPanel.SelectedHero .RadioButtonHero
@@ -296,10 +375,21 @@ ProgressBar #CurrentMicLevel .ProgressBarLeft
 	width: 44px;
 }
 
-.HeroFilters .HeroButtonPanel.SelectedHero #Default_Icon
+.HeroFilters .HeroButtonPanel.SelectedHero #HeroButtonHeroName
 {
-	width: 32px;
-	height: 32px;
+	font-size: 11px;
+	color: black;
+	text-shadow: 0px 0px 3.0 brandGreen;
+	visibility: visible;
+	animation-name: SelectedHeroNameAnim;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.HeroFilters .HeroButtonPanel.SelectedHero .DefaultHeroIcon
+{
+	width: 44px;
+	height: 44px;
 	wash-color: offBlack;
 }
 
@@ -321,12 +411,28 @@ ProgressBar #CurrentMicLevel .ProgressBarLeft
 	transition-duration: 0.1s;
 }
 
-.HeroFilters #Default_Icon
+.HeroFilters #HeroButtonHeroName
+{
+	visibility: collapse;
+	font-family: oracle;
+	font-weight: bold;
+	text-overflow: shrink;
+	overflow: noclip;
+	max-height: 16px;
+	font-size: 8px;
+	margin-bottom: -5px;
+	color: offWhite;
+	horizontal-align: center;
+	text-align: center;
+	vertical-align: bottom;
+	text-shadow: 0px 0px 4.0 black;
+}
+
+.HeroFilters .DefaultHeroIcon
 {
 	horizontal-align: center;
 	vertical-align: center;
-	width: 28px;
-	height: 28px;
+	padding: 4px;
 	wash-color: offWhite;
 }
 
@@ -339,12 +445,21 @@ ProgressBar #CurrentMicLevel .ProgressBarLeft
 	padding: 6px;
 	border-radius: 64px;
 	border: 2px solid #00000011;
-	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #00000000 ), to( #00000066 ) );
 	transition-property: border, width, height;
 	transition-duration: 0.1s;
 }
 
-.HeroFilters .unitHasKeybinds #UnitHasBindsIndicator
+:not(.lookingAtUnitSpecificBinds) .HeroFilters .RadioButtonHero
+{
+	background-color: gradient( radial, 50% 50%, 0% 0%, 50% 50%, from( #00000000 ), to( #00000066 ) );
+}
+
+.HeroFilters .RadioButtonHero:disabled
+{
+	background-color: none;
+}
+
+.HeroFilters .unitHasOverrides #UnitHasBindsIndicator,.HeroFilters .CriticalKeybindMissing #UnitHasBindsIndicator
 {
 	visibility: visible;
 	z-index: 9999;
@@ -353,6 +468,12 @@ ProgressBar #CurrentMicLevel .ProgressBarLeft
 	width: 8px;
 	height: 8px;
 	margin: 4px 0px 0px 4px;
+}
+
+.HeroFilters .CriticalKeybindMissing #UnitHasBindsIndicator
+{
+	background-color: warningRed;
+	box-shadow: fill warningRed&11 0px 0px 16px 1px;
 }
 
 .HeroFilters .RadioBox
@@ -373,6 +494,74 @@ CitadelSettingsKeyBinder.BindingRow
 	width: 100%;
 	height: fit-children;
 	tooltip-position: left;
+	overflow: noclip;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow:hover CitadelSettingsKeyBinder:disabled .AddBinding
+{
+	visibility: collapse;
+}
+
+#SettingsBodyMarginOverlay
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	flow-children: down;
+	overflow: noclip;
+}
+
+#SettingsBodyMarginMainRow
+{
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	flow-children: right;
+	overflow: noclip;
+	horizontal-align: right;
+}
+
+#SettingsBodyMarginBottomRow
+{
+	width: 100%;
+	height: SettingsBodyBottomDeadBand;
+	flow-children: right;
+	overflow: noclip;
+}
+
+.SettingsBodyMarginNavSpacer
+{
+	width: SettingsNavColumnWidth;
+	height: 100%;
+}
+
+.SettingsBodyMarginContentSpacer
+{
+	width: SettingsBodyContentWidth;
+	height: 100%;
+}
+
+.SettingsBodyMarginScrollBarSpacer
+{
+	width: SettingsBodyScrollBarGutter;
+	height: 100%;
+}
+
+#SettingsBodyLeftMargin
+{
+	width: SettingsBodyLeftPadding;
+	height: 100%;
+}
+
+#SettingsBodyRightMargin
+{
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
+}
+
+#SettingsBodyBottomMargin
+{
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
 }
 
 .SettingsContainer
@@ -393,23 +582,46 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	transition-duration: 0s;
 }
 
-.EscapeButton
+.SettingsFooterButtons
+{
+	vertical-align: bottom;
+	flow-children: right;
+}
+
+.FooterButton
 {
 	vertical-align: bottom;
 	margin: 16px;
 	flow-children: right;
 	opacity: 0.2;
-	transition-property: brightness;
+	transition-property: brightness, opacity;
 	transition-timing-function: ease-in-out;
 	transition-duration: 0.10s;
 }
 
-.EscapeButton:hover
+.FooterButton:enabled:hover
 {
 	brightness: 2.0;
 }
 
-.EscapeButton .FooterCommandLabel
+.FooterButton.HistoryNavButton
+{
+	margin-left: 0px;
+}
+
+.FooterButton.HistoryNavButton:disabled
+{
+	opacity: 0.06;
+}
+
+.FooterButton.HighlightButton
+{
+	margin-left: 56px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.FooterButton .FooterCommandLabel
 {
 	margin-left: 6px;
 	padding-top: 2px;
@@ -419,21 +631,108 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	text-transform: uppercase;
 }
 
-.EscapeButton CitadelBinding
+.FooterButton .FooterCommandLabel.HistoryForwardLabel
+{
+	margin-left: 0px;
+	margin-right: 6px;
+}
+
+.FooterButton CitadelBinding,.FooterButton CitadelKeyboardGlyph,.FooterButton .HistoryNavGlyph
 {
 	vertical-align: middle;
 }
 
-.Language_japanese .EscapeButton CitadelBinding
+.Language_japanese .FooterButton CitadelBinding,.Language_japanese .FooterButton CitadelKeyboardGlyph,.Language_japanese .FooterButton .HistoryNavGlyph
 {
 	margin-top: 1px;
 	margin-bottom: 2px;
 }
 
-.Language_schinese .EscapeButton CitadelBinding
+.Language_schinese .FooterButton CitadelBinding,.Language_schinese .FooterButton CitadelKeyboardGlyph,.Language_schinese .FooterButton .HistoryNavGlyph
 {
 	margin-top: 2px;
 	margin-bottom: 3px;
+}
+
+#HistoryBackButton
+{
+	padding-left: 50px;
+}
+
+.HistoryNavGlyph
+{
+	width: fit-children;
+	height: fit-children;
+	min-width: 18px;
+	min-height: 18px;
+	flow-children: none;
+	horizontal-align: center;
+	border-radius: 4px;
+	background-color: keybindHousingBGColor;
+}
+
+.HistoryNavGlyph .HistoryNavGlyphImage
+{
+	vertical-align: center;
+	horizontal-align: center;
+	width: 24px;
+	height: 24px;
+	background-image: url("s2r://panorama/images/icons/icon_arrow.vsvg");
+	background-texture-size: 24px 24px;
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: offBlack;
+}
+
+.HistoryNavGlyph .HistoryNavGlyphBack
+{
+	transform: rotateZ( 180deg );
+}
+
+#NewSettingIndicator
+{
+	ignore-parent-flow: true;
+	width: 6px;
+	height: 6px;
+	border-radius: 4px;
+	background-color: brightPurple;
+	box-shadow: fill brightPurple&11 0px 0px 10px 1px;
+	visibility: collapse;
+	vertical-align: center;
+	margin-left: 10px;
+	margin-right: 6px;
+}
+
+#NewSettingIndicator.SettingsRowIndicator
+{
+	ignore-parent-flow: false;
+	width: 14px;
+	height: width-percentage( 100% );
+	margin-left: 13px;
+	box-shadow: none;
+	background-color: none;
+	vertical-align: center;
+	background-image: url("s2r://panorama/images/icons/notification_alert.vsvg");
+	background-size: contain;
+	background-size: 14px;
+	background-texture-size: 14px 14px;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: #F1C7FF;
+	img-shadow: 0px 0px 8px rgba(218, 105, 255, 0.7);
+}
+
+.HaveNewSettings #NewSettingIndicator
+{
+	visibility: visible;
+}
+
+#SettingsSectionNavigationButton.CriticalKeybindMissing #NewSettingIndicator,#SettingsSubSectionNavigationButton.CriticalKeybindMissing #NewSettingIndicator
+{
+	visibility: visible;
+	background-color: warningRed;
+	box-shadow: fill warningRed&11 0px 0px 10px 1px;
 }
 
 #SettingsNavigationContainer
@@ -464,20 +763,6 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	wash-color: none;
 }
 
-#SettingsNavigationContainer #NewSettingIndicator
-{
-	ignore-parent-flow: true;
-	width: 6px;
-	height: 6px;
-	border-radius: 4px;
-	background-color: brightPurple;
-	box-shadow: fill brightPurple&11 0px 0px 10px 1px;
-	visibility: collapse;
-	vertical-align: center;
-	margin-left: 10px;
-	margin-right: 6px;
-}
-
 #SettingsNavigationContainer .SettingsSubNavigationButton #NewSettingIndicator
 {
 	margin-left: 24px;
@@ -488,17 +773,12 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	margin-left: 32px;
 }
 
-#SettingsNavigationContainer .HaveNewSettings #NewSettingIndicator
-{
-	visibility: visible;
-}
-
 #SettingsNavigationContainer .HaveNewSettings.HiddenSetting.HiddenSettingSearchResultIcon
 {
 	margin-right: 16px;
 }
 
-#SettingsNavigationContainer .HiddenSetting.SettingSearchResult #NewSettingIndicator
+#SettingsNavigationContainer .HiddenSetting.SettingSearchResult #NewSettingIndicator,#SettingsNavigationContainer .HiddenBySetting.SettingSearchResult #NewSettingIndicator,#SettingsNavigationContainer .BaseSettingOnly.SettingSearchResult #NewSettingIndicator
 {
 	margin-left: 12px;
 }
@@ -529,13 +809,19 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	opacity: 0.2;
 }
 
-#SettingsNavigationContainer #SettingsNavigationSearchBox
+#SettingsNavigationContainer #SettingsNavigationTopRow
 {
 	width: 100%;
-	margin-bottom: 24px;
+	margin-bottom: 16px;
+	flow-children: right;
 }
 
-#SettingsNavigationContainer #SettingsNavigationSearchBox #SettingsNavigationSearchIcon
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationSearchBox
+{
+	width: 198px;
+}
+
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationSearchBox #SettingsNavigationSearchIcon
 {
 	vertical-align: center;
 	width: 24px;
@@ -545,7 +831,7 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	opacity: 0.5;
 }
 
-#SettingsNavigationContainer #SettingsNavigationSearchBox #SettingsNavigationSearchTextEntry
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationSearchBox #SettingsNavigationSearchTextEntry
 {
 	width: 100%;
 	height: 40px;
@@ -559,18 +845,17 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	transition-property: border, background-color;
 }
 
-#SettingsNavigationContainer #SettingsNavigationSearchBox #SettingsNavigationSearchTextEntry:not(.HasInput) #PlaceholderText
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationSearchBox #SettingsNavigationSearchTextEntry:not(.HasInput) #PlaceholderText
 {
-	opacity: 1;
 	transition-duration: 0.1s;
 }
 
-#SettingsNavigationContainer #SettingsNavigationSearchBox #SettingsNavigationSearchTextEntry:hover
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationSearchBox #SettingsNavigationSearchTextEntry:hover
 {
 	border: 2px solid offWhite&11;
 }
 
-#SettingsNavigationContainer #SettingsNavigationSearchBox #SettingsNavigationSearchTextEntry:focus
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationSearchBox #SettingsNavigationSearchTextEntry:focus
 {
 	background-color: offWhite&03;
 	animation-name: GlowSearchInput;
@@ -580,12 +865,12 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	animation-direction: alternate-reverse;
 }
 
-#SettingsNavigationContainer #SettingsNavigationSearchBox #SettingsNavigationSearchTextEntry:focus #PlaceholderText
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationSearchBox #SettingsNavigationSearchTextEntry:focus #PlaceholderText
 {
 	opacity: 0;
 }
 
-#SettingsNavigationContainer #SettingsNavigationSearchBox #SettingsNavigationSearchClearButton
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationSearchBox #SettingsNavigationSearchClearButton
 {
 	width: 40px;
 	height: 40px;
@@ -602,14 +887,78 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	opacity: 0.4;
 }
 
-#SettingsNavigationContainer #SettingsNavigationSearchBox #SettingsNavigationSearchClearButton:hover
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationSearchBox #SettingsNavigationSearchClearButton:hover
 {
 	opacity: 1;
 }
 
-#SettingsNavigationContainer #SettingsNavigationSearchBox #SettingsNavigationSearchClearButton.ShowClearButton
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationSearchBox #SettingsNavigationSearchClearButton.ShowClearButton
 {
 	visibility: visible;
+}
+
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationShareButton
+{
+	width: 40px;
+	height: 40px;
+	border-radius: 6px;
+	border: 2px solid offWhite&06;
+	background-color: offWhite&03;
+	margin-left: 14px;
+	transition-duration: 0.1s;
+	transition-property: border, background-color;
+}
+
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationShareButton:hover
+{
+	border: 2px solid offWhite&11;
+}
+
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationShareButton:hover #SettingsNavigationShareIcon
+{
+	opacity: 1;
+}
+
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationShareButton #SettingsNavigationShareIcon
+{
+	vertical-align: middle;
+	horizontal-align: center;
+	wash-color: offWhite;
+	opacity: 0.5;
+	transition-duration: 0.1s;
+	transition-property: opacity;
+}
+
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationResetPopupButton
+{
+	width: 40px;
+	height: 40px;
+	border-radius: 6px;
+	border: 2px solid offWhite&06;
+	background-color: offWhite&03;
+	margin-left: 14px;
+	transition-duration: 0.1s;
+	transition-property: border, background-color;
+}
+
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationResetPopupButton:hover
+{
+	border: 2px solid offWhite&11;
+}
+
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationResetPopupButton:hover #SettingsNavigationGlobalResetIcon
+{
+	opacity: 1;
+}
+
+#SettingsNavigationContainer #SettingsNavigationTopRow #SettingsNavigationResetPopupButton #SettingsNavigationGlobalResetIcon
+{
+	vertical-align: middle;
+	horizontal-align: center;
+	wash-color: offWhite;
+	opacity: 0.5;
+	transition-duration: 0.1s;
+	transition-property: opacity;
 }
 
 #SettingsNavigationContainer #NoSearchResultsContainer
@@ -623,12 +972,6 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	transition-property: opacity;
 	transition-duration: 0.1s;
 	transition-timing-function: ease-out;
-}
-
-#SettingsNavigationContainer #NoSearchResultsContainer #NoSearchResultsImage
-{
-	horizontal-align: center;
-	vertical-align: top;
 }
 
 #SettingsNavigationContainer #NoSearchResultsContainer #NoSearchResultsText
@@ -646,8 +989,342 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	opacity: 1;
 }
 
-#SettingsNavigationContainer.NoSearchResults #SettingsNavigationButtonsContainer
+#SettingsNavigationContainer.NoSearchResults #SettingsNavigationButtonsContainer,#SettingsNavigationContainer.NoSearchResults #SelectedHeroRow
 {
+	opacity: 0;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer
+{
+	width: 100%;
+	height: fit-children;
+	flow-children: down;
+	overflow: noclip;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroRow
+{
+	width: 320px;
+	height: 88px;
+	flow-children: right;
+	padding: 6px 12px 6px 0px;
+	margin-bottom: 12px;
+	overflow: noclip;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorBanner
+{
+	ignore-parent-flow: true;
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/textures/paper_tile_1k_01_png.vtex");
+	background-size: cover;
+	wash-color: deadlockGreenDarker;
+	brightness: 1.25;
+	box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.45);
+	transform: rotateZ( -0.6deg );
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer
+{
+	width: fit-children;
+	height: 76px;
+	horizontal-align: left;
+	vertical-align: center;
+	margin-left: -6px;
+	overflow: noclip;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer #GlobalSettingOverlay
+{
+	ignore-parent-flow: true;
+	opacity: 0;
+	ui-scale: 50%;
+	width: 60px;
+	height: 60px;
+	wash-color: offWhite;
+	z-index: 2;
+	transition-property: opacity, ui-scale;
+	transition-duration: 0.1s;
+}
+
+.lookingAtUnitSpecificBinds #SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer #GlobalSettingOverlay.Active
+{
+	opacity: 1;
+	ui-scale: 100%;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer .HeroButtonPanel
+{
+	ui-scale: 115%;
+	width: 84px;
+	height: 72px;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer .HeroButtonPanel:hover:disabled
+{
+	sound: none;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer .HeroButtonPanel .RadioButtonHero,#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer .HeroButtonPanel #HeroButtonIcon
+{
+	ui-scale: 150%;
+	opacity: 1;
+	transition-property: opacity, ui-scale;
+	transition-duration: 0.1s;
+}
+
+.lookingAtUnitSpecificBinds #SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer .HeroButtonPanel .RadioButtonHero.Overridden,.lookingAtUnitSpecificBinds #SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer .HeroButtonPanel #HeroButtonIcon.Overridden
+{
+	opacity: 0.1;
+	ui-scale: 75%;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer .HeroButtonPanel .RadioButtonHero
+{
+	border: 0px;
+	transition-property: width, height;
+	brightness: 1;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer .HeroButtonPanel .RadioButtonHero:disabled
+{
+	background-color: none;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer .HeroButtonPanel #HeroButtonHeroName
+{
+	visibility: collapse;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroButtonContainer .HeroButtonPanel.Disabled
+{
+	saturation: 0.0;
+	opacity: 0.35;
+	background-color: none;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorExpandPanel
+{
+	width: 100%;
+	height: 0px;
+	opacity: 0;
+	flow-children: down;
+	overflow: clip;
+	margin-left: -80px;
+	transition-property: height, opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-out;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorScrollPanel
+{
+	width: 100%;
+	height: fill-parent-flow( 1.0 );
+	flow-children: down;
+	overflow: squish scroll;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer.HeroSelectorExpanded.PerUnitHotkeysEnabled #HeroSelectorExpandPanel
+{
+	height: 800px;
+	opacity: 1;
+	opacity-mask: url("s2r://panorama/images/masks/scroll_bottom_fade_psd.vtex");
+	margin-left: 0px;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #SelectedHeroDetails
+{
+	width: fill-parent-flow( 1.0 );
+	height: 100%;
+	flow-children: right;
+	overflow: noclip;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorViewMode
+{
+	flow-children: down;
+	vertical-align: center;
+	margin-left: 6px;
+	width: 160px;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorViewMode #HeroSelectorViewModeTitle
+{
+	font-family: oracle;
+	font-weight: bold;
+	font-size: 22px;
+	color: offWhite&dd;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+	text-overflow: shrink;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorViewMode #HeroSelectorViewModeScope
+{
+	font-style: italic;
+	font-size: 16px;
+	color: brandGreen;
+	margin-top: -2px;
+	text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+	text-overflow: shrink;
+	margin-bottom: 8px;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorResetContainer
+{
+	width: 44px;
+	height: 100%;
+	vertical-align: center;
+	padding-bottom: 10px;
+	overflow: noclip;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorResetContainer CitadelButton
+{
+	horizontal-align: left;
+	vertical-align: center;
+	opacity: 0;
+	position: -32px 0px 0px;
+	transition-property: opacity, position;
+	transition-duration: 0.2s;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer:hover #HeroSelectorResetContainer CitadelButton
+{
+	opacity: 1;
+	position: 0px 0px 0px;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorHeader
+{
+	width: 100%;
+	height: fit-children;
+	flow-children: right;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorHeader #HeroSelectorCollapseButton
+{
+	width: 50%;
+	height: 38px;
+	horizontal-align: center;
+	background-color: none;
+	border: 0px;
+	padding: 0px;
+	box-shadow: none;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorHeader #HeroSelectorCollapseButton #HeroSelectorCollapseIcon
+{
+	width: 100%;
+	height: 100%;
+	transform: rotateZ( 180deg );
+	wash-color: offWhite&aa;
+	img-shadow: 0px 0px 0px transparent;
+	transition-property: wash-color, img-shadow;
+	transition-duration: 0.15s;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorHeader #HeroSelectorCollapseButton:hover #HeroSelectorCollapseIcon
+{
+	wash-color: offWhite;
+	img-shadow: 0px 0px 12px offWhite&cc;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer .HeroFilters
+{
+	padding: 0px;
+	horizontal-align: center;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer .HeroFilters .HeroButtonPanel
+{
+	ui-scale: 110%;
+	width: 72px;
+	height: 68px;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer .HeroFilters.HeroSearchActive .HeroButtonPanel:not(.HeroSearchMatch) .RadioButtonHero
+{
+	opacity: 0.2;
+	brightness: 0.6;
+	saturation: 0.3;
+	box-shadow: none;
+	animation-name: none;
+	background-color: none;
+	height: 50px;
+	width: 50px;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer .HeroFilters.HeroSearchActive .HeroButtonPanel:not(.HeroSearchMatch) #HeroButtonIcon
+{
+	opacity: 0.2;
+	brightness: 0.6;
+	saturation: 0.3;
+	img-shadow: none;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer .HeroFilters.HeroSearchActive .HeroButtonPanel:not(.HeroSearchMatch) #UnitHasBindsIndicator
+{
+	opacity: 0.2;
+	box-shadow: none;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer .HeroFilters.HeroSearchActive .HeroButtonPanel:not(.HeroSearchMatch) #HeroButtonHeroName
+{
+	color: offWhite&40;
+	text-shadow: none;
+	animation-name: none;
+	opacity: 0.2;
+	brightness: 0.6;
+	saturation: 0.3;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer .HeroFilters.HeroSearchActive .HeroButtonPanel.SelectedHero:not(.HeroSearchMatch):hover .RadioButtonHero
+{
+	border: 3px solid brandGreen;
+	background-color: none;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer .HeroFilters.HeroSearchActive .HeroButtonPanel.HeroSearchMatch:not(.SelectedHero) .RadioButtonHero
+{
+	box-shadow: fill offWhite&11 0px 0px 9px 1px;
+	background-color: offWhite&11;
+	brightness: 0.2;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer .HeroFilters.HeroSearchActive .HeroButtonPanel.HeroSearchMatch:not(.SelectedHero):hover .RadioButtonHero
+{
+	background-color: brandGreen&11;
+	brightness: 1;
+	box-shadow: fill brandGreen&11 0px 0px 16px 1px;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer .HeroSelectorRow
+{
+	padding-left: 0px;
+	width: fit-children;
+	horizontal-align: center;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer:not(.PerUnitHotkeysEnabled)
+{
+	visibility: collapse;
+}
+
+#SettingsNavigationContainer.HeroSelectorExpanded
+{
+	padding-left: 10px;
+}
+
+#SettingsNavigationContainer.HeroSelectorExpanded #SettingsNavigationTopRow,#SettingsNavigationContainer.HeroSelectorExpanded #SelectedHeroRow,#SettingsNavigationContainer.HeroSelectorExpanded #SettingsNavigationButtonsContainer
+{
+	margin-left: 80px;
+	width: 306px;
+}
+
+#SettingsNavigationContainer.HeroSelectorExpanded #SettingsNavigationButtonsContainer
+{
+	height: 0px;
 	opacity: 0;
 }
 
@@ -661,8 +1338,8 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	opacity-mask: url("s2r://panorama/images/masks/soft_top_bottom_vscroll_psd.vtex");
 	padding: 24px 0px 48px;
 	margin-top: -24px;
-	transition-property: opacity;
-	transition-duration: 0.1s;
+	transition-property: height, opacity;
+	transition-duration: 0.2s;
 	transition-timing-function: ease-out;
 }
 
@@ -691,6 +1368,16 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 #SettingsNavigationContainer #SettingsSectionNavigationButton.NewSettingsNavigation .Background
 {
 	wash-color: brightPurple;
+}
+
+.HasFocusedSection #SettingsNavigationContainer #SettingsSectionNavigationButton:not(.Focused)
+{
+	visibility: collapse;
+}
+
+.HasFocusedSection #SettingsNavigationContainer #SettingsSubSectionNavigationButton:not(.Focused)
+{
+	visibility: collapse;
 }
 
 #SettingsNavigationContainer .SettingsNavigationButton
@@ -924,14 +1611,44 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	background-image: url("s2r://panorama/images/icons/icon_eye_disabled.vsvg");
 	background-size: 14px 10px;
 	background-repeat: no-repeat;
-	background-img-opacity: 0.1;
+	opacity: 0.1;
 	margin-left: 24px;
 	visibility: collapse;
+	transition-property: opacity;
+	transition-duration: .06s;
 }
 
-.HiddenSetting .HiddenSettingSearchResultIcon
+.HiddenSetting .HiddenSettingSearchResultIcon,.HiddenBySetting .HiddenSettingSearchResultIcon
 {
 	visibility: visible;
+}
+
+.BaseSettingSearchResultIcon
+{
+	ignore-parent-flow: true;
+	width: 12px;
+	height: 12px;
+	wash-color: offWhite;
+	vertical-align: middle;
+	horizontal-align: left;
+	background-image: url("s2r://panorama/images/icons/settings_global.vsvg");
+	background-size: 12px 12px;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+	margin-left: 25px;
+	visibility: collapse;
+	transition-property: opacity;
+	transition-duration: .06s;
+}
+
+.BaseSettingOnly .BaseSettingSearchResultIcon
+{
+	visibility: visible;
+}
+
+.BaseSettingOnly:hover .BaseSettingSearchResultIcon
+{
+	opacity: 1;
 }
 
 .SearchResultSelected
@@ -970,6 +1687,7 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 
 .NewSettingSelected
 {
+	sound: "UI.MainMenu.Activate";
 	animation-name: NewSettingAnimation;
 	animation-duration: 1s;
 	animation-iteration-count: 1;
@@ -994,12 +1712,24 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	animation-name: none;
 }
 
-.SettingsSubsectionContainer.NewSettingSelected .SettingsSectionSubtitle
+.SettingsSubsectionContainer.NewSettingSelected .SettingsSubsectionTitleContainer
 {
 	animation-name: NewSettingAnimation;
 	animation-duration: 1s;
 	animation-iteration-count: 1;
 	animation-delay: 0.1s;
+}
+
+#SettingsHeroSelectorContainer.HeroSettingsNoticeFlash #SelectedHeroButtonContainer .HeroButtonPanel,#HeroSpecificHighlightButton.HeroSettingsNoticeFlash
+{
+	animation-name: HighlightSettingAnimation;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+#HeroSpecificHighlightButton.HeroSettingsNoticeFlash
+{
+	opacity: 1;
 }
 
 .SettingSearchResultHeightAnimationContainer
@@ -1011,6 +1741,24 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	transition-property: height;
 	transition-duration: 0.3s;
 	transition-timing-function: ease-in;
+}
+
+RadioButton.HiddenSetting:active,RadioButton.HiddenBySetting:active
+{
+	animation-name: NegativeShake;
+	animation-timing-function: ease-out;
+	animation-duration: 0.06s;
+	animation-iteration-count: 4;
+}
+
+RadioButton.HiddenSetting:active .RadioBox,RadioButton.HiddenBySetting:active .RadioBox
+{
+	sound: "UI.Settings.Error";
+}
+
+RadioButton.HiddenSetting:active .HiddenSettingSearchResultIcon,RadioButton.HiddenBySetting:active .HiddenSettingSearchResultIcon
+{
+	opacity: 0.75;
 }
 
 .SearchResult
@@ -1196,6 +1944,11 @@ PopupSettingsSettingsSection
 	max-height: 16384px;
 }
 
+.ShowGameWorld #SettingsBody .SettingsSubsectionContainer.ActiveSection .SubsectionBackground
+{
+	opacity: 0;
+}
+
 #SettingsBody
 {
 	flow-children: down;
@@ -1222,10 +1975,15 @@ PopupSettingsSettingsSection
 	opacity: 1;
 }
 
-#SettingsBody .SettingsSectionContainer:hover .SettingsSectionTitleContainer .ResetButtonContainer .InputButton
+#SettingsBody .SettingsSectionContainer:hover .SettingsSectionTitleContainer .ResetButtonContainer CitadelButton
 {
 	opacity: 1;
 	position: 0px 0px 0px;
+}
+
+.HasFocusedSection #SettingsBody .SettingsSectionContainer:not(.Focused)
+{
+	opacity: 0;
 }
 
 #SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer
@@ -1241,12 +1999,65 @@ PopupSettingsSettingsSection
 	width: 100%;
 }
 
-#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .ResetButtonContainer .InputButton
+#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .ResetButtonContainer CitadelButton
 {
 	opacity: 0;
 	position: -32px 0px 0px;
 	transition-property: opacity, position;
 	transition-duration: 0.2s;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .ResetButtonContainer #ResetSectionButton .ButtonLabel,#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .ResetButtonContainer .ResetButton .ButtonLabel
+{
+	transform: translateY( 2px );
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .SectionTitleButton
+{
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: center;
+	margin-right: 16px;
+	height: 56px;
+	flow-children: right;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .SectionTitleButton Image
+{
+	width: 56px;
+	height: 56px;
+	vertical-align: center;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .SectionTitleButton Label
+{
+	vertical-align: center;
+	margin-left: 10px;
+	font-size: 18px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: offWhite;
+	text-overflow: shrink;
+	max-height: 28px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .SectionTitleButton Image,#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .SectionTitleButton Label
+{
+	wash-color: offWhite;
+	opacity: 0.5;
+	transition-property: opacity, wash-color;
+	transition-duration: 0.1s;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .SectionTitleButton:hover Image,#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .SectionTitleButton:hover Label
+{
+	opacity: 1;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .SectionTitleButton:active Image,#SettingsBody .SettingsSectionContainer .SettingsSectionTitleContainer .SectionTitleButton:active Label
+{
+	wash-color: brandGreen;
 }
 
 #SettingsBody .SettingsSectionContainer .SettingsSectionTitleIcon
@@ -1289,12 +2100,11 @@ PopupSettingsSettingsSection
 {
 	width: 440px;
 	height: 440px;
-	margin-right: 8px;
+	margin: 75px 8px 0px 0px;
 	border-radius: 10px;
 	background-color: #59544C;
 	opacity-mask: url("s2r://panorama/images/masks/rough_edge_01_png.vtex");
 	box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.5);
-	margin-bottom: 19px;
 	vertical-align: center;
 }
 
@@ -1357,7 +2167,6 @@ PopupSettingsSettingsSection
 {
 	width: 440px;
 	margin-right: 32px;
-	vertical-align: center;
 }
 
 #SettingsBody .SettingsSectionContainer .SettingsGroup
@@ -1486,6 +2295,42 @@ PopupSettingsSettingsSection
 	opacity-mask: url("s2r://panorama/images/masks/wipe_horizontal_1024x512_psd.vtex");
 }
 
+#SettingsBody .SettingsSectionContainer .SettingsSectionColumnBeforeGap .SettingsRow .SettingsRowResetButton
+{
+	margin-right: 8px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionColumnBeforeGap .SettingsRow.SettingsRowSlider .SettingsRowResetButton,#SettingsBody .SettingsSectionContainer .SettingsSectionColumnBeforeGap .SettingsRow.SettingsRowColorSlider .SettingsRowResetButton
+{
+	horizontal-align: right;
+	margin: 0px 5px 0px 0px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowDropDown .DropDownNew
+{
+	width: 320px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionColumnBeforeGap .SettingsRow.SettingsRowDropDown .DropDownNew
+{
+	width: fill-parent-flow( 1 );
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionColumnBeforeGap .SettingsRow.SettingsRowDropDown .SettingsRowResetButton
+{
+	margin-left: 12px;
+}
+
+#SettingsBody .SettingsSectionContainer #citadel_settings_chatwheel .SettingsRow.SettingsRowDropDown .DropDownNew
+{
+	width: 245px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsSectionColumnBeforeGap .SettingsRow .SettingContent #Slider,#SettingsBody .SettingsSectionContainer .SettingsSectionColumnBeforeGap .SettingsRow #SettingsRowContent #Slider
+{
+	width: 290px;
+}
+
 #SettingsBody .SettingsSectionContainer .SettingsRow
 {
 	width: 100%;
@@ -1526,16 +2371,122 @@ PopupSettingsSettingsSection
 	background-color: rgba(0, 0, 0, 0);
 }
 
+#SettingsBody .SettingsSectionContainer .SettingsRow .SettingsRowResetButton
+{
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: center;
+	margin: 0px settingsBodyPaddingLeft 0px 0px;
+	ui-scale: 55%;
+	visibility: collapse;
+	opacity: 0;
+	position: -32px 0px 0px;
+	transition-property: opacity, position, transform;
+	transition-duration: 0.25s;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow .SettingsRowResetButton .ButtonImage
+{
+	height: 36px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowToggle .SettingsRowResetButton
+{
+	horizontal-align: left;
+	margin: 0px 0px 0px 370px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowSlider .SettingsRowResetButton
+{
+	horizontal-align: left;
+	margin: 0px 0px 0px 748px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowColorSlider .SettingsRowResetButton
+{
+	horizontal-align: left;
+	margin: 0px 0px 0px 718px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowKeyBinder .SettingsRowResetButton
+{
+	ignore-parent-flow: false;
+	horizontal-align: left;
+	margin: 0px 0px 0px 18px;
+	position: 0px 0px 0px;
+	transform: translateX(-32px);
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowKeyBinder CitadelSettingsKeyBinder,#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowKeyBinder #KeybindContainer
+{
+	overflow: noclip;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow CitadelSettingsKeyBinder.canQuickCast #KeybindContainer,#SettingsBody .SettingsSectionContainer .SettingsRow CitadelSettingsKeyBinder.ChatWheelBind #KeybindContainer
+{
+	max-width: 600px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow CitadelSettingsKeyBinder.isChatWheelBinder #KeybindContainer
+{
+	max-width: 784px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowDropDown .SettingsRowResetButton
+{
+	ignore-parent-flow: false;
+	horizontal-align: left;
+	margin: 0px 0px 0px 18px;
+	position: 0px 0px 0px;
+	transform: translateX(-32px);
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowRadio .SettingsRowResetButton
+{
+	ignore-parent-flow: false;
+	horizontal-align: left;
+	margin: 0px 0px 0px 12px;
+	position: 0px 0px 0px;
+	transform: translateX(-32px);
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowToggleRightLeft .SettingsRowResetButton,#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowCheckboxes .SettingsRowResetButton
+{
+	ignore-parent-flow: false;
+	horizontal-align: left;
+	margin: 0px;
+	position: 0px 0px 0px;
+	transform: translateX(-32px);
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowModified .SettingsRowResetButton
+{
+	visibility: visible;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow.SettingsRowModified:hover .SettingsRowResetButton
+{
+	opacity: 1;
+	position: 0px 0px 0px;
+	transform: translateX(0px);
+}
+
 #SettingsBody .SettingsSectionContainer .SettingsRow .SettingContent,#SettingsBody .SettingsSectionContainer .SettingsRow #SettingsRowContent
 {
 	flow-children: right;
 	width: 100%;
 	padding: 10px settingsBodyPaddingLeft;
+	overflow: noclip;
 }
 
 #SettingsBody .SettingsSectionContainer .SettingsRow .SettingContent.TopBottomFlow,#SettingsBody .SettingsSectionContainer .SettingsRow #SettingsRowContent.TopBottomFlow
 {
 	flow-children: down;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow .SettingContent CitadelSettingsToggle.RightLeftFlow .SettingLabel,#SettingsBody .SettingsSectionContainer .SettingsRow #SettingsRowContent CitadelSettingsToggle.RightLeftFlow .SettingLabel
+{
+	width: fit-children;
 }
 
 #SettingsBody .SettingsSectionContainer .SettingsRow .SettingContent .SettingLabel,#SettingsBody .SettingsSectionContainer .SettingsRow #SettingsRowContent .SettingLabel
@@ -1561,6 +2512,12 @@ PopupSettingsSettingsSection
 #SettingsBody .SettingsSectionContainer .SettingsRow .SettingContent #Slider,#SettingsBody .SettingsSectionContainer .SettingsRow #SettingsRowContent #Slider
 {
 	width: 320px;
+	overflow: noclip;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow .SettingContent #ChatWheelDelaySlider .SliderTitle,#SettingsBody .SettingsSectionContainer .SettingsRow #SettingsRowContent #ChatWheelDelaySlider .SliderTitle
+{
+	width: 0px;
 }
 
 #SettingsBody .SettingsSectionContainer .SettingsRow .HR1px
@@ -1675,6 +2632,11 @@ PopupSettingsSettingsSection
 	background-color: rgba(0, 0, 0, 0.5);
 }
 
+#SettingsBody .SettingsSectionContainer .SettingsRow:hover .SettingsRowBackground.Shadow.HeroCustomizableSetting
+{
+	background-color: brandGreen;
+}
+
 #SettingsBody .SettingsSectionContainer .SettingsRow:hover .SettingLabel
 {
 	color: offWhite;
@@ -1696,6 +2658,16 @@ PopupSettingsSettingsSection
 #SettingsBody .SettingsSectionContainer .SettingsRow:hover .noKeyBinding .AddBinding
 {
 	visibility: collapse;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow:hover .NewSettingName
+{
+	color: offWhite;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow:hover .NewSettingDescription
+{
+	color: offWhite&88;
 }
 
 #SettingsBody .SettingsSectionContainer .SettingsRow:hover #LabelFXContainer CitadelKeyboardGlyph#keyboardMainGlyph.light .KeyboardKeyGlyphContainer,#SettingsBody .SettingsSectionContainer .SettingsRow:hover #LabelFXContainer CitadelKeyboardGlyph#keyboardMainGlyph.light .MouseGlyphBackground,#SettingsBody .SettingsSectionContainer .SettingsRow:hover #LabelFXContainer CitadelKeyboardGlyph#keyboardSecondaryGlyph.light .KeyboardKeyGlyphContainer,#SettingsBody .SettingsSectionContainer .SettingsRow:hover #LabelFXContainer CitadelKeyboardGlyph#keyboardSecondaryGlyph.light .MouseGlyphBackground,#SettingsBody .SettingsSectionContainer .SettingsRow:hover #LabelFXContainer2 CitadelKeyboardGlyph#keyboardMainGlyph.light .KeyboardKeyGlyphContainer,#SettingsBody .SettingsSectionContainer .SettingsRow:hover #LabelFXContainer2 CitadelKeyboardGlyph#keyboardMainGlyph.light .MouseGlyphBackground,#SettingsBody .SettingsSectionContainer .SettingsRow:hover #LabelFXContainer2 CitadelKeyboardGlyph#keyboardSecondaryGlyph.light .KeyboardKeyGlyphContainer,#SettingsBody .SettingsSectionContainer .SettingsRow:hover #LabelFXContainer2 CitadelKeyboardGlyph#keyboardSecondaryGlyph.light .MouseGlyphBackground
@@ -1933,6 +2905,20 @@ PopupSettingsSettingsSection
 	transition-duration: 0.3s;
 }
 
+#SettingsBody .SettingsSectionContainer .SettingsRow:hover CitadelSettingsSlider TextEntry
+{
+	color: offWhite;
+	border-color: offWhite&11;
+	background-color: offBlack&33;
+	background-image: url("s2r://panorama/images/textures/paper_tile_1k_01_png.vtex");
+	box-shadow: inset rgba( 0, 0, 0, 0.5) 0px 2px 6px;
+}
+
+#SettingsBody .SettingsSectionContainer .SettingsRow:hover CitadelSettingsSlider.ModifiedValue TextEntry
+{
+	color: brandGreen;
+}
+
 #SettingsBody .SettingsSectionContainer.ActiveSection .SettingsSectionTitle
 {
 	color: gradient( linear, 0% 0%, 0% 100%, from( brandGreen ), to( #A6FFB5 ) );
@@ -1995,7 +2981,7 @@ PopupSettingsSettingsSection
 	sound: "UI.Settings.Subsection.Hover";
 }
 
-#SettingsBody .SettingsSubsectionContainer:hover .SettingsSubsectionTitleContainer .ResetButtonContainer .InputButton
+#SettingsBody .SettingsSubsectionContainer:hover .SettingsSubsectionTitleContainer .ResetButtonContainer CitadelButton
 {
 	opacity: 1;
 	position: 0px 0px 0px;
@@ -2015,7 +3001,7 @@ PopupSettingsSettingsSection
 	padding-bottom: 8px;
 }
 
-#SettingsBody .SettingsSubsectionContainer .SettingsSubsectionTitleContainer .ResetButtonContainer .InputButton
+#SettingsBody .SettingsSubsectionContainer .SettingsSubsectionTitleContainer .ResetButtonContainer CitadelButton
 {
 	opacity: 0;
 	position: -32px 0px 0px;
@@ -2023,15 +3009,20 @@ PopupSettingsSettingsSection
 	transition-duration: 0.2s;
 }
 
-#SettingsBody .SettingsSubsectionContainer.ActiveSection
+#SettingsBody .SettingsSubsectionContainer.ActiveSection,#SettingsBody .SettingsSubsectionContainer.Focused
 {
 	opacity: 1;
 }
 
-#SettingsBody .SettingsSubsectionContainer.ActiveSection .SubsectionBackground
+#SettingsBody .SettingsSubsectionContainer.ActiveSection .SubsectionBackground,#SettingsBody .SettingsSubsectionContainer.Focused .SubsectionBackground
 {
 	opacity: 1;
 	box-shadow: 0px 8px 12px -6px rgba(0, 0, 0, 0.5);
+}
+
+.HasFocusedSection #SettingsBody .SettingsSubsectionContainer:not(.Focused)
+{
+	visibility: collapse;
 }
 
 #SettingsBody .SettingsSectionDivider
@@ -2111,6 +3102,81 @@ PopupSettingsSettingsSection
 	background-color: red;
 }
 
+#HeroSpecificHighlightButton CitadelKeyboardGlyph
+{
+	vertical-align: middle;
+}
+
+PopupSettings:not(.HeroSpecificSettingsEnabled) #AlwaysShowAllSettingsRow
+{
+	visibility: collapse;
+}
+
+PopupSettings #SettingsBody .HiddenForHeroScope,PopupSettings:not(.SettingsSearchActive) #SettingsNavigationContainer .HiddenForHeroScope
+{
+	visibility: collapse;
+}
+
+PopupSettings.HighlightHeroSpecificSettings #SettingsBody .SettingsSectionContainer .SettingsRow.HeroCustomizableSetting .SettingLabel,PopupSettings.HighlightHeroSpecificSettings #SettingsBody .SettingsSectionContainer .SettingsRow.HeroCustomizableSetting .SettingLabel Label,PopupSettings.HighlightHeroSpecificSettings #SettingsBody .SettingsSectionContainer .SettingsRow.HeroCustomizableSetting .QuickCastDesc
+{
+	color: heroSpecificHighlightColor;
+	text-shadow: 0px 0px 12px 0 heroSpecificHighlightColor&33;
+	transition-property: color;
+	transition-duration: 0.1s;
+}
+
+PopupSettings.HighlightHeroSpecificSettings #SettingsBody .SettingsSectionContainer .SettingsRow.HeroCustomizableSetting:hover .SettingLabel,PopupSettings.HighlightHeroSpecificSettings #SettingsBody .SettingsSectionContainer .SettingsRow.HeroCustomizableSetting:hover .SettingLabel Label,PopupSettings.HighlightHeroSpecificSettings #SettingsBody .SettingsSectionContainer .SettingsRow.HeroCustomizableSetting:hover .QuickCastDesc
+{
+	color: white;
+}
+
+PopupSettings.HighlightHeroSpecificSettings #SettingsBody .SettingsSectionContainer .SettingsRow:not(.HeroCustomizableSetting) .SettingLabel,PopupSettings.HighlightHeroSpecificSettings #SettingsBody .SettingsSectionContainer .SettingsRow:not(.HeroCustomizableSetting) .SettingLabel Label,PopupSettings.HighlightHeroSpecificSettings #SettingsBody .SettingsSectionContainer .SettingsRow:not(.HeroCustomizableSetting) .QuickCastDesc
+{
+	opacity: 0.4;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+}
+
+PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .SectionAnimation:not(.HasHeroSpecificSettings) #SectionNavigationButtonLabel,PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .SubSectionAnimation:not(.HasHeroSpecificSettings) #SubSectionNavigationButtonLabel
+{
+	opacity: 0.5;
+	transition-property: opacity;
+	transition-duration: 0.1s;
+}
+
+PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .SectionAnimation.NewSettingsNavigation #SectionNavigationButtonLabel
+{
+	opacity: 1;
+}
+
+PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHeroSpecificSettings #SectionNavigationButtonLabel,PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHeroSpecificSettings #SubSectionNavigationButtonLabel
+{
+	color: heroSpecificHighlightColor;
+	text-shadow: 0px 0px 12px 0 heroSpecificHighlightColor&33;
+}
+
+PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHeroSpecificSettings .SettingsNavigationButton .Background,PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHeroSpecificSettings .SettingsSubNavigationButton .Background
+{
+	wash-color: heroSpecificHighlightColor;
+	opacity: 0.5;
+}
+
+PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHeroSpecificSettings .SettingsNavigationButton:selected .Background
+{
+	opacity: 1;
+}
+
+PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHeroSpecificSettings .SettingsNavigationButton:selected #SectionNavigationButtonLabel,PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHeroSpecificSettings .SettingsNavigationButton:selected .SettingsNavigationButtonText
+{
+	color: offBlack;
+	text-shadow: 0px 0px 12px 0 heroSpecificHighlightColor;
+}
+
+PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHeroSpecificSettings .SettingsNavigationButton:selected #NewSettingIndicator
+{
+	wash-color: offBlack;
+}
+
 #NewSection
 {
 	visibility: collapse;
@@ -2119,6 +3185,11 @@ PopupSettingsSettingsSection
 #NewSection.HaveNewSettings
 {
 	visibility: visible;
+}
+
+#NewSection .HasFocusedSection,.HasFocusedSection #NewSection.HaveNewSettings
+{
+	visibility: collapse;
 }
 
 #NewSection .SettingsSectionTitleContainer
@@ -2200,6 +3271,7 @@ PopupSettingsSettingsSection
 	flow-children: down;
 	vertical-align: center;
 	width: fill-parent-flow( 1 );
+	max-width: 970px;
 	margin-right: 16px;
 }
 
@@ -2230,6 +3302,7 @@ PopupSettingsSettingsSection
 .NewSetting .NewSettingDate .NewSettingDateAdded
 {
 	vertical-align: center;
+	horizontal-align: right;
 	font-size: 14px;
 	font-weight: semi-bold;
 }
@@ -2259,46 +3332,78 @@ PopupSettingsSettingsSection
 
 .NewSetting #NewSettingDismissButton
 {
-	brightness: 1;
 	overflow: noclip;
 }
 
-.NewSetting #NewSettingDismissButton .Background
+.NewSettingNotVisible .NewSetting
 {
-	opacity: 0;
+	sound: "UI.Settings.Error";
+	animation-name: NegativeShake;
+	animation-timing-function: ease-out;
+	animation-duration: 0.06s;
+	animation-iteration-count: 4;
 }
 
-.NewSetting #NewSettingDismissButton .NewSettingDismissIcon
+.Updated .NewSettingIcon
 {
-	width: 24px;
-	height: 24px;
-	margin: 8px;
-	vertical-align: center;
-	horizontal-align: center;
-	wash-color: offWhite;
-}
-
-.NewSetting #NewSettingDismissButton:hover .Background
-{
-	opacity: 1;
-}
-
-.NewSetting #NewSettingDismissButton:active
-{
-	transform: scale3d( 0.96, 0.96, 1 );
-	brightness: 0.8;
+	background-image: url("s2r://panorama/images/icons/icon_refresh.vsvg");
+	wash-color: brandGreen;
 }
 
 #SettingsFooter
 {
 	height: 100px;
+	width: 100%;
+}
+
+#MissingRequiredKeybindMessage
+{
+	ignore-parent-flow: true;
+	flow-children: down;
+	horizontal-align: right;
+	margin-right: 20px;
+	padding-top: 25px;
+	width: 200px;
+	z-index: 20;
+	visibility: collapse;
+	animation-name: WarningPulse;
+	animation-timing-function: linear;
+	animation-duration: 2.5s;
+	animation-iteration-count: infinite;
+}
+
+#MissingRequiredKeybindMessage #MissingRequiredKeybindIcon,#MissingRequiredKeybindMessage #MissingRequiredKeybindTitle
+{
+	vertical-align: middle;
+}
+
+#MissingRequiredKeybindMessage #MissingRequiredKeybindIcon
+{
+	horizontal-align: center;
+	padding-bottom: 5px;
+	wash-color: warningRed;
+}
+
+#MissingRequiredKeybindMessage #MissingRequiredKeybindTitle
+{
+	color: warningRed;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	horizontal-align: center;
+	text-transform: uppercase;
+}
+
+.CriticalKeybindMissing #MissingRequiredKeybindMessage
+{
+	visibility: visible;
 }
 
 #HeroSelector
 {
 	horizontal-align: center;
 	flow-children: down;
-	overflow: noclip;
+	z-index: 2;
 }
 
 .HeroSelectorRow
@@ -2309,24 +3414,19 @@ PopupSettingsSettingsSection
 	overflow: noclip;
 }
 
-#SelectedHeroImage
+#HeroRow1
 {
-	visibility: collapse;
-	vertical-align: center;
-	width: 40px;
-	height: 40px;
-	margin-right: 12px;
-	img-shadow: 0px 0px 16px #000000aa;
+	margin-top: 15px;
 }
 
-.lookingAtUnitSpecificBinds #SelectedHeroImage
+.DefaultQuickCastContainer
 {
 	visibility: visible;
 }
 
-#HeroRow1
+.lookingAtUnitSpecificBinds .DefaultQuickCastContainer
 {
-	margin-top: 0px;
+	visibility: collapse;
 }
 
 #AltCastKey,#AltCastDoubleTapWindowSlider,#AltCastHoldTimeSlider
@@ -2358,9 +3458,9 @@ PopupSettingsSettingsSection
 	visibility: collapse;
 }
 
-#ItemQuickCastDropDownContainer.unitHasKeybinds #ItemQuickCastHeroIcon
+#ItemQuickCastDropDownContainer.unitHasKeybinds #ItemQuickCastHeroIcon.Hide
 {
-	visibility: visible;
+	visibility: collapse;
 }
 
 .RadioButtonHero Image
@@ -2381,11 +3481,6 @@ PopupSettingsSettingsSection
 	box-shadow: fill brandGreen&11 0px 0px 16px 1px;
 }
 
-#QuickCastContainer.isUnitSpecificBind #UnitHasBindsIndicator.QuickCastBind
-{
-	visibility: visible;
-}
-
 #QuickCastContainer#UnitHasBindsIndicator
 {
 	width: 10px;
@@ -2395,6 +3490,11 @@ PopupSettingsSettingsSection
 	visibility: collapse;
 	vertical-align: center;
 	margin-right: 10px;
+}
+
+.NotDefaultValue .SwitchButton
+{
+	img-shadow: 0px 0px 7px 1 brandGreen&66;
 }
 
 #TopChatWheelPanel
@@ -2736,6 +3836,11 @@ PopupSettingsSettingsSection
 	padding-right: 24px;
 }
 
+#citadel_settings_communication #citadel_settings_communication_permissions .CommunicationToggle.NotDefaultValue:not(:selected) .TickBox
+{
+	box-shadow: inset 0px 0px 6px 0px brandGreen&33;
+}
+
 .SubsectionLabel
 {
 	padding: 0px settingsBodyPaddingLeft;
@@ -2760,5 +3865,153 @@ PopupSettingsSettingsSection
 .hasControllerConnected #OpenSteamInputConfiguratorButton
 {
 	visibility: visible;
+}
+
+@keyframes 'NegativeShake'
+{
+	0%
+	{
+		transform: translateX(2px);
+	}
+	
+	60%
+	{
+		transform: translateX(2px);
+	}
+	
+	61%
+	{
+		transform: translateX(-2px);
+	}
+	
+	100%
+	{
+		transform: translateX(-2px);
+	}
+	
+}
+
+@keyframes 'WarningPulse'
+{
+	0%
+	{
+		brightness: 0.4;
+	}
+	
+	50%
+	{
+		brightness: 1.2;
+	}
+	
+	100%
+	{
+		brightness: 0.4;
+	}
+	
+}
+
+.ReticleCodeButtons
+{
+	flow-children: right;
+	horizontal-align: center;
+	margin-top: 12px;
+	margin-bottom: 95px;
+}
+
+.ReticleCodeButtons CitadelButton
+{
+	margin: 0px 8px;
+}
+
+.ReticleCodeButtons .ReticleUndoPasteContainer
+{
+	width: 36px;
+	height: 100%;
+}
+
+.ReticleCodeButtons .ReticleUndoPasteContainer CitadelButton
+{
+	margin: 0px;
+	vertical-align: center;
+	visibility: collapse;
+	opacity: 0;
+	position: -8px 0px 0px;
+	transition-property: opacity, position;
+	transition-duration: 0.2s;
+}
+
+.ReticleCodeButtons.CanUndoPaste .ReticleUndoPasteContainer CitadelButton
+{
+	visibility: visible;
+}
+
+.ReticleCodeButtons.CanUndoPaste:hover .ReticleUndoPasteContainer CitadelButton
+{
+	opacity: 1;
+	position: 0px 0px 0px;
+}
+
+#ReticlePreviewContainer .ReticleCodeToast
+{
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	vertical-align: bottom;
+	margin-bottom: 20px;
+	padding: 4px 12px;
+	border-radius: 4px;
+	background-color: #000000CC;
+	color: offWhite;
+	font-size: 15px;
+	font-weight: bold;
+	z-index: 10;
+	visibility: collapse;
+}
+
+#ReticlePreviewContainer .ReticleCodeToast.Failed
+{
+	color: #E8B84A;
+}
+
+#ReticlePreviewContainer.CodeCopied #ReticleCodeCopiedToast,#ReticlePreviewContainer.CodePasted #ReticleCodePastedToast,#ReticlePreviewContainer.CodePasteFailed #ReticleCodeFailedToast,#ReticlePreviewContainer.CodePasteMultiple #ReticleCodeMultipleToast
+{
+	visibility: visible;
+}
+
+#AccessibilityPreviewContainer
+{
+	height: 240px;
+	margin-top: 24px;
+}
+
+#AccessibilityPreviewContainer Image
+{
+	width: 100%;
+	height: 100%;
+}
+
+#AccessibilityPreviewContainer #SubtitlePreview
+{
+	margin-bottom: 20px;
+}
+
+#EnemyHealthbarPreviewContainer
+{
+	width: 100%;
+	height: 33%;
+	vertical-align: top;
+}
+
+#EnemyHealthbarPreviewScale
+{
+	horizontal-align: center;
+	vertical-align: top;
+	margin-top: 48px;
+	ui-scale: 150%;
+}
+
+CitadelButton .Content .ButtonImage.IconLeft
+{
+	margin-left: -4px;
+	margin-right: 4px;
 }
 

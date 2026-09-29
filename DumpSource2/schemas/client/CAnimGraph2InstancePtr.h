@@ -1,0 +1,3 @@
+class CAnimGraph2InstancePtr
+{
+};

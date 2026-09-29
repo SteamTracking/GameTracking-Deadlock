@@ -2,7 +2,7 @@ class CEnvSoundscape : public C_BaseEntity
 {
 	CEntityIOOutput m_OnPlay;
 	float32 m_flRadius;
-	CUtlSymbolLarge m_soundEventName;
+	CGameSoundEventName m_soundEventName;
 	bool m_bOverrideWithEvent;
 	// MNotSaved
 	int32 m_soundscapeIndex;

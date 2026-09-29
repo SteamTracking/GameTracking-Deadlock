@@ -238,7 +238,7 @@
 	}
 	Wraith.CardTrick.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		pitch_rand_min = -0.02
 		pitch_rand_max = 0.02
@@ -267,7 +267,7 @@
 	}
 	Wraith.CardTrick.Proj.Impact = 
 	{
-		base = "Base.Ability.Projectile"
+		base = "Base.Ability.Detached"
 		volume = 4.0
 		vsnd_files = 
 		[
@@ -323,7 +323,7 @@
 	}
 	Wraith.ProjectMind.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 2.0
 		vsnd_files = "sounds/abilities/wraith/projectmind_travel.vsnd"
 		vsnd_duration = 1.880612
@@ -345,7 +345,7 @@
 	}
 	Wraith.RapidFire.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 5.0
 		pitch = 0.95
 		vsnd_files = "sounds/abilities/wraith/wraith_psychicpulse_cast.vsnd"
@@ -406,7 +406,7 @@
 	}
 	Wraith.Telekenisis.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 4.0
 		vsnd_files = "sounds/abilities/wraith/telekinesis_travel_start.vsnd"
 		vsnd_duration = 1.039932
@@ -512,51 +512,34 @@
 	{
 		base = "Base.Movement"
 	}
-	Wraith.Melee.Charged = 
+	Wraith.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		delay = 0.0
-		vsnd_files = 
+		base = "Hero.Default.Melee.Charged"
+		track_2.vsnd_track_vol_offset_db = 2.0
+		track_2.track_vsnd_files = 
 		[
-			"sounds/player/melee/shared/swing_charged_01.vsnd",
-			"sounds/player/melee/shared/swing_charged_02.vsnd",
-			"sounds/player/melee/shared/swing_charged_03.vsnd",
-			"sounds/player/melee/shared/swing_charged_06.vsnd",
-			"sounds/player/melee/shared/swing_charged_07.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_01.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_02.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_03.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_04.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_05.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_06.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_07.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_08.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_09.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_10.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_11.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_12.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_13.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_14.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_15.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_16.vsnd",
+			"sounds/player/footsteps/wraith/wraith_foley_paper_17.vsnd",
 		]
-		vsnd_duration = 1.717664
 	}
 	Wraith.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
-		vsnd_duration = 1.062208
+		base = "Hero.Default.Melee.Swing"
 	}
 	Wraith.Footstep = 
 	{
@@ -622,7 +605,7 @@
 	Wraith.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "wraith"
+		context_name = "hero_wraith"
 		vsnd_files = 
 		[
 			"sounds/vo/wraith/wraith_kill_anyhero_08.vsnd",
@@ -636,7 +619,7 @@
 	Wraith.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "wraith"
+		context_name = "hero_wraith"
 		vsnd_files = 
 		[
 			"sounds/vo/wraith/wraith_concerned_10.vsnd",

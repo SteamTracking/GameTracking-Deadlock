@@ -47,10 +47,16 @@ enum ProjectileBehaviorFlag_t : uint32_t
 	// MPropertyFriendlyName = "Switch to position tracking if target dies."
 	// MPropertyDescription = "When set, this projectile will track to the last known good location of the target, if the target dies, instead of getting removed."
 	PBF_LocationTrackingOnTargetDeath = 262144,
-	// MPropertyFriendlyName = "Projetile should hit when near position"
+	// MPropertyFriendlyName = "Projectile should hit when near position"
 	// MPropertyDescription = "When set, this projectile will fire an on hit event when reaching a tracked position. Useful if your position isn't going to hit the ground."
-	PBF_DetonateWhenReachingTrackedPosition = 524288,
+	PBF_HitWhenReachingTrackedPosition = 524288,
 	// MPropertyFriendlyName = "Touch multiple entities at once"
 	// MPropertyDescription = "Fire AbilityTouch() for all entities the projectile is touching, instead of just the first."
 	PBF_TouchAllEntitiesEachTick = 1048576,
+	// MPropertyFriendlyName = "Stop tracking on detonate start"
+	// MPropertyDescription = "When set, tracked projectiles will stop moving when a detonate begins."
+	PBF_StopTrackingOnDetonateStart = 2097152,
+	// MPropertyFriendlyName = "Projectile should detonate when near position"
+	// MPropertyDescription = "When set, this projectile will start their detonate timer when reaching a tracked position. Useful if your position isn't going to hit the ground."
+	PBF_DetonateWhenReachingTrackedPosition = 4194304,
 };

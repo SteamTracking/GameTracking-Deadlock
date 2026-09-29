@@ -1,0 +1,1313 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	generic_data_type = "PingTargetDef_t"
+	generic_entity = 
+	{
+		m_SlotNorth = 
+		{
+			m_strSlotIcon = "file://{images}/pings/ping_icon_attack.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ATTACK_HERE"
+				m_eMinimapPingAnim = "k_eMinimapPingAnim_Attack"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_strSlotIcon = "file://{images}/pings/ping_icon_warning.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HELP"
+				m_eMinimapPingAnim = "k_eMinimapPingAnim_Watch"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_strSlotIcon = "file://{images}/pings/ping_icon_defend.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_HERE"
+				m_eMinimapPingAnim = "k_eMinimapPingAnim_Defend"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_strSlotIcon = "file://{images}/pings/ping_icon_go_here.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HEADING_HERE"
+				m_eMinimapPingAnim = "k_eMinimapPingAnim_Going"
+			}
+		}
+	}
+	hero_self = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_PLAYER",
+			]
+			m_eSubjectIsSelf = "k_ePingSubjectSelf_Self"
+		}
+		m_eDefaultConcept = "CITADEL_PING_HELP"
+		m_SlotNorth = 
+		{
+			m_strSlotIcon = "file://{images}/hud/ping/ping_icon_group_up.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_STICK_WITH_ME"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_strSlotIcon = "file://{images}/hud/icons/icon_ultimate.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ULTIMATE_ON_COOLDOWN"
+				m_eAbilityPingSlot = "ESlot_Signature_4"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eUltimateTrained = "k_ePingTristate_No"
+					}
+					m_bDisabled = true
+				},
+				{
+					m_when = 
+					{
+						m_eUltimateReady = "k_ePingTristate_Yes"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_ULTIMATE_READY"
+					}
+				},
+			]
+		}
+		m_SlotSouth = 
+		{
+			m_strSlotIcon = "file://{images}/hud/ping/ping_icon_retreat.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_RETREAT"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_strSlotIcon = "file://{images}/hud/ping/ping_icon_question.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_NEED_PLAN"
+			}
+		}
+	}
+	hero_friendly = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_PLAYER",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+		}
+		m_vecDefaultOverrides = 
+		[
+			{
+				m_when = 
+				{
+					m_eSourceContext = "k_ePingSourceContext_Roster"
+					m_eSubjectAlive = "k_ePingTristate_No"
+				}
+				m_eConcept = "CITADEL_PING_HERO_IS_DEAD"
+			},
+		]
+		m_SlotNorth = 
+		{
+			m_strSlotIcon = "file://{images}/hud/ping/ping_icon_group_up.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_IM_WITH_YOU"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_strSlotIcon = "file://{images}/hud/icons/icon_ultimate.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ULTIMATE_ON_COOLDOWN"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eUltimateTrained = "k_ePingTristate_No"
+					}
+					m_bDisabled = true
+				},
+				{
+					m_when = 
+					{
+						m_eUltimateReady = "k_ePingTristate_Yes"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_ULTIMATE_READY"
+					}
+				},
+			]
+		}
+		m_SlotSouth = 
+		{
+			m_strSlotIcon = "file://{images}/pings/ping_icon_warning.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_CAREFUL"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_strSlotIcon = "file://{images}/hud/ping/ping_icon_question.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ARE_YOU_READY"
+			}
+		}
+	}
+	hero_enemy = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_PLAYER",
+				"CLASS_HERO_CLONE",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+		}
+		m_vecDefaultOverrides = 
+		[
+			{
+				m_when = 
+				{
+					m_eSourceContext = "k_ePingSourceContext_Roster"
+					m_eSubjectAlive = "k_ePingTristate_No"
+				}
+				m_eConcept = "CITADEL_PING_HERO_IS_DEAD"
+			},
+			{
+				m_when = 
+				{
+					m_eSourceContext = "k_ePingSourceContext_Roster"
+				}
+				m_eConcept = "CITADEL_PING_MISSING"
+			},
+		]
+		m_SlotNorth = 
+		{
+			m_strSlotIcon = "file://{images}/pings/ping_icon_attack.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ATTACK_ENEMY"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_strSlotIcon = "file://{images}/hud/icons/icon_ultimate.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ULTIMATE_ON_COOLDOWN"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eUltimateTrained = "k_ePingTristate_No"
+					}
+					m_bDisabled = true
+				},
+				{
+					m_when = 
+					{
+						m_eUltimateReady = "k_ePingTristate_Yes"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_ULTIMATE_READY"
+					}
+				},
+			]
+		}
+		m_SlotSouth = 
+		{
+			m_strSlotIcon = "file://{images}/hud/ping/ping_icon_retreat.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_HERE"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eSourceContext = "k_ePingSourceContext_Roster"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_IGNORE_HERO"
+					}
+				},
+			]
+		}
+		m_SlotWest = 
+		{
+			m_strSlotIcon = "file://{images}/hud/ping/ping_icon_question.svg"
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_MISSING"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eSubjectVisible = "k_ePingTristate_Yes"
+						m_eSourceContext = "k_ePingSourceContext_Positional"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_HEADING_HERE"
+					}
+				},
+			]
+		}
+	}
+	zipline = 
+	{
+		m_strSubjectIcon = "file://{images}/icons/properties/zipline.svg"
+		m_strSubjectNameToken = "#citadel_ability_zip_line"
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_ZIP_LINE_NODE",
+			]
+		}
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PUSH_LANE"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_LANE_NEEDS_HELP"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_LANE"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HEADING_TO_LANE"
+			}
+		}
+	}
+	guardian_enemy = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_TROOPER_BOSS",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+		}
+		m_eDefaultConcept = "CITADEL_PING_PUSH_GUARDIAN"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PUSH_GUARDIAN"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_LANE_NEEDS_HELP"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_LANE"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HEADING_TO_LANE"
+			}
+		}
+	}
+	guardian_friendly = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_TROOPER_BOSS",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+		}
+		m_eDefaultConcept = "CITADEL_PING_DEFEND_GUARDIAN"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PUSH_LANE"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GUARDIAN_NEEDS_HELP"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_GUARDIAN"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HEADING_TO_LANE"
+			}
+		}
+	}
+	walker_enemy = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_BOSS_TIER_2",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+		}
+		m_eDefaultConcept = "CITADEL_PING_PUSH_WALKER"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PUSH_WALKER"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_LANE_NEEDS_HELP"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_LANE"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HEADING_TO_LANE"
+			}
+		}
+	}
+	walker_friendly = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_BOSS_TIER_2",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+		}
+		m_eDefaultConcept = "CITADEL_PING_DEFEND_WALKER"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PUSH_LANE"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_LANE_NEEDS_HELP"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_WALKER"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HEADING_TO_LANE"
+			}
+		}
+	}
+	base_guardian_enemy = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_BOSS_BARRACKS",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+		}
+		m_eDefaultConcept = "CITADEL_PING_PUSH_BASE_GUARDIAN"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PUSH_BASE_GUARDIAN"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_LANE_NEEDS_HELP"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_LANE"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HEADING_TO_LANE"
+			}
+		}
+	}
+	base_guardian_friendly = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_BOSS_BARRACKS",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+		}
+		m_eDefaultConcept = "CITADEL_PING_DEFEND_BASE_GUARDIAN"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PUSH_LANE"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_LANE_NEEDS_HELP"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_BASE_GUARDIAN"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HEADING_TO_LANE"
+			}
+		}
+	}
+	patron_enemy = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_BOSS_TIER_3",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+		}
+		m_eDefaultConcept = "CITADEL_PING_PUSH_PATRON"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PUSH_PATRON"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_PUSH"
+			}
+		}
+	}
+	patron_friendly = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_BOSS_TIER_3",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+		}
+		m_eDefaultConcept = "CITADEL_PING_DEFEND_PATRON"
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PATRON_UNDER_ATTACK"
+				m_eMinimapPingAnim = "k_eMinimapPingAnim_Watch"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_PATRON"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_BASE"
+			}
+		}
+	}
+	shrine_enemy = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_DESTROYABLE_BUILDING",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+		}
+		m_eDefaultConcept = "CITADEL_PING_PUSH_SHRINE"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PUSH_SHRINE"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_PUSH"
+			}
+		}
+	}
+	shrine_friendly = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_DESTROYABLE_BUILDING",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+		}
+		m_eDefaultConcept = "CITADEL_PING_DEFEND_SHRINE"
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_SHRINE"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_BASE"
+			}
+		}
+	}
+	trooper = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_TROOPER",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_PUSH_LANE"
+		m_vecDefaultOverrides = 
+		[
+			{
+				m_when = 
+				{
+					m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+				}
+				m_eConcept = "CITADEL_PING_CLEAR_TROOPERS"
+			},
+			{
+				m_when = 
+				{
+					m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+				}
+				m_eConcept = "CITADEL_PING_DEFEND_LANE"
+			},
+		]
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_PUSH_LANE"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_LANE_NEEDS_HELP"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_DEFEND_LANE"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HEADING_TO_LANE"
+			}
+		}
+	}
+	mid_boss = 
+	{
+		m_strSubjectIcon = "file://{images}/minimap/super_neutral_marker.psd"
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_SUPER_NEUTRAL",
+				"CLASS_SUPER_NEUTRAL_CAMP",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_LETS_TAKE_MIDBOSS"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_LETS_TAKE_MIDBOSS"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_MID_BOSS_HERE"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ENEMY_TAKING_MIDBOSS"
+				m_eMinimapPingAnim = "k_eMinimapPingAnim_Watch"
+			}
+		}
+	}
+	koth_rift = 
+	{
+		m_strSubjectIcon = "file://{images}/minimap/minimap_icon_koth.svg"
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_KOTH_SPAWNER",
+				"CLASS_KOTH_CAPTURE_POINT",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_KOTH_RIFT_HERE"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ATTACK_HERE"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_KOTH_RIFT_HERE"
+			}
+		}
+	}
+	sinners_sacrifice = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_TROOPER_NEUTRAL",
+			]
+			m_vecEntityClassnames = 
+			[
+				"npc_neutral_sinners_sacrifice",
+				"npc_neutral_sinners_sacrifice_hideout",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_SINNERS_HERE"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_FARM"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_STEAL_THEIR_FARM"
+					}
+				},
+			]
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HELP"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_ENEMY_STEALING_FARM"
+					}
+				},
+			]
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_FARM"
+			}
+		}
+	}
+	farmable = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_BREAKABLE_PROP",
+				"CLASS_TROOPER_NEUTRAL",
+			]
+		}
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_FARM"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_STEAL_THEIR_FARM"
+					}
+				},
+			]
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HELP"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_ENEMY_STEALING_FARM"
+					}
+				},
+			]
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_FARM"
+			}
+		}
+	}
+	breakable_pickup = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_BREAKABLE_PROP_PICKUP",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_GOING_TO_FARM"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_FARM"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_STEAL_THEIR_FARM"
+					}
+				},
+			]
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HELP"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_ENEMY_STEALING_FARM"
+					}
+				},
+			]
+		}
+	}
+	bridge_buff = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_BREAKABLE_PROP_PICKUP",
+			]
+			m_vecEntityClassnames = 
+			[
+				"citadel_pickup_modifier",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_BRIDGE_BUFF_HERE"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ATTACK_HERE"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_BRIDGE_BUFF_HERE"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_BRIDGE_BUFF"
+			}
+		}
+	}
+	loose_souls = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_ITEM_PICKUP",
+			]
+			m_vecEntityClassnames = 
+			[
+				"citadel_item_punchable_gold",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_LOOSE_SOULS"
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_LOOSE_SOULS"
+			}
+		}
+	}
+	rejuv_pickup = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_ITEM_PICKUP",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_REJUV_DROP"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ATTACK_HERE"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_REJUV_DROP"
+			}
+		}
+	}
+	idol = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_GOLDEN_IDOL_PICKUP",
+				"CLASS_CRATE",
+				"CLASS_TRIGGER_IDOL_RETURN",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_IDOL"
+		m_vecDefaultOverrides = 
+		[
+			{
+				m_when = 
+				{
+					m_vecEntityClasses = 
+					[
+						"CLASS_TRIGGER_IDOL_RETURN",
+					]
+					m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+				}
+				m_eConcept = "CITADEL_PING_URN_HELP"
+			},
+			{
+				m_when = 
+				{
+					m_vecEntityClasses = 
+					[
+						"CLASS_TRIGGER_IDOL_RETURN",
+					]
+					m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+				}
+				m_eConcept = "CITADEL_PING_STOP_URN"
+			},
+		]
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_URN_HELP"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_vecEntityClasses = 
+						[
+							"CLASS_TRIGGER_IDOL_RETURN",
+						]
+						m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_ATTACK_HERE"
+					}
+				},
+			]
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_IDOL"
+			}
+			m_vecOverrides = 
+			[
+				{
+					m_when = 
+					{
+						m_vecEntityClasses = 
+						[
+							"CLASS_TRIGGER_IDOL_RETURN",
+						]
+						m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+					}
+					m_Option = 
+					{
+						m_ePingConcept = "CITADEL_PING_STOP_URN"
+					}
+				},
+			]
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_URN"
+			}
+		}
+	}
+	urn_carrier_friendly = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_PLAYER",
+			]
+			m_eSubjectIsSelf = "k_ePingSubjectSelf_NotSelf"
+			m_eAllegiance = "k_ePingTargetAllegiance_Friendly"
+			m_eSubjectHoldingUrn = "k_ePingTristate_Yes"
+		}
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_URN_HELP"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_IDOL"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_URN"
+			}
+		}
+	}
+	urn_carrier_enemy = 
+	{
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_PLAYER",
+			]
+			m_eAllegiance = "k_ePingTargetAllegiance_Enemy"
+			m_eSubjectHoldingUrn = "k_ePingTristate_Yes"
+		}
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_ATTACK_ENEMY"
+			}
+		}
+		m_SlotEast = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_STOP_URN"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_URN"
+			}
+		}
+	}
+	shop = 
+	{
+		m_strSubjectIcon = "file://{images}/hud/ping/ping_icon_shop.svg"
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_ITEM_SHOP",
+				"CLASS_ABILITY_SHOP",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_GOING_TO_SHOP"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_VISIT_SHOP"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_IGNORE_SHOP"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_SHOP"
+			}
+		}
+	}
+	corrupted_item_shop = 
+	{
+		m_strSubjectIcon = "file://{images}/shop/corrupted_items/icon_minimap_dealer.svg"
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_CORRUPTED_ITEM_SHOP",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_GOING_TO_CORRUPTED_SHOP"
+		m_SlotNorth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_VISIT_CORRUPTED_SHOP"
+			}
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_IGNORE_CORRUPTED_SHOP"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_GOING_TO_CORRUPTED_SHOP"
+			}
+		}
+	}
+	dispenser = 
+	{
+		m_strSubjectIcon = "file://{images}/hud/ping/ping_icon_heal.svg"
+		m_match = 
+		{
+			m_vecEntityClasses = 
+			[
+				"CLASS_DISPENSER",
+			]
+		}
+		m_eDefaultConcept = "CITADEL_PING_HAVE_HEAL"
+		m_SlotNorth = 
+		{
+			m_bDisabled = true
+		}
+		m_SlotSouth = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HAVE_HEAL"
+			}
+		}
+		m_SlotWest = 
+		{
+			m_Option = 
+			{
+				m_ePingConcept = "CITADEL_PING_HEADING_HERE"
+			}
+		}
+	}
+}

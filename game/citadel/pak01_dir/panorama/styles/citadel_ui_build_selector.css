@@ -7,25 +7,23 @@ CitadelHeroBuildsSelector
 	background-image: none;
 	box-shadow: none;
 	font-size: 18px;
-	font-family: 'Retail Demo';
+	font-family: sans;
 	font-weight: normal;
 	color: offWhite;
-	background-color: buildsDarkerColor;
 	flow-children: down;
 }
 
 CitadelHeroBuildsSelector .MainContainer
 {
 	width: 100%;
-	height: 900px;
+	height: 830px;
 	flow-children:right;
+	background-color: offBlack&90;
 }
 
 CitadelHeroBuildsSelector #BuildDetails
 {
-	width: 650px;
-	padding: 20px;
-	padding-top: 10px;
+	width: 750px;
 	height: 100%;
 	horizontal-align: right;
 }
@@ -35,7 +33,8 @@ CitadelHeroBuildsSelector #HeroBuildList
 	width: fill-parent-flow(1.0);
 	overflow: squish scroll;
 	flow-children: down;
-	background-color: #333;
+	background-color: offBlack;
+	height: 100%;
 }
 
 CitadelHeroBuildsSelector.BuildsLoading #HeroBuildList
@@ -73,9 +72,22 @@ CitadelHeroBuildsSelector #HeroBuildListLoading .Spinner
 	transition-duration: 0.3s;
 }
 
-CitadelHeroBuildsSelector.ShowMyBuilds .HeroSelectorHeader .HeroSelectorTab.MyBuilds,CitadelHeroBuildsSelector.ShowPublicBuilds .HeroSelectorHeader .HeroSelectorTab.PublicBuilds
+CitadelHeroBuildsSelector.ShowMyBuilds .HeroSelectorHeader .HeroSelectorTab.MyBuilds .tab_bg,CitadelHeroBuildsSelector.ShowPublicBuilds .HeroSelectorHeader .HeroSelectorTab.PublicBuilds .tab_bg
 {
-	background-color: #555;
+	visibility: visible;
+	animation-name: UIGroove;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+CitadelHeroBuildsSelector.ShowMyBuilds .HeroSelectorHeader .HeroSelectorTab.MyBuilds .TabLabel,CitadelHeroBuildsSelector.ShowPublicBuilds .HeroSelectorHeader .HeroSelectorTab.PublicBuilds .TabLabel
+{
+	color: offBlack;
+}
+
+CitadelHeroBuildsSelector.ShowMyBuilds .HeroSelectorHeader .HeroSelectorTab.MyBuilds .tab_icon,CitadelHeroBuildsSelector.ShowPublicBuilds .HeroSelectorHeader .HeroSelectorTab.PublicBuilds .tab_icon
+{
+	wash-color: offBlack;
 }
 
 CitadelHeroBuildsSelector.ShowPublicBuilds .HeroSelectorLangagueContainer #ShowAllLanguagesToggle
@@ -93,45 +105,76 @@ CitadelHeroBuildsSelector .HeroSelectorHeader
 	width: 100%;
 	flow-children: none;
 	horizontal-align: left;
-	padding: 10px 40px 0px 40px;
-	border-bottom: 3px solid #99999930;
+	padding: 10px 0px 0px 0px;
+	border-bottom: 3px solid deadlockGreen;
 }
 
 CitadelHeroBuildsSelector .HeroSelectorHeader .HeroSelectorTabContainer
 {
-	height: 52px;
+	height: 40px;
 	vertical-align: bottom;
 	flow-children: right;
+	margin-bottom: 10px;
 }
 
 CitadelHeroBuildsSelector .HeroSelectorHeader .HeroSelectorTabContainer .HeroSelectorTab
 {
-	min-width: 200px;
+	min-width: 150px;
 	height: 100%;
 	margin-right: 10px;
 	margin-bottom: 0px;
 	vertical-align: bottom;
-	border-radius: 3px 3px 0px 0px;
-	padding: 0px 10px;
-	background-color: #222;
-	border-top: 3px solid #555;
-	border-left: 3px solid #555;
-	border-right: 3px solid #555;
+	flow-children: right;
+}
+
+CitadelHeroBuildsSelector .HeroSelectorHeader .HeroSelectorTabContainer .HeroSelectorTab .tab_bg
+{
+	width: 100%;
+	height: 100%;
+	margin: 2px 2px;
+	background-color: deadlockGreen;
+	ignore-parent-flow: true;
+	visibility: collapse;
+}
+
+CitadelHeroBuildsSelector .HeroSelectorHeader .HeroSelectorTabContainer .HeroSelectorTab .tab_icon
+{
+	width: 20px;
+	height: 20px;
+	vertical-align: middle;
+	margin-left: 10px;
+	wash-color: deadlockGreen;
 }
 
 CitadelHeroBuildsSelector .HeroSelectorHeader .HeroSelectorTabContainer .HeroSelectorTab .TabLabel
 {
 	font-weight: semi-bold;
-	font-size: 18px;
+	font-size: 26px;
 	vertical-align: middle;
 	horizontal-align: middle;
 	text-overflow: shrink;
+	padding: 0px 10px 0px 6px;
+	text-transform: uppercase;
+	font-family: block;
 	text-align: center;
+}
+
+CitadelHeroBuildsSelector .HeroSelectorHeader .HeroSelectorTabContainer .HeroSelectorTab.MyBuilds .tab_icon
+{
+	background-image: url("s2r://panorama/images/icons/icon_star.vsvg");
+	background-size: cover;
+	margin-bottom: 2px;
 }
 
 CitadelHeroBuildsSelector .HeroSelectorHeader .HeroSelectorTabContainer .HeroSelectorTab.PublicBuilds
 {
 	margin-right: 0px;
+}
+
+CitadelHeroBuildsSelector .HeroSelectorHeader .HeroSelectorTabContainer .HeroSelectorTab.PublicBuilds .tab_icon
+{
+	background-image: url("s2r://panorama/images/icons/icon_globe.vsvg");
+	background-size: cover;
 }
 
 CitadelHeroBuildsSelector .HeroSelectorHeader .SearchContainer
@@ -317,13 +360,69 @@ CitadelHeroBuildsSelector .HeroBuildListItem
 	margin-right: 10px;
 	width: 100%;
 	horizontal-align: left;
-	padding: 6px 30px 6px 40px;
+	padding: 8px 10px 8px 20px;
+	background-image: url("s2r://panorama/images/textures/paper_tile_1k_02_dark_psd.vtex");
 	visibility: collapse;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem:nth-child(even)
 {
 	background-color: #ffffff05;
+	background-image: url("s2r://panorama/images/textures/paper_tile_1k_02_dark_psd.vtex");
+	background-img-opacity: 0.7;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem CitadelButton
+{
+	transform: translateY(50px);
+	opacity: 0;
+	width: 170px;
+	margin-right: 10px;
+	transition-property: opacity, transform;
+	transition-duration: 0.05s;
+	transition-delay: 0s;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem CitadelButton Label
+{
+	text-overflow: shrink;
+}
+
+.Selected CitadelHeroBuildsSelector .HeroBuildListItem CitadelButton
+{
+	visibility: collapse;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem #SelectedBuildIndicator
+{
+	vertical-align: middle;
+	visibility: collapse;
+	margin-right: 20px;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem #SelectedBuildIndicator .tag_backer
+{
+	width: 100%;
+	height: 100%;
+	background-color: deadlockGreen;
+	margin: 1px;
+	animation-name: TagGroove1;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem #SelectedBuildIndicator Label
+{
+	font-family: block;
+	color: offBlack;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding: 2px 8px;
+}
+
+.ActiveBuild CitadelHeroBuildsSelector .HeroBuildListItem #SelectedBuildIndicator
+{
+	visibility: visible;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem:hover
@@ -333,7 +432,29 @@ CitadelHeroBuildsSelector .HeroBuildListItem:hover
 
 CitadelHeroBuildsSelector .HeroBuildListItem.Selected
 {
-	background-color: buildsColor;
+	background-color: buildsColor&30;
+	background-img-opacity: 0.5;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem.Selected CitadelButton
+{
+	opacity: 1;
+	transform: translateX(0px);
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem.ActiveBuild
+{
+	wash-color: deadlockGreen;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem.ActiveBuild CitadelButton
+{
+	opacity: 0;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem.ActiveBuild #SelectedBuildIndicator
+{
+	visibility: visible;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem .ProgressBarContainer
@@ -381,22 +502,37 @@ CitadelHeroBuildsSelector .HeroBuildListItem.Favorite .InfoContainer #FavoriteIc
 {
 	opacity: 1;
 	background-image: url("s2r://panorama/images/shop/builds/icon_fave_active.vsvg");
+	background-image: url("s2r://panorama/images/icons/icon_star.vsvg");
+	wash-color: deadlockGreen;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem.DefaultBuild .InfoContainer #FavoriteIcon
 {
-	visibility: collapse;
+	opacity: 0.02;
+	background-image: url("s2r://panorama/images/shop/builds/icon_fave_active.vsvg");
+	background-image: url("s2r://panorama/images/icons/icon_star.vsvg");
+	wash-color: deadlockGreen;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem.ObsoleteBuild
 {
 	opacity: 0.75;
+	wash-color: colorEnemy&90;
 	brightness: 0.75;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem.ObsoleteBuild #OldIcon
 {
 	visibility: visible;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem #AuthorAvatar
+{
+	width: 26px;
+	height: 26px;
+	margin: 3px;
+	vertical-align: center;
+	visibility: collapse;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem .InfoContainer
@@ -423,8 +559,8 @@ CitadelHeroBuildsSelector .HeroBuildListItem .InfoContainer #FavoriteCount
 
 CitadelHeroBuildsSelector .HeroBuildListItem .InfoContainer .HeroBuildTypeIcon
 {
-	width: 20px;
-	height: 20px;
+	width: 26px;
+	height: 26px;
 	vertical-align: center;
 	horizontal-align: center;
 }
@@ -443,22 +579,35 @@ CitadelHeroBuildsSelector .HeroBuildListItem .InfoContainer #FavoriteIcon
 {
 	margin: 3px;
 	background-image: url("s2r://panorama/images/shop/builds/icon_fave_inactive.vsvg");
+	background-image: url("s2r://panorama/images/icons/icon_star_outline.vsvg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center center;
 	opacity: 0.2;
+	vertical-align: middle;
+	transition-property: pre-transform-scale2d;
+	transition-duration: 0.1s;
 }
 
-CitadelHeroBuildsSelector .HeroBuildListItem .InfoContainer #FavoriteCount
+CitadelHeroBuildsSelector .HeroBuildListItem .InfoContainer #FavoriteIcon:hover
 {
-	vertical-align: center;
-	color: offWhite;
-	font-size: 16px;
-	opacity: 0.6;
-	font-weight: medium;
-	width: fit-children;
-	background-color: none;
+	pre-transform-scale2d: 1.2;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem.MyBuild #FavoriteIcon
+{
+	opacity: 0;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem.MyBuild #AuthorAvatar
+{
+	visibility: visible;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem.MyBuild #FavoriteIcon
+{
+	visibility: collapse;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem #BuildNameArea
@@ -468,32 +617,43 @@ CitadelHeroBuildsSelector .HeroBuildListItem #BuildNameArea
 	width: fill-parent-flow(1.0);
 }
 
-CitadelHeroBuildsSelector .HeroBuildListItem #BuildNameArea #AuthorAvatar
-{
-	width: 32px;
-	height: 32px;
-	vertical-align: center;
-	margin-right: 8px;
-}
-
 CitadelHeroBuildsSelector .HeroBuildListItem #BuildNameArea .BuildName
 {
 	vertical-align: center;
-	font-size: 17px;
+	font-size: 22px;
+	font-family: oracle;
 	font-weight: semi-bold;
+	font-weight: medium;
 	color: offWhite;
 	opacity: 1;
-	max-width: 100%;
-	max-height: 26px;
+	max-height: 30px;
+	margin-left: 10px;
+	text-overflow: shrink;
 }
 
-CitadelHeroBuildsSelector .HeroBuildListItem #BuildNameArea .ActiveBuild
+.ObsoleteBuild CitadelHeroBuildsSelector .HeroBuildListItem #BuildNameArea .BuildName
+{
+	font-style: italic;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem #BuildNameArea .SelectedBuild
 {
 	font-weight: bold;
 	color: offBlack;
 	opacity: 1;
 	font-size: 14px;
+	color: buildsLightColor;
 	visibility: collapse;
+}
+
+.ActiveBuild CitadelHeroBuildsSelector .HeroBuildListItem #BuildNameArea .SelectedBuild
+{
+	visibility: visible;
+}
+
+CitadelHeroBuildsSelector .HeroBuildListItem .ActiveBuild .SelectedBuild
+{
+	visibility: visible;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem .BuildTagContainer
@@ -510,6 +670,7 @@ CitadelHeroBuildsSelector .HeroBuildListItem .BuildTagContainer .BuildTag
 CitadelHeroBuildsSelector .HeroBuildListItem .nameRow
 {
 	flow-children: right;
+	width: fill-parent-flow(1.0);
 	vertical-align: center;
 }
 
@@ -517,14 +678,14 @@ CitadelHeroBuildsSelector .HeroBuildListItem #RightPanel
 {
 	horizontal-align: right;
 	flow-children: right;
-	width: 250px;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem .PopularityContainer
 {
-	margin-left: 10px;
+	margin: 5px 10px;
 	flow-children: right;
 	vertical-align: center;
+	visibility: collapse;
 }
 
 CitadelHeroBuildsSelector .HeroBuildListItem .PopularityTag
@@ -569,10 +730,11 @@ CitadelHeroBuildsSelector .HeroBuildListItem #WeeklyFavorite.PopularityTag
 
 CitadelHeroBuildsSelector .HeroBuildListItem #OldIcon
 {
-	opacity: 0.3;
 	width: 15px;
 	height: 15px;
 	margin-left: 5px;
+	brightness: 0.9;
+	wash-color: colorEnemy;
 	vertical-align: middle;
 	visibility: collapse;
 }
@@ -607,5 +769,49 @@ CitadelHeroBuildsSelector #PublishBuildContainer #PublishBuildButton
 	margin-top: 25px;
 	horizontal-align: center;
 	vertical-align: bottom;
+}
+
+@keyframes 'TagGroove1'
+{
+	0%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	26%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	51%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	76%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
+	}
+	
 }
 

@@ -1,0 +1,3 @@
+class CAudioMixerNodeDesc : public CVNodeTypeDesc
+{
+};

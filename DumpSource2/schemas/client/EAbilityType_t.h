@@ -8,4 +8,5 @@ enum EAbilityType_t : uint8_t
 	EAbilityType_Innate = 4,
 	EAbilityType_Cosmetic = 5,
 	EAbilityType_Melee = 6,
+	EAbilityType_Held = 7,
 };

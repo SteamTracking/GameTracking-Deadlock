@@ -212,68 +212,11 @@
 	}
 	Calico.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
-		vsnd_duration = 1.062208
+		base = "Hero.Default.Melee.Swing"
 	}
 	Calico.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
-		vsnd_duration = 1.399792
+		base = "Hero.Default.Melee.Charged"
 	}
 	Calico.Footstep = 
 	{
@@ -322,12 +265,15 @@
 	}
 	Calico.GloomBomb.Cast = 
 	{
-		base = "Base.Ability"
-		volume = 2.0
-		pitch_rand_min = -0.1
-		pitch_rand_max = 0.1
-		vsnd_files = "sounds/abilities/nano/nano_gloombomb_cast.vsnd"
-		vsnd_duration = 0.916213
+		base = "Base.Ability.Cast"
+		volume = 0.0
+		vsnd_files = 
+		[
+			"sounds/abilities/nano/nano_gloombomb_cast_01.vsnd",
+			"sounds/abilities/nano/nano_gloombomb_cast_02.vsnd",
+			"sounds/abilities/nano/nano_gloombomb_cast_03.vsnd",
+		]
+		vsnd_duration = 1.317914
 	}
 	Calico.GloomBomb.Projectile.Lp = 
 	{
@@ -360,9 +306,7 @@
 	Calico.Gloombomb.Impact_Player = 
 	{
 		base = "Base.Ability.Hit"
-		volume = 6.0
-		volume_offset_attacker_db = 6.0
-		pitch = 1.1
+		volume = 1.0
 		vsnd_files = 
 		[
 			"sounds/abilities/nano/nano_gloombomb_stick_01.vsnd",
@@ -372,7 +316,7 @@
 			"sounds/abilities/nano/nano_gloombomb_stick_05.vsnd",
 			"sounds/abilities/nano/nano_gloombomb_stick_06.vsnd",
 		]
-		vsnd_duration = 1.20424
+		vsnd_duration = 0.945011
 	}
 	Calico.Gloombomb.Impact_World = 
 	{
@@ -390,14 +334,14 @@
 	}
 	Calico.LeapingSlash.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 1.0
 		vsnd_files = "sounds/abilities/nano/nano_leapingslash_cast.vsnd"
 		vsnd_duration = 1.997211
 	}
 	Calico.LeapingSlash.Cast.Delay = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = 
 		[
@@ -422,7 +366,7 @@
 	}
 	Calico.Ava.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		pitch_rand_max = 0.1
 		pitch_rand_min = -0.1
@@ -599,7 +543,7 @@
 	}
 	Calico.Shadow.Cast = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 2.0
 		pitch_rand_min = -0.1
 		pitch_rand_max = 0.1
@@ -630,7 +574,7 @@
 	Nano.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "nano"
+		context_name = "hero_nano"
 		vsnd_files = 
 		[
 			"sounds/vo/nano/nano_happy_01.vsnd",
@@ -642,7 +586,7 @@
 	Nano.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "nano"
+		context_name = "hero_nano"
 		vsnd_files = 
 		[
 			"sounds/vo/nano/nano_angry_10.vsnd",

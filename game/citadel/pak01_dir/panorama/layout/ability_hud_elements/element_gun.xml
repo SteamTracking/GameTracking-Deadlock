@@ -1,9 +1,9 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/ability_hud_elements/element_common.vcss_c" />
-		<include src="s2r://panorama/styles/ability_hud_elements/element_gun.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/ability_hud_elements/element_common.vcss" />
+		<include src="s2r://panorama/styles/ability_hud_elements/element_gun.vcss" />
 	</styles>
 	<Citadel_AbilityHUDElement_Gun class="ability_element_gun">
 		<Panel id="DotOutline" class="dot_bits crosshair__dotborder" />
@@ -48,7 +48,11 @@
 				<Label class="weapon_ammo_max" text=" / {i:max_clip_ammp}" />
 				<Panel class="weapon_ammo_infinite" />
 			</Panel>
-			<Panel id="parry_unavailable" />
+			<Label id="auto_fire_indicator" text="#Citadel_Hud_AutoFire" />
+			<Panel id="parry_unavailable">
+				<Panel id="ParryImage" />
+				<Panel id="ParryCooldownBorder" />
+			</Panel>
 			<Panel id="reticle_status">
 				<CircularProgressBar id="reticle_status_progress_bar_bg" />
 				<CircularProgressBar id="attack_delayed_progress_bar" />

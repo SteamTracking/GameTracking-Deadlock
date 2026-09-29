@@ -38,6 +38,7 @@
 //	"m_vecAutoRegisterModifierValueFromAbilityPropertyName":
 //	[
 //	],
+//	"m_bPersistWhileAbilityDormant": true,
 //	"m_bCasterCountsAsAssister": true,
 //	"m_flLingeringAssistWindow": 0.000000,
 //	"m_bDurationCanBeTimeScaled": false,
@@ -73,6 +74,7 @@
 //	"m_vecAlwaysShowInStatModifierUI":
 //	[
 //	],
+//	"m_bHideInStatModifierUI": false,
 //	"m_OnCreateResponse":
 //	{
 //		"m_nConcept": "CITADEL_CONCEPT_NONE",
@@ -128,6 +130,7 @@
 //	"m_BarrierBehavior": "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY",
 //	"m_BarrierCreateParticle": "",
 //	"m_bSupressDefaultBarrierBreakParticle": false,
+//	"m_bSuppressBarrierRefreshSound": false,
 //	"m_sExpiredSound": "",
 //	"m_FootstepOverride":
 //	{
@@ -136,14 +139,18 @@
 //	},
 //	"m_FootstepAdditional": "",
 //	"m_bRemoveOnInterrupted": false,
-//	"m_CursedModel": "",
+//	"m_ModelChange":
+//	{
+//		"m_ModelName": "",
+//		"m_nPriority": 0
+//	},
 //	"m_flModelScale": 0.500000
 //}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_CheaterCurseVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"
-	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_CursedModel;
+	ModelChange_t m_ModelChange;
 	// MPropertyStartGroup = "+Properties"
 	float32 m_flModelScale;
 };

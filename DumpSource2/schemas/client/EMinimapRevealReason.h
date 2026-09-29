@@ -4,5 +4,4 @@ enum EMinimapRevealReason : uint32_t
 	EVisibleFromAttackingEnemyPlayer = 1,
 	EVisibleByNPC = 2,
 	EVisibleByObjective = 3,
-	EVisibleByMirageTeleport = 4,
 };

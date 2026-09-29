@@ -9,10 +9,13 @@ class CPhysBox : public CBreakable
 	bool m_bEnableUseOutput;
 	HoverPoseFlags_t m_nHoverPoseFlags;
 	float32 m_flTouchOutputPerEntityDelay;
+	CUtlSymbolLarge m_iszCollisionGroup;
+	CUtlSymbolLarge m_iszInteractsAs;
+	CUtlSymbolLarge m_iszInteractsWith;
+	CUtlSymbolLarge m_iszInteractsExclude;
 	CEntityIOOutput m_OnDamaged;
 	CEntityIOOutput m_OnAwakened;
 	CEntityIOOutput m_OnMotionEnabled;
 	CEntityIOOutput m_OnPlayerUse;
 	CEntityIOOutput m_OnStartTouch;
-	CHandle< CBasePlayerPawn > m_hCarryingPlayer;
 };

@@ -6,5 +6,5 @@ class CCitadel_Modifier_HookTarget : public CCitadel_Modifier_Link
 	bool m_bPlayedApproachingWhoosh;
 	float32 m_flInitialTravelDistance;
 	GameTime_t m_flStuckStartTime;
-	Vector m_vLastPos;
+	VectorWS m_vLastPos;
 };

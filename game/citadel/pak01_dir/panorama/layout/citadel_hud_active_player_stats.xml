@@ -1,10 +1,10 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/hud_common.vcss_c" />
-		<include src="s2r://panorama/styles/citadel_hud_active_player_stats.vcss_c" />
-		<include src="s2r://panorama/styles/ability_property_icons.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/hud_common.vcss" />
+		<include src="s2r://panorama/styles/citadel_hud_active_player_stats.vcss" />
+		<include src="s2r://panorama/styles/ability_property_icons.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="casterSnippet">
@@ -20,112 +20,303 @@
 			</Panel>
 		</snippet>
 	</snippets>
-	<Panel>
-		<GlobalClassListener classes="gDetailView gScoreboardOpen" />
-		<Panel id="bulletEvasionContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_BulletEvationDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon MoveDodge" />
-				<Label text="#ActivePlayerStats_Percentage" html="true" />
+	<Panel hittest="false">
+		<GlobalClassListener classes="gDetailView gScoreboardOpen gShopOpen gEditingBuilds gQuickbuyShopShowQueue" />
+		<Panel id="StatList">
+			<Panel id="WeaponColumn" class="column_stats">
+				<Panel id="fireRateContainer" class="miniModifier">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon FireRate" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="clipSizeContainer" class="miniModifier">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon AmmoClipSize" />
+						<Label class="statNumber" text="{s:value}" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="bulletDamageContainer" class="miniModifier">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon DamageBullet" />
+						<Label class="statNumber" text="{s:value}" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="bulletLifeStealContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon HealthStealingBullets" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="bulletSpeedIncreaseContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon BulletVelocity" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="reloadTimeContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon AmmoReload" />
+						<Label class="statNumber" text="{s:value}" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
 			</Panel>
-			<Panel id="casterList" />
+			<Panel id="SpiritColumn" class="column_stats">
+				<Panel id="abilityDurationContainer" class="miniModifier">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon Duration" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="abilityRangeContainer" class="miniModifier">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon Range" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="cooldownReductionContainer" class="miniModifier">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon Cooldown" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="techLifeStealContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon HealthStealingSpirit" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="bonusChargesContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon Charge" />
+						<Label class="statNumber" text="{s:value}" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+			</Panel>
+			<Panel id="VitalityColumn" class="column_stats">
+				<Panel id="bulletResistContainer" class="miniModifier armorContainer">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon ResistBullet" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="techResistContainer" class="miniModifier armorContainer">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon ResistSpirit" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="regenPerSecondContainer" class="miniModifier">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon HealthRegen" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Regen" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="speedDisplayContainer" class="miniModifier">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon MoveSpeed" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label id="speedDisplayPostfix" class="statPostfix" text="#ActivePlayerStats_MoveSpeed" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="sprintSpeedContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon MoveSprint" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label id="speedDisplayPostfix" class="statPostfix" text="#ActivePlayerStats_MoveSpeed" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="healingAmpContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon HealingReduction" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="healingOutputContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon Heal" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="staminaContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon MoveStamina" />
+						<Label class="statNumber" text="{s:value}" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="debuffResistContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon DebuffRemove" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+				<Panel id="meleeResistContainer" class="miniModifier secondaryStat">
+					<Panel class="miniModifierCore">
+						<Panel class="statIcon PropertiesIcon Melee" />
+						<Label class="statNumber" text="{s:value}" />
+						<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+					</Panel>
+					<Panel id="casterList" />
+				</Panel>
+			</Panel>
 		</Panel>
-		<Panel id="regenPerSecondContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_RegenDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon HealthRegen" />
-				<Label text="#ActivePlayerStats_Regen" html="true" />
+		<Panel id="HudStatBlock">
+			<Panel id="CoreStats" class="stat_block">
+				<Panel id="Weapon" class="core_stat">
+					<Panel class="core_bg" />
+					<Panel id="BarGraphContainer">
+						<CitadelHudSingleItemBarGraph slot_type="Weapon" id="WeaponBarGraph" class="Horizontal weaponProgressBarContainer progressBarContainer" />
+					</Panel>
+					<Label id="stat_label" text="000" html="true" />
+					<Panel id="weaponPowerContainer" class="miniModifier">
+						<Panel class="miniModifierCore">
+							<Panel class="statIcon PropertiesIcon DamageWeapon" />
+							<Panel class="statWithPostfix">
+								<Label class="statNumber" text="{s:value}" />
+								<Label class="statPostfix" text="#ActivePlayerStats_Percentage" />
+							</Panel>
+							<Label class="statNumberDelta" text="{d:delta}" />
+						</Panel>
+						<Label class="max_label" text="#Citadel_ModInvestment_Max" />
+						<Panel id="casterList" />
+					</Panel>
+				</Panel>
+				<Panel id="Spirit" class="core_stat">
+					<Panel class="core_bg" />
+					<Panel id="BarGraphContainer">
+						<CitadelHudSingleItemBarGraph slot_type="Tech" id="SpiritBarGraph" class="Horizontal techProgressBarContainer progressBarContainer" />
+					</Panel>
+					<Label id="stat_label" text="{s:stat_value}" html="true" />
+					<Panel id="spiritContainer" class="miniModifier">
+						<Panel class="miniModifierCore">
+							<Panel class="statIcon PropertiesIcon Spirit" />
+							<Label class="statNumber" text="{s:value}" />
+							<Label class="statNumberDelta" text="{d:delta}" />
+						</Panel>
+						<Label class="max_label" text="#Citadel_ModInvestment_Max" />
+						<Panel id="casterList" />
+					</Panel>
+				</Panel>
+				<Panel id="Vitality" class="core_stat">
+					<Panel class="core_bg" />
+					<Panel id="BarGraphContainer">
+						<CitadelHudSingleItemBarGraph slot_type="Armor" id="VitalityBarGraph" class="Horizontal armorProgressBarContainer progressBarContainer" />
+					</Panel>
+					<Label id="stat_label" text="000" html="true" />
+					<Panel id="maxHealthContainer" class="miniModifier">
+						<Panel class="miniModifierCore">
+							<Panel class="statIcon PropertiesIcon HealthRegen" />
+							<Panel class="statWithPostfix">
+								<Label class="statNumber" text="{s:value}" />
+								<Label class="statPostfix" text="#ActivePlayerStats_Health" />
+							</Panel>
+							<Label class="statNumberDelta" text="{d:delta}" />
+						</Panel>
+						<Label class="max_label" text="#Citadel_ModInvestment_Max" />
+						<Panel id="casterList" />
+					</Panel>
+				</Panel>
 			</Panel>
-			<Panel id="casterList" />
+			<Panel id="SubStats" class="stat_block">
+				<Panel class="stat_column weapon">
+					<Panel id="BulletDamage" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon Gun icon" />
+						<Label id="stat_label" text="00" html="true" />
+					</Panel>
+					<Panel id="FireRate" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon FireRate icon" />
+						<Label id="stat_label" text="00" html="true" />
+						<Label class="demote" text="%" />
+					</Panel>
+					<Panel id="Ammo" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon AmmoClipSize icon" />
+						<Label id="stat_label" text="00" html="true" />
+					</Panel>
+				</Panel>
+				<Panel class="stat_column spirit">
+					<Panel id="CooldownReduction" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon Cooldown icon" />
+						<Label id="stat_label" text="00" html="true" />
+						<Label class="demote" text="%" />
+					</Panel>
+					<Panel id="AbilityDuration" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon Duration icon" />
+						<Label id="stat_label" text="00" html="true" />
+						<Label class="demote" text="%" />
+					</Panel>
+					<Panel id="AbilityRange" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon Range icon" />
+						<Label id="stat_label" text="00" html="true" />
+						<Label class="demote" text="%" />
+					</Panel>
+				</Panel>
+				<Panel class="stat_column armor">
+					<Panel id="Armor" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon Health icon" />
+						<Label id="stat_label" text="{s:stat_value}" html="true" />
+					</Panel>
+					<Panel id="Regen" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon HealthRegen icon" />
+						<Label id="stat_label" text="0" html="true" />
+						<Label class="demote" text="/s" />
+					</Panel>
+					<Panel id="MoveSpeed" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon MoveSpeed icon" />
+						<Label id="stat_label" text="0" html="true" />
+						<Label class="demote" text="#MoveSpeed_postfix" />
+					</Panel>
+				</Panel>
+				<Panel class="stat_column armor">
+					<Panel id="WeaponResist" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon ResistBullet icon" />
+						<Label id="stat_label" text="{s:stat_value}" html="true" />
+						<Label class="demote" text="#BulletResist_postfix" />
+					</Panel>
+					<Panel id="SpiritResist" class="sub_stat">
+						<Panel class="AbilityPropertyIcon PropertiesIcon ResistSpirit icon" />
+						<Label id="stat_label" text="{s:stat_value}" html="true" />
+						<Label class="demote" text="#TechResist_postfix" />
+					</Panel>
+				</Panel>
+			</Panel>
 		</Panel>
-		<Panel id="bulletLifeStealContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_WeaponLifestealDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon HealthStealingBullets" />
-				<Label text="#ActivePlayerStats_Percentage" html="true" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="techLifeStealContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_SpiritLifestealDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon HealthStealingSpirit" />
-				<Label text="#ActivePlayerStats_Percentage" html="true" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="fireRateContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_FireRateDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon FireRate" />
-				<Label text="#ActivePlayerStats_Percentage" html="true" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="clipSizeContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_AmmoDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon AmmoClipSize" />
-				<Label class="statNumber" text="{s:value}" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="healingAmpContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_HealingAmpDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon HealAmplifcation" />
-				<Label text="#ActivePlayerStats_Percentage" html="true" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="bulletResistContainer" class="miniModifier armorContainer" onmouseover="UIShowTextTooltip( #StatDesc_WeaponResistDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon ResistBullet" />
-				<Label text="#ActivePlayerStats_PercentageNum" html="true" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="techResistContainer" class="miniModifier armorContainer" onmouseover="UIShowTextTooltip( #StatDesc_SpiritResistDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon ResistSpirit" />
-				<Label text="#ActivePlayerStats_PercentageNum" html="true" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="speedDisplayContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_MoveSpeedDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon MoveSpeed" />
-				<Label text="#ActivePlayerStats_MoveSpeed" html="true" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="weaponPowerContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_WeaponDamageDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon DamageWeapon" />
-				<Label text="#ActivePlayerStats_Percentage" html="true" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="spiritContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_SpiritPowerDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon Spirit" />
-				<Label class="statNumber" text="{s:value}" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="abilityRangeContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_AbilityRangeDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon Range" />
-				<Label text="#ActivePlayerStats_Percentage" html="true" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="abilityDurationContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_AbilityDurationDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon Duration" />
-				<Label text="#ActivePlayerStats_Percentage" html="true" />
-			</Panel>
-			<Panel id="casterList" />
-		</Panel>
-		<Panel id="damageAmpContainer" class="miniModifier" onmouseover="UIShowTextTooltip( #StatDesc_DamageAmpDesc )" onmouseout="UIHideTextTooltip()">
-			<Panel class="miniModifierCore">
-				<Panel class="statIcon PropertiesIcon DamageAmplification" />
-				<Label text="#ActivePlayerStats_Percentage" html="true" />
-			</Panel>
-			<Panel id="casterList" />
+		<Panel id="CoreStatFXLayer">
+			<ParticleScenePanel id="WeaponStatFX" class="stat_fx" particleonly="false" particleName="particles/ui/ui_player_weapon_stat_max.vpcf" fov="33" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" />
+			<ParticleScenePanel id="SpiritStatFX" class="stat_fx" particleonly="false" particleName="particles/ui/ui_player_spirit_stat_max.vpcf" fov="33" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" />
+			<ParticleScenePanel id="VitalityStatFX" class="stat_fx" particleonly="false" particleName="particles/ui/ui_player_vitality_stat_max.vpcf" fov="33" lookAt="0 0 0" squarePixels="true" renderdeferred="true" deferredalpha="true" />
 		</Panel>
 	</Panel>
 </root>

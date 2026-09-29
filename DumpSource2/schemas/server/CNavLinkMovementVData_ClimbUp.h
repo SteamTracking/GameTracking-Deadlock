@@ -7,12 +7,15 @@
 //	"m_vecVariants":
 //	[
 //	],
+//	"m_baseMetrics":
+//	{
+//		"m_horizontalRange": null,
+//		"m_verticalRange": null
+//	},
 //	"m_bAlignOrientationWithEdgeNormal": false,
 //	"m_metrics":
 //	{
-//		"m_flEntryDistance": 0.000000,
-//		"m_horizontalRange": 0.000000,
-//		"m_verticalRange": 0.000000
+//		"m_flEntryDistance": 0.000000
 //	}
 //}
 // MHasKV3TransferPolymorphicClassname

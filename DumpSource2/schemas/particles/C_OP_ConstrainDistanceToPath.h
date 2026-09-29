@@ -73,7 +73,8 @@
 //				0.000000,
 //				0.000000
 //			]
-//		}
+//		},
+//		"m_flCompareValue": 0.000000
 //	},
 //	"m_nOpEndCapState": "PARTICLE_ENDCAP_ALWAYS_ON",
 //	"m_nToolsState": "PARTICLE_TOOLS_STATE_ALWAYS_ON",
@@ -98,6 +99,7 @@
 //	"m_PathParameters":
 //	{
 //		"m_nStartControlPointNumber": 0,
+//		"m_nMidControlPointNumber": -1,
 //		"m_nEndControlPointNumber": 0,
 //		"m_nBulgeControl": 0,
 //		"m_flBulge": 0.000000,

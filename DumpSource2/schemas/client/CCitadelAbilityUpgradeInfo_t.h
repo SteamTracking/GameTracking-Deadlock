@@ -1,9 +1,9 @@
 // MGetKV3ClassDefaults = {
-//	"m_nUpgradeBits": 1,
-//	"m_nUpgradeLevel": 1
+//	"m_nUpgradeBits": "ABILITY_UPGRADE_BIT_TRAINED",
+//	"m_nUpgradeLevel": 0
 //}
 class CCitadelAbilityUpgradeInfo_t
 {
-	int32 m_nUpgradeBits;
+	AbilityUpgradeBits_t m_nUpgradeBits;
 	int32 m_nUpgradeLevel;
 };

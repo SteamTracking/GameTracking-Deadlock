@@ -1,21 +1,27 @@
 // MGetKV3ClassDefaults = {
-//	"m_graph":
+//	"Name": "",
+//	"m_nGraphOutputChannels": -1,
+//	"m_bIsMainGraph": false,
+//	"m_nPreviewNode": 0,
+//	"m_EditorNodes":
+//	[
+//	],
+//	"m_EditorEdges":
+//	[
+//	],
+//	"m_graphPreview":
 //	{
-//		"m_graphDescData":
+//		"m_flVolume": 1.000000,
+//		"m_previewList":
 //		{
-//			"Name": "",
-//			"m_nGraphOutputChannels": -1,
-//			"m_bIsMainGraph": false
+//			"m_sounds":
+//			[
+//			],
+//			"m_bPreviewInGame": false
 //		},
-//		"m_editorNodes":
-//		[
-//		],
-//		"m_editorEdges":
-//		[
-//		],
-//		"m_nPreviewNode": 0
+//		"m_previewGraphName": ""
 //	},
-//	"m_editorState":
+//	"m_EditorState":
 //	{
 //		"m_viewConfig":
 //		{
@@ -36,22 +42,11 @@
 //				"scale": 1.000000
 //			}
 //		}
-//	},
-//	"m_graphPreview":
-//	{
-//		"m_flVolume": 1.000000,
-//		"m_previewList":
-//		{
-//			"m_sounds":
-//			[
-//			],
-//			"m_bPreviewInGame": false
-//		}
 //	}
 //}
-class CVMixToolGraphEntry
+class CVMixToolGraphEntry : public CVMixToolGraph
 {
-	CVMixToolGraph m_graph;
-	CGraphEditorState m_editorState;
 	CGraphPreviewList m_graphPreview;
+	// MKV3TransferName = "m_EditorState"
+	CGraphEditorState m_editorState;
 };

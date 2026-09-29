@@ -15,11 +15,6 @@ CitadelHud #StatusEffectContainer
 	horizontal-align: left;
 }
 
-.UnitStatusOld #StatusEffectContainer
-{
-	margin-left: 0px;
-}
-
 .status_panel
 {
 	width: 100%;
@@ -39,22 +34,18 @@ CitadelHud #StatusEffectContainer
 	horizontal-align: right;
 	z-index: 2;
 	ignore-parent-flow: true;
-	font-size: 120px;
+	font-size: 14px;
+	padding: 2px;
 	font-weight: semi-bold;
 	transform: translateY(0px);
-	font-family: oracle;
-	text-shadow: 0px 0px 0px 5.0 offBlack;
-}
-
-.UnitStatusOld #stacks
-{
-	font-size: 30px;
+	font-family: numericOracle;
+	text-shadow: 0px 0px 0px 4.0 offBlack;
 }
 
 #gameplay_hud #stacks
 {
-	font-size: 26px;
-	text-shadow: 0px 0px 0px 8.0 offBlack;
+	font-size: 14px;
+	text-shadow: 0px 0px 0px 4 .0 offBlack;
 	margin-right: 0px;
 	margin-top: 5px;
 }
@@ -138,17 +129,16 @@ CitadelHud #StatusEffectContainer
 
 .statusEffect
 {
-	height: 250px;
-	width: 250px;
+	height: 30px;
+	width: 30px;
 	vertical-align: bottom;
 	background-image: url("s2r://panorama/images/hud/world_space/status_bg_psd.vtex");
 	background-size: contain;
 }
 
-.UnitStatusOld .statusEffect,CitadelHud .statusEffect
+CitadelHud .statusEffect
 {
-	height: 60px;
-	width: 60px;
+	ui-scale: 100%;
 }
 
 .statusEffectContainer
@@ -182,6 +172,11 @@ CitadelHudTopBar #StatusEffectsBorder
 {
 	opacity: 0.5;
 	wash-color: gold;
+}
+
+.isDebuff #StatusEffectsBorder
+{
+	wash-color: colorEnemy;
 }
 
 #StatusEffectInner
@@ -272,6 +267,22 @@ CitadelHudTopBar #StatusEffectsBorder
 {
 	background-image: url("s2r://panorama/images/hud/icons/powerup_survival.vsvg");
 	wash-color: offBlack;
+}
+
+.souls_pickup #StatusEffectInner
+{
+	wash-color: soulColor;
+}
+
+.souls_pickup .statusEffectImage
+{
+	background-image: url("s2r://panorama/images/hud/icons/powerup_survival.vsvg");
+	wash-color: offBlack;
+}
+
+.healing_needles #StatusEffectImage
+{
+	background-color: green;
 }
 
 .sleep_proc #state_icon
@@ -423,6 +434,17 @@ CitadelHudTopBar #StatusEffectsBorder
 	wash-color: StatusIconColor;
 }
 
+.healing_needles_amp #StatusEffectInner
+{
+	wash-color: WeaponBuffColor;
+}
+
+.healing_needles_amp .statusEffectImage
+{
+	background-image: url("s2r://panorama/images/upgrades/mods_weapon/bullet_damage_aura_psd.vtex");
+	wash-color: StatusIconColor;
+}
+
 .metal_skin #StatusEffectInner
 {
 	wash-color: ArmorBuffColor;
@@ -448,6 +470,12 @@ CitadelHudTopBar #StatusEffectsBorder
 .inhibitor .statusEffectImage
 {
 	background-image: url("s2r://panorama/images/upgrades/mods_weapon/inhibitor_psd.vtex");
+	wash-color: StatusIconColor;
+}
+
+.nurse_fear_weakened .statusEffectImage
+{
+	background-image: url("s2r://panorama/images/hud/abilities/nurse/medicine_bag_psd.vtex");
 	wash-color: StatusIconColor;
 }
 
@@ -730,6 +758,23 @@ CitadelHudTopBar #StatusEffectsBorder
 	wash-color: StatusIconColor;
 }
 
+.deadpack_coated #StatusEffectInner
+{
+	wash-color: black;
+}
+
+.deadpack_coated .statusEffectImage
+{
+	background-image: url("s2r://panorama/images/hud/abilities/deadpack/status_marked_psd.vtex");
+	wash-color: white;
+	visibility: visible;
+}
+
+.deadpack_coated #StatusEffectImage
+{
+	visibility: collapse;
+}
+
 .disarm_proc #state_icon
 {
 	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_disarm_icon_psd.vtex");
@@ -902,11 +947,6 @@ CitadelHudTopBar #StatusEffectsBorder
 .galvanic_buildup .statusEffectImage
 {
 	background-image: url("s2r://panorama/images/upgrades/mods_weapon/electrified_bullets_psd.vtex");
-}
-
-.slowed #StatusEffectCooldownOverlay
-{
-	background-color: #ff00c7AA;
 }
 
 .slowed .statusEffectImage
@@ -1308,5 +1348,23 @@ CitadelHudTopBar #StatusEffectsBorder
 		brightness: 1;
 	}
 	
+}
+
+.fixated #StatusEffectsBorder
+{
+	wash-color: offWhite;
+	opacity: 0.4;
+}
+
+.fixated #StatusEffectInner
+{
+	wash-color: hazeColor;
+	opacity: 0.5;
+}
+
+.fixated #stacks
+{
+	wash-color: hazeColor;
+	wash-color: offWhite;
 }
 

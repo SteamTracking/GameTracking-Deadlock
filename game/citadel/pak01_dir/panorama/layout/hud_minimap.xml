@@ -1,13 +1,14 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/hud_minimap.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/hud_minimap.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="MinimapPlayerSnippet">
 			<Panel class="map_button player">
 				<Panel id="HoverPanel" class="hover_panel" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
 				<Image id="MainImage" />
 				<Image id="SpeakingImage" class="speaking_button_image" />
 				<Panel id="DeathImage" />
@@ -20,12 +21,13 @@
 		</snippet>
 		<snippet name="MinimapPlayerFoVConeSnippet">
 			<Panel class="client_cone_fov player">
-				<Image id="MainImage" src="s2r://panorama/images/minimap/player_cone_psd.vtex" />
+				<Image id="MainImage" src="s2r://panorama/images/minimap/player_cone_psd.vtex" hittest="false" />
 			</Panel>
 		</snippet>
 		<snippet name="MinimapCrateSnippet">
 			<Panel class="map_button idol_return_snippet">
 				<Panel id="HoverPanel" class="hover_panel" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
 				<Image class="idol_return_friendly pingIdol1 idolReturnTarget" src="s2r://panorama/images/minimap/soul_jar_marker_return_pulse_psd.vtex" />
 				<Image class="idol_return_friendly pingIdol2 idolReturnTarget" src="s2r://panorama/images/minimap/soul_jar_marker_return_pulse_psd.vtex" />
 				<Image class="idol_return_friendly pingIdol3 idolReturnTarget" src="s2r://panorama/images/minimap/soul_jar_marker_return_pulse_psd.vtex" />
@@ -34,6 +36,7 @@
 		<snippet name="MinimapGoldIdlePickupSnippet">
 			<Panel class="map_button idol_return_snippet">
 				<Panel id="HoverPanel" class="hover_panel" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
 				<Image class="idol_return_friendly pingIdol1 idolReturnTarget" src="s2r://panorama/images/minimap/soul_jar_marker_return_pulse_psd.vtex" />
 				<Image class="idol_return_friendly pingIdol2 idolReturnTarget" src="s2r://panorama/images/minimap/soul_jar_marker_return_pulse_psd.vtex" />
 				<Image class="idol_return_friendly pingIdol3 idolReturnTarget" src="s2r://panorama/images/minimap/soul_jar_marker_return_pulse_psd.vtex" />
@@ -42,33 +45,37 @@
 		</snippet>
 		<snippet name="MinimapMinionSnippet">
 			<Panel class="map_button boss">
+				<Panel id="HoverPanel" class="hover_panel" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
 				<Panel id="BossHealthBG" class="boss_health_bg boss_image" />
 				<Panel id="BossHealth" class="boss_health boss_image" />
-				<Panel id="HoverPanel" class="hover_panel" />
 				<Image id="MainImage" />
 				<Panel id="BackgroundImage" />
 			</Panel>
 		</snippet>
 		<snippet name="MinimapBossSnippet">
 			<Panel class="map_button boss">
+				<Panel id="HoverPanel" class="hover_panel" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
 				<Panel id="BossHealthBG" class="boss_health_bg boss_image" />
 				<Panel id="BossHealth" class="boss_health boss_image" />
-				<Panel id="HoverPanel" class="hover_panel" />
 			</Panel>
 		</snippet>
 		<snippet name="MinimapTier3BossSnippet">
 			<Panel class="map_button boss">
+				<Panel id="HoverPanel" class="hover_panel" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
 				<Panel id="BossHealthBG" class="boss_health_bg boss_image" />
 				<Panel id="BossHealth" class="boss_health boss_image" />
 				<Panel id="BossHealthBG_S2" class="boss_health_bg_s2 boss_image" />
 				<Panel id="BossHealth_S2" class="boss_health_s2 boss_image" />
-				<Panel id="HoverPanel" class="hover_panel" />
 			</Panel>
 		</snippet>
 		<snippet name="MinimapMidBossSnippet">
 			<Panel class="map_button mid_boss">
 				<Panel id="HoverPanel" class="hover_panel" />
-				<Panel id="Spawned" class="" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
+				<Panel id="Spawned" class="" hittest="false" />
 				<Panel id="BackerRing" />
 				<Panel id="NextSpawnTimer">
 					<Label class="midboss_timer" text="{s:value}" html="true" />
@@ -82,6 +89,7 @@
 		<snippet name="MinimapKothSnippet">
 			<Panel class="map_button ability_castrange capture_point">
 				<Panel id="HoverPanel" class="hover_panel" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
 				<Panel id="CastRange" />
 			</Panel>
 		</snippet>
@@ -90,24 +98,33 @@
 				<Panel id="CastRange" />
 			</Panel>
 		</snippet>
+		<snippet name="MinimapBridgeBuff">
+			<Panel class="map_button bridge_buff">
+				<Panel id="HoverPanel" class="hover_panel" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
+			</Panel>
+		</snippet>
+		<snippet name="MinimapAbilityShop">
+			<Panel class="map_button tier1_shop">
+				<Panel id="HoverPanel" class="hover_panel" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
+			</Panel>
+		</snippet>
+		<snippet name="MinimapCorruptedItemShop">
+			<Panel class="map_button tier1_shop">
+				<Panel id="HoverPanel" class="hover_panel" />
+				<Panel id="HoverPanelAccurate" class="hover_panel_accurate" />
+			</Panel>
+		</snippet>
 	</snippets>
 	<Panel class="HudMinimap" hittest="true">
 		<GlobalClassListener classes="gScoreboardOpen gDetailView" />
 		<Panel id="MinimapBackgroundTest" class="NewMinimapBackgroundsContainer" hittest="false" hittestchildren="false">
-			<Panel class="newMinimapBackground backgroundImage" />
-			<ParticleScenePanel id="MinimapParticleScenePanel" particleonly="true" particleName="particles/ui/ui_minimap.vpcf" fov="65" lookAt="0 0 0" squarePixels="true" cameraOrigin="0 0 40" />
-			<Panel class="NewMinimapZiplinesContainer" hittest="false" hittestchildren="false">
-				<Panel class="newMinimapBackground ziplineYellowLane" />
-				<Panel class="newMinimapBackground ziplineGreenLane" />
-				<Panel class="newMinimapBackground ziplineBlueLane" />
-				<Panel class="newMinimapBackground ziplinePurpleLane" />
-			</Panel>
-			<HudMinimapRender id="map_render" hittest="false" />
+			<Image class="can_zoom backgroundImage1" src="s2r://panorama/images/minimap/base/minimap_midtown_mid_psd.vtex" />
+			<Image class="can_zoom backgroundImage2" src="s2r://panorama/images/minimap/base/minimap_midtown_mid_tunnels_psd.vtex" />
+			<Image class="can_zoom backgroundImage3" src="s2r://panorama/images/minimap/base/minimap_midtown_rat_tunnels_psd.vtex" />
 			<UICanvas id="canvas" hittest="false" />
 			<HudMinimapEffects id="MinimapEffects" particleonly="true" map="scenes/minimap_effects" camera="fx_camera" require-composition-layer="true" hittest="false" />
-			<Panel class="newMinimapBackground neutralsImage" />
-			<Panel id="NeturalImagesContainer" />
-			<Panel class="newMinimapBackground upperImage" />
 		</Panel>
 	</Panel>
 </root>

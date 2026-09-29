@@ -1,0 +1,46 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_corrupt_item.vcss" />
+		<include src="s2r://panorama/styles/ability_icons.vcss" />
+	</styles>
+	<snippets>
+		<snippet name="ButtonToCorrupt">
+			<Panel class="buttonToCorrupt">
+				<CitadelShopMod id="ModView" class="IgnoreOwnership" showcanpurchase="false" />
+				<Panel class="CorruptCostRow">
+					<Panel class="goldIcon" />
+					<Label class="CorruptCost" text="{i:corruption_cost}" />
+				</Panel>
+			</Panel>
+		</snippet>
+	</snippets>
+	<PopupCorruptItem class="PopupPanel Hidden" popupbackground="dim" oncancel="CitadelCorruptItemPopupCancel()">
+		<Panel id="Background" />
+		<Image id="shop_sign" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/shop/corrupted_items/logo_broker_psd.vtex" />
+		<Panel id="ModsCorruptContainer">
+			<Panel id="HeaderContainer">
+				<SplitLabel id="HeaderLabel" text="#Citadel_Shop_PickCorruptItem_Title" />
+				<Label class="headerDesc fade_in" text="#Citadel_Shop_PickCorruptItem_Desc" html="true" />
+				<Label class="headerDesc headerDescStreetBrawl fade_in" text="#Citadel_Shop_PickCorruptItem_StreetBrawlDesc" html="true" />
+				<Panel class="SoulsAvailableRow">
+					<Panel class="goldIcon" />
+					<Label class="SoulsAvailable" text="{i:souls_available}" />
+				</Panel>
+			</Panel>
+			<Panel id="InventorySlots">
+				<Panel id="ModsContainer" class="centerAlign" />
+			</Panel>
+			<Label id="NoItemsLabel" class="centerAlign" text="#Citadel_Shop_PickCorruptItem_None" />
+			<Panel id="ButtonsContainer">
+				<CitadelButton id="CancelButton" class="Large" text="#Cancel" onactivate="CitadelCorruptItemPopupCancel()" />
+				<CitadelButton id="SkipButton" class="Large" text="#Citadel_Shop_PickCorruptItem_Skip" onactivate="CitadelCorruptItemPopupCancel()" />
+			</Panel>
+			<Countdown id="Countdown" server-time="true">
+				<Label text="#Citadel_Shop_CorruptItem_Countdown" html="true" />
+			</Countdown>
+		</Panel>
+	</PopupCorruptItem>
+</root>

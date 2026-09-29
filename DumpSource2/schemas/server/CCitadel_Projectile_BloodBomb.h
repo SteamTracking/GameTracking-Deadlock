@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Projectile_BloodBomb : public CCitadelProjectile
 {
 	bool m_bSecondBomb;

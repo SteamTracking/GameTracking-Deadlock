@@ -87,6 +87,16 @@
 	opacity: 0.05;
 }
 
+.missingBinding #BindingLabelContainer,.missingBinding #BindingLabelContainer2
+{
+	box-shadow: 0px 0px 7px 0px brandGreen&66;
+}
+
+.missingBinding.criticalBinding #BindingLabelContainer,.noKeyBinding.criticalBinding #BindingLabelContainer,.missingBinding.criticalBinding #BindingLabelContainer2,.noKeyBinding.criticalBinding #BindingLabelContainer2
+{
+	box-shadow: 0px 0px 7px 0px warningRed&66;
+}
+
 .KeybindConjunction
 {
 	visibility: collapse;
@@ -506,25 +516,46 @@ b
 	margin-left: 800px;
 }
 
-#QuickCastContainer
+#QuickCastContainer,#DelaySliderContainer
 {
 	visibility: collapse;
+	ignore-parent-flow: true;
 	horizontal-align: right;
-	margin: 0px 68px 0px 0px;
 	flow-children: right;
 	vertical-align: top;
 }
 
-.canQuickCast #QuickCastContainer
+#QuickCastContainer
+{
+	margin: 0px 138px 0px 0px;
+}
+
+.canQuickCast #QuickCastContainer,.ChatWheelBind #DelaySliderContainer
 {
 	visibility: visible;
 }
 
-.QuickCastDesc
+.QuickCastDesc,.ChatWheelDelayDesc
 {
 	vertical-align: center;
+	horizontal-align: right;
 	font-weight: semi-bold;
 	margin-right: 10px;
+}
+
+#DelaySliderContainer
+{
+	margin: 0px 120px 0px 0px;
+}
+
+#DelaySliderContainer CitadelSettingsSlider
+{
+	width: 400px;
+}
+
+CitadelSettingsSlider TextEntry
+{
+	max-width: 100px;
 }
 
 #HeroIcon
@@ -537,7 +568,7 @@ b
 	img-shadow: 0px 0px 16px #000000aa;
 }
 
-.isUnitSpecificBind #HeroIcon
+:disabled #HeroIcon
 {
 	visibility: visible;
 }
@@ -629,13 +660,123 @@ b
 	visibility: visible;
 }
 
-.pingOptionLabel
-{
-	width: 100%;
-}
-
 #ChatWheelConcepts,#ChatWheelConceptsDropDownMenu
 {
 	width: 200px;
+}
+
+.hero_testing_keybinder
+{
+	margin-right: 10px;
+}
+
+.hero_testing_keybinder #KeybindContainer
+{
+	width: fit-children;
+	height: 30px;
+	flow-children: right;
+	horizontal-align: right;
+}
+
+.hero_testing_keybinder .SettingLabel
+{
+	width: 0px;
+	padding-left: 8px;
+}
+
+.hero_testing_keybinder .SettingLabel Label
+{
+	width: 0px;
+	font-size: 18px;
+	line-height: 30px;
+	color: offWhite&66;
+	text-overflow: shrink;
+}
+
+.hero_testing_keybinder .SettingLabel:hover
+{
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero_testing_keybinder .SettingLabel:active
+{
+	background-color: rgba(255, 255, 255, 0.75);
+}
+
+.hero_testing_keybinder #LabelFXContainer,.hero_testing_keybinder #LabelFXContainer2
+{
+	width: 50px;
+	height: 30px;
+	margin-right: 0px;
+	background-color: rgba(255, 255, 255, 0.0);
+}
+
+.hero_testing_keybinder #BindingLabelContainer,.hero_testing_keybinder #BindingLabelContainer2
+{
+	vertical-align: center;
+	width: 50px;
+	height: 30px;
+	flow-children: right;
+}
+
+.hero_testing_keybinder #BindingLabelContainer .Background,.hero_testing_keybinder #BindingLabelContainer2 .Background
+{
+	width: 50px;
+	background-color: rgba(0, 0, 0, 0.0);
+	background-image: url("s2r://panorama/images/textures/paper_tile_1k_01_png.vtex");
+	box-shadow: inset rgba( 0, 0, 0, 0) 0px 2px 6px;
+	brightness: 0.75;
+	opacity: 0;
+	transition-property: opacity, box-shadow;
+	transition-duration: 0.2s;
+}
+
+.hero_testing_keybinder #HeroIcon,.hero_testing_keybinder #AddSecondaryBindingContainer
+{
+	visibility: collapse;
+}
+
+.BindingRow.hero_testing_keybinder
+{
+	width: 100%;
+	height: 100%;
+}
+
+.hero_testing_keybinder .SettingLabel,.hero_testing_keybinder #HeroIcon,.hero_testing_keybinder #LabelFXContainer2,.hero_testing_keybinder #AddSecondaryBindingContainer,.hero_testing_keybinder #QuickCastContainer,.hero_testing_keybinder #DelaySliderContainer
+{
+	visibility: collapse;
+}
+
+.hero_testing_keybinder #KeybindContainer,.hero_testing_keybinder #LabelFXContainer
+{
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	flow-children: none;
+}
+
+.hero_testing_keybinder #BindingLabelContainer
+{
+	width: 100%;
+	height: 100%;
+	flow-children: none;
+	border-radius: 3px;
+	box-shadow: none;
+}
+
+.hero_testing_keybinder #BindingLabelContainer .Background,.hero_testing_keybinder #BindingLabelContainer .Border
+{
+	visibility: collapse;
+}
+
+.hero_testing_keybinder #keyboardMainGlyph
+{
+	horizontal-align: center;
+	vertical-align: center;
+}
+
+.hero_testing_keybinder.noKeyBinding #keyboardMainGlyph
+{
+	visibility: collapse;
 }
 

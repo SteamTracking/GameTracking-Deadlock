@@ -58,7 +58,4 @@
 // MHasKV3TransferPolymorphicClassname
 class CNmGraphDocLocalLayerNode : public CNmGraphDocLayerBaseNode
 {
-	bool m_isSynchronized;
-	bool m_ignoreEvents;
-	NmPoseBlendMode_t m_blendMode;
 };

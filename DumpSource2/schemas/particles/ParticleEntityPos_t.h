@@ -6,4 +6,6 @@ enum ParticleEntityPos_t : uint32_t
 	PARTICLE_WORLDSPACE_CENTER = 1,
 	// MPropertyFriendlyName = "Eyes"
 	PARTICLE_EYES = 2,
+	// MPropertyFriendlyName = "Flashlight"
+	PARTICLE_FLASHLIGHT = 3,
 };

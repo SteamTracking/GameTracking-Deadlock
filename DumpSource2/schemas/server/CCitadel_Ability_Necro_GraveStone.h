@@ -1,9 +1,6 @@
-// MNetworkVarNames = "EHANDLE m_vecDeployedGravestones"
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Necro_GraveStone : public CCitadelBaseAbility
 {
-	// MNetworkEnable
 	CNetworkUtlVectorBase< CHandle< CBaseEntity > > m_vecDeployedGravestones;
-	Vector m_vCastPosition;
+	VectorWS m_vCastPosition;
 	QAngle m_qCastAngle;
 };

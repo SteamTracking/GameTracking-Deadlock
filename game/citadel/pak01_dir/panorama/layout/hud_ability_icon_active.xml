@@ -1,9 +1,9 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/ability_icons.vcss_c" />
-		<include src="s2r://panorama/styles/hud_ability_icon_active.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/ability_icons.vcss" />
+		<include src="s2r://panorama/styles/hud_ability_icon_active.vcss" />
 	</styles>
 	<DraggableAbilityIcon class="ability_container" hittestchildren="false">
 		<Panel id="button_container" class="button_container">
@@ -12,11 +12,14 @@
 				<Panel id="active_toggle" />
 				<Label class="ability_name" text="{s:ability_name}" />
 				<Panel class="ability_key_container">
-					<CitadelBinding id="ability_binding_component" show_single_bind="true" />
-					<CitadelBinding id="ability_upgrade_binding_component" show_single_bind="true" />
+					<CitadelBinding id="ability_binding_component" show_single_bind="true" compact="true" />
+					<CitadelBinding id="ability_upgrade_binding_component" show_single_bind="true" compact="true" />
 				</Panel>
 				<Label class="bonusCounter" text="{s:bonusCounter}" />
-				<Image id="ability_image" class="ability_image" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel class="iconContainer">
+					<Image id="ability_image" class="ability_image" scaling="stretch-to-fit-preserve-aspect" />
+					<Panel class="corruptedBorder" />
+				</Panel>
 				<Panel id="cooldown_mask" />
 				<Panel id="charges_container">
 					<Label id="charges" text="{i:charges}" />

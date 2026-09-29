@@ -1,9 +1,9 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/settings_keybinder.vcss_c" />
-		<include src="s2r://panorama/styles/popups/popup_settings.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/settings_keybinder.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="PingOption">
@@ -47,8 +47,11 @@
 			<Panel id="ChatWheelConceptsContainer" />
 		</Panel>
 		<Panel id="QuickCastContainer">
-			<Panel id="UnitHasBindsIndicator" class="QuickCastBind" />
 			<Label id="QuickCastDescription" class="QuickCastDesc" text="#citadel_settings_quick_cast_desc" />
+		</Panel>
+		<Panel id="DelaySliderContainer">
+			<Label id="ChatWheelDelayDescription" class="ChatWheelDelayDesc" text="#citadel_settings_wheel_delay_desc" />
+			<CitadelSettingsSlider id="ChatWheelDelaySlider" convar="citadel_show_chat_wheel_time" textentry="true" postfix="#citadel_settings_seconds_postfix" min="0.0" max="0.5" snap="0.01" displayprecision="2" />
 		</Panel>
 	</CitadelSettingsKeyBinder>
 </root>

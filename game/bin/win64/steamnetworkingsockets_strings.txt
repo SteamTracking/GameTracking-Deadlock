@@ -18,9 +18,9 @@
  !"#$%&'()*+,-./0123NULL output buffer with non-zero size passed to Base64Decode
  %4[^ =\t] =%d
  ' ) - 3 G M Q _ c e i w } 
- (08@HPX`hpz`\n
- (08@HPX`j`\n
- (08@HR
+ (08@HPX`hpz
+ (08@HPX`j
+ (08@HPZ
  (BGP MDT)
  (MPLS)
  (MPLS-labeled VPN)
@@ -87,7 +87,6 @@
 "u\n"CMsgSteamDatagramCertificateSigned
 #%d POP '%s' not previously sent
 #%d route %s-%s was not sent
-#%u %s '%s'
 #:*S8,}gNzl
 #Q7z
 #SteamNetSockets_AppClose_Normal
@@ -236,6 +235,7 @@ $d`D-laM
 %s sent routing secret in msg 0x%02x.  Marking as fully trusted.  (Previous trust was %d)\n
 %s set to_virtual_port in rendezvous when connecting by FakeIP; ignored
 %s#%d (via %s %s)
+%s#%u %s '%s'
 %s%02x
 %s%lld
 %s(%d): Lock '%s' not held
@@ -384,7 +384,7 @@ $d`D-laM
 ,#,/,5,9,A,W,Y,i,w,
 ,AckPeerRoutes 
 ,AlsoSentViaRelay
-,RoutesChanged
+,RoutesChanged(peer_acked=%d,current=%d)
 ,\n$encryption_your_public_key_lead_byte
 ,\n(k_ESteamDatagramMsg_TicketDecryptRequest
 ,name:
@@ -636,8 +636,7 @@ $d`D-laM
 0123456789.:abcdefABCDEF
 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz./
 08@HPX`hpx
-08@HR`\n
-08@J
+08@HR
 08bX
 0F2R0P4
 0Z@q
@@ -665,6 +664,7 @@ $d`D-laM
 27;C
 2Ht\l
 2\n.k_ESteamDatagramMsg_SetSecondaryAddressRequest
+2\vp4
 2bT~
 2dV2:tN:\n
 2prB
@@ -724,6 +724,7 @@ $d`D-laM
 8\vWzK
 8]Vc2
 8d:^<T>\@ZB\DZFbHxJtLxNtPxRtTxV<X68&
+8eE<
 8pH8
 8y\rW
 8z\rkt
@@ -762,6 +763,7 @@ $d`D-laM
 <ASN1 29>
 <EMPTY>\n
 <INVALID>
+<invalid>
 <unsupported>
 =!=-=3=7=?=C=o=s=u=y={=
 ==zGdd
@@ -782,7 +784,8 @@ $d`D-laM
 @0pp
 @?33s?H
 @HPX&9
-@HPXf
+@HPXf@
+@HV0
 @\n\nAltAddress
 @n2w
 A connection with that ID already exists.
@@ -1266,6 +1269,7 @@ Assertion Failed: g_vecSharedClusterDataInConfigOrder.size() == g_SteamDatagramN
 Assertion Failed: g_vecSharedClusterDataInConfigOrder.size() == m_vecClusters.size()
 Assertion Failed: gapFilled->first < gapFilled->second
 Assertion Failed: gapFilled->first <= nSegBegin
+Assertion Failed: gapFilled->second > nSegBegin
 Assertion Failed: hAPICall != k_uAPICallInvalid
 Assertion Failed: has_element( m_vecLinkedConnections, pConn )
 Assertion Failed: identity.m_cbSize <= sizeof( identity.m_genericBytes )
@@ -1649,10 +1653,7 @@ Assertion Failed: nRemoteVirtualPort == k_nVirtualPort_Messages
 Assertion Failed: nRemoteVirtualPort >= -1 && nRemoteVirtualPort <= 0xffff
 Assertion Failed: nSDR_POPID
 Assertion Failed: nScore >= 0 || m_vecAvailableTransports.size() == 1
-Assertion Failed: nSegBegin < gapFilled->second
 Assertion Failed: nSegBegin < nSegEnd
-Assertion Failed: nSegBegin > gapFilled->first
-Assertion Failed: nSegEnd < gapFilled->second
 Assertion Failed: nSize >= 0
 Assertion Failed: nTotalPenalty >= 0
 Assertion Failed: nTotalWeightActiveLanes == 0
@@ -1740,7 +1741,6 @@ Assertion Failed: pMsg->m_linksSecondaryQueue.m_pQueue == nullptr
 Assertion Failed: pMsg->m_linksSecondaryQueue.m_pQueue == pCheckQueue
 Assertion Failed: pMsg->m_nMessageNumber > nLastMsgNumForUnreliable
 Assertion Failed: pMsg->m_pfnFreeData == CSteamNetworkingMessage::DefaultFreeData
-Assertion Failed: pMsgInsertBefore->m_links.m_pQueue == &m_queueRecvMessages
 Assertion Failed: pMsgInsertBefore->m_linksSecondaryQueue.m_pQueue == nullptr
 Assertion Failed: pNextForTarget->m_pPrevTaskForTarget == pTask
 Assertion Failed: pNextForTarget->m_pTarget == pTarget
@@ -1822,6 +1822,7 @@ Assertion Failed: pszFmt && *pszFmt
 Assertion Failed: pszVal && *pszVal
 Assertion Failed: ptr + escape_overhead < s
 Assertion Failed: ptr < end && *ptr == '\"'
+Assertion Failed: ptr->m_links.m_pQueue == &m_queueRecvMessages
 Assertion Failed: pubData
 Assertion Failed: pubKey
 Assertion Failed: pubKey != nullptr
@@ -3051,7 +3052,6 @@ Extended OCSP Status
 Extension
 Extension Request
 Extension factory's GetPrototype() returned NULL for extension: 
-Extra control data returned besides TOS?  0x%x/0x%x
 Extra text starting with character 0x%02x='%c'
 F6tr
 FDA~i
@@ -3104,7 +3104,7 @@ Failed to parse gameserver identity.  %s
 Failed to parse result JSON.  Line %d, offset %d: %s
 Failed to parse string
 Failed to send P2P signal
-Failed to serialize identity to %s message.  %s
+Failed to serialize identity to message.  %s
 Failed to set cached certificate.  %s
 Failed to set socket for IPv6 only (IPV6_V6ONLY=1).  Error code 0x%08X.  Continuing anyway.\n
 Failed to set socket for dual stack (IPV6_V6ONLY=0).  Error code 0x%08X.
@@ -3181,7 +3181,6 @@ File too large
 Filename too long
 FinalizeLocalCrypto
 FindServerDataForCluster
-Fingerprint check failed: %x vs. %x
 Flags indicate presence of TimeSincePrev, but no room for it.  Stats message size %d, packet size %d
 FlushMessagesOnConnection
 For best results, preload the config.  (See SDR_NETWORK_CONFIG env var)\n
@@ -3262,7 +3261,6 @@ GetSessionConnectionInfo
 GetTickCount64
 Giving up on %s after %d consecutive ping timeouts
 Giving up waiting for DualWifi adapter to be ready for secondary address access to %s.  (We waited ~%.1fs)\n
-Got %s expected %s\n
 Got SDR network config.  %s
 Got a rendezvous candidate at "%s"\n
 Got callback for wrong request?
@@ -3353,8 +3351,8 @@ ISteamNetworkingSocketsSerialized::GetCertAsync failed
 ITU-T
 I\nlQ
 I\tHA\t981G'dc
+Identity %s isn't valid for Messages sessions.
 Identity is blank
-Identity isn't valid for Messages sessions.
 If you specify a port for SDR_IP/SDR_IP6, you must specify the same port for both
 Ignoring Empty POP '%s'
 Ignoring P2P CMsgSteamDatagramConnectRequest from %s to FakeIP %s.  Invalid from_fake_ip '%s'
@@ -3585,7 +3583,8 @@ Management
 Marking %s as fully trusted.  (No routing secret, but dev environment.)  (Previous trust was %d)\n
 Mask Algorithm: 
 Message from relay session %u mapped to %s, but that connection has no TransportFromSDRClient?
-Message size %d is too big.  Max is %d
+Message size %d is too big.  Max internal size is %d
+Message size %u is too big.  Max is %d
 Messages session %s: Implicitly accepted connection %s via SendMessageToUser\n
 Messages session %s: connection [%s] is idle timing out, but we have a partial message from our peer.  Assuming a message was sent just at the timeout deadline.   Extending timeout.\n
 Messages session %s: connection [%s] is idle timing out.  But we still have unacked sent data?!?  This seems bad\n
@@ -3718,6 +3717,7 @@ No child processes
 No client identity\n
 No configured STUN servers
 No control data returned even though we asked for TOS?
+No data
 No dropped packets, pkt num %lld, dup bit not set?  recvseq=%lld inorder=%lld, dup=%lld, lurch=%lld, ooo=%lld, %s.  (%s)
 No error
 No identity data
@@ -3770,6 +3770,7 @@ O/lc\r=<1\r-,!@
 O44h\
 O:t\vg
 OBJ lib
+OBJECT
 OBJECT DESCRIPTOR
 OBJ_NAME_new_index
 OBJ_add_object
@@ -3906,7 +3907,7 @@ P-256
 P-384
 P-521
 P00`
-P08@J
+P08@J`%
 P1\t98"
 P2P %s
 P2P CMsgSteamDatagramConnectRequest from %s; we're listening on %s, hosted server connection\n
@@ -4282,6 +4283,7 @@ RSA_sign_ASN1_OCTET_STRING
 RSA_verify
 RSA_verify_ASN1_OCTET_STRING
 RSA_verify_PKCS1_PSS_mgf1
+R\vp4
 Rank=%d 
 Rbg.E
 Read-only file system
@@ -4353,7 +4355,6 @@ RelayServer::New
 RelayUrgentPing
 Reliable
 Reliable message number lurch.  Last reliable %lld, offset %llu, highest seen %lld
-Reliable message size %d too large.
 Reliable message size too large.  (%llu<<5 + %d)
 ReliableMessage
 ReliableRTO
@@ -4522,6 +4523,7 @@ SNP decode first reliable stream pos underflow.  %llx mod %llx, expected next %l
 SNP decode overrun %d bytes for %s segment data.
 SNP decode overrun, %d bytes for %s
 SNP decode unreliable msgnum underflow.  %llx mod %llx, highest seen %llx
+SNP stop waiting advanced past sentinel gap.  This should never happen!
 SNP stop waiting reduced %lld (pkt %lld) -> %lld (pkt %lld)
 SNP_SendPacket
 SO_PATH
@@ -4884,6 +4886,7 @@ Unauthenticated connections not allowed.
 Unencrypted
 Unencrypted addresses only allowed to 'dev' POPID
 Unexpected AvailAnyRouterCommunication %d
+Unexpected IPV6_TCLASS cmsg_len %lld
 Unexpected IP_TOS cmsg_len %lld
 Unexpected NoConnection
 Unexpected P2PSessionError %d
@@ -5397,6 +5400,7 @@ ZiKw
 \\n\nExtraField
 \f%\f/\f1\fA\f[\f_\fa\fm\fs\fw\f
 \f<<0A1pq
+\fp\vP0
 \n CMsgSteamDatagramRelayAuthTicket
 \n CMsgSteamDatagramRouterPingReply
 \n steamdatagram_messages_sdr.proto
@@ -5587,6 +5591,7 @@ a2i_GENERAL_NAME
 a5<p
 a5j_5W
 a8Bk
+aBv<
 aI)h
 aRecord
 a\n\rRouterQuality
@@ -5865,7 +5870,6 @@ bad type
 bad version number
 bad x509 filetype
 bad_type:%d
-base
 base64 decode error
 base64 encoding
 basicConstraints
@@ -7113,6 +7117,7 @@ hexpass
 hexsalt
 hexsecret
 hexseed
+hiD<
 hkdf
 hl\tJ3o
 hmac
@@ -7734,7 +7739,6 @@ keyUsage
 key_data
 key_enc_algor
 key_id
-key_type
 keyblob header parse error
 keyblob too short
 keyfunc
@@ -7795,7 +7799,7 @@ legacy_your_public_ip
 legacy_your_public_port
 length too long
 level_add_node
-lib Feb  9 2026 17:04:34
+lib Apr 29 2026 21:22:22
 lib(%lu)
 linebuffer_ctrl
 linebuffer_new
@@ -8220,6 +8224,7 @@ p.other
 p.ppBasis
 p.prime
 p.tpBasis
+p08@H^<
 p2p_routing_summary
 p2p_share_ip
 p2p_via_peer_relay_pop_id
@@ -8266,6 +8271,7 @@ password based MAC
 path must be absolute
 pathlen
 payment gateway capabilities
+pbP)
 pbeWithMD2AndDES-CBC
 pbeWithMD2AndRC2-CBC
 pbeWithMD5AndCast5CBC
@@ -8526,6 +8532,7 @@ rK99
 rUUT
 rZlN
 r\tU[B
+r\vp0
 r_32_12_16_init_key
 rand_drbg_enable_locking
 rand_drbg_get_entropy
@@ -8987,6 +8994,7 @@ snmpv2
 socket
 socket() call failed.  Error code 0x%08x.
 sockopt(IPPROTO_IP, IP_RECVTOS, 1) failed (0x%x), will not be able to read TOS\n
+sockopt(IPPROTO_IPV6, IPV6_RECVTCLASS, 1) failed (0x%x), will not be able to read TOS for IPv6 packets\n
 sockopt(IPPROTO_IPV6, IPV6_UNICAST_IF, %d) OK\n
 sockopt(IPPROTO_IPV6, IPV6_UNICAST_IF, %d) failed with error code 0x%08X.
 sockopt(IP_PROTO_IP, IP_UNICAST_IF, %d) OK\n
@@ -9034,6 +9042,7 @@ steamnetworkingsockets_messages.proto
 steamnetworkingsockets_messages_certs.proto
 steamnetworkingsockets_messages_udp.proto
 stop_waiting offset
+stop_waiting past sentinel gap
 stop_waiting pktNum %llu offset %llu
 store init error
 str:

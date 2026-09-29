@@ -210,7 +210,7 @@
 	}
 	Haze.Finesse.Dagger.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 0.0
 		vsnd_files = "sounds/abilities/haze/haze_sleep_dagger_cast.vsnd"
 		vsnd_duration = 1.67483
@@ -249,17 +249,9 @@
 		vsnd_files = "sounds/abilities/haze/haze_sleep_dagger_hit.vsnd"
 		vsnd_duration = 3.344989
 	}
-	Haze.Finesse.Dagger.Detonate = 
-	{
-		base = "Base.Ability"
-		pitch_rand_min = -0.05
-		pitch_rand_max = 0.05
-		vsnd_files = "sounds/abilities/haze/a1_finesse_dagger/tier3_explosion.vsnd"
-		vsnd_duration = 3.595419
-	}
 	Haze.Smoke.Bomb.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = -6.0
 		vsnd_files = "sounds/abilities/haze/haze_smoke_bomb_cast.vsnd"
 		vsnd_duration = 4.089683
@@ -310,14 +302,14 @@
 	}
 	Haze.BulletFlurry.Modifier.Start = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = -2.0
 		vsnd_files = "sounds/abilities/haze/haze_bullet_flurry_cast_start.vsnd"
 		vsnd_duration = 2.921565
 	}
 	Haze.BulletFlurry.Cast.Delay = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = 0.0
 		vsnd_files = "sounds/abilities/haze/haze_bullet_flurry_cast_delay.vsnd"
 		vsnd_duration = 1.852698
@@ -456,68 +448,30 @@
 	}
 	Haze.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
-		vsnd_duration = 1.062208
+		base = "Hero.Default.Melee.Swing"
 	}
 	Haze.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
-		vsnd_files = 
+		base = "Hero.Default.Melee.Charged"
+		track_2.track_vsnd_files = 
 		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_01.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_02.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_03.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_04.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_05.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_06.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_07.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_08.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_09.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_10.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_11.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_12.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_13.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_14.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_15.vsnd",
+			"sounds/player/movement/haze/haze_movement_foley_short_16.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	Haze.Reload.Twirl = 
 	{
@@ -580,7 +534,7 @@
 	Haze.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "haze"
+		context_name = "hero_haze"
 		vsnd_files = 
 		[
 			"sounds/vo/haze/haze_kill_anyhero_07.vsnd",
@@ -594,7 +548,7 @@
 	Haze.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "haze"
+		context_name = "hero_haze"
 		vsnd_files = 
 		[
 			"sounds/vo/haze/haze_angry_03.vsnd",

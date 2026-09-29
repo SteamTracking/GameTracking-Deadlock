@@ -1,4 +1,3 @@
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_SettingSun : public CCitadelBaseAbility
 {
 	bool m_bProjectileActive;

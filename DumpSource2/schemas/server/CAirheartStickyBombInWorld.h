@@ -1,3 +1,0 @@
-class CAirheartStickyBombInWorld : public CBaseAnimGraph
-{
-};

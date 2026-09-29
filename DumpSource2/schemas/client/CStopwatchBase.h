@@ -1,4 +1,5 @@
+// MGetKV3ClassDefaults = Could not parse KV3 Defaults
 class CStopwatchBase : public CSimpleSimTimer
 {
-	bool m_fIsRunning;
+	bool m_bIsRunning;
 };

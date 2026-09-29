@@ -1,0 +1,94 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	citadel_blocking_group = 
+	{
+		operators = 
+		[
+			{
+				name = "public"
+				operator = "util_null"
+				operator_variables = 
+				{
+					blocking_group_enable = 
+					{
+						data_type = "bool"
+						value = "false"
+					}
+					blocking_group_name = 
+					{
+						data_type = "string"
+						value = "blocking_group"
+						_system_properties = 
+						{
+							display_group = "locked"
+							property_group = "citadel_blocking_group"
+						}
+					}
+					blocking_subgroup_name = 
+					{
+						data_type = "string"
+						value = "default"
+						_system_properties = 
+						{
+							property_group = "citadel_blocking_group"
+							property_help = "Sets the branching group name. Any events we want to interact with each other must have the same subgroup name."
+						}
+					}
+					blocking_group_priority = 
+					{
+						data_type = "float"
+						value = "9999.0"
+						_system_properties = 
+						{
+							display_group = "Normal"
+							property_group = "citadel_dialog"
+							property_help = "A value that determines playback behavior. Any priority lower than the highest priority present will be blocked. If all concurrent events share the same priority value, nothing will be blocked."
+						}
+					}
+				}
+			},
+			{
+				name = "join_blocking_group"
+				input_execute = "@public.blocking_group_enable"
+				execute_once = "true"
+				operator = "soundevent_group_join"
+				input_group_name = "@public.blocking_group_name"
+				input_match_string = "@public.blocking_subgroup_name"
+			},
+			{
+				name = "get_blocking_group_kv3_max"
+				execute_once = "false"
+				input_execute = "@public.blocking_group_enable"
+				operator = "soundevent_group_get_float"
+				input_group_result = "@join_blocking_group.output_result"
+				input_name = "max"
+			},
+			{
+				name = "get_group_result_info"
+				input_execute = "@public.blocking_group_enable"
+				execute_once = "true"
+				operator = "soundevent_group_info"
+				input_group_result = "@join_blocking_group.output_result"
+			},
+			{
+				name = "priority_less_than_max"
+				operator = "math_float"
+				input_execute = "@public.blocking_group_enable"
+				apply = "less_than"
+				input1 = "@public.blocking_group_priority"
+				input2 = "@get_blocking_group_kv3_max.output"
+			},
+			{
+				name = "exec_block_low_priority"
+				operator = "sos_goto"
+				execute_once = "true"
+				input_execute = "@priority_less_than_max.output"
+				input_goto_end = "true"
+			},
+		]
+		_system_properties = 
+		{
+			display_game = "citadel"
+		}
+	}
+}

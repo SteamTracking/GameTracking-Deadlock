@@ -11,6 +11,24 @@
 //		16,
 //		16
 //	],
+//	"m_colCanvasBackgroundStaleCompile":
+//	[
+//		16,
+//		16,
+//		16
+//	],
+//	"m_colCanvasBorderStaleCompile":
+//	[
+//		96,
+//		96,
+//		0
+//	],
+//	"m_colCanvasBorderDebuggerDetached":
+//	[
+//		0,
+//		80,
+//		96
+//	],
 //	"m_flGridSnapV2": 40.000000,
 //	"m_bSnapAbsToGrid": true,
 //	"m_bSnapSizeToGrid": true,
@@ -168,6 +186,13 @@
 //		144,
 //		144
 //	],
+//	"m_FontCompileStatus": "Lucida Sans,16,-1,5,50,0,0,0,0,0,Regular",
+//	"m_colCompileStatus":
+//	[
+//		64,
+//		64,
+//		64
+//	],
 //	"m_flLiteralLabelSpacing": 8.000000,
 //	"m_colDebuggerBrokenBorder":
 //	[
@@ -177,12 +202,12 @@
 //	],
 //	"m_DebuggerBrokenImg": "tools/images/pulse_editor/debugger_broken.png",
 //	"m_DebuggerBrokenOtherImg": "tools/images/pulse_editor/debugger_broken_other.png",
+//	"m_DebuggerBrokenStackImg": "tools/images/pulse_editor/debugger_broken_instack.png",
+//	"m_DebuggerBrokenStackOtherImg": "tools/images/pulse_editor/debugger_broken_instack_other.png",
 //	"m_flDebuggerBrokenMarkerOffset": 2.000000,
 //	"m_flDebuggerBrokenMarkerSize": 18.000000,
 //	"m_DebuggerBreakpointImg": "tools/images/pulse_editor/debugger_breakpoint.png",
 //	"m_DebuggerBreakpointDisabledImg": "tools/images/pulse_editor/debugger_breakpoint_disabled.png",
-//	"m_flDebuggerBreakpointOffset": 2.000000,
-//	"m_flDebuggerBreakpointSize": 18.000000,
 //	"m_flYieldedCursorStackOffset": 8.000000,
 //	"m_GraphInstanceImg": "tools/images/pulse_editor/graph_instance.png",
 //	"m_flRecentExecTimeoutSec": 10.000000,
@@ -220,6 +245,8 @@
 //	"m_bBreakOnExceptions": false,
 //	"m_bShowExecutionHistory": false,
 //	"m_bBoxSelectRequiresFullyContained": false,
+//	"m_bShowFullContextLogging": false,
+//	"m_bFollowCursorDuringDebugSteps": true,
 //	"m_flFlowMinWidth": 200.000000,
 //	"m_colSelectedBorder":
 //	[
@@ -310,6 +337,9 @@ class CPulseEditorSettings
 {
 	Color m_colCanvasBackground;
 	Color m_colCanvasBackgroundWhenDebugging;
+	Color m_colCanvasBackgroundStaleCompile;
+	Color m_colCanvasBorderStaleCompile;
+	Color m_colCanvasBorderDebuggerDetached;
 	// MPropertyStartGroup = "+Grid"
 	float32 m_flGridSnapV2;
 	bool m_bSnapAbsToGrid;
@@ -367,6 +397,9 @@ class CPulseEditorSettings
 	CUtlString m_FontParentAssets;
 	Color m_colParentAssets;
 	Color m_colParentAssetsBroken;
+	// MPropertyAttributeEditor = "Font()"
+	CUtlString m_FontCompileStatus;
+	Color m_colCompileStatus;
 	// MPropertyStartGroup = "+Literals"
 	// MPropertyAttributeRange = "0 32"
 	float32 m_flLiteralLabelSpacing;
@@ -374,16 +407,14 @@ class CPulseEditorSettings
 	Color m_colDebuggerBrokenBorder;
 	CUtlString m_DebuggerBrokenImg;
 	CUtlString m_DebuggerBrokenOtherImg;
+	CUtlString m_DebuggerBrokenStackImg;
+	CUtlString m_DebuggerBrokenStackOtherImg;
 	// MPropertyAttributeRange = "0 32"
 	float32 m_flDebuggerBrokenMarkerOffset;
 	// MPropertyAttributeRange = "0 32"
 	float32 m_flDebuggerBrokenMarkerSize;
 	CUtlString m_DebuggerBreakpointImg;
 	CUtlString m_DebuggerBreakpointDisabledImg;
-	// MPropertyAttributeRange = "0 32"
-	float32 m_flDebuggerBreakpointOffset;
-	// MPropertyAttributeRange = "0 32"
-	float32 m_flDebuggerBreakpointSize;
 	// MPropertyAttributeRange = "0 32"
 	float32 m_flYieldedCursorStackOffset;
 	CUtlString m_GraphInstanceImg;
@@ -409,6 +440,8 @@ class CPulseEditorSettings
 	bool m_bBreakOnExceptions;
 	bool m_bShowExecutionHistory;
 	bool m_bBoxSelectRequiresFullyContained;
+	bool m_bShowFullContextLogging;
+	bool m_bFollowCursorDuringDebugSteps;
 	// MPropertyStartGroup = "+Group Layout"
 	float32 m_flFlowMinWidth;
 	Color m_colSelectedBorder;

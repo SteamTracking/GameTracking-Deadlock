@@ -6,12 +6,61 @@
 	height: 100%;
 }
 
-#UnitStatus
+#UnitStatus,.NormalContents
 {
 	width: 100%;
 	height: 100%;
 	vertical-align: bottom;
 	flow-children: up;
+	opacity: 1.0;
+}
+
+.not_interactive #UnitStatus
+{
+	opacity: 0.0;
+}
+
+.interactive #UnitStatus
+{
+	opacity: 1.0;
+	animation-name: itemReveal;
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+	opacity-mask-threshold: 0% 100%;
+}
+
+@keyframes 'itemReveal'
+{
+	0%
+	{
+		opacity: 0;
+		pre-transform-scale2d: 0.5;
+		opacity-mask-threshold: 100% 20%;
+		opacity-mask: url("s2r://panorama/images/hud/brawl/rings/ring_reveal_mask_psd.vtex");
+	}
+	
+	40%
+	{
+		opacity: 1;
+		transform: rotateZ(0deg);
+		pre-transform-scale2d: 1.1;
+	}
+	
+	60%
+	{
+		opacity: 1;
+		transform: rotateZ(0deg);
+		pre-transform-scale2d: 1.05;
+		opacity-mask-threshold: 0% 20%;
+		opacity-mask: url("s2r://panorama/images/hud/brawl/rings/ring_reveal_mask_psd.vtex");
+	}
+	
+	100%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1;
+	}
+	
 }
 
 .name
@@ -23,5 +72,70 @@
 	font-family: oracle;
 	font-weight: semi-bold;
 	text-overflow: shrink;
+}
+
+#icon
+{
+	width: 60%;
+	height: 60%;
+	horizontal-align: center;
+	visibility: collapse;
+}
+
+.has_icon #icon
+{
+	visibility: visible;
+}
+
+#cost
+{
+	visibility: collapse;
+}
+
+.has_cost #cost
+{
+	visibility: visible;
+}
+
+#GoldReward
+{
+	horizontal-align: middle;
+	background-color: offBlack&90;
+	flow-children: right;
+	padding: 0px 10px;
+	border-radius: 10px;
+	visibility: collapse;
+}
+
+#GoldReward .icon_souls
+{
+	width: 16px;
+	height: 24px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image: url("s2r://panorama/images/hud/icons/icon_soul.vsvg");
+	wash-color: #70F8C1;
+	img-shadow: 0px 0px 3px #000000;
+}
+
+#GoldReward Label
+{
+	font-family: numericOracle;
+	font-weight: bold;
+	color: offWhite;
+	font-size: 24px;
+	vertical-align: middle;
+}
+
+.is_gold_reward .NormalContents
+{
+	visibility: collapse;
+}
+
+.is_gold_reward #GoldReward
+{
+	visibility: visible;
 }
 

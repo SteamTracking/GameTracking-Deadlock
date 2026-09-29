@@ -31,8 +31,10 @@
 .?AVCKV3Transfer_ResourceLoadInterface@@
 .?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_1>@?7??Submit@CAsyncResourceDataRequest@@QEAAXXZ@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_1>@?7??Submit@CAsyncResourceDataRequest@@QEAAXXZ@@Z@
 .?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_1>@?8??IO_HandleAsyncResourceDataRequest@CAsyncResourceDataRequest@@AEAAXPEAVIAsyncReadRequest2@@W4AsyncRequestStatus_t@@@Z@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_1>@?8??IO_HandleAsyncResourceDataRequest@CAsyncResourceDataRequest@@AEAAXPEAVIAsyncReadRequest2@@W4AsyncRequestStatus_t@@@Z@@Z@
+.?AVCLambdaJob@?1???$QueueJobWithFlags@V<lambda_2>@?CC@??FinalizeManifests@CResourceSystem@@AEAAXXZ@@IThreadPool@@QEAA?AV?$CSmartPtr@VCThreadedJob@@VCRefCountAccessor@@@@PEBDW4JobPriority_t@@I$$QEAV<lambda_2>@?CC@??FinalizeManifests@CResourceSystem@@AEAAXXZ@@Z@
 .?AVCLoadingResource@@
 .?AVCNullTypeManager@@
+.?AVCRD_AsyncProcessDataUtils@@
 .?AVCRD_RegisterResourceDataUtils@@
 .?AVCResourceDeallocatorUtils@@
 .?AVCResourceManifestTypeManager@@
@@ -50,7 +52,10 @@
 .?AVIAsyncResourceDataRequest@@
 .?AVIAsyncResourceDataRequestOwner@@
 .?AVICodeResourceManifestManager@@
+.?AVIKV3TransferInterface_ResourceLoad@@
+.?AVIRD_AsyncProcessDataUtils@@
 .?AVIRD_RegisterResourceDataUtils@@
+.?AVIRD_ResourceExtrefUtils@@
 .?AVIResourceDeallocatorUtils@@
 .?AVIResourceHandleUtils@@
 .?AVIResourceManifestRegistry@@
@@ -61,10 +66,13 @@
 .?AVIResourceTypeManager@@
 .?AVIVDataTypeManager@@
 .?AVbad_weak_ptr@std@@
+2\vpL
 <Anonymous>
 <INVALID>
+<non-RTTI type>
 ?~~~~~~~~~~~~~~~~
 An attempt was made to create a resource manifest with debug name "%s" while the resource system was shutting down.\n
+AsyncPreFinalize
 AsyncProcess
 Attempted to register duplicate manifest name %s!\n
 Bad FLC data for resource '%s': %s\n
@@ -117,16 +125,16 @@ CUtlBlockVector<struct UtlLinkedListElem_t<struct ExtRefList_t *,unsigned int>,u
 CUtlBlockVector<struct UtlLinkedListElem_t<struct ExtRefList_t *,unsigned int>,unsigned int,class CMemAllocAllocator>::GrowCount
 CUtlHashtable
 CUtlLeanVectorBase<struct UtlLinkedListElem_t<class CResourceManifest *,unsigned short>,unsigned short,class CMemAllocAllocator>::EnsureCapacity
-CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<unsigned __int64,int,class CDefEquals<unsigned __int64>,struct HashMapFunctor_t<unsigned __int64>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<unsigned __int64,int,class CDefEquals<unsigned __int64>,struct HashMapFunctor_t<unsigned __int64>,int>::HashBucket_t,int>::AddMultipleToTail
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<unsigned __int64,int,class CDefEquals<unsigned __int64>,struct DefaultHashFunctor<unsigned __int64>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<unsigned __int64,int,class CDefEquals<unsigned __int64>,struct DefaultHashFunctor<unsigned __int64>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<struct UtlLinkedListElem_t<class CLoadingResource *,unsigned short>,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<struct UtlLinkedListElem_t<class CLoadingResource *,unsigned short>,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<struct UtlLinkedListElem_t<class CStreamingResourceData *,unsigned short>,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<struct UtlLinkedListElem_t<class CStreamingResourceData *,unsigned short>,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlMemoryBlockAllocator<struct UtlLinkedListElem_t<struct ExtRefList_t *,unsigned int>,class CMemAllocAllocator>::MemPage_t,int,class CMemAllocAllocator>,struct CUtlMemoryBlockAllocator<struct UtlLinkedListElem_t<struct ExtRefList_t *,unsigned int>,class CMemAllocAllocator>::MemPage_t,int>::EnsureUnusedCapacity
 CUtlMemoryBlockAllocator<struct UtlLinkedListElem_t<class CLoadingResource *,unsigned short>,class CMemAllocAllocator>::AddPage
 CUtlMemoryBlockAllocator<struct UtlLinkedListElem_t<class CStreamingResourceData *,unsigned short>,class CMemAllocAllocator>::AddPage
 CUtlMemoryBlockAllocator<struct UtlLinkedListElem_t<struct ExtRefList_t *,unsigned int>,class CMemAllocAllocator>::AddPage
-CUtlSortVector<struct CResourceManifest::LoadingResourceReference_t,class CUtlSortVectorDefaultLess<struct CResourceManifest::LoadingResourceReference_t>,class CUtlVector<struct CResourceManifest::LoadingResourceReference_t,int,class CUtlVectorMemory_Growable<struct CResourceManifest::LoadingResourceReference_t,int,0> > >::Find
-CUtlSortVector<struct CResourceManifest::LoadingResourceReference_t,class CUtlSortVectorDefaultLess<struct CResourceManifest::LoadingResourceReference_t>,class CUtlVector<struct CResourceManifest::LoadingResourceReference_t,int,class CUtlVectorMemory_Growable<struct CResourceManifest::LoadingResourceReference_t,int,0> > >::FindLessOrEqual
-CUtlSortVector<struct CResourceManifest::LoadingResourceReference_t,class CUtlSortVectorDefaultLess<struct CResourceManifest::LoadingResourceReference_t>,class CUtlVector<struct CResourceManifest::LoadingResourceReference_t,int,class CUtlVectorMemory_Growable<struct CResourceManifest::LoadingResourceReference_t,int,0> > >::Insert
+CUtlSortVector<struct ResourceBindingBase_t const *,class CUtlSortVectorDefaultLess<struct ResourceBindingBase_t const *>,class CUtlVector<struct ResourceBindingBase_t const *,int,class CUtlVectorMemory_Growable<struct ResourceBindingBase_t const *,int,0> > >::Find
+CUtlSortVector<struct ResourceBindingBase_t const *,class CUtlSortVectorDefaultLess<struct ResourceBindingBase_t const *>,class CUtlVector<struct ResourceBindingBase_t const *,int,class CUtlVectorMemory_Growable<struct ResourceBindingBase_t const *,int,0> > >::Insert
+CUtlStringToken
 CVDataHandle
 CVDataLocalizedToken
 CWeakHandle
@@ -147,16 +155,13 @@ Error loading resource "%s" file size %d > allocated buffer size %d\n
 Error loading resource manifest "%s" (No DATA block)\n
 FATAL ERROR: %s resource '%s' (%016llX) is the wrong resource type! (This is likely caused by a hash collision between the strings '%s' and '%s')\n
 Failed loading resource "%s" (%s)\n
-Failed to allocate an instance of a class
+Failed to allocate an instance of a class of type '%s'
 Failed to apply FLC data to resource '%s': %s\n
 Failed to enumerate process modules.\n
 Failed to find [K32]EnumProcessModules and [K32]GetModuleFileNameExA.\n
 Failed to find or register resource "%s" for external reference: referring resource is %s\n
 Failed to load resource "%s" and ExitOnResourceLoadFailure was set and it's not in badresources_whitelist.txt\n\tUse '-allow_missing_resources' to ignore.
 Failed to open handle for this process.\n
-Finalize queue Finalizing StartLoading(%s) @%.2f\n
-Finalize queue completed processed %d, %s, elapsed time %.2fMSEC %s @%.2f\n
-Finalize queue continue processed %d of %d, elapsed time %.2fMSEC %s @%.2f\n
 ForceSynchronizationAndBlockUntilManifestLoaded
 Forgot to remove resource type manager for type %s!\n
 FourVectors
@@ -167,16 +172,14 @@ GetNamedManifestResources: Manifest name not registered: "%s"\n
 GetRegistrationForType(pResourceData->m_nResourceType)->m_pTypeManager == NULL\n
 GetResourceStatus( resourceName ) == RESOURCE_STATUS_RESIDENT
 Gradient()
+IKV3TransferInterface_ResourceLoad
 IKV3TransferInterface_ResourceSave
 Idle (ResourceSystemSleep)
 InstallResourceTypeManager
 IsResourceManifestGroupKnown: Manifest group name is empty or null\n
-Leaked reference to ERROR resource for type %s!\n
-Leaked resource: Refcount %s for %s%s resource "%s" (%016llX).  This may result in a crash.\n
 MKV3TransferName
 MPropertyCustomEditor
 MResourceTypeForInfoType
-MULTI FRAME
 Manifest %s references non-existent resource '%s'\n
 No DATA block for resource\n
 Only wrote %d (of %d) values when saving map!
@@ -187,6 +190,7 @@ RESOURCE_TYPE_TEST
 RESOURCE_TYPE_VDATA
 RSDSY
 RSProfilerTool
+R\fpL
 Range_t
 Re-entrant calls to CResourceSystem::PreShutdown()\n
 Reentrant call to CResourceSystem::BlockUntilManifestLoaded() while already in a frame update!\n
@@ -203,7 +207,6 @@ ResourceSystem/ExitOnResourceLoadFailure
 ResourceSystem/SpewBlockingLoads
 ResourceSystemFrame
 ResourceSystemWaitingForFutureWork
-SINGLE FRAME
 SetGrowSize
 SphereBase_t
 Tried to double-register resource manager for two resource types! ( "%lld" and "%lld")\n
@@ -218,6 +221,7 @@ Update_Internal
 Usage: resource_leaks <resource_name>\n
 Usage: resource_repeated_reload <count> <resource_name>\n
 V_isempty( pFileNameOverride )
+VectorWS
 WARNING: %s resource '%s' (%016llX) requested but is not in the system. (Missing from from a manifest?)\n
 WARNING: Long frame update (%.2fms) for resource type manager '%s' in frame %d (%d long updates total for this manager)\n
 WARNING: Long resource system update - should have taken no more than %dns, but took %.4fs! (Frame #%d)\n
@@ -232,10 +236,10 @@ WARNING: resource '%s' is an unrecognized resource type!\n
 [% 5ims cb] [% 5ims async cb] [% 5i / %10s] TOTAL\n
 [refcount % 4d]
 \t\t[ FAIL ] - Manifest contains an illegal resource name "%s"!\n
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\v\n\v\n\v\n\v\n\v\n\v\n\v\n\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\v\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\f\r\f\r\f\r\f\r\f\r\f\r\f\r\f\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r
 ___error_resource__
 _include
 _localization_path
-anonymous 
 bad_weak_ptr
 badresources_whitelist.txt
 ch.GetPointer() == rh
@@ -250,9 +254,11 @@ gYGw
 generic_data_type
 item
 item->m_cookie == BindingAllocator_t::ITEM_COOKIE_ALLOC
+itemdefs
 localization_required
 m_hResource->m_nLoadingResource != LOADING_RESOURCE_INDEX_INVALID
 m_hResource->m_nStreamingResource != STREAMING_RESOURCE_DATA_INDEX_INVALID
+m_pPreviousFullFileSystem == nullptr
 m_pTestFS == nullptr
 m_pTestFS == pTestFS
 mathlib_extended
@@ -260,6 +266,7 @@ newSerial == i + 1
 panorama_image
 pthis->HandleUtils_Deref( ch )->m_ResourceId == key
 pthis->StaticDeref( ch, true ) == nullptr
+r\vpL
 removed
 resource_leaks: Invalid resource name '%s'\n
 resource_leaks: No resource named '%s'\n
@@ -279,6 +286,7 @@ vanmgrpheconitem
 vcompmat
 vdata
 vdpn
+vdsp
 vdvn
 vents
 vgcxdata
@@ -294,6 +302,7 @@ vpost
 vptest
 vrman
 vsgraph
+vsmart
 vsndevts
 vsndstckvseq
 vsurf

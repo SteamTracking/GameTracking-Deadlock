@@ -1,10 +1,6 @@
-// MNetworkIncludeByName = "m_lifeState"
-// MNetworkIncludeByName = "m_iMaxHealth"
-// MNetworkIncludeByName = "m_iHealth"
-// MNetworkVarNames = "int m_nHitIndex"
 class C_Citadel_BreakableProp : public CBaseAnimGraph
 {
-	// MNetworkEnable
-	// MNotSaved
-	int32 m_nHitIndex;
+	int32 m_nGoldCost;
+	int32 m_nMeleeHitsTaken;
+	ParticleIndex_t m_nAmbientEffect;
 };

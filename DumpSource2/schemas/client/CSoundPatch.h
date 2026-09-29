@@ -2,9 +2,7 @@ class CSoundPatch
 {
 	CSoundEnvelope m_pitch;
 	CSoundEnvelope m_volume;
-	// MKV3TransferSaveOpsForField = "GetEngineTimeSaveRestoreOps"
 	float32 m_shutdownTime;
-	// MKV3TransferSaveOpsForField = "GetEngineTimeSaveRestoreOps"
 	float32 m_flLastTime;
 	CUtlSymbolLarge m_iszSoundScriptName;
 	CHandle< C_BaseEntity > m_hEnt;

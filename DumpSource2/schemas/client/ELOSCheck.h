@@ -1,11 +1,11 @@
 enum ELOSCheck : uint32_t
 {
-	ELOSCheck_None = 0,
-	ELOSCheck_Head = 1,
-	ELOSCheck_Head_IgnoreObscureBlockers = 2,
-	ELOSCheck_BodyCenter = 3,
-	ELOSCheck_BodyCenter_IgnoreObscureBlockers = 4,
-	ELOSCheck_Bounds = 5,
-	ELOSCheck_Bounds_IgnoreObscureBlockers = 6,
-	ELOSCheck_FibonacciSphere = 7,
+	None = 0,
+	Head = 1,
+	Head_IgnoreObscureBlockers = 2,
+	BodyCenter = 3,
+	BodyCenter_IgnoreObscureBlockers = 4,
+	Bounds = 5,
+	Bounds_IgnoreObscureBlockers = 6,
+	FibonacciSphere = 7,
 };

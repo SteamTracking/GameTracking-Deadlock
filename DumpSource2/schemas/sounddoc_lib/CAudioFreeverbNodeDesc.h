@@ -1,0 +1,3 @@
+class CAudioFreeverbNodeDesc : public CVAudioNodeBaseDesc
+{
+};

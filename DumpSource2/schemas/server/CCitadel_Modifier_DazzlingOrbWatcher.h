@@ -4,7 +4,7 @@ class CCitadel_Modifier_DazzlingOrbWatcher : public CCitadelModifier
 	CHandle< CBaseEntity > m_hAssociatedProjectile;
 	GameTime_t m_flLastHitTime;
 	CHandle< CBaseEntity > m_hLastHitTarget;
-	Vector m_vLastHitLocation;
+	VectorWS m_vLastHitLocation;
 	int32 m_nBouncesRemaining;
 	GameTime_t m_flLingerEndTime;
 	float32 m_flDamageAtCast;

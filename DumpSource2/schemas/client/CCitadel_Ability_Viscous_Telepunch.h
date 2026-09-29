@@ -1,16 +1,7 @@
-// MNetworkVarNames = "Vector m_vecTeleportPosition"
-// MNetworkVarNames = "Vector m_vecTeleportPositionNormal"
-// MNetworkVarNames = "ETelepunchState_t m_eTelepunchState"
-// MNetworkVarNames = "GameTime_t m_flNextStateTime"
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_Viscous_Telepunch : public C_CitadelBaseAbility
 {
-	// MNetworkEnable
-	Vector m_vecTeleportPosition;
-	// MNetworkEnable
+	VectorWS m_vecTeleportPosition;
 	Vector m_vecTeleportPositionNormal;
-	// MNetworkEnable
 	ETelepunchState_t m_eTelepunchState;
-	// MNetworkEnable
 	GameTime_t m_flNextStateTime;
 };

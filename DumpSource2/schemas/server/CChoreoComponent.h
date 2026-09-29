@@ -1,11 +1,19 @@
+// MGetKV3ClassDefaults = {
+//	"_class": "CChoreoComponent",
+//	"m_hOwner": null,
+//	"m_nExernalChoreoGraphCount": 0,
+//	"m_sActiveExternalChoreoGraphSlotID": "",
+//	"m_nNextSceneEventId": 0,
+//	"m_flAllowResponsesEndTime": null
+//}
+// MHasKV3TransferPolymorphicClassname
 class CChoreoComponent
 {
 	// MNotSaved
 	CNetworkVarChainer __m_pChainEntity;
 	CHandle< CBaseModelEntity > m_hOwner;
+	int32 m_nExernalChoreoGraphCount;
+	CGlobalSymbol m_sActiveExternalChoreoGraphSlotID;
 	SceneEventId_t m_nNextSceneEventId;
-	// MNotSaved
-	bool m_bUpdateLayerPriorities;
-	CUtlVector< CModifierHandleTyped< CCitadelModifier > > m_vecChoreoModifiers;
 	GameTime_t m_flAllowResponsesEndTime;
 };

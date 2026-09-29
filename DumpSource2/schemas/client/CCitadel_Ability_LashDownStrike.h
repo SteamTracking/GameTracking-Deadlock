@@ -1,19 +1,11 @@
-// MNetworkVarNames = "Vector m_vStrikeVel"
-// MNetworkVarNames = "float m_flInitialYaw"
-// MNetworkVarNames = "float m_flStartHeight"
-// MClassHasEntityLimitedDataDesc
 class CCitadel_Ability_LashDownStrike : public C_CitadelBaseAbility
 {
 	GameTime_t m_ImpactTime;
-	Vector m_vDamagePos;
+	VectorWS m_vDamagePos;
 	ParticleIndex_t m_PreviewEffect;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
+	ParticleIndex_t m_ActiveEffect;
+	bool m_bIsCrashingDown;
 	Vector m_vStrikeVel;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
 	float32 m_flInitialYaw;
-	// MNetworkEnable
-	// MNetworkUserGroup = "LocalPlayerOwnerAndObserversExclusive"
 	float32 m_flStartHeight;
 };

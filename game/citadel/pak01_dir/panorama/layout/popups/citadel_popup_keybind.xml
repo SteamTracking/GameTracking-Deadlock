@@ -1,10 +1,10 @@
 <!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
 <root>
 	<styles>
-		<include src="s2r://panorama/styles/citadel_base_styles.vcss_c" />
-		<include src="s2r://panorama/styles/popups/popups_shared.vcss_c" />
-		<include src="s2r://panorama/styles/popups/popup_settings.vcss_c" />
-		<include src="s2r://panorama/styles/popups/citadel_popup_keybind.vcss_c" />
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_settings.vcss" />
+		<include src="s2r://panorama/styles/popups/citadel_popup_keybind.vcss" />
 	</styles>
 	<PopupKeybind class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
 		<Panel class="PopupBackgroundShadow" />
@@ -15,7 +15,7 @@
 				<Image id="HeroIcon" />
 				<Label id="BindingCommandName" text="{s:command}" />
 			</Panel>
-			<Label id="SingleKeyBindLabel" text="#citadel_keybind_popup_single_key_bind" />
+			<Label id="RestrictedBindLabel" text="{s:bind_restriction_text}" html="true" />
 			<Panel id="BindingsContainer">
 				<Panel id="PrimaryBindingContainer" class="Binding">
 					<Panel class="BindingRow LeftRightFlow">
@@ -29,13 +29,7 @@
 							</Panel>
 						</Panel>
 						<Panel class="ButtonWrapper">
-							<Button class="InputButton" id="ClearBinding1" onactivate="CitadelClearSingleKeybinding(0)" onmouseover="UIShowTextTooltipStyled( #citadel_settings_clear_keybind_tooltip , OptionsTooltip)" onmouseout="UIHideTextTooltip()">
-								<Panel class="Bottom" />
-								<Panel class="Top" />
-								<Panel class="Content IconOnly">
-									<Image texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/delete_trash.vsvg" />
-								</Panel>
-							</Button>
+							<CitadelButton id="ClearBinding1" class="Medium" imagesrc="s2r://panorama/images/icons/delete_trash.vsvg" onactivate="CitadelClearSingleKeybinding(0)" onmouseover="UIShowTextTooltipStyled( #citadel_settings_clear_keybind_tooltip , OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 						</Panel>
 					</Panel>
 					<Panel id="DupeBindingContainer1">
@@ -62,13 +56,7 @@
 							</Panel>
 						</Panel>
 						<Panel class="ButtonWrapper">
-							<Button class="InputButton" id="ClearBinding2" onactivate="CitadelClearSingleKeybinding(1)" onmouseover="UIShowTextTooltipStyled( #citadel_settings_clear_keybind_tooltip , OptionsTooltip)" onmouseout="UIHideTextTooltip()">
-								<Panel class="Bottom" />
-								<Panel class="Top" />
-								<Panel class="Content IconOnly">
-									<Image texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/delete_trash.vsvg" />
-								</Panel>
-							</Button>
+							<CitadelButton id="ClearBinding2" class="Medium" imagesrc="s2r://panorama/images/icons/delete_trash.vsvg" onactivate="CitadelClearSingleKeybinding(1)" onmouseover="UIShowTextTooltipStyled( #citadel_settings_clear_keybind_tooltip , OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
 						</Panel>
 					</Panel>
 					<Panel id="DupeBindingContainer2">
@@ -82,37 +70,9 @@
 			</Panel>
 			<Panel class="HR1px" />
 			<Panel class="Buttons">
-				<Panel class="ButtonWrapper">
-					<Button class="InputButton Fill" id="ResetBinding" onactivate="CitadelResetKeybinding()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_reset_keybind_tooltip , OptionsTooltip)" onmouseout="UIHideTextTooltip()">
-						<Panel class="Bottom" />
-						<Panel class="Top" />
-						<Panel class="Content IconOnly">
-							<Image texturewidth="20px" textureheight="20px" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/reset.vsvg" />
-						</Panel>
-					</Button>
-				</Panel>
-				<Panel class="ButtonWrapper">
-					<Button class="InputButton Fill" id="CancelBinding" onactivate="UIPopupButtonClicked()">
-						<Panel class="Bottom" />
-						<Panel class="Top" />
-						<Panel class="Content">
-							<Label text="#citadel_keybind_popup_cancel" />
-						</Panel>
-					</Button>
-				</Panel>
-				<Panel class="ButtonWrapper">
-					<Button class="InputButtonBorderRadius Fill" id="ConfirmBinding" onactivate="CitadelConfirmKeyBind()">
-						<Panel class="Bottom">
-							<Panel class="Background" />
-						</Panel>
-						<Panel class="Top">
-							<Panel class="Background" />
-						</Panel>
-						<Panel class="Content">
-							<Label text="{s:confirm_button_text}" />
-						</Panel>
-					</Button>
-				</Panel>
+				<CitadelButton id="ResetBinding" class="Medium Fill" imagesrc="s2r://panorama/images/icons/reset.vsvg" onactivate="CitadelResetKeybinding()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_reset_keybind_tooltip , OptionsTooltip)" onmouseout="UIHideTextTooltip()" />
+				<CitadelButton id="CancelBinding" class="Medium Fill" text="#citadel_keybind_popup_cancel" onactivate="UIPopupButtonClicked()" />
+				<CitadelButton id="ConfirmBinding" class="Medium Fill CTA" text="{s:confirm_button_text}" onactivate="CitadelConfirmKeyBind()" />
 			</Panel>
 		</Panel>
 	</PopupKeybind>

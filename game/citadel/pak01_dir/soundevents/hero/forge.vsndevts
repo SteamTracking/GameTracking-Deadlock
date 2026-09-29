@@ -248,8 +248,8 @@
 	}
 	Forge.Turret.Cast = 
 	{
-		base = "Base.Ability"
-		volume = 2.0
+		base = "Base.Ability.Cast"
+		volume = 3.0
 		pitch_rand_min = -0.05
 		pitch_rand_max = 0.05
 		vsnd_files = "sounds/abilities/forge/forge_turret_cast_01.vsnd"
@@ -258,7 +258,7 @@
 	Forge.Turret.Place = 
 	{
 		base = "Base.Ability.Detached"
-		volume = 2.0
+		volume = 4.0
 		pitch_rand_max = 0.02
 		pitch_rand_min = -0.02
 		block_duration = 0.5
@@ -332,28 +332,29 @@
 	Forge.Specter.Select = 
 	{
 		base = "Base.Ability"
-		volume = -7.0
+		volume = -6.0
 		vsnd_files = "sounds/abilities/forge/forge_specter_select.vsnd"
 		vsnd_duration = 1.240748
 	}
 	Forge.Specter.Unselect = 
 	{
 		base = "Base.Ability"
-		volume = -7.0
+		volume = -6.0
 		vsnd_files = "sounds/abilities/forge/forge_specter_unselect.vsnd"
 		vsnd_duration = 1.245215
 	}
 	Forge.Specter.Cast = 
 	{
-		base = "Base.Ability"
-		volume = 0.0
+		base = "Base.Ability.Cast"
+		volume = 2.0
+		volume_offset_team = 3.0
 		vsnd_files = "sounds/abilities/forge/forge_specter_cast.vsnd"
 		vsnd_duration = 1.487596
 	}
 	Forge.Specter.Start = 
 	{
 		base = "Base.Ability.Detached"
-		volume = 0.0
+		volume = 2.0
 		volume_offset_team = 5.0
 		vsnd_files = "sounds/abilities/forge/forge_specter_deploy.vsnd"
 		vsnd_duration = 3.144989
@@ -361,10 +362,10 @@
 	Forge.MobileResupply.Aura.Lp = 
 	{
 		base = "Base.Ability.Detached"
-		volume = 2.0
+		volume = 4.0
 		volume_fade_in = 0.2
 		volume_fade_out = 0.3
-		volume_offset_team = 4.0
+		volume_offset_team = 5.0
 		spread_max = 200.0
 		spread_max_value_team = 0.5
 		spread_max_value_player = 0.5
@@ -377,13 +378,13 @@
 	Forge.MobileResupply.End = 
 	{
 		base = "Base.Ability.Detached"
-		volume = -1.0
+		volume = 0.0
 		vsnd_files = "sounds/abilities/forge/forge_specter_aura_end.vsnd"
 		vsnd_duration = 2.662222
 	}
 	Forge.FissureWall.Cast = 
 	{
-		base = "Base.Ability"
+		base = "Base.Ability.Cast"
 		volume = 1.0
 		vsnd_files = "sounds/abilities/forge/a3_fissure_wall/forge_a3_fissure_wall_cast_01.vsnd"
 		vsnd_duration = 1.725329
@@ -436,10 +437,8 @@
 	}
 	Forge.FissureWall.ApplySlow = 
 	{
-		base = "Base.Ability.StatusEffect"
-		volume = -1.0
-		block_team = true
-		block_opponent = true
+		base = "Base.Ability.Hit"
+		volume = 5.0
 		pitch_rand_min = -0.1
 		pitch_rand_max = 0.1
 		vsnd_files = 
@@ -488,7 +487,7 @@
 	}
 	Forge.Rocket.Barrage.Fire = 
 	{
-		base = "Base.Ability.Ult"
+		base = "Base.Ability.Ult.Cast"
 		volume = -3.0
 		limiter_on = 1.0
 		limiter_max = 2.0
@@ -552,12 +551,11 @@
 	}
 	Forge.Rocket.Barrage.Explode = 
 	{
-		base = "Base.Ability.Projectile"
+		base = "Base.Ability.Detached"
 		volume = -10.0
 		limiter_on = 1.0
 		limiter_max = 2.0
 		volume_fade_out = 0.1
-		position_offset = [ 0.0, 0.0, 50.0 ]
 		vsnd_files = 
 		[
 			"sounds/abilities/forge/forge_rocket_barrage_explo_01.vsnd",
@@ -615,35 +613,8 @@
 	}
 	McGinnis.Melee.Swing = 
 	{
-		base = "Base.Movement.Melee"
+		base = "Hero.Default.Melee.Swing"
 		track_2.vsnd_track_vol_offset_db = -5.0
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_short_01.vsnd",
-			"sounds/player/melee/shared/swing_short_02.vsnd",
-			"sounds/player/melee/shared/swing_short_03.vsnd",
-			"sounds/player/melee/shared/swing_short_04.vsnd",
-			"sounds/player/melee/shared/swing_short_05.vsnd",
-			"sounds/player/melee/shared/swing_short_06.vsnd",
-			"sounds/player/melee/shared/swing_short_07.vsnd",
-			"sounds/player/melee/shared/swing_short_08.vsnd",
-			"sounds/player/melee/shared/swing_short_09.vsnd",
-			"sounds/player/melee/shared/swing_short_10.vsnd",
-			"sounds/player/melee/shared/swing_short_11.vsnd",
-			"sounds/player/melee/shared/swing_short_12.vsnd",
-			"sounds/player/melee/shared/swing_short_13.vsnd",
-			"sounds/player/melee/shared/swing_short_14.vsnd",
-			"sounds/player/melee/shared/swing_short_15.vsnd",
-			"sounds/player/melee/shared/swing_short_16.vsnd",
-			"sounds/player/melee/shared/swing_short_17.vsnd",
-			"sounds/player/melee/shared/swing_short_18.vsnd",
-			"sounds/player/melee/shared/swing_short_19.vsnd",
-			"sounds/player/melee/shared/swing_short_20.vsnd",
-			"sounds/player/melee/shared/swing_short_21.vsnd",
-			"sounds/player/melee/shared/swing_short_22.vsnd",
-			"sounds/player/melee/shared/swing_short_23.vsnd",
-			"sounds/player/melee/shared/swing_short_24.vsnd",
-		]
 		track_2.track_vsnd_files = 
 		[
 			"sounds/player/movement/forge/forge_foley_short_01.vsnd",
@@ -655,40 +626,11 @@
 			"sounds/player/movement/forge/forge_foley_short_07.vsnd",
 			"sounds/player/movement/forge/forge_foley_short_08.vsnd",
 		]
-		vsnd_duration = 1.062208
 	}
 	McGinnis.Melee.Swing.Charged = 
 	{
-		base = "Base.Movement.Melee"
+		base = "Hero.Default.Melee.Charged"
 		track_2.vsnd_track_vol_offset_db = -5.0
-		vsnd_files = 
-		[
-			"sounds/player/melee/shared/swing_long_01.vsnd",
-			"sounds/player/melee/shared/swing_long_02.vsnd",
-			"sounds/player/melee/shared/swing_long_03.vsnd",
-			"sounds/player/melee/shared/swing_long_04.vsnd",
-			"sounds/player/melee/shared/swing_long_05.vsnd",
-			"sounds/player/melee/shared/swing_long_06.vsnd",
-			"sounds/player/melee/shared/swing_long_07.vsnd",
-			"sounds/player/melee/shared/swing_long_08.vsnd",
-			"sounds/player/melee/shared/swing_long_09.vsnd",
-			"sounds/player/melee/shared/swing_long_10.vsnd",
-			"sounds/player/melee/shared/swing_long_11.vsnd",
-			"sounds/player/melee/shared/swing_long_12.vsnd",
-			"sounds/player/melee/shared/swing_long_13.vsnd",
-			"sounds/player/melee/shared/swing_long_14.vsnd",
-			"sounds/player/melee/shared/swing_long_15.vsnd",
-			"sounds/player/melee/shared/swing_long_16.vsnd",
-			"sounds/player/melee/shared/swing_long_17.vsnd",
-			"sounds/player/melee/shared/swing_long_18.vsnd",
-			"sounds/player/melee/shared/swing_long_19.vsnd",
-			"sounds/player/melee/shared/swing_long_20.vsnd",
-			"sounds/player/melee/shared/swing_long_21.vsnd",
-			"sounds/player/melee/shared/swing_long_22.vsnd",
-			"sounds/player/melee/shared/swing_long_23.vsnd",
-			"sounds/player/melee/shared/swing_long_24.vsnd",
-			"sounds/player/melee/shared/swing_long_25.vsnd",
-		]
 		track_2.track_vsnd_files = 
 		[
 			"sounds/player/movement/forge/forge_foley_short_01.vsnd",
@@ -700,7 +642,6 @@
 			"sounds/player/movement/forge/forge_foley_short_07.vsnd",
 			"sounds/player/movement/forge/forge_foley_short_08.vsnd",
 		]
-		vsnd_duration = 1.399792
 	}
 	McGinnis.Movement.Long = 
 	{
@@ -775,7 +716,7 @@
 	Forge.Progession.Page.Win.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "forge"
+		context_name = "hero_forge"
 		vsnd_files = 
 		[
 			"sounds/vo/forge/forge_killstreak_start_04.vsnd",
@@ -787,7 +728,7 @@
 	Forge.Progession.Page.Lose.VO = 
 	{
 		base = "Base.VO.HeroVictory"
-		context_name = "forge"
+		context_name = "hero_forge"
 		vsnd_files = 
 		[
 			"sounds/vo/forge/forge_sad_05.vsnd",

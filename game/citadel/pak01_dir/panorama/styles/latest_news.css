@@ -11,8 +11,6 @@ CitadelLatestNews
 	transition-property: opacity, transform, brightness;
 	transition-duration: 0.1s;
 	transition-timing-function: ease-in-out;
-	opacity-mask: url("s2r://panorama/images/main_menu/text_speckle_mask_main_psd.vtex");
-	opacity-mask-scale: 100% 100%;
 	animation-name: NewsFadeIn;
 	animation-duration: 22s;
 	animation-timing-function: ease-in;
@@ -57,7 +55,23 @@ CitadelLatestNews.HasNewsEntry:not(.NewsEntryAlreadySeen)
 {
 	width: 100%;
 	height: width-percentage( 56.25% );
+	margin-bottom: 8px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center bottom;
 	visibility: collapse;
+}
+
+.OldGods #NewsEntryImage
+{
+	background-image: url("s2r://panorama/images/main_menu/old_gods_new_blood_png.vtex");
+	visibility: visible;
+}
+
+.CityNeverSleeps #NewsEntryImage
+{
+	background-image: url("s2r://panorama/images/main_menu/city_never_sleeps_png.vtex");
+	visibility: visible;
 }
 
 #NewsEntryInfo

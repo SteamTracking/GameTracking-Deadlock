@@ -50,15 +50,10 @@
 //			]
 //		},
 //		"m_flProceduralIdleTurnSpeed": 180.000000,
-//		"m_heading":
-//		{
-//			"m_eMode": "eContinuous",
-//			"m_bUseBadZones": true,
-//			"m_badZones":
-//			[
-//			],
-//			"m_flPredictionLookAhead": 0.000000
-//		},
+//		"m_eStrafeMode": "eContinuous",
+//		"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//		"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//		"m_flStrafeTransitionMinPathLength": 60.000000,
 //		"m_flMaxIdleTurnScaleUp": 0.200000,
 //		"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //		"m_flBashStartDistance": 0.000000,
@@ -69,6 +64,8 @@
 //			4.000000
 //		],
 //		"m_flMantleStartDistance": 50.000000,
+//		"m_flLeanCalculationLookAheadDistance": 50.000000,
+//		"m_flLeanSmoothingFactor": 0.050000,
 //		"m_bEnabled": true
 //	},
 //	"m_medium":
@@ -122,15 +119,10 @@
 //			]
 //		},
 //		"m_flProceduralIdleTurnSpeed": 180.000000,
-//		"m_heading":
-//		{
-//			"m_eMode": "eContinuous",
-//			"m_bUseBadZones": true,
-//			"m_badZones":
-//			[
-//			],
-//			"m_flPredictionLookAhead": 0.000000
-//		},
+//		"m_eStrafeMode": "eContinuous",
+//		"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//		"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//		"m_flStrafeTransitionMinPathLength": 60.000000,
 //		"m_flMaxIdleTurnScaleUp": 0.200000,
 //		"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //		"m_flBashStartDistance": 0.000000,
@@ -141,6 +133,8 @@
 //			4.000000
 //		],
 //		"m_flMantleStartDistance": 50.000000,
+//		"m_flLeanCalculationLookAheadDistance": 50.000000,
+//		"m_flLeanSmoothingFactor": 0.050000,
 //		"m_bEnabled": false
 //	},
 //	"m_fast":
@@ -194,15 +188,10 @@
 //			]
 //		},
 //		"m_flProceduralIdleTurnSpeed": 180.000000,
-//		"m_heading":
-//		{
-//			"m_eMode": "eContinuous",
-//			"m_bUseBadZones": true,
-//			"m_badZones":
-//			[
-//			],
-//			"m_flPredictionLookAhead": 0.000000
-//		},
+//		"m_eStrafeMode": "eContinuous",
+//		"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//		"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//		"m_flStrafeTransitionMinPathLength": 60.000000,
 //		"m_flMaxIdleTurnScaleUp": 0.200000,
 //		"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //		"m_flBashStartDistance": 0.000000,
@@ -213,6 +202,8 @@
 //			4.000000
 //		],
 //		"m_flMantleStartDistance": 50.000000,
+//		"m_flLeanCalculationLookAheadDistance": 50.000000,
+//		"m_flLeanSmoothingFactor": 0.050000,
 //		"m_bEnabled": false
 //	},
 //	"m_veryFast":
@@ -266,15 +257,10 @@
 //			]
 //		},
 //		"m_flProceduralIdleTurnSpeed": 180.000000,
-//		"m_heading":
-//		{
-//			"m_eMode": "eContinuous",
-//			"m_bUseBadZones": true,
-//			"m_badZones":
-//			[
-//			],
-//			"m_flPredictionLookAhead": 0.000000
-//		},
+//		"m_eStrafeMode": "eContinuous",
+//		"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//		"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//		"m_flStrafeTransitionMinPathLength": 60.000000,
 //		"m_flMaxIdleTurnScaleUp": 0.200000,
 //		"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //		"m_flBashStartDistance": 0.000000,
@@ -285,6 +271,8 @@
 //			4.000000
 //		],
 //		"m_flMantleStartDistance": 50.000000,
+//		"m_flLeanCalculationLookAheadDistance": 50.000000,
+//		"m_flLeanSmoothingFactor": 0.050000,
 //		"m_bEnabled": false
 //	},
 //	"m_crouchStance":
@@ -340,15 +328,10 @@
 //				]
 //			},
 //			"m_flProceduralIdleTurnSpeed": 180.000000,
-//			"m_heading":
-//			{
-//				"m_eMode": "eContinuous",
-//				"m_bUseBadZones": true,
-//				"m_badZones":
-//				[
-//				],
-//				"m_flPredictionLookAhead": 0.000000
-//			},
+//			"m_eStrafeMode": "eContinuous",
+//			"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//			"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//			"m_flStrafeTransitionMinPathLength": 60.000000,
 //			"m_flMaxIdleTurnScaleUp": 0.200000,
 //			"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //			"m_flBashStartDistance": 0.000000,
@@ -359,6 +342,8 @@
 //				4.000000
 //			],
 //			"m_flMantleStartDistance": 50.000000,
+//			"m_flLeanCalculationLookAheadDistance": 50.000000,
+//			"m_flLeanSmoothingFactor": 0.050000,
 //			"m_bEnabled": true
 //		},
 //		"m_medium":
@@ -412,15 +397,10 @@
 //				]
 //			},
 //			"m_flProceduralIdleTurnSpeed": 180.000000,
-//			"m_heading":
-//			{
-//				"m_eMode": "eContinuous",
-//				"m_bUseBadZones": true,
-//				"m_badZones":
-//				[
-//				],
-//				"m_flPredictionLookAhead": 0.000000
-//			},
+//			"m_eStrafeMode": "eContinuous",
+//			"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//			"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//			"m_flStrafeTransitionMinPathLength": 60.000000,
 //			"m_flMaxIdleTurnScaleUp": 0.200000,
 //			"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //			"m_flBashStartDistance": 0.000000,
@@ -431,6 +411,8 @@
 //				4.000000
 //			],
 //			"m_flMantleStartDistance": 50.000000,
+//			"m_flLeanCalculationLookAheadDistance": 50.000000,
+//			"m_flLeanSmoothingFactor": 0.050000,
 //			"m_bEnabled": false
 //		},
 //		"m_fast":
@@ -484,15 +466,10 @@
 //				]
 //			},
 //			"m_flProceduralIdleTurnSpeed": 180.000000,
-//			"m_heading":
-//			{
-//				"m_eMode": "eContinuous",
-//				"m_bUseBadZones": true,
-//				"m_badZones":
-//				[
-//				],
-//				"m_flPredictionLookAhead": 0.000000
-//			},
+//			"m_eStrafeMode": "eContinuous",
+//			"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//			"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//			"m_flStrafeTransitionMinPathLength": 60.000000,
 //			"m_flMaxIdleTurnScaleUp": 0.200000,
 //			"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //			"m_flBashStartDistance": 0.000000,
@@ -503,6 +480,8 @@
 //				4.000000
 //			],
 //			"m_flMantleStartDistance": 50.000000,
+//			"m_flLeanCalculationLookAheadDistance": 50.000000,
+//			"m_flLeanSmoothingFactor": 0.050000,
 //			"m_bEnabled": false
 //		},
 //		"m_veryFast":
@@ -556,15 +535,10 @@
 //				]
 //			},
 //			"m_flProceduralIdleTurnSpeed": 180.000000,
-//			"m_heading":
-//			{
-//				"m_eMode": "eContinuous",
-//				"m_bUseBadZones": true,
-//				"m_badZones":
-//				[
-//				],
-//				"m_flPredictionLookAhead": 0.000000
-//			},
+//			"m_eStrafeMode": "eContinuous",
+//			"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//			"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//			"m_flStrafeTransitionMinPathLength": 60.000000,
 //			"m_flMaxIdleTurnScaleUp": 0.200000,
 //			"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //			"m_flBashStartDistance": 0.000000,
@@ -575,6 +549,8 @@
 //				4.000000
 //			],
 //			"m_flMantleStartDistance": 50.000000,
+//			"m_flLeanCalculationLookAheadDistance": 50.000000,
+//			"m_flLeanSmoothingFactor": 0.050000,
 //			"m_bEnabled": false
 //		},
 //		"m_bEnabled": false
@@ -632,15 +608,10 @@
 //				]
 //			},
 //			"m_flProceduralIdleTurnSpeed": 180.000000,
-//			"m_heading":
-//			{
-//				"m_eMode": "eContinuous",
-//				"m_bUseBadZones": true,
-//				"m_badZones":
-//				[
-//				],
-//				"m_flPredictionLookAhead": 0.000000
-//			},
+//			"m_eStrafeMode": "eContinuous",
+//			"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//			"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//			"m_flStrafeTransitionMinPathLength": 60.000000,
 //			"m_flMaxIdleTurnScaleUp": 0.200000,
 //			"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //			"m_flBashStartDistance": 0.000000,
@@ -651,6 +622,8 @@
 //				4.000000
 //			],
 //			"m_flMantleStartDistance": 50.000000,
+//			"m_flLeanCalculationLookAheadDistance": 50.000000,
+//			"m_flLeanSmoothingFactor": 0.050000,
 //			"m_bEnabled": true
 //		},
 //		"m_medium":
@@ -704,15 +677,10 @@
 //				]
 //			},
 //			"m_flProceduralIdleTurnSpeed": 180.000000,
-//			"m_heading":
-//			{
-//				"m_eMode": "eContinuous",
-//				"m_bUseBadZones": true,
-//				"m_badZones":
-//				[
-//				],
-//				"m_flPredictionLookAhead": 0.000000
-//			},
+//			"m_eStrafeMode": "eContinuous",
+//			"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//			"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//			"m_flStrafeTransitionMinPathLength": 60.000000,
 //			"m_flMaxIdleTurnScaleUp": 0.200000,
 //			"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //			"m_flBashStartDistance": 0.000000,
@@ -723,6 +691,8 @@
 //				4.000000
 //			],
 //			"m_flMantleStartDistance": 50.000000,
+//			"m_flLeanCalculationLookAheadDistance": 50.000000,
+//			"m_flLeanSmoothingFactor": 0.050000,
 //			"m_bEnabled": false
 //		},
 //		"m_fast":
@@ -776,15 +746,10 @@
 //				]
 //			},
 //			"m_flProceduralIdleTurnSpeed": 180.000000,
-//			"m_heading":
-//			{
-//				"m_eMode": "eContinuous",
-//				"m_bUseBadZones": true,
-//				"m_badZones":
-//				[
-//				],
-//				"m_flPredictionLookAhead": 0.000000
-//			},
+//			"m_eStrafeMode": "eContinuous",
+//			"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//			"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//			"m_flStrafeTransitionMinPathLength": 60.000000,
 //			"m_flMaxIdleTurnScaleUp": 0.200000,
 //			"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //			"m_flBashStartDistance": 0.000000,
@@ -795,6 +760,8 @@
 //				4.000000
 //			],
 //			"m_flMantleStartDistance": 50.000000,
+//			"m_flLeanCalculationLookAheadDistance": 50.000000,
+//			"m_flLeanSmoothingFactor": 0.050000,
 //			"m_bEnabled": false
 //		},
 //		"m_veryFast":
@@ -848,15 +815,10 @@
 //				]
 //			},
 //			"m_flProceduralIdleTurnSpeed": 180.000000,
-//			"m_heading":
-//			{
-//				"m_eMode": "eContinuous",
-//				"m_bUseBadZones": true,
-//				"m_badZones":
-//				[
-//				],
-//				"m_flPredictionLookAhead": 0.000000
-//			},
+//			"m_eStrafeMode": "eContinuous",
+//			"m_flStrafeTransitionAimLeftHysteresis": 20.000000,
+//			"m_flStrafeTransitionAimRightHysteresis": 20.000000,
+//			"m_flStrafeTransitionMinPathLength": 60.000000,
 //			"m_flMaxIdleTurnScaleUp": 0.200000,
 //			"m_flMovementPlantedTurnAngleThreshold": 120.000000,
 //			"m_flBashStartDistance": 0.000000,
@@ -867,17 +829,17 @@
 //				4.000000
 //			],
 //			"m_flMantleStartDistance": 50.000000,
+//			"m_flLeanCalculationLookAheadDistance": 50.000000,
+//			"m_flLeanSmoothingFactor": 0.050000,
 //			"m_bEnabled": false
 //		},
 //		"m_bEnabled": false
 //	},
-//	"m_customGaits":
+//	"m_vecPoseTransitions":
 //	[
 //	],
 //	"m_commonSettings":
 //	{
-//		"m_flSpringConstant": 10.000000,
-//		"m_flMaxSpringTension": 100.000000,
 //		"m_flSharpStartAngle": 180.000000,
 //		"m_flMinIdleTurnAngle": 10.000000,
 //		"m_bUseSmoothPaths": true,
@@ -907,6 +869,6 @@ class CAI_NPCMovementSettingsVData
 	CAI_NPCMovementStanceSettings_t m_crouchStance;
 	// MPropertyAutoExpandSelf
 	CAI_NPCMovementStanceSettings_t m_proneStance;
-	CUtlVector< CAI_CustomMovementGaitSettings > m_customGaits;
+	CUtlVector< AI_MovementPoseTransition_t > m_vecPoseTransitions;
 	AI_CommonMovementSettings_t m_commonSettings;
 };

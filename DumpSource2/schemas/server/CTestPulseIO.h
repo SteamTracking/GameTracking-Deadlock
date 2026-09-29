@@ -8,6 +8,7 @@ class CTestPulseIO : public CLogicalEntity
 	CEntityOutputTemplate< Color > m_OnVariantColor;
 	CEntityOutputTemplate< Vector > m_OnVariantVector;
 	bool m_bAllowEmptyInputs;
+	CTestPulseIOComponent_Derived m_TestComponent;
 	CEntityIOOutput m_OnInternalTestVoid;
 	CEntityOutputTemplate< bool > m_OnInternalTestBool;
 	CEntityOutputTemplate< int32 > m_OnInternalTestInt;
