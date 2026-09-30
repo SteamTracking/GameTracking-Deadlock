@@ -1,15 +1,6 @@
-// MGetKV3ClassDefaults = {
-//	"nId": -1,
-//	"hSourcePath": null,
-//	"flSourceT": 0.000000,
-//	"bSourceReversing": false,
-//	"hDestPath": null,
-//	"flDestT": 0.000000,
-//	"bDestReversing": false
-//}
 class FuncMoverTransitionRecord_t
 {
-	int32 nId;
+	int32 nId; // = -1
 	CHandle< CPathMover > hSourcePath;
 	float32 flSourceT;
 	bool bSourceReversing;

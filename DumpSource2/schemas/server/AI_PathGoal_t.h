@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 // MHasKV3TransferPolymorphicClassname
 class AI_PathGoal_t : public CNavGoalConstraints
 {

@@ -1,13 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unRequiredGold": 0,
-//	"m_bUseStandardUpgrade": false,
-//	"m_mapBonusCurrencies":
-//	{
-//	},
-//	"m_vecBonusUpgrades":
-//	[
-//	]
-//}
 class HeroLevel_t
 {
 	// MPropertyFlattenIntoParentRow

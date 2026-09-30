@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_sBodyGroupName": "",
-//	"m_BodygroupChoice": "",
-//	"m_nPriority": 0
-//}
 class CitadelBodygroupSetting_t
 {
 	// MPropertyAttributeEditor = "ModelDocPicker( MODELDOC_PICK_TYPE_BODY_GROUP )"

@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 // MHasKV3TransferPolymorphicClassname
 class AI_EnemyInfo_t : public AI_EnemyInfoBase_t
 {

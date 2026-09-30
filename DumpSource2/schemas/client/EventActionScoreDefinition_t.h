@@ -1,20 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"unActionScore": 0,
-//	"unActionScoreRepeatInterval": 0,
-//	"strRewardName": "",
-//	"strRewardDescription": "",
-//	"strRewardImage": "",
-//	"strRewardClass": "",
-//	"strAchievementCategory": "",
-//	"bIsAchievement": false,
-//	"bShowAchievementQuantity": false,
-//	"vecRewards":
-//	[
-//	],
-//	"vecRelatedActions":
-//	[
-//	]
-//}
 class EventActionScoreDefinition_t
 {
 	uint32 unActionScore;

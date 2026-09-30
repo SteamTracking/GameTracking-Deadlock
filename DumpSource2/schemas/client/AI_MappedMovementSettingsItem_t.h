@@ -1,7 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_sMovementSettingsId": "",
-//	"m_sMovementSettingsName": ""
-//}
 class AI_MappedMovementSettingsItem_t
 {
 	// MPropertyFlattenIntoParentRow

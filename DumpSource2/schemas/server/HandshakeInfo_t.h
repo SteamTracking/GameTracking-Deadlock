@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 class HandshakeInfo_t
 {
 	CGlobalSymbol m_sHandshakeName;

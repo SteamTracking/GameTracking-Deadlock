@@ -1,13 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadel_Hideout_ClockVData",
-//	"m_hModel": "",
-//	"m_HourParticle": "",
-//	"m_MinuteParticle": "",
-//	"m_strStartHourSound": "",
-//	"m_strHourSound": "",
-//	"m_strMinuteSound": "",
-//	"m_flHourChimeInterval": 1.000000
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Hideout_ClockVData : public CEntitySubclassVDataBase
 {
@@ -19,5 +9,5 @@ class CCitadel_Hideout_ClockVData : public CEntitySubclassVDataBase
 	CSoundEventName m_strStartHourSound;
 	CSoundEventName m_strHourSound;
 	CSoundEventName m_strMinuteSound;
-	float32 m_flHourChimeInterval;
+	float32 m_flHourChimeInterval; // = 1
 };

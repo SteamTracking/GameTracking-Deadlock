@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 class CAI_MotorServices::StanceRequest_t
 {
 	StanceType_t m_eStance;

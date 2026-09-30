@@ -1,14 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CNavLinkSubMotor_DefaultNavLink_GraphController",
-//	"m_hExternalGraph": 4294967295,
-//	"m_tNavLinkTarget": null,
-//	"m_sNavLinkEntryType": null,
-//	"m_sNavLinkExitType": null,
-//	"m_sNavLinkState": null,
-//	"m_sNavLinkEntryGait": null,
-//	"m_sNavLinkExitGait": null,
-//	"m_vNavLinkExitDirection": null
-//}
 // MHasKV3TransferPolymorphicClassname
 class CNavLinkSubMotor_DefaultNavLink_GraphController : public CAnimGraphControllerBase
 {

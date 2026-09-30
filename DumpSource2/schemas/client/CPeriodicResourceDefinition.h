@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unPeriodicResourceID": 0,
-//	"m_rtStartTimestamp": 0,
-//	"m_rtEndTimestamp": 0,
-//	"m_unPeriodDuration": 0,
-//	"m_unDefaultMaxValue": 0,
-//	"m_bExtendInitialPeriod": false
-//}
 class CPeriodicResourceDefinition
 {
 	PeriodicResourceID_t m_unPeriodicResourceID;

@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadelTriggerBonkVData",
-//	"m_strBonkParticle": "",
-//	"m_strBonkSound": ""
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadelTriggerBonkVData : public CEntitySubclassVDataBase
 {

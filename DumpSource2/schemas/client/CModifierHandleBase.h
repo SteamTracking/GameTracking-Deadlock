@@ -1,6 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CModifierHandleBase"
-//}
 // MHasKV3TransferPolymorphicClassname
 class CModifierHandleBase
 {

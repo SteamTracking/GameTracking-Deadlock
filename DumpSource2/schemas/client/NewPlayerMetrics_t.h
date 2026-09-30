@@ -1,15 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strSkillTierName": "",
-//	"m_NetWorth": 0,
-//	"m_DamageTaken": 0,
-//	"m_BossDamage": 0,
-//	"m_PlayerDamage": 0,
-//	"m_LastHits": 0,
-//	"m_OrbsSecured": 0,
-//	"m_OrbsDenied": 0,
-//	"m_AbilitiesUpgraded": 0,
-//	"m_ModsPurchased": 0
-//}
 class NewPlayerMetrics_t
 {
 	CUtlString m_strSkillTierName;

@@ -1,15 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unStatID": 0,
-//	"m_eStatImpl": "k_ePlayerTrackedStatImpl_Invalid",
-//	"m_expressionData":
-//	{
-//		"strExpression": ""
-//	},
-//	"m_heroAdjectiveData":
-//	{
-//		"m_strAdjective": ""
-//	}
-//}
 // MVDataRoot
 class CPlayerTrackedStatDefinition
 {
@@ -18,7 +6,7 @@ class CPlayerTrackedStatDefinition
 	// MPropertyAttributeEditor = "locked_int()"
 	TrackedStatID_t m_unStatID;
 	// MPropertyDescription = "how this stat is implemented"
-	EPlayerTrackedStatImpl m_eStatImpl;
+	EPlayerTrackedStatImpl m_eStatImpl; // = "k_ePlayerTrackedStatImpl_Invalid"
 	// MPropertyDescription = "For k_ePlayerTrackedStatImpl_Expression, what is the expression information."
 	// MPropertySuppressExpr = "m_eStatImpl != k_ePlayerTrackedStatImpl_Expression"
 	TrackedStatExpressionData_t m_expressionData;

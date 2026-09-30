@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CAI_MotorServices_GraphController",
-//	"m_hExternalGraph": 4294967295,
-//	"m_sNavLinkSelection": null,
-//	"m_bNavLinkIsOnPath": null,
-//	"m_flPathDistanceToNavLink": null,
-//	"m_bIsNonZUp": null,
-//	"m_flMovementTargetSpeed": null,
-//	"m_nNavLinkExternalGraphSlot": 0,
-//	"m_sAllowMovementOffPath": "",
-//	"m_sAllowMovementOffNavMesh": "",
-//	"m_sRestrictMovementToNavMeshDuringCustomMove": ""
-//}
 // MHasKV3TransferPolymorphicClassname
 class CAI_MotorServices_GraphController : public CAnimGraphControllerBase
 {

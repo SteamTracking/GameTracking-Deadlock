@@ -1,7 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_nAmount": 0,
-//	"m_sCurrencyPickup": ""
-//}
 class BreakablePropCurrencyReward_t
 {
 	// MPropertyDescription = "How much of this currency each recipient is granted"

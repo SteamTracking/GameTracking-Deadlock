@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 // MHasKV3TransferPolymorphicClassname
 class CAI_MotorGroundAnimGraph_GraphController : public CAnimGraphControllerBase
 {

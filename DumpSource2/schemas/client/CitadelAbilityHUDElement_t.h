@@ -1,16 +1,7 @@
-// MGetKV3ClassDefaults = {
-//	"m_eType": "CITADEL_ABILITY_HUD_ELEMENT_TYPE_GUN",
-//	"m_strContext": "",
-//	"m_strAdditionalClasses": "",
-//	"m_Layout": "",
-//	"m_Style": "",
-//	"m_bReverseProgress": false,
-//	"m_bShowStacksOnProgress": false
-//}
 // MPropertyArrayElementNameKey = "m_strContext"
 class CitadelAbilityHUDElement_t
 {
-	ECitadelAbilityHUDElementType_t m_eType;
+	ECitadelAbilityHUDElementType_t m_eType; // = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_GUN"
 	CUtlString m_strContext;
 	// MPropertyDescription = "Space separated set of classes to add to the panel (ex: "medium superCool noMiddle""
 	CUtlString m_strAdditionalClasses;

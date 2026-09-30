@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "C_PortraitWorldUnit_GraphController",
-//	"m_hExternalGraph": 4294967295,
-//	"m_BaseState": null,
-//	"m_ShopState": null
-//}
 // MHasKV3TransferPolymorphicClassname
 class C_PortraitWorldUnit_GraphController : public CAnimGraphControllerBase
 {

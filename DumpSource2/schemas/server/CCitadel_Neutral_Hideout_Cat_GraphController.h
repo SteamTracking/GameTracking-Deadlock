@@ -1,14 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadel_Neutral_Hideout_Cat_GraphController",
-//	"m_hExternalGraph": 4294967295,
-//	"m_flForwardSpeed": null,
-//	"m_flLookHeading": null,
-//	"m_flLookPitch": null,
-//	"m_flMoveSpeed": null,
-//	"m_MoveType": null,
-//	"m_BaseAction": null,
-//	"m_flRandomSeed": null
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Neutral_Hideout_Cat_GraphController : public CAnimGraphControllerBase
 {

@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_nID": 0,
-//	"m_sTitle": "",
-//	"m_sDescription": "",
-//	"sIcon": "",
-//	"m_sCreationDate": "",
-//	"m_eNewSettingsBadge": "New"
-//}
 // MVDataRoot
 class NewSettingsDefinition_t
 {
@@ -17,5 +9,5 @@ class NewSettingsDefinition_t
 	CUtlString m_sDescription;
 	CPanoramaImageName sIcon;
 	CUtlString m_sCreationDate;
-	ENewSettingsBadge m_eNewSettingsBadge;
+	ENewSettingsBadge m_eNewSettingsBadge; // = "New"
 };

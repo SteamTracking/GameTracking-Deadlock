@@ -1,16 +1,6 @@
-// MGetKV3ClassDefaults = {
-//	"eEntityClass": "CLASS_NONE",
-//	"vOffset2D":
-//	[
-//		0.000000,
-//		0.000000
-//	],
-//	"iLane": 0,
-//	"bAllLanes": false
-//}
 class MinimapOffsetDesc_t
 {
-	Class_T eEntityClass;
+	Class_T eEntityClass; // = "CLASS_NONE"
 	Vector2D vOffset2D;
 	int32 iLane;
 	bool bAllLanes;

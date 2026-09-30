@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 class CAI_InterestTarget
 {
 	CHandle< CBaseEntity > m_hTarget;

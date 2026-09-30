@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 class CAI_MotorServices::MovementGaitRequest_t
 {
 	SharedMovementGait_t m_eMovementGait;

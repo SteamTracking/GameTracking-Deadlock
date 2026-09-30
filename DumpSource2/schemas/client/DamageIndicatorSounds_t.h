@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strDamageDefault": "",
-//	"m_strDamageCrit": "",
-//	"m_strDamageLethal": "",
-//	"m_strDamageInvulnerable": "",
-//	"m_strDamageDOT": "",
-//	"m_strDamageHealthTransfer": ""
-//}
 class DamageIndicatorSounds_t
 {
 	CSoundEventName m_strDamageDefault;

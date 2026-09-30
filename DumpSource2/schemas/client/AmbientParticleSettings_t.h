@@ -1,12 +1,7 @@
-// MGetKV3ClassDefaults = {
-//	"m_nCP": 0,
-//	"m_eAttachmentType": "PATTACH_INVALID",
-//	"m_strAttachmentName": ""
-//}
 // MPropertyFriendlyName = "Citadel Ambient Particle Settings"
 class AmbientParticleSettings_t
 {
 	int32 m_nCP;
-	ParticleAttachment_t m_eAttachmentType;
+	ParticleAttachment_t m_eAttachmentType; // = "PATTACH_INVALID"
 	CUtlString m_strAttachmentName;
 };

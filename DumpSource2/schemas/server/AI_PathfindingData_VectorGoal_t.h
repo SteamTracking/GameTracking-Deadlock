@@ -1,33 +1,7 @@
-// MGetKV3ClassDefaults = {
-//	"m_OptionalStartPoint":
-//	{
-//		"m_Type": "WORLD_SPACE_POSITION",
-//		"m_vRelativeOffset":
-//		[
-//			340282346638528859811704183484516925440.000000,
-//			340282346638528859811704183484516925440.000000,
-//			340282346638528859811704183484516925440.000000
-//		],
-//		"m_vWorldSpacePos": null,
-//		"m_hEntity": null,
-//		"m_nLastKnownNavAreaVersion": 0,
-//		"m_nNavAreaID": 4294967295,
-//		"m_nNavBlockID": 4294967295
-//	},
-//	"m_vDir":
-//	[
-//		340282346638528859811704183484516925440.000000,
-//		340282346638528859811704183484516925440.000000,
-//		340282346638528859811704183484516925440.000000
-//	],
-//	"m_flTargetDist": 0.000000,
-//	"m_flMinDist": 0.000000,
-//	"m_bShouldDeflect": false
-//}
 class AI_PathfindingData_VectorGoal_t
 {
-	CRelativeLocation m_OptionalStartPoint;
-	Vector m_vDir;
+	CRelativeLocation m_OptionalStartPoint; // = { "m_Type": "WORLD_SPACE_POSITION", "m_hEntity": null, "m_nLastKnownNavAreaVersion": 0, "m_nNavAreaID": 4294967295, "m_nNavBlockID": 4294967295, "m_vRelativeOffset": [ 340282346638528859811704183484516925440, 340282346638528859811704183484516925440, 340282346638528859811704183484516925440 ], "m_vWorldSpacePos": null }
+	Vector m_vDir; // = [ 340282346638528859811704183484516925440, 340282346638528859811704183484516925440, 340282346638528859811704183484516925440 ]
 	float32 m_flTargetDist;
 	float32 m_flMinDist;
 	bool m_bShouldDeflect;

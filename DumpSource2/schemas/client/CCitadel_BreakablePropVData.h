@@ -1,66 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadel_BreakablePropVData",
-//	"m_bBreakOnDodgeTouch": false,
-//	"m_bRenderAfterDeath": false,
-//	"m_bSolidAfterDeath": false,
-//	"m_bDieOnBreak": true,
-//	"m_strDeathSequenceName": "",
-//	"m_strHitSequenceName": "",
-//	"m_flLootDelay": 0.000000,
-//	"m_bDamagedByBullets": false,
-//	"m_bDamagedByMelee": false,
-//	"m_bHeavyMeleeOnly": false,
-//	"m_bDamagedByAbilities": false,
-//	"m_bDamagedBySlide": false,
-//	"m_bDamagedByPlayersOnly": false,
-//	"m_iHealth": 0,
-//	"m_nMeleeHitsToBreak": 0,
-//	"m_nHeavyMeleeHitCount": 2,
-//	"m_bNoMeleeCleave": false,
-//	"m_bIsMantleable": false,
-//	"m_bRequireFullCostToBreak": true,
-//	"m_flOutlineRadius": 0.000000,
-//	"m_bRequireVisibleOnMinimapForOutline": false,
-//	"m_colorOutline":
-//	[
-//		0,
-//		0,
-//		0,
-//		0
-//	],
-//	"m_hModel": "",
-//	"m_flModelScale": 1.000000,
-//	"m_sMaterialGroupName": "",
-//	"m_ambientParticle": "",
-//	"m_breakParticle": "",
-//	"m_breakRollFailParticle": "",
-//	"m_sBreakSound": "",
-//	"m_sSpawnSound": "",
-//	"m_sBreakRollFailSound": "",
-//	"m_sMeleeDamageSound": "",
-//	"m_sOtherDamageSound": "",
-//	"m_sMeleeRejectSound": "",
-//	"m_OtherRejectSound": "",
-//	"m_sAmbientSound": "",
-//	"m_flInitialSpawnTime": 180.000000,
-//	"m_flInitialSpawnTimeTest": 1.000000,
-//	"m_flRespawnTime": 180.000000,
-//	"m_flRespawnTimeTest": 10.000000,
-//	"m_strMinimapCSSClassAlive": "",
-//	"m_strMinimapCSSClassDead": "",
-//	"m_flMinDistanceToRevealOnMinimap": 0.000000,
-//	"m_strLayoutFile": "",
-//	"m_flPanelHeightOffset": 0.000000,
-//	"m_flPanelDrawDistance": 0.000000,
-//	"m_strInWorldCSSClasses": "",
-//	"m_flPanelWidth": 1500.000000,
-//	"m_flPanelHeight": 1500.000000,
-//	"m_flPowerupDropChance": 0.000000,
-//	"m_eRollType": "ECitadelRandomRoll_BreakableGoldPickup",
-//	"m_mapPickupChances":
-//	{
-//	}
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 {
@@ -76,7 +13,7 @@ class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 	bool m_bSolidAfterDeath;
 	// MPropertyDescription = "If checked, this breakable will immediately die upon prop break."
 	// MPropertyFriendlyName = "Die on Break?"
-	bool m_bDieOnBreak;
+	bool m_bDieOnBreak; // = true
 	CUtlString m_strDeathSequenceName;
 	// MPropertyDescription = "Optional one-off animation played when this takes damage without breaking. Ignored if the model has no sequence with this name, so it is safe to set on a shared base."
 	// MPropertyFriendlyName = "Hit Sequence"
@@ -108,14 +45,14 @@ class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 	// MPropertyDescription = "How many hits a heavy melee counts as. 2 means one heavy opens a two-hit prop."
 	// MPropertyFriendlyName = "Heavy Melee Hit Count"
 	// MPropertySuppressExpr = "m_nMeleeHitsToBreak <= 0"
-	int32 m_nHeavyMeleeHitCount;
+	int32 m_nHeavyMeleeHitCount; // = 2
 	// MPropertyDescription = "If checked, a single melee swing can only hit one of these. When several are in the swing, only the nearest is hit, so they cannot be cleaved together."
 	// MPropertyFriendlyName = "No Melee Cleave"
 	// MPropertySuppressExpr = "m_bDamagedByMelee == false"
 	bool m_bNoMeleeCleave;
 	// MPropertyDescription = "Can be mantled?"
 	bool m_bIsMantleable;
-	bool m_bRequireFullCostToBreak;
+	bool m_bRequireFullCostToBreak; // = true
 	// MPropertyDescription = "Glow when within this range"
 	float32 m_flOutlineRadius;
 	// MPropertyDescription = "Also require being visible on the minimap"
@@ -128,7 +65,7 @@ class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 	// MPropertyDescription = "Model"
 	// MPropertyProvidesEditContextString = "ToolEditContext_ID_VMDL"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_hModel;
-	float32 m_flModelScale;
+	float32 m_flModelScale; // = 1
 	// MPropertyFriendlyName = "Material Group"
 	CModelMaterialGroupName m_sMaterialGroupName;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ambientParticle;
@@ -148,13 +85,13 @@ class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 	// MPropertyDescription = "3D ambient sound that plays while the prop is alive"
 	CSoundEventName m_sAmbientSound;
 	// MPropertyStartGroup = "Respawn Behavior"
-	float32 m_flInitialSpawnTime;
+	float32 m_flInitialSpawnTime; // = 180
 	// MPropertyDescription = "In test maps, use this as our initial spawn time"
-	float32 m_flInitialSpawnTimeTest;
+	float32 m_flInitialSpawnTimeTest; // = 1
 	// MPropertyDescription = "Respawn time"
-	float32 m_flRespawnTime;
+	float32 m_flRespawnTime; // = 180
 	// MPropertyDescription = "In test maps, use this as our respawn time"
-	float32 m_flRespawnTimeTest;
+	float32 m_flRespawnTimeTest; // = 10
 	// MPropertyStartGroup = "UI"
 	// MPropertyDescription = "CSS class to apply to this breakable's minimap icon while alive"
 	CUtlString m_strMinimapCSSClassAlive;
@@ -173,14 +110,14 @@ class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 	// MPropertySuppressExpr = "m_strLayoutFile == """
 	CUtlString m_strInWorldCSSClasses;
 	// MPropertySuppressExpr = "m_strLayoutFile == """
-	float32 m_flPanelWidth;
+	float32 m_flPanelWidth; // = 1500
 	// MPropertySuppressExpr = "m_strLayoutFile == """
-	float32 m_flPanelHeight;
+	float32 m_flPanelHeight; // = 1500
 	// MPropertyStartGroup = "Powerup Settings"
 	// MPropertyDescription = "Chance for this to drop a primary reward, 0 - 100%, this rolls first"
 	float32 m_flPowerupDropChance;
 	// MPropertyDescription = "Category for the random roller"
-	ECitadelRandomRollTypes m_eRollType;
+	ECitadelRandomRollTypes m_eRollType; // = "ECitadelRandomRoll_BreakableGoldPickup"
 	// MPropertyDescription = "What this prop can drop."
 	// MPropertyFriendlyName = "Rewards"
 	// MPropertySuppressExpr = "m_eRollType == ECitadelRandomRoll_BreakablePowerupPickup"

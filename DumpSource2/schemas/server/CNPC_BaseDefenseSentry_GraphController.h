@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CNPC_BaseDefenseSentry_GraphController",
-//	"m_hExternalGraph": 4294967295,
-//	"m_flPanel1": null,
-//	"m_bUnpackInstant": null,
-//	"m_flVelocity": null,
-//	"m_bAlert": null
-//}
 // MHasKV3TransferPolymorphicClassname
 class CNPC_BaseDefenseSentry_GraphController : public CNPC_SimpleAnimatingAI_GraphController
 {

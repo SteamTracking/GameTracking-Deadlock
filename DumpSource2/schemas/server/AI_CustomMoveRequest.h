@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 class AI_CustomMoveRequest
 {
 	CGlobalSymbol m_sType;

@@ -1,19 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CNPC_Boss_Tier3Core_GraphController",
-//	"m_hExternalGraph": 4294967295,
-//	"m_bCharge": null,
-//	"m_bDeath": null,
-//	"m_bExplode": null,
-//	"m_bIdle": null,
-//	"m_bReform": null,
-//	"m_bRelease": null,
-//	"m_flChargeDuration": null,
-//	"m_flDeathDuration": null,
-//	"m_flExplodeDuration": null,
-//	"m_flIdleDuration": null,
-//	"m_flReformDuration": null,
-//	"m_flReleaseDuration": null
-//}
 // MHasKV3TransferPolymorphicClassname
 class CNPC_Boss_Tier3Core_GraphController : public CAnimGraphControllerBase
 {

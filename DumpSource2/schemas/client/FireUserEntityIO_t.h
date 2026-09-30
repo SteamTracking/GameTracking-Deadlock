@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_bFireUser1": false,
-//	"m_bFireUser2": false,
-//	"m_bFireUser3": false,
-//	"m_bFireUser4": false
-//}
 class FireUserEntityIO_t
 {
 	bool m_bFireUser1;

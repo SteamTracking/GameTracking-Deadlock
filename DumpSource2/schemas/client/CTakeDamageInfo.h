@@ -1,36 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CTakeDamageInfo",
-//	"m_vecDamageForce":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"m_vecDamagePosition": null,
-//	"m_vecReportedPosition": null,
-//	"m_vecDamageDirection":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"m_hInflictor": null,
-//	"m_hAttacker": null,
-//	"m_hAbility": null,
-//	"m_flDamage": 0.000000,
-//	"m_flTotalledDamage": 0.000000,
-//	"m_bitsDamageType": "",
-//	"m_iDamageCustom": 0,
-//	"m_iAmmoType": "",
-//	"m_flOriginalDamage": 0.000000,
-//	"m_bShouldBleed": false,
-//	"m_bShouldSpark": false,
-//	"m_flDamageAbsorbed": 0.000000,
-//	"m_nDamageFlags": "",
-//	"m_DestructibleHitGroupRequests":
-//	[
-//	]
-//}
 // MHasKV3TransferPolymorphicClassname
 class CTakeDamageInfo
 {

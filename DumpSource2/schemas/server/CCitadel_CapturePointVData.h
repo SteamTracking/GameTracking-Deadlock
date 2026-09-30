@@ -1,33 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadel_CapturePointVData",
-//	"m_strPreEnableParticle": "",
-//	"m_strOnBecomeEnableParticle": "",
-//	"m_strEnabledParticle": "",
-//	"m_strOnFullyCapturedParticle": "",
-//	"m_EnabledLoopSounds":
-//	{
-//	},
-//	"m_EnemyCapturingLoopSounds":
-//	{
-//	},
-//	"m_FriendlyCapturingLoopSounds":
-//	{
-//	},
-//	"m_strPreEnableStartSound": "",
-//	"m_strEnableStartSound": "",
-//	"m_strFullyCapturedSound": "",
-//	"m_modifierCapturer":
-//	{
-//	},
-//	"m_flDecaySpeed": 0.100000,
-//	"m_remapCapturersToCaptureTime": 0.000000,
-//	"m_flEnemyProgressRemoveScale": 3.000000,
-//	"m_flTotalHealthToCapture": 50.000000,
-//	"m_bDestroyNearbyNeutrals": false,
-//	"m_flInitialEnableTimeInSeconds": 0.000000,
-//	"m_flPreEnableWindowInSeconds": 10.000000,
-//	"m_flRespawnRangeInSeconds": 0.000000
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_CapturePointVData : public CEntitySubclassVDataBase
 {
@@ -57,20 +27,20 @@ class CCitadel_CapturePointVData : public CEntitySubclassVDataBase
 	CEmbeddedSubclass< CBaseModifier > m_modifierCapturer;
 	// MPropertyStartGroup = "Capture Settings"
 	// MPropertyDescription = "When no playars are in the capture area, what fraction of progress is lost per second."
-	float32 m_flDecaySpeed;
+	float32 m_flDecaySpeed; // = 0.1
 	// MPropertyDescription = "Remap of number of capturers to capture time in seconds.  Smaller is faster!"
 	CRemapFloat m_remapCapturersToCaptureTime;
 	// MPropertyDescription = "Using the above capture times, scale them by this amount when undoing enemy progress."
-	float32 m_flEnemyProgressRemoveScale;
+	float32 m_flEnemyProgressRemoveScale; // = 3
 	// MPropertyDescription = "How much health will be taken from each player over a full capture."
-	float32 m_flTotalHealthToCapture;
+	float32 m_flTotalHealthToCapture; // = 50
 	// MPropertyDescription = "Kill nearby neutrals."
 	bool m_bDestroyNearbyNeutrals;
 	// MPropertyStartGroup = "Match Settings"
 	// MPropertyDescription = "Time in the match this capture point can first become enabled."
 	CRangeFloat m_flInitialEnableTimeInSeconds;
 	// MPropertyDescription = "How long before the enable time to trigger pre-enabled effects."
-	float32 m_flPreEnableWindowInSeconds;
+	float32 m_flPreEnableWindowInSeconds; // = 10
 	// MPropertyDescription = "Once the escort dies, how long until we re-enable ourselves."
 	CRangeFloat m_flRespawnRangeInSeconds;
 };

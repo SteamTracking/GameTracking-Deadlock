@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_flStrength": 0.000000,
-//	"m_nQuantizeType": 0,
-//	"m_flQuantizeScale": 0.000000,
-//	"m_flQuantizeStrength": 0.000000,
-//	"m_flFrameRate": 0.000000,
-//	"m_flSpeed": 0.000000,
-//	"m_flJumpStrength": 0.000000,
-//	"m_flDistortStrength": 0.000000,
-//	"m_flWhiteNoiseStrength": 0.000000,
-//	"m_flScanlineStrength": 0.000000,
-//	"m_flBreakupStrength": 0.000000
-//}
 class GlitchSettings_t
 {
 	float32 m_flStrength;

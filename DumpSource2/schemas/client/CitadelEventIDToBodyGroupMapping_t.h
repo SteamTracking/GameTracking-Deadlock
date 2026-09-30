@@ -1,9 +1,4 @@
 // MModelGameData
-// MGetKV3ClassDefaults = {
-//	"m_mapIDToSettings":
-//	{
-//	}
-//}
 // MPropertyFriendlyName = "AG2 Bodygroup Settings"
 class CitadelEventIDToBodyGroupMapping_t
 {

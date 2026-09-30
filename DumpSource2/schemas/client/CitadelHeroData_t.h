@@ -1,217 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CitadelHeroData_t",
-//	"m_vecAnimGraphDefaultValueOverrides":
-//	[
-//	],
-//	"m_HeroID": 0,
-//	"m_strHeroSortName": "",
-//	"m_strHeroSearchName": "",
-//	"m_strHeroGender": "",
-//	"m_hDamageTakenParticle": "",
-//	"m_hGroundDamageTakenParticle": "",
-//	"m_hDeathParticle": "",
-//	"m_hLowHealthParticle": "",
-//	"m_strIconImageSmall": "",
-//	"m_strIconHeroCard": "",
-//	"m_strIconHeroCardCritical": "",
-//	"m_strIconHeroCardGloat": "",
-//	"m_strMinimapImage": "",
-//	"m_strTopBarVertical": "",
-//	"m_strVoteSticker": "",
-//	"m_strLogoImageEnglish": "",
-//	"m_strLogoImageLocalized": "",
-//	"m_hRespawnParticle": "",
-//	"m_hVisibilityParticle": "",
-//	"m_colorUI":
-//	[
-//		0,
-//		0,
-//		0,
-//		0
-//	],
-//	"m_strModelName": "",
-//	"m_nModelSkin": 0,
-//	"m_strWIPModelName": "",
-//	"m_strMainOnlyModelName": "",
-//	"m_bUseMainOnlyModelForExperimental": true,
-//	"m_strUIPortraitMap": "",
-//	"m_strUIShoppingMap": "",
-//	"m_strUITeamRevealMap": "",
-//	"m_strUIPostgamePortraitMap": "",
-//	"m_strUIHeroRevealMap": "",
-//	"m_heroStatsUI":
-//	{
-//		"m_strWeaponNameLocString": "",
-//		"m_strWeaponImage": "",
-//		"m_eWeaponType": "ECitadelWeapon_Invalid",
-//		"m_eWeaponStatDisplay": "EStatsCount",
-//		"m_vecDisplayStats":
-//		[
-//		]
-//	},
-//	"m_heroStatsDisplay":
-//	{
-//		"m_vecWeaponHeaderStats":
-//		[
-//		],
-//		"m_vecWeaponStats":
-//		[
-//		],
-//		"m_vecHealthHeaderStats":
-//		[
-//		],
-//		"m_vecHealthStats":
-//		[
-//		],
-//		"m_vecMagicHeaderStats":
-//		[
-//		],
-//		"m_vecMagicStats":
-//		[
-//		]
-//	},
-//	"m_ShopStatDisplay":
-//	{
-//		"m_eWeaponStatsDisplay":
-//		{
-//			"m_strWeaponNameLocString": "",
-//			"m_strWeaponDescLocString": "",
-//			"m_strWeaponImage": "",
-//			"m_strSecondaryWeaponDescLocString": "",
-//			"m_eWeaponAttributes": "",
-//			"m_vecDisplayStats":
-//			[
-//			],
-//			"m_vecOtherDisplayStats":
-//			[
-//			]
-//		},
-//		"m_eVitalityStatsDisplay":
-//		{
-//			"m_vecDisplayStats":
-//			[
-//			],
-//			"m_vecOtherDisplayStats":
-//			[
-//			]
-//		},
-//		"m_eSpiritStatsDisplay":
-//		{
-//			"m_vecDisplayStats":
-//			[
-//			]
-//		}
-//	},
-//	"m_strDeathVOSound": "",
-//	"m_strDeathSound": "",
-//	"m_strLastHitSound": "",
-//	"m_strRosterSelectedSound": "",
-//	"m_strRosterRemovedSound": "",
-//	"m_strRosterAvoidedSound": "",
-//	"m_strHeroVotedSound": "",
-//	"m_strCharacterRevealDialog": "",
-//	"m_strCharacterRevealSfxStart": "",
-//	"m_strCharacterRevealSfxStop": "",
-//	"m_strLowHealthSound": "",
-//	"m_strHeroSpecificLowHealthSound": "",
-//	"m_strMovementLoop": "",
-//	"m_strMovementLoopStart": "",
-//	"m_strMovementLoopStop": "",
-//	"m_strSlideLoop": "",
-//	"m_strPostGameVictorySound": "",
-//	"m_strPostGameDefeatSound": "",
-//	"m_hGameSoundEventScript": "",
-//	"m_hGeneratedVOEventScript": "",
-//	"m_flStealthSpeedMetersPerSecond": 4.000000,
-//	"m_eHeroDevelopmentState": "EHeroDevState_InDevelopment",
-//	"m_bInDevelopment": false,
-//	"m_bNewPlayerRecommended": false,
-//	"m_bLaneTestingRecommended": false,
-//	"m_bNeedsTesting": false,
-//	"m_bLimitedTesting": false,
-//	"m_bDisabled": false,
-//	"m_nComplexity": 0,
-//	"m_nAllyBotDifficulty": 0,
-//	"m_nEnemyBotDifficulty": 0,
-//	"m_flMinLowHealthPercentage": 0.100000,
-//	"m_flMaxLowHealthPercentage": 0.200000,
-//	"m_flMinMidHealthPercentage": 0.400000,
-//	"m_flMaxMidHealthPercentage": 0.500000,
-//	"m_flMinHealthForThreshold": 1000.000000,
-//	"m_flMaxHealthForThreshold": 2750.000000,
-//	"m_flInCombatWithHeroDuration": 3.000000,
-//	"m_flInCombatWithNonHeroDuration": 0.500000,
-//	"m_flInCombatWithNeutralDuration": 3.000000,
-//	"m_bNAGunFalloffRange": false,
-//	"m_bAllowedInTunnels": false,
-//	"m_mapStartingStats":
-//	{
-//	},
-//	"m_mapScalingStats":
-//	{
-//	},
-//	"m_groundDashPositionCurve":
-//	{
-//		"m_spline":
-//		[
-//		],
-//		"m_tangents":
-//		[
-//		],
-//		"m_vDomainMins":
-//		[
-//			0.000000,
-//			0.000000
-//		],
-//		"m_vDomainMaxs":
-//		[
-//			0.000000,
-//			0.000000
-//		]
-//	},
-//	"m_mapModCostBonuses":
-//	{
-//	},
-//	"m_mapItemSlotInfo":
-//	{
-//	},
-//	"m_eAbilityResourceType": "EResourceType_None",
-//	"m_strGunTag": "",
-//	"m_vecHeroTags":
-//	[
-//	],
-//	"m_eHeroType": "ECitadelHeroType_LastEnum",
-//	"m_strRosterBackgroundLayout": "",
-//	"m_strHideoutRichPresence": "",
-//	"m_mapItemDraftCounterWeights":
-//	{
-//	},
-//	"m_mapStandardLevelUpUpgrades":
-//	{
-//	},
-//	"m_PopularItems":
-//	{
-//		"m_unTimestamp": 0,
-//		"m_mapManualItemPopularity":
-//		{
-//		},
-//		"m_mapGeneratedItemPopularity":
-//		{
-//		}
-//	},
-//	"m_mapLevelInfo":
-//	{
-//	},
-//	"m_mapBoundAbilities":
-//	{
-//	},
-//	"m_mapWIPAbilities":
-//	{
-//	},
-//	"m_mapItemDraftBucketing":
-//	{
-//	}
-//}
 // MVDataRoot
 // MVDataAssociatedFile = "scripts/heroes.vdata"
 // MVDataOverlayType = 1
@@ -249,7 +35,7 @@ class CitadelHeroData_t
 	// MPropertyDescription = "If specified, this model will be used in main instead of 'Model Name'."
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_strMainOnlyModelName;
 	// MPropertyDescription = "When set, also use the 'Main Only Model Name' in the Experimental branch"
-	bool m_bUseMainOnlyModelForExperimental;
+	bool m_bUseMainOnlyModelForExperimental; // = true
 	// MPropertyStartGroup = "UI"
 	// MPropertyAttributeEditor = "AssetBrowse( vmap )"
 	CUtlString m_strUIPortraitMap;
@@ -261,7 +47,7 @@ class CitadelHeroData_t
 	CUtlString m_strUIPostgamePortraitMap;
 	// MPropertyAttributeEditor = "AssetBrowse( vmap )"
 	CUtlString m_strUIHeroRevealMap;
-	HeroStatsUI_t m_heroStatsUI;
+	HeroStatsUI_t m_heroStatsUI; // = { "m_eWeaponStatDisplay": "EStatsCount", "m_eWeaponType": "ECitadelWeapon_Invalid", "m_strWeaponImage": "", "m_strWeaponNameLocString": "", "m_vecDisplayStats": [  ] }
 	HeroStatsDisplay_t m_heroStatsDisplay;
 	CitadelStatsDisplay_t m_ShopStatDisplay;
 	// MPropertyStartGroup = "Sounds"
@@ -286,9 +72,9 @@ class CitadelHeroData_t
 	// MPropertyDescription = "Teammate footstep sounds are relative to whoever we're spectating."
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCVSoundEventScriptList > > m_hGameSoundEventScript;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCVSoundEventScriptList > > m_hGeneratedVOEventScript;
-	float32 m_flStealthSpeedMetersPerSecond;
+	float32 m_flStealthSpeedMetersPerSecond; // = 4
 	// MPropertyStartGroup = ""
-	EHeroDevelopmentState m_eHeroDevelopmentState;
+	EHeroDevelopmentState m_eHeroDevelopmentState; // = "EHeroDevState_InDevelopment"
 	bool m_bInDevelopment;
 	bool m_bNewPlayerRecommended;
 	bool m_bLaneTestingRecommended;
@@ -305,26 +91,26 @@ class CitadelHeroData_t
 	// MPropertyStartGroup = "Low Health Settings"
 	// MPropertyDescription = "Percentage of health to be considered low health"
 	// MPropertyAttributeRange = "0 1"
-	float32 m_flMinLowHealthPercentage;
+	float32 m_flMinLowHealthPercentage; // = 0.1
 	// MPropertyDescription = "Percentage of health to be considered low health when you have high max health."
 	// MPropertyAttributeRange = "0 1"
-	float32 m_flMaxLowHealthPercentage;
+	float32 m_flMaxLowHealthPercentage; // = 0.2
 	// MPropertyDescription = "Percentage of health to be considered mid health"
 	// MPropertyAttributeRange = "0 1"
-	float32 m_flMinMidHealthPercentage;
+	float32 m_flMinMidHealthPercentage; // = 0.4
 	// MPropertyDescription = "Percentage of health to be considered mid health when you have high max health."
 	// MPropertyAttributeRange = "0 1"
-	float32 m_flMaxMidHealthPercentage;
+	float32 m_flMaxMidHealthPercentage; // = 0.5
 	// MPropertyDescription = "Min Max Health for Remapped Value"
-	float32 m_flMinHealthForThreshold;
+	float32 m_flMinHealthForThreshold; // = 1000
 	// MPropertyDescription = "Max Max Health for remapped value"
-	float32 m_flMaxHealthForThreshold;
+	float32 m_flMaxHealthForThreshold; // = 2750
 	// MPropertyDescription = "How long a player is deemed in combat taking or dealing damage to a player"
-	float32 m_flInCombatWithHeroDuration;
+	float32 m_flInCombatWithHeroDuration; // = 3
 	// MPropertyDescription = "How long a player is deemed in combat taking or dealing damage to a non-player"
-	float32 m_flInCombatWithNonHeroDuration;
+	float32 m_flInCombatWithNonHeroDuration; // = 0.5
 	// MPropertyDescription = "How long a player is deemed in combat taking or dealing damage to a neutral trooper"
-	float32 m_flInCombatWithNeutralDuration;
+	float32 m_flInCombatWithNeutralDuration; // = 3
 	// MPropertyDescription = "Show N/A for falloff numbers in gun panel."
 	bool m_bNAGunFalloffRange;
 	// MPropertyDescription = "Can this hero make it into the tunnel areas without it being a bug."
@@ -335,10 +121,10 @@ class CitadelHeroData_t
 	CPiecewiseCurve m_groundDashPositionCurve;
 	CUtlOrderedMap< EItemSlotTypes_t, CUtlVector< ModCostBonuses_t > > m_mapModCostBonuses;
 	CUtlOrderedMap< EItemSlotTypes_t, ItemSlotInfo_t > m_mapItemSlotInfo;
-	EAbilityResourceType m_eAbilityResourceType;
+	EAbilityResourceType m_eAbilityResourceType; // = "EResourceType_None"
 	CUtlString m_strGunTag;
 	CUtlVector< CUtlString > m_vecHeroTags;
-	EHeroType m_eHeroType;
+	EHeroType m_eHeroType; // = "ECitadelHeroType_LastEnum"
 	CUtlString m_strRosterBackgroundLayout;
 	// MPropertyDescription = "A custom rich presence string to show while in the hideout"
 	CUtlString m_strHideoutRichPresence;

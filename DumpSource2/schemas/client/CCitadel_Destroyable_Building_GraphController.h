@@ -1,15 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadel_Destroyable_Building_GraphController",
-//	"m_hExternalGraph": 4294967295,
-//	"m_bHitTrigger": null,
-//	"m_eState": null,
-//	"m_flHealth": null,
-//	"m_bActive": null,
-//	"m_flHealthPercent": null,
-//	"m_bVulnerable": null,
-//	"m_bDestroyed": null,
-//	"m_flExposedDurationFraction": null
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Destroyable_Building_GraphController : public CAnimGraphControllerBase
 {

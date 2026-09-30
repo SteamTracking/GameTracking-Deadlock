@@ -1,19 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadel_Ability_PrimaryWeapon_GraphController",
-//	"m_hExternalGraph": 4294967295,
-//	"m_Shoot": null,
-//	"m_Muzzle": null,
-//	"m_ReloadState": null,
-//	"m_ReloadFraction": null,
-//	"m_ReloadSpeed": null,
-//	"m_AmmoFraction": null,
-//	"m_Ammo": null,
-//	"m_AmmoMax": null,
-//	"m_nShootPriority": -1,
-//	"m_nReloadPriority": -1,
-//	"m_flLatchedReloadSpeed": 1.000000,
-//	"m_symLastMuzzle": ""
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Ability_PrimaryWeapon_GraphController : public CCitadelBaseAbilityGraphController
 {
@@ -25,8 +9,8 @@ class CCitadel_Ability_PrimaryWeapon_GraphController : public CCitadelBaseAbilit
 	CAnimGraphParamRef< float32 > m_AmmoFraction;
 	CAnimGraphParamRef< float32 > m_Ammo;
 	CAnimGraphParamRef< float32 > m_AmmoMax;
-	int32 m_nShootPriority;
-	int32 m_nReloadPriority;
-	float32 m_flLatchedReloadSpeed;
+	int32 m_nShootPriority; // = -1
+	int32 m_nReloadPriority; // = -1
+	float32 m_flLatchedReloadSpeed; // = 1
 	CGlobalSymbol m_symLastMuzzle;
 };

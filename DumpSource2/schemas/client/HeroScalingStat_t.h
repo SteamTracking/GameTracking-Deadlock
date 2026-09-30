@@ -1,15 +1,11 @@
-// MGetKV3ClassDefaults = {
-//	"eScalingStat": "EStatsCount",
-//	"flScale": 1.000000
-//}
 class HeroScalingStat_t
 {
 	// MPropertyFlattenIntoParentRow
 	// MPropertyFlattenStretchFactor = 1
 	// MPropertyFlattenIncludeLabel
-	EStatsType eScalingStat;
+	EStatsType eScalingStat; // = "EStatsCount"
 	// MPropertyFlattenIntoParentRow
 	// MPropertyFlattenStretchFactor = 1
 	// MPropertyFlattenIncludeLabel
-	float32 flScale;
+	float32 flScale; // = 1
 };

@@ -1,17 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_IdolModel": "",
-//	"m_ParachuteModel": "",
-//	"m_CrateModel": "",
-//	"m_strLoopingSequenceName": "",
-//	"m_IdolReturnLocationParticle": "",
-//	"m_flIdolReturnLocationParticleScale": 1.000000,
-//	"m_IdolSpawnLocationParticle": "",
-//	"m_IdolDroppingParticle": "",
-//	"m_IdolSpawnSound": "",
-//	"m_IdolSpawnCompleteSound": "",
-//	"m_flIdolDropHeight": 1800.000000,
-//	"m_flIdolDropDuration": 25.000000
-//}
 class IdolParams_t
 {
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_IdolModel;
@@ -19,11 +5,11 @@ class IdolParams_t
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_CrateModel;
 	CUtlString m_strLoopingSequenceName;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_IdolReturnLocationParticle;
-	float32 m_flIdolReturnLocationParticleScale;
+	float32 m_flIdolReturnLocationParticleScale; // = 1
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_IdolSpawnLocationParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_IdolDroppingParticle;
 	CSoundEventName m_IdolSpawnSound;
 	CSoundEventName m_IdolSpawnCompleteSound;
-	float32 m_flIdolDropHeight;
-	float32 m_flIdolDropDuration;
+	float32 m_flIdolDropHeight; // = 1800
+	float32 m_flIdolDropDuration; // = 25
 };

@@ -1,23 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_sAttachmentName": "",
-//	"m_sEntityName": "",
-//	"m_vOffset":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"m_aAngOffset":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"m_sModelName": "",
-//	"m_vecSpawnKV":
-//	[
-//	]
-//}
 class NPCAttachmentDesc_t
 {
 	CUtlString m_sAttachmentName;

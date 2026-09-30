@@ -1,38 +1,9 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "EventActionDefinition_t",
-//	"unMinActionID": 0,
-//	"unMaxActionID": 0,
-//	"unMaxGrantsIfOwned": 1,
-//	"unMaxGrantsIfUnowned": 0,
-//	"unAvailableAtEventLevel": 0,
-//	"unAvailableAtEventLevelRepeatInterval": 0,
-//	"unPointCost": 0,
-//	"unPremiumPointCost": 0,
-//	"unImportant": 0,
-//	"strFriendsLeaderboard": "",
-//	"m_vecAnyOfRequiredItemDefs":
-//	[
-//	],
-//	"vecScoreRewards":
-//	[
-//	],
-//	"vecPrerequisiteActions":
-//	[
-//	],
-//	"bClaimableIfPrerequisitesSatisfied": false,
-//	"bClaimableUpToEventLevel": false,
-//	"bAlwaysClaimable": false,
-//	"bNeverClaimable": false,
-//	"bClaimableWithoutGrant": false,
-//	"bIsRemovable": false,
-//	"bClaimableOnExpiredEvents": false
-//}
 // MHasKV3TransferPolymorphicClassname
 class EventActionDefinition_t
 {
 	uint32 unMinActionID;
 	uint32 unMaxActionID;
-	uint32 unMaxGrantsIfOwned;
+	uint32 unMaxGrantsIfOwned; // = 1
 	uint32 unMaxGrantsIfUnowned;
 	uint32 unAvailableAtEventLevel;
 	uint32 unAvailableAtEventLevelRepeatInterval;

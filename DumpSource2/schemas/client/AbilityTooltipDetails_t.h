@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_vecAbilityInfoSections":
-//	[
-//	],
-//	"m_vecAdditionalHeaderProperties":
-//	[
-//	]
-//}
 // MPropertyAutoExpandSelf
 class AbilityTooltipDetails_t
 {

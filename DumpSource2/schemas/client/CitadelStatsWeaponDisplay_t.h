@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strWeaponNameLocString": "",
-//	"m_strWeaponDescLocString": "",
-//	"m_strWeaponImage": "",
-//	"m_strSecondaryWeaponDescLocString": "",
-//	"m_eWeaponAttributes": "",
-//	"m_vecDisplayStats":
-//	[
-//	],
-//	"m_vecOtherDisplayStats":
-//	[
-//	]
-//}
 class CitadelStatsWeaponDisplay_t
 {
 	// MPropertyDescription = "The loc string of the heroes weapon name"

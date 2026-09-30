@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_vecPropertyUpgrades":
-//	[
-//	]
-//}
 class AbilityUpgrade_t
 {
 	// MPropertyAutoExpandSelf

@@ -1,14 +1,7 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadel_FissureWallVData",
-//	"m_nMeleeHits": 4,
-//	"m_HitSound": "",
-//	"m_DestroySound": "",
-//	"m_DestroyParticle": ""
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_FissureWallVData : public CEntitySubclassVDataBase
 {
-	int32 m_nMeleeHits;
+	int32 m_nMeleeHits; // = 4
 	// MPropertyGroupName = "Sounds"
 	CSoundEventName m_HitSound;
 	CSoundEventName m_DestroySound;

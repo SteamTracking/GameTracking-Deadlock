@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_flBase": 0.000000,
-//	"m_flPerMinuteAfterStart": 0.000000,
-//	"m_flStartMinute": 0.000000,
-//	"m_flMaxValue": 0.000000
-//}
 class TimeScalingValue_t
 {
 	// MPropertyFlattenIntoParentRow

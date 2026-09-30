@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_vecDisplayStats":
-//	[
-//	],
-//	"m_vecOtherDisplayStats":
-//	[
-//	]
-//}
 class CitadelStatsVitalityDisplay_t
 {
 	// MPropertyDescription = "What stats do we want to show in the top section?"

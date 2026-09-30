@@ -1,18 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CNavLinkMovementVData",
-//	"m_sToolsOnlyOwnerModelName": "",
-//	"m_vecAnimgraphVars":
-//	[
-//	],
-//	"m_vecVariants":
-//	[
-//	],
-//	"m_baseMetrics":
-//	{
-//		"m_horizontalRange": null,
-//		"m_verticalRange": null
-//	}
-//}
 // MVDataRoot
 // MVDataNodeType = 1
 // MVDataOverlayType = 1

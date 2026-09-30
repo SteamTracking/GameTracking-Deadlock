@@ -1,13 +1,6 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "ModifierScriptedEventHandler_t",
-//	"m_eEvent": "MODIFIER_SCRIPTED_EVENT_INVALID",
-//	"m_sModifierToAdd":
-//	{
-//	}
-//}
 // MHasKV3TransferPolymorphicClassname
 class ModifierScriptedEventHandler_t
 {
-	EModifierScriptedEvent m_eEvent;
+	EModifierScriptedEvent m_eEvent; // = "MODIFIER_SCRIPTED_EVENT_INVALID"
 	CEmbeddedSubclassGeneric< 2 > m_sModifierToAdd;
 };

@@ -1,12 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_bDontPreSettleCloth": false,
-//	"m_bDisableFreezeCloth": false,
-//	"m_strClothEffect": "portrait",
-//	"m_strAttachmentName": "",
-//	"m_flFOV": 25.000000,
-//	"m_flZNear": 5.000000,
-//	"m_flZFar": 200.000000
-//}
 class CitadelSceneSettings_t
 {
 	// MPropertyFriendlyName = "Don't Pre-Settle Cloth"
@@ -14,15 +5,15 @@ class CitadelSceneSettings_t
 	// MPropertyFriendlyName = "Disable cloth freeze"
 	bool m_bDisableFreezeCloth;
 	// MPropertyFriendlyName = "Cloth Effect"
-	CUtlStringTokenWithStorage m_strClothEffect;
+	CUtlStringTokenWithStorage m_strClothEffect; // = "portrait"
 	// MPropertyStartGroup = "Camera Settings"
 	// MPropertyFriendlyName = "Camera Attachment"
 	// MPropertyCustomFGDType = "model_attachment"
 	CUtlString m_strAttachmentName;
 	// MPropertyFriendlyName = "FOV"
-	float32 m_flFOV;
+	float32 m_flFOV; // = 25
 	// MPropertyFriendlyName = "Z-Near"
-	float32 m_flZNear;
+	float32 m_flZNear; // = 5
 	// MPropertyFriendlyName = "Z-Far"
-	float32 m_flZFar;
+	float32 m_flZFar; // = 200
 };

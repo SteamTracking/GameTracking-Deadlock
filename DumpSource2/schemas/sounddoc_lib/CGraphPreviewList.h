@@ -1,17 +1,6 @@
-// MGetKV3ClassDefaults = {
-//	"m_flVolume": 1.000000,
-//	"m_previewList":
-//	{
-//		"m_sounds":
-//		[
-//		],
-//		"m_bPreviewInGame": false
-//	},
-//	"m_previewGraphName": ""
-//}
 class CGraphPreviewList
 {
-	float32 m_flVolume;
+	float32 m_flVolume; // = 1
 	CPreviewList m_previewList;
 	CUtlString m_previewGraphName;
 };

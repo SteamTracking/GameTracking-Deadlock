@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 class AI_Waypoint_t
 {
 	VectorWS m_vPos;

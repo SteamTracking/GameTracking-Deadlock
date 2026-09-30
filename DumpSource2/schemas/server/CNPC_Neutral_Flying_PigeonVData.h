@@ -1,34 +1,16 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CNPC_Neutral_Flying_PigeonVData",
-//	"m_flFrequencyY": 5.000000,
-//	"m_flVerticalScale": 75.000000,
-//	"m_flVerticalOffset": 0.000000,
-//	"m_flFrequencyR": 5.000000,
-//	"m_flOrbitRadius": 80.000000,
-//	"m_flCollisionRadius": 15.000000,
-//	"m_flParticleRadius": 1.000000,
-//	"m_flLifeTime": 10.000000,
-//	"m_flRespawnTime": 4.000000,
-//	"m_flModelScale": 0.500000,
-//	"m_hModel": "",
-//	"m_SpawnParticle": "",
-//	"m_AmbientParticle": "",
-//	"m_DestroyParticle": "",
-//	"m_strDestroySound": ""
-//}
 // MHasKV3TransferPolymorphicClassname
 class CNPC_Neutral_Flying_PigeonVData : public CEntitySubclassVDataBase
 {
-	CRangeFloat m_flFrequencyY;
-	CRangeFloat m_flVerticalScale;
+	CRangeFloat m_flFrequencyY; // = 5
+	CRangeFloat m_flVerticalScale; // = 75
 	CRangeFloat m_flVerticalOffset;
-	CRangeFloat m_flFrequencyR;
-	CRangeFloat m_flOrbitRadius;
-	float32 m_flCollisionRadius;
-	float32 m_flParticleRadius;
-	CRangeFloat m_flLifeTime;
-	float32 m_flRespawnTime;
-	float32 m_flModelScale;
+	CRangeFloat m_flFrequencyR; // = 5
+	CRangeFloat m_flOrbitRadius; // = 80
+	float32 m_flCollisionRadius; // = 15
+	float32 m_flParticleRadius; // = 1
+	CRangeFloat m_flLifeTime; // = 10
+	float32 m_flRespawnTime; // = 4
+	float32 m_flModelScale; // = 0.5
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_hModel;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_SpawnParticle;

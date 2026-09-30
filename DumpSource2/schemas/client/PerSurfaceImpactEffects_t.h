@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strDecal": "",
-//	"m_strParticle": "",
-//	"m_strSound": ""
-//}
 // MPropertyAutoExpandSelf
 class PerSurfaceImpactEffects_t
 {

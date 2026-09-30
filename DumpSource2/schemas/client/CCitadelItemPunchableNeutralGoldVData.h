@@ -1,25 +1,11 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadelItemPunchableNeutralGoldVData",
-//	"m_flPhysicsRadius": 60.000000,
-//	"m_AmbientParticle": "",
-//	"m_nSpawnMusicState": "k_EMusicQueue_Invalid",
-//	"m_flGroundOffset": 40.000000,
-//	"m_flSpinRate": 10.000000,
-//	"m_flBobHeight": 40.000000,
-//	"m_flBobFrequency": 10.000000,
-//	"m_flSpinSpeed": 1.000000,
-//	"m_PunchPickupModifier":
-//	{
-//	}
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadelItemPunchableNeutralGoldVData : public CCitadelItemPickupVData
 {
-	float32 m_flGroundOffset;
-	float32 m_flSpinRate;
-	float32 m_flBobHeight;
-	float32 m_flBobFrequency;
-	float32 m_flSpinSpeed;
+	float32 m_flGroundOffset; // = 40
+	float32 m_flSpinRate; // = 10
+	float32 m_flBobHeight; // = 40
+	float32 m_flBobFrequency; // = 10
+	float32 m_flSpinSpeed; // = 1
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_PunchPickupModifier;
 };

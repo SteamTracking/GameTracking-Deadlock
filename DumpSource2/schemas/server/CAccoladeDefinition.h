@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unAccoladeID": 0,
-//	"m_sTrackedStatName": "",
-//	"m_sFlavorName": "",
-//	"m_sDescription": "",
-//	"m_eThresholdType": "Manual",
-//	"m_vecThresholds":
-//	[
-//	],
-//	"m_vecEnabledGameModes":
-//	[
-//	]
-//}
 // MVDataRoot
 // MVDataAssociatedFile = "scripts/accolades.vdata"
 class CAccoladeDefinition
@@ -21,7 +8,7 @@ class CAccoladeDefinition
 	CUtlString m_sTrackedStatName;
 	CVDataLocalizedToken m_sFlavorName;
 	CVDataLocalizedToken m_sDescription;
-	EAccoladeThresholdType m_eThresholdType;
+	EAccoladeThresholdType m_eThresholdType; // = "Manual"
 	CUtlVector< TrackedStatValue_t > m_vecThresholds;
 	CUtlVector< ECitadelGameMode > m_vecEnabledGameModes;
 };

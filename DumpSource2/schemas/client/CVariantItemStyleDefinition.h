@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_unSlotStyleID": 0,
-//	"m_strStyleLocName": "",
-//	"m_strSwatchImage": "",
-//	"m_vecStyleEquipModifiers":
-//	[
-//	]
-//}
 class CVariantItemStyleDefinition
 {
 	VariantItemSlotStyleID_t m_unSlotStyleID;

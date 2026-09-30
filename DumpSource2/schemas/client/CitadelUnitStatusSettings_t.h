@@ -1,31 +1,4 @@
 // MModelGameData
-// MGetKV3ClassDefaults = {
-//	"m_strUnitStatusAttachmentName": "",
-//	"m_vUnitStatusOffset":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"m_vHealthbarOffset":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"m_vDamageNumbersOffset":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	],
-//	"m_vStatusEffectsOffset":
-//	[
-//		0.000000,
-//		0.000000,
-//		0.000000
-//	]
-//}
 // MPropertyFriendlyName = "Citadel Unit Status Settings"
 class CitadelUnitStatusSettings_t
 {

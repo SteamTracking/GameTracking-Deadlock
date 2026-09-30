@@ -1,9 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strPropertiesTitleLocString": "",
-//	"m_vecAbilityProperties":
-//	[
-//	]
-//}
 // MPropertyAutoExpandSelf
 class SectionProperties_t
 {

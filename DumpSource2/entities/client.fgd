@@ -1,0 +1,6197 @@
+// Dumped by https://github.com/ValveResourceFormat/DumpSource2
+
+// CEntityInstance
+@BaseClass = root
+[
+	input AddOutput(string) // PVAL_STRING pParam
+	input GetAbsOrigin(void) : "The entity origin (absolute)" // returns PVAL_VEC3_WORLDSPACE retval, Pulse node
+	input GetOrigin(void) : "The entity origin (local)" // returns PVAL_VEC3 retval, Pulse node
+	input GetTeamNumber(void) : "The entity team number" // returns PVAL_INT retval, Pulse node
+	input IsMotionEnabled(void) : "Returns true if the entity is motion-enabled (i.e. its ideal motion type is dynamic). Note that the entity may still end up keyframed in some cases, e.g. if it's hierarchically attached to another keyframed entity." // returns PVAL_BOOL retval, Pulse node
+	input SetScale(float) // PVAL_FLOAT flValue, Pulse node
+]
+
+// C_BaseEntity
+@BaseClass base(root) = C_BaseEntity
+[
+	// component CBodyComponent: CBodyComponentPoint
+	renderWithViewModels(boolean) // FIELD_BOOLEAN m_bRenderWithViewModels
+	spawnflags(integer) // FIELD_UINT32 m_spawnflags
+	health(integer) // FIELD_INT32 m_iHealth
+	vscripts(string) // FIELD_STRING m_iszPrivateVScripts
+	velocity(vector) // FIELD_NETWORK_QUANTIZED_VECTOR m_vecVelocity
+	avelocity(angle) // FIELD_QANGLE m_vecAngVelocity
+	owner(target_destination) // FIELD_EHANDLE m_hOwnerEntity
+	platform_type(intchoices) : "platform_type" : : "" = // FIELD_UINT8 m_nPlatformType (EntityPlatformTypes_t)
+	[
+		0 : "ENTITY_NOT_PLATFORM"
+		1 : "ENTITY_PLATFORM_PLAYER_FOLLOWS_YAW"
+		2 : "ENTITY_PLATFORM_PLAYER_IGNORES_YAW"
+	]
+	MoveType(intchoices) : "MoveType" : : "" = // FIELD_UINT8 m_MoveType (MoveType_t)
+	[
+		0 : "MOVETYPE_NONE"
+		1 : "MOVETYPE_OBSOLETE"
+		2 : "MOVETYPE_WALK"
+		3 : "MOVETYPE_FLY"
+		4 : "MOVETYPE_FLYGRAVITY"
+		5 : "MOVETYPE_VPHYSICS"
+		6 : "MOVETYPE_PUSH"
+		7 : "MOVETYPE_NOCLIP"
+		8 : "MOVETYPE_OBSERVER"
+		9 : "MOVETYPE_STEP"
+		10 : "MOVETYPE_SYNC"
+		11 : "MOVETYPE_CUSTOM"
+		12 : "MOVETYPE_LAST"
+		12 : "MOVETYPE_INVALID"
+		5 : "MOVETYPE_MAX_BITS"
+	]
+	subclass_id(string) // FIELD_UTLSTRINGTOKEN m_nSubclassID
+	subclass_name(string) // FIELD_STRING
+	angles(angle) // FIELD_QANGLE
+	origin(vector) // FIELD_VECTOR
+	model(studio) // FIELD_HMODEL
+	ownername(string) // FIELD_UTLSTRING
+]
+
+// CBaseTrackedStatsEntity
+@BaseClass base(C_BaseEntity) = CBaseTrackedStatsEntity
+[
+]
+
+// CCitadelAudioProcessingVolumeBase
+@BaseClass base(C_BaseEntity) = CCitadelAudioProcessingVolumeBase
+[
+]
+
+// C_CitadelBaseAbility
+@PointClass base(C_BaseEntity) = citadel_base_ability
+[
+]
+
+// CCitadelBaseAbilityServerOnly
+@BaseClass base(citadel_base_ability) = CCitadelBaseAbilityServerOnly
+[
+]
+
+// CCitadelBaseShivAbility
+@BaseClass base(citadel_base_ability) = CCitadelBaseShivAbility
+[
+]
+
+// CCitadelBaseYamatoAbility
+@BaseClass base(citadel_base_ability) = CCitadelBaseYamatoAbility
+[
+]
+
+// C_BaseModelEntity
+@PointClass base(C_BaseEntity) = basemodelentity
+[
+	// component CBodyComponent: CBodyComponentBaseModelEntity
+	rendercolor(color255) // FIELD_COLOR32 m_clrRender
+	renderfx(intchoices) : "renderfx" : : "" = // FIELD_UINT8 m_nRenderFX (RenderFx_t)
+	[
+		0 : "kRenderFxNone"
+		1 : "kRenderFxPulseSlow"
+		2 : "kRenderFxPulseFast"
+		3 : "kRenderFxPulseSlowWide"
+		4 : "kRenderFxPulseFastWide"
+		5 : "kRenderFxFadeSlow"
+		6 : "kRenderFxFadeFast"
+		7 : "kRenderFxSolidSlow"
+		8 : "kRenderFxSolidFast"
+		9 : "kRenderFxStrobeSlow"
+		10 : "kRenderFxStrobeFast"
+		11 : "kRenderFxStrobeFaster"
+		12 : "kRenderFxFlickerSlow"
+		13 : "kRenderFxFlickerFast"
+		14 : "kRenderFxFadeOut"
+		15 : "kRenderFxFadeIn"
+		16 : "kRenderFxPulseFastWider"
+		17 : "kRenderFxMax"
+	]
+	rendermode(intchoices) : "rendermode" : : "" = // FIELD_UINT8 m_nRenderMode (RenderMode_t)
+	[
+		0 : "kRenderNormal"
+		1 : "kRenderTransAlpha"
+		2 : "kRenderNone"
+		3 : "kRenderModeCount"
+	]
+	rendertocubemaps(boolean) // FIELD_BOOLEAN m_bRenderToCubemaps
+	expand_render_bounds_to_include_cloth(boolean) // FIELD_BOOLEAN m_bExpandRenderBoundsToIncludeCloth
+	NoInterpolate(boolean) // FIELD_BOOLEAN m_bNoInterpolate
+	// m_Collision (CCollisionProperty)
+		solid(intchoices) : "solid" : : "" = // FIELD_UINT8 m_nSolidType (SolidType_t)
+		[
+			0 : "SOLID_NONE"
+			1 : "SOLID_BSP"
+			2 : "SOLID_BBOX"
+			3 : "SOLID_OBB"
+			4 : "SOLID_SPHERE"
+			5 : "SOLID_POINT"
+			6 : "SOLID_VPHYSICS"
+			7 : "SOLID_CAPSULE"
+			8 : "SOLID_CYLINDER"
+			9 : "SOLID_LAST"
+		]
+	glowbackfacemult(float) // FIELD_FLOAT32 m_flGlowBackfaceMult
+	fademindist(float) // FIELD_FLOAT32 m_fadeMinDist
+	fademaxdist(float) // FIELD_FLOAT32 m_fadeMaxDist
+	fadescale(float) // FIELD_FLOAT32 m_flFadeScale
+	object_culling(integer) // FIELD_UINT8 m_nObjectCulling
+	add_attribute(string) // FIELD_UTLSTRING
+	add_modifier(string) // FIELD_UTLSTRING m_szAddModifier
+	rendercolor32(color255) // FIELD_COLOR32
+	renderamt(integer) // FIELD_INT32
+	mins(vector) // FIELD_VECTOR
+	maxs(vector) // FIELD_VECTOR
+	skin(string) // FIELD_UTLSTRING
+	bodygroups(string) // FIELD_UTLSTRING
+	destructible_part_initial_state_destructed_1(intchoices) : "destructible_part_initial_state_destructed_1" : : "" = // FIELD_INT32 m_nDestructiblePartInitialStateDestructed0 (HitGroup_t)
+	[
+		-1 : "HITGROUP_INVALID"
+		0 : "HITGROUP_GENERIC"
+		1 : "HITGROUP_HEAD"
+		2 : "HITGROUP_CHEST"
+		3 : "HITGROUP_STOMACH"
+		4 : "HITGROUP_LEFTARM"
+		5 : "HITGROUP_RIGHTARM"
+		6 : "HITGROUP_LEFTLEG"
+		7 : "HITGROUP_RIGHTLEG"
+		8 : "HITGROUP_NECK"
+		9 : "HITGROUP_UNUSED"
+		10 : "HITGROUP_GEAR"
+		11 : "HITGROUP_SPECIAL"
+		12 : "HITGROUP_T2_BOSS_FRONT_LEFT_LEG_WEAKPOINT"
+		13 : "HITGROUP_T2_BOSS_FRONT_RIGHT_LEG_WEAKPOINT"
+		14 : "HITGROUP_T2_BOSS_REAR_LEFT_LEG_WEAKPOINT"
+		15 : "HITGROUP_T2_BOSS_REAR_RIGHT_LEG_WEAKPOINT"
+		16 : "HITGROUP_T2_BOSS_HEAD_WEAKPOINT"
+		17 : "HITGROUP_T2_BOSS_BACK_WEAKPOINT"
+		18 : "HITGROUP_DRONE_BOSS_DRONE_WEAKPOINT"
+		19 : "HITGROUP_HEAD_NO_RESIST"
+		20 : "HITGROUP_COUNT"
+	]
+	destructible_part_initial_state_destructed_2(intchoices) : "destructible_part_initial_state_destructed_2" : : "" = // FIELD_INT32 m_nDestructiblePartInitialStateDestructed1 (HitGroup_t)
+	[
+		-1 : "HITGROUP_INVALID"
+		0 : "HITGROUP_GENERIC"
+		1 : "HITGROUP_HEAD"
+		2 : "HITGROUP_CHEST"
+		3 : "HITGROUP_STOMACH"
+		4 : "HITGROUP_LEFTARM"
+		5 : "HITGROUP_RIGHTARM"
+		6 : "HITGROUP_LEFTLEG"
+		7 : "HITGROUP_RIGHTLEG"
+		8 : "HITGROUP_NECK"
+		9 : "HITGROUP_UNUSED"
+		10 : "HITGROUP_GEAR"
+		11 : "HITGROUP_SPECIAL"
+		12 : "HITGROUP_T2_BOSS_FRONT_LEFT_LEG_WEAKPOINT"
+		13 : "HITGROUP_T2_BOSS_FRONT_RIGHT_LEG_WEAKPOINT"
+		14 : "HITGROUP_T2_BOSS_REAR_LEFT_LEG_WEAKPOINT"
+		15 : "HITGROUP_T2_BOSS_REAR_RIGHT_LEG_WEAKPOINT"
+		16 : "HITGROUP_T2_BOSS_HEAD_WEAKPOINT"
+		17 : "HITGROUP_T2_BOSS_BACK_WEAKPOINT"
+		18 : "HITGROUP_DRONE_BOSS_DRONE_WEAKPOINT"
+		19 : "HITGROUP_HEAD_NO_RESIST"
+		20 : "HITGROUP_COUNT"
+	]
+	destructible_part_initial_state_destructed_3(intchoices) : "destructible_part_initial_state_destructed_3" : : "" = // FIELD_INT32 m_nDestructiblePartInitialStateDestructed2 (HitGroup_t)
+	[
+		-1 : "HITGROUP_INVALID"
+		0 : "HITGROUP_GENERIC"
+		1 : "HITGROUP_HEAD"
+		2 : "HITGROUP_CHEST"
+		3 : "HITGROUP_STOMACH"
+		4 : "HITGROUP_LEFTARM"
+		5 : "HITGROUP_RIGHTARM"
+		6 : "HITGROUP_LEFTLEG"
+		7 : "HITGROUP_RIGHTLEG"
+		8 : "HITGROUP_NECK"
+		9 : "HITGROUP_UNUSED"
+		10 : "HITGROUP_GEAR"
+		11 : "HITGROUP_SPECIAL"
+		12 : "HITGROUP_T2_BOSS_FRONT_LEFT_LEG_WEAKPOINT"
+		13 : "HITGROUP_T2_BOSS_FRONT_RIGHT_LEG_WEAKPOINT"
+		14 : "HITGROUP_T2_BOSS_REAR_LEFT_LEG_WEAKPOINT"
+		15 : "HITGROUP_T2_BOSS_REAR_RIGHT_LEG_WEAKPOINT"
+		16 : "HITGROUP_T2_BOSS_HEAD_WEAKPOINT"
+		17 : "HITGROUP_T2_BOSS_BACK_WEAKPOINT"
+		18 : "HITGROUP_DRONE_BOSS_DRONE_WEAKPOINT"
+		19 : "HITGROUP_HEAD_NO_RESIST"
+		20 : "HITGROUP_COUNT"
+	]
+	destructible_part_initial_state_destructed_4(intchoices) : "destructible_part_initial_state_destructed_4" : : "" = // FIELD_INT32 m_nDestructiblePartInitialStateDestructed3 (HitGroup_t)
+	[
+		-1 : "HITGROUP_INVALID"
+		0 : "HITGROUP_GENERIC"
+		1 : "HITGROUP_HEAD"
+		2 : "HITGROUP_CHEST"
+		3 : "HITGROUP_STOMACH"
+		4 : "HITGROUP_LEFTARM"
+		5 : "HITGROUP_RIGHTARM"
+		6 : "HITGROUP_LEFTLEG"
+		7 : "HITGROUP_RIGHTLEG"
+		8 : "HITGROUP_NECK"
+		9 : "HITGROUP_UNUSED"
+		10 : "HITGROUP_GEAR"
+		11 : "HITGROUP_SPECIAL"
+		12 : "HITGROUP_T2_BOSS_FRONT_LEFT_LEG_WEAKPOINT"
+		13 : "HITGROUP_T2_BOSS_FRONT_RIGHT_LEG_WEAKPOINT"
+		14 : "HITGROUP_T2_BOSS_REAR_LEFT_LEG_WEAKPOINT"
+		15 : "HITGROUP_T2_BOSS_REAR_RIGHT_LEG_WEAKPOINT"
+		16 : "HITGROUP_T2_BOSS_HEAD_WEAKPOINT"
+		17 : "HITGROUP_T2_BOSS_BACK_WEAKPOINT"
+		18 : "HITGROUP_DRONE_BOSS_DRONE_WEAKPOINT"
+		19 : "HITGROUP_HEAD_NO_RESIST"
+		20 : "HITGROUP_COUNT"
+	]
+	destructible_part_initial_state_destructed_5(intchoices) : "destructible_part_initial_state_destructed_5" : : "" = // FIELD_INT32 m_nDestructiblePartInitialStateDestructed4 (HitGroup_t)
+	[
+		-1 : "HITGROUP_INVALID"
+		0 : "HITGROUP_GENERIC"
+		1 : "HITGROUP_HEAD"
+		2 : "HITGROUP_CHEST"
+		3 : "HITGROUP_STOMACH"
+		4 : "HITGROUP_LEFTARM"
+		5 : "HITGROUP_RIGHTARM"
+		6 : "HITGROUP_LEFTLEG"
+		7 : "HITGROUP_RIGHTLEG"
+		8 : "HITGROUP_NECK"
+		9 : "HITGROUP_UNUSED"
+		10 : "HITGROUP_GEAR"
+		11 : "HITGROUP_SPECIAL"
+		12 : "HITGROUP_T2_BOSS_FRONT_LEFT_LEG_WEAKPOINT"
+		13 : "HITGROUP_T2_BOSS_FRONT_RIGHT_LEG_WEAKPOINT"
+		14 : "HITGROUP_T2_BOSS_REAR_LEFT_LEG_WEAKPOINT"
+		15 : "HITGROUP_T2_BOSS_REAR_RIGHT_LEG_WEAKPOINT"
+		16 : "HITGROUP_T2_BOSS_HEAD_WEAKPOINT"
+		17 : "HITGROUP_T2_BOSS_BACK_WEAKPOINT"
+		18 : "HITGROUP_DRONE_BOSS_DRONE_WEAKPOINT"
+		19 : "HITGROUP_HEAD_NO_RESIST"
+		20 : "HITGROUP_COUNT"
+	]
+	destructible_part_initial_state_destructed_1_part_index(integer) // FIELD_INT32 m_nDestructiblePartInitialStateDestructed0_PartIndex
+	destructible_part_initial_state_destructed_2_part_index(integer) // FIELD_INT32 m_nDestructiblePartInitialStateDestructed1_PartIndex
+	destructible_part_initial_state_destructed_3_part_index(integer) // FIELD_INT32 m_nDestructiblePartInitialStateDestructed2_PartIndex
+	destructible_part_initial_state_destructed_4_part_index(integer) // FIELD_INT32 m_nDestructiblePartInitialStateDestructed3_PartIndex
+	destructible_part_initial_state_destructed_5_part_index(integer) // FIELD_INT32 m_nDestructiblePartInitialStateDestructed4_PartIndex
+	destructible_part_initial_state_destructed_1_generate_breakpieces(boolean) // FIELD_BOOLEAN m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces
+	destructible_part_initial_state_destructed_2_generate_breakpieces(boolean) // FIELD_BOOLEAN m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces
+	destructible_part_initial_state_destructed_3_generate_breakpieces(boolean) // FIELD_BOOLEAN m_bDestructiblePartInitialStateDestructed2_GenerateBreakpieces
+	destructible_part_initial_state_destructed_4_generate_breakpieces(boolean) // FIELD_BOOLEAN m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces
+	destructible_part_initial_state_destructed_5_generate_breakpieces(boolean) // FIELD_BOOLEAN m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces
+	input Alpha(integer) // PVAL_INT param
+	input Color(color255) // PVAL_COLOR_RGB param
+	input Skin(integer) // PVAL_INT param
+	input fademaxdist(float) // PVAL_FLOAT param
+	input fademindist(float) // PVAL_FLOAT param
+]
+
+// CBaseAnimGraph
+@PointClass base(basemodelentity) = baseanimgraph
+[
+	// component CBodyComponent: CBodyComponentBaseAnimGraph
+	initially_populate_interp_history(boolean) // FIELD_BOOLEAN m_bInitiallyPopulateInterpHistory
+	suppress_anim_event_sounds(boolean) // FIELD_BOOLEAN m_bSuppressAnimEventSounds
+	input ClearTargetIdentifierOverride(void)
+	input DisableAnimEventSounds(boolean) // PVAL_BOOL param
+	input GetLayerCycle(integer) : "Returns the cycle of an animation playing on this layer<br><br>This node can appear in Observable contexts." // PVAL_INT iLayer, returns PVAL_FLOAT retval, Pulse node
+	input IsAnimEventActive(string) : "Is the specified AG2 event active?<br><br>This node can appear in Observable contexts." // PVAL_SCHEMA_ENUM:GameAnimEventIndex_t nAnimEvent, returns PVAL_BOOL retval, Pulse node
+	input IsExternalChoreoGraphActive(void) : "Is there an external choreo animgraph applied to this entity<br><br>This node can appear in Observable contexts." // returns PVAL_BOOL retval, Pulse node
+	input PlaySequence(string) : "Play the specified animation sequence on a NON-ANIMGRAPH entity" // PVAL_STRING pSequenceName, Pulse node
+	input SetBodygroup(string) // PVAL_STRING param
+	input SetPlaybackRate(float) // PVAL_FLOAT param
+	input SetTargetIdentifierOverride(string) // PVAL_STRING param
+	output OnLayerCycleUpdated(float) // PVAL_FLOAT param
+	output m_OnExternalChoreoGraphChanged(void)
+]
+
+// C_BaseCombatCharacter
+@BaseClass base(baseanimgraph) = C_BaseCombatCharacter
+[
+]
+
+// C_BasePlayerPawn
+@BaseClass base(C_BaseCombatCharacter) = base_player_pawn
+[
+	controller(target_destination) // FIELD_EHANDLE m_hController
+	// m_skybox3d (sky3dparams_t)
+		scale(integer) // FIELD_INT16 scale
+		clip_3D_skybox_near_to_world_far(boolean) // FIELD_BOOLEAN bClip3DSkyBoxNearToWorldFar
+		clip_3D_skybox_near_to_world_far_offset(float) // FIELD_FLOAT32 flClip3DSkyBoxNearToWorldFarOffset
+		// fog (fogparams_t)
+			fogdir(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE dirPrimary
+			fogcolor(color255) // FIELD_COLOR32 colorPrimary
+			fogcolor2(color255) // FIELD_COLOR32 colorSecondary
+			fogstart(float) // FIELD_FLOAT32 start
+			fogend(float) // FIELD_FLOAT32 end
+			farz(float) // FIELD_FLOAT32 farz
+			fogmaxdensity(float) // FIELD_FLOAT32 maxdensity
+			fogexponent(float) // FIELD_FLOAT32 exponent
+			HDRColorScale(float) // FIELD_FLOAT32 HDRColorScale
+			foglerptime(float) // FIELD_FLOAT32 duration
+			fogenable(boolean) // FIELD_BOOLEAN enable
+			fogblend(boolean) // FIELD_BOOLEAN blend
+			blendtobackground(float) // FIELD_FLOAT32 blendtobackground
+			scattering(float) // FIELD_FLOAT32 scattering
+			locallightscale(float) // FIELD_FLOAT32 locallightscale
+]
+
+// CCitadelPlayerPawnBase
+@BaseClass base(base_player_pawn) = CCitadelPlayerPawnBase
+[
+]
+
+// CCitadel_Ability_BaseHeldItem
+@BaseClass base(citadel_base_ability) = CCitadel_Ability_BaseHeldItem
+[
+]
+
+// CCitadel_Ability_Melee_Base
+@BaseClass base(citadel_base_ability) = CCitadel_Ability_Melee_Base
+[
+]
+
+// CCitadel_Ability_PrimaryWeapon
+@BaseClass base(citadel_base_ability) = CCitadel_Ability_PrimaryWeapon
+[
+]
+
+// CCitadel_CosmeticAbility
+@BaseClass base(citadel_base_ability) = CCitadel_CosmeticAbility
+[
+]
+
+// CCitadelAnimatingModelEntity
+@PointClass base(baseanimgraph) = citadel_animating_model_entity
+[
+]
+
+// CCitadel_GuidedArrow_OwlModel
+@BaseClass base(citadel_animating_model_entity) = CCitadel_GuidedArrow_OwlModel
+[
+]
+
+// CCitadel_Item
+@BaseClass base(citadel_base_ability) = CCitadel_Item
+[
+]
+
+// CLogicalEntity
+@BaseClass base(C_BaseEntity) = CLogicalEntity
+[
+]
+
+// CServerOnlyModelEntity
+@BaseClass base(basemodelentity) = CServerOnlyModelEntity
+[
+]
+
+// CTier3BossAbility
+@BaseClass base(CCitadelBaseAbilityServerOnly) = CTier3BossAbility
+[
+]
+
+// C_BaseClientUIEntity
+@BaseClass base(basemodelentity) = base_clientui_entity
+[
+	enabled(boolean) // FIELD_BOOLEAN m_bEnabled
+	dialog_layout_name(string) // FIELD_STRING m_DialogXMLName
+	panel_class_name(string) // FIELD_STRING m_PanelClassName
+	panel_id(string) // FIELD_STRING m_PanelID
+]
+
+// C_PointClientUIWorldPanel
+@PointClass base(base_clientui_entity) = point_clientui_world_panel
+[
+	ignore_input(boolean) // FIELD_BOOLEAN m_bIgnoreInput
+	follow_player_across_teleport(boolean) // FIELD_BOOLEAN m_bFollowPlayerAcrossTeleport
+	width(float) // FIELD_FLOAT32 m_flWidth
+	height(float) // FIELD_FLOAT32 m_flHeight
+	panel_dpi(float) // FIELD_FLOAT32 m_flDPI
+	window_ui_scale(float) // FIELD_FLOAT32 m_flWindowUIScale
+	interact_distance(float) // FIELD_FLOAT32 m_flInteractDistance
+	depth_offset(float) // FIELD_FLOAT32 m_flDepthOffset
+	owner_context(integer) // FIELD_UINT32 m_unOwnerContext
+	horizontal_align(integer) // FIELD_UINT32 m_unHorizontalAlign
+	vertical_align(integer) // FIELD_UINT32 m_unVerticalAlign
+	orientation(integer) // FIELD_UINT32 m_unOrientation
+	allow_interaction_from_all_scene_worlds(boolean) // FIELD_BOOLEAN m_bAllowInteractionFromAllSceneWorlds
+	opaque(boolean) // FIELD_BOOLEAN m_bOpaque
+	ignore_depth(boolean) // FIELD_BOOLEAN m_bNoDepth
+	visible_when_parent_nodraw(boolean) // FIELD_BOOLEAN m_bVisibleWhenParentNoDraw
+	render_backface(boolean) // FIELD_BOOLEAN m_bRenderBackface
+	lit(boolean) // FIELD_BOOLEAN m_bLit
+	enable_offscreen_indicator(boolean) // FIELD_BOOLEAN m_bUseOffScreenIndicator
+	exclude_from_save_games(boolean) // FIELD_BOOLEAN m_bExcludeFromSaveGames
+	grabbable(boolean) // FIELD_BOOLEAN m_bGrabbable
+	only_render_to_texture(boolean) // FIELD_BOOLEAN m_bOnlyRenderToTexture
+	disable_mip_gen(boolean) // FIELD_BOOLEAN m_bDisableMipGen
+	explicit_image_layout(integer) // FIELD_INT32 m_nExplicitImageLayout
+	ignore_parent_orientation(boolean) // FIELD_BOOLEAN m_bIgnoreParentOrientation
+	css_class(string) // FIELD_STRING
+]
+
+// CUnitStatusOverlay
+@BaseClass base(point_clientui_world_panel) = CUnitStatusOverlay
+[
+]
+
+// C_AI_BaseNPC
+@BaseClass base(C_BaseCombatCharacter) = C_AI_BaseNPC
+[
+]
+
+// C_AI_CitadelNPC
+@BaseClass base(C_AI_BaseNPC) = C_AI_CitadelNPC
+[
+]
+
+// C_BaseToggle
+@BaseClass base(basemodelentity) = C_BaseToggle
+[
+]
+
+// C_BaseDoor
+@BaseClass base(C_BaseToggle) = C_BaseDoor
+[
+]
+
+// CBaseProp
+@PointClass base(baseanimgraph) = base_prop
+[
+	propdata_override(string) // FIELD_STRING
+]
+
+// C_BreakableProp
+@BaseClass base(base_prop) = breakable_prop
+[
+	ExplodeDamage(float) // FIELD_FLOAT32 m_explodeDamage
+	ExplodeRadius(float) // FIELD_FLOAT32 m_explodeRadius
+	minhealthdmg(integer) // FIELD_INT32 m_iMinHealthDmg
+	PerformanceMode(intchoices) : "PerformanceMode" : : "" = // FIELD_INT32 m_PerformanceMode (PerformanceMode_t)
+	[
+		0 : "PM_NORMAL"
+		1 : "PM_NO_GIBS"
+	]
+	PressureDelay(float) // FIELD_FLOAT32 m_flPressureDelay
+	BurstScale(float) // FIELD_FLOAT32 m_flDefBurstScale
+	BurstLocation(vector) // FIELD_VECTOR m_vDefBurstOffset
+	BreakableContentsType(intchoices) : "BreakableContentsType" : : "" = // FIELD_INT32 m_BreakableContentsType (BreakableContentsType_t)
+	[
+		0 : "BC_DEFAULT"
+		1 : "BC_EMPTY"
+		2 : "BC_PROP_GROUP_OVERRIDE"
+		3 : "BC_PARTICLE_SYSTEM_OVERRIDE"
+	]
+	BreakableContentsPropGroupOverride(string) // FIELD_UTLSTRING m_strBreakableContentsPropGroupOverride
+	BreakableContentsParticleOverride(string) // FIELD_UTLSTRING m_strBreakableContentsParticleOverride
+	physdamagescale(float) // FIELD_FLOAT32 m_impactEnergyScale
+	input AddHealth(integer) // PVAL_INT param
+	input Break(void)
+	input RemoveHealth(integer) // PVAL_INT param
+	input SetEnableBreaking(boolean) // PVAL_BOOL param
+	input SetEnableCollisions(boolean) // PVAL_BOOL param
+	input SetHealth(integer) // PVAL_INT param
+	input physdamagescale(float) // PVAL_FLOAT param
+	output OnBreak(void)
+	output OnHealthChanged(float) // PVAL_FLOAT param
+	output OnStartDeath(void)
+	output OnTakeDamage(void)
+]
+
+// C_DynamicProp
+@PointClass base(breakable_prop) = prop_dynamic
+[
+	IdleAnim(string) // FIELD_STRING m_iszIdleAnim
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bStartDisabled
+	use_animgraph(boolean) // FIELD_BOOLEAN m_bUseAnimGraph
+	randomizecycle(boolean) // FIELD_BOOLEAN m_bRandomizeCycle
+	IdleAnimationLoopMode(intchoices) : "IdleAnimationLoopMode" : : "" = // FIELD_INT32 m_nIdleAnimLoopMode (AnimLoopMode_t)
+	[
+		-1 : "ANIM_LOOP_MODE_INVALID"
+		0 : "ANIM_LOOP_MODE_NOT_LOOPING"
+		1 : "ANIM_LOOP_MODE_LOOPING"
+		2 : "ANIM_LOOP_MODE_USE_SEQUENCE_SETTINGS"
+		3 : "ANIM_LOOP_MODE_COUNT"
+	]
+	glowstate(integer) // FIELD_INT32 m_iInitialGlowState
+	glowrange(integer) // FIELD_INT32 m_nGlowRange
+	glowrangemin(integer) // FIELD_INT32 m_nGlowRangeMin
+	glowcolor(color255) // FIELD_COLOR32 m_glowColor
+	glowteam(integer) // FIELD_INT32 m_nGlowTeam
+	forcenpcexclude(boolean) // FIELD_BOOLEAN m_bForceNpcExclude
+	create_surface_graph(boolean) // FIELD_BOOLEAN m_bCreateMovableSurfaceGraph
+	StartingAnim(string) // FIELD_STRING
+	StartingAnimationLoopMode(string) // FIELD_STRING
+	health(integer) // FIELD_INT32
+	HoldAnimation(boolean) // FIELD_BOOLEAN
+	input Disable(void)
+	input DisableCollision(void)
+	input Enable(void)
+	input EnableCollision(void)
+	input SetAnimation(string) // PVAL_STRING param
+	input SetAnimationLooping(string) // PVAL_STRING param
+	input SetAnimationNoReset(string) // PVAL_STRING param
+	input SetAnimationNoResetLooping(string) // PVAL_STRING param
+	input SetAnimationNoResetNotLooping(string) // PVAL_STRING param
+	input SetAnimationNotLooping(string) // PVAL_STRING param
+	input SetDefaultAnimation(string) // PVAL_STRING param
+	input SetDefaultAnimationLooping(string) // PVAL_STRING param
+	input SetDefaultAnimationNotLooping(string) // PVAL_STRING param
+	input SetGlowOverride(vector) // PVAL_VEC3 param
+	input SetGlowRange(integer) // PVAL_INT param
+	input SetIdleAnimationLooping(string) // PVAL_STRING param
+	input SetIdleAnimationNotLooping(string) // PVAL_STRING param
+	input SetPlaybackRate(float) // PVAL_FLOAT param
+	input StartGlowing(void)
+	input StopGlowing(void)
+	input TurnOff(void)
+	input TurnOn(void)
+	output OnAnimationBegun(void)
+	output OnAnimationDone(void)
+	output OnAnimationLoopCycleDone(void)
+	output OnAnimationReachedEnd(void)
+	output OnAnimationReachedStart(void)
+	output OnScriptFireEvent01(void) : "Fired when the animation hits the matching AE_SCRIPT_FIRE_EVENT_XX anim event."
+	output OnScriptFireEvent02(void) : "Fired when the animation hits the matching AE_SCRIPT_FIRE_EVENT_XX anim event."
+	output OnScriptFireEvent03(void) : "Fired when the animation hits the matching AE_SCRIPT_FIRE_EVENT_XX anim event."
+	output OnScriptFireEvent04(void) : "Fired when the animation hits the matching AE_SCRIPT_FIRE_EVENT_XX anim event."
+	output OnScriptFireEvent05(void) : "Fired when the animation hits the matching AE_SCRIPT_FIRE_EVENT_XX anim event."
+]
+
+// C_BasePropDoor
+@BaseClass base(prop_dynamic) = C_BasePropDoor
+[
+]
+
+// C_Breakable
+@BaseClass base(basemodelentity) = C_Breakable
+[
+]
+
+// C_BaseTrigger
+@PointClass base(C_BaseToggle) = trigger
+[
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bDisabled
+	filtername(string) // FIELD_STRING m_iFilterName
+	okifnomodel(boolean) // FIELD_BOOLEAN
+	radius(float) // FIELD_FLOAT32
+	input Disable(void)
+	input Enable(void)
+	input EndTouch(void)
+	input FindEntitiesInTrigger(api) // PVAL_STRING entityType, PVAL_ENTITY_NAME optionalEntityName, returns PVAL_ARRAY:PVAL_EHANDLE retval, Pulse node: Return the current entities touching the trigger, matching the optional criteria.<br><br>This node can appear in Observable contexts.
+	input IsTouching(target_destination) : "Is the other entity touching the trigger?<br><br>This node can appear in Observable contexts." // PVAL_EHANDLE pOtherEntity, returns PVAL_BOOL retval, Pulse node
+	input IsTouchingAny(void) : "Is there any entity touching the trigger?<br><br>This node can appear in Observable contexts." // returns PVAL_BOOL retval, Pulse node
+	input StartTouch(void)
+	input Toggle(void)
+	input TouchTest(void)
+	output OnEndTouch(void)
+	output OnEndTouchAll(void)
+	output OnNotTouching(void)
+	output OnStartTouch(void)
+	output OnStartTouchAll(void)
+	output OnTouching(void)
+	output OnTouchingChanged(void)
+	output OnTouchingEachEntity(void)
+]
+
+// C_CitadelClimbRopeTrigger
+@BaseClass base(trigger) = C_CitadelClimbRopeTrigger
+[
+]
+
+// C_CitadelIdolReturnTrigger
+@BaseClass base(trigger) = C_CitadelIdolReturnTrigger
+[
+]
+
+// C_CitadelMapDistrictTrigger
+@BaseClass base(trigger) = C_CitadelMapDistrictTrigger
+[
+]
+
+// C_CitadelShopTunnelTrigger
+@BaseClass base(trigger) = C_CitadelShopTunnelTrigger
+[
+]
+
+// C_Team, ECF_SPAWN_GROUP_HANDLE_INVALID
+@PointClass base(C_BaseEntity) = team_manager
+[
+	teamname(string) // FIELD_CHARACTER m_szTeamname
+]
+
+// C_CitadelTeam
+@BaseClass base(team_manager) = C_CitadelTeam
+[
+]
+
+// C_CitadelTeleportTrigger
+@BaseClass base(trigger) = C_CitadelTeleportTrigger
+[
+]
+
+// C_CitadelTriggerHideout
+@BaseClass base(trigger) = C_CitadelTriggerHideout
+[
+]
+
+// C_Citadel_BreakableProp
+@BaseClass base(baseanimgraph) = C_Citadel_BreakableProp
+[
+]
+
+// C_Citadel_Pickup
+@BaseClass base(baseanimgraph) = C_Citadel_Pickup
+[
+]
+
+// C_Citadel_PickupItemSpawner
+@BaseClass base(baseanimgraph) = C_Citadel_PickupItemSpawner
+[
+]
+
+// C_Citadel_PickupSpawner
+@BaseClass base(baseanimgraph) = C_Citadel_PickupSpawner
+[
+]
+
+// C_Citadel_Pickup_Ability
+@BaseClass base(C_Citadel_Pickup) = C_Citadel_Pickup_Ability
+[
+]
+
+// C_Citadel_Pickup_AssignedGold
+@BaseClass base(C_Citadel_Pickup) = C_Citadel_Pickup_AssignedGold
+[
+]
+
+// C_Citadel_Pickup_Currency
+@BaseClass base(C_Citadel_Pickup) = C_Citadel_Pickup_Currency
+[
+]
+
+// C_Citadel_Pickup_Gold
+@BaseClass base(C_Citadel_Pickup) = C_Citadel_Pickup_Gold
+[
+]
+
+// C_Citadel_Pickup_Health
+@BaseClass base(C_Citadel_Pickup) = C_Citadel_Pickup_Health
+[
+]
+
+// C_Citadel_Pickup_Item
+@BaseClass base(C_Citadel_Pickup_Ability) = C_Citadel_Pickup_Item
+[
+]
+
+// C_Citadel_Pickup_Modifier
+@BaseClass base(C_Citadel_Pickup) = C_Citadel_Pickup_Modifier
+[
+]
+
+// C_Citadel_Pickup_NecroDeath
+@BaseClass base(C_Citadel_Pickup) = C_Citadel_Pickup_NecroDeath
+[
+]
+
+// C_ColorCorrection
+@BaseClass base(C_BaseEntity) = C_ColorCorrection
+[
+]
+
+// C_ColorCorrectionVolume
+@BaseClass base(trigger) = C_ColorCorrectionVolume
+[
+]
+
+// C_DynamicLight
+@BaseClass base(basemodelentity) = C_DynamicLight
+[
+]
+
+// C_EconEntity
+@BaseClass base(baseanimgraph) = C_EconEntity
+[
+]
+
+// C_EnvWind
+@BaseClass base(C_BaseEntity) = C_EnvWind
+[
+	// m_EnvWindShared (C_EnvWindShared)
+		minwind(integer) // FIELD_UINT16 m_iMinWind
+		maxwind(integer) // FIELD_UINT16 m_iMaxWind
+		windradius(integer) // FIELD_INT32 m_windRadius
+		mingust(integer) // FIELD_UINT16 m_iMinGust
+		maxgust(integer) // FIELD_UINT16 m_iMaxGust
+		mingustdelay(float) // FIELD_FLOAT32 m_flMinGustDelay
+		maxgustdelay(float) // FIELD_FLOAT32 m_flMaxGustDelay
+		gustduration(float) // FIELD_FLOAT32 m_flGustDuration
+		gustdirchange(integer) // FIELD_UINT16 m_iGustDirChange
+]
+
+// C_Fish
+@BaseClass base(baseanimgraph) = C_Fish
+[
+]
+
+// C_FuncBrush
+@BaseClass base(basemodelentity) = C_FuncBrush
+[
+]
+
+// C_FuncElectrifiedVolume
+@BaseClass base(C_FuncBrush) = C_FuncElectrifiedVolume
+[
+]
+
+// C_FuncMoveLinear
+@BaseClass base(C_BaseToggle) = C_FuncMoveLinear
+[
+]
+
+// C_FuncMover
+@BaseClass base(C_BaseToggle) = C_FuncMover
+[
+]
+
+// C_FuncRotating
+@BaseClass base(basemodelentity) = C_FuncRotating
+[
+]
+
+// C_FuncTrackTrain
+@BaseClass base(basemodelentity) = C_FuncTrackTrain
+[
+]
+
+// C_GameRulesProxy, ECF_SPAWN_GROUP_HANDLE_INVALID
+@BaseClass base(C_BaseEntity) = C_GameRulesProxy
+[
+]
+
+// C_HandleTest
+@BaseClass base(C_BaseEntity) = C_HandleTest
+[
+]
+
+// C_MiniMapMarker
+@BaseClass base(C_BaseEntity) = C_MiniMapMarker
+[
+]
+
+// C_ModelPointEntity
+@BaseClass base(basemodelentity) = C_ModelPointEntity
+[
+	// component CBodyComponent: CBodyComponentPoint
+]
+
+// C_NPC_SimpleAnimatingAI
+@BaseClass base(baseanimgraph) = C_NPC_SimpleAnimatingAI
+[
+]
+
+// C_NPC_BaseDefenseSentry
+@BaseClass base(C_NPC_SimpleAnimatingAI) = C_NPC_BaseDefenseSentry
+[
+]
+
+// C_NPC_CarpetBombDrone
+@BaseClass base(C_AI_CitadelNPC) = C_NPC_CarpetBombDrone
+[
+]
+
+// C_NPC_FlyingDrone
+@BaseClass base(C_AI_CitadelNPC) = C_NPC_FlyingDrone
+[
+]
+
+// C_NPC_HornetDrone
+@BaseClass base(C_AI_CitadelNPC) = C_NPC_HornetDrone
+[
+]
+
+// C_NPC_ShieldedSentry
+@BaseClass base(C_NPC_SimpleAnimatingAI) = C_NPC_ShieldedSentry
+[
+]
+
+// C_NPC_SurveillanceDrone
+@BaseClass base(C_NPC_FlyingDrone) = C_NPC_SurveillanceDrone
+[
+]
+
+// C_PhysBox
+@BaseClass base(C_Breakable) = C_PhysBox
+[
+]
+
+// C_PhysMagnet
+@BaseClass base(baseanimgraph) = C_PhysMagnet
+[
+]
+
+// C_PhysicsProp
+@BaseClass base(breakable_prop) = C_PhysicsProp
+[
+]
+
+// C_PointCommentaryNode
+@BaseClass base(baseanimgraph) = C_PointCommentaryNode
+[
+]
+
+// C_PropDoorRotating
+@BaseClass base(C_BasePropDoor) = C_PropDoorRotating
+[
+]
+
+// C_RagdollProp
+@PointClass base(baseanimgraph) = prop_ragdoll
+[
+]
+
+// C_RagdollPropAttached
+@BaseClass base(prop_ragdoll) = C_RagdollPropAttached
+[
+]
+
+// C_SpotlightEnd
+@BaseClass base(basemodelentity) = C_SpotlightEnd
+[
+]
+
+// C_TriggerLerpObject
+@BaseClass base(trigger) = C_TriggerLerpObject
+[
+]
+
+// C_TriggerMultiple
+@BaseClass base(trigger) = C_TriggerMultiple
+[
+]
+
+// C_WaterBullet
+@BaseClass base(baseanimgraph) = C_WaterBullet
+[
+]
+
+// C_Citadel_PestilenceDroneDispenser
+@PointClass base(C_AI_CitadelNPC) = Citadel_PestilenceDroneDispenser
+[
+]
+
+// C_NPC_PestilenceDrone
+@PointClass base(C_AI_CitadelNPC) = NPC_PestilenceDrone
+[
+]
+
+// CCitadel_Ability_Boho_ChannelTether
+@PointClass base(citadel_base_ability) = abiilty_boho_channeltether
+[
+]
+
+// CCitadel_Ability_Boho_DoubleHit
+@PointClass base(citadel_base_ability) = abiilty_boho_doublehit
+[
+]
+
+// CCitadel_Ability_Afterburn
+@PointClass base(citadel_base_ability) = ability_afterburn
+[
+]
+
+// CCitadel_Ability_Bebop_StickyBomb2
+@PointClass base(citadel_base_ability) = ability_bebop_stickybomb2
+[
+]
+
+// CCitadel_Ability_BloodBomb
+@PointClass base(citadel_base_ability) = ability_blood_bomb
+[
+]
+
+// CCitadel_Ability_Ghost_BloodShards
+@PointClass base(citadel_base_ability) = ability_blood_shards
+[
+]
+
+// CCitadel_Ability_Boho_Ability01
+@PointClass base(citadel_base_ability) = ability_boho_ability01
+[
+]
+
+// CCitadel_Ability_Boho_Ability02
+@PointClass base(citadel_base_ability) = ability_boho_ability02
+[
+]
+
+// CCitadel_Ability_Boho_BouncyProjectile
+@PointClass base(citadel_base_ability) = ability_boho_bouncyprojectile
+[
+]
+
+// CCitadel_Ability_Boho_DamageShare
+@PointClass base(citadel_base_ability) = ability_boho_damageshare
+[
+]
+
+// CCitadel_Ability_Boho_SkipGrenade
+@PointClass base(citadel_base_ability) = ability_boho_skipgrenade
+[
+]
+
+// CCitadel_Ability_Bomber_Ability02
+@PointClass base(citadel_base_ability) = ability_bomber_ability02
+[
+]
+
+// CCitadel_Ability_Bomber_Ability03
+@PointClass base(citadel_base_ability) = ability_bomber_ability03
+[
+]
+
+// CCitadel_Ability_Bomber_ULT
+@PointClass base(citadel_base_ability) = ability_bomber_ult
+[
+]
+
+// CCitadel_Ability_Bookworm_AOEMagic
+@PointClass base(citadel_base_ability) = ability_bookworm_aoemagic
+[
+]
+
+// CCitadel_Ability_Bookworm_DragonFire
+@PointClass base(citadel_base_ability) = ability_bookworm_dragonfire
+[
+]
+
+// CCitadel_Ability_Bookworm_KnightBarrier
+@PointClass base(citadel_base_ability) = ability_bookworm_knightbarrier
+[
+]
+
+// CCitadel_Ability_Bounce_Pad
+@PointClass base(citadel_base_ability) = ability_bounce_pad
+[
+]
+
+// CCitadel_Ability_BulletFlurry
+@PointClass base(citadel_base_ability) = ability_bullet_flurry
+[
+]
+
+// CCitadel_Ability_Burrow
+@PointClass base(citadel_base_ability) = ability_burrow
+[
+]
+
+// CCitadel_Ability_Charged_Bomb
+@PointClass base(citadel_base_ability) = ability_charged_bomb
+[
+]
+
+// CCitadel_Ability_ChargedShot
+@PointClass base(citadel_base_ability) = ability_charged_shot
+[
+]
+
+// CCitadel_Ability_Crackshot
+@PointClass base(citadel_base_ability) = ability_crackshot
+[
+]
+
+// CCitadel_Ability_DeathTax
+@PointClass base(citadel_base_ability) = ability_death_tax
+[
+]
+
+// CCitadel_Gunslinger_DemonMark
+@PointClass base(citadel_base_ability) = ability_demonmark
+[
+]
+
+// CCitadel_Ability_Digger_EnterTunnel
+@PointClass base(citadel_base_ability) = ability_digger_entertunnel
+[
+]
+
+// CCitadel_Ability_Doorman_Bomb
+@PointClass base(citadel_base_ability) = ability_doorman_bomb
+[
+]
+
+// CCitadel_Ability_Doorman_Doorway
+@PointClass base(citadel_base_ability) = ability_doorman_doorway
+[
+]
+
+// CCitadelBaseTriggerAbility
+@PointClass base(citadel_base_ability) = citadel_base_trigger_ability
+[
+]
+
+// CCitadel_Ability_AbilityName
+@PointClass base(citadel_base_trigger_ability) = ability_doorman_doorway_trigger
+[
+]
+
+// CCitadel_Ability_Doorman_Hotel
+@PointClass base(citadel_base_ability) = ability_doorman_hotel
+[
+]
+
+// CCitadel_Ability_Doorman_Cart
+@PointClass base(citadel_base_ability) = ability_doorman_luggage_cart
+[
+]
+
+// CCitadel_Ability_Drifter_Hunger
+@PointClass base(citadel_base_ability) = ability_drifter_hunger
+[
+]
+
+// CCitadelAbilityDruidBasePlant
+@PointClass base(citadel_base_ability) = ability_druid_base_plant
+[
+]
+
+// CCitadelAbilityDruidHelicopterSeeds
+@PointClass base(citadel_base_ability) = ability_druid_helicopter_seeds
+[
+]
+
+// CCitadelAbilityDruidLeechSeed
+@PointClass base(citadel_base_ability) = ability_druid_leech_seed
+[
+]
+
+// CCitadelAbilityDruidPlantBranchWall
+@PointClass base(ability_druid_base_plant) = ability_druid_plant_branch_wall
+[
+]
+
+// CCitadelAbilityDruidPlantHealingTree
+@PointClass base(ability_druid_base_plant) = ability_druid_plant_healing_tree
+[
+]
+
+// CCitadelAbilityDruidPlantInvisBush
+@PointClass base(ability_druid_base_plant) = ability_druid_plant_invis_bush
+[
+]
+
+// CCitadelAbilityDruidPlantSomething
+@PointClass base(ability_druid_base_plant) = ability_druid_plant_something
+[
+]
+
+// CCitadelAbilityDruidSprout
+@PointClass base(citadel_base_ability) = ability_druid_sprout
+[
+]
+
+// CCitadelAbilityDruidAbility04
+@PointClass base(citadel_base_ability) = ability_druid_ult
+[
+]
+
+// CCitadel_Ability_EmpowerBullet
+@PointClass base(citadel_base_ability) = ability_empower_bullet
+[
+]
+
+// CCitadel_Ability_ExplosiveBarrel
+@PointClass base(citadel_base_ability) = ability_explosive_barrel
+[
+]
+
+// CCitadel_Ability_Familiar_Ability01
+@PointClass base(citadel_base_ability) = ability_familiar_ability01
+[
+]
+
+// CCitadel_Ability_Familiar_Ability02
+@PointClass base(citadel_base_ability) = ability_familiar_ability02
+[
+]
+
+// CCitadel_Ability_Familiar_AltWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = ability_familiar_alt_weapon
+[
+]
+
+// CCitadel_Ability_Familiar_Attach
+@PointClass base(citadel_base_ability) = ability_familiar_attach
+[
+]
+
+// CCitadel_Ability_Familiar_Attach_Trigger
+@PointClass base(citadel_base_ability) = ability_familiar_attach_trigger
+[
+]
+
+// CCitadel_Ability_Familiar_Clone
+@PointClass base(citadel_base_ability) = ability_familiar_clone
+[
+]
+
+// CCitadel_Ability_Familiar_Clone_End
+@PointClass base(citadel_base_ability) = ability_familiar_clone_end
+[
+]
+
+// CCitadel_Ability_Familiar_CloneSingle
+@PointClass base(citadel_base_ability) = ability_familiar_clonesingle
+[
+]
+
+// CCitadel_Ability_Familiar_CloneSingle_Trigger
+@PointClass base(citadel_base_ability) = ability_familiar_clonesingle_trigger
+[
+]
+
+// CCitadel_Ability_Familiar_HealHost
+@PointClass base(citadel_base_ability) = ability_familiar_healhost
+[
+]
+
+// CCitadel_Ability_Familiar_HelpingHands
+@PointClass base(citadel_base_ability) = ability_familiar_helpinghands
+[
+]
+
+// CCitadel_Ability_Familiar_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = ability_familiar_primary_weapon_bubblegun
+[
+]
+
+// CCitadel_Ability_Familiar_Spotlight
+@PointClass base(citadel_base_ability) = ability_familiar_spotlight
+[
+]
+
+// CAbility_Fencer_Lunge
+@PointClass base(citadel_base_ability) = ability_fencer_lunge
+[
+]
+
+// CCitadel_Ability_Fencer_Riposte
+@PointClass base(citadel_base_ability) = ability_fencer_riposte
+[
+]
+
+// CCitadel_Ability_RiposteTargetSelect
+@PointClass base(citadel_base_trigger_ability) = ability_fencer_riposte_target_select
+[
+]
+
+// CCitadel_Ability_Fencer_ThrowBlade
+@PointClass base(citadel_base_ability) = ability_fencer_throwblade
+[
+]
+
+// CAbility_Fencer_Ultimate
+@PointClass base(citadel_base_ability) = ability_fencer_ultimate
+[
+]
+
+// CCitadel_Ability_FireBomb
+@PointClass base(citadel_base_ability) = ability_fire_bomb
+[
+]
+
+// CCitadel_Ability_FlameDash
+@PointClass base(citadel_base_ability) = ability_flame_dash
+[
+]
+
+// CCitadel_Ability_Fortuna_Ability01
+@PointClass base(citadel_base_ability) = ability_fortuna_ability01
+[
+]
+
+// CCitadel_Ability_Fortuna_Ability02
+@PointClass base(citadel_base_ability) = ability_fortuna_ability02
+[
+]
+
+// CCitadel_Ability_Fortuna_Ability03
+@PointClass base(citadel_base_ability) = ability_fortuna_ability03
+[
+]
+
+// CCitadel_Ability_Fortuna_Ability04
+@PointClass base(citadel_base_ability) = ability_fortuna_ult
+[
+]
+
+// CCitadel_Ability_Frank_PainAura
+@PointClass base(citadel_base_ability) = ability_frank_painaura
+[
+]
+
+// CCitadel_Ability_Frank_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = ability_frank_primaryweapon
+[
+]
+
+// CCitadel_Ability_Frank_Revive
+@PointClass base(citadel_base_ability) = ability_frank_revive
+[
+]
+
+// CCitadel_Ability_Frank_SelfZap
+@PointClass base(citadel_base_ability) = ability_frank_selfzap
+[
+]
+
+// CCitadel_Ability_Frank_ShockTarget2
+@PointClass base(citadel_base_ability) = ability_frank_shocktarget2
+[
+]
+
+// CCitadel_Ability_GoldenIdol
+@PointClass base(CCitadel_Ability_BaseHeldItem) = ability_golden_idol
+[
+]
+
+// CCitadel_Ability_Graf_Ability01
+@PointClass base(citadel_base_ability) = ability_graf_ability01
+[
+]
+
+// CCitadel_Ability_Graf_Ability02
+@PointClass base(citadel_base_ability) = ability_graf_ability02
+[
+]
+
+// CCitadel_Ability_Graf_Ability03
+@PointClass base(citadel_base_ability) = ability_graf_ability03
+[
+]
+
+// CCitadel_Ability_Graf_Ability04
+@PointClass base(citadel_base_ability) = ability_graf_ult
+[
+]
+
+// CCitadel_Ability_Gravity_Lasso
+@PointClass base(citadel_base_ability) = ability_gravity_lasso
+[
+]
+
+// CCitadel_Ability_GuidedArrow
+@PointClass base(citadel_base_ability) = ability_guided_arrow
+[
+]
+
+// CCitadel_Ability_Gunslinger_KnockbackBlast
+@PointClass base(citadel_base_ability) = ability_gunslinger_knockbackblast
+[
+]
+
+// CCitadel_Ability_Gunslinger_SpreadingFire
+@PointClass base(citadel_base_ability) = ability_gunslinger_spreadingfire
+[
+]
+
+// CCitadel_Ability_HealthSwap
+@PointClass base(citadel_base_ability) = ability_health_swap
+[
+]
+
+// CCitadel_Ability_IceDome
+@PointClass base(citadel_base_ability) = ability_ice_dome
+[
+]
+
+// CCitadel_Ability_IceGrenade
+@PointClass base(citadel_base_ability) = ability_ice_grenade
+[
+]
+
+// CCitadel_Ability_IceBeam
+@PointClass base(citadel_base_ability) = ability_icebeam
+[
+]
+
+// CCitadel_Ability_IcePath
+@PointClass base(citadel_base_ability) = ability_icepath
+[
+]
+
+// CCitadel_Ability_ImmobilizeTrap
+@PointClass base(citadel_base_ability) = ability_immobilize_trap
+[
+]
+
+// CCitadel_Ability_IncendiaryProjectile
+@PointClass base(citadel_base_ability) = ability_incendiary_projectile
+[
+]
+
+// CCitadel_Ability_InfinitySlash
+@PointClass base(CCitadelBaseYamatoAbility) = ability_infinity_slash
+[
+]
+
+// CCitadel_Ability_Intimidate
+@PointClass base(citadel_base_ability) = ability_intimidate
+[
+]
+
+// CCitadel_Ability_Dust_Storm
+@PointClass base(citadel_base_ability) = ability_kali_dust_storm
+[
+]
+
+// CCitadel_Ability_Trappers_Bolo
+@PointClass base(citadel_base_ability) = ability_kali_trappers_bolo
+[
+]
+
+// CCitadel_Ability_Lash_Flog
+@PointClass base(citadel_base_ability) = ability_lash_flog
+[
+]
+
+// CCitadel_Ability_LifeDrain
+@PointClass base(citadel_base_ability) = ability_life_drain
+[
+]
+
+// CCitadel_Ability_Magician_AnimalCurse
+@PointClass base(citadel_base_ability) = ability_magician_animalcurse
+[
+]
+
+// CCitadel_Ability_Magician_AnimalHexArea
+@PointClass base(citadel_base_ability) = ability_magician_animalhexarea
+[
+]
+
+// CCitadel_Ability_Magician_BigBolt
+@PointClass base(citadel_base_ability) = ability_magician_bigbolt
+[
+]
+
+// CCitadel_Ability_TurretClone_Trigger
+@PointClass base(citadel_base_trigger_ability) = ability_magician_cloneturret_trigger
+[
+]
+
+// CCitadel_Ability_Magician_CopyUlt
+@PointClass base(citadel_base_ability) = ability_magician_copyult
+[
+]
+
+// CCitadel_Ability_Magician_Escape
+@PointClass base(citadel_base_ability) = ability_magician_escape
+[
+]
+
+// CCitadel_Ability_Magician_MagicBolt
+@PointClass base(citadel_base_ability) = ability_magician_magicbolt
+[
+]
+
+// CCitadel_Ability_Magician_ShadowClone
+@PointClass base(citadel_base_ability) = ability_magician_shadowclone
+[
+]
+
+// CCitadel_Ability_MedicHeal
+@PointClass base(CCitadelBaseAbilityServerOnly) = ability_medic_trooper_heal
+[
+]
+
+// CCitadel_Ability_Nano_CatForm
+@PointClass base(citadel_base_ability) = ability_nano_catform
+[
+]
+
+// CCitadel_Ability_Nano_CatFormPounce
+@PointClass base(citadel_base_ability) = ability_nano_catform_pounce
+[
+]
+
+// CCitadel_Ability_Nano_Pounce
+@PointClass base(citadel_base_ability) = ability_nano_pounce
+[
+]
+
+// CCitadel_Ability_Nano_Pounce_Instant
+@PointClass base(citadel_base_ability) = ability_nano_pounce_instant
+[
+]
+
+// CCitadel_Ability_ProximityRitual
+@PointClass base(citadel_base_ability) = ability_nano_proximity_ritual
+[
+]
+
+// CCitadel_Ability_Nano_Shadow
+@PointClass base(citadel_base_ability) = ability_nano_shadow_step
+[
+]
+
+// CCitadel_Ability_Necro_Fear
+@PointClass base(citadel_base_ability) = ability_necro_fear
+[
+]
+
+// CCitadel_Ability_Necro_HauntingSkull
+@PointClass base(citadel_base_ability) = ability_necro_hauntingskull
+[
+]
+
+// CCitadel_Ability_Necro_HauntingSpirits
+@PointClass base(citadel_base_ability) = ability_necro_hauntingspirits
+[
+]
+
+// CCitadel_Ability_Necro_KillSummon
+@PointClass base(citadel_base_ability) = ability_necro_killsummon
+[
+]
+
+// CCitadel_Ability_Necro_KillSummonTrigger
+@PointClass base(citadel_base_trigger_ability) = ability_necro_killsummon_trigger
+[
+]
+
+// CCitadel_Ability_Necro_NukeMap
+@PointClass base(citadel_base_ability) = ability_necro_nukemap
+[
+]
+
+// CCitadel_Ability_Necro_ZombieWall
+@PointClass base(citadel_base_ability) = ability_necro_zombiewall
+[
+]
+
+// CCitadel_NPCAbility_Shield
+@PointClass base(citadel_base_ability) = ability_npc_shield
+[
+]
+
+// CCitadel_Ability_Opera_Ability01
+@PointClass base(citadel_base_ability) = ability_opera_ability01
+[
+]
+
+// CCitadel_Ability_Opera_Ability02
+@PointClass base(citadel_base_ability) = ability_opera_ability02
+[
+]
+
+// CCitadel_Ability_Opera_Ability03
+@PointClass base(citadel_base_ability) = ability_opera_ability03
+[
+]
+
+// CCitadel_Ability_Opera_Ability04
+@PointClass base(citadel_base_ability) = ability_opera_ult
+[
+]
+
+// CCitadel_Ability_Perched_Predator
+@PointClass base(citadel_base_ability) = ability_perched_predator
+[
+]
+
+// CCitadel_Ability_PowerJump
+@PointClass base(citadel_base_ability) = ability_power_jump
+[
+]
+
+// CCitadel_Ability_PowerSurge
+@PointClass base(citadel_base_ability) = ability_power_surge
+[
+]
+
+// CCitadel_Ability_Priest_AntiSpiritVest
+@PointClass base(citadel_base_ability) = ability_priest_antispiritvest
+[
+]
+
+// CCitadel_Ability_Priest_CrossbowWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = ability_priest_crossbowweapon
+[
+]
+
+// CCitadel_Ability_Priest_Knockback
+@PointClass base(citadel_base_ability) = ability_priest_knockback
+[
+]
+
+// CCitadel_Ability_Priest_SelfHeal
+@PointClass base(citadel_base_ability) = ability_priest_selfheal
+[
+]
+
+// CCitadel_Ability_Priest_SmokeGrenade
+@PointClass base(citadel_base_ability) = ability_priest_smokegrenade
+[
+]
+
+// CCitadel_Ability_Priest_StackingDefense
+@PointClass base(citadel_base_ability) = ability_priest_stackingdefense
+[
+]
+
+// CCitadel_Ability_Priest_WeaponSwap
+@PointClass base(citadel_base_ability) = ability_priest_weaponswap
+[
+]
+
+// CCitadel_Ability_PunkGoat_Blasted
+@PointClass base(citadel_base_ability) = ability_punkgoat_blasted
+[
+]
+
+// CCitadel_Ability_PunkGoat_GoatFlip
+@PointClass base(citadel_base_ability) = ability_punkgoat_goatflip
+[
+]
+
+// CCitadel_Ability_PunkGoat_Tether
+@PointClass base(citadel_base_ability) = ability_punkgoat_tether
+[
+]
+
+// CCitadel_Ability_PunkGoat_Ult
+@PointClass base(citadel_base_ability) = ability_punkgoat_ult
+[
+]
+
+// CCitadel_Ability_Rolling_FireBall
+@PointClass base(citadel_base_ability) = ability_rolling_fireball
+[
+]
+
+// CCitadel_Ability_WreckerScrapBlast
+@PointClass base(citadel_base_ability) = ability_scrap_blast
+[
+]
+
+// CCitadel_Ability_ShieldGuy_Ability01
+@PointClass base(citadel_base_ability) = ability_shieldguy_ability01
+[
+]
+
+// CCitadel_Ability_ShieldGuy_Ability02
+@PointClass base(citadel_base_ability) = ability_shieldguy_ability02
+[
+]
+
+// CCitadel_Ability_ShieldGuy_Ability03
+@PointClass base(citadel_base_ability) = ability_shieldguy_ability03
+[
+]
+
+// CCitadel_Ability_ShieldGuy_Ability04
+@PointClass base(citadel_base_ability) = ability_shieldguy_ult
+[
+]
+
+// CCitadel_Ability_SkyRunner_FlakShot
+@PointClass base(citadel_base_ability) = ability_skyrunner_flakshot
+[
+]
+
+// CCitadel_Ability_SkyRunner_SwingLine
+@PointClass base(citadel_base_ability) = ability_skyrunner_swingline
+[
+]
+
+// CCitadel_Ability_SkyRunner_Ability04
+@PointClass base(citadel_base_ability) = ability_skyrunner_ult
+[
+]
+
+// CCitadel_Ability_SleepDagger
+@PointClass base(citadel_base_ability) = ability_sleep_dagger
+[
+]
+
+// CCitadel_Ability_SmokeBomb
+@PointClass base(citadel_base_ability) = ability_smoke_bomb
+[
+]
+
+// CCitadel_Ability_SnakeDash
+@PointClass base(citadel_base_ability) = ability_snake_dash
+[
+]
+
+// CCitadel_Ability_Haze_StackingDamage
+@PointClass base(citadel_base_ability) = ability_stacking_damage
+[
+]
+
+// CCitadel_Ability_Swan_Acrobat
+@PointClass base(citadel_base_ability) = ability_swan_acrobat
+[
+]
+
+// CCitadel_Ability_Swan_FeatherBoomerang
+@PointClass base(citadel_base_ability) = ability_swan_featherboomerang
+[
+]
+
+// CCitadel_Ability_Swan_Leap
+@PointClass base(citadel_base_ability) = ability_swan_leap
+[
+]
+
+// CCitadel_Ability_Swan_Ability04
+@PointClass base(citadel_base_ability) = ability_swan_ult
+[
+]
+
+// CCitadel_Ability_TestHero_FearTarget
+@PointClass base(citadel_base_ability) = ability_testhero_feartarget
+[
+]
+
+// CAbility_TestHero_SpookyHide
+@PointClass base(citadel_base_ability) = ability_testhero_spooky_hide
+[
+]
+
+// CCitadel_Ability_TestHero_StanceSwitch
+@PointClass base(citadel_base_ability) = ability_testhero_stanceswitch
+[
+]
+
+// CCitadel_Ability_TestHero_Stance_Bow
+@PointClass base(ability_testhero_stanceswitch) = ability_testhero_stance_bow
+[
+]
+
+// CCitadel_Ability_TestHero_Stance_Spaceman
+@PointClass base(ability_testhero_stanceswitch) = ability_testhero_stance_spaceman
+[
+]
+
+// CCitadel_Ability_TestHero_SummonCannon
+@PointClass base(citadel_base_ability) = ability_testhero_summoncannon
+[
+]
+
+// CCitadel_Ability_TestHero_SummonSoldier
+@PointClass base(citadel_base_ability) = ability_testhero_summonsoldier
+[
+]
+
+// CCitadel_Ability_TestHero_Ability04
+@PointClass base(citadel_base_ability) = ability_testhero_ult
+[
+]
+
+// CCitadel_Ability_TestHero_WallCling
+@PointClass base(citadel_base_ability) = ability_testhero_wallcling
+[
+]
+
+// CCitadel_Ability_ThrowSand
+@PointClass base(citadel_base_ability) = ability_throw_sand
+[
+]
+
+// CCitadel_Ability_Trapper_Fear
+@PointClass base(citadel_base_ability) = ability_trapper_fear
+[
+]
+
+// CCitadel_Ability_Trapper_SpiderJar
+@PointClass base(citadel_base_ability) = ability_trapper_spiderjar
+[
+]
+
+// CCitadel_Ability_SpiderShield
+@PointClass base(citadel_base_ability) = ability_trapper_spidershield
+[
+]
+
+// CCitadel_Ability_Trapper_WebWall
+@PointClass base(citadel_base_ability) = ability_trapper_webwall
+[
+]
+
+// CCitadel_Ability_UltCombo
+@PointClass base(citadel_base_ability) = ability_ult_combo
+[
+]
+
+// CCitadel_Ability_Unicorn_DazzlingOrb
+@PointClass base(citadel_base_ability) = ability_unicorn_dazzlingorb
+[
+]
+
+// CCitadel_Ability_Unicorn_LuminousStrike
+@PointClass base(citadel_base_ability) = ability_unicorn_luminousstrike
+[
+]
+
+// CCitadel_Ability_Unicorn_PrismaticGuard
+@PointClass base(citadel_base_ability) = ability_unicorn_prismaticguard
+[
+]
+
+// CCitadel_Ability_Unicorn_RadiantBlast
+@PointClass base(citadel_base_ability) = ability_unicorn_radiantblast
+[
+]
+
+// CCitadel_Ability_VampireBat_BatBlink
+@PointClass base(citadel_base_ability) = ability_vampirebat_batblink
+[
+]
+
+// CCitadel_Ability_VampireBat_BatCloud
+@PointClass base(citadel_base_ability) = ability_vampirebat_batcloud
+[
+]
+
+// CCitadel_Ability_VampireBat_BatSwarm
+@PointClass base(citadel_base_ability) = ability_vampirebat_batswarm
+[
+]
+
+// CCitadel_Ability_VampireBat_DoubleDagger
+@PointClass base(citadel_base_ability) = ability_vampirebat_doubledagger
+[
+]
+
+// CCitadel_Ability_VampireBat_LoveBites
+@PointClass base(citadel_base_ability) = ability_vampirebat_lovebites
+[
+]
+
+// CCitadel_Ability_VampireBat_StealLife
+@PointClass base(citadel_base_ability) = ability_vampirebat_steallife
+[
+]
+
+// CCitadel_Ability_Vandal_Ability03
+@PointClass base(citadel_base_ability) = ability_vandal_ability03
+[
+]
+
+// CCitadel_Ability_Vandal_Pillar
+@PointClass base(citadel_base_ability) = ability_vandal_pillar
+[
+]
+
+// CCitadel_Ability_Viper_DebuffDagger
+@PointClass base(citadel_base_ability) = ability_viper_debuffdagger
+[
+]
+
+// CCitadel_Ability_ViperHookblade
+@PointClass base(citadel_base_ability) = ability_viper_hookblade
+[
+]
+
+// CCitadel_Ability_Viper_PetrifyBola
+@PointClass base(citadel_base_ability) = ability_viper_petrifybola
+[
+]
+
+// CCitadel_Ability_Viper_Ability04
+@PointClass base(citadel_base_ability) = ability_viper_ult
+[
+]
+
+// CCitadel_Ability_ViperVenom
+@PointClass base(citadel_base_ability) = ability_viper_venom
+[
+]
+
+// CCitadel_Ability_CrowdControl
+@PointClass base(citadel_base_ability) = ability_warden_crowd_control
+[
+]
+
+// CCitadel_Ability_HighAlert
+@PointClass base(citadel_base_ability) = ability_warden_high_alert
+[
+]
+
+// CCitadel_Ability_LockDown
+@PointClass base(citadel_base_ability) = ability_warden_lock_down
+[
+]
+
+// CCitadel_Ability_RiotProtocol
+@PointClass base(citadel_base_ability) = ability_warden_riot_protocol
+[
+]
+
+// CCitadel_Werewolf_CripplingSlash
+@PointClass base(citadel_base_ability) = ability_werewolf_cripplingslash
+[
+]
+
+// CCitadel_Werewolf_Hunt
+@PointClass base(citadel_base_ability) = ability_werewolf_hunt
+[
+]
+
+// CCitadel_Ability_Werewolf_KickFlip
+@PointClass base(citadel_base_ability) = ability_werewolf_kickflip
+[
+]
+
+// CCitadel_Ability_Werewolf_Leap
+@PointClass base(citadel_base_ability) = ability_werewolf_leap
+[
+]
+
+// CCitadel_Ability_Werewolf_MaulingLeap
+@PointClass base(citadel_base_ability) = ability_werewolf_maulingleap
+[
+]
+
+// CCitadel_Ability_Werewolf_NetShot
+@PointClass base(citadel_base_ability) = ability_werewolf_netshot
+[
+]
+
+// CCitadel_Ability_Werewolf_TrackingBomb
+@PointClass base(citadel_base_ability) = ability_werewolf_trackingbomb
+[
+]
+
+// CCitadel_Werewolf_Transformation
+@PointClass base(citadel_base_ability) = ability_werewolf_transformation
+[
+]
+
+// CCitadel_Werewolf_UnloadGun
+@PointClass base(citadel_base_ability) = ability_werewolf_unload_gun
+[
+]
+
+// CCitadel_Werewolf_UnloadGun2
+@PointClass base(citadel_base_ability) = ability_werewolf_unload_gun2
+[
+]
+
+// CCitadel_Ability_Wrecker_Salvage
+@PointClass base(citadel_base_ability) = ability_wrecker_salvage
+[
+]
+
+// CCitadel_Ability_WreckerTeleport
+@PointClass base(citadel_base_ability) = ability_wrecker_teleport
+[
+]
+
+// CCitadel_Ability_Wrecker_Ultimate
+@PointClass base(citadel_base_ability) = ability_wrecker_ultimate
+[
+]
+
+// CCitadel_Ability_WreckingBall
+@PointClass base(citadel_base_ability) = ability_wrecking_ball
+[
+]
+
+// CCitadel_Ability_WreckingBallThrow
+@PointClass base(citadel_base_trigger_ability) = ability_wrecking_ball_throw
+[
+]
+
+// C_CitadelProjectile
+@PointClass base(basemodelentity) = citadel_projectile
+[
+]
+
+// C_Citadel_Projectile_Archer_ChargedShot
+@PointClass base(citadel_projectile) = archer_charged_shot_projectile
+[
+]
+
+// C_BasePlayerWeapon
+@BaseClass base(baseanimgraph) = base_player_weapon
+[
+]
+
+// CCitadel_Item_BaseProjectileAOEModifier
+@PointClass base(CCitadel_Item) = base_upgrade_projectile_aoe_modifier
+[
+]
+
+// CBaseAnimGraphAlias_baseanimating, ECF_ALIAS
+@PointClass base(baseanimgraph) = baseanimating
+[
+]
+
+// C_CitadelTrackedProjectile
+@PointClass base(citadel_projectile) = citadel_tracked_projectile
+[
+]
+
+// CCitadel_Projectile_BatSwarmProjectile
+@PointClass base(citadel_tracked_projectile) = batswarm_projectile
+[
+]
+
+// CCitadel_Projectile_BatSwarmExtraProjectile
+@PointClass base(batswarm_projectile) = batswarm_extra_projectile
+[
+]
+
+// C_Beam
+@PointClass base(basemodelentity) = beam
+[
+	HDRColorScale(float) // FIELD_FLOAT32 m_flHDRColorScale
+	damage(float) // FIELD_FLOAT32 m_flDamage
+	ScrollSpeed(float) // FIELD_FLOAT32 m_fSpeed
+	input ScrollSpeed(float) // PVAL_FLOAT param
+]
+
+// C_Citadel_Projectile_Bebop_Hook
+@PointClass base(citadel_projectile) = bebop_hook_projectile
+[
+]
+
+// C_Citadel_Projectile_BloodBomb
+@PointClass base(citadel_projectile) = blood_bomb_projectile
+[
+]
+
+// CProjectile_Boho_BouncyProjectile
+@PointClass base(citadel_tracked_projectile) = boho_bouncyprojectile
+[
+]
+
+// CProjectile_BookwormDragon_Projectile
+@PointClass base(citadel_projectile) = bookwormdragon_projectile
+[
+]
+
+// CCitadel_Projectile_BookwormGun
+@PointClass base(citadel_projectile) = bookwormgun_projectile
+[
+]
+
+// CCitadelBulletRedirectVolume
+@PointClass base(basemodelentity) = bullet_redirect_volume
+[
+]
+
+// CCitadelBulletTimeWarp
+@PointClass base(basemodelentity) = bullet_time_warp
+[
+	bullet_time_scale(float) // FIELD_FLOAT32 m_flBulletTimeScale
+	projectile_time_scale(float) // FIELD_FLOAT32 m_flProjectileTimeScale
+	expiretime(float) // FIELD_TIME m_flExpireTime
+	stopDuration(float) // FIELD_FLOAT32 m_flStopDuration
+	bullet_time_scale_friendly(float) // FIELD_FLOAT32 m_flBulletTimeScaleFriendly
+	bonus_bullet_base_damage_friendly(float) // FIELD_FLOAT32 m_flBonusBulletBaseDamageFriendly
+]
+
+// C_DynamicPropAlias_cable_dynamic, ECF_ALIAS
+@PointClass base(prop_dynamic) = cable_dynamic
+[
+]
+
+// CCitadel_Ability_Cadence_Anthem
+@PointClass base(citadel_base_ability) = cadence_ability_anthem
+[
+]
+
+// CCitadel_Ability_Cadence_Crescendo
+@PointClass base(citadel_base_ability) = cadence_ability_crescendo
+[
+]
+
+// CCitadel_Ability_Cadence_GrandFinale
+@PointClass base(citadel_base_ability) = cadence_ability_grandfinale
+[
+]
+
+// CCitadel_Ability_Cadence_Lullaby
+@PointClass base(citadel_base_ability) = cadence_ability_lullaby
+[
+]
+
+// CCitadelBaseDashCastAbility
+@PointClass base(citadel_base_ability) = citadel_dash_cast_ability
+[
+]
+
+// CCitadel_Ability_Cadence_SilenceContraptions
+@PointClass base(citadel_dash_cast_ability) = cadence_ability_silencecontraptions
+[
+]
+
+// CCitadel_Ability_Bebop_LaserBeam
+@PointClass base(citadel_base_ability) = citadel_ability_bebop_laser_beam
+[
+]
+
+// CCitadel_Ability_Boho_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_boho_primaryweapon
+[
+]
+
+// CCitadel_Ability_Boho_RideBroom
+@PointClass base(citadel_base_ability) = citadel_ability_boho_ridebroom
+[
+]
+
+// CCitadel_Ability_Bookworm_KnightCharge
+@PointClass base(citadel_base_ability) = citadel_ability_bookworm_knightcharge
+[
+]
+
+// CCitadel_Ability_BookWorm_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_bookworm_primaryweapon
+[
+]
+
+// CCitadel_Ability_Bull_Charge
+@PointClass base(citadel_base_ability) = citadel_ability_bull_charge
+[
+]
+
+// CCitadel_Ability_Bull_Heal
+@PointClass base(citadel_base_ability) = citadel_ability_bull_heal
+[
+]
+
+// CCitadel_Ability_Bull_Leap
+@PointClass base(citadel_base_ability) = citadel_ability_bull_leap
+[
+]
+
+// CCitadel_Ability_CardToss
+@PointClass base(citadel_base_ability) = citadel_ability_card_toss
+[
+]
+
+// CCitadel_Ability_ChargedTackle
+@PointClass base(citadel_base_ability) = citadel_ability_charged_tackle
+[
+]
+
+// CCitadel_Ability_Chrono_KineticCarbine
+@PointClass base(citadel_base_ability) = citadel_ability_chrono_kinetic_carbine
+[
+]
+
+// CCitadel_Ability_Chrono_PulseGrenade
+@PointClass base(citadel_base_ability) = citadel_ability_chrono_pulse_grenade
+[
+]
+
+// CCitadel_Ability_ChronoSwap
+@PointClass base(citadel_base_ability) = citadel_ability_chrono_swap
+[
+]
+
+// CCitadel_Ability_Chrono_TimeWall
+@PointClass base(citadel_base_ability) = citadel_ability_chrono_time_wall
+[
+]
+
+// CCitadel_Ability_Climb_Rope
+@PointClass base(citadel_base_ability) = citadel_ability_climb_rope
+[
+]
+
+// CCitadel_Ability_Dash
+@PointClass base(citadel_base_ability) = citadel_ability_dash
+[
+]
+
+// CCitadel_Ability_Drifter_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_drifter_primaryweapon
+[
+]
+
+// CCitadel_Ability_Empty
+@PointClass base(citadel_base_ability) = citadel_ability_empty
+[
+]
+
+// CCitadel_Ability_Fencer_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_fencer_primaryweapon
+[
+]
+
+// CCitadel_Ability_FissureWall
+@PointClass base(citadel_base_ability) = citadel_ability_fissure_wall
+[
+]
+
+// CCitadel_Ability_FlyingStrike
+@PointClass base(CCitadelBaseYamatoAbility) = citadel_ability_flying_strike
+[
+]
+
+// CCitadel_Ability_Fortuna_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_fortuna_primaryweapon
+[
+]
+
+// CCitadel_Ability_Gunslinger_DemonCarbine
+@PointClass base(citadel_base_ability) = citadel_ability_gunslinger_demon_carbine
+[
+]
+
+// CCitadel_Ability_HealingSlash
+@PointClass base(CCitadelBaseYamatoAbility) = citadel_ability_healing_slash
+[
+]
+
+// CCitadel_Ability_HoldMelee
+@PointClass base(CCitadel_Ability_Melee_Base) = citadel_ability_hold_melee
+[
+]
+
+// CCitadel_Ability_Hook
+@PointClass base(citadel_base_ability) = citadel_ability_hook
+[
+]
+
+// CCitadel_Ability_Hornet_Chain
+@PointClass base(citadel_base_ability) = citadel_ability_hornet_chain
+[
+]
+
+// CCitadel_Ability_HornetLeap
+@PointClass base(citadel_base_ability) = citadel_ability_hornet_leap
+[
+]
+
+// CCitadel_Ability_Hornet_Snipe
+@PointClass base(citadel_base_ability) = citadel_ability_hornet_snipe
+[
+]
+
+// CCitadel_Ability_HornetSting
+@PointClass base(citadel_base_ability) = citadel_ability_hornet_sting
+[
+]
+
+// CCitadel_Ability_Jump
+@PointClass base(citadel_base_ability) = citadel_ability_jump
+[
+]
+
+// CCitadel_Ability_Disruptive_Charge
+@PointClass base(citadel_base_ability) = citadel_ability_kali_disruptive_charge
+[
+]
+
+// CCitadel_Ability_Spinning_Blade
+@PointClass base(citadel_base_ability) = citadel_ability_kali_spinning_blade
+[
+]
+
+// CCitadel_Ability_Lash
+@PointClass base(citadel_base_ability) = citadel_ability_lash
+[
+]
+
+// CCitadel_Ability_LashDownStrike
+@PointClass base(citadel_base_ability) = citadel_ability_lash_down_strike
+[
+]
+
+// CCitadelBaseLockonAbility
+@PointClass base(citadel_base_ability) = citadel_base_lockon_ability
+[
+]
+
+// CCitadel_Ability_Lash_Ultimate
+@PointClass base(citadel_base_lockon_ability) = citadel_ability_lash_ultimate
+[
+]
+
+// CCitadel_Ability_LightningBall
+@PointClass base(citadel_base_ability) = citadel_ability_lightning_ball
+[
+]
+
+// CCitadel_Ability_MageWalk
+@PointClass base(citadel_base_ability) = citadel_ability_magewalk
+[
+]
+
+// CCitadel_Ability_Mantle
+@PointClass base(citadel_base_ability) = citadel_ability_mantle
+[
+]
+
+// CCitadel_Ability_MeleeParry
+@PointClass base(citadel_base_ability) = citadel_ability_melee_parry
+[
+]
+
+// CCitadel_Ability_MobileResupply
+@PointClass base(citadel_base_ability) = citadel_ability_mobile_resupply
+[
+]
+
+// CCitadel_Ability_Nano_ClusterGrenade
+@PointClass base(citadel_base_ability) = citadel_ability_nano_clustergrenade
+[
+]
+
+// CCitadel_Ability_NanoDash
+@PointClass base(citadel_base_ability) = citadel_ability_nano_dash
+[
+]
+
+// CCitadel_Ability_Nano_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_nano_primaryweapon
+[
+]
+
+// CCitadel_Ability_Necro_Coffin
+@PointClass base(citadel_base_ability) = citadel_ability_necro_coffin
+[
+]
+
+// CCitadel_Ability_Necro_GraveStone
+@PointClass base(citadel_base_ability) = citadel_ability_necro_gravestone
+[
+]
+
+// CCitadel_Ability_Necro_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_necro_primaryweapon
+[
+]
+
+// CCitadel_Ability_Nikuman
+@PointClass base(citadel_base_ability) = citadel_ability_nikuman
+[
+]
+
+// CCitadel_Ability_PassiveBeefy
+@PointClass base(citadel_base_ability) = citadel_ability_passive_beefy
+[
+]
+
+// CCitadel_Ability_PowerSlash
+@PointClass base(CCitadelBaseYamatoAbility) = citadel_ability_power_slash
+[
+]
+
+// CCitadel_Ability_Priest_SilenceBomb
+@PointClass base(citadel_base_ability) = citadel_ability_priest_silencebomb
+[
+]
+
+// CCitadel_Ability_PrimaryWeapon_Empty
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_primary_weapon
+[
+]
+
+// CCitadel_Ability_PrimaryWeapon_Bebop
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_primary_weapon_bebop
+[
+]
+
+// CCitadel_Ability_PrimaryWeapon_Cadence
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_primary_weapon_cadence
+[
+]
+
+// CCitadel_Ability_PrimaryWeapon_ScalingAltFire
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_primary_weapon_scaling_altfire
+[
+]
+
+// CCitadel_Ability_ProjectMind
+@PointClass base(citadel_base_ability) = citadel_ability_projectmind
+[
+]
+
+// CCitadel_Ability_PsychicLift
+@PointClass base(citadel_base_ability) = citadel_ability_psychic_lift
+[
+]
+
+// CCitadel_Ability_Punkgoat_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_punkgoat_primaryweapon
+[
+]
+
+// CCitadel_Ability_RocketBarrage
+@PointClass base(citadel_base_ability) = citadel_ability_rocket_barrage
+[
+]
+
+// CCitadel_Ability_SelfVacuum
+@PointClass base(citadel_base_ability) = citadel_ability_self_vacuum
+[
+]
+
+// CCitadel_Ability_ShieldedSentry
+@PointClass base(citadel_base_ability) = citadel_ability_shieldedsentry
+[
+]
+
+// CCitadel_Ability_ShivDagger
+@PointClass base(CCitadelBaseShivAbility) = citadel_ability_shiv_dagger
+[
+]
+
+// CCitadel_Ability_ShivDash
+@PointClass base(CCitadelBaseShivAbility) = citadel_ability_shiv_dash
+[
+]
+
+// CCitadel_Ability_Shiv_Defer_Damage
+@PointClass base(CCitadelBaseShivAbility) = citadel_ability_shiv_defer_damage
+[
+]
+
+// CCitadel_Ability_Shiv_KillingBlow
+@PointClass base(CCitadelBaseShivAbility) = citadel_ability_shiv_killing_blow
+[
+]
+
+// CCitadel_Ability_Skyrunner_MagicBeam
+@PointClass base(citadel_base_ability) = citadel_ability_skyrunner_magicbeam
+[
+]
+
+// CCitadel_Ability_SkyRunner_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_skyrunner_primaryweapon
+[
+]
+
+// CCitadel_Ability_Slide
+@PointClass base(citadel_base_ability) = citadel_ability_slide
+[
+]
+
+// CCitadel_Ability_Sprint
+@PointClass base(citadel_base_ability) = citadel_ability_sprint
+[
+]
+
+// CCitadel_Ability_StaticCharge
+@PointClass base(citadel_base_ability) = citadel_ability_static_charge
+[
+]
+
+// CCitadel_Ability_StaticCharge_V2
+@PointClass base(citadel_base_ability) = citadel_ability_static_charge_v2
+[
+]
+
+// CCitadel_Ability_StickyBomb
+@PointClass base(citadel_base_ability) = citadel_ability_sticky_bomb
+[
+]
+
+// CCitadel_Ability_Stomp
+@PointClass base(citadel_base_ability) = citadel_ability_stomp
+[
+]
+
+// CCitadel_Ability_StormCloud
+@PointClass base(citadel_base_ability) = citadel_ability_storm_cloud
+[
+]
+
+// CCitadel_Ability_TangoTether
+@PointClass base(citadel_base_ability) = citadel_ability_tangotether
+[
+]
+
+// CCitadel_Ability_TangoTether_Trigger
+@PointClass base(citadel_base_trigger_ability) = citadel_ability_tangotether_trigger
+[
+]
+
+// CCitadel_Ability_Teleport
+@PointClass base(citadel_base_ability) = citadel_ability_teleport
+[
+]
+
+// CCitadel_Ability_Tengu_AirLift
+@PointClass base(citadel_base_ability) = citadel_ability_tengu_airlift
+[
+]
+
+// CCitadel_Ability_Tengu_StoneForm
+@PointClass base(citadel_base_ability) = citadel_ability_tengu_stone_form
+[
+]
+
+// CCitadel_Ability_Tengu_Urn
+@PointClass base(citadel_base_ability) = citadel_ability_tengu_urn
+[
+]
+
+// CCitadel_Ability_Tier2Boss_AoEWave
+@PointClass base(CCitadelBaseAbilityServerOnly) = citadel_ability_tier2boss_aoe_wave
+[
+]
+
+// CCitadel_Ability_Tier2Boss_LaserBeam
+@PointClass base(CCitadelBaseAbilityServerOnly) = citadel_ability_tier2boss_laser_beam
+[
+]
+
+// CCitadel_Ability_Tier2Boss_RocketBarrage
+@PointClass base(CCitadelBaseAbilityServerOnly) = citadel_ability_tier2boss_rocket_barrage
+[
+]
+
+// CCitadel_Ability_Tier2Boss_Stomp
+@PointClass base(CCitadelBaseAbilityServerOnly) = citadel_ability_tier2boss_stomp
+[
+]
+
+// CCitadel_Ability_Tier3Boss_AoEWave
+@PointClass base(CTier3BossAbility) = citadel_ability_tier3boss_aoe_wave
+[
+]
+
+// CCitadel_Ability_Tier3Boss_DropBombs
+@PointClass base(CTier3BossAbility) = citadel_ability_tier3boss_drop_bombs
+[
+]
+
+// CCitadel_Ability_Tier3Boss_LaserBeam
+@PointClass base(CTier3BossAbility) = citadel_ability_tier3boss_laser_beam
+[
+]
+
+// CCitadel_Ability_Tier3Boss_RocketBarrage
+@PointClass base(CTier3BossAbility) = citadel_ability_tier3boss_rocket_barrage
+[
+]
+
+// CCitadel_Ability_TriggerTower
+@PointClass base(citadel_base_ability) = citadel_ability_tower_regen
+[
+]
+
+// CCitadel_Ability_Trapper_PoisonJar
+@PointClass base(citadel_base_ability) = citadel_ability_trapper_poisonjar
+[
+]
+
+// CCitadel_Ability_ZipLine
+@PointClass base(citadel_base_ability) = citadel_ability_zip_line
+[
+]
+
+// CCitadel_Ability_TrooperZipLine, ECF_NOT_NETWORKED
+@PointClass base(citadel_ability_zip_line) = citadel_ability_trooper_zip_line
+[
+]
+
+// CCitadel_Ability_TurretClone
+@PointClass base(citadel_base_ability) = citadel_ability_turretclone
+[
+]
+
+// CCitadel_Ability_Unicorn_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_unicorn_primaryweapon
+[
+]
+
+// CCitadel_Ability_Uppercut
+@PointClass base(CCitadel_Ability_Melee_Base) = citadel_ability_uppercut
+[
+]
+
+// CCitadel_Ability_VandalOverflow
+@PointClass base(citadel_base_ability) = citadel_ability_vandal_overflow
+[
+]
+
+// CCitadel_Ability_VandalSurge
+@PointClass base(citadel_base_ability) = citadel_ability_vandal_surge
+[
+]
+
+// CCitadel_Ability_VoidSphere
+@PointClass base(citadel_base_ability) = citadel_ability_void_sphere
+[
+]
+
+// CCitadel_Ability_Werewolf_ClawWeapon
+@PointClass base(citadel_ability_primary_weapon_scaling_altfire) = citadel_ability_werewolf_clawweapon
+[
+]
+
+// CAbility_Werewolf_Frenzy
+@PointClass base(citadel_base_ability) = citadel_ability_werewolf_frenzy
+[
+]
+
+// CCitadel_Ability_Werewolf_OnTheHunt
+@PointClass base(citadel_base_ability) = citadel_ability_werewolf_onthehunt
+[
+]
+
+// CCitadel_Ability_Werewolf_Rifle
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_werewolf_rifle
+[
+]
+
+// CCitadel_Ability_Wraith_RapidFire
+@PointClass base(citadel_base_ability) = citadel_ability_wraith_rapidfire
+[
+]
+
+// CCitadel_Ability_Wrecker_BoulderGrenade
+@PointClass base(citadel_base_ability) = citadel_ability_wrecker_bouldergrenade
+[
+]
+
+// CCitadel_Ability_WreckerGarbageSuck
+@PointClass base(citadel_base_ability) = citadel_ability_wrecker_garbage_suck
+[
+]
+
+// CCitadel_Ability_ZipLine_Boost
+@PointClass base(citadel_base_ability) = citadel_ability_zipline_boost
+[
+]
+
+// CCitadelHeroLoader
+@PointClass base(C_BaseEntity) = citadel_base_hero
+[
+	hero(string) // FIELD_STRING m_hero
+	seq(integer) // FIELD_INT32 m_nLoadSeq
+	owner(target_destination) // FIELD_EHANDLE m_hOwner
+]
+
+// C_PointEntity
+@PointClass base(C_BaseEntity) = point_entity
+[
+	// component CBodyComponent: CBodyComponentPoint
+	input SetPosition(vector) // PVAL_VEC3 param
+]
+
+// C_Citadel_BaseProp_MidStairs
+@PointClass base(point_entity) = citadel_base_prop_stairs
+[
+	stairs_location(intchoices) : "stairs_location" : : "" = // FIELD_INT32 m_eLocation (EMidStairsLocation_t)
+	[
+		0 : "EMidStairsNone"
+		1 : "EMidStairsLeft"
+		2 : "EMidStairsRight"
+	]
+]
+
+// CCitadelBaseTieredLockonAbility
+@PointClass base(citadel_base_lockon_ability) = citadel_base_tiered_lockon_ability
+[
+]
+
+// C_Citadel_Bounce_Pad
+@PointClass base(citadel_animating_model_entity) = citadel_bounce_pad
+[
+]
+
+// CCitadelTriggerCapturePoint
+@PointClass base(trigger) = citadel_capture_point
+[
+]
+
+// CCitadelTriggerCapturePoint_Escort
+@PointClass base(citadel_capture_point) = citadel_capture_point_escort
+[
+]
+
+// C_Citadel_CatAnimating
+@PointClass base(citadel_animating_model_entity) = citadel_cat_animating
+[
+]
+
+// C_CitadelConfigurableTrackedProjectile
+@PointClass base(citadel_projectile) = citadel_configurable_tracked_projectile
+[
+]
+
+// CCitadelControlPointTrigger
+@PointClass base(trigger) = citadel_control_point
+[
+	initial_radius(float) // FIELD_FLOAT32 m_flInitialRadius
+	end_radius(float) // FIELD_FLOAT32 m_flEndRadius
+	capture_time(float) // FIELD_FLOAT32 m_flCaptureTime
+	unlock_prereq(string) // FIELD_STRING m_strUnlockPrereq
+	beam_start(string) // FIELD_STRING m_strBeamStart
+	beam_target(string) // FIELD_STRING m_strBeamTarget
+]
+
+// C_Citadel_DeployablePreview
+@PointClass base(baseanimgraph) = citadel_deployable_preview
+[
+	src_ability(target_destination) // FIELD_EHANDLE
+]
+
+// CCitadel_DoorwayPortal
+@PointClass base(baseanimgraph) = citadel_doorway_portal
+[
+	other_door(target_destination) // FIELD_EHANDLE
+	portal_model(target_destination) // FIELD_EHANDLE
+	looping_sound(string) // FIELD_STRING
+]
+
+// C_Citadel_DruidHealingTree
+@PointClass base(citadel_animating_model_entity) = citadel_druid_healing_tree
+[
+	ability(target_destination) // FIELD_EHANDLE
+	caster(target_destination) // FIELD_EHANDLE
+	fruit_model(string) // FIELD_UTLSTRING m_strFruitModelName
+	start_pos(vector) // FIELD_POSITION_VECTOR m_vStartPos
+	end_pos(vector) // FIELD_POSITION_VECTOR m_vEndPos
+	grow_duration(float) // FIELD_FLOAT32 m_flGrowDuration
+]
+
+// C_Citadel_DruidHealingFruit
+@PointClass base(citadel_animating_model_entity) = citadel_druid_healing_tree_fruit
+[
+	ability(target_destination) // FIELD_EHANDLE
+	caster(target_destination) // FIELD_EHANDLE
+]
+
+// C_CitadelDruidInvisBush
+@PointClass base(citadel_animating_model_entity) = citadel_druid_invis_bush
+[
+]
+
+// C_Citadel_DruidPlantShield
+@PointClass base(citadel_animating_model_entity) = citadel_druid_plant_shield
+[
+]
+
+// CCitadelEconItemContainer
+@PointClass base(C_BaseEntity) = citadel_econ_item_container
+[
+	host(target_destination) // FIELD_EHANDLE m_hHost
+	host_name(string) // FIELD_UTLSTRING m_strHostName
+	clear_previous_loadout(boolean) // FIELD_BOOLEAN m_bClearPreviousLoadout
+]
+
+// C_Citadel_FissureWall
+@PointClass base(baseanimgraph) = citadel_fissure_wall
+[
+]
+
+// CCitadelGaffer
+@PointClass base(C_BaseEntity) = citadel_gaffer
+[
+	transition_time(float) // FIELD_FLOAT32 m_flTransitionTime
+	input BlendTo(string) // PVAL_STRING param
+]
+
+// C_CitadelGameRulesProxy
+@PointClass base(C_GameRulesProxy) = citadel_gamerules
+[
+]
+
+// CCitadel_GrandFinaleStage
+@PointClass base(baseanimgraph) = citadel_grandfinale_stage
+[
+]
+
+// C_Citadel_GraveStone_Blocker
+@PointClass base(citadel_animating_model_entity) = citadel_gravestone_blocker
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+	lifetime(float) // FIELD_FLOAT32 m_flLifetime
+	gravestonestate(integer) // FIELD_INT32 m_iGravestoneState
+]
+
+// CCitadelHeroReleaseVoteTerminal
+@PointClass base(prop_dynamic) = citadel_hero_release_vote_terminal
+[
+]
+
+// CCitadel_HeroTestOrbSpawner
+@PointClass base(baseanimgraph) = citadel_herotest_orbspawner
+[
+]
+
+// C_Citadel_Hideout_Ball
+@PointClass base(basemodelentity) = citadel_hideout_ball
+[
+]
+
+// CCitadelHideoutInteractableProp
+@PointClass base(prop_dynamic) = citadel_hideout_button
+[
+	interact_loc_string(string) // FIELD_UTLSTRING m_strInteractLocString
+	interact_distance(float) // FIELD_FLOAT32 m_flInteractDistance
+	interact_style(intchoices) : "interact_style" : : "" = // FIELD_INT32 m_eInteractStyle (EHideoutButtonInteractStyle)
+	[
+		0 : "k_eHideoutUse"
+		1 : "k_eAbilityMelee"
+		2 : "k_eHideoutLookAndUse"
+	]
+	hideout_action(intchoices) : "hideout_action" : : "" = // FIELD_INT32 m_eHideoutAction (EHideoutButtonAction)
+	[
+		0 : "k_eNone"
+		1 : "k_ePlay"
+		2 : "k_eWatch"
+		3 : "k_eHeroes"
+		4 : "k_eLearn"
+		5 : "k_eResources"
+		6 : "k_eExit"
+		7 : "k_eNews"
+		8 : "k_eHeroReleaseVote"
+		9 : "k_eFireEntityOutput"
+		10 : "k_eSeasonalEvent"
+		12 : "k_eRankedHub"
+		13 : "k_eServerCallback"
+		18 : "k_eHeroReleaseVoteInGame"
+		19 : "k_eVoiceLines"
+	]
+	world_panel(string) // FIELD_UTLSTRING m_strWorldPanelEntity
+	world_panel_opacity_curve(string) // FIELD_UTLSTRING m_strOpacityCurveString
+	output OnEndTouch(void)
+	output OnEndTouchAll(void)
+	output OnInteracted(void)
+	output OnStartTouch(void)
+	output OnStartTouchAll(void)
+]
+
+// C_Citadel_Hideout_Clock
+@PointClass base(citadel_animating_model_entity) = citadel_hideout_clock
+[
+]
+
+// CCitadelHideoutInteractableTrigger
+@PointClass base(trigger) = citadel_hideout_interactable_trigger
+[
+	interact_loc_string(string) // FIELD_UTLSTRING m_strInteractLocString
+	hideout_action(intchoices) : "hideout_action" : : "" = // FIELD_INT32 m_eHideoutAction (EHideoutButtonAction)
+	[
+		0 : "k_eNone"
+		1 : "k_ePlay"
+		2 : "k_eWatch"
+		3 : "k_eHeroes"
+		4 : "k_eLearn"
+		5 : "k_eResources"
+		6 : "k_eExit"
+		7 : "k_eNews"
+		8 : "k_eHeroReleaseVote"
+		9 : "k_eFireEntityOutput"
+		10 : "k_eSeasonalEvent"
+		12 : "k_eRankedHub"
+		13 : "k_eServerCallback"
+		18 : "k_eHeroReleaseVoteInGame"
+		19 : "k_eVoiceLines"
+	]
+]
+
+// CCitadelHideoutPropBase
+@PointClass base(baseanimgraph) = citadel_hideout_prop_base
+[
+	spawn_index(integer) // FIELD_UINT32
+]
+
+// CCitadelHideoutPropSlot
+@PointClass base(C_BaseEntity) = citadel_hideout_prop_slot
+[
+	slot_id(integer) // FIELD_INT32 m_nSlotID
+	slot_type(intchoices) : "slot_type" : : "" = // FIELD_INT32 m_nSlotType (EHideoutPropSlotType_t)
+	[
+		0 : "SLOT_TYPE_INVALID"
+		1 : "SLOT_TYPE_SMALL"
+		2 : "SLOT_TYPE_POSTER"
+	]
+]
+
+// C_Citadel_Ice_Dome_Blocker
+@PointClass base(baseanimgraph) = citadel_ice_dome_blocker
+[
+]
+
+// CCitadel_Item_Empty
+@PointClass base(CCitadel_Item) = citadel_item
+[
+]
+
+// CCitadel_Item_Aura_Base
+@PointClass base(CCitadel_Item) = citadel_item_aura_base
+[
+]
+
+// C_CitadelItemPickup
+@PointClass base(citadel_animating_model_entity) = citadel_item_pickup
+[
+	currency_value(integer) // FIELD_INT32 m_nCurrencyValue
+	loot_type(integer) // FIELD_INT32 m_eLootType
+	model_name(string) // FIELD_STRING m_iszModelName
+	model_scale(float) // FIELD_FLOAT32 m_flModelScale
+	target_player(target_destination) // FIELD_EHANDLE m_hTargetPlayer
+	fall_rate(float) // FIELD_FLOAT32 m_flFallRate
+	from_crate(boolean) // FIELD_BOOLEAN
+]
+
+// CCitadelItemKothSpawner
+@PointClass base(citadel_item_pickup) = citadel_item_koth_spawner
+[
+	koth_early_warning_time(float) // FIELD_FLOAT32
+]
+
+// CCitadelItemPickupIdol
+@PointClass base(citadel_item_pickup) = citadel_item_pickup_idol
+[
+]
+
+// CCitadelItemPickupRejuv
+@PointClass base(citadel_item_pickup) = citadel_item_pickup_rejuv
+[
+]
+
+// CCitadelItemPickupRejuvHeroTest
+@PointClass base(citadel_item_pickup_rejuv) = citadel_item_pickup_rejuv_herotest
+[
+]
+
+// CCitadelItemPickupRejuvHeroTestInfoSpawn
+@PointClass base(point_entity) = citadel_item_pickup_rejuv_herotest_infospawn
+[
+]
+
+// CCitadelItemPunchableNeutralGold
+@PointClass base(citadel_item_pickup) = citadel_item_punchable_gold
+[
+	victim_player(target_destination) // FIELD_EHANDLE m_hVictimPlayer
+]
+
+// CCitadelTriggerMultiCapturePoint
+@PointClass base(trigger) = citadel_multi_capture_point
+[
+]
+
+// CCitadel_KothCashIn
+@PointClass base(citadel_multi_capture_point) = citadel_koth_cashin
+[
+]
+
+// CCitadelLocalPlayerRankedBadgeProp
+@PointClass base(C_BaseEntity) = citadel_local_player_ranked_badge_prop
+[
+]
+
+// C_Citadel_Magic_Beam_Blocker
+@PointClass base(baseanimgraph) = citadel_magic_beam_blocker
+[
+]
+
+// CCitadel_MagicianTurret
+@PointClass base(citadel_animating_model_entity) = citadel_magician_turret_object
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+]
+
+// C_CitadelMinimapBoundary
+@PointClass base(C_BaseEntity) = citadel_minimap_boundary
+[
+]
+
+// CCitadel_Minimap_EffectsEntity
+@PointClass base(basemodelentity) = citadel_minimap_effects
+[
+]
+
+// CCitadel_MobileResupply
+@PointClass base(citadel_animating_model_entity) = citadel_mobile_resupply_object
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+]
+
+// CCitadelModelEntity
+@PointClass base(basemodelentity) = citadel_model_entity
+[
+]
+
+// C_Citadel_Nano_Predatory_Statue
+@PointClass base(citadel_animating_model_entity) = citadel_nano_predatory_statue
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+	lifetime(float) // FIELD_FLOAT32 m_flLifetime
+]
+
+// CCitadel_NewYears_Fireworks
+@PointClass base(prop_dynamic) = citadel_new_years_fireworks
+[
+	ShowDurationSeconds(integer) // FIELD_UINT32 m_unShowDurationSeconds
+	ShowDelaySeconds(integer) // FIELD_UINT32 m_unShowDelaySeconds
+	FireworkIntervalMin(float) // FIELD_FLOAT32 m_flFireworkIntervalMin
+	FireworkIntervalMax(float) // FIELD_FLOAT32 m_flFireworkIntervalMax
+	FireworkParticle1(string) // FIELD_UTLSTRING m_sFireworkParticle1
+	FireworkParticle2(string) // FIELD_UTLSTRING m_sFireworkParticle2
+	FireworkParticle3(string) // FIELD_UTLSTRING m_sFireworkParticle3
+	FireworkParticle4(string) // FIELD_UTLSTRING m_sFireworkParticle4
+	FireworkParticle5(string) // FIELD_UTLSTRING m_sFireworkParticle5
+	FireworkParticle6(string) // FIELD_UTLSTRING m_sFireworkParticle6
+	FireworkParticle7(string) // FIELD_UTLSTRING m_sFireworkParticle7
+	FireworkParticle8(string) // FIELD_UTLSTRING m_sFireworkParticle8
+	SoundName(string) // FIELD_STRING m_iszSoundName
+	StartSoundVerticalOffset(float) // FIELD_FLOAT32 m_flStartSoundVerticalOffset
+]
+
+// C_CitadelPassthroughFakeWall
+@PointClass base(basemodelentity) = citadel_passthrough_fake_wall
+[
+	allow_anyone(boolean) // FIELD_BOOLEAN m_bAllowAnyone
+	allow_tiny_characters(boolean) // FIELD_BOOLEAN m_bAllowTinyCharacters
+	trigger_distance_meters(float) // FIELD_FLOAT32 m_flTriggerDistanceMeters
+	output OnClose(void)
+	output OnOpen(void)
+]
+
+// CBasePlayerController, ECF_SPAWN_GROUP_HANDLE_INVALID
+@PointClass base(C_BaseEntity) = player_controller
+[
+	fakeclient(boolean) // FIELD_BOOLEAN
+	is_hltv(boolean) // FIELD_BOOLEAN
+	playername(string) // FIELD_UTLSTRING
+	reserving(boolean) // FIELD_BOOLEAN
+	steamid(integer) // FIELD_UINT64 m_steamID
+	input GetPlayerSlot(void) // returns PVAL_TYPESAFE_INT:CPlayerSlot retval, Pulse node
+	input IsFakeClient(void) : "Fake client, simulated server side; don't send network messages to them" // returns PVAL_BOOL retval, Pulse node
+]
+
+// CCitadelPlayerController
+@PointClass base(player_controller) = citadel_player_controller
+[
+]
+
+// CCitadelPregameHeroDraftButton
+@PointClass base(prop_dynamic) = citadel_pregame_hero_draft_button
+[
+]
+
+// CCitadel_Priest_SlideTrap
+@PointClass base(basemodelentity) = citadel_priest_slidetrap
+[
+]
+
+// C_Citadel_DynamicProp
+@PointClass base(prop_dynamic) = citadel_prop_dynamic
+[
+	DefaultSkin(string) // FIELD_UTLSTRING m_strDefaultSkin
+	FriendlySkin(string) // FIELD_UTLSTRING m_strFriendlySkin
+	EnemySkin(string) // FIELD_UTLSTRING m_strEnemySkin
+	IsWorld(boolean) // FIELD_BOOLEAN m_bIsWorld
+	input SetEnemySkin(string) // PVAL_STRING param
+	input SetFriendlySkin(string) // PVAL_STRING param
+]
+
+// CCitadelRankedBadgeProp
+@PointClass base(prop_dynamic) = citadel_ranked_badge_prop
+[
+	packed_rank(integer) // FIELD_UINT8 m_unPackedRank
+]
+
+// C_Citadel_RestorativeGooCube
+@PointClass base(citadel_animating_model_entity) = citadel_restorative_goo_cube
+[
+]
+
+// C_Citadel_Shield
+@PointClass base(citadel_model_entity) = citadel_shield
+[
+]
+
+// CCitadel_ShopProp
+@PointClass base(prop_dynamic) = citadel_shop_prop_dynamic
+[
+]
+
+// CCitadelPreviewPlayerController
+@PointClass base(citadel_player_controller) = citadel_simulated_player_controller
+[
+]
+
+// C_Citadel_SmokeGrenade_Blocker
+@PointClass base(baseanimgraph) = citadel_smokegrenade_blocker
+[
+]
+
+// CCitadelSoundStackFieldOBB
+@PointClass base(C_BaseEntity) = citadel_snd_stack_field_obb
+[
+	box_mins(vector) // FIELD_VECTOR m_vMins
+	box_maxs(vector) // FIELD_VECTOR m_vMaxs
+	max_distance(integer) // FIELD_UINT32 m_nMaxDistance
+	stack_name(string) // FIELD_UTLSTRING m_nStackName
+	operator_name(string) // FIELD_UTLSTRING m_nOperatorName
+	operator_variable_name(string) // FIELD_UTLSTRING m_nOperatorFieldName
+	music_state(integer) // FIELD_UINT32 m_nMusicState
+]
+
+// CCitadelBaseMusicOBB
+@PointClass base(citadel_snd_stack_field_obb) = citadel_snd_base_music_obb
+[
+]
+
+// CCitadelAudioProcessingVolumeOBB
+@PointClass base(CCitadelAudioProcessingVolumeBase) = citadel_snd_dsp_obb
+[
+	effect_name(string) // FIELD_UTLSTRING m_strEffectName
+	box_mins(vector) // FIELD_VECTOR m_vMins
+	box_maxs(vector) // FIELD_VECTOR m_vMaxs
+]
+
+// C_SoundEventEntity
+@PointClass base(C_BaseEntity) = point_soundevent
+[
+	startOnSpawn(boolean) // FIELD_BOOLEAN m_bStartOnSpawn
+	toLocalPlayer(boolean) // FIELD_BOOLEAN m_bToLocalPlayer
+	stopOnNew(boolean) // FIELD_BOOLEAN m_bStopOnNew
+	saveAndRestore(boolean) // FIELD_BOOLEAN m_bSaveRestore
+	entityIndexSelection(integer) // FIELD_INT32 m_nEntityIndexSelection
+	soundName(string) // FIELD_STRING m_iszSoundName
+	sourceEntityName(string) // FIELD_STRING m_iszSourceEntityName
+	sourceEntityAttachment(string) // FIELD_STRING m_iszAttachmentName
+	clientCullRadius(float) // FIELD_FLOAT32 m_flClientCullRadius
+	input PauseSound(boolean) // PVAL_BOOL param
+	input SetSoundEventName(string) // PVAL_STRING param
+	input SetSourceEntity(string) // PVAL_STRING param
+	input StartSound(string) // PVAL_STRING param
+	input StartSoundOnSingleClient(integer) // PVAL_INT param
+	input StopSound(void)
+	input UnPauseSound(boolean) // PVAL_BOOL param
+	output OnSoundFinished(void)
+	output SoundEventGuid(string) // PVAL_SNDEVT_GUID param
+]
+
+// CCitadelSoundEntityOBB
+@PointClass base(point_soundevent) = citadel_snd_obb
+[
+	box_mins(vector) // FIELD_VECTOR m_vMins
+	box_maxs(vector) // FIELD_VECTOR m_vMaxs
+]
+
+// CCitadelSoundOpvarSetOBB
+@PointClass base(C_BaseEntity) = citadel_snd_opvar_set_obb
+[
+	stackName(string) // FIELD_STRING m_iszStackName
+	operatorName(string) // FIELD_STRING m_iszOperatorName
+	opvarName(string) // FIELD_STRING m_iszOpvarName
+	box_inner_mins(vector) // FIELD_POSITION_VECTOR m_vDistanceInnerMins
+	box_inner_maxs(vector) // FIELD_POSITION_VECTOR m_vDistanceInnerMaxs
+	box_outer_mins(vector) // FIELD_POSITION_VECTOR m_vDistanceOuterMins
+	box_outer_maxs(vector) // FIELD_POSITION_VECTOR m_vDistanceOuterMaxs
+	AABBDirection(integer) // FIELD_INT32 m_nAABBDirection
+]
+
+// C_Citadel_Soldier_Entity
+@PointClass base(citadel_animating_model_entity) = citadel_soldier_entity
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+	lifetime(float) // FIELD_FLOAT32 m_flLifetime
+	soldier_state(integer) // FIELD_INT32 m_iSoldierState
+]
+
+// C_Citadel_SpiderAnimating
+@PointClass base(citadel_animating_model_entity) = citadel_spider_animating
+[
+]
+
+// CCitadelTeamRevealHeroCard
+@PointClass base(prop_dynamic) = citadel_team_reveal_hero_card
+[
+	hero_id(integer) // FIELD_UINT32 m_unHeroID
+]
+
+// CCitadelTriggerBonk
+@PointClass base(trigger) = citadel_trigger_bonk
+[
+	bonk_range(float) // FIELD_FLOAT32 m_flBonkRange
+]
+
+// CCitadelTriggerCorruptedItemShop
+@PointClass base(trigger) = citadel_trigger_corrupted_item_shop
+[
+]
+
+// CCitadelHideoutTeleportTrigger
+@PointClass base(trigger) = citadel_trigger_hideout_teleport
+[
+	Landmark(string) // FIELD_STRING m_strDestLandmark
+	Map(string) // FIELD_STRING m_strDestMap
+	LocString(string) // FIELD_STRING m_strDestLocString
+	Prop(string) // FIELD_STRING m_strPropModel
+	output OnHideoutTeleport(void)
+]
+
+// CCitadelTriggerNoPortals
+@PointClass base(trigger) = citadel_trigger_no_portals
+[
+]
+
+// CCitadelTriggerSecureSouls
+@PointClass base(trigger) = citadel_trigger_secure_souls
+[
+]
+
+// CCitadelSpeedBoostTrigger
+@PointClass base(trigger) = citadel_trigger_speed_boost
+[
+	movespeed_override(float) // FIELD_FLOAT32 m_flMovespeedOverride
+]
+
+// CCitadelTrooperMinimap, ECF_SPAWN_GROUP_HANDLE_INVALID
+@PointClass base(C_BaseEntity) = citadel_trooper_minimap
+[
+]
+
+// CCitadelTunnelNode
+@PointClass base(basemodelentity) = citadel_tunnel_node
+[
+	connecting_node_01(string) // FIELD_STRING m_strNode01
+	connecting_node_02(string) // FIELD_STRING m_strNode02
+	connecting_node_03(string) // FIELD_STRING m_strNode03
+	is_exit(boolean) // FIELD_BOOLEAN m_bIsExit
+	tunnel_id(integer) // FIELD_INT32 m_nTunnelID
+]
+
+// CCitadelTunnelTrigger
+@PointClass base(citadel_trigger_speed_boost) = citadel_tunnel_trigger
+[
+	kill_when_not_tiny(boolean) // FIELD_BOOLEAN m_bKillWhenNotTiny
+	tunnel_id(integer) // FIELD_INT32 m_nTunnelID
+]
+
+// CInfoTutorialController
+@PointClass base(prop_dynamic) = citadel_tutorial_controller
+[
+]
+
+// C_CitadelViscousBall
+@PointClass base(citadel_model_entity) = citadel_viscous_ball
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+]
+
+// CCitadel_Ability_Weapon_BossTier2
+@PointClass base(CCitadelBaseAbilityServerOnly) = citadel_weapon_bosstier2_set
+[
+]
+
+// CCitadel_Ability_Weapon_BossTier3
+@PointClass base(CTier3BossAbility) = citadel_weapon_bosstier3_set
+[
+]
+
+// CCitadel_Ability_ShivWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_weapon_shiv
+[
+]
+
+// C_PathParticleRope
+@PointClass base(C_BaseEntity) = path_particle_rope
+[
+	start_active(boolean) // FIELD_BOOLEAN m_bStartActive
+	max_simulation_time(float) // FIELD_FLOAT32 m_flMaxSimulationTime
+	effect_name(string) // FIELD_STRING m_iszEffectName
+	particle_spacing(float) // FIELD_FLOAT32 m_flParticleSpacing
+	slack(float) // FIELD_FLOAT32 m_flSlack
+	radius(float) // FIELD_FLOAT32 m_flRadius
+	color_tint(color255) // FIELD_COLOR32 m_ColorTint
+	pathNodes(string) // FIELD_STRING
+	input DestroyImmediately(void)
+	input DisablePin(string) // PVAL_STRING param
+	input SetRadius(float) // PVAL_FLOAT param
+	input SetSlack(float) // PVAL_FLOAT param
+	input Start(void)
+	input Stop(void)
+	input StopPlayEndCap(void)
+]
+
+// C_CitadelZiplinePath, ECF_NOT_NETWORKED
+@PointClass base(path_particle_rope) = citadel_zipline_path
+[
+	lane_number(integer) // FIELD_INT32 m_iLaneNumber
+]
+
+// C_ClientRagdoll
+@PointClass base(baseanimgraph) = client_ragdoll
+[
+]
+
+// CCitadel_CosmeticAbility_Emote
+@PointClass base(CCitadel_CosmeticAbility) = cosmetic_emote
+[
+]
+
+// CCitadel_CosmeticAbility_Snowball
+@PointClass base(CCitadel_CosmeticAbility) = cosmetic_snowball
+[
+]
+
+// CCitadel_CosmeticAbility_VotingPoster
+@PointClass base(CCitadel_CosmeticAbility) = cosmetic_voting_poster
+[
+]
+
+// C_Citadel_Destroyable_Building
+@PointClass base(citadel_animating_model_entity) = destroyable_building
+[
+	final(boolean) // FIELD_BOOLEAN m_bFinal
+]
+
+// CDoormanBombProjectile
+@PointClass base(citadel_projectile) = doorman_bomb_projectile
+[
+]
+
+// CAbility_Drifter_BloodBlast
+@PointClass base(citadel_base_ability) = drifter_blood_blast
+[
+]
+
+// CAbility_Drifter_Darkness
+@PointClass base(citadel_base_ability) = drifter_darkness
+[
+]
+
+// CAbility_Drifter_ShadowMark
+@PointClass base(citadel_base_ability) = drifter_shadow_mark
+[
+]
+
+// CAbility_Drifter_StalkersMark_Teleport
+@PointClass base(citadel_base_trigger_ability) = drifter_shadow_mark_teleport
+[
+]
+
+// C_DynamicPropAlias_dynamic_prop, ECF_ALIAS
+@PointClass base(prop_dynamic) = dynamic_prop
+[
+]
+
+// C_EntityFlame
+@PointClass base(C_BaseEntity) = entityflame
+[
+	attachedTo(target_destination) // FIELD_EHANDLE m_hEntAttached
+]
+
+// C_EnvCombinedLightProbeVolume
+@PointClass base(C_BaseEntity) = env_combined_light_probe_volume
+[
+	cubemaptexture(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hCubemapTexture
+	customcubemaptexture(boolean) // FIELD_BOOLEAN m_Entity_bCustomCubemapTexture
+	lightprobetexture(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeTexture_AmbientCube
+	lightprobetexture_sdf(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeTexture_SDF
+	lightprobetexture_sh2_dc(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeTexture_SH2_DC
+	lightprobetexture_sh2_l1(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeTexture_SH2_L1
+	lightprobetexture_dli(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeDirectLightIndicesTexture
+	lightprobetexture_dls(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeDirectLightScalarsTexture
+	lightprobetexture_dlshd(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeDirectLightShadowsTexture
+	box_mins(vector) // FIELD_VECTOR m_Entity_vBoxMins
+	box_maxs(vector) // FIELD_VECTOR m_Entity_vBoxMaxs
+	moveable(boolean) // FIELD_BOOLEAN m_Entity_bMoveable
+	handshake(integer) // FIELD_INT32 m_Entity_nHandshake
+	array_index(integer) // FIELD_INT32 m_Entity_nEnvCubeMapArrayIndex
+	edge_fade_dists(vector) // FIELD_VECTOR m_Entity_vEdgeFadeDists
+	edge_fade_dist(float) // FIELD_FLOAT32 m_Entity_flEdgeFadeDist
+	indoor_outdoor_level(integer) // FIELD_INT32 m_Entity_nPriority
+	StartDisabled(boolean) // FIELD_BOOLEAN m_Entity_bStartDisabled
+	light_probe_size_x(integer) // FIELD_INT32 m_Entity_nLightProbeSizeX
+	light_probe_size_y(integer) // FIELD_INT32 m_Entity_nLightProbeSizeY
+	light_probe_size_z(integer) // FIELD_INT32 m_Entity_nLightProbeSizeZ
+	light_probe_atlas_x(integer) // FIELD_INT32 m_Entity_nLightProbeAtlasX
+	light_probe_atlas_y(integer) // FIELD_INT32 m_Entity_nLightProbeAtlasY
+	light_probe_atlas_z(integer) // FIELD_INT32 m_Entity_nLightProbeAtlasZ
+]
+
+// C_EnvCubemap
+@PointClass base(C_BaseEntity) = env_cubemap
+[
+	cubemaptexture(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hCubemapTexture
+	customcubemaptexture(boolean) // FIELD_BOOLEAN m_Entity_bCustomCubemapTexture
+	influenceradius(float) // FIELD_FLOAT32 m_Entity_flInfluenceRadius
+	box_mins(vector) // FIELD_VECTOR m_Entity_vBoxProjectMins
+	box_maxs(vector) // FIELD_VECTOR m_Entity_vBoxProjectMaxs
+	moveable(boolean) // FIELD_BOOLEAN m_Entity_bMoveable
+	handshake(integer) // FIELD_INT32 m_Entity_nHandshake
+	array_index(integer) // FIELD_INT32 m_Entity_nEnvCubeMapArrayIndex
+	indoor_outdoor_level(integer) // FIELD_INT32 m_Entity_nPriority
+	edge_fade_dist(float) // FIELD_FLOAT32 m_Entity_flEdgeFadeDist
+	edge_fade_dists(vector) // FIELD_VECTOR m_Entity_vEdgeFadeDists
+	diffuse_scale(float) // FIELD_FLOAT32 m_Entity_flDiffuseScale
+	StartDisabled(boolean) // FIELD_BOOLEAN m_Entity_bStartDisabled
+	default_env_map(boolean) // FIELD_BOOLEAN m_Entity_bDefaultEnvMap
+	default_spec_env_map(boolean) // FIELD_BOOLEAN m_Entity_bDefaultSpecEnvMap
+	render_depth_map(boolean) // FIELD_BOOLEAN m_Entity_bIndoorCubeMap
+	copy_diffuse_from_default_cubemap(boolean) // FIELD_BOOLEAN m_Entity_bCopyDiffuseFromDefaultCubemap
+]
+
+// C_EnvCubemapBox, ECF_ALWAYS_SPAWN_ON_CLIENT
+@PointClass base(env_cubemap) = env_cubemap_box
+[
+]
+
+// C_EnvCubemapFog
+@PointClass base(C_BaseEntity) = env_cubemap_fog
+[
+	cubemapfogstartdistance(float) // FIELD_FLOAT32 m_flStartDistance
+	cubemapfogenddistance(float) // FIELD_FLOAT32 m_flEndDistance
+	cubemapfoglodbiase(float) // FIELD_FLOAT32 m_flLODBias
+	cubemapfogfalloffexponent(float) // FIELD_FLOAT32 m_flFogFalloffExponent
+	cubemapheightfog(boolean) // FIELD_BOOLEAN m_bHeightFogEnabled
+	cubemapfogheightwidth(float) // FIELD_FLOAT32 m_flFogHeightWidth
+	cubemapfogheightstart(float) // FIELD_FLOAT32 m_flFogHeightStart
+	cubemapfogheightend(float) // FIELD_FLOAT32 m_flFogHeightEnd
+	cubemapfogheightexponent(float) // FIELD_FLOAT32 m_flFogHeightExponent
+	cubemapfogmaxopacity(float) // FIELD_FLOAT32 m_flFogMaxOpacity
+	cubemapfogsource(integer) // FIELD_INT32 m_nCubemapSourceType
+	cubemapfogskymaterial(material) // FIELD_HMATERIAL m_hSkyMaterial
+	cubemapfogskyentity(string) // FIELD_STRING m_iszSkyEntity
+	cubemapfogdistancetype(integer) // FIELD_INT32 m_nDistanceFogType
+	cubemapfogdistancecurve(string) // FIELD_STRING m_DistanceFogCurveString
+	cubemapfogheighttype(integer) // FIELD_INT32 m_nHeightFogType
+	cubemapfogheightcurve(string) // FIELD_STRING m_HeightFogCurveString
+	cubemapfogheightblendmode(integer) // FIELD_INT32 m_nFogHeightBlendMode
+	cubemapfogheightcoordinatespace(integer) // FIELD_INT32 m_nFogHeightCoordinateSpace
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bStartDisabled
+	cubemapfogtexture(resource:texture) // FIELD_HRENDERTEXTURE m_hFogCubemapTexture
+	input Disable(boolean) // PVAL_BOOL param
+	input Enable(boolean) // PVAL_BOOL param
+]
+
+// C_EnvDecal
+@PointClass base(basemodelentity) = env_decal
+[
+	material(material) // FIELD_HMATERIAL m_hDecalMaterial
+	width(float) // FIELD_FLOAT32 m_flWidth
+	height(float) // FIELD_FLOAT32 m_flHeight
+	depth(float) // FIELD_FLOAT32 m_flDepth
+	depthsortbias(float) // FIELD_FLOAT32 m_flDepthSortBias
+	RenderOrder(integer) // FIELD_UINT32 m_nRenderOrder
+	projectonworld(boolean) // FIELD_BOOLEAN m_bProjectOnWorld
+	projectoncharacters(boolean) // FIELD_BOOLEAN m_bProjectOnCharacters
+	projectonwater(boolean) // FIELD_BOOLEAN m_bProjectOnWater
+]
+
+// C_EnvDetailController
+@PointClass base(C_BaseEntity) = env_detail_controller
+[
+	fademindist(float) // FIELD_FLOAT32 m_flFadeStartDist
+	fademaxdist(float) // FIELD_FLOAT32 m_flFadeEndDist
+]
+
+// C_EntityDissolve
+@PointClass base(basemodelentity) = env_entity_dissolver
+[
+]
+
+// C_FogController, ECF_ALWAYS_SPAWN_ON_CLIENT
+@PointClass base(C_BaseEntity) = env_fog_controller
+[
+	// m_fog (fogparams_t)
+		fogdir(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE dirPrimary
+		fogcolor(color255) // FIELD_COLOR32 colorPrimary
+		fogcolor2(color255) // FIELD_COLOR32 colorSecondary
+		fogstart(float) // FIELD_FLOAT32 start
+		fogend(float) // FIELD_FLOAT32 end
+		farz(float) // FIELD_FLOAT32 farz
+		fogmaxdensity(float) // FIELD_FLOAT32 maxdensity
+		fogexponent(float) // FIELD_FLOAT32 exponent
+		HDRColorScale(float) // FIELD_FLOAT32 HDRColorScale
+		foglerptime(float) // FIELD_FLOAT32 duration
+		fogenable(boolean) // FIELD_BOOLEAN enable
+		fogblend(boolean) // FIELD_BOOLEAN blend
+		blendtobackground(float) // FIELD_FLOAT32 blendtobackground
+		scattering(float) // FIELD_FLOAT32 scattering
+		locallightscale(float) // FIELD_FLOAT32 locallightscale
+	use_angles(boolean) // FIELD_BOOLEAN m_bUseAngles
+	input Set2DSkyboxFogFactor(float) // PVAL_FLOAT param
+	input Set2DSkyboxFogFactorLerpTo(float) // PVAL_FLOAT param
+	input SetAngles(string) // PVAL_STRING param
+	input SetColor(color255) // PVAL_COLOR_RGB param
+	input SetColorLerpTo(color255) // PVAL_COLOR_RGB param
+	input SetColorSecondary(color255) // PVAL_COLOR_RGB param
+	input SetColorSecondaryLerpTo(color255) // PVAL_COLOR_RGB param
+	input SetEndDist(float) // PVAL_FLOAT param
+	input SetEndDistLerpTo(float) // PVAL_FLOAT param
+	input SetFarZ(integer) // PVAL_INT param
+	input SetMaxDensity(float) // PVAL_FLOAT param
+	input SetMaxDensityLerpTo(float) // PVAL_FLOAT param
+	input SetStartDist(float) // PVAL_FLOAT param
+	input SetStartDistLerpTo(float) // PVAL_FLOAT param
+	input StartFogTransition(void)
+	input TurnOff(void)
+	input TurnOn(void)
+]
+
+// C_GradientFog
+@PointClass base(C_BaseEntity) = env_gradient_fog
+[
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bStartDisabled
+	gradientfogtexture(resource:texture) // FIELD_HRENDERTEXTURE m_hGradientFogTexture
+	fogstart(float) // FIELD_FLOAT32 m_flFogStartDistance
+	fogend(float) // FIELD_FLOAT32 m_flFogEndDistance
+	heightfog(boolean) // FIELD_BOOLEAN m_bHeightFogEnabled
+	fogstartheight(float) // FIELD_FLOAT32 m_flFogStartHeight
+	fogendheight(float) // FIELD_FLOAT32 m_flFogEndHeight
+	farz(float) // FIELD_FLOAT32 m_flFarZ
+	fogmaxopacity(float) // FIELD_FLOAT32 m_flFogMaxOpacity
+	fogfalloffexponent(float) // FIELD_FLOAT32 m_flFogFalloffExponent
+	fogverticalexponent(float) // FIELD_FLOAT32 m_flFogVerticalExponent
+	fogcolor(color255) // FIELD_COLOR32 m_fogColor
+	fogstrength(float) // FIELD_FLOAT32 m_flFogStrength
+	fadetime(float) // FIELD_FLOAT32 m_flFadeTime
+	input Disable(boolean) // PVAL_BOOL param
+	input Enable(boolean) // PVAL_BOOL param
+	input SetFarZ(float) // PVAL_FLOAT param
+	input SetFogColor(color255) // PVAL_COLOR_RGB param
+	input SetFogEndDistance(float) // PVAL_FLOAT param
+	input SetFogEndHeight(float) // PVAL_FLOAT param
+	input SetFogFalloffExponent(float) // PVAL_FLOAT param
+	input SetFogMaxOpacity(float) // PVAL_FLOAT param
+	input SetFogStartDistance(float) // PVAL_FLOAT param
+	input SetFogStartHeight(float) // PVAL_FLOAT param
+	input SetFogStrength(float) // PVAL_FLOAT param
+	input SetFogVerticalExponent(float) // PVAL_FLOAT param
+]
+
+// C_EnvLightProbeVolume
+@PointClass base(C_BaseEntity) = env_light_probe_volume
+[
+	lightprobetexture(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeTexture_AmbientCube
+	lightprobetexture_sdf(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeTexture_SDF
+	lightprobetexture_sh2_dc(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeTexture_SH2_DC
+	lightprobetexture_sh2_l1(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeTexture_SH2_L1
+	lightprobetexture_dli(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeDirectLightIndicesTexture
+	lightprobetexture_dls(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeDirectLightScalarsTexture
+	lightprobetexture_dlshd(resource:texture) // FIELD_HRENDERTEXTURE m_Entity_hLightProbeDirectLightShadowsTexture
+	box_mins(vector) // FIELD_VECTOR m_Entity_vBoxMins
+	box_maxs(vector) // FIELD_VECTOR m_Entity_vBoxMaxs
+	moveable(boolean) // FIELD_BOOLEAN m_Entity_bMoveable
+	handshake(integer) // FIELD_INT32 m_Entity_nHandshake
+	indoor_outdoor_level(integer) // FIELD_INT32 m_Entity_nPriority
+	StartDisabled(boolean) // FIELD_BOOLEAN m_Entity_bStartDisabled
+	light_probe_size_x(integer) // FIELD_INT32 m_Entity_nLightProbeSizeX
+	light_probe_size_y(integer) // FIELD_INT32 m_Entity_nLightProbeSizeY
+	light_probe_size_z(integer) // FIELD_INT32 m_Entity_nLightProbeSizeZ
+	light_probe_atlas_x(integer) // FIELD_INT32 m_Entity_nLightProbeAtlasX
+	light_probe_atlas_y(integer) // FIELD_INT32 m_Entity_nLightProbeAtlasY
+	light_probe_atlas_z(integer) // FIELD_INT32 m_Entity_nLightProbeAtlasZ
+]
+
+// C_ParticleSystem
+@PointClass base(basemodelentity) = info_particle_system
+[
+	start_active(boolean) // FIELD_BOOLEAN m_bStartActive
+	pre_sim_time(float) // FIELD_FLOAT32 m_flPreSimTime
+	effect_name(string) // FIELD_STRING m_iszEffectName
+	no_save(boolean) // FIELD_BOOLEAN m_bNoSave
+	no_freeze(boolean) // FIELD_BOOLEAN m_bNoFreeze
+	no_ramp(boolean) // FIELD_BOOLEAN m_bNoRamp
+	snapshot_file(string) // FIELD_CHARACTER m_szSnapshotFileName
+	cpoint0(string) // FIELD_STRING m_iszControlPointNames[0]
+	cpoint1(string) // FIELD_STRING m_iszControlPointNames[1]
+	cpoint2(string) // FIELD_STRING m_iszControlPointNames[2]
+	cpoint3(string) // FIELD_STRING m_iszControlPointNames[3]
+	cpoint4(string) // FIELD_STRING m_iszControlPointNames[4]
+	cpoint5(string) // FIELD_STRING m_iszControlPointNames[5]
+	cpoint6(string) // FIELD_STRING m_iszControlPointNames[6]
+	cpoint7(string) // FIELD_STRING m_iszControlPointNames[7]
+	cpoint8(string) // FIELD_STRING m_iszControlPointNames[8]
+	cpoint9(string) // FIELD_STRING m_iszControlPointNames[9]
+	cpoint10(string) // FIELD_STRING m_iszControlPointNames[10]
+	cpoint11(string) // FIELD_STRING m_iszControlPointNames[11]
+	cpoint12(string) // FIELD_STRING m_iszControlPointNames[12]
+	cpoint13(string) // FIELD_STRING m_iszControlPointNames[13]
+	cpoint14(string) // FIELD_STRING m_iszControlPointNames[14]
+	cpoint15(string) // FIELD_STRING m_iszControlPointNames[15]
+	cpoint16(string) // FIELD_STRING m_iszControlPointNames[16]
+	cpoint17(string) // FIELD_STRING m_iszControlPointNames[17]
+	cpoint18(string) // FIELD_STRING m_iszControlPointNames[18]
+	cpoint19(string) // FIELD_STRING m_iszControlPointNames[19]
+	cpoint20(string) // FIELD_STRING m_iszControlPointNames[20]
+	cpoint21(string) // FIELD_STRING m_iszControlPointNames[21]
+	cpoint22(string) // FIELD_STRING m_iszControlPointNames[22]
+	cpoint23(string) // FIELD_STRING m_iszControlPointNames[23]
+	cpoint24(string) // FIELD_STRING m_iszControlPointNames[24]
+	cpoint25(string) // FIELD_STRING m_iszControlPointNames[25]
+	cpoint26(string) // FIELD_STRING m_iszControlPointNames[26]
+	cpoint27(string) // FIELD_STRING m_iszControlPointNames[27]
+	cpoint28(string) // FIELD_STRING m_iszControlPointNames[28]
+	cpoint29(string) // FIELD_STRING m_iszControlPointNames[29]
+	cpoint30(string) // FIELD_STRING m_iszControlPointNames[30]
+	cpoint31(string) // FIELD_STRING m_iszControlPointNames[31]
+	cpoint32(string) // FIELD_STRING m_iszControlPointNames[32]
+	cpoint33(string) // FIELD_STRING m_iszControlPointNames[33]
+	cpoint34(string) // FIELD_STRING m_iszControlPointNames[34]
+	cpoint35(string) // FIELD_STRING m_iszControlPointNames[35]
+	cpoint36(string) // FIELD_STRING m_iszControlPointNames[36]
+	cpoint37(string) // FIELD_STRING m_iszControlPointNames[37]
+	cpoint38(string) // FIELD_STRING m_iszControlPointNames[38]
+	cpoint39(string) // FIELD_STRING m_iszControlPointNames[39]
+	cpoint40(string) // FIELD_STRING m_iszControlPointNames[40]
+	cpoint41(string) // FIELD_STRING m_iszControlPointNames[41]
+	cpoint42(string) // FIELD_STRING m_iszControlPointNames[42]
+	cpoint43(string) // FIELD_STRING m_iszControlPointNames[43]
+	cpoint44(string) // FIELD_STRING m_iszControlPointNames[44]
+	cpoint45(string) // FIELD_STRING m_iszControlPointNames[45]
+	cpoint46(string) // FIELD_STRING m_iszControlPointNames[46]
+	cpoint47(string) // FIELD_STRING m_iszControlPointNames[47]
+	cpoint48(string) // FIELD_STRING m_iszControlPointNames[48]
+	cpoint49(string) // FIELD_STRING m_iszControlPointNames[49]
+	cpoint50(string) // FIELD_STRING m_iszControlPointNames[50]
+	cpoint51(string) // FIELD_STRING m_iszControlPointNames[51]
+	cpoint52(string) // FIELD_STRING m_iszControlPointNames[52]
+	cpoint53(string) // FIELD_STRING m_iszControlPointNames[53]
+	cpoint54(string) // FIELD_STRING m_iszControlPointNames[54]
+	cpoint55(string) // FIELD_STRING m_iszControlPointNames[55]
+	cpoint56(string) // FIELD_STRING m_iszControlPointNames[56]
+	cpoint57(string) // FIELD_STRING m_iszControlPointNames[57]
+	cpoint58(string) // FIELD_STRING m_iszControlPointNames[58]
+	cpoint59(string) // FIELD_STRING m_iszControlPointNames[59]
+	cpoint60(string) // FIELD_STRING m_iszControlPointNames[60]
+	cpoint61(string) // FIELD_STRING m_iszControlPointNames[61]
+	cpoint62(string) // FIELD_STRING m_iszControlPointNames[62]
+	cpoint63(string) // FIELD_STRING m_iszControlPointNames[63]
+	// cpoint%d_value(string) // FIELD_UTLSTRING
+	AnimateDuringGameplayPause(boolean) // FIELD_BOOLEAN m_bAnimateDuringGameplayPause
+	data_cp(integer) // FIELD_INT32 m_nDataCP
+	data_cp_value(vector) // FIELD_VECTOR m_vecDataCPValue
+	tint_cp(integer) // FIELD_INT32 m_nTintCP
+	tint_cp_color(color255) // FIELD_COLOR32 m_clrTint
+	input DestroyImmediately(void)
+	input Freeze(float) // PVAL_FLOAT param
+	input SetControlPoint(string) // PVAL_STRING param
+	input SetDataControlPointX(float) // PVAL_FLOAT param
+	input SetDataControlPointY(float) // PVAL_FLOAT param
+	input SetDataControlPointZ(float) // PVAL_FLOAT param
+	input SetTextString(api) // PVAL_STRING pText, PVAL_BOOL bLocalize, Pulse node: Update the text data on this system.
+	input Start(void)
+	input Stop(void)
+	input StopPlayEndCap(void)
+	input Thaw(float) // PVAL_FLOAT param
+]
+
+// C_EnvParticleGlow
+@PointClass base(info_particle_system) = env_particle_glow
+[
+	alphascale(float) // FIELD_FLOAT32 m_flAlphaScale
+	scale(float) // FIELD_FLOAT32 m_flRadiusScale
+	selfillumscale(float) // FIELD_FLOAT32 m_flSelfIllumScale
+	colortint(color255) // FIELD_COLOR32 m_ColorTint
+	effect_textureOverride(resource:texture) // FIELD_HRENDERTEXTURE m_hTextureOverride
+	input setalphascale(float) // PVAL_FLOAT param
+	input setcolortint(color255) // PVAL_COLOR_RGB param
+	input setscale(float) // PVAL_FLOAT param
+]
+
+// C_PlayerVisibility
+@PointClass base(C_BaseEntity) = env_player_visibility
+[
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bStartDisabled
+	playervisibilitystrength(float) // FIELD_FLOAT32 m_flVisibilityStrength
+	playerfogdistancemultiplier(float) // FIELD_FLOAT32 m_flFogDistanceMultiplier
+	playerfogmaxdensitymultiplier(float) // FIELD_FLOAT32 m_flFogMaxDensityMultiplier
+	fadetime(float) // FIELD_FLOAT32 m_flFadeTime
+	input Disable(boolean) // PVAL_BOOL param
+	input Enable(boolean) // PVAL_BOOL param
+	input SetPlayerFogDistanceMultiplier(float) // PVAL_FLOAT param
+	input SetPlayerFogMaxDensityMultiplier(float) // PVAL_FLOAT param
+	input SetPlayerVisibilityStrength(float) // PVAL_FLOAT param
+]
+
+// C_EnvSky
+@PointClass base(basemodelentity) = env_sky
+[
+	skyname(material) // FIELD_HMATERIAL m_hSkyMaterial
+	sky_lightingonly_name(material) // FIELD_HMATERIAL m_hSkyMaterialLightingOnly
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bStartDisabled
+	tint_color(color255) // FIELD_COLOR32 m_vTintColor
+	lighting_only_tint_color(color255) // FIELD_COLOR32 m_vTintColorLightingOnly
+	brightnessscale(float) // FIELD_FLOAT32 m_flBrightnessScale
+	fog_type(integer) // FIELD_INT32 m_nFogType
+	angular_fog_min_start(float) // FIELD_FLOAT32 m_flFogMinStart
+	angular_fog_min_end(float) // FIELD_FLOAT32 m_flFogMinEnd
+	angular_fog_max_start(float) // FIELD_FLOAT32 m_flFogMaxStart
+	angular_fog_max_end(float) // FIELD_FLOAT32 m_flFogMaxEnd
+]
+
+// CEnvSoundscape
+@PointClass base(C_BaseEntity) = env_soundscape
+[
+	radius(float) // FIELD_FLOAT32 m_flRadius
+	soundscape(string) // FIELD_STRING m_soundscapeName
+	enablesoundevent(boolean) // FIELD_BOOLEAN m_bOverrideWithEvent
+	soundevent(sound) // FIELD_SOUNDNAME m_soundEventName
+	position0(string) // FIELD_STRING m_positionNames[0]
+	position1(string) // FIELD_STRING m_positionNames[1]
+	position2(string) // FIELD_STRING m_positionNames[2]
+	position3(string) // FIELD_STRING m_positionNames[3]
+	position4(string) // FIELD_STRING m_positionNames[4]
+	position5(string) // FIELD_STRING m_positionNames[5]
+	position6(string) // FIELD_STRING m_positionNames[6]
+	position7(string) // FIELD_STRING m_positionNames[7]
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bDisabled
+	input Disable(void)
+	input Enable(void)
+	input ToggleEnabled(void)
+	output OnPlay(void)
+]
+
+// CEnvSoundscapeProxy
+@PointClass base(env_soundscape) = env_soundscape_proxy
+[
+	MainSoundscapeName(string) // FIELD_STRING m_MainSoundscapeName
+]
+
+// CEnvSoundscapeTriggerable
+@PointClass base(env_soundscape) = env_soundscape_triggerable
+[
+]
+
+// C_Sprite
+@PointClass base(basemodelentity) = env_sprite
+[
+	scale(float) // FIELD_FLOAT32 m_flSpriteScale
+	framerate(float) // FIELD_FLOAT32 m_flSpriteFramerate
+	frame(float) // FIELD_FLOAT32 m_flFrame
+	HDRColorScale(float) // FIELD_FLOAT32 m_flHDRColorScale
+	speed(float) // FIELD_FLOAT32 m_flSpeed
+	GlowProxySize(float) // FIELD_FLOAT32 m_flGlowProxySize
+]
+
+// CSpriteOriented
+@PointClass base(env_sprite) = env_sprite_oriented
+[
+]
+
+// C_TonemapController2
+@PointClass base(C_BaseEntity) = env_tonemap_controller
+[
+	MinExposure(float) // FIELD_FLOAT32 m_flAutoExposureMin
+	MaxExposure(float) // FIELD_FLOAT32 m_flAutoExposureMax
+	rate(float) // FIELD_FLOAT32 m_flExposureAdaptationSpeedUp
+	input Disable(void)
+	input Enable(void)
+	input SetExposureAdaptationSpeedDown(float) // PVAL_FLOAT param
+	input SetExposureAdaptationSpeedUp(float) // PVAL_FLOAT param
+	input SetMaxExposure(float) // PVAL_FLOAT param
+	input SetMinExposure(float) // PVAL_FLOAT param
+]
+
+// C_TonemapController2Alias_env_tonemap_controller2, ECF_ALIAS
+@PointClass base(env_tonemap_controller) = env_tonemap_controller2
+[
+]
+
+// C_EnvVolumetricFogController
+@PointClass base(C_BaseEntity) = env_volumetric_fog_controller
+[
+	IsMaster(boolean) // FIELD_BOOLEAN m_bIsMaster
+	FadeSpeed(float) // FIELD_FLOAT32 m_flFadeSpeed
+	volume_depth_override(integer) // FIELD_INT32 m_nVolumeDepth
+	volume_first_slice_thickness(float) // FIELD_FLOAT32 m_fFirstVolumeSliceThickness
+	Anisotropy(float) // FIELD_FLOAT32 m_flAnisotropy
+	FogStrength(float) // FIELD_FLOAT32 m_flScattering
+	DrawDistance(float) // FIELD_FLOAT32 m_flDrawDistance
+	FadeInStart(float) // FIELD_FLOAT32 m_flFadeInStart
+	FadeInEnd(float) // FIELD_FLOAT32 m_flFadeInEnd
+	IndirectVoxelDimX(integer) // FIELD_INT32 m_nIndirectTextureDimX
+	IndirectVoxelDimY(integer) // FIELD_INT32 m_nIndirectTextureDimY
+	IndirectVoxelDimZ(integer) // FIELD_INT32 m_nIndirectTextureDimZ
+	IndirectStrength(float) // FIELD_FLOAT32 m_flIndirectStrength
+	IndirectEnabled(boolean) // FIELD_BOOLEAN m_bEnableIndirect
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bStartDisabled
+	box_mins(vector) // FIELD_VECTOR m_vBoxMins
+	box_maxs(vector) // FIELD_VECTOR m_vBoxMaxs
+	fogirradiancevolume(resource:texture) // FIELD_HRENDERTEXTURE m_hFogIndirectTexture
+	NoiseSpeed(float) // FIELD_FLOAT32 m_fNoiseSpeed
+	NoiseStrength(float) // FIELD_FLOAT32 m_fNoiseStrength
+	NoiseScale(vector) // FIELD_VECTOR m_vNoiseScale
+	WindSpeed(float) // FIELD_FLOAT32 m_fWindSpeed
+	WindDirection(vector) // FIELD_VECTOR m_vWindDirection
+	TintColor(color255) // FIELD_COLOR32 m_TintColor
+	input Disable(boolean) // PVAL_BOOL param
+	input Enable(boolean) // PVAL_BOOL param
+	input EnableIndirect(boolean) // PVAL_BOOL param
+	input ForceRefresh(void)
+	input SetAnisotropy(float) // PVAL_FLOAT param
+	input SetDrawDistance(float) // PVAL_FLOAT param
+	input SetFadeSpeed(float) // PVAL_FLOAT param
+	input SetFogStrength(float) // PVAL_FLOAT param
+	input SetToDefaults(void)
+]
+
+// C_EnvVolumetricFogVolume
+@PointClass base(C_BaseEntity) = env_volumetric_fog_volume
+[
+	box_mins(vector) // FIELD_VECTOR m_vBoxMins
+	box_maxs(vector) // FIELD_VECTOR m_vBoxMaxs
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bStartDisabled
+	IndirectUseLPVs(boolean) // FIELD_BOOLEAN m_bIndirectUseLPVs
+	FogStrength(float) // FIELD_FLOAT32 m_flStrength
+	FalloffExponent(float) // FIELD_FLOAT32 m_flFalloffExponent
+	HeightFogDepth(float) // FIELD_FLOAT32 m_flHeightFogDepth
+	HeightFogEdgeWidth(float) // FIELD_FLOAT32 m_fHeightFogEdgeWidth
+	FogIndirectStrength(float) // FIELD_FLOAT32 m_fIndirectLightStrength
+	FogSunLightStrength(float) // FIELD_FLOAT32 m_fSunLightStrength
+	FogNoiseStrength(float) // FIELD_FLOAT32 m_fNoiseStrength
+	Shape(integer) // FIELD_INT32 m_nFalloffShape
+	TintColor(color255) // FIELD_COLOR32 m_TintColor
+	OverrideFogIndirectStrength(boolean) // FIELD_BOOLEAN m_bOverrideIndirectLightStrength
+	OverrideFogSunLightStrength(boolean) // FIELD_BOOLEAN m_bOverrideSunLightStrength
+	OverrideFogNoiseStrength(boolean) // FIELD_BOOLEAN m_bOverrideNoiseStrength
+	OverrideTintColor(boolean) // FIELD_BOOLEAN m_bOverrideTintColor
+	input Disable(boolean) // PVAL_BOOL param
+	input Enable(boolean) // PVAL_BOOL param
+]
+
+// C_CitadelPlayerPawn
+@PointClass base(CCitadelPlayerPawnBase) = player
+[
+	// m_pCameraServices (CPlayer_CameraServices)
+		// m_CurrentFog (fogparams_t)
+			fogdir(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE dirPrimary
+			fogcolor(color255) // FIELD_COLOR32 colorPrimary
+			fogcolor2(color255) // FIELD_COLOR32 colorSecondary
+			fogstart(float) // FIELD_FLOAT32 start
+			fogend(float) // FIELD_FLOAT32 end
+			farz(float) // FIELD_FLOAT32 farz
+			fogmaxdensity(float) // FIELD_FLOAT32 maxdensity
+			fogexponent(float) // FIELD_FLOAT32 exponent
+			HDRColorScale(float) // FIELD_FLOAT32 HDRColorScale
+			foglerptime(float) // FIELD_FLOAT32 duration
+			fogenable(boolean) // FIELD_BOOLEAN enable
+			fogblend(boolean) // FIELD_BOOLEAN blend
+			blendtobackground(float) // FIELD_FLOAT32 blendtobackground
+			scattering(float) // FIELD_FLOAT32 scattering
+			locallightscale(float) // FIELD_FLOAT32 locallightscale
+]
+
+// CCitadelFamiliarClonePlayerPawn
+@PointClass base(player) = familiar_clone
+[
+	familiar(target_destination) // FIELD_EHANDLE m_hFamiliar
+]
+
+// CProjectile_Familiar_MovingToAttach
+@PointClass base(citadel_tracked_projectile) = familiar_projectile_movingtoattach
+[
+]
+
+// CCitadel_Ability_Fathom_Breach
+@PointClass base(citadel_base_ability) = fathom_breach
+[
+]
+
+// CAbility_Fathom_LurkersAmbush
+@PointClass base(citadel_base_ability) = fathom_lurkers_ambush
+[
+]
+
+// CAbility_Fathom_ReefdwellerHarpoon
+@PointClass base(citadel_base_ability) = fathom_reefdweller_harpoon
+[
+]
+
+// CCitadel_Ability_Fathom_ScaldingSpray
+@PointClass base(citadel_base_ability) = fathom_scalding_spray
+[
+]
+
+// CCitadel_Projectile_FeatherBoomerang
+@PointClass base(citadel_projectile) = featherboomerang_projectile
+[
+]
+
+// CBaseFilter
+@PointClass base(CLogicalEntity) = filter_base
+[
+	Negated(boolean) // FIELD_BOOLEAN m_bNegated
+	input TestActivator(void)
+	output OnFail(void)
+	output OnPass(void)
+]
+
+// CFilterAttributeInt
+@PointClass base(filter_base) = filter_activator_attribute_int
+[
+	filterattribute(string) // FIELD_STRING m_sAttributeName
+]
+
+// CFilterClass
+@PointClass base(filter_base) = filter_activator_class
+[
+	filterclass(string) // FIELD_STRING m_iFilterClass
+]
+
+// CFilterMassGreater
+@PointClass base(filter_base) = filter_activator_mass_greater
+[
+	filtermass(float) // FIELD_FLOAT32 m_fFilterMass
+]
+
+// CFilterModel
+@PointClass base(filter_base) = filter_activator_model
+[
+	model(string) // FIELD_STRING m_iFilterModel
+]
+
+// CFilterName
+@PointClass base(filter_base) = filter_activator_name
+[
+	filtername(string) // FIELD_STRING m_iFilterName
+]
+
+// CFilterTeam
+@PointClass base(filter_base) = filter_activator_team
+[
+	filterteam(integer) // FIELD_INT32 m_iFilterTeam
+]
+
+// FilterDamageType
+@PointClass base(filter_base) = filter_damage_type
+[
+	damagetype(integer) // FIELD_INT32 m_iDamageType
+]
+
+// FilterHealth
+@PointClass base(filter_base) = filter_health
+[
+	adrenalinepresence(boolean) // FIELD_BOOLEAN m_bAdrenalineActive
+	healthmin(integer) // FIELD_INT32 m_iHealthMin
+	healthmax(integer) // FIELD_INT32 m_iHealthMax
+]
+
+// CFilterLOS
+@PointClass base(filter_base) = filter_los
+[
+]
+
+// CFilterModifier
+@PointClass base(filter_base) = filter_modifier
+[
+	filtermodifier(string) // FIELD_STRING m_iFilterModifier
+]
+
+// CFilterMultiple
+@PointClass base(filter_base) = filter_multi
+[
+	FilterType(intchoices) : "FilterType" : : "" = // FIELD_INT32 m_nFilterType (filter_t)
+	[
+		0 : "FILTER_AND"
+		1 : "FILTER_OR"
+	]
+	Filter01(string) // FIELD_STRING m_iFilterName[0]
+	Filter02(string) // FIELD_STRING m_iFilterName[1]
+	Filter03(string) // FIELD_STRING m_iFilterName[2]
+	Filter04(string) // FIELD_STRING m_iFilterName[3]
+	Filter05(string) // FIELD_STRING m_iFilterName[4]
+	Filter06(string) // FIELD_STRING m_iFilterName[5]
+	Filter07(string) // FIELD_STRING m_iFilterName[6]
+	Filter08(string) // FIELD_STRING m_iFilterName[7]
+	Filter09(string) // FIELD_STRING m_iFilterName[8]
+	Filter10(string) // FIELD_STRING m_iFilterName[9]
+	input AddFilter(target_destination) : "Add the named entity to the filter list" // PVAL_EHANDLE:filter_base pFilter, Pulse node
+	input RemoveFilter(target_destination) : "Remove the named entity from the filter list" // PVAL_EHANDLE:filter_base pFilter, Pulse node
+]
+
+// CFilterProximity
+@PointClass base(filter_base) = filter_proximity
+[
+	filter_radius(float) // FIELD_FLOAT32 m_flRadius
+]
+
+// CCitadel_Projectile_FortunaWeapon
+@PointClass base(citadel_tracked_projectile) = fortuna_weapon_projectile
+[
+]
+
+// C_BaseButton
+@PointClass base(C_BaseToggle) = func_button
+[
+	displaytext(string) // FIELD_STRING m_szDisplayText
+]
+
+// C_EnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume, ECF_ALIAS
+@PointClass base(env_combined_light_probe_volume) = func_combined_light_probe_volume
+[
+]
+
+// C_ConditionalCollidable
+@PointClass base(basemodelentity) = func_conditional_collidable
+[
+]
+
+// C_FuncLadder
+@PointClass base(basemodelentity) = func_ladder
+[
+	point1(vector) // FIELD_VECTOR m_vecLocalTop
+	AutoRideSpeed(float) // FIELD_FLOAT32 m_flAutoRideSpeed
+	HasSlack(boolean) // FIELD_BOOLEAN m_bHasSlack
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bDisabled
+]
+
+// C_FuncMonitor
+@PointClass base(C_FuncBrush) = func_monitor
+[
+	target(string) // FIELD_UTLSTRING m_targetCamera
+	resolution(integer) // FIELD_INT32 m_nResolutionEnum
+	render_shadows(boolean) // FIELD_BOOLEAN m_bRenderShadows
+	unique_target(boolean) // FIELD_BOOLEAN m_bUseUniqueColorTarget
+	draw_3dskybox(boolean) // FIELD_BOOLEAN m_bDraw3DSkybox
+]
+
+// C_Precipitation
+@PointClass base(trigger) = func_precipitation
+[
+]
+
+// C_PrecipitationBlocker
+@PointClass base(basemodelentity) = func_precipitation_blocker
+[
+]
+
+// C_CitadelSpawnBlocker
+@PointClass base(C_FuncBrush) = func_spawn_blocker
+[
+]
+
+// CRagdollManager, spawn order 18
+@PointClass base(C_BaseEntity) = game_ragdoll_manager
+[
+]
+
+// CCitadel_Ability_GenericPerson_1
+@PointClass base(citadel_base_ability) = genericperson_ability_1
+[
+]
+
+// CCitadel_Ability_GenericPerson_2
+@PointClass base(citadel_base_ability) = genericperson_ability_2
+[
+]
+
+// CCitadel_Ability_GenericPerson_3
+@PointClass base(citadel_base_ability) = genericperson_ability_3
+[
+]
+
+// CCitadel_Ability_GenericPerson_4
+@PointClass base(citadel_base_ability) = genericperson_ability_4
+[
+]
+
+// C_Citadel_Projectile_Guided_Arrow
+@PointClass base(citadel_projectile) = guided_arrow_projectile
+[
+]
+
+// CCitadel_Ability_RapidFire
+@PointClass base(citadel_base_ability) = gunslinger_rapid_fire
+[
+]
+
+// CCitadel_Ability_RocketLauncher
+@PointClass base(citadel_base_ability) = gunslinger_rocket_launcher
+[
+]
+
+// CCitadel_Ability_Gunslinger_Salvo
+@PointClass base(citadel_base_ability) = gunslinger_salvo
+[
+]
+
+// CCitadel_Ability_SleepBomb
+@PointClass base(citadel_base_ability) = gunslinger_sleep_bomb
+[
+]
+
+// CCitadel_Ability_Tenacity
+@PointClass base(citadel_base_ability) = gunslinger_tenacity
+[
+]
+
+// C_HeroPreview
+@PointClass base(C_BaseEntity) = hero_preview
+[
+]
+
+// C_TextureBasedAnimatable
+@PointClass base(basemodelentity) = hl_vr_texture_based_animatable
+[
+	fps(float) // FIELD_FLOAT32 m_flFPS
+	loop(boolean) // FIELD_BOOLEAN m_bLoop
+	texture_based_animation_position_keys(resource:texture) // FIELD_HRENDERTEXTURE m_hPositionKeys
+	texture_based_animation_rotation_keys(resource:texture) // FIELD_HRENDERTEXTURE m_hRotationKeys
+	anim_bounds_min(vector) // FIELD_VECTOR m_vAnimationBoundsMin
+	anim_bounds_max(vector) // FIELD_VECTOR m_vAnimationBoundsMax
+	input Disable(void)
+	input Enable(void)
+	input Start(void)
+	input Stop(void)
+]
+
+// C_Citadel_Ice_Path_Shard_Physics
+@PointClass base(basemodelentity) = icepath_shard
+[
+]
+
+// C_CitadelProjectile_ImmobilizeTrap
+@PointClass base(citadel_projectile) = immobilize_trap_projectile
+[
+]
+
+// CCitadelInWorldEventTimer
+@PointClass base(point_clientui_world_panel) = in_world_event_timer
+[
+	entindex_target(integer) // FIELD_INT32 m_nTrackedEntity
+]
+
+// CInWorldItemPanel
+@PointClass base(point_clientui_world_panel) = in_world_item_panel
+[
+	entindex_target(integer) // FIELD_INT32 m_nTrackedEntity
+]
+
+// C_InWorldKeyBindPanel
+@PointClass base(point_clientui_world_panel) = in_world_key_bind_panel
+[
+]
+
+// C_AssignedLaneParticle
+@PointClass base(basemodelentity) = info_assigned_lane_particle
+[
+	LaneNum(integer) // FIELD_INT32 m_iLane
+]
+
+// CInfoCitadelHideout
+@PointClass base(point_entity) = info_citadel_hideout
+[
+	input ToggleFastCooldowns(void)
+	output OnFastCooldownsDisabled(void)
+	output OnFastCooldownsEnabled(void)
+]
+
+// CCitadelHideoutInterestPoint
+@PointClass base(basemodelentity) = info_citadel_hideout_interest_point
+[
+	max_distance(float) // FIELD_FLOAT32 m_flMaxDistance
+]
+
+// CCitadelMatchmakingStatusInfo
+@PointClass base(point_entity) = info_citadel_matchmaking_status
+[
+	output OnStartMatchmaking(void)
+	output OnStopMatchmaking(void)
+]
+
+// CInfoDynamicShadowHint
+@PointClass base(point_entity) = info_dynamic_shadow_hint
+[
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bDisabled
+	range(float) // FIELD_FLOAT32 m_flRange
+	importance(integer) // FIELD_INT32 m_nImportance
+	lightchoice(integer) // FIELD_INT32 m_nLightChoice
+	input Disable(void)
+	input Enable(void)
+]
+
+// CInfoDynamicShadowHintBox
+@PointClass base(info_dynamic_shadow_hint) = info_dynamic_shadow_hint_box
+[
+	box_mins(vector) // FIELD_VECTOR m_vBoxMins
+	box_maxs(vector) // FIELD_VECTOR m_vBoxMaxs
+]
+
+// CInfoKOTHSpawnLocation
+@PointClass base(point_entity) = info_koth_spawn_location
+[
+]
+
+// C_InfoLadderDismount
+@PointClass base(C_BaseEntity) = info_ladder_dismount
+[
+]
+
+// CInfoOffscreenPanoramaTexture
+@PointClass base(point_entity) = info_offscreen_panorama_texture
+[
+	start_disabled(boolean) // FIELD_BOOLEAN m_bDisabled
+	resolution_x(integer) // FIELD_INT32 m_nResolutionX
+	resolution_y(integer) // FIELD_INT32 m_nResolutionY
+	panel_type(string) // FIELD_STRING m_szPanelType
+	layout_file(string) // FIELD_STRING m_szLayoutFileName
+	render_attr_name(string) // FIELD_STRING m_RenderAttrName
+	enable_mip_gen(boolean) // FIELD_BOOLEAN m_bEnableMipGen
+	targets(string) // FIELD_STRING m_szTargetsName
+	input AddCSSClass(string) // PVAL_STRING param
+	input Disable(void)
+	input Enable(void)
+	input RemoveCSSClass(string) // PVAL_STRING param
+]
+
+// CInfoParticleTarget
+@PointClass base(point_entity) = info_particle_target
+[
+]
+
+// C_InfoPortalLink
+@PointClass base(point_entity) = info_portal_link
+[
+]
+
+// CInfoTarget
+@PointClass base(point_entity) = info_target
+[
+]
+
+// CChoreoInfoTarget
+@PointClass base(point_entity) = info_target_choreo
+[
+]
+
+// C_PointEntityAlias_info_target_portrait_root, ECF_ALIAS
+@PointClass base(point_entity) = info_target_portrait_root
+[
+]
+
+// C_TeamRelativeParticleSystem
+@PointClass base(info_particle_system) = info_team_relative_particle_system
+[
+	effect_name_friendly(string) // FIELD_STRING m_iszFriendlyEffectName
+	effect_name_enemy(string) // FIELD_STRING m_iszEnemyEffectName
+]
+
+// CInfoFan
+@PointClass base(point_entity) = info_trigger_fan
+[
+	fan_force_curve(string) // FIELD_STRING m_FanForceCurveString
+	fan_force_max_radius(float) // FIELD_FLOAT32 m_fFanForceMaxRadius
+	fan_force_min_radius(float) // FIELD_FLOAT32 m_fFanForceMinRadius
+]
+
+// CInfoTutorialPoint
+@PointClass base(point_entity) = info_tutorial_point
+[
+	PointType(integer) // FIELD_INT32 m_ePointType
+	MoveTarget(string) // FIELD_STRING m_sMoveTarget
+	HeroID(integer) // FIELD_UINT32 m_HeroID
+]
+
+// C_InfoVisibilityBox
+@PointClass base(C_BaseEntity) = info_visibility_box
+[
+	cull_mode(integer) // FIELD_INT32 m_nMode
+	box_size(vector) // FIELD_VECTOR m_vBoxSize
+	input Disable(void)
+	input Enable(void)
+]
+
+// CInfoWorldLayer, ECF_PRECACHE_NETWORKED_ENTITY_ON_CLIENT
+@PointClass base(C_BaseEntity) = info_world_layer
+[
+	worldName(string) // FIELD_STRING m_worldName
+	layerName(string) // FIELD_STRING m_layerName
+	childSpawnGroup(boolean) // FIELD_BOOLEAN m_bCreateAsChildSpawnGroup
+	input DestroyEntities(void)
+	input HideWorldLayer(void)
+	input HideWorldLayerAndDestroyEntities(void)
+	input ShowWorldLayer(void)
+	input ShowWorldLayerAndSpawnEntities(void)
+	input SpawnEntities(void)
+	output OnEntitiesSpawned(void)
+]
+
+// C_ItemCrate
+@PointClass base(C_PhysicsProp) = item_crate
+[
+	loot_type(integer) // FIELD_INT32 m_eLootType
+]
+
+// CItemExplosiveBarrel
+@PointClass base(citadel_projectile) = item_explosive_barrel
+[
+]
+
+// CCitadel_Item_ProjectileTest
+@PointClass base(CCitadel_Item) = item_projectile_test_01
+[
+]
+
+// CCitadel_Item_ProjectileTest02
+@PointClass base(item_projectile_test_01) = item_projectile_test_02
+[
+]
+
+// CCitadel_Item_ProjectileTest04
+@PointClass base(item_projectile_test_01) = item_projectile_test_04
+[
+]
+
+// CCitadel_Item_ProjectileTest05
+@PointClass base(item_projectile_test_01) = item_projectile_test_05
+[
+]
+
+// CCitadel_Item_ProjectileTest06
+@PointClass base(item_projectile_test_01) = item_projectile_test_06
+[
+]
+
+// CItemXP
+@PointClass base(basemodelentity) = item_xp
+[
+]
+
+// C_CitadelBoomerangProjectile
+@PointClass base(citadel_projectile) = kali_boomerang_projectile
+[
+]
+
+// C_RopeKeyframe
+@PointClass base(basemodelentity) = keyframe_rope
+[
+]
+
+// C_Projectile_KnightCharge_Projectile
+@PointClass base(citadel_projectile) = knightcharge_projectile
+[
+]
+
+// CProjectile_KnightChargeLeading_Projectile
+@PointClass base(knightcharge_projectile) = knightchargeleading_projectile
+[
+]
+
+// C_BarnLight
+@PointClass base(basemodelentity) = light_barn
+[
+	enabled(boolean) // FIELD_BOOLEAN m_bEnabled
+	colormode(integer) // FIELD_INT32 m_nColorMode
+	color(color255) // FIELD_COLOR32 m_Color
+	colortemperature(float) // FIELD_FLOAT32 m_flColorTemperature
+	brightness(float) // FIELD_FLOAT32 m_flBrightness
+	brightnessscale(float) // FIELD_FLOAT32 m_flBrightnessScale
+	directlight(integer) // FIELD_INT32 m_nDirectLight
+	bakedshadowindex(integer) // FIELD_INT32 m_nBakedShadowIndex
+	light_path_uniqueid(integer) // FIELD_INT32 m_nLightPathUniqueId
+	light_map_uniqueid(integer) // FIELD_INT32 m_nLightMapUniqueId
+	luminaire_shape(integer) // FIELD_INT32 m_nLuminaireShape
+	luminaire_size(float) // FIELD_FLOAT32 m_flLuminaireSize
+	luminaire_anisotropy(float) // FIELD_FLOAT32 m_flLuminaireAnisotropy
+	light_style(string) // FIELD_UTLSTRING m_LightStyleString
+	lightcookie(resource:texture) // FIELD_HRENDERTEXTURE m_hLightCookie
+	shape(float) // FIELD_FLOAT32 m_flShape
+	soft_x(float) // FIELD_FLOAT32 m_flSoftX
+	soft_y(float) // FIELD_FLOAT32 m_flSoftY
+	skirt(float) // FIELD_FLOAT32 m_flSkirt
+	skirt_near(float) // FIELD_FLOAT32 m_flSkirtNear
+	size_params(vector) // FIELD_VECTOR m_vSizeParams
+	range(float) // FIELD_FLOAT32 m_flRange
+	shear(vector) // FIELD_VECTOR m_vShear
+	bakespeculartocubemaps(integer) // FIELD_INT32 m_nBakeSpecularToCubemaps
+	bakespeculartocubemaps_size(vector) // FIELD_VECTOR m_vBakeSpecularToCubemapsSize
+	bakespeculartocubemaps_scale(float) // FIELD_FLOAT32 m_flBakeSpecularToCubemapsScale
+	castshadows(integer) // FIELD_INT32 m_nCastShadows
+	shadowmapsize(integer) // FIELD_INT32 m_nShadowMapSize
+	shadowpriority(integer) // FIELD_INT32 m_nShadowPriority
+	contactshadow(boolean) // FIELD_BOOLEAN m_bContactShadow
+	forceshadowsenabled(boolean) // FIELD_BOOLEAN m_bForceShadowsEnabled
+	bouncelight(integer) // FIELD_INT32 m_nBounceLight
+	bouncescale(float) // FIELD_FLOAT32 m_flBounceScale
+	minroughness(float) // FIELD_FLOAT32 m_flMinRoughness
+	altcolor(vector) // FIELD_VECTOR m_vAlternateColor
+	altcolorbrightness(float) // FIELD_FLOAT32 m_fAlternateColorBrightness
+	fog(integer) // FIELD_INT32 m_nFog
+	fogstrength(float) // FIELD_FLOAT32 m_flFogStrength
+	fogscale(float) // FIELD_FLOAT32 m_flFogScale
+	fogshadows(integer) // FIELD_INT32 m_nFogShadows
+	fade_size_start(float) // FIELD_FLOAT32 m_flFadeSizeStart
+	fade_size_end(float) // FIELD_FLOAT32 m_flFadeSizeEnd
+	shadowfade_size_start(float) // FIELD_FLOAT32 m_flShadowFadeSizeStart
+	shadowfade_size_end(float) // FIELD_FLOAT32 m_flShadowFadeSizeEnd
+	precomputedfieldsvalid(boolean) // FIELD_BOOLEAN m_bPrecomputedFieldsValid
+	precomputedboundsmins(vector) // FIELD_POSITION_VECTOR m_vPrecomputedBoundsMins
+	precomputedboundsmaxs(vector) // FIELD_POSITION_VECTOR m_vPrecomputedBoundsMaxs
+	precomputedobborigin(vector) // FIELD_POSITION_VECTOR m_vPrecomputedOBBOrigin
+	precomputedobbangles(angle) // FIELD_QANGLE_WORLDSPACE m_vPrecomputedOBBAngles
+	precomputedobbextent(vector) // FIELD_VECTOR m_vPrecomputedOBBExtent
+	precomputedsubfrusta(integer) // FIELD_INT32 m_nPrecomputedSubFrusta
+	precomputedobborigin0(vector) // FIELD_POSITION_VECTOR m_vPrecomputedOBBOrigin0
+	precomputedobbangles0(angle) // FIELD_QANGLE_WORLDSPACE m_vPrecomputedOBBAngles0
+	precomputedobbextent0(vector) // FIELD_VECTOR m_vPrecomputedOBBExtent0
+	precomputedobborigin1(vector) // FIELD_POSITION_VECTOR m_vPrecomputedOBBOrigin1
+	precomputedobbangles1(angle) // FIELD_QANGLE_WORLDSPACE m_vPrecomputedOBBAngles1
+	precomputedobbextent1(vector) // FIELD_VECTOR m_vPrecomputedOBBExtent1
+	precomputedobborigin2(vector) // FIELD_POSITION_VECTOR m_vPrecomputedOBBOrigin2
+	precomputedobbangles2(angle) // FIELD_QANGLE_WORLDSPACE m_vPrecomputedOBBAngles2
+	precomputedobbextent2(vector) // FIELD_VECTOR m_vPrecomputedOBBExtent2
+	precomputedobborigin3(vector) // FIELD_POSITION_VECTOR m_vPrecomputedOBBOrigin3
+	precomputedobbangles3(angle) // FIELD_QANGLE_WORLDSPACE m_vPrecomputedOBBAngles3
+	precomputedobbextent3(vector) // FIELD_VECTOR m_vPrecomputedOBBExtent3
+	precomputedobborigin4(vector) // FIELD_POSITION_VECTOR m_vPrecomputedOBBOrigin4
+	precomputedobbangles4(angle) // FIELD_QANGLE_WORLDSPACE m_vPrecomputedOBBAngles4
+	precomputedobbextent4(vector) // FIELD_VECTOR m_vPrecomputedOBBExtent4
+	precomputedobborigin5(vector) // FIELD_POSITION_VECTOR m_vPrecomputedOBBOrigin5
+	precomputedobbangles5(angle) // FIELD_QANGLE_WORLDSPACE m_vPrecomputedOBBAngles5
+	precomputedobbextent5(vector) // FIELD_VECTOR m_vPrecomputedOBBExtent5
+	input CastDynamicShadows(boolean) // PVAL_BOOL param
+	input Disable(void)
+	input Enable(void)
+	input SetBounceScale(float) // PVAL_FLOAT param
+	input SetBrightness(float) // PVAL_FLOAT param
+	input SetBrightnessScale(float) // PVAL_FLOAT param
+	input SetColor(color255) // PVAL_COLOR_RGB param
+	input SetColorTemperature(float) // PVAL_FLOAT param
+	input SetFogScale(float) // PVAL_FLOAT param
+	input SetFogStrength(float) // PVAL_FLOAT param
+	input SetStyle(string) // PVAL_STRING param
+	input Toggle(void)
+	output OnStyleEvent0(void)
+	output OnStyleEvent1(void)
+	output OnStyleEvent2(void)
+	output OnStyleEvent3(void)
+]
+
+// C_LightEntity
+@PointClass base(basemodelentity) = light_omni
+[
+	input SetAppearance(integer) // PVAL_INT param
+	input SetCustomAppearance(string) // PVAL_STRING param
+	input SetLightBrightness(float) // PVAL_FLOAT param
+	input SetLightColor(color255) // PVAL_COLOR_RGB param
+	input SetLightEnabled(boolean) // PVAL_BOOL param
+	input Toggle(void)
+	input TurnOff(void)
+	input TurnOn(void)
+]
+
+// C_LightDirectionalEntity
+@PointClass base(light_omni) = light_directional
+[
+]
+
+// C_EnvironmentLight
+@PointClass base(light_barn) = light_environment
+[
+	skycolor(color255) // FIELD_COLOR32 m_SkyColor
+	skyintensity(float) // FIELD_FLOAT32 m_flSkyIntensity
+	skyambientbounce(color255) // FIELD_COLOR32 m_SkyAmbientBounce
+	angulardiameter(float) // FIELD_FLOAT32 m_flAngularDiameter
+]
+
+// C_OmniLight
+@PointClass base(light_barn) = light_omni2
+[
+	inner_angle(float) // FIELD_FLOAT32 m_flInnerAngle
+	outer_angle(float) // FIELD_FLOAT32 m_flOuterAngle
+	showlight(boolean) // FIELD_BOOLEAN m_bShowLight
+]
+
+// C_LightOrthoEntity
+@PointClass base(light_omni) = light_ortho
+[
+]
+
+// C_RectLight
+@PointClass base(light_barn) = light_rect
+[
+	showlight(boolean) // FIELD_BOOLEAN m_bShowLight
+]
+
+// C_LightSpotEntity
+@PointClass base(light_omni) = light_spot
+[
+]
+
+// C_LocalTempEntity
+@PointClass base(baseanimgraph) = local_temp_entity
+[
+]
+
+// CLogicRelay
+@PointClass base(CLogicalEntity) = logic_relay
+[
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bDisabled
+	TriggerOnce(boolean) // FIELD_BOOLEAN m_bTriggerOnce
+	FastRetrigger(boolean) // FIELD_BOOLEAN m_bFastRetrigger
+	PassthroughCaller(boolean) // FIELD_BOOLEAN m_bPassthoughCaller
+	input CancelPending(void) : "Cancel any events fired by this relay that are currently pending in the I/O event queue." // Pulse node
+	input Disable(void) : "Disable this entity." // Pulse node
+	input Enable(void) : "Enable this entity." // Pulse node
+	input EnableRefire(void)
+	input Toggle(void) : "Toggle the relay between enabled and disabled." // Pulse node
+	input Trigger(void) : "Trigger the relay, causing its OnTrigger output to fire if it is enabled." // Pulse node
+	output OnSpawn(void) : "Fired when the relay is spawned. If the relay is set to only trigger once, it will delete itself after firing this output."
+	output OnTrigger(void) : "Fired when the relay is triggered. If the relay is set to only trigger once, it will delete itself after firing this output."
+]
+
+// CCitadel_Projectile_MagicBolt
+@PointClass base(citadel_projectile) = magician_magicbolt_projectile
+[
+]
+
+// CMatchTrackedStatsEntity
+@PointClass base(CBaseTrackedStatsEntity) = match_tracked_stats
+[
+]
+
+// CCitadel_Ability_Mirage_FireBeetles
+@PointClass base(citadel_base_ability) = mirage_fire_beetles
+[
+]
+
+// CAbility_Mirage_SandPhantom
+@PointClass base(citadel_base_ability) = mirage_sand_phantom
+[
+]
+
+// CCitadel_Ability_Mirage_Teleport
+@PointClass base(citadel_base_ability) = mirage_teleport
+[
+]
+
+// CAbility_Mirage_Tornado
+@PointClass base(citadel_base_ability) = mirage_tornado
+[
+]
+
+// CProjectile_Necro_HauntProjectile
+@PointClass base(citadel_projectile) = necro_haunt_projectile
+[
+]
+
+// C_NetTestBaseCombatCharacter
+@PointClass base(C_BaseCombatCharacter) = net_test_basecombatcharacter
+[
+]
+
+// C_NPC_BarrackBoss
+@PointClass base(C_AI_CitadelNPC) = npc_barrack_boss
+[
+]
+
+// C_NPC_Boss_Tier2
+@PointClass base(C_AI_CitadelNPC) = npc_boss_tier2
+[
+]
+
+// C_NPC_Boss_Tier2_Sidelanes
+@PointClass base(npc_boss_tier2) = npc_boss_tier2_sidelanes
+[
+]
+
+// C_NPC_Boss_Tier3
+@PointClass base(C_AI_CitadelNPC) = npc_boss_tier3
+[
+]
+
+// C_NPC_Boss_Tier3Core
+@PointClass base(citadel_animating_model_entity) = npc_boss_tier3core
+[
+]
+
+// C_NPC_Escort
+@PointClass base(C_AI_CitadelNPC) = npc_escort
+[
+]
+
+// CNPC_FamiliarHelper
+@PointClass base(C_AI_CitadelNPC) = npc_familiar_helper
+[
+]
+
+// CNecro_HauntingSkullEntity
+@PointClass base(basemodelentity) = npc_necro_hauntingskull
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+	skull_state(integer) // FIELD_INT32 m_eSkullState
+]
+
+// CNPC_NecroSkele
+@PointClass base(C_AI_CitadelNPC) = npc_necro_skele
+[
+	cast_location(vector) // FIELD_POSITION_VECTOR m_vecCastLocation
+	dont_move(boolean) // FIELD_BOOLEAN m_bDontMove
+	casting_ability(target_destination) // FIELD_EHANDLE m_hCastingAbility
+]
+
+// C_NPC_Neutral_Bug
+@PointClass base(baseanimgraph) = npc_neutral_bug
+[
+]
+
+// C_NPC_Neutral_Flying_Pigeon
+@PointClass base(citadel_animating_model_entity) = npc_neutral_flying_pigeon
+[
+]
+
+// C_NPC_Neutral_Hideout_Cat
+@PointClass base(citadel_animating_model_entity) = npc_neutral_hideout_cat
+[
+]
+
+// C_NPC_Neutral_Hideout_Rabbit
+@PointClass base(npc_neutral_hideout_cat) = npc_neutral_hideout_rabbit
+[
+]
+
+// C_NPC_TrooperNeutral
+@PointClass base(C_AI_CitadelNPC) = npc_trooper_neutral
+[
+]
+
+// C_NPC_Neutral_SinnersSacrifice
+@PointClass base(npc_trooper_neutral) = npc_neutral_sinners_sacrifice
+[
+]
+
+// C_NPC_Neutral_SinnersSacrifice_Hideout
+@PointClass base(npc_neutral_sinners_sacrifice) = npc_neutral_sinners_sacrifice_hideout
+[
+]
+
+// C_CitadelPlayerBotNPCBrain
+@PointClass base(C_AI_CitadelNPC) = npc_player_bot_brain
+[
+]
+
+// C_NPC_MidBoss
+@PointClass base(C_AI_CitadelNPC) = npc_super_neutral
+[
+]
+
+// C_NPC_Trooper
+@PointClass base(C_AI_CitadelNPC) = npc_trooper
+[
+]
+
+// C_NPC_TrooperBoss
+@PointClass base(C_AI_CitadelNPC) = npc_trooper_boss
+[
+]
+
+// C_NPC_TrooperNeutralNodeMover
+@PointClass base(npc_trooper_neutral) = npc_trooper_node_mover
+[
+]
+
+// CNPC_YakuzaGangster
+@PointClass base(C_AI_CitadelNPC) = npc_yakuza_gangster
+[
+]
+
+// C_CitadelObserverPawn
+@PointClass base(CCitadelPlayerPawnBase) = observer
+[
+	// m_pCameraServices (CPlayer_CameraServices)
+		// m_CurrentFog (fogparams_t)
+			fogdir(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE dirPrimary
+			fogcolor(color255) // FIELD_COLOR32 colorPrimary
+			fogcolor2(color255) // FIELD_COLOR32 colorSecondary
+			fogstart(float) // FIELD_FLOAT32 start
+			fogend(float) // FIELD_FLOAT32 end
+			farz(float) // FIELD_FLOAT32 farz
+			fogmaxdensity(float) // FIELD_FLOAT32 maxdensity
+			fogexponent(float) // FIELD_FLOAT32 exponent
+			HDRColorScale(float) // FIELD_FLOAT32 HDRColorScale
+			foglerptime(float) // FIELD_FLOAT32 duration
+			fogenable(boolean) // FIELD_BOOLEAN enable
+			fogblend(boolean) // FIELD_BOOLEAN blend
+			blendtobackground(float) // FIELD_FLOAT32 blendtobackground
+			scattering(float) // FIELD_FLOAT32 scattering
+			locallightscale(float) // FIELD_FLOAT32 locallightscale
+]
+
+// CCitadel_Ability_Operative_Blindside
+@PointClass base(citadel_base_ability) = operative_blindside
+[
+]
+
+// CAbility_Operative_Revelation
+@PointClass base(citadel_base_ability) = operative_revelation
+[
+]
+
+// CAbility_Operative_UmbrellaManeuver
+@PointClass base(citadel_base_ability) = operative_umbrella_maneuver
+[
+]
+
+// CPathNode
+@PointClass base(point_entity) = path_node
+[
+	in_tangent_local(vector) // FIELD_VECTOR m_vInTangentLocal
+	out_tangent_local(vector) // FIELD_VECTOR m_vOutTangentLocal
+	path_uniqueid(string) // FIELD_UTLSTRING m_strParentPathUniqueID
+	path_parameter_string(string) // FIELD_UTLSTRING m_strPathNodeParameter
+]
+
+// C_PathParticleRopeAlias_path_particle_rope_clientside, ECF_ALIAS
+@PointClass base(path_particle_rope) = path_particle_rope_clientside
+[
+]
+
+// CPathSimple
+@PointClass base(C_BaseEntity) = path_simple
+[
+	closed_loop(boolean) // FIELD_BOOLEAN m_bClosedLoop
+	input GetClosestDirToEntity(target_destination) : "Compute the closest direction along the path relative to the entity provided. (world space vector)" // PVAL_EHANDLE hEntity, returns PVAL_VEC3 retval, Pulse node
+	input GetClosestPosToEntity(target_destination) : "Compute the closest position on the path relative to the entity provided. (world space vector)" // PVAL_EHANDLE hEntity, returns PVAL_VEC3 retval, Pulse node
+	input GetClosestTValueToEntity(target_destination) : "Compute the closest T value on the path relative to the entity provided. (0.0 to 1.0 float value that defines the point along the spline)" // PVAL_EHANDLE hEntity, returns PVAL_FLOAT retval, Pulse node
+	input GetDirAtTValue(float) : "Compute the Direction along the spline at the provided T Value of the spline. (world space vector)" // PVAL_FLOAT flTValue, returns PVAL_VEC3 retval, Pulse node
+	input GetDistanceBetweenEntitiesAlongPath(api) // PVAL_EHANDLE hEntityA, PVAL_EHANDLE hEntityB, returns PVAL_FLOAT retval, Pulse node: Compute the distance along the path between provided Entity A and Entity B
+	input GetPosAtTValue(float) : "Compute the position at the provided T Value of the spline. (world space vector)" // PVAL_FLOAT flTValue, returns PVAL_VEC3_WORLDSPACE retval, Pulse node
+	input GetTValueAtDistanceOffset(api) // PVAL_FLOAT flTValue, PVAL_FLOAT flDistance, returns PVAL_FLOAT retval, Pulse node: Given a starting T value on the spline and a distance traveled on the spline, return the resulting T value.
+	input SetEntityAtTValue(api) // PVAL_EHANDLE hEntity, PVAL_FLOAT flTValue, Pulse node: Set entity to the position of the provided T value of the spline (world space vector)
+]
+
+// CPathWithDynamicNodes
+@PointClass base(path_simple) = path_with_dynamic_nodes
+[
+	preferred_direction(intchoices) : "preferred_direction" : : "" = // FIELD_INT32 m_eDesiredDirection (DirectionAlongSimplePath_t)
+	[
+		0 : "None"
+		1 : "TGoesUp"
+		2 : "TGoesDown"
+	]
+]
+
+// C_PlayerSprayDecal
+@PointClass base(basemodelentity) = player_spray_decal
+[
+	player_slot(integer) // FIELD_INT32 m_nPlayerSlot
+]
+
+// CPlayerTrackedStatsEntity
+@PointClass base(CBaseTrackedStatsEntity) = player_tracked_stats
+[
+]
+
+// C_PointCamera
+@PointClass base(C_BaseEntity) = point_camera
+[
+	FOV(float) // FIELD_FLOAT32 m_FOV
+	zNear(float) // FIELD_FLOAT32 m_flZNear
+	zFar(float) // FIELD_FLOAT32 m_flZFar
+	resolution(float) // FIELD_FLOAT32 m_Resolution
+	fogEnable(boolean) // FIELD_BOOLEAN m_bFogEnable
+	fogColor(color255) // FIELD_COLOR32 m_FogColor
+	fogStart(float) // FIELD_FLOAT32 m_flFogStart
+	fogEnd(float) // FIELD_FLOAT32 m_flFogEnd
+	fogMaxDensity(float) // FIELD_FLOAT32 m_flFogMaxDensity
+	UseScreenAspectRatio(boolean) // FIELD_BOOLEAN m_bUseScreenAspectRatio
+	aspectRatio(float) // FIELD_FLOAT32 m_flAspectRatio
+	hltvUsable(boolean) // FIELD_BOOLEAN m_bCanHLTVUse
+	align_with_parent(boolean) // FIELD_BOOLEAN m_bAlignWithParent
+	dof_enabled(boolean) // FIELD_BOOLEAN m_bDofEnabled
+	dof_near_blurry(float) // FIELD_FLOAT32 m_flDofNearBlurry
+	dof_near_crisp(float) // FIELD_FLOAT32 m_flDofNearCrisp
+	dac_dof_far_crisp(float) // FIELD_FLOAT32 m_flDofFarCrisp
+	dac_dof_far_blurry(float) // FIELD_FLOAT32 m_flDofFarBlurry
+	dac_dof_tilt_to_ground(float) // FIELD_FLOAT32 m_flDofTiltToGround
+	input Activate(void)
+	input ChangeFOV(string) // PVAL_STRING param
+	input Deactivate(void)
+	input DisableDOF(void)
+	input EnableDOF(void)
+	input SetDOFFarBlurry(float) // PVAL_FLOAT param
+	input SetDOFFarCrisp(float) // PVAL_FLOAT param
+	input SetDOFNearBlurry(float) // PVAL_FLOAT param
+	input SetDOFNearCrisp(float) // PVAL_FLOAT param
+	input SetDOFTiltToGround(float) // PVAL_FLOAT param
+	input SetOff(void)
+	input SetOn(void)
+	input SetOnAndTurnOthersOff(void)
+]
+
+// C_PointCameraVFOV
+@PointClass base(point_camera) = point_camera_vertical_fov
+[
+	VerticalFOV(float) // FIELD_FLOAT32 m_flVerticalFOV
+	dof_far_crisp(float) // FIELD_FLOAT32 m_flDofFarCrisp
+	dof_far_blurry(float) // FIELD_FLOAT32 m_flDofFarBlurry
+	dof_tilt_to_ground(float) // FIELD_FLOAT32 m_flDofTiltToGround
+]
+
+// CPointChildModifier
+@PointClass base(point_entity) = point_childmodifier
+[
+	orphan_children_on_remove(boolean) // FIELD_BOOLEAN m_bOrphanInsteadOfDeletingChildrenOnRemove
+]
+
+// C_PointClientUIDialog
+@PointClass base(base_clientui_entity) = point_clientui_dialog
+[
+	StartEnabled(boolean) // FIELD_BOOLEAN m_bStartEnabled
+]
+
+// C_PointClientUIHUD
+@PointClass base(base_clientui_entity) = point_clientui_hud
+[
+	ignore_input(boolean) // FIELD_BOOLEAN m_bIgnoreInput
+	width(float) // FIELD_FLOAT32 m_flWidth
+	height(float) // FIELD_FLOAT32 m_flHeight
+	panel_dpi(float) // FIELD_FLOAT32 m_flDPI
+	interact_distance(float) // FIELD_FLOAT32 m_flInteractDistance
+	depth_offset(float) // FIELD_FLOAT32 m_flDepthOffset
+	owner_context(integer) // FIELD_UINT32 m_unOwnerContext
+	horizontal_align(integer) // FIELD_UINT32 m_unHorizontalAlign
+	vertical_align(integer) // FIELD_UINT32 m_unVerticalAlign
+	orientation(integer) // FIELD_UINT32 m_unOrientation
+	allow_interaction_from_all_scene_worlds(boolean) // FIELD_BOOLEAN m_bAllowInteractionFromAllSceneWorlds
+]
+
+// C_PointClientUIWorldTextPanel
+@PointClass base(point_clientui_world_panel) = point_clientui_world_text_panel
+[
+	message(string) // FIELD_CHARACTER m_messageText
+	input SetIntMessage(integer) // PVAL_INT param
+	input SetMessage(string) // PVAL_STRING param
+	input Toggle(void)
+]
+
+// CPointModifierThinker
+@PointClass base(C_BaseEntity) = point_modifier_thinker
+[
+	send_to_clients(boolean) // FIELD_BOOLEAN m_bSendToClients
+]
+
+// CPointOffScreenIndicatorUi
+@PointClass base(point_clientui_world_panel) = point_offscreen_indicator_ui
+[
+]
+
+// CPointOrient
+@PointClass base(C_BaseEntity) = point_orient
+[
+	orient_towards(string) // FIELD_STRING m_iszSpawnTargetName
+	start_active(boolean) // FIELD_BOOLEAN m_bActive
+	constraint_type(intchoices) : "constraint_type" : : "" = // FIELD_INT32 m_nConstraint (PointOrientConstraint_t)
+	[
+		0 : "eNone"
+		1 : "ePreserveUpAxis"
+	]
+	goal_direction_type(intchoices) : "goal_direction_type" : : "" = // FIELD_INT32 m_nGoalDirection (PointOrientGoalDirectionType_t)
+	[
+		0 : "eAbsOrigin"
+		1 : "eCenter"
+		2 : "eHead"
+		3 : "eForward"
+		4 : "eEyesForward"
+	]
+	max_turn_rate(float) // FIELD_FLOAT32 m_flMaxTurnRate
+	input SetActive(boolean) // PVAL_BOOL param
+	input SetTarget(string) // PVAL_STRING param
+]
+
+// CPointTemplate, ECF_PRECACHE_NETWORKED_ENTITY_ON_CLIENT
+@PointClass base(CLogicalEntity) = point_template
+[
+	worldName(string) // FIELD_STRING m_iszWorldName
+	entityLumpName(string) // FIELD_STRING m_iszSource2EntityLumpName
+	entityFilterName(string) // FIELD_STRING m_iszEntityFilterName
+	asynchronous(boolean) // FIELD_BOOLEAN m_bAsynchronouslySpawnEntities
+	timeoutInterval(float) // FIELD_FLOAT32 m_flTimeoutInterval
+	spawnGroupType(intchoices) : "spawnGroupType" : : "" = // FIELD_INT32 m_ownerSpawnGroupType (PointTemplateOwnerSpawnGroupType_t)
+	[
+		0 : "INSERT_INTO_POINT_TEMPLATE_SPAWN_GROUP"
+		1 : "INSERT_INTO_CURRENTLY_ACTIVE_SPAWN_GROUP"
+		2 : "INSERT_INTO_NEWLY_CREATED_SPAWN_GROUP"
+	]
+	createClientOnlyEntities(intchoices) : "createClientOnlyEntities" : : "" = // FIELD_INT32 m_clientOnlyEntityBehavior (PointTemplateClientOnlyEntityBehavior_t)
+	[
+		0 : "CREATE_FOR_CURRENTLY_CONNECTED_CLIENTS_ONLY"
+		1 : "CREATE_FOR_CLIENTS_WHO_CONNECT_LATER"
+	]
+	input DeleteCreatedSpawnGroups(void) : "Deletes all spawn groups created by the template. Only works if you use asynchronous spawn and INSERT_INTO_NEWLY_CREATED_SPAWN_GROUP." // Pulse node
+	input ForceSpawn(void) : "Spawn an instance of the template at the original position." // Pulse node
+	input ForceSpawnAtLocation(api) // PVAL_EHANDLE pLocationEntity, PVAL_STRING pSpawnedEntityName, returns PVAL_EHANDLE retval, Pulse node: Tells the point_template entity to ForceSpawn and return the first entity that matches the name (wildcard)
+	input ForceSpawnReturnEntities(target_destination) : "Tells the point_template entity to ForceSpawn and return the all the entities spawned" // PVAL_EHANDLE pLocationEntity, returns PVAL_ARRAY:PVAL_EHANDLE retval, Pulse node
+	input GetSpawnedEntities(void) : "Get the list of the most recent spawned entities." // returns PVAL_ARRAY:PVAL_EHANDLE retval, Pulse node
+	output OnEntitySpawned(string) : "Fired after spawning an instance of this template." // PVAL_ARRAY:PVAL_EHANDLE param
+]
+
+// C_PointValueRemapper
+@PointClass base(C_BaseEntity) = point_value_remapper
+[
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bDisabled
+	updateOnClient(boolean) // FIELD_BOOLEAN m_bUpdateOnClient
+	inputType(intchoices) : "inputType" : : "" = // FIELD_INT32 m_nInputType (ValueRemapperInputType_t)
+	[
+		0 : "InputType_PlayerShootPosition"
+		1 : "InputType_PlayerShootPositionAroundAxis"
+	]
+	maximumChangePerSecond(float) // FIELD_FLOAT32 m_flMaximumChangePerSecond
+	maximumDistanceFromLine(float) // FIELD_FLOAT32 m_flDisengageDistance
+	engageDistance(float) // FIELD_FLOAT32 m_flEngageDistance
+	requiresUseKey(boolean) // FIELD_BOOLEAN m_bRequiresUseKey
+	outputType(intchoices) : "outputType" : : "" = // FIELD_INT32 m_nOutputType (ValueRemapperOutputType_t)
+	[
+		0 : "OutputType_AnimationCycle"
+		1 : "OutputType_RotationX"
+		2 : "OutputType_RotationY"
+		3 : "OutputType_RotationZ"
+	]
+	hapticsType(intchoices) : "hapticsType" : : "" = // FIELD_INT32 m_nHapticsType (ValueRemapperHapticsType_t)
+	[
+		0 : "HaticsType_Default"
+		1 : "HaticsType_None"
+	]
+	momentumType(intchoices) : "momentumType" : : "" = // FIELD_INT32 m_nMomentumType (ValueRemapperMomentumType_t)
+	[
+		0 : "MomentumType_None"
+		1 : "MomentumType_Friction"
+		2 : "MomentumType_SpringTowardSnapValue"
+		3 : "MomentumType_SpringAwayFromSnapValue"
+	]
+	momentumModifier(float) // FIELD_FLOAT32 m_flMomentumModifier
+	snapValue(float) // FIELD_FLOAT32 m_flSnapValue
+	ratchetType(intchoices) : "ratchetType" : : "" = // FIELD_INT32 m_nRatchetType (ValueRemapperRatchetType_t)
+	[
+		0 : "RatchetType_Absolute"
+		1 : "RatchetType_EachEngage"
+	]
+	inputOffset(float) // FIELD_FLOAT32 m_flInputOffset
+]
+
+// C_PointWorldText
+@PointClass base(C_ModelPointEntity) = point_worldtext
+[
+	message(string) // FIELD_CHARACTER m_messageText
+	font_name(string) // FIELD_CHARACTER m_FontName
+	background_material_name(string) // FIELD_CHARACTER m_BackgroundMaterialName
+	enabled(boolean) // FIELD_BOOLEAN m_bEnabled
+	fullbright(boolean) // FIELD_BOOLEAN m_bFullbright
+	world_units_per_pixel(float) // FIELD_FLOAT32 m_flWorldUnitsPerPx
+	font_size(float) // FIELD_FLOAT32 m_flFontSize
+	depth_render_offset(float) // FIELD_FLOAT32 m_flDepthOffset
+	color(color255) // FIELD_COLOR32 m_Color
+	draw_background(boolean) // FIELD_BOOLEAN m_bDrawBackground
+	background_border_width(float) // FIELD_FLOAT32 m_flBackgroundBorderWidth
+	background_border_height(float) // FIELD_FLOAT32 m_flBackgroundBorderHeight
+	background_world_to_uv(float) // FIELD_FLOAT32 m_flBackgroundWorldToUV
+	justify_horizontal(intchoices) : "justify_horizontal" : : "" = // FIELD_INT32 m_nJustifyHorizontal (PointWorldTextJustifyHorizontal_t)
+	[
+		0 : "POINT_WORLD_TEXT_JUSTIFY_HORIZONTAL_LEFT"
+		1 : "POINT_WORLD_TEXT_JUSTIFY_HORIZONTAL_CENTER"
+		2 : "POINT_WORLD_TEXT_JUSTIFY_HORIZONTAL_RIGHT"
+	]
+	justify_vertical(intchoices) : "justify_vertical" : : "" = // FIELD_INT32 m_nJustifyVertical (PointWorldTextJustifyVertical_t)
+	[
+		0 : "POINT_WORLD_TEXT_JUSTIFY_VERTICAL_BOTTOM"
+		1 : "POINT_WORLD_TEXT_JUSTIFY_VERTICAL_CENTER"
+		2 : "POINT_WORLD_TEXT_JUSTIFY_VERTICAL_TOP"
+	]
+	reorient_mode(intchoices) : "reorient_mode" : : "" = // FIELD_INT32 m_nReorientMode (PointWorldTextReorientMode_t)
+	[
+		0 : "POINT_WORLD_TEXT_REORIENT_NONE"
+		1 : "POINT_WORLD_TEXT_REORIENT_AROUND_UP"
+	]
+	input Disable(void)
+	input Enable(void)
+	input SetIntMessage(integer) // PVAL_INT param
+	input SetMessage(string) // PVAL_STRING param
+	input SetTextColor(color255) // PVAL_COLOR_RGB param
+	input Toggle(void)
+]
+
+// C_PortraitWorldCallbackHandler
+@PointClass base(C_BaseEntity) = portrait_world_callback_handler
+[
+]
+
+// C_PortraitWorldUnit
+@PointClass base(C_BaseCombatCharacter) = portrait_world_unit
+[
+	animate_cloth(boolean) // FIELD_BOOLEAN m_bAnimateCloth
+	cloth_ground_collision(boolean) // FIELD_BOOLEAN m_bClothGroundCollision
+	graph_base_state(string) // FIELD_STRING m_strGraphBaseState
+	scene_name(string) // FIELD_STRING m_sceneName
+	StartDisabled(boolean) // FIELD_BOOLEAN
+	input Disable(void)
+	input Enable(void)
+]
+
+// C_PostProcessingVolume
+@PointClass base(trigger) = post_processing_volume
+[
+	postprocessing(resource:postprocessing) // FIELD_HPOSTPROCESSING m_hPostSettings
+	fadetime(float) // FIELD_FLOAT32 m_flFadeDuration
+	minlogexposure(float) // FIELD_FLOAT32 m_flMinLogExposure
+	maxlogexposure(float) // FIELD_FLOAT32 m_flMaxLogExposure
+	minexposure(float) // FIELD_FLOAT32 m_flMinExposure
+	maxexposure(float) // FIELD_FLOAT32 m_flMaxExposure
+	exposurecompensation(float) // FIELD_FLOAT32 m_flExposureCompensation
+	exposurespeedup(float) // FIELD_FLOAT32 m_flExposureFadeSpeedUp
+	exposurespeeddown(float) // FIELD_FLOAT32 m_flExposureFadeSpeedDown
+	exposuresmoothingrange(float) // FIELD_FLOAT32 m_flTonemapEVSmoothingRange
+	master(boolean) // FIELD_BOOLEAN m_bMaster
+	enableexposure(boolean) // FIELD_BOOLEAN m_bExposureControl
+]
+
+// CCitadel_Ability_Priest_BearTrap
+@PointClass base(citadel_base_ability) = priest_beartrap
+[
+]
+
+// CCitadel_Ability_Priest_Flashbang
+@PointClass base(citadel_base_ability) = priest_flashbang
+[
+]
+
+// C_Projectile_Boho_SkipGrenade
+@PointClass base(citadel_projectile) = projectile_boho_skipgrenade
+[
+]
+
+// CCitadel_Projectile_Cyclone
+@PointClass base(citadel_projectile) = projectile_cyclone
+[
+]
+
+// C_Projectile_Doorman_Cart_Projectile
+@PointClass base(citadel_projectile) = projectile_doorman_cart_projectile
+[
+]
+
+// C_Citadel_Projectile_DustStorm
+@PointClass base(citadel_projectile) = projectile_dust_storm
+[
+]
+
+// C_Projectile_GraveStone_Projectile
+@PointClass base(citadel_projectile) = projectile_gravestone_projectile
+[
+]
+
+// C_Projectile_Necro_ZombieWall_Projectile
+@PointClass base(citadel_projectile) = projectile_necro_zombiewall_projectile
+[
+]
+
+// C_Projectile_Perched_Predator
+@PointClass base(citadel_projectile) = projectile_perched_predator
+[
+]
+
+// C_Projectile_Rolling_FireBall
+@PointClass base(citadel_projectile) = projectile_rolling_fireball
+[
+]
+
+// C_Projectile_Stomp_Projectile
+@PointClass base(citadel_projectile) = projectile_stomp_projectile
+[
+]
+
+// CCitadelProjectileTouchVolume
+@PointClass base(basemodelentity) = projectile_touch_volume
+[
+]
+
+// CPropAnimatingBreakable
+@PointClass base(baseanimgraph) = prop_animating_breakable
+[
+	input NextBreakStage(void)
+	output OnFinalBreak(void)
+	output OnStageAdvanced(void)
+	output OnTakeDamage(void)
+]
+
+// C_DynamicPropAlias_prop_dynamic_override, ECF_ALIAS
+@PointClass base(prop_dynamic) = prop_dynamic_override
+[
+]
+
+// C_PhysPropClientside
+@PointClass base(breakable_prop) = prop_physics
+[
+	physdamagescale(float) // FIELD_FLOAT32 m_impactEnergyScale
+	forcemotiondisabled(boolean) // FIELD_BOOLEAN
+	phys_start_asleep(boolean) // FIELD_BOOLEAN
+	fademaxdist(float) // FIELD_FLOAT32
+	fademindist(float) // FIELD_FLOAT32
+	fadescale(float) // FIELD_FLOAT32
+	scale(float) // FIELD_FLOAT32
+	skin(string) // FIELD_UTLSTRING
+]
+
+// CPulseGameBlackboard
+@PointClass base(C_BaseEntity) = pulse_game_blackboard
+[
+	graph_def(string) // FIELD_UTLSTRING m_strGraphName
+]
+
+// C_Projectile_PunkgoatTether
+@PointClass base(citadel_tracked_projectile) = punkgoat_tether_projectile
+[
+]
+
+// CCitadel_Item_TrackingProjectileApplyModifier
+@PointClass base(CCitadel_Item) = upgrade_tracking_projectile_apply_modifier
+[
+]
+
+// CCitadel_Item_RejuvTrackingProjectile
+@PointClass base(upgrade_tracking_projectile_apply_modifier) = rejuv_tracking_projectile
+[
+]
+
+// C_RenderPortal
+@PointClass base(basemodelentity) = render_portal
+[
+	local_portal_link(target_destination) // FIELD_EHANDLE m_hLocalPortalLink
+	remote_portal_link(target_destination) // FIELD_EHANDLE m_hRemotePortalLink
+	fade_start_dist(float) // FIELD_FLOAT32 m_flFadeStartDist
+	fade_end_dist(float) // FIELD_FLOAT32 m_flFadeEndDist
+	fade_start_angle(float) // FIELD_FLOAT32 m_flFadeStartAngle
+	fade_end_angle(float) // FIELD_FLOAT32 m_flFadeEndAngle
+	remote_view_forward_offset(float) // FIELD_FLOAT32 m_flRemoteViewForwardOffset
+	fade_to_color(color255) // FIELD_COLOR32 m_fadeToColor
+]
+
+// CCitadel_Projectile_RocketLauncher_Rocket
+@PointClass base(citadel_projectile) = rocket_launcher_rocket_projectile
+[
+]
+
+// CAbility_Rutger_CheatDeath
+@PointClass base(citadel_base_ability) = rutger_cheat_death
+[
+]
+
+// CAbility_Rutger_ForceField
+@PointClass base(citadel_base_ability) = rutger_force_field
+[
+]
+
+// CCitadel_Ability_Rutger_Pulse
+@PointClass base(citadel_base_ability) = rutger_pulse
+[
+]
+
+// CAbility_Rutger_RocketLauncher
+@PointClass base(citadel_base_ability) = rutger_rocket
+[
+]
+
+// C_CProjectile_Rutger_Rocket
+@PointClass base(citadel_projectile) = rutger_rocket_projectile
+[
+]
+
+// C_SceneEntity
+@PointClass base(point_entity) = scripted_scene
+[
+]
+
+// C_Citadel_Projectile_SettingSun
+@PointClass base(citadel_projectile) = setting_sun_projectile
+[
+]
+
+// CCitadel_Ability_ShadowPulse
+@PointClass base(citadel_base_ability) = shadow_pulse
+[
+]
+
+// C_ShatterGlassShardPhysics
+@PointClass base(basemodelentity) = shatterglass_shard
+[
+]
+
+// C_SkyCamera
+@PointClass base(C_BaseEntity) = sky_camera
+[
+	// m_skyboxData (sky3dparams_t)
+		scale(integer) // FIELD_INT16 scale
+		clip_3D_skybox_near_to_world_far(boolean) // FIELD_BOOLEAN bClip3DSkyBoxNearToWorldFar
+		clip_3D_skybox_near_to_world_far_offset(float) // FIELD_FLOAT32 flClip3DSkyBoxNearToWorldFarOffset
+		// fog (fogparams_t)
+			fogdir(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE dirPrimary
+			fogcolor(color255) // FIELD_COLOR32 colorPrimary
+			fogcolor2(color255) // FIELD_COLOR32 colorSecondary
+			fogstart(float) // FIELD_FLOAT32 start
+			fogend(float) // FIELD_FLOAT32 end
+			farz(float) // FIELD_FLOAT32 farz
+			fogmaxdensity(float) // FIELD_FLOAT32 maxdensity
+			fogexponent(float) // FIELD_FLOAT32 exponent
+			HDRColorScale(float) // FIELD_FLOAT32 HDRColorScale
+			foglerptime(float) // FIELD_FLOAT32 duration
+			fogenable(boolean) // FIELD_BOOLEAN enable
+			fogblend(boolean) // FIELD_BOOLEAN blend
+			blendtobackground(float) // FIELD_FLOAT32 blendtobackground
+			scattering(float) // FIELD_FLOAT32 scattering
+			locallightscale(float) // FIELD_FLOAT32 locallightscale
+	use_angles(boolean) // FIELD_BOOLEAN m_bUseAngles
+]
+
+// CSkyboxReference
+@PointClass base(C_BaseEntity) = skybox_reference
+[
+	worldGroupID(string) // FIELD_UTLSTRING
+]
+
+// C_SoundEventAABBEntity
+@PointClass base(point_soundevent) = snd_event_alignedbox
+[
+	box_mins(vector) // FIELD_VECTOR m_vMins
+	box_maxs(vector) // FIELD_VECTOR m_vMaxs
+]
+
+// C_SoundEventBoxHelper
+@PointClass base(C_BaseEntity) = snd_event_box_helper
+[
+	box_mins(vector) // FIELD_VECTOR m_vMins
+	box_maxs(vector) // FIELD_VECTOR m_vMaxs
+]
+
+// C_SoundEventConeEntity
+@PointClass base(point_soundevent) = snd_event_cone
+[
+	parameterName(string) // FIELD_STRING m_iszParameterName
+	emitterAngle(float) // FIELD_FLOAT32 m_flEmitterAngle
+	sweetSpotAngle(float) // FIELD_FLOAT32 m_flSweetSpotAngle
+	attenMin(float) // FIELD_FLOAT32 m_flAttenMin
+	attenMax(float) // FIELD_FLOAT32 m_flAttenMax
+]
+
+// C_SoundEventMultiPointEntity
+@PointClass base(point_soundevent) = snd_event_multipoint
+[
+]
+
+// C_SoundEventBoxEntity
+@PointClass base(snd_event_multipoint) = snd_event_oriented_boxes
+[
+]
+
+// C_SoundEventOBBEntity
+@PointClass base(point_soundevent) = snd_event_orientedbox
+[
+	box_mins(vector) // FIELD_VECTOR m_vMins
+	box_maxs(vector) // FIELD_VECTOR m_vMaxs
+]
+
+// C_SoundEventPathCornerEntity
+@PointClass base(snd_event_multipoint) = snd_event_path_corner
+[
+]
+
+// C_SoundEventEntityAlias_snd_event_point, ECF_ALIAS
+@PointClass base(point_soundevent) = snd_event_point
+[
+]
+
+// C_SoundEventSphereEntity
+@PointClass base(point_soundevent) = snd_event_sphere
+[
+	radius(float) // FIELD_FLOAT32 m_flRadius
+]
+
+// C_SoundOpvarSetPointBase
+@PointClass base(C_BaseEntity) = snd_opvar_set_point_base
+[
+	stackName(string) // FIELD_STRING m_iszStackName
+	operatorName(string) // FIELD_STRING m_iszOperatorName
+	opvarName(string) // FIELD_STRING m_iszOpvarName
+	opvarUseAutoCompare(boolean) // FIELD_BOOLEAN m_bUseAutoCompare
+	opvarArrayIndex(integer) // FIELD_INT32 m_iOpvarIndex
+	entityUseFastRefreshRate(boolean) // FIELD_BOOLEAN m_bFastRefresh
+]
+
+// C_SoundOpvarSetPointEntity
+@PointClass base(snd_opvar_set_point_base) = snd_opvar_set_point
+[
+]
+
+// CSoundOpvarSetBoxEntity
+@PointClass base(snd_opvar_set_point) = snd_opvar_set_box_base
+[
+]
+
+// C_SoundOpvarSetAABBEntity
+@PointClass base(snd_opvar_set_box_base) = snd_opvar_set_aabb
+[
+]
+
+// C_SoundOpvarSetAutoRoomEntity
+@PointClass base(snd_opvar_set_point) = snd_opvar_set_auto_room
+[
+]
+
+// C_SoundOpvarSetDomeEntity
+@PointClass base(snd_opvar_set_point) = snd_opvar_set_dome
+[
+]
+
+// C_SoundOpvarSetOBBEntity
+@PointClass base(snd_opvar_set_aabb) = snd_opvar_set_obb
+[
+]
+
+// C_SoundOpvarSetPathCornerEntity
+@PointClass base(snd_opvar_set_point) = snd_opvar_set_path_corner
+[
+]
+
+// C_SoundOpvarSetPrecipitationEntity
+@PointClass base(snd_opvar_set_point_base) = snd_opvar_set_precipitation
+[
+]
+
+// C_SoundOpvarSetPrecipitationOBBEntity
+@PointClass base(snd_opvar_set_precipitation) = snd_opvar_set_precipitation_obb
+[
+]
+
+// C_SoundOpvarSetOBBWindEntity
+@PointClass base(snd_opvar_set_point_base) = snd_opvar_set_wind_obb
+[
+]
+
+// C_SoundAreaEntityBase
+@PointClass base(C_BaseEntity) = snd_sound_area_base
+[
+	StartDisabled(boolean) // FIELD_BOOLEAN m_bDisabled
+	soundAreaType(string) // FIELD_STRING m_iszSoundAreaType
+]
+
+// C_SoundAreaEntityOrientedBox
+@PointClass base(snd_sound_area_base) = snd_sound_area_obb
+[
+	areaMin(vector) // FIELD_POSITION_VECTOR m_vMin
+	areaMax(vector) // FIELD_POSITION_VECTOR m_vMax
+]
+
+// C_SoundAreaEntitySphere
+@PointClass base(snd_sound_area_base) = snd_sound_area_sphere
+[
+	areaRadius(float) // FIELD_FLOAT32 m_flRadius
+]
+
+// CEnvSoundscapeAlias_snd_soundscape, ECF_ALIAS
+@PointClass base(env_soundscape) = snd_soundscape
+[
+]
+
+// CEnvSoundscapeProxyAlias_snd_soundscape_proxy, ECF_ALIAS
+@PointClass base(env_soundscape_proxy) = snd_soundscape_proxy
+[
+]
+
+// CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable, ECF_ALIAS
+@PointClass base(env_soundscape_triggerable) = snd_soundscape_triggerable
+[
+]
+
+// CCitadel_Projectile_SpiderProjectile
+@PointClass base(citadel_projectile) = spider_projectile
+[
+]
+
+// CCitadel_Ability_SuperNeutralCharge
+@PointClass base(citadel_base_ability) = super_neutral_charge
+[
+]
+
+// CCitadel_Ability_SuperNeutralIncendiary
+@PointClass base(CCitadelBaseAbilityServerOnly) = super_neutral_incendiary
+[
+]
+
+// CCitadel_Ability_SuperNeutralShield
+@PointClass base(CCitadelBaseAbilityServerOnly) = super_neutral_shield
+[
+]
+
+// CAbility_Synth_Affliction
+@PointClass base(citadel_base_ability) = synth_affliction
+[
+]
+
+// CAbility_Synth_Barrage
+@PointClass base(citadel_base_ability) = synth_barrage
+[
+]
+
+// C_Projectile_Synth_Barrage
+@PointClass base(citadel_projectile) = synth_barrage_projectile
+[
+]
+
+// CAbility_Synth_PlasmaFlux
+@PointClass base(citadel_base_ability) = synth_plasma_flux
+[
+]
+
+// C_TrackedProjectile_Synth_PlasmaFlux
+@PointClass base(citadel_projectile) = synth_plasma_flux_projectile
+[
+]
+
+// CAbility_Synth_PlasmaFlux_Trigger
+@PointClass base(citadel_base_trigger_ability) = synth_plasma_flux_trigger
+[
+]
+
+// CAbility_Synth_Pulse
+@PointClass base(citadel_base_ability) = synth_pulse
+[
+]
+
+// CCitadel_Ability_Targetdummy_1
+@PointClass base(citadel_base_ability) = targetdummy_ability_1
+[
+]
+
+// CCitadel_Ability_Targetdummy_2
+@PointClass base(citadel_base_ability) = targetdummy_ability_2
+[
+]
+
+// CCitadel_Ability_Targetdummy_3
+@PointClass base(citadel_base_ability) = targetdummy_ability_3
+[
+]
+
+// CCitadel_Ability_Targetdummy_4
+@PointClass base(citadel_base_ability) = targetdummy_ability_4
+[
+]
+
+// CTeamTrackedStatsEntity
+@PointClass base(CBaseTrackedStatsEntity) = team_tracked_stats
+[
+]
+
+// CCitadel_Ability_Thumper_1
+@PointClass base(citadel_base_ability) = thumper_ability_1
+[
+]
+
+// CCitadel_Ability_Thumper_2
+@PointClass base(citadel_base_ability) = thumper_ability_2
+[
+]
+
+// CCitadel_Ability_Thumper_3
+@PointClass base(citadel_base_ability) = thumper_ability_3
+[
+]
+
+// CCitadel_Ability_Thumper_4
+@PointClass base(citadel_base_ability) = thumper_ability_4
+[
+]
+
+// C_TintController, ECF_ALWAYS_SPAWN_ON_CLIENT
+@PointClass base(C_BaseEntity) = tint_controller
+[
+]
+
+// CCitadelCatapultTrigger
+@PointClass base(trigger) = trigger_catapult
+[
+	target(string) // FIELD_STRING m_nameTarget
+	launch_speed(float) // FIELD_FLOAT32 m_flLaunchSpeed
+	pickup_trail_enabled(boolean) // FIELD_BOOLEAN m_bPickupTrailEnabled
+	pickup_subclass(string) // FIELD_STRING m_iszTrailPickupSubclass
+	pickup_trail_count(integer) // FIELD_INT32 m_nTrailPickupCount
+	pickup_trail_start_delay(float) // FIELD_FLOAT32 m_flTrailStartDelay
+	pickup_trail_spawn_interval(float) // FIELD_FLOAT32 m_flTrailSpawnInterval
+	pickup_trail_auto_space(boolean) // FIELD_BOOLEAN m_bTrailAutoSpace
+	pickup_trail_trajectory_spacing(float) // FIELD_FLOAT32 m_flTrailTrajectoryTimeSpacing
+	input SpawnPickupTrail(void) : "Start laying the configured pickups along the launch arc now." // Pulse node
+]
+
+// CTriggerFan
+@PointClass base(trigger) = trigger_fan
+[
+	fan_push_away_from_info_fan(boolean) // FIELD_BOOLEAN m_bPushAwayFromInfoTarget
+	fan_push_towards_info_fan(boolean) // FIELD_BOOLEAN m_bPushTowardsInfoTarget
+	fan_force(float) // FIELD_FLOAT32 m_flForce
+	fan_falloff(boolean) // FIELD_BOOLEAN m_bFalloff
+]
+
+// C_TriggerItemShop
+@BaseClass base(trigger) = trigger_item_shop
+[
+	SoundName(string) // FIELD_STRING m_iszSoundName
+	LaneNum(integer) // FIELD_INT32 m_iLane
+]
+
+// C_TriggerNeutralShield
+@PointClass base(trigger) = trigger_neutral_shield
+[
+]
+
+// CTriggerPassthroughFakeWall
+@PointClass base(trigger) = trigger_passthrough_fake_wall
+[
+]
+
+// C_TriggerPhysics
+@PointClass base(trigger) = trigger_physics
+[
+	SetGravityScale(float) // FIELD_FLOAT32 m_gravityScale
+	SetVelocityLimit(float) // FIELD_FLOAT32 m_linearLimit
+	SetVelocityDamping(float) // FIELD_FLOAT32 m_linearDamping
+	SetAngVelocityLimit(float) // FIELD_FLOAT32 m_angularLimit
+	SetAngVelocityDamping(float) // FIELD_FLOAT32 m_angularDamping
+	SetLinearForce(float) // FIELD_FLOAT32 m_linearForce
+	LinearForcePointAt(vector) // FIELD_VECTOR m_vecLinearForcePointAt
+	CollapseToForcePoint(boolean) // FIELD_BOOLEAN m_bCollapseToForcePoint
+	SetFrequency(float) // FIELD_FLOAT32 m_flFrequency
+	SetDampingRatio(float) // FIELD_FLOAT32 m_flDampingRatio
+	ConvertToDebrisWhenPossible(boolean) // FIELD_BOOLEAN m_bConvertToDebrisWhenPossible
+	input CollapseToForcePoint(boolean) // PVAL_BOOL param
+	input LinearForcePointAt(vector) // PVAL_VEC3 param
+	input SetAngVelocityDamping(float) // PVAL_FLOAT param
+	input SetAngVelocityLimit(float) // PVAL_FLOAT param
+	input SetDampingRatio(float) // PVAL_FLOAT param
+	input SetFrequency(float) // PVAL_FLOAT param
+	input SetGravityScale(float) // PVAL_FLOAT param
+	input SetLinearForce(float) // PVAL_FLOAT param
+	input SetVelocityDamping(float) // PVAL_FLOAT param
+	input SetVelocityLimit(float) // PVAL_FLOAT param
+]
+
+// CCitadelPortalTrigger
+@PointClass base(trigger) = trigger_portal
+[
+	trigger_mins(vector) // FIELD_VECTOR
+	trigger_maxs(vector) // FIELD_VECTOR
+]
+
+// C_TriggerTier3Phase2Shield
+@PointClass base(trigger_neutral_shield) = trigger_tier3phase2_shield
+[
+]
+
+// C_TriggerVolume
+@PointClass base(basemodelentity) = trigger_transition
+[
+]
+
+// CCitadel_Ability_TrooperGrenade
+@PointClass base(CCitadelBaseAbilityServerOnly) = trooper_grenade
+[
+]
+
+// CCitadel_Ability_TrooperBossGrenade
+@PointClass base(trooper_grenade) = trooper_boss_grenade
+[
+]
+
+// CUnitStatusOverlayV2
+@PointClass base(CUnitStatusOverlay) = unit_status_overlay_v2
+[
+]
+
+// CCitadelUnitStatusStagger
+@PointClass base(point_clientui_world_panel) = unit_status_stagger
+[
+]
+
+// CCitadel_Item_PowerShard
+@PointClass base(CCitadel_Item) = upgrade_ability_power_shard
+[
+]
+
+// CCitadel_Item_Refresher
+@PointClass base(CCitadel_Item) = upgrade_ability_refresher
+[
+]
+
+// CCitadel_ArmorUpgrade_AbilityLifeSteal
+@PointClass base(CCitadel_Item) = upgrade_ability_vampire
+[
+]
+
+// CCitadel_ArmorUpgrade_AblativeCoat
+@PointClass base(CCitadel_Item) = upgrade_ablative_coat
+[
+]
+
+// CCitadel_ArmorUpgrade_ActiveBulletShield
+@PointClass base(CCitadel_Item) = upgrade_active_bullet_shield
+[
+]
+
+// CCitadel_Item_ActiveReload
+@PointClass base(CCitadel_Item) = upgrade_active_reload
+[
+]
+
+// CCitadel_Upgrade_AerialAssault
+@PointClass base(CCitadel_Item) = upgrade_aerial_assault
+[
+]
+
+// CCitadel_Upgrade_AmmoScavenger
+@PointClass base(CCitadel_Item) = upgrade_ammo_scavenger
+[
+]
+
+// CCitadel_Item_AOERoot
+@PointClass base(CCitadel_Item) = upgrade_aoe_root
+[
+]
+
+// CCitadel_UtilityUpgrade_AOESmokeBomb
+@PointClass base(CCitadel_Item) = upgrade_aoe_smoke_bomb
+[
+]
+
+// CCitadel_Item_AOE_Tech_Shield
+@PointClass base(CCitadel_Item) = upgrade_aoe_tech_shield
+[
+]
+
+// CCitadel_WeaponUpgrade_ApexCombat
+@PointClass base(CCitadel_Item) = upgrade_apex_combat
+[
+]
+
+// CCitadel_Item_ArcticBlast
+@PointClass base(CCitadel_Item) = upgrade_arctic_blast
+[
+]
+
+// CCitadel_ArmorUpgrade_AutoCleanse
+@PointClass base(CCitadel_Item) = upgrade_auto_cleanse
+[
+]
+
+// CCitadel_WeaponUpgrade_BloodTribute
+@PointClass base(CCitadel_Item) = upgrade_blood_tribute
+[
+]
+
+// CCitadel_ArmorUpgrade_BulletArmorReductionAura
+@PointClass base(CCitadel_Item) = upgrade_bullet_armor_reduction_aura
+[
+]
+
+// CCitadel_Ability_Shield
+@PointClass base(CCitadel_Item) = upgrade_bullet_shield
+[
+]
+
+// CCitadel_WeaponUpgrade_BurstFire
+@PointClass base(CCitadel_Item) = upgrade_burst_fire
+[
+]
+
+// CCitadel_Item_Camouflage
+@PointClass base(CCitadel_Item) = upgrade_camouflage
+[
+]
+
+// CItemCapacitor
+@PointClass base(CCitadel_Item) = upgrade_capacitor
+[
+]
+
+// CCitadel_Item_CelestialGuidance
+@PointClass base(CCitadel_Item) = upgrade_celestial_guidance
+[
+]
+
+// CCitadel_Item_Charge_Mastery
+@PointClass base(CCitadel_Item) = upgrade_charge_mastery
+[
+]
+
+// CCitadel_Item_CheatDeath
+@PointClass base(CCitadel_Item) = upgrade_cheat_death
+[
+]
+
+// CCitadel_ArmorUpgrade_CloakingDevice
+@PointClass base(CCitadel_Item) = upgrade_cloaking_device
+[
+]
+
+// CCitadel_ArmorUpgrade_CloakingDeviceActive
+@PointClass base(CCitadel_Item) = upgrade_cloaking_device_active
+[
+]
+
+// CCitadel_Item_ColdFront
+@PointClass base(CCitadel_Item) = upgrade_cold_front
+[
+]
+
+// CCitadel_ArmorUpgrade_Colossus
+@PointClass base(CCitadel_Item) = upgrade_colossus
+[
+]
+
+// CCitadel_Item_ComboBreaker
+@PointClass base(CCitadel_Item) = upgrade_combo_breaker
+[
+]
+
+// CCitadel_Item_Containment
+@PointClass base(upgrade_tracking_projectile_apply_modifier) = upgrade_containment
+[
+]
+
+// CCitadel_WeaponUpgrade_CooldownOnMiss
+@PointClass base(CCitadel_Item) = upgrade_cooldown_on_miss
+[
+]
+
+// CCitadel_TechUpgrade_CorpseExplosion
+@PointClass base(CCitadel_Item) = upgrade_corpse_explosion
+[
+]
+
+// CCitadel_ArmorUpgrade_DamageRecycler
+@PointClass base(CCitadel_Item) = upgrade_damage_recycler
+[
+]
+
+// CCitadel_UtilityUpgrade_DebuffImmunity
+@PointClass base(CCitadel_Item) = upgrade_debuff_absorb
+[
+]
+
+// CCitadel_Item_Disarm
+@PointClass base(upgrade_tracking_projectile_apply_modifier) = upgrade_disarm
+[
+]
+
+// CCitadel_Item_DivineBarrier
+@PointClass base(CCitadel_Item) = upgrade_divine_barrier
+[
+]
+
+// CCitadel_Item_DivinersKevlar
+@PointClass base(CCitadel_Item) = upgrade_diviners_kevlar
+[
+]
+
+// CCitadel_ArmorUpgrade_DoubleJump
+@PointClass base(CCitadel_Item) = upgrade_double_jump
+[
+]
+
+// CCitadel_Item_DPS_Aura
+@PointClass base(CCitadel_Item) = upgrade_dps_aura
+[
+]
+
+// CCitadel_Item_Electric_Slippers
+@PointClass base(CCitadel_Item) = upgrade_electric_slippers
+[
+]
+
+// CCitadel_WeaponUpgrade_ExpressShot
+@PointClass base(CCitadel_Item) = upgrade_express_shot
+[
+]
+
+// CCitadel_WeaponUpgrade_FireRateAura
+@PointClass base(CCitadel_Item) = upgrade_fire_rate_aura
+[
+]
+
+// CItem_FleetfootBoots
+@PointClass base(CCitadel_Item) = upgrade_fleetfoot_boots
+[
+]
+
+// CCitadel_Item_FocusLens
+@PointClass base(upgrade_tracking_projectile_apply_modifier) = upgrade_focus_lens
+[
+]
+
+// CCitadel_ArmorUpgrade_Frenzy
+@PointClass base(CCitadel_Item) = upgrade_frenzy
+[
+]
+
+// CCitadel_WeaponUpgrade_FuryTrance
+@PointClass base(CCitadel_Item) = upgrade_fury_trance
+[
+]
+
+// CCitadel_WeaponUpgrade_GlassCannon
+@PointClass base(CCitadel_Item) = upgrade_glass_cannon
+[
+]
+
+// CCitadel_Item_GooseEgg
+@PointClass base(CCitadel_Item) = upgrade_goose_egg
+[
+]
+
+// CItem_GreaterWitheringWhip
+@PointClass base(upgrade_tracking_projectile_apply_modifier) = upgrade_greater_withering_whip
+[
+]
+
+// CCitadel_ArmorUpgrade_Grit
+@PointClass base(CCitadel_Item) = upgrade_grit
+[
+]
+
+// CCitadel_Item_GuardianWard
+@PointClass base(CCitadel_Item) = upgrade_guardian_ward
+[
+]
+
+// CItemHauntingScream
+@PointClass base(CCitadel_Item) = upgrade_haunting_scream
+[
+]
+
+// CCitadel_WeaponUpgrade_HeadshotDamage
+@PointClass base(CCitadel_Item) = upgrade_headshot_damage
+[
+]
+
+// CCitadel_ArmorUpgrade_HealOnLevel
+@PointClass base(CCitadel_Item) = upgrade_healonlevel
+[
+]
+
+// CCitadel_UtilityUpgrade_HealthNova
+@PointClass base(CCitadel_Item) = upgrade_health_nova
+[
+]
+
+// CCitadel_Item_HealthRegenAura
+@PointClass base(CCitadel_Item) = upgrade_health_regen_aura
+[
+]
+
+// CCitadel_ArmorUpgrade_Stimpak
+@PointClass base(CCitadel_Item) = upgrade_health_stimpak
+[
+]
+
+// CCitadel_ArmorUpgrade_HighImpactArmor
+@PointClass base(CCitadel_Item) = upgrade_high_impact_armor
+[
+]
+
+// CCitadel_WeaponUpgrade_InfiniteMagazine
+@PointClass base(CCitadel_Item) = upgrade_infinitemagazine
+[
+]
+
+// CCitadel_TechUpgrade_Infuser
+@PointClass base(CCitadel_Item) = upgrade_infuser
+[
+]
+
+// CCitadel_Item_Intensifying_Clip
+@PointClass base(CCitadel_Item) = upgrade_intensifying_clip
+[
+]
+
+// CCitadel_Upgrade_MagicCarpet
+@PointClass base(CCitadel_Item) = upgrade_magic_carpet
+[
+]
+
+// CCitadel_ArmorUpgrade_MetalSkin
+@PointClass base(CCitadel_Item) = upgrade_metal_skin
+[
+]
+
+// CCitadel_Item_ModDisruptor
+@PointClass base(CCitadel_Item) = upgrade_mod_disruptor
+[
+]
+
+// CCitadel_Item_Mystic_Regeneration
+@PointClass base(CCitadel_Item) = upgrade_mystic_regeneration
+[
+]
+
+// CItemMysticReverb
+@PointClass base(CCitadel_Item) = upgrade_mystic_reverb
+[
+]
+
+// CCitadel_WeaponUpgrade_CultistSacrifice
+@PointClass base(CCitadel_Item) = upgrade_non_player_bonus_sacrifice
+[
+]
+
+// CCitadel_Item_NullificationAura
+@PointClass base(CCitadel_Item) = upgrade_nullification_aura
+[
+]
+
+// CCitadel_Omnicharge_Pendant
+@PointClass base(CCitadel_Item) = upgrade_omnicharge_pendant
+[
+]
+
+// CCitadel_ArmorUpgrade_PersonalRejuvenator
+@PointClass base(CCitadel_Item) = upgrade_personal_rejuvenator
+[
+]
+
+// CCitadel_Item_PhantomStrike
+@PointClass base(CCitadel_Item) = upgrade_phantom_strike
+[
+]
+
+// CCitadel_Item_Bubble
+@PointClass base(CCitadel_Item) = upgrade_self_bubble
+[
+]
+
+// CCitadel_Item_PrismBlast
+@PointClass base(upgrade_self_bubble) = upgrade_prism_blast
+[
+]
+
+// CCitadel_WeaponUpgrade_RechargingBullets
+@PointClass base(CCitadel_Item) = upgrade_recharging_bullets
+[
+]
+
+// CCitadel_ArmorUpgrade_DebuffReducer
+@PointClass base(CCitadel_Item) = upgrade_reduce_debuff_duration
+[
+]
+
+// CCitadel_ArmorUpgrade_RegeneratingBulletShield
+@PointClass base(CCitadel_Item) = upgrade_regenerating_bullet_shield
+[
+]
+
+// CCitadel_ArmorUpgrade_RegenerativeArmor
+@PointClass base(CCitadel_Item) = upgrade_regenerative_armor
+[
+]
+
+// CCitadel_Item_RescueBeam
+@PointClass base(CCitadel_Item) = upgrade_rescue_beam
+[
+]
+
+// CItem_ResonantHealing
+@PointClass base(CCitadel_Item) = upgrade_resonant_healing
+[
+]
+
+// CItem_RestorativeLocket
+@PointClass base(CCitadel_Item) = upgrade_restorative_locket
+[
+]
+
+// CCitadel_ArmorUpgrade_ReturnFire
+@PointClass base(CCitadel_Item) = upgrade_return_fire
+[
+]
+
+// CCitadel_WeaponUpgrade_Ricochet
+@PointClass base(CCitadel_Item) = upgrade_ricochet
+[
+]
+
+// CCitadel_UtilityUpgrade_RocketBoots
+@PointClass base(CCitadel_Item) = upgrade_rocket_boots
+[
+]
+
+// CCitadel_UtilityUpgrade_RocketBooster
+@PointClass base(upgrade_rocket_boots) = upgrade_rocket_booster
+[
+]
+
+// CCitadel_Item_SelfBuffModifier
+@PointClass base(CCitadel_Item) = upgrade_self_buff_modifier
+[
+]
+
+// CCitadel_Item_ShadowStep
+@PointClass base(CCitadel_Item) = upgrade_shadow_step
+[
+]
+
+// CCitadel_Item_ShadowStrike
+@PointClass base(CCitadel_Item) = upgrade_shadow_strike
+[
+]
+
+// CCitadel_ArmorUpgrade_Shrink_Ray
+@PointClass base(CCitadel_Item) = upgrade_shrink_ray
+[
+]
+
+// CItemSilenceGlyph
+@PointClass base(CCitadel_Item) = upgrade_silence_glyph
+[
+]
+
+// CCitadel_ArmorUpgrade_SlowImmunity
+@PointClass base(CCitadel_Item) = upgrade_slow_immunity
+[
+]
+
+// CCitadel_ArmorUpgrade_SpellShield
+@PointClass base(CCitadel_Item) = upgrade_spellshield
+[
+]
+
+// CCitadel_WeaponUpgrade_SpellslingerHeadshots
+@PointClass base(CCitadel_Item) = upgrade_spellslinger_headshots
+[
+]
+
+// CCitadel_ArmorUpgrade_SpiritBubble
+@PointClass base(CCitadel_Item) = upgrade_spirit_bubble
+[
+]
+
+// CCitadel_Item_SpiritSap
+@PointClass base(upgrade_tracking_projectile_apply_modifier) = upgrade_spirit_sap
+[
+]
+
+// CCitadel_WeaponUpgrade_SplitShot
+@PointClass base(CCitadel_Item) = upgrade_split_shot
+[
+]
+
+// CCitadel_Item_Stasis_Bomb
+@PointClass base(upgrade_self_bubble) = upgrade_stasis_bomb
+[
+]
+
+// CCitadel_TechUpgrade_SuperAcolyteGloves
+@PointClass base(CCitadel_Item) = upgrade_superacolytegloves
+[
+]
+
+// CCitadel_WeaponUpgrade_SurgingPower
+@PointClass base(CCitadel_Item) = upgrade_surging_power
+[
+]
+
+// CCitadel_Item_SingleTargetStun
+@PointClass base(CCitadel_Item) = upgrade_target_stun
+[
+]
+
+// CCitadel_Item_TechCleave
+@PointClass base(CCitadel_Item) = upgrade_tech_cleave
+[
+]
+
+// CCitadel_Item_TechDamagePulse
+@PointClass base(CCitadel_Item) = upgrade_tech_damage_pulse
+[
+]
+
+// CCitadel_Item_TrophyCollector
+@PointClass base(CCitadel_Item) = upgrade_trophy_collector
+[
+]
+
+// CCitadel_ArmorUpgrade_VexBarrier
+@PointClass base(CCitadel_Item) = upgrade_vex_barrier
+[
+]
+
+// CCitadel_Item_WarpStone
+@PointClass base(CCitadel_Item) = upgrade_warp_stone
+[
+]
+
+// CCitadel_WeaponUpgrade_WeaponEater
+@PointClass base(CCitadel_Item) = upgrade_weapon_eater
+[
+]
+
+// CCitadel_WeaponUpgrade_InstantReload
+@PointClass base(CCitadel_Item) = upgrade_weapon_instant_reload
+[
+]
+
+// CCitadel_Upgrade_OverdriveClip
+@PointClass base(CCitadel_Item) = upgrade_weapon_overdrive_clip
+[
+]
+
+// CCitadel_Upgrade_WeaponPowerForHealth
+@PointClass base(CCitadel_Item) = upgrade_weapon_power_and_health_drain
+[
+]
+
+// CCitadel_ArmorUpgrade_WeaponShielding
+@PointClass base(CCitadel_Item) = upgrade_weapon_shielding
+[
+]
+
+// CCitadel_WeaponUpgrade_SiphonBullets
+@PointClass base(CCitadel_Item) = upgrade_weapon_siphon_bullets
+[
+]
+
+// CItem_WitheringWhip
+@PointClass base(upgrade_tracking_projectile_apply_modifier) = upgrade_withering_whip
+[
+]
+
+// CCitadel_Projectile_Pillar
+@PointClass base(citadel_projectile) = vandal_pillar_projectile
+[
+]
+
+// CCitadel_NPCAbility_Vanguard_AOEBuff
+@PointClass base(citadel_base_ability) = vanguard_aoe_buff
+[
+]
+
+// CCitadel_Projectile_HookBlade
+@PointClass base(citadel_tracked_projectile) = viper_hookblade_projectile
+[
+]
+
+// CCitadel_Projectile_Petrify
+@PointClass base(citadel_projectile) = viper_petrify_projectile
+[
+]
+
+// CCitadel_Ability_GooBowlingBall
+@PointClass base(citadel_base_ability) = viscous_goo_bowling_ball
+[
+]
+
+// CCitadel_Ability_GooGrenade
+@PointClass base(citadel_base_ability) = viscous_goo_grenade
+[
+]
+
+// C_Citadel_Projectile_Viscous_GooGrenade
+@PointClass base(citadel_projectile) = viscous_goo_grenade_projectile
+[
+]
+
+// CCitadel_Ability_RestorativeGoo
+@PointClass base(citadel_base_ability) = viscous_restorative_goo
+[
+]
+
+// CCitadel_Ability_Viscous_Telepunch
+@PointClass base(citadel_base_ability) = viscous_telepunch
+[
+]
+
+// C_EconWearable
+@PointClass base(C_EconEntity) = wearable_item
+[
+]
+
+// CCitadel_Projectile_WebWall
+@PointClass base(citadel_projectile) = webwall_projectile
+[
+]
+
+// C_World, ECF_SPAWN_GROUP_HANDLE_INVALID, ECF_HAS_REQUIRED_ENTITY_HANDLE
+@PointClass base(basemodelentity) = worldent
+[
+]
+
+// C_Citadel_Projectile_Wrecker_Teleport
+@PointClass base(citadel_projectile) = wrecker_teleport_projectile
+[
+]
+
+// C_Citadel_Projectile_WreckingBall
+@PointClass base(citadel_projectile) = wrecking_ball_projectile
+[
+]
+
+// CCitadel_Ability_Fealty
+@PointClass base(citadel_base_ability) = yakuza_fealty
+[
+]
+
+// CCitadel_Ability_GangActivity
+@PointClass base(citadel_base_ability) = yakuza_gang_activity
+[
+]
+
+// CCitadel_Ability_GangActivity_Cancel
+@PointClass base(citadel_base_ability) = yakuza_gang_activity_cancel
+[
+]
+
+// CCitadel_Ability_Kobun
+@PointClass base(citadel_base_ability) = yakuza_kobun
+[
+]
+
+// CCitadel_Ability_Protection_Racket
+@PointClass base(citadel_base_ability) = yakuza_protection_racket
+[
+]
+
+// CCitadel_Ability_SettingSun
+@PointClass base(citadel_base_ability) = yakuza_setting_sun
+[
+]
+
+// CCitadel_Ability_Yakuza_Shakedown
+@PointClass base(citadel_base_ability) = yakuza_shakedown
+[
+]
+
+// CCitadel_Ability_Shakedown_Target
+@PointClass base(citadel_base_ability) = yakuza_shakedown_target
+[
+]
+
+// CCitadel_Ability_SummonGangster
+@PointClass base(citadel_base_ability) = yakuza_summon_gangster
+[
+]
+
+// CCitadel_Ability_TeleportToGangster
+@PointClass base(citadel_base_ability) = yakuza_teleport_to_gangster
+[
+]
+
+// CCitadelZipLineNode
+@PointClass base(basemodelentity) = zip_line_node
+[
+	lane_number(integer) // FIELD_INT16 m_iPrimaryLane
+	node_index(integer) // FIELD_INT16 m_iNodeIndex
+	corner_node(boolean) // FIELD_BOOLEAN m_bCornerNode
+	capturable(boolean) // FIELD_BOOLEAN m_bCapturable
+	rope_radius(float) // FIELD_FLOAT32 m_flRopeRadius
+	disable_zipping_to(boolean) // FIELD_BOOLEAN m_bDisableZippingToByPlayers
+	tangent_in(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE m_vTangentIn
+	tangent_out(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE m_vTangentOut
+	cumulative_distance(float) // FIELD_FLOAT32 m_flCumulativeDistance
+	speed_multiplier_to_base_bonus(float) // FIELD_FLOAT32 m_flSpeedMultiplierToBaseBonus
+	speed_multiplier_from_base_bonus(float) // FIELD_FLOAT32 m_flSpeedMultiplierFromBaseBonus
+]
+

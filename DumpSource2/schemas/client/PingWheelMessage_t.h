@@ -1,35 +1,4 @@
 // MVDataRoot
-// MGetKV3ClassDefaults = {
-//	"m_vecSubnavMessageIDs":
-//	[
-//	],
-//	"m_unPingWheelOptionID": 0,
-//	"m_ePingConcept": "CITADEL_PING_CONCEPT_NONE",
-//	"m_ePingMarkerInfo": "k_EPingMarkerInfo_HideMarkerAndSound",
-//	"m_eRecipientsType": "k_ECitadelRecipients_GlobalFriendlyTeam",
-//	"m_eLaneColor": "k_ELaneColor_Invalid",
-//	"m_strCommsWheelLabelToken": "",
-//	"m_strMessageToken": "",
-//	"m_strDropDownLabelToken": "",
-//	"m_strSelfMessageToken": "",
-//	"m_strSound": "",
-//	"m_strIcon": "",
-//	"m_ePingWheelSoundType": "CITADEL_PING_WHEEL_SOUND_NONE",
-//	"m_bIsSubnavMessage": false,
-//	"m_flPhraseTopMarginOffset": 30.000000,
-//	"m_vecSubnavMessageNames":
-//	[
-//	],
-//	"m_bSubnavsReadLeftToRight": false,
-//	"m_vecRespondsToConcepts":
-//	[
-//	],
-//	"m_bCommsWheelBindable": false,
-//	"m_bKeybindable": false,
-//	"m_vecChatTextTriggers":
-//	[
-//	]
-//}
 class PingWheelMessage_t
 {
 	// MPropertySuppressField
@@ -40,16 +9,16 @@ class PingWheelMessage_t
 	// MPropertySuppressField
 	PingWheelOptionID_t m_unPingWheelOptionID;
 	// MPropertyDescription = "Concept for your ping message. These are populated in citadel_ping_wheel_data.h"
-	CitadelPingWheelConcept_t m_ePingConcept;
+	CitadelPingWheelConcept_t m_ePingConcept; // = "CITADEL_PING_CONCEPT_NONE"
 	// MPropertySuppressExpr = "m_bIsSubnavMessage == true"
 	// MPropertyDescription = "How do you want the ping to behave?"
-	ChatMsgPingMarkerInfo m_ePingMarkerInfo;
+	ChatMsgPingMarkerInfo m_ePingMarkerInfo; // = "k_EPingMarkerInfo_HideMarkerAndSound"
 	// MPropertySuppressExpr = "m_bIsSubnavMessage == true"
 	// MPropertyDescription = "Which recipients do you want this ping message sent to?"
-	ECitadelPingMessageRecipients_t m_eRecipientsType;
+	ECitadelPingMessageRecipients_t m_eRecipientsType; // = "k_ECitadelRecipients_GlobalFriendlyTeam"
 	// MPropertySuppressExpr = "m_ePingConcept != CITADEL_PING_HEADING_TO_LANE && m_ePingConcept != CITADEL_PING_PUSH_LANE && m_ePingConcept != CITADEL_PING_DEFEND_LANE && m_ePingConcept != CITADEL_PING_PUSH_GUARDIAN && m_ePingConcept != CITADEL_PING_DEFEND_GUARDIAN && m_ePingConcept != CITADEL_PING_GUARDIAN_NEEDS_HELP && m_ePingConcept != CITADEL_PING_PUSH_WALKER && m_ePingConcept != CITADEL_PING_DEFEND_WALKER && m_ePingConcept != CITADEL_PING_PUSH_BASE_GUARDIAN && m_ePingConcept != CITADEL_PING_DEFEND_BASE_GUARDIAN"
 	// MPropertyDescription = "Lane Color for certain pings that require a line color."
-	CMsgLaneColor m_eLaneColor;
+	CMsgLaneColor m_eLaneColor; // = "k_ELaneColor_Invalid"
 	// MPropertyDescription = "This is the shortform label on the comms wheel."
 	CUtlString m_strCommsWheelLabelToken;
 	// MPropertyDescription = "This is the Loc String that shows in the chat area when you use this Ping Option."
@@ -66,11 +35,11 @@ class PingWheelMessage_t
 	CUtlString m_strIcon;
 	// MPropertySuppressExpr = "m_bIsSubnavMessage == true"
 	// MPropertyDescription = "What type of sound should this Ping Option play when used?"
-	ECitadelPingWheelSound_t m_ePingWheelSoundType;
+	ECitadelPingWheelSound_t m_ePingWheelSoundType; // = "CITADEL_PING_WHEEL_SOUND_NONE"
 	// MPropertyDescription = "Is this a subnav of another message? i.e. Heading to Yellow is a subnav of Heading to Lane..."
 	bool m_bIsSubnavMessage;
 	// MPropertyDescription = "The Default value 30 is usually good but if the text on the Ping Wheel isn't centered vertically, you should adjust this value."
-	float32 m_flPhraseTopMarginOffset;
+	float32 m_flPhraseTopMarginOffset; // = 30
 	// MPropertySuppressExpr = "m_bIsSubnavMessage == true || m_eSliceType == CITADEL_PING_WHEEL_ONE_SLICE || m_eSliceType == CITADEL_PING_WHEEL_TWO_SLICE"
 	// MPropertyCustomFGDType = "vdata_choice:scripts/ping_wheel_messages.vdata"
 	// MPropertyDescription = "Is this a parent message that has subnav messages? i.e. Heading to Lane has subnav messages Heading to Yellow, Heading to Blue, etc."

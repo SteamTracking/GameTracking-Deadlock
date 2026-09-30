@@ -1,44 +1,8 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CModifierVData",
-//	"m_flDuration": -1.000000,
-//	"m_bKeepMaximumDurationOnRefresh": false,
-//	"m_strParticleEffect": "",
-//	"m_strParticleEffectConfig": "",
-//	"m_strParticleStatusEffect": "",
-//	"m_strParticleStatusEffectConfig": "",
-//	"m_strScreenParticleEffect": "",
-//	"m_strScreenParticleEffectConfig": "",
-//	"m_nStatusEffectPriority": 0,
-//	"m_vecRenderAttributes":
-//	[
-//	],
-//	"m_sStartSound": "",
-//	"m_sAmbientLoopingSound": "",
-//	"m_nAmbientLoopingSoundSource": "MODIFIER_SOURCE_PARENT",
-//	"m_nAmbientLoopingSoundRecipients": "MODIFIER_SOUND_RECIPIENT_ALWAYS",
-//	"m_sEndSound": "",
-//	"m_nEnabledStateMask": "",
-//	"m_nDisabledStateMask": "",
-//	"m_nAttributes": "",
-//	"m_vecScriptValues":
-//	[
-//	],
-//	"m_vecScriptEventHandlers":
-//	[
-//	],
-//	"m_nDisableGroupsMask": "",
-//	"m_bIsHidden": false,
-//	"m_eHiddenType": "eHideAlways",
-//	"m_sLocalizationName": "",
-//	"m_eDebuffType": "MODIFIER_DEBUFF_ENEMY_TEAM_ONLY",
-//	"m_bAutomaticallyDecayStacks": false,
-//	"m_bAllowApplicationPrediction": true
-//}
 // MHasKV3TransferPolymorphicClassname
 class CModifierVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Time"
-	CModifierLevelFloat m_flDuration;
+	CModifierLevelFloat m_flDuration; // = -1
 	// MPropertyStartGroup = "Time"
 	// MPropertyDescription = "If set, the duration will not get reduced from a refresh with a shorter duration"
 	bool m_bKeepMaximumDurationOnRefresh;
@@ -70,9 +34,9 @@ class CModifierVData : public CEntitySubclassVDataBase
 	// MPropertyGroupName = "Sounds"
 	CSoundEventName m_sAmbientLoopingSound;
 	// MPropertyGroupName = "Sounds"
-	ModifierSourceType_t m_nAmbientLoopingSoundSource;
+	ModifierSourceType_t m_nAmbientLoopingSoundSource; // = "MODIFIER_SOURCE_PARENT"
 	// MPropertyGroupName = "Sounds"
-	ModifierSoundRecipients_t m_nAmbientLoopingSoundRecipients;
+	ModifierSoundRecipients_t m_nAmbientLoopingSoundRecipients; // = "MODIFIER_SOUND_RECIPIENT_ALWAYS"
 	// MPropertyGroupName = "Sounds"
 	CSoundEventName m_sEndSound;
 	// MPropertyGroupName = "Scripted Settings"
@@ -93,15 +57,15 @@ class CModifierVData : public CEntitySubclassVDataBase
 	bool m_bIsHidden;
 	// MPropertyGroupName = "UI"
 	// MPropertySuppressExpr = "m_bIsHidden != true"
-	ModifierHiddenType_t m_eHiddenType;
+	ModifierHiddenType_t m_eHiddenType; // = "eHideAlways"
 	// MPropertyGroupName = "UI"
 	// MPropertyDescription = "When set, use the value as localization key."
 	CUtlString m_sLocalizationName;
 	// MPropertyDescription = "When to consider the modifier a debuff."
-	ModifierDebuffType_t m_eDebuffType;
+	ModifierDebuffType_t m_eDebuffType; // = "MODIFIER_DEBUFF_ENEMY_TEAM_ONLY"
 	// MPropertyDescription = "When set, stacks will automatically be decayed after a duration's worth of time has passed.  Only makes sense if adding a stack refreshed the modifier."
 	bool m_bAutomaticallyDecayStacks;
 	// MPropertyStartGroup = "Networking"
 	// MPropertyDescription = "If true, application of the modifier will be delayed on the server to match the client's latency."
-	bool m_bAllowApplicationPrediction;
+	bool m_bAllowApplicationPrediction; // = true
 };

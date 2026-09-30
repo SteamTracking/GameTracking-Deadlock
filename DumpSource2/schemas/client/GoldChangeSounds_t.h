@@ -1,29 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strItemSale": "",
-//	"m_strTreasureChest": "",
-//	"m_strPlayerKill": "",
-//	"m_strPlayerKillAssist": "",
-//	"m_strBossKill": "",
-//	"m_strLaneTrooperKill": "",
-//	"m_strNeutralTrooperKill": "",
-//	"m_strBaseSentryKill": "",
-//	"m_strPlayerOrb": "",
-//	"m_strOrbDeny": "",
-//	"m_strLaneTrooperOrb": "",
-//	"m_strNeutralTrooperOrb": "",
-//	"m_strTier1BossOrb": "",
-//	"m_strTier2BossOrb": "",
-//	"m_strTier3BossOrb": "",
-//	"m_strBaseSentryOrb": "",
-//	"m_strOrbDeployable": "",
-//	"m_strNeutralBossKill": "",
-//	"m_strTrophyKillOrb": "",
-//	"m_strNeutralWorldPickup": "",
-//	"m_strItemPurchase": "",
-//	"m_strItemUpgrade": "",
-//	"m_strStartingAmount": "",
-//	"m_strCheats": ""
-//}
 class GoldChangeSounds_t
 {
 	// MPropertyStartGroup = "Sounds"

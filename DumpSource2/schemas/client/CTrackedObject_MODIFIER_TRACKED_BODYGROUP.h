@@ -1,11 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CTrackedObject_MODIFIER_TRACKED_BODYGROUP",
-//	"m_objectData":
-//	{
-//		"m_strBodygroupName": "",
-//		"m_nRestoreValue": 0
-//	}
-//}
 // MHasKV3TransferPolymorphicClassname
 class CTrackedObject_MODIFIER_TRACKED_BODYGROUP : public IModifierTrackedObject
 {

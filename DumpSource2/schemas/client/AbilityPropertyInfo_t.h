@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strImportantProperty": "",
-//	"m_strStatusEffectValue": "",
-//	"m_bShowPropertyValue": false
-//}
 // MPropertyArrayElementNameKey = "m_strImportantProperty"
 class AbilityPropertyInfo_t
 {

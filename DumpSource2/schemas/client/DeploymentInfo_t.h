@@ -1,22 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_bRequiresUpNormal": false,
-//	"m_bGroundCheck": false,
-//	"m_bPlaceFlat": false,
-//	"m_flFlatYawOffset": 0.000000,
-//	"m_bPlaceNormalToSurface": false,
-//	"m_bPointTrace": false,
-//	"m_bCheckPlayerFit": false,
-//	"m_flModelVerticalPlacementScaleOffset": 0.000000,
-//	"m_bDownCheckIgnoreLos": false,
-//	"m_previewModel": "",
-//	"m_previewParticle": "",
-//	"m_strPreviewParticleEffectConfig": "",
-//	"m_strExraBodygroup": "",
-//	"m_strPreviewClass": "citadel_deployable_preview",
-//	"m_flPreviewModelScale": 1.000000,
-//	"m_flGroundCheckHeightOffset": -1.000000,
-//	"m_flGroundCheckHeightOffsetDown": -1.000000
-//}
 class DeploymentInfo_t
 {
 	// MPropertyDescription = "If set, deployment will do a cast from above the cast point to see if there's a valid up surface to deploy to.  Will reject any non up facing surfaces."
@@ -42,10 +23,10 @@ class DeploymentInfo_t
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_previewParticle;
 	CUtlString m_strPreviewParticleEffectConfig;
 	CUtlString m_strExraBodygroup;
-	CUtlString m_strPreviewClass;
-	float32 m_flPreviewModelScale;
+	CUtlString m_strPreviewClass; // = "citadel_deployable_preview"
+	float32 m_flPreviewModelScale; // = 1
 	// MPropertyDescription = "If set, use the height offset instead of citadel_deployment_max_height_offset_up"
-	float32 m_flGroundCheckHeightOffset;
+	float32 m_flGroundCheckHeightOffset; // = -1
 	// MPropertyDescription = "If set, max the distance below caster for valid ground (positive value) default - citadel_deployment_max_height_offset_down"
-	float32 m_flGroundCheckHeightOffsetDown;
+	float32 m_flGroundCheckHeightOffsetDown; // = -1
 };

@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 class PathMotorSettings_t
 {
 	CGlobalSymbol m_sArrivalMovementGaitSet;

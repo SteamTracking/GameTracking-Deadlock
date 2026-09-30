@@ -1,7 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_sAnimGraphNavlinkType": "",
-//	"m_unAlignmentDegrees": 0
-//}
 class CNavLinkAnimgraphVar
 {
 	// MPropertyFriendlyName = "Animgraph Navlink Type"

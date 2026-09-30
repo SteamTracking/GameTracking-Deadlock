@@ -1,10 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadelBulletTimeWarpVData",
-//	"m_TimeWallHitParticle": "",
-//	"m_TimeWallHitTimerParticle": "",
-//	"m_TimeWallAllyBulletTracer": "",
-//	"m_strTimeWallHitSound": ""
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadelBulletTimeWarpVData : public CEntitySubclassVDataBase
 {

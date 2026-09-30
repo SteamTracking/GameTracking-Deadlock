@@ -1,30 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strValue": "",
-//	"m_strStreetBrawlValue": "",
-//	"m_subclassScaleFunction":
-//	{
-//	},
-//	"m_subclassScaleFunctionStreetBrawl":
-//	{
-//	},
-//	"m_eProvidedPropertyType": "MODIFIER_VALUE_INVALID",
-//	"m_eApplyFilter": "EApplyFilter_None",
-//	"m_strDisableValue": "",
-//	"m_bDamageAffectedByEffectiveness": false,
-//	"m_nRequiredUpgradeBits": "ABILITY_UPGRADE_BIT_TRAINED",
-//	"m_eDisplayType": "EStatsCount",
-//	"m_eDisplayUnits": "EDisplayUnit_Normal",
-//	"m_bIsHidden": false,
-//	"m_bIsNegativeAttribute": false,
-//	"m_bIsDetailedOnly": false,
-//	"m_strCSSClass": "",
-//	"m_strLocTokenOverride": "",
-//	"m_bCanSetTokenOverride": false,
-//	"m_strConditionalLocTokenOverride": "",
-//	"m_bRoundDown": false,
-//	"m_bIsAbilityDamageProperty": false,
-//	"m_eStatsUsageFlags": ""
-//}
 class CitadelAbilityProperty_t
 {
 	// MPropertyFlattenIntoParentRow
@@ -39,19 +12,19 @@ class CitadelAbilityProperty_t
 	CEmbeddedSubclass< CScaleFunctionBase > m_subclassScaleFunction;
 	CEmbeddedSubclass< CScaleFunctionBase > m_subclassScaleFunctionStreetBrawl;
 	// MPropertyDescription = "What type of modifier value does this property provide?  Used by modifiers to know what type to auto-register this property for and to tell the UI how this interacts with other stats and items."
-	EModifierValue m_eProvidedPropertyType;
+	EModifierValue m_eProvidedPropertyType; // = "MODIFIER_VALUE_INVALID"
 	// MPropertyDescription = "Conditions to filter what other abilities this property can affect."
-	PropertyValueApplyFilter_t m_eApplyFilter;
+	PropertyValueApplyFilter_t m_eApplyFilter; // = "EApplyFilter_None"
 	// MPropertyDescription = "This property will be disabled if this value matches m_strValue"
 	CUtlString m_strDisableValue;
 	// MPropertyDescription = "When true, effectiveness (distance falloff) will be applied when looking up this value.  Only works in modifiers for now."
 	bool m_bDamageAffectedByEffectiveness;
 	// MPropertyDescription = "If we don't have these bits always return 0. Otherwise, returns a real value."
-	AbilityUpgradeBits_t m_nRequiredUpgradeBits;
+	AbilityUpgradeBits_t m_nRequiredUpgradeBits; // = "ABILITY_UPGRADE_BIT_TRAINED"
 	// MPropertyStartGroup = "UI"
 	// MPropertyDescription = "Set this so we know how to display the ability property (prefix, postfix, and # decimal places)"
-	EStatsType m_eDisplayType;
-	ModifierValueDisplayUnits_t m_eDisplayUnits;
+	EStatsType m_eDisplayType; // = "EStatsCount"
+	ModifierValueDisplayUnits_t m_eDisplayUnits; // = "EDisplayUnit_Normal"
 	// MPropertyDescription = "When true, we don't show this ability property anywhere in the UI."
 	bool m_bIsHidden;
 	// MPropertyDescription = "When true, we add a different class to show it's a negative attribute."

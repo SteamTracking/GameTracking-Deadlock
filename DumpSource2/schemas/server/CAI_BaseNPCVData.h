@@ -1,48 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CAI_BaseNPCVData",
-//	"m_sModelName": "",
-//	"m_hFootstepSounds": "",
-//	"m_vecNavLinkMovementNames":
-//	[
-//	],
-//	"m_flAimConeAngle": 6.000000,
-//	"m_nMaxHealth": 100,
-//	"m_vecIntrinsicModifiers":
-//	[
-//	],
-//	"m_vecIntrinsicModifiersByName":
-//	[
-//	],
-//	"m_statusEffectMap":
-//	{
-//	},
-//	"m_vecAttachments":
-//	[
-//	],
-//	"m_bTakesDamage": true,
-//	"m_strDamagedEffect": "",
-//	"m_nRagdollHealth": 0,
-//	"m_flImpactEnergyScale": 1.000000,
-//	"m_bAllowNonZUpMovement": false,
-//	"m_vecObstacleNavLinks":
-//	[
-//	],
-//	"m_bUseDynamicCollisionHull": false,
-//	"m_bRequestCapsuleCollision": false,
-//	"m_flCapsuleRadiusOverride": 0.000000,
-//	"m_flCapsuleHeightOverride": 0.000000,
-//	"m_vecActionDesiredShared":
-//	[
-//	],
-//	"m_sPlayerKilledNpcSound": "",
-//	"m_sDefaultMovementSettings": "",
-//	"m_mappedMovementSettings":
-//	[
-//	],
-//	"m_bEnableCodeDrivenAnimgraphMovement": false,
-//	"m_bEnableAnimgraphTagDrivenStrafing": true,
-//	"m_flMassOverride": -1.000000
-//}
 // MHasKV3TransferPolymorphicClassname
 class CAI_BaseNPCVData : public CEntitySubclassVDataBase
 {
@@ -55,8 +10,8 @@ class CAI_BaseNPCVData : public CEntitySubclassVDataBase
 	// MPropertyDescription = "List of the kind of nav links movement this unit is capable of."
 	// MPropertyCustomFGDType = "vdata_choice:scripts/navlinks.vdata"
 	CUtlVector< CGlobalSymbol > m_vecNavLinkMovementNames;
-	float32 m_flAimConeAngle;
-	int32 m_nMaxHealth;
+	float32 m_flAimConeAngle; // = 6
+	int32 m_nMaxHealth; // = 100
 	CUtlVector< CEmbeddedSubclass< CCitadelModifier > > m_vecIntrinsicModifiers;
 	CUtlVector< CSubclassName< 2 > > m_vecIntrinsicModifiersByName;
 	// MPropertyFriendlyName = "Status Effects"
@@ -64,13 +19,13 @@ class CAI_BaseNPCVData : public CEntitySubclassVDataBase
 	NPCStatusEffectMap_t m_statusEffectMap;
 	CUtlVector< NPCAttachmentDesc_t > m_vecAttachments;
 	// MPropertyStartGroup = "Damage"
-	bool m_bTakesDamage;
+	bool m_bTakesDamage; // = true
 	// MPropertyDescription = "Damaged Effect"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_strDamagedEffect;
 	// MPropertyDescription = "Amount of health to grant to a ragdoll before the ragdoll is destroyed."
 	int32 m_nRagdollHealth;
 	// MPropertyDescription = "Scale on the energy used to look up into the damage tables for physics impacts (including vehicle impacts)."
-	float32 m_flImpactEnergyScale;
+	float32 m_flImpactEnergyScale; // = 1
 	// MPropertyStartGroup = "Navigation"
 	bool m_bAllowNonZUpMovement;
 	// MPropertyFriendlyName = "Obstacle Nav Links"
@@ -102,6 +57,6 @@ class CAI_BaseNPCVData : public CEntitySubclassVDataBase
 	// MPropertyDescription = "If true, this NPC will use code driven animgraph movement actions such as starts and stops"
 	bool m_bEnableCodeDrivenAnimgraphMovement;
 	// MPropertyDescription = "If true, the NPC will request strafing if it is supported by the animgraph. Can still be overriden by schedules."
-	bool m_bEnableAnimgraphTagDrivenStrafing;
-	float32 m_flMassOverride;
+	bool m_bEnableAnimgraphTagDrivenStrafing; // = true
+	float32 m_flMassOverride; // = -1
 };

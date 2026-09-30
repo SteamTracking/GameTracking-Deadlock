@@ -1,22 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CAI_AnimGraphServices_GraphController",
-//	"m_hExternalGraph": 4294967295,
-//	"m_sTaskHandshakeType": null,
-//	"m_sTaskHandshakeTypeShared": null,
-//	"m_eTaskHandshakeRestart": null,
-//	"m_sTaskHandshakeBodySectionDesired": null,
-//	"m_sMovementHandshakeType": null,
-//	"m_sMovementHandshakeTypeShared": null,
-//	"m_eMovementHandshakeRestart": null,
-//	"m_sMovementHandshakeBodySectionDesired": null,
-//	"m_sNavLinkType": null,
-//	"m_sNavLinkTypeShared": null,
-//	"m_vecHitDirection": null,
-//	"m_flHitHeading": null,
-//	"m_vecHitOffset": null,
-//	"m_flHitStrength": null,
-//	"m_nHitBone": null
-//}
 // MHasKV3TransferPolymorphicClassname
 class CAI_AnimGraphServices_GraphController : public CAnimGraphControllerBase
 {

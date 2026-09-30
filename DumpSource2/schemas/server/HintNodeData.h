@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"strEntityName": "",
-//	"nHintType": 0,
-//	"strGroup": "",
-//	"iDisabled": 0,
-//	"iszGenericType": "",
-//	"fIgnoreFacing": "HIF_DEFAULT",
-//	"minState": "NPC_STATE_IDLE",
-//	"maxState": "NPC_STATE_COMBAT",
-//	"nRadius": 0,
-//	"ePriority": "HINT_PRIORITY_LOW",
-//	"bReturnHintPositionAsOnGroundPerHull": false
-//}
 class HintNodeData
 {
 	CUtlSymbolLarge strEntityName;
@@ -18,10 +5,10 @@ class HintNodeData
 	CUtlSymbolLarge strGroup;
 	int32 iDisabled;
 	CUtlSymbolLarge iszGenericType;
-	HintIgnoreFacing_t fIgnoreFacing;
-	NPC_STATE minState;
-	NPC_STATE maxState;
+	HintIgnoreFacing_t fIgnoreFacing; // = "HIF_DEFAULT"
+	NPC_STATE minState; // = "NPC_STATE_IDLE"
+	NPC_STATE maxState; // = "NPC_STATE_COMBAT"
 	int32 nRadius;
-	HintPriority_t ePriority;
+	HintPriority_t ePriority; // = "HINT_PRIORITY_LOW"
 	bool bReturnHintPositionAsOnGroundPerHull;
 };

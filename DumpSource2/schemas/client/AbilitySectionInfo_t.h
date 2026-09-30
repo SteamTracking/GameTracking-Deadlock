@@ -1,13 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strLocString": "",
-//	"m_vecAbilityPropertiesBlock":
-//	[
-//	],
-//	"m_vecBasicProperties":
-//	[
-//	],
-//	"m_strAbilityPropertyUpgradeRequired": ""
-//}
 // MPropertyAutoExpandSelf
 class AbilitySectionInfo_t
 {

@@ -1,6 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strTooltipCSSClass": ""
-//}
 // MPropertyAutoExpandSelf
 class AbilityCosmeticInfo_t
 {

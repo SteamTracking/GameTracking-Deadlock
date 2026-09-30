@@ -1,14 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_vecItemDraftRounds":
-//	[
-//	],
-//	"m_chanceRare":
-//	{
-//	},
-//	"m_chanceEnhanced":
-//	{
-//	}
-//}
 class StreetBrawlGameRoundDrafts_t
 {
 	CUtlVector< StreetBrawlItemDraftRoundParams_t > m_vecItemDraftRounds;

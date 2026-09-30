@@ -1,8 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"nGoldThreshold": 0,
-//	"flBonus": 0.000000,
-//	"flPercentOnGraph": 0.000000
-//}
 // MPropertyArrayElementNameKey = "nGoldThreshold"
 class ModCostBonuses_t
 {

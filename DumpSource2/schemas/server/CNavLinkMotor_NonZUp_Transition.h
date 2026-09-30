@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 // MHasKV3TransferPolymorphicClassname
 class CNavLinkMotor_NonZUp_Transition : public INavLinkSubMotor
 {

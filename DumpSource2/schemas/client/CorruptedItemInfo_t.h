@@ -1,22 +1,7 @@
-// MGetKV3ClassDefaults = {
-//	"m_nSoulCostOverride": -1,
-//	"m_Upgrade":
-//	{
-//		"m_vecPropertyUpgrades":
-//		[
-//		]
-//	},
-//	"m_vecIntrinsicModifiers":
-//	[
-//	],
-//	"m_vecExcludedPenalties":
-//	[
-//	]
-//}
 class CorruptedItemInfo_t
 {
 	// MPropertyDescription = "Souls charged to corrupt this item.  If <= 0, the price for this item's tier from generic_data is used."
-	int32 m_nSoulCostOverride;
+	int32 m_nSoulCostOverride; // = -1
 	// MPropertyDescription = "Stat changes layered on top of the base item once it has been corrupted."
 	// MPropertyAutoExpandSelf
 	AbilityUpgrade_t m_Upgrade;

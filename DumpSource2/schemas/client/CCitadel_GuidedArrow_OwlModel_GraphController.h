@@ -1,10 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CCitadel_GuidedArrow_OwlModel_GraphController",
-//	"m_hExternalGraph": 4294967295,
-//	"m_flRoll": null,
-//	"m_flPitch": null,
-//	"m_bFast": null
-//}
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_GuidedArrow_OwlModel_GraphController : public CAnimGraphControllerBase
 {

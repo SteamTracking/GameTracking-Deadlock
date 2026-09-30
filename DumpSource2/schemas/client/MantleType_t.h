@@ -1,13 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "MantleType_t",
-//	"m_flMinHeight": 0.000000,
-//	"m_flAnimHeight": 0.000000,
-//	"m_flMaxHeight": 0.000000,
-//	"m_flVerticalTime": 0.200000,
-//	"m_flHorizontalTime": 0.200000,
-//	"m_eMantleType": "EMantleNone",
-//	"m_flSlideExitBoostOnGround": 400.000000
-//}
 // MHasKV3TransferPolymorphicClassname
 class MantleType_t
 {
@@ -18,10 +8,10 @@ class MantleType_t
 	// MPropertyDescription = "The maximum height difference of the player origin from the ledge for this type to be selected"
 	float32 m_flMaxHeight;
 	// MPropertyDescription = "How long to apply all of the vertical movement of this mantle"
-	float32 m_flVerticalTime;
+	float32 m_flVerticalTime; // = 0.2
 	// MPropertyDescription = "How long to apply all of the horizontal movement of this mantle.  NOTE: Horizontal applies after the vertical"
-	float32 m_flHorizontalTime;
-	EMantleType m_eMantleType;
+	float32 m_flHorizontalTime; // = 0.2
+	EMantleType m_eMantleType; // = "EMantleNone"
 	// MPropertyDescription = "Sliding out of a mantle gives you this impulse. units/second"
-	float32 m_flSlideExitBoostOnGround;
+	float32 m_flSlideExitBoostOnGround; // = 400
 };

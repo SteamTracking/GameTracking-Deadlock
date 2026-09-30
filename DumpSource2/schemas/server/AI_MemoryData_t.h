@@ -1,4 +1,3 @@
-// MGetKV3ClassDefaults = null
 class AI_MemoryData_t
 {
 	GameTime_t m_flSightingStartTime;

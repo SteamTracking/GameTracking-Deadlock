@@ -1,16 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_strLocString": "",
-//	"m_vecImportantAbilityProperties":
-//	[
-//	],
-//	"m_bRemoveAttributesBackgroundColor": false,
-//	"m_vecElevatedAbilityProperties":
-//	[
-//	],
-//	"m_vecAbilityProperties":
-//	[
-//	]
-//}
 // MPropertyAutoExpandSelf
 class SectionAttributes_t
 {

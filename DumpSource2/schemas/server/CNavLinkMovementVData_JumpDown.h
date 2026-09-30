@@ -1,26 +1,6 @@
-// MGetKV3ClassDefaults = {
-//	"_class": "CNavLinkMovementVData_JumpDown",
-//	"m_sToolsOnlyOwnerModelName": "",
-//	"m_vecAnimgraphVars":
-//	[
-//	],
-//	"m_vecVariants":
-//	[
-//	],
-//	"m_baseMetrics":
-//	{
-//		"m_horizontalRange": null,
-//		"m_verticalRange": null
-//	},
-//	"m_metrics":
-//	{
-//		"m_flEntryDistance": 0.000000
-//	},
-//	"m_bAlignWithExitDirectionDuringFall": true
-//}
 // MHasKV3TransferPolymorphicClassname
 class CNavLinkMovementVData_JumpDown : public CNavLinkMovementVData
 {
 	CNavLinkMetrics_JumpDown m_metrics;
-	bool m_bAlignWithExitDirectionDuringFall;
+	bool m_bAlignWithExitDirectionDuringFall; // = true
 };

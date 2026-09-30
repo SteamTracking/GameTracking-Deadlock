@@ -1,10 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_flBaseDPS": 0.000000,
-//	"m_flEndDPS": 0.000000,
-//	"m_flEndDPSTimeInSeconds": 0.000000,
-//	"m_flMaxRange": 0.000000,
-//	"m_flDamageResist": 0.000000
-//}
 class TrooperVsConfig_t
 {
 	// MPropertyDescription = "DPS dealt to enemy at the start of the match. Leave the value as 0 to use Beam Weapon values."

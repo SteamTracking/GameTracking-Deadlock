@@ -1,23 +1,3 @@
-// MGetKV3ClassDefaults = {
-//	"m_vecWeaponHeaderStats":
-//	[
-//	],
-//	"m_vecWeaponStats":
-//	[
-//	],
-//	"m_vecHealthHeaderStats":
-//	[
-//	],
-//	"m_vecHealthStats":
-//	[
-//	],
-//	"m_vecMagicHeaderStats":
-//	[
-//	],
-//	"m_vecMagicStats":
-//	[
-//	]
-//}
 class HeroStatsDisplay_t
 {
 	// MPropertyDescription = "What stats do we want to show in the weapon header area?"
