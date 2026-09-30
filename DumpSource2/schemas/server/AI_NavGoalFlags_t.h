@@ -1,6 +1,5 @@
 enum AI_NavGoalFlags_t : uint32_t
 {
-	eYawToDest = 1,
 	eDisableUpdateGoalPos = 2,
 	eLocalSucceedOnWithinTolerance = 4,
 	eDontLimitGoalOffset = 64,

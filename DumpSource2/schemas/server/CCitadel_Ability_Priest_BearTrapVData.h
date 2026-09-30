@@ -306,6 +306,9 @@
 //	"m_DebuffModifier":
 //	{
 //	},
+//	"m_UntargetableModifier":
+//	{
+//	},
 //	"m_flVerticalSpawnOffset": -5.000000,
 //	"m_flHorizontalSpawnOffset": 0.000000,
 //	"m_flDropDownRate": 0.000000,
@@ -335,6 +338,7 @@ class CCitadel_Ability_Priest_BearTrapVData : public CitadelAbilityVData
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_TetherModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_DebuffModifier;
+	CEmbeddedSubclass< CCitadelModifier > m_UntargetableModifier;
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flVerticalSpawnOffset;
 	float32 m_flHorizontalSpawnOffset;

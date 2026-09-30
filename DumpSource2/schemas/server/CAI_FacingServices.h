@@ -1,6 +1,6 @@
 class CAI_FacingServices : public CAI_Component
 {
-	CAI_InterestTarget[10] m_pEntityFacingRequests;
+	CAI_InterestTarget[9] m_pEntityFacingRequests;
 	AI_ScheduleFacingTargetPriority_t m_eScheduleFacingRequestPriority;
 	AI_Strafing_t[7] m_strafingRequests;
 	bool[2] m_pEnableForceFacing;
