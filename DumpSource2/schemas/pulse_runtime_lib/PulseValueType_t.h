@@ -42,33 +42,29 @@ enum PulseValueType_t : uint32_t
 	PVAL_ENTITY_NAME = 18,
 	// MPropertyFriendlyName = "Leaf Type"
 	PVAL_LEAF = 19,
-	// MPropertyFriendlyName = "Typesafe Int"
-	PVAL_TYPESAFE_INT = 20,
 	// MPropertyFriendlyName = "Material Group"
-	PVAL_MODEL_MATERIAL_GROUP = 21,
+	PVAL_MODEL_MATERIAL_GROUP = 20,
 	// MPropertySuppressEnumerator
-	PVAL_CURSOR_FLOW = 22,
+	PVAL_CURSOR_FLOW = 21,
 	// MPropertyFriendlyName = "Variant"
 	// MPropertySuppressEnumerator
-	PVAL_VARIANT = 23,
+	PVAL_VARIANT = 22,
 	// MPropertyFriendlyName = "Unknown"
 	// MPropertySuppressEnumerator
-	PVAL_UNKNOWN = 24,
-	// MPropertyFriendlyName = "Schema Enum"
-	PVAL_SCHEMA_ENUM = 25,
+	PVAL_UNKNOWN = 23,
+	// MPropertyFriendlyName = "Enum"
+	PVAL_ENUM = 24,
 	// MPropertyFriendlyName = "Panorama Panel Handle"
-	PVAL_PANORAMA_PANEL_HANDLE = 26,
+	PVAL_PANORAMA_PANEL_HANDLE = 25,
 	// MPropertyFriendlyName = "Array"
-	PVAL_ARRAY = 27,
-	// MPropertyFriendlyName = "Typesafe Int64"
-	PVAL_TYPESAFE_INT64 = 28,
+	PVAL_ARRAY = 26,
 	// MPropertySuppressEnumerator
 	// MPropertyFriendlyName = "Particle Object"
-	PVAL_PARTICLE_EHANDLE = 29,
+	PVAL_PARTICLE_EHANDLE = 27,
 	// MPropertyFriendlyName = "Anim Sequence"
-	PVAL_ANIM_SEQUENCE = 30,
+	PVAL_ANIM_SEQUENCE = 28,
 	// MPropertyFriendlyName = "VData Choice"
-	PVAL_VDATA_CHOICE = 31,
+	PVAL_VDATA_CHOICE = 29,
 	// MPropertySuppressEnumerator
-	PVAL_COUNT = 32,
+	PVAL_COUNT = 30,
 };

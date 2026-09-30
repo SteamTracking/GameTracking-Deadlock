@@ -121,7 +121,7 @@
 
 .unit_info_panel
 {
-	width: 22px;
+	width: 20px;
 	height: width-percentage(100%);
 	vertical-align: middle;
 	horizontal-align: left;
@@ -191,6 +191,7 @@
 	background-image: url("s2r://panorama/images/hud/world_space/hero_info_panel_ultready_bg_psd.vtex");
 	background-image: url("s2r://panorama/images/hud/icons/icon_ultimate_blk.vsvg");
 	background-size: 100%;
+	background-position: center;
 	visibility: collapse;
 	brightness: 2;
 }
@@ -261,7 +262,7 @@
 	horizontal-align: center;
 	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_horiz_mask_flipped.vsvg");
 	height: 18px;
-	width: 76px;
+	width: 79px;
 	vertical-align: top;
 	margin-bottom: 0px;
 	background-color: rgb(67, 12, 12);
@@ -269,7 +270,7 @@
 
 .player .UnitHealthbarContainer
 {
-	margin-left: 17px;
+	margin-left: 13px;
 }
 
 .player.health_critical .ShowCriticalState .UnitHealthbarContainer
@@ -301,6 +302,7 @@
 .enemy .UnitHealthbarContainer
 {
 	background-color: #2f0404;
+	background-color: offBlack;
 }
 
 .enemy.health_critical .ShowCriticalState .UnitHealthbarContainer
@@ -318,7 +320,7 @@
 	height: 12px;
 	width: 69px;
 	margin-top: 3.5px;
-	margin-left: 4px;
+	margin-left: 6px;
 	background-color: black;
 	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_horiz_mask_flipped.vsvg");
 }
@@ -879,14 +881,27 @@
 	font-family: oracle;
 	vertical-align: top;
 	animation: none;
-	text-shadow: 0px 0px 0px 5.0 offBlack&ee;
+	text-shadow: 0px 0px 0px 4.0 offBlack&ee;
 	padding: 0px 2px;
-	brightness: 0.8;
+	brightness: 0.7;
 	max-width: 170px;
 	max-height: 20px;
 	transform: rotateZ(-4deg);
 	visibility: collapse;
 	text-overflow: shrink;
+	transition-property: opacity;
+	transition-duration: 0.4s;
+	transition-timing-function: ease-in-out;
+}
+
+.NameFading #name
+{
+	opacity: 0.8;
+}
+
+.NameFaded #name
+{
+	opacity: 0;
 }
 
 .neutral_normal
@@ -959,7 +974,17 @@
 	visibility: visible;
 }
 
+.HideName #name
+{
+	visibility: collapse;
+}
+
 .player.beingSpectatedInEye #name
+{
+	visibility: collapse;
+}
+
+.player.HideName #name
 {
 	visibility: collapse;
 }
@@ -1093,7 +1118,7 @@
 {
 	horizontal-align: center;
 	ignore-parent-flow: true;
-	margin-top: 84px;
+	margin-top: 86px;
 	margin-left: 0px;
 	background-image: url("s2r://panorama/images/hud/healthbar/critical_text_png.vtex");
 	background-size: contain;
@@ -1256,8 +1281,12 @@
 	flow-children: right;
 	vertical-align: top;
 	horizontal-align: center;
-	margin-top: 8px;
-	margin-right: 5px;
+	margin-top: 9px;
+}
+
+.HideName #StaminaContainer
+{
+	margin-top: 28px;
 }
 
 .enemy #StaminaContainer

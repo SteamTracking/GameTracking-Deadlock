@@ -393,9 +393,9 @@
 	input BreakJointByName(string) : "Destroy this joint by Name" // PVAL_STRING pJointName, Pulse node
 	input ClearRenderAttribute(string) : "Clear the specified render attribute" // PVAL_STRING pAttributeName, Pulse node
 	input Color(color255) // PVAL_COLOR_RGB param
-	input DestructibleHitGroupDestroy(api) // PVAL_SCHEMA_ENUM:HitGroup_t nHitGroup, PVAL_INT nDamageLevel, Pulse node: Destroy a destructible hit group. Damage level of -1 means all damage levels, otherwise specify the last one you want to blow up.
+	input DestructibleHitGroupDestroy(api) // PVAL_ENUM:HitGroup_t nHitGroup, PVAL_INT nDamageLevel, Pulse node: Destroy a destructible hit group. Damage level of -1 means all damage levels, otherwise specify the last one you want to blow up.
 	input Extinguish(void)
-	input GetIntactDestructibleHitGroups(void) : "Returns the destructible hitgroups that are still intact." // returns PVAL_ARRAY:PVAL_SCHEMA_ENUM:HitGroup_t retval, Pulse node
+	input GetIntactDestructibleHitGroups(void) : "Returns the destructible hitgroups that are still intact." // returns PVAL_ARRAY:PVAL_ENUM:HitGroup_t retval, Pulse node
 	input GetJointLimitAngles(string) : "Returns the joint limit angles." // PVAL_STRING pJointName, returns PVAL_BOOL retval, PVAL_FLOAT MinAngle, PVAL_FLOAT MaxAngle, Pulse node
 	input GetRenderAlpha(void) : "Get object render alpha (0-255)" // returns PVAL_INT retval, Pulse node
 	input GetRenderColor(void) : "Get object render color (Alpha is ignored)" // returns PVAL_COLOR_RGB retval, Pulse node
@@ -403,7 +403,7 @@
 	input IgniteHitboxFireScale(float) // PVAL_FLOAT param
 	input IgniteLifetime(float) // PVAL_FLOAT param
 	input IgniteNumHitboxFires(integer) // PVAL_INT param
-	input IsDestructibleHitGroupIntact(string) : "True/False if hitgroup is intact.  If hitgroup is not a destructible hitgroup you'll get a warning and it'll return false." // PVAL_SCHEMA_ENUM:HitGroup_t nHitGroup, returns PVAL_BOOL retval, Pulse node
+	input IsDestructibleHitGroupIntact(string) : "True/False if hitgroup is intact.  If hitgroup is not a destructible hitgroup you'll get a warning and it'll return false." // PVAL_ENUM:HitGroup_t nHitGroup, returns PVAL_BOOL retval, Pulse node
 	input SetBodyGroupValue(api) // PVAL_STRING pBodyGroupName, PVAL_INT iValue, Pulse node: Change the active choice for the named bodygroup to the specified value
 	input SetJointLimitAngles(api) // PVAL_STRING pJointName, PVAL_FLOAT flMinAngle, PVAL_FLOAT flMaxAngle, Pulse node: Sets the joint limit angles. Only valid for prismatic and revolute joints.
 	input SetJointLimitEnabled(api) // PVAL_STRING pJointName, PVAL_BOOL bEnabled, Pulse node: Enables/disables the joint limit. Only valid for prismatic and revolute joints.
@@ -418,7 +418,7 @@
 	input Skin(integer) // PVAL_INT param
 	input fademaxdist(float) // PVAL_FLOAT param
 	input fademindist(float) // PVAL_FLOAT param
-	output OnDestructibleHitGroupDamageLevelChanged(api) // PVAL_SCHEMA_ENUM:HitGroup_t nHitGroup, PVAL_INT nDamageLevel, PVAL_INT nDamageLevelsRemaining, PVAL_INT nPrevDamageLevel: Called when the damage level of destructible part for a particular hit group has been changed.
+	output OnDestructibleHitGroupDamageLevelChanged(api) // PVAL_ENUM:HitGroup_t nHitGroup, PVAL_INT nDamageLevel, PVAL_INT nDamageLevelsRemaining, PVAL_INT nPrevDamageLevel: Called when the damage level of destructible part for a particular hit group has been changed.
 	output OnIgnite(void)
 ]
 
@@ -429,7 +429,7 @@
 	initially_populate_interp_history(boolean) // FIELD_BOOLEAN m_bInitiallyPopulateInterpHistory
 	input ClearTargetIdentifierOverride(void)
 	input GetLayerCycle(integer) : "Returns the cycle of an animation playing on this layer<br><br>This node can appear in Observable contexts." // PVAL_INT iLayer, returns PVAL_FLOAT retval, Pulse node
-	input IsAnimEventActive(string) : "Is the specified AG2 event active?<br><br>This node can appear in Observable contexts." // PVAL_SCHEMA_ENUM:GameAnimEventIndex_t nAnimEvent, returns PVAL_BOOL retval, Pulse node
+	input IsAnimEventActive(string) : "Is the specified AG2 event active?<br><br>This node can appear in Observable contexts." // PVAL_ENUM:GameAnimEventIndex_t nAnimEvent, returns PVAL_BOOL retval, Pulse node
 	input IsExternalChoreoGraphActive(void) : "Is there an external choreo animgraph applied to this entity<br><br>This node can appear in Observable contexts." // returns PVAL_BOOL retval, Pulse node
 	input PlaySequence(string) : "Play the specified animation sequence on a NON-ANIMGRAPH entity" // PVAL_STRING pSequenceName, Pulse node
 	input SetBodygroup(string) // PVAL_STRING param
@@ -2229,10 +2229,10 @@
 	MaxRange(float) // FIELD_FLOAT32 m_flMaxRange
 	input Disable(void)
 	input Enable(void)
-	input GetSensedEvents(void) : "Returns all currently sensed events" // returns PVAL_ARRAY:PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t retval, Pulse node
+	input GetSensedEvents(void) : "Returns all currently sensed events" // returns PVAL_ARRAY:PVAL_LEAF:AI_VolumetricEventHandle_t retval, Pulse node
 	output OnAllEventsEnded(void) : "Fired when the last sensor event has ended."
-	output OnEventEnded(string) : "Fired whenever this sensor hears any sound it cares about. The activator is the owner of the event (can be null)." // PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t param
-	output OnEventStarted(api) // PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t hEvent, PVAL_VEC3_WORLDSPACE vOrigin, PVAL_FLOAT flRadius: Fired whenever this sensor hears any sound it cares about. The activator is the owner of the event (can be null).
+	output OnEventEnded(string) : "Fired whenever this sensor hears any sound it cares about. The activator is the owner of the event (can be null)." // PVAL_LEAF:AI_VolumetricEventHandle_t param
+	output OnEventStarted(api) // PVAL_LEAF:AI_VolumetricEventHandle_t hEvent, PVAL_VEC3_WORLDSPACE vOrigin, PVAL_FLOAT flRadius: Fired whenever this sensor hears any sound it cares about. The activator is the owner of the event (can be null).
 ]
 
 // CAmbientGeneric
@@ -2312,9 +2312,9 @@
 	]
 	input Break(void)
 	input GetNPCMovementVelocity(void) : "Returns movement velocity of the given NPC" // returns PVAL_VEC3 retval, Pulse node
-	input GetNPCState(void) : "Returns the NPC_STATE of the given NPC" // returns PVAL_SCHEMA_ENUM:NPC_STATE retval, Pulse node
+	input GetNPCState(void) : "Returns the NPC_STATE of the given NPC" // returns PVAL_ENUM:NPC_STATE retval, Pulse node
 	input OverrideHealth(integer) // PVAL_INT param
-	input SetAILOD(string) : "Set the LOD of this NPC. Accepted values are 'eLow', 'eMedium', 'eHigh'" // PVAL_SCHEMA_ENUM:AILOD_t nLOD, Pulse node
+	input SetAILOD(string) : "Set the LOD of this NPC. Accepted values are 'eLow', 'eMedium', 'eHigh'" // PVAL_ENUM:AILOD_t nLOD, Pulse node
 	input SetHealth(integer) // PVAL_INT param
 	input SetNavRestrictionVolume(string) // PVAL_STRING param
 	output OnDamaged(void)
@@ -3520,6 +3520,7 @@
 @PointClass base(citadel_item_pickup) = citadel_item_koth_spawner
 [
 	koth_early_warning_time(float) // FIELD_FLOAT32
+	koth_silent_spawn(boolean) // FIELD_BOOLEAN
 ]
 
 // CCitadelItemPickupIdol
@@ -3714,7 +3715,7 @@
 	playername(string) // FIELD_UTLSTRING
 	reserving(boolean) // FIELD_BOOLEAN
 	steamid(integer) // FIELD_UINT64 m_steamID
-	input GetPlayerSlot(void) // returns PVAL_TYPESAFE_INT:CPlayerSlot retval, Pulse node
+	input GetPlayerSlot(void) // returns PVAL_LEAF:CPlayerSlot retval, Pulse node
 	input IsFakeClient(void) : "Fake client, simulated server side; don't send network messages to them" // returns PVAL_BOOL retval, Pulse node
 ]
 
@@ -3779,6 +3780,8 @@
 // CCitadel_ShopProp
 @PointClass base(prop_dynamic) = citadel_shop_prop_dynamic
 [
+	LaneNum(integer) // FIELD_INT32 m_iLane
+	input SetShopOpen(boolean) : "Open or close this shop. Keep in sync with its trigger_item_shop." // PVAL_BOOL bOpen, Pulse node
 ]
 
 // CCitadel_SmokeGrenade_Blocker
@@ -5676,7 +5679,7 @@
 	input SetFollowMoverEntityToClosestOnSpline(void)
 	input SetFollowMoverSpringStrength(integer) // PVAL_INT param
 	input SetMoveType(integer) // PVAL_INT param
-	input SetMoveTypeEnum(string) : "Set the movers movement mode." // PVAL_SCHEMA_ENUM:CFuncMover::Move_t eMoveType, Pulse node
+	input SetMoveTypeEnum(string) : "Set the movers movement mode." // PVAL_ENUM:CFuncMover::Move_t eMoveType, Pulse node
 	input SetMoverFaceEntity(target_destination) : "Set the movers face entity" // PVAL_EHANDLE hFaceEntity, Pulse node
 	input SetMoverOffsetFromPath(vector) : "Set the offset from the spline the mover rides at, in the movers own space. The mover snaps to the new offset, its location along the path is unchanged." // PVAL_VEC3 vOffset, Pulse node
 	input SetOffsetFromPath(vector) // PVAL_VEC3 param
@@ -10045,20 +10048,20 @@
 [
 	allow_empty_inputs(boolean) // FIELD_BOOLEAN m_bAllowEmptyInputs
 	input GetTestIntValue(void) : "<br><br>This node can appear in Observable contexts." // returns PVAL_INT retval, Pulse node
-	input InternalTestBool(boolean) // PVAL_BOOL bInValue, Pulse node
-	input InternalTestColor(color255) // PVAL_COLOR_RGB colInValue, Pulse node
-	input InternalTestEntityHandle(target_destination) // PVAL_EHANDLE hEntity, Pulse node
-	input InternalTestEntityHandleInt(api) // PVAL_EHANDLE handleA, PVAL_INT valueB, Pulse node
-	input InternalTestEntityName(string) // PVAL_ENTITY_NAME name, Pulse node
-	input InternalTestEntityNameString(api) // PVAL_ENTITY_NAME nameA, PVAL_STRING strValueB, Pulse node
-	input InternalTestFloat(float) // PVAL_FLOAT flInValue, Pulse node
-	input InternalTestFloatString(api) // PVAL_FLOAT flValueA, PVAL_STRING strValueB, Pulse node
-	input InternalTestInt(integer) // PVAL_INT nInValue, Pulse node
-	input InternalTestSchemaEnum(string) // PVAL_SCHEMA_ENUM:TestInputOutputCombinationsEnum_t value, Pulse node
-	input InternalTestString(string) // PVAL_STRING strInValue, Pulse node
-	input InternalTestStringStringString(api) // PVAL_STRING strValueA, PVAL_STRING strValueB, PVAL_STRING strValueC, Pulse node
-	input InternalTestVector(vector) // PVAL_VEC3 vecInValue, Pulse node
-	input InternalTestVoid(void) // Pulse node
+	input InternalTestBool(boolean) // PVAL_BOOL bInValue
+	input InternalTestColor(color255) // PVAL_COLOR_RGB colInValue
+	input InternalTestEntityHandle(target_destination) // PVAL_EHANDLE hEntity
+	input InternalTestEntityHandleInt(api) // PVAL_EHANDLE handleA, PVAL_INT valueB
+	input InternalTestEntityName(string) // PVAL_ENTITY_NAME name
+	input InternalTestEntityNameString(api) // PVAL_ENTITY_NAME nameA, PVAL_STRING strValueB
+	input InternalTestFloat(float) // PVAL_FLOAT flInValue
+	input InternalTestFloatString(api) // PVAL_FLOAT flValueA, PVAL_STRING strValueB
+	input InternalTestInt(integer) // PVAL_INT nInValue
+	input InternalTestSchemaEnum(string) // PVAL_ENUM:TestInputOutputCombinationsEnum_t value
+	input InternalTestString(string) // PVAL_STRING strInValue
+	input InternalTestStringStringString(api) // PVAL_STRING strValueA, PVAL_STRING strValueB, PVAL_STRING strValueC
+	input InternalTestVector(vector) // PVAL_VEC3 vecInValue
+	input InternalTestVoid(void)
 	input VariantBool(boolean) // PVAL_BOOL param
 	input VariantColor(color255) // PVAL_COLOR_RGB param
 	input VariantFloat(float) // PVAL_FLOAT param
@@ -10075,7 +10078,7 @@
 	output OnInternalTestFloat(float) // PVAL_FLOAT param
 	output OnInternalTestFloatString(api) // PVAL_FLOAT flOutFloat, PVAL_STRING strOutString
 	output OnInternalTestInt(integer) // PVAL_INT param
-	output OnInternalTestSchemaEnum(string) // PVAL_SCHEMA_ENUM:TestInputOutputCombinationsEnum_t param
+	output OnInternalTestSchemaEnum(string) // PVAL_ENUM:TestInputOutputCombinationsEnum_t param
 	output OnInternalTestString(string) // PVAL_STRING param
 	output OnInternalTestStringStringString(api) // PVAL_STRING strArg1, PVAL_STRING strArg2, PVAL_STRING strArg3
 	output OnInternalTestVector(vector) // PVAL_VEC3 param

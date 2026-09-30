@@ -178,6 +178,44 @@
 	animation-iteration-count: 1;
 }
 
+@define MinimapAlarmColor: #ff3b30ff;
+@define minimapAlarmDuration: 3.6;
+.MinimapAlarm #center,.MinimapAlarm #circle
+{
+	border: 3px solid MinimapAlarmColor;
+}
+
+.location_set.MinimapAlarm #center
+{
+	opacity: 0.9;
+}
+
+.location_set.MinimapAlarm #circle
+{
+	width: 22px;
+	height: 22px;
+	animation-name: minimap-alarm-pulse;
+	animation-duration: 1.2s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 3;
+}
+
+@keyframes 'minimap-alarm-pulse'
+{
+	0%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1.0;
+	}
+	
+	100%
+	{
+		opacity: 0;
+		pre-transform-scale2d: 6.0;
+	}
+	
+}
+
 @define pingAnimationDuration: 4.5;
 @define PingWashAttackColor: #ff5353ff;
 @define PingWashGoingColor: #749bffff;

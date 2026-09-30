@@ -50,6 +50,7 @@ class CCitadelGameRules : public CTeamplayRules
 	float32 m_timeNextKothSpawnWindowTime;
 	VectorWS m_vNextKothLocation;
 	CUtlVector< VectorWS > m_vKothSpawnLocationDeck;
+	int32 m_nKothSpawnWarnings;
 	bool m_bNotifiedClientsOfNextCrateSpawn;
 	bool m_bEarlyCratesSpawned;
 	bool m_bIsEarlyCrateGamestate;

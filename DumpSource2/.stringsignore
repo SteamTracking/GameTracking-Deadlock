@@ -375,6 +375,7 @@ $SPECULARSCALE
 <team number> - Unlock the flex slots for a team (or both teams if you omit the team number)
 <type> Dumps the contents of the currently subscribed caches of a particular type
 <xp> [BookID=1] Grants the specified amount of XP to the book
+> this is a large delta
 A
 A 3-bone solver that uses two 2-bone solves under the hood to emulate a dog leg.
 A bias on the lerp
@@ -1212,6 +1213,7 @@ Args: [Asset directory Path]
 Args: [Voice Container Path]
 Arm Attacks
 Armor
+Around this is a small delta
 Array
 ArrivalDirectionType_t
 As an observer, lock the spectator target to the currently observed target
@@ -1511,6 +1513,8 @@ Blue Channel
 Blue channel of the HUD subtitle background color.
 Blue channel of the HUD subtitle text color.
 Blue channel of the color used for enemy health bars and other enemy indicators in the UI.
+Blue channel of the color used for enemy ziplines and enemy objectives on the minimap.
+Blue channel of the color used for the part of an enemy health bar just lost to damage.
 Blue with Blue as Alpha
 BlurFilterType_t
 Blurry up through this distance.
@@ -5099,6 +5103,7 @@ CITADEL_PING_LOOK_HERE
 CITADEL_PING_LOOSE_SOULS
 CITADEL_PING_MEET_HERE
 CITADEL_PING_MID_BOSS_HERE
+CITADEL_PING_MINIMAP_ALARM
 CITADEL_PING_MINIMAP_LOCATION_PING
 CITADEL_PING_MISSING
 CITADEL_PING_NEED_COVER
@@ -9184,6 +9189,8 @@ Distance field occlusion length
 Distance field ray origin bias max
 Distance field ray origin bias min
 Distance from core we consider to be a threat
+Distance in meters from the camera at which names above health bars are fully faded out
+Distance in meters from the camera at which names above health bars start fading out
 Distance invariant capsule radius, in pixels at 1080 vertical res. This makes targets less finnicky to hit at a distance. Near range, we'll have already hit via hitbox.
 Distance threshold that we allow bullet to penetrate body to headshot.
 Distance to Both of Two Control Points
@@ -10352,12 +10359,12 @@ EQ_BOOL
 EQ_COLOR_RGB
 EQ_EHANDLE
 EQ_ENTITY_NAME
+EQ_ENUM
 EQ_FLOAT
 EQ_GAMETIME
 EQ_INT
 EQ_LEAF
 EQ_PANEL_HANDLE
-EQ_SCHEMA_ENUM
 EQ_STRING
 EQ_VEC2
 EQ_VEC3
@@ -12222,6 +12229,8 @@ Green Channel
 Green channel of the HUD subtitle background color.
 Green channel of the HUD subtitle text color.
 Green channel of the color used for enemy health bars and other enemy indicators in the UI.
+Green channel of the color used for enemy ziplines and enemy objectives on the minimap.
+Green channel of the color used for the part of an enemy health bar just lost to damage.
 Green with Green as Alpha
 Ground Dash Stuff
 Ground IK
@@ -12594,7 +12603,6 @@ How logn does the player icon linger on the minimap after they die
 How long CAI_CitadelNPC::FVisible() results stay cached
 How long a dead hero's ragdoll exists for before it despawns. Can outlive the death camera ( citadel_death_return_to_spawn_delay ) so that other players still see the body.
 How long a frame must stall before we make a log message.
-How long a low stamina reading stays trusted without a fresh stamina message.
 How long a mantleable ledge must stay ahead of you while you keep moving toward it before the Auto-Mantle settings can climb it
 How long a ping panel lasts for. < 0 for infinite
 How long a player is deemed in combat taking or dealing damage to a neutral trooper
@@ -12873,6 +12881,7 @@ IN_BUTTON_UP_DOWN_UP
 IN_BUTTON_UP_DOWN_UP_DOWN
 IN_CANCEL_ABILITY
 IN_COSMETIC_1
+IN_DOWN_DASH
 IN_DUCK
 IN_DUCK_TOGGLE
 IN_FIRST_MOD_SPECIFIC_BIT
@@ -15041,6 +15050,7 @@ Min size of the recv margin queue when in tools/debug mode
 Min time between messages a player bot can send
 Min value property name
 Min walk speed
+Min z offset for character's whose offset attachment go very low
 Min/Max number parts to destroy when gibbing
 MinExposure
 MinHitPointsToCommit
@@ -15486,12 +15496,12 @@ NE_BOOL
 NE_COLOR_RGB
 NE_EHANDLE
 NE_ENTITY_NAME
+NE_ENUM
 NE_FLOAT
 NE_GAMETIME
 NE_INT
 NE_LEAF
 NE_PANEL_HANDLE
-NE_SCHEMA_ENUM
 NE_STRING
 NE_VEC2
 NE_VEC3
@@ -15614,6 +15624,7 @@ Name of the hero that should be faked as the local player
 Name of the layer
 Name of the mixgroup. TODO: needs to be autopopulated with mixgroups.
 Name of the particle system to dynamically spawn
+Name shown above hero health bars. 0: player name, 1: hero name, 2: none
 Name shown at the centre of the radial. Leave empty to fall back on the entity's own name.
 NameMatches
 Named Values
@@ -16965,6 +16976,7 @@ PVAL_COUNT
 PVAL_CURSOR_FLOW
 PVAL_EHANDLE
 PVAL_ENTITY_NAME
+PVAL_ENUM
 PVAL_FLOAT
 PVAL_GAMETIME
 PVAL_INT
@@ -16975,14 +16987,11 @@ PVAL_PARTICLE_EHANDLE
 PVAL_QANGLE
 PVAL_RESOURCE
 PVAL_RESOURCE_NAME
-PVAL_SCHEMA_ENUM
 PVAL_SNDEVT_GUID
 PVAL_SNDEVT_NAME
 PVAL_STRING
 PVAL_TRANSFORM
 PVAL_TRANSFORM_WORLDSPACE
-PVAL_TYPESAFE_INT
-PVAL_TYPESAFE_INT64
 PVAL_UNKNOWN
 PVAL_VARIANT
 PVAL_VDATA_CHOICE
@@ -18015,6 +18024,8 @@ Red Channel
 Red channel of the HUD subtitle background color.
 Red channel of the HUD subtitle text color.
 Red channel of the color used for enemy health bars and other enemy indicators in the UI.
+Red channel of the color used for enemy ziplines and enemy objectives on the minimap.
+Red channel of the color used for the part of an enemy health bar just lost to damage.
 Red with Red as Alpha
 Redirect server console output
 Reduce rope popping on decay
@@ -18870,7 +18881,6 @@ SceneUtils_001
 SceneViewId_t
 Schedule
 ScheduleId_t
-Schema Enum
 SchemaSystem
 SchemaSystem_001
 Screen
@@ -19399,6 +19409,7 @@ SetRotationDistance
 SetRotatorTarget
 SetScale
 SetScrollSpeed
+SetShopOpen
 SetSize
 SetSlack
 SetSlideFriction
@@ -19799,7 +19810,9 @@ Smooth Arrival Path
 Smooth client's view after prediction error over this many seconds
 Smooth player eye z coordinate when traversing stairs.
 Smooth view/eye origin after prediction errors
-Snap mouse wheel scrolling in the shop's filtered tab to price tiers. The arrow keys step a tier either way.
+Smoothing for large deltas
+Smoothing for small deltas
+Snap mouse wheel scrolling in the shop's filtered tab to price tiers. The tier keybinds step a tier either way.
 Snap player eyes and orientation to specified pitch yaw <roll:optional> (must have sv_cheats).
 Snap player eyes to specified pitch yaw <roll:optional> (must have sv_cheats).
 SnapToStartPos
@@ -20094,7 +20107,6 @@ Ss Pos and Dot OUT CP
 Stack unwinding
 StackStats_Dump
 Staggered
-Stamina is always shown while the target has this many pips or fewer.
 Stance Override
 Stance Scale
 Stance Source
@@ -21255,8 +21267,6 @@ Type 0=time domain, 1 = freq domain
 Type of mood
 TypeManager
 TypeScriptCompiler
-Typesafe Int
-Typesafe Int64
 U
 U Spacing
 UF_FAIL_INVALID_ENTITY
@@ -22266,6 +22276,7 @@ When there is only a single player on the server, set whether or not we allow fo
 When this attack is used, pause shooting for this long
 When this attack is used, pause weapon reloads for this long
 When to consider the modifier a debuff.
+When tracing in free cursor mode, turn on a more expensive trace vs the local player model (nearer objects will undergo more scrutiny)
 When trimming a bloated CQ, leave at least N more commands than the minimum
 When trimming a bloated CQ, try to leave room for N more commands to be added.  0 will trim only what is needed to remove the immediate bloat, a very large value will reset the whole queue.
 When trimming an overful CQ due to app 'catchup' request, leave at least N more commands than the minimum
@@ -22491,6 +22502,7 @@ Z Axis offset from our camera pivot. +Up and -Down
 Z Dimension Count
 Z Dimension Spacing
 Z Offset
+Z Offset for all charcters, indpendent of the vmdl offset.
 Z axis scaling scalar field
 Z-Far
 Z-Near
@@ -24293,10 +24305,16 @@ citadel_enable_vdata_sound_preload
 citadel_end_of_match_additional_delay_s
 citadel_enemy_consume_stamina_notification_range_close
 citadel_enemy_consume_stamina_notification_range_far
+citadel_enemy_damage_delta_color_b
+citadel_enemy_damage_delta_color_g
+citadel_enemy_damage_delta_color_r
 citadel_enemy_ui_color_b
 citadel_enemy_ui_color_g
 citadel_enemy_ui_color_r
 citadel_enemy_visible_upon_reveal_duration
+citadel_enemy_zipline_color_b
+citadel_enemy_zipline_color_g
+citadel_enemy_zipline_color_r
 citadel_energy_tower
 citadel_english_hero_names
 citadel_english_mod_names
@@ -24728,9 +24746,9 @@ citadel_new_abandon_rules_early_end_countdown
 citadel_new_abandon_rules_early_t1
 citadel_new_abandon_rules_early_time
 citadel_new_mini_radial_delay_time
-citadel_new_ping_coyote_time
 citadel_new_ping_fow_window
 citadel_new_ping_free_cursor_world_trace
+citadel_new_ping_hitbox_self_test
 citadel_new_ping_minimap_left_click
 citadel_new_ping_system
 citadel_new_ping_system_fixed_slot_icons
@@ -25506,6 +25524,7 @@ citadel_unit_status_enabled
 citadel_unit_status_fadeout_dist
 citadel_unit_status_healthbar_highlight_speed
 citadel_unit_status_height
+citadel_unit_status_hero_name_mode
 citadel_unit_status_hide_names
 citadel_unit_status_max_distance_distance
 citadel_unit_status_max_distance_scale
@@ -25513,6 +25532,14 @@ citadel_unit_status_max_health_per_bar
 citadel_unit_status_max_health_segment_increment
 citadel_unit_status_max_total_bars
 citadel_unit_status_min_distance_scale
+citadel_unit_status_name_fade_end_dist
+citadel_unit_status_name_fade_start_dist
+citadel_unit_status_offset_player_min_z
+citadel_unit_status_offset_player_z_offset_adjustment
+citadel_unit_status_offset_smooth_large_delta
+citadel_unit_status_offset_smooth_max_rate
+citadel_unit_status_offset_smooth_min_rate
+citadel_unit_status_offset_smooth_small_delta
 citadel_unit_status_opaque_dist_sq
 citadel_unit_status_recent_damage_time
 citadel_unit_status_show_ally_health_value
@@ -25520,8 +25547,6 @@ citadel_unit_status_show_critical_state
 citadel_unit_status_show_health_value
 citadel_unit_status_show_stats
 citadel_unit_status_stamina_consume_linger
-citadel_unit_status_stamina_low_pips
-citadel_unit_status_stamina_low_show_window
 citadel_unit_status_transparent_dist_sq
 citadel_unit_status_viewer_damage_match_window
 citadel_unit_status_width
@@ -29691,6 +29716,7 @@ killvector
 knightcharge_projectile
 knightchargeleading_projectile
 koth_early_warning_time
+koth_silent_spawn
 labelled_debug_helper_arc_segments
 labelled_debug_helper_enabled
 labelled_debug_helper_scale
@@ -34314,6 +34340,7 @@ m_bIsSecondaryTool
 m_bIsSemiAuto
 m_bIsSet
 m_bIsShadowFormCast
+m_bIsShopOpen
 m_bIsSideHead
 m_bIsSignatureAbility == false
 m_bIsSliding
@@ -42823,6 +42850,7 @@ m_nKOTHIdx
 m_nKeysSource
 m_nKillingTeamNumber
 m_nKothScoringTeam
+m_nKothSpawnWarnings
 m_nLFOShape
 m_nLOD
 m_nLODGroupMask

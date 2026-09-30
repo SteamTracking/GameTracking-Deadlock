@@ -77782,7 +77782,7 @@
 		m_bStartTrained = true
 		m_iMaxLevel = 1
 		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_PRESS"
-		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_DONT_BREAK_INVISIBILITY | CITADEL_ABILITY_BEHAVIOR_CHANNELLED | CITADEL_ABILITY_BEHAVIOR_NOT_SILENCABLE"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_DONT_BREAK_INVISIBILITY | CITADEL_ABILITY_BEHAVIOR_CHANNELLED | CITADEL_ABILITY_BEHAVIOR_NOT_SILENCABLE | CITADEL_ABILITY_BEHAVIOR_CANNOT_CANCEL_DURING_CHANNEL"
 		m_vTeleportOffset = [ 180, 0, 0 ]
 		m_vStartingOffset = [ 0, 130, -30 ]
 		m_flMinPushIntoWallDot = 0.5
@@ -77805,6 +77805,20 @@
 		m_ExitTunnelSound = soundevent:"MoKrill.Burrow.Modifier.Start"
 		m_EnterParticle = resource_name:"particles/abilities/digger/digger_burrow_start.vpcf"
 		m_ExitParticle = resource_name:"particles/abilities/digger/digger_burrow_start.vpcf"
+		m_HudSharedStyle = resource_name:"panorama/styles/ability_hud_elements/abilities_mokrill.vcss"
+		m_HUDPanel = 
+		{
+			m_vecHUDElements = 
+			[
+				{
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS"
+					m_strContext = "channel"
+					m_Layout = "file://{resources}/layout/ability_hud_elements/element_progress_bar_text.vxml"
+					m_Style = resource_name:"panorama/styles/ability_hud_elements/abilities_mokrill.vcss"
+					m_bReverseProgress = true
+				},
+			]
+		}
 	}
 	ability_melee_digger = 
 	{
@@ -187764,7 +187778,7 @@
 					},
 					{
 						m_strPropertyName = "BuildUpPerShot"
-						m_strBonus = "0.3"
+						m_strBonus = "-0.2"
 					},
 				]
 			}
@@ -197499,7 +197513,7 @@
 					},
 					{
 						m_strPropertyName = "BuildUpPerShot"
-						m_strBonus = "0.72"
+						m_strBonus = "-0.48"
 					},
 					{
 						m_strPropertyName = "HealAmpReceivePenaltyPercent"

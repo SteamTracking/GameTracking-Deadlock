@@ -298,7 +298,7 @@
 	input ClearTargetIdentifierOverride(void)
 	input DisableAnimEventSounds(boolean) // PVAL_BOOL param
 	input GetLayerCycle(integer) : "Returns the cycle of an animation playing on this layer<br><br>This node can appear in Observable contexts." // PVAL_INT iLayer, returns PVAL_FLOAT retval, Pulse node
-	input IsAnimEventActive(string) : "Is the specified AG2 event active?<br><br>This node can appear in Observable contexts." // PVAL_SCHEMA_ENUM:GameAnimEventIndex_t nAnimEvent, returns PVAL_BOOL retval, Pulse node
+	input IsAnimEventActive(string) : "Is the specified AG2 event active?<br><br>This node can appear in Observable contexts." // PVAL_ENUM:GameAnimEventIndex_t nAnimEvent, returns PVAL_BOOL retval, Pulse node
 	input IsExternalChoreoGraphActive(void) : "Is there an external choreo animgraph applied to this entity<br><br>This node can appear in Observable contexts." // returns PVAL_BOOL retval, Pulse node
 	input PlaySequence(string) : "Play the specified animation sequence on a NON-ANIMGRAPH entity" // PVAL_STRING pSequenceName, Pulse node
 	input SetBodygroup(string) // PVAL_STRING param
@@ -2848,6 +2848,7 @@
 @PointClass base(citadel_item_pickup) = citadel_item_koth_spawner
 [
 	koth_early_warning_time(float) // FIELD_FLOAT32
+	koth_silent_spawn(boolean) // FIELD_BOOLEAN
 ]
 
 // CCitadelItemPickupIdol
@@ -2967,7 +2968,7 @@
 	playername(string) // FIELD_UTLSTRING
 	reserving(boolean) // FIELD_BOOLEAN
 	steamid(integer) // FIELD_UINT64 m_steamID
-	input GetPlayerSlot(void) // returns PVAL_TYPESAFE_INT:CPlayerSlot retval, Pulse node
+	input GetPlayerSlot(void) // returns PVAL_LEAF:CPlayerSlot retval, Pulse node
 	input IsFakeClient(void) : "Fake client, simulated server side; don't send network messages to them" // returns PVAL_BOOL retval, Pulse node
 ]
 
@@ -3016,6 +3017,8 @@
 // CCitadel_ShopProp
 @PointClass base(prop_dynamic) = citadel_shop_prop_dynamic
 [
+	LaneNum(integer) // FIELD_INT32 m_iLane
+	input SetShopOpen(boolean) : "Open or close this shop. Keep in sync with its trigger_item_shop." // PVAL_BOOL bOpen, Pulse node
 ]
 
 // CCitadelPreviewPlayerController

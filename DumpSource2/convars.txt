@@ -2518,6 +2518,15 @@ citadel_enemy_consume_stamina_notification_range_close 10 (developmentonly gamed
 citadel_enemy_consume_stamina_notification_range_far 100 (developmentonly gamedll clientdll replicated defensive)
 	If an enemy is this far, then we never send a stamina consume usermessage to enemies.
 
+citadel_enemy_damage_delta_color_b 91 (min: 0, max: 255, clientdll archive per_user)
+	Blue channel of the color used for the part of an enemy health bar just lost to damage.
+
+citadel_enemy_damage_delta_color_g 229 (min: 0, max: 255, clientdll archive per_user)
+	Green channel of the color used for the part of an enemy health bar just lost to damage.
+
+citadel_enemy_damage_delta_color_r 255 (min: 0, max: 255, clientdll archive per_user)
+	Red channel of the color used for the part of an enemy health bar just lost to damage.
+
 citadel_enemy_ui_color_b 50 (min: 0, max: 255, clientdll archive per_user)
 	Blue channel of the color used for enemy health bars and other enemy indicators in the UI.
 
@@ -2529,6 +2538,15 @@ citadel_enemy_ui_color_r 215 (min: 0, max: 255, clientdll archive per_user)
 
 citadel_enemy_visible_upon_reveal_duration 0.7 (developmentonly clientdll gameinfo_cannot_override)
 	How long an enemy appears through walls (outline or ui icon) after taking damage. Must also have fog of war visibility.
+
+citadel_enemy_zipline_color_b 38 (min: 0, max: 255, clientdll archive per_user)
+	Blue channel of the color used for enemy ziplines and enemy objectives on the minimap.
+
+citadel_enemy_zipline_color_g 55 (min: 0, max: 255, clientdll archive per_user)
+	Green channel of the color used for enemy ziplines and enemy objectives on the minimap.
+
+citadel_enemy_zipline_color_r 140 (min: 0, max: 255, clientdll archive per_user)
+	Red channel of the color used for enemy ziplines and enemy objectives on the minimap.
 
 citadel_english_hero_names false (clientdll archive per_user)
 	<no description>
@@ -3565,14 +3583,14 @@ citadel_new_abandon_rules_early_time 300 (developmentonly gamedll defensive)
 citadel_new_mini_radial_delay_time 0.125 (developmentonly clientdll)
 	<no description>
 
-citadel_new_ping_coyote_time 0.125 (developmentonly clientdll)
-	<no description>
-
 citadel_new_ping_fow_window 2 (developmentonly clientdll)
 	How long after an enemy drops off shared team vision they can still be pinged, in seconds.
 
 citadel_new_ping_free_cursor_world_trace false (developmentonly clientdll)
 	Allow free cursor pings to trace through the HUD into the world (entities and ziplines).
+
+citadel_new_ping_hitbox_self_test false (developmentonly clientdll)
+	When tracing in free cursor mode, turn on a more expensive trace vs the local player model (nearer objects will undergo more scrutiny)
 
 citadel_new_ping_minimap_left_click true (developmentonly clientdll)
 	With citadel_new_ping_system on, left clicking anywhere on the minimap opens the ping radial, same as the ping keybind. Never overrides a minimap targeting ability like Mirage's teleport.
@@ -4652,7 +4670,7 @@ citadel_shop_scroll_snap_threshold 5 (clientdll archive release)
 	How many pixels of scroll delta triggers a snap.  Source2 mouse wheel is hardcoded to 3.0 per integral mouse wheel click.
 
 citadel_shop_scroll_snap_to_tiers true (clientdll archive release)
-	Snap mouse wheel scrolling in the shop's filtered tab to price tiers. The arrow keys step a tier either way.
+	Snap mouse wheel scrolling in the shop's filtered tab to price tiers. The tier keybinds step a tier either way.
 
 citadel_shop_search_use_name_only false (clientdll archive)
 	Only match items based on the name of the item when searching
@@ -5389,6 +5407,9 @@ citadel_unit_status_healthbar_highlight_speed 2 (developmentonly clientdll)
 citadel_unit_status_height 210 (developmentonly clientdll)
 	<no description>
 
+citadel_unit_status_hero_name_mode 0 (min: 0, max: 2, clientdll archive per_user release)
+	Name shown above hero health bars. 0: player name, 1: hero name, 2: none
+
 citadel_unit_status_hide_names false (clientdll cheat release)
 	<no description>
 
@@ -5410,6 +5431,30 @@ citadel_unit_status_max_total_bars -1 (developmentonly clientdll)
 citadel_unit_status_min_distance_scale 0.2 (developmentonly clientdll)
 	<no description>
 
+citadel_unit_status_name_fade_end_dist 35 (developmentonly clientdll)
+	Distance in meters from the camera at which names above health bars are fully faded out
+
+citadel_unit_status_name_fade_start_dist 25 (developmentonly clientdll)
+	Distance in meters from the camera at which names above health bars start fading out
+
+citadel_unit_status_offset_player_min_z 50 (developmentonly clientdll)
+	Min z offset for character's whose offset attachment go very low
+
+citadel_unit_status_offset_player_z_offset_adjustment 16 (developmentonly clientdll)
+	Z Offset for all charcters, indpendent of the vmdl offset.
+
+citadel_unit_status_offset_smooth_large_delta 10 (developmentonly clientdll)
+	> this is a large delta
+
+citadel_unit_status_offset_smooth_max_rate 30 (developmentonly clientdll)
+	Smoothing for large deltas
+
+citadel_unit_status_offset_smooth_min_rate 2 (developmentonly clientdll)
+	Smoothing for small deltas
+
+citadel_unit_status_offset_smooth_small_delta 2 (developmentonly clientdll)
+	Around this is a small delta
+
 citadel_unit_status_opaque_dist_sq 50000 (developmentonly clientdll)
 	<no description>
 
@@ -5430,12 +5475,6 @@ citadel_unit_status_show_stats false (developmentonly clientdll defensive)
 
 citadel_unit_status_stamina_consume_linger 5 (developmentonly clientdll)
 	<no description>
-
-citadel_unit_status_stamina_low_pips 1 (developmentonly clientdll)
-	Stamina is always shown while the target has this many pips or fewer.
-
-citadel_unit_status_stamina_low_show_window 2.5 (developmentonly clientdll)
-	How long a low stamina reading stays trusted without a fresh stamina message.
 
 citadel_unit_status_transparent_dist_sq 0 (developmentonly clientdll)
 	<no description>

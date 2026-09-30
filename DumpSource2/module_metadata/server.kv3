@@ -2910,6 +2910,19 @@
 			{
 			}
 		}
+		CCitadel_ShopProp = 
+		{
+			base = "CDynamicProp"
+			fields = 
+			{
+				LaneNum = 
+				{
+					cpp_name = "m_iLane"
+					field_flags = "FTYPEDESC_KEY"
+					field_type = "FIELD_INT32"
+				}
+			}
+		}
 		CCitadel_Soldier_Entity = 
 		{
 			base = "CBaseAnimGraph"
@@ -3546,6 +3559,12 @@
 					cpp_name = "__PROCEDURAL"
 					field_flags = "FTYPEDESC_PROCEDURAL_KEYFIELD"
 					field_type = "FIELD_FLOAT32"
+				}
+				koth_silent_spawn = 
+				{
+					cpp_name = "__PROCEDURAL"
+					field_flags = "FTYPEDESC_PROCEDURAL_KEYFIELD"
+					field_type = "FIELD_BOOLEAN"
 				}
 			}
 		}
@@ -21807,7 +21826,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:NPC_STATE"
+								type = "PVAL_ENUM:NPC_STATE"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -21940,7 +21959,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:AILOD_t"
+								type = "PVAL_ENUM:AILOD_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -23423,7 +23442,7 @@
 								{
 									polymorphic_arg = true
 								}
-								type = "PVAL_ARRAY:PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t"
+								type = "PVAL_ARRAY:PVAL_LEAF:AI_VolumetricEventHandle_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -24965,7 +24984,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:GameAnimEventIndex_t"
+								type = "PVAL_ENUM:GameAnimEventIndex_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -32684,7 +32703,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:HitGroup_t"
+								type = "PVAL_ENUM:HitGroup_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -32989,7 +33008,7 @@
 								{
 									polymorphic_arg = true
 								}
-								type = "PVAL_ARRAY:PVAL_SCHEMA_ENUM:HitGroup_t"
+								type = "PVAL_ARRAY:PVAL_ENUM:HitGroup_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -33592,7 +33611,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:HitGroup_t"
+								type = "PVAL_ENUM:HitGroup_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -35959,7 +35978,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT:CPlayerSlot"
+								type = "PVAL_LEAF:CPlayerSlot"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -40027,6 +40046,80 @@
 					m_Outputs = [  ]
 					m_Helpers = [  ]
 				}
+				"CCitadel_ShopProp_API::SetShopOpen" = 
+				{
+					m_BaseClasses = [  ]
+					m_FriendlyName = "Set Shop Open"
+					m_Description = "Open or close this shop. Keep in sync with its trigger_item_shop."
+					m_MetaData = 
+					{
+						supported_domains = 
+						{
+							BaseDomain = true
+						}
+						fingerprint = "@lib:server.dll!CCitadel_ShopProp_API"
+						pulse_inparams = 
+						{
+							_Target = 
+							{
+								friendly_name = "citadel_shop_prop_dynamic"
+								description = "The Target object. In code, this parameter is the API This() object for this Input."
+								advanced_view = false
+								metadata = null
+								type = "PVAL_EHANDLE:citadel_shop_prop_dynamic"
+								default_value = 
+								[
+									"PVAL_VOID",
+								]
+								associated_inflow_name = "InDefault"
+							}
+							bOpen = 
+							{
+								friendly_name = "Open"
+								description = ""
+								advanced_view = false
+								metadata = null
+								type = "PVAL_BOOL"
+								default_value = 
+								[
+									"PVAL_VOID",
+								]
+								associated_inflow_name = "InDefault"
+							}
+						}
+						pulse_feature_tag = 1
+						generic_node_category = 5
+						is_pulse_target_method = true
+						target_arg_name = "_Target"
+						pulse_inflows = 
+						[
+							{
+								name = "InDefault"
+								friendly_name = "Default In"
+								is_default_inflow = true
+							},
+						]
+						pulse_outflows = 
+						[
+							{
+								name = "OutDefault"
+								friendly_name = "Default Out"
+								is_default_outflow = true
+								allow_direct_return = true
+							},
+						]
+					}
+					m_HelpContextName = ""
+					m_nClassType = "vdata"
+					m_rgbColor = [ 220, 30, 220 ]
+					m_bmins = [ -8.0, -8.0, -8.0 ]
+					m_bmaxs = [ 8.0, 8.0, 8.0 ]
+					m_Tags = [  ]
+					m_Variables = [  ]
+					m_Inputs = [  ]
+					m_Outputs = [  ]
+					m_Helpers = [  ]
+				}
 				"CCitadelCatapultTrigger_API::SpawnPickupTrail" = 
 				{
 					m_BaseClasses = [  ]
@@ -40396,7 +40489,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:ECitadelGameMode"
+								type = "PVAL_ENUM:ECitadelGameMode"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -40615,7 +40708,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:EGameState"
+								type = "PVAL_ENUM:EGameState"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -40738,7 +40831,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:ECitadelMatchMode"
+								type = "PVAL_ENUM:ECitadelMatchMode"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -40751,7 +40844,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:ECitadelGameMode"
+								type = "PVAL_ENUM:ECitadelGameMode"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -40838,7 +40931,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:EStreetBrawlGameState"
+								type = "PVAL_ENUM:EStreetBrawlGameState"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -40855,6 +40948,65 @@
 								name = "OutDefault"
 								friendly_name = "Default Out"
 								is_default_outflow = true
+							},
+						]
+					}
+					m_HelpContextName = ""
+					m_nClassType = "vdata"
+					m_rgbColor = [ 220, 30, 220 ]
+					m_bmins = [ -8.0, -8.0, -8.0 ]
+					m_bmaxs = [ 8.0, 8.0, 8.0 ]
+					m_Tags = [  ]
+					m_Variables = [  ]
+					m_Inputs = [  ]
+					m_Outputs = [  ]
+					m_Helpers = [  ]
+				}
+				"CCitadelPointPulseAPI::PulseMinimapAtEntity" = 
+				{
+					m_BaseClasses = [  ]
+					m_FriendlyName = "Pulse Minimap At Entity"
+					m_Description = "Flash a red alarm pulse at an entity's location on every player's minimap."
+					m_MetaData = 
+					{
+						supported_domains = 
+						{
+							ServerEntity = true
+						}
+						fingerprint = "@lib:server.dll!CCitadelPointPulseAPI"
+						pulse_inparams = 
+						{
+							hEntity = 
+							{
+								friendly_name = "Entity"
+								description = ""
+								advanced_view = false
+								metadata = null
+								type = "PVAL_EHANDLE"
+								default_value = 
+								[
+									"PVAL_VOID",
+								]
+								associated_inflow_name = "InDefault"
+							}
+						}
+						generic_node_category = 5
+						is_pulse_library_method = true
+						pulse_inflows = 
+						[
+							{
+								name = "InDefault"
+								friendly_name = "Default In"
+								is_default_inflow = true
+							},
+						]
+						pulse_outflows = 
+						[
+							{
+								name = "OutDefault"
+								friendly_name = "Default Out"
+								is_default_outflow = true
+								allow_direct_return = true
 							},
 						]
 					}
@@ -53175,7 +53327,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:CFuncMover::Move_t"
+								type = "PVAL_ENUM:CFuncMover::Move_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -85661,7 +85813,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:AI_VolumetricEventType_t"
+								type = "PVAL_ENUM:AI_VolumetricEventType_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -85729,7 +85881,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t"
+								type = "PVAL_LEAF:AI_VolumetricEventHandle_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -85789,7 +85941,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t"
+								type = "PVAL_LEAF:AI_VolumetricEventHandle_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -85848,7 +86000,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t"
+								type = "PVAL_LEAF:AI_VolumetricEventHandle_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -85907,7 +86059,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t"
+								type = "PVAL_LEAF:AI_VolumetricEventHandle_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -85966,7 +86118,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t"
+								type = "PVAL_LEAF:AI_VolumetricEventHandle_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -85982,7 +86134,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:AI_VolumetricEventType_t"
+								type = "PVAL_ENUM:AI_VolumetricEventType_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -86025,7 +86177,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t"
+								type = "PVAL_LEAF:AI_VolumetricEventHandle_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -86097,7 +86249,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t"
+								type = "PVAL_LEAF:AI_VolumetricEventHandle_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -87557,7 +87709,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:Flags_t"
+								type = "PVAL_ENUM:Flags_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -87641,7 +87793,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:SharedMovementGait_t"
+								type = "PVAL_ENUM:SharedMovementGait_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -90582,10 +90734,10 @@
 								description = ""
 								advanced_view = true
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:PulseCursorCancelPriority_t"
+								type = "PVAL_ENUM:PulseCursorCancelPriority_t"
 								default_value = 
 								[
-									"PVAL_SCHEMA_ENUM:PulseCursorCancelPriority_t",
+									"PVAL_ENUM:PulseCursorCancelPriority_t",
 									"HardCancel",
 								]
 								associated_inflow_name = "InDefault"
@@ -90673,10 +90825,10 @@
 								description = ""
 								advanced_view = true
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:PulseCursorCancelPriority_t"
+								type = "PVAL_ENUM:PulseCursorCancelPriority_t"
 								default_value = 
 								[
-									"PVAL_SCHEMA_ENUM:PulseCursorCancelPriority_t",
+									"PVAL_ENUM:PulseCursorCancelPriority_t",
 									"HardCancel",
 								]
 								associated_inflow_name = "InDefault"
@@ -90941,10 +91093,10 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:PulseCursorWakePriority_t"
+								type = "PVAL_ENUM:PulseCursorWakePriority_t"
 								default_value = 
 								[
-									"PVAL_SCHEMA_ENUM:PulseCursorWakePriority_t",
+									"PVAL_ENUM:PulseCursorWakePriority_t",
 									"WakeElegantly",
 								]
 								associated_inflow_name = "InDefault"
@@ -91003,8 +91155,9 @@
 								metadata = 
 								{
 									polymorphic_arg = true
+									type_restriction = "type_restriction_is_enum_flags"
 								}
-								type = "PVAL_SCHEMA_ENUM"
+								type = "PVAL_ENUM"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91021,7 +91174,7 @@
 									polymorphic_arg = true
 									polymorphic_dependent_arg = "value:fulltype"
 								}
-								type = "PVAL_SCHEMA_ENUM"
+								type = "PVAL_ENUM"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91041,7 +91194,7 @@
 									polymorphic_arg = true
 									polymorphic_dependent_arg = "value:fulltype"
 								}
-								type = "PVAL_SCHEMA_ENUM"
+								type = "PVAL_ENUM"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91087,8 +91240,9 @@
 								metadata = 
 								{
 									polymorphic_arg = true
+									type_restriction = "type_restriction_is_enum_flags"
 								}
-								type = "PVAL_SCHEMA_ENUM"
+								type = "PVAL_ENUM"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91105,7 +91259,7 @@
 									polymorphic_arg = true
 									polymorphic_dependent_arg = "value:fulltype"
 								}
-								type = "PVAL_SCHEMA_ENUM"
+								type = "PVAL_ENUM"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91130,7 +91284,7 @@
 								direct_return_value_for = "CPulseEnumlib::HasAllFlags"
 							}
 						}
-						expr_alias_info = "allflags( Schema Enum value, Schema Enum flags )"
+						expr_alias_info = "allflags( Enum value, Enum flags )"
 						generic_node_category = 4
 						is_pulse_library_method = true
 					}
@@ -91168,8 +91322,9 @@
 								metadata = 
 								{
 									polymorphic_arg = true
+									type_restriction = "type_restriction_is_enum_flags"
 								}
-								type = "PVAL_SCHEMA_ENUM"
+								type = "PVAL_ENUM"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91186,7 +91341,7 @@
 									polymorphic_arg = true
 									polymorphic_dependent_arg = "value:fulltype"
 								}
-								type = "PVAL_SCHEMA_ENUM"
+								type = "PVAL_ENUM"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91211,7 +91366,7 @@
 								direct_return_value_for = "CPulseEnumlib::HasAnyFlags"
 							}
 						}
-						expr_alias_info = "anyflags( Schema Enum value, Schema Enum flags )"
+						expr_alias_info = "anyflags( Enum value, Enum flags )"
 						generic_node_category = 4
 						is_pulse_library_method = true
 					}
@@ -91248,8 +91403,9 @@
 								metadata = 
 								{
 									polymorphic_arg = true
+									type_restriction = "type_restriction_is_enum_flags"
 								}
-								type = "PVAL_SCHEMA_ENUM"
+								type = "PVAL_ENUM"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91266,7 +91422,7 @@
 									polymorphic_arg = true
 									polymorphic_dependent_arg = "value:fulltype"
 								}
-								type = "PVAL_SCHEMA_ENUM"
+								type = "PVAL_ENUM"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91286,7 +91442,7 @@
 									polymorphic_arg = true
 									polymorphic_dependent_arg = "value:fulltype"
 								}
-								type = "PVAL_SCHEMA_ENUM"
+								type = "PVAL_ENUM"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91355,10 +91511,10 @@
 								description = ""
 								advanced_view = true
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:ParticleAttachment_t"
+								type = "PVAL_ENUM:ParticleAttachment_t"
 								default_value = 
 								[
-									"PVAL_SCHEMA_ENUM:ParticleAttachment_t",
+									"PVAL_ENUM:ParticleAttachment_t",
 									"PATTACH_POINT_FOLLOW",
 								]
 								associated_inflow_name = "InDefault"
@@ -91386,7 +91542,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT:ParticleIndex_t"
+								type = "PVAL_LEAF:ParticleIndex_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91446,7 +91602,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT:ParticleIndex_t"
+								type = "PVAL_LEAF:ParticleIndex_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91533,7 +91689,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT:ParticleIndex_t"
+								type = "PVAL_LEAF:ParticleIndex_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91559,7 +91715,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:ParticleAttachment_t"
+								type = "PVAL_ENUM:ParticleAttachment_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91645,7 +91801,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT:ParticleIndex_t"
+								type = "PVAL_LEAF:ParticleIndex_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91730,7 +91886,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT:ParticleIndex_t"
+								type = "PVAL_LEAF:ParticleIndex_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91815,7 +91971,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT:ParticleIndex_t"
+								type = "PVAL_LEAF:ParticleIndex_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -91900,7 +92056,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT:ParticleIndex_t"
+								type = "PVAL_LEAF:ParticleIndex_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -103426,10 +103582,10 @@
 								description = ""
 								advanced_view = true
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:PulseTraceContents_t"
+								type = "PVAL_ENUM:PulseTraceContents_t"
 								default_value = 
 								[
-									"PVAL_SCHEMA_ENUM:PulseTraceContents_t",
+									"PVAL_ENUM:PulseTraceContents_t",
 									"STATIC_LEVEL",
 								]
 								associated_inflow_name = "CPulseServerFuncs::GetTraceHit"
@@ -103440,10 +103596,10 @@
 								description = ""
 								advanced_view = true
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:PulseCollisionGroup_t"
+								type = "PVAL_ENUM:PulseCollisionGroup_t"
 								default_value = 
 								[
-									"PVAL_SCHEMA_ENUM:PulseCollisionGroup_t",
+									"PVAL_ENUM:PulseCollisionGroup_t",
 									"DEFAULT",
 								]
 								associated_inflow_name = "CPulseServerFuncs::GetTraceHit"
@@ -103986,7 +104142,7 @@
 				{
 					m_BaseClasses = [  ]
 					m_FriendlyName = "Make Relative Location Following Entity"
-					m_Description = "Make a location that follows an entity, calculated from the initial world position. Not valid if there is no entity."
+					m_Description = "Make a location that follows an entity. Considered invalid if there is no entity."
 					m_MetaData = 
 					{
 						supported_domains = 
@@ -104003,19 +104159,6 @@
 								advanced_view = false
 								metadata = null
 								type = "PVAL_EHANDLE"
-								default_value = 
-								[
-									"PVAL_VOID",
-								]
-								associated_inflow_name = "CPulseServerFuncs::MakeRelativeLocationFollowingEntity"
-							}
-							vWorldPosition = 
-							{
-								friendly_name = "World Position"
-								description = ""
-								advanced_view = false
-								metadata = null
-								type = "PVAL_VEC3_WORLDSPACE"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -104054,11 +104197,11 @@
 					m_Outputs = [  ]
 					m_Helpers = [  ]
 				}
-				"CPulseServerFuncs::MakeRelativeLocationFollowingEntityRelative" = 
+				"CPulseServerFuncs::MakeRelativeLocationFollowingEntityLocal" = 
 				{
 					m_BaseClasses = [  ]
-					m_FriendlyName = "Make Relative Location Following Entity Relative"
-					m_Description = "Make a location that follows an entity, offset in the entity's local space. Not valid if there is no entity."
+					m_FriendlyName = "Make Relative Location Following Entity Local"
+					m_Description = "Make a location that follows an entity, offset in the entity's local space. Considered invalid if there is no entity."
 					m_MetaData = 
 					{
 						supported_domains = 
@@ -104079,7 +104222,7 @@
 								[
 									"PVAL_VOID",
 								]
-								associated_inflow_name = "CPulseServerFuncs::MakeRelativeLocationFollowingEntityRelative"
+								associated_inflow_name = "CPulseServerFuncs::MakeRelativeLocationFollowingEntityLocal"
 							}
 							vLocalOffset = 
 							{
@@ -104092,7 +104235,7 @@
 								[
 									"PVAL_VOID",
 								]
-								associated_inflow_name = "CPulseServerFuncs::MakeRelativeLocationFollowingEntityRelative"
+								associated_inflow_name = "CPulseServerFuncs::MakeRelativeLocationFollowingEntityLocal"
 							}
 						}
 						pulse_outparams = 
@@ -104109,7 +104252,79 @@
 									"PVAL_VOID",
 								]
 								associated_outflow_name = "OutDefault"
-								direct_return_value_for = "CPulseServerFuncs::MakeRelativeLocationFollowingEntityRelative"
+								direct_return_value_for = "CPulseServerFuncs::MakeRelativeLocationFollowingEntityLocal"
+							}
+						}
+						generic_node_category = 4
+						is_pulse_library_method = true
+					}
+					m_HelpContextName = ""
+					m_nClassType = "vdata"
+					m_rgbColor = [ 220, 30, 220 ]
+					m_bmins = [ -8.0, -8.0, -8.0 ]
+					m_bmaxs = [ 8.0, 8.0, 8.0 ]
+					m_Tags = [  ]
+					m_Variables = [  ]
+					m_Inputs = [  ]
+					m_Outputs = [  ]
+					m_Helpers = [  ]
+				}
+				"CPulseServerFuncs::MakeRelativeLocationFollowingEntityWorld" = 
+				{
+					m_BaseClasses = [  ]
+					m_FriendlyName = "Make Relative Location Following Entity World"
+					m_Description = "Make a location that follows an entity, offset calculated from the initial world position. Considered invalid if there is no entity."
+					m_MetaData = 
+					{
+						supported_domains = 
+						{
+							ServerEntity = true
+						}
+						fingerprint = "@lib:server.dll!CPulseServerFuncs"
+						pulse_inparams = 
+						{
+							hEntity = 
+							{
+								friendly_name = "Entity"
+								description = ""
+								advanced_view = false
+								metadata = null
+								type = "PVAL_EHANDLE"
+								default_value = 
+								[
+									"PVAL_VOID",
+								]
+								associated_inflow_name = "CPulseServerFuncs::MakeRelativeLocationFollowingEntityWorld"
+							}
+							vWorldPosition = 
+							{
+								friendly_name = "World Position"
+								description = ""
+								advanced_view = false
+								metadata = null
+								type = "PVAL_VEC3_WORLDSPACE"
+								default_value = 
+								[
+									"PVAL_VOID",
+								]
+								associated_inflow_name = "CPulseServerFuncs::MakeRelativeLocationFollowingEntityWorld"
+							}
+						}
+						pulse_outparams = 
+						{
+							retval = 
+							{
+								friendly_name = "Result"
+								description = ""
+								advanced_view = false
+								metadata = null
+								type = "PVAL_LEAF:CRelativeLocation"
+								default_value = 
+								[
+									"PVAL_VOID",
+								]
+								associated_outflow_name = "OutDefault"
+								direct_return_value_for = "CPulseServerFuncs::MakeRelativeLocationFollowingEntityWorld"
 							}
 						}
 						generic_node_category = 4
@@ -104768,7 +104983,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:MoveType_t"
+								type = "PVAL_ENUM:MoveType_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -104840,7 +105055,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:ChoreoExternalAnimgraphControlState_t"
+								type = "PVAL_ENUM:ChoreoExternalAnimgraphControlState_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -104998,7 +105213,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:StanceType_t"
+								type = "PVAL_ENUM:StanceType_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -106162,10 +106377,10 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:PulseDurationStringFormat_t"
+								type = "PVAL_ENUM:PulseDurationStringFormat_t"
 								default_value = 
 								[
-									"PVAL_SCHEMA_ENUM:PulseDurationStringFormat_t",
+									"PVAL_ENUM:PulseDurationStringFormat_t",
 									"MM_SS_LEADING_ZERO",
 								]
 								associated_inflow_name = "CPulseStringlib::FormatDurationStringFromSeconds"
@@ -112299,7 +112514,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:HitGroup_t"
+								type = "PVAL_ENUM:HitGroup_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -112717,6 +112932,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -112791,6 +113007,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -112865,6 +113082,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -112939,6 +113157,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -113026,6 +113245,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -113100,6 +113320,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -113187,6 +113408,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -113261,6 +113483,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -113348,6 +113571,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -113422,6 +113646,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -113443,7 +113668,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:TestInputOutputCombinationsEnum_t"
+								type = "PVAL_ENUM:TestInputOutputCombinationsEnum_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -113496,6 +113721,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -113570,6 +113796,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -113670,6 +113897,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -113744,6 +113972,7 @@
 							BaseDomain = true
 						}
 						fingerprint = "@lib:server.dll!CTestPulseIO_API"
+						hidden_in_tool = true
 						pulse_inparams = 
 						{
 							_Target = 
@@ -117783,7 +118012,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:HitGroup_t"
+								type = "PVAL_ENUM:HitGroup_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -118972,7 +119201,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t"
+								type = "PVAL_LEAF:AI_VolumetricEventHandle_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -119038,7 +119267,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_TYPESAFE_INT64:AI_VolumetricEventHandle_t"
+								type = "PVAL_LEAF:AI_VolumetricEventHandle_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -121234,7 +121463,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:HitGroup_t"
+								type = "PVAL_ENUM:HitGroup_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -139952,7 +140181,7 @@
 								description = ""
 								advanced_view = false
 								metadata = null
-								type = "PVAL_SCHEMA_ENUM:TestInputOutputCombinationsEnum_t"
+								type = "PVAL_ENUM:TestInputOutputCombinationsEnum_t"
 								default_value = 
 								[
 									"PVAL_VOID",
@@ -142181,7 +142410,7 @@
 	}
 	pulse_fingerprints = 
 	{
-		"@lib:server.dll!CAI_BaseNPC_API" = 2107567029
+		"@lib:server.dll!CAI_BaseNPC_API" = 2598089373
 		"@lib:server.dll!CAI_ChangeHintGroup_API" = 582089837
 		"@lib:server.dll!CAI_CitadelNPC_API" = 0
 		"@lib:server.dll!CAI_GoalEntity_API" = 2820753336
@@ -142191,12 +142420,12 @@
 		"@lib:server.dll!CAI_ScriptConditions_API" = 143715553
 		"@lib:server.dll!CAI_SpeechFilter_API" = 496700886
 		"@lib:server.dll!CAI_VolumetricEventEntity_API" = 1493786901
-		"@lib:server.dll!CAI_VolumetricEventSensor_API" = 2074432563
+		"@lib:server.dll!CAI_VolumetricEventSensor_API" = 1832589629
 		"@lib:server.dll!CAITestPath_API" = 0
 		"@lib:server.dll!CAmbientGeneric_API" = 2545903890
 		"@lib:server.dll!CAssignedLaneParticle_API" = 0
 		"@lib:server.dll!CBarnLight_API" = 3742994358
-		"@lib:server.dll!CBaseAnimGraph_API" = 4007306958
+		"@lib:server.dll!CBaseAnimGraph_API" = 187124206
 		"@lib:server.dll!CBaseButton_API" = 2283324860
 		"@lib:server.dll!CBaseClientUIEntity_API" = 3843036197
 		"@lib:server.dll!CBaseCombatCharacter_API" = 264987176
@@ -142205,12 +142434,12 @@
 		"@lib:server.dll!CBaseEntity_API" = 917390089
 		"@lib:server.dll!CBaseEntity_SharedAPI" = 3343199019
 		"@lib:server.dll!CBaseFilter_API" = 848718785
-		"@lib:server.dll!CBaseModelEntity_API" = 3067720397
+		"@lib:server.dll!CBaseModelEntity_API" = 3643085208
 		"@lib:server.dll!CBaseModifier_API" = 0
 		"@lib:server.dll!CBaseModifierAura_API" = 0
 		"@lib:server.dll!CBaseNPCMaker_API" = 787266376
 		"@lib:server.dll!CBasePlatTrain_API" = 0
-		"@lib:server.dll!CBasePlayerController_API" = 1180759901
+		"@lib:server.dll!CBasePlayerController_API" = 56373115
 		"@lib:server.dll!CBasePlayerPawn_API" = 3717123866
 		"@lib:server.dll!CBasePlayerWeapon_API" = 3038871360
 		"@lib:server.dll!CBaseProp_API" = 0
@@ -142240,6 +142469,7 @@
 		"@lib:server.dll!CCitadel_PickupItemSpawner_API" = 2229066563
 		"@lib:server.dll!CCitadel_PickupSpawner_API" = 1037252464
 		"@lib:server.dll!CCitadel_PointTalker_Base_API" = 2418862689
+		"@lib:server.dll!CCitadel_ShopProp_API" = 3489989097
 		"@lib:server.dll!CCitadel_Soldier_Entity_API" = 0
 		"@lib:server.dll!CCitadelAudioProcessingVolumeOBB_API" = 0
 		"@lib:server.dll!CCitadelBaseAbility_API" = 0
@@ -142276,7 +142506,7 @@
 		"@lib:server.dll!CCitadelObserverPawn_API" = 0
 		"@lib:server.dll!CCitadelPassthroughFakeWall_API" = 3291675794
 		"@lib:server.dll!CCitadelPlayerPawn_API" = 0
-		"@lib:server.dll!CCitadelPointPulseAPI" = 2526833106
+		"@lib:server.dll!CCitadelPointPulseAPI" = 3170652040
 		"@lib:server.dll!CCitadelPortalTrigger_API" = 0
 		"@lib:server.dll!CCitadelProjectileTouchVolume_API" = 0
 		"@lib:server.dll!CCitadelPushTrigger_API" = 0
@@ -142361,7 +142591,7 @@
 		"@lib:server.dll!CFuncLadder_API" = 2988440516
 		"@lib:server.dll!CFuncMonitor_API" = 3730308603
 		"@lib:server.dll!CFuncMoveLinear_API" = 2359109547
-		"@lib:server.dll!CFuncMover_API" = 2403833265
+		"@lib:server.dll!CFuncMover_API" = 88800727
 		"@lib:server.dll!CFuncMoverRouter_API" = 165904796
 		"@lib:server.dll!CFuncNavBlocker_API" = 2204016454
 		"@lib:server.dll!CFuncNavObstruction_API" = 0
@@ -142541,15 +142771,15 @@
 		"@lib:server.dll!CPropAnimatingBreakable_API" = 119659429
 		"@lib:server.dll!CPropDoorRotating_API" = 1057297190
 		"@lib:server.dll!CPropDoorRotatingBreakable_API" = 2977978069
-		"@lib:server.dll!CPulseAIVolumetricEventAPI" = 3773821861
+		"@lib:server.dll!CPulseAIVolumetricEventAPI" = 4043194151
 		"@lib:server.dll!CPulseArraylib" = 3525226864
 		"@lib:server.dll!CPulseCell_ApplyAnimGraphParam" = 376460925
 		"@lib:server.dll!CPulseCell_ApplyDynamicAttributeBase" = 0
 		"@lib:server.dll!CPulseCell_ApplyDynamicAttributeEHandle" = 1708393459
 		"@lib:server.dll!CPulseCell_ApplyDynamicAttributeInt" = 1242230346
 		"@lib:server.dll!CPulseCell_ApplyDynamicAttributeString" = 4040435771
-		"@lib:server.dll!CPulseCell_ApplyEntityFlags" = 3199532024
-		"@lib:server.dll!CPulseCell_ApplyGaitOverride" = 4260171309
+		"@lib:server.dll!CPulseCell_ApplyEntityFlags" = 2905506938
+		"@lib:server.dll!CPulseCell_ApplyGaitOverride" = 1426733493
 		"@lib:server.dll!CPulseCell_ApplyModifier" = 172837837
 		"@lib:server.dll!CPulseCell_ApplyModifierBase" = 0
 		"@lib:server.dll!CPulseCell_ApplyModifierToMultiple" = 3996823352
@@ -142601,18 +142831,18 @@
 		"@lib:server.dll!CPulseCell_Value_RandomInt" = 393431413
 		"@lib:server.dll!CPulseCell_WaitForCursorsWithTag" = 860342186
 		"@lib:server.dll!CPulseCell_WaitForObservable" = 1630411852
-		"@lib:server.dll!CPulseCursorFuncs" = 2994080292
-		"@lib:server.dll!CPulseEnumlib" = 1916837592
-		"@lib:server.dll!CPulseFuncs_GameParticleManager" = 2653736692
+		"@lib:server.dll!CPulseCursorFuncs" = 3063805403
+		"@lib:server.dll!CPulseEnumlib" = 2503225258
+		"@lib:server.dll!CPulseFuncs_GameParticleManager" = 4013877016
 		"@lib:server.dll!CPulseGameBlackboard_API" = 0
 		"@lib:server.dll!CPulseGraphInstance_GameBlackboard" = 0
 		"@lib:server.dll!CPulseGraphInstance_ServerEntity" = 1680306429
 		"@lib:server.dll!CPulseMathlib" = 1311878972
 		"@lib:server.dll!CPulsePhysicsConstraintsFuncs" = 651858802
 		"@lib:server.dll!CPulseServerCursor" = 0
-		"@lib:server.dll!CPulseServerFuncs" = 2454352789
+		"@lib:server.dll!CPulseServerFuncs" = 4282146442
 		"@lib:server.dll!CPulseServerFuncs_Sounds" = 2057943293
-		"@lib:server.dll!CPulseStringlib" = 1343543655
+		"@lib:server.dll!CPulseStringlib" = 4277376346
 		"@lib:server.dll!CPulseTestScriptLib" = 1396807546
 		"@lib:server.dll!CRagdollConstraint_API" = 0
 		"@lib:server.dll!CRagdollMagnet_API" = 3261186291
@@ -142660,13 +142890,13 @@
 		"@lib:server.dll!CSoundStackSave_API" = 0
 		"@lib:server.dll!CSplineConstraint_API" = 57481671
 		"@lib:server.dll!CSprite_API" = 3896753594
-		"@lib:server.dll!CTakeDamageResultAPI" = 703258689
+		"@lib:server.dll!CTakeDamageResultAPI" = 1390384683
 		"@lib:server.dll!CTankTargetChange_API" = 0
 		"@lib:server.dll!CTankTrainAI_API" = 1564101857
 		"@lib:server.dll!CTeam_API" = 0
 		"@lib:server.dll!CTeamRelativeParticleSystem_API" = 0
 		"@lib:server.dll!CTemplateNPCMaker_API" = 0
-		"@lib:server.dll!CTestPulseIO_API" = 3575416751
+		"@lib:server.dll!CTestPulseIO_API" = 361202486
 		"@lib:server.dll!CTestPulseIOComponent_API" = 2647014926
 		"@lib:server.dll!CTestPulseIOComponent_DerivedAPI" = 0
 		"@lib:server.dll!CTextureBasedAnimatable_API" = 1655322798
@@ -142704,42 +142934,42 @@
 		"@lib:server.dll!CTriggerTrooperDetector_API" = 0
 		"@lib:server.dll!CTriggerVolume_API" = 0
 		"@lib:server.dll!CWaterBullet_API" = 0
-		"@lib:server.dll!DestructiblePartDamageRequestAPI" = 1477869074
+		"@lib:server.dll!DestructiblePartDamageRequestAPI" = 3880965737
 		"@lib:server.dll!FilterDamageType_API" = 0
 		"@lib:server.dll!FilterHealth_API" = 0
-		"@type:server.dll!PVAL_SCHEMA_ENUM:AI_Strafing_t" = 1275994559
-		"@type:server.dll!PVAL_SCHEMA_ENUM:AI_VolumetricEventType_t" = 1819225902
-		"@type:server.dll!PVAL_SCHEMA_ENUM:AILOD_t" = 2989435320
-		"@type:server.dll!PVAL_SCHEMA_ENUM:BodySectionMutex_t" = 2033816131
-		"@type:server.dll!PVAL_SCHEMA_ENUM:CFuncMover::Move_t" = 2444045097
-		"@type:server.dll!PVAL_SCHEMA_ENUM:ChoreoExternalAnimgraphControlState_t" = 3320598106
-		"@type:server.dll!PVAL_SCHEMA_ENUM:ChoreoLocatorArrivalOptionFlags_t" = 2634857771
-		"@type:server.dll!PVAL_SCHEMA_ENUM:ChoreoLookAtConditions_t" = 765423101
-		"@type:server.dll!PVAL_SCHEMA_ENUM:ChoreoLookAtMode_t" = 1855753749
-		"@type:server.dll!PVAL_SCHEMA_ENUM:ChoreoLookAtSpeed_t" = 4241769962
-		"@type:server.dll!PVAL_SCHEMA_ENUM:ChoreoScriptedMoveTo_t" = 2179696382
-		"@type:server.dll!PVAL_SCHEMA_ENUM:DamageTypes_t" = 2170947975
-		"@type:server.dll!PVAL_SCHEMA_ENUM:ECitadelGameMode" = 4267472791
-		"@type:server.dll!PVAL_SCHEMA_ENUM:ECitadelMatchMode" = 1217247979
-		"@type:server.dll!PVAL_SCHEMA_ENUM:EGameState" = 1093534349
-		"@type:server.dll!PVAL_SCHEMA_ENUM:EModifierState" = 3750352229
-		"@type:server.dll!PVAL_SCHEMA_ENUM:EStreetBrawlGameState" = 62714967
-		"@type:server.dll!PVAL_SCHEMA_ENUM:Flags_t" = 586122488
-		"@type:server.dll!PVAL_SCHEMA_ENUM:GameAnimEventIndex_t" = 1356365256
-		"@type:server.dll!PVAL_SCHEMA_ENUM:HitGroup_t" = 3817317871
-		"@type:server.dll!PVAL_SCHEMA_ENUM:MoveType_t" = 831783037
-		"@type:server.dll!PVAL_SCHEMA_ENUM:NPC_STATE" = 3496838490
-		"@type:server.dll!PVAL_SCHEMA_ENUM:NPCFollowFormation_t" = 1844189520
-		"@type:server.dll!PVAL_SCHEMA_ENUM:ParticleAttachment_t" = 2760371775
-		"@type:server.dll!PVAL_SCHEMA_ENUM:PulseCollisionGroup_t" = 3569657246
-		"@type:server.dll!PVAL_SCHEMA_ENUM:PulseCursorCancelPriority_t" = 627611872
-		"@type:server.dll!PVAL_SCHEMA_ENUM:PulseCursorWakePriority_t" = 2889899724
-		"@type:server.dll!PVAL_SCHEMA_ENUM:PulseDurationStringFormat_t" = 1531666510
-		"@type:server.dll!PVAL_SCHEMA_ENUM:PulseNPCCondition_t" = 4250447670
-		"@type:server.dll!PVAL_SCHEMA_ENUM:PulseTraceContents_t" = 1979282183
-		"@type:server.dll!PVAL_SCHEMA_ENUM:SharedMovementGait_t" = 2695773104
-		"@type:server.dll!PVAL_SCHEMA_ENUM:StanceType_t" = 4217034654
-		"@type:server.dll!PVAL_SCHEMA_ENUM:TestInputOutputCombinationsEnum_t" = 4116603079
+		"@type:server.dll!PVAL_ENUM:AI_Strafing_t" = 1275994559
+		"@type:server.dll!PVAL_ENUM:AI_VolumetricEventType_t" = 1819225902
+		"@type:server.dll!PVAL_ENUM:AILOD_t" = 2989435320
+		"@type:server.dll!PVAL_ENUM:BodySectionMutex_t" = 2033816131
+		"@type:server.dll!PVAL_ENUM:CFuncMover::Move_t" = 2444045097
+		"@type:server.dll!PVAL_ENUM:ChoreoExternalAnimgraphControlState_t" = 3320598106
+		"@type:server.dll!PVAL_ENUM:ChoreoLocatorArrivalOptionFlags_t" = 2634857771
+		"@type:server.dll!PVAL_ENUM:ChoreoLookAtConditions_t" = 765423101
+		"@type:server.dll!PVAL_ENUM:ChoreoLookAtMode_t" = 1855753749
+		"@type:server.dll!PVAL_ENUM:ChoreoLookAtSpeed_t" = 4241769962
+		"@type:server.dll!PVAL_ENUM:ChoreoScriptedMoveTo_t" = 2179696382
+		"@type:server.dll!PVAL_ENUM:DamageTypes_t" = 2170947975
+		"@type:server.dll!PVAL_ENUM:ECitadelGameMode" = 4267472791
+		"@type:server.dll!PVAL_ENUM:ECitadelMatchMode" = 1217247979
+		"@type:server.dll!PVAL_ENUM:EGameState" = 1093534349
+		"@type:server.dll!PVAL_ENUM:EModifierState" = 3750352229
+		"@type:server.dll!PVAL_ENUM:EStreetBrawlGameState" = 62714967
+		"@type:server.dll!PVAL_ENUM:Flags_t" = 586122488
+		"@type:server.dll!PVAL_ENUM:GameAnimEventIndex_t" = 1356365256
+		"@type:server.dll!PVAL_ENUM:HitGroup_t" = 3817317871
+		"@type:server.dll!PVAL_ENUM:MoveType_t" = 831783037
+		"@type:server.dll!PVAL_ENUM:NPC_STATE" = 3496838490
+		"@type:server.dll!PVAL_ENUM:NPCFollowFormation_t" = 1844189520
+		"@type:server.dll!PVAL_ENUM:ParticleAttachment_t" = 2760371775
+		"@type:server.dll!PVAL_ENUM:PulseCollisionGroup_t" = 3569657246
+		"@type:server.dll!PVAL_ENUM:PulseCursorCancelPriority_t" = 627611872
+		"@type:server.dll!PVAL_ENUM:PulseCursorWakePriority_t" = 2889899724
+		"@type:server.dll!PVAL_ENUM:PulseDurationStringFormat_t" = 1531666510
+		"@type:server.dll!PVAL_ENUM:PulseNPCCondition_t" = 4250447670
+		"@type:server.dll!PVAL_ENUM:PulseTraceContents_t" = 1979282183
+		"@type:server.dll!PVAL_ENUM:SharedMovementGait_t" = 2695773104
+		"@type:server.dll!PVAL_ENUM:StanceType_t" = 4217034654
+		"@type:server.dll!PVAL_ENUM:TestInputOutputCombinationsEnum_t" = 4116603079
 	}
 	resource_manifests = 
 	[

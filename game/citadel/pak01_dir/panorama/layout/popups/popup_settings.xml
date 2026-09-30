@@ -298,6 +298,9 @@
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="CrouchToggleBinder" bind="CrouchToggle" />
 						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_down_dash, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="DownDashBinder" bind="DownDash" />
+						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_move_up, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="MoveUpBinder" bind="MoveUp" />
 						</PopupSettingsSettingsRow>
@@ -455,6 +458,38 @@
 							<CitadelSettingsKeyBinder id="HideoutCameraOutBinder" bind="HideoutCameraOut" new-setting-index="7" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow />
+					</PopupSettingsSettingsSubsection>
+					<PopupSettingsSettingsSubsection id="citadel_settings_shopkeybinds">
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_shop_purchase_search_match, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ShopPurchaseSearchMatchBinder" bind="ShopPurchaseSearchMatch" new-setting-index="23" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_shop_focus_search, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ShopFocusSearchBinder" bind="ShopFocusSearch" new-setting-index="23" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_shop_tab_build, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ShopTabBuildBinder" bind="ShopTabBuild" new-setting-index="23" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_shop_tab_recommended, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ShopTabRecommendedBinder" bind="ShopTabRecommended" new-setting-index="23" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_shop_tab_all_items, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ShopTabAllItemsBinder" bind="ShopTabAllItems" new-setting-index="23" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_shop_tab_weapon, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ShopTabWeaponBinder" bind="ShopTabWeapon" new-setting-index="23" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_shop_tab_spirit, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ShopTabSpiritBinder" bind="ShopTabSpirit" new-setting-index="23" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_shop_tab_vitality, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ShopTabVitalityBinder" bind="ShopTabVitality" new-setting-index="23" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_shop_tier_up, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ShopTierUpBinder" bind="ShopTierUp" new-setting-index="23" />
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_shop_tier_down, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="ShopTierDownBinder" bind="ShopTierDown" new-setting-index="23" />
+						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_spectatorkeybinds">
 						<PopupSettingsSettingsRow>
@@ -1026,6 +1061,14 @@
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_unit_status_show_critical_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle class="CheckBox" text="#citadel_settings_unit_status_show_critical" convar="citadel_unit_status_show_critical_state" new-setting-index="17" />
 						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_unit_status_hero_name_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_unit_status_hero_name" searchable="true" search-alias="#citadel_settings_unit_status_hero_name_search" new-setting-index="24" />
+							<CitadelEnumDropDown id="UnitStatusHeroNameDropDown" convar="citadel_unit_status_hero_name_mode">
+								<Label id="unitstatusheroname0" value="0" text="#citadel_settings_unit_status_hero_name_player" />
+								<Label id="unitstatusheroname1" value="1" text="#citadel_settings_unit_status_hero_name_hero" />
+								<Label id="unitstatusheroname2" value="2" text="#citadel_settings_unit_status_hero_name_none" />
+							</CitadelEnumDropDown>
+						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_damage_text_cumulative_tooltip , SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_damage_text_cumulative" searchable="true" new-setting-index="17" />
 							<CitadelEnumDropDown id="DamageTextCumulativeModeDropDown" convar="citadel_damage_text_cumulative_mode" onmouseout="UIHideTextTooltip()">
@@ -1245,6 +1288,12 @@
 						<Panel class="SettingsGroup" id="CustomUIColorOptions" hidden-by="CustomUIColorsToggle">
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_enemy_ui_color_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 								<CitadelSettingsColorSlider id="EnemyUIColor" text="#citadel_settings_enemy_ui_color" convar="citadel_enemy_ui_color" search-alias="#citadel_settings_enemy_ui_color_search" />
+							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_enemy_damage_delta_color_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsColorSlider id="EnemyDamageDeltaColor" text="#citadel_settings_enemy_damage_delta_color" convar="citadel_enemy_damage_delta_color" search-alias="#citadel_settings_enemy_damage_delta_color_search" />
+							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_enemy_zipline_color_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsColorSlider id="EnemyZiplineColor" text="#citadel_settings_enemy_zipline_color" convar="citadel_enemy_zipline_color" search-alias="#citadel_settings_enemy_zipline_color_search" />
 							</PopupSettingsSettingsRow>
 						</Panel>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_light_sensitivity_mode_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
