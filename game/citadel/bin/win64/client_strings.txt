@@ -118,6 +118,8 @@
  (%d)Unknown
  (%ld unused bits)\n
  (+%d more due to usercommand delivery)
+ (08@HPXb`
+ (0X`hpz`
  (Dirty Animation)
  (INVALID PSS PARAMETERS)\n
  (Negative)
@@ -135,6 +137,7 @@
  -0000
  .CPlayer_GetNicknameList_Request
  .CPublishedFile_Publish_Response"2
+ .PhD
  240 frames: %5.1f fps, avg time:%5.2fms, abs_range:%7.2fms, min_time:%5.2fms, max_time:%5.2fms\n
  240 frames: %5.1f fps, avg:%5.2fms +/- %-7.2f | min:%5.2fms, max:%5.2fms
  240 server ticks: %5.1f tps, avg time:%5.2fms, abs_range:%7.2fms, min_time:%5.2fms, max_time:%5.2fms
@@ -765,8 +768,10 @@
 #Citadel_HeroReleaseVote_Terminal_Overhead
 #Citadel_HideoutBallJuggle_Increment
 #Citadel_HideoutBallJuggle_Land
-#Citadel_HideoutConnectionFailed_FailedToConnect
+#Citadel_HideoutConnectionFailed_GCDisabled
 #Citadel_HideoutConnectionFailed_NoServer
+#Citadel_HideoutConnectionFailed_PlayersInMatch
+#Citadel_HideoutConnectionFailed_TooFewPlayers
 #Citadel_HideoutConnectionFailed_VersionIncompatible
 #Citadel_Hud_BuyPhase_Countdown
 #Citadel_Hud_CastTimeRemaining
@@ -2187,7 +2192,6 @@ $hRh
 %s at offset %u, run %s %d bytes\n
 %s at offset invalid, reading field %s for %d bytes\n
 %s bytes
-%s caches (type %u) - %u\n
 %s called on fill brush type %d\n
 %s copying array count %d\n
 %s created page that doesn't auto-delete "%s"\n
@@ -3300,7 +3304,6 @@ $hRh
 *?IsObject@Value@v8@@QEBA_NXZ
 *BaseEntity::CBodyComponent
 *BaseModelEntity::CBodyComponentBaseModelEntity
-*CEnvWindSharedAPI
 *Gets the last-played times for the account
 *Returns the player's community preferences
 *UlS
@@ -3641,7 +3644,6 @@ $hRh
 ../src/devtools/bin/certificates/game/
 ..CPlayer_GetNewSteamAnnouncementState_Response"_
 ..uR5&m
-.0mD
 .4bb
 .97yY
 .?AU?$CameraOp_Approach_t@M@@
@@ -3947,6 +3949,7 @@ $hRh
 .?AV<lambda_10>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@
 .?AV<lambda_10>@?1??UpdateDirtyPanel@CCitadel_UI_ShopFilters@@UEAAXXZ@
 .?AV<lambda_10>@?BG@??UpdateDirtyPanel@CCitadel_UI_HideoutInWorldRanked@@UEAAXXZ@
+.?AV<lambda_11>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@
 .?AV<lambda_12>@?1??Reset@CCitadelHud_DamageEvent_Indicator@@QEAA_NXZ@
 .?AV<lambda_14>@?6???R<lambda_8>@?1??UpdateKothCashInMeter@CCitadel_Hud_Koth@@AEAAXXZ@QEBA@H@Z@
 .?AV<lambda_14>@?BI@??UpdateDirtyPanel@CCitadel_UI_HideoutInWorldRanked@@UEAAXXZ@
@@ -4386,7 +4389,6 @@ $hRh
 .?AV<lambda_7>@?1???R<lambda_2>@?1??UpdateDirtyPanel@CCitadel_UI_CommendNotification@@UEAAXXZ@QEBA@PEAVCPanel2D@panorama@@H@Z@
 .?AV<lambda_7>@?1???R<lambda_4>@?1??UpdateTeam@CCitadel_DB_PostGame_Team@@QEAAXPEAVCCitadel_DB_Page_PostGame_New@@AEBVCMsgMatchMetaDataContents_MatchInfo@@W4ECitadelLobbyTeam@@AEBV?$CUtlVector@PEBVCMsgMatchMetaDataContents_Players@@HV?$CUtlVectorMemory_Growable@PEBVCMsgMatchMetaDataContents_Players@@H$0A@@@@@PEBVCMsgMatchMetaDataContents_Players@@PEA_N@Z@QEBA@PEAVCPanel2D@panorama@@H@Z@
 .?AV<lambda_7>@?1??UpdateComponentModList@CCitadel_Tooltip_ModDetails@@AEAAXPEBUCitadelAbilityVData@@@Z@
-.?AV<lambda_7>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@
 .?AV<lambda_7>@?1??UpdateDirtyPanel@CCitadel_ShopModBuildCategory@@UEAAXXZ@
 .?AV<lambda_7>@?CI@??SetupQuestions@CCitadel_UI_Popup_PostMatchSurvey@@QEAA_NAEBV?$CUtlVector@PEBUCitadelHeroData_t@@HV?$CUtlVectorMemory_Growable@PEBUCitadelHeroData_t@@H$0A@@@@@@Z@
 .?AV<lambda_8>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@
@@ -10273,9 +10275,10 @@ $hRh
 .?AV?$_Func_base@_NPEAVCToggleButton@panorama@@@std@@
 .?AV?$_Func_base@_NPEAVIUIPanel@panorama@@PEAV12@@std@@
 .?AV?$_Func_impl_no_alloc@P6AXPEAVCSceneObject@@@ZXPEAV1@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_10>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_10>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@PEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_10>@?1??UpdateDirtyPanel@CCitadel_UI_ShopFilters@@UEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_10>@?BG@??UpdateDirtyPanel@CCitadel_UI_HideoutInWorldRanked@@UEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_11>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_12>@?1??Reset@CCitadelHud_DamageEvent_Indicator@@QEAA_NXZ@_NPEAVCPanel2D@panorama@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_14>@?6???R<lambda_8>@?1??UpdateKothCashInMeter@CCitadel_Hud_Koth@@AEAAXXZ@QEBA@H@Z@PEAVCCitadel_UI_HeroImage@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_14>@?BI@??UpdateDirtyPanel@CCitadel_UI_HideoutInWorldRanked@@UEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
@@ -10717,16 +10720,15 @@ $hRh
 .?AV?$_Func_impl_no_alloc@V<lambda_7>@?1???R<lambda_2>@?1??UpdateDirtyPanel@CCitadel_UI_CommendNotification@@UEAAXXZ@QEBA@PEAVCPanel2D@panorama@@H@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_7>@?1???R<lambda_4>@?1??UpdateTeam@CCitadel_DB_PostGame_Team@@QEAAXPEAVCCitadel_DB_Page_PostGame_New@@AEBVCMsgMatchMetaDataContents_MatchInfo@@W4ECitadelLobbyTeam@@AEBV?$CUtlVector@PEBVCMsgMatchMetaDataContents_Players@@HV?$CUtlVectorMemory_Growable@PEBVCMsgMatchMetaDataContents_Players@@H$0A@@@@@PEBVCMsgMatchMetaDataContents_Players@@PEA_N@Z@QEBA@PEAVCPanel2D@panorama@@H@Z@XPEAVCCitadel_DB_PostGame_Award@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_7>@?1??UpdateComponentModList@CCitadel_Tooltip_ModDetails@@AEAAXPEBUCitadelAbilityVData@@@Z@XPEAVCPanel2D@panorama@@H@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_7>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@PEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_7>@?1??UpdateDirtyPanel@CCitadel_ShopModBuildCategory@@UEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_7>@?CI@??SetupQuestions@CCitadel_UI_Popup_PostMatchSurvey@@QEAA_NAEBV?$CUtlVector@PEBUCitadelHeroData_t@@HV?$CUtlVectorMemory_Growable@PEBUCitadelHeroData_t@@H$0A@@@@@@Z@X$$V@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_8>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_8>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@PEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_8>@?1??UpdateDirtyPanel@CCitadel_ShopModsBuild@@UEAAXXZ@PEAVCCitadel_ShopModBuildCategory@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_8>@?1??UpdateLeaderboardEntries@CCitadel_UI_Popup_GlobalLeaderboards@@AEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_8>@?1??UpdatePanel@CCitadel_UI_Popup_SellMaxItems@@AEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_8>@?9??UpdateDirtyPanel@CCitadel_UI_HideoutInWorldRanked@@UEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_9>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@_NPEAVCPanel2D@panorama@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_9>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@PEAVCPanel2D@panorama@@H@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_9>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_9>@?1??UpdateDirtyPanel@CCitadel_ShopModsBuild@@UEAAXXZ@XPEAVCCitadel_ShopModBuildCategory@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_9>@?2??UpdateDirtyPanel@CCitadel_DB_Page_Play@@EEAAXXZ@XPEAVCLabel@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_9>@?M@??UpdateDirtyPanel@CCitadel_DB_PostGame_Scoreboard_New@@EEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
@@ -17080,6 +17082,7 @@ $hRh
 .?AW4ValueRemapperOutputType_t@@
 .?AW4ValueRemapperRatchetType_t@@
 .?AW4attributeprovidertypes_t@@
+.Am_hLight
 .CBaseUserCmdExecutionNotes:
 .CBaseUserCmdPB
 .CBaseUserCmdPB:
@@ -17654,7 +17657,6 @@ $hRh
 .lbN
 .png
 .pp@0
-.pxD
 .steammessages_unified_base.steamworkssdk.proto"
 .steammessages_unified_base.steamworkssdk.proto"4\n2CPlayer_GetMutualFriendsForIncomingInvites_Request"\\n&CPlayer_IncomingInviteMutualFriendList
 .steammessages_unified_base.steamworkssdk.proto"\\n"CMsgSteamLearnDataSourceDescObject
@@ -17726,12 +17728,12 @@ $hRh
 0123456789
 02V8[
 05=k
+08@J`
 08bX
 09,h
 0:00
 0;Q5[
 0<cz
-0DD?
 0M2~@p
 0Marks latest announcement timestamp read by user
 0Name of the file to publish in the user's cloud.
@@ -17774,7 +17776,6 @@ $hRh
 0e\r8
 0pp@5tqE?|sO541
 0tU+xc:
-0v$H?
 0x%4.4x 
 0x%X
 0x%X 
@@ -18101,7 +18102,7 @@ $hRh
 4@AA
 4Ch;
 4F0I
-4F\v01
+4F\vP1
 4Mv8
 4Redirection URI provided during client registration.2
 4Zis
@@ -18171,7 +18172,7 @@ $hRh
 6(Optional) Type of game the published file represents.
 6,2K
 6-zeZ
-60`D
+60zD
 62$|S)6f
 64CK\vH
 65535
@@ -18184,11 +18185,9 @@ $hRh
 6?NumberValue@Value@v8@@QEBA?AV?$Maybe@N@2@V?$Local@VContext@v8@@@2@@Z
 6H,N
 6O|T%
-6PrD
 6Qd=
 6Returns the URL of the proper cloud server for a user.
 6True if the operation was successful, false otherwise.
-6Z\rE
 6\n1k_EMsgClientToGCTarotDevGenerateTestTilesResponse
 6\n1k_EMsgClientToGCUpdateHeroBuildPreferenceResponse
 6\n2GAME_PARTICLE_MANAGER_EVENT_UPDATE_ENTITY_POSITION
@@ -18349,6 +18348,7 @@ $hRh
 :    initpredictable %d:%s for %d slots\n
 : lexer error %d :\n\t%s at offset %d, 
 : unrecognized parent "%s"\n
+:%s caches (type %u) - %u\n
 :':+:1:K:Q:[:c:g:m:y:
 :4\n\vdescription
 :9\n\tkey_field
@@ -18393,7 +18393,6 @@ $hRh
 ;\n\taccolades
 ;`Fzc
 ;bwP*
-;cc_emit
 ;sv_pausable;sv_cheats
 ;xsK
 <!-- dmx encoding keyvalues2_noids 4 format vtex 1 -->\n"CDmeVtex"\n{\n\t"m_inputTextureArray" "element_array"\n\t[\n
@@ -18492,6 +18491,7 @@ $hRh
 =========================\n
 =======================\n
 => TempVarBank: Bank%d\n
+=CCitadel_Modifier_StompDebuff
 =CNmTransitionNode::CDefinition
 =O?AqP
 =Q9M
@@ -18506,7 +18506,6 @@ $hRh
 =\n\tstat_type
 =\tV_atand
 =cdE
-=modifier_punkgoat_goatgoingup
 =trF6,#
 > No World, Just Minimap and sound*
 >#>)>/>3>A>W>c>e>w>
@@ -18552,7 +18551,7 @@ $hRh
 ??1TryCatch@v8@@QEAA@XZ
 ??1Utf8Value@String@v8@@QEAA@XZ
 ?BooleanValue@Value@v8@@QEBA_NPEAVIsolate@2@@Z
-?CCitadel_Ability_Familiar_HelpingHandsVData
+?CCitadelTriggerMultiCapturePoint_API
 ?Call@Function@v8@@QEAA?AV?$MaybeLocal@VValue@v8@@@2@V?$Local@VContext@v8@@@2@V?$Local@VValue@v8@@@2@HQEAV52@@Z
 ?CreateHandle@HandleScope@v8@@KAPEA_KPEAVIsolate@internal@2@_K@Z
 ?DisposeGlobal@api_internal@v8@@YAXPEA_K@Z
@@ -18572,7 +18571,6 @@ $hRh
 ?GetName@Function@v8@@QEBA?AV?$Local@VValue@v8@@@2@XZ
 ?Global@Context@v8@@QEAA?AV?$Local@VObject@v8@@@2@XZ
 ?GlobalizeReference@api_internal@v8@@YAPEA_KPEAVIsolate@internal@2@_K@Z
-?Good
 ?HAI\t81\t9dcG'
 ?HP4
 ?HasCaught@TryCatch@v8@@QEBA_NXZ
@@ -18590,6 +18588,7 @@ $hRh
 ?\n\rmatch_outcome
 ?\nnexttoken
 ?\tV_atof
+?citadel_steamtimeline_show_dev_messages
 ?color
 ?d86L
 ?dt]X
@@ -18597,25 +18596,23 @@ $hRh
 ?gwL
 ?jOb
 ?m_flPosition
-?soundcommands_t
+?m_vMinBounds
 ?srJO
+?team_manager
 ?tya
 ?uWS
 ?x29
 @!@%@+@1@?@C@E@]@a@g@m@
 @":\n$CCitadelUserMsg_SpectatorTeamChanged
-@08N$H?
 @0pp
-@>PvD
 @?SlowGetInternalField@Object@v8@@AEAA?AV?$Local@VData@v8@@@2@H@Z
 @BH]f
 @BoneSetup
 @CAccoladeDefinition
-@CitadelChat
+@CitadelFriendsListEntryParty
 @DebugIndividualStyle
 @MfKZ
 @Pgl
-@PqM
 @Pu\rm
 @Requests the metadata that was generated from a specified fetch.
 @WE]X
@@ -19659,6 +19656,7 @@ BOGUS
 BOOL ABSENT
 BOOLEAN
 BPIN_txt
+BPingTargetMatch_t
 BReadyForDisplay
 BRouteMsgToJob
 BScrollParentToFitWhenFocused
@@ -19678,7 +19676,6 @@ BUG:  %s couldn't look up codegen info for CEntityClass(%s)\n
 BULLET
 BUMP_WITH_TIMEOUT_WHEN_LEARNED
 BURN
-BWhat information do we want to display for Vitality?
 BY_FILE_CTRL
 BY_Lq)
 BYldPromptYesNo
@@ -19689,7 +19686,7 @@ B\n\fmeasurements
 B\n\nobjectives
 B\n\rHeroWhitelist
 B\n\vbook_reward
-B\v01
+B\vP1
 B\vP\n0
 B\vp\n0
 B\vp\nP
@@ -19904,6 +19901,7 @@ BlueValue
 Blur slice %i
 BlurBackground
 BlurVisionRange
+Bm_nPrevFullStacks
 BoX5
 Body Component Scriptdesc
 Body Group Name
@@ -20872,7 +20870,6 @@ CCitadelLocalMatchHost::WaitForReady
 CCitadelMatchmakingStatusInfo_API
 CCitadelModifierFrameUpdateGameSystem
 CCitadelModifier_API
-CCitadelMusicCueData_t
 CCitadelMusicManager::FireGameEvent
 CCitadelNeutralCampTimerSystem
 CCitadelNewSettingsSchema: %s\n
@@ -20922,7 +20919,6 @@ CCitadelSteamShare
 CCitadelTeamRevealHeroCard_API
 CCitadelTriggerBonk_API
 CCitadelTriggerCapturePoint_API
-CCitadelTriggerMultiCapturePoint_API
 CCitadelTunnelNode::CCitadelTunnelNetworkManager
 CCitadelTunnelNode_API
 CCitadelTunnelTrigger_API
@@ -21341,6 +21337,7 @@ CEnvVolumetricFogController_API::SetToDefaults
 CEnvVolumetricFogVolume_API
 CEnvVolumetricFogVolume_API::Disable
 CEnvVolumetricFogVolume_API::Enable
+CEnvWindSharedAPI
 CEnvironmentLight_API
 CExtraMsgBlock
 CFatalErrorAllocator::AllocConstAligned
@@ -21583,7 +21580,6 @@ CInfoOffscreenPanoramaTexture_API::Disable
 CInfoOffscreenPanoramaTexture_API::Enable
 CInfoOffscreenPanoramaTexture_API::RemoveCSSClass
 CInfoTutorialPoint_API
-CInfoVisibilityBox_API
 CInfoVisibilityBox_API::Disable
 CInfoVisibilityBox_API::Enable
 CInfoWorldLayer_API
@@ -22437,6 +22433,7 @@ CPlayer_WeaponServices *
 CPointCameraVFOV_API
 CPointCamera_API
 CPointCamera_API::Activate
+CPointCamera_API::ChangeFOV
 CPointCamera_API::Deactivate
 CPointCamera_API::DisableDOF
 CPointCamera_API::EnableDOF
@@ -23848,6 +23845,7 @@ CitadelCaptureBinding
 CitadelCastCheaterVote
 CitadelChallengeUpdated
 CitadelChangeSettingsHeroSelection
+CitadelChat
 CitadelChatCheckExpireMessage
 CitadelChatInputBlur
 CitadelChatInputSubmitted
@@ -23958,7 +23956,6 @@ CitadelFriendStatusChanged
 CitadelFriendVoiceTransmittingStateChanged
 CitadelFriendsList
 CitadelFriendsListEntry
-CitadelFriendsListEntryParty
 CitadelFriendsPanelButtonClicked
 CitadelGCConnectionStatusChanged
 CitadelGameAccountClientChanged
@@ -24206,7 +24203,6 @@ CitadelLatestNewsEntriesUpdated
 CitadelLeaderboardsSelectHero
 CitadelLeaderboardsSelectRegion
 CitadelLeaderboardsUpdated
-CitadelLearnPage
 CitadelLeaveMatchmaking
 CitadelLeftGameLobby
 CitadelLevelReward
@@ -24398,6 +24394,7 @@ CitadelPrivateLobbyPage
 CitadelPrivateLobbyReadyUp
 CitadelPrivateLobbySetBotDifficulty
 CitadelPrivateLobbySetCheatsEnabled
+CitadelPrivateLobbySetCorruptedItemShopSpawnMinutes
 CitadelPrivateLobbySetDuplicateHeroesEnabled
 CitadelPrivateLobbySetGameMode
 CitadelPrivateLobbySetPartySlot
@@ -25038,6 +25035,7 @@ Cluster Endcap node removed ( num: %d )\n
 Cluster node '%s' added ( num: %d )\n
 Cluster node removed ( num: %d )\n
 Cluster node total count ( primary: %d, endcap: %d )\n
+Cm_IdleParticle
 Cmd %d likely server substitute
 Co-dependent physics tasks detected!
 Coarse
@@ -27025,7 +27023,6 @@ ExtraSweepRange
 ExtraTargetConeAngle
 ExtraTargetHorizontalOffset
 Extraneous token
-F aD
 F#bgn?MwN|%
 F'pY
 F+Zb
@@ -27037,6 +27034,7 @@ F7!z
 F9q'
 F<mb
 F?ToString@Value@v8@@QEBA?AV?$MaybeLocal@VString@v8@@@2@V?$Local@VContext@v8@@@2@@Z
+F@iD
 FALL
 FCVAR_DEMO
 FCVAR_DEVELOPMENTONLY
@@ -27094,7 +27092,6 @@ F\n\finventories3
 F\n\fitem_scalars
 F\n\trow_range
 F\rH'4
-F`aD
 Face %s
 Face Actor
 FaceposerSectionPause
@@ -27604,7 +27601,7 @@ GCSDK::GCDirIndex_t
 GCSQL_VERSION_BASELINE
 GCSQL_VERSION_BOOLTYPE
 GCType_t"2\n
-GCitadelPrivateLobbySetCorruptedItemShopSpawnMinutes
+GCitadelLearnPage
 GENERALIZEDTIME
 GENERALSTRING
 GENERAL_ALLOCATE_BOOLEAN
@@ -27972,6 +27969,7 @@ Gold
 GoldPerMinute
 GoldStar
 GooDuration
+Good
 Got CMsgClientToGCStartMatchmakingResponse: %s\n
 Got a NaN origin on %s\n
 Got a NaN velocity on %s\n
@@ -30708,6 +30706,7 @@ Next Break Stage
 Next attempt: %s, Backoff count: %u\n
 NextCycle
 NextHeroBadgeIcon
+NextIsSell
 NextItemButton
 NextLevelProgressBar
 NextRewardIsAbilityUnlock
@@ -31307,11 +31306,11 @@ P-224
 P-256
 P-384
 P-521
-P08N$H?
+P08@J`
 P1\t98"
 P2P ping to "%s". Timed out after %.2fms\n
 P5[1
-P6@tD
+P6 |D
 PAGN_4
 PAIgnPrm
 PANORAMA_LAYOUTFILE
@@ -31350,7 +31349,6 @@ PBKDF2PARAM
 PBMAC1
 PC_NETWORKED_ONLY
 PC_NON_NETWORKED_ONLY
-PDD?
 PEIF
 PEM lib
 PEM part of OpenSSL 1.0.2j  26 Sep 2016
@@ -32107,7 +32105,6 @@ Please Wait
 Please specify 0 or 1 with the -stream Parameter\n
 Pm8A?
 PmR"H?
-Pn$H?
 Point entity.
 Point under crosshair
 Policy Qualifier CPS
@@ -32711,7 +32708,6 @@ R\n\nBookReward
 R\n\rincludekvtags
 R\r1>Vp
 R\vp!y
-R\vpDD?
 R]Di
 Rad2 Deg
 RadialBackground
@@ -37024,7 +37020,7 @@ WinningTeam
 WinningTeamNumber
 Wins
 WizardSubPanel.BgColor
-Wm_angEyeAngles
+Wm_vecFOWEntities
 Wmn|CH
 Wn4'
 Work Item for Work Pool %s completed but job no longer existed to notify\n
@@ -37766,7 +37762,6 @@ Z~wl
 \nFinished generating SSTs (%.1f seconds)\n\n
 \nGameTime_t
 \nGameTime_t:
-\nPDD?
 \nSimulating Entities:\n\n
 \n[ Spirit ]
 \n[ Vitality ]
@@ -38640,7 +38635,6 @@ Z~wl
 \r!\r+\r-\r=\r?\rO\rU\ri\ry\r
 \r@h!Aq8
 \rB6uZ
-\rCCitadelTriggerBonkVData
 \rChallengeID_t
 \rChallengeID_t"
 \rCitadelMMRu_t
@@ -38673,6 +38667,7 @@ Z~wl
 \r^mX
 \ri1I
 \rjwB\t
+\rk_eUnitBucket_Boss
 \roKK
 \rrCj
 \rstyle_index_t
@@ -38902,7 +38897,6 @@ Z~wl
 \v\vTSG
 \vj0k
 \vjC7
-\vpDD?
 ]1h=bfz
 ]FhSD}
 ]GT7]
@@ -38910,6 +38904,7 @@ Z~wl
 ]MSd
 ][LK~lO
 ^.om5r
+^0gD
 ^DnJ
 ^DqPt
 ^J_spY
@@ -39001,7 +38996,7 @@ _}eOk
 `\n\rvector_values
 `fPw.\vM
 `h9T~
-`htP
+`htp
 `o_je
 `yNT
 a null shared library handle was used
@@ -39020,7 +39015,6 @@ a:typeparam
 a;Tg
 a@XZ
 aA0k
-aBv$H?
 aD/x
 aDSS
 aECDH
@@ -41159,7 +41153,7 @@ cycle_class
 cycle_classes
 cz>Sp
 d e not congruent to 1
-d%$82
+d%$X2
 d.allOrFirstTier
 d.authenticatedData
 d.certificate
@@ -41561,6 +41555,8 @@ dh_paramgen_type
 dh_rfc5114
 dhpublicnumber
 dialog_mix_priority
+dialog_variable_int_name
+dialog_variable_int_value
 dialog_variable_locstring
 dialog_variable_name
 dietime
@@ -42819,6 +42815,7 @@ flRadians
 flRoll
 flScaleAmount
 flSeconds
+flStackDecayTime
 flTValue
 flTime
 flVal
@@ -43681,6 +43678,7 @@ hover
 hover_label
 hovering
 hp_stat
+hpz`
 hr_H
 href="
 hscroll
@@ -46878,6 +46876,7 @@ modifier_punkgoat_blastedshred
 modifier_punkgoat_goatflip_damagebuff
 modifier_punkgoat_goatflip_empowermelee
 modifier_punkgoat_goatflip_maxhealthbuff
+modifier_punkgoat_goatgoingup
 modifier_punkgoat_goatgoingup_aircontrol
 modifier_punkgoat_sigil_aura
 modifier_punkgoat_tether
@@ -47188,6 +47187,7 @@ mysterious_
 mzP"T
 n < (int)sizeof(ctx->enc_data)
 n does not equal p q
+n eD
 n-resize
 n0?X
 n1Z 
@@ -47196,7 +47196,7 @@ n6j/
 n:2C[
 n@PK
 nAnimEvent
-nCPointCamera_API::ChangeFOV
+nCInfoVisibilityBox_API
 nCRD
 nChangeOffset < INT16_MAX
 nChangeOffset > 0
@@ -47917,8 +47917,6 @@ p.other
 p.ppBasis
 p.prime
 p.tpBasis
-p08@H^$H?
-p0j 
 p2p_ping could not convert "%s" to a CPeerToPeerAddress\n
 p2p_ping could not ping "%s" because they are an unknown peer\n
 p2p_ping requires a destination address\n
@@ -47934,7 +47932,6 @@ pBuffer != nullptr
 pCachedPoseBuffer->m_ID.IsValid()
 pCheckpointName
 pD4t
-pDD?
 pData->GetDataDescMap() == pTemplateDataMap
 pDescription
 pDest
@@ -48335,7 +48332,6 @@ perspective
 perspective-origin
 peru
 pet_npc_script_override
-pflStackDecayTime
 pgi_hash
 phase not supported
 phase1
@@ -48575,7 +48571,6 @@ playresponse
 playtime_2weeks
 playtime_forever
 plum
-pn$H?
 pngsize
 point
 point arithmetic failure
@@ -48826,6 +48821,7 @@ pseudonym
 psk identity not found
 psk no client cb
 psk no server cb
+ptype
 pub: 
 pub_key
 pubkey
@@ -48944,7 +48940,6 @@ rRfKR
 rX&O0
 rZ1VwGf5
 rZPM
-r\fpDD?
 r\n\vstart_index
 r\vDi
 r_citadel_mboit_enabled
@@ -52202,7 +52197,7 @@ z/B,9d
 z<d2
 z>Hz
 z?ff
-zDWhen you sell an item.
+zDm_OnStartTouch
 zF):O4
 zG2m8
 zRXU 
