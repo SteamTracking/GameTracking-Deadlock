@@ -405,6 +405,7 @@ A light attack will trigger if the melee button is pressed and released within t
 A list of modifier value stats to show in the UI (if empty, will show everything)
 A master convar that effectively disables the entire footlock node.
 A minimum on particle simulation time, particle simulation happening more frequently than this will lerp.
+A pinged teammate with no other living ally (the pinger included) within this many units is told to be careful.
 A short time delay with modulation for flange and chorus effects.
 A simple delay with separate left & right delay times.
 A simple reverb that approximates the reflections of a box-shaped room, copied from previous audio system.
@@ -5134,6 +5135,7 @@ CITADEL_PING_RETREAT
 CITADEL_PING_SHOP_CLOSED
 CITADEL_PING_SINNERS_HERE
 CITADEL_PING_SOMEONE_BUY_THIS
+CITADEL_PING_SOMEONE_WAS_HERE
 CITADEL_PING_SORRY
 CITADEL_PING_SPLIT_PUSH
 CITADEL_PING_STAY_TOGETHER
@@ -6825,6 +6827,7 @@ CScaleFunctionAbilityProperty_NanoTechRoundsDamage
 CScaleFunctionAbilityProperty_TechDamage
 CScaleFunctionAbilityProperty_TechDuration
 CScaleFunctionAbilityProperty_TechRange
+CScaleFunctionAbilityProperty_TechRangeFloored
 CScaleFunctionAbilityProperty_WeaponDamage
 CScaleFunctionBase
 CScaleFunctionVData
@@ -7882,6 +7885,7 @@ C_TintController
 C_TonemapController2
 C_TonemapController2Alias_env_tonemap_controller2
 C_TrackedProjectile_Synth_PlasmaFlux
+C_TriggerInvisVolume
 C_TriggerItemShop
 C_TriggerLerpObject
 C_TriggerMultiple
@@ -12476,6 +12480,7 @@ HideSprite
 HideWorldLayer
 HideWorldLayerAndDestroyEntities
 Hideout
+Hides Healthbars, Local Hero, HUD
 Hides the game UI
 Hides the overlay.
 Hides your own health bar on the HUD
@@ -16365,6 +16370,7 @@ Only warp if there is a warp tag active. Otherwise this node will warp whenever 
 OnlySearchAnimEvents
 OnlySearchGraphEvents
 Opacity scale for see-thru UI
+Opacity, in percent, of the HUD subtitle background.
 Open
 Open ModelDoc to the model under the cursor.  Pass any parameter to open your own model
 Open a VConsole subtool.
@@ -20311,6 +20317,7 @@ StrikeTime
 String
 Stun the local player
 Stunned
+Style of the HUD subtitle background: 0 solid, 1 outline.
 Sub
 Sub-Sample Between Input Points
 SubGraph
@@ -20913,6 +20920,7 @@ The weights from the tip of the chain to the base. 0 is the effector/tip of the 
 These are the unique aims of this hero.  If one is not specified, the "idle" aim will be used instead.
 These joints will maintain their offset relative to the camera joint.
 Thickness
+Thickness, in pixels, of the outline around the HUD subtitles when their background style is outline.
 Third
 This NPC will take no damage or react to it
 This ability provides these types of ability target effects.
@@ -24830,6 +24838,7 @@ citadel_per_weapon_per_surface_impact_effects
 citadel_perf_interval_report_s
 citadel_perf_long_frame_time_threshold_ms
 citadel_perf_short_idle_time_threshold_ms
+citadel_photomode_enabled
 citadel_pickup
 citadel_pickup_ability
 citadel_pickup_assigned_gold
@@ -24856,6 +24865,7 @@ citadel_ping_radial_anchor_mode
 citadel_ping_radial_debug_gesture
 citadel_ping_radial_early_open_deflection_deg
 citadel_ping_spam_hides_marker
+citadel_ping_teammate_alone_radius
 citadel_ping_wheel_activation_radius
 citadel_play_page_fake_data
 citadel_play_page_finished_tutorial
@@ -25318,10 +25328,13 @@ citadel_subtitles_all_caps
 citadel_subtitles_background_color_b
 citadel_subtitles_background_color_g
 citadel_subtitles_background_color_r
+citadel_subtitles_background_opacity
+citadel_subtitles_background_style
 citadel_subtitles_bold_font
 citadel_subtitles_custom_style
 citadel_subtitles_font
 citadel_subtitles_font_size
+citadel_subtitles_outline_thickness
 citadel_subtitles_text_color_b
 citadel_subtitles_text_color_g
 citadel_subtitles_text_color_r
@@ -27673,15 +27686,9 @@ fogEnd
 fogMaxDensity
 fogStart
 fog_color
-fog_colorskybox
 fog_enable
-fog_enableskybox
 fog_end
-fog_endskybox
 fog_hdrcolorscale
-fog_hdrcolorscaleskybox
-fog_maxdensity
-fog_maxdensityskybox
 fog_override
 fog_override_color
 fog_override_enable
@@ -27690,7 +27697,6 @@ fog_override_exponent
 fog_override_max_density
 fog_override_start
 fog_start
-fog_startskybox
 fog_type
 fog_volume
 fog_volume_debug

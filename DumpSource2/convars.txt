@@ -3787,6 +3787,9 @@ citadel_perf_long_frame_time_threshold_ms 17.5 (developmentonly gamedll)
 citadel_perf_short_idle_time_threshold_ms 3 (developmentonly gamedll)
 	The amount of time in milliseconds where if we have less than this in idle time, count it as a low idle frame
 
+citadel_photomode_enabled false (clientdll release)
+	Hides Healthbars, Local Hero, HUD
+
 citadel_pickup_spawner_enabled true (gamedll replicated cheat release)
 	Set to false to stop citadel_pickup_spawner pickups (healing snacks) from spawning and respawning
 
@@ -3834,6 +3837,9 @@ citadel_ping_radial_early_open_deflection_deg 10 (developmentonly clientdll)
 
 citadel_ping_spam_hides_marker false (gamedll cheat)
 	Restores the old behaviour where repeat pings hid the marker as well as the sound. The marker is positional information the team needs; the noise is the spam.
+
+citadel_ping_teammate_alone_radius 1500 (gamedll cheat)
+	A pinged teammate with no other living ally (the pinger included) within this many units is told to be careful.
 
 citadel_ping_wheel_activation_radius 0.6 (developmentonly clientdll)
 	Increase this to change how much you have to move your mouse to make the mousewheel visible.
@@ -4945,6 +4951,12 @@ citadel_subtitles_background_color_g 0 (min: 0, max: 255, clientdll archive per_
 citadel_subtitles_background_color_r 0 (min: 0, max: 255, clientdll archive per_user)
 	Red channel of the HUD subtitle background color.
 
+citadel_subtitles_background_opacity 93 (min: 0, max: 100, clientdll archive per_user)
+	Opacity, in percent, of the HUD subtitle background.
+
+citadel_subtitles_background_style 0 (min: 0, max: 1, clientdll archive per_user)
+	Style of the HUD subtitle background: 0 solid, 1 outline.
+
 citadel_subtitles_bold_font true (clientdll archive per_user)
 	Show the HUD subtitles in a semi-bold font rather than normal weight.
 
@@ -4954,8 +4966,11 @@ citadel_subtitles_custom_style false (clientdll archive per_user)
 citadel_subtitles_font 0 (min: 0, max: 2, clientdll archive per_user)
 	Font of the HUD subtitles: 0 default, 1 block, 2 stylized.
 
-citadel_subtitles_font_size 16 (min: 8, max: 24, clientdll archive per_user)
+citadel_subtitles_font_size 16 (min: 8, max: 32, clientdll archive per_user)
 	Font size of the HUD subtitles.
+
+citadel_subtitles_outline_thickness 2 (min: 0, max: 6, clientdll archive per_user)
+	Thickness, in pixels, of the outline around the HUD subtitles when their background style is outline.
 
 citadel_subtitles_text_color_b 198 (min: 0, max: 255, clientdll archive per_user)
 	Blue channel of the HUD subtitle text color.
@@ -5437,7 +5452,7 @@ citadel_unit_status_name_fade_end_dist 35 (developmentonly clientdll)
 citadel_unit_status_name_fade_start_dist 25 (developmentonly clientdll)
 	Distance in meters from the camera at which names above health bars start fading out
 
-citadel_unit_status_offset_player_min_z 50 (developmentonly clientdll)
+citadel_unit_status_offset_player_min_z 75 (developmentonly clientdll)
 	Min z offset for character's whose offset attachment go very low
 
 citadel_unit_status_offset_player_z_offset_adjustment 16 (developmentonly clientdll)
@@ -7204,31 +7219,13 @@ fish_dormant false (gamedll replicated cheat)
 fog_color [-1, -1, -1] (clientdll cheat)
 	<no description>
 
-fog_colorskybox [-1, -1, -1] (clientdll cheat)
-	<no description>
-
 fog_enable true (clientdll cheat)
 	Enable fog
-
-fog_enableskybox true (clientdll cheat)
-	<no description>
 
 fog_end -1 (clientdll cheat)
 	<no description>
 
-fog_endskybox -1 (clientdll cheat)
-	<no description>
-
 fog_hdrcolorscale -1 (clientdll cheat)
-	<no description>
-
-fog_hdrcolorscaleskybox -1 (clientdll cheat)
-	<no description>
-
-fog_maxdensity -1 (clientdll cheat)
-	<no description>
-
-fog_maxdensityskybox -1 (clientdll cheat)
 	<no description>
 
 fog_override 0 (clientdll cheat)
@@ -7250,9 +7247,6 @@ fog_override_start 1000 (cheat)
 	<no description>
 
 fog_start -1 (clientdll cheat)
-	<no description>
-
-fog_startskybox -1 (clientdll cheat)
 	<no description>
 
 fog_volume_debug false (developmentonly gamedll defensive)

@@ -1248,8 +1248,6 @@ $toolgraphs
 12dB
 1:1: Tokens : ( T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | T__48 | T__49 | T__50 | T__51 | T__52 | TOK_COLON | OPEN_BRACE | CLOSE_BRACE | OPEN_PAREN | CLOSE_PAREN | OPEN_BRACKET | CLOSE_BRACKET | SEMICOLON | OP_EQUAL | COMMA | DOUBLE_AND | NEGATIVE_TOK | DOUBLE_OR | LITERAL_TRUE | LITERAL_FALSE | POS_INTLITERAL | POS_FLOATLITERAL | SCOPE_QUALIFIER | ID | DOUBLE_QUOTED_STRING | SINGLE_QUOTED_STRING | SINGLE_LINE_COMMENT | ML_COMMENT | WS | UNRECOGNIZED );
 1e<w 
-2\vp4
-2\vpl
 33s?
 488:1: POS_FLOATLITERAL : ( ( DIGIT )+ '.' ( DIGIT )* ( EXPONENT )? | '.' ( DIGIT )+ ( EXPONENT )? | ( DIGIT )+ EXPONENT );
 8fff?fff?fff?fff?
@@ -1271,6 +1269,7 @@ $toolgraphs
 <non-RTTI type>
 <unnamed>
 =X94=
+>0jK
 >EJtM
 >\tV_atanf
 ?333?
@@ -1280,6 +1279,7 @@ $toolgraphs
 ?l@GC
 ?s,DT
 ?wr^a
+@W8bI
 ANTLR3_EXCEPTION number %d (%08X).\n
 ANTLR3_EXCEPTION: %s\n
 Abort processing sound event %s (scheduled recursively will not process this frame)\n
@@ -1382,7 +1382,9 @@ C:\buildworker\citadel_rel_win64\build\src\soundsystem\snd_op_sys\sos_beatpatter
 C:\buildworker\citadel_rel_win64\build\src\soundsystem\snd_op_sys\sos_system.cpp
 C:\buildworker\citadel_rel_win64\build\src\soundsystem\snd_wave_mixer.cpp
 C:\buildworker\citadel_rel_win64\build\src\soundsystem\snd_wave_mixer_mp3.cpp
+C:\buildworker\citadel_rel_win64\build\src\soundsystem\steamaudio_wrapper.cpp
 C:\buildworker\citadel_rel_win64\build\src\soundsystem\vmix.cpp
+C:\buildworker\citadel_rel_win64\build\src\soundsystem\vmix_mixer.cpp
 C:\buildworker\citadel_rel_win64\build\src\soundsystem\vsound_manager.cpp
 CAssociateResourceBlockLoader::BlockingLoadResourceFileData: Trying to load an illegal resource name %s!\n
 CAsyncWavDataCache:  %i sounds total %s, %.2f %% of capacity\n
@@ -1390,6 +1392,7 @@ CAudioDecoderWave::OnCachedDataAvailable
 CAudioDecoderWaveMP3::OpenHandle
 CAudioMixThread::MixAudioFrame
 CFieldSelectionWordAllocator: Total number of array selection bytes on soundevent exceeded.\n\t%i required\n\t%i available\n
+CHRTFAudioProcessor::Process
 CKV3Transfer_ToolsOnlyBlockingResourceLoad
 CKV3Transfer_ToolsOnlyBlockingResourceLoad::CKV3Transfer_ToolsOnlyBlockingResourceLoad
 CLOSE_BRACE
@@ -1521,6 +1524,7 @@ CaptureSoundEventDefinitionOverwritesOn: skipped, snd_sos_capture_soundevent_ove
 Catch up mixing failed: %d times\n
 Channels:\t%d\n
 CheckAndSilenceInfiniteBuffer
+CheckFinite
 Class does not allow allocation from its schema binding
 Cleaning up leaked audio capture stream.\n
 Cleaning up leaked audio stream!\n
@@ -1809,6 +1813,7 @@ Ignoring reload of '%s' whose only changes are in vsnd_duration\n
 InOut: %.2f\nSize: %.1f
 Incorrect sampling rate in %s (mp3 frames are at %dHz, .vsnd file has %dHz)\n
 Increased audio mix latency to %.1f ms\n
+Infinite vmix control input: graph name: %s, control input type: %i.\n
 Input %s: 
 Input Diffusion1
 Input Diffusion2
@@ -1821,6 +1826,7 @@ Invalid arg %s set for subvoice playing %s\n
 Invalid field type %s for field %s\n
 Invalid vmix graph %s\n
 Is Oneshot
+IsFinite( flValue )
 KV3 Pointer
 K\tV_coshf
 KeyValues3
@@ -1928,6 +1934,7 @@ No DATA block for resource\n
 No MP3 support, can't compile!\n
 No data
 No input data for '%s'. (Empty buffer.)
+Non-Finite position received by Steam Audio
 Not safe to 'new' this class due to alignment requirements
 Note: Array declaration using table syntax on field %s in stack %s. Please convert.\n
 Note: Double array found in field %s in stack %s, value: %s\n
@@ -2040,7 +2047,6 @@ RESOURCE_TYPE_VDSP
 RESOURCE_TYPE_VMIX_LIST
 RMS Time MS
 ROOM Detected \n
-R\fpl
 Random Modulation
 Random Sampler Voice Container referenced an audio asset (%s) that's too long (%d samples. Max supported: %d)\n
 Random Sampler Voice Container referenced too many audio assets (Referenced %d. Max supported: %d)\n
@@ -3639,7 +3645,6 @@ queue
 queue_event_type
 quiet
 rAb<
-r\vpl
 random
 random_distribution_factor
 random_exclusive

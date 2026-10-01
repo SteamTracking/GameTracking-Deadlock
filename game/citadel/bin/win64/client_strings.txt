@@ -2689,7 +2689,6 @@ $hRh
 (.CPlayer_SetPerFriendPreferences_Request
 (0'yX
 (0x%08X)'??'
-(4Py
 (5Me
 (5jP
 (?-buildcubemaps - Game shutdown before cubemaps got built!
@@ -3301,6 +3300,7 @@ $hRh
 *?IsObject@Value@v8@@QEBA_NXZ
 *BaseEntity::CBodyComponent
 *BaseModelEntity::CBodyComponentBaseModelEntity
+*CEnvWindSharedAPI
 *Gets the last-played times for the account
 *Returns the player's community preferences
 *UlS
@@ -3641,7 +3641,7 @@ $hRh
 ../src/devtools/bin/certificates/game/
 ..CPlayer_GetNewSteamAnnouncementState_Response"_
 ..uR5&m
-.0lD
+.0mD
 .4bb
 .97yY
 .?AU?$CameraOp_Approach_t@M@@
@@ -8570,6 +8570,7 @@ $hRh
 .?AV?$CScaleFunctionFactory@VCScaleFunctionAbilityProperty_TechDamage@@@@
 .?AV?$CScaleFunctionFactory@VCScaleFunctionAbilityProperty_TechDuration@@@@
 .?AV?$CScaleFunctionFactory@VCScaleFunctionAbilityProperty_TechRange@@@@
+.?AV?$CScaleFunctionFactory@VCScaleFunctionAbilityProperty_TechRangeFloored@@@@
 .?AV?$CScaleFunctionFactory@VCScaleFunctionAbilityProperty_WeaponDamage@@@@
 .?AV?$CSchemaAttributeTypeBase@I@@
 .?AV?$CSchemaAttributeTypeBase@M@@
@@ -9435,6 +9436,7 @@ $hRh
 .?AV?$CSubclassFactory@VCScaleFunctionAbilityProperty_TechDamage@@VCScaleFunctionBase@@@@
 .?AV?$CSubclassFactory@VCScaleFunctionAbilityProperty_TechDuration@@VCScaleFunctionBase@@@@
 .?AV?$CSubclassFactory@VCScaleFunctionAbilityProperty_TechRange@@VCScaleFunctionBase@@@@
+.?AV?$CSubclassFactory@VCScaleFunctionAbilityProperty_TechRangeFloored@@VCScaleFunctionBase@@@@
 .?AV?$CSubclassFactory@VCScaleFunctionAbilityProperty_WeaponDamage@@VCScaleFunctionBase@@@@
 .?AV?$CSubclassFactoryDictionary@VCBaseModifier@@$01@@
 .?AV?$CSubclassFactoryDictionary@VCScaleFunctionBase@@$04@@
@@ -15865,6 +15867,7 @@ $hRh
 .?AVCScaleFunctionAbilityProperty_TechDamage@@
 .?AVCScaleFunctionAbilityProperty_TechDuration@@
 .?AVCScaleFunctionAbilityProperty_TechRange@@
+.?AVCScaleFunctionAbilityProperty_TechRangeFloored@@
 .?AVCScaleFunctionAbilityProperty_WeaponDamage@@
 .?AVCScaleFunctionBase@@
 .?AVCScaleFunctionVData@@
@@ -16609,6 +16612,7 @@ $hRh
 .?AVC_TonemapController2@@
 .?AVC_TonemapController2Alias_env_tonemap_controller2@@
 .?AVC_TrackedProjectile_Synth_PlasmaFlux@@
+.?AVC_TriggerInvisVolume@@
 .?AVC_TriggerItemShop@@
 .?AVC_TriggerLerpObject@@
 .?AVC_TriggerMultiple@@
@@ -17648,9 +17652,9 @@ $hRh
 .google.protobuf.ServiceOptions
 .kv3
 .lbN
-.pGD
 .png
 .pp@0
+.pxD
 .steammessages_unified_base.steamworkssdk.proto"
 .steammessages_unified_base.steamworkssdk.proto"4\n2CPlayer_GetMutualFriendsForIncomingInvites_Request"\\n&CPlayer_IncomingInviteMutualFriendList
 .steammessages_unified_base.steamworkssdk.proto"\\n"CMsgSteamLearnDataSourceDescObject
@@ -17727,6 +17731,7 @@ $hRh
 0:00
 0;Q5[
 0<cz
+0DD?
 0M2~@p
 0Marks latest announcement timestamp read by user
 0Name of the file to publish in the user's cloud.
@@ -17767,10 +17772,9 @@ $hRh
 0\r%0h
 0\r0#0)070;0U0Y0[0g0q0y0}0
 0e\r8
-0l2?
 0pp@5tqE?|sO541
-0t8?
 0tU+xc:
+0v$H?
 0x%4.4x 
 0x%X
 0x%X 
@@ -18027,8 +18031,6 @@ $hRh
 2\r.ECommendType
 2\rlhp
 2\tV_ZSTD_getFrameContentSize
-2\vpl2?
-2\vpt8?
 2^pV
 2a"l
 2bT~
@@ -18045,6 +18047,7 @@ $hRh
 3.CPlayer_GetMutualFriendsForIncomingInvites_Request
 31tPR
 32:B\n
+33#@fff@
 333333
 33s?
 35-w
@@ -18098,6 +18101,7 @@ $hRh
 4@AA
 4Ch;
 4F0I
+4F\v01
 4Mv8
 4Redirection URI provided during client registration.2
 4Zis
@@ -18161,14 +18165,13 @@ $hRh
 5s\nl
 5t?F
 5~EW
-6 mD
-6 pD
 6#6165676;6M6O6S6Y6a6k6m6
 6#RDP#
 6%vi
 6(Optional) Type of game the published file represents.
 6,2K
 6-zeZ
+60`D
 62$|S)6f
 64CK\vH
 65535
@@ -18179,15 +18182,13 @@ $hRh
 6666666666666666C:\buildworker\citadel_rel_win64\build\src\common\opensslwrapper.cpp
 67-s
 6?NumberValue@Value@v8@@QEBA?AV?$Maybe@N@2@V?$Local@VContext@v8@@@2@@Z
-6@nD
-6@sD
 6H,N
 6O|T%
-6PwD
-6PxD
+6PrD
 6Qd=
 6Returns the URL of the proper cloud server for a user.
 6True if the operation was successful, false otherwise.
+6Z\rE
 6\n1k_EMsgClientToGCTarotDevGenerateTestTilesResponse
 6\n1k_EMsgClientToGCUpdateHeroBuildPreferenceResponse
 6\n2GAME_PARTICLE_MANAGER_EVENT_UPDATE_ENTITY_POSITION
@@ -18201,7 +18202,6 @@ $hRh
 6\n\vmatch_slots
 6\ng_flConfigMaxCoord
 6_wEX
-6`oD
 6afD
 6bX+
 6c&0|vvX
@@ -18209,7 +18209,6 @@ $hRh
 6l13
 6lkc
 6myY;
-6prD
 6qo~
 6r-m_v
 6r1ij
@@ -18359,7 +18358,6 @@ $hRh
 :EXTERNAL TYPE %s\n
 :LBN
 :NAy
-:Override the region of the client
 :QYJ
 :Vlq
 :\n5k_EMsgClientToGCCancelUnfinalizedTransactionsResponse
@@ -18508,13 +18506,13 @@ $hRh
 =\n\tstat_type
 =\tV_atand
 =cdE
+=modifier_punkgoat_goatgoingup
 =trF6,#
 > No World, Just Minimap and sound*
 >#>)>/>3>A>W>c>e>w>
 >(Only show on Minimap, no world, no sound
 >*`\n\fECommendType
 >-10000 10000
->0uD
 >333>
 >4|6eXg_e
 >7^0g
@@ -18555,7 +18553,6 @@ $hRh
 ??1Utf8Value@String@v8@@QEAA@XZ
 ?BooleanValue@Value@v8@@QEBA_NPEAVIsolate@2@@Z
 ?CCitadel_Ability_Familiar_HelpingHandsVData
-?CTeamRelativeParticleSystem_API
 ?Call@Function@v8@@QEAA?AV?$MaybeLocal@VValue@v8@@@2@V?$Local@VContext@v8@@@2@V?$Local@VValue@v8@@@2@HQEAV52@@Z
 ?CreateHandle@HandleScope@v8@@KAPEA_KPEAVIsolate@internal@2@_K@Z
 ?DisposeGlobal@api_internal@v8@@YAXPEA_K@Z
@@ -18565,7 +18562,6 @@ $hRh
 ?Entities
 ?Exit@Context@v8@@QEAAXXZ
 ?Exit@Isolate@v8@@QEAAXXZ
-?Experimental: Use Multithreaded implementation. 0: Use regular style. > 0 number of jobs to chunk the 128 traces into. Power of 2 only, please. 8 is great.
 ?Far field
 ?For@Symbol@v8@@SA?AV?$Local@VSymbol@v8@@@2@PEAVIsolate@2@V?$Local@VString@v8@@@2@@Z
 ?FromJustIsNothing@api_internal@v8@@YAXXZ
@@ -18576,6 +18572,7 @@ $hRh
 ?GetName@Function@v8@@QEBA?AV?$Local@VValue@v8@@@2@XZ
 ?Global@Context@v8@@QEAA?AV?$Local@VObject@v8@@@2@XZ
 ?GlobalizeReference@api_internal@v8@@YAPEA_KPEAVIsolate@internal@2@_K@Z
+?Good
 ?HAI\t81\t9dcG'
 ?HP4
 ?HasCaught@TryCatch@v8@@QEBA_NXZ
@@ -18598,10 +18595,8 @@ $hRh
 ?dt]X
 ?expf
 ?gwL
-?hero_base
 ?jOb
 ?m_flPosition
-?m_iszSoundName
 ?soundcommands_t
 ?srJO
 ?tya
@@ -18609,16 +18604,18 @@ $hRh
 ?x29
 @!@%@+@1@?@C@E@]@a@g@m@
 @":\n$CCitadelUserMsg_SpectatorTeamChanged
+@08N$H?
 @0pp
+@>PvD
 @?SlowGetInternalField@Object@v8@@AEAA?AV?$Local@VData@v8@@@2@H@Z
 @BH]f
 @BoneSetup
 @CAccoladeDefinition
-@CCitadel_Ability_BloodBombVData
 @CitadelChat
 @DebugIndividualStyle
 @MfKZ
 @Pgl
+@PqM
 @Pu\rm
 @Requests the metadata that was generated from a specified fetch.
 @WE]X
@@ -18630,7 +18627,6 @@ $hRh
 @\n\fSingleObject
 @dKb]
 @fff>fff>fff>fff>
-@htP
 @i1V
 @keyframes 
 @keyframes '%s'\r\n{\r\n
@@ -19682,7 +19678,7 @@ BUG:  %s couldn't look up codegen info for CEntityClass(%s)\n
 BULLET
 BUMP_WITH_TIMEOUT_WHEN_LEARNED
 BURN
-BWhat information do we want to display for Weapon?
+BWhat information do we want to display for Vitality?
 BY_FILE_CTRL
 BY_Lq)
 BYldPromptYesNo
@@ -19693,6 +19689,7 @@ B\n\fmeasurements
 B\n\nobjectives
 B\n\rHeroWhitelist
 B\n\vbook_reward
+B\v01
 B\vP\n0
 B\vp\n0
 B\vp\nP
@@ -20207,6 +20204,7 @@ BulletDamageAmpDuration
 BulletDamageReflectedPct
 BulletEffectiveness
 BulletLifesteal
+BulletLifestealEffectiveness
 BulletLifestealPercent
 BulletLifestealPercentHero
 BulletMagnitude
@@ -20307,9 +20305,9 @@ C:\buildworker\citadel_rel_win64\build\src\game\client\c_rope.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\c_te_effect_dispatch.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\c_triggers.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\cdll_client_int.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2486
-C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2828
-C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2952
+C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2507
+C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2849
+C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2973
 C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_playerspraydecal.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\citadel_musicmanager.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\citadel_thirdpersoncamera.cpp:1658
@@ -20360,7 +20358,6 @@ C:\buildworker\citadel_rel_win64\build\src\game\client\panorama_world_panel.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\prediction.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\renderingpipeline\depth_pyramid_compute_renderer.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\renderingpipeline\gaussian_bloom_blur.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\client\view.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\ai_responsesystem.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\animgraph_gamesystem.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\animgraphcontroller.cpp
@@ -20875,6 +20872,7 @@ CCitadelLocalMatchHost::WaitForReady
 CCitadelMatchmakingStatusInfo_API
 CCitadelModifierFrameUpdateGameSystem
 CCitadelModifier_API
+CCitadelMusicCueData_t
 CCitadelMusicManager::FireGameEvent
 CCitadelNeutralCampTimerSystem
 CCitadelNewSettingsSchema: %s\n
@@ -21139,7 +21137,6 @@ CCoJobMgr::CheckForJobTimeouts
 CCoJobMgr::CheckThreadID
 CColorBlindSimulationRenderer
 CColorCorrectionMgr::SetColorCorrectionWeight
-CColorCorrectionMgr::UpdateColorCorrection
 CColorGradient
 CCommunity_ClanAnnouncementInfo
 CComponentPredictionCopyDataOps(invalid)
@@ -21344,7 +21341,6 @@ CEnvVolumetricFogController_API::SetToDefaults
 CEnvVolumetricFogVolume_API
 CEnvVolumetricFogVolume_API::Disable
 CEnvVolumetricFogVolume_API::Enable
-CEnvWindSharedAPI
 CEnvironmentLight_API
 CExtraMsgBlock
 CFatalErrorAllocator::AllocConstAligned
@@ -22441,7 +22437,6 @@ CPlayer_WeaponServices *
 CPointCameraVFOV_API
 CPointCamera_API
 CPointCamera_API::Activate
-CPointCamera_API::ChangeFOV
 CPointCamera_API::Deactivate
 CPointCamera_API::DisableDOF
 CPointCamera_API::EnableDOF
@@ -22871,6 +22866,7 @@ CTakeDamageResultAPI::GetInflictor
 CTakeDamageResultAPI::GetPreModifiedDamage
 CTakeDamageResultAPI::HasDamageTypeBlast
 CTakeDamageResultAPI::HasDamageTypeBurn
+CTeamRelativeParticleSystem_API
 CTeam_API
 CTempEnts::PhysicsProp: model %s not found\n
 CTextureBasedAnimatable_API
@@ -23115,7 +23111,6 @@ CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<char const *,stru
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<char const *,struct CRuntimeStatDependencyList::SkippedRegistration_t,struct StringEqualFunctor,struct StringHashFunctor,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<char const *,struct CRuntimeStatDependencyList::SkippedRegistration_t,struct StringEqualFunctor,struct StringHashFunctor,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<char const *,struct SndOpEventGuid_t,class CDefEquals<char const *>,struct DefaultHashFunctor<char const *>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<char const *,struct SndOpEventGuid_t,class CDefEquals<char const *>,struct DefaultHashFunctor<char const *>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,class CUtlHashtable<unsigned int,struct vcon_PredictionReportUnpackedField_t,struct DefaultHashFunctor<unsigned int>,struct DefaultEqualFunctor<unsigned int>,class CUtlLeanVector<class CUtlHashtableEntry<unsigned int,struct vcon_PredictionReportUnpackedField_t>,int,class CMemAllocAllocator>,0> *,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,class CUtlHashtable<unsigned int,struct vcon_PredictionReportUnpackedField_t,struct DefaultHashFunctor<unsigned int>,struct DefaultEqualFunctor<unsigned int>,class CUtlLeanVector<class CUtlHashtableEntry<unsigned int,struct vcon_PredictionReportUnpackedField_t>,int,class CMemAllocAllocator>,0> *,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
-CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,float,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,float,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,int,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,int,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,struct CCHealthBarGameSystem::HealthBar_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,struct CCHealthBarGameSystem::HealthBar_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,struct CCitadel_Hud_Health_Container::RecentDamageEvent_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,struct CCitadel_Hud_Health_Container::RecentDamageEvent_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
@@ -23123,6 +23118,7 @@ CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityInde
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,struct RecentEventNameData_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,struct RecentEventNameData_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CGlobalSymbol,int,class CDefEquals<class CGlobalSymbol>,struct DefaultHashFunctor<class CGlobalSymbol>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CGlobalSymbol,int,class CDefEquals<class CGlobalSymbol>,struct DefaultHashFunctor<class CGlobalSymbol>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_BaseEntity>,class ParticleIndex_t,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_BaseEntity>,class ParticleIndex_t,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int>::AddMultipleToTail
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_BaseEntity>,float,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_BaseEntity>,float,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_BaseEntity>,int,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_BaseEntity>,int,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_BaseEntity>,struct CCitadelHudDamageImpact::ImpactPanel_t,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_BaseEntity>,struct CCitadelHudDamageImpact::ImpactPanel_t,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_CitadelPlayerPawn>,int,class CDefEquals<class CHandle<class C_CitadelPlayerPawn> >,struct DefaultHashFunctor<class CHandle<class C_CitadelPlayerPawn> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_CitadelPlayerPawn>,int,class CDefEquals<class CHandle<class C_CitadelPlayerPawn> >,struct DefaultHashFunctor<class CHandle<class C_CitadelPlayerPawn> >,int>::HashBucket_t,int>::AddMultipleToTail
@@ -23312,7 +23308,6 @@ CVDataEconSchema: item '%s' doesn't have a def index
 CVDataLocalizedToken
 CValidateStatTableOnStartup::CValidateStatTableOnStartup
 CVcn
-CViewRender::Render
 CVoiceStatus::HandleReqStateMsg\n
 CVoiceStatus::HandleVoiceMaskMsg\n
 CVoiceStatus::SetPlayerBlockedState: setting player %lld ban to %d\n
@@ -23915,6 +23910,7 @@ CitadelCreatePartyFromInvites
 CitadelCustomLayoutPage
 CitadelCustomMatchCreate
 CitadelCustomMatchJoin
+CitadelCustomUIColorChanged
 CitadelDB
 CitadelDamageImpact
 CitadelDamageIndicator
@@ -27029,6 +27025,7 @@ ExtraSweepRange
 ExtraTargetConeAngle
 ExtraTargetHorizontalOffset
 Extraneous token
+F aD
 F#bgn?MwN|%
 F'pY
 F+Zb
@@ -27097,6 +27094,7 @@ F\n\finventories3
 F\n\fitem_scalars
 F\n\trow_range
 F\rH'4
+F`aD
 Face %s
 Face Actor
 FaceposerSectionPause
@@ -27716,6 +27714,7 @@ GameMode_Normal
 GameMode_StreetBrawl
 GameMonitorPanel
 GameMonitorPanelColor%d.vtex
+GameMonitorPanelDepth%d.vtex
 GameMonitorPanelTemplate
 GamePadBindingComponent
 GamePadGlyphSnippet
@@ -27973,7 +27972,6 @@ Gold
 GoldPerMinute
 GoldStar
 GooDuration
-Good
 Got CMsgClientToGCStartMatchmakingResponse: %s\n
 Got a NaN origin on %s\n
 Got a NaN velocity on %s\n
@@ -28295,6 +28293,7 @@ Health
 Health: %d, collision group: %d, nav ignore: %s
 Health: %d\n
 HealthAttribute
+HealthBar_Fill
 HealthBoostDuration
 HealthDamage
 HealthDamagePercent
@@ -28352,7 +28351,6 @@ HeroBuildResult
 HeroBuildSelector
 HeroBuildTagID_t"
 HeroBuild_t::Sanitize
-HeroBulletLifestealEffectiveness
 HeroButton
 HeroButtonHeroName
 HeroButtonIcon
@@ -28376,7 +28374,6 @@ HeroDraftPositionChanged
 HeroDragHover
 HeroDropDownOption
 HeroFilter
-HeroHealth
 HeroHealth_Left
 HeroID_t"
 HeroID_t"A\n
@@ -28431,7 +28428,6 @@ HeroSettingsNoticeFlash
 HeroSnippet
 HeroSpecificHighlightButton
 HeroSpecificSettingsEnabled
-HeroSpiritLifestealEffectiveness
 HeroSpotlight
 HeroStatsDisplay
 HeroStatsTooltips
@@ -31298,7 +31294,6 @@ Override Points: %d\n
 Override Premium Points: %d\n
 OverrideBulletRadius
 Overrides\n
-Overview: scale %.2f, pos_x %.0f, pos_y %.0f\n
 OverviewTab
 Ow!y
 OwnGameplayInfo
@@ -31312,9 +31307,11 @@ P-224
 P-256
 P-384
 P-521
+P08N$H?
 P1\t98"
 P2P ping to "%s". Timed out after %.2fms\n
 P5[1
+P6@tD
 PAGN_4
 PAIgnPrm
 PANORAMA_LAYOUTFILE
@@ -31353,6 +31350,7 @@ PBKDF2PARAM
 PBMAC1
 PC_NETWORKED_ONLY
 PC_NON_NETWORKED_ONLY
+PDD?
 PEIF
 PEM lib
 PEM part of OpenSSL 1.0.2j  26 Sep 2016
@@ -31948,7 +31946,6 @@ Pet NPC Script Override:
 PetrifyDamage
 PetrifyDamageBreakThreshold
 PetrifyDuration
-Pf0iD
 Phrase%d
 PhraseContainer
 PhrasesContainer
@@ -32023,7 +32020,6 @@ Pitch: %6.1f   Yaw: %6.1f   Dist: %6.1f %16s
 Pitch: %6.1f   Yaw: %6.1f   Dist: %6.1f %19s
 Pitch: %6.1f   Yaw: %6.1f %38s
 PivotPaint
-Pl2?
 PlaceDecalEvent_t
 PlaceDistance
 PlaceDistanceInFrontOfCaster
@@ -32111,7 +32107,7 @@ Please Wait
 Please specify 0 or 1 with the -stream Parameter\n
 Pm8A?
 PmR"H?
-Pn0jD
+Pn$H?
 Point entity.
 Point under crosshair
 Policy Qualifier CPS
@@ -32710,13 +32706,12 @@ RSA_verify_PKCS1_PSS
 RSA_verify_PKCS1_PSS_mgf1
 RSDSy_C
 RT_txt
-R\fpt8?
 R\n)k_EPingMarkerInfo_NoMarkerYesSoundMiniMap
 R\n\nBookReward
 R\n\rincludekvtags
 R\r1>Vp
 R\vp!y
-R\vpl2?
+R\vpDD?
 R]Di
 Rad2 Deg
 RadialBackground
@@ -34866,6 +34861,7 @@ SpiritDamage
 SpiritDamageReductionProc
 SpiritDamageReflectedPct
 SpiritItemTags
+SpiritLifestealEffectiveness
 SpiritPerStack
 SpiritPower
 SpiritPowerDesc
@@ -34876,7 +34872,6 @@ SpiritResReducedPerStack
 SpiritResist
 SpiritScalingRow
 SpiritStat
-SpiritStatFX
 SpiritStats
 SpiritSteal
 SpiritStealDuration
@@ -35313,12 +35308,16 @@ SubscribedType
 SubsectionBackground
 Subtitle
 SubtitleAllCaps
+SubtitleBackgroundOutline
 SubtitleFont1
 SubtitleFont2
 SubtitleOptions
+SubtitleOutlineOptions
 SubtitlePreview
+SubtitleSolidBackgroundOptions
 SubtitleWeightNormal
 SubtitlesAllCapsRow
+SubtitlesBackgroundStyleEnum
 SubtitlesFontRow
 Success
 Success event 
@@ -36777,7 +36776,6 @@ Vitality
 VitalityBarGraph
 VitalityItemTags
 VitalityProgressBar
-VitalityStatFX
 VitalityStats
 Voice slot %llu bc: %s  heard: %s  bitSet: %s\n
 VoiceActive
@@ -36983,7 +36981,6 @@ WeaponResist
 WeaponSlot
 WeaponSpreadPenalty
 WeaponSpreadScale
-WeaponStatFX
 WeaponStats
 WeaponStatsHeader
 Weather Type:
@@ -37520,7 +37517,6 @@ Z~wl
 \fdhWTh
 \fevents.proto
 \fiaR
-\fpl2?
 \ful2
 \fy&3Gl
 \l:ArR
@@ -37770,6 +37766,7 @@ Z~wl
 \nFinished generating SSTs (%.1f seconds)\n\n
 \nGameTime_t
 \nGameTime_t:
+\nPDD?
 \nSimulating Entities:\n\n
 \n[ Spirit ]
 \n[ Vitality ]
@@ -38643,6 +38640,7 @@ Z~wl
 \r!\r+\r-\r=\r?\rO\rU\ri\ry\r
 \r@h!Aq8
 \rB6uZ
+\rCCitadelTriggerBonkVData
 \rChallengeID_t
 \rChallengeID_t"
 \rCitadelMMRu_t
@@ -38904,8 +38902,7 @@ Z~wl
 \v\vTSG
 \vj0k
 \vjC7
-\vpl2?
-\vpt8?
+\vpDD?
 ]1h=bfz
 ]FhSD}
 ]GT7]
@@ -38993,7 +38990,6 @@ _xU`u
 _}eOk
 `28)fk
 `3?New@Array@v8@@SA?AV?$Local@VArray@v8@@@2@PEAVIsolate@2@H@Z
-`6PGD
 `:zQF
 `Aq8
 `D$daM-l
@@ -39005,7 +39001,7 @@ _}eOk
 `\n\rvector_values
 `fPw.\vM
 `h9T~
-`htPy
+`htP
 `o_je
 `yNT
 a null shared library handle was used
@@ -39024,6 +39020,7 @@ a:typeparam
 a;Tg
 a@XZ
 aA0k
+aBv$H?
 aD/x
 aDSS
 aECDH
@@ -41162,6 +41159,7 @@ cycle_class
 cycle_classes
 cz>Sp
 d e not congruent to 1
+d%$82
 d.allOrFirstTier
 d.authenticatedData
 d.certificate
@@ -42268,7 +42266,6 @@ fBB\fy
 fC\tc
 fL\ri
 fP;y
-fPDD
 fUnh\
 f\trixZ
 f_DrainScale
@@ -42315,7 +42312,6 @@ favouriteDrink
 fdxfv%
 feop(
 fetch_id
-fff@
 fidget
 field missing
 field too large
@@ -42823,7 +42819,6 @@ flRadians
 flRoll
 flScaleAmount
 flSeconds
-flStackDecayTime
 flTValue
 flTime
 flVal
@@ -43505,6 +43500,7 @@ hero_action_source
 hero_assigned_lane_changed
 hero_atlas
 hero_ban_allowed
+hero_base
 hero_build_id=%u
 hero_bullets_fired
 hero_bullets_hit
@@ -46882,7 +46878,6 @@ modifier_punkgoat_blastedshred
 modifier_punkgoat_goatflip_damagebuff
 modifier_punkgoat_goatflip_empowermelee
 modifier_punkgoat_goatflip_maxhealthbuff
-modifier_punkgoat_goatgoingup
 modifier_punkgoat_goatgoingup_aircontrol
 modifier_punkgoat_sigil_aura
 modifier_punkgoat_tether
@@ -47201,6 +47196,7 @@ n6j/
 n:2C[
 n@PK
 nAnimEvent
+nCPointCamera_API::ChangeFOV
 nCRD
 nChangeOffset < INT16_MAX
 nChangeOffset > 0
@@ -47355,7 +47351,6 @@ nickname
 niv <= EVP_MAX_IV_LENGTH
 nkey <= EVP_MAX_KEY_LENGTH
 nmI\n8
-nm_vBoxSize
 nmonqnmomnmomomno
 nmvos^\n
 no LOS
@@ -47888,6 +47883,7 @@ outputdepth
 outputid
 outputintermediate
 outputs
+outputupscaleddepth
 over
 over: no hits
 over_the_shoulder
@@ -47921,6 +47917,8 @@ p.other
 p.ppBasis
 p.prime
 p.tpBasis
+p08@H^$H?
+p0j 
 p2p_ping could not convert "%s" to a CPeerToPeerAddress\n
 p2p_ping could not ping "%s" because they are an unknown peer\n
 p2p_ping requires a destination address\n
@@ -47936,11 +47934,11 @@ pBuffer != nullptr
 pCachedPoseBuffer->m_ID.IsValid()
 pCheckpointName
 pD4t
+pDD?
 pData->GetDataDescMap() == pTemplateDataMap
 pDescription
 pDest
 pExternalPoseNode->m_externalPoseBufferID.IsValid()
-pF@OD
 pFilter
 pG_*h
 pHeroReleaseVoteOptions->GetChildCount() == (int)EActiveHeroReleaseVoteOption::Count
@@ -48337,6 +48335,7 @@ perspective
 perspective-origin
 peru
 pet_npc_script_override
+pflStackDecayTime
 pgi_hash
 phase not supported
 phase1
@@ -48465,7 +48464,6 @@ pkey
 pkeyalg
 pkix
 pkparameters2group failure
-pl2?
 place normal to surface: vision trace missed
 placebo
 placeholder
@@ -48577,6 +48575,7 @@ playresponse
 playtime_2weeks
 playtime_forever
 plum
+pn$H?
 pngsize
 point
 point arithmetic failure
@@ -48827,7 +48826,6 @@ pseudonym
 psk identity not found
 psk no client cb
 psk no server cb
-pt8?
 pub: 
 pub_key
 pubkey
@@ -48946,9 +48944,9 @@ rRfKR
 rX&O0
 rZ1VwGf5
 rZPM
+r\fpDD?
 r\n\vstart_index
 r\vDi
-r\vpt8?
 r_citadel_mboit_enabled
 r_cleardecals
 r_fog_occlusion 0
@@ -49592,6 +49590,7 @@ scale_function_single_stat
 scale_function_tech_damage
 scale_function_tech_duration
 scale_function_tech_range
+scale_function_tech_range_floored
 scale_size
 scaled_panel
 scales
@@ -50389,6 +50388,8 @@ spinup_progress_bar
 spiritContainer
 spiritStats
 spirit_jar_
+spirit_stat_state_max
+spirit_stat_state_spike
 spkac
 splitscreenplayer
 sprayDecalName
@@ -50991,6 +50992,7 @@ text-decoration
 text-decoration-style
 text-overflow
 text-shadow
+text-shadow: 0px 0px 0px %d #%02X%02X%02X;
 text-transform
 text/plain
 text:
@@ -51868,6 +51870,8 @@ vision missed: ground check disabled, using trace end
 vision missed: running ground check
 vision trace %s at (%.1f, %.1f, %.1f) nz %.2f ent %s
 visuals
+vitality_stat_state_max
+vitality_stat_state_spike
 vjs_c
 vm:u
 vmap
@@ -52002,6 +52006,8 @@ weapon_range_bonus
 weapon_reload_complete
 weapon_reload_started
 weapon_spin_up
+weapon_stat_state_max
+weapon_stat_state_spike
 weapon_subclass_id
 weapon_swap
 weapon_top_fx
@@ -52196,6 +52202,7 @@ z/B,9d
 z<d2
 z>Hz
 z?ff
+zDWhen you sell an item.
 zF):O4
 zG2m8
 zRXU 

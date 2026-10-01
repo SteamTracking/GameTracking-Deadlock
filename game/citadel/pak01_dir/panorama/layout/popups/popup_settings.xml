@@ -1259,14 +1259,30 @@
 						</Panel>
 						<Panel class="SettingsGroup" id="SubtitleOptions" hidden-by="CustomSubtitlesToggle">
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_font_size_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-								<CitadelSettingsSlider id="SubtitlesFontSize" text="#citadel_settings_subtitles_font_size" convar="citadel_subtitles_font_size" min="12" max="28" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" search-alias="#citadel_settings_subtitles_search" />
+								<CitadelSettingsSlider id="SubtitlesFontSize" text="#citadel_settings_subtitles_font_size" convar="citadel_subtitles_font_size" min="12" max="32" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" search-alias="#citadel_settings_subtitles_search" />
 							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_text_color_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 								<CitadelSettingsColorSlider id="SubtitlesTextColor" text="#citadel_settings_subtitles_text_color" convar="citadel_subtitles_text_color" search-alias="#citadel_settings_subtitles_search" />
 							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_background_style_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<CitadelSettingsEnum class="HorizontalEnum" convar="citadel_subtitles_background_style" text="#citadel_settings_subtitles_background_style" id="SubtitlesBackgroundStyleEnum" search-alias="#citadel_settings_subtitles_search">
+									<RadioButton text="#citadel_settings_subtitles_background_style_solid" value="0" class="EnumButton" id="SubtitlesBackgroundSolid" group="subtitlesbackgroundstyle" />
+									<RadioButton text="#citadel_settings_subtitles_background_style_outline" value="1" class="EnumButton" id="SubtitlesBackgroundOutline" group="subtitlesbackgroundstyle" />
+								</CitadelSettingsEnum>
+							</PopupSettingsSettingsRow>
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_background_color_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 								<CitadelSettingsColorSlider id="SubtitlesBackgroundColor" text="#citadel_settings_subtitles_background_color" convar="citadel_subtitles_background_color" search-alias="#citadel_settings_subtitles_search" />
 							</PopupSettingsSettingsRow>
+							<Panel class="SettingsGroup" id="SubtitleSolidBackgroundOptions" hidden-by="SubtitlesBackgroundStyleEnum">
+								<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_background_opacity_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+									<CitadelSettingsSlider id="SubtitlesBackgroundOpacity" text="#citadel_settings_subtitles_background_opacity" convar="citadel_subtitles_background_opacity" min="0" max="100" snap="1" percentage="false" postfix="#citadel_settings_slider_percentage" displayprecision="0" textentry="true" search-alias="#citadel_settings_subtitles_search" />
+								</PopupSettingsSettingsRow>
+							</Panel>
+							<Panel class="SettingsGroup" id="SubtitleOutlineOptions" hidden-by="SubtitlesBackgroundStyleEnum">
+								<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_outline_thickness_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+									<CitadelSettingsSlider id="SubtitlesOutlineThickness" text="#citadel_settings_subtitles_outline_thickness" convar="citadel_subtitles_outline_thickness" min="0" max="6" snap="1" percentage="false" postfix="#citadel_settings_pixels_postfix" displayprecision="0" textentry="true" search-alias="#citadel_settings_subtitles_search" />
+								</PopupSettingsSettingsRow>
+							</Panel>
 							<PopupSettingsSettingsRow id="SubtitlesFontRow" onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_font_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 								<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_subtitles_font" searchable="true" search-alias="#citadel_settings_subtitles_search" />
 								<CitadelEnumDropDown id="SubtitlesFontDropDown" convar="citadel_subtitles_font">
