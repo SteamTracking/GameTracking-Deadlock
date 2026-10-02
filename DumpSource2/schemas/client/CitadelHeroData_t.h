@@ -58,6 +58,7 @@ class CitadelHeroData_t
 	CSoundEventName m_strRosterRemovedSound;
 	CSoundEventName m_strRosterAvoidedSound;
 	CSoundEventName m_strHeroVotedSound;
+	CSoundEventName m_strHeroDebutSound;
 	CSoundEventName m_strCharacterRevealDialog;
 	CSoundEventName m_strCharacterRevealSfxStart;
 	CSoundEventName m_strCharacterRevealSfxStop;
