@@ -1,4 +1,4 @@
-enum CNmSoundEvent::Position_t : uint32_t
+enum CNmSoundEventBase::Position_t : uint32_t
 {
 	None = 0,
 	World = 1,

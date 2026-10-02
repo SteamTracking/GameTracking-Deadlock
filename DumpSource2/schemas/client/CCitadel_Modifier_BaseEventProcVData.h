@@ -12,4 +12,5 @@ class CCitadel_Modifier_BaseEventProcVData : public CCitadelModifierVData
 	CITADEL_UNIT_TARGET_FLAGS m_nAbilityTargetFlags;
 	CUtlVector< ECitadelDamageType > m_vecProcDamageTypes;
 	TakeDamageFlags_t m_nRequiredDamageFlags;
+	TakeDamageFlags_t m_nInvalidatingDamageFlags; // = "DFLAG_DO_NOT_PROC"
 };

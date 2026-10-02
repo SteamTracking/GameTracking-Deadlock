@@ -2,28 +2,61 @@
 
 CitadelAltInfoPanel
 {
-	background-color: #1A2B2D95;
-	padding: 6px 20px;
-	width: 100%;
-	border-top: 2px solid #11111140;
+	background-color: offBlack;
+	padding: 5px 20px;
+	border-radius: 5px;
+	margin-left: 0px;
+	ui-scale: 70%;
+	height: 40px;
+	margin: 5px 0px;
+	opacity: 0.9;
+	horizontal-align: center;
+	background-color: #173a2d;
 }
 
-CitadelAltInfoPanel.NoAdjustedStats
+.gDetailView CitadelAltInfoPanel
 {
-	visibility: collapse;
+	opacity: 0.1;
+}
+
+.HasAnyModifiedTextLabel CitadelAltInfoPanel
+{
+	visibility: visible;
+	animation-name: SearchHighlightDesc;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'SearchHighlightDesc'
+{
+	0%
+	{
+		brightness: 1;
+		background-color: offBlack;
+	}
+	
+	50%
+	{
+		brightness: 1.5;
+		background-color: #173a2d;
+	}
+	
+	100%
+	{
+		brightness: 1;
+		background-color: offBlack;
+	}
+	
 }
 
 .AltInfoLabel
 {
-	font-size: 16px;
-	font-weight: medium;
-	margin-top: -3px;
+	font-family: oracle;
+	font-weight: bold;
+	text-transform: uppercase;
 	opacity: 0.6;
-}
-
-.gDetailView .HoldAltDesc,.AdjustedStats
-{
-	visibility: collapse;
+	font-size: 21px;
+	vertical-align: middle;
 }
 
 .gDetailView .AdjustedStats

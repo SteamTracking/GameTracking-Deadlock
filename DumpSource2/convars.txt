@@ -1993,7 +1993,7 @@ citadel_corrupted_item_bonus_variance_better 15 (gamedll clientdll replicated ch
 citadel_corrupted_item_bonus_variance_worse 15 (gamedll clientdll replicated cheat)
 	Max percent a corrupted item's stat bonuses can roll below their authored values each match.
 
-citadel_corrupted_item_shop_enabled true (gamedll clientdll replicated cheat)
+citadel_corrupted_item_shop_enabled false (gamedll clientdll replicated cheat)
 	<no description>
 
 citadel_corrupted_item_shop_num_items 1 (gamedll clientdll replicated cheat)
@@ -3811,6 +3811,9 @@ citadel_ping_almost_respawned_seconds 10 (gamedll cheat)
 citadel_ping_below_us_z 500 (gamedll cheat)
 	If the pinged hero is below us by this many units, use the "below_us" voice variant
 
+citadel_ping_can_heal_range 2500 (gamedll cheat)
+	Pinging a low teammate offers a heal only if they are within this many units and in line of sight. Matches citadel_fow_player_range.
+
 citadel_ping_consecutive_window 0.25 (developmentonly clientdll)
 	Seconds between taps on one subject for them to chain into a double (triple...) ping.
 
@@ -4591,6 +4594,9 @@ citadel_settings_active_settings_subsection_read_only -1 (clientdll hidden archi
 citadel_settings_always_show_all_settings true (clientdll archive per_user)
 	Keep the settings shared by all heroes visible while browsing a specific hero's settings
 
+citadel_settings_default_view 0 (min: 0, max: 1, clientdll archive per_user)
+	Which hero the settings menu shows while hero-specific settings are enabled: 0 the hero being played, 1 the base settings
+
 citadel_settings_dismissed_new_settings "" (clientdll archive per_user)
 	New Settings which have already been dismissed by the user
 
@@ -4617,6 +4623,9 @@ citadel_settings_last_scrollbar_position_read_only 0 (clientdll hidden archive)
 
 citadel_settings_new_setting_newness_duration 2592000 (developmentonly clientdll defensive)
 	Maximum age a new setting will be shown without dismissing
+
+citadel_settings_remember_selected_hero true (clientdll archive per_user)
+	Reopen the settings menu on the hero last selected in it, instead of its default view
 
 citadel_settings_scroll_panel_height_read_only 0 (clientdll hidden archive)
 	Last Settings menu total scroll panel height
@@ -11195,9 +11204,6 @@ r_particle_debug_vector_attribute_scale 1 (developmentonly)
 	Scale attribute vectors by this much for 3d rendering
 
 r_particle_enable_fastpath true (developmentonly)
-	<no description>
-
-r_particle_explicit_fetch false (developmentonly)
 	<no description>
 
 r_particle_fixedrandomseeds false (developmentonly)

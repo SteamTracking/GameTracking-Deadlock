@@ -1352,6 +1352,15 @@
 						<PopupSettingsSettingsRow id="AlwaysShowAllSettingsRow" hidden-by="PerUnitHotkeysCheckBox" onmouseover="UIShowTextTooltipStyled( #citadel_settings_always_show_all_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle class="CheckBox" id="AlwaysShowAllSettingsCheckBox" text="#citadel_settings_always_show_all" onactivate="CitadelSettingsAlwaysShowAllChanged();" convar="citadel_settings_always_show_all_settings" />
 						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow id="SettingsDefaultViewRow" hidden-by="PerUnitHotkeysCheckBox" onmouseover="UIShowTextTooltipStyled( #citadel_settings_default_view_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsEnum class="HorizontalEnum" convar="citadel_settings_default_view" text="#citadel_settings_default_view" id="SettingsDefaultViewEnum" onactivate="CitadelSettingsDefaultViewChanged();">
+								<RadioButton text="#citadel_settings_default_view_current_hero" value="0" class="EnumButton" id="SettingsDefaultViewCurrentHero" group="settingsdefaultview" />
+								<RadioButton text="#citadel_settings_default_view_base_settings" value="1" class="EnumButton" id="SettingsDefaultViewBaseSettings" group="settingsdefaultview" />
+							</CitadelSettingsEnum>
+						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow id="RememberSelectedHeroRow" hidden-by="PerUnitHotkeysCheckBox" onmouseover="UIShowTextTooltipStyled( #citadel_settings_remember_selected_hero_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsToggle class="CheckBox" id="RememberSelectedHeroCheckBox" text="#citadel_settings_remember_selected_hero" convar="citadel_settings_remember_selected_hero" />
+						</PopupSettingsSettingsRow>
 					</PopupSettingsSettingsSubsection>
 					<PopupSettingsSettingsSubsection id="citadel_settings_spectator_camera" search-alias="#citadel_settings_spectator_camera_search">
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_spectator_auto_target_view_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">

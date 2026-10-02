@@ -6647,6 +6647,55 @@
 				}
 			}
 		}
+		CNPC_Ratking_Rat = 
+		{
+			base = "CBaseAnimGraph"
+			fields = 
+			{
+				ability = 
+				{
+					cpp_name = "m_hAbility"
+					field_flags = "FTYPEDESC_KEY"
+					field_type = "FIELD_EHANDLE"
+				}
+				spread_offset = 
+				{
+					cpp_name = "m_flSpreadOffset"
+					field_flags = "FTYPEDESC_KEY"
+					field_type = "FIELD_FLOAT32"
+				}
+				flight_velocity = 
+				{
+					cpp_name = "m_vFlightVelocity"
+					field_flags = "FTYPEDESC_KEY"
+					field_type = "FIELD_DIRECTION_VECTOR_WORLDSPACE"
+				}
+				lifetime = 
+				{
+					cpp_name = "m_flLifetime"
+					field_flags = "FTYPEDESC_KEY"
+					field_type = "FIELD_FLOAT32"
+				}
+				travel_distance = 
+				{
+					cpp_name = "m_flMaxTravelDistance"
+					field_flags = "FTYPEDESC_KEY"
+					field_type = "FIELD_FLOAT32"
+				}
+				rats_to_attach = 
+				{
+					cpp_name = "m_nRatsToAttach"
+					field_flags = "FTYPEDESC_KEY"
+					field_type = "FIELD_INT32"
+				}
+				run_direction = 
+				{
+					cpp_name = "m_vRunDir"
+					field_flags = "FTYPEDESC_KEY"
+					field_type = "FIELD_DIRECTION_VECTOR_WORLDSPACE"
+				}
+			}
+		}
 		CPathNode = 
 		{
 			base = "C_PointEntity"
@@ -7385,6 +7434,11 @@
 		ability_punkgoat_goatflip = "citadel_base_ability"
 		ability_punkgoat_tether = "citadel_base_ability"
 		ability_punkgoat_ult = "citadel_base_ability"
+		ability_ratking_entertunnel = "citadel_base_ability"
+		ability_ratking_ratarmor = "citadel_base_ability"
+		ability_ratking_ratnibble = "citadel_base_ability"
+		ability_ratking_scrap_grenade = "citadel_base_ability"
+		ability_ratking_standard_bearer = "citadel_base_ability"
 		ability_rolling_fireball = "citadel_base_ability"
 		ability_scrap_blast = "citadel_base_ability"
 		ability_shieldguy_ability01 = "citadel_base_ability"
@@ -7538,6 +7592,7 @@
 		citadel_ability_projectmind = "citadel_base_ability"
 		citadel_ability_psychic_lift = "citadel_base_ability"
 		citadel_ability_punkgoat_primaryweapon = "citadel_base_ability"
+		citadel_ability_ratking_primaryweapon = "citadel_base_ability"
 		citadel_ability_rocket_barrage = "citadel_base_ability"
 		citadel_ability_self_vacuum = "citadel_base_ability"
 		citadel_ability_shieldedsentry = "citadel_base_ability"
@@ -7649,6 +7704,7 @@
 		citadel_projectile = "basemodelentity"
 		citadel_prop_dynamic = "prop_dynamic"
 		citadel_ranked_badge_prop = "prop_dynamic"
+		citadel_ratking_standard = "citadel_animating_model_entity"
 		citadel_restorative_goo_cube = "citadel_animating_model_entity"
 		citadel_shield = "citadel_model_entity"
 		citadel_shop_prop_dynamic = "prop_dynamic"
@@ -7826,6 +7882,7 @@
 		npc_neutral_sinners_sacrifice_hideout = "npc_neutral_sinners_sacrifice"
 		NPC_PestilenceDrone = "baseanimgraph"
 		npc_player_bot_brain = "baseanimgraph"
+		npc_ratking_rat = "citadel_animating_model_entity"
 		npc_super_neutral = "baseanimgraph"
 		npc_trooper = "baseanimgraph"
 		npc_trooper_boss = "baseanimgraph"
@@ -7882,6 +7939,7 @@
 		prop_ragdoll = "baseanimgraph"
 		pulse_game_blackboard = ""
 		punkgoat_tether_projectile = "citadel_tracked_projectile"
+		ratking_scrap_grenade_projectile = "citadel_projectile"
 		rejuv_tracking_projectile = "upgrade_tracking_projectile_apply_modifier"
 		render_portal = "basemodelentity"
 		rocket_launcher_rocket_projectile = "citadel_projectile"
@@ -10339,42 +10397,6 @@
 				m_Outputs = [  ]
 				m_Helpers = [  ]
 			}
-			CitadelTaggedSoundSettings_t = 
-			{
-				m_BaseClasses = [  ]
-				m_FriendlyName = "Citadel Tagged Sounds Settings"
-				m_Description = ""
-				m_MetaData = 
-				{
-					MVDataNodeType = 0
-					MVDataOverlayType = 0
-				}
-				m_HelpContextName = ""
-				m_nClassType = "modelgamedata"
-				m_rgbColor = [ 220, 30, 220 ]
-				m_bmins = [ -8.0, -8.0, -8.0 ]
-				m_bmaxs = [ 8.0, 8.0, 8.0 ]
-				m_Tags = [  ]
-				m_Variables = 
-				[
-					{
-						m_Name = "m_taggedSounds"
-						m_FullType = "array:resource:vdata"
-						m_LongName = "Tagged Sounds"
-						m_Description = ""
-						m_bUsingLegacyDefault = false
-						m_DefaultKV3 = [  ]
-						m_KV3Metadata = 
-						{
-							hidden = false
-						}
-						m_pItemSet = null
-					},
-				]
-				m_Inputs = [  ]
-				m_Outputs = [  ]
-				m_Helpers = [  ]
-			}
 			CitadelTeamRelativeParticleSettings_t = 
 			{
 				m_BaseClasses = [  ]
@@ -10946,6 +10968,42 @@
 						{
 							hidden = false
 							mapkeys_is_suggestion = true
+						}
+						m_pItemSet = null
+					},
+				]
+				m_Inputs = [  ]
+				m_Outputs = [  ]
+				m_Helpers = [  ]
+			}
+			TaggedSoundSettings_t = 
+			{
+				m_BaseClasses = [  ]
+				m_FriendlyName = "Tagged Sounds Settings"
+				m_Description = ""
+				m_MetaData = 
+				{
+					MVDataNodeType = 0
+					MVDataOverlayType = 0
+				}
+				m_HelpContextName = ""
+				m_nClassType = "modelgamedata"
+				m_rgbColor = [ 220, 30, 220 ]
+				m_bmins = [ -8.0, -8.0, -8.0 ]
+				m_bmaxs = [ 8.0, 8.0, 8.0 ]
+				m_Tags = [  ]
+				m_Variables = 
+				[
+					{
+						m_Name = "m_taggedSounds"
+						m_FullType = "array:resource:vdata"
+						m_LongName = "Tagged Sounds"
+						m_Description = ""
+						m_bUsingLegacyDefault = false
+						m_DefaultKV3 = [  ]
+						m_KV3Metadata = 
+						{
+							hidden = false
 						}
 						m_pItemSet = null
 					},
@@ -43536,6 +43594,7 @@
 		"@lib:client.dll!CNecro_HauntingSkullEntity_API" = 0
 		"@lib:client.dll!CNPC_FamiliarHelper_API" = 0
 		"@lib:client.dll!CNPC_NecroSkele_API" = 0
+		"@lib:client.dll!CNPC_Ratking_Rat_API" = 0
 		"@lib:client.dll!COmniLight_API" = 0
 		"@lib:client.dll!CParticleBindingRealPulse" = 0
 		"@lib:client.dll!CParticleCollectionBindingInstance" = 11256737

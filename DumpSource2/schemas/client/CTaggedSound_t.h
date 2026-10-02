@@ -1,5 +1,6 @@
+// MVDataRoot
 // MVDataOverlayType = 2
-class CCitadelTaggedSound_t
+class CTaggedSound_t
 {
 	// MPropertyStartGroup = "Tagged Sounds"
 	CSoundEventName m_soundEvent;

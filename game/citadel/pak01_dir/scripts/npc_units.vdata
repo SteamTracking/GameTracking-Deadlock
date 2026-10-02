@@ -2881,6 +2881,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 			}
 		}
@@ -3030,6 +3031,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -3216,6 +3218,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -3409,6 +3412,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -3603,6 +3607,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -3795,6 +3800,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -3994,6 +4000,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -4194,6 +4201,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 			}
 		}
@@ -4400,6 +4408,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 			}
 		}
@@ -4511,8 +4520,10 @@
 		m_iGoldReward = 1
 		m_flStepHeight = 32.0
 		m_DeathParticle = resource_name:"particles/npc/neutral_trooper_death.vpcf"
-		m_flRespawnTime = 30.0
+		m_flRespawnTime = 15.0
 		m_flRespawnTimeHeroTest = 2.0
+		m_sReplacementSubclass = "npc_neutral_bug_rat"
+		m_flReplacementChance = 0.1
 		m_vecIntrinsicModifiers = 
 		[
 			subclass:
@@ -4522,6 +4533,114 @@
 				m_nEnabledStateMask = "MODIFIER_STATE_IGNORED_BY_NPC_TARGETING"
 			},
 		]
+		m_strLastHitSound = soundevent:"LastHit.HighFrequency"
+	}
+	npc_neutral_bug_rat = 
+	{
+		_class = "npc_neutral_bug"
+		m_bOutlineThroughWalls = false
+		m_sModelName = resource_name:"models/heroes_wip/ratking/ratking_minion.vmdl"
+		m_nMaxHealth = 1
+		m_iGoldReward = 1
+		m_flStepHeight = 32.0
+		m_DeathParticle = resource_name:"particles/npc/neutral_trooper_death.vpcf"
+		m_flRespawnTime = 15.0
+		m_flRespawnTimeHeroTest = 2.0
+		m_sReplacementSubclass = ""
+		m_flReplacementChance = 0.0
+		m_vecIntrinsicModifiers = 
+		[
+			subclass:
+			{
+				_class = "modifier_intrinsic_base"
+				_my_subclass_name = "bug_intrinsic"
+				m_nEnabledStateMask = "MODIFIER_STATE_IGNORED_BY_NPC_TARGETING"
+			},
+		]
+		m_strLastHitSound = soundevent:"LastHit.HighFrequency"
+		_base = "npc_neutral_bug"
+		m_bIsRat = true
+		m_flRadius = 30.0
+		m_flModelScale = 1.7
+		m_vecRunSequences = 
+		[
+			"rat_pack_run_01",
+			"rat_pack_run_02",
+			"rat_pack_run_03",
+		]
+		m_flMoveSpeedMin = 170.0
+		m_flMoveSpeedMax = 240.0
+		m_flWaitTimeMax = 0.2
+		m_sDeathSwarmSubclass = "npc_neutral_bug_rat_swarm"
+		m_nDeathSwarmCount = 5
+		m_DeathSwarmImmuneHeroID = 84
+		m_flDeathSwarmSpawnDistMin = 630.0
+		m_flDeathSwarmSpawnDistMax = 866.0
+		m_strRatAttachSound = soundevent:"Neutral.Rat.Attach"
+	}
+	npc_neutral_bug_rat_swarm = 
+	{
+		_class = "npc_neutral_bug"
+		m_bOutlineThroughWalls = false
+		m_sModelName = resource_name:"models/heroes_wip/ratking/ratking_minion.vmdl"
+		m_nMaxHealth = 1
+		m_iGoldReward = 0
+		m_flStepHeight = 32.0
+		m_DeathParticle = resource_name:"particles/npc/neutral_trooper_death.vpcf"
+		m_flRespawnTime = 15.0
+		m_flRespawnTimeHeroTest = 2.0
+		m_sReplacementSubclass = ""
+		m_flReplacementChance = 0.0
+		m_vecIntrinsicModifiers = 
+		[
+			subclass:
+			{
+				_class = "modifier_intrinsic_base"
+				_my_subclass_name = "bug_intrinsic"
+				m_nEnabledStateMask = "MODIFIER_STATE_IGNORED_BY_NPC_TARGETING"
+			},
+		]
+		m_strLastHitSound = soundevent:"LastHit.HighFrequency"
+		_base = "npc_neutral_bug_rat"
+		m_bIsRat = true
+		m_flRadius = 30.0
+		m_flModelScale = 1.7
+		m_vecRunSequences = 
+		[
+			"rat_pack_run_01",
+			"rat_pack_run_02",
+			"rat_pack_run_03",
+			"rat_pack_run_04",
+		]
+		m_flMoveSpeedMin = 150.0
+		m_flMoveSpeedMax = 200.0
+		m_flWaitTimeMax = 0.2
+		m_sDeathSwarmSubclass = ""
+		m_nDeathSwarmCount = 0
+		m_DeathSwarmImmuneHeroID = 84
+		m_flDeathSwarmSpawnDistMin = 630.0
+		m_flDeathSwarmSpawnDistMax = 866.0
+		m_strRatAttachSound = soundevent:"Neutral.Rat.Attach"
+		m_flDropDownRate = 800.0
+		m_flChaseLifetime = 8.0
+		m_flAttachRadius = 64.0
+		m_flAttachHeight = 96.0
+		m_SwarmModifier = subclass:
+		{
+			_class = "modifier_neutral_rat_swarm"
+			_my_subclass_name = "neutral_rat_swarm"
+			m_flRatDuration = 6.0
+			m_flDamagePerRatPerSecond = 2.0
+			m_flDamageInterval = 0.5
+			m_eDamageType = "CITADEL_DAMAGETYPE_ABILITY"
+			m_flDashDropFraction = 0.5
+			m_RatParticle = resource_name:"particles/abilities/ratking/ratking_nibble_debuff.vpcf"
+			m_nMaxRatParticles = 5
+			m_strDashOffSound = soundevent:"Neutral.Rat.Knockoff"
+			m_sAmbientLoopingSound = soundevent:"Neutral.Rat.Debuff.Lp"
+			m_strHudIcon = panorama:"file://{images}/hud/abilities/ratking/ratking_nibble.psd"
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+		}
 	}
 	npc_boss_tier2 = 
 	{
@@ -6661,6 +6780,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -6855,6 +6975,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -7041,6 +7162,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -7234,6 +7356,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -7428,6 +7551,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -7615,6 +7739,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -7810,6 +7935,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -8006,6 +8132,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -8192,6 +8319,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -8385,6 +8513,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -8579,6 +8708,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -8765,6 +8895,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -8958,6 +9089,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -9150,6 +9282,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -9348,6 +9481,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -9547,6 +9681,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -9734,6 +9869,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -9929,6 +10065,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -10125,6 +10262,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -10321,6 +10459,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -10517,6 +10656,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -10706,6 +10846,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -10901,6 +11042,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -11097,6 +11239,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -11284,6 +11427,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -11470,6 +11614,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -11663,6 +11808,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -11857,6 +12003,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -12046,6 +12193,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -12241,6 +12389,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -12436,6 +12585,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -12631,6 +12781,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -12827,6 +12978,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -13014,6 +13166,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -13210,6 +13363,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -13407,6 +13561,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}
@@ -13488,6 +13643,33 @@
 		m_bUseSleepPoseWhenNoTarget = true
 		m_bSpawnBreakablesOnDeath = true
 		m_strCustomUnitIcon = panorama:"file://{images}/npcs/neutrals/neutral_barrel_heavy.psd"
+	}
+	npc_ratking_rat = 
+	{
+		_class = "npc_ratking_rat"
+		m_RatModel = resource_name:"models/heroes_wip/ratking/ratking_minion.vmdl"
+		m_flProbeDistance = 192.0
+		m_flProbeStepUp = 50.0
+		m_bDebugDraw = false
+		m_flScurryPeriodMin = 1.0
+		m_flScurryPeriodMax = 2.0
+		m_flScurryAmplitudeMin = 15.0
+		m_flScurryAmplitudeMax = 30.0
+		m_flProbeInterval = 0.1
+		m_flSpreadDuration = 2.0
+		m_flMoveSpeedMin = 10.0
+		m_RatSwarmParticle = resource_name:"particles/abilities/ratking/ratking_nibble_swarm.vpcf"
+		m_flMoveSpeedMax = 16.0
+		m_AnimRunSequences = 
+		[
+			"rat_pack_run_01",
+			"rat_pack_run_02",
+			"rat_pack_run_03",
+			"rat_pack_run_04",
+		]
+		m_AnimFlightSequence = "rat_release"
+		m_flModelScaleMax = 3.5
+		m_strMovementLoopingSound = soundevent:"Ratking.Nibble.Rat.Scurry.Lp"
 	}
 	neutral_barrel_02_normal = 
 	{
@@ -13596,6 +13778,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 6.125
 			}
@@ -13792,6 +13975,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 6
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 9.1
 			}
@@ -13989,6 +14173,7 @@
 				m_flReloadMoveSpeed = 236.22
 				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Default"
 				m_flAutoReplenishClip = 4
+				m_NpcAimingSpread = [ 0.0, 3.0 ]
 				m_strShootSound = soundevent:"Neutral.Camp.Bullet.Fire"
 				m_flBulletDamage = 2.415
 			}

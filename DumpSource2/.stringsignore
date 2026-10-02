@@ -1138,6 +1138,7 @@ Animgraph Parameter
 Animgraph Position Parameter
 Animgraph Variables
 Animgraph trigger parameter for this attack
+Anims
 Anisotropy
 Anti Gun
 Anti Healing
@@ -1376,6 +1377,7 @@ Back-Right
 Backdoor Protection Modifier
 BackdoorProtectionTrigger
 Background Color
+Backward speed (away from the banner) of the hop he does after planting.
 Bake citadel_tightcamera scale onto camera settings
 Bake occlusion for a single source probe with the given probe id.
 BakedLightingInfo_t
@@ -1754,6 +1756,7 @@ CAI_MovementGaitSettings
 CAI_NPCMovementSettingsVData
 CAI_NPCMovementStanceSettings_t
 CAI_NPC_NecroSkeleVData
+CAI_NPC_Ratking_RatVData
 CAI_NPC_TrooperVData
 CAI_NavLinkMotor
 CAI_NavLinkObstacleSettings
@@ -2425,6 +2428,7 @@ CCitadelModifier_BleedBase
 CCitadelModifier_BleedOwnerModifier
 CCitadelModifier_Viscous_Goo_Aura
 CCitadelNPCModelGameData_t
+CCitadelNmEventConsumerSound
 CCitadelObserverPawn
 CCitadelObserver_MovementServices
 CCitadelPassthroughFakeWall
@@ -2458,7 +2462,6 @@ CCitadelSoundOpvarSetOBB
 CCitadelSoundStackFieldOBB
 CCitadelSpawnBlocker
 CCitadelSpeedBoostTrigger
-CCitadelTaggedSound_t
 CCitadelTeam
 CCitadelTeamRevealHeroCard
 CCitadelTeleportLocation
@@ -2816,6 +2819,18 @@ CCitadel_Ability_PunkGoat_Ult
 CCitadel_Ability_Punkgoat_PrimaryWeapon
 CCitadel_Ability_Punkgoat_PrimaryWeaponVData
 CCitadel_Ability_RapidFire
+CCitadel_Ability_RatArmor
+CCitadel_Ability_RatArmorVData
+CCitadel_Ability_RatKing_RatNibble
+CCitadel_Ability_RatKing_RatNibbleVData
+CCitadel_Ability_Ratking_EnterTunnel
+CCitadel_Ability_Ratking_EnterTunnelVData
+CCitadel_Ability_Ratking_PrimaryWeapon
+CCitadel_Ability_Ratking_PrimaryWeaponVData
+CCitadel_Ability_Ratking_ScrapGrenade
+CCitadel_Ability_Ratking_ScrapGrenadeVData
+CCitadel_Ability_Ratking_StandardBearer
+CCitadel_Ability_Ratking_StandardBearerVData
 CCitadel_Ability_RestorativeGoo
 CCitadel_Ability_RiotProtocol
 CCitadel_Ability_RiposteTargetSelect
@@ -3585,6 +3600,11 @@ CCitadel_Modifier_FireRateAura
 CCitadel_Modifier_FireRateAuraVData
 CCitadel_Modifier_FissureWall
 CCitadel_Modifier_FissureWallVData
+CCitadel_Modifier_FlagAllyAura
+CCitadel_Modifier_FlagAllyBuff
+CCitadel_Modifier_FlagAllyBuffVData
+CCitadel_Modifier_FlagAura
+CCitadel_Modifier_FlagAuraVData
 CCitadel_Modifier_FlameDash
 CCitadel_Modifier_FlameDashBurn
 CCitadel_Modifier_FlameDashBurnVData
@@ -3893,6 +3913,8 @@ CCitadel_Modifier_NeutralAbility
 CCitadel_Modifier_NeutralAgro
 CCitadel_Modifier_NeutralDamageGrowth
 CCitadel_Modifier_NeutralDamageGrowthVData
+CCitadel_Modifier_NeutralRatSwarm
+CCitadel_Modifier_NeutralRatSwarmVData
 CCitadel_Modifier_NeutralSelfAoE
 CCitadel_Modifier_NeutralSelfAoEVData
 CCitadel_Modifier_NeutralSelfCastBomb
@@ -4004,6 +4026,15 @@ CCitadel_Modifier_RampSlow
 CCitadel_Modifier_RampSlowModifierVData
 CCitadel_Modifier_RapidFire
 CCitadel_Modifier_RapidFire_AirJuggle
+CCitadel_Modifier_RatKing_RatArmor
+CCitadel_Modifier_RatKing_RatArmorVData
+CCitadel_Modifier_RatKing_RatTracker
+CCitadel_Modifier_RatNibble
+CCitadel_Modifier_RatNibbleArmorTotal
+CCitadel_Modifier_RatNibbleLinger
+CCitadel_Modifier_RatNibbleVData
+CCitadel_Modifier_Ratking_SewerEruption
+CCitadel_Modifier_Ratking_SewerEruptionVData
 CCitadel_Modifier_RebirthCredit
 CCitadel_Modifier_RebirthCreditVData
 CCitadel_Modifier_RebuttalWatcher
@@ -4444,6 +4475,7 @@ CCitadel_Projectile_WebWall
 CCitadel_Projectile_Wrecker_Teleport
 CCitadel_Projectile_WreckingBall
 CCitadel_Prop_MidBossIndicator
+CCitadel_Ratking_Standard
 CCitadel_RestorativeGooCube
 CCitadel_Shield
 CCitadel_ShopProp
@@ -4886,6 +4918,7 @@ CITADEL_ABILITY_BEHAVIOR_DONT_SWITCH_AWAY_ON_CAST
 CITADEL_ABILITY_BEHAVIOR_DONT_TRIGGER_POST_CAST_ON_CAST_COMPLETE
 CITADEL_ABILITY_BEHAVIOR_DONT_TRIGGER_SPELL_BLOCK
 CITADEL_ABILITY_BEHAVIOR_DO_NOT_ALLOW_SPAM_PROC
+CITADEL_ABILITY_BEHAVIOR_DO_NOT_CANCEL_ON_PARRY
 CITADEL_ABILITY_BEHAVIOR_EQUAL_UNIT_TARGET_PRIORITY
 CITADEL_ABILITY_BEHAVIOR_EXCLUSIVE_USE
 CITADEL_ABILITY_BEHAVIOR_HIDDEN
@@ -5391,6 +5424,7 @@ CLASS_NONE
 CLASS_NPC_FLYING_PIGEON
 CLASS_NPC_HIDEOUT_CAT
 CLASS_NURSE_REVIVAL_TARGET
+CLASS_PASSTHROUGH_FAKE_WALL
 CLASS_PERCHED_PREDATOR_PROJECTILE
 CLASS_PICKUP_SPAWN
 CLASS_PING_LOCATION
@@ -5883,6 +5917,8 @@ CNPC_Neutral_Hideout_Rabbit
 CNPC_Neutral_Hideout_RabbitVData
 CNPC_Neutral_SinnersSacrifice
 CNPC_Neutral_SinnersSacrifice_Hideout
+CNPC_Ratking_Rat
+CNPC_Ratking_Rat_GraphController
 CNPC_ShieldedSentry
 CNPC_ShieldedSentryVData
 CNPC_ShieldedSentry_GraphController
@@ -6006,6 +6042,8 @@ CNmClipDocEvent_OrientationWarp
 CNmClipDocEvent_Particle
 CNmClipDocEvent_RootMotion
 CNmClipDocEvent_Sound
+CNmClipDocEvent_SoundBase
+CNmClipDocEvent_TaggedSound
 CNmClipDocEvent_TargetWarp
 CNmClipDocEvent_Transition
 CNmClipDocument
@@ -6310,7 +6348,8 @@ CNmSkeleton::SecondarySkeleton_t
 CNmSkeletonDocument
 CNmSkeletonDocument::SecondarySkeleton_t
 CNmSoundEvent
-CNmSoundEvent::Position_t
+CNmSoundEventBase
+CNmSoundEventBase::Position_t
 CNmSpeedScaleBaseNode::CDefinition
 CNmSpeedScaleNode::CDefinition
 CNmStateCompletedConditionNode::CDefinition
@@ -6325,6 +6364,7 @@ CNmSyncEventIndexConditionNode::TriggerMode_t
 CNmSyncTrack
 CNmSyncTrack::EventMarker_t
 CNmSyncTrack::Event_t
+CNmTaggedSoundEvent
 CNmTarget
 CNmTargetInfoNode::CDefinition
 CNmTargetInfoNode::Info_t
@@ -6838,6 +6878,7 @@ CSceneListManager
 CSceneObjectData
 CSceneObjectData::RTProxyDrawDescriptor_t
 CSchemaSystemInternalRegistration
+CScrapGrenadeProjectile
 CScriptComponent
 CScriptItem
 CScriptNavBlocker
@@ -6996,6 +7037,7 @@ CSubassetTypeInfo
 CSubmix
 CSubtractUpdateNode
 CSymbolAnimParameter
+CTaggedSound_t
 CTakeDamageInfo
 CTakeDamageResult
 CTakeDamageSummaryScopeGuard
@@ -8028,6 +8070,7 @@ Channeling "hero_action" value
 Channels
 CharacterDecalRenderer
 Charge
+Charge speed multiplier over the rise
 Charges
 Chase cam's ideal distance from target
 Chat text messages that trigger the concept associated with this message
@@ -8080,7 +8123,6 @@ Citadel Model Particle Settings
 Citadel Muzzle Settings
 Citadel NPC Data
 Citadel Play Controller
-Citadel Tagged Sounds Settings
 Citadel Team Relative Particle Settings
 Citadel UI Scene Data
 Citadel Unit Query Settings
@@ -8164,7 +8206,6 @@ CitadelStatsWeaponDisplay_t
 CitadelStolenAbilitySlot_t
 CitadelTVCamera
 CitadelTVDirector
-CitadelTaggedSoundSettings_t
 CitadelTeamRelativeParticleSettings_t
 CitadelTrackedAbilityProjectileCreateInfo_t
 CitadelUnitQuerySettings_t
@@ -8821,6 +8862,7 @@ Deactivate
 Dead
 Deals the target damage by the given amount
 Death
+Death swarm rats spawn at a random point this far from the killer (0 max spawns them where this died)
 Debris
 Debuff
 Debuffs
@@ -9285,6 +9327,7 @@ Double Buffer Source Audio
 Double-tap Move Forward to keep moving forward until Move Forward or Move Back is pressed
 Downsides rolled onto every corruptible item at match start.  The networked id is the index into this list, so only ever append.
 Downward Ratio
+Downward speed of the slam out of the apex.
 Dpad Down
 Dpad Left
 Dpad Right
@@ -10290,6 +10333,11 @@ EPingSubjectSelf_t
 EPingSubjectSourceContext_t
 EPingTargetAllegiance_t
 EPingTristate_t
+EPlantLeapPhase_t
+EPlantLeap_Hovering
+EPlantLeap_None
+EPlantLeap_Rising
+EPlantLeap_Slamming
 EPlayOfTheGameReplayTrigger
 EPlayOfTheGameReplayTrigger_BeginOutro
 EPlayOfTheGameReplayTrigger_HeroCalloutMajor
@@ -12395,6 +12443,7 @@ HULL_TINY
 HULL_TINY_CENTERED
 HULL_WIDE_HUMAN
 Half Blend Add
+Half height of the cylinder the eruption checks for victims, in meters.
 Half width of the cone at the player
 Hammer
 Hammer only. Set between 0 and 1 to color dimensions probes and the smooth surface with a hard cut instead of the continuous ramp: inside / outside below the value is red, at or above is blue. Negative disables.
@@ -12565,6 +12614,10 @@ How do you want the ping to behave?
 How does the power of 'Wall Jump Max Lateral Speed' fall off with speed along the wall (so that players can't stack this speed forever). X axis is speed along the wall in meters per second (using METERS_PER_INCH). Values from this curve are clamped to 0..1 output. 
 How far a dash jump will send you forward.  This is on top of the ~8m already traveled by the dash.
 How far a path may detour from the direct route. Negative means no limit.
+How far above the ground the plant animation starts while he's slamming down
+How far above the ground to still be grounded while charging
+How far ahead we trace the navmesh when looking for somewhere to run.
+How far along our ray we aim ahead of ourselves.
 How far apart, in 2D world units, two pings with no pinged entity can be and still count as the same ping.
 How far away before we stop showing in world deny events.
 How far back a target must dash during the melee attack delay window  in order to dodge a pending hit
@@ -12574,6 +12627,7 @@ How far forward from the plane of hero and camera forward to move the shoot posi
 How far forward the mantle will move the player onto the ledge
 How far forward/back to offset the camera, in camera rotation space, from the camera pivot. -Backwards/+Forwards
 How far from Allies that is acceptable
+How far from abs origin in the z do we start the plant check.
 How far in front of a ledge's lip auto-mantle looks for a lower step. If the drop there is within step height the ledge can be walked up to (stairs), so auto-mantle skips it.
 How far in front of player to trace when looking for mantle ledges.
 How far in front of the shoot position to check if the eyes can see for turning on the shoot lean
@@ -12583,26 +12637,32 @@ How far offset to the left and right will damage numbers be when this model take
 How far out of the players effective gun range do we show the health bar
 How far past the halfway point between two discrete strafe angles the target angle has to go before a strafe transition is triggered, when the character is aiming to its left.
 How far past the halfway point between two discrete strafe angles the target angle has to go before a strafe transition is triggered, when the character is aiming to its right.
+How far the rats run as a fraction of the banner's Radius
 How far to search for friendly players for deploying our shield and fast walking
 How far to search for friendly players for deploying our shield and slow walking. Only applies if players are behind
 How far to the side a target must dash during the melee attack delay window  in order to dodge a pending hit
 How far vertically will damage numbers be when this model takes damage when the model is far
 How far vertically will damage numbers be when this model takes damage when the model is near
+How far we weave to either side as we scurry in units
 How far we will really try to transition from player to player
+How far we will step down
 How far we'll trace to see if the wall we collided with is close enough to trigger a wall jump
 How far we'll trace using the player's velocity to find a wall to jump off of
 How fast bullets return to their normal speed after exiting a time warp
 How fast does recoil recovery down to the original crosshair position.
+How fast he builds up to full charge speed.
 How fast the dash should go.  When using the curve, the dash will travel this speen when y=1
 How fast the inaccuracy moves - mimic mouse movement correction
 How fast to approach the target value
 How fast we accelerate depends on our move speed - this lower bound ensures it doesn't go below ground friction
 How fast we can walk when zoomed/shooting/reloading
+How fast we run along our path, in meters per second.
 How fast will the lean parameter converge to the actual target lean based on the current path curvature. 0 means never while 1 means immediately.
 How fast you have to be moving on flat ground to be able to initiate a slide.
 How fast you have to be moving while dashing to initiate a slide.  Mainly to prevent slowed-dash flowing into a weirdly fast slides.
 How health per second does backdoor protection regen?
 How health per second when out of combat?
+How high a step up we'll take
 How high the maximum mantle is
 How logn does the player icon linger on the minimap after they die
 How long CAI_CitadelNPC::FVisible() results stay cached
@@ -12644,6 +12704,7 @@ How long does it takes to aim down sights.
 How long each lockon stack takes to gain, in order. The number of entries is the max number of stacks.
 How long gravity ramps back up after a parry cancels an air dash, so the fall eases in instead of snapping on
 How long ground friction stays reduced after a parry cancels a ground dash, so the kept momentum bleeds off visibly
+How long he holds his height at the apex before slamming down
 How long in addition to the tv_delay do we wait at the end of the match before going to the score screen in seconds
 How long in milliseconds before we warn about lock hold duration
 How long is the cinematic intro applied to npcs (shrine/patron)
@@ -12652,6 +12713,7 @@ How long it takes after pressing the +ping command for the chat wheel to appear.
 How long lane swap is available in pre-game wait. Set to 0 to disable, -1 for infinity.
 How long lane swap is available in-game. Set to 0 to disable, -1 for infinity.
 How long looping soundpatch captions should display for.
+How long one full left-right-and-back weave takes in seconds.
 How long postgame lasts until play of the game
 How long pre-match is until we start the match
 How long pre-match is until we start the match in the full version
@@ -12661,6 +12723,7 @@ How long should the warning be up before it boots the user from the MM queue
 How long someone can be outside the circle before they are considered absent
 How long the debug draws stick around for, unless they're per-tick.
 How long the face to black should be for the teleports
+How long the rise lasts.
 How long the shield effect lingers after having taken damage
 How long the slow penalty is for spamming duck is
 How long this modifier must be alive before backdoor protection is activated
@@ -12679,6 +12742,7 @@ How long to let the value lag behind before springing to the default value
 How long to remember recent attackers
 How long to remember recent melee attacks
 How long to show the message about Killer Replay after death. The best setting is a bit shorter than spec_replay_autostart_delay + spec_replay_leadup_time + spec_replay_winddown_time
+How long we take to peel out into the lane the spread_offset spawn key gave us.
 How long we will queue an ability activation to happen if the player tried to use it while busy.
 How long we'll buffer input to trigger another melee if we're already performing a melee
 How long you have to be walking around, not sliding until we clear the air-drag flag on jumps.
@@ -12735,6 +12799,7 @@ How much max health to heal from 0 to 1 as (0 to 100%)
 How much money to buffer item purchases in Hero Testing
 How much more potential air acceleration to add
 How much normal ( e.g. ground ) path we have to have after the navlink to trigger exit to movement.
+How much of our speed we keep while turning as hard as we can. 
 How much of the downhill acceleration to apply at the minimum angle.
 How much of the signal to send to the delay lines.  How loud the reflections are.
 How much of this currency each recipient is granted
@@ -12761,6 +12826,7 @@ How much to slow down backwards motion
 How much variance to allow the GC check time to avoid swamping the GC (in seconds)
 How much vertical distance the anim of this type will appear to travel
 How much vertical speed do we give the player, before fatigue is applied. Fatigue only applies to vertical speed.
+How much we dislike ending up off our ray. Steers them back to the ray.
 How much we scale physics impacts against the ragdoll.
 How name is displayed in tools
 How often bots will roll given damage conditions
@@ -12768,6 +12834,7 @@ How often do we update (seconds)
 How often the server should check the GC is still connected (in seconds)
 How often to flash demo recording/playback overlay (0 - disable overlay, -1 - show always)
 How often to update the enemy player target (per pawn)
+How often we check the navmesh.
 How quickly the camera resets to the horizon. Higher is faster
 How rapidly we fade the character to transparent when using first person mode.
 How selected NPC's are highlighted. ( 0 = no highlight, 1 = npc hull, 2 = cross at origin )
@@ -13659,6 +13726,8 @@ LastIncomingHit_t
 Lastest Value
 LatchDirtyPermission_t
 Late Reflections
+Launch pitch of each rat
+Launch speed of each rat as it leaps.
 LayerMaskType_t
 LayerType_t
 Layers for this mood
@@ -14302,6 +14371,7 @@ MODIFIER_STATE_IS_MELEE_TARGET
 MODIFIER_STATE_IS_SMALL_DEPLOYABLE
 MODIFIER_STATE_IS_TINY_CHARACTER
 MODIFIER_STATE_ITEMS_DISABLED
+MODIFIER_STATE_ITEMS_IGNORE_COMBAT_ABILITIES_DISABLED
 MODIFIER_STATE_ITEMS_IGNORE_IMMOBILIZE
 MODIFIER_STATE_JUMP_DISABLED
 MODIFIER_STATE_KEEP_HP_PERCENTAGE_ON_MAXHEALTH_CHANGE
@@ -14919,6 +14989,7 @@ Max stretch (and 1/x compression) ratio a triangle-anchored decal may show relat
 Max time between Move Forward presses to toggle auto-move
 Max time to attempt a reconnect after a crash.
 Max to fire upon SplitShot (-1 = use default)
+Max turn rate
 Max value property name
 Max vertical offset at which to create a jump connection ( possibly one-way ).
 Max vertical offset at which to make a jump connection two-way.
@@ -17303,6 +17374,7 @@ PingTargetMatch_t
 PingWheelMessage_t
 PingWheelOptionID_t
 Pinging a dead hero whose respawn is at most this many seconds away says they are almost back rather than dead.
+Pinging a low teammate offers a heal only if they are within this many units and in line of sight. Matches citadel_fow_player_range.
 Pitch
 Pitch (aiming down) for bots when using a friendly ability
 Pitch Limit
@@ -17478,6 +17550,7 @@ PreDelayMS:7
 Precipitation
 PrecipitationFilter_t
 Prediction
+Prediction headroom after a stun/root/sleep clears.
 PredictionDiffManager001
 Prefer being matched with other solo players when not in a party
 Prefer shader loop unrolling.
@@ -17984,11 +18057,15 @@ RankInterval_t
 RankProgress_t
 Ranked
 Rapid Fire
+RatArmorPiece_t
 RatchetType_Absolute
 RatchetType_EachEngage
 Rate at which entities can be trickled to players
 Rate of Fire
 Rate of interpolation once hold time has elapsed.
+Rats
+Rats leaping out per spew.
+Rats that attach to an enemy hit by one of these rats.
 Raytracing TLAS
 Re-Selection Time Window
 Re-lays the pickup trail on every catapult that has one, clearing the old pickups first
@@ -18180,10 +18257,12 @@ Renders mix layer debug.
 Rendersystem option in use (changing this does not change the rendersystem).
 Rendersystem option requested (changing this does not change the rendersystem).
 Rendersystem shader model in use (changing this does not change the shader model).
+Reopen the settings menu on the hero last selected in it, instead of its default view
 Repeat last console command.
 Repel
 Replace
 Replacement Options
+Replaces the charging sequence from the start of the plant leap rise until the leap ends.
 Replay the last death of the round, if possible. Disabled on official servers by default. Experimental.
 Replay time in seconds before the highlighted event
 ReplayEventType_t
@@ -18311,6 +18390,8 @@ RightFootDown
 RightFootPassing
 RightPhase
 Rings
+Rise speed multiplier over the rise
+Rise speed of the hop before he plants, before the curve scales it.
 RnBlendVertex_t
 RnBodyDesc_t
 RnCapsuleDesc_t
@@ -18889,6 +18970,7 @@ Schedule
 ScheduleId_t
 SchemaSystem
 SchemaSystem_001
+Score bonus for carrying on in the direction we last picked, so near-equal choices don't fight each other and make us zig-zag.
 Screen
 Screen & Particle Normal Align
 Screen Align
@@ -18940,15 +19022,19 @@ Second Curve
 Second Sound
 Secondary Clip Size
 Secondary Initial Clip (-1 means use clip size)
+Seconds a rat lives after leaping out. 
 Seconds after a bot sees you before it can react
 Seconds after a bullet stops updating before its tracer can be recycled for a new bullet. Should cover how long the tracer effect lingers after it stops emitting.
 Seconds after a ping during which repeating it folds into the same chat bubble instead of making a new one. Restarts on each repeat.
+Seconds after a rat jumps onto a target before the next rat can jump onto that same target.
 Seconds after client connect during which extra frames are buffered to prevent non-delta'd update
+Seconds after the banner is planted before the sewer erupts and the auras switch on.
 Seconds after the pickup is collected before it comes back. Set to -1 for one and done.
 Seconds between consecutive overhead buff models on the same player, so buffs gained together play one after another instead of on top of each other.
 Seconds between drowning ticks
 Seconds between each additional corrupted item allowance after the shop opens. 0 disables restocking.
 Seconds between full frame embeddeds
+Seconds between spews of rats from the planted banner.
 Seconds between taps on one subject for them to chain into a double (triple...) ping.
 Seconds each stat line from a permanent buff pickup stays on screen.
 Seconds from launch to impact. Drives the arc height.
@@ -19718,6 +19804,7 @@ Shows the entity browser, focused on the entity you specify.\n\tArguments:   \t{
 Shows the game UI
 Shows the list of upgrades/items/mods a player has in the order they purchased them. 0-3 for verbosity
 Shows the popup for a report you filed that we took action on, if there is one
+Shows the target's combined bullet armor reduction from every nibble debuff and linger as one overhead icon
 Shrine Gameplay
 Shrink the length of the traces in the XY axis so that going into doorways is less affected by the soft collision system.
 Shuffle
@@ -20558,6 +20645,8 @@ TagActionStatus
 TagSpan_t
 TagStatus
 Tagged Sounds
+Tagged Sounds Settings
+TaggedSoundSettings_t
 Tags
 Take a .png screenshot: png_screenshot [filename]
 Take a jpeg screenshot: jpeg_screenshot [filename] [quality 1-100].
@@ -20885,6 +20974,7 @@ The recent damage time window to be counted as an assister for player kill
 The region of the world to report this server in.
 The replay group that this server will be uploading files to
 The reverb can be parameterized either by a delay range (min/max delay in milliseconds) OR by a delay size for each dimension of a box (width/height/depth).<br>If you set width, height, or depth to anything other than zero, these min/max fields will not be used.
+The ring is split into this many wedges and each spew walks them in a shuffled order
 The select box alpha.
 The server tries to keep each player's m_nTickBase withing this many msecs of the server absolute tickcount
 The server will always shutdown on receiving the shutdown request, even if not hibernating
@@ -21240,6 +21330,8 @@ Turn on some model hit size debug visuals
 Turn on to enable combat log in matches with GC Lobbies
 Turn on to see animgraph variable changes for entities passing animgraph_debug_filterent.
 Turn on to show all matches in the ranked season view, not just matches from that ranked season.
+Turn rate in degrees per second at full charge speed.
+Turn rate in degrees per second while charging slowly.
 Turn to Face
 Turn to Face Limit
 Turn to Face Offset
@@ -21432,6 +21524,8 @@ Upper limit on texture pool size.
 UpperRandomBound
 UpscalerType_t
 Upward Ratio
+Upward launch speed of anyone caught in the eruption.
+Upward speed of the little hop he does after planting the banner. 0 disables the hop.
 Usage:  dumpstringtable <tablename |all> <sv | cl> <verbose | simple> <element>      Print string tables to console, verbose to dump data, simple to show name and count only, can specifiy a single numeric element index to restrict spew.
 Usage: pulse_debug_print <vpulse_resource>
 Usage: test_vqlayout tools/layout/examples/simple.vqlayout
@@ -22388,6 +22482,7 @@ Which ability to fire a MODIFIER_EVENT_ABILITY_TRIGGER_ACTIVATED event to when t
 Which attachment handle to use from the hero when creating the "zip_line_path_universal_attach" FX
 Which entity should we spew input for? (Useful for debugging bot input)
 Which hero do we spawn when we spawn and enemy or ally hero
+Which hero the settings menu shows while hero-specific settings are enabled: 0 the hero being played, 1 the base settings
 Which hero to auto-select the first time in the game.
 Which lane should be active? 0 means all
 Which lesson to associate with activating this ability
@@ -22702,6 +22797,11 @@ ability_punkgoat_blasted
 ability_punkgoat_goatflip
 ability_punkgoat_tether
 ability_punkgoat_ult
+ability_ratking_entertunnel
+ability_ratking_ratarmor
+ability_ratking_ratnibble
+ability_ratking_scrap_grenade
+ability_ratking_standard_bearer
 ability_rolling_fireball
 ability_scrap_blast
 ability_shieldguy_ability01
@@ -23666,6 +23766,7 @@ citadel_ability_projectmind
 citadel_ability_property_usage
 citadel_ability_psychic_lift
 citadel_ability_punkgoat_primaryweapon
+citadel_ability_ratking_primaryweapon
 citadel_ability_rocket_barrage
 citadel_ability_select_mash_protection_time
 citadel_ability_self_vacuum
@@ -24856,6 +24957,7 @@ citadel_ping_above_us_z
 citadel_ping_allow_responses_to_yourself
 citadel_ping_almost_respawned_seconds
 citadel_ping_below_us_z
+citadel_ping_can_heal_range
 citadel_ping_consecutive_window
 citadel_ping_enemy_count_radius
 citadel_ping_indicator_display_time
@@ -25090,6 +25192,7 @@ citadel_ranked_progress_fake_win_streak
 citadel_ranked_season_match_history_fake_rank_changes
 citadel_ranked_season_match_history_unfiltered
 citadel_rapid_stamina_regen
+citadel_ratking_standard
 citadel_recent_boss_damage_for_assist_time
 citadel_recent_comms_recording_window
 citadel_recent_comms_session_attempt_throttled_count
@@ -25154,6 +25257,7 @@ citadel_set_server_convar
 citadel_settings_active_settings_section_read_only
 citadel_settings_active_settings_subsection_read_only
 citadel_settings_always_show_all_settings
+citadel_settings_default_view
 citadel_settings_dismissed_new_settings
 citadel_settings_hero_selector_search
 citadel_settings_hide_hero_specific_disabled_notice
@@ -25163,6 +25267,7 @@ citadel_settings_hide_row_reset_confirm
 citadel_settings_hide_show_all_settings_off_notice
 citadel_settings_last_scrollbar_position_read_only
 citadel_settings_new_setting_newness_duration
+citadel_settings_remember_selected_hero
 citadel_settings_reset_dismissed_settings
 citadel_settings_scroll_panel_height_read_only
 citadel_settings_seen_new_settings
@@ -27669,6 +27774,7 @@ flags
 flashlight radius CP
 flashlight radius control point component
 flattening strength
+flight_velocity
 flip cull normal
 flip horizontal
 flip percentage
@@ -30115,6 +30221,7 @@ m_AirMeleeUpScale
 m_AirSpeedMax
 m_AlliedParticle
 m_AllyBounceModifier
+m_AllyFlagAuraModifier
 m_AllyIndicatorParticle
 m_AllyLockoutModifier
 m_AlphaAnimationCurve
@@ -30171,7 +30278,9 @@ m_Angles
 m_AngularVelocity
 m_AnimCaptures
 m_AnimCastEffect
+m_AnimFlightSequence
 m_AnimOverlay
+m_AnimRunSequences
 m_AnimStrayRadii
 m_AnimatedMaterialAttributes
 m_AnimgraphParameterNameOrientation
@@ -30180,6 +30289,9 @@ m_AnthemAOEModifier
 m_AntiTunnelBytecode
 m_AntiTunnelProbes
 m_AntiTunnelTargetNodes
+m_AnticipationParticle
+m_AnticipationParticleIndex
+m_AnticipationSound
 m_AoECastEffect
 m_AoEEnemy
 m_AoEFriendly
@@ -30202,6 +30314,7 @@ m_ArmSound
 m_ArmedParticle
 m_ArmorDebuff
 m_ArmorModifier
+m_ArmorTotalModifier
 m_ArpeggiatorMode
 m_Arpeggiators
 m_Array
@@ -30318,6 +30431,7 @@ m_Behavior_String != kMatch
 m_BerserkerSound
 m_BiasEffectNegative
 m_BiasEffectPositive
+m_BigExplosionSlowModifier
 m_BindPose
 m_BlackboardReferences
 m_BlackboardResource
@@ -30515,11 +30629,13 @@ m_ChannelStartParticle
 m_ChargeActiveModifier
 m_ChargeBombModifier
 m_ChargeHitSound
+m_ChargeImpactSound
 m_ChargeParticle
 m_ChargePrepareModifier
 m_ChargePreviewParticle
 m_ChargeUpParticle
 m_Charging
+m_ChargingCameraSequence
 m_ChargingModifier
 m_ChargingParticle
 m_ChargingSpeedCurve
@@ -30694,6 +30810,7 @@ m_DeathBarrierModifier
 m_DeathImmuneModifier
 m_DeathParticle
 m_DeathSound
+m_DeathSwarmImmuneHeroID
 m_DebrisParticle
 m_DebuffImmunityModifier
 m_DebuffModifier
@@ -30788,6 +30905,7 @@ m_DotOutlineColor
 m_DoublePounceModifier
 m_DownDashParticle
 m_DownStrikeModifier
+m_DpsSound
 m_DraftParams
 m_DragModifier
 m_DragonCastParticle
@@ -30867,6 +30985,7 @@ m_EndEntity
 m_EndParticleEnemy
 m_EndParticleFriendly
 m_EndTime
+m_EndcapParticle
 m_EndingForce
 m_EnemyAndFriendlyCapturingLoopSounds
 m_EnemyAura
@@ -30874,6 +30993,7 @@ m_EnemyAuraModifier
 m_EnemyCapturingLoopSounds
 m_EnemyDamageModifier
 m_EnemyDebuffModifier
+m_EnemyFlagAuraModifier
 m_EnemyFreezeAuraModifier
 m_EnemyGrabModifier
 m_EnemyGrappleParticle
@@ -31011,6 +31131,8 @@ m_FitMatrices
 m_FitWeights
 m_FixDescription
 m_FixType
+m_FlagModel
+m_FlagPlantSound
 m_Flags
 m_FlameAuraParticle
 m_FlameDashModifier
@@ -31396,6 +31518,7 @@ m_KnightChargeChannelParticle
 m_KnockbackModifier
 m_KnockbackToWallModifier
 m_KnockedOffSlowModifier
+m_KnockoffParticle
 m_KothEarlyWarningParticle
 m_KothOnSpawnParticle
 m_KothParams
@@ -31482,6 +31605,7 @@ m_LimitToMods
 m_Line
 m_LinePreviewParticleOverride
 m_LinearLimit
+m_LingerModifier
 m_LingerParticle
 m_LingeringAirControl
 m_LinkEffect
@@ -32096,6 +32220,10 @@ m_PlaceDoorParticle
 m_Plane
 m_PlaneNormal
 m_Planes
+m_PlantLeapCameraSequence
+m_PlantLeapHorizontalCurve
+m_PlantLeapSpeedCurve
+m_PlantedModifier
 m_PlayerActorProxTester
 m_PlayerDamage
 m_PlayerDataGlobal
@@ -32227,6 +32355,16 @@ m_RangeRingParticle
 m_RangedArmorModifier
 m_RapidFireModifier
 m_RapidFireParticle
+m_RatArmorModifier
+m_RatCountParticle
+m_RatJumpConeAngle
+m_RatJumpConeLength
+m_RatModel
+m_RatParticle
+m_RatRayRightOffset
+m_RatScreenParticle
+m_RatShieldStartParticle
+m_RatSwarmParticle
 m_Rate
 m_RateMax
 m_RateMin
@@ -32401,6 +32539,7 @@ m_SerializePoseRecipeAG2Dynamic
 m_SerializePoseRecipeAG2Slots
 m_ServerViewAngleChanges
 m_SettingSunThinkerModifier
+m_SewerModel
 m_ShadowModifier
 m_ShadowRevealedEffect
 m_ShadowStrikeInvisModifier
@@ -32437,6 +32576,7 @@ m_ShotID
 m_ShotId
 m_ShotVictimSound
 m_ShoveParticle
+m_ShrapnelTracer
 m_ShredModifier
 m_ShrinesDownBuffModifier
 m_ShrinkRayModifier
@@ -32674,6 +32814,7 @@ m_SwapParticle
 m_SwappedMaterial
 m_SwappedModel
 m_SwappedToTime
+m_SwarmModifier
 m_SwingAttachParticle
 m_SwingEndTime
 m_SwingLimit
@@ -33590,6 +33731,8 @@ m_bDebug
 m_bDebugAbsOriginChanges
 m_bDebugBypass
 m_bDebugCommandline
+m_bDebugDraw
+m_bDebugDrawEvents
 m_bDebugOrientation
 m_bDebugThisNode
 m_bDecayBounce
@@ -34329,6 +34472,7 @@ m_bIsPulling
 m_bIsPure
 m_bIsQueryOnly
 m_bIsRadialWind
+m_bIsRat
 m_bIsReferenced
 m_bIsRenderingWithViewModels
 m_bIsRepeatable
@@ -34422,6 +34566,7 @@ m_bLastTickBeforeClientUpdate
 m_bLastUpdateSkipped
 m_bLatched
 m_bLaunch
+m_bLeapLanded
 m_bLeaping
 m_bLearningAbility
 m_bLeaveAsleep
@@ -36122,6 +36267,7 @@ m_ePingLocation
 m_ePingMarkerInfo
 m_ePingWheelSoundType
 m_ePivot
+m_ePlantLeapPhase
 m_ePlayState
 m_ePointType
 m_ePreferredKnockdownType
@@ -36630,6 +36776,7 @@ m_flArmTime
 m_flArmingDuration
 m_flArmingTime
 m_flArmorPower
+m_flArmorReductionRatioNonHero
 m_flArrivalFlyingSpeedScale
 m_flArrivalTime
 m_flArrowModelTurnSpringStrength
@@ -36638,7 +36785,9 @@ m_flArtistGestureDrawingScale
 m_flAspectRatio
 m_flAsyncThinkInterval
 m_flAsyncThinkIntervalStartTime
+m_flAttachHeight
 m_flAttachOffset
+m_flAttachRadius
 m_flAttack
 m_flAttackCone
 m_flAttackConeHalfWidth
@@ -36849,14 +36998,18 @@ m_flBossVictimCalmTime
 m_flBossVictimNoMeleeTime
 m_flBottomOffset
 m_flBounceAmount
+m_flBounceDirectionalDampening
 m_flBounceForwardRatio
 m_flBounceForwardSpeed
 m_flBouncePadCollisionHeight
 m_flBouncePadCollisionRadius
 m_flBounceRadiusAtCast
 m_flBounceScale
+m_flBounceTargetingPlayerWeight
+m_flBounceUpMagnitude
 m_flBounceUpSpeed
 m_flBounceVelocity
+m_flBounceVerticalDampening
 m_flBounceVerticalReductionRatio
 m_flBoundaryDampening
 m_flBoundaryDist
@@ -37002,13 +37155,16 @@ m_flChannelTime
 m_flChannelTimeStarted
 m_flChannelingAirDrag
 m_flChannelingMaxFallSpeed
+m_flChargeAccelerationMeters
 m_flChargeAmount
 m_flChargeAnimDelayTime
 m_flChargeDuration
 m_flChargeForMaxDamage
 m_flChargeRechargeEnd
 m_flChargeRechargeStart
+m_flChargeResumeTime
 m_flChargeSpeedm
+m_flChargeStartSpeed
 m_flChargeStartTime
 m_flChargeUpTime
 m_flChargedBulletDamage
@@ -37019,6 +37175,7 @@ m_flChaseAtTarget
 m_flChaseDistTolerance
 m_flChaseDistanceEnd
 m_flChaseDistanceStart
+m_flChaseLifetime
 m_flChaseMoveDistance
 m_flCheckPlayerRate
 m_flCheckRadius
@@ -37166,6 +37323,7 @@ m_flCurlNoiseStrengthDuringTarget
 m_flCurrBuildup
 m_flCurrentAngle
 m_flCurrentBrightnessMultiplier
+m_flCurrentChargeSpeed
 m_flCurrentGustLifetime
 m_flCurrentGustTimer
 m_flCurrentHealingAmount
@@ -37227,6 +37385,7 @@ m_flDamageLeftToDealOverPull
 m_flDamageNonPlayer
 m_flDamageOverPullAccumulator
 m_flDamagePerPulse
+m_flDamagePerRatPerSecond
 m_flDamagePerTick
 m_flDamagePositionOffset
 m_flDamageReductionForTroopers
@@ -37263,6 +37422,7 @@ m_flDashCastStartTime
 m_flDashCastTriggerRadius
 m_flDashDamageThreshold
 m_flDashDamageTickDown
+m_flDashDropFraction
 m_flDashEndTime
 m_flDashJumpDistanceInMeters
 m_flDashJumpEndTime
@@ -37285,9 +37445,12 @@ m_flDeathDestroyTime
 m_flDeathDuration
 m_flDeathFadeTimeEnd
 m_flDeathFadeTimeStart
+m_flDeathSwarmSpawnDistMax
+m_flDeathSwarmSpawnDistMin
 m_flDeathTime
 m_flDebuffDuration
 m_flDebuffScale
+m_flDebugEventDuration
 m_flDebugNormalizedLength
 m_flDebugNormalizedValue
 m_flDebuggerBrokenMarkerOffset
@@ -37368,6 +37531,7 @@ m_flDestScale
 m_flDestinationValue
 m_flDestroyLeashDistance
 m_flDestroyMapDistance
+m_flDestroyTime
 m_flDestroyedTime
 m_flDetachDisallowedTime
 m_flDetachForce
@@ -37394,6 +37558,7 @@ m_flDirectGain
 m_flDirectMixLevel
 m_flDirection
 m_flDirectionCommitment
+m_flDirectionStickiness
 m_flDisconnectDistanceBuffer
 m_flDisconnectTime
 m_flDisengageDistance
@@ -37457,6 +37622,7 @@ m_flDotProductToStun
 m_flDotTolerance
 m_flDoubleJumpFailTime
 m_flDownSpeed
+m_flDownTraceDistance
 m_flDownwardAirDashSpeed
 m_flDrag
 m_flDragAtPlane
@@ -37581,7 +37747,9 @@ m_flExplodeHoldTime
 m_flExplodeParticleSize
 m_flExplodeRadius
 m_flExplodeTime
+m_flExplodeTimer
 m_flExplosionDamageScaleAtMaxRadius
+m_flExplosionHalfHeightMeters
 m_flExplosionRadius
 m_flExplosionRadius == 0
 m_flExplosionShakeAmplitude
@@ -37717,6 +37885,7 @@ m_flFixedBlendWeightVals
 m_flFixedCycleValue
 m_flFixedLength
 m_flFixedWidth
+m_flFlagForwardDistance
 m_flFlashHitRotation
 m_flFlashHitScale
 m_flFlatGroundFrictionGraceTime
@@ -37790,6 +37959,7 @@ m_flForceMultPlayer
 m_flForceScale
 m_flForceToEnableMotion
 m_flForcedCycle
+m_flForcedPlantTime
 m_flForgivenessDelay
 m_flForwardAngleBias
 m_flForwardBoostSpeed
@@ -38637,6 +38807,7 @@ m_flMinAngleToConsiderASlope
 m_flMinAttackTime
 m_flMinBashDelay
 m_flMinBlendRate
+m_flMinBounceSpeed
 m_flMinButtonHoldTimeToActivate
 m_flMinButtonHoldTimeToPlaySound
 m_flMinCameraSweepSpeed
@@ -38726,6 +38897,7 @@ m_flMinSustainSpeed
 m_flMinTargetDot
 m_flMinTimeBeforeSwappingBack
 m_flMinTimeBetweenAbilities
+m_flMinTimeBetweenExplosions
 m_flMinTimeRemaining
 m_flMinTimeToRoofCheck
 m_flMinTimeout
@@ -38761,6 +38933,8 @@ m_flMix
 m_flModDepth
 m_flModRate
 m_flModelScale
+m_flModelScaleMax
+m_flModelScaleMin
 m_flModelVerticalPlacementScaleOffset
 m_flModifier
 m_flModifierDuration
@@ -38853,6 +39027,7 @@ m_flNearCrispDistance
 m_flNearDeathDuration
 m_flNearDistMax
 m_flNearDistMin
+m_flNearGroundDistance
 m_flNearbyAllyResistRange
 m_flNearbyEnemyResistRange
 m_flNearbySweepOffset
@@ -39182,6 +39357,16 @@ m_flPlacementWallTestExtentsWallScale
 m_flPlacementWallTestSphereRadius
 m_flPlaneDist
 m_flPlaneOffset
+m_flPlantAnticipationDistance
+m_flPlantFlagZStart
+m_flPlantLeapHoverDuration
+m_flPlantLeapPhaseElapsedAtPause
+m_flPlantLeapPhaseStartTime
+m_flPlantLeapRiseDuration
+m_flPlantLeapSlamSpeed
+m_flPlantLeapUpSpeed
+m_flPlantPopBackSpeed
+m_flPlantPopUpSpeed
 m_flPlasticity
 m_flPlayAnimFadeInTime
 m_flPlayBeatMult
@@ -39204,6 +39389,8 @@ m_flPlayerLightMeleeChipAngle
 m_flPlayerTargetFOV
 m_flPlayerTargetProximity
 m_flPlayerWakeRadius
+m_flPoolHealth
+m_flPoolHealthMax
 m_flPortDragOffCreateThreshold
 m_flPortalEndTime
 m_flPortalStartTime
@@ -39275,7 +39462,11 @@ m_flPrimaryAttackPauseDuration
 m_flPrimaryMuzzleResetTime
 m_flPriorityTargetLingerDuration
 m_flProbability
+m_flProbeDistance
+m_flProbeInterval
 m_flProbePathRange
+m_flProbeStepDown
+m_flProbeStepUp
 m_flProbeVisRadius
 m_flProbeVisThreshold
 m_flProcChargeBonusDamage
@@ -39372,12 +39563,22 @@ m_flRangeStart
 m_flRangeWhileZoomed
 m_flRareWeight
 m_flRareWeightScale
+m_flRatDuration
+m_flRatJumpDelay
+m_flRatLeapAngle
+m_flRatLeapSpeed
+m_flRatLifetime
+m_flRatSpawnInterval
+m_flRatSpread
+m_flRatTravelRadiusFraction
 m_flRatchetOffset
 m_flRate
 m_flRateScale
 m_flRatio
 m_flRatioAbove
 m_flRatioBelow
+m_flRayDriftPenalty
+m_flRayLookahead
 m_flReRandomRate
 m_flReadIndex
 m_flRealTime
@@ -39395,6 +39596,7 @@ m_flRecoilShotIndexRecoveryTimeFactor
 m_flRecoilSpeed
 m_flRecoilStartTime
 m_flRecordingTime
+m_flRecoveryDelay
 m_flRecursionSplitScale
 m_flRecycleTime
 m_flReductionPerModifier
@@ -39453,6 +39655,7 @@ m_flRenderFxStartTime
 m_flRenderTime
 m_flRepathTime
 m_flRepeat
+m_flReplacementChance
 m_flRepulsionMaxDistance
 m_flRepulsionMaxStrength
 m_flRepulsionMinDistance
@@ -39600,6 +39803,10 @@ m_flScoringTime
 m_flScreenBloomStrength
 m_flScreenEdgeAlignmentDistance
 m_flScrollSpeed
+m_flScurryAmplitudeMax
+m_flScurryAmplitudeMin
+m_flScurryPeriodMax
+m_flScurryPeriodMin
 m_flSearchDist
 m_flSearchDownDistance
 m_flSearchInterval
@@ -40274,9 +40481,12 @@ m_flTurnDuration
 m_flTurnMaxAngDiff
 m_flTurnMinAngDiff
 m_flTurnRate
+m_flTurnRateMax
+m_flTurnRateMin
 m_flTurnRatio
 m_flTurnSolidTime
 m_flTurnSpeed
+m_flTurnSpeedFraction
 m_flTurnThreshold
 m_flTurnTimeMax
 m_flTurnTimeMin
@@ -42028,6 +42238,7 @@ m_nAntitunnelGroupBits
 m_nAppliedIndexOffset
 m_nAreaDst
 m_nAreaSrc
+m_nArmorStacks
 m_nArrivalOptions
 m_nAssetThumbnailVersion
 m_nAssetTypeVersion
@@ -42075,6 +42286,7 @@ m_nBakedShadowIndex
 m_nBallParticle
 m_nBandCount
 m_nBands
+m_nBannerRatsAttached
 m_nBase
 m_nBaseCP
 m_nBaseClusterCount
@@ -42393,6 +42605,7 @@ m_nDataOffset_Segments
 m_nDataSlotIdx
 m_nDeathMarkParticle
 m_nDeathReplayAvailable
+m_nDeathSwarmCount
 m_nDebuffsTotal
 m_nDebugBand
 m_nDebugCurIndex
@@ -42840,6 +43053,7 @@ m_nInterpType
 m_nInterpolation
 m_nInterpolationLatchDirtyFlags
 m_nInterruptCount
+m_nInvalidatingDamageFlags
 m_nInvisModifierID
 m_nInvokeBindingIndex
 m_nItemCorruptionPricePerTier
@@ -43015,6 +43229,7 @@ m_nMaxNumNPCs
 m_nMaxParticleCount
 m_nMaxParticles
 m_nMaxPlanes
+m_nMaxRatParticles
 m_nMaxRow
 m_nMaxSegmentsPerHairStrand
 m_nMaxSquadmatesPerEnemy
@@ -43366,8 +43581,12 @@ m_nRandomSeed
 m_nRandomStreak
 m_nRangeIndicatorCaster
 m_nRangeIndicatorParent
+m_nRatYawSegments
 m_nRatchetType
 m_nRate
+m_nRatsPerSpawn
+m_nRatsRemaining
+m_nRatsToAttach
 m_nRecoilSeed
 m_nRedCyanBalH
 m_nRedCyanBalM
@@ -44574,6 +44793,7 @@ m_sAttribute
 m_sAttributeName
 m_sBecomeInteractiveSound
 m_sBodyGroupName
+m_sBodyGroupNames
 m_sBone
 m_sBoneName
 m_sBoneName1
@@ -44605,6 +44825,7 @@ m_sCustomMovementGait
 m_sCustomStackLabel
 m_sCustomTooltipID
 m_sDOTParticle
+m_sDeathSwarmSubclass
 m_sDebugName
 m_sDecalGroup
 m_sDecalGroupName
@@ -44787,6 +45008,7 @@ m_sPredictedHitLimboGlowParticle
 m_sPreviousStance
 m_sProceduralWorldNameForRelays
 m_sReferenceSequence
+m_sReplacementSubclass
 m_sRequiredAddons
 m_sRespawnSound
 m_sRestrictMovementToNavMeshDuringCustomMove
@@ -45127,6 +45349,8 @@ m_strBeamStopSound
 m_strBeamTarget
 m_strBeepSound
 m_strBerserkerStackSound
+m_strBigExplodeSound
+m_strBlockedDamageSound
 m_strBloodSpillStatName
 m_strBodygroupName
 m_strBolaExplodeSound
@@ -45183,6 +45407,7 @@ m_strCharacterRevealSfxStop
 m_strChargeGlintSound
 m_strChargeHitOtherSound
 m_strChargeHitSound
+m_strChargeLoopSound
 m_strChargeSound
 m_strChargeUpSound
 m_strCheats
@@ -45223,6 +45448,7 @@ m_strDamagedEffect
 m_strDamagedSound
 m_strDashHitEnemy
 m_strDashJumpSound
+m_strDashOffSound
 m_strDashSlideActivate
 m_strDashStart
 m_strDashStartEcho
@@ -45277,6 +45503,7 @@ m_strEscapedSound
 m_strEventID
 m_strExitCombatSound
 m_strExitPoint
+m_strExpireOffPlayerSound
 m_strExpireSound
 m_strExpiredSound
 m_strExplodeEffect
@@ -45284,6 +45511,7 @@ m_strExplodeHitSound
 m_strExplodeSound
 m_strExraBodygroup
 m_strExternalRegenAbilityPropertyName
+m_strExtraTimerSound
 m_strFailSound
 m_strFailureSound
 m_strFallCollideImpactSound
@@ -45410,6 +45638,8 @@ m_strKickSoundName
 m_strKillConfirmSound
 m_strKilledSound
 m_strKnightChargeExplosionSound
+m_strKnockoffArmorSound
+m_strKnockoffAttachment
 m_strKothBlockedSound
 m_strKothCaptureStartAnnounce
 m_strKothCashedInSoundEnemy
@@ -45471,6 +45701,7 @@ m_strMeasureReference
 m_strMeasureTarget
 m_strMeleeAttackSound
 m_strMeleeDashSound
+m_strMeleeHitSound
 m_strMeleeReloadSoundHeavy
 m_strMeleeReloadSoundLight
 m_strMeow
@@ -45489,6 +45720,7 @@ m_strMovementForward
 m_strMovementLoop
 m_strMovementLoopStart
 m_strMovementLoopStop
+m_strMovementLoopingSound
 m_strMovementName
 m_strMovementReverse
 m_strMuzzleFlashParticleConfig
@@ -45575,6 +45807,8 @@ m_strPurgeSound
 m_strPushAndDamage
 m_strPushOffSound
 m_strQueryPublicFieldName
+m_strRatAttachSound
+m_strRatReleaseSound
 m_strRecallSound
 m_strRedirect
 m_strRefreshStackSound
@@ -46296,6 +46530,7 @@ m_vFanOriginLS
 m_vFanOriginOffset
 m_vFanOriginWS
 m_vFinalOutputScale
+m_vFlightVelocity
 m_vFloat4Arg
 m_vFlyingInitialOffsetToPath
 m_vFootBaseBindPosePositionMS
@@ -46476,6 +46711,7 @@ m_vPhase2ObserverOrigin
 m_vPhysicsVelocity
 m_vPlacementOffset
 m_vPlaneNorm
+m_vPlantDir
 m_vPoint0
 m_vPoint1
 m_vPointOnPlane
@@ -46541,6 +46777,7 @@ m_vRiposteStartPosition
 m_vRootOffset
 m_vRootOffset_flLengthScale
 m_vRotation
+m_vRunDir
 m_vSAxisLS
 m_vSampler
 m_vSaveAngles
@@ -46571,6 +46808,7 @@ m_vStartPosition
 m_vStartPositionOffsetLS
 m_vStartValue
 m_vStartingOffset
+m_vStartingPositionSpringVelocity
 m_vStatusEffectsOffset
 m_vStompDir
 m_vStompPos
@@ -46695,6 +46933,7 @@ m_vecAnimgraphVars
 m_vecAnyOfRequiredItemDefs
 m_vecApplyOffset
 m_vecArmorGroups
+m_vecArmorPieces
 m_vecAssociatedEntityCollidesOutsideHierarchy
 m_vecAssociatedEntityCollidesWithHierarchy
 m_vecAttach
@@ -47097,6 +47336,7 @@ m_vecQuickbuyQueue
 m_vecQuickbuySellQueue
 m_vecRandomBodyGroup
 m_vecRandomSkin
+m_vecRatParticles
 m_vecRateMax
 m_vecRateMin
 m_vecRecentCommAttempts
@@ -47118,6 +47358,7 @@ m_vecRotation
 m_vecRotationB
 m_vecRoundLengthMinutes
 m_vecRoundLengthMinutesUrgent
+m_vecRunSequences
 m_vecSamplePosition
 m_vecSavedConnections
 m_vecScale
@@ -48397,6 +48638,7 @@ npc_neutral_sinners_sacrifice_hideout
 npc_pathquery_text
 npc_player_bot_brain
 npc_position
+npc_ratking_rat
 npc_record_skeleton_snapshot
 npc_record_snapshot_data
 npc_relationships
@@ -49548,7 +49790,6 @@ r_particle_debug_show_rope_segments
 r_particle_debug_show_sort_position
 r_particle_debug_vector_attribute_scale
 r_particle_enable_fastpath
-r_particle_explicit_fetch
 r_particle_fixedrandomseeds
 r_particle_gpu_implicit
 r_particle_gpu_implicit_cull_columns
@@ -49749,6 +49990,8 @@ ranked_set_active_season
 ratchetType
 rate
 rate scale
+ratking_scrap_grenade_projectile
+rats_to_attach
 ray trace environment cp
 ray trace environment name
 ray_bench
@@ -49951,6 +50194,7 @@ rtx_texture_resolution
 rule_entity
 rule_point_entity
 run in a square, # represents how many usercommands to run before turning.
+run_direction
 run_perftest
 run_voicecontainer_async
 rutger_cheat_death
@@ -50998,6 +51242,7 @@ spotlight distance
 spotlight distance falloff
 spotlight_end
 spotlight_radius
+spread_offset
 springaxis
 src_ability
 srgb_to_xyz
@@ -51701,6 +51946,7 @@ transitiontime
 transmit_always
 travel time
 travel time scale field
+travel_distance
 treat distance between points as radius
 treat offset as scalar of particle radius
 treat offset as scale of total distance

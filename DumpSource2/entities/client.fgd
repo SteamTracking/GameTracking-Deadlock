@@ -1575,6 +1575,31 @@
 [
 ]
 
+// CCitadel_Ability_Ratking_EnterTunnel
+@PointClass base(citadel_base_ability) = ability_ratking_entertunnel
+[
+]
+
+// CCitadel_Ability_RatArmor
+@PointClass base(citadel_base_ability) = ability_ratking_ratarmor
+[
+]
+
+// CCitadel_Ability_RatKing_RatNibble
+@PointClass base(citadel_base_ability) = ability_ratking_ratnibble
+[
+]
+
+// CCitadel_Ability_Ratking_ScrapGrenade
+@PointClass base(citadel_base_ability) = ability_ratking_scrap_grenade
+[
+]
+
+// CCitadel_Ability_Ratking_StandardBearer
+@PointClass base(citadel_base_ability) = ability_ratking_standard_bearer
+[
+]
+
 // CCitadel_Ability_Rolling_FireBall
 @PointClass base(citadel_base_ability) = ability_rolling_fireball
 [
@@ -2335,6 +2360,11 @@
 [
 ]
 
+// CCitadel_Ability_Ratking_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_ratking_primaryweapon
+[
+]
+
 // CCitadel_Ability_RocketBarrage
 @PointClass base(citadel_base_ability) = citadel_ability_rocket_barrage
 [
@@ -3007,6 +3037,11 @@
 @PointClass base(prop_dynamic) = citadel_ranked_badge_prop
 [
 	packed_rank(integer) // FIELD_UINT8 m_unPackedRank
+]
+
+// CCitadel_Ratking_Standard
+@PointClass base(citadel_animating_model_entity) = citadel_ratking_standard
+[
 ]
 
 // C_Citadel_RestorativeGooCube
@@ -4578,6 +4613,18 @@
 [
 ]
 
+// CNPC_Ratking_Rat
+@PointClass base(citadel_animating_model_entity) = npc_ratking_rat
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+	spread_offset(float) // FIELD_FLOAT32 m_flSpreadOffset
+	flight_velocity(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE m_vFlightVelocity
+	lifetime(float) // FIELD_FLOAT32 m_flLifetime
+	travel_distance(float) // FIELD_FLOAT32 m_flMaxTravelDistance
+	rats_to_attach(integer) // FIELD_INT32 m_nRatsToAttach
+	run_direction(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE m_vRunDir
+]
+
 // C_NPC_MidBoss
 @PointClass base(C_AI_CitadelNPC) = npc_super_neutral
 [
@@ -5047,6 +5094,11 @@
 
 // C_Projectile_PunkgoatTether
 @PointClass base(citadel_tracked_projectile) = punkgoat_tether_projectile
+[
+]
+
+// CScrapGrenadeProjectile
+@PointClass base(citadel_projectile) = ratking_scrap_grenade_projectile
 [
 ]
 

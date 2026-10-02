@@ -1254,6 +1254,31 @@
 [
 ]
 
+// CCitadel_Ability_Ratking_EnterTunnel
+@PointClass base(citadel_base_ability) = ability_ratking_entertunnel
+[
+]
+
+// CCitadel_Ability_RatArmor
+@PointClass base(citadel_base_ability) = ability_ratking_ratarmor
+[
+]
+
+// CCitadel_Ability_RatKing_RatNibble
+@PointClass base(citadel_base_ability) = ability_ratking_ratnibble
+[
+]
+
+// CCitadel_Ability_Ratking_ScrapGrenade
+@PointClass base(citadel_base_ability) = ability_ratking_scrap_grenade
+[
+]
+
+// CCitadel_Ability_Ratking_StandardBearer
+@PointClass base(citadel_base_ability) = ability_ratking_standard_bearer
+[
+]
+
 // CCitadel_Ability_Rolling_FireBall
 @PointClass base(citadel_base_ability) = ability_rolling_fireball
 [
@@ -1902,7 +1927,8 @@
 		118 : "CLASS_RATKING_STANDARD"
 		119 : "CLASS_RATKING_RAT"
 		120 : "CLASS_RATKING_SEWER"
-		121 : "NUM_CLASSIFY_CLASSES"
+		121 : "CLASS_PASSTHROUGH_FAKE_WALL"
+		122 : "NUM_CLASSIFY_CLASSES"
 	]
 	targetclass(string) // FIELD_STRING m_iszTargetClass
 	targetclassify(intchoices) : "targetclassify" : : "" = // FIELD_INT32 m_nTargetClassifyAs (Class_T)
@@ -2028,7 +2054,8 @@
 		118 : "CLASS_RATKING_STANDARD"
 		119 : "CLASS_RATKING_RAT"
 		120 : "CLASS_RATKING_SEWER"
-		121 : "NUM_CLASSIFY_CLASSES"
+		121 : "CLASS_PASSTHROUGH_FAKE_WALL"
+		122 : "NUM_CLASSIFY_CLASSES"
 	]
 	disposition(integer) // FIELD_INT32 m_iDisposition
 	rank(integer) // FIELD_INT32 m_iRank
@@ -2910,6 +2937,11 @@
 [
 ]
 
+// CCitadel_Ability_Ratking_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_ratking_primaryweapon
+[
+]
+
 // CCitadel_Ability_RocketBarrage
 @PointClass base(citadel_base_ability) = citadel_ability_rocket_barrage
 [
@@ -3767,6 +3799,11 @@
 	packed_rank(integer) // FIELD_UINT8 m_unPackedRank
 ]
 
+// CCitadel_Ratking_Standard
+@PointClass base(citadel_animating_model_entity) = citadel_ratking_standard
+[
+]
+
 // CCitadel_RestorativeGooCube
 @PointClass base(citadel_animating_model_entity) = citadel_restorative_goo_cube
 [
@@ -4550,7 +4587,8 @@
 		118 : "CLASS_RATKING_STANDARD"
 		119 : "CLASS_RATKING_RAT"
 		120 : "CLASS_RATKING_SEWER"
-		121 : "NUM_CLASSIFY_CLASSES"
+		121 : "CLASS_PASSTHROUGH_FAKE_WALL"
+		122 : "NUM_CLASSIFY_CLASSES"
 	]
 	ignoredEntity(string) // FIELD_STRING m_iszEntityIgnoreName
 	explosion_type(string) // FIELD_STRING
@@ -8033,6 +8071,18 @@
 [
 ]
 
+// CNPC_Ratking_Rat
+@PointClass base(citadel_animating_model_entity) = npc_ratking_rat
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+	spread_offset(float) // FIELD_FLOAT32 m_flSpreadOffset
+	flight_velocity(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE m_vFlightVelocity
+	lifetime(float) // FIELD_FLOAT32 m_flLifetime
+	travel_distance(float) // FIELD_FLOAT32 m_flMaxTravelDistance
+	rats_to_attach(integer) // FIELD_INT32 m_nRatsToAttach
+	run_direction(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE m_vRunDir
+]
+
 // CNPC_ShieldedSentry
 @PointClass base(simple_animating_ai) = npc_shielded_sentry
 [
@@ -9331,6 +9381,11 @@
 
 // CProjectile_PunkgoatTether
 @PointClass base(citadel_tracked_projectile) = punkgoat_tether_projectile
+[
+]
+
+// CScrapGrenadeProjectile
+@PointClass base(citadel_projectile) = ratking_scrap_grenade_projectile
 [
 ]
 
