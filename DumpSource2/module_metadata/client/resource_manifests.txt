@@ -1,0 +1,296 @@
+GameStartup "" // src/game/client/base_world_panel.cpp
+	dev/panorama_world_panel_default.vmat
+	dev/panorama_world_panel_opaque.vmat
+	dev/panorama_world_panel_lit_default.vmat
+	dev/panorama_world_panel_lit_opaque.vmat
+	dev/panorama_world_panel_no_depth.vmat
+	dev/panorama_world_panel_no_backface.vmat
+	dev/panorama_world_panel_lit_no_depth.vmat
+	dev/panorama_world_panel_lit_no_backface.vmat
+
+GameSessionManifest_client "PrecacheWaterWake_client" // src/game/client/c_basecombatcharacter.cpp
+	// resources = null
+
+GameStartup "_BaseEntity" // src/game/client/c_baseentity.cpp
+	materials/tools/show_collision_geometry_wire.vmat
+	materials/tools/show_collision_geometry_wire.vmat
+
+LoopModeGameStartup "GlassImpact_global_client" // src/game/client/c_impact_effects.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheRopes_client" // src/game/client/c_rope.cpp
+	// resources = null
+
+LoopModeGameStartup "ShakeRopes_global_client" // src/game/client/c_rope.cpp
+	// resources = null
+
+LoopModeGameStartup "Error_global_client" // src/game/client/c_te_effect_dispatch.cpp
+	particles/error/error.vpcf
+
+GameSessionManifest_client "PrecachePlayerSprayDecal_client" // src/game/client/citadel/c_playerspraydecal.cpp
+	materials/decals/playerspraydecal.vmat
+	materials/decals/playerspraydecal_preview.vmat
+
+LoopModeGameStartup "Impact_global_client" // src/game/client/citadel/fx_citadel_impacts.cpp
+	// resources = null
+
+"" "CitadelRenderingPipelineManifestDeveloperModeOnly" // src/game/client/citadel/renderingpipeline_citadel.cpp
+	textures/dev/albedo_chart.vtex
+	textures/dev/reflectivity_scale.vtex
+	materials/dev/visualize_distance_field.vmat
+
+GameStartup "RenderingPipelineCitadelManifest" // src/game/client/citadel/renderingpipeline_citadel.cpp
+	textures/dev/brdf_lut.vtex
+	materials/dev/bloom_downsample.vmat
+	materials/dev/downsample_depth.vmat
+	materials/dev/downsample_depth_cs.vmat
+	materials/dev/deferred_lighting.vmat
+	materials/dev/deferred_fogging.vmat
+	materials/dev/blur.vmat
+	materials/dev/saturation_volumes.vmat
+	materials/dev/generate_outlines.vmat
+	materials/dev/reset_bounding_rects_cs.vmat
+	materials/dev/dof1_general.vmat
+	materials/dev/dof1_blur.vmat
+	textures/dev/blue_noise_256.vtex
+	materials/dev/distancefield_cs.vmat
+	materials/dev/depthoffield_cs.vmat
+	materials/dev/reconstruct_static_motion_vectors.vmat
+	materials/dev/xegtao_cs.vmat
+	materials/dev/compute_reactive_mask.vmat
+	materials/dev/fxaa_cs.vmat
+	materials/dev/fxaa_ps.vmat
+	materials/dev/copytextureload.vmat
+	materials/dev/copy_gbuffer_flags_and_normals.vmat
+	materials/dev/npr_dummy.vmat
+	materials/dev/upsample_fsr.vmat
+	materials/dev/upsample_rcas.vmat
+	materials/dev/upsample.vmat
+	materials/dev/mboitfinal.vmat
+	materials/dev/atrous_filter.vmat
+	materials/dev/gpu_debug_draw2d.vmat
+	materials/dev/gpu_debug_draw3d.vmat
+	materials/dev/atrous_pack_depthnormal.vmat
+	materials/dev/tunnel_fs.vmat
+	materials/dev/outlineproperty.vmat
+
+GameStartup "RenderingPipelineCitadelHelpersManifest" // src/game/client/citadel/renderingpipeline_citadel_helpers.cpp
+	materials/dev/post_process.vmat
+	materials/effects/flashbang_overlay/citadel_flashbang_overlay.vmat
+	materials/dev/glow_health_color.vmat
+	materials/dev/shadow_decal.vmat
+	materials/dev/test_grading.vmat
+
+GameStartup "RenderingPipelineCitadelShadowsManifest" // src/game/client/citadel/renderingpipeline_citadel_shadows.cpp
+	materials/dev/copy_depth.vmat
+
+GameStartup "CitadelHudElementGunManifest" // src/game/client/citadel/ui/citadel_ability_hud_element_gun.cpp
+	materials/minimap/minimap_circle.vtex
+
+GameStartup "CitadelHudDamageIndicatorManifest" // src/game/client/citadel/ui/citadel_hud_damage_indicator.cpp
+	materials/particle/generic/generic_chevron_arrow.vtex
+
+GameStartup "HeroRevealManifest_global_client" // src/game/client/citadel/ui/citadel_hud_pregame_hero_reveal.cpp
+	models/match_intro/hero_reveal_card/hero_reveal_card.vmdl
+
+GameStartup "LoadingScreenManifest_global_client" // src/game/client/citadel/ui/citadel_loading_screen_main.cpp
+	panorama/images/control_icons/spinner_png.vtex
+
+GameStartup "CitadelNewSettings_global_client" // src/game/client/citadel/ui/citadel_popup_settings.cpp
+	scripts/new_settings.vdata
+
+GameStartup "CitadelMinimapManifest" // src/game/client/citadel/ui/hud_minimap.cpp
+	materials/minimap/minimap_circle.vtex
+	materials/minimap/neutral_small.vtex
+	materials/minimap/neutral_medium.vtex
+	materials/minimap/neutral_large.vtex
+	materials/minimap/neutral_vault.vtex
+
+GameSessionManifest_client "PrecacheGlowAssets_client" // src/game/client/clientglowproperty.cpp
+	materials/dev/glowproperty.vmat
+
+LoopModeGameStartup "MuzzleFlash_global_client" // src/game/client/fx.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheEffectExplosion_client" // src/game/client/fx_explosion.cpp
+	particles/entity/env_explosion/explosion_default.vpcf
+
+LoopModeGameStartup "Explosion_global_client" // src/game/client/fx_explosion.cpp
+	// resources = null
+
+LoopModeGameStartup "ParticleTracer_global_client" // src/game/client/fx_tracer.cpp
+	// resources = null
+
+LoopModeGameStartup "TracerSound_global_client" // src/game/client/fx_tracer.cpp
+	// resources = null
+
+LoopModeGameStartup "Tracer_global_client" // src/game/client/fx_tracer.cpp
+	// resources = null
+
+LoopModeGameStartup "gunshotsplash_global_client" // src/game/client/fx_water.cpp
+	// resources = null
+
+LoopModeGameStartup "watersplash_global_client" // src/game/client/fx_water.cpp
+	// resources = null
+
+PanoramaUIStartup "CloseCaptionPanoramaResources" // src/game/client/hud_closecaption.cpp
+	// resources = null
+
+GameStartup "" // src/game/client/panorama/ui_canvas.cpp
+	materials/vgui/white_no_stencil.vmat
+	materials/dev/msaa_resolve.vmat
+
+GameStartup "GaussianBloomBlurManifestClient" // src/game/client/renderingpipeline/gaussian_bloom_blur.cpp
+	materials/dev/gaussian_bloom_blur.vmat
+
+GameStartup "ResponseRulesManifest_global_client" // src/game/shared/ai_responsesystem.cpp
+	scripts/talker/response_rules.vrr
+
+GameStartup "BeamManifest" // src/game/shared/beam_shared.cpp
+	particles/beams/default_beam.vpcf
+
+GameStartup "AccoladesDataManifest_global_client" // src/game/shared/citadel/citadel_accolades_schema.cpp
+	scripts/accolades.vdata
+
+GameStartup "HeroDataManifest_global_client" // src/game/shared/citadel/citadel_base_hero.cpp
+	scripts/heroes.vdata
+
+GameStartup "BotDataManifest_global_client" // src/game/shared/citadel/citadel_bot_schema.cpp
+	scripts/bots/bot_difficulty.vdata
+
+GameStartup "CCitadel_GameGenericData_global_client" // src/game/shared/citadel/citadel_generic_data.cpp
+	scripts/generic_data.vdata
+
+GameStartup "CCitadel_MusicData_global_client" // src/game/shared/citadel/citadel_music_data.cpp
+	scripts/music_data.vdata
+
+GameStartup "CCitadel_GamePingTargetData_global_client" // src/game/shared/citadel/citadel_ping_target_data.cpp
+	scripts/ping_targets.vdata
+
+GameStartup "CCitadel_GamePingWheelData_global_client" // src/game/shared/citadel/citadel_ping_wheel_data.cpp
+	scripts/ping_wheel_message_types.vdata
+	scripts/ping_wheel_messages.vdata
+
+GameStartup "CitadelGameStatePostProcessingManifest" // src/game/shared/citadel/citadel_post_processing_controller.cpp
+	postprocessing/gamestate/killed.vpost
+	postprocessing/gamestate/black.vpost
+	postprocessing/gamestate/doorman_hotel_victim.vpost
+	postprocessing/gamestate/blinded.vpost
+	postprocessing/gamestate/drifter_darkness_caster.vpost
+	postprocessing/gamestate/match_intro.vpost
+
+GameStartup "RankedModelManifest_global_client" // src/game/shared/citadel/citadel_ranked_badge_entities.cpp
+	models/hideout/hideout_ranked_badge_obscurus.vmdl
+	models/hideout/hideout_ranked_badge_wood.vmdl
+	models/hideout/hideout_ranked_badge_iron.vmdl
+	models/hideout/hideout_ranked_badge_steel.vmdl
+	models/hideout/hideout_ranked_badge_bronze.vmdl
+	models/hideout/hideout_ranked_badge_silver.vmdl
+	models/hideout/hideout_ranked_badge_gold.vmdl
+	models/hideout/hideout_ranked_badge_platinum.vmdl
+	models/hideout/hideout_ranked_badge_diamond.vmdl
+	models/hideout/hideout_ranked_badge_phantom.vmdl
+	models/hideout/hideout_ranked_badge_ascendent.vmdl
+	models/hideout/hideout_ranked_badge_eternus.vmdl
+
+GameStartup "RankedDataManifest_global_client" // src/game/shared/citadel/citadel_ranked_schema.cpp
+	scripts/ranked_seasons.vdata
+
+GameStartup "CitadelStatTracker_global_client" // src/game/shared/citadel/citadel_stat_tracker_schema.cpp
+	stats/tracked_stats_player.vdata
+	stats/tracked_stats_player_staging.vdata
+	stats/tracked_stats_team.vdata
+	stats/tracked_stats_team_staging.vdata
+	stats/tracked_stats_match.vdata
+	stats/tracked_stats_match_staging.vdata
+
+GameStartup "CitadelZipLineNodeManifest" // src/game/shared/citadel/citadel_zip_line_node.cpp
+	materials/dev/zipline_inner_rope.vmat
+	materials/dev/zipline_inner_secondary_rope.vmat
+	materials/dev/zipline_outer_glow.vmat
+
+GameStartup "RenderPortalManifest" // src/game/shared/citadel/render_portal.cpp
+	materials/dev/render_portal.vmat
+
+GameStartup "EconDataManifest_global_client" // src/game/shared/econ/econ_item_vdata.cpp
+	econ/econ_items.itemdefs
+
+GameSessionManifest_client "wearable_item_client" // src/game/shared/econ/econ_wearable.cpp
+	wearable_item.ventr
+
+GameStartup "EventsDataManifest_global_client" // src/game/shared/events/base_event_schema.cpp
+	events/events.vdata
+
+GameStartup "PeriodicResourcesManifest_global_client" // src/game/shared/events/periodic_resource_schema.cpp
+	scripts/periodic_resource_definitions.vdata
+
+GameStartup "ExplosionTypesManifest_global_client" // src/game/shared/explosiontypes.cpp
+	scripts/explosion_types.vdata
+
+GameStartup "" // src/game/shared/func_shatterglass.cpp
+	materials/glass/shatterglass.vmat
+
+"" "LoopModeGame_client" // src/game/shared/loopmodegame.cpp
+	// resources = null
+
+GameStartup "NoiseStreamsManifest_global_client" // src/game/shared/noisestreams_vdata.cpp
+	scripts/noise_presets.vdata
+
+LoopModeGameStartup "ParticleEffectStop_global_client" // src/game/shared/particle_system.cpp
+	// resources = null
+
+LoopModeGameStartup "ParticleEffect_global_client" // src/game/shared/particle_system.cpp
+	// resources = null
+
+GameSessionManifest_client "PhysFrictionEffectPrecache_client" // src/game/shared/physics_shared.cpp
+	// resources = null
+
+"" "PhysicsGameSystemManifest_client" // src/game/shared/physicsgamesystem.cpp
+	materials/tools/show_collision_geometry_wire_nodepth.vmat
+	materials/physics/wireframe_basic.vmat
+	materials/physics/wireframe_hidden.vmat
+	materials/physics/flat_basic.vmat
+
+GameStartup "" // src/game/shared/point_clientui_world_text_panel.cpp
+	dev/panorama_world_panel_hint_ui.vmat
+
+GameStartup "" // src/game/shared/point_worldtext.cpp
+	dev/point_worldtext_default.vmat
+	dev/point_worldtext_translucent.vmat
+	dev/point_worldtext_fullbright.vmat
+	dev/point_worldtext_translucent_fullbright.vmat
+	dev/point_worldtext_default_background.vmat
+
+GameStartup "CPropDataManifest_global_client" // src/game/shared/props_shared.cpp
+	scripts/propdata.vdata
+
+GameSessionManifest_client "PrecacheEffectBubbles_client" // src/game/shared/te/te_bubbles.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheEffectBubbleTrail_client" // src/game/shared/te/te_bubbletrail.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheEffectEnergySplash_client" // src/game/shared/te/te_energysplash.cpp
+	// resources = null
+
+GameSessionManifest_client "CTEFizz_client" // src/game/shared/te/te_fizz.cpp
+	// resources = null
+
+GameSessionManifest_client "CTEGlowSprite_client" // src/game/shared/te/te_glowsprite.cpp
+	// resources = null
+
+GameSessionManifest_client "CTELargeFunnel_client" // src/game/shared/te/te_largefunnel.cpp
+	// resources = null
+
+GameSessionManifest_client "TE_MuzzleFlash_client" // src/game/shared/te/te_muzzleflash.cpp
+	// resources = null
+
+GameSessionManifest_client "PrecacheTESmoke_client" // src/game/shared/te/te_smoke.cpp
+	// resources = null
+
+GameStartup "VoiceStatusManifest_global_client" // src/game/shared/voice_status.cpp
+	materials/voice/icntlk_pl.vmat
+
+GameStartup "LightStylesManifest_Client" // src/public/game/shared/lightstyles2.cpp
+	scripts/light_styles.vdata
+

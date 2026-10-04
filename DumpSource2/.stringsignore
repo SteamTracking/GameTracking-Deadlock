@@ -15228,6 +15228,7 @@ ModelMeshBufferData_t
 ModelMeshBufferUsage_t
 ModelProcessingSystem
 ModelReference_t
+ModelScale
 ModelSkeletonData_t
 ModelSkeletonData_t::BoneFlags_t
 ModelSpace
@@ -23104,6 +23105,7 @@ allow_empty_inputs
 allow_interaction_from_all_scene_worlds
 allow_pickup_script_func
 allow_purchasing_anywhere
+allow_sst_generation
 allow_tiny_characters
 allownewgibs
 alpha field
@@ -23179,6 +23181,7 @@ animation type
 animevents_dump
 animgraph
 animgraph2_enable_parallel_update
+animgraph2_identifier
 animgraph2_serialize_pose_recipe_in_pre_pack_entities
 animgraph_debug
 animgraph_debug_animevents
@@ -23268,6 +23271,7 @@ attachedentity2
 attachment to follow
 attachment1
 attachment2
+attachment_name
 attachpoint
 attack_cone
 attack_delay
@@ -23284,6 +23288,9 @@ attempt_secure_orb_pct
 attenMax
 attenMin
 attenuation type
+attenuation0
+attenuation1
+attenuation2
 attrib_definition_index_db32_t
 attrib_definition_index_t
 attribute to cache to
@@ -23293,6 +23300,7 @@ attribute to use for normal
 attribute to use for rope segment id
 attribute to write to
 attributeprovidertypes_t
+attributes
 audioHardMinVelocity
 audio_debug_health_fraction_change
 audio_display_soundstack_debug_base_3d
@@ -23388,6 +23396,7 @@ background_border_height
 background_border_width
 background_material_name
 background_world_to_uv
+baked_light_indexing
 bakedshadowindex
 bakespeculartocubemaps
 bakespeculartocubemaps_scale
@@ -23456,6 +23465,8 @@ blocker
 blood_bomb_projectile
 bloom mip up-sample filtering radius (using 3x3 tent filter, radius in mip level texels), 0.0 radius => box (2x2) filter with (fixed) 1.0 radius
 bodyMassScale
+body_group_choice
+body_group_name
 bodygroup field
 bodygroups
 boho_bouncyprojectile
@@ -23605,9 +23616,13 @@ can_override_npc_state
 capsule behavior
 capsule height
 capsule length
+capsule_length
 capturable
 capture_time
 capturecubemap
+cascadecrossfade
+cascadedistancefade
+cascaderenderstaticobj
 cast shadows
 cast_aabb
 cast_capsule
@@ -26502,11 +26517,13 @@ current anim time output field
 current_enemy
 current_movement_gait
 current_movement_gait_set
+customGaitOverride
 customOutputValue
 customcubemaptexture
 cutoff radius
 cv_collect_assert_stack_for_gc
 cvarlist
+cycle
 cyclevar
 cylinder inner output
 cylinder inner radius
@@ -26714,6 +26731,7 @@ disabledValue
 disablelowviolence
 disablereceiveshadows
 disableshadows
+discard_outside_viewcone
 disconnect
 display up-to-date elapsed play time
 display_convars_onscreen_in_big_text
@@ -27185,6 +27203,7 @@ effect_name_friendly
 effect_textureOverride
 effect_zap_name
 effect_zap_source
+effectiveness
 effects
 elasticity
 emission count scale control point
@@ -27774,6 +27793,7 @@ flags
 flashlight radius CP
 flashlight radius control point component
 flattening strength
+flicker
 flight_velocity
 flip cull normal
 flip horizontal
@@ -27795,6 +27815,7 @@ fog_color
 fog_enable
 fog_end
 fog_hdrcolorscale
+fog_lighting
 fog_override
 fog_override_color
 fog_override_enable
@@ -27809,6 +27830,7 @@ fog_volume_debug
 fogblend
 fogcolor
 fogcolor2
+fogcontributionstrength
 fogdir
 fogenable
 fogend
@@ -28010,6 +28032,7 @@ g_ragdoll_important_maxcount
 g_ragdoll_lvfadespeed
 g_ragdoll_maxcount
 gain of wet signal (dB)
+gaitOverride
 gait_switch_blocked_reason
 game_data_list{ key = 'CDestructiblePart' }
 game_data_list{ key = 'CNPCPhysicsHull' }
@@ -28303,6 +28326,7 @@ hitbox scale
 hitbox set
 hitbox shell thickness
 hitbox velocity inherited scale
+hitboxset
 hl_vr_texture_based_animatable
 hltv memory statistics. Use with "ent 10" (dump entity 10 memory usage) or "top 8" (dump top 8 memory users) or "class" CWorld (dump CWorld class)
 hltvUsable
@@ -28366,6 +28390,7 @@ ic
 ice_path_shard_model_desc_t
 icepath_shard
 id
+identifier
 if > 0.0, show lag compensated hitboxes (value is seconds) whenever a bullet is lag compensated and hits something.
 if imgui should consume input
 if imgui should display
@@ -28540,6 +28565,7 @@ inner angle
 inner cone angle
 inner_angle
 inner_radius
+innerconeangle
 input
 input 1
 input 2
@@ -30074,8 +30100,12 @@ local space control point
 local space control point number
 local space scale
 local space transform
+local.angles
+local.origin
+local.scales
 localBits
 localSound
+local_offset
 local_portal_link
 local_temp_entity
 locallightscale
@@ -30129,6 +30159,8 @@ logic_relay
 logic_scene_list_manager
 logic_script
 logic_timer
+look_at_mode
+look_at_speed
 lookatname
 loop
 loop_dump
@@ -47742,6 +47774,7 @@ max_melee_attack_memory
 max_range
 max_rotation
 max_simulation_time
+max_stack_count
 max_steering_angle
 max_suspension_offset
 max_turn_rate
@@ -47889,6 +47922,7 @@ mirage_sand_phantom
 mirage_teleport
 mirage_tornado
 mirror_player
+mixedshadows
 mks
 mm_idle_enabled
 mm_idle_show_warning_at_s
@@ -48441,6 +48475,7 @@ navspace_debug_transition_calc
 navspace_draw_changes_blocks
 navspace_draw_changes_waters
 navspace_path_use_water_level_locator
+nearclipplane
 necro_haunt_projectile
 needsprocessing
 neighbor distance
@@ -48569,6 +48604,7 @@ normalize fade times to endcap
 normalize output
 normalize output 0/1
 normalize result
+nospawnheroid
 notarget
 notifyforce_x
 notifyforce_y
@@ -48696,6 +48732,7 @@ npcsolve_separation_r2
 npctester_path_lookahead_time
 num to emit
 number of steps to push candidate plane behind depths.
+numcascades
 object local space axis 0/1
 object_culling
 objective_position
@@ -48803,7 +48840,10 @@ orientation_update
 orientationtype
 origin
 originParentSpace
+origin_type
 orphan_children_on_remove
+ortholightheight
+ortholightwidth
 oscType
 oscillation field
 oscillation frequency
@@ -48821,6 +48861,7 @@ out_tangent_local
 outer angle
 outer cone angle
 outer_angle
+outerconeangle
 outline alpha
 outline color
 outline end 0
@@ -49005,8 +49046,10 @@ paramName
 param_template%02d
 parameterName
 parent particle radius scale
+parentAttachmentName
 parentIndex
 parentattachment
+parentname
 parry_chance
 parry_chance_escalation
 parry_melee_charge_detection_pct
@@ -49102,6 +49145,7 @@ path_simple_push_dir
 path_track
 path_uniqueid
 path_with_dynamic_nodes
+pattern
 pause
 pawn_mimic_all
 peak strength
@@ -49260,6 +49304,7 @@ play end cap effect
 play endcap when children are removed
 play when emission ends
 play_spawn_music
+playbackrate
 playcast
 playdemo
 played at the end of a channeled ability
@@ -49349,6 +49394,7 @@ position t value
 position to get
 position%d
 position2
+positionInLocalSpace
 post_processing_volume
 postcommands
 postprocessing
@@ -49360,6 +49406,7 @@ precommands
 precomputedboundsmaxs
 precomputedboundsmins
 precomputedfieldsvalid
+precomputedmaxrange
 precomputedobbangles
 precomputedobbangles0
 precomputedobbangles1
@@ -50059,9 +50106,12 @@ render_shadows
 renderamt
 rendercolor
 rendercolor32
+renderdiffuse
 renderfx
 rendermode
+renderspecular
 rendertocubemaps
+rendertransmissive
 reorient_mode
 repeat_last_console_command
 repeatable
@@ -50164,6 +50214,8 @@ rotation rate max
 rotation rate min
 rotation roll scale
 rotation speed
+rotationAxis
+rotationSpeed
 rotation_distance
 rotator_target
 rotator_target_entity
@@ -50409,6 +50461,7 @@ scale size multiplier from CP
 scale value to map attribute to texture coordinate
 scale velocity
 scale_function_dump
+scales
 scattering
 scene%d
 scene_clientflex
@@ -50505,6 +50558,7 @@ second control point number
 second dimension 0-2 (-1 disables)
 second input control point
 second vector
+secondary_color
 secondary_guard_boss_name
 self illum amount
 self illum texture
@@ -50525,6 +50579,7 @@ sequence min
 sequence number
 sequence number 1
 sequence override
+sequenceName
 sequence_for_scene
 server_dump_lobby
 server_dump_signout
@@ -50583,10 +50638,22 @@ setscale
 setting_sun_projectile
 shadow_pulse
 shadowcachedebugger_showdebugwindow
+shadowcascadedistance0
+shadowcascadedistance1
+shadowcascadedistance2
+shadowcascadedistance3
+shadowcascaderesolution0
+shadowcascaderesolution1
+shadowcascaderesolution2
+shadowcascaderesolution3
 shadowfade_size_end
 shadowfade_size_start
+shadowfademaxdist
+shadowfademindist
 shadowmapsize
 shadowpriority
+shadowtextureheight
+shadowtexturewidth
 shake
 shake duration after end
 shake_show
@@ -51254,6 +51321,7 @@ ss_teleport
 ss_voice_hearpartner
 stackName
 stackToSave
+stack_count
 stack_name
 stackname
 stairs_location
@@ -51771,7 +51839,9 @@ targetMapName
 targetNodes
 target_area_search_radius
 target_attachment
+target_direction
 target_player
+target_position
 target_scan_use_query_cache
 targetclass
 targetclassify
@@ -51912,6 +51982,7 @@ tools_detailed_focus_logging_break_focusin_class
 tools_renderscenes
 tools_stall_monitor_break_on_unknown_cause
 toolscenelightrigs.vdata
+top_speed_scale
 toptrack
 torqueLimit
 torquelimit
@@ -52315,6 +52386,8 @@ use the derivative
 use velocity for test direction
 use vertical velocity for weighting
 useEntityPivot
+useLocalOffset
+useParentRenderBounds
 useParentedPath
 use_ability_cooldown
 use_angles
@@ -52323,6 +52396,7 @@ use_center_pusher
 use_forward_pusher
 use_landmark_angles
 use_ref_position
+use_secondary_color
 use_sound
 useable
 useasyncqueries

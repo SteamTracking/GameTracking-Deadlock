@@ -100,9 +100,25 @@
 // CBaseEntity
 @BaseClass base(root) = CBaseEntity
 [
+	// component CScriptComponent
+	// component CBodyComponent
+		// m_pSceneNode (CGameSceneNode)
+			local.origin(vector) // FIELD_NETWORK_ORIGIN_CELL_QUANTIZED_VECTOR m_vecOrigin
+			local.angles(angle) // FIELD_QANGLE m_angRotation
+			origin(vector) // FIELD_POSITION_VECTOR m_vecAbsOrigin
+			angles(angle) // FIELD_QANGLE_WORLDSPACE m_angAbsRotation
+			parentAttachmentName(string) // FIELD_UTLSTRINGTOKEN m_hierarchyAttachName
+			parentname(target_destination) // FIELD_EHANDLE
+			useLocalOffset(boolean) // FIELD_BOOLEAN
+			useParentRenderBounds(boolean) // FIELD_BOOLEAN
+			positionInLocalSpace(boolean) // FIELD_BOOLEAN
+			scales(vector) // FIELD_VECTOR
+			local.scales(vector) // FIELD_VECTOR
+			scale(float) // FIELD_FLOAT32
+			ModelScale(float) // FIELD_FLOAT32
 	// component CBodyComponent: CBodyComponentPoint
 	globalname(string) // FIELD_STRING m_iGlobalname
-	vscripts(string) // FIELD_STRING m_iszPrivateVScripts
+	vscripts(string) // FIELD_STRING m_iszPrivateVScripts, ADDED_KEYFIELD
 	nextthink(integer) // FIELD_TICK m_nNextThinkTick
 	effects(integer) // FIELD_UINT32 m_fEffects
 	ResponseContext(string) // FIELD_STRING m_iszResponseContext
@@ -193,7 +209,15 @@
 // CBaseModelEntity
 @PointClass base(CBaseEntity) = basemodelentity
 [
+	// component CRenderComponent
+	// component CHitboxComponent
 	// component CBodyComponent: CBodyComponentBaseModelEntity
+		// CBodyComponentSkeletonInstance
+		// m_skeletonInstance (CSkeletonInstance)
+			hitboxset(integer) // FIELD_UINT8 m_nHitboxSet
+			velocity(vector) // FIELD_VECTOR
+			rotationAxis(vector) // FIELD_VECTOR
+			rotationSpeed(float) // FIELD_FLOAT32
 	rendercolor(color255) // FIELD_COLOR32 m_clrRender
 	renderfx(intchoices) : "renderfx" : : "" = // FIELD_UINT8 m_nRenderFX (RenderFx_t)
 	[
@@ -426,6 +450,9 @@
 @PointClass base(basemodelentity) = baseanimgraph
 [
 	// component CBodyComponent: CBodyComponentBaseAnimGraph
+		// m_animationController (CBaseAnimGraphController)
+			playbackrate(float) // FIELD_NETWORK_QUANTIZED_FLOAT m_flPlaybackRate
+			animgraph2_identifier(string) // FIELD_GLOBALSYMBOL m_sAnimGraph2Identifier
 	initially_populate_interp_history(boolean) // FIELD_BOOLEAN m_bInitiallyPopulateInterpHistory
 	input ClearTargetIdentifierOverride(void)
 	input GetLayerCycle(integer) : "Returns the cycle of an animation playing on this layer<br><br>This node can appear in Observable contexts." // PVAL_INT iLayer, returns PVAL_FLOAT retval, Pulse node
@@ -510,6 +537,7 @@
 // CCitadelAnimatingModelEntity
 @PointClass base(baseanimgraph) = citadel_animating_model_entity
 [
+	// component CCitadelRegenComponent
 ]
 
 // CCitadel_GuidedArrow_OwlModel
@@ -2380,12 +2408,14 @@
 // CBaseProp
 @PointClass base(baseanimgraph) = base_prop
 [
+	health(remove_key) // FIELD_VOID
 	propdata_override(string) // FIELD_STRING
 ]
 
 // CBreakableProp
 @BaseClass base(base_prop) = breakable_prop
 [
+	// component CPropDataComponent
 	ExplodeDamage(float) // FIELD_FLOAT32 m_explodeDamage
 	ExplodeRadius(float) // FIELD_FLOAT32 m_explodeRadius
 	minhealthdmg(integer) // FIELD_INT32 m_iMinHealthDmg
@@ -3203,6 +3233,7 @@
 // CCitadel_BaseProp_MidStairs
 @PointClass base(point_entity) = citadel_base_prop_stairs
 [
+	// component CCitadelMinimapComponent
 	stairs_location(intchoices) : "stairs_location" : : "" = // FIELD_INT32 m_eLocation (EMidStairsLocation_t)
 	[
 		0 : "EMidStairsNone"
@@ -3241,6 +3272,7 @@
 // CCitadel_BreakableProp
 @PointClass base(baseanimgraph) = citadel_breakable_prop
 [
+	// component CCitadelMinimapComponent
 	breakable_spawn_group(integer) // FIELD_INT32 m_nSpawnGroup
 	initial_spawn_time_override(float) // FIELD_FLOAT32 m_flOverrideInitialSpawnTime
 	respawn_time_override(float) // FIELD_FLOAT32 m_flOverrideRespawnTime
@@ -3251,6 +3283,7 @@
 // CCitadelTriggerCapturePoint
 @PointClass base(trigger) = citadel_capture_point
 [
+	// component CCitadelMinimapComponent
 	GroupName(string) // FIELD_STRING m_iszGroupName
 	output OnBecomeCapturable(void)
 	output OnFullyCaptured(integer) // PVAL_INT param
@@ -3310,6 +3343,7 @@
 // CCitadel_DoorwayPortal
 @PointClass base(baseanimgraph) = citadel_doorway_portal
 [
+	// component CCitadelMinimapComponent
 	other_door(target_destination) // FIELD_EHANDLE
 	portal_model(target_destination) // FIELD_EHANDLE
 	looping_sound(string) // FIELD_STRING
@@ -3388,6 +3422,7 @@
 // CCitadel_GraveStone_Blocker
 @PointClass base(citadel_animating_model_entity) = citadel_gravestone_blocker
 [
+	// component CCitadelMinimapComponent
 	ability(target_destination) // FIELD_EHANDLE m_hAbility
 	lifetime(float) // FIELD_FLOAT32 m_flLifetime
 	gravestonestate(integer) // FIELD_INT32 m_iGravestoneState
@@ -3521,6 +3556,7 @@
 // CCitadelItemPickup
 @PointClass base(citadel_animating_model_entity) = citadel_item_pickup
 [
+	// component CCitadelMinimapComponent
 	currency_value(integer) // FIELD_INT32 m_nCurrencyValue
 	loot_type(integer) // FIELD_INT32 m_eLootType
 	model_name(string) // FIELD_STRING m_iszModelName
@@ -3563,6 +3599,7 @@
 // CCitadelItemPickupRejuv
 @PointClass base(citadel_item_pickup) = citadel_item_pickup_rejuv
 [
+	// component CCitadelAbilityComponent
 ]
 
 // CCitadelItemPickupRejuvHeroTest
@@ -3590,6 +3627,7 @@
 // CCitadelTriggerMultiCapturePoint
 @PointClass base(trigger) = citadel_multi_capture_point
 [
+	// component CCitadelMinimapComponent
 	GroupName(string) // FIELD_STRING m_iszGroupName
 	output OnBecomeCapturable(void)
 	output OnFullyCaptured(integer) // PVAL_INT param
@@ -3634,6 +3672,7 @@
 // CCitadelModelEntity
 @PointClass base(basemodelentity) = citadel_model_entity
 [
+	// component CCitadelRegenComponent
 ]
 
 // CCitadel_Nano_Predatory_Statue
@@ -3665,6 +3704,9 @@
 // CAI_CitadelNPC
 @BaseClass base(base_npc) = citadel_npc
 [
+	// component CCitadelAbilityComponent
+	// component CCitadelRegenComponent
+	// component CCitadelMinimapComponent
 	owning_ability(target_destination) // FIELD_EHANDLE m_hAbilityOwner
 	caster(target_destination) // FIELD_EHANDLE m_hCaster
 ]
@@ -3688,6 +3730,7 @@
 // CCitadel_Pickup
 @PointClass base(baseanimgraph) = citadel_pickup
 [
+	// component CCitadelMinimapComponent
 ]
 
 // CCitadel_Pickup_Ability
@@ -3938,6 +3981,7 @@
 // CCitadelTriggerCorruptedItemShop
 @PointClass base(trigger) = citadel_trigger_corrupted_item_shop
 [
+	// component CCitadelMinimapComponent
 	output OnItemLimitChanged(void)
 ]
 
@@ -3971,6 +4015,7 @@
 // CCitadelIdolReturnTrigger
 @PointClass base(trigger_modifier) = citadel_trigger_idol_return
 [
+	// component CCitadelMinimapComponent
 ]
 
 // CCitadelIgnoreOutOfPlayArea
@@ -4005,6 +4050,7 @@
 // CCitadelTriggerSecureSouls
 @PointClass base(trigger) = citadel_trigger_secure_souls
 [
+	// component CCitadelMinimapComponent
 ]
 
 // CCitadelShopTunnelTrigger
@@ -4027,6 +4073,7 @@
 // CCitadelTeleportTrigger
 @PointClass base(trigger_modifier) = citadel_trigger_teleport
 [
+	// component CCitadelMinimapComponent
 	ExitPoint(string) // FIELD_STRING m_strExitPoint
 	Prop(string) // FIELD_STRING m_strPropModel
 	Delay(float) // FIELD_FLOAT32 m_flTeleportDelay
@@ -4205,6 +4252,8 @@
 // CCitadel_Destroyable_Building
 @PointClass base(citadel_animating_model_entity) = destroyable_building
 [
+	// component CCitadelMinimapComponent
+	// component CCitadelAbilityComponent
 	final(boolean) // FIELD_BOOLEAN m_bFinal
 	building_health(integer) // FIELD_INT32 m_nBuildingHealth
 	LaneNum(integer) // FIELD_INT32 m_iLane
@@ -5184,6 +5233,11 @@
 // CCitadelPlayerPawn
 @PointClass base(CCitadelPlayerPawnBase) = player
 [
+	// component CCitadelAbilityComponent
+	// component CCitadelHeroComponent
+		nospawnheroid(integer) // FIELD_UINT32 m_nNoSpawnHeroID
+	// component CCitadelRegenComponent
+	// component CCitadelMinimapComponent
 ]
 
 // CCitadelFamiliarClonePlayerPawn
@@ -5365,6 +5419,7 @@
 // CBreakable
 @PointClass base(basemodelentity) = func_breakable
 [
+	// component CPropDataComponent
 	explosion(intchoices) : "explosion" : : "" = // FIELD_INT32 m_Explosion (Explosions)
 	[
 		0 : "expRandom"
@@ -6257,6 +6312,7 @@
 // CCitadel_Projectile_Guided_Arrow
 @PointClass base(citadel_projectile) = guided_arrow_projectile
 [
+	// component CCitadelMinimapComponent
 ]
 
 // CCitadel_Ability_RapidFire
@@ -6297,6 +6353,8 @@
 // C_HeroPreview
 @PointClass base(CBaseEntity) = hero_preview
 [
+	// component CCitadelHeroComponent
+		nospawnheroid(integer) // FIELD_UINT32 m_nNoSpawnHeroID
 ]
 
 // CInfoHeroTestingController
@@ -6548,6 +6606,7 @@
 // CMiniMapMarker
 @PointClass base(point_entity) = info_mini_map_marker
 [
+	// component CCitadelMinimapComponent
 	MarkerType(intchoices) : "MarkerType" : : "" = // FIELD_INT32 m_eType (EMiniMapMarkerType_t)
 	[
 		0 : "EMarkerShopTunnels"
@@ -6564,6 +6623,7 @@
 // CInfoTrooperNeutralCamp
 @PointClass base(point_entity) = info_neutral_trooper_camp
 [
+	// component CCitadelMinimapComponent
 	CampName(string) // FIELD_STRING m_iszCampName
 	TetherRadiusOverride(float) // FIELD_FLOAT32 m_flTetherRadiusOverride
 	input SetDisabled(boolean) // PVAL_BOOL param
@@ -6926,6 +6986,7 @@
 // CItemCrate
 @PointClass base(prop_physics) = item_crate
 [
+	// component CCitadelMinimapComponent
 	loot_type(integer) // FIELD_INT32 m_eLootType
 	spawner(target_destination) // FIELD_EHANDLE m_hSpawner
 	objective_position(intchoices) : "objective_position" : : "" = // FIELD_INT32 m_eObjectivePosition (EObjectivePositions_t)
@@ -7085,6 +7146,7 @@
 // CProjectile_KnightCharge_Projectile
 @PointClass base(citadel_projectile) = knightcharge_projectile
 [
+	// component CCitadelMinimapComponent
 ]
 
 // CProjectile_KnightChargeLeading_Projectile
@@ -7194,6 +7256,75 @@
 // CLightEntity
 @PointClass base(basemodelentity) = light_omni
 [
+	// component CLightComponent
+		color(color255) // FIELD_COLOR32 m_Color
+		secondary_color(color255) // FIELD_COLOR32 m_SecondaryColor
+		brightness(float) // FIELD_FLOAT32 m_flBrightness
+		brightnessscale(float) // FIELD_FLOAT32 m_flBrightnessScale
+		range(float) // FIELD_FLOAT32 m_flRange
+		falloff(float) // FIELD_FLOAT32 m_flFalloff
+		attenuation0(float) // FIELD_FLOAT32 m_flAttenuation0
+		attenuation1(float) // FIELD_FLOAT32 m_flAttenuation1
+		attenuation2(float) // FIELD_FLOAT32 m_flAttenuation2
+		innerconeangle(float) // FIELD_FLOAT32 m_flTheta
+		outerconeangle(float) // FIELD_FLOAT32 m_flPhi
+		lightcookie(resource:texture) // FIELD_HRENDERTEXTURE m_hLightCookie
+		numcascades(integer) // FIELD_INT32 m_nCascades
+		cascaderenderstaticobj(integer) // FIELD_INT32 m_nCascadeRenderStaticObjects
+		cascadecrossfade(float) // FIELD_FLOAT32 m_flShadowCascadeCrossFade
+		cascadedistancefade(float) // FIELD_FLOAT32 m_flShadowCascadeDistanceFade
+		shadowcascadedistance0(float) // FIELD_FLOAT32 m_flShadowCascadeDistance0
+		shadowcascadedistance1(float) // FIELD_FLOAT32 m_flShadowCascadeDistance1
+		shadowcascadedistance2(float) // FIELD_FLOAT32 m_flShadowCascadeDistance2
+		shadowcascadedistance3(float) // FIELD_FLOAT32 m_flShadowCascadeDistance3
+		shadowcascaderesolution0(integer) // FIELD_INT32 m_nShadowCascadeResolution0
+		shadowcascaderesolution1(integer) // FIELD_INT32 m_nShadowCascadeResolution1
+		shadowcascaderesolution2(integer) // FIELD_INT32 m_nShadowCascadeResolution2
+		shadowcascaderesolution3(integer) // FIELD_INT32 m_nShadowCascadeResolution3
+		castshadows(integer) // FIELD_INT32 m_nCastShadows
+		shadowtexturewidth(integer) // FIELD_INT32 m_nShadowWidth
+		shadowtextureheight(integer) // FIELD_INT32 m_nShadowHeight
+		baked_light_indexing(boolean) // FIELD_BOOLEAN m_bUsesBakedShadowing
+		shadowpriority(integer) // FIELD_INT32 m_nShadowPriority
+		bakedshadowindex(integer) // FIELD_INT32 m_nBakedShadowIndex
+		light_path_uniqueid(integer) // FIELD_INT32 m_nLightPathUniqueId
+		light_map_uniqueid(integer) // FIELD_INT32 m_nLightMapUniqueId
+		renderdiffuse(boolean) // FIELD_BOOLEAN m_bRenderDiffuse
+		renderspecular(integer) // FIELD_INT32 m_nRenderSpecular
+		rendertransmissive(boolean) // FIELD_BOOLEAN m_bRenderTransmissive
+		ortholightwidth(float) // FIELD_FLOAT32 m_flOrthoLightWidth
+		ortholightheight(float) // FIELD_FLOAT32 m_flOrthoLightHeight
+		style(integer) // FIELD_INT32 m_nStyle
+		pattern(string) // FIELD_UTLSTRING m_Pattern
+		directlight(integer) // FIELD_INT32 m_nDirectLight
+		bouncelight(integer) // FIELD_INT32 m_nBounceLight
+		bouncescale(float) // FIELD_FLOAT32 m_flBounceScale
+		fademindist(float) // FIELD_FLOAT32 m_flFadeMinDist
+		fademaxdist(float) // FIELD_FLOAT32 m_flFadeMaxDist
+		shadowfademindist(float) // FIELD_FLOAT32 m_flShadowFadeMinDist
+		shadowfademaxdist(float) // FIELD_FLOAT32 m_flShadowFadeMaxDist
+		enabled(boolean) // FIELD_BOOLEAN m_bEnabled
+		rendertocubemaps(boolean) // FIELD_BOOLEAN m_bRenderToCubemaps
+		flicker(boolean) // FIELD_BOOLEAN m_bFlicker
+		precomputedfieldsvalid(boolean) // FIELD_BOOLEAN m_bPrecomputedFieldsValid
+		precomputedboundsmins(vector) // FIELD_POSITION_VECTOR m_vPrecomputedBoundsMins
+		precomputedboundsmaxs(vector) // FIELD_POSITION_VECTOR m_vPrecomputedBoundsMaxs
+		precomputedmaxrange(float) // FIELD_FLOAT32 m_flPrecomputedMaxRange
+		precomputedobborigin(vector) // FIELD_POSITION_VECTOR m_vPrecomputedOBBOrigin
+		precomputedobbangles(angle) // FIELD_QANGLE_WORLDSPACE m_vPrecomputedOBBAngles
+		precomputedobbextent(vector) // FIELD_VECTOR m_vPrecomputedOBBExtent
+		fog_lighting(integer) // FIELD_INT32 m_nFogLightingMode
+		fogcontributionstrength(float) // FIELD_FLOAT32 m_flFogContributionStength
+		nearclipplane(float) // FIELD_FLOAT32 m_flNearClipPlane
+		skycolor(color255) // FIELD_COLOR32 m_SkyColor
+		skyintensity(float) // FIELD_FLOAT32 m_flSkyIntensity
+		skyambientbounce(color255) // FIELD_COLOR32 m_SkyAmbientBounce
+		use_secondary_color(boolean) // FIELD_BOOLEAN m_bUseSecondaryColor
+		capsule_length(float) // FIELD_FLOAT32 m_flCapsuleLength
+		mixedshadows(boolean) // FIELD_BOOLEAN m_bMixedShadows
+		minroughness(float) // FIELD_FLOAT32 m_flMinRoughness
+		allow_sst_generation(boolean) // FIELD_BOOLEAN m_bAllowSSTGeneration
+		pvs_modify_entity(boolean) // FIELD_BOOLEAN m_bPvsModifyEntity
 	input SetAppearance(integer) // PVAL_INT param
 	input SetCustomAppearance(string) // PVAL_STRING param
 	input SetLightBrightness(float) // PVAL_FLOAT param
@@ -7861,7 +7992,7 @@
 	StartDirection(integer) // FIELD_INT32 m_direction
 	returnspeed(float) // FIELD_FLOAT32 m_returnSpeed
 	StartPosition(float) // FIELD_FLOAT32 m_flStartPosition
-	solidbsp(boolean) // FIELD_BOOLEAN m_bSolidBsp
+	solidbsp(boolean) // FIELD_BOOLEAN m_bSolidBsp, ADDED_KEYFIELD
 	input SetPosition(float) // PVAL_FLOAT param
 	input SetPositionImmediately(float) // PVAL_FLOAT param
 	input _DisableUpdateTarget(void)
@@ -7893,6 +8024,7 @@
 // CNPC_BarrackBoss
 @PointClass base(citadel_npc) = npc_barrack_boss
 [
+	// component CCitadelPlayerClipComponent
 	LaneSide(intchoices) : "LaneSide" : : "" = // FIELD_UINT8 m_LaneSide (LaneSide_t)
 	[
 		0 : "Center"
@@ -7906,6 +8038,7 @@
 // CNPC_SimpleAnimatingAI
 @PointClass base(baseanimgraph) = simple_animating_ai
 [
+	// component CCitadelRegenComponent
 	owning_ability(target_destination) // FIELD_EHANDLE m_hAbilityOwner
 ]
 
@@ -8086,6 +8219,7 @@
 // CNPC_ShieldedSentry
 @PointClass base(simple_animating_ai) = npc_shielded_sentry
 [
+	// component CCitadelMinimapComponent
 	attack_cone(float) // FIELD_FLOAT32 m_flAttackCone
 	lifetime(float) // FIELD_FLOAT32 m_flLifeTime
 	tracking_speed(float) // FIELD_FLOAT32 m_flTrackingSpeed
@@ -8117,6 +8251,7 @@
 // CNPC_TrooperBoss
 @PointClass base(citadel_npc) = npc_trooper_boss
 [
+	// component CCitadelPlayerClipComponent
 	LaneSide(intchoices) : "LaneSide" : : "" = // FIELD_UINT8 m_LaneSide (LaneSide_t)
 	[
 		0 : "Center"
@@ -8198,6 +8333,7 @@
 // CPathSimple
 @PointClass base(CBaseEntity) = path_simple
 [
+	// component CPathQueryComponent
 	closed_loop(boolean) // FIELD_BOOLEAN m_bClosedLoop
 	input GetClosestDirToEntity(target_destination) : "Compute the closest direction along the path relative to the entity provided. (world space vector)" // PVAL_EHANDLE hEntity, returns PVAL_VEC3 retval, Pulse node
 	input GetClosestPosToEntity(target_destination) : "Compute the closest position on the path relative to the entity provided. (world space vector)" // PVAL_EHANDLE hEntity, returns PVAL_VEC3 retval, Pulse node
@@ -8721,6 +8857,7 @@
 // CRagdollProp, spawn order 7
 @PointClass base(baseanimgraph) = prop_ragdoll
 [
+	// component CPropDataComponent
 	StartDisabled(boolean) // FIELD_BOOLEAN m_bStartDisabled
 	massScale(float) // FIELD_FLOAT32 m_massScale
 	buoyancyScale(float) // FIELD_FLOAT32 m_buoyancyScale
@@ -8843,9 +8980,9 @@
 @PointClass base(point_camera) = point_camera_vertical_fov
 [
 	VerticalFOV(float) // FIELD_FLOAT32 m_flVerticalFOV
-	dof_far_crisp(float) // FIELD_FLOAT32 m_flDofFarCrisp
-	dof_far_blurry(float) // FIELD_FLOAT32 m_flDofFarBlurry
-	dof_tilt_to_ground(float) // FIELD_FLOAT32 m_flDofTiltToGround
+	dof_far_crisp(float) // FIELD_FLOAT32 m_flDofFarCrisp, ADDED_KEYFIELD
+	dof_far_blurry(float) // FIELD_FLOAT32 m_flDofFarBlurry, ADDED_KEYFIELD
+	dof_tilt_to_ground(float) // FIELD_FLOAT32 m_flDofTiltToGround, ADDED_KEYFIELD
 ]
 
 // CPointChildModifier
@@ -10332,6 +10469,7 @@
 // CTriggerItemShop
 @PointClass base(trigger) = trigger_item_shop
 [
+	// component CCitadelMinimapComponent
 	AudioOffset(vector) // FIELD_VECTOR m_vAudioOffset
 	SoundName(string) // FIELD_STRING m_iszSoundName
 	LaneNum(integer) // FIELD_INT32 m_iLane
@@ -11165,6 +11303,7 @@
 // CCitadel_Projectile_Wrecker_Teleport
 @PointClass base(citadel_projectile) = wrecker_teleport_projectile
 [
+	// component CCitadelMinimapComponent
 ]
 
 // CCitadel_Projectile_WreckingBall
@@ -11239,5 +11378,113 @@
 	guard_boss_name(string) // FIELD_STRING m_strGuardBossName
 	secondary_guard_boss_name(string) // FIELD_STRING m_strGuardBossName2
 	tertiary_guard_boss_name(string) // FIELD_STRING m_strGuardBossName3
+]
+
+// Datamaps that no entity class has, like modifiers and structs that only code fills
+
+@BaseClass = CAI_InterestTarget
+[
+	target(target_destination) // FIELD_EHANDLE m_hTarget
+	target_position(vector) // FIELD_POSITION_VECTOR m_vPosition
+	target_direction(vector) // FIELD_DIRECTION_VECTOR_WORLDSPACE m_vDirection
+	discard_outside_viewcone(boolean) // FIELD_BOOLEAN m_bDiscardOutsideViewcone
+	look_at_mode(intchoices) : "look_at_mode" : : "" = // FIELD_INT32 m_nLookAtMode (ChoreoLookAtMode_t)
+	[
+		-1 : "eInvalid"
+		0 : "eChest"
+		1 : "eHead"
+		2 : "eEyesOnly"
+	]
+	look_at_speed(intchoices) : "look_at_speed" : : "" = // FIELD_INT32 m_nLookAtSpeed (ChoreoLookAtSpeed_t)
+	[
+		-1 : "eInvalid"
+		0 : "eSlow"
+		1 : "eMedium"
+		2 : "eFast"
+	]
+]
+
+@BaseClass = CBaseModifier
+[
+	stack_count(integer) // FIELD_INT16 m_iStackCount
+	max_stack_count(integer) // FIELD_INT16 m_iMaxStackCount
+	attributes(integer) // FIELD_UINT8 m_iAttributes
+]
+
+@BaseClass base(CBaseModifier) = CCitadelModifier
+[
+	effectiveness(float) // FIELD_FLOAT32 m_flEffectiveness
+]
+
+@BaseClass base(CCitadelModifier) = CBaseModifierAura
+[
+	radius(float) // FIELD_FLOAT32 m_flOverrideRadius
+]
+
+@BaseClass base(CCitadelModifier) = CGameModifier_BodyGroupChoice
+[
+	body_group_choice(integer) // FIELD_INT32 m_nBodyGroupChoice
+	body_group_name(string) // FIELD_UTLSTRINGTOKEN m_nBodyGroupName
+]
+
+@BaseClass base(CCitadelModifier) = CGameModifier_OverrideTargetIdentifier
+[
+	identifier(string) // FIELD_GLOBALSYMBOL m_sTargetIdentifier
+	entity(target_destination) // FIELD_EHANDLE m_hTarget
+	attachment_name(string) // FIELD_GLOBALSYMBOL m_sAttachmentName
+	origin_type(intchoices) : "origin_type" : : "" = // FIELD_INT32 m_nOriginType (EntityAttachmentType_t)
+	[
+		0 : "eAbsOrigin"
+		1 : "eCenter"
+		2 : "eEyes"
+		3 : "eAttachment"
+		4 : "eLocalOffset"
+	]
+	local_offset(string) // FIELD_VOID
+]
+
+@BaseClass base(CCitadelModifier) = CGameModifier_PlayEffectOnDeath
+[
+	effect_name(string) // FIELD_UTLSTRING m_sEffect
+]
+
+@BaseClass base(CCitadelModifier) = CGameModifier_SetMoveType
+[
+	MoveType(intchoices) : "MoveType" : : "" = // FIELD_UINT8 m_nMoveType (MoveType_t)
+	[
+		0 : "MOVETYPE_NONE"
+		1 : "MOVETYPE_OBSOLETE"
+		2 : "MOVETYPE_WALK"
+		3 : "MOVETYPE_FLY"
+		4 : "MOVETYPE_FLYGRAVITY"
+		5 : "MOVETYPE_VPHYSICS"
+		6 : "MOVETYPE_PUSH"
+		7 : "MOVETYPE_NOCLIP"
+		8 : "MOVETYPE_OBSERVER"
+		9 : "MOVETYPE_STEP"
+		10 : "MOVETYPE_SYNC"
+		11 : "MOVETYPE_CUSTOM"
+		12 : "MOVETYPE_LAST"
+		12 : "MOVETYPE_INVALID"
+		5 : "MOVETYPE_MAX_BITS"
+	]
+]
+
+@BaseClass base(CCitadelModifier) = CGameModifier_VehicleTopSpeedScale
+[
+	top_speed_scale(float) // FIELD_FLOAT32 m_flTopSpeedScale
+]
+
+@BaseClass = CNetworkedSequenceOperation
+[
+	cycle(float) // FIELD_FLOAT32 m_flCycle
+	sequenceName(string) // FIELD_UTLSTRING
+	sequence(integer) // FIELD_INT32
+]
+
+@BaseClass = PathAccompanyNode_t
+[
+	gaitOverride(string) // FIELD_STRING
+	customGaitOverride(string) // FIELD_STRING
 ]
 

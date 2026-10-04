@@ -1,0 +1,153 @@
+GameStartup "CAILODManifest_global_server" // src/game/server/ai_base/ai_basenpc.cpp
+	scripts/ai_lod.vdata
+
+GameStartup "NavLinkSchema_global_server" // src/game/server/ai_base/nav_link_schema.cpp
+	scripts/navlinks.vdata
+
+GameStartup "BaseEntity" // src/game/server/baseentity.cpp
+	materials/tools/show_collision_geometry_wire.vmat
+	materials/tools/show_collision_geometry.vmat
+	materials/tools/show_collision_geometry_depthtest.vmat
+
+GameSessionManifest_server "ClientGamePrecache_server" // src/game/server/citadel/citadel_client.cpp
+	// resources = null
+
+GameSessionManifest_server "player_server" // src/game/server/citadel/citadel_player_pawn.cpp
+	player.ventr
+
+GameSessionManifest_server "ClientPrecacheRegistry_server" // src/game/server/client.cpp
+	// resources = null
+
+GameSessionManifest_server "entityflame_server" // src/game/server/entityflame.cpp
+	entityflame.ventr
+
+GameStartup "CAI_BaseNPC_Spawn" // src/game/shared/ai_base/ai_basenpc_system.cpp
+	scripts/basenpc_movementsettings.vdata
+
+GameStartup "ResponseRulesManifest_global_server" // src/game/shared/ai_responsesystem.cpp
+	scripts/talker/response_rules.vrr
+
+GameStartup "AccoladesDataManifest_global_server" // src/game/shared/citadel/citadel_accolades_schema.cpp
+	scripts/accolades.vdata
+
+GameStartup "HeroDataManifest_global_server" // src/game/shared/citadel/citadel_base_hero.cpp
+	scripts/heroes.vdata
+
+GameStartup "BotDataManifest_global_server" // src/game/shared/citadel/citadel_bot_schema.cpp
+	scripts/bots/bot_difficulty.vdata
+
+GameStartup "CitadelGaffer_global_server" // src/game/shared/citadel/citadel_gaffer.cpp
+	scripts/gaffer.vdata
+
+GameStartup "CCitadel_GameGenericData_global_server" // src/game/shared/citadel/citadel_generic_data.cpp
+	scripts/generic_data.vdata
+
+GameStartup "CCitadel_MusicData_global_server" // src/game/shared/citadel/citadel_music_data.cpp
+	scripts/music_data.vdata
+
+GameStartup "CCitadel_GamePingTargetData_global_server" // src/game/shared/citadel/citadel_ping_target_data.cpp
+	scripts/ping_targets.vdata
+
+GameStartup "CCitadel_GamePingWheelData_global_server" // src/game/shared/citadel/citadel_ping_wheel_data.cpp
+	scripts/ping_wheel_message_types.vdata
+	scripts/ping_wheel_messages.vdata
+
+GameStartup "RankedModelManifest_global_server" // src/game/shared/citadel/citadel_ranked_badge_entities.cpp
+	models/hideout/hideout_ranked_badge_obscurus.vmdl
+	models/hideout/hideout_ranked_badge_wood.vmdl
+	models/hideout/hideout_ranked_badge_iron.vmdl
+	models/hideout/hideout_ranked_badge_steel.vmdl
+	models/hideout/hideout_ranked_badge_bronze.vmdl
+	models/hideout/hideout_ranked_badge_silver.vmdl
+	models/hideout/hideout_ranked_badge_gold.vmdl
+	models/hideout/hideout_ranked_badge_platinum.vmdl
+	models/hideout/hideout_ranked_badge_diamond.vmdl
+	models/hideout/hideout_ranked_badge_phantom.vmdl
+	models/hideout/hideout_ranked_badge_ascendent.vmdl
+	models/hideout/hideout_ranked_badge_eternus.vmdl
+
+GameStartup "RankedDataManifest_global_server" // src/game/shared/citadel/citadel_ranked_schema.cpp
+	scripts/ranked_seasons.vdata
+
+GameStartup "CitadelStatTracker_global_server" // src/game/shared/citadel/citadel_stat_tracker_schema.cpp
+	stats/tracked_stats_player.vdata
+	stats/tracked_stats_player_staging.vdata
+	stats/tracked_stats_team.vdata
+	stats/tracked_stats_team_staging.vdata
+	stats/tracked_stats_match.vdata
+	stats/tracked_stats_match_staging.vdata
+
+GameStartup "EconDataManifest_global_server" // src/game/shared/econ/econ_item_vdata.cpp
+	econ/econ_items.itemdefs
+
+GameSessionManifest_server "wearable_item_server" // src/game/shared/econ/econ_wearable.cpp
+	wearable_item.ventr
+
+GameStartup "EventsDataManifest_global_server" // src/game/shared/events/base_event_schema.cpp
+	events/events.vdata
+
+GameStartup "PeriodicResourcesManifest_global_server" // src/game/shared/events/periodic_resource_schema.cpp
+	scripts/periodic_resource_definitions.vdata
+
+GameStartup "ExplosionTypesManifest_global_server" // src/game/shared/explosiontypes.cpp
+	scripts/explosion_types.vdata
+
+GameStartup "" // src/game/shared/func_shatterglass.cpp
+	materials/glass/shatterglass.vmat
+
+"" "LoopModeGame_server" // src/game/shared/loopmodegame.cpp
+	// resources = null
+
+GameStartup "NoiseStreamsManifest_global_server" // src/game/shared/noisestreams_vdata.cpp
+	scripts/noise_presets.vdata
+
+GameSessionManifest_server "PhysFrictionEffectPrecache_server" // src/game/shared/physics_shared.cpp
+	// resources = null
+
+"" "PhysicsGameSystemManifest_server" // src/game/shared/physicsgamesystem.cpp
+	materials/tools/show_collision_geometry_wire_nodepth.vmat
+	materials/physics/wireframe_basic.vmat
+	materials/physics/wireframe_hidden.vmat
+	materials/physics/flat_basic.vmat
+
+GameStartup "" // src/game/shared/point_clientui_world_text_panel.cpp
+	dev/panorama_world_panel_hint_ui.vmat
+
+"" "PrecacheTest2" // src/game/shared/precache_register.cpp
+	// resources = null
+
+"" "PrecacheTest3" // src/game/shared/precache_register.cpp
+	// resources = null
+
+PrecacheTest_server "PrecacheTest" // src/game/shared/precache_register.cpp
+	PrecacheTest2
+	precacheTest3.vrnmd
+	entityflame.ventr
+
+GameStartup "CPropDataManifest_global_server" // src/game/shared/props_shared.cpp
+	scripts/propdata.vdata
+
+GameSessionManifest_server "PrecacheEffectBubbles_server" // src/game/shared/te/te_bubbles.cpp
+	// resources = null
+
+GameSessionManifest_server "PrecacheEffectBubbleTrail_server" // src/game/shared/te/te_bubbletrail.cpp
+	// resources = null
+
+GameSessionManifest_server "PrecacheEffectEnergySplash_server" // src/game/shared/te/te_energysplash.cpp
+	// resources = null
+
+GameSessionManifest_server "CTEFizz_server" // src/game/shared/te/te_fizz.cpp
+	// resources = null
+
+GameSessionManifest_server "CTEGlowSprite_server" // src/game/shared/te/te_glowsprite.cpp
+	// resources = null
+
+GameSessionManifest_server "CTELargeFunnel_server" // src/game/shared/te/te_largefunnel.cpp
+	// resources = null
+
+GameSessionManifest_server "PrecacheTESmoke_server" // src/game/shared/te/te_smoke.cpp
+	// resources = null
+
+GameStartup "LightStylesManifest_Server" // src/public/game/shared/lightstyles2.cpp
+	scripts/light_styles.vdata
+
