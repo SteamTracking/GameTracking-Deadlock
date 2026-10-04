@@ -20,6 +20,7 @@ class CCitadel_Ability_Ratking_ScrapGrenadeVData : public CitadelAbilityVData
 	float32 m_flBounceTargetingPlayerWeight; // = 5
 	float32 m_flBounceUpMagnitude; // = 1.8
 	float32 m_flMinTimeBetweenExplosions; // = 0.7
+	float32 m_flBounceTargetDistanceCheck; // = 2000
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ShrapnelTracer;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_BounceParticle;

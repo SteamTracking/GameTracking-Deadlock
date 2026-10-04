@@ -1,0 +1,4995 @@
+AABB_t
+	Vector m_vMinBounds
+	Vector m_vMaxBounds
+
+AbilityResource_t
+	GameTime_t m_flLatchTime (sent as: float32)
+	float m_flLatchValue
+
+AbilityUpgradeState_t
+	AbilityID_t m_ItemID (sent as: uint32)
+	CitadelAbilityUpgradeInfoPacked_t m_nUpgradeInfo
+
+ActiveModelConfig_t
+	ModelConfigHandle_t m_Handle (sent as: uint32)
+	string_t m_Name
+	CHandle< CBaseModelEntity > m_AssociatedEntities (sent as: ehandle)
+	string_t m_AssociatedEntityNames
+
+AnimGraph2SerializedPoseRecipeSlot_t
+	CUtlBinaryBlock m_topology
+
+CAITestPath
+
+CAI_BaseNPC
+	include by name: m_lifeState, m_spawnflags
+	NPC_STATE m_NPCState
+	CAI_MotorServices * m_pMotorServices
+
+CAI_ChangeHintGroup
+
+CAI_CitadelFacingServices
+
+CAI_CitadelMotorServices
+
+CAI_CitadelNPC
+	include by name: m_iMaxHealth, m_iHealth, m_iTeam, m_vecViewOffset
+	exclude by name: m_flEncodedController, m_flPoseParameter, m_flSimulationTime
+	exclude by user group: m_flCycle
+	CCitadelAbilityComponent::Storage_t m_CCitadelAbilityComponent (class: CCitadelAbilityComponent; alias: CCitadelAbilityComponent; type alias: CCitadelAbilityComponent; user groups: CCitadelAbilityComponent)
+	CCitadelRegenComponent::Storage_t m_CCitadelRegenComponent (class: CCitadelRegenComponent; alias: CCitadelRegenComponent; type alias: CCitadelRegenComponent; user groups: CCitadelRegenComponent)
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	WeakPoint_t m_vecWeakPoints
+	bool m_bMinion
+	EHANDLE m_hLookTarget (sent as: ehandle)
+	bool m_bBeamActive
+	VectorWS m_vEyeBeamTarget (encoder: coord)
+
+CAI_Component
+
+CAI_GoalEntity
+
+CAI_Hint
+
+CAI_LookTarget
+
+CAI_MotorServices
+	StanceType_t m_nCurrentStance
+	CGlobalSymbol m_sSharedPoseSlotID
+	CTransform m_vecSharedPoseParentSpace
+
+CAI_NetworkManager
+
+CAI_Relationship
+
+CAI_ScriptConditions
+
+CAI_SpeechFilter
+
+CAI_VolumetricEventEntity
+
+CAI_VolumetricEventEntityAlias_ai_sound
+
+CAI_VolumetricEventSensor
+
+CAbility_Drifter_BloodBlast
+
+CAbility_Drifter_Darkness
+
+CAbility_Drifter_ShadowMark
+	EHANDLE m_hTeleportTarget (sent as: ehandle)
+	bool m_bTeleported
+	QAngle m_qPostTeleportAngles (encoder: qangle; change callbacks: OnTeleportAnglesChanged)
+
+CAbility_Drifter_StalkersMark_Teleport
+
+CAbility_Fathom_LurkersAmbush
+	bool m_bIsVisibleOnMinimap
+	GameTime_t m_flStoppedMovingStartTime (sent as: float32)
+
+CAbility_Fathom_ReefdwellerHarpoon
+	bool m_bBulletFlying
+	bool m_bHasLatchedOnce
+	bool m_bLatched
+	VectorWS m_vHarpoonTarget
+	float m_flLatchedYaw
+	GameTime_t m_flCloseEnoughStartTime (sent as: float32)
+	GameTime_t m_flStuckStartTime (sent as: float32)
+	GameTime_t m_flReelStartTime (sent as: float32)
+
+CAbility_Fencer_Lunge
+	uint8 m_nCurrentLungeState (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flStateStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vDashStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vDashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vLookDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vStrikeDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bStartedInAir (user groups: LocalPlayerOwnerAndObserversExclusive)
+	uint8 m_iRemainingCasts
+	GameTime_t m_RecastEndTime (sent as: float32)
+	uint8 m_eLungeDirection
+	int m_nPowerLevel (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CAbility_Fencer_Ultimate
+	VectorWS m_vStartPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vDashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vecLastPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
+	EFencerUltState_t m_eUltState (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flStateStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CAbility_Mirage_SandPhantom
+	bool m_bHasVictims (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CAbility_Mirage_Tornado
+	QAngle m_anglesCharging
+	GameTime_t m_flChargeStartTime (sent as: float32; change callbacks: OnMirageTornadoStateChanged)
+
+CAbility_Operative_Revelation
+
+CAbility_Operative_UmbrellaManeuver
+
+CAbility_Rutger_CheatDeath
+
+CAbility_Rutger_ForceField
+
+CAbility_Rutger_RocketLauncher
+
+CAbility_Synth_Affliction
+
+CAbility_Synth_Barrage
+	GameTime_t m_flNextShootTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CAbility_Synth_PlasmaFlux
+	EHANDLE m_hActiveProjectile (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CAbility_Synth_PlasmaFlux_Trigger
+
+CAbility_Synth_Pulse
+
+CAbility_TestHero_SpookyHide
+	bool m_bIsVisibleOnMinimap
+	GameTime_t m_flStoppedMovingStartTime (sent as: float32)
+
+CAbility_Werewolf_Frenzy
+
+CAmbientGeneric
+
+CAssignedLaneParticle
+	include by name: m_iTeamNum
+	int m_iLane
+
+CAttributeContainer
+	include by name: m_ProviderType, m_hOuter, m_iReapplyProvisionParity, m_Item
+	CEconItemView m_Item
+
+CAttributeList
+	CEconItemAttribute m_Attributes (type alias: CUtlVector< CEconItemAttribute >)
+
+CAttributeManager
+	int m_iReapplyProvisionParity
+	EHANDLE m_hOuter (sent as: ehandle)
+	attributeprovidertypes_t m_ProviderType
+
+CBarnLight
+	bool m_bEnabled (change callbacks: RenderingChanged)
+	int m_nColorMode (change callbacks: RenderingChanged)
+	Color m_Color (change callbacks: RenderingChanged)
+	float m_flColorTemperature (change callbacks: RenderingChanged)
+	float m_flBrightness (change callbacks: RenderingChanged)
+	float m_flBrightnessScale (change callbacks: RenderingChanged)
+	int m_nDirectLight (change callbacks: RenderingChanged)
+	int m_nBakedShadowIndex (change callbacks: RenderingChanged)
+	int32 m_nLightPathUniqueId (change callbacks: RenderingChanged)
+	int32 m_nLightMapUniqueId (change callbacks: RenderingChanged)
+	int m_nLuminaireShape (change callbacks: RenderingChanged)
+	float m_flLuminaireSize (change callbacks: RenderingChanged)
+	float m_flLuminaireAnisotropy (change callbacks: RenderingChanged)
+	CUtlString m_LightStyleString (change callbacks: StyleChanged)
+	GameTime_t m_flLightStyleStartTime (sent as: float32; change callbacks: RenderingChanged)
+	CUtlString m_QueuedLightStyleStrings
+	CUtlString m_LightStyleEvents
+	CHandle< CBaseModelEntity > m_LightStyleTargets (sent as: ehandle)
+	HRenderTextureStrong m_hLightCookie (change callbacks: RenderingChanged; resource type: vtex)
+	float m_flShape (change callbacks: RenderingChanged)
+	float m_flSoftX (change callbacks: RenderingChanged)
+	float m_flSoftY (change callbacks: RenderingChanged)
+	float m_flSkirt (change callbacks: RenderingChanged)
+	float m_flSkirtNear (change callbacks: RenderingChanged)
+	Vector m_vSizeParams (change callbacks: RenderingChanged)
+	float m_flRange (change callbacks: RenderingChanged)
+	Vector m_vShear (change callbacks: RenderingChanged)
+	int m_nBakeSpecularToCubemaps
+	Vector m_vBakeSpecularToCubemapsSize (change callbacks: RenderingChanged)
+	float m_flBakeSpecularToCubemapsScale (change callbacks: RenderingChanged)
+	int m_nCastShadows (change callbacks: RenderingChanged)
+	int m_nShadowMapSize (change callbacks: RenderingChanged)
+	int m_nShadowPriority (change callbacks: RenderingChanged)
+	bool m_bContactShadow (change callbacks: RenderingChanged)
+	bool m_bForceShadowsEnabled (change callbacks: RenderingChanged)
+	int m_nBounceLight
+	float m_flBounceScale (change callbacks: RenderingChanged)
+	float m_flMinRoughness (change callbacks: RenderingChanged)
+	Vector m_vAlternateColor (change callbacks: RenderingChanged)
+	float m_fAlternateColorBrightness (change callbacks: RenderingChanged)
+	int m_nFog (change callbacks: RenderingChanged)
+	float m_flFogStrength (change callbacks: RenderingChanged)
+	int m_nFogShadows (change callbacks: RenderingChanged)
+	float m_flFogScale (change callbacks: RenderingChanged)
+	float m_flFadeSizeStart (change callbacks: RenderingChanged)
+	float m_flFadeSizeEnd (change callbacks: RenderingChanged)
+	float m_flShadowFadeSizeStart (change callbacks: RenderingChanged)
+	float m_flShadowFadeSizeEnd (change callbacks: RenderingChanged)
+	bool m_bPrecomputedFieldsValid (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedBoundsMins (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedBoundsMaxs (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBOrigin (change callbacks: RenderingChanged)
+	QAngle m_vPrecomputedOBBAngles (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBExtent (change callbacks: RenderingChanged)
+	int m_nPrecomputedSubFrusta (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBOrigin0 (change callbacks: RenderingChanged)
+	QAngle m_vPrecomputedOBBAngles0 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBExtent0 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBOrigin1 (change callbacks: RenderingChanged)
+	QAngle m_vPrecomputedOBBAngles1 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBExtent1 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBOrigin2 (change callbacks: RenderingChanged)
+	QAngle m_vPrecomputedOBBAngles2 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBExtent2 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBOrigin3 (change callbacks: RenderingChanged)
+	QAngle m_vPrecomputedOBBAngles3 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBExtent3 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBOrigin4 (change callbacks: RenderingChanged)
+	QAngle m_vPrecomputedOBBAngles4 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBExtent4 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBOrigin5 (change callbacks: RenderingChanged)
+	QAngle m_vPrecomputedOBBAngles5 (change callbacks: RenderingChanged)
+	Vector m_vPrecomputedOBBExtent5 (change callbacks: RenderingChanged)
+	uint16 m_VisClusters (change callbacks: RenderingChanged)
+
+CBaseAnimGraph
+	include by name: m_bClientSideRagdoll
+	bool m_bInitiallyPopulateInterpHistory
+	bool m_bAnimGraphUpdateEnabled
+	Vector m_vecForce
+	int32 m_nForceBone
+	PhysicsRagdollPose_t m_RagdollPose
+	bool m_bRagdollEnabled (change callbacks: OnClientRagdollEnabledChanged)
+	bool m_bRagdollClientSide (change callbacks: OnClientRagdollChanged)
+	bool m_bShouldUpdateTransformations
+
+CBaseAnimGraphAlias_baseanimating
+
+CBaseAnimGraphController
+	AnimationAlgorithm_t m_nAnimationAlgorithm (change callbacks: AG2_OnAnimGraphDefinitionOrModeChanged)
+	CGlobalSymbol m_vecSecondarySkeletonSlotIDs (user groups: LocalPlayerAndPredictorsExclusive)
+	CHandle< CBaseAnimGraph > m_vecSecondarySkeletons (sent as: ehandle; change callbacks: OnSecondarySkeletonsChanged)
+	int m_nSecondarySkeletonMasterCount (change callbacks: AG2_OnAnimGraphDefinitionOrModeChanged)
+	HSequence m_hSequence (sent as: int32; serializer: minusone; priority: 32; change callbacks: OnNetworkedSequenceChanged)
+	GameTime_t m_flSeqStartTime (sent as: float32; priority: 32; change callbacks: OnNetworkedAnimationChanged)
+	float m_flSeqFixedCycle (priority: 32; change callbacks: OnNetworkedAnimationChanged)
+	AnimLoopMode_t m_nAnimLoopMode (priority: 32; change callbacks: OnNetworkedAnimationChanged)
+	CNetworkedQuantizedFloat m_flPlaybackRate (sent as: float32; priority: 32; change callbacks: OnNetworkedAnimationChanged; bit count: 8; encode flags: 5; min: -4; max: 12)
+	HNmGraphDefinitionStrong m_hGraphDefinitionAG2 (change callbacks: AG2_OnAnimGraphDefinitionOrModeChanged; resource type: vnmgraph)
+	AnimGraph2SerializedPoseRecipeSlot_t m_SerializePoseRecipeAG2Slots (change callbacks: AG2_PoseRecipeChanged)
+	uint8 m_SerializePoseRecipeAG2Dynamic (change callbacks: AG2_PoseRecipeChanged)
+	uint32 m_nSerializePoseRecipeAG2ActiveSlot (change callbacks: AG2_PoseRecipeChanged)
+	int m_nSerializePoseRecipeVersionAG2
+	int m_nServerGraphInstanceIteration (change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
+	int m_nServerSerializationContextIteration (change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
+	ResourceId_t m_primaryGraphId (sent as: uint64; change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
+	ResourceId_t m_vecExternalGraphIds (sent as: uint64; change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
+	ResourceId_t m_vecExternalClipIds (sent as: uint64; change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
+
+CBaseButton
+	CHandle< CBaseModelEntity> m_glowEntity (sent as: ehandle)
+	bool m_usable
+	string_t m_szDisplayText
+
+CBaseClientUIEntity
+	bool m_bEnabled
+	string_t m_DialogXMLName
+	string_t m_PanelClassName
+	string_t m_PanelID
+
+CBaseCombatCharacter
+	exclude by user group: LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
+	CHandle< CEconWearable > m_hMyWearables (sent as: ehandle)
+
+CBaseDMStart
+
+CBaseDoor
+	bool m_bIsUsable
+
+CBaseEntity
+	exclude by name: m_bClientSideRagdoll, m_iMaxHealth, m_spawnflags, m_bTakesDamage, m_nTakeDamageFlags
+	exclude by user group: Water, Player, LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
+	user group proxies: AnimTime
+	CBodyComponent::Storage_t m_CBodyComponent (class: CBodyComponent; alias: CBodyComponent; type alias: CBodyComponent; priority: 48; user groups: CBodyComponent)
+	int32 m_iHealth (serializer: ClampHealth; priority: 32; user groups: Player; change callbacks: ObservableRecv_m_iHealth)
+	int32 m_iMaxHealth (change callbacks: ObservableRecv_m_iMaxHealth)
+	uint8 m_lifeState (priority: 32; user groups: Player)
+	bool m_bTakesDamage
+	TakeDamageFlags_t m_nTakeDamageFlags
+	EntityPlatformTypes_t m_nPlatformType
+	MoveCollide_t m_MoveCollide
+	MoveType_t m_MoveType
+	EntitySubclassID_t m_nSubclassID (sent as: uint32; recipients filter: SubclassID_RecipientsFilter)
+	float32 m_flAnimTime (serializer: animTimeSerializer; priority: 0; user groups: AnimTime)
+	GameTime_t m_flCreateTime (sent as: float32)
+	bool m_bClientSideRagdoll
+	uint8 m_ubInterpolationFrame
+	uint8 m_iTeamNum
+	uint32 m_spawnflags
+	GameTick_t m_nNextThinkTick (sent as: int32; user groups: LocalPlayerAndPredictorsExclusive)
+	uint32 m_fFlags (priority: 32; user groups: Player)
+	CNetworkVelocityVector m_vecVelocity (priority: 32; user groups: LocalPlayerAndPredictorsExclusive)
+	CModifierProperty * m_pModifierProp
+	CHandle< CBaseEntity> m_hEffectEntity (sent as: ehandle)
+	CHandle< CBaseEntity> m_hOwnerEntity (sent as: ehandle; priority: 32)
+	uint32 m_fEffects (change callbacks: OnEffectsChanged)
+	CHandle< CBaseEntity> m_hGroundEntity (sent as: ehandle; priority: 32; user groups: Player)
+	int m_nGroundBodyIndex (priority: 32; user groups: Player)
+	float32 m_flFriction (user groups: LocalPlayerAndPredictorsExclusive; bit count: 8; encode flags: 1; min: 0; max: 4)
+	float32 m_flElasticity (encoder: coord)
+	float32 m_flGravityScale
+	float32 m_flTimeScale (user groups: LocalPlayerAndPredictorsExclusive)
+	float m_flWaterLevel (user groups: Water; bit count: 8; encode flags: 8; min: 0; max: 1)
+	bool m_bGravityDisabled
+	bool m_bAnimatedEveryTick
+	GameTime_t m_flNavIgnoreUntilTime (sent as: float32)
+
+CBaseFilter
+
+CBaseModelEntity
+	CHitboxComponent::Storage_t m_CHitboxComponent (class: CHitboxComponent; alias: CHitboxComponent; type alias: CHitboxComponent; user groups: CHitboxComponent)
+	CChoreoComponent * m_pChoreoComponent (change pointer callback: OnChoreoComponentPointerChanged)
+	CDestructiblePartsComponent * m_pDestructiblePartsSystemComponent (type alias: CDestructiblePartsSystemComponent*)
+	RenderMode_t m_nRenderMode
+	RenderFx_t m_nRenderFX
+	Color m_clrRender (change callbacks: OnColorChanged)
+	EntityRenderAttribute_t m_vecRenderAttributes (change callbacks: OnRenderAttributesChanged)
+	bool m_bRenderToCubemaps
+	bool m_bExpandRenderBoundsToIncludeCloth
+	bool m_bNoInterpolate
+	CCollisionProperty m_Collision
+	CGlowProperty m_Glow
+	float m_flGlowBackfaceMult
+	float32 m_fadeMinDist
+	float32 m_fadeMaxDist
+	float32 m_flFadeScale
+	float32 m_flShadowStrength
+	uint8 m_nObjectCulling
+	CNetworkViewOffsetVector m_vecViewOffset (priority: 32; user groups: Player)
+	uint32 m_bvDisabledHitGroups (change callbacks: OnDisabledHitgroupsChanged)
+
+CBaseModifier
+
+CBaseNPCMaker
+
+CBasePlatTrain
+
+CBasePlayerController
+	include by name: m_pEntity, m_flSimulationTime, m_flCreateTime, m_iTeamNum, m_nNextThinkTick, m_fFlags
+	include by user group: LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
+	overrides: m_nNextThinkTick userGroup LocalPlayerAndPredictorsExclusive
+	user group proxies: LocalPlayerExclusive, LocalTeamExclusive, LocalPlayerAndObserversExclusive, LocalPlayerAndPredictorsExclusive
+	uint32 m_nTickBase (priority: 1; user groups: LocalPlayerAndPredictorsExclusive)
+	CHandle< CBasePlayerPawn> m_hPawn (sent as: ehandle; change callbacks: OnPawnChanged)
+	bool m_bKnownTeamMismatch
+	PlayerConnectedState m_iConnected (change callbacks: OnConnectionStateChanged)
+	PlayerConnectedState m_iMostConnected
+	char m_iszPlayerName (change callbacks: OnPlayerControllerNameChanged)
+	uint64 m_steamID (encoder: fixed64; change callbacks: OnSteamIDChanged)
+	bool m_bNoClipEnabled (change callbacks: OnNoClipEnableChanged)
+	uint32 m_iDesiredFOV
+
+CBasePlayerPawn
+	include by name: m_iMaxHealth
+	exclude by name: m_pWeaponServices, m_pItemServices, m_pAutoaimServices, m_pObserverServices, m_pWaterServices, m_pUseServices, m_pFlashlightServices, m_pMovementServices
+	include by user group: Player, Water, LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
+	exclude by user group: FogController
+	overrides: CNetworkOriginCellCoordQuantizedVector::m_vecX bitCount 32, CNetworkOriginCellCoordQuantizedVector::m_vecY bitCount 32, CNetworkOriginCellCoordQuantizedVector::m_vecZ bitCount 32
+	user group proxies: LocalPlayerExclusive, LocalPlayerAndObserversExclusive, LocalPlayerAndPredictorsExclusive
+	CPlayer_WeaponServices * m_pWeaponServices
+	CPlayer_ItemServices * m_pItemServices
+	CPlayer_AutoaimServices * m_pAutoaimServices (user groups: LocalPlayerExclusive)
+	CPlayer_ObserverServices * m_pObserverServices
+	CPlayer_WaterServices * m_pWaterServices
+	CPlayer_UseServices * m_pUseServices
+	CPlayer_FlashlightServices * m_pFlashlightServices
+	CPlayer_CameraServices * m_pCameraServices
+	CPlayer_MovementServices * m_pMovementServices
+	ViewAngleServerChange_t m_ServerViewAngleChanges (user groups: LocalPlayerAndPredictorsExclusive)
+	uint32 m_iHideHUD (user groups: LocalPlayerExclusive)
+	sky3dparams_t m_skybox3d (user groups: LocalPlayerExclusive)
+	GameTime_t m_flDeathTime (sent as: float32)
+	CHandle< CBasePlayerController> m_hController (sent as: ehandle)
+	CHandle< CBasePlayerController> m_hDefaultController (sent as: ehandle)
+
+CBasePlayerWeapon
+	include by name: m_nNextThinkTick
+	exclude by name: m_flexWeight
+	exclude by user group: m_flPoseParameter, m_flCycle, overlay_vars
+	user group proxies: LocalWeaponExclusive
+	GameTick_t m_nNextPrimaryAttackTick (sent as: int32; user groups: LocalWeaponExclusive)
+	float32 m_flNextPrimaryAttackTickRatio (user groups: LocalWeaponExclusive)
+	GameTick_t m_nNextSecondaryAttackTick (sent as: int32; user groups: LocalWeaponExclusive)
+	float32 m_flNextSecondaryAttackTickRatio (user groups: LocalWeaponExclusive)
+	int32 m_iClip1 (serializer: minusone; priority: 32)
+	int32 m_iClip2 (serializer: minusone; user groups: LocalWeaponExclusive)
+	int m_pReserveAmmo (user groups: LocalWeaponExclusive)
+
+CBaseProp
+
+CBasePropDoor
+	include by name: m_spawnflags
+	exclude by name: m_flexWeight, m_animationController.m_flPlaybackRate
+	exclude by user group: m_flPoseParameter, overlay_vars
+	DoorState_t m_eDoorState
+	bool m_bLocked
+	bool m_bNoNPCs
+	VectorWS m_closedPosition
+	QAngle m_closedAngles
+	CHandle< CBasePropDoor> m_hMaster (sent as: ehandle)
+
+CBaseToggle
+
+CBaseTrackedStatsEntity
+	TrackedStatNetworkData_t m_vecTrackedStats (change callbacks: OnTrackedStatsChanged)
+
+CBaseTrigger
+	include by name: m_spawnflags
+	bool m_bDisabled (change callbacks: OnNetworkedDisableChanged)
+
+CBeam
+	include by name: m_nModelIndex, m_nRenderFX, m_nRenderMode, m_clrRender, CGameSceneNode::m_hParent
+	include by user group: Origin
+	overrides: m_clrRender priority NETWORK_FIELD_CHANGES_OFTEN_PRIORITY
+	float32 m_flFrameRate (bit count: 10; encode flags: 2; min: -25; max: 25)
+	float32 m_flHDRColorScale
+	uint8 m_nNumBeamEnts
+	HMaterialStrong m_hBaseMaterial (resource type: vmat)
+	HMaterialStrong m_nHaloIndex (resource type: vmat)
+	BeamType_t m_nBeamType
+	uint32 m_nBeamFlags
+	CHandle< CBaseEntity > m_hAttachEntity (sent as: ehandle)
+	AttachmentHandle_t m_nAttachIndex (sent as: uint8)
+	float32 m_fWidth (bit count: 10; encode flags: 2; min: 0; max: 102.3)
+	float32 m_fEndWidth (bit count: 10; encode flags: 2; min: 0; max: 102.3)
+	float32 m_fFadeLength
+	float32 m_fHaloScale
+	float32 m_fAmplitude (bit count: 8; encode flags: 1; min: 0; max: 64)
+	float32 m_fStartFrame (bit count: 8; encode flags: 1; min: 0; max: 256)
+	float32 m_fSpeed (bit count: 8; min: 0; max: 100)
+	float32 m_flFrame (priority: 32; bit count: 20; encode flags: 1; min: 0; max: 256)
+	bool m_bTurnedOff
+	VectorWS m_vecEndPos (encoder: coord)
+
+CBodyComponent
+
+CBodyComponentBaseAnimGraph
+	CBaseAnimGraphController m_animationController
+
+CBodyComponentBaseModelEntity
+
+CBodyComponentPoint
+	CGameSceneNode m_sceneNode
+
+CBodyComponentSkeletonInstance
+	CSkeletonInstance m_skeletonInstance
+
+CBreakable
+	CPropDataComponent::Storage_t m_CPropDataComponent (class: CPropDataComponent; alias: CPropDataComponent; type alias: CPropDataComponent; user groups: CPropDataComponent)
+
+CBreakableProp
+	CPropDataComponent::Storage_t m_CPropDataComponent (class: CPropDataComponent; alias: CPropDataComponent; type alias: CPropDataComponent; user groups: CPropDataComponent)
+
+CChangeLevel
+
+CChoreoComponent
+
+CChoreoInfoTarget
+
+CCitadelAbilityBeam_t
+	GameTime_t m_nActivateTime (sent as: float32)
+	QAngle m_angBeamAngles
+	VectorWS m_vBeamAimPos (encoder: coord; priority: 32)
+
+CCitadelAbilityComponent
+	CHandle<CCitadelBaseAbility> m_vecAbilities (sent as: ehandle; priority: 32; user groups: Abilities; change callbacks: OnVecAbilitiesChanged)
+	int32 m_arPendingAsyncAbilityReservationSlots (priority: 32; user groups: Abilities)
+	int32 m_arPendingAsyncAbilityReservationAbilityIDs (priority: 32; user groups: Abilities)
+	CHandle< CCitadelBaseAbility> m_hSelectedAbility (sent as: ehandle; change callbacks: AbiCompSelectedAbilityChanged)
+	CHandle< CCitadelBaseAbility> m_hChannellingAbility (sent as: ehandle; user groups: LocalPlayerExclusive)
+	CHandle< CCitadelBaseAbility> m_hCastDelayingAbility (sent as: ehandle; user groups: LocalPlayerExclusive)
+	EHANDLE m_hPreviouslySelectedAbility (sent as: ehandle; user groups: LocalPlayerExclusive)
+	bool m_bPreviousAbilityQueued (user groups: LocalPlayerExclusive)
+	float m_flTimeScale (change callbacks: AbiCompTimeScaleChanged)
+	float m_flParticleTimeScale (change callbacks: AbiCompParticleTimeScaleChanged)
+	bool m_bInInterruptState (user groups: LocalPlayerExclusive)
+	AbilityResource_t m_ResourceStamina (user groups: LocalPlayerOwnerAndObserversExclusive)
+	AbilityResource_t m_ResourceAbility (user groups: LocalPlayerOwnerAndObserversExclusive)
+	ConsumedComponentState_t m_vecConsumedComponents (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadelAbilityDruidAbility04
+
+CCitadelAbilityDruidBasePlant
+
+CCitadelAbilityDruidHelicopterSeeds
+
+CCitadelAbilityDruidLeechSeed
+
+CCitadelAbilityDruidPlantBranchWall
+
+CCitadelAbilityDruidPlantHealingTree
+
+CCitadelAbilityDruidPlantInvisBush
+
+CCitadelAbilityDruidPlantSomething
+
+CCitadelAbilityDruidSprout
+
+CCitadelAnimatingModelEntity
+	include by name: m_vecViewOffset, m_iHealth, m_iMaxHealth
+	exclude by name: m_flSimulationTime
+	CCitadelRegenComponent::Storage_t m_CCitadelRegenComponent (class: CCitadelRegenComponent; alias: CCitadelRegenComponent; type alias: CCitadelRegenComponent; user groups: CCitadelRegenComponent)
+
+CCitadelAudioProcessingVolumeBase
+	CUtlString m_strEffectName
+	int32 m_nVolumeID
+
+CCitadelAudioProcessingVolumeOBB
+	Vector m_vMins
+	Vector m_vMaxs
+
+CCitadelAutoScaledTime
+	GameTime_t m_flTime (sent as: float32)
+
+CCitadelBaseAbility
+	include by name: m_flTimeScale
+	exclude by name: m_angRotation, m_cellX, m_cellY, m_cellZ, m_flEncodedController, m_flPoseParameter, m_flSimulationTime, m_flexWeight, m_nForceBone, m_nHitboxSet, m_baseLayer.m_hSequence, m_vecForce, m_vecMaxs, m_vecMins, m_vecOrigin, m_vecSpecifiedSurroundingMaxs, m_vecSpecifiedSurroundingMins, m_vLookTargetPosition, m_MoveCollide, m_MoveType, m_flElasticity, m_nMinCPULevel, m_nMinGPULevel, m_nMaxCPULevel, m_nMaxGPULevel, m_flNavIgnoreUntilTime, m_ubInterpolationFrame, m_flScale
+	exclude by user group: m_flCycle, overlay_vars
+	overrides: m_flTimeScale userGroup
+	user group proxies: LocalPlayerOwnerExclusive, LocalPlayerOwnerAndObserversExclusive
+	bool m_bChanneling (change callbacks: ObservableRecv_m_bChanneling)
+	bool m_bInCastDelay (change callbacks: ObservableRecv_m_bInCastDelay)
+	bool m_bShouldBeExecuted
+	bool m_bCanBeUpgraded
+	CitadelStolenAbilitySlot_t m_eStolenInSlot
+	CitadelAbilityUpgradeInfoPacked_t m_nUpgradeInfo (priority: 32; change callbacks: ObservableRecv_m_nUpgradeInfo)
+	bool m_bToggleState (change callbacks: ObservableRecv_m_bToggleState)
+	GameTime_t m_flCooldownStart (sent as: float32; priority: 32)
+	GameTime_t m_flCooldownEnd (sent as: float32; priority: 32; change callbacks: ObservableRecv_m_flCooldownEnd)
+	GameTime_t m_flCastCompletedTime (sent as: float32)
+	GameTime_t m_flChannelStartTime (sent as: float32)
+	GameTime_t m_flCastDelayStartTime (sent as: float32)
+	EAbilitySlots_t m_eAbilitySlot (change callbacks: OnAbilitySlotChanged)
+	GameTime_t m_flPostCastDelayEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flPostCastDelayEndTime)
+	int m_iRemainingCharges (priority: 32; change callbacks: ObservableRecv_m_iRemainingCharges)
+	GameTime_t m_flChargeRechargeStart (sent as: float32; priority: 32)
+	GameTime_t m_flChargeRechargeEnd (sent as: float32; priority: 32)
+	GameTime_t m_flMovementControlActiveTime (sent as: float32; change callbacks: ObservableRecv_m_flMovementControlActiveTime)
+	GameTime_t m_flSelectedChangedTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flAltCastHoldStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flAltCastDoubleTapStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bCanBeImbued
+	EntitySubclassID_t m_vecImbuedAbilities (sent as: uint32; change callbacks: OnAbilityImbuedChanged)
+	bool m_bSelectionModeIsAltMode (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadelBaseAbilityServerOnly
+
+CCitadelBaseDashCastAbility
+	GameTime_t m_flDashCastStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vDashCastDir (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadelBaseLockonAbility
+	LockonTarget_t m_vecLockonTargets (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_LockOnStartTime (sent as: float32)
+
+CCitadelBaseMusicOBB
+
+CCitadelBaseShivAbility
+
+CCitadelBaseTieredLockonAbility
+
+CCitadelBaseTriggerAbility
+	CHandle< CCitadelBaseAbility> m_hAbilityToTrigger (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_SwappedToTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadelBaseYamatoAbility
+
+CCitadelBoomerangProjectile
+
+CCitadelBotTestNode
+
+CCitadelBulletRedirectVolume
+
+CCitadelBulletTimeWarp
+	float m_flBulletTimeScale
+	float m_flProjectileTimeScale
+	GameTime_t m_flExpireTime (sent as: float32)
+	float m_flStopDuration
+	float m_flBulletTimeScaleFriendly
+	float m_flBonusBulletBaseDamageFriendly
+
+CCitadelCatapultTrigger
+	VectorWS m_vLaunchTarget
+	float m_flLaunchSpeed
+
+CCitadelClimbRopeTrigger
+	bool m_bAlignCameraOnAutoDismount
+
+CCitadelConfigurableTrackedProjectile
+
+CCitadelControlPointTrigger
+	float m_flInitialRadius
+	float m_flEndRadius
+	float m_flProgress
+	float m_flCaptureTime
+	EHANDLE m_hUnlockPrereq (sent as: ehandle)
+	bool m_bAvailable
+	bool m_bIsBeingCaptured
+	bool m_bIsBeingBlocked
+
+CCitadelDevTrigger
+
+CCitadelDruidHealingFruit
+
+CCitadelDruidHealingTree
+
+CCitadelDruidInvisBush
+
+CCitadelDruidPlantShield
+
+CCitadelEconItemContainer
+
+CCitadelEnergyTower
+
+CCitadelFamiliarClonePlayerPawn
+	include by name: m_pMovementServices
+	var type overrides: m_pMovementServices CCitadelFamiliarClone_MovementServices
+
+CCitadelFamiliarClone_MovementServices
+
+CCitadelFilterModifier
+
+CCitadelGaffer
+	Vector m_vSkyboxScale
+	Vector m_vCubemapFogScale
+	Vector m_vSunlightScale
+	GameTime_t m_LerpTimes (sent as: float32)
+
+CCitadelGameRules
+	bool m_bFreezePeriod
+	GameTime_t m_fLevelStartTime (sent as: float32)
+	GameTime_t m_flGameStartTime (sent as: float32)
+	GameTime_t m_flGameStateStartTime (sent as: float32)
+	GameTime_t m_flGameStateEndTime (sent as: float32)
+	GameTime_t m_flRoundStartTime (sent as: float32)
+	EGameState m_eGameState
+	EHANDLE m_hTowerAmber (sent as: ehandle)
+	EHANDLE m_hTowerSapphire (sent as: ehandle)
+	bool m_bEnemyInAmberBase
+	bool m_bEnemyInSapphireBase
+	bool m_bEnemyPlayersInAmberBase
+	bool m_bEnemyPlayersInSapphireBase
+	VectorWS m_vMinimapMins
+	VectorWS m_vMinimapMaxs
+	bool m_bMatchSafeToAbandon
+	bool m_bMatchNotScored
+	GameTime_t m_tAbandonTriggerEarlyTime (sent as: float32)
+	bool m_bAbandonTriggerSapphire
+	bool m_bAbandonTriggerAmber
+	ECitadelMatchMode m_eMatchMode
+	ECitadelGameMode m_eGameMode
+	uint32 m_unSpectatorCount
+	uint32 m_unExpectedPlayerCount
+	AccountID_t m_nHideoutOwner
+	CHandle<CCitadelTrooperMinimap> m_hTrooperMinimap (sent as: ehandle)
+	CitadelTeam_t m_iWinningTeam
+	HeroID_t m_vecBannedHeroes (sent as: uint32)
+	uint32 m_nCorruptedPenaltySeed
+	int m_nNumCorruptedItemsLimit
+	TeamKothState_t m_vecTeamKothStates
+	CitadelTeam_t m_nKothScoringTeam
+	GameTime_t m_timeKothScoring (sent as: float32)
+	GameTime_t m_timeKothCashInStarted (sent as: float32)
+	GameTime_t m_timeKothGiveUp (sent as: float32)
+	int m_nAmberGold
+	int m_nSapphireGold
+	VectorWS m_vKothCashInCurrentLocation
+	EHANDLE m_hCurrentHeroDrafterRebels (sent as: ehandle; priority: 32)
+	EHANDLE m_hCurrentHeroDrafterCombine (sent as: ehandle; priority: 32)
+	int m_iMidbossKillCount
+	int m_iAmberRejuvCount
+	int m_iSapphireRejuvCount
+	float m_tNextMidBossSpawnTime
+	VectorWS m_vecNeutralCampTimerOrigins
+	float m_vecNeutralCampNextSpawnTimes
+	bool m_vecNeutralCampTimerIsMidBoss
+	bool m_bServerPaused
+	int m_iPauseTeam
+	int m_nMatchClockUpdateTick
+	float m_flMatchClockAtLastUpdate
+	float m_fUnpauseRawTime
+	int m_eGGTeam
+	GameTime_t m_flGGEndsAtTime (sent as: float32)
+	MatchID_t m_unMatchID (sent as: uint64)
+	CUtlString m_sGameplayExperiment
+	uint32 m_ExperimentTokenHashCode
+	GameTime_t m_flHeroDiedTime (sent as: float32)
+	CCitadelPlayOfTheGame* m_pPlayOfTheGame
+	CStreetBrawlController m_tStreetBrawl
+
+CCitadelGameRulesProxy
+	CCitadelGameRules * m_pGameRules (type alias: CCitadelGamerules*; priority: 32)
+
+CCitadelHeroComponent
+	CitadelHeroSpawnData_t m_spawnedHero (change callbacks: OnHeroChanged)
+	CitadelHeroSpawnData_t m_loadingHero (priority: 32)
+	HeroID_t m_nNoSpawnHeroID (sent as: uint32)
+
+CCitadelHeroLoader
+
+CCitadelHeroReleaseVoteTerminal
+
+CCitadelHideoutInteractableProp
+	CUtlString m_strInteractLocString
+	EHideoutButtonInteractStyle m_eInteractStyle
+	EHideoutButtonAction m_eHideoutAction
+	float m_flInteractDistance
+	CUtlString m_strWorldPanelEntity
+	CUtlString m_strOpacityCurveString
+
+CCitadelHideoutInteractableTrigger
+	CUtlString m_strInteractLocString
+	EHideoutButtonAction m_eHideoutAction
+
+CCitadelHideoutInterestPoint
+	float m_flMaxDistance
+
+CCitadelHideoutPropBase
+	exclude by name: m_flSimulationTime
+	CEconItemView m_ItemView
+
+CCitadelHideoutPropSlot
+	int m_nSlotID
+	EHideoutPropSlotType_t m_nSlotType
+	CHandle< CCitadelHideoutPropBase> m_hProp (sent as: ehandle)
+
+CCitadelHideoutTeleportTrigger
+
+CCitadelHotelExitTrigger
+
+CCitadelIdolReturnTrigger
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+
+CCitadelIgnoreOutOfPlayArea
+
+CCitadelInteriorTrigger
+
+CCitadelItemKothSpawner
+
+CCitadelItemPickup
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	int32 m_eLootType
+	int32 m_nCurrencyValue
+	string_t m_iszModelName
+	float m_flModelScale
+	EHANDLE m_hTargetPlayer (sent as: ehandle)
+	float m_flFallRate
+
+CCitadelItemPickupIdol
+	int m_nTeamBias
+
+CCitadelItemPickupRejuv
+	CCitadelAbilityComponent::Storage_t m_CCitadelAbilityComponent (class: CCitadelAbilityComponent; alias: CCitadelAbilityComponent; type alias: CCitadelAbilityComponent; user groups: CCitadelAbilityComponent)
+	bool m_bPickedUp
+
+CCitadelItemPickupRejuvHeroTest
+
+CCitadelItemPickupRejuvHeroTestInfoSpawn
+
+CCitadelItemPunchableNeutralGold
+
+CCitadelLocalPlayerRankedBadgeProp
+
+CCitadelMapDistrictTrigger
+
+CCitadelMatchmakingStatusInfo
+
+CCitadelMinimapBoundary
+
+CCitadelMinimapComponent
+
+CCitadelModelEntity
+	include by name: m_iHealth, m_iMaxHealth
+	exclude by name: m_flSimulationTime
+	CCitadelRegenComponent::Storage_t m_CCitadelRegenComponent (class: CCitadelRegenComponent; alias: CCitadelRegenComponent; type alias: CCitadelRegenComponent; user groups: CCitadelRegenComponent)
+
+CCitadelObserverPawn
+	include by name: m_iMaxHealth, m_pObserverServices, m_pCameraServices, m_pMovementServices
+	exclude by name: m_baseLayer.m_hSequence, m_flEncodedController, m_flPoseParameter
+	exclude by user group: m_flCycle
+	var type overrides: m_pObserverServices CCitadelPlayer_ObserverServices, m_pCameraServices CCitadelPlayer_CameraServices, m_pMovementServices CCitadelObserver_MovementServices
+
+CCitadelObserver_MovementServices
+
+CCitadelPassthroughFakeWall
+
+CCitadelPlayOfTheGame
+	bool m_bTriggerStarted (change callbacks: triggerChanged)
+	PlayOfTheGamePlaybackData_t m_playOfTheGameDataServer
+
+CCitadelPlayerBotNPCBrain
+
+CCitadelPlayerClipComponent
+
+CCitadelPlayerController
+	EPlayerPlayState m_ePlayState
+	int m_iGuidedBotMatchLastHits
+	int m_iGuidedBotMatchOrbsSecured
+	int m_iGuidedBotMatchOrbsDenied
+	int m_iGuidedBotMatchDamageToGuardians
+	int m_iGuidedBotMatchDamageToPlayers
+	int m_iGuidedBotMatchDamageTaken
+	int m_iGuidedBotMatchNetWorth
+	int m_iGuidedBotMatchModsPurchased
+	int m_iGuidedBotMatchAbilityUpgrades
+	float m_flGuideBotMatchLastTaskNagVO
+	float m_flGuideBotLastTimeTaskCompleted
+	EGuidedBotMatchObjective m_eGuidedBotMatchObjective
+	int m_nCurrentRank
+	int8 m_nAssignedLane (change callbacks: AssignedLaneChanged)
+	int8 m_nOriginalLaneAssignment
+	bool m_bBotDisconnectTakeover
+	bool m_bInTeamChat (change callbacks: ChatGroupsChanged)
+	bool m_bInPartyChat (change callbacks: ChatGroupsChanged)
+	bool m_bLaneSwapLocked
+	EHANDLE m_vecLaneSwapRequests (sent as: ehandle)
+	EHANDLE m_vecLaneSwapRejects (sent as: ehandle)
+	int32 m_vecMutedPlayers
+	bool m_bCommsRestricted
+	bool m_bPriorCommsAbuse
+	bool m_bIsNewPlayer
+	AccountID_t m_unEconAccountID
+	CHandle< CCitadelPlayerPawn> m_hHeroPawn (sent as: ehandle; change callbacks: OnHeroPawnChanged)
+	PlayerDataGlobal_t m_PlayerDataGlobal
+	int8 m_nDeathReplayAvailable (user groups: LocalPlayerOwnerAndObserversExclusive)
+	CitadelLobbyPlayerSlot_t m_unLobbyPlayerSlot (sent as: uint8)
+
+CCitadelPlayerPawn
+	include by name: m_iMaxHealth, m_pCameraServices, m_pMovementServices
+	exclude by name: m_baseLayer.m_hSequence, m_flEncodedController, m_flPoseParameter
+	exclude by user group: m_flCycle
+	var type overrides: m_pCameraServices CCitadelPlayer_CameraServices, m_pMovementServices CCitadelPlayer_MovementServices
+	user group proxies: RemotePlayersOnly, SourceTVOnly, LocalPlayerOwnerExclusive, LocalPlayerOwnerAndObserversExclusive
+	QAngle m_angClientCamera (priority: 32; user groups: SourceTVExclusive; bit count: 11)
+	QAngle m_angEyeAngles (encoder: qangle; priority: 32; user groups: RemotePlayersOnly; bit count: 11)
+	QAngle m_angLockedEyeAngles (user groups: LocalPlayerExclusive)
+	bool m_bIgnoringZoom (user groups: LocalPlayerExclusive)
+	int32 m_nLevel (change callbacks: ObservableRecv_m_nLevel)
+	int32 m_nCurrencies (user groups: LocalPlayerOwnerAndObserversExclusive)
+	int32 m_nSpentCurrencies
+	int m_nNumHeroChangesUsed (user groups: LocalPlayerExclusive)
+	GameTime_t m_flRespawnTime (sent as: float32)
+	GameTime_t m_flLastSpawnTime (sent as: float32)
+	bool m_bInRegenerationZone (user groups: LocalPlayerAndObserversExclusive)
+	bool m_bInItemShopZone (user groups: LocalPlayerExclusive)
+	bool m_bInHideoutZone (user groups: LocalPlayerExclusive)
+	int32 m_nLastEnteredTunnelID (user groups: LocalPlayerAndObserversExclusive)
+	EntitySubclassID_t m_vecFullSellPriceItems (sent as: uint32; user groups: LocalPlayerExclusive)
+	FullSellPriceAbilityUpgrades_t m_vecFullSellPriceAbilityUpgrades (user groups: LocalPlayerExclusive)
+	EntitySubclassID_t m_vecQuickbuyQueue (sent as: uint32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	EntitySubclassID_t m_vecQuickbuySellQueue (sent as: uint32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bQuickbuyAutoPurchase (user groups: LocalPlayerOwnerAndObserversExclusive)
+	AbilityID_t m_unQuickbuyAutoPurchaseRequest (sent as: uint32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bQuickbuyAutoQueueBuild (user groups: LocalPlayerOwnerAndObserversExclusive)
+	EntitySubclassID_t m_vecRestrictedToItems (sent as: uint32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	HeroBuildID_t m_unHeroBuildID (sent as: uint32; user groups: LocalPlayerAndObserversExclusive)
+	CUtlString m_sHeroBuildSerialized (user groups: LocalPlayerAndObserversExclusive)
+	EHANDLE m_hViewEntityForObserver (sent as: ehandle; user groups: LocalPlayerAndObserversExclusive)
+	bool m_bNetworkDisconnected
+	bool m_bLearningAbility (user groups: LocalPlayerExclusive)
+	int m_nFlashStartTick
+	int m_nFlashMaxStartTick
+	int m_nFlashFadeStartTick
+	int m_nFlashEndTick
+	int8 m_nFlashMaxAlpha
+	int32 m_nDeducedLane
+	CPlayerSlot m_hEnemyPlayerPrimaryAimTarget (sent as: int32; priority: 32; user groups: RemotePlayersOnly)
+	uint64 m_iEnemyPlayerAimTargetBitVec (priority: 32; user groups: RemotePlayersOnly)
+	ItemDraftRoundState_t m_ItemDraftRoundState (user groups: LocalPlayerAndObserversExclusive)
+	int m_nStreetBrawlCorruptionsAvailable (user groups: LocalPlayerAndObserversExclusive)
+	GameTime_t m_tLastRevealTime (sent as: float32; user groups: LocalPlayerAndObserversExclusive)
+	GameTime_t m_tLastPlayerRevealTime (sent as: float32)
+	bool m_bDismissedReportCard
+	float m_flCurrentHealingAmount
+	CCitadelAbilityComponent::Storage_t m_CCitadelAbilityComponent (class: CCitadelAbilityComponent; alias: CCitadelAbilityComponent; type alias: CCitadelAbilityComponent; priority: 32; user groups: CCitadelAbilityComponent)
+	CCitadelHeroComponent::Storage_t m_CCitadelHeroComponent (class: CCitadelHeroComponent; alias: CCitadelHeroComponent; type alias: CCitadelHeroComponent; user groups: CCitadelHeroComponent)
+	CCitadelRegenComponent::Storage_t m_CCitadelRegenComponent (class: CCitadelRegenComponent; alias: CCitadelRegenComponent; type alias: CCitadelRegenComponent; user groups: CCitadelRegenComponent)
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	CCitadelRecentDamage m_sInCombat
+	CCitadelRecentDamage m_sPlayerDamageTaken
+	CCitadelRecentDamage m_sPlayerDamageDealt
+	CMsgLaneColor m_eZipLineLaneColor (user groups: LocalPlayerExclusive)
+	int8 m_nMapDistrictLocation (user groups: LocalPlayerExclusive)
+	int8 m_nSuccessiveDucks (user groups: LocalPlayerExclusive)
+	GameTime_t m_flLastDuckTime (sent as: float32; user groups: LocalPlayerExclusive)
+	GameTime_t m_flPredTimeSlowedStart (sent as: float32; user groups: LocalPlayerExclusive)
+	GameTime_t m_flPredTimeSlowedEnd (sent as: float32; user groups: LocalPlayerExclusive)
+	float32 m_flPredSlowSpeed (user groups: LocalPlayerExclusive)
+	GameTime_t m_flTimeSlowedStart (sent as: float32; user groups: LocalPlayerExclusive)
+	GameTime_t m_flTimeSlowedEnd (sent as: float32; user groups: LocalPlayerExclusive)
+	float32 m_flSlowSpeed (user groups: LocalPlayerExclusive)
+	GameTime_t m_flForceInCombatAnimsUntilTime (sent as: float32; user groups: LocalPlayerExclusive)
+	bool m_arrPreventAbilityLearning (user groups: LocalPlayerExclusive)
+
+CCitadelPlayerPawnBase
+	exclude by name: m_flSimulationTime
+
+CCitadelPlayer_CameraServices
+
+CCitadelPlayer_MovementServices
+	CNetworkVelocityVector m_vPositionDeltaVelocity (priority: 32; user groups: LocalPlayerExclusive)
+	bool m_bToggleDuckActive (priority: 32; user groups: LocalPlayerExclusive)
+	bool m_bDucked (user groups: LocalPlayerExclusive)
+	bool m_bInPortalEnvironment (user groups: LocalPlayerExclusive)
+
+CCitadelPlayer_ObserverServices
+	QAngle m_angTargetCamera (encoder: qangle; priority: 32; user groups: LocalPlayerExclusive; bit count: 11)
+	VectorWS m_vTargetCameraPos (encoder: coord; priority: 32; user groups: LocalPlayerExclusive)
+
+CCitadelPortalTrigger
+	CHandle< CCitadelPortalTrigger > m_hOtherPortal (sent as: ehandle)
+
+CCitadelPregameHeroDraftButton
+
+CCitadelProjectile
+	include by name: m_flTimeScale
+	exclude by name: m_flSimulationTime
+	overrides: m_flTimeScale userGroup, m_flTimeScale changeCallback OnCitadelProjectileTimeScaleChanged
+	Vector m_vInitialVelocity
+	VectorWS m_vInitialPosition
+	AbilityID_t m_abilityID (sent as: uint32)
+	HParticleSystemDefinitionStrong m_hParticleDef (resource type: vpcf)
+	VectorWS m_vecSpawnPosition
+	float m_flProjectileSpeed
+	float m_flMaxLifetime
+	float m_flParticleRadius
+
+CCitadelProjectileTouchVolume
+
+CCitadelProjectile_ImmobilizeTrap
+
+CCitadelPushTrigger
+
+CCitadelRankedBadgeProp
+	PackedRank_t m_unPackedRank
+
+CCitadelRecentDamage
+	GameTime_t m_flLastDamageTime (sent as: float32)
+	GameTime_t m_flStartTime (sent as: float32)
+	GameTime_t m_flEndTime (sent as: float32)
+	EHANDLE m_hPlayerEntToStore (sent as: ehandle)
+
+CCitadelRegenComponent
+
+CCitadelShopTunnelTrigger
+
+CCitadelSoundEntityOBB
+	Vector m_vMins
+	Vector m_vMaxs
+
+CCitadelSoundOpvarSetOBB
+	string_t m_iszStackName
+	string_t m_iszOperatorName
+	string_t m_iszOpvarName
+	Vector m_vDistanceInnerMins
+	Vector m_vDistanceInnerMaxs
+	Vector m_vDistanceOuterMins
+	Vector m_vDistanceOuterMaxs
+	int m_nAABBDirection
+
+CCitadelSoundStackFieldOBB
+	Vector m_vMins
+	Vector m_vMaxs
+	uint32 m_nMaxDistance
+	CUtlString m_nStackName
+	CUtlString m_nOperatorName
+	CUtlString m_nOperatorFieldName
+	uint32 m_nMusicState
+
+CCitadelSpawnBlocker
+
+CCitadelSpeedBoostTrigger
+
+CCitadelTeam
+	float32 m_flBaseObjectiveHealth
+	int m_vecBaseLocationX
+	int m_vecBaseLocationY
+	bool m_bHasValidBaseLocation
+	int m_nBossesAlive
+	int m_nBossesMax
+	EFlexSlotTypes_t m_nFlexSlotsUnlocked
+	int m_nBaseGuardianLanesCleared
+	STeamFOWEntity m_vecFOWEntities (recipients filter: SendProxyTeamFOWEntity_RecipientsFilter; priority: 32)
+	int m_nStreetBrawlScore
+	int m_nStreetBrawlScoreLastRound
+
+CCitadelTeleportLocation
+
+CCitadelTeleportTrigger
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	VectorWS m_vExitOrigin
+
+CCitadelTrackedProjectile
+
+CCitadelTriggerBonk
+
+CCitadelTriggerCapturePoint
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	GameTime_t m_tQueuedEnableTime (sent as: float32; change callbacks: OnQueuedEnableTimeChanged)
+	float m_flCaptureProgress
+	int m_nCaptureProgressOwner
+	int m_nActivelyCapturingTeam
+	int m_nActiveCapturers
+	uint8 m_nEnableState (change callbacks: OnEnableStateChanged)
+
+CCitadelTriggerCapturePoint_Escort
+
+CCitadelTriggerCorruptedItemShop
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+
+CCitadelTriggerHideout
+
+CCitadelTriggerHurt
+
+CCitadelTriggerMultiCapturePoint
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	uint8 m_nEnableState (change callbacks: OnMultiEnableStateChanged)
+
+CCitadelTriggerNoPortals
+
+CCitadelTriggerSecureSouls
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+
+CCitadelTrooperMinimap
+	float m_flUpdateInterval
+	STrooperFOWEntity m_vecFOWEntities (priority: 32)
+
+CCitadelTunnelNode
+	bool m_bIsExit
+	int32 m_nTunnelID
+	CHandle<CCitadelTunnelNode> m_hConnection1 (sent as: ehandle)
+	CHandle<CCitadelTunnelNode> m_hConnection2 (sent as: ehandle)
+	CHandle<CCitadelTunnelNode> m_hConnection3 (sent as: ehandle)
+
+CCitadelTunnelTrigger
+
+CCitadelViscousBall
+
+CCitadelZapTrigger
+
+CCitadelZipLineNode
+	CHandle<CCitadelZipLineNode> m_vecConnections (sent as: ehandle; change callbacks: connectionsChanged)
+	int m_vecConnectionDir
+	Vector m_vTangentIn
+	Vector m_vTangentOut
+	float m_flCumulativeDistance
+	int16 m_iNodeIndex
+	int16 m_eCaptureState
+	int16 m_iPrimaryLane
+	int16 m_nRopesParity
+	bool m_bCornerNode
+	bool m_bCapturable
+	bool m_bDisableZippingToByPlayers
+	float m_flSpeedMultiplierToBaseBonus
+	float m_flSpeedMultiplierFromBaseBonus
+	EHANDLE m_hGuardingBosses (sent as: ehandle)
+	float m_flRopeRadius
+
+CCitadelZipLinePathNode
+
+CCitadelZiplineCaptureTrigger
+
+CCitadelZiplinePath
+
+CCitadel_Ability_AbilityName
+
+CCitadel_Ability_Afterburn
+
+CCitadel_Ability_BaseHeldItem
+
+CCitadel_Ability_Bebop_LaserBeam
+	bool m_bAirCast
+	CCitadelAbilityBeam_t m_beam
+
+CCitadel_Ability_Bebop_StickyBomb2
+
+CCitadel_Ability_BloodBomb
+
+CCitadel_Ability_Boho_Ability01
+
+CCitadel_Ability_Boho_Ability02
+
+CCitadel_Ability_Boho_BouncyProjectile
+
+CCitadel_Ability_Boho_ChannelTether
+
+CCitadel_Ability_Boho_DamageShare
+
+CCitadel_Ability_Boho_DoubleHit
+
+CCitadel_Ability_Boho_PrimaryWeapon
+
+CCitadel_Ability_Boho_RideBroom
+	bool m_bLeaping
+	GameTime_t m_flLeapStartTime (sent as: float32)
+
+CCitadel_Ability_Boho_SkipGrenade
+
+CCitadel_Ability_Bomber_Ability02
+
+CCitadel_Ability_Bomber_Ability03
+
+CCitadel_Ability_Bomber_ULT
+
+CCitadel_Ability_BookWorm_PrimaryWeapon
+
+CCitadel_Ability_Bookworm_AOEMagic
+
+CCitadel_Ability_Bookworm_DragonFire
+
+CCitadel_Ability_Bookworm_KnightBarrier
+
+CCitadel_Ability_Bookworm_KnightCharge
+
+CCitadel_Ability_Bounce_Pad
+	QAngle m_angFacing
+
+CCitadel_Ability_Bull_Charge
+	QAngle m_anglesCharging
+	GameTime_t m_flChargeStartTime (sent as: float32; change callbacks: OnChargingStateChanged)
+	GameTime_t m_flFastChargeStartTime (sent as: float32)
+	GameTime_t m_flFastChargeEndTime (sent as: float32)
+	bool m_bHitSomethingStunnable (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Bull_Heal
+
+CCitadel_Ability_Bull_Leap
+	bool m_bBraceParamTriggered (user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flBoostYaw
+	VectorWS m_vecCrashPosition
+	Vector m_vecCrashDirection
+	ELeapState_t m_eLeapState (change callbacks: OnLeapStateChanged)
+	GameTime_t m_flStateEnterTime (sent as: float32)
+	CCitadelAutoScaledTime m_flNextStateTime
+	CCitadelAutoScaledTime m_flBoostEndTime
+
+CCitadel_Ability_BulletFlurry
+	CCitadelAutoScaledTime m_flFlurryEndTime
+	GameTime_t m_flNextAttackTime (sent as: float32)
+
+CCitadel_Ability_Burrow
+	bool m_bInGround (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flLastDamageTime (sent as: float32)
+	GameTime_t m_SpinEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Cadence_Anthem
+
+CCitadel_Ability_Cadence_Crescendo
+
+CCitadel_Ability_Cadence_GrandFinale
+
+CCitadel_Ability_Cadence_Lullaby
+
+CCitadel_Ability_Cadence_SilenceContraptions
+
+CCitadel_Ability_CardToss
+	bool m_bCardIsFlying
+
+CCitadel_Ability_ChargedShot
+
+CCitadel_Ability_ChargedTackle
+	bool m_bPreparing
+	bool m_bTackling
+	GameTime_t m_flTackleStartTime (sent as: float32)
+	GameTime_t m_flPrepareStartTime (sent as: float32)
+	Vector m_vecTackleDir
+
+CCitadel_Ability_Charged_Bomb
+
+CCitadel_Ability_ChronoSwap
+
+CCitadel_Ability_Chrono_KineticCarbine
+	bool m_bWantsSlow (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flLatchedTimeScaleFracChangeTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flLatchedTimeScaleFrac (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flSpeedBoostEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flSpeedBoostEndTime)
+	GameTime_t m_flShotTimeScaleEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flShotTimeScaleEndTime)
+
+CCitadel_Ability_Chrono_PulseGrenade
+
+CCitadel_Ability_Chrono_TimeWall
+	bool m_bAirCast
+
+CCitadel_Ability_Climb_Rope
+	CNetworkOriginQuantizedVectorWS m_vTop (user groups: LocalPlayerOwnerAndObserversExclusive)
+	CNetworkOriginQuantizedVectorWS m_vBottom (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bRequestStopClimbing (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bRequestJumpToRoof (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flMoveDownStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	EClimbRopeState_t m_eClimbState
+
+CCitadel_Ability_Crackshot
+
+CCitadel_Ability_CrowdControl
+
+CCitadel_Ability_Dash
+	float m_flDashAngle (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_GroundDashExecuteTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_GroundDashCancelExecuteTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int m_nLastGroundDashTick (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bAnglesControlActive (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flAirDashCastTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_flAirDashStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flAirDashDragStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flParryCancelSlideEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flParryCancelAirGlideStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int8 m_nConsecutiveAirDashes (user groups: LocalPlayerOwnerAndObserversExclusive)
+	int8 m_nConsecutiveDownDashes (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bDownAirDash (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_DeathTax
+
+CCitadel_Ability_Digger_EnterTunnel
+	CHandle< CCitadelPassthroughFakeWall > m_hPushedFakeWall (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+	CHandle< CCitadelPassthroughFakeWall > m_hPushedFakeWallLastThink (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Disruptive_Charge
+
+CCitadel_Ability_Doorman_Bomb
+
+CCitadel_Ability_Doorman_Cart
+
+CCitadel_Ability_Doorman_Doorway
+	CHandle< CCitadel_DoorwayPortal> m_hDoor1 (sent as: ehandle)
+
+CCitadel_Ability_Doorman_Hotel
+	VectorWS m_vLookTarget
+
+CCitadel_Ability_Drifter_Hunger
+
+CCitadel_Ability_Drifter_PrimaryWeapon
+
+CCitadel_Ability_Dust_Storm
+
+CCitadel_Ability_EmpowerBullet
+
+CCitadel_Ability_Empty
+
+CCitadel_Ability_ExplosiveBarrel
+
+CCitadel_Ability_Familiar_Ability01
+	EHANDLE m_vecTargetsInCone (sent as: ehandle)
+
+CCitadel_Ability_Familiar_Ability02
+	bool m_bCastWhileAttached
+
+CCitadel_Ability_Familiar_AltWeapon
+	int16 m_nAmmoToBeConsumedForChannel
+	bool m_bForceFiring
+
+CCitadel_Ability_Familiar_Attach
+	EHANDLE m_vecTagAlongVisitedAllies (sent as: ehandle)
+	EHANDLE m_hLastAttachedTo (sent as: ehandle)
+
+CCitadel_Ability_Familiar_Attach_Trigger
+
+CCitadel_Ability_Familiar_Clone
+
+CCitadel_Ability_Familiar_CloneSingle
+
+CCitadel_Ability_Familiar_CloneSingle_Trigger
+
+CCitadel_Ability_Familiar_Clone_End
+
+CCitadel_Ability_Familiar_HealHost
+	float m_flOverrideCooldown
+
+CCitadel_Ability_Familiar_HelpingHands
+	EHANDLE m_vecHelpers (sent as: ehandle)
+	GameTime_t m_tChoreUseCooldownEndTime (sent as: float32)
+	GameTime_t m_tSoonestHelperCooldownEndTime (sent as: float32)
+	char m_nAvailableHelperCount
+
+CCitadel_Ability_Familiar_PrimaryWeapon
+
+CCitadel_Ability_Familiar_Spotlight
+	EHANDLE m_hWasAttachedTo (sent as: ehandle)
+	VectorWS m_vAuraPosition
+
+CCitadel_Ability_Fathom_Breach
+	bool m_bInFlight
+
+CCitadel_Ability_Fathom_ScaldingSpray
+
+CCitadel_Ability_Fealty
+
+CCitadel_Ability_Fencer_PrimaryWeapon
+	int m_iCurrentShotCount
+
+CCitadel_Ability_Fencer_Riposte
+	EHANDLE m_hTarget (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vRiposteStartPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vDashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flStateStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	uint8 m_nCurrentRiposteState (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_nCurrentRiposteState)
+	GameTime_t m_flSuccessfulRiposteTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flSuccessfulRiposteTime)
+
+CCitadel_Ability_Fencer_ThrowBlade
+	GameTime_t m_tRecastEndTime (sent as: float32)
+
+CCitadel_Ability_FireBomb
+	CCitadelAutoScaledTime m_flDetonateTime (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_FissureWall
+	VectorWS m_vecPosition
+	VectorWS m_vecTravellingPosition
+	VectorWS m_vecInitialPosition
+	GameTime_t m_CastTime (sent as: float32)
+	Vector m_vecDirection
+	Vector m_vecLeft
+	float m_Length
+	bool m_bTraveling
+	bool m_bPreview
+
+CCitadel_Ability_FlameDash
+	CCitadelAutoScaledTime m_flDashEndTime
+	bool m_bIsSpeedBursting
+
+CCitadel_Ability_FlyingStrike
+	bool m_bShadowFormCast (user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vYamatoCastPos (encoder: coord; user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vTargetCastPos (encoder: coord; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flFlyingToTargetStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flEndAttackTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flGrappleStartTime (sent as: float32)
+	GameTime_t m_flGrappleArriveTime (sent as: float32)
+	GameTime_t m_flAttackLatchTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vAttackLatchPos (user groups: LocalPlayerOwnerAndObserversExclusive)
+	EHANDLE m_hTarget (sent as: ehandle)
+	bool m_bIsTargetAlly
+	GameTime_t m_flGrappleShotAttackTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_rgPath (encoder: coord; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnPathChanged)
+	int m_nPathIdx (user groups: LocalPlayerOwnerAndObserversExclusive)
+	int m_nPathSize (user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flPathLength (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vFlyingInitialOffsetToPath (user groups: LocalPlayerOwnerAndObserversExclusive)
+	float flDistFlown (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Fortuna_Ability01
+
+CCitadel_Ability_Fortuna_Ability02
+
+CCitadel_Ability_Fortuna_Ability03
+
+CCitadel_Ability_Fortuna_Ability04
+
+CCitadel_Ability_Fortuna_PrimaryWeapon
+
+CCitadel_Ability_Frank_PainAura
+	GameTime_t m_ToggleOnTime (sent as: float32)
+
+CCitadel_Ability_Frank_PrimaryWeapon
+
+CCitadel_Ability_Frank_Revive
+	bool m_bReviveIsActive
+	GameTime_t m_TimeOfDeath (sent as: float32)
+	GameTime_t m_TimeOfRevive (sent as: float32)
+	float m_flTotalPendingHeal (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Frank_SelfZap
+	float m_flTotalPendingHeal (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Frank_ShockTarget2
+	bool m_bIsFullyCharged
+
+CCitadel_Ability_GangActivity
+
+CCitadel_Ability_GangActivity_Cancel
+
+CCitadel_Ability_GenericPerson_1
+
+CCitadel_Ability_GenericPerson_2
+
+CCitadel_Ability_GenericPerson_3
+
+CCitadel_Ability_GenericPerson_4
+
+CCitadel_Ability_Ghost_BloodShards
+
+CCitadel_Ability_GoldenIdol
+	float m_flHeldTime (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_GooBowlingBall
+	bool m_bIsRolling (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnIsRollingChanged)
+	CHandle< CCitadelViscousBall > m_hBall (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+	EViscousBowlingBallState_t m_eRollingState (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flNextStateTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flNextWallCheck (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flRollStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flWallExitTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vecWallExitVelocity (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_GooGrenade
+	EHANDLE m_vecPuddleModifiers (sent as: ehandle)
+
+CCitadel_Ability_Graf_Ability01
+
+CCitadel_Ability_Graf_Ability02
+
+CCitadel_Ability_Graf_Ability03
+
+CCitadel_Ability_Graf_Ability04
+
+CCitadel_Ability_Gravity_Lasso
+
+CCitadel_Ability_GuidedArrow
+	EHANDLE m_hProjectile (sent as: ehandle)
+	EHANDLE m_hCameraTarget (sent as: ehandle)
+	float m_flArrowSpeed
+	GameTime_t m_flSnapAnglesBackTime (sent as: float32)
+
+CCitadel_Ability_Gunslinger_DemonCarbine
+	bool m_bWantsSlow (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flLatchedTimeScaleFracChangeTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flLatchedTimeScaleFrac (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flSpeedBoostEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flShotTimeScaleEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Gunslinger_KnockbackBlast
+
+CCitadel_Ability_Gunslinger_Salvo
+
+CCitadel_Ability_Gunslinger_SpreadingFire
+
+CCitadel_Ability_Haze_StackingDamage
+
+CCitadel_Ability_HealingSlash
+
+CCitadel_Ability_HealthSwap
+	GameTime_t m_flPostCastHoldEndTime (sent as: float32)
+
+CCitadel_Ability_HighAlert
+
+CCitadel_Ability_HoldMelee
+	GameTime_t m_flStateStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flStateStartTime)
+	GameTime_t m_flDashStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	EMeleeHold_AttackState m_eCurrentAttackState (user groups: LocalPlayerOwnerAndObserversExclusive)
+	EMeleeHold_AttackType m_eCurrentAttackType (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vAirDashDir (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bAttackStartedWhileSliding (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flLightChainEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int m_nLightChainCount (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Hook
+	EHANDLE m_hHookVictim (sent as: ehandle; change callbacks: HookVictimChanged)
+	VectorWS m_vecHookTargetStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flCancelHookTime (sent as: float32)
+	GameTime_t m_flBeginReelHookTime (sent as: float32)
+	GameTime_t m_flBulletShouldExpireTime (sent as: float32)
+
+CCitadel_Ability_HornetLeap
+	bool m_bLeaping (change callbacks: ObservableRecv_m_bLeaping)
+	GameTime_t m_flLeapStartTime (sent as: float32)
+
+CCitadel_Ability_HornetSting
+
+CCitadel_Ability_Hornet_Chain
+
+CCitadel_Ability_Hornet_Snipe
+	GameTime_t m_flScopeStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flScopeStartTime)
+
+CCitadel_Ability_IceBeam
+	bool m_bIceBeaming (user groups: LocalPlayerOwnerAndObserversExclusive)
+	CCitadelAbilityBeam_t m_beam
+
+CCitadel_Ability_IceDome
+	GameTime_t m_flDomeStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flDomeEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_IceGrenade
+
+CCitadel_Ability_IcePath
+	bool m_bIcePathing (user groups: LocalPlayerOwnerAndObserversExclusive)
+	QAngle m_qLastAngles
+	Vector m_vLastVelocity
+	bool m_bFirstMovementTick
+
+CCitadel_Ability_ImmobilizeTrap
+
+CCitadel_Ability_IncendiaryProjectile
+
+CCitadel_Ability_InfinitySlash
+	GameTime_t m_flExplodeEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flBuffEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Intimidate
+
+CCitadel_Ability_Jump
+	CCitadelAutoScaledTime m_flDashJumpStartTime
+	CCitadelAutoScaledTime m_flDashJumpEndTime
+	bool m_bJumped (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bCanDashJump (user groups: LocalPlayerOwnerAndObserversExclusive)
+	int m_nDesiredAirJumpCount (user groups: LocalPlayerOwnerAndObserversExclusive)
+	int m_nExecutedAirJumpCount (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bInSlideJump (user groups: LocalPlayerOwnerAndObserversExclusive)
+	int8 m_nConsecutiveAirJumps (user groups: LocalPlayerOwnerAndObserversExclusive)
+	int8 m_nConsecutiveWallJumps (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flLateralInputSuppressEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Kobun
+
+CCitadel_Ability_Lash
+
+CCitadel_Ability_LashDownStrike
+	bool m_bIsCrashingDown (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnCrashingDownChanged)
+	Vector m_vStrikeVel (user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flInitialYaw (user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flStartHeight (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Lash_Flog
+
+CCitadel_Ability_Lash_Ultimate
+	ELashGrappleState m_EGrappleState
+	GameTime_t m_flStateEnterTime (sent as: float32)
+	GameTime_t m_flNextStateTime (sent as: float32)
+	GameTime_t m_flBoostEndTime (sent as: float32)
+
+CCitadel_Ability_LifeDrain
+	GameTime_t m_tDrainLifeStopTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_tDrainLifeStopTime)
+	GameTime_t m_tSlowStartTime (sent as: float32; user groups: LocalPlayerOwnerExclusive; change callbacks: ObservableRecv_m_tSlowStartTime)
+	GameTime_t m_tSlowStopTime (sent as: float32; user groups: LocalPlayerOwnerExclusive; change callbacks: ObservableRecv_m_tSlowStopTime)
+
+CCitadel_Ability_LightningBall
+
+CCitadel_Ability_LockDown
+
+CCitadel_Ability_MageWalk
+
+CCitadel_Ability_Magician_AnimalCurse
+
+CCitadel_Ability_Magician_AnimalHexArea
+
+CCitadel_Ability_Magician_BigBolt
+
+CCitadel_Ability_Magician_CopyUlt
+	bool m_bHasUsedCopiedUlt
+	bool m_bHasCopiedUlt
+	bool m_bIsModelSwapped
+	GameTime_t m_timeSwappedModel (sent as: float32)
+	CHandle< CCitadelBaseAbility> m_pActiveCopyUltimateAbility (sent as: ehandle)
+	HeroID_t m_nCopiedHeroID (sent as: uint32)
+
+CCitadel_Ability_Magician_Escape
+
+CCitadel_Ability_Magician_MagicBolt
+
+CCitadel_Ability_Magician_ShadowClone
+
+CCitadel_Ability_Mantle
+	float m_flVertOffset (user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flHorizGap (user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vTargetPos (user groups: LocalPlayerOwnerAndObserversExclusive)
+	QAngle m_angFacing (user groups: LocalPlayerOwnerAndObserversExclusive)
+	int m_nMantleTypeIndex (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flAutoMantlePushStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flAutoMantleLastPushTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vAutoMantleLastPushPos (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_MedicHeal
+
+CCitadel_Ability_MeleeParry
+	GameTime_t m_flParryStartTime (sent as: float32)
+	bool m_bAttackParried
+	GameTime_t m_flParrySuccessEndTime (sent as: float32; change callbacks: ObservableRecv_m_flParrySuccessEndTime)
+
+CCitadel_Ability_Melee_Base
+	bool m_bUsingThisMelee (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bUsingMeleeTagActive (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bHitWithThisAttack (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flLastActivateTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flNextAttackAllowedTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flAttackTriggeredTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flAttackTriggeredTime)
+
+CCitadel_Ability_Mirage_FireBeetles
+
+CCitadel_Ability_Mirage_Teleport
+	EHANDLE m_hTarget (sent as: ehandle)
+	GameTime_t m_tTeleportCompletedTime (sent as: float32)
+	VectorWS m_vTargetPosition
+	QAngle m_vTargetAngles
+
+CCitadel_Ability_MobileResupply
+
+CCitadel_Ability_NanoDash
+	VectorWS m_vStartPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vEndPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bIsDashing (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Nano_CatForm
+	bool m_bIsInCatform
+	GameTime_t m_flLastDamageTime (sent as: float32)
+	GameTime_t m_flTransformStartTime (sent as: float32)
+	GameTime_t m_flTransformEndTime (sent as: float32)
+	float m_flStoredDamageAmp
+
+CCitadel_Ability_Nano_CatFormPounce
+
+CCitadel_Ability_Nano_ClusterGrenade
+
+CCitadel_Ability_Nano_Pounce
+	bool m_bActive
+	EHANDLE m_hCurrentTarget (sent as: ehandle)
+	EHANDLE m_hLastCastTarget (sent as: ehandle)
+	VectorWS m_vStartPosition
+	VectorWS m_vDeparturePosition
+	CCitadelAutoScaledTime m_flDepartureTime
+	CCitadelAutoScaledTime m_flArrivalTime
+	bool m_bIsFirstCastCompleted
+	GameTime_t m_tDoubleCastWindow (sent as: float32)
+
+CCitadel_Ability_Nano_Pounce_Instant
+	bool m_bActive
+	EHANDLE m_hCurrentTarget (sent as: ehandle)
+	EHANDLE m_hLastCastTarget (sent as: ehandle)
+	VectorWS m_vStartPosition
+	VectorWS m_vDeparturePosition
+	CCitadelAutoScaledTime m_flDepartureTime
+	CCitadelAutoScaledTime m_flArrivalTime
+	bool m_bIsFirstCastCompleted
+	GameTime_t m_tDoubleCastWindow (sent as: float32)
+
+CCitadel_Ability_Nano_PrimaryWeapon
+
+CCitadel_Ability_Nano_Shadow
+
+CCitadel_Ability_Necro_Coffin
+
+CCitadel_Ability_Necro_Fear
+	float m_flTotalBuildup
+
+CCitadel_Ability_Necro_GraveStone
+	EHANDLE m_vecDeployedGravestones (sent as: ehandle)
+
+CCitadel_Ability_Necro_HauntingSkull
+	bool m_bIsFullyCharged
+
+CCitadel_Ability_Necro_HauntingSpirits
+
+CCitadel_Ability_Necro_KillSummon
+	bool m_bIsInRecast
+	GameTime_t m_RecastEndTime (sent as: float32)
+
+CCitadel_Ability_Necro_KillSummonTrigger
+
+CCitadel_Ability_Necro_NukeMap
+
+CCitadel_Ability_Necro_PrimaryWeapon
+	GameTime_t m_tTetherAttachTime (sent as: float32)
+	GameTime_t m_tTetherBreakTime (sent as: float32)
+	bool m_bHasTetherTarget
+
+CCitadel_Ability_Necro_ZombieWall
+	GameTime_t m_tWallDeployFinishTime (sent as: float32)
+
+CCitadel_Ability_Nikuman
+
+CCitadel_Ability_Opera_Ability01
+
+CCitadel_Ability_Opera_Ability02
+
+CCitadel_Ability_Opera_Ability03
+
+CCitadel_Ability_Opera_Ability04
+
+CCitadel_Ability_Operative_Blindside
+
+CCitadel_Ability_PassiveBeefy
+	float m_flTotalPendingHeal (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Perched_Predator
+	EHANDLE m_hActiveProjectile (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_PowerJump
+	bool m_bAirRaiding
+
+CCitadel_Ability_PowerSlash
+	int m_nPowerLevel (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_PowerSurge
+
+CCitadel_Ability_Priest_AntiSpiritVest
+
+CCitadel_Ability_Priest_BearTrap
+
+CCitadel_Ability_Priest_CrossbowWeapon
+
+CCitadel_Ability_Priest_Flashbang
+
+CCitadel_Ability_Priest_Knockback
+
+CCitadel_Ability_Priest_SelfHeal
+
+CCitadel_Ability_Priest_SilenceBomb
+
+CCitadel_Ability_Priest_SmokeGrenade
+
+CCitadel_Ability_Priest_StackingDefense
+	float m_flMaxStacksBonusDamage
+
+CCitadel_Ability_Priest_WeaponSwap
+
+CCitadel_Ability_PrimaryWeapon
+	GameTime_t m_flLastReloadStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flNextPrimaryAttack (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int32 m_iClip (serializer: minusone; priority: 32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int32 m_iBonusClip (serializer: minusone; priority: 32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int32 m_nNumContinuousShots (priority: 32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flContinuousShotStartTime (sent as: float32; user groups: LocalWeaponExclusive)
+	float m_flSpreadPenalty (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flZoomTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flZoomOutTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int8 m_iSpreadIndex (user groups: LocalWeaponExclusive)
+	int16 m_nShotRecoilIndex (user groups: LocalWeaponExclusive)
+	GameTime_t m_flNextShotRecoilRecoveryTime (sent as: float32; user groups: LocalWeaponExclusive)
+	bool m_bIsZoomed (user groups: LocalPlayerOwnerAndObserversExclusive)
+	uint8 m_nBurstShotsRemaining (user groups: LocalPlayerOwnerAndObserversExclusive)
+	uint32 m_nShotNumber (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bInReload
+	bool m_bSingleShotReloadFirstBullet (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_reloadQueuedStartTime (sent as: float32; user groups: LocalWeaponExclusive)
+	GameTime_t m_flReloadAvailableTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bCanActiveReload (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flLastAttackTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flNextAttackDelayStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flNextAttackDelayEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flAttackDelayPauseTotalTime (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flAttackDelayPauseEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	ENextAttackDelayReason_t m_eNextAttackDelayReason (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bInputPressedWhileSelected (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_tFireOnReleaseHoldBeginTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flShotChargeFrac
+	EFireMode_t m_eActiveFireMode (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bPassiveFXActive (change callbacks: PassiveFXChanged)
+	float m_flAmmoFrac (user groups: RemotePlayersOnly; change callbacks: PassiveFXChanged)
+	bool m_bFiredRecently (user groups: RemotePlayersOnly; change callbacks: PassiveFXChanged)
+	bool m_bHasReleasedForFireOnRelease (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_PrimaryWeapon_Bebop
+	GameTime_t m_flStartWindUpTime (sent as: float32)
+	GameTime_t m_flStartFiringTime (sent as: float32)
+	bool m_bFiring
+
+CCitadel_Ability_PrimaryWeapon_Cadence
+
+CCitadel_Ability_PrimaryWeapon_Empty
+
+CCitadel_Ability_PrimaryWeapon_ScalingAltFire
+
+CCitadel_Ability_ProjectMind
+
+CCitadel_Ability_Protection_Racket
+
+CCitadel_Ability_ProximityRitual
+	ECatStatueState_t m_eState (user groups: LocalPlayerOwnerAndObserversExclusive)
+	EHANDLE m_hStatue (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_PsychicLift
+	VectorWS m_vLiftPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vCrashPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_PunkGoat_Blasted
+	float m_flBlastedCurrentDuration
+
+CCitadel_Ability_PunkGoat_GoatFlip
+	PG_RisingRamState m_eState
+	GameTime_t m_tStateStartTime (sent as: float32)
+	float m_flGoingUpTargetElevation
+	float m_flGoingUpStartElevation
+
+CCitadel_Ability_PunkGoat_Tether
+	bool m_bTetheringActive
+
+CCitadel_Ability_PunkGoat_Ult
+	uint8 m_nSlamTravelType
+	float m_flDistanceToTravel
+	bool m_bHoldingAbilityButton
+
+CCitadel_Ability_Punkgoat_PrimaryWeapon
+
+CCitadel_Ability_RapidFire
+
+CCitadel_Ability_RatArmor
+
+CCitadel_Ability_RatKing_RatNibble
+
+CCitadel_Ability_Ratking_EnterTunnel
+	CHandle< CCitadelPassthroughFakeWall > m_hPushedFakeWall (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+	CHandle< CCitadelPassthroughFakeWall > m_hPushedFakeWallLastThink (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Ratking_PrimaryWeapon
+
+CCitadel_Ability_Ratking_ScrapGrenade
+
+CCitadel_Ability_Ratking_StandardBearer
+	GameTime_t m_flForcedPlantTime (sent as: float32)
+	GameTime_t m_flChargeResumeTime (sent as: float32)
+	GameTime_t m_flChargeStartTime (sent as: float32; change callbacks: OnBannerChargingStateChanged)
+	EPlantLeapPhase_t m_ePlantLeapPhase
+	GameTime_t m_flPlantLeapPhaseStartTime (sent as: float32)
+
+CCitadel_Ability_RestorativeGoo
+	GameTime_t m_flSelfCastEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_RiotProtocol
+	bool m_bActive (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_RiposteTargetSelect
+
+CCitadel_Ability_RocketBarrage
+	CCitadelAutoScaledTime m_flBarrageEndTime
+
+CCitadel_Ability_RocketLauncher
+
+CCitadel_Ability_Rolling_FireBall
+
+CCitadel_Ability_Rutger_Pulse
+
+CCitadel_Ability_SelfVacuum
+
+CCitadel_Ability_SettingSun
+
+CCitadel_Ability_ShadowPulse
+
+CCitadel_Ability_Shakedown_Target
+
+CCitadel_Ability_Shield
+
+CCitadel_Ability_ShieldGuy_Ability01
+
+CCitadel_Ability_ShieldGuy_Ability02
+
+CCitadel_Ability_ShieldGuy_Ability03
+
+CCitadel_Ability_ShieldGuy_Ability04
+
+CCitadel_Ability_ShieldedSentry
+	CHandle<CNPC_ShieldedSentry> m_vecDeployedSentries (sent as: ehandle)
+
+CCitadel_Ability_ShivDagger
+
+CCitadel_Ability_ShivDash
+	VectorWS m_vStartPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vDashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bIsDashing (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_ShivWeapon
+
+CCitadel_Ability_Shiv_Defer_Damage
+	float m_flTotalPendingDamage
+
+CCitadel_Ability_Shiv_KillingBlow
+	bool m_bDamagedAnyHero
+	bool m_bActive
+	bool m_bStartedOnGround
+	bool m_bIsBonusCast
+	VectorWS m_vStartPosition
+	QAngle m_qCurrentAngles
+	CCitadelAutoScaledTime m_flDepartureTime
+	CCitadelAutoScaledTime m_flArrivalTime
+	GameTime_t m_flRecastWindowEnd (sent as: float32)
+
+CCitadel_Ability_SkyRunner_Ability04
+
+CCitadel_Ability_SkyRunner_FlakShot
+
+CCitadel_Ability_SkyRunner_PrimaryWeapon
+
+CCitadel_Ability_SkyRunner_SwingLine
+	ESwingState_t m_eSwingState
+	GameTime_t m_SwingStartTime (sent as: float32)
+	GameTime_t m_SwingEndTime (sent as: float32)
+	VectorWS m_vecSwingPoint
+	float m_flIdealSpringLength
+
+CCitadel_Ability_Skyrunner_MagicBeam
+
+CCitadel_Ability_SleepBomb
+
+CCitadel_Ability_SleepDagger
+
+CCitadel_Ability_Slide
+	CCitadelAutoScaledTime m_flGroundDashSlideTime
+	GameTime_t m_flSlowGetupStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flSlowGetupStartTime)
+	bool m_bShouldTriggerSlowGetup (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bWantsSlide (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bAirborneWhenDuckPressed (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bIsSliding (change callbacks: ObservableRecv_m_bIsSliding)
+	bool m_bSlideIsSticky (user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flSpeedAdjust (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flDuckPressedTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flSlideChangeTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flSlideChangeTime)
+	GameTime_t m_flSlidingOnFlatStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int m_nJumpsThisSlideSession (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flOnGroundStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flDashSlideStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_SmokeBomb
+
+CCitadel_Ability_SnakeDash
+
+CCitadel_Ability_SpiderShield
+
+CCitadel_Ability_Spinning_Blade
+
+CCitadel_Ability_Sprint
+	bool m_bSprinting (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnSprintingChanged)
+	GameTime_t m_flSprintStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_StaticCharge
+
+CCitadel_Ability_StaticCharge_V2
+
+CCitadel_Ability_StickyBomb
+	EHANDLE m_hAutoTarget (sent as: ehandle)
+	GameTime_t m_flHookEndTime (sent as: float32)
+	float m_flBombBonusHits
+	float m_flBombBonusKills
+
+CCitadel_Ability_Stomp
+
+CCitadel_Ability_StormCloud
+	float m_flFloat
+	int m_nLightningStrikesRemaining
+
+CCitadel_Ability_SummonGangster
+
+CCitadel_Ability_SuperNeutralCharge
+	bool m_bPreparing
+	bool m_bTackling
+	GameTime_t m_flTackleStartTime (sent as: float32)
+	float m_flTackleDuration
+	Vector m_vecTackleDir
+
+CCitadel_Ability_SuperNeutralIncendiary
+
+CCitadel_Ability_SuperNeutralShield
+
+CCitadel_Ability_Swan_Ability04
+
+CCitadel_Ability_Swan_Acrobat
+
+CCitadel_Ability_Swan_FeatherBoomerang
+
+CCitadel_Ability_Swan_Leap
+
+CCitadel_Ability_TangoTether
+	Vector m_vecCastStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vecDashStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vecDashEndPos (user groups: LocalPlayerOwnerAndObserversExclusive)
+	QAngle m_angDashStartAng (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flDashStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flGrappleStartTime (sent as: float32)
+	GameTime_t m_flGrappleArriveTime (sent as: float32)
+	EHANDLE m_hTarget (sent as: ehandle)
+	GameTime_t m_flGrappleShotAttackTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_rgTargetPos (encoder: coord; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_rgTargetPosTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_TangoTether_Trigger
+
+CCitadel_Ability_Targetdummy_1
+
+CCitadel_Ability_Targetdummy_2
+
+CCitadel_Ability_Targetdummy_3
+
+CCitadel_Ability_Targetdummy_4
+
+CCitadel_Ability_Teleport
+
+CCitadel_Ability_TeleportToGangster
+
+CCitadel_Ability_Tenacity
+
+CCitadel_Ability_Tengu_AirLift
+	EHANDLE m_hGrabTarget (sent as: ehandle)
+	EFlightState m_eFlightState (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_eFlightState)
+	bool m_bIsGrabbing (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bIsHoldingBomb (user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flCurrentSpeed (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Tengu_StoneForm
+	GameTime_t m_flStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flLandedTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bLanded (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bFalling (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bInStoneForm (user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flStartHeight (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Tengu_Urn
+
+CCitadel_Ability_TestHero_Ability04
+
+CCitadel_Ability_TestHero_FearTarget
+
+CCitadel_Ability_TestHero_StanceSwitch
+	bool m_bStanceActive
+
+CCitadel_Ability_TestHero_Stance_Bow
+
+CCitadel_Ability_TestHero_Stance_Spaceman
+
+CCitadel_Ability_TestHero_SummonCannon
+	bool m_bCannonPending
+
+CCitadel_Ability_TestHero_SummonSoldier
+	EHANDLE m_vecTargetsInCone (sent as: ehandle)
+
+CCitadel_Ability_TestHero_WallCling
+	Vector m_vecWallClingNormal
+	VectorWS m_vecWallPosition
+	Vector m_vecLastVelocity
+
+CCitadel_Ability_ThrowSand
+
+CCitadel_Ability_Thumper_1
+
+CCitadel_Ability_Thumper_2
+
+CCitadel_Ability_Thumper_3
+
+CCitadel_Ability_Thumper_4
+
+CCitadel_Ability_Tier2Boss_AoEWave
+
+CCitadel_Ability_Tier2Boss_LaserBeam
+
+CCitadel_Ability_Tier2Boss_RocketBarrage
+
+CCitadel_Ability_Tier2Boss_Stomp
+
+CCitadel_Ability_Tier3Boss_AoEWave
+
+CCitadel_Ability_Tier3Boss_DropBombs
+
+CCitadel_Ability_Tier3Boss_LaserBeam
+
+CCitadel_Ability_Tier3Boss_RocketBarrage
+
+CCitadel_Ability_Trapper_Fear
+
+CCitadel_Ability_Trapper_PoisonJar
+
+CCitadel_Ability_Trapper_SpiderJar
+
+CCitadel_Ability_Trapper_WebWall
+	VectorWS m_vecCastPosition
+	Vector m_vecCastPositionNormal
+	VectorWS m_vecEndPosition
+	Vector m_vecEndPositionNormal
+
+CCitadel_Ability_Trappers_Bolo
+
+CCitadel_Ability_TriggerTower
+
+CCitadel_Ability_TrooperBossGrenade
+
+CCitadel_Ability_TrooperGrenade
+
+CCitadel_Ability_TrooperZipLine
+
+CCitadel_Ability_TurretClone
+	bool m_bHasTurretReady
+	int m_iCurrentSwapCount
+	GameTime_t m_flTurretExpireTime (sent as: float32)
+	CHandle< CCitadel_MagicianTurret> m_pActiveTurret (sent as: ehandle)
+
+CCitadel_Ability_TurretClone_Trigger
+
+CCitadel_Ability_UltCombo
+	int m_iBonusHealth
+	CHandle< CBaseEntity> m_hTarget (sent as: ehandle)
+
+CCitadel_Ability_Unicorn_DazzlingOrb
+
+CCitadel_Ability_Unicorn_LuminousStrike
+	GameTime_t m_vecNextExplosionTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vecNextExplosionLocation (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Unicorn_PrimaryWeapon
+
+CCitadel_Ability_Unicorn_PrismaticGuard
+
+CCitadel_Ability_Unicorn_RadiantBlast
+
+CCitadel_Ability_Uppercut
+
+CCitadel_Ability_VampireBat_BatBlink
+	int m_iRemainingCasts
+	bool m_bIsBlinking
+	GameTime_t m_RecastEndTime (sent as: float32)
+	GameTime_t m_BlinkEndTime (sent as: float32)
+
+CCitadel_Ability_VampireBat_BatCloud
+
+CCitadel_Ability_VampireBat_BatSwarm
+	int m_iBonusBats
+	int m_iBatCountOnCast
+	float m_flChannelTime
+	bool m_bPauseChannel
+	float m_flLastRemainingChannelTime
+
+CCitadel_Ability_VampireBat_DoubleDagger
+
+CCitadel_Ability_VampireBat_LoveBites
+
+CCitadel_Ability_VampireBat_StealLife
+	bool m_bFloating
+
+CCitadel_Ability_VandalOverflow
+
+CCitadel_Ability_VandalSurge
+
+CCitadel_Ability_Vandal_Ability03
+
+CCitadel_Ability_Vandal_Pillar
+
+CCitadel_Ability_ViperHookblade
+
+CCitadel_Ability_ViperVenom
+
+CCitadel_Ability_Viper_Ability04
+
+CCitadel_Ability_Viper_DebuffDagger
+
+CCitadel_Ability_Viper_PetrifyBola
+
+CCitadel_Ability_Viscous_Telepunch
+	VectorWS m_vecTeleportPosition
+	Vector m_vecTeleportPositionNormal
+	ETelepunchState_t m_eTelepunchState
+	GameTime_t m_flNextStateTime (sent as: float32)
+
+CCitadel_Ability_VoidSphere
+
+CCitadel_Ability_Weapon_BossTier2
+
+CCitadel_Ability_Weapon_BossTier3
+
+CCitadel_Ability_Werewolf_ClawWeapon
+
+CCitadel_Ability_Werewolf_KickFlip
+	bool m_bIsLeaping
+	GameTime_t m_tLeapStartTime (sent as: float32)
+	GameTime_t m_tLeapOffTime (sent as: float32)
+
+CCitadel_Ability_Werewolf_Leap
+	bool m_bWillLeapOff
+	bool m_bIsLeaping
+	GameTime_t m_tLeapStartTime (sent as: float32)
+	GameTime_t m_tLeapOffTime (sent as: float32)
+
+CCitadel_Ability_Werewolf_MaulingLeap
+	GameTime_t m_tLeapStartTime (sent as: float32)
+
+CCitadel_Ability_Werewolf_NetShot
+
+CCitadel_Ability_Werewolf_OnTheHunt
+
+CCitadel_Ability_Werewolf_Rifle
+
+CCitadel_Ability_Werewolf_TrackingBomb
+
+CCitadel_Ability_Wraith_RapidFire
+
+CCitadel_Ability_WreckerGarbageSuck
+
+CCitadel_Ability_WreckerScrapBlast
+
+CCitadel_Ability_WreckerTeleport
+	EHANDLE m_hProjectile (sent as: ehandle)
+	float m_flArrowSpeed
+	GameTime_t m_flSnapAnglesBackTime (sent as: float32)
+
+CCitadel_Ability_Wrecker_BoulderGrenade
+
+CCitadel_Ability_Wrecker_Salvage
+
+CCitadel_Ability_Wrecker_Ultimate
+	QAngle m_angBeamAngles
+
+CCitadel_Ability_WreckingBall
+	bool m_bHoldingBall
+
+CCitadel_Ability_WreckingBallThrow
+
+CCitadel_Ability_Yakuza_Shakedown
+
+CCitadel_Ability_ZipLine
+	GameTime_t m_flTimeStartZipping (sent as: float32)
+	GameTime_t m_flTimeForKnockdownProtection (sent as: float32)
+	GameTime_t m_flTimeStopZipping (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flCasterSpeed (user groups: LocalPlayerOwnerAndObserversExclusive)
+	CNetworkVelocityVector m_vecInitialVel (user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vecAttachPoint
+	EHANDLE m_pPrevNode (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+	EHANDLE m_pNextNode (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flTimeEnterState (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flLatchTime (sent as: float32)
+	GameTime_t m_flDamagedTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	EAttachState_t m_eAttachState (change callbacks: AttachStateChanged)
+	int m_iAttachedZipLineLane
+	bool m_bDroppedFromZipline (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vAttachZipLineOffset (user groups: LocalPlayerOwnerAndObserversExclusive)
+	float m_flZiplineAirDrag (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flZiplineAirDrag)
+	Vector m_vPendulumVelocity (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vPendulumPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vVelocityHistory1 (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vVelocityHistory2 (user groups: LocalPlayerOwnerAndObserversExclusive)
+	int m_iDesiredLane (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: DesiredLaneChanged)
+
+CCitadel_Ability_ZipLine_Boost
+
+CCitadel_Announcer
+
+CCitadel_Announcer_Base
+
+CCitadel_ArmorUpgrade_AbilityLifeSteal
+
+CCitadel_ArmorUpgrade_AblativeCoat
+	int m_iCurrentResistValue
+
+CCitadel_ArmorUpgrade_ActiveBulletShield
+
+CCitadel_ArmorUpgrade_AutoCleanse
+
+CCitadel_ArmorUpgrade_BulletArmorReductionAura
+
+CCitadel_ArmorUpgrade_CloakingDevice
+
+CCitadel_ArmorUpgrade_CloakingDeviceActive
+
+CCitadel_ArmorUpgrade_Colossus
+
+CCitadel_ArmorUpgrade_DamageRecycler
+
+CCitadel_ArmorUpgrade_DebuffReducer
+
+CCitadel_ArmorUpgrade_DoubleJump
+
+CCitadel_ArmorUpgrade_Frenzy
+
+CCitadel_ArmorUpgrade_Grit
+
+CCitadel_ArmorUpgrade_HealOnLevel
+
+CCitadel_ArmorUpgrade_HighImpactArmor
+
+CCitadel_ArmorUpgrade_MetalSkin
+
+CCitadel_ArmorUpgrade_PersonalRejuvenator
+
+CCitadel_ArmorUpgrade_RegeneratingBulletShield
+
+CCitadel_ArmorUpgrade_RegenerativeArmor
+
+CCitadel_ArmorUpgrade_ReturnFire
+
+CCitadel_ArmorUpgrade_Shrink_Ray
+
+CCitadel_ArmorUpgrade_SlowImmunity
+
+CCitadel_ArmorUpgrade_SpellShield
+
+CCitadel_ArmorUpgrade_SpiritBubble
+
+CCitadel_ArmorUpgrade_Stimpak
+
+CCitadel_ArmorUpgrade_VexBarrier
+
+CCitadel_ArmorUpgrade_WeaponShielding
+
+CCitadel_BaseProp_MidStairs
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	EMidStairsLocation_t m_eLocation
+
+CCitadel_Bounce_Pad
+	float m_flUpFactor
+	float m_flBounceVelocity
+	GameTime_t m_tDeactivationTime (sent as: float32)
+
+CCitadel_BreakableProp
+	include by name: m_lifeState, m_iMaxHealth, m_iHealth
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	int m_nGoldCost
+	int m_nMeleeHitsTaken
+
+CCitadel_CatAnimating
+
+CCitadel_CosmeticAbility
+
+CCitadel_CosmeticAbility_Emote
+
+CCitadel_CosmeticAbility_Snowball
+	int m_nSeasonal2025Level
+	float m_flSeasonal2025LevelFrac
+	GameTime_t m_flNextShotTime (sent as: float32; user groups: LocalPlayerOwnerExclusive)
+	int m_nShotsRemaining (user groups: LocalPlayerOwnerExclusive)
+
+CCitadel_CosmeticAbility_VotingPoster
+	bool m_bPreview
+	HeroID_t m_nActiveHero (sent as: uint32)
+
+CCitadel_DeployablePreview
+
+CCitadel_Destroyable_Building
+	include by name: m_bTakesDamage, m_nTakeDamageFlags
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	CCitadelAbilityComponent::Storage_t m_CCitadelAbilityComponent (class: CCitadelAbilityComponent; alias: CCitadelAbilityComponent; type alias: CCitadelAbilityComponent; user groups: CCitadelAbilityComponent)
+	WeakPoint_t m_vecWeakPoints
+	bool m_bDestroyed (change callbacks: DestroyedChanged)
+	bool m_bActive
+	bool m_bFinal
+
+CCitadel_DoorwayPortal
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	CHandle< CCitadel_DoorwayPortal> m_hLinkedDoorway (sent as: ehandle)
+
+CCitadel_DynamicProp
+	CUtlString m_strDefaultSkin
+	CUtlString m_strFriendlySkin
+	CUtlString m_strEnemySkin
+	bool m_bIsWorld
+
+CCitadel_FissureWall
+
+CCitadel_GrandFinaleStage
+
+CCitadel_GraveStone_Blocker
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
+	int m_iGravestoneState
+
+CCitadel_GuidedArrow_OwlModel
+
+CCitadel_Gunslinger_DemonMark
+
+CCitadel_HeroTestOrbSpawner
+
+CCitadel_HideOutTargetSpawner
+
+CCitadel_Hideout_Ball
+	exclude by name: m_flSimulationTime
+
+CCitadel_Hideout_Clock
+
+CCitadel_Ice_Dome_Blocker
+	GameTime_t m_flTurnSolidTime (sent as: float32)
+
+CCitadel_Ice_Path_Shard_Physics
+	exclude by name: m_hModel
+	ice_path_shard_model_desc_t m_ShardDesc
+	QAngle m_qForward
+	GameTime_t m_flStartTime (sent as: float32)
+	GameTime_t m_flEndTime (sent as: float32)
+	float m_flShardWidth
+
+CCitadel_Item
+
+CCitadel_Item_AOERoot
+
+CCitadel_Item_AOE_Tech_Shield
+
+CCitadel_Item_ActiveReload
+
+CCitadel_Item_ArcticBlast
+
+CCitadel_Item_Aura_Base
+
+CCitadel_Item_BaseProjectileAOEModifier
+
+CCitadel_Item_Bubble
+	GameTime_t m_flEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Item_Camouflage
+
+CCitadel_Item_CelestialGuidance
+
+CCitadel_Item_Charge_Mastery
+
+CCitadel_Item_CheatDeath
+
+CCitadel_Item_ColdFront
+
+CCitadel_Item_ComboBreaker
+
+CCitadel_Item_Containment
+
+CCitadel_Item_DPS_Aura
+
+CCitadel_Item_Disarm
+
+CCitadel_Item_DivineBarrier
+
+CCitadel_Item_DivinersKevlar
+
+CCitadel_Item_Electric_Slippers
+
+CCitadel_Item_Empty
+
+CCitadel_Item_FocusLens
+
+CCitadel_Item_GooseEgg
+	int m_iAccruedGold (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Item_GuardianWard
+
+CCitadel_Item_HealthRegenAura
+
+CCitadel_Item_Intensifying_Clip
+
+CCitadel_Item_ModDisruptor
+
+CCitadel_Item_Mystic_Regeneration
+	int m_iRegenStacks (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_iRegenStacks)
+	float m_flPendingIncomingHeal
+
+CCitadel_Item_NullificationAura
+
+CCitadel_Item_PhantomStrike
+
+CCitadel_Item_PowerShard
+
+CCitadel_Item_PrismBlast
+	CCitadelAbilityBeam_t m_beam00
+	CCitadelAbilityBeam_t m_beam01
+	CCitadelAbilityBeam_t m_beam02
+	CCitadelAbilityBeam_t m_beam03
+	CCitadelAbilityBeam_t m_beam04
+
+CCitadel_Item_ProjectileTest
+
+CCitadel_Item_ProjectileTest02
+
+CCitadel_Item_ProjectileTest04
+
+CCitadel_Item_ProjectileTest05
+
+CCitadel_Item_ProjectileTest06
+
+CCitadel_Item_Refresher
+
+CCitadel_Item_RejuvTrackingProjectile
+
+CCitadel_Item_RescueBeam
+	bool m_bCanPull
+
+CCitadel_Item_SelfBuffModifier
+
+CCitadel_Item_ShadowStep
+
+CCitadel_Item_ShadowStrike
+
+CCitadel_Item_SingleTargetStun
+
+CCitadel_Item_SpiritSap
+
+CCitadel_Item_Stasis_Bomb
+
+CCitadel_Item_TechCleave
+
+CCitadel_Item_TechDamagePulse
+
+CCitadel_Item_TrackingProjectileApplyModifier
+
+CCitadel_Item_TrophyCollector
+	int m_iTrophyCount
+
+CCitadel_Item_WarpStone
+
+CCitadel_KothCashIn
+
+CCitadel_Magic_Beam_Blocker
+	GameTime_t m_flTurnSolidTime (sent as: float32)
+
+CCitadel_MagicianTurret
+	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
+
+CCitadel_MobileResupply
+	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
+	bool m_bFloating
+
+CCitadel_NPCAbility_Shield
+
+CCitadel_NPCAbility_Vanguard_AOEBuff
+
+CCitadel_Nano_Predatory_Statue
+	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
+
+CCitadel_NewYears_Fireworks
+
+CCitadel_Omnicharge_Pendant
+
+CCitadel_Pickup
+	exclude by name: m_flSimulationTime
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	CHandle< CBaseEntity> m_hAssignedClaimer (sent as: ehandle)
+	bool m_bActive
+	bool m_bInteractive
+	VectorWS m_vVacuumStartPos
+	Vector m_vInitialVacuumVel
+	CHandle< CBaseEntity> m_hVacuumTarget (sent as: ehandle)
+
+CCitadel_PickupItemSpawner
+	GameTime_t m_tNextDropTime (sent as: float32)
+	bool m_bPowerupActive
+
+CCitadel_PickupSpawner
+
+CCitadel_Pickup_Ability
+	AbilityUpgradeBits_t m_nUpgradeBits
+	int m_nUpgradeLevel
+	AbilityID_t m_unAbilityID (sent as: uint32)
+	int m_nGoldCost
+	bool m_bShowGoldCostInUI
+
+CCitadel_Pickup_AssignedGold
+
+CCitadel_Pickup_Currency
+	int m_nCurrencyAmount
+
+CCitadel_Pickup_Gold
+	int m_iGoldReward
+
+CCitadel_Pickup_Health
+
+CCitadel_Pickup_Item
+
+CCitadel_Pickup_Modifier
+
+CCitadel_Pickup_NecroDeath
+
+CCitadel_PointTalker
+
+CCitadel_PointTalker_Base
+
+CCitadel_PointTalker_Idol
+
+CCitadel_Priest_SlideTrap
+	float m_flRangeAtCast
+	bool m_bArmed
+	bool m_bMoving
+
+CCitadel_Projectile_Archer_ChargedShot
+
+CCitadel_Projectile_BatSwarmExtraProjectile
+
+CCitadel_Projectile_BatSwarmProjectile
+
+CCitadel_Projectile_Bebop_Hook
+
+CCitadel_Projectile_BloodBomb
+
+CCitadel_Projectile_BookwormGun
+
+CCitadel_Projectile_Cyclone
+
+CCitadel_Projectile_DustStorm
+
+CCitadel_Projectile_FeatherBoomerang
+
+CCitadel_Projectile_FortunaWeapon
+
+CCitadel_Projectile_Guided_Arrow
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+
+CCitadel_Projectile_HookBlade
+
+CCitadel_Projectile_MagicBolt
+	bool bIsCloneProjectile
+
+CCitadel_Projectile_Petrify
+
+CCitadel_Projectile_Pillar
+
+CCitadel_Projectile_RocketLauncher_Rocket
+
+CCitadel_Projectile_SettingSun
+
+CCitadel_Projectile_SpiderProjectile
+
+CCitadel_Projectile_Viscous_GooGrenade
+
+CCitadel_Projectile_WebWall
+
+CCitadel_Projectile_Wrecker_Teleport
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+
+CCitadel_Projectile_WreckingBall
+
+CCitadel_Prop_MidBossIndicator
+
+CCitadel_Ratking_Standard
+	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
+
+CCitadel_RestorativeGooCube
+
+CCitadel_Shield
+	include by name: m_fFlags
+	bool m_bAllowRotatingUp
+	bool m_bFixedPosition
+	float m_flShieldOffset
+
+CCitadel_ShopProp
+	bool m_bIsShopOpen
+	int m_iLane
+
+CCitadel_SmokeGrenade_Blocker
+	GameTime_t m_flTurnSolidTime (sent as: float32)
+
+CCitadel_Soldier_Entity
+	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
+	int m_iSoldierState
+
+CCitadel_SpiderAnimating
+
+CCitadel_TechUpgrade_CorpseExplosion
+
+CCitadel_TechUpgrade_Infuser
+
+CCitadel_TechUpgrade_SuperAcolyteGloves
+
+CCitadel_Upgrade_AerialAssault
+
+CCitadel_Upgrade_AmmoScavenger
+
+CCitadel_Upgrade_MagicCarpet
+	bool m_bFlying (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bSummoning (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Upgrade_OverdriveClip
+
+CCitadel_Upgrade_WeaponPowerForHealth
+
+CCitadel_UtilityUpgrade_AOESmokeBomb
+
+CCitadel_UtilityUpgrade_DebuffImmunity
+
+CCitadel_UtilityUpgrade_HealthNova
+
+CCitadel_UtilityUpgrade_RocketBooster
+	GameTime_t m_flCastTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnCanSlamDownChanged)
+	bool m_bCrashingDown (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bImpulseApplied (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bCanCrash (user groups: LocalPlayerOwnerAndObserversExclusive)
+	VectorWS m_vecCrashPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
+	Vector m_vecCrashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_UtilityUpgrade_RocketBoots
+
+CCitadel_WeaponUpgrade_ApexCombat
+
+CCitadel_WeaponUpgrade_BloodTribute
+
+CCitadel_WeaponUpgrade_BurstFire
+	GameTime_t m_nFastFireEndTime (sent as: float32; change callbacks: ObservableRecv_m_nFastFireEndTime)
+
+CCitadel_WeaponUpgrade_CooldownOnMiss
+
+CCitadel_WeaponUpgrade_CultistSacrifice
+
+CCitadel_WeaponUpgrade_ExpressShot
+	int m_iShotsToCreate
+	bool m_bIsInExpressShot
+	bool m_bProcShotCharged
+	float m_flProcChargeBonusDamage
+
+CCitadel_WeaponUpgrade_FireRateAura
+
+CCitadel_WeaponUpgrade_FuryTrance
+
+CCitadel_WeaponUpgrade_GlassCannon
+
+CCitadel_WeaponUpgrade_HeadshotDamage
+
+CCitadel_WeaponUpgrade_InfiniteMagazine
+
+CCitadel_WeaponUpgrade_InstantReload
+
+CCitadel_WeaponUpgrade_RechargingBullets
+
+CCitadel_WeaponUpgrade_Ricochet
+
+CCitadel_WeaponUpgrade_SiphonBullets
+	int m_iStacks
+
+CCitadel_WeaponUpgrade_SpellslingerHeadshots
+
+CCitadel_WeaponUpgrade_SplitShot
+	bool m_bSplitShotActive
+
+CCitadel_WeaponUpgrade_SurgingPower
+
+CCitadel_WeaponUpgrade_WeaponEater
+	int m_nWeaponPower
+
+CCitadel_Werewolf_CripplingSlash
+
+CCitadel_Werewolf_Hunt
+
+CCitadel_Werewolf_Transformation
+	bool m_bIsTransformed
+	GameTime_t m_flWerewolfStartTime (sent as: float32)
+
+CCitadel_Werewolf_UnloadGun
+
+CCitadel_Werewolf_UnloadGun2
+	GameTime_t m_tActiveEndTime (sent as: float32)
+
+CCollisionProperty
+	VPhysicsCollisionAttribute_t m_collisionAttribute (change callbacks: CollisionAttributeChanged)
+	Vector m_vecMins (change callbacks: OnUpdateOBB)
+	Vector m_vecMaxs (change callbacks: OnUpdateOBB)
+	uint8 m_usSolidFlags (change callbacks: OnUpdateSolidFlags)
+	SolidType_t m_nSolidType (change callbacks: OnUpdateSolidType)
+	uint8 m_triggerBloat (change callbacks: MarkSurroundingBoundsDirty)
+	SurroundingBoundsType_t m_nSurroundType (change callbacks: MarkSurroundingBoundsDirty)
+	uint8 m_CollisionGroup
+	uint8 m_nEnablePhysics (change callbacks: OnUpdateEnablePhysics)
+	Vector m_vecSpecifiedSurroundingMins (change callbacks: MarkSurroundingBoundsDirty)
+	Vector m_vecSpecifiedSurroundingMaxs (change callbacks: MarkSurroundingBoundsDirty)
+	Vector m_vCapsuleCenter1 (change callbacks: OnUpdateCapsule)
+	Vector m_vCapsuleCenter2 (change callbacks: OnUpdateCapsule)
+	float m_flCapsuleRadius (change callbacks: OnUpdateCapsule)
+
+CColorCorrection
+	include by user group: Origin
+	float32 m_flFadeInDuration
+	float32 m_flFadeOutDuration
+	float32 m_flMaxWeight
+	bool m_bEnabled
+	bool m_bMaster
+	bool m_bClientSide
+	bool m_bExclusive
+	float32 m_MinFalloff
+	float32 m_MaxFalloff
+	float32 m_flCurWeight
+	char m_netlookupFilename
+
+CColorCorrectionVolume
+	float32 m_MaxWeight
+	float32 m_FadeDuration
+	float32 m_Weight
+	char m_lookupFilename
+
+CCommentaryAuto
+
+CCommentaryViewPosition
+
+CConditionalCollidable
+
+CConstraintAnchor
+
+CCredits
+
+CDebugHistory
+
+CDestructiblePartsComponent
+	CHandle< CBaseModelEntity > m_hOwner (sent as: ehandle)
+
+CDoormanBombProjectile
+
+CDynamicLight
+	uint8 m_Flags
+	uint8 m_LightStyle
+	float32 m_Radius
+	int32 m_Exponent
+	float32 m_InnerAngle (bit count: 8; min: 0; max: 360)
+	float32 m_OuterAngle (bit count: 8; min: 0; max: 360)
+	float32 m_SpotRadius
+
+CDynamicNavConnectionsVolume
+
+CDynamicProp
+	bool m_bUseHitboxesForRenderBox
+	bool m_bUseAnimGraph
+
+CDynamicPropAlias_cable_dynamic
+
+CDynamicPropAlias_dynamic_prop
+
+CDynamicPropAlias_prop_dynamic_override
+
+CEconEntity
+	CAttributeContainer m_AttributeManager
+
+CEconItemAttribute
+	attrib_definition_index_t m_iAttributeDefinitionIndex (sent as: uint16)
+	float m_flValue (alias: m_iRawValue32)
+
+CEconItemView
+	item_definition_index_t m_iItemDefinitionIndex (sent as: uint32)
+	int m_iEntityQuality
+	uint32 m_iEntityLevel
+	itemid_t m_iItemID (sent as: uint64)
+	uint32 m_iAccountID
+	uint32 m_iInventoryPosition
+	bool m_bInitialized
+	style_index_t m_nOverrideStyle (sent as: uint8)
+	CAttributeList m_AttributeList
+
+CEconWearable
+
+CEnableMotionFixup
+
+CEntityBlocker
+
+CEntityComponent
+
+CEntityDissolve
+	float32 m_flFadeInStart
+	float32 m_flFadeInLength
+	float32 m_flFadeOutModelStart
+	float32 m_flFadeOutModelLength
+	float32 m_flFadeOutStart
+	float32 m_flFadeOutLength
+	GameTime_t m_flStartTime (sent as: float32)
+	EntityDissolveType_t m_nDissolveType
+	VectorWS m_vDissolverOrigin
+	uint32 m_nMagnitude
+
+CEntityFlame
+	CHandle< CBaseEntity> m_hEntAttached (sent as: ehandle)
+	bool m_bCheapEffect
+
+CEntityIdentity
+	int32 m_nameStringTableIndex (change callbacks: entityIdentityNameChanged)
+
+CEntityInstance
+	CEntityIdentity * m_pEntity (priority: 56)
+
+CEnvBeam
+
+CEnvBeverage
+
+CEnvCombinedLightProbeVolume
+	Color m_Entity_Color (change callbacks: StateChanged)
+	float m_Entity_flBrightness (change callbacks: StateChanged)
+	HRenderTextureStrong m_Entity_hCubemapTexture (resource type: vtex)
+	bool m_Entity_bCustomCubemapTexture
+	HRenderTextureStrong m_Entity_hLightProbeTexture_AmbientCube (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeTexture_SDF (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_DC (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_L1 (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeDirectLightIndicesTexture (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeDirectLightScalarsTexture (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeDirectLightShadowsTexture (resource type: vtex)
+	Vector m_Entity_vBoxMins
+	Vector m_Entity_vBoxMaxs
+	bool m_Entity_bMoveable
+	int m_Entity_nHandshake
+	int m_Entity_nEnvCubeMapArrayIndex
+	int m_Entity_nPriority
+	bool m_Entity_bStartDisabled
+	float m_Entity_flEdgeFadeDist
+	Vector m_Entity_vEdgeFadeDists
+	int m_Entity_nLightProbeSizeX
+	int m_Entity_nLightProbeSizeY
+	int m_Entity_nLightProbeSizeZ
+	int m_Entity_nLightProbeAtlasX
+	int m_Entity_nLightProbeAtlasY
+	int m_Entity_nLightProbeAtlasZ
+	bool m_Entity_bEnabled
+
+CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume
+
+CEnvCubemap
+	HRenderTextureStrong m_Entity_hCubemapTexture (resource type: vtex)
+	bool m_Entity_bCustomCubemapTexture
+	float m_Entity_flInfluenceRadius
+	Vector m_Entity_vBoxProjectMins
+	Vector m_Entity_vBoxProjectMaxs
+	bool m_Entity_bMoveable
+	int m_Entity_nHandshake
+	int m_Entity_nEnvCubeMapArrayIndex
+	int m_Entity_nPriority
+	float m_Entity_flEdgeFadeDist
+	Vector m_Entity_vEdgeFadeDists
+	float m_Entity_flDiffuseScale
+	bool m_Entity_bStartDisabled
+	bool m_Entity_bDefaultEnvMap
+	bool m_Entity_bDefaultSpecEnvMap
+	bool m_Entity_bIndoorCubeMap
+	bool m_Entity_bCopyDiffuseFromDefaultCubemap
+	bool m_Entity_bEnabled
+
+CEnvCubemapFog
+	float m_flEndDistance
+	float m_flStartDistance
+	float m_flFogFalloffExponent
+	bool m_bHeightFogEnabled
+	float m_flFogHeightWidth
+	float m_flFogHeightEnd
+	float m_flFogHeightStart
+	float m_flFogHeightExponent
+	float m_flLODBias
+	bool m_bActive
+	bool m_bStartDisabled
+	float m_flFogMaxOpacity
+	int m_nCubemapSourceType
+	HMaterialStrong m_hSkyMaterial (resource type: vmat)
+	string_t m_iszSkyEntity
+	int m_nHeightFogType
+	int m_nFogHeightBlendMode
+	int m_nFogHeightCoordinateSpace
+	int m_nDistanceFogType
+	string_t m_DistanceFogCurveString
+	string_t m_HeightFogCurveString
+	HRenderTextureStrong m_hFogCubemapTexture (resource type: vtex)
+	bool m_bHasHeightFogEnd
+
+CEnvDecal
+	HMaterialStrong m_hDecalMaterial (resource type: vmat)
+	float m_flWidth (change callbacks: OnDecalDimensionsChanged)
+	float m_flHeight (change callbacks: OnDecalDimensionsChanged)
+	float m_flDepth (change callbacks: OnDecalDimensionsChanged)
+	uint32 m_nRenderOrder
+	bool m_bProjectOnWorld
+	bool m_bProjectOnCharacters
+	bool m_bProjectOnWater
+	float m_flDepthSortBias
+
+CEnvDetailController
+	float32 m_flFadeStartDist
+	float32 m_flFadeEndDist
+
+CEnvEntityIgniter
+
+CEnvEntityMaker
+
+CEnvExplosion
+
+CEnvFade
+	Color m_fadeColor
+
+CEnvGlobal
+
+CEnvInstructorHint
+
+CEnvInstructorVRHint
+
+CEnvLaser
+
+CEnvLightProbeVolume
+	HRenderTextureStrong m_Entity_hLightProbeTexture_AmbientCube (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeTexture_SDF (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_DC (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_L1 (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeDirectLightIndicesTexture (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeDirectLightScalarsTexture (resource type: vtex)
+	HRenderTextureStrong m_Entity_hLightProbeDirectLightShadowsTexture (resource type: vtex)
+	Vector m_Entity_vBoxMins
+	Vector m_Entity_vBoxMaxs
+	bool m_Entity_bMoveable
+	int m_Entity_nHandshake
+	int m_Entity_nPriority
+	bool m_Entity_bStartDisabled
+	int m_Entity_nLightProbeSizeX
+	int m_Entity_nLightProbeSizeY
+	int m_Entity_nLightProbeSizeZ
+	int m_Entity_nLightProbeAtlasX
+	int m_Entity_nLightProbeAtlasY
+	int m_Entity_nLightProbeAtlasZ
+	bool m_Entity_bEnabled
+
+CEnvMuzzleFlash
+
+CEnvParticleGlow
+	float32 m_flAlphaScale
+	float32 m_flRadiusScale
+	float32 m_flSelfIllumScale
+	Color m_ColorTint
+	HRenderTextureStrong m_hTextureOverride (resource type: vtex)
+
+CEnvShake
+
+CEnvSky
+	HMaterialStrong m_hSkyMaterial (change callbacks: SkyStateChanged; resource type: vmat)
+	HMaterialStrong m_hSkyMaterialLightingOnly (change callbacks: SkyStateChanged; resource type: vmat)
+	bool m_bStartDisabled (change callbacks: SkyStateChanged)
+	Color m_vTintColor (change callbacks: SkyStateChanged)
+	Color m_vTintColorLightingOnly (change callbacks: SkyStateChanged)
+	float m_flBrightnessScale (change callbacks: SkyStateChanged)
+	int m_nFogType (change callbacks: SkyStateChanged)
+	float m_flFogMinStart (change callbacks: SkyStateChanged)
+	float m_flFogMinEnd (change callbacks: SkyStateChanged)
+	float m_flFogMaxStart (change callbacks: SkyStateChanged)
+	float m_flFogMaxEnd (change callbacks: SkyStateChanged)
+	bool m_bEnabled (change callbacks: SkyStateChanged)
+
+CEnvSoundscape
+
+CEnvSoundscapeAlias_snd_soundscape
+
+CEnvSoundscapeProxy
+
+CEnvSoundscapeProxyAlias_snd_soundscape_proxy
+
+CEnvSoundscapeTriggerable
+
+CEnvSoundscapeTriggerableAlias_snd_soundscape_triggerable
+
+CEnvSpark
+
+CEnvSplash
+
+CEnvTilt
+
+CEnvViewPunch
+
+CEnvVolumetricFogController
+	float m_flScattering
+	Color m_TintColor
+	float m_flAnisotropy
+	float m_flFadeSpeed
+	float m_flDrawDistance
+	float m_flFadeInStart
+	float m_flFadeInEnd
+	float m_flIndirectStrength
+	int m_nVolumeDepth
+	float m_fFirstVolumeSliceThickness
+	int m_nIndirectTextureDimX
+	int m_nIndirectTextureDimY
+	int m_nIndirectTextureDimZ
+	Vector m_vBoxMins
+	Vector m_vBoxMaxs
+	bool m_bActive
+	GameTime_t m_flStartAnisoTime (sent as: float32)
+	GameTime_t m_flStartScatterTime (sent as: float32)
+	GameTime_t m_flStartDrawDistanceTime (sent as: float32)
+	float m_flStartAnisotropy
+	float m_flStartScattering
+	float m_flStartDrawDistance
+	float m_flDefaultAnisotropy
+	float m_flDefaultScattering
+	float m_flDefaultDrawDistance
+	bool m_bStartDisabled
+	bool m_bEnableIndirect
+	bool m_bIsMaster
+	HRenderTextureStrong m_hFogIndirectTexture (resource type: vtex)
+	int m_nForceRefreshCount
+	float m_fNoiseSpeed
+	float m_fNoiseStrength
+	Vector m_vNoiseScale
+	float m_fWindSpeed
+	Vector m_vWindDirection
+
+CEnvVolumetricFogVolume
+	bool m_bActive
+	Vector m_vBoxMins
+	Vector m_vBoxMaxs
+	bool m_bStartDisabled
+	bool m_bIndirectUseLPVs
+	float m_flStrength
+	int m_nFalloffShape
+	float m_flFalloffExponent
+	float m_flHeightFogDepth
+	float m_fHeightFogEdgeWidth
+	float m_fIndirectLightStrength
+	float m_fSunLightStrength
+	float m_fNoiseStrength
+	Color m_TintColor
+	bool m_bOverrideTintColor
+	bool m_bOverrideIndirectLightStrength
+	bool m_bOverrideSunLightStrength
+	bool m_bOverrideNoiseStrength
+
+CEnvWind
+	CEnvWindShared m_EnvWindShared
+
+CEnvWindShared
+	GameTime_t m_flStartTime (sent as: float32)
+	uint32 m_iWindSeed
+	uint16 m_iMinWind
+	uint16 m_iMaxWind
+	int32 m_windRadius
+	uint16 m_iMinGust
+	uint16 m_iMaxGust
+	float32 m_flMinGustDelay
+	float32 m_flMaxGustDelay
+	float32 m_flGustDuration
+	uint16 m_iGustDirChange
+	uint16 m_iInitialWindDir
+	float32 m_flInitialWindSpeed
+	VectorWS m_location (encoder: coord)
+
+CEnvironmentLight
+	Color m_SkyColor (change callbacks: RenderingChanged)
+	float m_flSkyIntensity (change callbacks: RenderingChanged)
+	Color m_SkyAmbientBounce (change callbacks: RenderingChanged)
+	float m_flAngularDiameter (change callbacks: RenderingChanged)
+
+CFilterAttributeInt
+
+CFilterClass
+
+CFilterContext
+
+CFilterEnemy
+
+CFilterLOS
+
+CFilterMassGreater
+
+CFilterModel
+
+CFilterModifier
+
+CFilterMultiple
+
+CFilterName
+
+CFilterProximity
+
+CFilterTeam
+
+CFish
+	include by name: m_nModelIndex, m_lifeState
+	float32 m_x (serializer: fish_pos_x)
+	float32 m_y (serializer: fish_pos_y)
+	float32 m_z (serializer: fish_pos_z)
+	float32 m_angle (serializer: angle_normalize_positive; bit count: 7; encode flags: 1; min: 0; max: 360)
+	VectorWS m_poolOrigin (encoder: coord)
+	float32 m_waterLevel
+
+CFishPool
+
+CFogController
+	fogparams_t m_fog
+
+CFogTrigger
+
+CFogVolume
+
+CFuncBrush
+
+CFuncElectrifiedVolume
+	string_t m_EffectName
+
+CFuncIllusionary
+
+CFuncInteractionLayerClip
+
+CFuncLadder
+	Vector m_vecLadderDir (encoder: coord)
+	VectorWS m_vecPlayerMountPositionTop (encoder: coord)
+	VectorWS m_vecPlayerMountPositionBottom (encoder: coord)
+	float m_flAutoRideSpeed
+	bool m_bFakeLadder
+
+CFuncLadderAlias_func_useableladder
+
+CFuncMonitor
+	CUtlString m_targetCamera
+	int m_nResolutionEnum
+	bool m_bRenderShadows
+	bool m_bUseUniqueColorTarget
+	CUtlString m_brushModelName
+	EHANDLE m_hTargetCamera (sent as: ehandle)
+	bool m_bEnabled
+	bool m_bDraw3DSkybox
+
+CFuncMoveLinear
+	include by name: m_fFlags, m_vecVelocity
+	overrides: CBaseEntity::m_fFlags kind8 
+
+CFuncMoveLinearAlias_momentary_door
+
+CFuncMover
+
+CFuncMoverRouter
+
+CFuncNavBlocker
+
+CFuncNavObstruction
+
+CFuncPlat
+
+CFuncPlatRot
+
+CFuncPropRespawnZone
+
+CFuncRotating
+	overrides: CGameSceneNode::m_angRotation serializer StepSimulationFuncRotatingAnglesSerializer, CBaseEntity::m_flSimulationTime serializer funcRotatingSimulationTimeSerializer
+
+CFuncRotator
+
+CFuncShatterglass
+
+CFuncTankTrain
+
+CFuncTimescale
+
+CFuncTrackAuto
+
+CFuncTrackChange
+
+CFuncTrackTrain
+
+CFuncTrain
+
+CFuncTrainControls
+
+CFuncVPhysicsClip
+
+CFuncVehicleClip
+
+CFuncWall
+
+CFuncWallToggle
+
+CGameGibManager
+
+CGamePlayerEquip
+
+CGamePlayerZone
+
+CGameRules
+	int m_nTotalPausedTicks
+	int m_nPauseStartTick
+	bool m_bGamePaused
+
+CGameRulesProxy
+
+CGameSceneNode
+	CGameSceneNodeHandle m_hParent (serializer: gameSceneNode; priority: 32; change callbacks: gameSceneNodeHierarchyParentChanged; embedded field offset delta: 8)
+	CNetworkOriginCellCoordQuantizedVector m_vecOrigin (priority: 32; user groups: Origin; change callbacks: gameSceneNodeLocalOriginChanged)
+	QAngle m_angRotation (serializer: gameSceneNodeStepSimulationAnglesSerializer; encoder: qangle_precise; priority: 32; change callbacks: gameSceneNodeLocalAnglesChanged)
+	float m_flScale (priority: 32; change callbacks: gameSceneNodeLocalScaleChanged)
+	CUtlStringToken m_name (sent as: uint32)
+	CUtlStringToken m_hierarchyAttachName (sent as: uint32; change callbacks: gameSceneNodeHierarchyAttachmentChanged)
+
+CGameSceneNodeHandle
+	CEntityHandle m_hOwner (sent as: ehandle)
+	CUtlStringToken m_name (sent as: uint32)
+
+CGameText
+
+CGenericConstraint
+
+CGenericLogicPlayerProxy
+
+CGlowProperty
+	int32 m_iGlowType (change callbacks: OnGlowTypeChanged)
+	int32 m_iGlowTeam
+	int32 m_nGlowRange
+	int32 m_nGlowRangeMin
+	Color m_glowColorOverride (change callbacks: OnGlowColorChanged)
+	bool m_bFlashing
+	float m_flGlowTime
+	float m_flGlowStartTime
+
+CGradientFog
+	HRenderTextureStrong m_hGradientFogTexture (resource type: vtex)
+	float m_flFogStartDistance (change callbacks: FogStateChanged)
+	float m_flFogEndDistance (change callbacks: FogStateChanged)
+	bool m_bHeightFogEnabled (change callbacks: FogStateChanged)
+	float m_flFogStartHeight (change callbacks: FogStateChanged)
+	float m_flFogEndHeight (change callbacks: FogStateChanged)
+	float m_flFarZ (change callbacks: FogStateChanged)
+	float m_flFogMaxOpacity (change callbacks: FogStateChanged)
+	float m_flFogFalloffExponent (change callbacks: FogStateChanged)
+	float m_flFogVerticalExponent (change callbacks: FogStateChanged)
+	Color m_fogColor (change callbacks: FogStateChanged)
+	float m_flFogStrength (change callbacks: FogStateChanged)
+	float m_flFadeTime (change callbacks: FogStateChanged)
+	bool m_bStartDisabled
+	bool m_bIsEnabled
+
+CGunTarget
+
+CHandleDummy
+
+CHandleTest
+	CHandle< CBaseEntity> m_Handle (sent as: ehandle)
+	bool m_bSendHandle
+
+CHitboxComponent
+
+CInWorldKeyBindPanel
+
+CInfoAbilityTestBot
+
+CInfoChoreoAnchor
+
+CInfoCitadelHelperLocation
+
+CInfoCitadelHideout
+
+CInfoData
+
+CInfoDynamicShadowHint
+
+CInfoDynamicShadowHintBox
+
+CInfoFan
+	float m_fFanForceMaxRadius
+	float m_fFanForceMinRadius
+	float m_flCurveDistRange
+	string_t m_FanForceCurveString
+
+CInfoGameEventProxy
+
+CInfoHeroTestingController
+
+CInfoHeroTestingPoint
+
+CInfoInstructorHintTarget
+
+CInfoKOTHSpawnLocation
+
+CInfoLadderDismount
+
+CInfoLandmark
+
+CInfoMidBossSpawn
+
+CInfoOffscreenPanoramaTexture
+	bool m_bDisabled
+	bool m_bEnableMipGen
+	int m_nResolutionX
+	int m_nResolutionY
+	string_t m_szPanelType
+	string_t m_szLayoutFileName
+	string_t m_RenderAttrName
+	CHandle< CBaseModelEntity > m_TargetEntities (sent as: ehandle)
+	int m_nTargetChangeCount
+	string_t m_vecCSSClasses
+
+CInfoParticleTarget
+
+CInfoPlayerStart
+
+CInfoPortalLink
+
+CInfoSpawnGroupLandmark
+
+CInfoSpawnGroupLoadUnload
+
+CInfoTarget
+
+CInfoTargetServerOnly
+
+CInfoTeamSpawn
+
+CInfoTeleportDestination
+
+CInfoTrooperBossSpawn
+
+CInfoTrooperNeutralCamp
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+
+CInfoTrooperNeutralSpawn
+
+CInfoTrooperSpawn
+
+CInfoTutorialController
+
+CInfoTutorialPoint
+
+CInfoVisibilityBox
+	int m_nMode
+	Vector m_vBoxSize
+	bool m_bEnabled
+
+CInfoWorldLayer
+	string_t m_worldName
+	string_t m_layerName
+	bool m_bWorldLayerVisible
+	bool m_bEntitiesSpawned
+
+CInstancedSceneEntity
+
+CInstructorEventEntity
+
+CItem
+
+CItemCapacitor
+
+CItemCrate
+	include by name: m_iHealth, m_iMaxHealth
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	int m_eLootType
+
+CItemCrateSpawn
+
+CItemExplosiveBarrel
+
+CItemGeneric
+
+CItemGenericTriggerHelper
+
+CItemHauntingScream
+
+CItemMysticReverb
+
+CItemSilenceGlyph
+
+CItemSoda
+
+CItemXP
+	exclude by name: m_flSimulationTime
+	GameTime_t m_timeLaunch (sent as: float32)
+	GameTime_t m_flAttackableTime (sent as: float32)
+	GameTime_t m_flEndAttackableTime (sent as: float32)
+	int m_nLaunchNum
+
+CItem_FleetfootBoots
+
+CItem_GreaterWitheringWhip
+
+CItem_ResonantHealing
+	int m_iResonantHealingRegenStacks (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_iResonantHealingRegenStacks)
+
+CItem_RestorativeLocket
+	int m_nNumStacks
+
+CItem_WitheringWhip
+
+CKeepUpright
+
+CLaneMarkerPath
+
+CLightComponent
+	Color m_Color (change callbacks: LightRenderingChanged)
+	Color m_SecondaryColor (change callbacks: LightRenderingChanged)
+	float m_flBrightness (change callbacks: LightRenderingChanged)
+	float m_flBrightnessScale (change callbacks: LightRenderingChanged)
+	float m_flBrightnessMult (change callbacks: LightRenderingChanged)
+	float m_flRange (change callbacks: LightRenderingChanged)
+	float m_flFalloff (change callbacks: LightRenderingChanged)
+	float m_flAttenuation0 (change callbacks: LightRenderingChanged)
+	float m_flAttenuation1 (change callbacks: LightRenderingChanged)
+	float m_flAttenuation2 (change callbacks: LightRenderingChanged)
+	float m_flTheta (change callbacks: LightRenderingChanged)
+	float m_flPhi (change callbacks: LightRenderingChanged)
+	HRenderTextureStrong m_hLightCookie (change callbacks: LightRenderingChanged; resource type: vtex)
+	int m_nCascades (change callbacks: LightRenderingChanged)
+	int m_nCastShadows (change callbacks: LightRenderingChanged)
+	int m_nShadowWidth (change callbacks: LightRenderingChanged)
+	int m_nShadowHeight (change callbacks: LightRenderingChanged)
+	bool m_bRenderDiffuse (change callbacks: LightRenderingChanged)
+	int m_nRenderSpecular (change callbacks: LightRenderingChanged)
+	bool m_bRenderTransmissive (change callbacks: LightRenderingChanged)
+	float m_flOrthoLightWidth (change callbacks: LightRenderingChanged)
+	float m_flOrthoLightHeight (change callbacks: LightRenderingChanged)
+	int m_nStyle (change callbacks: LightRenderingChanged)
+	CUtlString m_Pattern (change callbacks: LightRenderingChanged)
+	int m_nCascadeRenderStaticObjects (change callbacks: LightRenderingChanged)
+	float m_flShadowCascadeCrossFade (change callbacks: LightRenderingChanged)
+	float m_flShadowCascadeDistanceFade (change callbacks: LightRenderingChanged)
+	float m_flShadowCascadeDistance0 (change callbacks: LightRenderingChanged)
+	float m_flShadowCascadeDistance1 (change callbacks: LightRenderingChanged)
+	float m_flShadowCascadeDistance2 (change callbacks: LightRenderingChanged)
+	float m_flShadowCascadeDistance3 (change callbacks: LightRenderingChanged)
+	int m_nShadowCascadeResolution0 (change callbacks: LightRenderingChanged)
+	int m_nShadowCascadeResolution1 (change callbacks: LightRenderingChanged)
+	int m_nShadowCascadeResolution2 (change callbacks: LightRenderingChanged)
+	int m_nShadowCascadeResolution3 (change callbacks: LightRenderingChanged)
+	bool m_bUsesBakedShadowing (alias: m_bUsesIndexedBakedLighting; change callbacks: LightRenderingChanged)
+	int m_nShadowPriority (change callbacks: LightRenderingChanged)
+	int m_nBakedShadowIndex (change callbacks: LightRenderingChanged)
+	int32 m_nLightPathUniqueId (change callbacks: LightRenderingChanged)
+	int32 m_nLightMapUniqueId (change callbacks: LightRenderingChanged)
+	bool m_bRenderToCubemaps (change callbacks: LightRenderingChanged)
+	bool m_bAllowSSTGeneration
+	int m_nDirectLight
+	int m_nBounceLight
+	float m_flBounceScale
+	float m_flFadeMinDist (change callbacks: LightRenderingChanged)
+	float m_flFadeMaxDist (change callbacks: LightRenderingChanged)
+	float m_flShadowFadeMinDist (change callbacks: LightRenderingChanged)
+	float m_flShadowFadeMaxDist (change callbacks: LightRenderingChanged)
+	bool m_bEnabled (change callbacks: LightRenderingChanged)
+	bool m_bFlicker (change callbacks: LightRenderingChanged)
+	bool m_bPrecomputedFieldsValid
+	Vector m_vPrecomputedBoundsMins
+	Vector m_vPrecomputedBoundsMaxs
+	Vector m_vPrecomputedOBBOrigin
+	QAngle m_vPrecomputedOBBAngles
+	Vector m_vPrecomputedOBBExtent
+	float m_flPrecomputedMaxRange
+	int m_nFogLightingMode
+	float m_flFogContributionStength
+	float m_flNearClipPlane
+	Color m_SkyColor
+	float m_flSkyIntensity
+	Color m_SkyAmbientBounce
+	bool m_bUseSecondaryColor
+	bool m_bMixedShadows (change callbacks: MixedShadowsChanged)
+	GameTime_t m_flLightStyleStartTime (sent as: float32; change callbacks: LightRenderingChanged)
+	float m_flCapsuleLength
+	float m_flMinRoughness (change callbacks: LightRenderingChanged)
+
+CLightDirectionalEntity
+
+CLightEntity
+	CLightComponent::Storage_t m_CLightComponent (class: CLightComponent; alias: CLightComponent; type alias: CLightComponent; user groups: CLightComponent)
+
+CLightOrthoEntity
+
+CLightSpotEntity
+
+CLogicAchievement
+
+CLogicActiveAutosave
+
+CLogicActivityEvent
+
+CLogicAuto
+
+CLogicAutoCitadel
+
+CLogicAutosave
+
+CLogicBranch
+
+CLogicBranchList
+
+CLogicCase
+
+CLogicCollisionPair
+
+CLogicCompare
+
+CLogicDistanceAutosave
+
+CLogicDistanceCheck
+
+CLogicGameEvent
+
+CLogicGameEventListener
+	bool m_bEnabled
+
+CLogicGameStateReport
+
+CLogicLineToEntity
+
+CLogicMeasureMovement
+
+CLogicNPCCounter
+
+CLogicNPCCounterAABB
+
+CLogicNPCCounterOBB
+
+CLogicNavigation
+
+CLogicPlayerProxyBase
+
+CLogicProximity
+
+CLogicRelay
+
+CLogicScript
+
+CLogicalEntity
+
+CMapSharedEnvironment
+
+CMarkupVolume
+
+CMarkupVolumeTagged
+
+CMarkupVolumeTagged_Nav
+
+CMarkupVolumeTagged_NavCitadel
+
+CMarkupVolumeTagged_NavGame
+
+CMarkupVolumeWithRef
+
+CMatchTrackedStatsEntity
+
+CMathColorBlend
+
+CMathCounter
+
+CMathRemap
+
+CMessage
+
+CMessageEntity
+
+CMiniMapMarker
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	EMiniMapMarkerType_t m_eType
+
+CModelPointEntity
+
+CModelState
+	HModelStrong m_hModel (change callbacks: skeletonModelChanged; resource type: vmdl)
+	float m_flRootBoneOffset_x (change callbacks: OnRootBoneOffsetChanged; bit count: 14; encode flags: 4; min: -128; max: 128)
+	float m_flRootBoneOffset_y (change callbacks: OnRootBoneOffsetChanged; bit count: 14; encode flags: 4; min: -128; max: 128)
+	float m_flRootBoneOffset_z (change callbacks: OnRootBoneOffsetChanged; bit count: 14; encode flags: 4; min: -128; max: 128)
+	uint8 m_nRootBoneOffsetResetSerialNumber (change callbacks: OnRootBoneOffsetResetChanged)
+	bool m_bClientClothCreationSuppressed
+	uint8 m_nAnimStateNoInterpSerialNumber
+	MeshGroupMask_t m_MeshGroupMask (change callbacks: skeletonMeshGroupMaskChanged)
+	int32 m_nBodyGroupChoices (change callbacks: bodyGroupChoiceChanged)
+	int8 m_nIdealMotionType (change callbacks: skeletonMotionTypeChanged)
+
+CModifierProperty
+	bool m_bAllowModifiersOnDeadEntities
+	uint32 m_nDisabledGroups
+	uint32 m_bvEnabledStateMask (change callbacks: modifierStatesChanged)
+	uint32 m_bvDisabledStateMask (change callbacks: modifierStatesChanged)
+	uint32 m_bvEnabledPredictedStateMask (change callbacks: modifierStatesChanged)
+
+CMomentaryRotButton
+
+CMoverPathNode
+
+CMultiLightProxy
+
+CMultiSource
+
+CMultiplayRules
+
+CNPCMaker
+
+CNPCSpawnDestination
+
+CNPC_BarrackBoss
+	CCitadelPlayerClipComponent::Storage_t m_CCitadelPlayerClipComponent (class: CCitadelPlayerClipComponent; alias: CCitadelPlayerClipComponent; type alias: CCitadelPlayerClipComponent; user groups: CCitadelPlayerClipComponent)
+	int m_iLane
+	GameTime_t m_flFadeOutStart (sent as: float32)
+	GameTime_t m_flFadeOutEnd (sent as: float32)
+
+CNPC_BaseDefenseSentry
+	include by name: m_bTakesDamage, m_nTakeDamageFlags
+
+CNPC_Boss_Tier2
+	int m_iLane
+	EHANDLE m_hTargetedEnemy (sent as: ehandle)
+	GameTime_t m_flFadeOutStart (sent as: float32)
+	GameTime_t m_flFadeOutEnd (sent as: float32)
+	GameTime_t m_flLastWeakpointHitTime (sent as: float32)
+	VectorWS m_vecElectricBeamLookTarget (encoder: coord)
+	int m_nElectricBeamCasts
+
+CNPC_Boss_Tier3
+	int m_iLane
+	VectorWS m_vecElectricBeamTargetEnd
+	ETier3State_t m_eAliveState
+	ETier3Phase_t m_ePhase
+	VectorWS m_vShrineAttackTargetPos
+
+CNPC_Boss_Tier3Core
+
+CNPC_Escort
+
+CNPC_FamiliarHelper
+	GameTime_t m_tCooldownStartTime (sent as: float32)
+	GameTime_t m_tCooldownEndTime (sent as: float32)
+	bool m_bIsHelperAvailableNet
+
+CNPC_MidBoss
+
+CNPC_NecroSkele
+	CHandle< CCitadelBaseAbility> m_hCastingAbility (sent as: ehandle)
+	GameTime_t m_tSpawnTime (sent as: float32)
+	VectorWS m_vecCastLocation
+	bool m_bDontMove
+	float m_flAttackRange
+	float m_flSpawnDuration
+
+CNPC_Neutral_Bug
+	exclude by name: m_flSimulationTime
+
+CNPC_Neutral_Flying_Pigeon
+
+CNPC_Neutral_Hideout_Cat
+
+CNPC_Neutral_Hideout_Rabbit
+
+CNPC_Neutral_SinnersSacrifice
+	int m_iVaultState
+	int m_nGoldToGiveOnDamage
+	float m_flRandomTimePhase
+	float m_flMiniGameTimeScale
+
+CNPC_Neutral_SinnersSacrifice_Hideout
+
+CNPC_Ratking_Rat
+	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
+
+CNPC_ShieldedSentry
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	float m_flAttackRange
+	float m_flAimPitch
+	bool m_bHasRecentlyAttacked
+	float m_flLifeTime
+	GameTime_t m_flSpawnTime (sent as: float32)
+
+CNPC_SimpleAnimatingAI
+	include by name: m_iMaxHealth, m_iHealth, m_iTeam
+	exclude by name: m_flSimulationTime, m_flEncodedController, m_flPoseParameter
+	exclude by user group: m_flCycle
+	EHANDLE m_hEnemy (sent as: ehandle)
+	CHandle<CCitadelBaseAbility> m_hAbilityOwner (sent as: ehandle)
+	CCitadelRegenComponent::Storage_t m_CCitadelRegenComponent (class: CCitadelRegenComponent; alias: CCitadelRegenComponent; type alias: CCitadelRegenComponent; user groups: CCitadelRegenComponent)
+
+CNPC_Trooper
+	int m_iLane
+	EHANDLE m_hTargetedEnemy (sent as: ehandle)
+	bool m_bUsingBossWeapon
+
+CNPC_TrooperBoss
+	CCitadelPlayerClipComponent::Storage_t m_CCitadelPlayerClipComponent (class: CCitadelPlayerClipComponent; alias: CCitadelPlayerClipComponent; type alias: CCitadelPlayerClipComponent; user groups: CCitadelPlayerClipComponent)
+	int m_iLane
+	GameTime_t m_flFadeOutStart (sent as: float32)
+	GameTime_t m_flFadeOutEnd (sent as: float32)
+
+CNPC_TrooperNeutral
+
+CNPC_YakuzaGangster
+
+CNavLinkAreaEntity
+
+CNavSpaceInfo
+
+CNavWalkable
+
+CNecro_HauntingSkullEntity
+	include by name: m_iHealth, m_iMaxHealth
+	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
+	int m_eSkullState
+
+CNetworkOriginCellCoordQuantizedVector
+	vars atomic
+	uint16 m_cellX (serializer: cellx; priority: 31; change callbacks: OnCellChanged)
+	uint16 m_cellY (serializer: celly; priority: 31; change callbacks: OnCellChanged)
+	uint16 m_cellZ (serializer: cellz; priority: 31; change callbacks: OnCellChanged)
+	uint16 m_nOutsideWorld
+	CNetworkedQuantizedFloat m_vecX (sent as: float32; serializer: posx; priority: 31; change callbacks: OnCellChanged; bit count: 15; encode flags: 1; min: 0; max: 1024)
+	CNetworkedQuantizedFloat m_vecY (sent as: float32; serializer: posy; priority: 31; change callbacks: OnCellChanged; bit count: 15; encode flags: 1; min: 0; max: 1024)
+	CNetworkedQuantizedFloat m_vecZ (sent as: float32; serializer: posz; priority: 31; change callbacks: OnCellChanged; bit count: 15; encode flags: 1; min: 0; max: 1024)
+
+CNetworkOriginCellCoordQuantizedVectorWS
+	vars atomic
+	uint16 m_cellX (serializer: cellx; priority: 31; change callbacks: OnCellChangedWS)
+	uint16 m_cellY (serializer: celly; priority: 31; change callbacks: OnCellChangedWS)
+	uint16 m_cellZ (serializer: cellz; priority: 31; change callbacks: OnCellChangedWS)
+	uint16 m_nOutsideWorld
+	CNetworkedQuantizedFloat m_vecX (sent as: float32; serializer: posx; priority: 31; change callbacks: OnCellChangedWS; bit count: 15; encode flags: 1; min: 0; max: 1024)
+	CNetworkedQuantizedFloat m_vecY (sent as: float32; serializer: posy; priority: 31; change callbacks: OnCellChangedWS; bit count: 15; encode flags: 1; min: 0; max: 1024)
+	CNetworkedQuantizedFloat m_vecZ (sent as: float32; serializer: posz; priority: 31; change callbacks: OnCellChangedWS; bit count: 15; encode flags: 1; min: 0; max: 1024)
+
+CNetworkOriginQuantizedVector
+	vars atomic
+	CNetworkedQuantizedFloat m_vecX (sent as: float32; change callbacks: CNetworkOriginQuantizedVector; bit count: 19; encode flags: 4; min: -16384; max: 16384)
+	CNetworkedQuantizedFloat m_vecY (sent as: float32; change callbacks: CNetworkOriginQuantizedVector; bit count: 19; encode flags: 4; min: -16384; max: 16384)
+	CNetworkedQuantizedFloat m_vecZ (sent as: float32; change callbacks: CNetworkOriginQuantizedVector; bit count: 19; encode flags: 4; min: -16384; max: 16384)
+
+CNetworkOriginQuantizedVectorWS
+	vars atomic
+	CNetworkedQuantizedFloat m_vecX (sent as: float32; change callbacks: CNetworkOriginQuantizedVector; bit count: 19; encode flags: 4; min: -16384; max: 16384)
+	CNetworkedQuantizedFloat m_vecY (sent as: float32; change callbacks: CNetworkOriginQuantizedVector; bit count: 19; encode flags: 4; min: -16384; max: 16384)
+	CNetworkedQuantizedFloat m_vecZ (sent as: float32; change callbacks: CNetworkOriginQuantizedVector; bit count: 19; encode flags: 4; min: -16384; max: 16384)
+
+CNetworkVelocityVector
+	vars atomic
+	CNetworkedQuantizedFloat m_vecX (sent as: float32; change callbacks: CNetworkVelocityVector; bit count: 18; encode flags: 4; min: -4096; max: 4096)
+	CNetworkedQuantizedFloat m_vecY (sent as: float32; change callbacks: CNetworkVelocityVector; bit count: 18; encode flags: 4; min: -4096; max: 4096)
+	CNetworkedQuantizedFloat m_vecZ (sent as: float32; change callbacks: CNetworkVelocityVector; bit count: 18; encode flags: 4; min: -4096; max: 4096)
+
+CNetworkViewOffsetVector
+	vars atomic
+	CNetworkedQuantizedFloat m_vecX (sent as: float32; change callbacks: CNetworkViewOffsetVector; bit count: 10; encode flags: 4; min: -64; max: 64)
+	CNetworkedQuantizedFloat m_vecY (sent as: float32; change callbacks: CNetworkViewOffsetVector; bit count: 10; encode flags: 4; min: -64; max: 64)
+	CNetworkedQuantizedFloat m_vecZ (sent as: float32; change callbacks: CNetworkViewOffsetVector; bit count: 20; encode flags: 4; min: 0; max: 128)
+
+CNetworkedSequenceOperation
+	HSequence m_hSequence (sent as: int32; serializer: minusone; priority: 32; change callbacks: sequenceOpSequenceChanged)
+	float32 m_flPrevCycle (recipients filter: SendProxyNeverSend_RecipientsFilter; priority: 32; user groups: m_flCycle; bit count: 15; encode flags: 8; min: 0; max: 1)
+	float32 m_flCycle (recipients filter: SendProxyNeverSend_RecipientsFilter; priority: 32; user groups: m_flCycle; bit count: 15; encode flags: 8; min: 0; max: 1)
+	CNetworkedQuantizedFloat m_flWeight (sent as: float32; bit count: 8; min: 0; max: 1)
+
+CNodeEnt
+
+CNodeEnt_InfoHint
+
+CNodeEnt_InfoNodeAir
+
+CNodeEnt_InfoNodeAirHint
+
+CNodeEnt_InfoNodeHint
+
+CNpcFootSweep
+
+CNullEntity
+
+COmniLight
+	float m_flInnerAngle (change callbacks: RenderingChanged)
+	float m_flOuterAngle (change callbacks: RenderingChanged)
+	bool m_bShowLight (change callbacks: RenderingChanged)
+
+COrbSpawner
+
+COrnamentProp
+
+CParticleSystem
+	include by name: CGameSceneNode::m_angRotation, m_hOwnerEntity, CGameSceneNode::m_hParent, CGameSceneNode::m_hierarchyAttachName, m_nameStringTableIndex
+	include by user group: Origin
+	char m_szSnapshotFileName
+	bool m_bActive
+	bool m_bFrozen
+	float m_flFreezeTransitionDuration
+	int m_nStopType
+	bool m_bAnimateDuringGameplayPause
+	HParticleSystemDefinitionStrong m_iEffectIndex (resource type: vpcf)
+	GameTime_t m_flStartTime (sent as: float32)
+	float32 m_flPreSimTime
+	Vector m_vServerControlPoints
+	uint8 m_iServerControlPointAssignments
+	CHandle< CBaseEntity > m_hControlPointEnts (sent as: ehandle)
+	bool m_bDataStringLocalized
+	CUtlString m_strDataString
+	bool m_bNoSave
+	bool m_bNoFreeze
+	bool m_bNoRamp
+
+CPathAccompany
+
+CPathCorner
+
+CPathCornerCrash
+
+CPathKeyFrame
+
+CPathMover
+
+CPathMoverEntitySpawner
+
+CPathNode
+	Vector m_vInTangentLocal
+	Vector m_vOutTangentLocal
+	CUtlString m_strParentPathUniqueID
+	CUtlString m_strPathNodeParameter
+
+CPathParticleRope
+	float m_flParticleSpacing
+	float m_flSlack (change callbacks: parametersChanged)
+	float m_flRadius (change callbacks: parametersChanged)
+	Color m_ColorTint (change callbacks: parametersChanged)
+	int m_nEffectState (change callbacks: effectStateChanged)
+	HParticleSystemDefinitionStrong m_iEffectIndex (resource type: vpcf)
+	Vector m_PathNodes_Position
+	Vector m_PathNodes_TangentIn
+	Vector m_PathNodes_TangentOut
+	Vector m_PathNodes_Color
+	bool m_PathNodes_PinEnabled (change callbacks: pinStateChanged)
+	float m_PathNodes_RadiusScale
+
+CPathParticleRopeAlias_path_particle_rope_clientside
+
+CPathQueryComponent
+
+CPathQueryUtil
+
+CPathSimple
+	CPathQueryComponent::Storage_t m_CPathQueryComponent (class: CPathQueryComponent; alias: CPathQueryComponent; type alias: CPathQueryComponent; user groups: CPathQueryComponent)
+	CUtlString m_pathString
+
+CPathTrack
+
+CPathWithDynamicNodes
+	CHandle< CPathNode > m_vecPathNodes (sent as: ehandle)
+	CTransform m_xInitialPathWorldToLocal
+
+CPhysBallSocket
+
+CPhysBox
+
+CPhysConstraint
+
+CPhysExplosion
+
+CPhysFixed
+
+CPhysForce
+
+CPhysHinge
+
+CPhysHingeAlias_phys_hinge_local
+
+CPhysImpact
+
+CPhysLength
+
+CPhysMagnet
+
+CPhysMotor
+
+CPhysPulley
+
+CPhysSlideConstraint
+
+CPhysThruster
+
+CPhysTorque
+
+CPhysWheelConstraint
+
+CPhysicalButton
+
+CPhysicsEntitySolver
+
+CPhysicsNPCSolver
+
+CPhysicsProp
+	include by name: m_spawnflags
+	exclude by name: m_flexWeight, m_animationController.m_flPlaybackRate
+	exclude by user group: m_flPoseParameter, overlay_vars
+	bool m_bAwake
+
+CPhysicsPropOverride
+
+CPhysicsPropRespawnable
+
+CPhysicsSpring
+
+CPhysicsWire
+
+CPlatTrigger
+
+CPlayerControllerComponent
+
+CPlayerPawnComponent
+
+CPlayerSprayDecal
+	int m_nUniqueID
+	uint32 m_unAccountID
+	uint32 m_unTraceID
+	VectorWS m_vecEndPos
+	VectorWS m_vecStart
+	Vector m_vecLeft
+	Vector m_vecNormal
+	CPlayerSlot m_nPlayerSlot (sent as: int32)
+	int m_nEntity
+	int m_nHitbox
+	float m_flCreationTime
+	int m_nTintID
+	uint8 m_nVersion
+	CUtlString m_sTextureName
+	CUtlString m_sTextureNameDamaged
+	CUtlString m_sSoundNameDamaged
+	bool m_bDamaged
+
+CPlayerTrackedStatsEntity
+	CPlayerSlot m_nPlayerSlot (sent as: int32)
+
+CPlayerVisibility
+	float m_flVisibilityStrength (change callbacks: PlayerVisibilityStateChanged)
+	float m_flFogDistanceMultiplier (change callbacks: PlayerVisibilityStateChanged)
+	float m_flFogMaxDensityMultiplier (change callbacks: PlayerVisibilityStateChanged)
+	float m_flFadeTime (change callbacks: PlayerVisibilityStateChanged)
+	bool m_bStartDisabled
+	bool m_bIsEnabled
+
+CPlayer_AutoaimServices
+
+CPlayer_CameraServices
+	QAngle m_vecPunchAngle (encoder: qangle_precise; priority: 32; user groups: LocalPlayerExclusive)
+	QAngle m_vecPunchAngleVel (encoder: qangle_precise; user groups: LocalPlayerExclusive)
+	GameTick_t m_nPunchAngleJoltTick (sent as: int32; change callbacks: OnPunchJoltChanged)
+	fogplayerparams_t m_PlayerFog
+	CHandle< CColorCorrection> m_hColorCorrectionCtrl (sent as: ehandle)
+	CHandle< CBaseEntity> m_hViewEntity (sent as: ehandle)
+	CHandle< CTonemapController2> m_hTonemapController (sent as: ehandle; user groups: LocalPlayerAndObserversExclusive)
+	audioparams_t m_audio (user groups: LocalPlayerAndObserversExclusive)
+	CHandle<CPostProcessingVolume> m_PostProcessingVolumes (sent as: ehandle; user groups: LocalPlayerAndObserversExclusive)
+
+CPlayer_FlashlightServices
+
+CPlayer_ItemServices
+
+CPlayer_MovementServices
+	ButtonBitMask_t m_nToggleButtonDownMask (user groups: LocalPlayerAndPredictorsExclusive)
+	float32 m_flMaxspeed (bit count: 12; encode flags: 1; min: 0; max: 2048)
+	float32 m_arrForceSubtickMoveWhen
+
+CPlayer_MovementServices_Humanoid
+	float32 m_flFallVelocity (bit count: 17; encode flags: 4; min: -4096; max: 4096)
+
+CPlayer_ObserverServices
+	uint8 m_iObserverMode (change callbacks: OnObserverModeChanged)
+	CHandle< CBaseEntity> m_hObserverTarget (sent as: ehandle; change callbacks: OnObserverTargetChanged)
+
+CPlayer_UseServices
+
+CPlayer_WaterServices
+
+CPlayer_WeaponServices
+	CHandle< CBasePlayerWeapon > m_hMyWeapons (sent as: ehandle; change callbacks: OnMyWeaponsChanged)
+	CHandle< CBasePlayerWeapon> m_hActiveWeapon (sent as: ehandle; change callbacks: OnActiveWeaponChanged)
+	CHandle< CBasePlayerWeapon> m_hLastWeapon (sent as: ehandle; user groups: LocalPlayerAndPredictorsExclusive)
+	uint16 m_iAmmo (change callbacks: OnReserveAmmoChanged)
+
+CPointAngleSensor
+
+CPointAngularVelocitySensor
+
+CPointBroadcastClientCommand
+
+CPointCamera
+	float m_FOV
+	float m_Resolution
+	bool m_bFogEnable
+	Color m_FogColor
+	float m_flFogStart
+	float m_flFogEnd
+	float m_flFogMaxDensity
+	bool m_bActive
+	bool m_bUseScreenAspectRatio
+	float m_flAspectRatio
+	bool m_bNoSky
+	float m_fBrightness
+	float m_flZFar
+	float m_flZNear
+	bool m_bCanHLTVUse
+	bool m_bAlignWithParent
+	bool m_bDofEnabled
+	float m_flDofNearBlurry
+	float m_flDofNearCrisp
+	float m_flDofFarCrisp
+	float m_flDofFarBlurry
+	float m_flDofTiltToGround
+
+CPointCameraVFOV
+
+CPointChildModifier
+
+CPointClientCommand
+
+CPointClientUIDialog
+	EHANDLE m_hActivator (sent as: ehandle; change callbacks: OnDialogActivatorChanged)
+
+CPointClientUIWorldPanel
+	bool m_bIgnoreInput
+	bool m_bLit
+	bool m_bFollowPlayerAcrossTeleport
+	float m_flWidth
+	float m_flHeight
+	float m_flDPI
+	float m_flWindowUIScale
+	float m_flInteractDistance
+	float m_flDepthOffset
+	uint32 m_unOwnerContext
+	uint32 m_unHorizontalAlign
+	uint32 m_unVerticalAlign
+	uint32 m_unOrientation
+	bool m_bAllowInteractionFromAllSceneWorlds
+	string_t m_vecCSSClasses
+	bool m_bOpaque
+	bool m_bNoDepth
+	bool m_bVisibleWhenParentNoDraw
+	bool m_bRenderBackface
+	bool m_bUseOffScreenIndicator
+	bool m_bExcludeFromSaveGames
+	bool m_bGrabbable
+	bool m_bOnlyRenderToTexture
+	bool m_bDisableMipGen
+	int32 m_nExplicitImageLayout
+	bool m_bIgnoreParentOrientation
+
+CPointClientUIWorldTextPanel
+	char m_messageText
+
+CPointCommentaryNode
+	string_t m_iszCommentaryFile
+	CHandle< CBaseEntity> m_hViewPosition (sent as: ehandle)
+	bool m_bActive
+	GameTime_t m_flStartTime (sent as: float32)
+	float32 m_flStartTimeInCommentary
+	string_t m_iszTitle
+	string_t m_iszSpeakers
+	int m_iNodeNumber
+	int m_iNodeNumberMax
+	bool m_bListenedTo
+
+CPointEntity
+
+CPointEntityFinder
+
+CPointHurt
+
+CPointModifierThinker
+
+CPointOrient
+
+CPointPrefab
+
+CPointProximitySensor
+
+CPointPulse
+
+CPointPush
+
+CPointServerCommand
+
+CPointTeleport
+
+CPointTemplate
+
+CPointValueRemapper
+	bool m_bDisabled
+	bool m_bUpdateOnClient
+	ValueRemapperInputType_t m_nInputType
+	CHandle< CBaseEntity> m_hRemapLineStart (sent as: ehandle)
+	CHandle< CBaseEntity> m_hRemapLineEnd (sent as: ehandle)
+	float m_flMaximumChangePerSecond
+	float m_flDisengageDistance
+	float m_flEngageDistance
+	bool m_bRequiresUseKey
+	ValueRemapperOutputType_t m_nOutputType
+	CHandle< CBaseEntity > m_hOutputEntities (sent as: ehandle)
+	ValueRemapperHapticsType_t m_nHapticsType
+	ValueRemapperMomentumType_t m_nMomentumType
+	float m_flMomentumModifier
+	float m_flSnapValue
+	ValueRemapperRatchetType_t m_nRatchetType
+	float m_flInputOffset
+
+CPointVelocitySensor
+
+CPointWorldText
+	char m_messageText
+	char m_FontName
+	char m_BackgroundMaterialName
+	bool m_bEnabled
+	bool m_bFullbright
+	float m_flWorldUnitsPerPx
+	float m_flFontSize
+	float m_flDepthOffset
+	bool m_bDrawBackground
+	float m_flBackgroundBorderWidth
+	float m_flBackgroundBorderHeight
+	float m_flBackgroundWorldToUV
+	Color m_Color
+	PointWorldTextJustifyHorizontal_t m_nJustifyHorizontal
+	PointWorldTextJustifyVertical_t m_nJustifyVertical
+	PointWorldTextReorientMode_t m_nReorientMode
+
+CPostProcessingVolume
+	HPostProcessingStrong m_hPostSettings (resource type: vpost)
+	float m_flFadeDuration
+	float m_flMinLogExposure
+	float m_flMaxLogExposure
+	float m_flMinExposure
+	float m_flMaxExposure
+	float m_flExposureCompensation
+	float m_flExposureFadeSpeedUp
+	float m_flExposureFadeSpeedDown
+	float m_flTonemapEVSmoothingRange
+	bool m_bMaster
+	bool m_bExposureControl
+
+CPrecipitation
+
+CPrecipitationBlocker
+
+CProjectile_Boho_BouncyProjectile
+
+CProjectile_Boho_SkipGrenade
+
+CProjectile_BookwormDragon_Projectile
+
+CProjectile_Doorman_Cart_Projectile
+
+CProjectile_Familiar_MovingToAttach
+
+CProjectile_GraveStone_Projectile
+	float m_flWidth
+	GameTime_t m_tDieTime (sent as: float32)
+
+CProjectile_KnightChargeLeading_Projectile
+
+CProjectile_KnightCharge_Projectile
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+
+CProjectile_Necro_HauntProjectile
+
+CProjectile_Necro_ZombieWall_Projectile
+
+CProjectile_Perched_Predator
+
+CProjectile_PunkgoatTether
+
+CProjectile_Rolling_FireBall
+
+CProjectile_Rutger_Rocket
+
+CProjectile_Stomp_Projectile
+	float m_flWidth
+	GameTime_t m_tDieTime (sent as: float32)
+
+CProjectile_Synth_Barrage
+
+CProjectile_Synth_PlasmaFlux
+	bool m_bSpawnedInNoTeleportArea
+
+CPropAnimatingBreakable
+	include by name: m_iMaxHealth, m_iHealth
+
+CPropDataComponent
+
+CPropDoorRotating
+
+CPropDoorRotatingBreakable
+
+CPulseGameBlackboard
+	CUtlString m_strGraphName
+	CUtlString m_strStateBlob (change callbacks: OnBlackboardStateChanged)
+
+CPushable
+
+CRagdollConstraint
+
+CRagdollMagnet
+
+CRagdollManager
+	int8 m_iCurrentMaxRagdollCount
+
+CRagdollProp
+	CPropDataComponent::Storage_t m_CPropDataComponent (class: CPropDataComponent; alias: CPropDataComponent; type alias: CPropDataComponent; user groups: CPropDataComponent)
+	bool m_ragEnabled
+	Vector m_ragPos (encoder: coord)
+	QAngle m_ragAngles (encoder: qangle; bit count: 13)
+	float32 m_flBlendWeight (bit count: 8; encode flags: 1; min: 0; max: 1)
+
+CRagdollPropAlias_physics_prop_ragdoll
+
+CRagdollPropAttached
+	uint32 m_boneIndexAttached
+	uint32 m_ragdollAttachedObjectIndex
+	Vector m_attachmentPointBoneSpace (encoder: coord)
+	Vector m_attachmentPointRagdollSpace (encoder: coord)
+
+CRectLight
+	bool m_bShowLight (change callbacks: RenderingChanged)
+
+CRegenerateZone
+
+CRenderComponent
+
+CRenderPortal
+	exclude by name: m_flSimulationTime
+	EHANDLE m_hLocalPortalLink (sent as: ehandle)
+	EHANDLE m_hRemotePortalLink (sent as: ehandle)
+	CUtlString m_brushModelName
+	float m_flFadeStartDist
+	float m_flFadeEndDist
+	float m_flFadeStartAngle
+	float m_flFadeEndAngle
+	float m_flRemoteViewForwardOffset
+	Color m_fadeToColor
+
+CRevertSaved
+
+CRopeKeyframe
+	include by name: CGameSceneNode::m_hParent, CGameSceneNode::m_hierarchyAttachName, m_nMinCPULevel, m_nMaxCPULevel, m_nMinGPULevel, m_nMaxGPULevel
+	include by user group: Origin
+	uint16 m_RopeFlags
+	int16 m_Slack
+	float32 m_Width
+	float32 m_TextureScale (bit count: 10; min: 0.1; max: 10)
+	uint8 m_nSegments
+	bool m_bConstrainBetweenEndpoints
+	HMaterialStrong m_iRopeMaterialModelIndex (resource type: vmat)
+	uint8 m_Subdiv
+	uint8 m_nChangeCount
+	int16 m_RopeLength
+	uint8 m_fLockedPoints
+	float32 m_flScrollSpeed
+	CHandle< CBaseEntity> m_hStartPoint (sent as: ehandle)
+	CHandle< CBaseEntity> m_hEndPoint (sent as: ehandle)
+	AttachmentHandle_t m_iStartAttachment (sent as: uint8)
+	AttachmentHandle_t m_iEndAttachment (sent as: uint8)
+
+CRopeKeyframeAlias_move_rope
+
+CRotButton
+
+CRotDoor
+
+CRotatorTarget
+
+CRuleBrushEntity
+
+CRuleEntity
+
+CRulePointEntity
+
+CSceneEntity
+	bool m_bIsPlayingBack
+	bool m_bPaused
+	bool m_bMultiplayer
+	bool m_bAutogenerated
+	float32 m_flForceClientTime
+	CHandle< CBaseModelEntity > m_hActorList (sent as: ehandle)
+	uint16 m_nSceneStringIndex
+
+CSceneEntityAlias_logic_choreographed_scene
+
+CSceneListManager
+
+CScrapGrenadeProjectile
+
+CScriptComponent
+
+CScriptItem
+
+CScriptNavBlocker
+
+CScriptTriggerHurt
+
+CScriptTriggerMultiple
+
+CScriptTriggerOnce
+
+CScriptTriggerPush
+
+CScriptedSequence
+
+CServerOnlyEntity
+
+CServerOnlyModelEntity
+
+CServerOnlyPointEntity
+
+CServerRagdollTrigger
+
+CShatterGlassShardPhysics
+	exclude by name: m_hModel
+	shard_model_desc_t m_ShardDesc
+
+CShower
+
+CSimpleMarkupVolumeTagged
+
+CSingleplayRules
+
+CSkeletonAnimationController
+
+CSkeletonInstance
+	CModelState m_modelState
+	bool m_bUseParentRenderBounds
+	CUtlStringToken m_materialGroup (sent as: uint32; change callbacks: skeletonMaterialGroupChanged)
+	uint8 m_nHitboxSet
+
+CSkyCamera
+	sky3dparams_t m_skyboxData
+	CUtlStringToken m_skyboxSlotToken (sent as: uint32)
+
+CSkyboxReference
+
+CSoundAreaEntityBase
+	bool m_bDisabled
+	string_t m_iszSoundAreaType
+	Vector m_vPos
+
+CSoundAreaEntityOrientedBox
+	Vector m_vMin
+	Vector m_vMax
+
+CSoundAreaEntitySphere
+	float m_flRadius
+
+CSoundEventAABBEntity
+	Vector m_vMins
+	Vector m_vMaxs
+
+CSoundEventBoxEntity
+	SoundeventBoxHelperNetworked_t m_vecBoxHelpersNetworked
+
+CSoundEventBoxHelper
+	Vector m_vMins
+	Vector m_vMaxs
+
+CSoundEventConeEntity
+
+CSoundEventEntity
+
+CSoundEventEntityAlias_snd_event_point
+
+CSoundEventMultiPointEntity
+
+CSoundEventOBBEntity
+	Vector m_vMins
+	Vector m_vMaxs
+
+CSoundEventParameter
+
+CSoundEventPathCornerEntity
+	SoundeventPathCornerPairNetworked_t m_vecCornerPairsNetworked
+
+CSoundEventSphereEntity
+	float m_flRadius
+
+CSoundOpvarSetAABBEntity
+
+CSoundOpvarSetAutoRoomEntity
+
+CSoundOpvarSetBoxEntity
+
+CSoundOpvarSetDomeEntity
+
+CSoundOpvarSetEntity
+
+CSoundOpvarSetOBBEntity
+
+CSoundOpvarSetOBBWindEntity
+
+CSoundOpvarSetPathCornerEntity
+
+CSoundOpvarSetPointBase
+	string_t m_iszStackName
+	string_t m_iszOperatorName
+	string_t m_iszOpvarName
+	int m_iOpvarIndex
+	bool m_bUseAutoCompare
+	bool m_bFastRefresh
+
+CSoundOpvarSetPointEntity
+
+CSoundOpvarSetPrecipitationEntity
+
+CSoundOpvarSetPrecipitationOBBEntity
+
+CSoundStackSave
+
+CSplineConstraint
+
+CSpotlightEnd
+	float32 m_flLightScale
+	float32 m_Radius
+
+CSprite
+	HMaterialStrong m_hSpriteMaterial (resource type: vmat)
+	CHandle< CBaseEntity> m_hAttachedToEntity (sent as: ehandle)
+	AttachmentHandle_t m_nAttachment (sent as: uint8)
+	float32 m_flSpriteFramerate (bit count: 8; encode flags: 2; min: 0; max: 60)
+	float32 m_flFrame (bit count: 20; encode flags: 1; min: 0; max: 256)
+	uint32 m_nBrightness
+	float32 m_flBrightnessDuration
+	float32 m_flSpriteScale (change callbacks: OnSpriteScaleChanged)
+	float32 m_flScaleDuration
+	bool m_bWorldSpaceScale
+	float32 m_flGlowProxySize (bit count: 6; encode flags: 2; min: 0; max: 64)
+	float32 m_flHDRColorScale
+
+CSpriteAlias_env_glow
+
+CSpriteOriented
+
+CStreetBrawlController
+	EStreetBrawlGameState m_eStreetBrawlState (change callbacks: streetBrawlStateChanged)
+	GameTime_t m_flStreetBrawlStateStartTime (sent as: float32)
+	GameTime_t m_flNextStateTime (sent as: float32)
+	float m_flStreetBrawlTotalNonCombatTime
+	int m_iRound
+	int m_iLastBuyCountDown
+	int m_iTeamSapphireScore
+	int m_iTeamAmberScore
+
+CTankTargetChange
+
+CTankTrainAI
+
+CTeam
+	include by name: m_iTeamNum
+	CHandle< CBasePlayerController > m_aPlayerControllers (sent as: ehandle; alias: m_aPlayers)
+	CHandle< CBasePlayerPawn > m_aPlayers (sent as: ehandle; alias: m_aPawns)
+	int32 m_iScore
+	char m_szTeamname
+
+CTeamRelativeParticleSystem
+	include by name: m_iTeamNum
+	exclude by name: m_iEffectIndex
+	HParticleSystemDefinitionStrong m_iFriendlyEffectIndex (resource type: vpcf)
+	HParticleSystemDefinitionStrong m_iEnemyEffectIndex (resource type: vpcf)
+
+CTeamTrackedStatsEntity
+	CitadelTeam_t m_nTeam
+
+CTeamplayRules
+
+CTemplateNPCMaker
+
+CTestEffect
+
+CTestPulseIO
+
+CTextureBasedAnimatable
+	bool m_bLoop
+	float m_flFPS
+	HRenderTextureStrong m_hPositionKeys (resource type: vtex)
+	HRenderTextureStrong m_hRotationKeys (resource type: vtex)
+	Vector m_vAnimationBoundsMin
+	Vector m_vAnimationBoundsMax
+	float m_flStartTime
+	float m_flStartFrame
+
+CTier3BossAbility
+
+CTimerEntity
+
+CTonemapController2
+	float m_flAutoExposureMin
+	float m_flAutoExposureMax
+	float m_flExposureAdaptationSpeedUp
+	float m_flExposureAdaptationSpeedDown
+	float m_flTonemapEVSmoothingRange
+
+CTonemapController2Alias_env_tonemap_controller2
+
+CTonemapTrigger
+
+CTouchExpansionComponent
+
+CTriggerActiveWeaponDetect
+
+CTriggerAddModifier
+
+CTriggerBrush
+
+CTriggerBurrowUnderground
+
+CTriggerCallback
+
+CTriggerDetectBulletFire
+
+CTriggerDetectExplosion
+
+CTriggerFan
+	Vector m_vFanOriginOffset
+	Vector m_vDirection
+	bool m_bPushTowardsInfoTarget
+	bool m_bPushAwayFromInfoTarget
+	Quaternion m_qNoiseDelta
+	CHandle< CInfoFan> m_hInfoFan (sent as: ehandle)
+	float m_flForce
+	bool m_bFalloff
+	CountdownTimer m_RampTimer
+
+CTriggerGameEvent
+	CUtlString m_strStartTouchEventName
+	CUtlString m_strEndTouchEventName
+	CUtlString m_strTriggerID
+
+CTriggerGravity
+
+CTriggerHurt
+
+CTriggerIcePathVolume
+
+CTriggerImpact
+
+CTriggerInvisVolume
+
+CTriggerItemShop
+	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
+	string_t m_iszSoundName
+	int m_iLane
+
+CTriggerItemShopSafeZone
+
+CTriggerLerpObject
+
+CTriggerLook
+	bool m_bTestOcclusion
+	bool m_bTestAllVisibleOcclusion
+
+CTriggerMidBossShield
+
+CTriggerModifier
+
+CTriggerMultiple
+
+CTriggerNeutralIdles
+
+CTriggerNeutralShield
+
+CTriggerObscuredVolume
+
+CTriggerOnce
+
+CTriggerPassthroughFakeWall
+
+CTriggerPhysics
+	float m_gravityScale
+	float m_linearLimit
+	float m_linearDamping
+	float m_angularLimit
+	float m_angularDamping
+	float m_linearForce
+	float m_flFrequency
+	float m_flDampingRatio
+	Vector m_vecLinearForcePointAt
+	bool m_bCollapseToForcePoint
+	VectorWS m_vecLinearForcePointAtWorld
+	Vector m_vecLinearForceDirection
+	bool m_bForceDirectionIsInLocalSpace
+	bool m_bConvertToDebrisWhenPossible
+
+CTriggerPingLocation
+
+CTriggerProximity
+
+CTriggerPush
+
+CTriggerRemove
+
+CTriggerRemoveModifier
+
+CTriggerSave
+
+CTriggerSndSosOpvar
+
+CTriggerSoundscape
+
+CTriggerSuspendModifier
+
+CTriggerTeamBase
+
+CTriggerTeleport
+
+CTriggerTier3Phase2Shield
+	int8 m_nNumEnemyPlayers
+
+CTriggerTrooperDamageReductionDetector
+
+CTriggerTrooperDetector
+
+CTriggerVolume
+
+CTrooperApproachHorizon
+
+CWaterBullet
+
+CWorld
+
+C_HeroPreview
+	CCitadelHeroComponent::Storage_t m_CCitadelHeroComponent (class: CCitadelHeroComponent; alias: CCitadelHeroComponent; type alias: CCitadelHeroComponent; user groups: CCitadelHeroComponent)
+
+CapturePointTeamState_t
+	struct not in network utl vector embedded
+	float m_flCaptureProgress
+	int m_nCapturerCount
+	bool m_bIsBlocked
+
+CitadelHeroSpawnData_t
+	HeroID_t m_nHeroID (sent as: uint32)
+	HeroBadgeXP_t m_unHeroBadgeXP (sent as: uint32)
+
+CitadelStolenAbilitySlot_t
+	EAbilitySlots_t m_eStolenSlot
+	bool m_bIsActivelyStolen
+
+ConsumedComponentState_t
+	AbilityID_t m_unComponentID (sent as: uint32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int m_nRefCount (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bPurchased (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CountdownTimer
+	float32 m_duration
+	GameTime_t m_timestamp (sent as: float32)
+	float32 m_timescale
+	WorldGroupId_t m_nWorldGroupId (sent as: uint32)
+
+DynamicAbilityValues_t
+	AbilityID_t m_SourceAbilityID (sent as: uint32)
+	EntitySubclassID_t m_vecImbuedAbilities (sent as: uint32)
+	EModifierValue m_eValType
+	float m_flValue
+
+EntityRenderAttribute_t
+	CUtlStringToken m_ID (sent as: uint32)
+	Vector4D m_Values
+
+FilterDamageType
+
+FilterHealth
+
+FullSellPriceAbilityUpgrades_t
+	struct not in network utl vector embedded
+	CUtlString m_strAbilityUpgrade
+	GameTime_t m_unGameTimePurchased (sent as: float32)
+
+IEconItemInterface
+
+IHasAttributes
+
+IHideoutInteractable
+
+ISkeletonAnimationController
+
+ItemDraftItem_t
+	AbilityID_t m_unItemID (sent as: uint32)
+	AbilityUpgradeBits_t m_nUpgradeBits
+	int m_nAbilityLevel
+
+ItemDraftOption_t
+	ItemDraftItem_t m_Item
+	ItemDraftItem_t m_BonusItem1
+	ItemDraftItem_t m_BonusItem2
+	bool m_bHasBeenDrafted
+	bool m_bRare
+
+ItemDraftRoundState_t
+	ItemDraftOption_t m_vecOptions
+	ItemDraftRoundID_t m_nID (sent as: uint32)
+	int m_nDraftsRemaining
+	int m_nDraftsTotal
+	int m_nRoundsRemaining
+	int m_nRoundsTotal
+
+ItemImbuementPair_t
+	AbilityID_t m_SourceItemID (sent as: uint32)
+	EntitySubclassID_t m_vecImbuedAbilities (sent as: uint32)
+
+ItemTradeOption_t
+	AbilityID_t m_TradeInItem (sent as: uint32)
+	ItemDraftItem_t m_ReceiveItem
+	bool m_bHasBeenDrafted
+	ItemTradeOptionID_t m_nID (sent as: uint32)
+
+ItemTradeRoundState_t
+	ItemTradeOption_t m_vecOptions
+	ItemTradeRoundID_t m_nID (sent as: uint32)
+	int m_nRerolls
+
+LockonTarget_t
+	float m_flGainRate
+	float m_flDrainRate
+	float m_flMaxValue
+	float m_flLatchedValue
+	GameTime_t m_flLatchedTime (sent as: float32)
+	ELockonState m_eLockonState
+	EHANDLE m_hTarget (sent as: ehandle)
+
+PhysicsRagdollPose_t
+	CTransform m_RelativeTransforms (encoder: coord; change callbacks: OnTransformChanged)
+	EHANDLE m_hOwner (sent as: ehandle)
+
+PlayOfTheGamePlaybackData_t
+	CPlayerSlot m_vecParticipants (sent as: int32)
+	PlayOfTheGameTrigger_t m_vecTriggers
+	GameTime_t m_tBeginTimeWithPrewarm (sent as: float32)
+	GameTime_t m_tEndTime (sent as: float32)
+
+PlayOfTheGameTrigger_t
+	GameTime_t m_tTriggerTime (sent as: float32)
+	EPlayOfTheGameReplayTrigger m_eType
+	CPlayerSlot m_nTarget (sent as: int32)
+
+PlayerDataGlobal_t
+	int32 m_iLevel
+	int32 m_iMaxAmmo
+	int32 m_iHealthMax
+	float m_flHealthRegen
+	GameTime_t m_flRespawnTime (sent as: float32)
+	HeroID_t m_nHeroID (sent as: uint32)
+	HeroID_t m_nPreGameHeroID (sent as: uint32)
+	HeroBadgeXP_t m_unHeroBadgeXP (sent as: uint32)
+	int32 m_iGold
+	int32 m_iGoldNetWorth
+	int32 m_iAPNetWorth
+	int32 m_iCreepGold
+	int32 m_iCreepGoldSoloBonus
+	int32 m_iCreepGoldKill
+	int32 m_iCreepGoldAirOrb
+	int32 m_iCreepGoldGroundOrb
+	int32 m_iCreepGoldDeny
+	int32 m_iCreepGoldNeutral
+	int32 m_iFarmBaseline
+	int32 m_iHealth
+	int32 m_iPlayerKills
+	int32 m_iNPCKills
+	int32 m_iPlayerAssists
+	int32 m_iDeaths
+	int32 m_iDenies
+	int32 m_iLastHits
+	int32 m_iKillStreak
+	bool m_bAlive
+	int32 m_nHeroDraftPosition (change callbacks: HeroDraftPositionChanged)
+	bool m_bUltimateTrained
+	GameTime_t m_flUltimateCooldownStart (sent as: float32)
+	GameTime_t m_flUltimateCooldownEnd (sent as: float32)
+	bool m_bHasRejuvenator
+	bool m_bHasRebirth
+	bool m_bFlaggedAsCheater
+	bool m_bAbandon
+	int32 m_iHeroDamage
+	int32 m_iHeroHealing
+	int32 m_iSelfHealing
+	int32 m_iObjectiveDamage
+	EntitySubclassID_t m_vecUpgrades (sent as: uint32; user groups: Abilities; change callbacks: pdgUpgradesChanged)
+	EntitySubclassID_t m_vecBonusCounterAbilities (sent as: uint32)
+	int32 m_vecBonusCounterValues (user groups: Abilities; change callbacks: pdgBonusCounterChanged)
+	EntitySubclassID_t m_vecBonusCounterModifiers (sent as: uint32)
+	int32 m_vecModifierBonusCounterValues (user groups: Abilities; change callbacks: pdgBonusCounterChanged)
+	AbilityID_t m_tHeldItem (sent as: uint32; user groups: Abilities; change callbacks: pdgUpgradesChanged)
+	ItemImbuementPair_t m_vecImbuements
+	DynamicAbilityValues_t m_vecDynamicAbilityValues
+	StatViewerModifierValues_t m_vecStatViewerModifierValues
+	StolenAbilityPair_t m_vecStolenAbilities (user groups: Abilities; change callbacks: pdgStolenAbilityChanged)
+	AbilityUpgradeState_t m_vecAbilityUpgradeState (user groups: Abilities; change callbacks: pdgAbilityUpgradeStateChanged)
+	CUtlString m_strIconHeroCardOverride
+	CUtlString m_strIconHeroCardCriticalOverride
+	CUtlString m_strIconHeroCardGloatOverride
+	PackedRank_t m_unPackedRank
+
+STeamFOWEntity
+	CEntityIndex m_nEntIndex (sent as: int32)
+	int m_nTeam
+	Class_T m_eClass
+	int m_iLane
+	EMinimapHeight m_eHeight
+	bool m_bVisibleOnMap
+	bool m_bBackdoorProtectionActive
+	GameTick_t m_nTickHidden (sent as: int32)
+	CUtlString m_strCSSClass
+	uint8 m_nHealthPercent
+	uint8 m_nPositionX (encoder: fixed8; priority: 32)
+	uint8 m_nPositionY (encoder: fixed8; priority: 32)
+
+STrooperFOWEntity
+	uint8 m_nPosX (encoder: fixed8; priority: 32)
+	uint8 m_nPosY (encoder: fixed8; priority: 32)
+	uint8 m_nFlags (encoder: fixed8)
+
+SoundeventBoxHelperNetworked_t
+	struct not in network utl vector embedded
+	VectorWS vOrigin
+	QAngle qAngles
+	Vector vMins
+	Vector vMaxs
+
+SoundeventPathCornerPairNetworked_t
+	struct not in network utl vector embedded
+	VectorWS vP1
+	VectorWS vP2
+	float flPathLengthSqr
+	float flP1Pct
+	float flP2Pct
+
+StatViewerModifierValues_t
+	EntitySubclassID_t m_SourceModifierID (sent as: uint32)
+	AbilityID_t m_SourceAbilityID (sent as: uint32)
+	EModifierValue m_eValType
+	float m_flValue
+
+StolenAbilityPair_t
+	EAbilitySlots_t m_ItemSlotType
+	AbilityID_t m_StolenAbilityID (sent as: uint32)
+
+TeamKothState_t
+	float m_flCaptureProgressFrac
+	int m_nCapturerCount
+	bool m_bIsBlocked
+	HeroID_t m_vecParticipants (sent as: uint32)
+
+TrackedStatNetworkData_t
+	TrackedStatID_t unStatID (sent as: uint32)
+	TrackedStatValue_t unStatValue (sent as: int32)
+
+VPhysicsCollisionAttribute_t
+	uint64 m_nInteractsAs
+	uint64 m_nInteractsWith
+	uint64 m_nInteractsExclude
+	uint32 m_nEntityId
+	uint32 m_nOwnerId
+	uint16 m_nHierarchyId
+	uint16 m_nDetailLayerMask
+	uint8 m_nDetailLayerMaskType
+	uint8 m_nTargetDetailLayer
+	uint8 m_nCollisionGroup
+	uint8 m_nCollisionFunctionMask
+
+ViewAngleServerChange_t
+	FixAngleSet_t nType
+	QAngle qAngle (encoder: qangle_precise)
+	uint32 nIndex
+
+WeakPoint_t
+	EHANDLE m_hOuter (sent as: ehandle; change callbacks: OnOuterChanged)
+	HitGroup_t m_nCritHitGroup (change callbacks: OnFlashDataChanged)
+	int m_nBodyGroup (change callbacks: OnFlashDataChanged)
+	bool m_bPermanentlyBroken (change callbacks: OnPermanentlyBroken)
+	int m_nBrokenBodygroupIndex
+
+audioparams_t
+	VectorWS localSound (encoder: coord)
+	int32 soundscapeIndex
+	uint8 localBits
+	int soundscapeEntityListIndex
+	uint32 soundEventHash
+
+fogparams_t
+	Vector dirPrimary (encoder: coord)
+	Color colorPrimary
+	Color colorSecondary
+	Color colorPrimaryLerpTo (user groups: FogController)
+	Color colorSecondaryLerpTo (user groups: FogController)
+	float32 start
+	float32 end
+	float32 farz (user groups: FogController)
+	float32 maxdensity
+	float32 exponent
+	float32 HDRColorScale
+	float32 skyboxFogFactor (user groups: FogController)
+	float32 skyboxFogFactorLerpTo (user groups: FogController)
+	float32 startLerpTo (user groups: FogController)
+	float32 endLerpTo (user groups: FogController)
+	float32 maxdensityLerpTo (user groups: FogController)
+	GameTime_t lerptime (sent as: float32; user groups: FogController)
+	float32 duration (user groups: FogController)
+	float32 blendtobackground (user groups: FogController)
+	float32 scattering (user groups: FogController)
+	float32 locallightscale (user groups: FogController)
+	bool enable
+	bool blend
+
+fogplayerparams_t
+	CHandle< CFogController> m_hCtrl (sent as: ehandle; user groups: PlayerFogController)
+
+ice_path_shard_model_desc_t
+	int32 m_nModelID
+	Vector2D m_vecPanelSize
+	VectorWS m_vecPanelVertices
+	float m_flThickness
+	CUtlStringToken m_SurfacePropStringToken (sent as: uint32)
+
+shard_model_desc_t
+	int32 m_nModelID
+	HMaterialStrong m_hMaterialBase (resource type: vmat)
+	HMaterialStrong m_hMaterialDamageOverlay (resource type: vmat)
+	ShardSolid_t m_solid
+	Vector2D m_vecPanelSize
+	Vector2D m_vecStressPositionA
+	Vector2D m_vecStressPositionB
+	Vector2D m_vecPanelVertices
+	Vector4D m_vInitialPanelVertices
+	float m_flGlassHalfThickness
+	bool m_bHasParent
+	bool m_bParentFrozen
+	CUtlStringToken m_SurfacePropStringToken (sent as: uint32)
+
+sky3dparams_t
+	int16 scale
+	VectorWS origin (encoder: coord)
+	bool bClip3DSkyBoxNearToWorldFar
+	float32 flClip3DSkyBoxNearToWorldFarOffset
+	fogparams_t fog
+	WorldGroupId_t m_nWorldGroupID (sent as: uint32)
+
