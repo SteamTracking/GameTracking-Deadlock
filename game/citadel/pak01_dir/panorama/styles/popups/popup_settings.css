@@ -2113,6 +2113,11 @@ PopupSettingsSettingsSection
 	vertical-align: center;
 }
 
+#SettingsBody .SettingsSectionContainer .SettingsPreviewContainer.AccessibilityPreview
+{
+	margin-top: 443px;
+}
+
 #SettingsBody .SettingsSectionContainer .SettingsPreviewContainer Image
 {
 	border: 0px;
@@ -3829,21 +3834,47 @@ PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHer
 	color: brandGreen;
 }
 
-#citadel_settings_communication #citadel_settings_communication_permissions .CommunicationToggle
+.SettingsCheckboxList
+{
+	width: fill-parent-flow( 1 );
+	flow-children: right-wrap;
+	margin: -4px 0px;
+}
+
+.SettingsCheckboxList CitadelSettingsCheckbox
+{
+	vertical-align: top;
+	margin: 4px 0px;
+}
+
+#citadel_settings_communication #citadel_settings_communication_permissions .CommunicationToggle,#citadel_settings_accessibility #SubtitleFilterOptions .SubtitleFilterCheckbox
 {
 	flow-children: right;
 }
 
-#citadel_settings_communication #citadel_settings_communication_permissions .CommunicationToggle Label
+#citadel_settings_communication #citadel_settings_communication_permissions .CommunicationToggle Label,#citadel_settings_accessibility #SubtitleFilterOptions .SubtitleFilterCheckbox Label
 {
 	width: fit-children;
 	margin-left: 8px;
 	padding-right: 24px;
 }
 
-#citadel_settings_communication #citadel_settings_communication_permissions .CommunicationToggle.NotDefaultValue:not(:selected) .TickBox
+#citadel_settings_communication #citadel_settings_communication_permissions .CommunicationToggle.NotDefaultValue:not(:selected) .TickBox,#citadel_settings_accessibility #SubtitleFilterOptions .SubtitleFilterCheckbox.NotDefaultValue:not(:selected) .TickBox
 {
 	box-shadow: inset 0px 0px 6px 0px brandGreen&33;
+}
+
+#citadel_settings_accessibility #SubtitleFilterOptions .SubtitleFilterCheckbox
+{
+	width: 100%;
+}
+
+#citadel_settings_accessibility #SubtitleFilterOptions .SettingsCheckboxList .SettingsRowResetButton
+{
+	ignore-parent-flow: true;
+	horizontal-align: right;
+	vertical-align: center;
+	margin: 0px;
 }
 
 .SubsectionLabel
@@ -3985,7 +4016,7 @@ PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHer
 #AccessibilityPreviewContainer
 {
 	height: 240px;
-	margin-top: 24px;
+	margin-top: 444px;
 }
 
 #AccessibilityPreviewContainer Image

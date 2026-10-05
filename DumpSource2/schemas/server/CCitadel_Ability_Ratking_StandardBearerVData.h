@@ -18,6 +18,8 @@ class CCitadel_Ability_Ratking_StandardBearerVData : public CitadelAbilityVData
 	float32 m_flExplodeTimer; // = 0.25
 	// MPropertyDescription = "How fast he builds up to full charge speed."
 	float32 m_flChargeAccelerationMeters; // = 30
+	// MPropertyDescription = "Gravity multiplier while falling during the charge, so he feels heavier without changing jump height."
+	float32 m_flChargeFallGravityScale; // = 1.5
 	// MPropertyDescription = "Turn rate in degrees per second while charging slowly."
 	float32 m_flTurnRateMax; // = 150
 	// MPropertyDescription = "Turn rate in degrees per second at full charge speed."

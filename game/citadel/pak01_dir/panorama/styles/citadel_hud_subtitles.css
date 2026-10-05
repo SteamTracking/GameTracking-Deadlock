@@ -3,10 +3,17 @@
 CitadelHudSubtitles
 {
 	width: 400px;
-	height: 100%;
+	height: fit-children;
+	vertical-align: bottom;
 	flow-children: up;
 	horizontal-align: center;
 	margin-bottom: 150px;
+	overflow: noclip;
+}
+
+Panel.Subtitle
+{
+	overflow: noclip;
 }
 
 Panel.Subtitle.HasEntity Label.ForWorld
@@ -17,6 +24,100 @@ Panel.Subtitle.HasEntity Label.ForWorld
 Panel.Subtitle:not(.HasEntity) Label.ForEntity
 {
 	visibility: collapse;
+}
+
+Panel.Subtitle Label.ForIcon,Panel.Subtitle Label.ForIconAndName
+{
+	visibility: collapse;
+	overflow: noclip;
+}
+
+.SubtitleSpeakerIcons Panel.Subtitle.HasSpeakerIcon Label.ForWorld
+{
+	visibility: collapse;
+}
+
+.SubtitleSpeakerIcons Panel.Subtitle.HasSpeakerIcon Label.ForEntity
+{
+	visibility: collapse;
+}
+
+.SubtitleSpeakerIcons Panel.Subtitle.HasSpeakerIcon Label.ForIcon
+{
+	visibility: visible;
+}
+
+.SubtitleSpeakerIconsAndNames Panel.Subtitle.HasSpeakerIcon Label.ForWorld
+{
+	visibility: collapse;
+}
+
+.SubtitleSpeakerIconsAndNames Panel.Subtitle.HasSpeakerIcon Label.ForEntity
+{
+	visibility: collapse;
+}
+
+.SubtitleSpeakerIconsAndNames Panel.Subtitle.HasSpeakerIcon Label.ForIcon
+{
+	visibility: visible;
+}
+
+.SubtitleSpeakerIconsAndNames Panel.Subtitle.HasSpeakerIcon.HasEntity Label.ForIcon
+{
+	visibility: collapse;
+}
+
+.SubtitleSpeakerIconsAndNames Panel.Subtitle.HasSpeakerIcon.HasEntity Label.ForIconAndName
+{
+	visibility: visible;
+}
+
+.SubtitleSpeakerIcon
+{
+	overflow: noclip;
+}
+
+.SubtitleSpeakerIcon Image
+{
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+}
+
+.SubtitleSpeakerIcon #SpeakerIconKeyline
+{
+	visibility: collapse;
+	img-shadow: 0px 0px 0px 2 #FFFFFF;
+	wash-color: #000000;
+}
+
+.SubtitleSpeakerIcon.HasKeyline #SpeakerIconKeyline
+{
+	visibility: visible;
+}
+
+.SubtitleSpeakerIcon #SpeakerIconBacking
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #000000;
+	visibility: collapse;
+}
+
+.SubtitleSpeakerIcon.HasDiscBacking #SpeakerIconBacking
+{
+	visibility: visible;
+}
+
+.SubtitleSpeakerIcon.SpeakerIconTeam1 #SpeakerIconImage
+{
+	wash-color: team1Color;
+}
+
+.SubtitleSpeakerIcon.SpeakerIconTeam2 #SpeakerIconImage
+{
+	wash-color: team2Color;
 }
 
 Label

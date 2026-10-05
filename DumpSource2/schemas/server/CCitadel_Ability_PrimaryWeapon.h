@@ -1,3 +1,4 @@
+// MConstructibleClassBase
 class CCitadel_Ability_PrimaryWeapon : public CCitadelBaseAbility
 {
 	GameTime_t m_flLastReloadStartTime;

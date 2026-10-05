@@ -1,3 +1,4 @@
+// MConstructibleClassBase
 class CCitadel_Ability_BaseHeldItem : public CCitadelBaseAbility
 {
 	CHandle< CBaseEntity > m_hProjectile;

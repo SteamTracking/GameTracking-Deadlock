@@ -13,16 +13,6 @@
 				</Panel>
 			</Panel>
 		</snippet>
-		<snippet name="AbilityDamageBar">
-			<Panel class="AbilityDamageContainer">
-				<Image id="AbilityImage" />
-				<Panel class="AbilityDamageBarContainer">
-					<ProgressBarWithMiddle id="DamageRatioProgressBar" class="DamageRatioProgressBar Horizontal" />
-					<Label class="AbilityName" text="{s:damage_name}" />
-					<Label class="DamageValue" text="{d:damage_done}" />
-				</Panel>
-			</Panel>
-		</snippet>
 	</snippets>
 	<Panel class="HudDamageReport ShowDamageByHero">
 		<GlobalClassListener classes="gScoreboardOpen gShopOpen gEditingBuilds gDetailView" />
@@ -35,7 +25,7 @@
 					<Label html="true" class="DamageReportHeader LastRespawn" text="#Citadel_HUD_DamageReport_LastRespawn" />
 					<Panel class="TimeControl">
 						<DropDown id="TimeControlDropDown">
-							<Label id="TimeOptionlastRespawn" class="TimeControlOption" value="-1" text="#Citadel_HUD_DamageReport_CurrentLife" />
+							<Label id="TimeOptionLastRespawn" class="TimeControlOption" value="-1" text="#Citadel_HUD_DamageReport_CurrentLife" />
 							<Label id="TimeOption600" class="TimeControlOption" value="600" text="#Citadel_HUD_DamageReport_Time600" />
 							<Label id="TimeOption300" class="TimeControlOption" value="300" text="#Citadel_HUD_DamageReport_Time300" />
 							<Label id="TimeOption180" class="TimeControlOption" value="180" text="#Citadel_HUD_DamageReport_Time180" />
@@ -61,9 +51,7 @@
 					</Panel>
 					<Panel id="DamageByHero" class="DamageByHero" />
 				</Panel>
-				<Label class="TopDamageSources" text="#Citadel_HUD_DamageReport_TopDamageSources:f" />
 				<CitadelDamageRows id="DamageByAbility" />
-				<Panel id="DamagePieGraph" />
 				<Panel class="Footer">
 					<Panel class="DamageTotal">
 						<Panel class="LabelArea">

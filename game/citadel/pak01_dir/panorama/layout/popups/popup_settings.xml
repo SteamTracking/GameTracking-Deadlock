@@ -122,7 +122,7 @@
 	<PopupSettings class="Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()" onmovedown="CitadelSettingsOnMoveDown()" onmoveup="CitadelSettingsOnMoveUp()">
 		<Panel class="PopupBackground" />
 		<Panel id="SettingsContainer" class="SettingsContainer">
-			<Panel class="WarningMessage LeftRightFlow" id="MissingRequiredKeybindMessage" onmouseover="UIShowTextTooltipStyled( #Hideout_required_keybind_missing_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
+			<Panel class="WarningMessage LeftRightFlow" id="MissingRequiredKeybindMessage" onmouseover="CitadelSettingsShowMissingBindsTooltip()" onmouseout="CitadelSettingsHideMissingBindsTooltip()">
 				<Image id="MissingRequiredKeybindIcon" texturewidth="24px" textureheight="24px" src="s2r://panorama/images/icons/notification_alert.vsvg" />
 				<Label id="MissingRequiredKeybindTitle" text="#Hideout_required_keybind_missing" />
 			</Panel>
@@ -409,9 +409,6 @@
 					<PopupSettingsSettingsSubsection id="citadel_settings_misckeybinds">
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_pause, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="PauseConsoleBinder" bind="Pause" />
-						</PopupSettingsSettingsRow>
-						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_replay_death, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsKeyBinder id="ToggleSpectatorReplayDeathBinder" bind="ReplayDeath" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_teammate_camera, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="SwitchPlayerCam1Binder" bind="SwitchPlayerCam1" />
@@ -1145,6 +1142,11 @@
 									<CitadelSettingsToggle id="CrosshairStaticPipGap" text="#citadel_settings_crosshair_static_pip_gap" invert="true" convar="citadel_crosshair_pip_gap_static" />
 								</PopupSettingsSettingsRow>
 							</Panel>
+							<Panel class="SettingsGroup" id="ReticleCollapseGroup">
+								<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_crosshair_collapse_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+									<CitadelSettingsToggle id="CrosshairCollapse" text="#citadel_settings_crosshair_collapse" convar="citadel_crosshair_pip_gap_collapse" />
+								</PopupSettingsSettingsRow>
+							</Panel>
 							<Panel id="ReticlePreviewContainer" class="SettingsPreviewContainer">
 								<Image src="s2r://panorama/images/buttons/temp_preview_panel_reticle_png.vtex" />
 								<Citadel_AbilityHUDElement_Gun id="ReticlePreview" is_reticle_preview="true" />
@@ -1252,6 +1254,33 @@
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_showsubtitles_desc, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle id="ShowSubtitlesToggle" text="#citadel_settings_showsubtitles" convar="closecaption" search-alias="#citadel_settings_showsubtitles_search" new-setting-index="13" />
 						</PopupSettingsSettingsRow>
+						<Panel class="SettingsGroup" id="SubtitleFilterOptions">
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_filter_allies_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_subtitles_filter_allies" searchable="true" search-alias="#citadel_settings_subtitles_search" />
+								<Panel class="SettingsCheckboxList">
+									<CitadelSettingsCheckbox class="SubtitleFilterCheckbox" text="#citadel_settings_subtitles_filter_abilities" convar="citadel_subtitles_ally_abilities" search-alias="#citadel_settings_subtitles_search" />
+									<CitadelSettingsCheckbox class="SubtitleFilterCheckbox" text="#citadel_settings_subtitles_filter_kills" convar="citadel_subtitles_ally_kills" search-alias="#citadel_settings_subtitles_search" />
+									<CitadelSettingsCheckbox class="SubtitleFilterCheckbox" text="#citadel_settings_subtitles_filter_pings" convar="citadel_subtitles_ally_pings" search-alias="#citadel_settings_subtitles_search" />
+									<CitadelSettingsCheckbox class="SubtitleFilterCheckbox" text="#citadel_settings_subtitles_filter_conversations" convar="citadel_subtitles_ally_conversations" search-alias="#citadel_settings_subtitles_search" />
+								</Panel>
+							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_filter_enemies_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_subtitles_filter_enemies" searchable="true" search-alias="#citadel_settings_subtitles_search" />
+								<Panel class="SettingsCheckboxList">
+									<CitadelSettingsCheckbox class="SubtitleFilterCheckbox" text="#citadel_settings_subtitles_filter_abilities" convar="citadel_subtitles_enemy_abilities" search-alias="#citadel_settings_subtitles_search" />
+									<CitadelSettingsCheckbox class="SubtitleFilterCheckbox" text="#citadel_settings_subtitles_filter_kills" convar="citadel_subtitles_enemy_kills" search-alias="#citadel_settings_subtitles_search" />
+								</Panel>
+							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_filter_npcs_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_subtitles_filter_npcs" searchable="true" search-alias="#citadel_settings_subtitles_search" />
+								<Panel class="SettingsCheckboxList">
+									<CitadelSettingsCheckbox class="SubtitleFilterCheckbox" text="#citadel_settings_subtitles_filter_patrons" convar="citadel_subtitles_patrons" search-alias="#citadel_settings_subtitles_search" />
+									<CitadelSettingsCheckbox class="SubtitleFilterCheckbox" text="#citadel_settings_subtitles_filter_soul_urn" convar="citadel_subtitles_soul_urn" search-alias="#citadel_settings_subtitles_search" />
+									<CitadelSettingsCheckbox class="SubtitleFilterCheckbox" text="#citadel_settings_subtitles_filter_shopkeeper" convar="citadel_subtitles_shopkeeper" search-alias="#citadel_settings_subtitles_search" />
+									<CitadelSettingsCheckbox class="SubtitleFilterCheckbox" text="#citadel_settings_subtitles_filter_newscaster" convar="citadel_subtitles_newscaster" search-alias="#citadel_settings_subtitles_search" />
+								</Panel>
+							</PopupSettingsSettingsRow>
+						</Panel>
 						<Panel class="SettingsGroup" id="CustomSubtitlesOption">
 							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_custom_style_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 								<CitadelSettingsToggle id="CustomSubtitlesToggle" class="RightLeftFlow" text="#citadel_settings_subtitles_custom_style" convar="citadel_subtitles_custom_style" search-alias="#citadel_settings_subtitles_search" />
@@ -1297,6 +1326,14 @@
 							<PopupSettingsSettingsRow id="SubtitlesAllCapsRow" onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_all_caps_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 								<CitadelSettingsToggle id="SubtitlesAllCaps" text="#citadel_settings_subtitles_all_caps" convar="citadel_subtitles_all_caps" search-alias="#citadel_settings_subtitles_search" />
 							</PopupSettingsSettingsRow>
+							<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_subtitles_speaker_names_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+								<Label class="SettingLabel AlignVerticalCenter" text="#citadel_settings_subtitles_speaker_names" searchable="true" search-alias="#citadel_settings_subtitles_search" />
+								<CitadelEnumDropDown id="SubtitlesSpeakerNamesDropDown" convar="citadel_subtitles_speaker_names">
+									<Label id="subtitlesspeakernames_icon_and_name" value="0" text="#citadel_settings_subtitles_speaker_names_icon_and_name" />
+									<Label id="subtitlesspeakernames_icon" value="1" text="#citadel_settings_subtitles_speaker_names_icon" />
+									<Label id="subtitlesspeakernames_name" value="2" text="#citadel_settings_subtitles_speaker_names_name" />
+								</CitadelEnumDropDown>
+							</PopupSettingsSettingsRow>
 						</Panel>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_settings_custom_ui_colors_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle id="CustomUIColorsToggle" class="RightLeftFlow" convar="citadel_custom_ui_colors" text="#citadel_settings_custom_ui_colors" search-alias="#citadel_settings_custom_ui_colors_search" new-setting-index="16" />
@@ -1332,7 +1369,7 @@
 						</PopupSettingsSettingsRow>
 						<Panel class="SettingsSectionColumnGap" />
 						<Panel id="AccessibilityPreviewColumn" class="SettingsSectionColumn SettingsPreview">
-							<Panel id="AccessibilityPreviewContainer" class="SettingsPreviewContainer">
+							<Panel id="AccessibilityPreviewContainer" class="SettingsPreviewContainer AccessibilityPreview">
 								<Image src="s2r://panorama/images/buttons/temp_preview_panel_subtitles_png.vtex" scaling="stretch-to-cover-preserve-aspect" />
 								<CitadelHudSubtitles id="SubtitlePreview" is_preview="true" />
 								<Panel id="EnemyHealthbarPreviewContainer" hittest="false">

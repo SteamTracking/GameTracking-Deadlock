@@ -20,12 +20,11 @@ DropDown
 
 DropDown Label
 {
-	font-size: 14px font-weight: bold;
+	font-size: 14px;
+	font-weight: bold;
 	horizontal-align: middle;
 }
 
-@define bgColor: #b7b7b7;
-@define bgColorDark: #909090;
 @define abilityDamageBarColor: #8A55B3;
 @define weaponDamageBarColor: #af731d;
 @define pureDamageBarColor: grey;
@@ -33,13 +32,9 @@ DropDown Label
 @define weaponDamageBarColorDecreased: #875100;
 @define abilityDamageBarColorIncreased: #8c4379;
 @define weaponDamageBarColorIncreased: #8c501b;
-@define tooltipBGolor: #5f5f5f;
 @define tooltipBGColorDark: #282828;
 @define tooltipBGColorMid: #515151;
 @define tooltipBGColorLight: #909090;
-@define tooltipTextColorDefault: white;
-@define tooltipHeroNameColor: #ffefd7;
-@define tooltipPlayerNameColor: #a69d8f;
 .DamageRatioProgressBar
 {
 	border: 1px solid #00000090;
@@ -47,7 +42,6 @@ DropDown Label
 	width: 25px;
 	height: 100px;
 	margin: 2px 5px;
-	margin-right: 5px;
 	horizontal-align: center;
 }
 
@@ -99,13 +93,6 @@ DropDown Label
 .DamageRatioProgressBar .ProgressBarMiddle.AllPureDamage
 {
 	background-color: pureDamageBarColor;
-}
-
-.DamageRatioProgressBar .arrowIcon
-{
-	width: 10px;
-	height: 10px;
-	background-color: red;
 }
 
 .HudDamageReport.Tab
@@ -163,11 +150,6 @@ DropDown Label
 	visibility: collapse;
 }
 
-.HudDamageReport.Compact .TopDamageSources
-{
-	visibility: collapse;
-}
-
 .DamageReportHeader.LastRespawn
 {
 	visibility: collapse;
@@ -198,11 +180,6 @@ DropDown Label
 	visibility: collapse;
 }
 
-.HudDamageReport.Outgoing .TopDamageSources
-{
-	visibility: collapse;
-}
-
 .HudDamageReport.Outgoing .ShowMore
 {
 	visibility: collapse;
@@ -224,7 +201,6 @@ DropDown Label
 	horizontal-align: right;
 	margin-top: 250px;
 	width: 350px;
-	border-radius: 20px 0px 0px 20px;
 	border: 1px solid #ffffff01;
 	font-family: sans;
 	flow-children: right;
@@ -236,7 +212,7 @@ DropDown Label
 	visibility: collapse;
 }
 
-.HudDamageReport.ShowAlways:not(.Hidden),.HudDamageReport.gScoreboardOpen:not(.Hidden),.dead .HudDamageReport:not(.Hidden),.spec_mode .HudDamageReport:not(.Hidden) .connectedToHeroTesting .HudDamageReport.gScoreboardOpen
+.HudDamageReport.ShowAlways:not(.Hidden),.HudDamageReport.gScoreboardOpen:not(.Hidden),.dead .HudDamageReport:not(.Hidden),.spec_mode .HudDamageReport:not(.Hidden)
 {
 	visibility: visible;
 }
@@ -261,7 +237,6 @@ DropDown Label
 	flow-children: down;
 	background-color: #1E2616aa;
 	world-blur: ingameHudBlur;
-	horizontal-align: right z-index: 2;
 }
 
 .HudDamageReport .Header
@@ -355,28 +330,6 @@ DropDown Label
 	horizontal-align: center;
 	background-color: #00000050;
 	padding: 4px 8px;
-}
-
-.HudDamageReport .DamageControlRow .LabelArea
-{
-	flow-children: down;
-	margin: 0px 10px;
-}
-
-.HudDamageReport .DamageControlRow .LabelArea .DamageDesc
-{
-	horizontal-align: left;
-	vertical-align: center;
-	color: rgb(24, 24, 24);
-	opacity: 0.9;
-	font-weight: bold;
-	font-size: 16px;
-}
-
-.HudDamageReport .DamageControlRow .TimeControl
-{
-	horizontal-align: right;
-	vertical-align: center;
 }
 
 .HudDamageReport .DamageControlRow .DamageBreakdown
@@ -503,13 +456,6 @@ DropDown Label
 	box-shadow: 0px 0px 20px #00000070;
 }
 
-.HudDamageReport .DamageSection #DamageByHero .HeroDamageColumn.Focused
-{
-	border: 2px solid #ffffff20;
-	background-color: #ffffff10;
-	opacity: 1;
-}
-
 .HudDamageReport .DamageSection #DamageByHero .HeroDamageColumn .HeroIconContainer
 {
 	max-height: 45px;
@@ -537,80 +483,6 @@ DropDown Label
 {
 	flow-children: down;
 	background-color: #00000050;
-}
-
-.HudDamageReport .DamageSection .TopDamageSources
-{
-	margin-top: 10px;
-	vertical-align: center;
-	horizontal-align: center;
-	font-weight: semi-bold;
-	color: offWhite;
-	visibility: collapse;
-}
-
-.NoDisplayedDamage .HudDamageReport .DamageSection .TopDamageSources
-{
-	visibility: collapse;
-}
-
-.HudDamageReport .DamageSection #DamageDealtPieGraph
-{
-	vertical-align: center;
-	horizontal-align: left;
-	flow-children: none;
-	margin: 20px;
-	margin-left: 60px;
-	min-height: 150px;
-}
-
-.HudDamageReport .DamageSection #DamageDealtPieGraph .PieSlice
-{
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	vertical-align: center;
-	horizontal-align: center;
-}
-
-.HudDamageReport .DamageSection #DamageDealtPieGraph .PieSlice.WeaponDamage
-{
-	background-color: weaponDamageBarColor;
-}
-
-.HudDamageReport .DamageSection #DamageDealtPieGraph .PieSlice.AbilityDamage
-{
-	background-color: abilityDamageBarColor;
-}
-
-.HudDamageReport .DamageSection #DamageDealtPieGraph .PieSlice.DamagePriority9
-{
-	brightness: 1.2;
-}
-
-.HudDamageReport .DamageSection #DamageDealtPieGraph .PieSlice.DamagePriority8
-{
-	brightness: 1.1;
-}
-
-.HudDamageReport .DamageSection #DamageDealtPieGraph .PieSlice.DamagePriority6
-{
-	brightness: 0.9;
-}
-
-.HudDamageReport .DamageSection #DamageDealtPieGraph .PieSlice.DamagePriority5
-{
-	brightness: 0.8;
-}
-
-.HudDamageReport .DamageSection #DamageDealtPieGraph .PieSlice.DamagePriority4
-{
-	brightness: 0.6;
-}
-
-.HudDamageReport .DamageSection #DamageDealtPieGraph .PieSlice.DamagePriority3
-{
-	brightness: 0.4;
 }
 
 .HudDamageReport .DamageSection .Footer
@@ -677,31 +549,6 @@ DropDown Label
 	text-align: center;
 	horizontal-align: center;
 	font-family: sansMono;
-}
-
-.HudDamageReport .DamageSection .DamageDealtToggleButton
-{
-	horizontal-align: right;
-	vertical-align: bottom;
-	width: 30px;
-	height: 30px;
-	background-size: auto 50%;
-	background-position: center;
-	margin-right: 5px;
-	background-repeat: no-repeat;
-	background-image: url("s2r://panorama/images/icons/icon_graph.vsvg");
-	transition-property: pre-transform-scale2d;
-	transition-duration: 0.3s;
-}
-
-.HudDamageReport .DamageSection .DamageDealtToggleButton:hover
-{
-	pre-transform-scale2d: 1.1;
-}
-
-.HudDamageReport.NoDisplayedDamage .DamageSection .TopDamageSources
-{
-	visibility: collapse;
 }
 
 .HudDamageRows
@@ -946,11 +793,6 @@ DropDown Label
 	background-image: url("s2r://panorama/images/hud/text_images/killing_blow/killing_blow_ukrainian_png.vtex");
 }
 
-.HudDamageRows.AllHeroDamage #Data .AbilityDamageContainer .AbilityDamageBarContainer .DamageBarInner .AbilityImage
-{
-	visibility: collapse;
-}
-
 .LocalPlayerDead .HudDamageRows #Data .AbilityDamageContainer.isKillingBlow .AbilityDamageBarContainer .killing_blow
 {
 	visibility: visible;
@@ -997,28 +839,13 @@ CitadelTooltipDamageReportHeroSummary #Contents,CitadelTooltipDamageReportAbilit
 	width: 100%;
 }
 
-.SummaryTooltip .Header .NameContainer .HeroName,.SummaryTooltip .Header .NameContainer .ViewingHeroName
+.SummaryTooltip .Header .NameContainer .HeroName
 {
 	font-size: 24px;
 	font-weight: bold;
 	font-family: serif;
 	text-transform: uppercase;
 	margin-bottom: -4px;
-}
-
-.AllHeroes .SummaryTooltip .Header .NameContainer .HeroName
-{
-	visibility: collapse;
-}
-
-.SummaryTooltip .Header .NameContainer .ViewingHeroName
-{
-	visibility: collapse;
-}
-
-.AllHeroes .SummaryTooltip .Header .NameContainer .ViewingHeroName
-{
-	visibility: visible;
 }
 
 .SummaryTooltip .Header .NameContainer .HeroSubtitle
@@ -1039,12 +866,6 @@ CitadelTooltipDamageReportHeroSummary #Contents,CitadelTooltipDamageReportAbilit
 	padding: 0px;
 	width: 100%;
 	background-color: tooltipBGColorLight;
-}
-
-.AbilitySummary .AbilityProgressBarContainer
-{
-	width: 100%;
-	margin: 8px;
 }
 
 .AbilitySummary .Footer
@@ -1082,32 +903,6 @@ CitadelTooltipDamageReportHeroSummary #Contents,CitadelTooltipDamageReportAbilit
 {
 	flow-children: down;
 	vertical-align: middle;
-}
-
-#ReportToggle
-{
-	width: 220px;
-	height: 50px;
-	transform: rotateZ(90deg);
-	margin-left: 0px;
-	horizontal-align: right;
-	vertical-align: middle;
-	ignore-parent-flow: true;
-	border-radius: 5px 5px 0px 0px;
-	background-color: grey;
-	background-color: gradient( linear, 0% 100%, 0% 70%, from( #3d3d3d ), to( grey ) );
-	background-image: url("s2r://panorama/images/shop/dmg_report_texture_png.vtex");
-	background-img-opacity: 0.2;
-	z-index: 1;
-	visibility: collapse;
-}
-
-#ReportToggle Label
-{
-	horizontal-align: center;
-	vertical-align: middle;
-	font-weight: semi-bold;
-	opacity: 0.9;
 }
 
 .HeroSummary

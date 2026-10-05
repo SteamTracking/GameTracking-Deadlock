@@ -83,7 +83,10 @@
 						<CitadelSettingsToggle id="ImportKeybinds" class="ShareToggle" text="#citadel_settings_share_apply_keybinds" onactivate="CitadelSettingsShareOptionToggled()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_share_apply_keybinds_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
 						<CitadelSettingsToggle id="ImportBase" class="ShareToggle" text="#citadel_settings_share_apply_base" onactivate="CitadelSettingsShareOptionToggled()" onmouseover="UIShowTextTooltipStyled( #citadel_settings_share_apply_base_tooltip, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()" />
 						<Label id="ImportBaseAsOverridesLabel" class="ShareHint" text="#citadel_settings_share_base_as_overrides" />
-						<Label id="ImportUnbindsRequiredLabel" class="ShareWarning" text="#citadel_settings_share_warning_unbinds_required" />
+						<Panel id="ImportUnbindsRequiredRow" class="ShareWarningRow">
+							<Label id="ImportUnbindsRequiredLabel" class="ShareWarning" text="#citadel_settings_share_warning_unbinds_required" />
+							<Panel id="UnbindsRequiredInfoIcon" class="ShareInfoIcon" onmouseover="CitadelSettingsShareShowMissingBindsTooltip()" onmouseout="CitadelSettingsShareHideMissingBindsTooltip()" />
+						</Panel>
 					</Panel>
 				</Panel>
 			</Panel>

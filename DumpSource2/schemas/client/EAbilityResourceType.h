@@ -8,4 +8,6 @@ enum EAbilityResourceType : uint32_t
 	EResourceType_Heat = 2,
 	// MPropertyFriendlyName = "Ink"
 	EResourceType_Ink = 3,
+	// MPropertyFriendlyName = "Mana"
+	EResourceType_Blood = 4,
 };

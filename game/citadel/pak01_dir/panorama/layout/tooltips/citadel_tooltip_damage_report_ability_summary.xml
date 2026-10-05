@@ -3,25 +3,12 @@
 	<styles>
 		<include src="s2r://panorama/styles/hud_damage_report.vcss" />
 	</styles>
-	<snippets>
-		<snippet name="AbilityDamageBar">
-			<Panel class="AbilityDamageContainer">
-				<Image id="AbilityImage" />
-				<Panel class="AbilityDamageBarContainer">
-					<ProgressBarWithMiddle id="DamageRatioProgressBar" class="DamageRatioProgressBar Horizontal" />
-					<Label class="AbilityName" text="{s:damage_name}" />
-					<Label class="DamageValue" text="{d:damage_done}" />
-				</Panel>
-			</Panel>
-		</snippet>
-	</snippets>
 	<TooltipContents>
 		<Panel class="AbilitySummary SummaryTooltip">
 			<Panel class="Header">
 				<Panel class="NameContainer">
 					<Label class="HeroName" text="{s:hero_name}" />
-					<Label class="ViewingHeroName" text="{s:viewing_hero_name}" />
-					<Label class="HeroSubtitle" text="{s:ability_summary_subtitle}" />
+					<Label class="HeroSubtitle" text="#Citadel_HUD_DamageReport_HeroDamageReceived" />
 				</Panel>
 			</Panel>
 			<CitadelDamageRows id="Data" class="Data" />

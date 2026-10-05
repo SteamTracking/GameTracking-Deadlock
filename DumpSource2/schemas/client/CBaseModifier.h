@@ -24,6 +24,7 @@ class CBaseModifier
 	bool m_bReadyOnClient;
 	float32 m_flThinkInterval;
 	GameTime_t m_flThinkIntervalStartTime;
+	GameTime_t m_flLastThinkTime;
 	float32 m_flTimeScale;
 	// MNotSaved
 	CUtlVector< IModifierTrackedObject* >* m_pVecTrackedObjects;

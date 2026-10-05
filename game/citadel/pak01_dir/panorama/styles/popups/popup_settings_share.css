@@ -252,19 +252,7 @@ PopupSettingsShare.PopupPanel .ShareSummaryRow .ShareCategoryLabel
 	text-overflow: shrink;
 }
 
-PopupSettingsShare.PopupPanel .ShareScopeRow
-{
-	flow-children: right;
-	margin-bottom: 8px;
-}
-
-PopupSettingsShare.PopupPanel .ShareScopeRow .ShareSummary
-{
-	margin-bottom: 0px;
-	vertical-align: center;
-}
-
-PopupSettingsShare.PopupPanel .ShareScopeRow .ShareInfoIcon
+PopupSettingsShare.PopupPanel .ShareInfoIcon
 {
 	width: 18px;
 	height: 18px;
@@ -279,9 +267,21 @@ PopupSettingsShare.PopupPanel .ShareScopeRow .ShareInfoIcon
 	transition-duration: 0.15s;
 }
 
-PopupSettingsShare.PopupPanel .ShareScopeRow .ShareInfoIcon:hover
+PopupSettingsShare.PopupPanel .ShareInfoIcon:hover
 {
 	opacity: 0.9;
+}
+
+PopupSettingsShare.PopupPanel .ShareScopeRow
+{
+	flow-children: right;
+	margin-bottom: 8px;
+}
+
+PopupSettingsShare.PopupPanel .ShareScopeRow .ShareSummary
+{
+	margin-bottom: 0px;
+	vertical-align: center;
 }
 
 PopupSettingsShare.PopupPanel .ShareHeroIcons
@@ -299,6 +299,7 @@ PopupSettingsShare.PopupPanel .ShareHeroIcons .ShareHeroIcon
 	margin: 0px 4px 6px 0px;
 	border-radius: 50%;
 	img-shadow: 0px 0px 8px #000000aa;
+	box-shadow: fill #21212150 0px 0px 0px 0px;
 	transition-property: brightness, background-color, box-shadow;
 	transition-duration: 0.1s;
 }
@@ -328,6 +329,30 @@ PopupSettingsShare.PopupPanel .ShareWarning
 	font-size: 14px;
 	margin-top: 4px;
 	margin-bottom: 4px;
+}
+
+PopupSettingsShare.PopupPanel .ShareWarningRow
+{
+	flow-children: right;
+	width: 100%;
+}
+
+PopupSettingsShare.PopupPanel .ShareWarningRow .ShareWarning
+{
+	max-width: 576px;
+	vertical-align: center;
+}
+
+PopupSettingsShare.PopupPanel .ShareWarningRow .ShareInfoIcon
+{
+	wash-color: warningRed;
+	opacity: 0.6;
+	margin-left: 0px;
+}
+
+PopupSettingsShare.PopupPanel .ShareWarningRow .ShareInfoIcon:hover
+{
+	opacity: 1;
 }
 
 PopupSettingsShare.PopupPanel .ShareStatus
@@ -378,7 +403,7 @@ PopupSettingsShare.PopupPanel .highlight
 	font-weight: bold;
 }
 
-PopupSettingsShare.PopupPanel #ImportScopeBase,PopupSettingsShare.PopupPanel #ImportScopeAll,PopupSettingsShare.PopupPanel #ContentsInfoIcon,PopupSettingsShare.PopupPanel #ImportHeroesIgnoredLabel,PopupSettingsShare.PopupPanel #ImportSummaryReticleRow,PopupSettingsShare.PopupPanel #ImportSummaryReticleSame,PopupSettingsShare.PopupPanel #ImportSummaryReticleNone,PopupSettingsShare.PopupPanel #ImportSummaryKeybindsRow,PopupSettingsShare.PopupPanel #ImportSummaryKeybindsSame,PopupSettingsShare.PopupPanel #ImportSummaryKeybindsNone,PopupSettingsShare.PopupPanel #ImportUnbindsRequiredLabel,PopupSettingsShare.PopupPanel #ImportBaseDiffersLabel,PopupSettingsShare.PopupPanel #ImportBaseAsOverridesLabel,PopupSettingsShare.PopupPanel #ImportInvalidLabel,PopupSettingsShare.PopupPanel #ExportEmptyLabel,PopupSettingsShare.PopupPanel #StatusRow,PopupSettingsShare.PopupPanel #AppliedLabel,PopupSettingsShare.PopupPanel #RevertedLabel
+PopupSettingsShare.PopupPanel #ImportScopeBase,PopupSettingsShare.PopupPanel #ImportScopeAll,PopupSettingsShare.PopupPanel #ContentsInfoIcon,PopupSettingsShare.PopupPanel #ImportHeroesIgnoredLabel,PopupSettingsShare.PopupPanel #ImportSummaryReticleRow,PopupSettingsShare.PopupPanel #ImportSummaryReticleSame,PopupSettingsShare.PopupPanel #ImportSummaryReticleNone,PopupSettingsShare.PopupPanel #ImportSummaryKeybindsRow,PopupSettingsShare.PopupPanel #ImportSummaryKeybindsSame,PopupSettingsShare.PopupPanel #ImportSummaryKeybindsNone,PopupSettingsShare.PopupPanel #ImportUnbindsRequiredRow,PopupSettingsShare.PopupPanel #ImportBaseDiffersLabel,PopupSettingsShare.PopupPanel #ImportBaseAsOverridesLabel,PopupSettingsShare.PopupPanel #ImportInvalidLabel,PopupSettingsShare.PopupPanel #ExportEmptyLabel,PopupSettingsShare.PopupPanel #StatusRow,PopupSettingsShare.PopupPanel #AppliedLabel,PopupSettingsShare.PopupPanel #RevertedLabel
 {
 	visibility: collapse;
 }
@@ -413,7 +438,7 @@ PopupSettingsShare.PopupPanel.HasKeybinds #ImportSummaryKeybindsRow
 	visibility: visible;
 }
 
-PopupSettingsShare.PopupPanel.UnbindsRequired #ImportUnbindsRequiredLabel
+PopupSettingsShare.PopupPanel.UnbindsRequired #ImportUnbindsRequiredRow
 {
 	visibility: visible;
 }

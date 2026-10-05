@@ -2101,6 +2101,9 @@ citadel_crosshair_outline_color_r 0 (developmentonly clientdll per_user defensiv
 citadel_crosshair_pip_gap 4 (developmentonly clientdll per_user defensive)
 	<no description>
 
+citadel_crosshair_pip_gap_collapse false (developmentonly clientdll per_user defensive)
+	<no description>
+
 citadel_crosshair_pip_gap_static false (developmentonly clientdll per_user defensive)
 	<no description>
 
@@ -2145,12 +2148,6 @@ citadel_damage_radar_enemy_display_time 2 (developmentonly clientdll gameinfo_ca
 
 citadel_damage_report_enable true (developmentonly clientdll)
 	If enabled, show damage report
-
-citadel_damage_report_ignore_neutral_subclass 1 (developmentonly clientdll)
-	Treat all neutral damage as one attacker class bucket
-
-citadel_damage_report_ignore_trooper_subclass 0 (developmentonly clientdll)
-	Treat all trooper damage as one attacker class bucket
 
 citadel_damage_report_show_adjusted_percent_min 3 (developmentonly clientdll)
 	Hide buffed/resisted damage if it's below this percentage of change
@@ -3424,9 +3421,6 @@ citadel_minimap_trooper_size 3 (clientdll release)
 citadel_minimap_unit_click_radius 200 (clientdll release)
 	<no description>
 
-citadel_minimap_use_effects false (developmentonly clientdll)
-	<no description>
-
 citadel_minimap_zip_line_hover_radius 16 (clientdll release)
 	Extra pixels either side of a minimap zipline that still count as hovering it
 
@@ -3670,8 +3664,8 @@ citadel_num_matches_in_profile_history 16 (developmentonly clientdll)
 citadel_num_team_pauses_allowed 3 (developmentonly gamedll defensive)
 	Number of times a team is allowed to pause the game. 0 Means unbounded
 
-citadel_observer_max_dolly_level 8 (developmentonly clientdll defensive)
-	<no description>
+citadel_observer_max_dolly_level 16 (clientdll archive)
+	Number of increments along the zoom dolly
 
 citadel_observer_roaming_speed 600 (clientdll archive)
 	<no description>
@@ -3873,6 +3867,9 @@ citadel_player_attack_enemy_npc_fow_reveal_duration 2 (gamedll cheat)
 
 citadel_player_attack_enemy_player_fow_reveal_duration 1 (gamedll cheat)
 	How long a player is visible to enemy FOW after attacking an enemy player
+
+citadel_player_cam_toggle false (clientdll archive per_user)
+	Player Cam buttons toggle the teammate view instead of showing it while held
 
 citadel_player_client_reprediction_disabled false (clientdll cheat release)
 	<no description>
@@ -4951,6 +4948,18 @@ citadel_subtick_aim_data false (developmentonly gamedll clientdll replicated def
 citadel_subtitles_all_caps false (clientdll archive per_user)
 	Show the HUD subtitles in all caps.
 
+citadel_subtitles_ally_abilities true (clientdll archive per_user)
+	Show subtitles for ability and item voice lines from your hero and allies.
+
+citadel_subtitles_ally_conversations true (clientdll archive per_user)
+	Show subtitles for conversations between your hero and allies.
+
+citadel_subtitles_ally_kills true (clientdll archive per_user)
+	Show subtitles for kill, reaction, and match voice lines from your hero and allies.
+
+citadel_subtitles_ally_pings true (clientdll archive per_user)
+	Show subtitles for ping and chat wheel voice lines from your hero and allies.
+
 citadel_subtitles_background_color_b 0 (min: 0, max: 255, clientdll archive per_user)
 	Blue channel of the HUD subtitle background color.
 
@@ -4972,14 +4981,35 @@ citadel_subtitles_bold_font true (clientdll archive per_user)
 citadel_subtitles_custom_style false (clientdll archive per_user)
 	Show the HUD subtitles in the player's custom size, colors, and font rather than the default style.
 
+citadel_subtitles_enemy_abilities true (clientdll archive per_user)
+	Show subtitles for ability and item voice lines from enemies.
+
+citadel_subtitles_enemy_kills true (clientdll archive per_user)
+	Show subtitles for kill, reaction, and match voice lines from enemies.
+
 citadel_subtitles_font 0 (min: 0, max: 2, clientdll archive per_user)
 	Font of the HUD subtitles: 0 default, 1 block, 2 stylized.
 
 citadel_subtitles_font_size 16 (min: 8, max: 32, clientdll archive per_user)
 	Font size of the HUD subtitles.
 
+citadel_subtitles_newscaster true (clientdll archive per_user)
+	Show subtitles for the Newscaster.
+
 citadel_subtitles_outline_thickness 2 (min: 0, max: 6, clientdll archive per_user)
 	Thickness, in pixels, of the outline around the HUD subtitles when their background style is outline.
+
+citadel_subtitles_patrons true (clientdll archive per_user)
+	Show subtitles for the Patrons.
+
+citadel_subtitles_shopkeeper true (clientdll archive per_user)
+	Show subtitles for the Shopkeeper and the Broker.
+
+citadel_subtitles_soul_urn true (clientdll archive per_user)
+	Show subtitles for the Soul Urn.
+
+citadel_subtitles_speaker_names 0 (min: 0, max: 2, clientdll archive per_user)
+	How the HUD subtitles show who is speaking: 0 icon and name, 1 icon only, 2 name only. Speakers without an icon always get their name.
 
 citadel_subtitles_text_color_b 198 (min: 0, max: 255, clientdll archive per_user)
 	Blue channel of the HUD subtitle text color.
@@ -5484,6 +5514,9 @@ citadel_unit_status_opaque_dist_sq 50000 (developmentonly clientdll)
 
 citadel_unit_status_recent_damage_time 0.25 (developmentonly clientdll)
 	<no description>
+
+citadel_unit_status_release_delay_time 5 (developmentonly clientdll)
+	Delay releasing unit status overlays back to the pool until after they've been hidden this long (seconds). <= 0 disables.
 
 citadel_unit_status_show_ally_health_value false (clientdll archive per_user)
 	Show health numbers on allied heroes' health bars when they take damage.

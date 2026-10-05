@@ -1,3 +1,4 @@
+// MConstructibleClassBase
 // MHasKV3TransferPolymorphicClassname
 class CAI_Component
 {

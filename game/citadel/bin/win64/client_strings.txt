@@ -135,6 +135,7 @@
  -0000
  .CPlayer_GetNicknameList_Request
  .CPublishedFile_Publish_Response"2
+ .pEG
  240 frames: %5.1f fps, avg time:%5.2fms, abs_range:%7.2fms, min_time:%5.2fms, max_time:%5.2fms\n
  240 frames: %5.1f fps, avg:%5.2fms +/- %-7.2f | min:%5.2fms, max:%5.2fms
  240 server ticks: %5.1f tps, avg time:%5.2fms, abs_range:%7.2fms, min_time:%5.2fms, max_time:%5.2fms
@@ -157,6 +158,7 @@
  <-- Retval '%s'
  <b>@import</b> 
  <font color='#%.2x%.2x%.2x'>%d
+ A8K
  ABILITY ACTIVE REPORT\n
  ABILITY MODIFIER VALUE ACTIVE-NESS REPORT\n
  ACTIVE GROUP
@@ -699,7 +701,6 @@
 #Citadel_GraphicsDriverOutOfDateWarning_AMD
 #Citadel_GraphicsDriverOutOfDateWarning_Nvidia
 #Citadel_GraphicsDriverWarning_Title
-#Citadel_HUD_DamageReport_HeroDamage%s
 #Citadel_HUD_Damage_DefenderInTier3Pit
 #Citadel_HUD_Damage_NotInMidPit
 #Citadel_HUD_Damage_NotInTier3Pit
@@ -1378,6 +1379,7 @@
 #FileOpenDialog_Select
 #GameUI_Disconnected
 #HealthPercent_label
+#Hideout_required_keybind_missing_tooltip
 #Ignore
 #InlineAttribute_%s
 #InlineAttribute_Spirit
@@ -1697,6 +1699,10 @@
 #citadel_settings_language_none
 #citadel_settings_low_latency_amd
 #citadel_settings_low_latency_tip_amd
+#citadel_settings_missing_binds_all_heroes
+#citadel_settings_missing_binds_caption
+#citadel_settings_missing_binds_caption_scopes
+#citadel_settings_missing_binds_more_heroes:f
 #citadel_settings_new
 #citadel_settings_no_audio_input_devices
 #citadel_settings_no_results
@@ -1749,6 +1755,8 @@
 #citadel_settings_share_contents_heroes_tooltip
 #citadel_settings_share_contents_preview_tooltip
 #citadel_settings_share_contents_scope_base
+#citadel_settings_share_missing_binds_caption
+#citadel_settings_share_missing_binds_caption_scopes
 #citadel_settings_share_scope_all_heroes
 #citadel_settings_share_scope_all_heroes_tooltip
 #citadel_settings_share_scope_base
@@ -2694,7 +2702,7 @@ $hRh
 (0x%08X)'??'
 (5Me
 (5jP
-(?animTimeSerializer
+(?CBaseEntity_SharedAPI::AddOutput
 (ACTIVE)
 (App Id to retrieve published files from.
 (BZq
@@ -3153,7 +3161,6 @@ $hRh
 (default)
 (end of input).\n\t This indicates a poorly specified lexer RULE\n\t or unterminated input element such as: "STRING["]\n
 (fS{ggRcjh
-(fpEG
 (from angle, to angle, time) - Spherical lerp of angle from->to based on time
 (h`H1pqA
 (i/Al
@@ -3304,6 +3311,7 @@ $hRh
 *?IsObject@Value@v8@@QEBA_NXZ
 *BaseEntity::CBodyComponent
 *BaseModelEntity::CBodyComponentBaseModelEntity
+*Client mode %d took %f msecs to Init()
 *Gets the last-played times for the account
 *Returns the player's community preferences
 *UlS
@@ -3645,10 +3653,10 @@ $hRh
 ../src/devtools/bin/certificates/game/
 ..CPlayer_GetNewSteamAnnouncementState_Response"_
 ..uR5&m
-.0KG
-.0SG
-.0TG
-.0kG
+.0RG
+.0cG
+.0xG
+.0zG
 .4bb
 .97yY
 .?AU?$CameraOp_Approach_t@M@@
@@ -3981,16 +3989,17 @@ $hRh
 .?AV<lambda_1>@?1???$IterateChildrenTraverseOfType@VCLabel@panorama@@@CPanel2D@panorama@@QEAA_NAEBV?$function@$$A6A_NPEAVCLabel@panorama@@@Z@std@@@Z@
 .?AV<lambda_1>@?1???$IterateChildrenTraverseOfType@VCRadioButton@panorama@@@CPanel2D@panorama@@QEAA_NAEBV?$function@$$A6A_NPEAVCRadioButton@panorama@@@Z@std@@@Z@
 .?AV<lambda_1>@?1???$IterateChildrenTraverseOfType@VCToggleButton@panorama@@@CPanel2D@panorama@@QEAA_NAEBV?$function@$$A6A_NPEAVCToggleButton@panorama@@@Z@std@@@Z@
-.?AV<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@V0?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@
-.?AV<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@V0?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@
+.?AV<lambda_1>@?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@AEBV1?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV0?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAX0AEBV0?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@Z@
+.?AV<lambda_1>@?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@AEBV1?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV0?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAX0AEBV0?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@Z@
+.?AV<lambda_1>@?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1??GetCriticalBindRows@CCitadel_PopupSettings@@AEAAXPEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@PEAV?$CUtlVector@UKeybindMapCriticalRow_t@@HV?$CUtlVectorMemory_Growable@UKeybindMapCriticalRow_t@@H$0A@@@@@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV0?1??GetCriticalBindRows@CCitadel_PopupSettings@@AEAAXPEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@PEAV?$CUtlVector@UKeybindMapCriticalRow_t@@HV?$CUtlVectorMemory_Growable@UKeybindMapCriticalRow_t@@H$0A@@@@@@Z@@Z@
 .?AV<lambda_1>@?1???$SortChildren@A6A_NPEBVCPanel2D@panorama@@0@Z@CPanel2D@panorama@@QEAAXA6A_NPEBV12@0@Z@Z@
 .?AV<lambda_1>@?1???$SortChildren@P6A_NPEBVCPanel2D@panorama@@0@Z@CPanel2D@panorama@@QEAAX$$QEAP6A_NPEBV12@0@Z@Z@
-.?AV<lambda_1>@?1???$SortChildren@V<lambda_10>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@@CPanel2D@panorama@@QEAAX$$QEAV<lambda_10>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@@Z@
 .?AV<lambda_1>@?1???$SortChildren@V<lambda_1>@?1???$ReverseComparator@A6A_NPEBVCPanel2D@panorama@@0@Z@@YA?A_PA6A_NPEBVCPanel2D@panorama@@0@Z@Z@@CPanel2D@panorama@@QEAAX$$QEAV0?1???$ReverseComparator@A6A_NPEBVCPanel2D@panorama@@0@Z@@YA?A_PA6A_NPEBV12@0@Z@Z@@Z@
 .?AV<lambda_1>@?1???$SortChildren@V<lambda_1>@?4??UpdateDirtyPanel@CCitadel_Hud_PlayerIntents_Team@@UEAAXXZ@@CPanel2D@panorama@@QEAAX$$QEAV0?4??UpdateDirtyPanel@CCitadel_Hud_PlayerIntents_Team@@UEAAXXZ@@Z@
 .?AV<lambda_1>@?1???$SortChildren@V<lambda_1>@?DG@??EventLoadVisiblePanels@CDelayLoadList@panorama@@AEAA_NIHH@Z@@CPanel2D@panorama@@QEAAX$$QEAV0?DG@??EventLoadVisiblePanels@CDelayLoadList@2@AEAA_NIHH@Z@@Z@
 .?AV<lambda_1>@?1???$SortChildren@V<lambda_1>@?M@??UpdateDirtyPanel@CCitadel_Hud_TopBar_Team@@UEAAXXZ@@CPanel2D@panorama@@QEAAX$$QEAV0?M@??UpdateDirtyPanel@CCitadel_Hud_TopBar_Team@@UEAAXXZ@@Z@
 .?AV<lambda_1>@?1???$SortChildren@V<lambda_2>@?1??UpdateDirtyPanel@CCitadel_UI_BuildSelector@@UEAAXXZ@@CPanel2D@panorama@@QEAAX$$QEAV<lambda_2>@?1??UpdateDirtyPanel@CCitadel_UI_BuildSelector@@UEAAXXZ@@Z@
+.?AV<lambda_1>@?1???$SortChildren@V<lambda_9>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@@CPanel2D@panorama@@QEAAX$$QEAV<lambda_9>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@@Z@
 .?AV<lambda_1>@?1???$TweakKV@V<lambda_1>@?1???R1?1??citadel_vdata_update_popular_items@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@QEBA@XZ@@@YAXV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@AEAV1@AEBV0?1???R0?1??citadel_vdata_update_popular_items@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@QEBA@XZ@PEBD@Z@
 .?AV<lambda_1>@?1???$TweakKV@V<lambda_1>@?1??citadel_ability_damage_vdata_tweak@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@@@YAXV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@AEAV1@AEBV0?1??citadel_ability_damage_vdata_tweak@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@PEBD@Z@
 .?AV<lambda_1>@?1???$TweakKV@V<lambda_1>@?1??citadel_ability_maintain@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@@@YAXV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@AEAV1@AEBV0?1??citadel_ability_maintain@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@PEBD@Z@
@@ -4100,8 +4109,9 @@ $hRh
 .?AV<lambda_1>@?1???0CCitadel_PopupSettings@@QEAA@PEAVCPanel2D@panorama@@PEBD@Z@
 .?AV<lambda_1>@?1???0CCitadel_UI_CommendNotification@@QEAA@PEAVCPanel2D@panorama@@PEBD@Z@
 .?AV<lambda_1>@?1???0CDelayLoadPanel@panorama@@QEAA@PEAVCPanel2D@2@PEBD@Z@
-.?AV<lambda_1>@?1???R0?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@V0?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@QEBA@PEAVCCitadel_PopupSettings_SettingsSubsection@@@Z@
-.?AV<lambda_1>@?1???R0?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@V0?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@QEBA@PEAVCCitadel_PopupSettings_SettingsSubsection@@@Z@
+.?AV<lambda_1>@?1???R0?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@AEBV1?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV0?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAX0AEBV0?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@Z@QEBA@PEAVCCitadel_PopupSettings_SettingsSubsection@@@Z@
+.?AV<lambda_1>@?1???R0?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@AEBV1?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV0?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAX0AEBV0?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@Z@QEBA@PEAVCCitadel_PopupSettings_SettingsSubsection@@@Z@
+.?AV<lambda_1>@?1???R0?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1??GetCriticalBindRows@CCitadel_PopupSettings@@AEAAXPEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@PEAV?$CUtlVector@UKeybindMapCriticalRow_t@@HV?$CUtlVectorMemory_Growable@UKeybindMapCriticalRow_t@@H$0A@@@@@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV0?1??GetCriticalBindRows@CCitadel_PopupSettings@@AEAAXPEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@PEAV?$CUtlVector@UKeybindMapCriticalRow_t@@HV?$CUtlVectorMemory_Growable@UKeybindMapCriticalRow_t@@H$0A@@@@@@Z@@Z@QEBA@PEAVCCitadel_PopupSettings_SettingsSubsection@@@Z@
 .?AV<lambda_1>@?1???R0?1???R<lambda_4>@?9??UpdateDirtyPanel@CCitadel_UI_HideoutInWorldRanked@@UEAAXXZ@QEBA@PEAVCPanel2D@panorama@@H@Z@QEBA@0H@Z@
 .?AV<lambda_1>@?1???R0?1??BPanelHasVisibleSharedRows@CCitadel_PopupSettings@@AEAA_NPEAVCPanel2D@panorama@@_N@Z@QEBA@0@Z@
 .?AV<lambda_1>@?1???R0?1??ClearHeroOverridesInPanel@CCitadel_PopupSettings@@AEAAXPEAVCPanel2D@panorama@@@Z@QEBA@0@Z@
@@ -4121,6 +4131,7 @@ $hRh
 .?AV<lambda_1>@?1??EventDeleteBinding@CCitadel_UI_Popup_BindKey@@AEAA_NXZ@
 .?AV<lambda_1>@?1??EventHideModTooltip@CCitadel_ShopModsTier@@QEAAXPEAVCPanel2D@panorama@@VCUtlStringToken@@VCPlayerSlot@@@Z@
 .?AV<lambda_1>@?1??EventResetRow@CCitadel_PopupSettings_SettingsRow@@AEAA_NPEAVCPanel2D@panorama@@@Z@
+.?AV<lambda_1>@?1??EventShowMissingBindsTooltip@CCitadel_PopupSettings@@AEAA_NPEAVCPanel2D@panorama@@@Z@
 .?AV<lambda_1>@?1??EventShowModTooltip@CCitadel_ShopModsTier@@QEAAXPEAVCPanel2D@panorama@@VCUtlStringToken@@VCPlayerSlot@@@Z@
 .?AV<lambda_1>@?1??FireGameEvent@C_Citadel_HLTVCamera@@UEAAXPEAVIGameEvent@@@Z@
 .?AV<lambda_1>@?1??ForEachResettableControl@CCitadel_PopupSettings_SettingsRow@@AEAAXAEBV?$function@$$A6AXPEAVISettingResettable@@@Z@std@@@Z@
@@ -4323,6 +4334,7 @@ $hRh
 .?AV<lambda_2>@?1??UpdateTickBar@CCitadelHudUtils@@SAXPEAVCPanel2D@panorama@@HAEBV?$function@$$A6AXPEAVCPanel2D@panorama@@H@Z@std@@@Z@
 .?AV<lambda_2>@?5??SetupSettingsSearchData@CCitadel_PopupSettings@@AEAAXXZ@
 .?AV<lambda_2>@?6???R<lambda_3>@?1??UpdateDirtyPanel@CCitadel_UI_FriendsList@@UEAAXXZ@QEBA@PEAVCPanel2D@panorama@@H@Z@
+.?AV<lambda_2>@?9??EventShowMissingBindsTooltip@CCitadel_UI_Popup_SettingsShare@@AEAA_NPEAVCPanel2D@panorama@@@Z@
 .?AV<lambda_2>@?BB@??EventSubmitValue@CCitadel_UI_Popup_PostMatchSurvey@@AEAA_NHH@Z@
 .?AV<lambda_2>@?BG@??SaveGame_Finalize@CEntity2SaveRestore@@UEAA_NPEAUSaveRestoreDataHandle_t__@@@Z@
 .?AV<lambda_2>@?BJ@??RefineNode@RayTracingEnvironment@@AEAAXHPEBHHPEBUTriangleBounds_t@@V?$Vec3D@M@@2HPEAVCUtlMultiJobProcessor@@@Z@
@@ -4396,12 +4408,12 @@ $hRh
 .?AV<lambda_7>@?1??UpdateComponentModList@CCitadel_Tooltip_ModDetails@@AEAAXPEBUCitadelAbilityVData@@@Z@
 .?AV<lambda_7>@?1??UpdateDirtyPanel@CCitadel_ShopModBuildCategory@@UEAAXXZ@
 .?AV<lambda_7>@?CI@??SetupQuestions@CCitadel_UI_Popup_PostMatchSurvey@@QEAA_NAEBV?$CUtlVector@PEBUCitadelHeroData_t@@HV?$CUtlVectorMemory_Growable@PEBUCitadelHeroData_t@@H$0A@@@@@@Z@
+.?AV<lambda_8>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@
 .?AV<lambda_8>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@
 .?AV<lambda_8>@?1??UpdateDirtyPanel@CCitadel_ShopModsBuild@@UEAAXXZ@
 .?AV<lambda_8>@?1??UpdateLeaderboardEntries@CCitadel_UI_Popup_GlobalLeaderboards@@AEAAXXZ@
 .?AV<lambda_8>@?1??UpdatePanel@CCitadel_UI_Popup_SellMaxItems@@AEAAXXZ@
 .?AV<lambda_8>@?9??UpdateDirtyPanel@CCitadel_UI_HideoutInWorldRanked@@UEAAXXZ@
-.?AV<lambda_9>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@
 .?AV<lambda_9>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@
 .?AV<lambda_9>@?1??UpdateDirtyPanel@CCitadel_ShopModsBuild@@UEAAXXZ@
 .?AV<lambda_9>@?2??UpdateDirtyPanel@CCitadel_DB_Page_Play@@EEAAXXZ@
@@ -4803,7 +4815,6 @@ $hRh
 .?AV?$CDefaultTypedEntityInstanceFilter@VCBaseAnimGraph@@@@
 .?AV?$CDefaultTypedEntityInstanceFilter@VCBaseProp@@@@
 .?AV?$CDefaultTypedEntityInstanceFilter@VCCitadelTeamRevealHeroCard@@@@
-.?AV?$CDefaultTypedEntityInstanceFilter@VCCitadel_Minimap_EffectsEntity@@@@
 .?AV?$CDefaultTypedEntityInstanceFilter@VC_BaseEntity@@@@
 .?AV?$CDefaultTypedEntityInstanceFilter@VC_BaseModelEntity@@@@
 .?AV?$CDefaultTypedEntityInstanceFilter@VC_CitadelIdolReturnTrigger@@@@
@@ -10306,6 +10317,7 @@ $hRh
 .?AV?$_Func_base@_NPEAVCRadioButton@panorama@@@std@@
 .?AV?$_Func_base@_NPEAVCToggleButton@panorama@@@std@@
 .?AV?$_Func_base@_NPEAVIUIPanel@panorama@@PEAV12@@std@@
+.?AV?$_Func_base@_NW4CitadelKeybindCommand_t@@PEBD@std@@
 .?AV?$_Func_impl_no_alloc@P6AXPEAVCSceneObject@@@ZXPEAV1@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_10>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@PEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_10>@?1??UpdateDirtyPanel@CCitadel_UI_ShopFilters@@UEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
@@ -10337,16 +10349,17 @@ $hRh
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$IterateChildrenTraverseOfType@VCLabel@panorama@@@CPanel2D@panorama@@QEAA_NAEBV?$function@$$A6A_NPEAVCLabel@panorama@@@Z@std@@@Z@_NPEAV23@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$IterateChildrenTraverseOfType@VCRadioButton@panorama@@@CPanel2D@panorama@@QEAA_NAEBV?$function@$$A6A_NPEAVCRadioButton@panorama@@@Z@std@@@Z@_NPEAV23@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$IterateChildrenTraverseOfType@VCToggleButton@panorama@@@CPanel2D@panorama@@QEAA_NAEBV?$function@$$A6A_NPEAVCToggleButton@panorama@@@Z@std@@@Z@_NPEAV23@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@V1?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@_NPEAVCCitadel_PopupSettings_SettingsSubsection@@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@V1?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@_NPEAVCCitadel_PopupSettings_SettingsSubsection@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@AEBV1?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV1?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAX0AEBV1?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@Z@_NPEAVCCitadel_PopupSettings_SettingsSubsection@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@AEBV1?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV1?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAX0AEBV1?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@Z@_NPEAVCCitadel_PopupSettings_SettingsSubsection@@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1??GetCriticalBindRows@CCitadel_PopupSettings@@AEAAXPEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@PEAV?$CUtlVector@UKeybindMapCriticalRow_t@@HV?$CUtlVectorMemory_Growable@UKeybindMapCriticalRow_t@@H$0A@@@@@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV1?1??GetCriticalBindRows@CCitadel_PopupSettings@@AEAAXPEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@PEAV?$CUtlVector@UKeybindMapCriticalRow_t@@HV?$CUtlVectorMemory_Growable@UKeybindMapCriticalRow_t@@H$0A@@@@@@Z@@Z@_NPEAVCCitadel_PopupSettings_SettingsSubsection@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SortChildren@A6A_NPEBVCPanel2D@panorama@@0@Z@CPanel2D@panorama@@QEAAXA6A_NPEBV23@0@Z@Z@_NPEAVIUIPanel@3@PEAV43@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SortChildren@P6A_NPEBVCPanel2D@panorama@@0@Z@CPanel2D@panorama@@QEAAX$$QEAP6A_NPEBV23@0@Z@Z@_NPEAVIUIPanel@3@PEAV43@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SortChildren@V<lambda_10>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@@CPanel2D@panorama@@QEAAX$$QEAV<lambda_10>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@@Z@_NPEAVIUIPanel@3@PEAV83@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SortChildren@V<lambda_1>@?1???$ReverseComparator@A6A_NPEBVCPanel2D@panorama@@0@Z@@YA?A_PA6A_NPEBVCPanel2D@panorama@@0@Z@Z@@CPanel2D@panorama@@QEAAX$$QEAV1?1???$ReverseComparator@A6A_NPEBVCPanel2D@panorama@@0@Z@@YA?A_PA6A_NPEBV23@0@Z@Z@@Z@_NPEAVIUIPanel@3@PEAV43@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SortChildren@V<lambda_1>@?4??UpdateDirtyPanel@CCitadel_Hud_PlayerIntents_Team@@UEAAXXZ@@CPanel2D@panorama@@QEAAX$$QEAV1?4??UpdateDirtyPanel@CCitadel_Hud_PlayerIntents_Team@@UEAAXXZ@@Z@_NPEAVIUIPanel@3@PEAV63@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SortChildren@V<lambda_1>@?DG@??EventLoadVisiblePanels@CDelayLoadList@panorama@@AEAA_NIHH@Z@@CPanel2D@panorama@@QEAAX$$QEAV1?DG@??EventLoadVisiblePanels@CDelayLoadList@3@AEAA_NIHH@Z@@Z@_NPEAVIUIPanel@3@PEAV63@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SortChildren@V<lambda_1>@?M@??UpdateDirtyPanel@CCitadel_Hud_TopBar_Team@@UEAAXXZ@@CPanel2D@panorama@@QEAAX$$QEAV1?M@??UpdateDirtyPanel@CCitadel_Hud_TopBar_Team@@UEAAXXZ@@Z@_NPEAVIUIPanel@3@PEAV63@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SortChildren@V<lambda_2>@?1??UpdateDirtyPanel@CCitadel_UI_BuildSelector@@UEAAXXZ@@CPanel2D@panorama@@QEAAX$$QEAV<lambda_2>@?1??UpdateDirtyPanel@CCitadel_UI_BuildSelector@@UEAAXXZ@@Z@_NPEAVIUIPanel@3@PEAV73@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$SortChildren@V<lambda_9>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@@CPanel2D@panorama@@QEAAX$$QEAV<lambda_9>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@@Z@_NPEAVIUIPanel@3@PEAV83@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$TweakKV@V<lambda_1>@?1???R1?1??citadel_vdata_update_popular_items@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@QEBA@XZ@@@YAXV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@AEAV2@AEBV1?1???R1?1??citadel_vdata_update_popular_items@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@QEBA@XZ@PEBD@Z@XPEBD@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$TweakKV@V<lambda_1>@?1??citadel_ability_damage_vdata_tweak@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@@@YAXV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@AEAV2@AEBV1?1??citadel_ability_damage_vdata_tweak@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@PEBD@Z@XPEBD@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???$TweakKV@V<lambda_1>@?1??citadel_ability_maintain@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@@@YAXV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@AEAV2@AEBV1?1??citadel_ability_maintain@@YAXAEBVCCommandContext@@AEBVCCommand@@@Z@PEBD@Z@XPEBD@std@@
@@ -10456,8 +10469,9 @@ $hRh
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???0CCitadel_PopupSettings@@QEAA@PEAVCPanel2D@panorama@@PEBD@Z@_NPEAV34@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???0CCitadel_UI_CommendNotification@@QEAA@PEAVCPanel2D@panorama@@PEBD@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???0CDelayLoadPanel@panorama@@QEAA@PEAVCPanel2D@3@PEBD@Z@XPEAV23@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???R1?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@V1?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@QEBA@PEAVCCitadel_PopupSettings_SettingsSubsection@@@Z@_NPEAV23@@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???R1?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@V1?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@QEBA@PEAVCCitadel_PopupSettings_SettingsSubsection@@@Z@_NPEAV23@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???R1?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@AEBV1?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV1?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAX0AEBV1?1??EventShowKeybindMapPopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@Z@QEBA@PEAVCCitadel_PopupSettings_SettingsSubsection@@@Z@_NPEAV23@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???R1?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAXPEAVCPanel2D@panorama@@AEBV1?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV1?1???$SettingsMenu_ForEachKeybindMapKeyBinder@V<lambda_1>@?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@@YAX0AEBV1?1??EventShowSettingsSharePopup@CCitadel_PopupSettings@@AEAAXXZ@@Z@@Z@QEBA@PEAVCCitadel_PopupSettings_SettingsSubsection@@@Z@_NPEAV23@@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???R1?1???$SettingsMenu_ForEachKeyBinder@V<lambda_1>@?1??GetCriticalBindRows@CCitadel_PopupSettings@@AEAAXPEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@PEAV?$CUtlVector@UKeybindMapCriticalRow_t@@HV?$CUtlVectorMemory_Growable@UKeybindMapCriticalRow_t@@H$0A@@@@@@Z@@@YAXPEAVCPanel2D@panorama@@AEBV1?1??GetCriticalBindRows@CCitadel_PopupSettings@@AEAAXPEAV?$CUtlVector@VCUtlString@@HV?$CUtlVectorMemory_Growable@VCUtlString@@H$0A@@@@@PEAV?$CUtlVector@UKeybindMapCriticalRow_t@@HV?$CUtlVectorMemory_Growable@UKeybindMapCriticalRow_t@@H$0A@@@@@@Z@@Z@QEBA@PEAVCCitadel_PopupSettings_SettingsSubsection@@@Z@_NPEAV23@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???R1?1???R<lambda_4>@?9??UpdateDirtyPanel@CCitadel_UI_HideoutInWorldRanked@@UEAAXXZ@QEBA@PEAVCPanel2D@panorama@@H@Z@QEBA@0H@Z@XPEAV56@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???R1?1??BPanelHasVisibleSharedRows@CCitadel_PopupSettings@@AEAA_NPEAVCPanel2D@panorama@@_N@Z@QEBA@0@Z@_NPEAV45@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1???R1?1??ClearHeroOverridesInPanel@CCitadel_PopupSettings@@AEAAXPEAVCPanel2D@panorama@@@Z@QEBA@0@Z@XAEBVConVarRefAbstract@@@std@@
@@ -10477,6 +10491,7 @@ $hRh
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??EventDeleteBinding@CCitadel_UI_Popup_BindKey@@AEAA_NXZ@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??EventHideModTooltip@CCitadel_ShopModsTier@@QEAAXPEAVCPanel2D@panorama@@VCUtlStringToken@@VCPlayerSlot@@@Z@_NPEAVCCitadel_ShopModView@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??EventResetRow@CCitadel_PopupSettings_SettingsRow@@AEAA_NPEAVCPanel2D@panorama@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??EventShowMissingBindsTooltip@CCitadel_PopupSettings@@AEAA_NPEAVCPanel2D@panorama@@@Z@_NW4CitadelKeybindCommand_t@@PEBD@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??EventShowModTooltip@CCitadel_ShopModsTier@@QEAAXPEAVCPanel2D@panorama@@VCUtlStringToken@@VCPlayerSlot@@@Z@_NPEAVCCitadel_ShopModView@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??FireGameEvent@C_Citadel_HLTVCamera@@UEAAXPEAVIGameEvent@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_1>@?1??ForEachResettableControl@CCitadel_PopupSettings_SettingsRow@@AEAAXAEBV?$function@$$A6AXPEAVISettingResettable@@@Z@std@@@Z@_NPEAVCPanel2D@panorama@@@std@@
@@ -10680,6 +10695,7 @@ $hRh
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?1??UpdateTickBar@CCitadelHudUtils@@SAXPEAVCPanel2D@panorama@@HAEBV?$function@$$A6AXPEAVCPanel2D@panorama@@H@Z@std@@@Z@XPEAV45@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?5??SetupSettingsSearchData@CCitadel_PopupSettings@@AEAAXXZ@_NPEAVCLabel@panorama@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?6???R<lambda_3>@?1??UpdateDirtyPanel@CCitadel_UI_FriendsList@@UEAAXXZ@QEBA@PEAVCPanel2D@panorama@@H@Z@XPEAVCCitadel_UI_FriendsListEntry@@H@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_2>@?9??EventShowMissingBindsTooltip@CCitadel_UI_Popup_SettingsShare@@AEAA_NPEAVCPanel2D@panorama@@@Z@_NW4CitadelKeybindCommand_t@@PEBD@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?BB@??EventSubmitValue@CCitadel_UI_Popup_PostMatchSurvey@@AEAA_NHH@Z@_NPEAVCPanel2D@panorama@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?BG@??SaveGame_Finalize@CEntity2SaveRestore@@UEAA_NPEAUSaveRestoreDataHandle_t__@@@Z@X$$V@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_2>@?BJ@??RefineNode@RayTracingEnvironment@@AEAAXHPEBHHPEBUTriangleBounds_t@@V?$Vec3D@M@@2HPEAVCUtlMultiJobProcessor@@@Z@X$$V@std@@
@@ -10754,12 +10770,12 @@ $hRh
 .?AV?$_Func_impl_no_alloc@V<lambda_7>@?1??UpdateComponentModList@CCitadel_Tooltip_ModDetails@@AEAAXPEBUCitadelAbilityVData@@@Z@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_7>@?1??UpdateDirtyPanel@CCitadel_ShopModBuildCategory@@UEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_7>@?CI@??SetupQuestions@CCitadel_UI_Popup_PostMatchSurvey@@QEAA_NAEBV?$CUtlVector@PEBUCitadelHeroData_t@@HV?$CUtlVectorMemory_Growable@PEBUCitadelHeroData_t@@H$0A@@@@@@Z@X$$V@std@@
+.?AV?$_Func_impl_no_alloc@V<lambda_8>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@_NPEAVCPanel2D@panorama@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_8>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@PEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_8>@?1??UpdateDirtyPanel@CCitadel_ShopModsBuild@@UEAAXXZ@PEAVCCitadel_ShopModBuildCategory@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_8>@?1??UpdateLeaderboardEntries@CCitadel_UI_Popup_GlobalLeaderboards@@AEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_8>@?1??UpdatePanel@CCitadel_UI_Popup_SellMaxItems@@AEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_8>@?9??UpdateDirtyPanel@CCitadel_UI_HideoutInWorldRanked@@UEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
-.?AV?$_Func_impl_no_alloc@V<lambda_9>@?1??UpdateDamageData@CCitadel_UI_DamageRows@@QEAAXPEAUHeroDamageData_t@@@Z@_NPEAVCPanel2D@panorama@@@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_9>@?1??UpdateDirtyPanel@CCitadel_Hud_Quickbuy@@EEAAXXZ@XPEAVCPanel2D@panorama@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_9>@?1??UpdateDirtyPanel@CCitadel_ShopModsBuild@@UEAAXXZ@XPEAVCCitadel_ShopModBuildCategory@@H@std@@
 .?AV?$_Func_impl_no_alloc@V<lambda_9>@?2??UpdateDirtyPanel@CCitadel_DB_Page_Play@@EEAAXXZ@XPEAVCLabel@panorama@@H@std@@
@@ -11569,6 +11585,7 @@ $hRh
 .?AVCCitadel_AbilityHUDElement_ButtonHint@@
 .?AVCCitadel_AbilityHUDElement_Dash@@
 .?AVCCitadel_AbilityHUDElement_Gun@@
+.?AVCCitadel_AbilityHUDElement_LockOn@@
 .?AVCCitadel_AbilityHUDElement_Progress@@
 .?AVCCitadel_AbilityHUDElement_UnitTarget@@
 .?AVCCitadel_AbilityHUDElement_ZiplineLaneSelection@@
@@ -12275,7 +12292,6 @@ $hRh
 .?AVCCitadel_Hud_Main@@
 .?AVCCitadel_Hud_MatchEnd@@
 .?AVCCitadel_Hud_MatchStart@@
-.?AVCCitadel_Hud_MinimapEffects@@
 .?AVCCitadel_Hud_ModifierHistory@@
 .?AVCCitadel_Hud_Modifiers@@
 .?AVCCitadel_Hud_Modifiers_Entry@@
@@ -12409,7 +12425,6 @@ $hRh
 .?AVCCitadel_LoadingScreen_Main@@
 .?AVCCitadel_MagicianTurret@@
 .?AVCCitadel_MagicianTurret_GraphController@@
-.?AVCCitadel_Minimap_EffectsEntity@@
 .?AVCCitadel_MobileResupply@@
 .?AVCCitadel_MobileResupply_GraphController@@
 .?AVCCitadel_ModBonusDisplay@@
@@ -17416,15 +17431,13 @@ $hRh
 .PEBVCMsgMatchMetaDataContents_Players@@
 .PEBVCRankedSeasonDefinition@@
 .PEBVILocalizationString@panorama@@
-.PKG
-.PMG
-.PSG
-.PTG
 .PartnerAccountType
+.PcG
 .PerFriendPreferences"*\n(CPlayer_SetPerFriendPreferences_Response"c\n
 .PerFriendPreferences"U\n'CPlayer_SetPerFriendPreferences_Request
 .PingCommonData
 .PostProcessingGameStates
+.PpG
 .PublishedFileDetails
 .PublishedFileDetails"
 .PublishedFileDetails.Child
@@ -17433,6 +17446,8 @@ $hRh
 .PublishedFileDetails.Tag
 .PublishedFileDetails.VoteData
 .Publishes a clouded user file to the Workshop.
+.PxG
+.PzG
 .Q.Ol
 .\crypto\asn1\a_bitstr.c
 .\crypto\asn1\a_bool.c
@@ -17726,12 +17741,10 @@ $hRh
 .google.protobuf.ServiceOptions
 .kv3
 .lbN
-.pJG
-.pKG
-.pMG
-.pSG
 .png
 .pp@0
+.ppG
+.pxG
 .steammessages_unified_base.steamworkssdk.proto"
 .steammessages_unified_base.steamworkssdk.proto"4\n2CPlayer_GetMutualFriendsForIncomingInvites_Request"\\n&CPlayer_IncomingInviteMutualFriendList
 .steammessages_unified_base.steamworkssdk.proto"\\n"CMsgSteamLearnDataSourceDescObject
@@ -17808,6 +17821,7 @@ $hRh
 0:00
 0;Q5[
 0<cz
+0D)B
 0M2~@p
 0Marks latest announcement timestamp read by user
 0Name of the file to publish in the user's cloud.
@@ -17850,6 +17864,7 @@ $hRh
 0e\r8
 0pp@5tqE?|sO541
 0tU+xc:
+0v$-B
 0x%4.4x 
 0x%X
 0x%X 
@@ -18174,9 +18189,9 @@ $hRh
 488:1: POS_FLOATLITERAL : ( ( DIGIT )+ '.' ( DIGIT )* ( EXPONENT )? | '.' ( DIGIT )+ ( EXPONENT )? | ( DIGIT )+ EXPONENT );
 4<Td
 4@AA
+4BhEP
 4Ch;
 4F0I
-4F\v@N
 4Mv8
 4Redirection URI provided during client registration.2
 4Zis
@@ -18240,14 +18255,16 @@ $hRh
 5s\nl
 5t?F
 5~EW
-6 7G
-6 IG
+6 DG
+6 gG
 6#6165676;6M6O6S6Y6a6k6m6
 6#RDP#
 6%vi
 6(Optional) Type of game the published file represents.
 6,2K
 6-zeZ
+60EG
+60hG
 62$|S)6f
 64CK\vH
 65535
@@ -18258,12 +18275,13 @@ $hRh
 6666666666666666C:\buildworker\citadel_rel_win64\build\src\common\opensslwrapper.cpp
 67-s
 6?NumberValue@Value@v8@@QEBA?AV?$Maybe@N@2@V?$Local@VContext@v8@@@2@@Z
-6@1G
-6@EG
+6@aG
+6@eG
+6@lG
 6H,N
 6O|T%
-6P)G
-6P;G
+6PWG
+6PoG
 6Qd=
 6Returns the URL of the proper cloud server for a user.
 6True if the operation was successful, false otherwise.
@@ -18280,6 +18298,7 @@ $hRh
 6\n\vmatch_slots
 6\ng_flConfigMaxCoord
 6_wEX
+6`fG
 6afD
 6bX+
 6c&0|vvX
@@ -18287,8 +18306,7 @@ $hRh
 6l13
 6lkc
 6myY;
-6p<G
-6pAG
+6pkG
 6qo~
 6r-m_v
 6r1ij
@@ -18340,6 +18358,7 @@ $hRh
 80F2<
 82\n:XPH
 851Pe
+85z\n
 8<pl
 8= zp
 8A6j
@@ -18372,6 +18391,7 @@ $hRh
 8\n\vreason_code
 8\v8!83858A8G8K8S8W8_8e8o8q8}8
 8]Vc2
+8a1\n
 8ca1
 8dS2
 8invalid string position
@@ -18436,7 +18456,6 @@ $hRh
 :Blowfish part of OpenSSL 1.0.2j  26 Sep 2016
 :EXTERNAL TYPE %s\n
 :LBN
-:MPropertyFriendlyName
 :NAy
 :QYJ
 :Vlq
@@ -18459,12 +18478,11 @@ $hRh
 :gN(dq
 :mIR
 :w4v
-:xqt
 ;!;#;-;9;E;S;Y;_;q;{;
 ;"lY7
 ;5jNf
 ;83\v\nHBJ7
-;<}\v<}\v<}\v<}\venv_tonemap_controller2
+;<}\v<}\v<}\v<}\vC_TonemapController2
 ;LGEW
 ;Qo0
 ;Subtitles and Captions
@@ -18542,6 +18560,7 @@ $hRh
 <panel paneltype="CitadelBinding" action="%s" actionset="%s" inlinebindflags="%u" vertical-align="center" />
 <panel paneltype="CitadelHeroImage" class="InlineHeroIcon" heroid="%u" heroimagestyle="icon" vertical-align="center" />
 <panel paneltype="CitadelKeyboardGlyph" class="InlineKeyGlyph" buttoncode="%s" modifierbuttoncode="%s" vertical-align="center" />
+<panel paneltype="Image" class="InlineCitadelIcon %s" src="%s" vertical-align="center" />
 <span class="%s"> %s="</span>
 <span class="%s"> address="</span>
 <span class="%s"> context="</span>
@@ -18586,7 +18605,6 @@ $hRh
 =\n\rability_stats
 =\n\tstat_type
 =\tV_atand
-=ability_nano_pounce
 =cdE
 =trF6,#
 > No World, Just Minimap and sound*
@@ -18594,12 +18612,15 @@ $hRh
 >(Only show on Minimap, no world, no sound
 >*`\n\fECommendType
 >-10000 10000
+>0nG
 >333>
 >4|6eXg_e
 >7^0g
 >9Only Show Ping Indicator at Ping Location (no ping sound)
+>@C_Fish
 >BShow Ping Indicator at Ping Location, Play Ping Sound, and Play VO
 >CShow Ping Indicator on Pinging Player, Play Ping Sound, and Play VO
+>PiG
 >Sem
 >WK6
 >\n:GAME_PARTICLE_MANAGER_EVENT_ADD_MODELLIST_OVERRIDE_ELEMENT
@@ -18632,10 +18653,11 @@ $hRh
 ??1TryCatch@v8@@QEAA@XZ
 ??1Utf8Value@String@v8@@QEAA@XZ
 ?BooleanValue@Value@v8@@QEBA_NPEAVIsolate@2@@Z
-?CCitadel_KothCashIn_API
 ?Call@Function@v8@@QEAA?AV?$MaybeLocal@VValue@v8@@@2@V?$Local@VContext@v8@@@2@V?$Local@VValue@v8@@@2@HQEAV52@@Z
+?CitadelPlayerLevelDisplay
 ?CreateHandle@HandleScope@v8@@KAPEA_KPEAVIsolate@internal@2@_K@Z
 ?DisposeGlobal@api_internal@v8@@YAXPEA_K@Z
+?EUnitQueryBucket
 ?EncodeBC7Blocks
 ?Enter@Context@v8@@QEAAXXZ
 ?Enter@Isolate@v8@@QEAAXXZ
@@ -18660,7 +18682,6 @@ $hRh
 ?TabButton
 ?The most recent last-played time the client already knows about"
 ?VBH;
-?When enabled, a popup will be shown indicating that you have received an invite
 ?\n1increase_spring_strength_to_keep_target_on_screen
 ?\n;GAME_PARTICLE_MANAGER_EVENT_CHANGE_CONTROL_POINT_ATTACHMENT
 ?\n;GAME_PARTICLE_MANAGER_EVENT_SET_SCENE_OBJECT_TINT_AND_DESAT
@@ -18677,24 +18698,22 @@ $hRh
 ?gwL
 ?jOb
 ?m_flPosition
-?m_vMinBounds
+?opvars
 ?srJO
+?tooltip
 ?tya
 ?uWS
 ?x29
 @!@%@+@1@?@C@E@]@a@g@m@
 @":\n$CCitadelUserMsg_SpectatorTeamChanged
-@08Nd
+@08N$-B
 @0pp
-@6 KG
-@6 SG
-@6`JG
 @?SlowGetInternalField@Object@v8@@AEAA?AV?$Local@VData@v8@@@2@H@Z
 @BH]f
 @BoneSetup
-@CitadelContextMenuManager
+@CitadelFriendsListEntry
 @DebugIndividualStyle
-@HPX`hvP
+@HPX`hv
 @MVDataRoot
 @MfKZ
 @Pgl
@@ -18709,12 +18728,12 @@ $hRh
 @\n\fSingleObject
 @dKb]
 @fff>fff>fff>fff>
-@htP
 @i1V
 @keyframes 
 @keyframes '%s'\r\n{\r\n
 @n2w
 A random value [0.0, 1.0] used to make sure entities are not all in sync
+A sample line.
 A specific_item component must define either an exact item to use or a lootlist to select an item from!
 A string associated with this Cursor, to use later for remote Kill or Wait requests. Cursors can have any number of Tags associated with them.
 A uniform random number generator.
@@ -19612,6 +19631,7 @@ BAKED_LIGHT_CHART
 BAKED_SHADOWS
 BAKED_TARGET_LUMINANCE
 BASEPTR
+BASE_SETTINGS
 BASIC_CONSTRAINTS
 BAcceptsFocus
 BAcceptsInput
@@ -19765,7 +19785,6 @@ B\n\rHeroWhitelist
 B\n\vbook_reward
 B\vP\n0
 B\vp\n0
-B\vp\nP
 B_txt
 B`4I
 Background
@@ -20382,9 +20401,9 @@ C:\buildworker\citadel_rel_win64\build\src\game\client\c_rope.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\c_te_effect_dispatch.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\c_triggers.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\cdll_client_int.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2511
-C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2853
-C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2977
+C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2568
+C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:2910
+C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_citadel_player_pawn.cpp:3034
 C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\c_playerspraydecal.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\citadel_musicmanager.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\client\citadel\citadel_thirdpersoncamera.cpp:1658
@@ -20476,7 +20495,7 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_stats_sha
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_unit_query_system.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_zip_line_node.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_bull.cpp:426
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_ratking.cpp:3839
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_ratking.cpp:3865
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_shiv.cpp:2070
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_tengu.cpp:2172
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1551
@@ -20704,7 +20723,6 @@ CBaseEntity::PhysicsSimulate-MOVETYPE_STEP
 CBaseEntity::TakeDamageOld: damagetype %d with info.GetDamageForce() == Vector::vZero\n
 CBaseEntity::TakeDamageOld: damagetype %d with info.GetDamagePosition() == VectorWS::vZero\n
 CBaseEntity_SharedAPI
-CBaseEntity_SharedAPI::AddOutput
 CBaseEntity_SharedAPI::IsMotionEnabled
 CBaseEntity_SharedAPI::SetScale
 CBaseEventSchema: Can't add event: %s
@@ -21147,6 +21165,7 @@ CCitadel_Hud_PregameCountdown::Update
 CCitadel_Hud_Quickbuy::UserMsg_ItemPurchaseNotification
 CCitadel_Hud_Replay::EventHudUpdate
 CCitadel_Hud_Replay_Scrubber::OnCitadelHudUpdate
+CCitadel_KothCashIn_API
 CCitadel_MagicianTurret_API
 CCitadel_MobileResupply_API
 CCitadel_MusicData_global_client
@@ -23083,6 +23102,7 @@ CUtlDict<class CRestoreLookupTable *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CScriptConsoleCommand *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CUtlDict<class CUtlString,class CDefFastCaselessStringLess> *,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CUtlString,class CDefFastCaselessStringLess>::Insert
+CUtlDict<class CUtlVector<bool,int,class CUtlVectorMemory_Growable<bool,int,0> >,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CUtlVector<class CUtlString,int,class CUtlVectorMemory_Growable<class CUtlString,int,0> >,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CUtlVector<int,int,class CUtlVectorMemory_Growable<int,int,0> >,class CDefFastCaselessStringLess>::Insert
 CUtlDict<class CUtlVector<unsigned char,int,class CUtlVectorMemory_Growable<unsigned char,int,0> > *,class CDefFastCaselessStringLess>::Insert
@@ -23186,7 +23206,6 @@ CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<char const *,stru
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<char const *,struct SndOpEventGuid_t,class CDefEquals<char const *>,struct DefaultHashFunctor<char const *>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<char const *,struct SndOpEventGuid_t,class CDefEquals<char const *>,struct DefaultHashFunctor<char const *>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,class CUtlHashtable<unsigned int,struct vcon_PredictionReportUnpackedField_t,struct DefaultHashFunctor<unsigned int>,struct DefaultEqualFunctor<unsigned int>,class CUtlLeanVector<class CUtlHashtableEntry<unsigned int,struct vcon_PredictionReportUnpackedField_t>,int,class CMemAllocAllocator>,0> *,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,class CUtlHashtable<unsigned int,struct vcon_PredictionReportUnpackedField_t,struct DefaultHashFunctor<unsigned int>,struct DefaultEqualFunctor<unsigned int>,class CUtlLeanVector<class CUtlHashtableEntry<unsigned int,struct vcon_PredictionReportUnpackedField_t>,int,class CMemAllocAllocator>,0> *,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,int,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,int,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
-CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,struct CCHealthBarGameSystem::HealthBar_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,struct CCHealthBarGameSystem::HealthBar_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,struct CCitadel_Hud_Health_Container::RecentDamageEvent_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,struct CCitadel_Hud_Health_Container::RecentDamageEvent_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,struct EnemyRelevanceData_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,struct EnemyRelevanceData_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CEntityIndex,struct RecentEventNameData_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CEntityIndex,struct RecentEventNameData_t,class CDefEquals<class CEntityIndex>,struct DefaultHashFunctor<class CEntityIndex>,int>::HashBucket_t,int>::AddMultipleToTail
@@ -23194,6 +23213,7 @@ CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CGlobalSymb
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_BaseEntity>,class ParticleIndex_t,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_BaseEntity>,class ParticleIndex_t,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_BaseEntity>,float,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_BaseEntity>,float,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_BaseEntity>,int,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_BaseEntity>,int,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int>::AddMultipleToTail
+CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_BaseEntity>,struct CCHealthBarGameSystem::HealthBar_t,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_BaseEntity>,struct CCHealthBarGameSystem::HealthBar_t,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_BaseEntity>,struct CCitadelHudDamageImpact::ImpactPanel_t,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_BaseEntity>,struct CCitadelHudDamageImpact::ImpactPanel_t,class CDefEquals<class CHandle<class C_BaseEntity> >,struct DefaultHashFunctor<class CHandle<class C_BaseEntity> >,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CHandle<class C_CitadelPlayerPawn>,int,class CDefEquals<class CHandle<class C_CitadelPlayerPawn> >,struct DefaultHashFunctor<class CHandle<class C_CitadelPlayerPawn> >,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CHandle<class C_CitadelPlayerPawn>,int,class CDefEquals<class CHandle<class C_CitadelPlayerPawn> >,struct DefaultHashFunctor<class CHandle<class C_CitadelPlayerPawn> >,int>::HashBucket_t,int>::AddMultipleToTail
 CUtlLeanVectorImpl<class CUtlLeanVectorBase<struct CUtlHashMap<class CPlayerSlot,class CRecipientLimiter,class CDefEquals<class CPlayerSlot>,struct DefaultHashFunctor<class CPlayerSlot>,int>::HashBucket_t,int,class CMemAllocAllocator>,struct CUtlHashMap<class CPlayerSlot,class CRecipientLimiter,class CDefEquals<class CPlayerSlot>,struct DefaultHashFunctor<class CPlayerSlot>,int>::HashBucket_t,int>::AddMultipleToTail
@@ -23703,7 +23723,6 @@ Catmull-Rom
 Catmull-Rom (Norm X)
 Catmull-Rom (Norm)
 Catmull-Rom (Tangent)
-Ccitadel_item_pickup_rejuv_herotest
 Ceiling - round float up to nearest integer)
 Ceiling Float
 CenterColumn
@@ -23971,6 +23990,7 @@ CitadelConnectingToGameServer
 CitadelConnectionStatus
 CitadelConnectionStatusSpoofUpdated
 CitadelContextMenuGameChat
+CitadelContextMenuManager
 CitadelContextMenuParty
 CitadelContextMenuPlayer
 CitadelContextualPingManager
@@ -24030,7 +24050,6 @@ CitadelFriendRecommended
 CitadelFriendStatusChanged
 CitadelFriendVoiceTransmittingStateChanged
 CitadelFriendsList
-CitadelFriendsListEntry
 CitadelFriendsListEntryParty
 CitadelFriendsPanelButtonClicked
 CitadelGCConnectionStatusChanged
@@ -24150,7 +24169,6 @@ CitadelHudDamageIndicatorManifest
 CitadelHudDamageMeterReset
 CitadelHudDamageReport
 CitadelHudDamageReport_CycleDisplayMode
-CitadelHudDamageReport_FocusHero
 CitadelHudDamageReport_SetDisplayMode
 CitadelHudDamageReport_ToggleDamageByHero
 CitadelHudDamageSummary
@@ -24404,7 +24422,6 @@ CitadelPlayPageBots
 CitadelPlayerContextMenuSetAudioVolume
 CitadelPlayerDraftRoundChanged
 CitadelPlayerLevel
-CitadelPlayerLevelDisplay
 CitadelPlayerLevelDisplayTooltip
 CitadelPlayerLevelUpBonuses
 CitadelPlayerListEntrySetMuted
@@ -24480,6 +24497,7 @@ CitadelPrivateLobbySetRandomizeLanes
 CitadelPrivateLobbySetServerRegion
 CitadelPrivateLobbyShuffleLanes
 CitadelPrivateLobbyShuffleTeams
+CitadelPrivateLobbyStartMatch
 CitadelPrivateLobbyStartMatch( 0 )
 CitadelPrivateLobbySwapTeams
 CitadelPrivateLobbyTeamSlot
@@ -24622,8 +24640,10 @@ CitadelSettingsFocusSection
 CitadelSettingsGlobalSettingRowHovered
 CitadelSettingsHeroSelectorPickHero
 CitadelSettingsHeroSelectorScrollToSelection
+CitadelSettingsHideMissingBindsTooltip
 CitadelSettingsKeyBindCapture
 CitadelSettingsKeyBinder
+CitadelSettingsMissingBindsTooltip
 CitadelSettingsNewSettingsClicked
 CitadelSettingsNewSettingsUpdated
 CitadelSettingsOnMoveDown
@@ -24642,14 +24662,18 @@ CitadelSettingsShareApplied
 CitadelSettingsShareApply
 CitadelSettingsShareCopyCode
 CitadelSettingsShareExportOptionChanged
+CitadelSettingsShareHideMissingBindsTooltip
+CitadelSettingsShareMissingBindsTooltip
 CitadelSettingsShareOptionToggled
 CitadelSettingsSharePasteClipboard
 CitadelSettingsSharePreviewChanges
 CitadelSettingsSharePreviewStep
 CitadelSettingsShareScrollScopeMenu
 CitadelSettingsShareSetMode
+CitadelSettingsShareShowMissingBindsTooltip
 CitadelSettingsShareShowPreview
 CitadelSettingsShareUndo
+CitadelSettingsShowMissingBindsTooltip
 CitadelSettingsSlider
 CitadelSettingsSubSectionHovered
 CitadelSettingsToggle
@@ -24744,7 +24768,6 @@ CitadelShowPostGameGraphsTooltip
 CitadelShowPostGameNew
 CitadelShowPrimaryTabPage
 CitadelShowPriorityTokenTooltip
-CitadelShowPrivateLobbyPage
 CitadelShowProfileCardTooltip
 CitadelShowProfileCardWithHeroTooltip
 CitadelShowProfilePage
@@ -24910,6 +24933,7 @@ Citadel_AbilityHUDButtonHintPanel
 Citadel_AbilityHUDElement_ButtonHint
 Citadel_AbilityHUDElement_Dash
 Citadel_AbilityHUDElement_Gun
+Citadel_AbilityHUDElement_LockOn
 Citadel_AbilityHUDElement_Progress
 Citadel_AbilityHUDElement_Punkgoat
 Citadel_AbilityHUDElement_UnitTarget
@@ -25037,7 +25061,6 @@ Client compatibility version %u no longer matches the server %u\n
 Client decals\n
 Client failed to parse the local lobby sent by the server\n
 Client mode %d took %f msecs to Enable()
-Client mode %d took %f msecs to Init()
 Client received a local lobby while already in GC lobby %llu, ignoring it\n
 Client received destruction of lobby %llu while connected to lobby %llu\n
 Client received lobby %llu while already connected to lobby %llu\n
@@ -25853,7 +25876,6 @@ DamageByHero
 DamageByTypeProgressBar
 DamageBy_%s
 DamageCooldown
-DamageDealt
 DamageHealMult
 DamageHealMultNonHero
 DamageHealthPercent
@@ -25876,7 +25898,6 @@ DamagePerSecondFlown
 DamagePerShot
 DamagePerShrapnel
 DamagePerStack
-DamagePieGraph
 DamagePulseAmount
 DamagePulseInterval
 DamagePulseRadius
@@ -25933,7 +25954,6 @@ Deadlock
 Deadlock heroes prewarm
 Deal 3,000 fire damage within a match
 DealMaxHealthDamagePct
-Dealt
 Death Destroy Time
 Death Penalty Gold
 Death replay active, flushing match sound.\n
@@ -26196,7 +26216,6 @@ DispatchPanelEvent
 DispatchVideoPlayerEvent
 Display Time Override:
 DisplayDropDown
-DisplayMode
 DisplayModeDropDown
 DisplayOnly
 Distance Field
@@ -26823,7 +26842,6 @@ Enable this entity.
 EnableAbilityCharges
 EnableAura
 EnableConsoleCheckbox
-EnableMinimapEffects
 EnableSatVolumesEvent_t
 Encipher Only
 Encountered %s entity '%s' with no target map specified!\n
@@ -27096,6 +27114,7 @@ ExtraSweepRange
 ExtraTargetConeAngle
 ExtraTargetHorizontalOffset
 Extraneous token
+F FG
 F#bgn?MwN|%
 F'pY
 F+Zb
@@ -27164,6 +27183,7 @@ F\n\finventories3
 F\n\fitem_scalars
 F\n\trow_range
 F\rH'4
+F`FG
 Face %s
 Face Actor
 FaceposerSectionPause
@@ -27484,6 +27504,7 @@ Footstep doesn't have valid sound hash.  Trace missed=%s, or trace didn't hit a 
 Footstep sound event invalid: %s (Anim: %s)
 Footstep: %s (Anim: %s, WalkSpeed Parameter: %.2f)
 Fop]
+ForIconAndName
 Force Display:
 Force Refresh
 Force Reload Cubemaps
@@ -27528,7 +27549,6 @@ Found soundscape entity "%s" with no soundscape name.\n
 FourLane
 FourVectors
 FourthHitDamagePercentage
-Fp%G
 Frac
 Frac: %.2f
 Fractional component (ie. returns 0.34 for 12.34)
@@ -27675,7 +27695,7 @@ GCSDK::GCDirIndex_t
 GCSQL_VERSION_BASELINE
 GCSQL_VERSION_BOOLTYPE
 GCType_t"2\n
-GCitadelPrivateLobbyStartMatch
+GCitadelShowPrivateLobbyPage
 GENERALIZEDTIME
 GENERALSTRING
 GENERAL_ALLOCATE_BOOLEAN
@@ -28248,6 +28268,8 @@ HasImbueTarget
 HasInput
 HasKeyBind
 HasKeybinds
+HasKeyline
+HasKeyline HasDiscBacking
 HasLane
 HasLastMatch
 HasLiveMatches
@@ -28285,6 +28307,7 @@ HasSearchQuery
 HasSectionText
 HasSellPriority
 HasSound
+HasSpeakerIcon
 HasSpectators
 HasStatImage
 HasSubText
@@ -28681,7 +28704,6 @@ HudHidden
 HudHiddenPanel
 HudMini
 HudMinimap
-HudMinimapEffects
 HudMinimapSize%i
 HudNetJitterGraph
 HudPerfStatsBasics
@@ -29397,8 +29419,10 @@ KeybindMapTooltipConjunction
 KeybindMapTooltipGroup
 KeybindMapTooltipGroupTitle
 KeybindMapTooltipGroups
+KeybindMapTooltipHeroCount
 KeybindMapTooltipRow
 KeybindMapTooltipScopeIcon
+KeybindMapTooltipScopes
 KeybindMapTooltipSetting
 KeybindMapView
 KeyboardArrowDown
@@ -29437,7 +29461,6 @@ Killer replay stuck waiting for tick message for %.2fs, requesting update\n
 KillerContainer
 KillerHeroImage
 KillerImage
-Kills
 KlD#
 KnightBonusPerWave
 KnightChargeHeight
@@ -29807,6 +29830,7 @@ LocatorTargetHide
 LocatorTargetShow
 LocatorTargetUpdate
 LockDynamicConstantBuffer failed in CreatePerViewConstantBuffer!!!\n
+LockOnTarget
 Locked
 LockedForRanked
 Locomotion and choreo handshake
@@ -30324,7 +30348,6 @@ MinimapBossSnippet
 MinimapBridgeBuff
 MinimapCorruptedItemShop
 MinimapCrateSnippet
-MinimapEffects
 MinimapGoldIdlePickupSnippet
 MinimapKothSnippet
 MinimapMidBossSnippet
@@ -30366,11 +30389,12 @@ Missing token
 Missing token %s
 Missing valid "Root Motion" bone on vmdl: "%s". Valid Bone names are:\n 
 Missing value for currency type %s for price point %u
+MissingBinds
+MissingBindsTooltip
 MissingHPHeal
 MissingHealthBurstPct
 MissingHealthDamagePercentage
 MissingHealthPercentHeal
-MixedPureDamage
 MlT8
 Mlt(J
 Mod R%d <- R%d %% R%d
@@ -30472,7 +30496,6 @@ MouseButton3
 MouseButton4
 MouseButton5
 MouseButtonImage
-MouseCursorSize
 MouseDown
 MouseDrag
 MouseGlyphSnippet
@@ -30829,8 +30852,6 @@ NoChannel
 NoClipDuration
 NoCommand
 NoConversation
-NoDamageData
-NoDisplayedDamage
 NoDraftsAvailable
 NoEntry
 NoFeaturedMatches
@@ -31229,10 +31250,11 @@ P-256
 P-384
 P-521
 P08J
-P08Nd
+P08N$-B
 P1\t98"
 P2P ping to "%s". Timed out after %.2fms\n
 P5[1
+P6@YG
 PAGN_4
 PAIgnPrm
 PANORAMA_LAYOUTFILE
@@ -31271,6 +31293,7 @@ PBKDF2PARAM
 PBMAC1
 PC_NETWORKED_ONLY
 PC_NON_NETWORKED_ONLY
+PD)B
 PEIF
 PEM lib
 PEM part of OpenSSL 1.0.2j  26 Sep 2016
@@ -32023,6 +32046,7 @@ Please Wait
 Please specify 0 or 1 with the -stream Parameter\n
 Pm8A?
 PmR"H?
+Pn$-B
 Point entity.
 Point under crosshair
 Policy Qualifier CPS
@@ -32623,6 +32647,7 @@ R\n\nBookReward
 R\n\rincludekvtags
 R\r1>Vp
 R\vp!y
+R\vpD)B
 R]Di
 Rad2 Deg
 RadialBackground
@@ -32744,7 +32769,6 @@ Rebuilding Bush List:\n
 RecallCooldown
 RecastTime
 RecastWindow
-Received
 Received %u lifetime stats from server for match %llu. End: %s, Official: %s\n
 Received client welcome from GC.\n
 Received event OnDemoSkip, stopping all emitters.\n
@@ -33062,6 +33086,7 @@ Result: %s\n
 Results
 ResurrectedUnreachables%d
 ReticleCodeButtons
+ReticleCollapseGroup
 ReticleMotionGroup
 ReticleNoChanges
 ReticleNoCustomizations
@@ -34306,7 +34331,6 @@ Show%s
 Show2Arrows
 Show3Arrows
 ShowAccountID
-ShowAdjusted
 ShowAllCategories
 ShowAllItems
 ShowAllyHealthValue
@@ -34388,6 +34412,7 @@ ShowRatingLine
 ShowRatingName
 ShowResultAnimation
 ShowRoster
+ShowScopes
 ShowScreenNoAnimation
 ShowSeasonDesc
 ShowSettings
@@ -34632,6 +34657,10 @@ SpawnHeroRevealCard
 SpawnRadius
 Speaker
 SpeakerHasNoImage
+SpeakerIcon
+SpeakerIconOutline
+SpeakerIconTeam1
+SpeakerIconTeam2
 SpeakerIsPatron
 SpecialPayment
 Specified charge cost for %s was 0 (for charge cost item def %u)
@@ -35219,12 +35248,15 @@ SubsectionBackground
 Subtitle
 SubtitleAllCaps
 SubtitleBackgroundOutline
+SubtitleFilterOptions
 SubtitleFont1
 SubtitleFont2
 SubtitleOptions
 SubtitleOutlineOptions
 SubtitlePreview
 SubtitleSolidBackgroundOptions
+SubtitleSpeakerIcons
+SubtitleSpeakerIconsAndNames
 SubtitleWeightNormal
 SubtitlesAllCapsRow
 SubtitlesBackgroundStyleEnum
@@ -35804,6 +35836,7 @@ TimeToFullCharge
 TimeToGainLockonStack
 TimeToLoseLockonStack
 TimeToMaxDistance
+TimeToMaxStacks
 TimeUntilStasis
 TimeWallDepth
 TimeWallDepthVisualScale
@@ -36516,7 +36549,6 @@ UtilRemoveDeferralSystem
 Uv1t
 Uz_G3=
 V07;m
-V0MG
 V2I_ASIDENTIFIERS
 V2I_AUTHORITY_INFO_ACCESS
 V2I_AUTHORITY_KEYID
@@ -36746,7 +36778,6 @@ WARNING: Too many essential breakpieces in one frame - this may cause performanc
 WARNING: VNotify abandoned after too many attempts:\n%s\n
 WARNING: m_bDisableCollisionWithParent not supported on client (%s:%s)\n
 WASDTask
-WC_CitadelMapDistrictTrigger
 WD%g"0Q-)
 WEBAPI_PARAM_STEAMID_ACCOUNTID
 WEnumerates Cloud files for a user of a given app ID. Returns up to 500 files at a time.
@@ -36966,6 +36997,7 @@ WorldText: %s %f
 WorldUITextPanel
 WorldVector
 Worldspace Render Bounds: [%.2f %.2f %.2f] -> [%.2f %.2f %.2f]\n
+Wping_trace_radius
 Wrapper
 Wrapper class over g_pDebugOverlay instance
 WrgoI
@@ -37218,7 +37250,6 @@ XYD%
 X\tQo
 Xbox VDP is not supported on this platform.
 Xd3h
-Xf0=G
 XfJ7
 XjfR
 XqgA+
@@ -37682,6 +37713,7 @@ Z~wl
 \nFinished generating SSTs (%.1f seconds)\n\n
 \nGameTime_t
 \nGameTime_t:
+\nPD)B
 \nSimulating Entities:\n\n
 \n[ Spirit ]
 \n[ Vitality ]
@@ -38590,6 +38622,7 @@ Z~wl
 \roKK
 \rrCj
 \rstyle_index_t
+\rtrigger_catapult
 \rusercmd.proto"
 \sG7tPD
 \t The lexer was matching from line %d, offset %d, which\n\t 
@@ -38816,6 +38849,7 @@ Z~wl
 \v\vTSG
 \vj0k
 \vjC7
+\vpD)B
 ]1h=bfz
 ]FhSD}
 ]GT7]
@@ -38823,11 +38857,11 @@ Z~wl
 ]MSd
 ][LK~lO
 ^.om5r
-^0cG
 ^DnJ
 ^DqPt
 ^J_spY
 ^Nij
+^PDG
 ^RB!r
 ^\n\ffloat_values
 ^\n\fmap_mappings
@@ -38904,9 +38938,7 @@ _xU`u
 _}eOk
 `28)fk
 `3?New@Array@v8@@SA?AV?$Local@VArray@v8@@@2@PEAVIsolate@2@H@Z
-`6 LG
-`6@VG
-`6@WG
+`60yG
 `:zQF
 `Aq8
 `D$daM-l
@@ -38918,7 +38950,6 @@ _}eOk
 `\n\rvector_values
 `fPw.\vM
 `h9T~
-`ht0
 `o_je
 `yNT
 a null shared library handle was used
@@ -38937,7 +38968,7 @@ a:typeparam
 a;Tg
 a@XZ
 aA0k
-aBvd
+aBv$-B
 aD/x
 aDSS
 aECDH
@@ -39047,7 +39078,6 @@ ability_stacks
 ability_stat
 ability_subcasts
 ability_subclass
-ability_summary_subtitle
 ability_teleport
 ability_type
 ability_unlock_type
@@ -40411,6 +40441,7 @@ citadel_hero_refresh
 citadel_hint_activate %s
 citadel_hint_activate All
 citadel_hint_changed
+citadel_icon
 citadel_in_hideout
 citadel_inline_attribute
 citadel_inline_attribute_icon
@@ -40955,6 +40986,7 @@ crosshair_outline_color_b
 crosshair_outline_color_g
 crosshair_outline_color_r
 crosshair_pip_gap
+crosshair_pip_gap_collapse
 crosshair_pip_gap_static
 crosshair_pip_height
 crosshair_pip_opacity
@@ -41058,7 +41090,6 @@ cycle_class
 cycle_classes
 cz>Sp
 d e not congruent to 1
-d%$HO
 d.allOrFirstTier
 d.authenticatedData
 d.certificate
@@ -41158,7 +41189,6 @@ damage_dealers
 damage_direction
 damage_direction_cp
 damage_done
-damage_done_raw
 damage_meter_duration
 damage_meter_total
 damage_mitigated
@@ -41611,6 +41641,7 @@ down
 down-wrap
 down-wrap-left
 dpiaware
+dq\f0
 draft_inner_wheel
 draft_inner_wheel_blur
 draft_item_sets
@@ -41931,6 +41962,7 @@ entindex_scorer
 entindex_victim
 entities
 entity # %i: %s%s%s\n
+entity is dormant
 entity1
 entity2/gametime.h
 entityType:to_subtype
@@ -42159,7 +42191,6 @@ eyj5yR
 f#9i\n
 f%wyLmX:
 f&dy
-f0"G
 f1cK%
 f45\r
 fBB\fy
@@ -42229,6 +42260,7 @@ file://%s
 file://{images}/%s%s
 file://{images}/browser/browser_mousepan.png
 file://{images}/builds/%s.svg
+file://{images}/control_icons/broadcast.psd
 file://{images}/control_icons/plus.png
 file://{images}/control_icons/question_mark.png
 file://{images}/glyphs/keyboard_arrow_down.svg
@@ -42247,7 +42279,9 @@ file://{images}/icons/icon_player.svg
 file://{images}/icons/settings_global.svg
 file://{images}/main_menu/logo_logo.png
 file://{images}/minimap/boss_marker_enemy.psd
+file://{images}/minimap/minimap_icon_broker.svg
 file://{images}/minimap/minimap_icon_koth.png
+file://{images}/minimap/minimap_shop.psd
 file://{images}/minimap/npc_marker_enemy.psd
 file://{images}/minimap/npc_marker_friend.psd
 file://{images}/minimap/player_cone.psd
@@ -42266,9 +42300,12 @@ file://{images}/npcs/tier_2_boss.psd
 file://{images}/npcs/tier_3_boss.psd
 file://{images}/npcs/trooper.psd
 file://{images}/npcs/turret.psd
+file://{images}/post_game/nav_icon_team1.png
+file://{images}/post_game/nav_icon_team2.png
 file://{resources}/%s
 file://{resources}/citadel_keybinds.cfg
 file://{resources}/images/hud/ping/ping_icon_question.svg
+file://{resources}/layout/ability_hud_element_lock_on.xml
 file://{resources}/layout/ability_hud_element_unit_target.xml
 file://{resources}/layout/ability_hud_elements/element_button_hint.xml
 file://{resources}/layout/ability_hud_elements/element_charges.xml
@@ -42625,7 +42662,6 @@ file://{resources}/styles/citadel_shop_mods_build.css
 file://{resources}/styles/citadel_shop_mods_filtered.css
 file://{resources}/styles/citadel_shop_mods_recommended.css
 file://{resources}/styles/tooltips/citadel_text_tooltip.css
-file://{resources}/videos/main_menu/menu_streets_loop2.webm
 file_crc
 file_description
 file_url
@@ -43170,12 +43206,12 @@ h0XB
 h2Wl
 h2n_\
 h5N.
+h5T\n
 hActivator
 hAttacker
 hCallbackScope
 hCaller
 hCamera
-hEA\n
 hEM&!
 hEntityA
 hEntityB
@@ -43184,7 +43220,6 @@ hFcg
 hInstance
 hJxRX@_
 hN2D
-hQS\n
 hRB.
 hThinkFunc
 hW*m
@@ -43421,6 +43456,8 @@ hero_incoming_bullets_crit
 hero_incoming_bullets_fired
 hero_incoming_bullets_hit
 hero_inferno
+hero_kelvin
+hero_lash
 hero_level
 hero_list
 hero_lore
@@ -43467,6 +43504,7 @@ hex_model
 hex_to_string
 hexkey
 hhwi
+hiU\n
 hidden-by
 hidden_modifier
 hide
@@ -43593,6 +43631,7 @@ https://store.steampowered.com/account/preferences#CommunityContentPreferences
 https://store.steampowered.com/news/app/1422450/view/524216645064852902?l=%s
 https://store.steampowered.com/news/app/1422450/view/530965072572320687?l=%s
 https://www.google.com/
+huJ\n
 hudActivePlayerStats
 hud_cur_gold
 hud_damage_summary
@@ -43667,6 +43706,7 @@ ice_path_phys_%i.vphys
 icepath_friendly_modifier
 icon
 icon name for ping = %s\n
+icon_and_name
 icon_path
 icon_replacement
 icon_replacement_hero
@@ -43981,6 +44021,7 @@ imbued_ability_id
 imbued_ability_name
 imbuing_ability_name
 img-shadow
+img-shadow: 0px 0px 0px %d #FFFFFF;
 imgui_set_selection %i
 immobilize_modifier
 immobilize_proc
@@ -44188,7 +44229,6 @@ interrupter_ability_icon
 interrupter_hero_icon
 interval
 intmap
-introMovieActive
 intro_lineup_origin
 intro_phase
 inv_type
@@ -44453,7 +44493,6 @@ is_primary_weapon
 is_private_lobby
 is_profile_created
 is_profile_public
-is_progress
 is_progress_active
 is_progress_inactive
 is_publicly_visible
@@ -45384,6 +45423,8 @@ location_index
 location_set
 locator
 lock
+lock_on_container
+lock_on_target_%d
 locking_on
 lockon
 lockon_progress
@@ -46984,6 +47025,7 @@ month
 mood
 moodbody
 moods_file
+more_hero_count
 most_played_hero_id
 motion_vector
 mouse
@@ -47066,13 +47108,12 @@ mzP"T
 n < (int)sizeof(ctx->enc_data)
 n does not equal p q
 n-resize
-n0:G
 n0?X
 n1Z 
 n5cM
 n6j/
 n:2C[
-n@9G
+n@BG
 n@PK
 nAnimEvent
 nCRD
@@ -47445,8 +47486,15 @@ notifications_showonline
 notreadybehavior
 nowrap
 npc_ability_name
+npc_broker
 npc_dota_hero_%s
+npc_female_patron
+npc_male_patron
 npc_material_override
+npc_newscaster
+npc_seasonal
+npc_shopkeeper
+npc_spirit_jar
 npcclass
 npr_outline
 ns-resize
@@ -47476,7 +47524,6 @@ num_comments_public
 num_comms_reports
 num_conflicts
 num_daily_favorites
-num_damage_rows
 num_hours
 num_invites
 num_item_unlocks
@@ -47688,7 +47735,6 @@ optionalSignature
 optionallycompressedtangentframe
 options.m_pBoneWeights->Count() >= m_boneIDs.Count()
 options.m_pBoneWeights->Count() >= m_pSkeleton->GetNumBones()
-opvars
 orOF
 orange
 orangeLane
@@ -47788,7 +47834,8 @@ p.other
 p.ppBasis
 p.prime
 p.tpBasis
-p08@H^d
+p08@H^$-B
+p0j v
 p2p_ping could not convert "%s" to a CPeerToPeerAddress\n
 p2p_ping could not ping "%s" because they are an unknown peer\n
 p2p_ping requires a destination address\n
@@ -47798,12 +47845,12 @@ p4Z3
 p5Z3
 p5\nL,
 p618
-p6`0G
 p>?Set@Template@v8@@QEAAXV?$Local@VName@v8@@@2@V?$Local@VData@v8@@@2@W4PropertyAttribute@2@@Z
 p@0pqE5tsO?|1
 pBuffer != nullptr
 pCachedPoseBuffer->m_ID.IsValid()
 pCheckpointName
+pD)B
 pD4t
 pData->GetDataDescMap() == pTemplateDataMap
 pDescription
@@ -47811,7 +47858,6 @@ pDest
 pExternalPoseNode->m_externalPoseBufferID.IsValid()
 pFilter
 pG_*h
-pGetVehicleTopSpeedScale
 pHeroReleaseVoteOptions->GetChildCount() == (int)EActiveHeroReleaseVoteOption::Count
 pHitEntity
 pHoveredPanel = %s\n
@@ -47822,6 +47868,7 @@ pLocationEntity
 pNestedLootList
 pO0h
 pOtherEntity
+pProcBuildupReceivedPercent
 pRTH
 pSPo
 pSectionData != nullptr
@@ -48049,7 +48096,6 @@ particles/npc_range_indicator.vpcf
 particles/status_fx/status_fx_nano_clone.vpcf
 particles/status_fx/status_fx_silenced.vpcf
 particles/status_fx/status_fx_titan_invunerable.vpcf
-particles/ui/ui_boss_healthbar.vpcf
 particles/ui/ui_range_finder_aoe.vpcf
 particles/upgrades/health_nova_buff.vpcf
 particles/upgrades/overdrive_buff.vpcf
@@ -48436,6 +48482,7 @@ playresponse
 playtime_2weeks
 playtime_forever
 plum
+pn$-B
 pngsize
 point
 point arithmetic failure
@@ -48574,6 +48621,7 @@ preview
 previewBuy
 previewBuySell
 previewSell
+preview_all_speakers
 preview_angles
 preview_cloudfilename
 preview_file_size
@@ -48799,6 +48847,7 @@ rRfKR
 rX&O0
 rZ1VwGf5
 rZPM
+r\fpD)B
 r\n\vstart_index
 r\vDi
 r_citadel_mboit_enabled
@@ -49475,6 +49524,7 @@ scope_hero_count
 scope_name
 scoped
 score
+scoreboard_toggled
 scratchcolor
 scratchdepth
 screen
@@ -49919,6 +49969,7 @@ shop_panel
 shop_state
 shop_tunnel_exit
 shopkeeper_
+shopkeeper_mysterious_corrupted_
 shopping
 short header
 short line
@@ -50176,6 +50227,7 @@ spawn_probability
 speak
 speaker
 speaker_name
+speaker_names
 spec_goto %.1f %.1f %.1f %.1f %.1f\n
 spec_goto %f %f %f %f %f
 spec_lock_to_current_player failed.\n
@@ -50966,7 +51018,6 @@ tools/
 tools/images/pulse_editor/cursor_kill.png
 tools/images/pulse_editor/kill_cursor_with_tag.png
 tools_content_changed
-tooltip
 tooltip-arrow-position
 tooltip-body-position
 tooltip-position
@@ -51546,7 +51597,6 @@ vVelocityDownLine %.2f %.2f %.2f
 vW3N&
 v\n,associated_workshop_file_for_direct_payments
 v\v$m8
-v`kG
 valCur
 valDelta
 valNew
@@ -51683,7 +51733,6 @@ viewingTeammate
 viewing_as_player
 viewing_entity_index
 viewing_entity_position
-viewing_hero_name
 viewport_height
 viewport_width
 views
@@ -52032,7 +52081,7 @@ z/B,9d
 z<d2
 z>Hz
 z?ff
-zDm_ColorGradient
+zDCount
 zF):O4
 zG2m8
 zRXU 
@@ -52109,5 +52158,6 @@ zz2K
 ~R65Fu
 ~\tV_iswdigit
 ~jLRG
+~pzG
 ~w]UG
 ~yhZ

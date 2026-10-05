@@ -1,3 +1,4 @@
+// MConstructibleClassBase
 class CAI_GoalEntity : public CBaseEntity
 {
 	CUtlSymbolLarge m_iszActor;

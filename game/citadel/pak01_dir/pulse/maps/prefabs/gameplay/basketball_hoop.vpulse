@@ -1,0 +1,1248 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpulse_c2:version{0a77a200-ffb7-471f-a0b3-137267336f06} -->
+{
+	m_Cells = 
+	[
+		{
+			_class = "CPulseCell_Inflow_EntOutputHandler"
+			m_nEditorNodeID = 489762874
+			m_EntryChunk = 0
+			m_RegisterMap = 
+			{
+				m_Inparams = null
+				m_Outparams = null
+			}
+			m_SourceEntity = "basketball_backboard_trigger"
+			m_SourceOutput = "OnStartTouch"
+			m_ExpectedParamType = "PVAL_VOID"
+		},
+		{
+			_class = "CPulseCell_Inflow_GraphHook"
+			m_nEditorNodeID = 499905603
+			m_EntryChunk = 1
+			m_RegisterMap = 
+			{
+				m_Inparams = null
+				m_Outparams = null
+			}
+			m_HookName = "CPulseGraphInstance_ServerEntity::GraphStart"
+		},
+		{
+			_class = "CPulseCell_Inflow_EntOutputHandler"
+			m_nEditorNodeID = 899594608
+			m_EntryChunk = 2
+			m_RegisterMap = 
+			{
+				m_Inparams = null
+				m_Outparams = 
+				{
+					Activator = 0
+				}
+			}
+			m_SourceEntity = "basketball_score_trigger"
+			m_SourceOutput = "OnStartTouch"
+			m_ExpectedParamType = "PVAL_VOID"
+		},
+		{
+			m_nEditorNodeID = 120134360
+			m_Type = "SOUNDEVENT_START_ENTITY"
+			_class = "CPulseCell_SoundEventStart"
+		},
+		{
+			m_nEditorNodeID = 358246996
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "Start"
+		},
+		{
+			m_nEditorNodeID = 541693679
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "Kill"
+		},
+		{
+			m_nEditorNodeID = 834422117
+			_class = "CPulseCell_Inflow_Wait"
+			m_WakeResume = 
+			{
+				m_SourceOutflowName = "m_WakeResume"
+				m_nDestChunk = 2
+				m_nInstruction = 11
+			}
+		},
+		{
+			m_nEditorNodeID = 457506226
+			m_Type = "SOUNDEVENT_START_ENTITY"
+			_class = "CPulseCell_SoundEventStart"
+		},
+		{
+			m_nEditorNodeID = 824677315
+			_class = "CPulseCell_Inflow_Wait"
+			m_WakeResume = 
+			{
+				m_SourceOutflowName = "m_WakeResume"
+				m_nDestChunk = 0
+				m_nInstruction = 17
+			}
+		},
+		{
+			m_nEditorNodeID = 183674401
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "Stop"
+		},
+		{
+			m_nEditorNodeID = 550348391
+			_class = "CPulseCell_Step_EntFire"
+			m_Input = "ForceSpawn"
+		},
+	]
+	m_DomainIdentifier = "ServerEntity"
+	m_DomainSubType = "PVAL_EHANDLE:point_pulse"
+	m_ParentMapName = "maps/prefabs/gameplay/basketball_hoop.vmap"
+	m_ParentXmlName = ""
+	m_Vars = 
+	[
+		{
+			m_Name = "bIsBouncing"
+			m_Description = ""
+			m_Type = "PVAL_BOOL"
+			m_DefaultValue = false
+			m_nKeysSource = "VMAP"
+			m_bIsPublicBlackboardVariable = false
+			m_bIsObservable = false
+			m_nEditorNodeID = 160740642
+			m_Metadata = null
+		},
+	]
+	m_TempVarBanks = [  ]
+	m_Constants = 
+	[
+		{
+			m_Type = "PVAL_SNDEVT_NAME"
+			m_Value = soundevent:"Vault.Impact.Stinger_05"
+		},
+		{
+			m_Type = "PVAL_STRING"
+			m_Value = ""
+		},
+		{
+			m_Type = "PVAL_FLOAT"
+			m_Value = 1.0
+		},
+		{
+			m_Type = "PVAL_BOOL"
+			m_Value = true
+		},
+		{
+			m_Type = "PVAL_SNDEVT_NAME"
+			m_Value = soundevent:"Ability.Astro.BouncePad.Solo"
+		},
+		{
+			m_Type = "PVAL_FLOAT"
+			m_Value = 0.25
+		},
+		{
+			m_Type = "PVAL_BOOL"
+			m_Value = false
+		},
+	]
+	m_DomainValues = 
+	[
+		{
+			m_nType = "ENTITY_NAME"
+			m_Value = "basketball_score_fx"
+			m_RequiredRuntimeType = "PVAL_EHANDLE"
+		},
+		{
+			m_nType = "ENTITY_NAME"
+			m_Value = "basketball_score_fx"
+			m_RequiredRuntimeType = "PVAL_ENTITY_NAME"
+		},
+		{
+			m_nType = "ENTITY_NAME"
+			m_Value = "basketball_template"
+			m_RequiredRuntimeType = "PVAL_ENTITY_NAME"
+		},
+	]
+	m_BlackboardReferences = [  ]
+	m_PublicOutputs = [  ]
+	m_InvokeBindings = 
+	[
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					strSoundEventName = 1
+					hTargetEntity = 2
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_SoundEventStart::Run"
+			m_nCellIndex = 3
+			m_nSrcChunk = 2
+			m_nSrcInstruction = 3
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 3
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 4
+			m_nSrcChunk = 2
+			m_nSrcInstruction = 5
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					hTarget = 0
+					pParam = 4
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::Run"
+			m_nCellIndex = 5
+			m_nSrcChunk = 2
+			m_nSrcInstruction = 7
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					flDurationSec = 5
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Inflow_Wait::Wait"
+			m_nCellIndex = 6
+			m_nSrcChunk = 2
+			m_nSrcInstruction = 9
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					strSoundEventName = 3
+					hTargetEntity = 4
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_SoundEventStart::Run"
+			m_nCellIndex = 7
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 11
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					flDurationSec = 5
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Inflow_Wait::Wait"
+			m_nCellIndex = 8
+			m_nSrcChunk = 0
+			m_nSrcInstruction = 13
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 6
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 9
+			m_nSrcChunk = 2
+			m_nSrcInstruction = 13
+		},
+		{
+			m_RegisterMap = 
+			{
+				m_Inparams = 
+				{
+					TargetName = 7
+				}
+				m_Outparams = null
+			}
+			m_FuncName = "CPulseCell_Step_EntFire::FireAtName"
+			m_nCellIndex = 10
+			m_nSrcChunk = 2
+			m_nSrcInstruction = 15
+		},
+	]
+	m_CallInfos = [  ]
+	m_OutputConnections = 
+	[
+		{
+			m_SourceOutput = "Step_EntFire:183674401"
+			m_TargetEntity = "basketball_score_fx"
+			m_TargetInput = "Stop"
+			m_Param = ""
+		},
+		{
+			m_SourceOutput = "Step_EntFire:358246996"
+			m_TargetEntity = "basketball_score_fx"
+			m_TargetInput = "Start"
+			m_Param = ""
+		},
+		{
+			m_SourceOutput = "Step_EntFire:550348391"
+			m_TargetEntity = "basketball_template"
+			m_TargetInput = "ForceSpawn"
+			m_Param = ""
+		},
+	]
+	m_Chunks = 
+	[
+		{
+			m_Instructions = 
+			[
+				{
+					m_nCode = "NOP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_VAR"
+					m_nVar = 0
+					m_nReg0 = 0
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "NOT"
+					m_nVar = -1
+					m_nReg0 = 1
+					m_nReg1 = 0
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "JUMP_COND"
+					m_nVar = -1
+					m_nReg0 = 1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 6
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "JUMP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 15
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "IMMEDIATE_HALT"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "NOP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 2
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 3
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "SET_VAR"
+					m_nVar = 0
+					m_nReg0 = 2
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 3
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 4
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 4
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 0
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 4
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 5
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 5
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 5
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "IMMEDIATE_HALT"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "NOP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "RETURN_VOID"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "NOP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 6
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 6
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "SET_VAR"
+					m_nVar = 0
+					m_nReg0 = 6
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "RETURN_VOID"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+			]
+			m_Registers = 
+			[
+				{
+					m_nReg = 0
+					m_Type = "PVAL_BOOL"
+					m_OriginName = "160740642:value"
+					m_nWrittenByInstruction = 1
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 1
+					m_Type = "PVAL_BOOL"
+					m_OriginName = "42341273:not_condition"
+					m_nWrittenByInstruction = 2
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 2
+					m_Type = "PVAL_BOOL"
+					m_OriginName = "860950996:m_Value"
+					m_nWrittenByInstruction = 7
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 3
+					m_Type = "PVAL_SNDEVT_NAME"
+					m_OriginName = "457506226:strSoundEventName"
+					m_nWrittenByInstruction = 9
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 4
+					m_Type = "PVAL_EHANDLE"
+					m_OriginName = "457506226:hTargetEntity"
+					m_nWrittenByInstruction = 10
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 5
+					m_Type = "PVAL_FLOAT"
+					m_OriginName = "824677315:flDurationSec"
+					m_nWrittenByInstruction = 12
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 6
+					m_Type = "PVAL_BOOL"
+					m_OriginName = "747918901:m_Value"
+					m_nWrittenByInstruction = 18
+					m_nLastReadByInstruction = -1
+				},
+			]
+			m_InstructionDebugInfos = 
+			[
+				{
+					m_nFlowNodeID = 489762874
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 42341273
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 42341273
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 42341273
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 42341273
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 42341273
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 42341273
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_IsTrue"
+				},
+				{
+					m_nFlowNodeID = 860950996
+					m_nValueNodeID = 860950996
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 860950996
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 457506226
+					m_nValueNodeID = 457506226
+					m_SequencePointName = "Run"
+				},
+				{
+					m_nFlowNodeID = 457506226
+					m_nValueNodeID = 457506226
+					m_SequencePointName = "Run"
+				},
+				{
+					m_nFlowNodeID = 457506226
+					m_nValueNodeID = -1
+					m_SequencePointName = "Run"
+				},
+				{
+					m_nFlowNodeID = 824677315
+					m_nValueNodeID = 824677315
+					m_SequencePointName = "Wait"
+				},
+				{
+					m_nFlowNodeID = 824677315
+					m_nValueNodeID = -1
+					m_SequencePointName = "Wait"
+				},
+				{
+					m_nFlowNodeID = 824677315
+					m_nValueNodeID = -1
+					m_SequencePointName = "Wait"
+				},
+				{
+					m_nFlowNodeID = 42341273
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_IsFalse"
+				},
+				{
+					m_nFlowNodeID = 42341273
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_IsFalse"
+				},
+				{
+					m_nFlowNodeID = 824677315
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_WakeResume"
+				},
+				{
+					m_nFlowNodeID = 747918901
+					m_nValueNodeID = 747918901
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 747918901
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 747918901
+					m_nValueNodeID = -1
+					m_SequencePointName = "OutDefault"
+				},
+			]
+			m_nTempVarBank = -1
+		},
+		{
+			m_Instructions = 
+			[
+				{
+					m_nCode = "NOP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "RETURN_VOID"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+			]
+			m_Registers = [  ]
+			m_InstructionDebugInfos = 
+			[
+				{
+					m_nFlowNodeID = 499905603
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_OptionalSpontaneousPoint"
+				},
+				{
+					m_nFlowNodeID = 499905603
+					m_nValueNodeID = -1
+					m_SequencePointName = "OutDefault"
+				},
+			]
+			m_nTempVarBank = -1
+		},
+		{
+			m_Instructions = 
+			[
+				{
+					m_nCode = "NOP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 0
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 2
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 0
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 0
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 3
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 4
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 2
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_CONST"
+					m_nVar = -1
+					m_nReg0 = 5
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = 2
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 3
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "IMMEDIATE_HALT"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "NOP"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 6
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 6
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "GET_DOMAIN_VALUE"
+					m_nVar = -1
+					m_nReg0 = 7
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = 2
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "CELL_INVOKE"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = 7
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+				{
+					m_nCode = "RETURN_VOID"
+					m_nVar = -1
+					m_nReg0 = -1
+					m_nReg1 = -1
+					m_nReg2 = -1
+					m_nInvokeBindingIndex = -1
+					m_nChunk = -1
+					m_nDestInstruction = 0
+					m_nCallInfoIndex = -1
+					m_nConstIdx = -1
+					m_nDomainValueIdx = -1
+					m_nBlackboardReferenceIdx = -1
+					m_nTempVarIdx = -1
+				},
+			]
+			m_Registers = 
+			[
+				{
+					m_nReg = 0
+					m_Type = "PVAL_EHANDLE"
+					m_OriginName = "899594608:Activator"
+					m_nWrittenByInstruction = -1
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 1
+					m_Type = "PVAL_SNDEVT_NAME"
+					m_OriginName = "120134360:strSoundEventName"
+					m_nWrittenByInstruction = 1
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 2
+					m_Type = "PVAL_EHANDLE"
+					m_OriginName = "120134360:hTargetEntity"
+					m_nWrittenByInstruction = 2
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 3
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "358246996:TargetName"
+					m_nWrittenByInstruction = 4
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 4
+					m_Type = "PVAL_STRING"
+					m_OriginName = "541693679:pParam"
+					m_nWrittenByInstruction = 6
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 5
+					m_Type = "PVAL_FLOAT"
+					m_OriginName = "834422117:flDurationSec"
+					m_nWrittenByInstruction = 8
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 6
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "183674401:TargetName"
+					m_nWrittenByInstruction = 12
+					m_nLastReadByInstruction = -1
+				},
+				{
+					m_nReg = 7
+					m_Type = "PVAL_ENTITY_NAME"
+					m_OriginName = "550348391:TargetName"
+					m_nWrittenByInstruction = 14
+					m_nLastReadByInstruction = -1
+				},
+			]
+			m_InstructionDebugInfos = 
+			[
+				{
+					m_nFlowNodeID = 899594608
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_PrimaryPoint"
+				},
+				{
+					m_nFlowNodeID = 120134360
+					m_nValueNodeID = 120134360
+					m_SequencePointName = "Run"
+				},
+				{
+					m_nFlowNodeID = 120134360
+					m_nValueNodeID = 120134360
+					m_SequencePointName = "Run"
+				},
+				{
+					m_nFlowNodeID = 120134360
+					m_nValueNodeID = -1
+					m_SequencePointName = "Run"
+				},
+				{
+					m_nFlowNodeID = 358246996
+					m_nValueNodeID = 358246996
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 358246996
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 541693679
+					m_nValueNodeID = 541693679
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 541693679
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 834422117
+					m_nValueNodeID = 834422117
+					m_SequencePointName = "Wait"
+				},
+				{
+					m_nFlowNodeID = 834422117
+					m_nValueNodeID = -1
+					m_SequencePointName = "Wait"
+				},
+				{
+					m_nFlowNodeID = 834422117
+					m_nValueNodeID = -1
+					m_SequencePointName = "Wait"
+				},
+				{
+					m_nFlowNodeID = 834422117
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_WakeResume"
+				},
+				{
+					m_nFlowNodeID = 183674401
+					m_nValueNodeID = 183674401
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 183674401
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 550348391
+					m_nValueNodeID = 550348391
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 550348391
+					m_nValueNodeID = -1
+					m_SequencePointName = "m_StepPoint"
+				},
+				{
+					m_nFlowNodeID = 550348391
+					m_nValueNodeID = -1
+					m_SequencePointName = "OutDefault"
+				},
+			]
+			m_nTempVarBank = -1
+		},
+	]
+}

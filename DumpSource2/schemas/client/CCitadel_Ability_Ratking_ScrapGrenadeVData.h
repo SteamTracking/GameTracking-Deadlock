@@ -18,6 +18,8 @@ class CCitadel_Ability_Ratking_ScrapGrenadeVData : public CitadelAbilityVData
 	float32 m_flMinSurfaceDotToBounce;
 	float32 m_flMaxSurfaceDotToBounce;
 	float32 m_flBounceTargetingPlayerWeight; // = 5
+	float32 m_flBounceTargetDistancePower; // = 2
+	float32 m_flBounceMaxHorizontalSpeed; // = 1000
 	float32 m_flBounceUpMagnitude; // = 1.8
 	float32 m_flMinTimeBetweenExplosions; // = 0.7
 	float32 m_flBounceTargetDistanceCheck; // = 2000

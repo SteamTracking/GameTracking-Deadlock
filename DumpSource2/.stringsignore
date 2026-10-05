@@ -953,6 +953,7 @@ All damage multiplier, after increases
 All operation source and target values are considered relative to the default values
 All values connected to this node must be 'observable'. Variables on this graph will be automatically promoted to observable. Other value nodes must take an explicit context, look for those nodes with a corresponding icon.
 Allied Players around Pinging Player
+Allies
 Allow Hit On Non-Tracked Targets
 Allow Item Stacking
 Allow Low GPU Memory mode (i.e. when building maps).
@@ -1627,6 +1628,7 @@ Branch Towards Endpoint
 Branch Twist
 Branch%02d
 Break
+Break Debris Speed
 Break On Dodge?
 Break Value of >= 1
 Break in debugger when missing resource match is found.\nFormat: cl_break_on_missing_resource <substring> /(empty to break on all) / 0 to turn off.\n
@@ -3244,7 +3246,6 @@ CCitadel_KothCashInVData
 CCitadel_Magic_Beam_Blocker
 CCitadel_MagicianTurret
 CCitadel_MagicianTurret_GraphController
-CCitadel_Minimap_EffectsEntity
 CCitadel_MobileResupply
 CCitadel_MobileResupply_GraphController
 CCitadel_Modifier_AIPhysics
@@ -4979,6 +4980,7 @@ CITADEL_ABILITY_BEHAVIOR_USE_LAG_COMPENSATION_FOR_UNIT_TARGETING
 CITADEL_ABILITY_BEHAVIOR_WEAPON_TOGGLE
 CITADEL_ABILITY_HUD_ELEMENT_TYPE_GUN
 CITADEL_ABILITY_HUD_ELEMENT_TYPE_HIDDEN
+CITADEL_ABILITY_HUD_ELEMENT_TYPE_LOCK_ON
 CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS
 CITADEL_ABILITY_HUD_ELEMENT_TYPE_UNIT_TARGET
 CITADEL_ABILITY_TARGETING_LOCATION_COUNT
@@ -8418,6 +8420,7 @@ CommandLine
 Comment
 Comms wheel quick reveal anchor mode 0: only compare to the heading we had when pressing down ping. 1: Use both the heading we had, AND the world space point we had at the start, updated based on our movement, and the target's relative movement, through space. Essentially a double deadzone center to help with pinging while moving fast through space. Distance from line as opposed to distance from point. 
 Compacts the heap
+Companion Abilities
 Compare
 Compare the compiled and loaded contents of 2 soundevents.
 CompareValue
@@ -8500,6 +8503,7 @@ Controls whether the compiled in vsnd morph data ease in/out values are used or 
 Convar for toggling foot lock ground tracking.
 Convar to open hero selection
 Convar to test new ping particle
+Conversations
 Convert From dB
 Convert SteamID into multiple formats
 Convert team_relative_particle_cfg to CitadelTeamRelativeParticleSettings_t
@@ -8509,6 +8513,7 @@ Cookie is Spherically Mapped
 Cooldown
 Copy a bot's recorded commands to the clipboard as a share code (aim at the bot, or the first bot with a recording)
 Copy layer from CS output to shadow atlas uses PS copy (vs CopyTexture).
+CopyUltCompanionAbility_t
 Corner Boost sound - a tricky to execute wall jump, off of an upward turned collision contact
 Correct behavior
 Correction Method
@@ -8986,6 +8991,7 @@ Delay after shooting stops to start decaying shooting spread penalty.  -1 means 
 Delay after teleporting to the source before control is given back to the player. This period is for the player to get their bearings
 Delay before ice shard's physics kick in to account for client latency
 Delay in seconds before the client will resend the 'connect' attempt
+Delay releasing unit status overlays back to the pool until after they've been hidden this long (seconds). <= 0 disables.
 DelayGain (dB)
 DeleteCreatedSpawnGroups
 DeleteFollowMoverSpringConstraint
@@ -10464,6 +10470,7 @@ ERequirementNonChargedULT
 ERequirementNone
 ERequirementStreetBrawl
 EResetDeathPenalty
+EResourceType_Blood
 EResourceType_Heat
 EResourceType_Ink
 EResourceType_None
@@ -10741,6 +10748,8 @@ EVisibleByEnemyPlayer
 EVisibleByNPC
 EVisibleByObjective
 EVisibleFromAttackingEnemyPlayer
+EVoiceLineCategory
+EVoiceLineModifier
 EVsndPlaybackMode
 EVsndTriggerMode
 EWallJumpFacing
@@ -11007,6 +11016,7 @@ Ends hero draft mode and goes straight to playing the game
 Ends the current match
 Ends the current match as if players all abandoned.
 Ends timedemo on given tick.
+Enemies
 Enemies are slowed for this duration when hit by this attack
 Enemies are slowed to this speed when hit by this attack
 Enemy
@@ -11737,6 +11747,7 @@ Flat
 Flat Alt-fire Bullet Damage given from boons that will be scaled by all increases and multipliers
 Flat Bullet Damage given from boons that will be scaled by all increases and multipliers
 Flat Melee Damage given from boons that will be scaled by all increases and multipliers
+Flat bonus to the max move speed while crouched on the ground
 Flat bullet damage that is added after all the scaling is done.
 FlattenedSerializersVersion001
 FlexOpCode_t
@@ -11934,6 +11945,7 @@ FourQuaternions
 FourVectors2D
 Frac * 5 Players to get how much extra buildup is added. Larger values make the buildup complete faster.  0.2 (*5 Players) is exactly halving the buildup time
 Fraction of an active movement slow that is also applied as additional air drag
+Fraction of the breaker's velocity added to break debris, only when the breaker is in contact (e.g. dashing through). Stacks with Break Debris Speed.
 Fraction of the comeback souls earned by a player above the enemy team's average net worth that is redirected to the tick gold pool for the two lowest net worth teammates
 Fraction of the dash travel speed kept when a parry cancels the dash, so the stop tapers off instead of snapping
 Fraction of the redirected comeback souls pool paid out to the two lowest net worth players each period
@@ -12288,6 +12300,7 @@ Gradient
 GradientWithAlpha()
 Grain Size (ms)
 Grant Abilities on Character Spawn
+Granted (no slot) alongside the copied ult, for ults that rely on another ability from the source hero
 Granulator Container
 Graph IDs
 Graph Writable
@@ -12297,6 +12310,7 @@ Graphs CIE1931 functions to make sure they look right
 Graphs the old broken filter kernel and candidates for new ones
 Gravity
 Gravity multiplier at the moment a parry cancels an air dash. Ramps to 1.0 over the glide duration
+Gravity multiplier while falling during the charge, so he feels heavier without changing jump height.
 Gravity scale for the lob. 1.0 matches world gravity; higher is a steeper arc.
 Greater Than
 GreaterThan
@@ -12339,6 +12353,7 @@ GroupTag
 Groups a set of nodes.  Comments/colors will get displayed in the graph and on node editors.  A group box allows the user to drag the entire group as one object.
 Growth Per Minute
 Growth Start Minute
+Grunts
 Guide bot talks about neutrals
 Gun
 HDRColorScale
@@ -12542,6 +12557,7 @@ HeroLevel_t
 HeroPersona_t
 HeroReveal
 HeroScalingStat_t
+HeroSelect
 HeroStatsDisplay_t
 HeroStatsUI_t
 Hide POTG hud
@@ -12730,7 +12746,7 @@ How long do accumulated numbers live.
 How long do we show the can't pause/unpause dialog.
 How long do we wait for them to dismiss the popup dialog in lane training?
 How long does it takes to aim down sights. 
-How long each lockon stack takes to gain, in order. The number of entries is the max number of stacks.
+How long each lockon stack takes to gain, in order. The number of entries is the max number of stacks. When the TimeToMaxStacks property is above 0 these are relative weights scaled to sum to it.
 How long gravity ramps back up after a parry cancels an air dash, so the fall eases in instead of snapping on
 How long ground friction stays reduced after a parry cancels a ground dash, so the kept momentum bleeds off visibly
 How long he holds his height at the apex before slamming down
@@ -12871,6 +12887,7 @@ How short the time between presses needs to be for us to consider it a double-pr
 How soon before the target arrives at Bebop to play the approaching whoosh sound
 How strong the damper effect is. Higher values will smooth out the approach and prevent overshooting.
 How strong the spring effect is. Higher values will bounce around more as it tries to reach its ideal position.
+How the HUD subtitles show who is speaking: 0 icon and name, 1 icon only, 2 name only. Speakers without an icon always get their name.
 How the UnitQuerySystem's queries size this object's capsule
 How the detail layer is meant to be used
 How this buff's stat value is displayed in the postgame Permanent Buffs graph. Meters converts from engine units.
@@ -13378,6 +13395,7 @@ InfoForResourceTypeManifestTestResource_t
 InfoForResourceTypeProceduralTestResource_t
 InfoForResourceTypeVMapResourceData_t
 InfoForResourceTypeWorld_t
+Inherit Breaker Velocity Fraction
 Inherit from Parent
 Inherit the source's velocity and add a chase term proportional to how far behind we are, clamped so it can't overshoot the hold point.
 InheritableBoolType_t
@@ -13628,6 +13646,7 @@ Killed
 Killed by Cull
 Killed on Collision
 Killer Replay - replay from victim's point of view (1); the default is killer's (0). Experimental.
+Kills
 Kills a player applying an explosive force. Usage: explodevector <player> <x value> <y value> <z value>
 Kills a player applying force. Usage: killvector <player> <x value> <y value> <z value>
 Kills all bosses and troopers in the map
@@ -13798,6 +13817,7 @@ Level Volume
 Level of validation for nav system.  Higher will be slower.
 LevelChanged
 LevelScript
+LevelUp
 LifeState_t
 Lifesteal
 Light Orientation Type
@@ -14462,6 +14482,7 @@ MODIFIER_STATE_OBSCURED
 MODIFIER_STATE_OUT_OF_GAME
 MODIFIER_STATE_PARRY_ACTIVE
 MODIFIER_STATE_PARRY_DISABLED
+MODIFIER_STATE_PARRY_IGNORES_MELEE_DISABLED
 MODIFIER_STATE_PICKING_UP_IDOL
 MODIFIER_STATE_PITCH_UP_VOICE
 MODIFIER_STATE_POWER_SLASHING
@@ -14645,6 +14666,7 @@ MODIFIER_VALUE_COOLDOWN_MAX_TIME
 MODIFIER_VALUE_COOLDOWN_REDUCTION_PERCENTAGE
 MODIFIER_VALUE_COUNT
 MODIFIER_VALUE_CRIT_DAMAGE_RECEIVED_SCALE
+MODIFIER_VALUE_CROUCH_SPEED_BONUS
 MODIFIER_VALUE_CYCLE_TIME
 MODIFIER_VALUE_CYCLE_TIME_PERCENTAGE
 MODIFIER_VALUE_DIMENSION_TYPE
@@ -14871,6 +14893,7 @@ Makes ropes use average of cubemap lighting instead of max intensity.
 Makes the CPs for a team available to capture
 Makes the bots purchase a random draft option
 Makes the debug overlay dashboard visible.
+Mana
 ManifestTestResource_t
 Mantle automatically when moving backward into a ledge while on the ground
 Mantle automatically when moving forward into a ledge while on the ground
@@ -15932,6 +15955,7 @@ Number of bone effected
 Number of bullets to fire per shot
 Number of cascades in sunlight shadow
 Number of fragments we need to have in the buffer before slowing down playback. For use with tv_playcast_slow_playback_when_fragment_requests_fail
+Number of increments along the zoom dolly
 Number of individual dolly steps the mouse wheel zoom has while in the hideout.
 Number of minutes past which bots should try to end the game
 Number of minutes to ban users who fail rcon authentication
@@ -17560,6 +17584,7 @@ PingWheelMessage_t
 PingWheelOptionID_t
 Pinging a dead hero whose respawn is at most this many seconds away says they are almost back rather than dead.
 Pinging a low teammate offers a heal only if they are within this many units and in line of sight. Matches citadel_fow_player_range.
+Pings
 Pitch
 Pitch (aiming down) for bots when using a friendly ability
 Pitch Limit
@@ -17613,6 +17638,7 @@ Played to the teammates of the player who claimed the orb.
 Played when the client hit the orb but it isn't confirmed by the server yet.
 Played when the server receives a hit on the orb but is waiting to fully claim it.
 Player
+Player Cam buttons toggle the teammate view instead of showing it while held
 Player Cam switching button pressed
 Player Cam switching button released
 Player Fow Vision Range
@@ -18265,6 +18291,7 @@ Reach destination when warp tag ends
 ReachDestinationOnRootMotionEnd
 ReachDestinationOnWarpTagEnd
 Reachability Analysis
+Reactions
 Read the effective client simulation interpolation amount in terms of time.
 Real time FM Synthesis
 Reassign any network disconnected players to the unnassigned team
@@ -19210,6 +19237,7 @@ SearchName
 SearchOnlyAnimEvents
 SearchOnlyGraphEvents
 SearchType
+Seasonal
 Second
 Second Control point to set
 Second Curve
@@ -19931,6 +19959,16 @@ Show rope segments when debugging particle systems - specify a number to isolate
 Show scenesystem object bounding boxes
 Show server hostname in client status.
 Show specific attribute when debugging particle systems
+Show subtitles for ability and item voice lines from enemies.
+Show subtitles for ability and item voice lines from your hero and allies.
+Show subtitles for conversations between your hero and allies.
+Show subtitles for kill, reaction, and match voice lines from enemies.
+Show subtitles for kill, reaction, and match voice lines from your hero and allies.
+Show subtitles for ping and chat wheel voice lines from your hero and allies.
+Show subtitles for the Newscaster.
+Show subtitles for the Patrons.
+Show subtitles for the Shopkeeper and the Broker.
+Show subtitles for the Soul Urn.
 Show the HUD subtitles in a semi-bold font rather than normal weight.
 Show the HUD subtitles in all caps.
 Show the HUD subtitles in the player's custom size, colors, and font rather than the default style.
@@ -20328,6 +20366,7 @@ Spectator camera automatically try to match target view after no input for somet
 Spectator voice transmit mode: 0 spectators and players, 1 spectators only
 Speed
 Speed (Preferred)
+Speed (units/sec) of break debris thrown away from the attacker. 0 leaves debris where it broke. Model BreakCommands still apply on top.
 Speed Function
 Speed Range (optional)
 Speed Scale
@@ -21482,8 +21521,6 @@ Transmit all entities (not only director view)
 Transpose
 Trash Synth
 Treat Translation Separately
-Treat all neutral damage as one attacker class bucket
-Treat all trooper damage as one attacker class bucket
 Treat path as a loop
 Triangle
 Triangles
@@ -21555,6 +21592,7 @@ Turns on/off rendering the HUD
 Turns on/off the new minimap
 Turns quick response to ping messages off.
 Turns this traversal off without removing it, keeping the submotor ids of the entries below it stable
+Tutorial
 Tweak this parameter to adjust Free Camera mouse rotation.
 Tweak this parameter to adjust Free Camera movement acceleration.
 Tweak this parameter to adjust Free Camera movement max speed.
@@ -21730,6 +21768,10 @@ UpscalerType_t
 Upward Ratio
 Upward launch speed of anyone caught in the eruption.
 Upward speed of the little hop he does after planting the banner. 0 disables the hop.
+UrnCarried
+UrnDelivered
+UrnExpired
+UrnWaiting
 Usage:  dumpstringtable <tablename |all> <sv | cl> <verbose | simple> <element>      Print string tables to console, verbose to dump data, simple to show name and count only, can specifiy a single numeric element index to restrict spew.
 Usage: pulse_debug_print <vpulse_resource>
 Usage: test_vqlayout tools/layout/examples/simple.vqlayout
@@ -24475,6 +24517,7 @@ citadel_crosshair_outline_color_b
 citadel_crosshair_outline_color_g
 citadel_crosshair_outline_color_r
 citadel_crosshair_pip_gap
+citadel_crosshair_pip_gap_collapse
 citadel_crosshair_pip_gap_static
 citadel_crosshair_pip_height
 citadel_crosshair_pip_opacity
@@ -24490,8 +24533,6 @@ citadel_damage_indicator_width
 citadel_damage_offscreen_indicator_disabled
 citadel_damage_radar_enemy_display_time
 citadel_damage_report_enable
-citadel_damage_report_ignore_neutral_subclass
-citadel_damage_report_ignore_trooper_subclass
 citadel_damage_report_show_adjusted_percent_min
 citadel_damage_report_show_always
 citadel_damage_summary_max_entries
@@ -25007,7 +25048,6 @@ citadel_min_match_minutes_for_replay
 citadel_minimap_arrow_show_distance_down
 citadel_minimap_arrow_show_distance_up
 citadel_minimap_boundary
-citadel_minimap_effects
 citadel_minimap_koth_trooper_size
 citadel_minimap_local_player_width
 citadel_minimap_max_icon_shrink
@@ -25023,7 +25063,6 @@ citadel_minimap_teleporter_height_dist
 citadel_minimap_teleporter_nearby_dist
 citadel_minimap_trooper_size
 citadel_minimap_unit_click_radius
-citadel_minimap_use_effects
 citadel_minimap_zip_line_hover_radius
 citadel_minimap_zip_line_hover_thickness_scale
 citadel_minimap_zip_line_thickness
@@ -25206,6 +25245,7 @@ citadel_player_aim_at_hero_query_half_width
 citadel_player_aim_at_hero_query_interval
 citadel_player_attack_enemy_npc_fow_reveal_duration
 citadel_player_attack_enemy_player_fow_reveal_duration
+citadel_player_cam_toggle
 citadel_player_client_reprediction_disabled
 citadel_player_controller
 citadel_player_crit_multiplier
@@ -25658,6 +25698,10 @@ citadel_sub_nav_outer_radius_scaler
 citadel_subnav_select_time
 citadel_subtick_aim_data
 citadel_subtitles_all_caps
+citadel_subtitles_ally_abilities
+citadel_subtitles_ally_conversations
+citadel_subtitles_ally_kills
+citadel_subtitles_ally_pings
 citadel_subtitles_background_color_b
 citadel_subtitles_background_color_g
 citadel_subtitles_background_color_r
@@ -25665,9 +25709,16 @@ citadel_subtitles_background_opacity
 citadel_subtitles_background_style
 citadel_subtitles_bold_font
 citadel_subtitles_custom_style
+citadel_subtitles_enemy_abilities
+citadel_subtitles_enemy_kills
 citadel_subtitles_font
 citadel_subtitles_font_size
+citadel_subtitles_newscaster
 citadel_subtitles_outline_thickness
+citadel_subtitles_patrons
+citadel_subtitles_shopkeeper
+citadel_subtitles_soul_urn
+citadel_subtitles_speaker_names
 citadel_subtitles_text_color_b
 citadel_subtitles_text_color_g
 citadel_subtitles_text_color_r
@@ -25888,6 +25939,7 @@ citadel_unit_status_offset_smooth_min_rate
 citadel_unit_status_offset_smooth_small_delta
 citadel_unit_status_opaque_dist_sq
 citadel_unit_status_recent_damage_time
+citadel_unit_status_release_delay_time
 citadel_unit_status_show_ally_health_value
 citadel_unit_status_show_critical_state
 citadel_unit_status_show_health_value
@@ -30085,7 +30137,6 @@ kill_all_shrines
 kill_when_not_tiny
 killing_team
 killvector
-kind8
 knightcharge_projectile
 knightchargeleading_projectile
 koth_early_warning_time
@@ -30955,6 +31006,7 @@ m_ComebackAuraModifier
 m_Command
 m_CommandContext
 m_Comment
+m_Companion
 m_CompileDependsOnResourceTypes
 m_CompilerIdentifier
 m_Completed
@@ -33257,6 +33309,7 @@ m_UltCopiedModifier
 m_UltHoldEffect
 m_UltHoldVFX
 m_UltLeapCastParticle
+m_Ultimate
 m_UltimateCastEnemyParticle
 m_UltimateCastParticle
 m_UnitTargetParticle
@@ -37272,11 +37325,13 @@ m_flBounceAmount
 m_flBounceDirectionalDampening
 m_flBounceForwardRatio
 m_flBounceForwardSpeed
+m_flBounceMaxHorizontalSpeed
 m_flBouncePadCollisionHeight
 m_flBouncePadCollisionRadius
 m_flBounceRadiusAtCast
 m_flBounceScale
 m_flBounceTargetDistanceCheck
+m_flBounceTargetDistancePower
 m_flBounceTargetingPlayerWeight
 m_flBounceUpMagnitude
 m_flBounceUpSpeed
@@ -37304,6 +37359,7 @@ m_flBreakAfterTimeY
 m_flBreakAfterTimeZ
 m_flBreakDamage
 m_flBreakDamageRadius
+m_flBreakDebrisSpeed
 m_flBreakDistance
 m_flBreakSpeed
 m_flBreakValue
@@ -37431,6 +37487,7 @@ m_flChargeAccelerationMeters
 m_flChargeAmount
 m_flChargeAnimDelayTime
 m_flChargeDuration
+m_flChargeFallGravityScale
 m_flChargeForMaxDamage
 m_flChargeRechargeEnd
 m_flChargeRechargeStart
@@ -38496,6 +38553,7 @@ m_flIndirectStrength
 m_flInertiaScale
 m_flInertiaScaleInv
 m_flInfestedNPCModelScale
+m_flInheritBreakerVelocityFrac
 m_flInheritPlayerSpeedMultiplier
 m_flInitAtTime
 m_flInitFromKilledParentParticles
@@ -38579,6 +38637,7 @@ m_flJumpDuration
 m_flJumpEndCycle
 m_flJumpFallSpeedMax
 m_flJumpHeight
+m_flJumpHeightPct
 m_flJumpMaxDist
 m_flJumpMaxDrop
 m_flJumpMaxRise
@@ -38669,7 +38728,6 @@ m_flLastDmgTime
 m_flLastDuckTime
 m_flLastEntitySteadyState
 m_flLastFailedCommsTime
-m_flLastFleeDirectionChange
 m_flLastFrameTime
 m_flLastGameStatsRecorded
 m_flLastGameTime
@@ -39253,6 +39311,7 @@ m_flMoveSpeedReductionPct
 m_flMoveTolerance_Meters
 m_flMoveTolerance_UnitTarget_Meters
 m_flMovementAcc
+m_flMovementConeAngle
 m_flMovementControlActiveTime
 m_flMovementCurrentSpeed
 m_flMovementCurrentSpeedFast
@@ -39965,6 +40024,7 @@ m_flReturnSpeed
 m_flReturnSpeedFail
 m_flReturnStuckTime
 m_flReturnToSpawnSpeed
+m_flReturnTurnRate
 m_flRevealDuration
 m_flRevealFadeDuration
 m_flRevealStartLevel
@@ -40390,6 +40450,7 @@ m_flStateEnterTime
 m_flStateStartTime
 m_flStaticImpactVolume
 m_flStealthSpeedMetersPerSecond
+m_flSteerTurnRate
 m_flSteeringAxisFriction
 m_flStepDownHeight
 m_flStepHeight
@@ -41205,6 +41266,7 @@ m_hCharmEntity
 m_hChildEntity
 m_hChoreoScene
 m_hColorCorrectionCtrl
+m_hCompanionOf
 m_hConnection1
 m_hConnection2
 m_hConnection3
@@ -47287,6 +47349,7 @@ m_vecClusterForProbe
 m_vecColorLit
 m_vecColorScale
 m_vecColorUnlit
+m_vecCompanionAbilities
 m_vecComparisonVelocity
 m_vecComponentItems
 m_vecComponentScale
@@ -47375,7 +47438,6 @@ m_vecFinishAngles
 m_vecFinishOrigin
 m_vecFissureWallEntities
 m_vecFisureEntitiesHit
-m_vecFleeDirection
 m_vecFloatDest
 m_vecFlyingCards
 m_vecFollowMoverCouplerRange
@@ -47666,6 +47728,7 @@ m_vecSmoothedVelocity
 m_vecSpawnKV
 m_vecSpawnOrigin
 m_vecSpawnPosition
+m_vecSpawnedEntities
 m_vecSpawnedZombies
 m_vecSpawners
 m_vecSpecifiedSurroundingMaxs
@@ -50352,6 +50415,7 @@ remote_portal_link
 remote_view_forward_offset
 remove children when particle count lowers
 remove test object
+removeAll
 remove_on_completion
 remove_on_unreserved
 remove_weapon

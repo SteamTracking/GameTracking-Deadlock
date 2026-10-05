@@ -50,6 +50,12 @@ class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 	// MPropertyFriendlyName = "No Melee Cleave"
 	// MPropertySuppressExpr = "m_bDamagedByMelee == false"
 	bool m_bNoMeleeCleave;
+	// MPropertyDescription = "Speed (units/sec) of break debris thrown away from the attacker. 0 leaves debris where it broke. Model BreakCommands still apply on top."
+	// MPropertyFriendlyName = "Break Debris Speed"
+	float32 m_flBreakDebrisSpeed; // = 30
+	// MPropertyDescription = "Fraction of the breaker's velocity added to break debris, only when the breaker is in contact (e.g. dashing through). Stacks with Break Debris Speed."
+	// MPropertyFriendlyName = "Inherit Breaker Velocity Fraction"
+	float32 m_flInheritBreakerVelocityFrac; // = 0.25
 	// MPropertyDescription = "Can be mantled?"
 	bool m_bIsMantleable;
 	bool m_bRequireFullCostToBreak; // = true

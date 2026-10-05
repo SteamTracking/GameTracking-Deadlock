@@ -8,4 +8,6 @@ class CCitadel_Ability_Magician_CopyUltVData : public CitadelAbilityVData
 	CEmbeddedSubclass< CCitadelModifier > m_UltActiveModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_InformTargetUltCopiedModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_CopiedUltSpawnedEntityModifier;
+	// MPropertyStartGroup = "Companion Abilities"
+	CUtlVector< CopyUltCompanionAbility_t > m_vecCompanionAbilities;
 };

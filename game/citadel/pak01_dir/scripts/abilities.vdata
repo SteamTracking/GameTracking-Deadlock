@@ -7604,7 +7604,7 @@
 			m_vecHUDElements = 
 			[
 				{
-					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_UNIT_TARGET"
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_LOCK_ON"
 					m_strContext = "lockon"
 				},
 			]
@@ -7644,6 +7644,10 @@
 			{
 				m_strValue = "0"
 			}
+			TimeToMaxStacks = 
+			{
+				m_strValue = "0"
+			}
 		}
 		_class = "citadel_base_tiered_lockon_ability"
 		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_CONE"
@@ -7657,7 +7661,7 @@
 			m_vecHUDElements = 
 			[
 				{
-					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_UNIT_TARGET"
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_LOCK_ON"
 					m_strContext = "lockon"
 				},
 			]
@@ -124652,8 +124656,8 @@
 				m_flRecoilSpeed = 5.0
 				m_flZoomFOV = 35.0
 				m_flZoomFOV_Relative = -40.0
-				m_flDamageFalloffStartRange = 1000.0
-				m_flDamageFalloffEndRange = 2400.0
+				m_flDamageFalloffStartRange = 787.402
+				m_flDamageFalloffEndRange = 2362.205
 				m_flRange = 7000.0
 				m_flBulletLifetime = 2
 				m_flDamageFalloffStartScale = 1.0
@@ -124751,7 +124755,7 @@
 				m_nRecoilSeed = 32152
 				m_AimingShootSpreadPenalty = [ 0.0, 0.2 ]
 				m_strBulletImpactSound = soundevent:"Wraith.Wpn.Impact"
-				m_flBulletDamage = 17.76
+				m_flBulletDamage = 16.5
 			}
 		}
 		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
@@ -126065,7 +126069,7 @@
 		m_strAbilityOffCooldownSound = soundevent:""
 		m_strAbilityChargeReadySound = soundevent:""
 		m_skillshotMissParticle = resource_name:"particles/abilities/skillshot_default_miss_owner.vpcf"
-		m_flBossDamageScale = 1.0
+		m_flBossDamageScale = 0.5
 		m_iUpdateTime = 1668192829
 		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_UNIT"
 		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
@@ -127479,8 +127483,8 @@
 				m_eAttachmentSourceType = "EAttachmentSource_Custom"
 				m_strCustomAttachmentSource = "muzzle_fx"
 				m_strShootSound = soundevent:"Magician.SpectralAssist.Clone.Shoot"
-				m_flDamageFalloffStartRange = 1000.0
-				m_flDamageFalloffEndRange = 2400.0
+				m_flDamageFalloffStartRange = 787.402
+				m_flDamageFalloffEndRange = 2362.205
 				m_flDamageFalloffStartScale = 1.0
 				m_flDamageFalloffEndScale = 0.3
 			}
@@ -129015,7 +129019,7 @@
 			}
 			CopiedUltWindow = 
 			{
-				m_strValue = "12"
+				m_strValue = "9"
 				m_subclassScaleFunction = subclass:
 				{
 					_class = "scale_function_tech_duration"
@@ -129029,7 +129033,7 @@
 			}
 			CopyCooldownPercentage = 
 			{
-				m_strValue = "40"
+				m_strValue = "60"
 				m_strCSSClass = "cooldown"
 			}
 		}
@@ -129135,6 +129139,13 @@
 			m_nEnabledStateMask = "MODIFIER_STATE_MATERIAL_OVERRIDE"
 			m_bIsHidden = true
 		}
+		m_vecCompanionAbilities = 
+		[
+			{
+				m_Ultimate = "ability_ratking_standard_bearer"
+				m_Companion = "ability_ratking_ratnibble"
+			},
+		]
 		m_vecAbilityUpgrades = 
 		[
 			{
@@ -129301,7 +129312,7 @@
 			}
 			Radius = 
 			{
-				m_strValue = "6.5m"
+				m_strValue = "6m"
 				m_subclassScaleFunction = subclass:
 				{
 					_class = "scale_function_single_stat"
@@ -129521,7 +129532,7 @@
 				[
 					{
 						m_strPropertyName = "Radius"
-						m_strBonus = "3m"
+						m_strBonus = "2m"
 					},
 					{
 						m_strPropertyName = "DamageAmpPercentage"
@@ -263468,7 +263479,7 @@
 			m_vecHUDElements = 
 			[
 				{
-					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_UNIT_TARGET"
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_LOCK_ON"
 					m_strContext = "lockon"
 				},
 			]
@@ -265422,7 +265433,7 @@
 					m_bReverseProgress = false
 				},
 				{
-					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_UNIT_TARGET"
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_LOCK_ON"
 					m_strContext = "lockon"
 				},
 			]
@@ -288773,7 +288784,7 @@
 		{
 			AbilityCooldown = 
 			{
-				m_strValue = "28"
+				m_strValue = "24"
 				m_strDisableValue = "0"
 				m_strCSSClass = "cooldown"
 				m_bCanSetTokenOverride = true
@@ -289361,7 +289372,7 @@
 			}
 			DamagePerShrapnel = 
 			{
-				m_strValue = "65"
+				m_strValue = "70"
 				m_subclassScaleFunction = subclass:
 				{
 					_class = "scale_function_ability_weapon_damage"
@@ -289590,7 +289601,7 @@
 				[
 					{
 						m_strPropertyName = "DamagePerShrapnel"
-						m_strBonus = "65"
+						m_strBonus = "70"
 					},
 				]
 			},
@@ -289742,6 +289753,10 @@
 		m_strExtraTimerSound = soundevent:"Ratking.ScrapGrenade.Timer.Final"
 		m_strMeleeHitSound = soundevent:"Ratking.ScrapGrenade.MeleeHit"
 		m_strBigExplodeSound = soundevent:"Ratking.ScrapGrenade.Explode.Big"
+		m_flBounceTargetDistancePower = 1.5
+		m_flBounceTargetingPlayerWeight = 1.5
+		m_flBounceMaxHorizontalSpeed = 600.0
+		m_flBounceTargetDistanceCheck = 1200.0
 	}
 	ability_ratking_ratarmor = 
 	{
@@ -290470,7 +290485,7 @@
 		{
 			AbilityCooldown = 
 			{
-				m_strValue = "130"
+				m_strValue = "160"
 				m_strDisableValue = "0"
 				m_strCSSClass = "cooldown"
 				m_bCanSetTokenOverride = true
@@ -290483,7 +290498,7 @@
 			}
 			AbilityDuration = 
 			{
-				m_strValue = "12"
+				m_strValue = "10"
 				m_strDisableValue = "0"
 				m_strCSSClass = "duration"
 				m_bCanSetTokenOverride = true
@@ -290607,7 +290622,7 @@
 			}
 			Radius = 
 			{
-				m_strValue = "24m"
+				m_strValue = "20m"
 				m_subclassScaleFunction = subclass:
 				{
 					_class = "scale_function_tech_range"
@@ -290636,15 +290651,11 @@
 				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SPEED_MAX"
 				m_subclassScaleFunction = subclass:
 				{
-					_class = "scale_function_single_stat"
-					m_eSpecificStatScaleType = "ETechPower"
-					_my_subclass_name = "move_speed_sf"
-					m_flStatScale = 0.05
 				}
 			}
 			AllyDamageReduction = 
 			{
-				m_strValue = "20"
+				m_strValue = "15"
 				m_eProvidedPropertyType = "MODIFIER_VALUE_ALL_DAMAGE_TAKEN_REDUCTION"
 			}
 			SlowPercent = 
@@ -290705,12 +290716,8 @@
 				m_vecPropertyUpgrades = 
 				[
 					{
-						m_strPropertyName = "AbilityCooldown"
-						m_strBonus = "-20"
-					},
-					{
 						m_strPropertyName = "BonusMoveSpeed"
-						m_strBonus = "1m"
+						m_strBonus = "2m"
 					},
 				]
 			},
@@ -290719,15 +290726,11 @@
 				[
 					{
 						m_strPropertyName = "FlagDuration"
-						m_strBonus = "8"
+						m_strBonus = "5"
 					},
 					{
 						m_strPropertyName = "Radius"
 						m_strBonus = "8m"
-					},
-					{
-						m_strPropertyName = "AbilityDuration"
-						m_strBonus = "8"
 					},
 				]
 			},
@@ -290740,7 +290743,7 @@
 					},
 					{
 						m_strPropertyName = "AllyDamageReduction"
-						m_strBonus = "15"
+						m_strBonus = "10"
 					},
 				]
 			},
@@ -290977,6 +290980,7 @@
 		}
 		m_flExplodeTimer = 0.25
 		m_flChargeAccelerationMeters = 30.0
+		m_flChargeFallGravityScale = 1.6
 		m_flTurnRateMax = 150.0
 		m_flTurnRateMin = 80.0
 		m_strAG2CastCompletedAction = "bearer_cast_complete"
