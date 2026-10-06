@@ -88,7 +88,7 @@ PS
 	Texture2D g_tGBufferTarget2 < Attribute("GBufferTarget2"); SrgbRead(false); >;
 	Texture2D g_tInput < Attribute("InputTexture"); SrgbRead(false); >;
 	float4 g_vInvTexDim < Source(InvTextureDim); SourceArg(g_tInput) UiType(VectorText); >;
-	float3 g_vThresholdParams < UiType(VectorText); Expression(float3(-bloomthreshold/bloomthresholdwidth,1/bloomthresholdwidth,skyboxbloomstrength)); >;
+	float3 g_vThresholdParams < UiType(VectorText); Expression(float3(-bloomThreshold/bloomThresholdWidth,1/bloomThresholdWidth,skyboxBloomStrength)); >;
 	
 	
 	// Variant parameters

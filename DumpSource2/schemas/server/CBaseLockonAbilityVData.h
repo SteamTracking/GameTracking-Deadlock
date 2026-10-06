@@ -5,4 +5,5 @@ class CBaseLockonAbilityVData : public CitadelAbilityVData
 	CEmbeddedSubclass< CBaseModifier > m_TargetModifier;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strApplyLockonStack;
+	CSoundEventName m_strApplyMaxLockonStack;
 };

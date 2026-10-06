@@ -6,6 +6,28 @@ CitadelModifiedAttributeLabel
 	flow-children: right;
 }
 
+.AttributeContents
+{
+	width: fit-children;
+	flow-children: right;
+	vertical-align: center;
+}
+
+.ShowBonusDiff .AttributeContents,#TierBonusValue .AttributeContents
+{
+	width: 100%;
+}
+
+.heroStatsDisplay .AttributeContents
+{
+	height: 100%;
+}
+
+#AbilityType_Innate .isNegative.Corrupted .AttributeContents
+{
+	max-width: 80%;
+}
+
 CitadelHeroStatsDisplay CitadelModifiedAttributeLabel
 {
 	horizontal-align: center;
@@ -27,12 +49,17 @@ CitadelHeroStatsDisplay #StatContainer_TechPower CitadelModifiedAttributeLabel
 	margin-top: 5px;
 }
 
+#HeroStats .StatDesc_MaxHealth .AttributeContents,#HeroStats .StatDesc_DPS .AttributeContents,#HeroStats .StatDesc_TechPower .AttributeContents,#HeroStats .StatDesc_BaseHealthRegen .AttributeContents,#HeroStats .StatDesc_BulletDamage .AttributeContents,#HeroStats .StatDesc_TechDamageScale .AttributeContents
+{
+	flow-children: down;
+}
+
 CitadelModifiedAttributeLabel.Elevated
 {
 	font-weight: bold;
 }
 
-CitadelModifiedAttributeLabel#TierBonusValue,CitadelModifiedAttributeLabel#ImportantStatValue
+CitadelModifiedAttributeLabel#TierBonusValue,CitadelModifiedAttributeLabel#ImportantStatValue,#TierBonusValue .AttributeContents,#ImportantStatValue .AttributeContents
 {
 	flow-children: none;
 }

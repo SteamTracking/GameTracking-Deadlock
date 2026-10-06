@@ -1,0 +1,102 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+.ability_element_progress
+{
+	height: 100%;
+	width: 100%;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+#charge_jump_container
+{
+	clip: radial( 50% 50%, 0deg, 360deg );
+	width: 64px;
+	height: 64px;
+	vertical-align: center;
+	horizontal-align: center;
+}
+
+#charge_jump_backer
+{
+	width: 64px;
+	height: 64px;
+	vertical-align: center;
+	horizontal-align: center;
+	border-radius: 50%;
+	clip: radial( 50% 50%, 0deg, 360deg );
+	border: 3px solid #ffffff30;
+	visibility: collapse;
+}
+
+#charge_jump_progress
+{
+	width: 64px;
+	height: 64px;
+	vertical-align: center;
+	horizontal-align: center;
+	border-radius: 50%;
+	border: 3px solid #92CD38;
+	visibility: collapse;
+}
+
+.active #charge_jump_backer,.active #charge_jump_progress
+{
+	visibility: visible;
+}
+
+@keyframes 'charge_jump_full_flash'
+{
+	0%
+	{
+		border: 8px solid #ffffff;
+	}
+	
+	40%
+	{
+		border: 8px solid #ffffff;
+	}
+	
+	100%
+	{
+		border: 5px solid #D4FF7A;
+	}
+	
+}
+
+@keyframes 'charge_jump_full_pop'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+	35%
+	{
+		pre-transform-scale2d: 1.25;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1.1;
+	}
+	
+}
+
+#charge_jump_container.charge_full
+{
+	pre-transform-scale2d: 1.1;
+	animation-name: charge_jump_full_pop;
+	animation-duration: 0.3s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: 1;
+}
+
+.charge_full #charge_jump_progress
+{
+	border: 5px solid #D4FF7A;
+	animation-name: charge_jump_full_flash;
+	animation-duration: 0.45s;
+	animation-iteration-count: 1;
+}
+

@@ -603,9 +603,9 @@ PS
 	
 	RenderState(BackStencilPassOp, Replace);
 	RenderState(CullMode, F_RENDER_BACKFACES ? None : Back);
-	RenderState(CullMode, (exists(shadervar_wireframebackfaces) && shadervar_wireframebackfaces) ? None : F_RENDER_BACKFACES ? None : Back);
+	RenderState(CullMode, (exists(ShaderVar_WireframeBackfaces) && ShaderVar_WireframeBackfaces) ? None : F_RENDER_BACKFACES ? None : Back);
 	RenderState(DepthBiasClamp, 0);
-	RenderState(DepthEnable, exists(shadervar_wireframedepthenable) ? shadervar_wireframedepthenable : true);
+	RenderState(DepthEnable, exists(ShaderVar_WireframeDepthEnable) ? ShaderVar_WireframeDepthEnable : true);
 	RenderState(DepthFunc, GreaterEqual);
 	RenderState(DepthFunc, Always);
 	RenderState(DepthFunc, (F_DISABLE_DEPTH_WRITE || F_DISABLE_Z_PREPASS) ? GreaterEqual : Equal);
@@ -756,12 +756,12 @@ PS
 	float4 g_vNPROutlineDarkColor < Attribute("g_vNPROutlineDarkColor"); UiType(VectorText); >;
 	float3 g_vNPRPrimaryLightDirection < Attribute("g_vNPRPrimaryLightDirection"); UiType(VectorText); >;
 	float2 g_vNPRRimLightUpRamp < Attribute("g_vNPRRimLightUpRamp"); UiType(VectorText); >;
-	float4 g_vNormalTexcoordXform < UiType(VectorText); Expression(v0 = g_flNormalTexcoordRotation1*3.1415927/180;
+	float4 g_vNormalTexcoordXform < UiType(VectorText); Expression(v0 = g_flNormalTexCoordRotation1*3.1415927/180;
 		v1 = cos(v0);
 		v2 = sin(v0);
 		v3 = g_vNormalTexcoordScale1;
 		v3.xxy*float4(v1,-v2,v2,v1)); >;
-	float2 g_vNormalTexcoordXformOffset < UiType(VectorText); Expression(v0 = g_flNormalTexcoordRotation1*3.1415927/180;
+	float2 g_vNormalTexcoordXformOffset < UiType(VectorText); Expression(v0 = g_flNormalTexCoordRotation1*3.1415927/180;
 		v1 = cos(v0);
 		v2 = sin(v0);
 		v3 = g_vNormalTexcoordScale1;
@@ -966,7 +966,7 @@ PS
 	#endif
 	#if (S_MODE_TOOLS_WIREFRAME == 1)
 		Texture2D g_tColor < Channel(RGB, Box(TextureColor1), Srgb); Channel(A, Box(TextureMetalness1), Linear); OutputFormat(BC7); SrgbRead(true); >;
-		RenderState(CullMode, (exists(shadervar_wireframebackfaces) && shadervar_wireframebackfaces) ? None : F_RENDER_BACKFACES ? None : Back);
+		RenderState(CullMode, (exists(ShaderVar_WireframeBackfaces) && ShaderVar_WireframeBackfaces) ? None : F_RENDER_BACKFACES ? None : Back);
 		RenderState(DepthFunc, GreaterEqual);
 		RenderState(DepthWriteEnable, false);
 	#endif

@@ -1,0 +1,282 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+@define baba_barrier_brew_color: #5ead9c;
+@define baba_fire_brew_color: #e13f3f;
+.ability_element_progress
+{
+	margin-bottom: 340px;
+}
+
+.ability_element_progress Label
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	font-family: oracle;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: offWhite;
+	text-shadow: 1px 1px 0px offBlack&50;
+}
+
+.progress_bar
+{
+	height: fill-parent-flow(1.0);
+	width: fill-parent-flow(1.0);
+	background-color: none;
+	margin: 0px 1px;
+}
+
+.progress_bar,#bar_fg_container,#bar_bg
+{
+	border-radius: 0px;
+}
+
+#bar_bg,.progress_bar
+{
+	background-color: none;
+}
+
+#bar_fg
+{
+	background-image: none;
+}
+
+#bar_bg
+{
+	background-color: offBlack&aa;
+}
+
+.brew_barrier #bar_bg,.brew_fire #bar_bg,.brew_silence #bar_bg
+{
+	background-color: offBlack&00;
+}
+
+#baba_brew
+{
+	width: 390px;
+	height: 50px;
+	flow-children: down;
+	visibility: visible;
+}
+
+#baba_brew.brew_locked
+{
+	animation-name: locked_pulse;
+	animation-duration: 0.6s;
+	animation-iteration-count: infinite;
+}
+
+.bar_frame
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/hud/hero_specific/baba_brew_frame_nolines_png.vtex");
+	background-size: 100% 100%;
+	ignore-parent-flow: true;
+	opacity: 1;
+	wash-color: #706f6f;
+	transition-property: wash-color;
+	transition-duration: 0.15s;
+}
+
+.brew_barrier .bar_frame
+{
+	wash-color: baba_barrier_brew_color;
+	background-image: url("s2r://panorama/images/hud/hero_specific/baba_brew_frame_png.vtex");
+	opacity: 1;
+}
+
+.brew_silence .bar_frame
+{
+	wash-color: spiritBrightColor;
+	background-image: url("s2r://panorama/images/hud/hero_specific/baba_brew_frame_png.vtex");
+	opacity: 1;
+}
+
+.brew_fire .bar_frame
+{
+	wash-color: baba_fire_brew_color;
+	background-image: url("s2r://panorama/images/hud/hero_specific/baba_brew_frame_png.vtex");
+	opacity: 1;
+}
+
+#bars
+{
+	flow-children: down;
+	vertical-align: middle;
+	margin-top: 3px;
+	width: 320px;
+	height: 48px;
+	border-radius: 5px;
+	horizontal-align: center;
+}
+
+#group_brewing
+{
+	width: 100%;
+	height: 44px;
+	margin-bottom: 2px;
+	visibility: visible;
+}
+
+#group_brewing .progress_bar
+{
+	height: 100%;
+	vertical-align: middle;
+}
+
+.brew_barrier #group_brewing,.brew_silence #group_brewing,.brew_fire #group_brewing
+{
+	visibility: collapse;
+}
+
+#group_brewing Label
+{
+	font-size: 24px;
+	max-width: 300px;
+	text-overflow: shrink;
+	animation-name: brewing_wiggle;
+	animation-duration: 0.2s;
+	animation-iteration-count: infinite;
+}
+
+#group_brewing #bar_fg
+{
+	background-color: #706f6f;
+}
+
+@keyframes 'brewing_wiggle'
+{
+	0%
+	{
+		transform: translateY(0px);
+	}
+	
+	50%
+	{
+		transform: translateY(2px);
+	}
+	
+	100%
+	{
+		transform: translateY(0px);
+	}
+	
+}
+
+#group_effects
+{
+	width: 100%;
+	flow-children: right;
+	height: 0px;
+}
+
+#group_effects Label
+{
+	visibility: collapse;
+}
+
+.brew_barrier #group_effects,.brew_silence #group_effects,.brew_fire #group_effects
+{
+	height: 44px;
+}
+
+.brew_barrier #group_effects Label,.brew_silence #group_effects Label,.brew_fire #group_effects Label
+{
+	visibility: visible;
+	max-width: 120px;
+	max-height: 30px;
+	text-overflow: shrink;
+	text-align: center;
+}
+
+#group_effects .progress_bar
+{
+	transform: translateY(0px);
+	transition-property: transform;
+	transition-duration: 0.2s;
+}
+
+#group_effects #bar_container_barrier #bar_fg
+{
+	background-color: baba_barrier_brew_color;
+}
+
+.brew_barrier #group_effects #bar_container_barrier
+{
+	transform: translateY(0px);
+}
+
+.brew_barrier #group_effects #bar_container_barrier #bar_bg
+{
+	background-color: #132131ee;
+}
+
+#group_effects #bar_container_silence #bar_fg
+{
+	background-color: spiritBrightColor;
+}
+
+.brew_silence #group_effects #bar_container_silence
+{
+	transform: translateY(0px);
+}
+
+.brew_silence #group_effects #bar_container_silence #bar_bg
+{
+	background-color: #132131ee;
+}
+
+#group_effects #bar_container_fire #bar_fg
+{
+	background-color: baba_fire_brew_color;
+}
+
+.brew_fire #group_effects #bar_container_fire
+{
+	transform: translateY(0px);
+}
+
+.brew_fire #group_effects #bar_container_fire #bar_bg
+{
+	background-color: #132131ee;
+}
+
+.brew_barrier.brew_locked #group_effects #bar_container_silence,.brew_barrier.brew_locked #group_effects #bar_container_fire
+{
+	opacity: 0.2;
+	saturation: 0.2;
+}
+
+.brew_silence.brew_locked #group_effects #bar_container_barrier,.brew_silence.brew_locked #group_effects #bar_container_fire
+{
+	opacity: 0.2;
+	saturation: 0.2;
+}
+
+.brew_fire.brew_locked #group_effects #bar_container_silence,.brew_fire.brew_locked #group_effects #bar_container_barrier
+{
+	opacity: 0.2;
+	saturation: 0.2;
+}
+
+@keyframes 'locked_pulse'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1.03;
+		brightness: 1.5;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+}
+

@@ -149,10 +149,10 @@ PS
 	DynamicCombo( D_BAKED_LIGHTING_FROM_LIGHTMAP, 0..1 );
 	DynamicComboRule( Allow1( S_MODE_TOOLS_WIREFRAME, D_BAKED_LIGHTING_FROM_LIGHTMAP ) );
 	
-	RenderState(CullMode, (exists(shadervar_wireframebackfaces) && shadervar_wireframebackfaces) ? None : Back);
+	RenderState(CullMode, (exists(ShaderVar_WireframeBackfaces) && ShaderVar_WireframeBackfaces) ? None : Back);
 	RenderState(DepthBias, 768);
 	RenderState(DepthBiasClamp, 0);
-	RenderState(DepthEnable, exists(shadervar_wireframedepthenable) ? shadervar_wireframedepthenable : true);
+	RenderState(DepthEnable, exists(ShaderVar_WireframeDepthEnable) ? ShaderVar_WireframeDepthEnable : true);
 	RenderState(DepthFunc, GreaterEqual);
 	RenderState(DepthWriteEnable, false);
 	RenderState(FillMode, Wireframe);

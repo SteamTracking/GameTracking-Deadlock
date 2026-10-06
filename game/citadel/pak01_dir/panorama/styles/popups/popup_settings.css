@@ -1175,26 +1175,73 @@ PopupSettings.SettingsPopupVisible .SettingsContainer
 	margin-bottom: 8px;
 }
 
-#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorResetContainer
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorSwitchContainer
 {
-	width: 44px;
+	width: 50px;
 	height: 100%;
 	vertical-align: center;
 	padding-bottom: 10px;
 	overflow: noclip;
 }
 
-#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorResetContainer CitadelButton
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorSwitchContainer #HeroSelectorSwitchButton
 {
+	ui-scale: 90%;
+	width: 46px;
+	height: 38px;
 	horizontal-align: left;
 	vertical-align: center;
 	opacity: 0;
 	position: -32px 0px 0px;
 	transition-property: opacity, position;
 	transition-duration: 0.2s;
+	overflow: noclip;
 }
 
-#SettingsNavigationContainer #SettingsHeroSelectorContainer:hover #HeroSelectorResetContainer CitadelButton
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorSwitchContainer #HeroSelectorSwitchButton #HeroSelectorSwitchFrame
+{
+	width: 100%;
+	height: 100%;
+	wash-color: offWhite;
+	img-shadow: 0px 0px 0px transparent;
+	transition-property: wash-color, img-shadow;
+	transition-duration: 0.15s;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorSwitchContainer #HeroSelectorSwitchButton #HeroSelectorSwitchDisc
+{
+	width: 25px;
+	height: 25px;
+	horizontal-align: center;
+	vertical-align: center;
+	border-radius: 50%;
+	background-color: offBlack&aa;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorSwitchContainer #HeroSelectorSwitchButton #HeroSelectorSwitchIcon
+{
+	width: 24px;
+	height: 24px;
+	horizontal-align: center;
+	vertical-align: center;
+	img-shadow: 0px 0px 4px 4.0 #000000;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorSwitchContainer #HeroSelectorSwitchButton #HeroSelectorSwitchIcon.DefaultHeroIcon
+{
+	width: 22px;
+	height: 22px;
+	wash-color: offWhite;
+	img-shadow: 0px 0px 4px 4.0 #000000;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer #HeroSelectorSwitchContainer #HeroSelectorSwitchButton:hover #HeroSelectorSwitchFrame
+{
+	wash-color: brandGreen&aa;
+	img-shadow: 0px 0px 8px brandGreen&cc;
+}
+
+#SettingsNavigationContainer #SettingsHeroSelectorContainer:hover #HeroSelectorSwitchContainer #HeroSelectorSwitchButton
 {
 	opacity: 1;
 	position: 0px 0px 0px;
@@ -3596,11 +3643,6 @@ PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHer
 	flow-children: down;
 }
 
-.HasSound.ChatWheelButton .ChatWheelButtonContents
-{
-	flow-children: up;
-}
-
 #MiddleChatWheelPanel
 {
 	vertical-align: middle;
@@ -3634,23 +3676,6 @@ PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHer
 {
 	text-align: center;
 	horizontal-align: center;
-}
-
-.ChatWheelBindOptionsContainer
-{
-	border: 1px solid #000000;
-	box-shadow: #00000033 0px 0px 4px 0px ;
-	background-color: #202023;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #202023 ), to( #202023 ) );
-	transition-property: background-color, box-shadow, border;
-	transition-duration: 0.32s;
-	transition-timing-function: ease-in-out;
-}
-
-.ChatWheelBindOptionsContainer.Active
-{
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #28395C ), to( #1F2533 ) );
-	box-shadow: #000000dd 0px 0px 12px 0px ;
 }
 
 #LeftChatWheelContents,#RightChatWheelContents
@@ -3713,99 +3738,6 @@ PopupSettings.HighlightHeroSpecificSettings #SettingsNavigationContainer .HasHer
 {
 	transform: rotateZ(90deg);
 	width: 440px;
-}
-
-.ChatWheelCategory,.ChatWheelCategory #ChatWheelMessages
-{
-	width: 100%;
-	flow-children: down;
-}
-
-#ChatWheelHeader
-{
-	width: 100%;
-	border-bottom: 1px solid #3b3f40;
-	margin-top: 10px;
-	margin-bottom: 4px;
-	flow-children: right;
-}
-
-#ChatWheelHeader > Label
-{
-	color: #939da0;
-	font-size: 20px;
-	text-transform: uppercase;
-	transition-property: color, border;
-	transition-duration: .32s;
-}
-
-.ChatWheelPhraseChoiceLine
-{
-	width: 100%;
-	flow-children: right;
-	margin-left: 4px;
-	padding: 4px;
-}
-
-#ChatWheelPhraseListContainer.Active .ChatWheelPhraseChoiceLine:hover,#PingWheelListContainer.Active .ChatWheelPhraseChoiceLine:hover
-{
-	background-color: #0570BB;
-}
-
-.ChatWheelPhraseChoiceLine.MessageIsToAll .ChatWheelAllLabel
-{
-	visibility: visible;
-}
-
-.ChatWheelAllLabel
-{
-	color: white;
-	transition-property: color;
-	transition-duration: .32s;
-	visibility: collapse;
-}
-
-#ChatWheelSoundButton
-{
-	margin-right: 4px;
-	visibility: collapse;
-}
-
-.ChatWheelSoundIcon:hover
-{
-	brightness: 2.0;
-}
-
-.ChatWheelSoundIcon:active
-{
-	brightness: 1.5;
-}
-
-.MessageHasSound #ChatWheelSoundButton
-{
-	visibility: visible;
-}
-
-.ChatWheelSoundIcon
-{
-	width: 20px;
-	height: 20px;
-	background-image: url("s2r://panorama/images/chat_wheel/icon_scoreboard_mute_sound_psd.vtex");
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-
-.ChatWheelButton .ChatWheelSoundIcon
-{
-	vertical-align: middle;
-	horizontal-align: center;
-	margin-right: 4px;
-	visibility: collapse;
-}
-
-.ChatWheelButton.HasSound .ChatWheelSoundIcon
-{
-	visibility: visible;
 }
 
 #SoundGameVoiceVolume

@@ -38,8 +38,6 @@ class PingWheelMessage_t
 	ECitadelPingWheelSound_t m_ePingWheelSoundType; // = "CITADEL_PING_WHEEL_SOUND_NONE"
 	// MPropertyDescription = "Is this a subnav of another message? i.e. Heading to Yellow is a subnav of Heading to Lane..."
 	bool m_bIsSubnavMessage;
-	// MPropertyDescription = "The Default value 30 is usually good but if the text on the Ping Wheel isn't centered vertically, you should adjust this value."
-	float32 m_flPhraseTopMarginOffset; // = 30
 	// MPropertySuppressExpr = "m_bIsSubnavMessage == true || m_eSliceType == CITADEL_PING_WHEEL_ONE_SLICE || m_eSliceType == CITADEL_PING_WHEEL_TWO_SLICE"
 	// MPropertyCustomFGDType = "vdata_choice:scripts/ping_wheel_messages.vdata"
 	// MPropertyDescription = "Is this a parent message that has subnav messages? i.e. Heading to Lane has subnav messages Heading to Yellow, Heading to Blue, etc."

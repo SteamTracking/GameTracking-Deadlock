@@ -1,0 +1,49 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/ability_hud_elements/element_common.vcss" />
+		<include src="s2r://panorama/styles/ability_hud_elements/element_progress_bar.vcss" />
+		<include src="s2r://panorama/styles/ability_hud_elements/element_baba_brew.vcss" />
+	</styles>
+	<Citadel_AbilityHUDElement_Progress class="ability_element_progress">
+		<Panel id="baba_brew" context="brewing" conditional_classes="brew_fire brew_barrier brew_silence brew_locked">
+			<Panel class="bar_backer" />
+			<Panel id="bars">
+				<Panel id="group_brewing">
+					<Panel id="bar_container_brewing" class="progress_bar">
+						<Panel id="bar_bg" />
+						<Panel id="bar_fg_container">
+							<Panel id="bar_fg" context="progress_brewing" progress="fill_right" start_value="0" end_value="1" />
+						</Panel>
+						<Label text="#baba_brew_ui_brewing" />
+					</Panel>
+				</Panel>
+				<Panel id="group_effects">
+					<Panel id="bar_container_barrier" class="progress_bar">
+						<Panel id="bar_bg" />
+						<Panel id="bar_fg_container">
+							<Panel id="bar_fg" context="progress_barrier" progress="fill_right" start_value="0" end_value="1" />
+						</Panel>
+						<Label text="#modifier_baba_brew_segment_barrier" />
+					</Panel>
+					<Panel id="bar_container_silence" class="progress_bar">
+						<Panel id="bar_bg" />
+						<Panel id="bar_fg_container">
+							<Panel id="bar_fg" context="progress_silence" progress="fill_right" start_value="0" end_value="1" />
+						</Panel>
+						<Label text="#modifier_baba_brew_segment_silence" />
+					</Panel>
+					<Panel id="bar_container_fire" class="progress_bar">
+						<Panel id="bar_bg" />
+						<Panel id="bar_fg_container">
+							<Panel id="bar_fg" context="progress_fire" progress="fill_right" start_value="0" end_value="1" />
+						</Panel>
+						<Label text="#modifier_baba_brew_segment_fire" />
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="bar_frame" />
+		</Panel>
+	</Citadel_AbilityHUDElement_Progress>
+</root>

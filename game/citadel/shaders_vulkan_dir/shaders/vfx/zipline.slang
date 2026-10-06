@@ -239,7 +239,7 @@ PS
 	RenderState(CullMode, F_RENDER_BACKFACES_ONLY ? Front : Back);
 	RenderState(DepthBias, 64);
 	RenderState(DepthBiasClamp, 0);
-	RenderState(DepthEnable, exists(shadervar_wireframedepthenable) ? shadervar_wireframedepthenable : true);
+	RenderState(DepthEnable, exists(ShaderVar_WireframeDepthEnable) ? ShaderVar_WireframeDepthEnable : true);
 	RenderState(DepthFunc, GreaterEqual);
 	RenderState(DepthWriteEnable, false);
 	RenderState(DstBlend, F_ADDITIVE_BLEND ? One : SrcAlpha);

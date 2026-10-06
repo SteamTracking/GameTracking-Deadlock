@@ -1,0 +1,249 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+@import url("s2r://panorama/styles/citadel_base_styles.vcss");
+Citadel_AbilityHUDElement_Baba_BubblingBrew
+{
+	visibility: visible;
+	margin-top: 110px;
+	height: 70px;
+	width: 200px;
+	horizontal-align: center;
+	vertical-align: center;
+	z-index: -1;
+	opacity: 1;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew ProgressBar
+{
+	height: 60px;
+	width: 60px;
+	border-radius: 0px;
+	horizontal-align: right;
+	background-color: offBlack&aa;
+	opacity-mask: url("s2r://panorama/images/hud/hero_specific/baba_stackwing_psd.vtex");
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew ProgressBar .ProgressBarLeft
+{
+	background-color: #e7bdff;
+	opacity-brush: gradient( linear, 0% 0%, 100% 0%, from( spiritColor ), color-stop( 0.9, spiritBrightColor ), to( #e7bdff ) );
+	transition-property: position, height;
+	transition-duration: 0.3s;
+	transition-timing-function: ease-out;
+}
+
+.expiring_soon Citadel_AbilityHUDElement_Baba_BubblingBrew ProgressBar .ProgressBarLeft
+{
+	animation-name: expiring_soon;
+	animation-iteration-count: infinite;
+	animation-duration: 0.3s;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew .wing_left
+{
+	horizontal-align: left;
+	transform: scaleX(-1);
+	margin-left: 5px;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew .wing_right
+{
+	horizontal-align: right;
+	margin-right: 5px;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew .wing_outline
+{
+	width: 100%;
+	height: 100%;
+	wash-color: offBlack;
+	opacity: 0.7;
+	background-image: url("s2r://panorama/images/hud/hero_specific/baba_stackwing_outline_psd.vtex");
+	background-size: 100% 100%;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew #SpiritTotal
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+	width: 28px;
+	height: 28px;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew #SpiritTotal .spirit_backer
+{
+	background-image: url("s2r://panorama/images/hud/hero_specific/baba_pigeonstacks_psd.vtex");
+	background-image: url("s2r://panorama/images/hud/core/core_spirit_icon_psd.vtex");
+	width: 40px;
+	height: 40px;
+	opacity: 0.3;
+	wash-color: spiritBrightColor;
+	background-size: cover;
+	opacity: 0.3;
+}
+
+.is_zero Citadel_AbilityHUDElement_Baba_BubblingBrew #SpiritTotal .spirit_backer
+{
+	wash-color: offBlack;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew #SpiritTotal #DurationRing
+{
+	width: 100%;
+	height: 100%;
+	horizontal-align: right;
+	vertical-align: bottom;
+	visibility: collapse;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew #SpiritTotal #DurationRing .CircularProgressBarBG,Citadel_AbilityHUDElement_Baba_BubblingBrew #SpiritTotal #DurationRing .CircularProgressBarFG
+{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew #SpiritTotal #DurationRing .CircularProgressBarBG
+{
+	border: 2px solid offBlack&aa;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew #SpiritTotal #DurationRing .CircularProgressBarFG
+{
+	border: 2.5px solid spiritBrightColor;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew #SpiritTotal #SpiritLabel
+{
+	horizontal-align: center;
+	vertical-align: center;
+	text-align: center;
+	font-family: oracle;
+	font-weight: bold;
+	margin-top: 2px;
+	margin-right: 0.5px;
+	font-size: 16px;
+	color: spiritLightColor;
+	text-shadow: 0px 0px 0px 3.0 spiritDarkColor;
+	animation-name: max_value;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;
+}
+
+Citadel_AbilityHUDElement_Baba_BubblingBrew #SpiritLabel
+{
+	horizontal-align: right;
+	vertical-align: bottom;
+}
+
+.is_zero .wing_outline
+{
+	wash-color: offWhite;
+	opacity: 0.04;
+}
+
+.is_zero #SpiritTotal .spirit_backer
+{
+	opacity: 0.05;
+	wash-color: offWhite;
+}
+
+.is_zero #SpiritTotal #SpiritLabel
+{
+	color: offWhite&00;
+	opacity: 0;
+	text-shadow: 0px 0px 0px 3.0 ofFBlack;
+	animation-name: none;
+}
+
+.has_buff #SpiritTotal #DurationRing
+{
+	visibility: visible;
+}
+
+.expiring_soon #SpiritTotal #DurationRing .CircularProgressBarFG
+{
+	border-color: #c43e3e;
+}
+
+.expiring_soon .ProgressBarLeft
+{
+	animation-name: expiring_soon;
+	animation-iteration-count: infinite;
+	animation-duration: 0.7s;
+}
+
+@keyframes 'expiring_soon'
+{
+	0%
+	{
+		opacity: 1.0;
+		background-color: #a546dc;
+	}
+	
+	50%
+	{
+		opacity: 0.2;
+		background-color: #c43e3e;
+	}
+	
+	100%
+	{
+		opacity: 1.0;
+		background-color: #a546dc;
+	}
+	
+}
+
+.max_value .ProgressBarLeft
+{
+	animation-name: max_value;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+}
+
+@keyframes 'max_value'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	
+	50%
+	{
+		brightness: 2;
+	}
+	
+	100%
+	{
+		brightness: 1;
+	}
+	
+}
+
+.gained_spirit .ProgressBarLeft
+{
+	animation-name: value_add_flash;
+	animation-iteration-count: 1;
+	animation-duration: 0.3s;
+}
+
+@keyframes 'value_add_flash'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	
+	50%
+	{
+		brightness: 10;
+	}
+	
+	100%
+	{
+		brightness: 1;
+	}
+	
+}
+

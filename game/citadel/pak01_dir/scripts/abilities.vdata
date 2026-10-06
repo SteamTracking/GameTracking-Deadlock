@@ -63,6 +63,7 @@
 		resource_name:"scripts/abilities/necro.vdata_inc",
 		resource_name:"scripts/abilities/werewolf.vdata_inc",
 		resource_name:"scripts/abilities/unicorn.vdata_inc",
+		resource_name:"scripts/abilities/baba.vdata_inc",
 		resource_name:"scripts/abilities/ratking.vdata_inc",
 	]
 	ability_golden_idol = 
@@ -89444,10 +89445,6 @@
 			{
 				_class = "modifier_guided_arrow_tech_power_boost"
 				_my_subclass_name = "modifier_guided_arrow_tech_power_boost"
-				m_vecAlwaysShowInStatModifierUI = 
-				[
-					"MODIFIER_VALUE_TECH_POWER",
-				]
 			},
 		]
 		m_strCastDelaySound = soundevent:"Archer.GuidedArrow.Cast"
@@ -237076,6 +237073,11 @@
 				m_bIsHidden = true
 				m_SwingParticle = resource_name:"particles/upgrades/spirit_melee_t3_proc.vpcf"
 				m_HitParticle = resource_name:"particles/upgrades/acolytes_glove_hit.vpcf"
+				m_vecAlwaysShowInStatModifierUI = 
+				[
+					"MODIFIER_VALUE_TECH_POWER",
+					"MODIFIER_VALUE_TECH_RESIST",
+				]
 				m_BuffModifier = subclass:
 				{
 					_class = "modifier_upgrade_spirit_snatch_buff"
@@ -257576,37 +257578,31 @@
 				m_HeroID = 87
 				m_strPosterImage = resource_name:"materials/voting/vote_nurse.vtex"
 				m_strPosterImageDamaged = resource_name:"materials/voting/vote_nurse_damaged.vtex"
-				m_strPosterImageThumbnail = panorama:"file://{images}/seasonal/2026/vote_nurse_sm.png"
 			},
 			{
 				m_HeroID = 78
 				m_strPosterImage = resource_name:"materials/voting/vote_deadpack.vtex"
 				m_strPosterImageDamaged = resource_name:"materials/voting/vote_deadpack_damaged.vtex"
-				m_strPosterImageThumbnail = panorama:"file://{images}/seasonal/2026/vote_deadpack_sm.png"
 			},
 			{
 				m_HeroID = 85
 				m_strPosterImage = resource_name:"materials/voting/vote_chessmaster.vtex"
 				m_strPosterImageDamaged = resource_name:"materials/voting/vote_chessmaster_damaged.vtex"
-				m_strPosterImageThumbnail = panorama:"file://{images}/seasonal/2026/vote_chessmaster_sm.png"
 			},
 			{
 				m_HeroID = 88
 				m_strPosterImage = resource_name:"materials/voting/vote_baba.vtex"
 				m_strPosterImageDamaged = resource_name:"materials/voting/vote_baba_damaged.vtex"
-				m_strPosterImageThumbnail = panorama:"file://{images}/seasonal/2026/vote_baba_sm.png"
 			},
 			{
 				m_HeroID = 84
 				m_strPosterImage = resource_name:"materials/voting/vote_ratking.vtex"
 				m_strPosterImageDamaged = resource_name:"materials/voting/vote_ratking_damaged.vtex"
-				m_strPosterImageThumbnail = panorama:"file://{images}/seasonal/2026/vote_ratking_sm.png"
 			},
 			{
 				m_HeroID = 86
 				m_strPosterImage = resource_name:"materials/voting/vote_artist.vtex"
 				m_strPosterImageDamaged = resource_name:"materials/voting/vote_artist_damaged.vtex"
-				m_strPosterImageThumbnail = panorama:"file://{images}/seasonal/2026/vote_artist_sm.png"
 			},
 		]
 		m_strCastButtonLocToken = "#AbilityButtonHint_PlacePoster"
@@ -287498,6 +287494,3941 @@
 		}
 		m_TellParticle = resource_name:"particles/abilities/unicorn/unicorn_daggers_target.vpcf"
 		m_strHitSound = soundevent:"Unicorn.Luminous.Flux.Hit"
+	}
+	citadel_weapon_baba_set = 
+	{
+		_class = "citadel_ability_primary_weapon"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero Baba"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 7000.0
+				m_Spread = 0.0
+				m_StandingSpread = 1.5
+				m_flScatterYawScale = 1
+				m_flShootingUpSpreadPenalty = 0
+				m_flZoomMoveSpeedPercent = 1.0
+				m_flShootMoveSpeedPercent = 0.75
+				m_flHorizontalPunch = 0
+				m_flVerticalPunch = 0.2
+				m_flRecoilRecoverySpeed = 5.0
+				m_VerticallRecoil = 
+				{
+					m_Range = [ 0.0, 0.0 ]
+					m_flBurstSlope = 0.0
+					m_flBurstExponent = 0.0
+					m_flBurstConstant = 0.0
+				}
+				m_HorizontalRecoil = 
+				{
+					m_Range = [ 0.0, 0.0 ]
+					m_flBurstExponent = 0.0
+				}
+				m_flRecoilSpeed = 5.0
+				m_flZoomFOV = 50
+				m_flZoomFOV_Relative = -20
+				m_flDamageFalloffStartRange = 590.551
+				m_flDamageFalloffEndRange = 1653.543
+				m_flRange = 7000.0
+				m_flBulletLifetime = 2
+				m_flDamageFalloffStartScale = 1.0
+				m_flDamageFalloffEndScale = 0.1
+				m_flDamageFalloffBias = 0.5
+				m_iBullets = 3
+				m_flCycleTime = 0.31
+				m_reloadDuration = 2.5
+				m_iClipSize = 15
+				m_iBurstShotCount = 1
+				m_flIntraBurstCycleTime = 0
+				m_flBulletGravityScale = 0
+				m_flBulletRadius = 7.0
+				m_flBulletReflectScale = 0
+				m_flBulletReflectAmount = 1
+				m_flBulletInheritShooterVelocityScale = 0
+				m_szBulletTravelTracerParticle = resource_name:"particles/weapon_fx/baba/baba_tracer.vpcf"
+				m_szMuzzleFlashEffectName = resource_name:"particles/weapon_fx/baba/baba_muzzle_flash.vpcf"
+				m_strBulletWhizSound = soundevent:"McGinnis.Wpn.BulletWhizby"
+				m_flBulletWhizDistance = 80
+				m_mapImpactEffects = 
+				{
+					default = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+						m_strSound = soundevent:"Default.BulletImpact"
+					}
+					flesh = 
+					{
+						m_strDecal = ""
+						m_strParticle = resource_name:"particles/blood_impact/blood_impact_red_01.vpcf"
+					}
+					concrete = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+					}
+					solidmetal = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+					}
+					wood = 
+					{
+						m_strDecal = "Impact.Wood"
+						m_strParticle = resource_name:"particles/impact_fx/impact_wood.vpcf"
+					}
+					wood_plank = 
+					{
+						m_strDecal = "Impact.Wood"
+						m_strParticle = resource_name:"particles/impact_fx/impact_wood.vpcf"
+					}
+					portals = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+						m_strSound = soundevent:""
+					}
+					dirt = 
+					{
+					}
+					metalvehicle = 
+					{
+					}
+					metal = 
+					{
+					}
+					leafy_tree = 
+					{
+					}
+				}
+				m_flCritBonusStart = 1.65
+				m_flCritBonusEnd = 1.65
+				m_flCritBonusStartRange = 500.0
+				m_flCritBonusEndRange = 1500.0
+				m_flCritBonusAgainstNPCs = 0
+				m_flShootSpreadPenaltyPerShot = 1.0
+				m_flShootSpreadPenaltyDecayDelay = 0.0
+				m_flShootSpreadPenaltyDecay = 2.0
+				m_flRecoilShotIndexRecoveryTimeFactor = 0.25
+				m_bCanZoom = true
+				m_strWeaponImpactEffect = resource_name:"particles/weapon_fx/baba/baba_tracer_impact.vpcf"
+				m_flReloadMoveSpeed = "10000"
+				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Hero"
+				m_strLocalPlayerBulletImpactHeavySound = soundevent:"Player.Bullet.Impact.Hero.Large"
+				m_strReloadSound = soundevent:"Baba.Wpn.Reload.Start"
+				m_strReloadEndSound = soundevent:"Baba.Wpn.Reload.End"
+				m_strZoomInSound = soundevent:"Wraith.Wpn.Zoom.In"
+				m_strZoomOutSound = soundevent:"Wraith.Wpn.Zoom.Out"
+				m_flDamageForce = 50.0
+				m_bBulletShouldUseVerlet = true
+				m_flBulletDamage = 8.8
+				m_flRecoilRecoveryDelayFactor = 0.05
+				m_nRecoilSeed = 32152
+				m_AimingShootSpreadPenalty = [ 0.0, 0.2 ]
+				m_strShootSound = soundevent:"Baba.Wpn.Fire"
+				m_strBulletImpactSound = soundevent:"Wraith.Wpn.Impact"
+				m_vecScatterOffsets = 
+				[
+					[ -0.5, -0.25 ],
+					[ 0.5, 0.25 ],
+					[ 0.0, 0.5 ],
+				]
+				m_bHitOnceAcrossAllBullets = true
+				m_flBulletSpeedRandomFactor = 0.3
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"hero_weapon_base",
+		]
+		m_bStartTrained = true
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_ON_BUTTON_IS_DOWN"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SPRINT | CITADEL_ABILITY_BEHAVIOR_IS_PRIMARY_WEAPON | CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_SILENT_CAST_FAILURE_FEEDBACK | CITADEL_ABILITY_BEHAVIOR_DISARMABLE | CITADEL_ABILITY_BEHAVIOR_NOT_SILENCABLE | CITADEL_ABILITY_BEHAVIOR_WEAPON_TOGGLE"
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED | MODIFIER_STATE_IS_ASLEEP"
+		m_eAbilityType = "EAbilityType_Weapon"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/weapon_damage.psd"
+		m_nAbilityPointsCost = 1
+		m_HUDPanel = 
+		{
+			m_vecHUDElements = 
+			[
+				{
+					m_strContext = "gun"
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_GUN"
+				},
+			]
+		}
+		m_sObstructedShotSound = soundevent:""
+		m_DOFWhileZoomed = 
+		{
+			m_flDofNearCrisp = 200.0
+			m_flDofFarCrisp = 100.0
+			m_flDofFarBlurry = 7000.0
+		}
+		m_strAG2SourceName = "weapon"
+		m_sDisarmedSound = soundevent:"Player.Weapon.Jammed"
+		m_flMinDisarmedSoundInterval = 0.1
+		m_flBossDamageScale = 1.0
+		m_cameraSequenceZoom = 
+		{
+			m_nPriority = 2
+			m_vecFOVOperations = 
+			[
+				{
+					m_bValuesAreRelative = true
+					m_eCameraOperation = "k_ECameraOp_Spring"
+					m_flLerpDuration = 0.1
+					m_bLerpEndAtDefault = false
+					m_flLerpGain = 0.75
+					m_bSpringToDefault = false
+					m_flSpringStrength = 40.0
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+				},
+			]
+		}
+		m_cameraSequenceUnZoom = 
+		{
+			m_nPriority = 2
+			m_vecFOVOperations = 
+			[
+				{
+					m_bValuesAreRelative = true
+					m_bApproachDefault = true
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bSpringToDefault = true
+					m_flSpringStrength = 40.0
+					m_flLerpDuration = 0.12
+					m_flLerpBias = 0.75
+				},
+			]
+		}
+		m_PassiveWeaponParticle = resource_name:"particles/abilities/baba/baba_ambient_spell_circle.vpcf"
+	}
+	ability_melee_baba = 
+	{
+		_class = "citadel_ability_hold_melee"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCharges_scale_function"
+					m_eSpecificStatScaleType = "EMaxChargesIncrease"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldownBetweenCharge_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldownBetweenChargeUses"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "1.3m"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			MeleeHalfAngle = 
+			{
+				m_strValue = "30"
+			}
+			MeleeAttackLength = 
+			{
+				m_strValue = "5m"
+				m_strCSSClass = "distance"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "MeleeAttackLength_scale_function"
+					m_eSpecificStatScaleType = "EMeleeRange"
+				}
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero Baba"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"inherent_base",
+			"citadel_hold_melee",
+		]
+		m_eAbilityType = "EAbilityType_Melee"
+		m_bStartTrained = true
+		m_iMaxLevel = 1
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_HIDDEN | CITADEL_ABILITY_BEHAVIOR_SILENT_CAST_FAILURE_FEEDBACK  | CITADEL_ABILITY_BEHAVIOR_NOT_SILENCABLE | CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_CASTABLE_WHILE_HIDDEN"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY | CITADEL_UNIT_TARGET_TROPHY_ENEMY"
+		m_nAbilityTargetFlags = "CITADEL_UNIT_TARGET_FLAG_PENETRATE_INVULNERABLE | CITADEL_UNIT_TARGET_FLAG_ALLOW_SMALL_DEPLOYABLES"
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED | MODIFIER_STATE_IS_ASLEEP"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/melee_damage.psd"
+		m_MeleeDamageFlags = "DFLAG_TRIGGER_FLINCH"
+		m_flCollisionDistance = 50.0
+		m_cameraSequenceHoldStart = 
+		{
+			m_vecFOVOperations = 
+			[
+				{
+					m_flMaintainDuration = 0.1
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_flLerpDuration = 0.6
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 8.0
+					m_flLerpBias = 0.723
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_flDelay = 0.1
+					m_bValuesAreRelative = true
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Spring"
+				},
+			]
+			m_vecDistanceOperations = 
+			[
+				{
+					m_flMaintainDuration = 0.1
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 10.0
+					m_flLerpDuration = 0.7
+					m_flLerpBias = 0.784
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Spring"
+				},
+			]
+		}
+		m_strHoldBegin = soundevent:"Player.Melee.Hold.Shared"
+		m_HoldBeginEffect = resource_name:"particles/abilities/melee/melee_heavy_activate_charge.vpcf"
+		m_cameraSequenceHitImpact = 
+		{
+			m_vecDistanceOperations = 
+			[
+				{
+					m_bValuesAreRelative = true
+					m_flApproachTarget = -20.0
+					m_flApproachSpeed = 800.0
+					m_flApproachAcceleration = 1000.0
+					m_flDelay = 0.25
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bValuesAreRelative = true
+					m_flLerpDuration = 0.35
+					m_bLerpEndAtDefault = true
+					m_flLerpEnd = 20.0
+					m_flLerpBias = 0.33
+				},
+			]
+			m_vecFOVOperations = [  ]
+		}
+		m_SuccessfulParryParticle = resource_name:"particles/abilities/melee/melee_parry_success.vpcf"
+		m_strSuccessfulParrySound = soundevent:"Player.Melee.Parry.Shared"
+		m_flParryWindow = 0.28
+		m_flParryStunTime = 1.1
+		m_ParryActivateParticle = resource_name:"particles/abilities/melee/melee_parry_attack.vpcf"
+		m_AirMeleeUpScale = [ 20.0, -45.0, 1.0, 0.1 ]
+		m_mapAttacks = 
+		{
+			EAttackType_Light = 
+			{
+				m_Trigger = "light"
+				m_flCooldownOnHit = 0.75
+				m_flCooldownOnMiss = 0.75
+				m_SpeedBonusCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 0.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 0.224286
+							y = 0.0
+							m_flSlopeIncoming = -1296.296265
+							m_flSlopeOutgoing = -1296.296265
+						},
+						{
+							x = 0.231429
+							y = -300.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 0.705714
+							y = 0.0
+							m_flSlopeIncoming = 632.53009
+							m_flSlopeOutgoing = 632.53009
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, -300.0 ]
+					m_vDomainMaxs = [ 1.0, 0.0 ]
+				}
+				m_MovementSpeedCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 128.545456
+							m_flSlopeIncoming = 2650.541992
+							m_flSlopeOutgoing = 2650.541992
+						},
+						{
+							x = 0.140143
+							y = 500.0
+							m_flSlopeIncoming = 1689.520264
+							m_flSlopeOutgoing = 1689.520264
+						},
+						{
+							x = 0.219858
+							y = 500.0
+							m_flSlopeIncoming = -6140.309082
+							m_flSlopeOutgoing = -6140.309082
+						},
+						{
+							x = 0.221572
+							y = 0.0
+							m_flSlopeIncoming = -291716.78125
+							m_flSlopeOutgoing = -291716.78125
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.3, 500.0 ]
+				}
+				m_MeleeActivateParticle = resource_name:""
+				m_strHitSound = soundevent:"Ability.Melee.Impact.NPC"
+				m_MeleeImpactParticle = resource_name:"particles/abilities/melee_impact.vpcf"
+				m_flAttackStateTime = 0.5
+				m_MeleeSwingParticle = resource_name:"particles/abilities/melee_quick.vpcf"
+				m_strHitDebrisSound = soundevent:"Player.Melee.Hit.Physics"
+				m_strHitHeroSound = soundevent:"Ability.Melee.Impact.Player"
+			}
+			EAttackType_Heavy = 
+			{
+				m_cameraSequenceAttackStart = 
+				{
+					m_vecTargetPosOperations = 
+					[
+						{
+							m_flLagMinDuration = 0.2
+							m_flLagTime = 0.1
+							m_flLagMaxSpeed = 20.0
+							m_flLagSpringStrength = 5.0
+							m_eCameraOperation = "k_ECameraOp_Lag"
+						},
+					]
+				}
+				m_Trigger = "heavy"
+				m_flCooldownOnHit = 1.0
+				m_flCooldownOnMiss = 1.3
+				m_bApplyScreenShake = true
+				m_SpeedBonusCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = -300.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 0.271158
+							y = -300.0
+							m_flSlopeIncoming = 669.14325
+							m_flSlopeOutgoing = 669.14325
+						},
+						{
+							x = 0.345788
+							y = -68.618172
+							m_flSlopeIncoming = 1323.338623
+							m_flSlopeOutgoing = 1323.338623
+						},
+						{
+							x = 0.497857
+							y = 0.0
+							m_flSlopeIncoming = 451.231018
+							m_flSlopeOutgoing = 451.231018
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, -300.0 ]
+					m_vDomainMaxs = [ 0.5, 0.0 ]
+				}
+				m_MovementSpeedCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.00008
+							y = 470.10907
+							m_flSlopeIncoming = 1842.533813
+							m_flSlopeOutgoing = 1842.533813
+						},
+						{
+							x = 0.179122
+							y = 800.0
+							m_flSlopeIncoming = 940.240601
+							m_flSlopeOutgoing = 940.240601
+						},
+						{
+							x = 0.350938
+							y = 800.0
+							m_flSlopeIncoming = -4623.689453
+							m_flSlopeOutgoing = -4623.689453
+						},
+						{
+							x = 0.352144
+							y = 0.0
+							m_flSlopeIncoming = -663344.125
+							m_flSlopeOutgoing = -663344.125
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.4, 800.0 ]
+				}
+				bIsHeavyAttack = true
+				m_strActivateSound = soundevent:""
+				m_flMovementAcc = 200000.0
+				m_strHitSound = soundevent:"Ability.Melee.Impact.Heavy.NPC"
+				m_strMeleeDashSound = soundevent:"Player.Melee.Dash.Ground"
+				m_MeleeSwingParticle = resource_name:"particles/abilities/melee_swing_heavy.vpcf"
+				m_MeleeActivateParticle = resource_name:""
+				m_MeleeImpactParticle = resource_name:"particles/abilities/melee/melee_impact_heavy.vpcf"
+				m_strHitHeroSound = soundevent:"Ability.Melee.Impact.Heavy.Player"
+				m_strHitDebrisSound = soundevent:"Player.Melee.Hit.Physics"
+				m_MeleeAttackParticle = resource_name:"particles/abilities/melee/melee_heavy_activate.vpcf"
+			}
+			EAttackType_HeavyAir = 
+			{
+				m_Trigger = "heavy"
+				bIsHeavyAttack = true
+				m_flCooldownOnHit = 1.0
+				m_flCooldownOnMiss = 1.3
+				m_bApplyScreenShake = true
+				m_SpeedBonusCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = -300.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 0.199155
+							y = -300.0
+							m_flSlopeIncoming = 707.983032
+							m_flSlopeOutgoing = 707.983032
+						},
+						{
+							x = 0.303474
+							y = -85.145447
+							m_flSlopeIncoming = 1004.345276
+							m_flSlopeOutgoing = 1004.345276
+						},
+						{
+							x = 0.497857
+							y = 0.0
+							m_flSlopeIncoming = 438.029633
+							m_flSlopeOutgoing = 438.029633
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, -300.0 ]
+					m_vDomainMaxs = [ 0.5, 0.0 ]
+				}
+				m_MovementSpeedCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 337.890869
+							m_flSlopeIncoming = 2661.166016
+							m_flSlopeOutgoing = 2661.166016
+						},
+						{
+							x = 0.173649
+							y = 800.0
+							m_flSlopeIncoming = 1357.308105
+							m_flSlopeOutgoing = 1357.308105
+						},
+						{
+							x = 0.34046
+							y = 800.0
+							m_flSlopeIncoming = -4768.748535
+							m_flSlopeOutgoing = -4768.748535
+						},
+						{
+							x = 0.341408
+							y = 0.0
+							m_flSlopeIncoming = -843871.3125
+							m_flSlopeOutgoing = -843871.3125
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.4, 800.0 ]
+				}
+				m_flMovementAcc = 200000.0
+				m_cameraSequenceAttackStart = 
+				{
+					m_vecDistanceOperations = [  ]
+					m_vecFOVOperations = 
+					[
+						{
+							m_bValuesAreRelative = true
+							m_flApproachTarget = -10.0
+							m_flApproachSpeed = 5.0
+							m_flApproachAcceleration = 10.0
+						},
+						{
+							m_eCameraOperation = "k_ECameraOp_Maintain"
+							m_flMaintainDuration = 5.0
+							m_bValuesAreRelative = true
+						},
+					]
+				}
+				m_flAttackStateTime = 0.3
+				m_strHitHeroSound = soundevent:"Ability.Melee.Impact.Heavy.Player"
+				m_MeleeAttackParticle = resource_name:"particles/abilities/melee/melee_heavy_activate.vpcf"
+				m_strHitSound = soundevent:"Ability.Melee.Impact.Heavy.NPC"
+				m_strMeleeDashSound = soundevent:"Player.Melee.Dash.Air"
+			}
+			EAttackType_Slide = 
+			{
+				m_Trigger = "heavy"
+				m_bApplyScreenShake = true
+				bIsHeavyAttack = true
+				m_MovementSpeedCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 367.272705
+							m_flSlopeIncoming = 191.498413
+							m_flSlopeOutgoing = 191.498413
+						},
+						{
+							x = 0.191789
+							y = 404.0
+							m_flSlopeIncoming = 1802.960327
+							m_flSlopeOutgoing = 1802.960327
+						},
+						{
+							x = 0.350938
+							y = 1000.0
+							m_flSlopeIncoming = -2519.4104
+							m_flSlopeOutgoing = -2519.4104
+						},
+						{
+							x = 0.352144
+							y = 0.0
+							m_flSlopeIncoming = -829180.125
+							m_flSlopeOutgoing = -829180.125
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.4, 1000.0 ]
+				}
+				m_flCooldownOnMiss = 1.0
+				m_flCooldownOnHit = 1.0
+				m_flMovementAcc = 3000.0
+				m_flKnockUpStrength = 200.0
+			}
+		}
+		m_HUDPanel = 
+		{
+			m_vecButtonHints = 
+			[
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleeRejuvinator"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_rejuv"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_RejuvenatorOwned"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_strContext = "rejuv_owned"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleePowerUp"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_powerup"
+				},
+				{
+					m_strContext = "melee_heavy_punch_destroy"
+					m_nButton1 = "IN_WEAPON1"
+					m_strLocToken = "#AbilityButtonHint_MeleeHeavyPunchDestroy"
+					m_eHintSide = "EButtonSide_Bottom"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleePickUp"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_pickup"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleeChangeTeam"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_change_team"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleeIdolCashIn"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_idol_cashin"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleeIdolPickup"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_idol_pickup"
+				},
+			]
+		}
+		m_flBackDashDodgeDist = 50.0
+		m_flSideDashDodgeDist = 45.0
+		m_strAG2SourceName = "melee"
+		m_HeavyTurnSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 1.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 0.0
+				},
+				{
+					x = 0.6
+					y = 1.0
+					m_flSlopeIncoming = -0.847226
+					m_flSlopeOutgoing = -0.847226
+				},
+				{
+					x = 0.879035
+					y = 0.255258
+					m_flSlopeIncoming = -2.668987
+					m_flSlopeOutgoing = -2.668987
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.01 ]
+			m_vDomainMaxs = [ 1.0, 1.0 ]
+		}
+		m_flHeavyMeleeMaxTurnRate = 700.0
+		m_flCameraMaxTurnRate = 720.0
+		m_cameraSequenceMiss = 
+		{
+			m_vecDistanceOperations = 
+			[
+				{
+					m_flApproachTarget = 20.0
+					m_flApproachSpeed = 350.0
+					m_flApproachAcceleration = 700.0
+					m_bValuesAreRelative = true
+					m_bApproachDefault = true
+				},
+			]
+			m_vecFOVOperations = 
+			[
+				{
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bValuesAreRelative = true
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 7.0
+					m_flLerpDuration = 0.2
+					m_flLerpBias = 0.687
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Spring"
+					m_flSpringStrength = 10.0
+				},
+			]
+		}
+		m_cameraSequenceHighSpeedHoldStart = 
+		{
+			m_vecFOVOperations = 
+			[
+				{
+					m_flMaintainDuration = 0.1
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_flLerpDuration = 0.6
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 17.0
+					m_flLerpBias = 0.723
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_flDelay = 0.1
+					m_bValuesAreRelative = true
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Spring"
+				},
+			]
+			m_vecDistanceOperations = 
+			[
+				{
+					m_flMaintainDuration = 0.1
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 20.0
+					m_flLerpDuration = 0.7
+					m_flLerpBias = 0.784
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Spring"
+				},
+			]
+		}
+	}
+	ability_baba_bench_melee = 
+	{
+		_class = "ability_baba_bench_melee"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			MeleeAttackLength = 
+			{
+				m_strValue = "5m"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+			}
+			MeleeHalfAngle = 
+			{
+				m_strValue = "30"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero Baba"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"inherent_base",
+		]
+		m_eAbilityType = "EAbilityType_Innate"
+		m_bStartTrained = true
+		m_iMaxLevel = 1
+		m_strAG2SourceName = "ability_baba_bench_run"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_HIDDEN | CITADEL_ABILITY_BEHAVIOR_SILENT_CAST_FAILURE_FEEDBACK | CITADEL_ABILITY_BEHAVIOR_NOT_SILENCABLE | CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_CASTABLE_WHILE_HIDDEN"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY | CITADEL_UNIT_TARGET_TROPHY_ENEMY"
+		m_nAbilityTargetFlags = "CITADEL_UNIT_TARGET_FLAG_PENETRATE_INVULNERABLE | CITADEL_UNIT_TARGET_FLAG_ALLOW_SMALL_DEPLOYABLES"
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED | MODIFIER_STATE_IS_ASLEEP"
+		m_flHeavyHoldTime = 0.25
+		m_flMinChargeTime = 0.2
+		m_flCollisionDistance = 50.0
+		m_flGroundPoundDiveSpeed = 1400.0
+		m_flGroundPoundLaunchSpeed = 450.0
+		m_flGroundPoundChargeAirControlSpeed = 225.0
+		m_flGroundPoundChargeAirControlAccel = 1300.0
+		m_mapAttacks = 
+		{
+			EBabaBenchMeleeAttack_Light = 
+			{
+				m_bIsHeavyAttack = false
+				m_flChargeTime = 0.125
+				m_flAttackStateTime = 0.5
+				m_flAttackImpulse = 500.0
+				m_MovementSpeedCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 0.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 0.125
+							y = 100.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.125, 400.0 ]
+				}
+				m_SpeedBonusCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 0.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 1.0
+							y = 0.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 1.0, 1.0 ]
+				}
+				m_MeleeSwingParticle = resource_name:"particles/abilities/baba/baba_witching_hour_melee_quick.vpcf"
+				m_MeleeImpactParticle = resource_name:"particles/abilities/baba/baba_witching_hour_melee_quick_impact.vpcf"
+				m_strHitSound = soundevent:"Ability.Melee.Impact.NPC"
+				m_strHitHeroSound = soundevent:"Ability.Melee.Impact.Player"
+				m_strMeleeDashSound = soundevent:""
+				m_cameraSequenceAttackStart = 
+				{
+					m_vecFOVOperations = 
+					[
+						{
+							m_eCameraOperation = "k_ECameraOp_Spring"
+							m_flSpringMaxDuration = 0.2
+							m_bSpringToDefault = false
+							m_flSpringTarget = 7.0
+							m_bValuesAreRelative = true
+							m_flSpringStrength = 3.0
+							m_flDelay = 0.1
+						},
+						{
+							m_bApproachDefault = true
+							m_flApproachSpeed = 600.0
+							m_flApproachAcceleration = 1000.0
+							m_flApproachMinDuration = 0.1
+						},
+					]
+				}
+			}
+			EBabaBenchMeleeAttack_Heavy = 
+			{
+				m_bIsHeavyAttack = true
+				m_flChargeTime = 0.66
+				m_flAttackStateTime = 0.0
+				m_flPrimaryAttackPauseDuration = 0.0
+				m_bApplyScreenShake = true
+				m_bWaitForGroundToTrigger = true
+				m_MovementSpeedCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 0.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 0.05
+							y = 0.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.05, 1.0 ]
+				}
+				m_bCanBeParried = true
+				m_bParryOnlyBlocksParrier = true
+				m_bParryStunsAttacker = false
+				m_flCooldownOnHit = 1.4
+				m_flCooldownOnMiss = 1.7
+				m_strHitSound = soundevent:"Ability.Melee.Impact.Heavy.NPC"
+				m_strHitHeroSound = soundevent:"Ability.Melee.Impact.Heavy.Player"
+				m_strMeleeDashSound = soundevent:"Player.Melee.Dash.Ground"
+			}
+		}
+		m_HoldBeginEffect = resource_name:"particles/abilities/melee/melee_heavy_activate_charge.vpcf"
+		m_strHoldBegin = soundevent:"Player.Melee.Hold.Shared"
+		m_GroundPoundImpactParticle = resource_name:"particles/abilities/baba/baba_bench_slam_impact.vpcf"
+		m_strGroundImpactSound = soundevent:"Baba.Bench.Ground.Pound.Impact"
+		m_cameraSequenceHoldStart = 
+		{
+			m_vecDistanceOperations = 
+			[
+				{
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 600.0
+					m_flLerpDuration = 3.0
+					m_flLerpBias = 0.5
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bValuesAreRelative = true
+					m_flLerpGain = 0.5
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+					m_flSpringStrength = 5.0
+				},
+			]
+			m_vecFOVOperations = 
+			[
+				{
+					m_flLerpDuration = 1.0
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 16.0
+					m_flLerpBias = 0.723
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_flDelay = 0.1
+					m_bValuesAreRelative = true
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+				},
+			]
+			m_nPriority = 2
+		}
+		m_strLightKickBeginSound = soundevent:"Baba.Bench.Kick.Start.Light"
+		m_flGroundPoundGravityScale = 15.0
+	}
+	ability_baba_bubbling_brew = 
+	{
+		_class = "ability_baba_bubbling_brew"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = 26.0
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "35m"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "1"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "6"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			ProjectileLifetime = 
+			{
+				m_strValue = 0
+			}
+			ProjectileSpeed = 
+			{
+				m_strValue = 2600
+			}
+			ProjectileTurnRate = 
+			{
+				m_strValue = 220
+			}
+			ProjectileSpacingThinkInterval = 
+			{
+				m_strValue = 0.05
+			}
+			ExplodeTime = 
+			{
+				m_strValue = 0.9
+			}
+			StolenSpiritEffectiveness = 
+			{
+				m_strValue = "175"
+			}
+			Damage = 
+			{
+				m_strValue = 50
+				m_strCSSClass = "tech_damage"
+				m_bIsAbilityDamageProperty = true
+			}
+			ExplodeRadius = 
+			{
+				m_strValue = "3.5m"
+				m_strCSSClass = "distance"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "Radius_scale_function"
+					m_eSpecificStatScaleType = "ETechRadius"
+				}
+			}
+			ExplodeTimeInterval = 
+			{
+				m_strValue = 0.05
+			}
+			DebuffDuration = 
+			{
+				m_strValue = "22"
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "duration_scale_function"
+				}
+			}
+			TechPowerGain = 
+			{
+				m_strValue = "10"
+				m_strCSSClass = "spirit"
+				m_eDisplayType = "ETechPower"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "TechPowerGain_scale_function"
+					m_eSpecificStatScaleType = "ELevelUpBoons"
+					m_flStatScale = 0.9
+				}
+				m_strLocTokenOverride = "BubblingBrew_TechPowerSteal"
+			}
+			MaxStacks = 
+			{
+				m_strValue = "45"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "MaxStacks_scale_function"
+					m_eSpecificStatScaleType = "ELevelUpBoons"
+					m_flStatScale = 2.0
+				}
+				m_strLocTokenOverride = "MaxStacks_BabaBubblingBrew"
+			}
+			ProjectileTurnMaxDegrees = 
+			{
+				m_strValue = "270"
+			}
+			PullDistance = 
+			{
+				m_strValue = "0m"
+				m_strCSSClass = "distance"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "PullDistance_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			PullDuration = 
+			{
+				m_strValue = "0.6"
+				m_bIsHidden = true
+			}
+			MagicDamagePerBullet = 
+			{
+				m_strValue = "8"
+				m_strCSSClass = "tech_damage"
+				m_bDamageAffectedByEffectiveness = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					_my_subclass_name = "DPS_scale_function"
+					m_flStatScale = 0.26
+				}
+				m_bIsAbilityDamageProperty = true
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_IN_ABILITY_ALLOW_ZOOM"
+		_editor = 
+		{
+			folder_name = "Hero Baba"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_IN_ABILITY_ALLOW_ZOOM"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"signature_base",
+		]
+		m_bStartTrained = false
+		m_nAbilityPointsCost = 0
+		m_nAbillityUnlocksCost = 1
+		m_eAbilityType = "EAbilityType_Signature"
+		m_iMaxLevel = 1
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED"
+		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
+		m_strAbilityOffCooldownSound = soundevent:""
+		m_strAbilityChargeReadySound = soundevent:""
+		m_skillshotMissParticle = resource_name:"particles/abilities/skillshot_default_miss_owner.vpcf"
+		m_flBossDamageScale = 1.0
+		m_projectileInfo = 
+		{
+			m_nBehaviors = "PBF_OnlyTouchWorld"
+			m_particle = resource_name:"particles/abilities/baba/baba_bubbling_brew_projectile.vpcf"
+			m_flGravityScale = 0
+			m_LoopingSound = soundevent:"Baba.Threadsap.Return.Projectile.Lp"
+			m_flPhysicsRadius = 20
+			m_flTriggerRadius = 0.5
+			m_bHideWarningParticle = true
+		}
+		m_iUpdateTime = 0
+		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_CIRCLE"
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_NONE"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_DISPLAYS_DAMAGE_IMPACT | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SLIDE_ON_CAST"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/baba/threadsap.psd"
+		m_strSecondaryStatName = "ability_baba_bubbling_brew_gun_damage"
+		m_ExplosionParticle = resource_name:"particles/abilities/baba/baba_bubbling_brew_explode.vpcf"
+		m_strCastSound = soundevent:"Baba.Threadsap.Cast"
+		m_strExplodeSound = soundevent:"Baba.Threadsap.Explode"
+		m_strAG2CastingAction = "threadsap_cast_start"
+		m_strAG2CastCompletedAction = "threadsap_cast_completed"
+		m_AutoIntrinsicModifiers = 
+		[
+			subclass:
+			{
+				_class = "modifier_baba_bubbling_brew_gun_damage"
+				_my_subclass_name = "modifier_baba_bubbling_brew_gun_damage"
+				m_bIsHidden = true
+				m_HandParticle = resource_name:"particles/weapon_fx/baba/baba_muzzle_flash_charged.vpcf"
+				m_TracerParticle = resource_name:"particles/weapon_fx/baba/baba_tracer_charged.vpcf"
+				m_vecAlwaysShowInStatModifierUI = 
+				[
+					"MODIFIER_VALUE_TECH_POWER",
+				]
+			},
+		]
+		m_vecAbilityUpgrades = 
+		[
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "MagicDamagePerBullet"
+						m_strBonus = "8"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCooldown"
+						m_strBonus = "-12"
+					},
+					{
+						m_strPropertyName = "DebuffDuration"
+						m_strBonus = "8"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCharges"
+						m_strBonus = "1"
+					},
+					{
+						m_strPropertyName = "PullDistance"
+						m_strBonus = "7m"
+					},
+				]
+			},
+		]
+		m_BuffModifier = subclass:
+		{
+			_class = "modifier_baba_bubbling_brew_buff"
+			_my_subclass_name = "modifier_baba_bubbling_brew_buff"
+			m_sLocalizationName = "modifier_baba_bubbling_brew_buff"
+			m_strHudMessageText = ""
+			m_bIsHidden = true
+			m_nAttributes = "MODIFIER_ATTRIBUTE_MULTIPLE"
+			m_strParticleEffect = resource_name:""
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_BOTTOM_LEFT"
+			m_eHudDisplayLocation = "DISPLAY_HUD_LEFT"
+			m_strParticleEffectConfig = ""
+			m_ThreadSapAmpParticle = resource_name:"particles/abilities/baba/baba_bubbling_brew_buff.vpcf"
+		}
+		m_DebuffModifier = subclass:
+		{
+			_class = "modifier_baba_bubbling_brew_debuff"
+			_my_subclass_name = "modifier_baba_bubbling_brew_debuff"
+			m_sLocalizationName = "modifier_baba_bubbling_brew_debuff"
+			m_strHudMessageText = ""
+			m_bIsHidden = false
+			m_nAttributes = "MODIFIER_ATTRIBUTE_MULTIPLE"
+			m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_EVERYONE"
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+			m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+			m_strParticleEffect = resource_name:"particles/abilities/baba/baba_bubbling_brew_debuff.vpcf"
+			m_sAmbientLoopingSound = soundevent:"Baba.Threadsap.Debuff.Lp"
+			m_sExpiredSound = soundevent:"Mods.Tech.Spirit.Sap.Debuff.End"
+			m_nAmbientLoopingSoundRecipients = "MODIFIER_SOUND_RECIPIENT_ALWAYS"
+		}
+		m_PullModifier = subclass:
+		{
+			_class = "modifier_baba_thread_pull"
+			_my_subclass_name = "modifier_baba_thread_pull"
+			m_sLocalizationName = "modifier_baba_thread_pull"
+			m_eDebuffType = "MODIFIER_DEBUFF_ENEMY_TEAM_ONLY"
+			m_bDurationReducible = false
+			m_bIsHidden = false
+			m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
+			m_strSmallIconCssClass = "tether_proc"
+			m_sStartSound = soundevent:""
+			m_flExitVelocityScale = 0.2
+			m_bCompensatePredictionDelay = true
+			m_PullProgressCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = 0.0
+						m_flSlopeIncoming = 0.75
+						m_flSlopeOutgoing = 0.75
+					},
+					{
+						x = 1.0
+						y = 1.0
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_FREE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_FREE"
+					},
+				]
+				m_vDomainMins = [ 0.0, 0.0 ]
+				m_vDomainMaxs = [ 1.0, 1.0 ]
+			}
+		}
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = "#ability_baba_bubbling_brew_desc"
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "TechPowerGain"
+								},
+								{
+									m_strImportantProperty = "StolenSpiritEffectiveness"
+								},
+								{
+									m_strImportantProperty = "MagicDamagePerBullet"
+								},
+							]
+						},
+					]
+					m_vecBasicProperties = 
+					[
+						"DebuffDuration",
+						"MaxStacks",
+						"Damage",
+					]
+				},
+			]
+			m_vecAdditionalHeaderProperties = 
+			[
+				"ExplodeRadius",
+			]
+		}
+		m_strBeamPointClosestLoopSound = soundevent:"Baba.Threadsap.Proj.Ramp"
+		m_strHitConfirmationSound = soundevent:"Baba.Threadsap.Hit"
+		m_ProjectileTurnAngleSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 0.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 0.0
+				},
+				{
+					x = 0.12
+					y = 1.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 0.0
+				},
+				{
+					x = 1.0
+					y = 1.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.0 ]
+			m_vDomainMaxs = [ 1.0, 1.0 ]
+		}
+		m_BoltParticle = resource_name:"particles/abilities/baba/baba_bubbling_brew_tgt_bolt.vpcf"
+		m_StringParticle = resource_name:"particles/abilities/baba/baba_bubbling_brew_projectile_yarn_pnt.vpcf"
+		m_CasterBuffParticle = resource_name:"particles/abilities/baba/baba_bubbling_brew_caster_buff.vpcf"
+		m_strAG2SourceName = "ability_baba_bubbling_brew"
+		m_nStringParticle = resource_name:"particles/abilities/baba/baba_bubbling_brew_string_cast.vpcf"
+		m_strPullSound = soundevent:"Baba.Threadsap.Pull.Projectile"
+		m_strFirstExplosionSound = soundevent:"Baba.Threadsap.Explode.First"
+		m_strVictimPulledSound = soundevent:"Baba.Threadsap.Pull.Victim"
+	}
+	ability_baba_bench_run = 
+	{
+		_class = "ability_baba_bench_run"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "30"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "10"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "BenchRunDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0.0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "1m"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			Radius = 
+			{
+				m_strValue = "8m"
+				m_strCSSClass = "distance"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_range"
+					_my_subclass_name = "ground_pound_radius_sf"
+				}
+			}
+			BonusMoveSpeed = 
+			{
+				m_strValue = "5m"
+				m_strCSSClass = "move_speed"
+				m_eDisplayType = "EMaxMoveSpeed"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SPEED_MAX"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			CrouchMoveSpeedBonus = 
+			{
+				m_strValue = "3.5m"
+				m_strCSSClass = "move_speed"
+				m_bIsHidden = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_CROUCH_SPEED_BONUS"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			MeleeSpiritDamage = 
+			{
+				m_strValue = "0"
+				m_strCSSClass = "tech_damage"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					_my_subclass_name = "MeleeSpiritDamage_scale_function"
+					m_eSpecificStatScaleType = "ETechPower"
+					m_flStatScale = 0.0
+				}
+				m_bIsAbilityDamageProperty = true
+			}
+			HeavyMeleeSpiritDamage = 
+			{
+				m_strValue = "75"
+				m_strCSSClass = "tech_damage"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					_my_subclass_name = "HeavyMeleeSpiritDamage_scale_function"
+					m_eSpecificStatScaleType = "ETechPower"
+					m_flStatScale = 0.6
+				}
+				m_bIsAbilityDamageProperty = true
+			}
+			HeavyMeleeSlowPercent = 
+			{
+				m_strValue = "50"
+				m_strCSSClass = "slow"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SPEED_SLOW_PERCENT"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			HeavyMeleeDashSlowPercent = 
+			{
+				m_strValue = "-25"
+				m_strCSSClass = "slow"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_GROUND_DASH_REDUCTION_PERCENT"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			HeavyMeleeSlowDuration = 
+			{
+				m_strValue = "4"
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "HeavyMeleeSlowDuration_scale_function"
+				}
+			}
+			MoveWhileShootingSpeedPenaltyReductionPercent = 
+			{
+				m_strValue = "100"
+				m_strCSSClass = "move_speed"
+				m_bIsHidden = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SPEED_WHILE_SHOOTING_PENALTY_REDUCTION_PERCENT"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			StatusResistancePercent = 
+			{
+				m_strValue = "30"
+				m_strCSSClass = "duration"
+				m_eDisplayType = "EDebuffResist"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_STATUS_RESISTANCE"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			MeleeResist = 
+			{
+				m_strValue = "30"
+				m_strCSSClass = "melee_resist"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MELEE_RESIST"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			MeleeLifesteal = 
+			{
+				m_strValue = "0"
+				m_strCSSClass = "healing"
+			}
+			MeleeLifestealNonHeroPct = 
+			{
+				m_strValue = "60"
+				m_bIsHidden = true
+			}
+			LightKickKnockbackDistance = 
+			{
+				m_strValue = "10m"
+				m_strCSSClass = "distance"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_range"
+					_my_subclass_name = "light_kick_knockback_distance_sf"
+				}
+			}
+			LightKickKnockbackHeight = 
+			{
+				m_strValue = "0.75m"
+				m_strCSSClass = "distance"
+				m_bIsHidden = true
+			}
+			GroundPoundKnockUpDuration = 
+			{
+				m_strValue = "0.3"
+				m_strCSSClass = "duration"
+			}
+			GroundPoundFallTimeReductionPercent = 
+			{
+				m_strValue = "30"
+				m_bIsHidden = true
+			}
+			GroundPoundKnockUpHeight = 
+			{
+				m_strValue = "2.54m"
+				m_strCSSClass = "distance"
+				m_bIsHidden = true
+			}
+			KickKnockbackDuration = 
+			{
+				m_strValue = "0.45"
+				m_strCSSClass = "duration"
+			}
+			BonusMeleeRange = 
+			{
+				m_strValue = "2m"
+				m_strCSSClass = "distance"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_BONUS_MELEE_RANGE"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			GravityScalePercent = 
+			{
+				m_strValue = "80"
+				m_bIsHidden = true
+			}
+			RisingGravityScalePercent = 
+			{
+				m_strValue = "50"
+				m_bIsHidden = true
+			}
+			HeavyMeleeEndGraceTime = 
+			{
+				m_strValue = "0.6"
+				m_bIsHidden = true
+			}
+			EndLaunchMaxLingerTime = 
+			{
+				m_strValue = "3"
+				m_bIsHidden = true
+			}
+			MinJumpHeight = 
+			{
+				m_strValue = "75"
+				m_strCSSClass = "move_speed"
+			}
+			MaxJumpHeight = 
+			{
+				m_strValue = "250"
+				m_strCSSClass = "move_speed"
+			}
+			JumpSoundLayerVolumeMin = 
+			{
+				m_strValue = "-60.0"
+			}
+			JumpSoundLayerVolumeMax = 
+			{
+				m_strValue = "-4.0"
+			}
+			ChargedJumpForwardForce = 
+			{
+				m_strValue = "300"
+				m_strCSSClass = "move_speed"
+				m_bIsHidden = true
+			}
+			JumpChargeUpTime = 
+			{
+				m_strValue = "0.0"
+				m_strCSSClass = "duration"
+				m_bIsHidden = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_JUMP_CHARGE_UP_TIME"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			DashDistancePercent = 
+			{
+				m_strValue = "20"
+				m_strCSSClass = "move_speed"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_GROUND_DASH_INCREASE_PERCENT"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			AirDashDistancePercent = 
+			{
+				m_strValue = "20"
+				m_strCSSClass = "move_speed"
+				m_bIsHidden = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_AIR_DASH_DISTANCE_INCREASE_PERCENT"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero Baba"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"signature_base",
+		]
+		m_bStartTrained = false
+		m_nAbilityPointsCost = 0
+		m_nAbillityUnlocksCost = 1
+		m_eAbilityType = "EAbilityType_Signature"
+		m_iMaxLevel = 1
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED"
+		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
+		m_strAbilityOffCooldownSound = soundevent:""
+		m_strAbilityChargeReadySound = soundevent:""
+		m_skillshotMissParticle = resource_name:"particles/abilities/skillshot_default_miss_owner.vpcf"
+		m_flBossDamageScale = 1.0
+		m_bDisabled = "false"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/baba/strafing_run.psd"
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_NONE"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_NON_COMBAT | CITADEL_ABILITY_BEHAVIOR_CASTABLE_WHILE_BUSY"
+		m_strCastSound = soundevent:"Baba.Bench.Run.Cast"
+		m_flMaxChargeJumpDuration = 2.0
+		m_HUDPanel = 
+		{
+			m_vecHUDElements = 
+			[
+				{
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS"
+					m_strContext = "charge_jump"
+					m_Layout = panorama:"file://{resources}/layout/ability_hud_elements/element_baba_charge_jump.vxml"
+				},
+				{
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS"
+					m_strContext = "ride"
+					m_Layout = panorama:"file://{resources}/layout/ability_hud_elements/element_progress_bar_text.vxml"
+					m_Style = resource_name:"panorama/styles/ability_hud_elements/abilities_baba.vcss"
+					m_bReverseProgress = false
+				},
+			]
+		}
+		m_vecAbilityUpgrades = 
+		[
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "BonusMoveSpeed"
+						m_strBonus = "2.5m"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCooldown"
+						m_strBonus = -7
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "StatusResistancePercent"
+						m_strBonus = "15"
+					},
+					{
+						m_strPropertyName = "MeleeResist"
+						m_strBonus = "15"
+					},
+					{
+						m_strPropertyName = "MeleeLifesteal"
+						m_strBonus = "50"
+					},
+				]
+			},
+		]
+		m_mapDependentAbilities = 
+		{
+			ability_baba_bench_melee = null
+		}
+		m_BenchRunModifier = subclass:
+		{
+			_class = "modifier_baba_bench_run"
+			_my_subclass_name = "modifier_baba_bench_run"
+			m_sLocalizationName = "modifier_baba_bench_run"
+			m_bIsHidden = true
+			m_eDrawOverheadStatus = "OVERHEAD_DRAW_NEVER"
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_BOTTOM_LEFT"
+			m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+			[
+				"BonusMoveSpeed",
+				"CrouchMoveSpeedBonus",
+				"MoveWhileShootingSpeedPenaltyReductionPercent",
+				"StatusResistancePercent",
+				"MeleeResist",
+				"BonusMeleeRange",
+				"JumpChargeUpTime",
+				"DashDistancePercent",
+				"AirDashDistancePercent",
+			]
+			m_cameraSequenceCreated = 
+			{
+				m_vecVertOffsetOperations = 
+				[
+					{
+						m_eCameraOperation = "k_ECameraOp_Spring"
+						m_bValuesAreRelative = true
+						m_bSpringToDefault = false
+						m_flSpringTarget = 55.0
+						m_flSpringStrength = 5.0
+					},
+					{
+						m_eCameraOperation = "k_ECameraOp_Maintain"
+					},
+				]
+				m_vecDistanceOperations = 
+				[
+					{
+						m_eCameraOperation = "k_ECameraOp_Spring"
+						m_bValuesAreRelative = true
+						m_bSpringToDefault = false
+						m_flSpringTarget = 100.0
+						m_flSpringStrength = 5.0
+					},
+					{
+						m_eCameraOperation = "k_ECameraOp_Maintain"
+					},
+				]
+			}
+			m_strParticleEffect = resource_name:"particles/abilities/baba/baba_bench_run_buff.vpcf"
+			m_sStartSound = soundevent:""
+			m_sExpiredSound = soundevent:"Baba.Bench.Run.Expire"
+			m_KickParticle = resource_name:"particles/abilities/bookworm/bookworm_knockback.vpcf"
+			m_AG2HeroState = 
+			{
+				m_strParamName = "baba_bench_run_active"
+				m_nPriority = 1
+			}
+			m_FootstepOverride = 
+			{
+				m_sFootstepSound = soundevent:"Baba.Footstep.Bench.Run"
+				m_nFootstepPriority = 1
+			}
+			m_strParticleEffectConfig = "preview"
+			m_strLightKickSound = soundevent:"Baba.Bench.Kick.Hit.Light"
+			m_strHeavyKickSound = soundevent:"Baba.Bench.Kick.Hit.Heavy"
+			m_HeavyKickSlowModifier = subclass:
+			{
+				_class = "modifier_slow_base"
+				_my_subclass_name = "modifier_baba_bench_heavy_kick_slow"
+				m_eDebuffType = "MODIFIER_DEBUFF_ENEMY_TEAM_ONLY"
+				m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+				[
+					"HeavyMeleeSlowPercent",
+					"HeavyMeleeDashSlowPercent",
+				]
+			}
+			m_GroundPoundFallModifier = subclass:
+			{
+				_class = "modifier_baba_ground_pound_fall"
+				_my_subclass_name = "modifier_baba_ground_pound_fall"
+				m_eDebuffType = "MODIFIER_DEBUFF_ENEMY_TEAM_ONLY"
+				m_bDurationReducible = false
+				m_bIsHidden = true
+				m_sAmbientLoopingSound = soundevent:""
+			}
+			m_LightKickShoveModifier = subclass:
+			{
+				_class = "modifier_baba_thread_pull"
+				_my_subclass_name = "modifier_baba_bench_light_kick_shove"
+				m_eDebuffType = "MODIFIER_DEBUFF_ENEMY_TEAM_ONLY"
+				m_bDurationReducible = false
+				m_bIsHidden = true
+				m_bCompensatePredictionDelay = true
+				m_PullProgressCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 0.0
+							m_flSlopeIncoming = 1.5
+							m_flSlopeOutgoing = 1.5
+						},
+						{
+							x = 1.0
+							y = 1.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_FREE"
+							m_nOutgoingTangent = "CURVE_TANGENT_FREE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_FREE"
+							m_nOutgoingTangent = "CURVE_TANGENT_FREE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 1.0, 1.0 ]
+				}
+			}
+			m_flUpwardsForceOnHeavyMeleeStart = 600.0
+			m_BenchRunEndParticle = resource_name:"particles/abilities/baba/baba_bench_run_end.vpcf"
+			m_FootstepAdditional = soundevent:""
+		}
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = "#ability_baba_bench_run_desc"
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "BonusMoveSpeed"
+								},
+								{
+									m_strImportantProperty = "StatusResistancePercent"
+								},
+								{
+									m_strImportantProperty = "MeleeResist"
+								},
+							]
+						},
+					]
+					m_vecBasicProperties = 
+					[
+						"MeleeSpiritDamage",
+						"LightKickKnockbackDistance",
+						"HeavyMeleeSpiritDamage",
+						"HeavyMeleeSlowPercent",
+						"HeavyMeleeSlowDuration",
+					]
+				},
+			]
+		}
+		m_CastParticle = resource_name:"particles/abilities/baba/baba_bench_run_cast.vpcf"
+		m_ChargedJumpParticle = resource_name:"particles/abilities/baba/baba_highjump.vpcf"
+		m_flChargeJumpAnimSpeedScale = 2.0
+		m_strChargedJumpSound = soundevent:"Baba.Bench.Run.Jump.Release"
+		m_strAG2CastingAction = "bench_run_casting"
+		m_strAG2ChannelingAction = "bench_run_channeling"
+		m_strAG2CastCompletedAction = "bench_run_cast_completed"
+		m_strFullyChargedSound = soundevent:"Baba.Bench.Run.FullyCharged"
+		m_strChargingLoopSound = soundevent:"Baba.Bench.Run.Jump.Charge.Lp"
+		m_strChargingStartSound = soundevent:"Baba.Bench.Run.Jump.Charge.Start"
+		m_ChargingJumpParticle = resource_name:"particles/abilities/baba/baba_witching_hour_hold_jump.vpcf"
+	}
+	ability_baba_hexing_brew = 
+	{
+		_class = "ability_baba_hexing_brew"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = 25.0
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "12m"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+				m_bIsHidden = true
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "1.0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+				m_bIsHidden = true
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			BrewTime = 
+			{
+				m_strValue = "1.5"
+				m_strCSSClass = "duration"
+			}
+			BarrierLockTime = 
+			{
+				m_strValue = "2.5"
+				m_strCSSClass = "duration"
+			}
+			SilenceLockTime = 
+			{
+				m_strValue = "3.5"
+				m_strCSSClass = "duration"
+			}
+			FireLockTime = 
+			{
+				m_strValue = "4.5"
+				m_strCSSClass = "duration"
+			}
+			FailLockTime = 
+			{
+				m_strValue = "0"
+				m_strCSSClass = "duration"
+			}
+			SelfCastForwardOffset = 
+			{
+				m_strValue = "1m"
+				m_strCSSClass = "distance"
+			}
+			Radius = 
+			{
+				m_strValue = "6m"
+				m_strCSSClass = "distance"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "Radius_scale_function"
+					m_eSpecificStatScaleType = "ETechRadius"
+				}
+			}
+			DamagePerSecond = 
+			{
+				m_strValue = "12"
+				m_strCSSClass = "tech_damage"
+				m_strLocTokenOverride = "BabaBrewBurnDPS"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					_my_subclass_name = "DamagePerSecond_scale_function"
+					m_eSpecificStatScaleType = "ETechPower"
+					m_flStatScale = 0.152
+				}
+				m_bIsAbilityDamageProperty = true
+			}
+			BurnDuration = 
+			{
+				m_strValue = "8"
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "BurnDuration_scale_function"
+				}
+			}
+			SpiritResistReduction = 
+			{
+				m_strValue = "-15"
+				m_strCSSClass = "tech_armor_down"
+				m_strLocTokenOverride = "BabaBrewBurnSpiritResist"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_RESIST_REDUCTION"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			CombatBarrier = 
+			{
+				m_strValue = "100"
+				m_strCSSClass = "combat_barrier"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_BARRIER_HEALTH"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					_my_subclass_name = "CombatBarrier_scale_function"
+					m_eSpecificStatScaleType = "ETechPower"
+					m_flStatScale = 1.2
+				}
+			}
+			BarrierDuration = 
+			{
+				m_strValue = "8"
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "BarrierDuration_scale_function"
+				}
+			}
+			SilenceDuration = 
+			{
+				m_strValue = "3"
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "SilenceDuration_scale_function"
+				}
+			}
+			BrewEffectiveness = 
+			{
+				m_strValue = "0"
+				m_bIsHidden = true
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero Baba"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_SHOOTING_DISABLED | MODIFIER_STATE_COMBAT_ABILITIES_DISABLED | MODIFIER_STATE_ITEMS_IGNORE_COMBAT_ABILITIES_DISABLED | MODIFIER_STATE_ALLOW_MELEE_WHEN_CHANNELING | MODIFIER_STATE_ALLOW_DASH_WHEN_CHANNELING | MODIFIER_STATE_FORCE_CAN_PARRY | MODIFIER_STATE_DISABLE_INATTACK2_DESELECT | MODIFIER_STATE_DISABLE_PINGS"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"signature_base",
+		]
+		m_bStartTrained = false
+		m_nAbilityPointsCost = 0
+		m_nAbillityUnlocksCost = 1
+		m_eAbilityType = "EAbilityType_Signature"
+		m_iMaxLevel = 1
+		m_bitsInterruptingStates = ""
+		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
+		m_strAbilityOffCooldownSound = soundevent:""
+		m_strAbilityChargeReadySound = soundevent:""
+		m_skillshotMissParticle = resource_name:"particles/abilities/skillshot_default_miss_owner.vpcf"
+		m_flBossDamageScale = 1.0
+		m_bDisabled = "false"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/baba/teapot_brew.psd"
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_NONE"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_CHANNELLED | CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_DISPLAYS_DAMAGE_IMPACT | CITADEL_ABILITY_BEHAVIOR_CANNOT_CANCEL_DURING_CHANNEL | CITADEL_ABILITY_BEHAVIOR_PROJECTILE_FIRED_AS_BULLET | CITADEL_ABILITY_BEHAVIOR_COOLDOWN_ON_CHANNEL_END | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SLIDE_ON_CAST | CITADEL_ABILITY_BEHAVIOR_HOLDS_AT_MAX_CHANNEL"
+		m_vecAbilityUpgrades = 
+		[
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "Radius"
+						m_strBonus = "3m"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCooldown"
+						m_strBonus = "-12"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "BrewEffectiveness"
+						m_strBonus = "33.33"
+					},
+					{
+						m_strPropertyName = "DamagePerSecond"
+						m_strBonus = "33.33"
+						m_eUpgradeType = "EMultiplyBase"
+					},
+					{
+						m_strPropertyName = "DamagePerSecond"
+						m_strBonus = 1.3333
+						m_eUpgradeType = "EMultiplyScale"
+						m_eScaleStatFilter = "ETechPower"
+					},
+					{
+						m_strPropertyName = "CombatBarrier"
+						m_strBonus = "33.33"
+						m_eUpgradeType = "EMultiplyBase"
+					},
+					{
+						m_strPropertyName = "CombatBarrier"
+						m_strBonus = 1.3333
+						m_eUpgradeType = "EMultiplyScale"
+						m_eScaleStatFilter = "ETechPower"
+					},
+					{
+						m_strPropertyName = "SilenceDuration"
+						m_strBonus = "33.33"
+						m_eUpgradeType = "EMultiplyBase"
+					},
+					{
+						m_strPropertyName = "SpiritResistReduction"
+						m_strBonus = "33.33"
+						m_eUpgradeType = "EMultiplyBase"
+					},
+				]
+			},
+		]
+		m_strChannelLoopSound = soundevent:"Baba.Hex.Brew.Lp"
+		m_strCastDelaySound = soundevent:"Baba.Hex.Cast"
+		m_strBrewLockSound = soundevent:"Baba.Hex.Brew.Sub.Select"
+		m_DetonateSound = soundevent:"Baba.Hex.Detonate"
+		m_FuseParticle = resource_name:"particles/abilities/baba/baba_hexing_brew_channel.vpcf"
+		m_FireModifier = subclass:
+		{
+			_class = "modifier_baba_brew_burn"
+			_my_subclass_name = "modifier_baba_brew_fire"
+			m_sLocalizationName = "modifier_baba_brew_fire"
+			m_bIsHidden = false
+			m_eDebuffType = "MODIFIER_DEBUFF_YES"
+			m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_CASTER_ONLY"
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+			m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+			m_strParticleEffect = resource_name:""
+			m_FireParticle = resource_name:"particles/abilities/baba/baba_hexing_brew_fire_debuff.vpcf"
+			m_strDPSAbilityPropertyName = "DamagePerSecond"
+			m_flTickInterval = 0.5
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+			[
+				"SpiritResistReduction",
+			]
+			m_sExpiredSound = soundevent:"Baba.Hex.Burn.Expire"
+			m_sAmbientLoopingSound = soundevent:"Baba.Hex.Burn.Lp"
+		}
+		m_BarrierModifier = subclass:
+		{
+			_class = "modifier_combat_barrier"
+			_my_subclass_name = "modifier_baba_brew_barrier"
+			m_sLocalizationName = "modifier_baba_brew_barrier"
+			m_bIsHidden = false
+			m_eDebuffType = "MODIFIER_DEBUFF_ENEMY_TEAM_ONLY"
+			m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+			m_sStartSound = soundevent:""
+			m_bSuppressBarrierRefreshSound = true
+			m_strParticleEffect = resource_name:"particles/abilities/baba/baba_hexing_brew_barrier_buff.vpcf"
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+		}
+		m_SilenceModifier = subclass:
+		{
+			_class = "modifier_citadel_silenced"
+			_my_subclass_name = "modifier_baba_brew_silence"
+			m_nEnabledStateMask = "MODIFIER_STATE_SILENCED"
+			m_strSmallIconCssClass = "silence_proc"
+			m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_CASTER_ONLY"
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+			m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
+			m_sLocalizationName = "modifier_citadel_silenced"
+		}
+		m_HoldingModifier = subclass:
+		{
+			_class = "modifier_baba_brew_holding"
+			_my_subclass_name = "modifier_baba_brew_holding"
+			m_sLocalizationName = "modifier_baba_brew_holding"
+			m_bIsHidden = true
+			m_eDebuffType = "MODIFIER_DEBUFF_NO"
+			m_nAttributes = "MODIFIER_ATTRIBUTE_CANNOT_BE_PURGED"
+			m_eDrawOverheadStatus = "OVERHEAD_DRAW_NEVER"
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_BOTTOM_LEFT"
+			m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
+		}
+		m_mapDependentAbilities = 
+		{
+			ability_baba_hexing_brew_throw = null
+		}
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = "#ability_baba_hexing_brew_desc"
+					m_vecAbilityPropertiesBlock = [  ]
+					m_vecBasicProperties = [  ]
+				},
+				{
+					m_strLocString = ""
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_strPropertiesTitleLocString = "#ability_header_baba_brew_barrier"
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "CombatBarrier"
+								},
+								{
+									m_strImportantProperty = "BarrierDuration"
+								},
+							]
+						},
+					]
+					m_vecBasicProperties = [  ]
+				},
+				{
+					m_strLocString = ""
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_strPropertiesTitleLocString = "#ability_header_baba_brew_silence"
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "StatusEffectSilence"
+									m_strStatusEffectValue = "SilenceDuration"
+									m_bShowPropertyValue = true
+								},
+							]
+						},
+					]
+					m_vecBasicProperties = [  ]
+				},
+				{
+					m_strLocString = ""
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_strPropertiesTitleLocString = "#ability_header_baba_brew_fire"
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "DamagePerSecond"
+								},
+								{
+									m_strImportantProperty = "SpiritResistReduction"
+								},
+								{
+									m_strImportantProperty = "BurnDuration"
+								},
+							]
+						},
+					]
+					m_vecBasicProperties = [  ]
+				},
+			]
+		}
+		m_HUDPanel = 
+		{
+			m_vecHUDElements = 
+			[
+				{
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS"
+					m_Layout = panorama:"file://{resources}/layout/ability_hud_elements/element_baba_brew_reticle.vxml"
+					m_Style = resource_name:"panorama/styles/ability_hud_elements/abilities_baba.vcss"
+					m_strContext = "brew_reticle"
+				},
+				{
+					m_strContext = "brewing"
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS"
+					m_Layout = panorama:"file://{resources}/layout/ability_hud_elements/element_baba_brew.vxml"
+					m_Style = resource_name:"panorama/styles/ability_hud_elements/abilities_baba.vcss"
+				},
+			]
+			m_vecButtonHints = 
+			[
+				{
+					m_strContext = "brew_throw_hint"
+					m_nButton1 = "IN_ATTACK"
+					m_strLocToken = "#AbilityButtonHint_Throw"
+					m_eHintSide = "EButtonSide_Right"
+				},
+				{
+					m_strContext = "brew_lock_hint"
+					m_nButton1 = "IN_ATTACK2"
+					m_strLocToken = "#citadel_ability_baba_brew_lock"
+					m_eHintSide = "EButtonSide_Right"
+				},
+				{
+					m_strContext = "brew_unlock_hint"
+					m_nButton1 = "IN_ATTACK2"
+					m_strLocToken = "#citadel_ability_baba_brew_unlock"
+					m_eHintSide = "EButtonSide_Right"
+				},
+			]
+		}
+		m_DetonateFireParticle = resource_name:"particles/abilities/baba/baba_hexing_brew_explode_fire.vpcf"
+		m_DetonateBarrierParticle = resource_name:"particles/abilities/baba/baba_hexing_brew_explode_barrier.vpcf"
+		m_DetonateSilenceParticle = resource_name:"particles/abilities/baba/baba_hexing_brew_explode.vpcf"
+		m_strAG2CastingAction = "hexing_brew_casting"
+		m_strAG2ChannelingAction = "hexing_brew_channeling"
+		m_strAG2CastCompletedAction = "hexing_brew_cast_completed"
+		m_FuseBarrierColor = [ 69, 150, 108 ]
+		m_strBurnAppliedSound = soundevent:"Baba.Hex.Hit.Fire"
+		m_strSilenceAppliedSound = soundevent:"Baba.Hex.Hit.Silence"
+		m_strBrewChangeDefaultSound = soundevent:"Baba.Hex.Brew.Switch"
+		m_strBrewChangeBarrierSound = soundevent:"Baba.Hex.Brew.Switch.Barrier"
+		m_strBrewChangeFireSound = soundevent:"Baba.Hex.Brew.Switch.Fire"
+		m_strBrewChangeSilenceSound = soundevent:"Baba.Hex.Brew.Switch.Silence"
+		m_strBrewUnlockSound = soundevent:"Baba.Hex.Brew.Sub.Select"
+		m_strBarrierAppliedSound = soundevent:"Baba.Hex.Hit.Barrier"
+	}
+	ability_baba_hexing_brew_throw = 
+	{
+		_class = "ability_baba_hexing_brew_throw"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = 0
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero Baba"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 1300.0
+				m_flBulletGravityScale = 1.85
+				m_flVerticalAimBias = 25.0
+				m_flBulletRadius = 25.0
+				m_flBulletRadiusVsWorld = 20.0
+				m_szBulletTravelTracerParticle = resource_name:"particles/abilities/baba/baba_hexing_bolt_projectile.vpcf"
+				m_strBulletLoopingSound = soundevent:"Baba.Hex.Projectile.Lp"
+				m_mapImpactEffects = 
+				{
+					default = 
+					{
+					}
+				}
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"ability_trigger_base",
+		]
+		m_eAbilityType = "EAbilityType_Innate"
+		m_bStartTrained = true
+		m_iMaxLevel = 1
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_NONE"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_PRESS"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_TRIGGER | CITADEL_ABILITY_BEHAVIOR_PROJECTILE | CITADEL_ABILITY_BEHAVIOR_PROJECTILE_FIRED_AS_BULLET | CITADEL_ABILITY_BEHAVIOR_NON_COMBAT | CITADEL_ABILITY_BEHAVIOR_CASTABLE_WHILE_BUSY | CITADEL_ABILITY_BEHAVIOR_CASTABLE_WHILE_HIDDEN | CITADEL_ABILITY_BEHAVIOR_CASTABLE_WHILE_DODGING | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SPRINT | CITADEL_ABILITY_BEHAVIOR_IGNORE_SELECTION_MASH_PROTECTION | CITADEL_ABILITY_BEHAVIOR_ALLOW_ALT_CAST"
+		m_eAbilitySpectatePriority = "CITADELTV_ABILITY_SPECTATE_PRIORITY_HIGH"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/baba/pigeon_hex.psd"
+		m_HUDPanel = 
+		{
+			m_vecButtonHints = [  ]
+		}
+		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_CIRCLE"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+		m_bShowTargetingPreviewWhileCasting = true
+		m_AbilityToTrigger = "ability_baba_hexing_brew"
+		bTriggerOnDeselect = false
+		m_strCastSound = soundevent:"Baba.Hex.Brew.Sub.Cast"
+		m_SilenceTrailParticle = resource_name:"particles/abilities/baba/baba_hexing_bolt_projectile.vpcf"
+		m_BarrierTrailParticle = resource_name:"particles/abilities/baba/baba_hexing_bolt_barrier_projectile.vpcf"
+		m_FireTrailParticle = resource_name:"particles/abilities/baba/baba_hexing_bolt_fire_projectile.vpcf"
+		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
+	}
+	ability_baba_ultimate_2 = 
+	{
+		m_eAbilityType = "EAbilityType_Ultimate"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_CHANNELLED | CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_DISPLAYS_DAMAGE_IMPACT | CITADEL_ABILITY_BEHAVIOR_COOLDOWN_ON_CHANNEL_END | CITADEL_ABILITY_BEHAVIOR_TRIGGER_CANCEL_MASH_PROTECTION_ON_CAST | CITADEL_ABILITY_BEHAVIOR_REQUIRE_ABILITY_BUTTON_TO_CANCEL | CITADEL_ABILITY_BEHAVIOR_SHOW_CAST_RANGE_AS_SAT_SPHERE_WHILE_CASTING"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_mapAbilityProperties = 
+		{
+			TimeToGainLockonStack = 
+			{
+				m_strValue = "0.7"
+				m_strCSSClass = "cooldown"
+			}
+			LockonConeAngle = 
+			{
+				m_strValue = "40"
+				m_strCSSClass = "distance"
+			}
+			TimeToLoseLockonStack = 
+			{
+				m_strValue = "2"
+			}
+			LosingLockGraceTime = 
+			{
+				m_strValue = "1.0"
+			}
+			MaxLockonStacks = 
+			{
+				m_strValue = "1"
+			}
+			StacksCanDecay = 
+			{
+				m_strValue = "0"
+			}
+			TimeToMaxStacks = 
+			{
+				m_strValue = "3.5"
+				m_strLocTokenOverride = "BabaUlt2TimeToMaxStacks"
+				m_strCSSClass = "duration"
+			}
+			AbilityCooldown = 
+			{
+				m_strValue = 150.0
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "18m"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "9999"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0.15"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "6.5"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0.6"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "99m"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			NotInConeLosesLock = 
+			{
+				m_strValue = "0"
+			}
+			MaxSlow = 
+			{
+				m_strValue = "32"
+				m_strLocTokenOverride = "BabaUlt2MaxSlow"
+				m_strCSSClass = "slow"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SPEED_SLOW_PERCENT"
+				m_eStatsUsageFlags = "ConditionallyApplied"
+			}
+			BarrageMaxDamage = 
+			{
+				m_strValue = "450"
+				m_strLocTokenOverride = "MaxDamage"
+				m_strCSSClass = "tech_damage"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "tickdamage_scale_function"
+					m_eSpecificStatScaleType = "ETechPower"
+					m_flStatScale = 1.6
+				}
+				m_bIsAbilityDamageProperty = true
+			}
+			TickDamageIncreasePerHit = 
+			{
+				m_strValue = "30"
+				m_bIsHidden = true
+			}
+			TickInterval = 
+			{
+				m_strValue = "0.15"
+				m_strCSSClass = "duration"
+			}
+			BarrageStartDelayMin = 
+			{
+				m_strValue = "1.2"
+				m_bIsHidden = true
+			}
+			BarrageStartDelayMax = 
+			{
+				m_strValue = "1.8"
+				m_bIsHidden = true
+			}
+			FinalTickDelay = 
+			{
+				m_strValue = "1.2"
+				m_strCSSClass = "duration"
+			}
+			HexDuration = 
+			{
+				m_strValue = "2.75"
+				m_strLocTokenOverride = "MaxPigeonDuration"
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "hexduration_scale_function"
+				}
+			}
+		}
+		_class = "ability_baba_ultimate_2"
+		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_CONE"
+		m_flTargetingConeAngle = 110.0
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_HERO_ENEMY | CITADEL_UNIT_TARGET_MINION_ENEMY"
+		m_nAbilityTargetFlags = "CITADEL_UNIT_TARGET_FLAG_NO_INVIS"
+		m_bShowTargetingPreviewWhileChanneling = false
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_UNIT"
+		m_HUDPanel = 
+		{
+			m_vecHUDElements = 
+			[
+				{
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS"
+					m_Layout = "file://{resources}/layout/ability_hud_elements/element_baba_pigeon_assault_progress.vxml"
+					m_Style = resource_name:"panorama/styles/ability_hud_elements/abilities_baba.vcss"
+					m_strContext = "channel"
+					m_bReverseProgress = true
+				},
+				{
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_LOCK_ON"
+					m_strContext = "lockon"
+					m_Style = resource_name:"panorama/styles/ability_hud_elements/abilities_baba.vcss"
+					m_strAdditionalClasses = "baba_ult_lockon"
+					m_vecLockOnSegmentArcs = 
+					[
+						[ 2.5, 19.0 ],
+						[ 24.0, 46.0 ],
+						[ 51.0, 77.0 ],
+						[ 81.5, 110.5 ],
+						[ 115.5, 150.5 ],
+						[ 155.5, 199.0 ],
+						[ 203.5, 267.0 ],
+						[ 272.0, 360.0 ],
+					]
+				},
+			]
+			m_vecButtonHints = 
+			[
+				{
+					m_strLocToken = "#citadel_ability_baba_pigeon_assault_release_early"
+					m_eHintSide = "EButtonSide_Right"
+					m_strContext = "cancel_single_ability"
+					m_nButton1 = "IN_ATTACK"
+					m_bButton2IsSlot = true
+					m_eButtonHintType = "EButtonHintType_TwoDifferentButtons"
+				},
+			]
+		}
+		m_strApplyLockonStack = soundevent:"Baba.Ult.Lockon"
+		_multibase = 
+		[
+			"citadel_base_tiered_lockon_ability",
+			"ultimate_base",
+		]
+		m_vecLockonStackDurations = 
+		[
+			0.16, 0.19, 0.21, 0.24,
+			0.3, 0.4, 0.6, 0.9,
+		]
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero Baba"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_SHOOTING_DISABLED | MODIFIER_STATE_COMBAT_ABILITIES_DISABLED | MODIFIER_STATE_ITEMS_IGNORE_COMBAT_ABILITIES_DISABLED | MODIFIER_STATE_MELEE_DISABLED"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		m_bStartTrained = false
+		m_nAbilityPointsCost = 0
+		m_nAbillityUnlocksCost = 1
+		m_iMaxLevel = 1
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED"
+		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
+		m_strAbilityOffCooldownSound = soundevent:""
+		m_strAbilityChargeReadySound = soundevent:""
+		m_skillshotMissParticle = resource_name:"particles/abilities/skillshot_default_miss_owner.vpcf"
+		m_flBossDamageScale = 1.0
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/baba/pigeon_launcher.psd"
+		m_CastDelayParticle = resource_name:"particles/abilities/baba/baba_anim_homing_pigeon_start.vpcf"
+		m_ChannelParticle = resource_name:"particles/abilities/baba/baba_homing_pigeon_channel.vpcf"
+		m_cameraSequenceCastStart = 
+		{
+			m_nPriority = 1
+			m_vecDistanceOperations = [  ]
+		}
+		m_cameraSequenceChannelStart = 
+		{
+			m_nPriority = 1
+			m_vecDistanceOperations = [  ]
+		}
+		m_strCastSound = soundevent:""
+		m_strChannelSound = soundevent:"Baba.Ult.Channel"
+		m_flPostChannelDelay = 0.15
+		m_vecAbilityUpgrades = 
+		[
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "MaxSlow"
+						m_strBonus = "32"
+					},
+					{
+						m_strPropertyName = "AbilityCastRange"
+						m_strBonus = "4m"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCooldown"
+						m_strBonus = "-55"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "BarrageMaxDamage"
+						m_strBonus = "125"
+					},
+					{
+						m_strPropertyName = "HexDuration"
+						m_strBonus = "0.5"
+					},
+					{
+						m_strPropertyName = "BarrageMaxDamage"
+						m_strBonus = 1.5
+						m_eUpgradeType = "EAddToScale"
+						m_eScaleStatFilter = "ETechPower"
+					},
+				]
+			},
+		]
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = "#ability_baba_ultimate_2_desc"
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "BarrageMaxDamage"
+								},
+								{
+									m_strImportantProperty = "HexDuration"
+								},
+							]
+						},
+					]
+					m_vecBasicProperties = 
+					[
+						"TimeToMaxStacks",
+						"MaxSlow",
+					]
+				},
+			]
+		}
+		m_TargetModifier = subclass:
+		{
+			_class = "modifier_baba_ult2_mark"
+			_my_subclass_name = "modifier_baba_ult2_mark"
+			m_sLocalizationName = "modifier_baba_ult2_mark"
+			m_nAttributes = "MODIFIER_ATTRIBUTE_MULTIPLE"
+			m_bIsHidden = false
+			m_eDebuffType = "MODIFIER_DEBUFF_YES"
+			m_strHudIcon = panorama:"file://{images}/hud/abilities/baba/pigeon_launcher.psd"
+			m_strParticleEffect = resource_name:""
+			m_strParticleStatusEffect = resource_name:""
+			m_strScreenParticleEffect = resource_name:""
+			m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_EVERYONE"
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+			m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+			m_LockingOnParticle = resource_name:"particles/abilities/baba/baba_homing_pigeon_lock_debuff.vpcf"
+			m_TickParticle = resource_name:"particles/abilities/baba/baba_homing_pigeon_explode.vpcf"
+			m_strVictimLockonSound = soundevent:"Baba.Ult.Victim.Lockon"
+			m_strFinalPigeonWarning = soundevent:"Baba.Ult.Final.Pigeon.Warning"
+			m_flImpactDelay = 0.5
+			m_ImpactModifier = subclass:
+			{
+				_class = "modifier_baba_ult2_impact"
+				_my_subclass_name = "modifier_baba_ult2_impact"
+				m_bIsHidden = true
+				m_eDebuffType = "MODIFIER_DEBUFF_NO"
+				m_eDrawOverheadStatus = "OVERHEAD_DRAW_NEVER"
+				m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+				m_strHitSound = soundevent:"Baba.Ult.Hit"
+				m_strHexSound = soundevent:"Baba.Ult.Pigeon.Hex"
+				m_HexModifier = subclass:
+				{
+					_class = "modifier_baba_hex"
+					_my_subclass_name = "modifier_baba_ult2_pigeon"
+					m_sLocalizationName = "modifier_baba_ult2_pigeon"
+					m_bIsHidden = false
+					m_flModelScale = 2.2
+					m_CursedModel = 
+					{
+						m_ModelName = resource_name:"models/heroes_wip/baba/baba_pigeon_transform.vmdl"
+					}
+					m_TargetParticle = resource_name:"particles/abilities/baba/baba_hexing_bolt_tgt_revert.vpcf"
+					m_bCanFly = true
+					m_flFlyAcceleration = 0.8
+					m_flFlyDeceleration = 1.5
+					m_flFlySpeedScale = 1.0
+					m_flFlyIdleSinkSpeed = 40.0
+					m_flLaunchUpSpeed = 0.0
+					m_flFlyLaunchTime = 0.2
+					m_flFlyHoverMinHeight = 50.0
+					m_flFlyHoverMaxHeight = 300.0
+					m_eDrawOverheadStatus = "OVERHEAD_DRAW_NEVER"
+					m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+					m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+					m_flFlyJumpImpulseUp = 0.0
+					m_flFlyJumpImpulseHoriz = 0.0
+					m_HexedParticle = resource_name:"particles/abilities/baba/baba_hexing_bolt_tgt.vpcf"
+					m_cameraSequenceHexed = 
+					{
+						m_vecDistanceOperations = 
+						[
+							{
+								m_eCameraOperation = "k_ECameraOp_Spring"
+								m_bSpringToDefault = false
+								m_flSpringTarget = 375.0
+								m_flSpringStrength = 30.0
+							},
+							{
+								m_eCameraOperation = "k_ECameraOp_Maintain"
+							},
+						]
+						m_nPriority = 5
+					}
+					m_sExpiredSound = soundevent:"Baba.Ult.Pigeon.Hex.Expire"
+					m_sAmbientLoopingSound = soundevent:"Baba.Ult.Pigeon.Hex.Lp"
+				}
+			}
+			m_FinalTickParticle = resource_name:"particles/abilities/baba/baba_homing_pigeon_final_tick.vpcf"
+			m_LockingOnParticleCaster = resource_name:"particles/abilities/baba/baba_homing_pigeon_lock_debuff_caster.vpcf"
+			m_strVictimMaxLockonSound = soundevent:"Baba.Ult.Lockon.Max.Victim"
+		}
+		m_strHitConfirmationSound = soundevent:"Baba.Ult.Hit"
+		m_strChannelLoopSound = soundevent:"Baba.Ult.Channel.Lp"
+		m_LaunchParticle = resource_name:"particles/abilities/baba/baba_homing_pigeon_channel_launch.vpcf"
+		m_strSnapSound = soundevent:"Baba.Ult.Channel.End.Snap"
+		m_strRampSound = soundevent:"Baba.Ult.Channel.End.Ramp"
+		m_strEmptyReleaseSound = soundevent:""
+		m_bTargetingPreviewDesaturatesScreen = false
+		m_strAG2CastingAction = "pigeon_assault_casting"
+		m_strAG2ChannelingAction = "pigeon_assault_channeling"
+		m_strAG2UltFinishedAction = "cast_completed"
+		m_strApplyMaxLockonStack = soundevent:"Baba.Ult.Lockon.Max"
+		m_strAG2CastCompletedAction = ""
 	}
 	citadel_weapon_ratking_set = 
 	{

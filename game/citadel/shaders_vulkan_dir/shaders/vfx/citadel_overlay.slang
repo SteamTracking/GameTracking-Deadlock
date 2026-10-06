@@ -232,7 +232,7 @@ PS
 	DynamicComboRule( Allow1( S_MODE_TOOLS_WIREFRAME, S_RENDER_ON_TRANSLUCENT, D_BAKED_LIGHTING_FROM_LIGHTMAP ) );
 	DynamicComboRule( Allow1( S_MODE_TOOLS_WIREFRAME, S_RENDER_ON_TRANSLUCENT, D_OVERLAY_WRITE_DEPTH ) );
 	
-	RenderState(DepthEnable, exists(shadervar_wireframedepthenable) ? shadervar_wireframedepthenable : true);
+	RenderState(DepthEnable, exists(ShaderVar_WireframeDepthEnable) ? ShaderVar_WireframeDepthEnable : true);
 	RenderState(DepthFunc, GreaterEqual);
 	RenderState(DepthWriteEnable, false);
 	[[layer_constant]] StructuredBuffer g_BarnLights < Attribute("BarnLights"); >;

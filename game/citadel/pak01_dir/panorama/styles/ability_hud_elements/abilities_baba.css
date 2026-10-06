@@ -1,0 +1,196 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+@import url("s2r://panorama/styles/citadel_base_styles.vcss");
+@keyframes 'DefaultAnim'
+{
+	0%
+	{
+		transform: translateX( 1px );
+	}
+	
+	50%
+	{
+		transform: translateY( 1px );
+	}
+	
+	100%
+	{
+		transform: translateX( -1px );
+	}
+	
+}
+
+#fancy_progress_container
+{
+	visibility: visible;
+}
+
+#basic_progress_container
+{
+	visibility: collapse;
+}
+
+.ModifierProgressBar
+{
+	background-color: vampirebatColor;
+}
+
+.BarAndNameContainer
+{
+	visibility: collapse;
+}
+
+.AbilityNameLabel
+{
+	visibility: collapse;
+}
+
+.ability_baba_bench_run.ability_element_progress
+{
+	transform: rotateZ(0deg);
+	ui-scale: 70%;
+	margin-left: 0px;
+}
+
+.ability_baba_bench_run .SplitLabelProgressBar .SplitLabelName Image
+{
+	animation-name: DefaultAnim;
+	animation-duration: 0.4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-frame-time: 300ms;
+}
+
+.ability_baba_bench_run .SplitLabelProgressBar .SplitLabelName Image:nth-child(odd)
+{
+	animation-direction: alternate-reverse;
+}
+
+.ability_baba_bench_run .SplitLabelProgressBar .SplitLabelName Image:nth-child(even)
+{
+	animation-direction: alternate;
+}
+
+.ability_baba_bench_run .SplitLabelProgressBar .SplitLabelProgress
+{
+	wash-color: babaColor;
+}
+
+.SplitLabelProgressBar .SplitLabelName Image
+{
+	animation-name: DefaultAnim;
+	animation-duration: 0.4s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-frame-time: 300ms;
+}
+
+.SplitLabelProgressBar .SplitLabelName Image:nth-child(odd)
+{
+	animation-direction: alternate-reverse;
+}
+
+.SplitLabelProgressBar .SplitLabelName Image:nth-child(even)
+{
+	animation-direction: alternate;
+}
+
+.SplitLabelProgressBar .SplitLabelProgress
+{
+	wash-color: babaColor;
+}
+
+.baba_ult_lockon
+{
+	background-image: url("s2r://panorama/images/hud/hero_specific/baba_ult_pigeon_buildup_psd.vtex");
+	background-size: 220px 220px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-img-opacity: 0.2;
+}
+
+.baba_ult_lockon .lockon_progress
+{
+	width: 220px;
+	height: 220px;
+	border: 0px;
+	border-radius: 0px;
+	background-image: url("s2r://panorama/images/hud/hero_specific/baba_ult_pigeon_buildup_psd.vtex");
+	background-size: 100% 100%;
+	wash-color: white;
+	opacity: 0.7;
+}
+
+.baba_ult_lockon .stack_is_locked.lockon_progress
+{
+	wash-color: babaColor;
+	brightness: 3;
+	opacity: 1;
+}
+
+.baba_ult_lockon .lockon_progress_inner,.baba_ult_lockon .stack_is_locked.lockon_progress_inner
+{
+	visibility: collapse;
+}
+
+@keyframes 'BabaUltLockonMaxPop'
+{
+	0%
+	{
+		transform: scale3d( 1.25, 1.25, 1 );
+	}
+	
+	100%
+	{
+		transform: scale3d( 1, 1, 1 );
+	}
+	
+}
+
+@keyframes 'BabaUltLockonMaxRotate'
+{
+	0%
+	{
+		pre-transform-rotate2d: 0deg;
+	}
+	
+	100%
+	{
+		pre-transform-rotate2d: 360deg;
+	}
+	
+}
+
+@keyframes 'BabaUltLockonMaxBrightness'
+{
+	0%
+	{
+		brightness: 1;
+	}
+	
+	50%
+	{
+		brightness: 2;
+	}
+	
+	100%
+	{
+		brightness: 1;
+	}
+	
+}
+
+.baba_ult_lockon.max_lockon_stacks #unscaled_panel
+{
+	background-image: url("s2r://panorama/images/hud/hero_specific/baba_ult_pigeon_max_psd.vtex");
+	background-size: 200px 200px;
+	background-position: center;
+	background-repeat: no-repeat;
+	saturation: 0.9;
+	opacity: 0.7;
+	animation-name: BabaUltLockonMaxRotate, BabaUltLockonMaxBrightness;
+	animation-duration: 10s, 0.5s;
+	animation-timing-function: linear, linear;
+	animation-iteration-count: infinite, infinite;
+}
+

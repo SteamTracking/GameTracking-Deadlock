@@ -1162,9 +1162,6 @@ citadel_auto_highlight_seconds_after 8 (clientdll release)
 citadel_auto_highlight_seconds_before 20 (clientdll release)
 	How many seconds before the highlight event to show when viewing highlights.
 
-citadel_auto_ping_window 0.35 (developmentonly clientdll)
-	If the ping button is opened and closed within this time, and no option is selected, chose this.
-
 citadel_auto_queue_build false (clientdll archive userinfo)
 	Automatically queue the selected build at game start
 
@@ -1870,8 +1867,8 @@ citadel_chat_fade_time_extension 7 (developmentonly clientdll defensive)
 citadel_chat_typing_indicator_fade_time 5 (developmentonly clientdll defensive)
 	<no description>
 
-citadel_chat_wheel_fade_out_duration 0.35 (developmentonly clientdll)
-	Chat wheel must be propped open so that it can visible fade away while showing the user their selection. This controls that maximum time.
+citadel_check_walk_on_skyclip true (gamedll clientdll replicated cheat)
+	<no description>
 
 citadel_cinematic_intro_duration_npc 7.5 (gamedll cheat)
 	How long is the cinematic intro applied to npcs (shrine/patron)
@@ -1881,9 +1878,6 @@ citadel_cinematic_intro_duration_player 9.5 (gamedll cheat)
 
 citadel_cinematic_intro_enabled 0 (gamedll cheat)
 	-1 = force disabled, 0 = default, 1 = force enabled
-
-citadel_clamp_mouse_when_using_ping_wheel true (developmentonly clientdll)
-	<no description>
 
 citadel_client_mm_ignore_engine_version false (developmentonly clientdll)
 	Ignore the engine version number for matchmaking. Useful for testing locally in release.
@@ -2257,9 +2251,6 @@ citadel_damage_text_x_offset_far 0 (developmentonly clientdll)
 citadel_damage_text_x_offset_near 0 (developmentonly clientdll)
 	How much to offset damage numbers left and right when near the camera
 
-citadel_dead_zone_radius 0.075 (developmentonly clientdll defensive)
-	<no description>
-
 citadel_death_linger_time 3 (developmentonly gamedll)
 	How logn does the player icon linger on the minimap after they die
 
@@ -2431,9 +2422,6 @@ citadel_disable_quick_response true (developmentonly clientdll)
 citadel_display_new_player_recommendations true (clientdll release)
 	Do we want to show the decorations for new player friendly heroes?
 
-citadel_distance_mouse_move_for_minimap_drawing 15 (clientdll release)
-	<no description>
-
 citadel_doorway_debug_draw 0 (gamedll clientdll replicated cheat)
 	<no description>
 
@@ -2484,9 +2472,6 @@ citadel_dump_keybindings false (developmentonly clientdll defensive)
 
 citadel_enable_chat_rate_limiting true (developmentonly gamedll)
 	<no description>
-
-citadel_enable_double_ping true (developmentonly clientdll)
-	Turns off the ability to have aggressive and passive pings.
 
 citadel_enable_new_ping_particle false (developmentonly clientdll)
 	Convar to test new ping particle
@@ -3016,6 +3001,9 @@ citadel_hud_announcement_force_single_levelup false (developmentonly clientdll d
 citadel_hud_build_category_max_height 600 (developmentonly clientdll)
 	<no description>
 
+citadel_hud_build_category_max_width 5000 (developmentonly clientdll)
+	<no description>
+
 citadel_hud_build_category_min_height 125 (developmentonly clientdll)
 	<no description>
 
@@ -3026,9 +3014,6 @@ citadel_hud_build_compact_category_extra_height 0 (developmentonly clientdll)
 	<no description>
 
 citadel_hud_build_compact_category_extra_width 0 (developmentonly clientdll)
-	<no description>
-
-citadel_hud_chat_wheel true (developmentonly clientdll defensive)
 	<no description>
 
 citadel_hud_damage_counter_duration 2 (developmentonly clientdll defensive)
@@ -3418,18 +3403,6 @@ citadel_minimap_teleporter_nearby_dist 1600 (developmentonly clientdll defensive
 citadel_minimap_trooper_size 3 (clientdll release)
 	<no description>
 
-citadel_minimap_unit_click_radius 200 (clientdll release)
-	<no description>
-
-citadel_minimap_zip_line_hover_radius 16 (clientdll release)
-	Extra pixels either side of a minimap zipline that still count as hovering it
-
-citadel_minimap_zip_line_hover_thickness_scale 2 (clientdll release)
-	How much thicker a hovered minimap zipline lane draws
-
-citadel_minimap_zip_line_thickness 2 (clientdll release)
-	<no description>
-
 citadel_minimum_fire_rate -50 (gamedll clientdll replicated cheat)
 	Minimum value possible for fire rate
 
@@ -3517,6 +3490,9 @@ citadel_neutral_ability_dev_test -1 (developmentonly gamedll)
 citadel_neutral_aggro_time 5 (developmentonly gamedll)
 	<no description>
 
+citadel_neutral_ai_pathfinder_max_path_detour 1500 (gamedll cheat)
+	How far a path may detour from the direct route. Negative means no limit.
+
 citadel_neutral_camp_spawn_per_tick_limit 1 (developmentonly gamedll)
 	Spawn this many neutral camps per tick (this is a limit, so if it's 1, we'll only spawn one per tick (perf)). Set this value to something large to effectively remove the limit. 0 or negative will prevent spawning.
 
@@ -3587,10 +3563,7 @@ citadel_new_ping_hitbox_self_test false (developmentonly clientdll)
 	When tracing in free cursor mode, turn on a more expensive trace vs the local player model (nearer objects will undergo more scrutiny)
 
 citadel_new_ping_minimap_left_click true (developmentonly clientdll)
-	With citadel_new_ping_system on, left clicking anywhere on the minimap opens the ping radial, same as the ping keybind. Never overrides a minimap targeting ability like Mirage's teleport.
-
-citadel_new_ping_system 1 (developmentonly clientdll archive)
-	Allow Minimap Radial to appear. 0: Off. 1: On. 2: Spew
+	Left clicking anywhere on the minimap opens the ping radial, same as the ping keybind. Never overrides a minimap targeting ability like Mirage's teleport.
 
 citadel_new_ping_system_fixed_slot_icons true (developmentonly clientdll defensive)
 	Draw the icon each slot pins in scripts/ping_targets.vdata on the radials whose layout is fixed, so the art stops moving when an override fires. A minimap sourced radial pins the generic_entity row's four, since one compass serves everything on the map; a radial from hud chrome pins its own row's, so a friendly and an enemy portrait stay distinct. 0 restores the per ping icons.
@@ -3706,9 +3679,6 @@ citadel_orb_required_bullets_to_claim_override 0 (developmentonly gamedll client
 citadel_orb_velocity_decay_in_lagcomp 0.85 (developmentonly gamedll)
 	Decay velocity to 0 by this amount during lag comp window
 
-citadel_outer_radius_scaler 0.2545 (developmentonly clientdll defensive)
-	<no description>
-
 citadel_party_invite_in_game true (clientdll release)
 	When set, only users in game can be invited
 
@@ -3808,8 +3778,11 @@ citadel_ping_below_us_z 500 (gamedll cheat)
 citadel_ping_can_heal_range 2500 (gamedll cheat)
 	Pinging a low teammate offers a heal only if they are within this many units and in line of sight. Matches citadel_fow_player_range.
 
-citadel_ping_consecutive_window 0.25 (developmentonly clientdll)
+citadel_ping_consecutive_window 0.35 (developmentonly clientdll)
 	Seconds between taps on one subject for them to chain into a double (triple...) ping.
+
+citadel_ping_debug_spew false (developmentonly clientdll)
+	Log ping subject, radial and send decisions, and draw ping debug overlays.
 
 citadel_ping_enemy_count_radius 1500 (clientdll cheat)
 	How close another visible enemy has to be to the pinged position to count toward the group callout.
@@ -3837,9 +3810,6 @@ citadel_ping_spam_hides_marker false (gamedll cheat)
 
 citadel_ping_teammate_alone_radius 1500 (gamedll cheat)
 	A pinged teammate with no other living ally (the pinger included) within this many units is told to be careful.
-
-citadel_ping_wheel_activation_radius 0.6 (developmentonly clientdll)
-	Increase this to change how much you have to move your mouse to make the mousewheel visible.
 
 citadel_play_page_fake_data false (developmentonly clientdll)
 	<no description>
@@ -4699,9 +4669,6 @@ citadel_show_all_purchase_toasts false (clientdll archive)
 citadel_show_bullet_lag_compensation 0 (gamedll clientdll replicated cheat)
 	if > 0.0, show lag compensated hitboxes (value is seconds) whenever a bullet is lag compensated and hits something.
 
-citadel_show_chat_wheel_debug false (developmentonly clientdll)
-	Increase this to change how much you have to move your camera angle to make the mousewheel visible (degrees)
-
 citadel_show_chat_wheel_time 0.23 (clientdll archive)
 	How long it takes after pressing the +ping command for the chat wheel to appear.
 
@@ -4934,12 +4901,6 @@ citadel_stuck_camera_trace_extra_length 100 (gamedll clientdll replicated cheat)
 	<no description>
 
 citadel_stuck_normal_find_trace_fallback_elevation 24 (gamedll clientdll replicated cheat)
-	<no description>
-
-citadel_sub_nav_outer_radius_scaler 0.412 (developmentonly clientdll defensive)
-	<no description>
-
-citadel_subnav_select_time 0 (developmentonly clientdll)
 	<no description>
 
 citadel_subtick_aim_data false (developmentonly gamedll clientdll replicated defensive)
@@ -10240,18 +10201,6 @@ ping_indicator_safe_area_x 480 (developmentonly clientdll defensive)
 ping_indicator_safe_area_y 200 (developmentonly clientdll defensive)
 	<no description>
 
-ping_target_reset_time 1.2 (developmentonly clientdll)
-	<no description>
-
-ping_trace_radius 5 (developmentonly clientdll)
-	<no description>
-
-ping_trace_radius_expanded 60 (developmentonly clientdll)
-	<no description>
-
-ping_trace_radius_minimap 60 (developmentonly clientdll)
-	<no description>
-
 ping_wheel_phrase_0 1 (clientdll archive per_user)
 	<no description>
 
@@ -10701,12 +10650,6 @@ r_citadel_npr_outlines true (developmentonly clientdll cheat gameinfo_cannot_ove
 
 r_citadel_npr_outlines_max_dist 1000 (min: 0, developmentonly clientdll cheat gameinfo_cannot_override)
 	Maximum distance at which NPR outlines are rendered
-
-r_citadel_portrait_allow_particle_only true (developmentonly clientdll)
-	<no description>
-
-r_citadel_portrait_highlight_particle_only false (developmentonly clientdll)
-	<no description>
 
 r_citadel_render_game true (developmentonly clientdll cheat gameinfo_cannot_override)
 	Should you render the main game world

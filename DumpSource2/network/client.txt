@@ -523,6 +523,45 @@ CCitadel_Ability_AbilityName
 
 CCitadel_Ability_Afterburn
 
+CCitadel_Ability_Baba_BenchMelee
+	EBabaBenchMeleeState m_eState
+	EBabaBenchMeleeAttackType m_eAttackType
+	GameTime_t m_flStateStartTime (sent as: float32)
+	GameTime_t m_flCommitTime (sent as: float32)
+	GameTime_t m_flAttackTriggeredTime (sent as: float32)
+	GameTime_t m_flNextLightAttackAllowedTime (sent as: float32)
+	GameTime_t m_flNextHeavyAttackAllowedTime (sent as: float32)
+	Vector m_vDashDir
+	bool m_bDiveApplied
+	Vector m_vDashStartVelocity
+	bool m_bAttackImpulseApplied
+
+CCitadel_Ability_Baba_BenchRun
+	bool m_bHoldingJump
+	bool m_bHeldJumpAborted
+	GameTime_t m_flHoldJumpStartTime (sent as: float32)
+	GameTime_t m_flRideStartTime (sent as: float32)
+	GameTime_t m_flRideEndTime (sent as: float32)
+	GameTime_t m_flEndLaunchTime (sent as: float32)
+	float m_flLastChargeJumpFraction
+	bool m_bInMelee
+	bool m_bMeleeIsHeavy
+
+CCitadel_Ability_Baba_BubblingBrew
+	EState m_eState
+	int m_CurrentStacks
+	GameTime_t m_tStackExpiryTime (sent as: float32)
+
+CCitadel_Ability_Baba_HexingBrew
+	EBrewEffect m_eBrewEffect
+	bool m_bBrewLocked
+	GameTime_t m_flBrewLockTime (sent as: float32)
+	float m_flBrewPausedTime
+
+CCitadel_Ability_Baba_HexingBrew_Throw
+
+CCitadel_Ability_Baba_Ultimate2
+
 CCitadel_Ability_BaseHeldItem
 
 CCitadel_Ability_Bebop_LaserBeam
@@ -1891,6 +1930,9 @@ CCitadel_Projectile_BatSwarmExtraProjectile
 CCitadel_Projectile_BatSwarmProjectile
 
 CCitadel_Projectile_BookwormGun
+
+CCitadel_Projectile_BubblingBrew
+	bool m_bIsReturningProjectile
 
 CCitadel_Projectile_Cyclone
 

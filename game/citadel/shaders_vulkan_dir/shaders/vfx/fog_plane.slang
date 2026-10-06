@@ -258,7 +258,7 @@ PS
 	DynamicComboRule( Allow1( S_MODE_TOOLS_WIREFRAME, S_MODE_TOOLS_VIS, D_SATURATION_VOLUMES ) );
 	DynamicComboRule( Requires( D_COSMIC_VEIL_FRONT_DEPTH, S_MODE_DEPTH, S_MODE_FRONT_DEPTH ) );
 	
-	RenderState(DepthEnable, exists(shadervar_wireframedepthenable) ? shadervar_wireframedepthenable : true);
+	RenderState(DepthEnable, exists(ShaderVar_WireframeDepthEnable) ? ShaderVar_WireframeDepthEnable : true);
 	RenderState(DepthFunc, GreaterEqual);
 	RenderState(DepthWriteEnable, false);
 	[[layer_constant]] StructuredBuffer g_BarnLights < Attribute("BarnLights"); >;

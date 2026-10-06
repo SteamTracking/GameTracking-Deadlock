@@ -269,7 +269,7 @@ PS
 	DynamicComboRule( Requires( D_COSMIC_VEIL_FRONT_DEPTH, S_MODE_DEPTH, S_MODE_FRONT_DEPTH ) );
 	
 	RenderState(CullMode, (1 && !g_bDoubleSidedVeil) ? Back : None);
-	RenderState(DepthEnable, exists(shadervar_wireframedepthenable) ? shadervar_wireframedepthenable : true);
+	RenderState(DepthEnable, exists(ShaderVar_WireframeDepthEnable) ? ShaderVar_WireframeDepthEnable : true);
 	RenderState(DepthFunc, GreaterEqual);
 	RenderState(DepthWriteEnable, false);
 	[[layer_constant]] ExternalDescriptorSet g_globalLateBoundBindlessSet < Source(ExternalDescSet); Attribute("g_globalLateBoundBindlessSet"); >;

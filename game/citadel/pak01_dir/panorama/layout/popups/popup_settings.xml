@@ -110,14 +110,6 @@
 				<Label id="HeroButtonHeroName" />
 			</Panel>
 		</snippet>
-		<snippet name="ChatWheelMessage">
-			<Panel class="ChatWheelPhraseChoiceLine">
-				<Panel id="ChatWheelMessageUnlockInfo" />
-				<Button id="ChatWheelSoundButton" class="ChatWheelSoundIcon" />
-				<Label class="ChatWheelAllLabel" text="#citadel_settings_chat_wheel_all" />
-				<Label class="ChatWheelPhraseChoiceText" html="true" text="{s:chat_wheel_message}" />
-			</Panel>
-		</snippet>
 	</snippets>
 	<PopupSettings class="Hidden" popupbackground="blur" oncancel="UIPopupButtonClicked()" onmovedown="CitadelSettingsOnMoveDown()" onmoveup="CitadelSettingsOnMoveUp()">
 		<Panel class="PopupBackground" />
@@ -151,8 +143,12 @@
 								<Label id="HeroSelectorViewModeTitle" text="#citadel_settings_view_mode" />
 								<Label id="HeroSelectorViewModeScope" text="{s:selected_hero_name}" />
 							</Panel>
-							<Panel id="HeroSelectorResetContainer" class="ResetButtonContainer">
-								<CitadelButton id="ResetHeroSettingsButton" class="Small Fill ResetButton" imagesrc="s2r://panorama/images/icons/reset.vsvg" onactivate="CitadelClearHeroSettings();" onmouseover="UIShowTextTooltipStyled( #citadel_confirm_reset_keybindings_for_either, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()" />
+							<Panel id="HeroSelectorSwitchContainer">
+								<Button id="HeroSelectorSwitchButton" onmouseout="UIHideTextTooltip()">
+									<Image id="HeroSelectorSwitchFrame" hittest="false" scaling="stretch-to-fit-preserve-aspect" src="s2r://panorama/images/icons/icon_refresh.vsvg" />
+									<Panel id="HeroSelectorSwitchDisc" hittest="false" />
+									<Image id="HeroSelectorSwitchIcon" hittest="false" scaling="stretch-to-fit-preserve-aspect" />
+								</Button>
 							</Panel>
 						</Panel>
 					</Panel>

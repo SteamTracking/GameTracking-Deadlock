@@ -92,9 +92,9 @@ PS
 	Texture3D g_tColorCorrection < Attribute("ColorCorrectionTex"); SrgbRead(false); >;
 	Texture2D g_tHDRBuffer < Attribute("ColorBuffer"); SrgbRead(false); >;
 	Texture2D g_tNoise < Channel(RGB, None(TextureNoise), Linear); OutputFormat(DXT1); SrgbRead(false); >;
-	float4 g_vBloomUvScaleClamp < UiType(VectorText); Expression(bloombufferscaleclamp); >;
-	float3 g_vNormalizedBloomStrengths < UiType(VectorText); Expression(float3(normalizedadditivebloomstrength,normalizedscreenbloomstrength,normalizedblurbloomstrength)); >;
-	float3 g_vUnNormalizedBloomStrengths < UiType(VectorText); Expression(float3(additivebloomstrength,screenbloomstrength,blurbloomstrength)); >;
+	float4 g_vBloomUvScaleClamp < UiType(VectorText); Expression(bloomBufferScaleClamp); >;
+	float3 g_vNormalizedBloomStrengths < UiType(VectorText); Expression(float3(normalizedAdditiveBloomStrength,normalizedScreenBloomStrength,normalizedBlurBloomStrength)); >;
+	float3 g_vUnNormalizedBloomStrengths < UiType(VectorText); Expression(float3(additiveBloomStrength,screenBloomStrength,blurBloomStrength)); >;
 	
 	// Film Grain
 	CreateInputTexture2D(TextureNoise, Linear, 8, "", "_noise", "Film Grain", Default4(0.5, 0.5, 0.5, 0));

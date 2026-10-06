@@ -135,6 +135,7 @@ $SPECULARSCALE
 +Event SubString
 +Facing
 +Filter
++Flight
 +Flying to Target Properties
 +Fonts
 +Gameplay
@@ -854,6 +855,7 @@ AddOutput
 AddRestLength
 AddToCounter
 AddToTimer
+Added for each barrage hit. The hit lands when it expires
 Added to the max after the property, e.g. a +1 rounding buffer.
 Additional Abilities
 Additional Ability Properties that are demoted compared to the Section Ability Properties
@@ -957,7 +959,6 @@ Allies
 Allow Hit On Non-Tracked Targets
 Allow Item Stacking
 Allow Low GPU Memory mode (i.e. when building maps).
-Allow Minimap Radial to appear. 0: Off. 1: On. 2: Spew
 Allow N late commands to run at 0 timescale prior to running an on-time command. Negative values for network round trip based calculation with a hard cap of the of absolute value
 Allow SourceTV to control server hibernation state.
 Allow alternate baseline system, set to 2 for debugging spew.
@@ -1384,6 +1385,7 @@ BUILDUP_MODE_EXTEND_FILL_DURATION
 BUILDUP_MODE_MAX_FILL_DURATION
 BUILDUP_MODE_ONE_AND_DONE
 BUILDUP_MODE_RESTART_ON_FILL
+BabaBenchMeleeAttack_t
 Back
 Back-Left
 Back-Right
@@ -1809,6 +1811,7 @@ CATEGORY_DEFENSIVE
 CATEGORY_NEUTRAL
 CATEGORY_OFFENSIVE
 CATEGORY_UNSET
+CAbilityBabaBenchMeleeVData
 CAbilityBloodShardsVData
 CAbilityBouncePadVData
 CAbilityBullChargeVData
@@ -2510,6 +2513,19 @@ CCitadelZiplineCaptureTrigger
 CCitadelZiplinePath
 CCitadel_Ability_AbilityName
 CCitadel_Ability_Afterburn
+CCitadel_Ability_Baba_BenchMelee
+CCitadel_Ability_Baba_BenchRun
+CCitadel_Ability_Baba_BenchRun_VData
+CCitadel_Ability_Baba_BubblingBrew
+CCitadel_Ability_Baba_BubblingBrew::EState
+CCitadel_Ability_Baba_BubblingBrew_VData
+CCitadel_Ability_Baba_HexingBrew
+CCitadel_Ability_Baba_HexingBrew::EBrewEffect
+CCitadel_Ability_Baba_HexingBrew_Throw
+CCitadel_Ability_Baba_HexingBrew_ThrowVData
+CCitadel_Ability_Baba_HexingBrew_VData
+CCitadel_Ability_Baba_Ultimate2
+CCitadel_Ability_Baba_Ultimate2_VData
 CCitadel_Ability_BaseHeldItem
 CCitadel_Ability_BaseHeldItemVData
 CCitadel_Ability_Bebop_LaserBeam
@@ -3291,6 +3307,16 @@ CCitadel_Modifier_ArcticBlastAOE
 CCitadel_Modifier_ArcticBlastAOE_VData
 CCitadel_Modifier_ArcticBlast_Freeze
 CCitadel_Modifier_ArcticBlast_Freeze_VData
+CCitadel_Modifier_Baba_BenchRun
+CCitadel_Modifier_Baba_BenchRun_VData
+CCitadel_Modifier_Baba_BrewHolding
+CCitadel_Modifier_Baba_GroundPoundFall
+CCitadel_Modifier_Baba_Hex
+CCitadel_Modifier_Baba_HexVData
+CCitadel_Modifier_Baba_Ult2_Impact
+CCitadel_Modifier_Baba_Ult2_Impact_VData
+CCitadel_Modifier_Baba_Ult2_Mark
+CCitadel_Modifier_Baba_Ult2_Mark_VData
 CCitadel_Modifier_Backdoor_Protection
 CCitadel_Modifier_Backdoor_ProtectionVData
 CCitadel_Modifier_Backstabber_Debuff
@@ -4472,6 +4498,7 @@ CCitadel_Projectile_BatSwarmProjectile
 CCitadel_Projectile_Bebop_Hook
 CCitadel_Projectile_BloodBomb
 CCitadel_Projectile_BookwormGun
+CCitadel_Projectile_BubblingBrew
 CCitadel_Projectile_Cyclone
 CCitadel_Projectile_DustStorm
 CCitadel_Projectile_FeatherBoomerang
@@ -5206,10 +5233,7 @@ CITADEL_PING_VISIT_SHOP
 CITADEL_PING_WAIT
 CITADEL_PING_WATCH_OUT
 CITADEL_PING_WELL_PLAYED_ALLCHAT
-CITADEL_PING_WHEEL_CONTEXTUAL
 CITADEL_PING_WHEEL_COUNT
-CITADEL_PING_WHEEL_DISABLED_WHILE_DEAD
-CITADEL_PING_WHEEL_INPROGRESS
 CITADEL_PING_WHEEL_POSTGAME
 CITADEL_PING_WHEEL_PREGAME
 CITADEL_PING_WHEEL_SOUND_ATTACK
@@ -5217,21 +5241,8 @@ CITADEL_PING_WHEEL_SOUND_DEFEND
 CITADEL_PING_WHEEL_SOUND_MAP_PING
 CITADEL_PING_WHEEL_SOUND_NONE
 CITADEL_PING_WHEEL_SOUND_WARNING
-CITADEL_PING_WHEEL_SUBNAV
 CITADEL_PING_YES
 CITADEL_PING_YOURE_WELCOME
-CITADEL_QUICK_RESPONSE_COUNT
-CITADEL_QUICK_RESPONSE_DEFAULT
-CITADEL_QUICK_RESPONSE_GOOD_JOB
-CITADEL_QUICK_RESPONSE_GREAT_KILL
-CITADEL_QUICK_RESPONSE_HEADING_TO_LANE
-CITADEL_QUICK_RESPONSE_HEALING
-CITADEL_QUICK_RESPONSE_NONE
-CITADEL_QUICK_RESPONSE_SHOP_OR_DEFEND
-CITADEL_QUICK_RESPONSE_THANKS
-CITADEL_QUICK_RESPONSE_UH_OH
-CITADEL_QUICK_RESPONSE_YES
-CITADEL_QUICK_RESPONSE_YES_NO
 CITADEL_TARGET_ABILITY_BEHAVIOR_IMBUE_ACTIVE
 CITADEL_TARGET_ABILITY_BEHAVIOR_IMBUE_ACTIVE_NON_ULT
 CITADEL_TARGET_ABILITY_BEHAVIOR_IMBUE_ENHANCE
@@ -5775,6 +5786,15 @@ CModifierVacuumAuraVData
 CModifierVandalOverflowVData
 CModifierVandalSurgeVData
 CModifierVitalitySuppressorVData
+CModifier_Baba_BrewBurn
+CModifier_Baba_BrewBurn_VData
+CModifier_Baba_BubblingBrew_Buff
+CModifier_Baba_BubblingBrew_Buff_VData
+CModifier_Baba_BubblingBrew_GunDamage
+CModifier_Baba_BubblingBrew_GunDamage_VData
+CModifier_Baba_Bubbling_Brew_Debuff
+CModifier_Baba_ThreadPull
+CModifier_Baba_ThreadPull_VData
 CModifier_CheatDeathImmunity
 CModifier_CheatDeathImmunityVData
 CModifier_Citadel_Bull_Leap_LandingBonuses
@@ -6068,6 +6088,7 @@ CNmClipDocEvent_Transition
 CNmClipDocument
 CNmClipDocument::AdditiveBaseFrame_t
 CNmClipDocument::AdditiveType_t
+CNmClipDocument::SpeedScale_t
 CNmClipNode::CDefinition
 CNmClipReferenceNode::CDefinition
 CNmClipSelectorNode::CDefinition
@@ -8032,6 +8053,7 @@ Cast Completed "hero_action" value
 Cast Fail "hero_action" value
 CastDynamicShadows
 Caster
+Casting
 Casting "hero_action" value
 Casts a ray and starts a sound event where the ray hits. The sound event will retrigger periodically if cl_snd_cast_retrigger is set. The sound event will clear previous snd_cast events if cl_snd_cast_clear is set. Usage: snd_cast <eventname> [<retrigger time>] [<max distance>]. Arguments that are specified will become defaults for the remainder of the session.
 Category for the random roller
@@ -8094,7 +8116,6 @@ Charge speed multiplier over the rise
 Charges
 Chase cam's ideal distance from target
 Chat text messages that trigger the concept associated with this message
-Chat wheel must be propped open so that it can visible fade away while showing the user their selection. This controls that maximum time.
 ChatGroupsChanged
 ChatIgnoreType_t
 ChatMsgPingMarkerInfo
@@ -8183,7 +8204,6 @@ CitadelCameraOperationsSequence_t
 CitadelCameraSettings_t
 CitadelCameraTargetPosOperationDef_t
 CitadelCameraVertOffsetOperationDef_t
-CitadelChatWheelQuickResponseTypes_t
 CitadelConcept_t
 CitadelConfigurableTrackedAbilityProjectileCreateInfo_t
 CitadelCosmeticAbilityVData
@@ -9500,6 +9520,7 @@ Duration to display debug draw for FindAbilityUnits functions
 Duration to display debug draw for UnitQuery errors
 Duration to draw the various traces that formed a shot.  Set to a negative number to view the current angles without shooting.
 Duration value for path point
+DurationOverride
 DurationValue
 During Outro
 During a VMA defrag, number of MB in moves per pass.
@@ -9619,6 +9640,15 @@ EAttackType_HeavyAir
 EAttackType_Light
 EAttackType_None
 EAttackType_Slide
+EBabaBenchMeleeAttackType
+EBabaBenchMeleeAttack_Heavy
+EBabaBenchMeleeAttack_Light
+EBabaBenchMeleeAttack_None
+EBabaBenchMeleeState
+EBabaBenchMeleeState_Attacking
+EBabaBenchMeleeState_Charging
+EBabaBenchMeleeState_Dashing
+EBabaBenchMeleeState_None
 EBannedFeature
 EBarrackBossActivity
 EBaseClientMessages
@@ -10807,6 +10837,7 @@ Editor
 Effect
 Effect Config
 Effect Config for Muzzle Flash - if set, will use this config specified in the particle effect, using whatever CP configuration is specified there, vdata muzzleflash attachment will be ignored
+Effect Modifiers
 Effect Preset Name
 Effect to actually fire into the world from this weapon. CP3.X = radius, CP3.Y = fire rate, CP3.Z = DPS.
 Effect to parent to the gun.CP.0 = muzzle attachment source below, CP.1 = muzzle_fx. CP2.X = ammo frac, CP2.Y = is reloading (1/0), CP2.Z = shot recently (1/0).
@@ -11153,7 +11184,6 @@ Execute a cfg file over time
 Execute a vscript file, replacing existing functions with the functions in the run script
 Execute all of this entity's VScripts, replacing existing functions with the functions in the run scripts
 Execute perftest.cfg
-Executes the highlighted chatwheel menu item
 Executes url-based commands, used for incoming commands from url-based launches when the game's already running.
 Exit
 ExitPoint
@@ -11169,6 +11199,7 @@ Expiration Time (seconds)
 Explode
 ExplodeDamage
 ExplodeRadius
+Exploding
 Explosion
 Explosion where you're looking, or at x y z, with a real explosion's physics force (unlike create_radius_damage).
 Explosions
@@ -11188,7 +11219,6 @@ Extra distance bots are willing to engage enemies at to get last hits
 Extra distance bots are willing to engage heroes at
 Extra distance that a melee attacking npc can hit this npc from. Useful for medium and larger npcs.
 Extra intrinsic modifiers granted only while the item is corrupted.
-Extra pixels either side of a minimap zipline that still count as hovering it
 Extra time for an orb to linger to allow lag compensated players to contest
 Extra time for ice path movement controller to linger to prevent mispredictions
 Extra velocity along the wall, either direction, based on wish direction.
@@ -11536,6 +11566,7 @@ FadeInStart
 FadeOut
 FadeSpeed
 Fading and culling
+Fail
 Fake Ent-Fire
 Fall To Ground Settings
 Fallback World Position
@@ -11948,7 +11979,9 @@ Fraction of an active movement slow that is also applied as additional air drag
 Fraction of the breaker's velocity added to break debris, only when the breaker is in contact (e.g. dashing through). Stacks with Break Debris Speed.
 Fraction of the comeback souls earned by a player above the enemy team's average net worth that is redirected to the tick gold pool for the two lowest net worth teammates
 Fraction of the dash travel speed kept when a parry cancels the dash, so the stop tapers off instead of snapping
+Fraction of the pull distance covered (y) over normalized pull time (x)
 Fraction of the redirected comeback souls pool paid out to the two lowest net worth players each period
+Fraction of the target's horizontal velocity from when the pull landed that is handed back to them when the pull ends
 FractionalPart
 Frame
 Frame Index
@@ -12326,6 +12359,7 @@ Green channel of the color used for the part of an enemy health bar just lost to
 Green with Green as Alpha
 Ground Dash Stuff
 Ground IK
+Ground Pound
 Ground Root Motion Motor
 Ground friction change during the parry cancel slide, as a percentage. Negative reduces friction
 Group
@@ -12560,6 +12594,7 @@ HeroScalingStat_t
 HeroSelect
 HeroStatsDisplay_t
 HeroStatsUI_t
+Hex
 Hide POTG hud
 Hide always
 Hide buffed/resisted damage if it's below this percentage of change
@@ -12627,6 +12662,7 @@ Hold point is rebuilt every tick from the direction the source is looking.
 Hold point is rebuilt every tick from the direction the source is travelling.
 Hold time (ms)
 HoldAnimation
+Holding Modifier
 Holds game events until client has received the tick the event was fired on.
 Honors the per-particle radius (multiplied by radius scale) but is more expensive to render.  Some particles with large radii can make things much costlier
 HookVictimChanged
@@ -12855,7 +12891,6 @@ How much should damage be reduced from players when enemy troopers are on your b
 How much stamina is required, and costs, to perform a wall jump.
 How much stamina is required, and costs, to perform your first wall jump.
 How much the dragon will look in the direction its traveling. Higher values will mean the velocity controls more of the orientation.
-How much thicker a hovered minimap zipline lane draws
 How much time until a takeover bot till spend gold/ap
 How much to enlarge ropes in screen space for antialiasing effect
 How much to normalize shoot spread penalty per shot based on fire rate pct. Y values between 0.0-1.0
@@ -13200,7 +13235,6 @@ If specified, this model will be used in main instead of 'Model Name'.
 If the GC hasn't sent an idle keep alive from the match maker in this many minutes, the server will restart
 If the angle delta between the current face direction and the target face direction is more than this angle, no warping will occur.
 If the navlink destination and the path goal are less than this distance from each other snap the navlink destination to the goal
-If the ping button is opened and closed within this time, and no option is selected, chose this.
 If the pinged hero is above us by this many units, use the "above_us" voice variant
 If the pinged hero is below us by this many units, use the "below_us" voice variant
 If the source animation has no rotation root motion and there is no tag present that specifies rotation warp section, rotation will be introduced only during linear root motion.
@@ -13322,8 +13356,6 @@ IncompatibleFilter_t
 Increase Cycle Time (Decrease FireRate)
 Increase texture memory pool size by this many MB / s when under budget.
 Increase the Replay speed while watching a replay
-Increase this to change how much you have to move your camera angle to make the mousewheel visible (degrees)
-Increase this to change how much you have to move your mouse to make the mousewheel visible.
 Increase weapon damage for testing
 Increment Index
 Increment specified convar value.
@@ -13798,6 +13830,7 @@ Left Hand
 Left Only
 Left Shoulder
 Left Trigger
+Left clicking anywhere on the minimap opens the ping radial, same as the ping keybind. Never overrides a minimap targeting ability like Mirage's teleport.
 LeftFootDown
 LeftFootPassing
 LeftPhase
@@ -13968,6 +14001,7 @@ Log every ability active reason edge, one line per opened or closed window.
 Log game events being considered by the director
 Log network processing
 Log packets to files
+Log ping subject, radial and send decisions, and draw ping debug overlays.
 Log registry adds/removes for entities whose classname contains this substring, * for all
 Log server bans in the server logs.
 Log server information in the log file.
@@ -14264,6 +14298,7 @@ MODIFIER_STATE_ARTIST_BAMBOO_IMMUNE
 MODIFIER_STATE_ARTIST_CLOUD_ARMED
 MODIFIER_STATE_ARTIST_ENHANCED_SLIDE
 MODIFIER_STATE_ARTIST_FLOWSTATE
+MODIFIER_STATE_ARTIST_PERMANENT_BUFF
 MODIFIER_STATE_ARTIST_PREVENT_BULLET_CREATION
 MODIFIER_STATE_ARTIST_TETHER
 MODIFIER_STATE_ASSASSINATE_LOWHEALTH_TARGET
@@ -14291,10 +14326,10 @@ MODIFIER_STATE_CHARGING
 MODIFIER_STATE_CHESSMASTER_BISHOP_TARGET
 MODIFIER_STATE_CHESSMASTER_BLACKPIECE
 MODIFIER_STATE_CHESSMASTER_BUFFALLY
-MODIFIER_STATE_CHESSMASTER_CHECK
 MODIFIER_STATE_CHESSMASTER_COOLDOWN
 MODIFIER_STATE_CHESSMASTER_MOVING
 MODIFIER_STATE_CHESSMASTER_PIECE
+MODIFIER_STATE_CHESSMASTER_ROOK_IMMUNE
 MODIFIER_STATE_CHRONO_SWAPPING
 MODIFIER_STATE_CINEMATIC_INTRO
 MODIFIER_STATE_COMBAT_ABILITIES_DISABLED
@@ -14359,6 +14394,7 @@ MODIFIER_STATE_FRANK_REVIVING
 MODIFIER_STATE_FRANK_ZOMBIE
 MODIFIER_STATE_FRIENDLY_FIRE_ENABLED
 MODIFIER_STATE_FROZEN
+MODIFIER_STATE_FULL_SPEED_DUCKING
 MODIFIER_STATE_GALVANIC_STORM_BUFF
 MODIFIER_STATE_GHOST_LIFEDRAINED
 MODIFIER_STATE_GLITCHED
@@ -16169,6 +16205,7 @@ On Finished
 On Fire
 On Ground
 On Punched Sound
+On her while she carries the flask. Its HUD bar shows the brewing timeline
 On which side of the crosshair should this hint show
 On, Frequency Dependent Transmission
 On, Frequency Independent Transmission
@@ -16665,7 +16702,7 @@ Opens a graph referencing the selected entity. If it is referenced by more than 
 Opens an asset in it's primary editor of choice. Specify the full path to the asset from the mod directory.
 Opens chat menu to chat with Allies
 Opens chat menu to chat with everyone
-Opens chatwheel menu while held
+Opens the comms wheel instantly while held
 Opens the graph and starts live debugging the AG2 graph for a given entity\n\tArguments: entityName\n\tArguments:   \t{entity_name} / {class_name} / {entity_index} / {no argument = pick what player is looking at}
 Opens the specified pulse used in this map in the editor.\n\tArguments: <pulse_file>
 Operation
@@ -16675,6 +16712,7 @@ Operator Fade Timescale Modifiers
 OperatorAnd
 OperatorOr
 Optimize for not repredicting if there were no errors
+Optional [start, end] degrees, clockwise from 12 o'clock, for each lock-on stack's ring segment
 Optional initialization value for this node
 Optional model for the spawner itself. Leave empty to make the spawner invisible.
 Optional name of a send in your main mix graph.  When set this node's mix will be sent to the named track in your main mix graph.
@@ -16780,6 +16818,7 @@ Override maximum visible envmaps
 Override the base Fov from the player
 Override the base Fov from the player when aiming down sights
 Override the far clipping plane. -1 means to use the value in env_fog_controller.
+Override the final duration of this clip by using a multiplier
 Override the final duration of this clip in seconds (0 or a negative value means use the authored duration)
 Override the height of the capsule. Requires m_bAllowNonZUpMovement or m_bRequestCapsuleCollision to be set. 0 to use collision prop height.
 Override the hero labs schedule we think is assigned to your client
@@ -17571,7 +17610,6 @@ Ping a peer.
 Ping button pressed
 Ping button released
 Ping higher than this (ms) is considered 'poor'.
-Ping keybind pressed
 PingConditions_t
 PingDefaultOverride_t
 PingMessageID_t
@@ -17635,6 +17673,7 @@ Played to assigned earners when an enemy denied their orb.
 Played to the player when they denied an enemy orb.
 Played to the player who claimed the orb.
 Played to the teammates of the player who claimed the orb.
+Played when the channel ends with no full lock-on, so nothing is fired
 Played when the client hit the orb but it isn't confirmed by the server yet.
 Played when the server receives a hit on the orb but is waiting to fully claim it.
 Player
@@ -17678,6 +17717,7 @@ Plays a vmix graph and its containers.
 Plays a vsnd container.
 Plays a warning sound when a projectile hits a surface, but before it detonates. Plays ONLY if a warning particle is also created.
 Plays alongside the default footstep.
+Plays on the victim for as long as the hex is in effect. Use this rather than the modifier's own particle effect, which would start before the hex lands
 Plays vsnds based on membership in a numbered index.
 Plays vsnds based on trigger parameter changes.
 Plays when a projectile detonates. Not all projectiles detonate.
@@ -17934,6 +17974,7 @@ Projectile won't impact targets until this much time has elapsed.
 ProjectileBehaviorFlag_t
 ProjectileInfo_t
 ProjectileShape_t
+ProjectileWait
 Prompt for confirmation before discarding unsaved hero build edits.
 Prone
 Prop
@@ -18025,6 +18066,7 @@ Queue Event Type
 QueuedAISearchId_t
 Queues for internal bot test using matchmaking
 Quick example for how we'd derive traits from voice containers.
+Quick ping keybind pressed. Arg is the slot, 1-12.
 QuickbuyChanged
 QuickbuyPurchaseRequestChanged
 Quietest Volume
@@ -19259,6 +19301,7 @@ Seconds between full frame embeddeds
 Seconds between spews of rats from the planted banner.
 Seconds between taps on one subject for them to chain into a double (triple...) ping.
 Seconds each stat line from a permanent buff pickup stays on screen.
+Seconds from a barrage hit's FX to its damage, hit sound and hex landing
 Seconds from launch to impact. Drives the arc height.
 Seconds to keep the cast delay modifier alive past the end of the cast delay. 0 is default behavior.
 SectionAttributes_t
@@ -19322,6 +19365,7 @@ SendProxyNeverSend_RecipientsFilter
 SendProxyTeamFOWEntity_RecipientsFilter
 Sends all selected NPC(s) to a random node.\n\tArguments:   \t-none-
 Sends specified command to target bot under reticle
+Sends the hovered comms wheel option
 SensableByNPCHandle_t
 Sensitivity
 SeqCmd_Add
@@ -20055,6 +20099,7 @@ SignatureOutflow_Continue
 SignatureOutflow_Resume
 SignonState
 SignonState_t
+Silence
 Silence the local player
 Silenced
 Sim Rate (FPS)
@@ -20373,6 +20418,7 @@ Speed Scale
 Speed Scaling
 Speed remap to slide effect intensity
 Speed to stop when sticking
+SpeedScale
 Spew CSerializedEntity memory
 Spew CSerializedEntity metadata information
 Spew IME info.
@@ -20471,6 +20517,7 @@ Start recording bug voice attachment.
 Start recording movie frames.
 Start recording to a desired wav.
 Start the Early Warning of Koth and Teleport the active player there
+Start the curve when movement control becomes ready (after the prediction latency window) and extend the duration by that window, so the full displacement is always applied over the authored duration
 StartActive
 StartAmbientSound
 StartBackward
@@ -20495,6 +20542,7 @@ StartSpawnGroupUnload
 StartTilt
 StartTouch
 StartUnstoppableCommentary
+Started on the victim when the hex lands, and stopped when it ends. Use this rather than Sequence Created, which would start before the hex lands
 StartingAnim
 StartingAnimationLoopMode
 Starts SourceTV demo recording.
@@ -21070,7 +21118,6 @@ Thaw
 The  dolly step we enter when rolling the mouse wheel.
 The DOF settings to apply while riding the zipline.
 The DOF settings to apply while zoomed in.
-The Default value 30 is usually good but if the text on the Ping Wheel isn't centered vertically, you should adjust this value.
 The GC has told this server that it is providing it a match but the server hasn't received the lobby in this many minutes so it should restart
 The HOST file to load.
 The ID of the steam group that this server belongs to. You can find your group's ID on the admin profile page in the steam community.
@@ -21583,7 +21630,6 @@ TurnOff
 TurnOn
 Turns off interactive fish behavior. Fish become immobile and unresponsive.
 Turns off screen shake.
-Turns off the ability to have aggressive and passive pings.
 Turns on bullet impacts and decals on world from troopers and neutrals shooting
 Turns on the absbox for all active physics objects.\n  0 : un-highlight.\n
 Turns on/off Movespeed indicator on the HUD
@@ -22384,6 +22430,7 @@ Warn if processing messages from a client consumes more than N ms of CPU time pe
 Warn if the created or teleported npc is off nav.
 Warning Particle
 Warning Ping Sound
+Warning sound to play before the final pigeon if victim has max lock-ons
 Warp Orientation
 Warp Position
 Warp Section Tag
@@ -22787,7 +22834,6 @@ WindDirection
 WindSpeed
 Window over which to average queries per second averages.
 With Cloth Effect
-With citadel_new_ping_system on, left clicking anywhere on the minimap opens the ping radial, same as the ping keybind. Never overrides a minimap targeting ability like Mirage's teleport.
 Within-Cluster Fire Count Before Cooldown
 Within-Cluster Refire Time
 World
@@ -22907,6 +22953,12 @@ abiilty_boho_channeltether
 abiilty_boho_doublehit
 ability
 ability_afterburn
+ability_baba_bench_melee
+ability_baba_bench_run
+ability_baba_bubbling_brew
+ability_baba_hexing_brew
+ability_baba_hexing_brew_throw
+ability_baba_ultimate_2
 ability_bebop_stickybomb2
 ability_blood_bomb
 ability_blood_shards
@@ -23641,6 +23693,7 @@ b_dying
 b_goal_completion_allowed
 b_has_path
 b_shield_active
+baba_bubblingbrew_projectile
 background_border_height
 background_border_width
 background_material_name
@@ -24142,7 +24195,6 @@ citadel_announcer
 citadel_assume_pawn_control
 citadel_auto_highlight_seconds_after
 citadel_auto_highlight_seconds_before
-citadel_auto_ping_window
 citadel_auto_queue_build
 citadel_autobuy_refund_time
 citadel_autoqueue_build_window
@@ -24420,11 +24472,10 @@ citadel_catapult_respawn_pickup_trails
 citadel_chat_fade_time
 citadel_chat_fade_time_extension
 citadel_chat_typing_indicator_fade_time
-citadel_chat_wheel_fade_out_duration
+citadel_check_walk_on_skyclip
 citadel_cinematic_intro_duration_npc
 citadel_cinematic_intro_duration_player
 citadel_cinematic_intro_enabled
-citadel_clamp_mouse_when_using_ping_wheel
 citadel_clear_all_post_process_effects
 citadel_clear_killstreak
 citadel_clear_killstreak [player_slot]
@@ -24570,7 +24621,6 @@ citadel_damage_text_spacing
 citadel_damage_text_x_offset_far
 citadel_damage_text_x_offset_near
 citadel_dash_cast_ability
-citadel_dead_zone_radius
 citadel_death_linger_time
 citadel_death_ragdoll_duration
 citadel_death_replay_enabled
@@ -24637,7 +24687,6 @@ citadel_disable_duplicate_heroes
 citadel_disable_purchasing_in_combat
 citadel_disable_quick_response
 citadel_display_new_player_recommendations
-citadel_distance_mouse_move_for_minimap_drawing
 citadel_doorway_debug_draw
 citadel_doorway_glow_close_distance
 citadel_doorway_glow_other_distance
@@ -24671,7 +24720,6 @@ citadel_dump_player_stats
 citadel_dump_rank_data
 citadel_econ_item_container
 citadel_enable_chat_rate_limiting
-citadel_enable_double_ping
 citadel_enable_duplicate_heroes
 citadel_enable_nearby_capture_point
 citadel_enable_new_ping_particle
@@ -24897,11 +24945,11 @@ citadel_hud_announcement_display_time_max
 citadel_hud_announcement_display_time_override
 citadel_hud_announcement_force_single_levelup
 citadel_hud_build_category_max_height
+citadel_hud_build_category_max_width
 citadel_hud_build_category_min_height
 citadel_hud_build_category_min_width
 citadel_hud_build_compact_category_extra_height
 citadel_hud_build_compact_category_extra_width
-citadel_hud_chat_wheel
 citadel_hud_damage_counter_duration
 citadel_hud_exclusive_visible_id
 citadel_hud_experiments_enabled
@@ -25062,10 +25110,6 @@ citadel_minimap_teleporter_active_dist
 citadel_minimap_teleporter_height_dist
 citadel_minimap_teleporter_nearby_dist
 citadel_minimap_trooper_size
-citadel_minimap_unit_click_radius
-citadel_minimap_zip_line_hover_radius
-citadel_minimap_zip_line_hover_thickness_scale
-citadel_minimap_zip_line_thickness
 citadel_minimum_fire_rate
 citadel_minimum_players_to_show_postgame
 citadel_minion_gold_reward
@@ -25102,6 +25146,7 @@ citadel_nano_set_shouldercat_bodygroup
 citadel_napalm_projectile_show_debug
 citadel_neutral_ability_dev_test
 citadel_neutral_aggro_time
+citadel_neutral_ai_pathfinder_max_path_detour
 citadel_neutral_camp_spawn_per_tick_limit
 citadel_neutral_gold_ratio
 citadel_neutral_health_growth_pct_per_min
@@ -25126,7 +25171,6 @@ citadel_new_ping_fow_window
 citadel_new_ping_free_cursor_world_trace
 citadel_new_ping_hitbox_self_test
 citadel_new_ping_minimap_left_click
-citadel_new_ping_system
 citadel_new_ping_system_fixed_slot_icons
 citadel_new_ping_trace_pixel_radius
 citadel_new_ping_world_volume_radius
@@ -25179,7 +25223,6 @@ citadel_orb_required_bullets_to_claim_override
 citadel_orb_velocity_decay_in_lagcomp
 citadel_orbit_camera_in
 citadel_orbit_camera_out
-citadel_outer_radius_scaler
 citadel_party_invite_in_game
 citadel_passive_items_area_display_time
 citadel_passthrough_fake_wall
@@ -25226,6 +25269,7 @@ citadel_ping_almost_respawned_seconds
 citadel_ping_below_us_z
 citadel_ping_can_heal_range
 citadel_ping_consecutive_window
+citadel_ping_debug_spew
 citadel_ping_enemy_count_radius
 citadel_ping_indicator_display_time
 citadel_ping_indicator_duration
@@ -25235,7 +25279,6 @@ citadel_ping_radial_debug_gesture
 citadel_ping_radial_early_open_deflection_deg
 citadel_ping_spam_hides_marker
 citadel_ping_teammate_alone_radius
-citadel_ping_wheel_activation_radius
 citadel_play_page_fake_data
 citadel_play_page_finished_tutorial
 citadel_play_stats_laning_end_time
@@ -25565,7 +25608,6 @@ citadel_show_account_ids
 citadel_show_active_slot_popup
 citadel_show_all_purchase_toasts
 citadel_show_bullet_lag_compensation
-citadel_show_chat_wheel_debug
 citadel_show_chat_wheel_time
 citadel_show_combatlog
 citadel_show_disabled_heroes
@@ -25694,8 +25736,6 @@ citadel_street_brawl_test_drafts
 citadel_stuck_camera_trace_extra_length
 citadel_stuck_normal_find_trace_fallback_elevation
 citadel_stunme
-citadel_sub_nav_outer_radius_scaler
-citadel_subnav_select_time
 citadel_subtick_aim_data
 citadel_subtitles_all_caps
 citadel_subtitles_ally_abilities
@@ -30712,6 +30752,7 @@ m_BarrierBehavior
 m_BarrierCastParticle
 m_BarrierCreateParticle
 m_BarrierModifier
+m_BarrierTrailParticle
 m_BaseAction
 m_BaseFlow_OnAfterCancel
 m_BaseFlow_WhileActive
@@ -30746,6 +30787,8 @@ m_Behavior_Opvar
 m_Behavior_Opvar != kMatch
 m_Behavior_String
 m_Behavior_String != kMatch
+m_BenchRunEndParticle
+m_BenchRunModifier
 m_BerserkerSound
 m_BiasEffectNegative
 m_BiasEffectPositive
@@ -30780,6 +30823,7 @@ m_BodyModel
 m_BodygroupChoice
 m_BodygroupOnOtherModels
 m_BoltHitModifier
+m_BoltParticle
 m_BombAttachedModifier
 m_BombAttachedParticle
 m_BombAttachedStatusEffectParticle
@@ -30919,6 +30963,7 @@ m_CastVenomParticle
 m_CastWarningParticle
 m_CasterArrivalModifier
 m_CasterBuffModifier
+m_CasterBuffParticle
 m_CasterDebuffModifier
 m_CasterMarkTriggerSound
 m_CasterModifier
@@ -30952,8 +30997,10 @@ m_ChargeParticle
 m_ChargePrepareModifier
 m_ChargePreviewParticle
 m_ChargeUpParticle
+m_ChargedJumpParticle
 m_Charging
 m_ChargingCameraSequence
+m_ChargingJumpParticle
 m_ChargingModifier
 m_ChargingParticle
 m_ChargingSpeedCurve
@@ -31068,6 +31115,7 @@ m_CurlNoiseStrengthCurve
 m_Currency
 m_CurrencyTypeSounds
 m_CurrentFog
+m_CurrentStacks
 m_CurseModifier
 m_CursedModel
 m_Curve
@@ -31175,7 +31223,10 @@ m_DetachBuff
 m_DetailLayerStrings
 m_DetailLayers
 m_DetonateActivatedSound
+m_DetonateBarrierParticle
+m_DetonateFireParticle
 m_DetonateParticle
+m_DetonateSilenceParticle
 m_DetonateSound
 m_DetonateWarningTime
 m_DialogXMLName
@@ -31420,6 +31471,7 @@ m_Faces
 m_FacingPercentage
 m_FadeDuration
 m_FadeStartTime
+m_FailModifier
 m_FailOutflow
 m_FailureParticle
 m_FakeFamiliarParticle
@@ -31433,18 +31485,22 @@ m_FervorParticle
 m_FieldName
 m_Filter
 m_FinalDamageParticle
+m_FinalTickParticle
 m_FindMethod
 m_FinderData
 m_FinishParticle
 m_FireBombModifier
 m_FireDebuffModifier
+m_FireModifier
 m_FireOnAdded
 m_FireOnRemoved
+m_FireParticle
 m_FireRateAuraSourceParticle
 m_FireRateBuffModifier
 m_FireRateModifier
 m_FireRatePctRange
 m_FireRateSlowModifier
+m_FireTrailParticle
 m_FistReadyEffect
 m_FitMatrices
 m_FitWeights
@@ -31523,6 +31579,10 @@ m_FruitPickupParticle
 m_FullyChargedFXModifier
 m_FullyChargedParticle
 m_FuncName
+m_FuseBarrierColor
+m_FuseFireColor
+m_FuseNoColor
+m_FuseParticle
 m_GainedBatParticle
 m_GameTimeEnabled
 m_GarbageAuraModifier
@@ -31576,6 +31636,8 @@ m_GroundJumpExecutedSound
 m_GroundParticle
 m_GroundParticleFriendly
 m_GroundPointModifier
+m_GroundPoundFallModifier
+m_GroundPoundImpactParticle
 m_Group
 m_GroupName
 m_GroupNames
@@ -31586,6 +31648,7 @@ m_GunReloadParticle
 m_HOTLoopSounds
 m_HUDPanel
 m_HalloweenMask
+m_HandParticle
 m_Handle
 m_HauntDamageModifier
 m_HeadHealthChangeAmberParticle
@@ -31623,6 +31686,7 @@ m_HealthDisplayModifier
 m_HealthLossParticle
 m_HealthModifier
 m_HeartCardTrail
+m_HeavyKickSlowModifier
 m_HeavyMeleeImpact
 m_HeavyTurnSpeedCurve
 m_HeightFogCurveString
@@ -31646,6 +31710,7 @@ m_HeroResourceGainedSound
 m_HeroState
 m_HexAreaModifier
 m_HexModifier
+m_HexedParticle
 m_HideForRetailMods
 m_HideoutProp
 m_HidingModifier
@@ -31667,6 +31732,7 @@ m_HoldInPlaceModifier
 m_HoldTime
 m_HoldingBallLoop
 m_HoldingIdolModifier
+m_HoldingModifier
 m_HookName
 m_HookOutParticle
 m_HookRetrieveParticle
@@ -31908,6 +31974,7 @@ m_LightFiftyDist1
 m_LightFiftyDist2
 m_LightFiftyDist3
 m_LightFiftyDist4
+m_LightKickShoveModifier
 m_LightMeleeImpact
 m_LightStyle
 m_LightStyleEvents
@@ -31948,6 +32015,7 @@ m_LockToParent
 m_LockedOnParticle
 m_LockedTargetModifier
 m_LockingOnParticle
+m_LockingOnParticleCaster
 m_LogicBranchList
 m_LoopMode
 m_LoopSound
@@ -32103,6 +32171,7 @@ m_NoiseRunning
 m_NonEmbeddedModifier
 m_NonGatherConditions
 m_NonTargetLoopingSound
+m_NoneModifier
 m_Notes
 m_NotifyForceReachedX
 m_NotifyForceReachedY
@@ -32622,6 +32691,7 @@ m_ProjectileHitConfirm
 m_ProjectileImpactParticle
 m_ProjectileModel
 m_ProjectileSpeedCurve
+m_ProjectileTurnAngleSpeedCurve
 m_ProviderType
 m_Providers
 m_PublicOutputs
@@ -32630,6 +32700,7 @@ m_PullDownModifier
 m_PullEnemiesParticle
 m_PullForceFracByDistanceCurve
 m_PullModifier
+m_PullProgressCurve
 m_PullSound
 m_PullSpeedScaleCurve
 m_PullToGroundModifier
@@ -32906,6 +32977,7 @@ m_SilenceDebuff
 m_SilenceDuration
 m_SilenceExplodeParticle
 m_SilenceModifier
+m_SilenceTrailParticle
 m_SilencedModifier
 m_SilencerActiveParticle
 m_SimStateBones
@@ -33093,6 +33165,7 @@ m_Stream
 m_StreetBrawl
 m_StrikeParticle
 m_StrikeParticleFriendly
+m_StringParticle
 m_StunAttachedParticle
 m_StunDelayModifier
 m_StunDuration
@@ -33229,8 +33302,10 @@ m_TextureHeight
 m_TextureId
 m_TextureName
 m_TextureScale
+m_ThreadSapAmpParticle
 m_ThrowSound
 m_ThumbnailOverlayImage
+m_TickParticle
 m_TiltTime
 m_TimeBetweenEvents
 m_TimeDestroy
@@ -33812,6 +33887,7 @@ m_bAttachedToReferenceFrame
 m_bAttachment
 m_bAttachmentDirty
 m_bAttack
+m_bAttackImpulseApplied
 m_bAttackParried
 m_bAttackStartedWhileSliding
 m_bAudioHasSkyExposure
@@ -33876,6 +33952,7 @@ m_bBreakOnRangeLoss
 m_bBreakShardless
 m_bBreakSilent
 m_bBreakable
+m_bBrewLocked
 m_bBringEngineToFront
 m_bBroken
 m_bBrushOnly
@@ -33983,6 +34060,7 @@ m_bColliding
 m_bCommentaryEnabledMidGame
 m_bCommsRestricted
 m_bCommsWheelBindable
+m_bCompensatePredictionDelay
 m_bCompleteOnNextWake
 m_bCompletedEarly
 m_bCompoundsPacked
@@ -34129,6 +34207,7 @@ m_bDismissedReportCard
 m_bDisplay
 m_bDistanceAlpha
 m_bDistributeEvenly
+m_bDiveApplied
 m_bDoDecalLightmapping
 m_bDoFinalTeleport
 m_bDoNotDrawInParticlePass
@@ -34527,6 +34606,7 @@ m_bHealCaster
 m_bHeavyMelee
 m_bHeavyMeleeOnly
 m_bHeightFogEnabled
+m_bHeldJumpAborted
 m_bHidden
 m_bHiddenAssetFlag
 m_bHide
@@ -34557,6 +34637,7 @@ m_bHitWithThisAttack
 m_bHitWorld
 m_bHoldingAbilityButton
 m_bHoldingBall
+m_bHoldingJump
 m_bHollow
 m_bHull_Human
 m_bHull_Large
@@ -34612,6 +34693,7 @@ m_bInHideoutZone
 m_bInInterruptState
 m_bInItemShopZone
 m_bInKillFlow
+m_bInMelee
 m_bInPartyChat
 m_bInPortalEnvironment
 m_bInRegenerationZone
@@ -34653,6 +34735,7 @@ m_bInterruptStop
 m_bInterruptable
 m_bInterrupted
 m_bInterruptedActorsScenes
+m_bInterruptsChannels
 m_bIntroSpawn
 m_bInverse
 m_bInvert
@@ -34731,6 +34814,7 @@ m_bIsGesture
 m_bIsGrabbing
 m_bIsGroup
 m_bIsHLTV
+m_bIsHeavyAttack
 m_bIsHelperAvailableNet
 m_bIsHidden
 m_bIsHidden != true
@@ -34798,6 +34882,7 @@ m_bIsRat
 m_bIsReferenced
 m_bIsRenderingWithViewModels
 m_bIsRepeatable
+m_bIsReturningProjectile
 m_bIsReversing
 m_bIsRolling
 m_bIsRootMotionExclusive
@@ -34974,6 +35059,7 @@ m_bMaxLuminanceBlendingSequence0
 m_bMaxStacksReached
 m_bMedicHeal
 m_bMeleeAttack
+m_bMeleeIsHeavy
 m_bMeshoptCompressed
 m_bMeshoptIndexSequence
 m_bMimicOwner
@@ -36116,6 +36202,7 @@ m_cameraSequenceExplosion
 m_cameraSequenceFlying
 m_cameraSequenceGetUp
 m_cameraSequenceGroundDashActivate
+m_cameraSequenceHexed
 m_cameraSequenceHitImpact
 m_cameraSequenceHoldStart
 m_cameraSequenceImpact
@@ -36454,12 +36541,14 @@ m_eAttachState
 m_eAttachmentSourceType
 m_eAttachmentSourceType != EAttachmentSource_Custom
 m_eAttachmentType
+m_eAttackType
 m_eBaseAction
 m_eBehavior
 m_eBetweenBehavior
 m_eBlendMode
 m_eBodySectionMutex
 m_eBreakBehavior
+m_eBrewEffect
 m_eBuffTypeValueUnit
 m_eBuildupMode
 m_eBulletHandlerType
@@ -36671,7 +36760,9 @@ m_eTransitionedToPathNodeAction
 m_eTrooperAction
 m_eTurn
 m_eType
+m_eType != CITADEL_ABILITY_HUD_ELEMENT_TYPE_LOCK_ON
 m_eType != CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS
+m_eType != CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS && m_eType != CITADEL_ABILITY_HUD_ELEMENT_TYPE_LOCK_ON
 m_eType != eFloat && m_eType != eBoolean && m_eType != eInteger
 m_eType != eGenericCapsule
 m_eType != eGroundBox
@@ -37016,6 +37107,7 @@ m_flAirYawSpeedRatio
 m_flAjarAngle
 m_flAlignWithGravityFactor
 m_flAllowResponsesEndTime
+m_flAllowedSlideAngleCos
 m_flAllyCollideRadius
 m_flAllyDelayedBoostTime
 m_flAllyGrabCancelTime
@@ -37120,6 +37212,7 @@ m_flAttackDelayPauseEndTime
 m_flAttackDelayPauseTotalTime
 m_flAttackDuration
 m_flAttackHalfAngle
+m_flAttackImpulse
 m_flAttackInterval
 m_flAttackLatchTime
 m_flAttackRange
@@ -37367,6 +37460,8 @@ m_flBreakableForceScale
 m_flBreakoutPercentage
 m_flBreakoutProectionTime
 m_flBreakupStrength
+m_flBrewLockTime
+m_flBrewPausedTime
 m_flBrightness
 m_flBrightnessCandelas
 m_flBrightnessDelta
@@ -37489,12 +37584,14 @@ m_flChargeAnimDelayTime
 m_flChargeDuration
 m_flChargeFallGravityScale
 m_flChargeForMaxDamage
+m_flChargeJumpAnimSpeedScale
 m_flChargeRechargeEnd
 m_flChargeRechargeStart
 m_flChargeResumeTime
 m_flChargeSpeedm
 m_flChargeStartSpeed
 m_flChargeStartTime
+m_flChargeTime
 m_flChargeUpTime
 m_flChargedBulletDamage
 m_flChargedBulletGravityScale
@@ -37552,6 +37649,7 @@ m_flColorTemperature
 m_flColorWarpIntensity
 m_flComebackWeightScale_Trailing_1
 m_flComebackWeightScale_Trailing_2
+m_flCommitTime
 m_flCommittedStrafeAngle
 m_flComparand
 m_flCompareValue
@@ -37761,6 +37859,7 @@ m_flDashJumpMantleDisableTime
 m_flDashJumpMissMaxSpeed
 m_flDashJumpStartTime
 m_flDashJumpVerticalSpeed
+m_flDashMaxTurnRate
 m_flDashMinActivationSpeed
 m_flDashSlideFailSpeed
 m_flDashSlideFriction
@@ -38020,6 +38119,7 @@ m_flEndFadeInTime
 m_flEndFadeOutTime
 m_flEndFadeSize
 m_flEndGrowTime
+m_flEndLaunchTime
 m_flEndLerpTime
 m_flEndOffset
 m_flEndRadius
@@ -38068,6 +38168,7 @@ m_flEscortFriendlyHeroSlowMoveSearchRadius
 m_flExcludeSoundsMaxThresholdValue
 m_flExcludeSoundsMinThresholdValue
 m_flExitTimeSeconds
+m_flExitVelocityScale
 m_flExpirationTime
 m_flExpireTime
 m_flExplodeDamage
@@ -38159,6 +38260,7 @@ m_flFailSafeMinTime
 m_flFakeBulletDistanceFudge
 m_flFakeBulletSpread
 m_flFallGravity
+m_flFallGravityScale
 m_flFallRate
 m_flFallSpeed
 m_flFallSpeedMax
@@ -38236,8 +38338,24 @@ m_flFloorSpringStrength
 m_flFlowMinWidth
 m_flFluidDensity
 m_flFlurryEndTime
+m_flFlyAcceleration
+m_flFlyAirDrag
+m_flFlyDeceleration
 m_flFlyHeight
+m_flFlyHoverMaxHeight
+m_flFlyHoverMaxScale
+m_flFlyHoverMinHeight
+m_flFlyHoverMinImpulseFlat
+m_flFlyHoverMinImpulseScaling
+m_flFlyIdleSinkSpeed
+m_flFlyJumpImpulseHoriz
+m_flFlyJumpImpulseUp
+m_flFlyLaunchTime
+m_flFlySinkSpeedMax
 m_flFlySpeed
+m_flFlySpeedScale
+m_flFlyTimeBetweenImpulse
+m_flFlyTimeBetweenJumps
 m_flFlyingCloseEnoughToTarget
 m_flFlyingStartTime
 m_flFlyingToTargetStartTime
@@ -38419,6 +38537,11 @@ m_flGroundHitPitchCurve
 m_flGroundHitRollCurve
 m_flGroundHitYawCurve
 m_flGroundOffset
+m_flGroundPoundChargeAirControlAccel
+m_flGroundPoundChargeAirControlSpeed
+m_flGroundPoundDiveSpeed
+m_flGroundPoundGravityScale
+m_flGroundPoundLaunchSpeed
 m_flGroundProbeSpeed
 m_flGroundSnapDistance
 m_flGroundStepDown
@@ -38454,6 +38577,7 @@ m_flHealthRegenSnapShot
 m_flHealthScale
 m_flHeartWeight
 m_flHeavyAttackRequiredHoldTime
+m_flHeavyHoldTime
 m_flHeavyMeleeBuildUp
 m_flHeavyMeleeDmg
 m_flHeavyMeleeMaxTurnRate
@@ -38477,6 +38601,7 @@ m_flHeroKillGoldShareFrac
 m_flHeroLockBreakRange
 m_flHeroLockRange
 m_flHertz
+m_flHexStartTime
 m_flHideDuration
 m_flHighCutoffFreq
 m_flHintRecoveryStrength
@@ -38498,6 +38623,7 @@ m_flHoldBombOffsetX
 m_flHoldBombOffsetY
 m_flHoldBombOffsetZ
 m_flHoldBreathTime
+m_flHoldJumpStartTime
 m_flHoldTime
 m_flHoldTimeMS
 m_flHoldingDuration
@@ -38535,6 +38661,7 @@ m_flIkRotation_MaxQuantizationError
 m_flIkRotation_MaxSplineError
 m_flIkTranslation_MaxQuantizationError
 m_flIkTranslation_MaxSplineError
+m_flImpactDelay
 m_flImpactEffectRadius
 m_flImpactEnergyScale
 m_flImpactTime
@@ -38715,6 +38842,7 @@ m_flLastBuildupAppliedTime
 m_flLastBurn
 m_flLastBurnTime
 m_flLastCameraSetupTime
+m_flLastChargeJumpFraction
 m_flLastCleanupTime
 m_flLastCommsTime
 m_flLastCycle
@@ -38734,10 +38862,12 @@ m_flLastGameTime
 m_flLastHealTime
 m_flLastHitSoundWindowTime
 m_flLastHitTime
+m_flLastHoverImpulseTime
 m_flLastHurtByEnemyNPC
 m_flLastHurtByNeutral
 m_flLastHurtTimeByEnemyHero
 m_flLastJumpFromTime
+m_flLastJumpTime
 m_flLastJumpToTime
 m_flLastKnownTime
 m_flLastNpcOverlapTime
@@ -38802,6 +38932,7 @@ m_flLaunchMaxSpeed
 m_flLaunchSpeed
 m_flLaunchSpeedMult
 m_flLaunchTime
+m_flLaunchUpSpeed
 m_flLeanCalculationLookAheadDistance
 m_flLeanSmoothingFactor
 m_flLeapStartTime
@@ -38965,6 +39096,7 @@ m_flMaxBoneVelocity
 m_flMaxBulletsToProcInShot
 m_flMaxBurstFireCooldownOverride
 m_flMaxCameraAngleForSeeing
+m_flMaxChargeJumpDuration
 m_flMaxClimbUp
 m_flMaxCloak
 m_flMaxConnectionDistance
@@ -39061,6 +39193,7 @@ m_flMaxScale
 m_flMaxShadowLum
 m_flMaxSimulationTime
 m_flMaxSize
+m_flMaxSlow
 m_flMaxSourceLength
 m_flMaxSpeed
 m_flMaxSpeedDelta
@@ -39144,6 +39277,7 @@ m_flMinButtonHoldTimeToPlaySound
 m_flMinCameraSweepSpeed
 m_flMinCancelTime
 m_flMinCentroidRadius
+m_flMinChargeTime
 m_flMinCloak
 m_flMinConnectTime
 m_flMinConversionDuration
@@ -39395,6 +39529,8 @@ m_flNextBlockTime
 m_flNextDamageTick
 m_flNextDamageTime
 m_flNextDisarmSound
+m_flNextHeavyAttackAllowedTime
+m_flNextLightAttackAllowedTime
 m_flNextMPSoundTime
 m_flNextMeepMopTime
 m_flNextMoveSoundTime
@@ -39653,7 +39789,6 @@ m_flPhase2SightRange
 m_flPhaseMatchingMaxRootMotionSkip
 m_flPhaseStartTime
 m_flPhi
-m_flPhraseTopMarginOffset
 m_flPhysicsEntitySpawnedAtTime
 m_flPhysicsForceDamage
 m_flPhysicsImpulseMultiplier
@@ -39736,6 +39871,7 @@ m_flPostCastCooldown
 m_flPostCastDelayEndTime
 m_flPostCastHoldEndTime
 m_flPostCastTime
+m_flPostChannelDelay
 m_flPostDragDuration
 m_flPostMaxDrag
 m_flPostProcessStrength
@@ -39825,6 +39961,8 @@ m_flPullSpeedMax
 m_flPullSpeedMin
 m_flPullTargetSpeed
 m_flPullToCasterLocationDuration
+m_flPulseFrequency
+m_flPulseWidth
 m_flPushForce
 m_flPushRange
 m_flPushScale
@@ -40040,6 +40178,8 @@ m_flRicochetDotMaxDampening
 m_flRicochetDotMinDampening
 m_flRicochetGravity
 m_flRicochetPitchAddition
+m_flRideEndTime
+m_flRideStartTime
 m_flRightLevel
 m_flRightPeak
 m_flRimLightScale
@@ -40047,6 +40187,7 @@ m_flRiseAcc
 m_flRiseDecayFracEnd
 m_flRiseDecayFracStart
 m_flRiseDuration
+m_flRiseGravityScale
 m_flRiseMaxSpeed
 m_flRiseSpeed
 m_flRiseTime
@@ -40341,6 +40482,7 @@ m_flSpeedMultiplier
 m_flSpeedMultiplierFromBaseBonus
 m_flSpeedMultiplierToBaseBonus
 m_flSpeedOut
+m_flSpeedScale
 m_flSpeedScaleBias
 m_flSpeedScaleBlending
 m_flSpeedWhenSpinUpOrSpinDownStarted
@@ -40380,6 +40522,7 @@ m_flSquiggleMotionAmplitude
 m_flSquiggleMotionRandomizeInterval
 m_flSquiggleMotionScale
 m_flStackDecayDelayTime
+m_flStackExpiryWarningDuration
 m_flStageModelHeight
 m_flStageModelLength
 m_flStageModelScale
@@ -40853,6 +40996,7 @@ m_flUpdateInterval
 m_flUpdateRate
 m_flUpdateThreshold
 m_flUpperRandomBound
+m_flUpwardsForceOnHeavyMeleeStart
 m_flUseAngleTolerance
 m_flUseLockedTime
 m_flUseRange
@@ -41251,6 +41395,7 @@ m_hBlocker
 m_hBlockingEntity
 m_hBreaker
 m_hBuffEffect
+m_hBuffHandle
 m_hBuffedAbility
 m_hBuffer
 m_hCP
@@ -43573,6 +43718,7 @@ m_nMaxRatParticles
 m_nMaxRow
 m_nMaxSegmentsPerHairStrand
 m_nMaxSquadmatesPerEnemy
+m_nMaxStacks
 m_nMaxTempVarsUsed
 m_nMaxTesselation
 m_nMaxTracesPerFrame
@@ -44195,6 +44341,7 @@ m_nStreetBrawlScoreLastRound
 m_nStreetBrawlStateChangedEventID
 m_nStrength
 m_nStrengthFieldOverride
+m_nStringParticle
 m_nStuckFramesCount
 m_nStyle
 m_nSubCycles
@@ -45467,6 +45614,7 @@ m_shaderName
 m_shakeCallback
 m_shapeMarkups
 m_shotID
+m_shotIdToIgnore
 m_shotProced
 m_shouldPlayClusterChild
 m_shouldPlayOpvar
@@ -45552,6 +45700,7 @@ m_specularColor
 m_speed
 m_speedFunction
 m_speedRange
+m_speedScaleMode
 m_speedToPitchRemap
 m_spheres
 m_spinDown
@@ -45621,6 +45770,7 @@ m_strAG2ChannelingAction
 m_strAG2PostCastAction
 m_strAG2SourceName
 m_strAG2SuccessHeroState
+m_strAG2UltFinishedAction
 m_strAOEAnnounceSound
 m_strAOEImpactSound
 m_strAbilityChargeReadySound
@@ -45644,6 +45794,7 @@ m_strAmbientLoopSound
 m_strAmbientLoopingLocalPlayerSound
 m_strAmbientZapSound
 m_strApplyLockonStack
+m_strApplyMaxLockonStack
 m_strApplySlowSound
 m_strApproachingWhooshSound
 m_strAreaEffectEnemy
@@ -45672,6 +45823,7 @@ m_strBarrelBounceSound
 m_strBarrelLaunchSound
 m_strBarrelMeleedSound
 m_strBarrelSoundLp
+m_strBarrierAppliedSound
 m_strBarrierSound
 m_strBaseSentryKill
 m_strBaseSentryOrb
@@ -45709,6 +45861,12 @@ m_strBounceSound
 m_strBoundaryPuffParticle
 m_strBreakableContentsParticleOverride
 m_strBreakableContentsPropGroupOverride
+m_strBrewChangeBarrierSound
+m_strBrewChangeDefaultSound
+m_strBrewChangeFireSound
+m_strBrewChangeSilenceSound
+m_strBrewLockSound
+m_strBrewUnlockSound
 m_strBucket
 m_strBucketName
 m_strBuffGainedSound
@@ -45717,6 +45875,7 @@ m_strBuilding
 m_strBulletImpactSound
 m_strBulletLoopingSound
 m_strBulletWhizSound
+m_strBurnAppliedSound
 m_strBurrowEndSound
 m_strCSSClass
 m_strCantCastOutOfResourceToken
@@ -45752,6 +45911,9 @@ m_strChargeHitSound
 m_strChargeLoopSound
 m_strChargeSound
 m_strChargeUpSound
+m_strChargedJumpSound
+m_strChargingLoopSound
+m_strChargingStartSound
 m_strCheats
 m_strClothEffect
 m_strCommsWheelLabelToken
@@ -45824,6 +45986,7 @@ m_strEarnedSound
 m_strEffectName
 m_strEffectsAttachName
 m_strElectricBulletHitSound
+m_strEmptyReleaseSound
 m_strEnableStartSound
 m_strEnabledLoopSound
 m_strEnabledParticle
@@ -45862,10 +46025,12 @@ m_strFileName
 m_strFilterAbilityName
 m_strFilterName
 m_strFinalExplodeSound
+m_strFinalPigeonWarning
 m_strFireBatSound
 m_strFirePendingBulletSound
 m_strFireSound
 m_strFiringLoopSound
+m_strFirstExplosionSound
 m_strFirstShotSound
 m_strFloatEndSound
 m_strFloatLoopSound
@@ -45896,6 +46061,7 @@ m_strGrappleHitTarget
 m_strGrappleHitWorld
 m_strGrappleLoop
 m_strGroundDashSound
+m_strGroundImpactSound
 m_strGroupTag
 m_strGuardBossName
 m_strGuardBossName2
@@ -45906,6 +46072,7 @@ m_strHUDSnippetName
 m_strHangSound
 m_strHealCastSound
 m_strHealSound
+m_strHeavyKickSound
 m_strHeavyMeleeSweetenerSound
 m_strHelperBuffSound
 m_strHelperEmoteSound
@@ -45920,6 +46087,7 @@ m_strHeroSearchName
 m_strHeroSortName
 m_strHeroSpecificLowHealthSound
 m_strHeroVotedSound
+m_strHexSound
 m_strHideoutRichPresence
 m_strHighThresholdOneshot
 m_strHintText
@@ -46014,6 +46182,8 @@ m_strLateHitConfirmSound
 m_strLaunchSound
 m_strLayoutFile
 m_strLayoutFile == ""
+m_strLightKickBeginSound
+m_strLightKickSound
 m_strLightMeleeSweetenerSound
 m_strLightStyle
 m_strLightStyle == ''
@@ -46123,7 +46293,6 @@ m_strPostGameDefeatSound
 m_strPostGameVictorySound
 m_strPosterImage
 m_strPosterImageDamaged
-m_strPosterImageThumbnail
 m_strPowerUp1Sounds
 m_strPowerUp2Sounds
 m_strPowerUp3Sounds
@@ -46150,6 +46319,7 @@ m_strPurgeSound
 m_strPushAndDamage
 m_strPushOffSound
 m_strQueryPublicFieldName
+m_strRampSound
 m_strRatAttachSound
 m_strRatReleaseSound
 m_strRecallSound
@@ -46198,6 +46368,7 @@ m_strShootSound
 m_strShopIconLarge
 m_strShotReleaseSound
 m_strShotSound
+m_strSilenceAppliedSound
 m_strSilenceTargetSound
 m_strSingleDoorAbilityImage
 m_strSkillTierName
@@ -46212,6 +46383,7 @@ m_strSlotLocName
 m_strSlowZoomSound
 m_strSmallIconCssClass
 m_strSmallIconCssClassMax
+m_strSnapSound
 m_strSnapshotSubset
 m_strSnipeImpactSound
 m_strSoldierShootSound
@@ -46327,6 +46499,8 @@ m_strVenomWeakExplode
 m_strVictimCastSound
 m_strVictimHitSound
 m_strVictimLockonSound
+m_strVictimMaxLockonSound
+m_strVictimPulledSound
 m_strViperSlideAbility
 m_strVoteSticker
 m_strWIPModelName
@@ -46524,6 +46698,7 @@ m_tSlowStopTime
 m_tSoonestHelperCooldownEndTime
 m_tSourcePrevious
 m_tSpawnTime
+m_tStackExpiryTime
 m_tStateChangeTime
 m_tStateStartTime
 m_tStopTarget
@@ -46828,8 +47003,10 @@ m_vDamagePos
 m_vDamagePosition
 m_vDamageTakenEvents
 m_vDashCastDir
+m_vDashDir
 m_vDashDirection
 m_vDashStartPos
+m_vDashStartVelocity
 m_vDebugOffset
 m_vDefBurstOffset
 m_vDefaultCardColor
@@ -46860,6 +47037,7 @@ m_vEndPos
 m_vEndPosition
 m_vEscapeTarget
 m_vExitOrigin
+m_vExitVelocity
 m_vExtent
 m_vExtentsMax
 m_vExtentsMin
@@ -47105,6 +47283,7 @@ m_vPrevWaypointPos
 m_vPreviousPos
 m_vPreviousPosition
 m_vProjectileRemovedOrigin
+m_vPullDisplacement
 m_vPullToLocation
 m_vPush
 m_vPushForce
@@ -47537,6 +47716,7 @@ m_vecLocalCoordinateSystemSpeedScale
 m_vecLocalOffset
 m_vecLocalRotation
 m_vecLocalTop
+m_vecLockOnSegmentArcs
 m_vecLockonStackDurations
 m_vecLockonTargets
 m_vecLongEffectOffset
@@ -49593,10 +49773,6 @@ ping_indicator_safe_area_x
 ping_indicator_safe_area_y
 ping_location
 ping_quick_response
-ping_target_reset_time
-ping_trace_radius
-ping_trace_radius_expanded
-ping_trace_radius_minimap
 ping_wheel_phrase_0
 ping_wheel_phrase_1
 ping_wheel_phrase_2
@@ -49983,8 +50159,6 @@ r_citadel_gpu_preview_denoise_signal_phi
 r_citadel_mboit_quality
 r_citadel_npr_outlines
 r_citadel_npr_outlines_max_dist
-r_citadel_portrait_allow_particle_only
-r_citadel_portrait_highlight_particle_only
 r_citadel_render_game
 r_citadel_see_thru_walls_opacity
 r_citadel_selection_outline2_alpha
