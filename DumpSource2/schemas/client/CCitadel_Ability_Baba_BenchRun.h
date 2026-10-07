@@ -8,5 +8,5 @@ class CCitadel_Ability_Baba_BenchRun : public C_CitadelBaseAbility
 	GameTime_t m_flEndLaunchTime;
 	float32 m_flLastChargeJumpFraction;
 	bool m_bInMelee;
-	bool m_bMeleeIsHeavy;
+	bool m_bRideCut;
 };
