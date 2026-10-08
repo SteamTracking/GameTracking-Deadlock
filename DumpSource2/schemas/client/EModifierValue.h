@@ -397,7 +397,10 @@ enum EModifierValue : uint16_t
 	MODIFIER_VALUE_RATKING_ARMOR_HEALTH_MAX = 244,
 	MODIFIER_VALUE_RATKING_NIBBLE_STACKS = 245,
 	// MPropertySuppressEnumerator
-	MODIFIER_VALUE_COUNT = 246,
+	// MPropertyDescription = "A local-space position for offset for Weapon Obstruction Test"
+	MODIFIER_VALUE_WEAPON_OBSTRUCTION_ORIGIN_OVERRIDE = 246,
+	// MPropertySuppressEnumerator
+	MODIFIER_VALUE_COUNT = 247,
 	// MPropertySuppressEnumerator
 	MODIFIER_VALUE_INVALID = 65535,
 };
