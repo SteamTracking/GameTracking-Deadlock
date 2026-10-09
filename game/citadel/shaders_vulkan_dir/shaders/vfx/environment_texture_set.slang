@@ -223,7 +223,6 @@ PS
 	RenderState(DepthWriteEnable, false);
 	RenderState(FillMode, Wireframe);
 	RenderState(SlopeScaleDepthBias, 0);
-	bool g_bIsDeprecated < Attribute("bIsDeprecated"); UiType(CheckBox); >;
 	[[layer_constant]] ExternalDescriptorSet g_globalLateBoundBindlessSet < Source(ExternalDescSet); Attribute("g_globalLateBoundBindlessSet"); >;
 	[[layer_constant]] ExternalDescriptorSet g_lightBinnerGpuSet < Source(ExternalDescSet); Attribute("g_lightBinnerGpuSet"); >;
 	Texture2D g_tBlueNoise < Attribute("BlueNoise"); SrgbRead(false); >;

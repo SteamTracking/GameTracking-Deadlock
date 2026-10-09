@@ -377,7 +377,6 @@ PS
 	RenderState(DepthFunc, GreaterEqual);
 	RenderState(FillMode, Wireframe);
 	RenderState(SlopeScaleDepthBias, 0);
-	bool g_bIsDeprecated < Attribute("bIsDeprecated"); UiType(CheckBox); >;
 	[[layer_constant]] ExternalDescriptorSet g_globalLateBoundBindlessSet < Source(ExternalDescSet); Attribute("g_globalLateBoundBindlessSet"); >;
 	[[layer_constant]] ExternalDescriptorSet g_lightBinnerGpuSet < Source(ExternalDescSet); Attribute("g_lightBinnerGpuSet"); >;
 	float4x4 g_mAlbedoColorCorrect1 < Expression(MatrixColorCorrect2(g_vAlbedoContrastSaturationBrightness1,TextureAverageColor(g_tColor1))); >;

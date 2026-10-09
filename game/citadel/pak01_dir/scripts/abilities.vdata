@@ -64,6 +64,7 @@
 		resource_name:"scripts/abilities/werewolf.vdata_inc",
 		resource_name:"scripts/abilities/unicorn.vdata_inc",
 		resource_name:"scripts/abilities/baba.vdata_inc",
+		resource_name:"scripts/abilities/chessmaster.vdata_inc",
 		resource_name:"scripts/abilities/ratking.vdata_inc",
 	]
 	ability_golden_idol = 
@@ -289822,6 +289823,12 @@
 			{
 				m_strValue = "0"
 				m_strCSSClass = "healing"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "meleelifestealsf"
+					m_eSpecificStatScaleType = "EHealingOutput"
+				}
 			}
 			MeleeLifestealNonHeroPct = 
 			{
@@ -291428,6 +291435,5826 @@
 		m_strAG2UltFinishedAction = "cast_completed"
 		m_strApplyMaxLockonStack = soundevent:"Baba.Ult.Lockon.Max"
 		m_strAG2CastCompletedAction = ""
+	}
+	citadel_weapon_chessmaster_shotgun = 
+	{
+		_class = "citadel_ability_chessmaster_primaryweapon"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			ChargeTime = 
+			{
+				m_strValue = "2.0"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "ChargeTime_scale_function"
+					m_eSpecificStatScaleType = "EReloadSpeed"
+				}
+			}
+			BulletsPerDegree = 
+			{
+				m_strValue = "1.5"
+			}
+			MinRotation = 
+			{
+				m_strValue = 6
+			}
+			MaxRotation = 
+			{
+				m_strValue = 90
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 14000.0
+				m_Spread = 0.0
+				m_StandingSpread = 1.5
+				m_flScatterYawScale = 2.0
+				m_flShootingUpSpreadPenalty = 0
+				m_flZoomMoveSpeedPercent = 1.0
+				m_flShootMoveSpeedPercent = 0.75
+				m_flHorizontalPunch = 0
+				m_flVerticalPunch = 0
+				m_flRecoilRecoverySpeed = 1.0
+				m_VerticallRecoil = 
+				{
+					m_Range = [ 0.1, 0.1 ]
+					m_flBurstSlope = 0.0
+					m_flBurstExponent = 0.0
+					m_flBurstConstant = 0.0
+				}
+				m_HorizontalRecoil = 
+				{
+					m_Range = [ -0.15, 0.15 ]
+					m_flBurstExponent = 0.0
+				}
+				m_flRecoilSpeed = 5.0
+				m_flZoomFOV = 35.0
+				m_flZoomFOV_Relative = -40.0
+				m_flDamageFalloffStartRange = 787
+				m_flDamageFalloffEndRange = 1800.0
+				m_flRange = 7000.0
+				m_flBulletLifetime = 2
+				m_flDamageFalloffStartScale = 1.0
+				m_flDamageFalloffEndScale = 0.1
+				m_flDamageFalloffBias = 0.5
+				m_iBullets = 1
+				m_flCycleTime = 0.5
+				m_reloadDuration = 3.0
+				m_iClipSize = 8
+				m_iBurstShotCount = 1
+				m_flIntraBurstCycleTime = 0.075
+				m_flBulletGravityScale = 0.0
+				m_flBulletRadius = 8.0
+				m_flBulletReflectScale = 0
+				m_flBulletReflectAmount = 1
+				m_flBulletInheritShooterVelocityScale = 0
+				m_szBulletTravelTracerParticle = resource_name:"particles/weapon_fx/chessmaster/chessmaster_tracer.vpcf"
+				m_szMuzzleFlashEffectName = resource_name:"particles/weapon_fx/chessmaster/chessmaster_muzzle_flash.vpcf"
+				m_strBulletWhizSound = soundevent:"Chessmaster.Wpn.Whizby"
+				m_flBulletWhizDistance = 80
+				m_mapImpactEffects = 
+				{
+					default = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+						m_strSound = soundevent:"Default.BulletImpact"
+					}
+					flesh = 
+					{
+						m_strDecal = ""
+						m_strParticle = resource_name:"particles/blood_impact/blood_impact_red_01.vpcf"
+					}
+					concrete = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+					}
+					solidmetal = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+					}
+					wood = 
+					{
+						m_strDecal = "Impact.Wood"
+						m_strParticle = resource_name:"particles/impact_fx/impact_wood.vpcf"
+					}
+					wood_plank = 
+					{
+						m_strDecal = "Impact.Wood"
+						m_strParticle = resource_name:"particles/impact_fx/impact_wood.vpcf"
+					}
+					portals = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+						m_strSound = soundevent:""
+					}
+					dirt = 
+					{
+					}
+					metalvehicle = 
+					{
+					}
+					metal = 
+					{
+					}
+					leafy_tree = 
+					{
+					}
+				}
+				m_flCritBonusStart = 1.65
+				m_flCritBonusEnd = 1.65
+				m_flCritBonusStartRange = 500.0
+				m_flCritBonusEndRange = 1500.0
+				m_flCritBonusAgainstNPCs = 0
+				m_flShootSpreadPenaltyPerShot = 0.25
+				m_flShootSpreadPenaltyDecayDelay = 0.0
+				m_flShootSpreadPenaltyDecay = 4.0
+				m_flRecoilShotIndexRecoveryTimeFactor = 0.25
+				m_bCanZoom = false
+				m_strWeaponImpactEffect = resource_name:"particles/weapon_fx/chessmaster/chessmaster_tracer_impact.vpcf"
+				m_flReloadMoveSpeed = "10000"
+				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Hero"
+				m_strLocalPlayerBulletImpactHeavySound = soundevent:"Player.Bullet.Impact.Hero.Large"
+				m_strReloadSound = soundevent:"Chessmaster.Wpn.Reload.Start"
+				m_strReloadEndSound = soundevent:""
+				m_strZoomInSound = soundevent:"Chessmaster.Wpn.Zoom.In"
+				m_strZoomOutSound = soundevent:"Chessmaster.Wpn.Zoom.Out"
+				m_flDamageForce = 50.0
+				m_bBulletShouldUseVerlet = true
+				m_flRecoilRecoveryDelayFactor = 0.3
+				m_bHitOnceAcrossAllBullets = true
+				m_strShootSound = soundevent:"Chessmaster.Wpn.Fire"
+				m_AimingShootSpreadPenalty = [ 0.0, 2.0 ]
+				m_vecScatterOffsets = [  ]
+				m_flPelletScatterFactor = 1.0
+				m_flPelletScatterSpreadFactor = 0.2
+				m_strBulletImpactSound = soundevent:"Chessmaster.Wpn.Impact"
+				m_flBulletDamage = 30.0
+				m_bFirstShotPerfectAccuracy = false
+				m_bUsesSpreadPattern = true
+				m_bAllowExplosionToCollectGold = true
+				m_flExplosionDamageScaleAtMaxRadius = 1.0
+				m_flExplosionRadius = 40.0
+				m_flBulletRadiusVsWorld = 0.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"hero_shotgun_base",
+		]
+		m_bStartTrained = true
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_ON_BUTTON_IS_DOWN"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SPRINT | CITADEL_ABILITY_BEHAVIOR_IS_PRIMARY_WEAPON | CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_SILENT_CAST_FAILURE_FEEDBACK | CITADEL_ABILITY_BEHAVIOR_DISARMABLE | CITADEL_ABILITY_BEHAVIOR_NOT_SILENCABLE | CITADEL_ABILITY_BEHAVIOR_WEAPON_TOGGLE"
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED | MODIFIER_STATE_IS_ASLEEP"
+		m_eAbilityType = "EAbilityType_Weapon"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/weapon_damage.psd"
+		m_nAbilityPointsCost = 1
+		m_HUDPanel = 
+		{
+			m_vecHUDElements = 
+			[
+				{
+					m_strContext = "charge"
+					m_vecPanels = 
+					[
+						{
+							m_strPanelName = "circular_progress"
+							m_eProgressType = "EProgress_RadialCW"
+							m_bReverseProgress = false
+							m_flStartValue = 0.0
+							m_flEndValue = 360.0
+						},
+					]
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS"
+					m_Layout = panorama:"file://{resources}/layout/ability_hud_elements/element_circular_progress.vxml"
+					m_strAdditionalClasses = "medium"
+				},
+				{
+					m_strContext = "gun"
+					m_vecPanels = 
+					[
+						{
+							m_strPanelName = "left_progress"
+							m_eProgressType = "EProgress_OffsetLeft"
+						},
+						{
+							m_strPanelName = "right_progress"
+							m_eProgressType = "EProgress_OffsetRight"
+						},
+					]
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_GUN"
+					m_Layout = panorama:"file://{resources}/layout/ability_hud_elements/element_gun.vxml"
+				},
+			]
+			m_Layout = panorama:"file://{resources}/layout/ability_hud_elements_container.vxml"
+		}
+		m_sObstructedShotSound = soundevent:""
+		m_DOFWhileZoomed = 
+		{
+			m_flDofNearCrisp = 100.0
+			m_flDofFarCrisp = 200.0
+			m_flDofFarBlurry = 7000.0
+		}
+		m_strAG2SourceName = "weapon"
+		m_sDisarmedSound = soundevent:"Player.Weapon.Jammed"
+		m_flMinDisarmedSoundInterval = 0.1
+		m_flBossDamageScale = 1.0
+		m_cameraSequenceZoom = 
+		{
+			m_nPriority = 2
+			m_vecFOVOperations = 
+			[
+				{
+					m_bValuesAreRelative = true
+					m_eCameraOperation = "k_ECameraOp_Spring"
+					m_flLerpDuration = 0.1
+					m_bLerpEndAtDefault = false
+					m_flLerpGain = 0.75
+					m_bSpringToDefault = false
+					m_flSpringStrength = 40.0
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+				},
+			]
+		}
+		m_cameraSequenceUnZoom = 
+		{
+			m_nPriority = 2
+			m_vecFOVOperations = 
+			[
+				{
+					m_bValuesAreRelative = true
+					m_bApproachDefault = true
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bSpringToDefault = true
+					m_flSpringStrength = 40.0
+					m_flLerpDuration = 0.12
+					m_flLerpBias = 0.75
+				},
+			]
+		}
+		m_bDOFFarSettingsAreOffsetByGunRange = false
+		m_strBishopTracer = resource_name:"particles/weapon_fx/empty_tracer.vpcf"
+		m_strBishopCommandSound = soundevent:""
+		m_flEmpoweredBulletRadius = 25.0
+		m_AutoIntrinsicModifiers = 
+		[
+			subclass:
+			{
+				_class = "modifier_hero_gravity"
+				_my_subclass_name = "gravity"
+				m_flGravityChange = -25.0
+				m_nEnabledStateMask = "MODIFIER_STATE_CHESSMASTER_PIECE"
+			},
+		]
+		m_bSuppressBulletOnBishopFire = true
+		m_flHorizontalOffsetPerShot = 0.0
+	}
+	citadel_weapon_chessmaster_set = 
+	{
+		_class = "citadel_ability_chessmaster_primaryweapon"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0.1"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			SplitShotAngle = 
+			{
+				m_strValue = "90"
+			}
+			SplitShotRange = 
+			{
+				m_strValue = "12m"
+			}
+			SplitShotSpeed = 
+			{
+				m_strValue = "2400"
+			}
+			SplitShotRadius = 
+			{
+				m_strValue = "20"
+			}
+			SplitShotDamagePercent = 
+			{
+				m_strValue = "50"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 2400.0
+				m_Spread = 0.0
+				m_StandingSpread = 1.5
+				m_flScatterYawScale = 1
+				m_flShootingUpSpreadPenalty = 0
+				m_flZoomMoveSpeedPercent = 1.0
+				m_flShootMoveSpeedPercent = 0.75
+				m_flHorizontalPunch = 0
+				m_flVerticalPunch = 0.0
+				m_flRecoilRecoverySpeed = 5.0
+				m_VerticallRecoil = 
+				{
+					m_Range = [ 0.0, 0.0 ]
+					m_flBurstSlope = 0.0
+					m_flBurstExponent = 0.0
+					m_flBurstConstant = 0.0
+				}
+				m_HorizontalRecoil = 
+				{
+					m_Range = [ 0.0, 0.0 ]
+					m_flBurstExponent = 0.0
+				}
+				m_flRecoilSpeed = 5.0
+				m_flZoomFOV = 35.0
+				m_flZoomFOV_Relative = -40.0
+				m_flDamageFalloffStartRange = 787
+				m_flDamageFalloffEndRange = 2264.0
+				m_flRange = 7000.0
+				m_flBulletLifetime = 0.3
+				m_flDamageFalloffStartScale = 1.0
+				m_flDamageFalloffEndScale = 0.1
+				m_flDamageFalloffBias = 0.5
+				m_iBullets = 1
+				m_flCycleTime = 0.6
+				m_reloadDuration = 2.5
+				m_iClipSize = 6
+				m_iBurstShotCount = 1
+				m_flIntraBurstCycleTime = 0.1
+				m_flBulletGravityScale = 0
+				m_flBulletRadius = 12.0
+				m_flBulletReflectScale = 0
+				m_flBulletReflectAmount = 1
+				m_flBulletInheritShooterVelocityScale = 0
+				m_szBulletTravelTracerParticle = resource_name:"particles/weapon_fx/chessmaster/chessmaster_gun_tracer.vpcf"
+				m_szMuzzleFlashEffectName = resource_name:"particles/weapon_fx/bookworm/bookworm_muzzle_flash.vpcf"
+				m_strBulletWhizSound = soundevent:"Wraith.Wpn.Whizby"
+				m_flBulletWhizDistance = 80
+				m_mapImpactEffects = 
+				{
+					default = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+						m_strSound = soundevent:"Default.BulletImpact"
+					}
+					flesh = 
+					{
+						m_strDecal = ""
+						m_strParticle = resource_name:"particles/blood_impact/blood_impact_red_01.vpcf"
+					}
+					concrete = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+					}
+					solidmetal = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+					}
+					wood = 
+					{
+						m_strDecal = "Impact.Wood"
+						m_strParticle = resource_name:"particles/impact_fx/impact_wood.vpcf"
+					}
+					wood_plank = 
+					{
+						m_strDecal = "Impact.Wood"
+						m_strParticle = resource_name:"particles/impact_fx/impact_wood.vpcf"
+					}
+					portals = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+						m_strSound = soundevent:""
+					}
+					dirt = 
+					{
+					}
+					metalvehicle = 
+					{
+					}
+					metal = 
+					{
+					}
+					leafy_tree = 
+					{
+					}
+				}
+				m_flCritBonusStart = 1.65
+				m_flCritBonusEnd = 1.65
+				m_flCritBonusStartRange = 500.0
+				m_flCritBonusEndRange = 1500.0
+				m_flCritBonusAgainstNPCs = 0
+				m_flShootSpreadPenaltyPerShot = 1.0
+				m_flShootSpreadPenaltyDecayDelay = 0.0
+				m_flShootSpreadPenaltyDecay = 2.0
+				m_flRecoilShotIndexRecoveryTimeFactor = 0.25
+				m_bCanZoom = false
+				m_strWeaponImpactEffect = resource_name:"particles/weapon_fx/bookworm/bookworm_tracer_impact.vpcf"
+				m_flReloadMoveSpeed = "10000"
+				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Hero"
+				m_strLocalPlayerBulletImpactHeavySound = soundevent:"Player.Bullet.Impact.Hero.Large"
+				m_strReloadSound = soundevent:"Bookworm.Wpn.Reload.Start"
+				m_strReloadEndSound = soundevent:""
+				m_strZoomInSound = soundevent:"Wraith.Wpn.Zoom.In"
+				m_strZoomOutSound = soundevent:"Wraith.Wpn.Zoom.Out"
+				m_flDamageForce = 50.0
+				m_bBulletShouldUseVerlet = true
+				m_strShootSound = soundevent:"Bookworm.Wpn.Fire"
+				m_flSpreadPerShot = 0.0
+				m_flRecoilRecoveryDelayFactor = 0.05
+				m_flSpreadDecay = 2.5
+				m_nRecoilSeed = 32152
+				m_AimingShootSpreadPenalty = [ 0.0, 0.2 ]
+				m_strBulletImpactSound = soundevent:"Wraith.Wpn.Impact"
+				m_flBulletDamage = 35.0
+				m_bCanCrit = true
+				m_flBulletRadiusVsWorld = 1.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"hero_weapon_base",
+		]
+		m_bStartTrained = true
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_ON_BUTTON_IS_DOWN"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_IS_PRIMARY_WEAPON | CITADEL_ABILITY_BEHAVIOR_SILENT_CAST_FAILURE_FEEDBACK | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SPRINT | CITADEL_ABILITY_BEHAVIOR_PROJECTILE | CITADEL_ABILITY_BEHAVIOR_WEAPON_TOGGLE | CITADEL_ABILITY_BEHAVIOR_DISARMABLE | CITADEL_ABILITY_BEHAVIOR_NOT_SILENCABLE | CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_USE_INSTANT_CAST_UNIT_TARGET_UI"
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED | MODIFIER_STATE_IS_ASLEEP"
+		m_eAbilityType = "EAbilityType_Weapon"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/weapon_damage.psd"
+		m_nAbilityPointsCost = 1
+		m_HUDPanel = 
+		{
+			m_vecHUDElements = 
+			[
+				{
+					m_strContext = "gun"
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_GUN"
+				},
+			]
+		}
+		m_sObstructedShotSound = soundevent:""
+		m_DOFWhileZoomed = 
+		{
+			m_flDofNearCrisp = 200.0
+			m_flDofFarCrisp = 100.0
+			m_flDofFarBlurry = 7000.0
+		}
+		m_strAG2SourceName = "weapon"
+		m_sDisarmedSound = soundevent:"Player.Weapon.Jammed"
+		m_flMinDisarmedSoundInterval = 0.1
+		m_flBossDamageScale = 1.0
+		m_cameraSequenceZoom = 
+		{
+			m_nPriority = 2
+			m_vecFOVOperations = 
+			[
+				{
+					m_bValuesAreRelative = true
+					m_eCameraOperation = "k_ECameraOp_Spring"
+					m_flLerpDuration = 0.1
+					m_bLerpEndAtDefault = false
+					m_flLerpGain = 0.75
+					m_bSpringToDefault = false
+					m_flSpringStrength = 40.0
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+				},
+			]
+		}
+		m_cameraSequenceUnZoom = 
+		{
+			m_nPriority = 2
+			m_vecFOVOperations = 
+			[
+				{
+					m_bValuesAreRelative = true
+					m_bApproachDefault = true
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bSpringToDefault = true
+					m_flSpringStrength = 40.0
+					m_flLerpDuration = 0.12
+					m_flLerpBias = 0.75
+				},
+			]
+		}
+		m_projectileInfo = 
+		{
+			m_nBehaviors = ""
+			m_flGravityScale = 1.0
+			m_flFriction = 0.0
+			m_flElasticity = 0.0
+			m_flSpeed = 3500.0
+			m_flUpSpeed = 100.0
+			m_flMaxLinearRange = 0.0
+			m_flVerticalAimBias = 0.0
+			m_eProjectileShape = "Sphere"
+			m_flTriggerRadius = 1.5
+			m_flPhysicsRadius = 1.5
+			m_flBulletOnlyTriggerRadius = 0.0
+			m_vecCapsulePhysicsCenter1 = [ 0.0, 0.0, 0.0 ]
+			m_vecCapsulePhysicsCenter2 = [ 0.0, 0.0, 0.0 ]
+			m_flCapsulePhysicsRadius = 1.5
+			m_vecCapsuleTriggerCenter1 = [ 0.0, 0.0, 0.0 ]
+			m_vecCapsuleTriggerCenter2 = [ 0.0, 0.0, 0.0 ]
+			m_flCapsuleTriggerRadius = 1.5
+			m_particle = resource_name:""
+			m_bHideWarningParticle = false
+			m_warningParticle = resource_name:""
+			m_customModel = resource_name:""
+			m_flProjectileModelScale = 1.0
+			m_HitSound = soundevent:""
+			m_HitTargetSound = soundevent:""
+			m_HitWorldSound = soundevent:""
+			m_DetonateSound = soundevent:""
+			m_LoopingSound = soundevent:""
+			m_WarningSound = soundevent:""
+			m_flTrackingDampingCoefficient = 0.0
+			m_flTrackingDuration = 0.0
+			m_flTrackingStartTime = 0.0
+			m_flTrackingEndTime = 0.0
+			m_AutoProjectileModifier = subclass:
+			{
+			}
+		}
+		m_flTargetingConeAngle = 10.0
+		m_nAbilityTargetFlags = "CITADEL_UNIT_TARGET_FLAG_NO_INVIS"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_GOLD_ORBS_FRIENDLY | CITADEL_UNIT_TARGET_GOLD_ORBS_ENEMY | CITADEL_UNIT_TARGET_ALL_ENEMY"
+		m_strCrosshairCSSClass = "BookWorm"
+		m_previewParticle = resource_name:""
+		m_SplitShotTracer = resource_name:"particles/weapon_fx/chessmaster/chessmaster_gun_split_tracer.vpcf"
+	}
+	ability_melee_chessmaster = 
+	{
+		_class = "citadel_ability_hold_melee"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCharges_scale_function"
+					m_eSpecificStatScaleType = "EMaxChargesIncrease"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldownBetweenCharge_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldownBetweenChargeUses"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "1.3m"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			MeleeHalfAngle = 
+			{
+				m_strValue = "30"
+			}
+			MeleeAttackLength = 
+			{
+				m_strValue = "5m"
+				m_strCSSClass = "distance"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "MeleeAttackLength_scale_function"
+					m_eSpecificStatScaleType = "EMeleeRange"
+				}
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"inherent_base",
+			"citadel_hold_melee",
+		]
+		m_eAbilityType = "EAbilityType_Melee"
+		m_bStartTrained = true
+		m_iMaxLevel = 1
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_HIDDEN | CITADEL_ABILITY_BEHAVIOR_SILENT_CAST_FAILURE_FEEDBACK  | CITADEL_ABILITY_BEHAVIOR_NOT_SILENCABLE | CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_CASTABLE_WHILE_HIDDEN"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY | CITADEL_UNIT_TARGET_TROPHY_ENEMY"
+		m_nAbilityTargetFlags = "CITADEL_UNIT_TARGET_FLAG_PENETRATE_INVULNERABLE | CITADEL_UNIT_TARGET_FLAG_ALLOW_SMALL_DEPLOYABLES"
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED | MODIFIER_STATE_IS_ASLEEP"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/melee_damage.psd"
+		m_MeleeDamageFlags = "DFLAG_TRIGGER_FLINCH"
+		m_flCollisionDistance = 50.0
+		m_cameraSequenceHoldStart = 
+		{
+			m_vecFOVOperations = 
+			[
+				{
+					m_flMaintainDuration = 0.1
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_flLerpDuration = 0.6
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 8.0
+					m_flLerpBias = 0.723
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_flDelay = 0.1
+					m_bValuesAreRelative = true
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Spring"
+				},
+			]
+			m_vecDistanceOperations = 
+			[
+				{
+					m_flMaintainDuration = 0.1
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 10.0
+					m_flLerpDuration = 0.7
+					m_flLerpBias = 0.784
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Spring"
+				},
+			]
+		}
+		m_strHoldBegin = soundevent:"Player.Melee.Hold.Shared"
+		m_HoldBeginEffect = resource_name:"particles/abilities/melee/melee_heavy_activate_charge.vpcf"
+		m_cameraSequenceHitImpact = 
+		{
+			m_vecDistanceOperations = 
+			[
+				{
+					m_bValuesAreRelative = true
+					m_flApproachTarget = -20.0
+					m_flApproachSpeed = 800.0
+					m_flApproachAcceleration = 1000.0
+					m_flDelay = 0.25
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bValuesAreRelative = true
+					m_flLerpDuration = 0.35
+					m_bLerpEndAtDefault = true
+					m_flLerpEnd = 20.0
+					m_flLerpBias = 0.33
+				},
+			]
+			m_vecFOVOperations = [  ]
+		}
+		m_SuccessfulParryParticle = resource_name:"particles/abilities/melee/melee_parry_success.vpcf"
+		m_strSuccessfulParrySound = soundevent:"Player.Melee.Parry.Shared"
+		m_flParryWindow = 0.28
+		m_flParryStunTime = 1.1
+		m_ParryActivateParticle = resource_name:"particles/abilities/melee/melee_parry_attack.vpcf"
+		m_AirMeleeUpScale = [ 20.0, -45.0, 1.0, 0.1 ]
+		m_mapAttacks = 
+		{
+			EAttackType_Light = 
+			{
+				m_Trigger = "light"
+				m_flCooldownOnHit = 0.75
+				m_flCooldownOnMiss = 0.75
+				m_SpeedBonusCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 0.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 0.224286
+							y = 0.0
+							m_flSlopeIncoming = -1296.296265
+							m_flSlopeOutgoing = -1296.296265
+						},
+						{
+							x = 0.231429
+							y = -300.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 0.705714
+							y = 0.0
+							m_flSlopeIncoming = 632.53009
+							m_flSlopeOutgoing = 632.53009
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, -300.0 ]
+					m_vDomainMaxs = [ 1.0, 0.0 ]
+				}
+				m_MovementSpeedCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 128.545456
+							m_flSlopeIncoming = 2650.541992
+							m_flSlopeOutgoing = 2650.541992
+						},
+						{
+							x = 0.140143
+							y = 500.0
+							m_flSlopeIncoming = 1689.520264
+							m_flSlopeOutgoing = 1689.520264
+						},
+						{
+							x = 0.219858
+							y = 500.0
+							m_flSlopeIncoming = -6140.309082
+							m_flSlopeOutgoing = -6140.309082
+						},
+						{
+							x = 0.221572
+							y = 0.0
+							m_flSlopeIncoming = -291716.78125
+							m_flSlopeOutgoing = -291716.78125
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.3, 500.0 ]
+				}
+				m_MeleeActivateParticle = resource_name:""
+				m_strHitSound = soundevent:"Ability.Melee.Impact.NPC"
+				m_MeleeImpactParticle = resource_name:"particles/abilities/melee_impact.vpcf"
+				m_flAttackStateTime = 0.5
+				m_MeleeSwingParticle = resource_name:"particles/abilities/melee_quick.vpcf"
+				m_strHitDebrisSound = soundevent:"Player.Melee.Hit.Physics"
+				m_strHitHeroSound = soundevent:"Ability.Melee.Impact.Player"
+			}
+			EAttackType_Heavy = 
+			{
+				m_cameraSequenceAttackStart = 
+				{
+					m_vecTargetPosOperations = 
+					[
+						{
+							m_flLagMinDuration = 0.2
+							m_flLagTime = 0.1
+							m_flLagMaxSpeed = 20.0
+							m_flLagSpringStrength = 5.0
+							m_eCameraOperation = "k_ECameraOp_Lag"
+						},
+					]
+				}
+				m_Trigger = "heavy"
+				m_flCooldownOnHit = 1.0
+				m_flCooldownOnMiss = 1.3
+				m_bApplyScreenShake = true
+				m_SpeedBonusCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = -300.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 0.271158
+							y = -300.0
+							m_flSlopeIncoming = 669.14325
+							m_flSlopeOutgoing = 669.14325
+						},
+						{
+							x = 0.345788
+							y = -68.618172
+							m_flSlopeIncoming = 1323.338623
+							m_flSlopeOutgoing = 1323.338623
+						},
+						{
+							x = 0.497857
+							y = 0.0
+							m_flSlopeIncoming = 451.231018
+							m_flSlopeOutgoing = 451.231018
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, -300.0 ]
+					m_vDomainMaxs = [ 0.5, 0.0 ]
+				}
+				m_MovementSpeedCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.00008
+							y = 470.10907
+							m_flSlopeIncoming = 1842.533813
+							m_flSlopeOutgoing = 1842.533813
+						},
+						{
+							x = 0.179122
+							y = 800.0
+							m_flSlopeIncoming = 940.240601
+							m_flSlopeOutgoing = 940.240601
+						},
+						{
+							x = 0.350938
+							y = 800.0
+							m_flSlopeIncoming = -4623.689453
+							m_flSlopeOutgoing = -4623.689453
+						},
+						{
+							x = 0.352144
+							y = 0.0
+							m_flSlopeIncoming = -663344.125
+							m_flSlopeOutgoing = -663344.125
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.4, 800.0 ]
+				}
+				bIsHeavyAttack = true
+				m_strActivateSound = soundevent:""
+				m_flMovementAcc = 200000.0
+				m_strHitSound = soundevent:"Ability.Melee.Impact.Heavy.NPC"
+				m_strMeleeDashSound = soundevent:"Player.Melee.Dash.Ground"
+				m_MeleeSwingParticle = resource_name:"particles/abilities/melee_swing_heavy.vpcf"
+				m_MeleeActivateParticle = resource_name:""
+				m_MeleeImpactParticle = resource_name:"particles/abilities/melee/melee_impact_heavy.vpcf"
+				m_strHitHeroSound = soundevent:"Ability.Melee.Impact.Heavy.Player"
+				m_strHitDebrisSound = soundevent:"Player.Melee.Hit.Physics"
+				m_MeleeAttackParticle = resource_name:"particles/abilities/melee/melee_heavy_activate.vpcf"
+			}
+			EAttackType_HeavyAir = 
+			{
+				m_Trigger = "heavy"
+				bIsHeavyAttack = true
+				m_flCooldownOnHit = 1.0
+				m_flCooldownOnMiss = 1.3
+				m_bApplyScreenShake = true
+				m_SpeedBonusCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = -300.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 0.199155
+							y = -300.0
+							m_flSlopeIncoming = 707.983032
+							m_flSlopeOutgoing = 707.983032
+						},
+						{
+							x = 0.303474
+							y = -85.145447
+							m_flSlopeIncoming = 1004.345276
+							m_flSlopeOutgoing = 1004.345276
+						},
+						{
+							x = 0.497857
+							y = 0.0
+							m_flSlopeIncoming = 438.029633
+							m_flSlopeOutgoing = 438.029633
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, -300.0 ]
+					m_vDomainMaxs = [ 0.5, 0.0 ]
+				}
+				m_MovementSpeedCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 337.890869
+							m_flSlopeIncoming = 2661.166016
+							m_flSlopeOutgoing = 2661.166016
+						},
+						{
+							x = 0.173649
+							y = 800.0
+							m_flSlopeIncoming = 1357.308105
+							m_flSlopeOutgoing = 1357.308105
+						},
+						{
+							x = 0.34046
+							y = 800.0
+							m_flSlopeIncoming = -4768.748535
+							m_flSlopeOutgoing = -4768.748535
+						},
+						{
+							x = 0.341408
+							y = 0.0
+							m_flSlopeIncoming = -843871.3125
+							m_flSlopeOutgoing = -843871.3125
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.4, 800.0 ]
+				}
+				m_flMovementAcc = 200000.0
+				m_cameraSequenceAttackStart = 
+				{
+					m_vecDistanceOperations = [  ]
+					m_vecFOVOperations = 
+					[
+						{
+							m_bValuesAreRelative = true
+							m_flApproachTarget = -10.0
+							m_flApproachSpeed = 5.0
+							m_flApproachAcceleration = 10.0
+						},
+						{
+							m_eCameraOperation = "k_ECameraOp_Maintain"
+							m_flMaintainDuration = 5.0
+							m_bValuesAreRelative = true
+						},
+					]
+				}
+				m_flAttackStateTime = 0.3
+				m_strHitHeroSound = soundevent:"Ability.Melee.Impact.Heavy.Player"
+				m_MeleeAttackParticle = resource_name:"particles/abilities/melee/melee_heavy_activate.vpcf"
+				m_strHitSound = soundevent:"Ability.Melee.Impact.Heavy.NPC"
+				m_strMeleeDashSound = soundevent:"Player.Melee.Dash.Air"
+			}
+			EAttackType_Slide = 
+			{
+				m_Trigger = "heavy"
+				m_bApplyScreenShake = true
+				bIsHeavyAttack = true
+				m_MovementSpeedCurve = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 367.272705
+							m_flSlopeIncoming = 191.498413
+							m_flSlopeOutgoing = 191.498413
+						},
+						{
+							x = 0.191789
+							y = 404.0
+							m_flSlopeIncoming = 1802.960327
+							m_flSlopeOutgoing = 1802.960327
+						},
+						{
+							x = 0.350938
+							y = 1000.0
+							m_flSlopeIncoming = -2519.4104
+							m_flSlopeOutgoing = -2519.4104
+						},
+						{
+							x = 0.352144
+							y = 0.0
+							m_flSlopeIncoming = -829180.125
+							m_flSlopeOutgoing = -829180.125
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 0.4, 1000.0 ]
+				}
+				m_flCooldownOnMiss = 1.0
+				m_flCooldownOnHit = 1.0
+				m_flMovementAcc = 3000.0
+				m_flKnockUpStrength = 200.0
+			}
+		}
+		m_HUDPanel = 
+		{
+			m_vecButtonHints = 
+			[
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleeRejuvinator"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_rejuv"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_RejuvenatorOwned"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_strContext = "rejuv_owned"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleePowerUp"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_powerup"
+				},
+				{
+					m_strContext = "melee_heavy_punch_destroy"
+					m_nButton1 = "IN_WEAPON1"
+					m_strLocToken = "#AbilityButtonHint_MeleeHeavyPunchDestroy"
+					m_eHintSide = "EButtonSide_Bottom"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleePickUp"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_pickup"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleeChangeTeam"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_change_team"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleeIdolCashIn"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_idol_cashin"
+				},
+				{
+					m_strLocToken = "#AbilityButtonHint_MeleeIdolPickup"
+					m_eHintSide = "EButtonSide_Bottom"
+					m_nButton1 = "IN_WEAPON1"
+					m_strContext = "melee_idol_pickup"
+				},
+			]
+		}
+		m_flBackDashDodgeDist = 50.0
+		m_flSideDashDodgeDist = 45.0
+		m_strAG2SourceName = "melee"
+		m_HeavyTurnSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 1.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 0.0
+				},
+				{
+					x = 0.6
+					y = 1.0
+					m_flSlopeIncoming = -0.847226
+					m_flSlopeOutgoing = -0.847226
+				},
+				{
+					x = 0.879035
+					y = 0.255258
+					m_flSlopeIncoming = -2.668987
+					m_flSlopeOutgoing = -2.668987
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.01 ]
+			m_vDomainMaxs = [ 1.0, 1.0 ]
+		}
+		m_flHeavyMeleeMaxTurnRate = 700.0
+		m_flCameraMaxTurnRate = 720.0
+		m_cameraSequenceMiss = 
+		{
+			m_vecDistanceOperations = 
+			[
+				{
+					m_flApproachTarget = 20.0
+					m_flApproachSpeed = 350.0
+					m_flApproachAcceleration = 700.0
+					m_bValuesAreRelative = true
+					m_bApproachDefault = true
+				},
+			]
+			m_vecFOVOperations = 
+			[
+				{
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bValuesAreRelative = true
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 7.0
+					m_flLerpDuration = 0.2
+					m_flLerpBias = 0.687
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Spring"
+					m_flSpringStrength = 10.0
+				},
+			]
+		}
+		m_cameraSequenceHighSpeedHoldStart = 
+		{
+			m_vecFOVOperations = 
+			[
+				{
+					m_flMaintainDuration = 0.1
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_flLerpDuration = 0.6
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 17.0
+					m_flLerpBias = 0.723
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_flDelay = 0.1
+					m_bValuesAreRelative = true
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Spring"
+				},
+			]
+			m_vecDistanceOperations = 
+			[
+				{
+					m_flMaintainDuration = 0.1
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_bLerpEndAtDefault = false
+					m_flLerpEnd = 20.0
+					m_flLerpDuration = 0.7
+					m_flLerpBias = 0.784
+					m_eCameraOperation = "k_ECameraOp_Lerp"
+					m_bValuesAreRelative = true
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Spring"
+				},
+			]
+		}
+		m_strEffectsAttachName = "heavy_melee_fx"
+	}
+	ability_chessmaster_movechesspiece = 
+	{
+		_class = "ability_chessmaster_movechesspiece"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "0.15"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = ""
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "50m"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0.1"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			MinBishopMoveDuration = 
+			{
+				m_strValue = "0.15"
+			}
+			BishopMoveSpeed = 
+			{
+				m_strValue = "1500"
+			}
+			Damage = 
+			{
+				m_strValue = "40"
+			}
+			Radius = 
+			{
+				m_strValue = "3m"
+			}
+			TossUpSpeed = 
+			{
+				m_strValue = "300"
+			}
+			TossBackSpeed = 
+			{
+				m_strValue = "450"
+			}
+			AltCastRange = 
+			{
+				m_strValue = "20m"
+			}
+			HitboxActiveDuration = 
+			{
+				m_strValue = "1"
+			}
+			TossUpDuration = 
+			{
+				m_strValue = "0.4"
+			}
+			QueenMoveDuration = 
+			{
+				m_strValue = "0.75"
+			}
+			MinAllyMoveDuration = 
+			{
+				m_strValue = "1"
+			}
+			AllyMoveSpeed = 
+			{
+				m_strValue = "700"
+			}
+			AirSpeedMax = 
+			{
+				m_strValue = "100"
+			}
+			FallSpeedMax = 
+			{
+				m_strValue = "10"
+			}
+			AirDrag = 
+			{
+				m_strValue = "0.3"
+			}
+			KingMoveSpeed = 
+			{
+				m_strValue = "400"
+			}
+			MinKingMoveDuration = 
+			{
+				m_strValue = "1"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION | MODIFIER_STATE_SHOOTING_DISABLED"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 25000.0
+				m_Spread = 0.5
+				m_StandingSpread = 1.5
+				m_flScatterYawScale = 1
+				m_flShootingUpSpreadPenalty = 0
+				m_flZoomMoveSpeedPercent = 1.0
+				m_flShootMoveSpeedPercent = 0.75
+				m_flHorizontalPunch = 0
+				m_flVerticalPunch = 0
+				m_flRecoilRecoverySpeed = 10.0
+				m_VerticallRecoil = 
+				{
+					m_Range = [ -0.2, 0.2 ]
+					m_flBurstSlope = 0.0
+					m_flBurstExponent = 0.0
+					m_flBurstConstant = 0.0
+				}
+				m_HorizontalRecoil = 
+				{
+					m_Range = [ -0.1, 0.1 ]
+					m_flBurstExponent = 0.0
+				}
+				m_flRecoilSpeed = 1
+				m_flZoomFOV = 35.0
+				m_flZoomFOV_Relative = -40.0
+				m_flDamageFalloffStartRange = 787
+				m_flDamageFalloffEndRange = 2264.0
+				m_flRange = 7000.0
+				m_flBulletLifetime = 2
+				m_flDamageFalloffStartScale = 1.0
+				m_flDamageFalloffEndScale = 0.1
+				m_flDamageFalloffBias = 0.5
+				m_iBullets = 1
+				m_flCycleTime = 0.3
+				m_reloadDuration = 1.5
+				m_iClipSize = 10
+				m_iBurstShotCount = 1
+				m_flIntraBurstCycleTime = 0
+				m_flBulletGravityScale = 0.8
+				m_flBulletRadius = 3
+				m_flBulletReflectScale = 0
+				m_flBulletReflectAmount = 1
+				m_flBulletInheritShooterVelocityScale = 0
+				m_szBulletTravelTracerParticle = resource_name:"particles/weapon_fx/default_tracer.vpcf"
+				m_szMuzzleFlashEffectName = resource_name:"particles/weapon_fx/default_muzzle_flash.vpcf"
+				m_strBulletWhizSound = soundevent:"Base.Bullet.Whizby"
+				m_flBulletWhizDistance = 80
+				m_mapImpactEffects = 
+				{
+					default = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+						m_strSound = soundevent:"Default.BulletImpact"
+					}
+					flesh = 
+					{
+						m_strDecal = ""
+						m_strParticle = resource_name:"particles/blood_impact/blood_impact_red_01.vpcf"
+					}
+					concrete = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+					}
+					solidmetal = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+					}
+					wood = 
+					{
+						m_strDecal = "Impact.Wood"
+						m_strParticle = resource_name:"particles/impact_fx/impact_wood.vpcf"
+					}
+					wood_plank = 
+					{
+						m_strDecal = "Impact.Wood"
+						m_strParticle = resource_name:"particles/impact_fx/impact_wood.vpcf"
+					}
+					portals = 
+					{
+						m_strDecal = "Impact.Concrete"
+						m_strParticle = resource_name:"particles/impact_fx/impact_spark_spray_large.vpcf"
+						m_strSound = soundevent:""
+					}
+				}
+				m_flCritBonusStart = 1.65
+				m_flCritBonusEnd = 1.65
+				m_flCritBonusStartRange = 500.0
+				m_flCritBonusEndRange = 1500.0
+				m_flCritBonusAgainstNPCs = 0
+				m_flShootSpreadPenaltyPerShot = 0.0
+				m_flShootSpreadPenaltyDecayDelay = 0.0
+				m_flShootSpreadPenaltyDecay = 2.0
+				m_flRecoilShotIndexRecoveryTimeFactor = 0.25
+				m_bCanZoom = true
+				m_strWeaponImpactEffect = resource_name:"particles/weapon_fx/default_tracer_impact.vpcf"
+				m_flReloadMoveSpeed = "10000"
+				m_strLocalPlayerBulletImpactSound = soundevent:"Player.Bullet.Impact.Hero"
+				m_strLocalPlayerBulletImpactHeavySound = soundevent:"Player.Bullet.Impact.Hero.Large"
+				m_strReloadSound = soundevent:"Player.WpnReload.Shared.Clip.Out"
+				m_strReloadEndSound = soundevent:"Player.WpnReload.Shared.Clip.In"
+				m_strZoomInSound = soundevent:"Default.ZoomIn"
+				m_strZoomOutSound = soundevent:"Default.ZoomOut"
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"weapon_alternative_rmb_activate",
+		]
+		m_bStartTrained = true
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_ON_BUTTON_RELEASE"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_DISPLAYS_DAMAGE_IMPACT | CITADEL_ABILITY_BEHAVIOR_EQUAL_UNIT_TARGET_PRIORITY | CITADEL_ABILITY_BEHAVIOR_TARGET_THROUGH_WALLS | CITADEL_ABILITY_BEHAVIOR_CANNOT_CANCEL_DURING_CHANNEL | CITADEL_ABILITY_BEHAVIOR_USE_INSTANT_CAST_UNIT_TARGET_UI | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SLIDE_ON_CAST"
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED | MODIFIER_STATE_IS_ASLEEP"
+		m_eAbilityType = "EAbilityType_Weapon"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/chess/chessmaster_movepiece.psd"
+		m_nAbilityPointsCost = 1
+		m_HUDPanel = 
+		{
+			m_vecHUDElements = 
+			[
+				{
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_UNIT_TARGET"
+					m_strContext = "unit_target"
+				},
+			]
+			m_vecButtonHints = 
+			[
+				{
+					m_strLocToken = "#AbilityButtonHint_MovePieceCancel"
+					m_strContext = "cancel_move"
+					m_nButton1 = "IN_ATTACK"
+					m_nPriority = 1
+					m_bIsHintShownWhileOnCooldown = true
+					m_eHintSide = "EButtonSide_Bottom"
+				},
+				{
+					m_nButton1 = "IN_ATTACK2"
+					m_bButton1IsSlot = false
+					m_nPriority = 1
+					m_strContext = "confirm_move"
+					m_bShowAbilityIcon = false
+					m_bIsHintShownWhileOnCooldown = true
+					m_strLocToken = "#AbilityButtonHint_MovePieceConfirm"
+					m_eHintSide = "EButtonSide_Bottom"
+				},
+			]
+		}
+		m_iUpdateTime = 0
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_HERO_ENEMY | CITADEL_UNIT_TARGET_ALL_FRIENDLY"
+		m_strCastSound = soundevent:""
+		m_vecAbilityUpgrades = [  ]
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = "#ability_chessmaster_movechesspiece_desc"
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "MoveDistance"
+								},
+							]
+						},
+					]
+				},
+			]
+		}
+		m_MoveModifier = subclass:
+		{
+			_class = "modifier_movechesspiece"
+			_my_subclass_name = "move"
+			m_MovementCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = 0.0
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 1.0
+						y = 1.0
+						m_flSlopeIncoming = -0.089115
+						m_flSlopeOutgoing = -0.089115
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+				]
+				m_vDomainMins = [ 0.0, 0.0 ]
+				m_vDomainMaxs = [ 1.0, 1.0 ]
+			}
+			m_strParticleEffect = resource_name:""
+			m_PathParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_bishop.vpcf"
+			m_VerticalOffsetCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = 0.0
+						m_flSlopeIncoming = 13.20603
+						m_flSlopeOutgoing = 13.20603
+					},
+					{
+						x = 0.458881
+						y = 6.06
+						m_flSlopeIncoming = -5.87752
+						m_flSlopeOutgoing = -5.87752
+					},
+					{
+						x = 1.0
+						y = 0.0
+						m_flSlopeIncoming = -48.506577
+						m_flSlopeOutgoing = -48.506577
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+				]
+				m_vDomainMins = [ 0.0, 0.0 ]
+				m_vDomainMaxs = [ 1.0, 60.0 ]
+			}
+			m_LeanCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = -2.840012
+						m_flSlopeIncoming = -558.6086
+						m_flSlopeOutgoing = -558.6086
+					},
+					{
+						x = 0.15911
+						y = -91.71999
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 0.885479
+						y = -97.77999
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 0.94
+						y = 0.0
+						m_flSlopeIncoming = 1793.4521
+						m_flSlopeOutgoing = 1793.4521
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_MIRROR"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+				]
+				m_vDomainMins = [ 0.0, -120.0 ]
+				m_vDomainMaxs = [ 1.0, 120.0 ]
+			}
+			m_RadiusParticle = resource_name:""
+			m_bStopOnFirstHit = false
+			m_bDamageWhileMoving = false
+			m_cameraSequenceCreated = 
+			{
+				m_vecDistanceOperations = 
+				[
+					{
+						m_eCameraOperation = "k_ECameraOp_Spring"
+						m_bSpringToDefault = false
+						m_flSpringTarget = 200.0
+						m_bValuesAreRelative = true
+						m_flSpringStrength = 30.0
+					},
+					{
+						m_eCameraOperation = "k_ECameraOp_Maintain"
+					},
+				]
+			}
+			m_sStartSound = soundevent:"Chessmaster.Bishop.Move.Start"
+			m_sAmbientLoopingSound = soundevent:"Chessmaster.Bishop.Move.Lp"
+			m_nEnabledStateMask = ""
+			m_sExpiredSound = soundevent:"Chessmaster.Bishop.Move.End"
+			m_BishopPathParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_bishop.vpcf"
+			m_bDebug = true
+			m_bTryToGroundDuring = true
+			m_bMoveOnDiagonal = false
+			m_AdditionalPathParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_ally_additional.vpcf"
+		}
+		m_MoveAllyModifier = subclass:
+		{
+			_class = "modifier_movechesspiece"
+			_my_subclass_name = "moveally"
+			m_MovementCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = 0.0
+						m_flSlopeIncoming = 0.776296
+						m_flSlopeOutgoing = 0.776296
+					},
+					{
+						x = 1.0
+						y = 1.0
+						m_flSlopeIncoming = 0.241647
+						m_flSlopeOutgoing = 0.241647
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+				]
+				m_vDomainMins = [ 0.0, 0.0 ]
+				m_vDomainMaxs = [ 1.0, 1.0 ]
+			}
+			m_strParticleEffect = resource_name:""
+			m_PathParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_ally.vpcf"
+			m_VerticalOffsetCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = 0.0
+						m_flSlopeIncoming = 296.2222
+						m_flSlopeOutgoing = 296.2222
+					},
+					{
+						x = 0.197745
+						y = 34.34
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 0.430533
+						y = 0.0
+						m_flSlopeIncoming = -371.47632
+						m_flSlopeOutgoing = -116.20546
+					},
+					{
+						x = 0.464325
+						y = 2.02
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 0.498117
+						y = 0.0
+						m_flSlopeIncoming = -101.14624
+						m_flSlopeOutgoing = 730.99927
+					},
+					{
+						x = 0.750929
+						y = 72.72
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 1.0
+						y = 0.0
+						m_flSlopeIncoming = -739.76465
+						m_flSlopeOutgoing = -739.76465
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_FREE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_FREE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+				]
+				m_vDomainMins = [ 0.0, 0.0 ]
+				m_vDomainMaxs = [ 1.0, 80.0 ]
+			}
+			m_LeanCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = -0.710003
+						m_flSlopeIncoming = -139.65215
+						m_flSlopeOutgoing = -139.65215
+					},
+					{
+						x = 0.15911
+						y = -22.929998
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 0.505
+						y = -0.709997
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 0.774847
+						y = -22.929998
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 0.94
+						y = 0.0
+						m_flSlopeIncoming = 138.84122
+						m_flSlopeOutgoing = 138.84122
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_MIRROR"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_MIRROR"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+				]
+				m_vDomainMins = [ 0.0, -30.0 ]
+				m_vDomainMaxs = [ 1.0, 30.0 ]
+			}
+			m_RadiusParticle = resource_name:""
+			m_bStopOnFirstHit = false
+			m_bDamageWhileMoving = false
+			m_cameraSequenceCreated = 
+			{
+				m_vecDistanceOperations = 
+				[
+					{
+						m_eCameraOperation = "k_ECameraOp_Spring"
+						m_bSpringToDefault = false
+						m_flSpringTarget = 120.0
+						m_bValuesAreRelative = true
+						m_flSpringStrength = 5.0
+					},
+					{
+						m_eCameraOperation = "k_ECameraOp_Maintain"
+					},
+				]
+				m_vecTargetPosOperations = 
+				[
+					{
+						m_eCameraOperation = "k_ECameraOp_Lag"
+						m_flDelay = 0.0
+						m_flLagMinDuration = 1.0
+						m_flLagTime = 1.0
+						m_flLagSpringStrength = 10.0
+						m_bIncreaseSpringStrengthToKeepTargetOnScreen = false
+					},
+				]
+			}
+			m_bImmuneDuringMove = true
+			m_sAmbientLoopingSound = soundevent:"Chessmaster.Knight.Move.Lp"
+			m_sStartSound = soundevent:"Chessmaster.Knight.Move.Start"
+			m_bMoveOnRightTriangle = true
+			m_bDebug = false
+			m_AdditionalPathParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_ally_additional.vpcf"
+			m_strLandingSound = soundevent:"Chessmaster.Knight.Move.Impact"
+			m_sExpiredSound = soundevent:"Chessmaster.Knight.Move.End"
+			m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
+			m_sLocalizationName = "MODIFIER_STATE_INVULNERABLE"
+			m_nEnabledStateMask = "MODIFIER_STATE_DO_NOT_DRAW_MODEL"
+		}
+		m_flTargetingConeAngle = 25.0
+		m_bMoveAllFixedDistance = false
+		m_vecPossibleClasses = 
+		[
+			"CLASS_CHESSPIECE_QUEEN",
+			"CLASS_CHESSPIECE_BISHOP",
+		]
+		m_TargetingPreviewParticle = resource_name:""
+		m_CooldownModifier = subclass:
+		{
+			_class = "modifier_movechesspiececooldown"
+			_my_subclass_name = "cooldown"
+			m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+			m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_CASTER_ONLY"
+			m_nEnabledStateMask = "MODIFIER_STATE_CHESSMASTER_COOLDOWN"
+			m_bIsHidden = false
+			m_strParticleStatusEffect = resource_name:""
+			m_nStatusEffectPriority = 0
+			m_StatusEffectParticle = resource_name:"particles/status_fx/status_fx_chessmaster_dark_piece.vpcf"
+			m_sAmbientLoopingSound = soundevent:"Chessmaster.Bishop.Timeout"
+			m_sExpiredSound = soundevent:""
+			m_strCooldownCompleteSound = soundevent:"Chessmaster.Bishop.Timeout.End"
+			m_strCooldownCompleteQueenSound = soundevent:"Chessmaster.Queen.Timeout.End"
+		}
+		m_MoveQueenModifier = subclass:
+		{
+			_class = "modifier_movechesspiece"
+			_my_subclass_name = "movequeen"
+			m_MovementCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = 0.0
+						m_flSlopeIncoming = 3.008553
+						m_flSlopeOutgoing = 3.008553
+					},
+					{
+						x = 1.0
+						y = 1.0
+						m_flSlopeIncoming = 0.393982
+						m_flSlopeOutgoing = 0.393982
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+				]
+				m_vDomainMins = [ 0.0, 0.0 ]
+				m_vDomainMaxs = [ 1.0, 1.0 ]
+			}
+			m_VerticalOffsetCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = 0.0
+						m_flSlopeIncoming = 1027.0555
+						m_flSlopeOutgoing = 1027.0555
+					},
+					{
+						x = 0.504215
+						y = 335.60223
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 0.984697
+						y = 0.0
+						m_flSlopeIncoming = -2243.478
+						m_flSlopeOutgoing = -2243.478
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+				]
+				m_vDomainMins = [ 0.0, 0.0 ]
+				m_vDomainMaxs = [ 1.0, 350.0 ]
+			}
+			m_LeanCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = 0.0
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 0.504368
+						y = 0.0
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+					{
+						x = 1.0
+						y = 0.0
+						m_flSlopeIncoming = 0.0
+						m_flSlopeOutgoing = 0.0
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+						m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+					},
+				]
+				m_vDomainMins = [ 0.0, 0.0 ]
+				m_vDomainMaxs = [ 1.0, 5.0 ]
+			}
+			m_sAmbientLoopingSound = soundevent:""
+			m_sStartSound = soundevent:"Chessmaster.Queen.Move.Start"
+			m_PathParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move.vpcf"
+		}
+		m_projectileInfo = 
+		{
+			m_bHideWarningParticle = true
+		}
+		m_flSpawnPositionNavMeshSearchRange = 500.0
+		m_cameraSequenceChannelStart = 
+		{
+			m_strToken = ""
+			m_bIsEmpty = false
+			m_nPriority = 1
+			m_vecDistanceOperations = [  ]
+			m_vecFOVOperations = [  ]
+			m_vecTargetPosOperations = [  ]
+			m_vecVertOffsetOperations = [  ]
+			m_vecHorizOffsetOperations = [  ]
+		}
+		m_TargetPreviewQueenParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_preview_queen.vpcf"
+		m_TargetPreviewAllyParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_preview_knight.vpcf"
+		m_TargetPreviewBishopParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_preview_bishop.vpcf"
+		m_bDebug = false
+		m_mapChessAbilities = 
+		{
+			kChessPiece_Type_Bishop = "ability_chessmaster_throwbishop"
+			kChessPiece_Type_Knight = "ability_chessmaster_knightbuff"
+			kChessPiece_Type_Queen = "ability_chessmaster_queen"
+		}
+		m_cHoverOutlineColor = [ 0, 234, 234 ]
+		m_flHoverOutlineWidth = 6.0
+		m_strMoveBishopSound = soundevent:"Chessmaster.Bishop.Move.Cast"
+		m_strMoveKnightSound = soundevent:"Chessmaster.Knight.Move.Cast"
+		m_strMoveQueenSound = soundevent:""
+		m_CooldownPlayerModifier = subclass:
+		{
+			_class = "modifier_movechesspiececooldown"
+			_my_subclass_name = "cooldownplayer"
+			m_bIsHidden = true
+			m_nEnabledStateMask = "MODIFIER_STATE_CHESSMASTER_COOLDOWN"
+		}
+		m_flHoverTime = 1.5
+		m_flPassiveTargetingConeAngle = 7.0
+		m_flPassiveTargetingHalfWidth = 20.0
+		m_flPassiveTargetingNearbyCasterRadius = 700.0
+		m_flPassiveTargetingNearbyCrosshairRadius = 700.0
+		m_bCreateSatVolume = true
+		m_MoveKingModifier = subclass:
+		{
+			_class = "modifier_movechesspiece"
+			_my_subclass_name = "moveking"
+			m_bIsHidden = false
+			m_PathParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_king.vpcf"
+			m_MovementCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = 0.0
+						m_flSlopeIncoming = 0.307801
+						m_flSlopeOutgoing = 0.307801
+					},
+					{
+						x = 1.0
+						y = 1.0
+						m_flSlopeIncoming = 0.480309
+						m_flSlopeOutgoing = 0.480309
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+				]
+				m_vDomainMins = [ 0.0, 0.0 ]
+				m_vDomainMaxs = [ 1.0, 1.0 ]
+			}
+			m_VerticalOffsetCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = 0.0
+						m_flSlopeIncoming = 438.7432
+						m_flSlopeOutgoing = 438.7432
+					},
+					{
+						x = 0.58897
+						y = 84.16665
+						m_flSlopeIncoming = 17.820425
+						m_flSlopeOutgoing = 17.820425
+					},
+					{
+						x = 1.0
+						y = 0.0
+						m_flSlopeIncoming = -579.9498
+						m_flSlopeOutgoing = -579.9498
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+				]
+				m_vDomainMins = [ 0.0, 0.0 ]
+				m_vDomainMaxs = [ 1.0, 100.0 ]
+			}
+			m_cameraSequenceCreated = 
+			{
+				m_vecDistanceOperations = 
+				[
+					{
+						m_eCameraOperation = "k_ECameraOp_Spring"
+						m_bSpringToDefault = false
+						m_flSpringTarget = 120.0
+						m_bValuesAreRelative = true
+						m_flSpringStrength = 5.0
+					},
+					{
+						m_eCameraOperation = "k_ECameraOp_Maintain"
+					},
+				]
+				m_vecTargetPosOperations = 
+				[
+					{
+						m_eCameraOperation = "k_ECameraOp_Lag"
+						m_flDelay = 0.0
+						m_flLagMinDuration = 1.0
+						m_flLagTime = 1.0
+						m_flLagSpringStrength = 10.0
+						m_bIncreaseSpringStrengthToKeepTargetOnScreen = false
+					},
+				]
+				m_vecVertOffsetOperations = [  ]
+			}
+			m_nEnabledStateMask = "MODIFIER_STATE_DO_NOT_DRAW_MODEL"
+			m_sLocalizationName = "MODIFIER_STATE_INVULNERABLE"
+			m_bMoveOnRightTriangle = false
+			m_bImmuneDuringMove = true
+			m_sStartSound = soundevent:""
+			m_sAmbientLoopingSound = soundevent:"Chessmaster.King.Move.Lp"
+			m_sExpiredSound = soundevent:"Chessmaster.King.Move.End"
+			m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
+		}
+		m_strMoveKingSound = soundevent:"Chessmaster.Knight.Move.Cast"
+		m_TargetPreviewKingParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_preview_king.vpcf"
+		m_strAG2SourceName = "ability_chessmaster_movepiece"
+		m_strAG2CastingAction = "chessmaster_movepiece_casting"
+		m_strAG2ChannelingAction = "chessmaster_movepiece_channeling"
+		m_strAG2CastCompletedAction = "chessmaster_movepiece_cast_completed"
+		m_strSelectPieceSound = soundevent:"Chessmaster.Piece.Move.Select"
+	}
+	ability_chessmaster_throwbishop = 
+	{
+		_class = "ability_chessmaster_throwbishop"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "12"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "20m"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0.2"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			Radius = 
+			{
+				m_strValue = "3.5m"
+				m_bIsHidden = true
+			}
+			ExpireDistance = 
+			{
+				m_strValue = "80m"
+				m_strCSSClass = "distance"
+			}
+			MoveDistance = 
+			{
+				m_strValue = "12m"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "movesf"
+					m_flStatScale = 0.23
+					m_eSpecificStatScaleType = "ELevelUpBoons"
+					m_vecScalingStats = 
+					[
+						"ELevelUpBoons",
+						"ETechRange",
+					]
+				}
+			}
+			MaxPieces = 
+			{
+				m_strValue = "1"
+				m_strStreetBrawlValue = ""
+			}
+			BulletResist = 
+			{
+				m_eProvidedPropertyType = "MODIFIER_VALUE_BULLET_ARMOR_DAMAGE_RESIST"
+				m_strValue = "25"
+			}
+			TechResist = 
+			{
+				m_strValue = "50"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_RESIST"
+			}
+			DebuffDuration = 
+			{
+				m_strValue = "0"
+			}
+			TickInterval = 
+			{
+				m_strValue = "0.15"
+			}
+			FadingSlowPercent = 
+			{
+				m_strValue = "30"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SPEED_SLOW_PERCENT"
+				m_strCSSClass = "slow"
+				m_subclassScaleFunction = subclass:
+				{
+				}
+			}
+			SlowDuration = 
+			{
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					m_flStatScale = 1.0
+					_my_subclass_name = "slowduration"
+				}
+				m_strCSSClass = "slow"
+				m_strValue = "3"
+			}
+			MaxStacks = 
+			{
+				m_strValue = "0"
+			}
+			TechArmorDamageReductionPerStack = 
+			{
+				m_strValue = "0"
+			}
+			StackDuration = 
+			{
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					m_flStatScale = 1.0
+					_my_subclass_name = "stackdurationsf"
+				}
+			}
+			BonusFireRate = 
+			{
+				m_strValue = "0"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_FIRE_RATE"
+			}
+			CurrentCooldownRefundPercent = 
+			{
+				m_strValue = "50"
+			}
+			RecastWindow = 
+			{
+				m_strValue = "0"
+			}
+			ImpactDamage = 
+			{
+				m_strValue = "70"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					_my_subclass_name = "movedamagesf"
+					m_flStatScale = 2.0
+				}
+			}
+			ImpactRadius = 
+			{
+				m_strValue = "2.5m"
+			}
+			MoveCooldown = 
+			{
+				m_strValue = "3"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					m_eSpecificStatScaleType = "ETechCooldown"
+					_my_subclass_name = "cooldonwsf"
+				}
+			}
+			Damage = 
+			{
+				m_strValue = "25"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					m_bFunctionDisabled = false
+					m_flStatScale = 0.64
+					_my_subclass_name = "tiledamagesf"
+				}
+			}
+			AuraHeight = 
+			{
+				m_strValue = "50m"
+			}
+			GroundAuraLingerDuration = 
+			{
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "auralingerdurationsf"
+				}
+			}
+			PulseDamage = 
+			{
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					m_flStatScale = 0.8
+				}
+			}
+			DPS = 
+			{
+				m_strValue = "30"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					m_flStatScale = 0.7
+					_my_subclass_name = "dpssf"
+				}
+			}
+			DPSTickInterval = 
+			{
+				m_strValue = "0.25"
+			}
+			GroundAuraHeight = 
+			{
+				m_strValue = "4m"
+			}
+			DashSlowPercent = 
+			{
+				m_strValue = "-25"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_GROUND_DASH_REDUCTION_PERCENT"
+			}
+			TechArmorDamageReduction = 
+			{
+				m_strValue = "0"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_RESIST_REDUCTION"
+			}
+			MultiHitPenaltyPercentage = 
+			{
+				m_strValue = "25"
+			}
+			TileSteps = 
+			{
+				m_strValue = "2"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_range_rounded"
+					_my_subclass_name = "steps"
+				}
+			}
+			BishopGunDamagePercent = 
+			{
+				m_strValue = "0"
+			}
+			BishopTimemBetweenShots = 
+			{
+				m_strValue = "0.05"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 2400.0
+				m_flBulletSpeedRandomFactor = 0.0
+				m_flBulletGravityScale = 0.0
+				m_flBulletRadius = 20.0
+				m_flBulletRadiusVsWorld = 1.5
+				m_flBulletLifetime = 0.0
+				m_flBulletInheritShooterVelocityScale = 0.0
+				m_szBulletTravelTracerParticle = resource_name:"particles/weapon_fx/chessmaster/chessmaster_bishop_tracer.vpcf"
+				m_mapImpactEffects = 
+				{
+					default = 
+					{
+					}
+				}
+				m_strBulletLoopingSound = soundevent:""
+				m_strShootSound = soundevent:""
+				m_flPenetrationPercent = 0.0
+				m_bUseBulletGravityScaleCurve = true
+				m_flBulletGravityScaleOverDistance = 
+				{
+					m_spline = 
+					[
+						{
+							x = 0.0
+							y = 0.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 138.4013
+							y = 0.0
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+						{
+							x = 703.54
+							y = 0.0
+							m_flSlopeIncoming = 0.002592
+							m_flSlopeOutgoing = 0.002592
+						},
+						{
+							x = 717.0229
+							y = 1.5
+							m_flSlopeIncoming = 0.00506
+							m_flSlopeOutgoing = 0.00506
+						},
+						{
+							x = 1000.0
+							y = 1.5
+							m_flSlopeIncoming = 0.0
+							m_flSlopeOutgoing = 0.0
+						},
+					]
+					m_tangents = 
+					[
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+						{
+							m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+							m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+						},
+					]
+					m_vDomainMins = [ 0.0, 0.0 ]
+					m_vDomainMaxs = [ 1000.0, 1.5 ]
+				}
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"signature_base",
+		]
+		m_bStartTrained = false
+		m_nAbilityPointsCost = 0
+		m_nAbillityUnlocksCost = 1
+		m_eAbilityType = "EAbilityType_Signature"
+		m_iMaxLevel = 1
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED"
+		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
+		m_strAbilityOffCooldownSound = soundevent:""
+		m_strAbilityChargeReadySound = soundevent:""
+		m_skillshotMissParticle = resource_name:"particles/abilities/skillshot_default_miss_owner.vpcf"
+		m_flBossDamageScale = 0.5
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_NONE"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_PRESS"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_PROJECTILE | CITADEL_ABILITY_BEHAVIOR_DISPLAYS_DAMAGE_IMPACT | CITADEL_ABILITY_BEHAVIOR_CAN_SET_QUICK_CAST | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SLIDE_ON_CAST"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/chess/chessmaster_bishop.psd"
+		m_strCastSound = soundevent:"Chessmaster.Bishop.Cast"
+		m_strSubCastUICSSClass = "subcast_chessmaster_bishop"
+		m_vecAbilityUpgrades = 
+		[
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "MoveDistance"
+						m_strBonus = "5m"
+					},
+					{
+						m_strPropertyName = "FadingSlowPercent"
+						m_strBonus = "15"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "MaxPieces"
+						m_strBonus = "1"
+					},
+					{
+						m_strPropertyName = "RecastWindow"
+						m_strBonus = "8"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "TechArmorDamageReductionPerStack"
+						m_strBonus = "-2.5"
+					},
+					{
+						m_strPropertyName = "MaxStacks"
+						m_strBonus = "10"
+					},
+					{
+						m_strPropertyName = "StackDuration"
+						m_strBonus = "10"
+					},
+					{
+						m_strPropertyName = "TileSteps"
+						m_strBonus = "1"
+					},
+				]
+			},
+		]
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = "#ability_chessmaster_throwbishop_desc"
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "FadingSlowPercent"
+								},
+								{
+									m_strImportantProperty = "ImpactDamage"
+								},
+							]
+							m_strPropertiesTitleLocString = ""
+						},
+						{
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "Damage"
+								},
+							]
+							m_strPropertiesTitleLocString = "#ability_header_on_square"
+						},
+					]
+					m_vecBasicProperties = 
+					[
+						"TileSteps",
+						"MoveDistance",
+						"SlowDuration",
+						"MoveCooldown",
+						"TechArmorDamageReductionPerStack",
+						"StackDuration",
+						"MaxStacks",
+					]
+				},
+			]
+			m_vecAdditionalHeaderProperties = [  ]
+		}
+		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_CIRCLE"
+		m_deploymentInfo = 
+		{
+			m_bRequiresUpNormal = false
+			m_bGroundCheck = false
+			m_bPlaceFlat = false
+			m_flFlatYawOffset = 0.0
+			m_bPlaceNormalToSurface = false
+			m_bPointTrace = false
+			m_bCheckPlayerFit = false
+			m_flModelVerticalPlacementScaleOffset = 0.0
+			m_bDownCheckIgnoreLos = false
+			m_previewModel = resource_name:""
+			m_previewParticle = resource_name:""
+			m_strPreviewParticleEffectConfig = ""
+			m_strExraBodygroup = ""
+			m_strPreviewClass = "citadel_deployable_preview"
+			m_flPreviewModelScale = 1.0
+			m_flGroundCheckHeightOffset = -1.0
+			m_flGroundCheckHeightOffsetDown = -1.0
+		}
+		m_eChessPieceType = "kChessPiece_Type_Bishop"
+		m_flPopUpSpeed = 0.0
+		m_SummonModifier = subclass:
+		{
+			_class = "modifier_base"
+			_my_subclass_name = "base"
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+			[
+				"BulletResist",
+				"TechResist",
+			]
+			m_sAmbientLoopingSound = soundevent:""
+			m_sExpiredSound = soundevent:""
+			m_nEnabledStateMask = "MODIFIER_STATE_GLOW_THROUGH_WALLS_TO_PROVIDER"
+		}
+		m_flVerticalOffset = 5.0
+		m_projectileInfo = 
+		{
+			m_flGravityScale = 1.5
+			m_flSpeed = 1400.0
+			m_particle = resource_name:"particles/abilities/chessmaster/chessmaster_bishop_cast_projectile.vpcf"
+			m_bHideWarningParticle = true
+			m_nBehaviors = "PBF_DetonateOnHitTarget | PBF_DetonateOnHitWorld | PBF_DetonateOnHitIgnoreArmingTime | PBF_DetonateOnLifetimeExpire"
+			m_flPhysicsRadius = 1.5
+			m_flUpSpeed = 0.0
+			m_flTriggerRadius = 1.5
+			m_flVerticalAimBias = 10.0
+			m_LoopingSound = soundevent:"Chessmaster.Bishop.Cast.Proj.Lp"
+		}
+		m_flCylinderTraceRadius = 5.0
+		m_flCylinderTraceLength = 10000.0
+		m_BishopSpawnSound = soundevent:"Chessmaster.Bishop.Impact"
+		m_bDebugTrace = false
+		m_MoveBuffModifier = subclass:
+		{
+			_class = "modifier_chessmaster_movingpiecedamage"
+			_my_subclass_name = "movingpiecedamage"
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = [  ]
+			m_strImpactSound = soundevent:"Chessmaster.Bishop.Move.Hit"
+			m_ImpactParticle = resource_name:"particles/abilities/chessmaster/chessmaster_bishop_move_impact.vpcf"
+			m_bDropGroundAuras = false
+			m_GroundAuraModifier = subclass:
+			{
+				_class = "modifier_chessmaster_groundtile"
+				_my_subclass_name = "groundaura"
+				m_modifierProvidedByAura = subclass:
+				{
+					_class = "modifier_base"
+					_my_subclass_name = "target"
+					m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+					[
+						"TechArmorDamageReduction",
+					]
+					m_nEnabledStateMask = "MODIFIER_STATE_CHESSMASTER_BISHOP_TARGET"
+					m_strParticleEffect = resource_name:"particles/abilities/chessmaster/chessmaster_threat_debuff.vpcf"
+				}
+				m_GroundParticle = resource_name:"particles/abilities/chessmaster/chessmaster_bishop_aura.vpcf"
+				m_bDestroyOnParentMove = true
+				m_bDestroyOnParentLost = true
+				m_bDoDPS = false
+				m_iAuraSearchType = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+				m_DamageParticle = resource_name:"particles/abilities/chessmaster/chessmaster_bishop_aura_attack.vpcf"
+				m_bDetonate = true
+				m_GroundExplosionParticle = resource_name:"particles/abilities/chessmaster/chessmaster_rook_root_endcap.vpcf"
+				m_bWaitUntilParentOffCooldown = true
+				m_SlowModifier = subclass:
+				{
+					_class = "modifier_diminishing_slow"
+					_my_subclass_name = "dimslow"
+					m_nEnabledStateMask = "MODIFIER_STATE_SLOWED | MODIFIER_STATE_CHESSMASTER_BISHOP_TARGET"
+				}
+				m_GroundWarningParticle = resource_name:""
+				m_flActivationDelay = -1.0
+				m_strAuraHitNPCSound = soundevent:"Chessmaster.Bishop.Aura.Hit.NPC"
+				m_strActivationSound = soundevent:"Chessmaster.Bishop.Aura.Activate"
+			}
+			m_bAlignOnDiagonal = true
+		}
+		m_SpawnParticle = resource_name:"particles/abilities/chessmaster/chessmaster_bishop_create.vpcf"
+		m_flRecallOnMeleeRange = -1.0
+		m_mapDependentAbilities = 
+		{
+			ability_chessmaster_throwbishop_trigger = 
+			{
+			}
+		}
+		m_EnemyAuraModifier = subclass:
+		{
+			_class = "modifier_chessmaster_damageaura"
+			_my_subclass_name = "aura"
+			m_modifierProvidedByAura = subclass:
+			{
+				_my_subclass_name = "slow"
+				_class = "modifier_base"
+				m_vecAutoRegisterModifierValueFromAbilityPropertyName = [  ]
+				m_nEnabledStateMask = ""
+				m_bIsHidden = true
+				m_sAmbientLoopingSound = soundevent:""
+			}
+			m_strParticleEffect = resource_name:""
+			m_AuraParticle = resource_name:"particles/abilities/chessmaster/chessmaster_bishop_aura.vpcf"
+			m_strPulseSound = soundevent:""
+			m_bShouldPulseOnAuraCreation = true
+			m_flPulseDelay = 0.5
+			m_LaserParticle = resource_name:"particles/abilities/chessmaster/chessmaster_bishop_aura_attack.vpcf"
+			m_sAmbientLoopingSound = soundevent:""
+			m_strBeamLoopSound = soundevent:""
+			m_strBeamLoopStartSound = soundevent:""
+			m_strBeamHitSound = soundevent:""
+			m_bShouldPulseOnlyOffCooldown = true
+			m_DamageParticle = resource_name:"particles/abilities/chessmaster/chessmaster_bishop_aura_dmg.vpcf"
+			m_bShouldDamageOnAura = true
+			m_TargetModifier = subclass:
+			{
+				_class = "modifier_base"
+				_my_subclass_name = "target"
+				m_bIsHidden = true
+				m_nEnabledStateMask = "MODIFIER_STATE_CHESSMASTER_BISHOP_TARGET"
+				m_strParticleEffect = resource_name:""
+			}
+		}
+		_not_pickable = 1
+		m_strSecondaryStatName = "ability_chessmaster_throwbishop_dot"
+		m_strHitConfirmationSound = soundevent:"Chessmaster.Bishop.Aura.Hit"
+		m_StackingModifier = subclass:
+		{
+			_class = "modifier_chessmaster_stackingspiritresistreduction"
+			_my_subclass_name = "stack"
+			m_bIsHidden = false
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = [  ]
+			m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_CASTER_ONLY"
+			m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+			m_strParticleEffect = resource_name:"particles/abilities/chessmaster/chessmaster_bishop_impact_debuff.vpcf"
+		}
+		m_strSelectedSound = soundevent:"Chessmaster.Bishop.Select"
+		m_strUnselectedSound = soundevent:"Chessmaster.Bishop.Unselect"
+		m_strSelectedLoopSound = soundevent:"Chessmaster.Bishop.Select.Lp"
+		m_HUDPanel = 
+		{
+			m_vecHUDElements = 
+			[
+				{
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS"
+					m_strContext = "recast"
+					m_Layout = "file://{resources}/layout/ability_hud_elements/element_progress_bar_text.vxml"
+					m_Style = resource_name:"panorama/styles/ability_hud_elements/abilities_chessmaster.vcss"
+					m_bReverseProgress = false
+				},
+			]
+		}
+		m_BishopRecallSound = soundevent:"Chessmaster.Bishop.Recall"
+		m_bShouldCreateEnemyAura = false
+		m_BlackPieceModifier = subclass:
+		{
+			_class = "modifier_base"
+			_my_subclass_name = "black"
+			m_nEnabledStateMask = "MODIFIER_STATE_CHESSMASTER_BLACKPIECE"
+		}
+		m_AOEPreviewParticleOverride = resource_name:"particles/abilities/chessmaster/chessmaster_bishop_range_finder_preview.vpcf"
+		m_bUseSatShapesOnPreview = false
+		m_strAG2SourceName = "ability_chessmaster_throwbishop"
+		m_strAG2CastingAction = "chessmaster_throwbishop_casting"
+		m_strAG2ChannelingAction = "chessmaster_throwbishop_channeling"
+		m_strAG2CastCompletedAction = "chessmaster_throwbishop_cast_completed"
+		m_SlowModifier = subclass:
+		{
+			_class = "modifier_diminishing_slow"
+			_my_subclass_name = "slow"
+		}
+		m_strBishopExpireSound = soundevent:"Chessmaster.Bishop.Expire"
+	}
+	ability_chessmaster_throwbishop_trigger = 
+	{
+		_class = "citadel_base_trigger_ability"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"ability_trigger_base",
+		]
+		m_eAbilityType = "EAbilityType_Innate"
+		m_bStartTrained = true
+		m_iMaxLevel = 1
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_NON_COMBAT | CITADEL_ABILITY_BEHAVIOR_CAN_CAST_ON_ZIPLINE | CITADEL_ABILITY_BEHAVIOR_TRIGGER | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SLIDE_ON_CAST"
+		m_eAbilitySpectatePriority = "CITADELTV_ABILITY_SPECTATE_PRIORITY_HIGH"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/chess/chessmaster_undobishop.psd"
+		m_HUDPanel = 
+		{
+			m_vecButtonHints = 
+			[
+				{
+					m_nButton1 = "IN_ATTACK"
+					m_strContext = "channel"
+					m_strLocToken = "#ability_chessmaster_movepiece_confirm_tip"
+					m_nPriority = 1
+					m_bIsHintShownWhileOnCooldown = false
+					m_eHintSide = "EButtonSide_Right"
+				},
+			]
+			m_vecHUDElements = null
+		}
+		m_iUpdateTime = 0
+		m_strCastSound = soundevent:""
+		m_vecAbilityUpgrades = [  ]
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = ""
+					m_vecAbilityPropertiesBlock = [  ]
+				},
+			]
+		}
+		m_flTargetingConeAngle = 60.0
+		m_flMinCancelTime = 2.0
+		m_AbilityToTrigger = "ability_chessmaster_throwbishop"
+	}
+	ability_chessmaster_knightbuff = 
+	{
+		_class = "ability_chessmaster_knightbuff"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "25"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "28m"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0.15"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			MoveDistance = 
+			{
+				m_strValue = "13m"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "movesf"
+					m_flStatScale = 0.23
+					m_eSpecificStatScaleType = "ELevelUpBoons"
+					m_vecScalingStats = 
+					[
+						"ELevelUpBoons",
+						"ETechRange",
+					]
+				}
+			}
+			TechResist = 
+			{
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_RESIST"
+				m_strCSSClass = "tech_armor_up"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					m_bFunctionDisabled = false
+					m_eSpecificStatScaleType = "ELevelUpBoons"
+					m_flStatScale = 0.5
+					_my_subclass_name = "techresistsf"
+				}
+			}
+			BuffDuration = 
+			{
+				m_strValue = "7"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "buffdurationsf"
+				}
+			}
+			CombatBarrier = 
+			{
+				m_strValue = "80"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_BARRIER_HEALTH"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					m_flStatScale = 0.8
+					_my_subclass_name = "shield"
+					m_eSpecificStatScaleType = "ETechPower"
+				}
+			}
+			SlowResistancePercent = 
+			{
+				m_strValue = "0"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SLOW_RESISTANCE"
+				m_strCSSClass = "move_speed"
+			}
+			RemoveDebuffs = 
+			{
+				m_strValue = "0"
+			}
+			BonusMoveSpeed = 
+			{
+			}
+			Stamina = 
+			{
+				m_strValue = "1"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_STAMINA"
+			}
+			StaminaCooldown = 
+			{
+				m_strValue = "0"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_STAMINA_REGEN_PER_SECOND_PERCENTAGE"
+			}
+			Damage = 
+			{
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					_my_subclass_name = null
+				}
+			}
+			SlowPercent = 
+			{
+				m_strValue = "0"
+			}
+			SlowDuration = 
+			{
+				m_strValue = "0"
+			}
+			TossDuration = 
+			{
+				m_strValue = "0"
+			}
+			TossUpSpeed = 
+			{
+				m_strValue = "0"
+			}
+			MoveCooldown = 
+			{
+				m_strValue = "10"
+			}
+			TargetingConeAngle = 
+			{
+				m_strValue = "30"
+			}
+			MaxPieces = 
+			{
+				m_strValue = "1"
+			}
+			BonusTargetRadius = 
+			{
+				m_strValue = "0"
+			}
+			SelfMoveDistance = 
+			{
+				m_strValue = "7m"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					m_eSpecificStatScaleType = "ELevelUpBoons"
+					m_bFunctionDisabled = false
+					m_flStatScale = 0.14
+					m_vecScalingStats = 
+					[
+						"ELevelUpBoons",
+						"ETechRange",
+					]
+					_my_subclass_name = "selfcastmovedistance"
+				}
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"signature_base",
+		]
+		m_bStartTrained = false
+		m_nAbilityPointsCost = 0
+		m_nAbillityUnlocksCost = 1
+		m_eAbilityType = "EAbilityType_Signature"
+		m_iMaxLevel = 1
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED"
+		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
+		m_strAbilityOffCooldownSound = soundevent:""
+		m_strAbilityChargeReadySound = soundevent:""
+		m_skillshotMissParticle = resource_name:"particles/abilities/skillshot_default_miss_owner.vpcf"
+		m_flBossDamageScale = 1.0
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_UNIT"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_PRESS"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_PROJECTILE | CITADEL_ABILITY_BEHAVIOR_PROJECTILE_PASS_THROUGH_WORLD | CITADEL_ABILITY_BEHAVIOR_ALLOW_SELF_CAST | CITADEL_ABILITY_BEHAVIOR_USE_INSTANT_CAST_UNIT_TARGET_UI | CITADEL_ABILITY_BEHAVIOR_CAN_SET_QUICK_CAST | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SLIDE_ON_CAST"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_HERO_FRIENDLY | CITADEL_UNIT_TARGET_MINION_FRIENDLY"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/chess/chessmaster_knight.psd"
+		m_strCastSound = soundevent:"Chessmaster.Knight.Cast"
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = "#ability_chessmaster_knightbuff_desc"
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "CombatBarrier"
+								},
+								{
+									m_strImportantProperty = "SlowResistancePercent"
+								},
+								{
+									m_strImportantProperty = "Stamina"
+								},
+							]
+						},
+					]
+					m_vecBasicProperties = 
+					[
+						"SelfMoveDistance",
+						"MoveDistance",
+						"SlowDuration",
+						"SlowPercent",
+						"BuffDuration",
+					]
+				},
+			]
+		}
+		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_CONE"
+		m_projectileInfo = 
+		{
+			m_nBehaviors = ""
+			m_flGravityScale = 0.0
+			m_flFriction = 0.0
+			m_flElasticity = 0.0
+			m_flSpeed = 3500.0
+			m_flUpSpeed = 100.0
+			m_flVerticalAimBias = 0.0
+			m_eProjectileShape = "Sphere"
+			m_flPhysicsRadius = 1.5
+			m_flBulletOnlyTriggerRadius = 0.0
+			m_vecCapsulePhysicsCenter1 = [ 0.0, 0.0, 0.0 ]
+			m_vecCapsulePhysicsCenter2 = [ 0.0, 0.0, 0.0 ]
+			m_flCapsulePhysicsRadius = 1.5
+			m_vecCapsuleTriggerCenter1 = [ 0.0, 0.0, 0.0 ]
+			m_vecCapsuleTriggerCenter2 = [ 0.0, 0.0, 0.0 ]
+			m_flCapsuleTriggerRadius = 1.5
+			m_particle = resource_name:"particles/abilities/chessmaster/chessmaster_knight_buff_projectile.vpcf"
+			m_bHideWarningParticle = true
+			m_warningParticle = resource_name:""
+			m_customModel = resource_name:""
+			m_flProjectileModelScale = 1.0
+			m_HitSound = soundevent:""
+			m_HitTargetSound = soundevent:""
+			m_HitWorldSound = soundevent:""
+			m_DetonateSound = soundevent:""
+			m_LoopingSound = soundevent:""
+			m_WarningSound = soundevent:""
+			m_flTrackingDampingCoefficient = 0.0
+			m_flTrackingDuration = 0.0
+			m_flTrackingStartTime = 0.0
+			m_flTrackingEndTime = 0.0
+			m_AutoProjectileModifier = subclass:
+			{
+			}
+		}
+		m_HUDPanel = 
+		{
+		}
+		m_mapDependentAbilities = 
+		{
+		}
+		m_strSubCastUICSSClass = "subcast_chessmaster_knight"
+		m_vecAbilityUpgrades = 
+		[
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCooldown"
+						m_strBonus = "-8"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "Stamina"
+						m_strBonus = "1"
+						m_eUpgradeType = "EAddToBase"
+					},
+					{
+						m_strPropertyName = "CombatBarrier"
+						m_strBonus = "80"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "MaxPieces"
+						m_strBonus = "1"
+					},
+					{
+						m_strPropertyName = "BonusTargetRadius"
+						m_strBonus = "20m"
+					},
+					{
+						m_strPropertyName = "RemoveDebuffs"
+						m_strBonus = "1"
+					},
+				]
+			},
+		]
+		m_flTargetingConeHalfWidth = 10.0
+		m_flTargetingConeAngle = 30.0
+		m_AuraModifier = subclass:
+		{
+			_class = ""
+			_my_subclass_name = "aura"
+		}
+		m_MoveBuffModifier = subclass:
+		{
+			_class = "modifier_base"
+			_my_subclass_name = "buff"
+			m_bIsHidden = true
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+			[
+				"CombatBarrier",
+			]
+			m_sStartSound = soundevent:""
+		}
+		m_BuffModifier = subclass:
+		{
+			_class = "modifier_chessmaster_buffally_buff"
+			_my_subclass_name = "rookbuff"
+			m_bIsHidden = true
+			m_strParticleEffect = resource_name:"particles/abilities/chessmaster/chessmaster_knight_buff.vpcf"
+			m_vecRenderAttributes = [  ]
+			m_nEnabledStateMask = "MODIFIER_STATE_CHESSMASTER_BUFFALLY | MODIFIER_STATE_CHESSMASTER_PIECE"
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+			[
+				"SlowResistancePercent",
+				"StaminaCooldown",
+			]
+			m_sStartSound = soundevent:"Player.Barrier.Activate"
+			m_sExpiredSound = soundevent:"Chessmaster.Knight.Buff.End"
+		}
+		m_SlowModifier = subclass:
+		{
+			_class = "modifier_diminishing_slow"
+			_my_subclass_name = "dimslow"
+		}
+		m_ExplosionParticle = resource_name:"particles/abilities/tengu/tengu_stone_form_stomp.vpcf"
+		m_strHitConfirmationSound = soundevent:"Chessmaster.Knight.Buff.Start"
+		m_strSelectedSound = soundevent:"Chessmaster.Knight.Select"
+		m_strUnselectedSound = soundevent:"Chessmaster.Knight.Unselect"
+		m_strSelectedLoopSound = soundevent:"Chessmaster.Knight.Select.Lp"
+		m_strAG2SourceName = "ability_chessmaster_knightbuff"
+		m_strAG2CastingAction = "chessmaster_knightbuff_casting"
+		m_strAG2ChannelingAction = "chessmaster_knightbuff_channeling"
+		m_strAG2CastCompletedAction = "chessmaster_knightbuff_cast_completed"
+		m_eTargettingLOSCheck = "Bounds_IgnoreObscureBlockers"
+	}
+	ability_chessmaster_forkpiece = 
+	{
+		_class = "ability_chessmaster_forkpiece"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "33"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0.25"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			TossUpSpeed = 
+			{
+				m_strValue = "220"
+			}
+			MoveDistance = 
+			{
+				m_strValue = "12m"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "movesf"
+					m_flStatScale = 0.23
+					m_eSpecificStatScaleType = "ELevelUpBoons"
+					m_vecScalingStats = 
+					[
+						"ELevelUpBoons",
+						"ETechRange",
+					]
+				}
+			}
+			Damage = 
+			{
+				m_strValue = "50"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					m_flStatScale = 1.3
+					_my_subclass_name = "damagesf"
+				}
+			}
+			DebuffDuration = 
+			{
+				m_strValue = "0"
+			}
+			TossBackSpeed = 
+			{
+				m_strValue = "300"
+			}
+			FireRateSlow = 
+			{
+				m_strValue = "0"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_FIRE_RATE_SLOW"
+			}
+			TossDuration = 
+			{
+				m_strValue = "1"
+				m_subclassScaleFunction = subclass:
+				{
+				}
+			}
+			SummonHealth = 
+			{
+				m_strValue = "100"
+			}
+			SlowDuration = 
+			{
+				m_strValue = "0"
+			}
+			SlowPercent = 
+			{
+				m_strValue = "0"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SPEED_SLOW_PERCENT"
+				m_subclassScaleFunction = subclass:
+				{
+				}
+				m_strCSSClass = "slow"
+			}
+			DetonationDelay = 
+			{
+				m_strValue = "0.25"
+			}
+			GroundAuraDuration = 
+			{
+				m_strLocTokenOverride = "KnightAuraDuration"
+				m_strValue = "0"
+				m_strCSSClass = "duration"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "auradurationsf"
+				}
+			}
+			GroundAuraSpacing = 
+			{
+				m_strValue = "3m"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_range"
+					_my_subclass_name = "spacingsf"
+				}
+			}
+			GroundAuraRadius = 
+			{
+				m_strLocTokenOverride = "KnightAuraRadius"
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_range"
+					m_flStatScale = 1.0
+					_my_subclass_name = "auraradiussf"
+				}
+			}
+			GroundAuraLingerDuration = 
+			{
+				m_strValue = "0.5"
+			}
+			GroundAuraHeight = 
+			{
+				m_strValue = "2m"
+			}
+			BonusMoveSpeedPercent = 
+			{
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					m_flStatScale = 0.1
+					_my_subclass_name = "speedsf"
+				}
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SPEED_MAX_PERCENT"
+				m_strCSSClass = "move_speed"
+			}
+			BonusFireRate = 
+			{
+				m_strValue = "0"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_FIRE_RATE"
+			}
+			SlideScale = 
+			{
+				m_strValue = "100"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SLIDE_DISTANCE_SCALE"
+			}
+			ImmobilizeDuration = 
+			{
+				m_strValue = "1"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "hexdurationsf"
+				}
+				m_strCSSClass = "duration"
+			}
+			SelfPushForce = 
+			{
+				m_strValue = "0"
+			}
+			StunDuration = 
+			{
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "stunduration"
+				}
+			}
+			CurrentHealthPercent = 
+			{
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					m_eSpecificStatScaleType = "ETechArmorDamageReduction"
+					m_flStatScale = 0.0
+				}
+			}
+			BuffDuration = 
+			{
+				m_strValue = "0"
+			}
+			CombatBarrier = 
+			{
+				m_strValue = "100"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_BARRIER_HEALTH"
+			}
+			AirDrag = 
+			{
+				m_strValue = "0.3"
+			}
+			AirSpeedMax = 
+			{
+				m_strValue = "100"
+			}
+			FallSpeedMax = 
+			{
+				m_strValue = "10"
+			}
+			MaxReflectCount = 
+			{
+				m_strValue = "1"
+			}
+			MaxTriggers = 
+			{
+				m_strValue = "1"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 3000.0
+				m_flBulletRadiusVsWorld = 1.0
+				m_szBulletTravelTracerParticle = resource_name:"particles/abilities/chessmaster/chessmaster_knight_projectile.vpcf"
+				m_mapImpactEffects = 
+				{
+					default = 
+					{
+					}
+				}
+				m_flBulletGravityScale = 0.0
+				m_flBulletRadius = 88.0
+				m_flPenetrationPercent = 100.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"signature_base",
+		]
+		m_bStartTrained = false
+		m_nAbilityPointsCost = 0
+		m_nAbillityUnlocksCost = 1
+		m_eAbilityType = "EAbilityType_Signature"
+		m_iMaxLevel = 1
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED"
+		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
+		m_strAbilityOffCooldownSound = soundevent:""
+		m_strAbilityChargeReadySound = soundevent:""
+		m_skillshotMissParticle = resource_name:"particles/abilities/skillshot_default_miss_owner.vpcf"
+		m_flBossDamageScale = 1.0
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_PROJECTILE | CITADEL_ABILITY_BEHAVIOR_DISPLAYS_DAMAGE_IMPACT | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SLIDE_ON_CAST"
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/chess/chessmaster_rook.psd"
+		m_strCastSound = soundevent:"Chessmaster.Rook.Cast"
+		m_vecAbilityUpgrades = 
+		[
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "FireRateSlow"
+						m_strBonus = "25"
+					},
+					{
+						m_strPropertyName = "DebuffDuration"
+						m_strBonus = "5"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "CurrentHealthPercent"
+						m_strBonus = "5"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCooldown"
+						m_strBonus = "-12"
+						m_eUpgradeType = "EAddToBase"
+					},
+					{
+						m_strPropertyName = "ImmobilizeDuration"
+						m_strBonus = "0.5"
+					},
+					{
+						m_strPropertyName = "MaxReflectCount"
+						m_strBonus = "1"
+					},
+				]
+			},
+		]
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = "#ability_chessmaster_forkpiece_desc"
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "Damage"
+								},
+								{
+									m_strImportantProperty = "CurrentHealthPercent"
+								},
+							]
+						},
+						{
+							m_strPropertiesTitleLocString = "#ability_header_on_enemy_hit"
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "SlowPercent"
+								},
+								{
+									m_strImportantProperty = "StatusEffectImmobilize"
+									m_strStatusEffectValue = "ImmobilizeDuration"
+									m_bShowPropertyValue = true
+								},
+							]
+						},
+					]
+					m_vecBasicProperties = 
+					[
+						"DebuffDuration",
+						"BonusFireRate",
+						"FireRateSlow",
+						"SlowDuration",
+						"MaxReflectCount",
+					]
+				},
+			]
+			m_vecAdditionalHeaderProperties = 
+			[
+				"ForkDistance",
+			]
+		}
+		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_LINE"
+		m_projectileInfo = 
+		{
+			m_nBehaviors = "PBF_DetonateOnHitWorld"
+			m_flSpeed = 850.0
+			m_flUpSpeed = 100.0
+			m_vecCapsulePhysicsCenter1 = [ 0.0, 0.0, 0.0 ]
+			m_vecCapsulePhysicsCenter2 = [ 0.0, 0.0, 0.0 ]
+			m_flCapsulePhysicsRadius = 1.5
+			m_vecCapsuleTriggerCenter1 = [ 0.0, 0.0, 80.0 ]
+			m_vecCapsuleTriggerCenter2 = [ 0.0, 0.0, 0.0 ]
+			m_flCapsuleTriggerRadius = 70.0
+			m_particle = resource_name:"particles/abilities/chessmaster/chessmaster_knight_projectile.vpcf"
+			m_bHideWarningParticle = true
+			m_warningParticle = resource_name:""
+			m_customModel = resource_name:""
+			m_flProjectileModelScale = 1.0
+			m_HitSound = soundevent:""
+			m_HitTargetSound = soundevent:""
+			m_HitWorldSound = soundevent:""
+			m_DetonateSound = soundevent:""
+			m_LoopingSound = soundevent:"Chessmaster.Rook.Projectile.Lp"
+			m_WarningSound = soundevent:""
+			m_flTrackingDampingCoefficient = 0.0
+			m_flTrackingDuration = 0.0
+			m_flTrackingStartTime = 0.0
+			m_flTrackingEndTime = 0.0
+			m_AutoProjectileModifier = subclass:
+			{
+			}
+			m_flTriggerRadius = 70.0
+			m_flPhysicsRadius = 1.5
+			m_eProjectileShape = "Capsule"
+		}
+		m_HUDPanel = 
+		{
+			m_vecButtonHints = 
+			[
+				{
+					m_nButton1 = "IN_ATTACK2"
+					m_strLocToken = "#ability_chessmaster_submenu_tip_cancel"
+				},
+			]
+		}
+		m_flMinPitch = -80.0
+		m_flMaxPitch = 80.0
+		m_flTraceRadius = 0.5
+		m_flDistanceAboveGround = 15.0
+		m_flFloatDownRate = 15.0
+		m_flClimbHeight = 15.0
+		m_flStepDownHeight = 4.0
+		m_mapDependentAbilities = 
+		{
+			ability_chessmaster_forkpiece_trigger = 
+			{
+			}
+		}
+		m_DebuffModifier = subclass:
+		{
+			_class = "modifier_base"
+			_my_subclass_name = "debuff"
+			m_bIsHidden = true
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+			[
+				"FireRateSlow",
+			]
+		}
+		m_SlowModifier = subclass:
+		{
+			_class = "modifier_slow_base"
+			_my_subclass_name = "slow"
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+			[
+				"SlowPercent",
+			]
+		}
+		m_strHitConfirmationSound = soundevent:"Chessmaster.Rook.Hit"
+		m_ForkParticle = resource_name:"particles/abilities/chessmaster/chessmaster_knight_fork.vpcf"
+		m_AuraEnemyModifier = subclass:
+		{
+			_class = ""
+			_my_subclass_name = ""
+		}
+		m_AuraAllyModifier = subclass:
+		{
+			_class = ""
+			_my_subclass_name = ""
+		}
+		m_HexModifier = subclass:
+		{
+			_class = "modifier_citadel_root"
+			m_bIsHidden = false
+			_my_subclass_name = "hex"
+			m_CursedModel = 
+			{
+				m_ModelName = resource_name:"models/abilities/rabbit/rabbit.vmdl"
+				m_nPriority = 2
+			}
+			m_flModelScale = 0.9
+			m_strParticleEffect = resource_name:"particles/abilities/chessmaster/chessmaster_rook_root.vpcf"
+			m_cameraSequenceCreated = 
+			{
+				m_vecDistanceOperations = [  ]
+			}
+			m_bStopMovementPosZ = false
+			m_bStopMovementXY = false
+			m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
+			m_sLocalizationName = "modifier_citadel_root"
+			m_nEnabledStateMask = "MODIFIER_STATE_CHESSMASTER_BISHOP_TARGET"
+		}
+		m_bOnlyDebuffOnFork = false
+		m_bShouldDropEnemyAura = false
+		m_flDeployGap = 75.0
+		m_strSecondaryStatName = ""
+		m_flReverseTraceDistance = 100.0
+		m_BuffModifier = subclass:
+		{
+			_class = "modifier_base"
+			_my_subclass_name = "buff"
+			m_bIsHidden = true
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+			[
+				"CombatBarrier",
+			]
+		}
+		m_strCastDelaySound = soundevent:"Chessmaster.Rook.Cast.Delay"
+		m_strExpireSound = soundevent:"Chessmaster.Rook.Expire"
+		m_bAllowMultihitOnReverse = true
+		m_strAG2SourceName = "ability_chessmaster_forkpiece"
+		m_strAG2CastingAction = "chessmaster_forkpiece_casting"
+		m_strAG2ChannelingAction = "chessmaster_forkpiece_channeling"
+		m_strAG2CastCompletedAction = "chessmaster_forkpiece_cast_completed"
+		m_strForkSound = soundevent:"Chessmaster.Rook.Fork"
+		m_strReflectSound = soundevent:"Chessmaster.Rook.Redirect"
+		m_ImmunityModifier = subclass:
+		{
+			_class = "modifier_base"
+			_my_subclass_name = "immune"
+			m_eDebuffType = "MODIFIER_DEBUFF_NO"
+			m_bIsHidden = true
+			m_nEnabledStateMask = "MODIFIER_STATE_CHESSMASTER_ROOK_IMMUNE"
+		}
+		m_flImmunityDuration = 0.75
+	}
+	ability_chessmaster_forkpiece_trigger = 
+	{
+		_class = "citadel_base_trigger_ability"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "0.35"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "35m"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "2"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0.5"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			MoveDistance = 
+			{
+				m_strValue = "20m"
+			}
+			MinMoveDuration = 
+			{
+				m_strValue = "0.2"
+			}
+			MaxMoveDuration = 
+			{
+				m_strValue = "1"
+			}
+			Damage = 
+			{
+				m_strValue = "60"
+			}
+			Radius = 
+			{
+				m_strValue = "1m"
+			}
+			TossUpSpeed = 
+			{
+				m_strValue = "300"
+			}
+			TossBackSpeed = 
+			{
+				m_strValue = "300"
+			}
+			AltCastRange = 
+			{
+				m_strValue = "20m"
+			}
+			HitboxActiveDuration = 
+			{
+				m_strValue = "1"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION | MODIFIER_STATE_SHOOTING_DISABLED"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_SHOOTING_DISABLED"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"ability_trigger_base",
+		]
+		m_eAbilityType = "EAbilityType_Innate"
+		m_bStartTrained = true
+		m_iMaxLevel = 1
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_NON_COMBAT | CITADEL_ABILITY_BEHAVIOR_TRIGGER | CITADEL_ABILITY_BEHAVIOR_ALLOW_ALT_CAST | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SLIDE_ON_CAST"
+		m_eAbilitySpectatePriority = "CITADELTV_ABILITY_SPECTATE_PRIORITY_HIGH"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/chess/chessmaster_fork.psd"
+		m_HUDPanel = 
+		{
+			m_vecButtonHints = 
+			[
+				{
+					m_nButton1 = "IN_ATTACK"
+					m_strContext = "channel"
+					m_strLocToken = "#ability_chessmaster_movepiece_confirm_tip"
+					m_nPriority = 1
+					m_bIsHintShownWhileOnCooldown = false
+					m_eHintSide = "EButtonSide_Right"
+				},
+			]
+			m_vecHUDElements = null
+		}
+		m_iUpdateTime = 0
+		m_strCastSound = soundevent:""
+		m_vecAbilityUpgrades = 
+		[
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCooldown"
+						m_strBonus = "0"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCooldown"
+						m_strBonus = "0"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCooldown"
+						m_strBonus = "0"
+					},
+				]
+			},
+		]
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = "#ability_chessmaster_leapchesspiece_desc"
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_vecAbilityProperties = [  ]
+						},
+					]
+				},
+			]
+		}
+		m_flTargetingConeAngle = 60.0
+		m_flMinCancelTime = 0.15
+		m_AbilityToTrigger = "ability_chessmaster_forkpiece"
+	}
+	ability_chessmaster_queen = 
+	{
+		_class = "ability_chessmaster_queen"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "210"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "30m"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0.75"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+			TossUpSpeed = 
+			{
+				m_strValue = "600"
+			}
+			StunDuration = 
+			{
+				m_strValue = "1.25"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "stundurationsf"
+				}
+			}
+			MoveDistance = 
+			{
+				m_strValue = "16m"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "movesf"
+					m_flStatScale = 0.23
+					m_eSpecificStatScaleType = "ELevelUpBoons"
+					m_vecScalingStats = 
+					[
+						"ELevelUpBoons",
+						"ETechRange",
+					]
+				}
+			}
+			Damage = 
+			{
+				m_strValue = "120"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					m_flStatScale = 1.4
+					_my_subclass_name = "damagesf"
+				}
+			}
+			MaxPieces = 
+			{
+				m_strValue = "1"
+			}
+			QueenBonusMoves = 
+			{
+				m_strValue = "2"
+			}
+			GroundAuraDuration = 
+			{
+				m_strLocTokenOverride = "SquareDuration"
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "groundauradurationsf"
+				}
+			}
+			GroundAuraHeight = 
+			{
+				m_strValue = "1m"
+			}
+			SlowPercent = 
+			{
+				m_strValue = "15"
+				m_eProvidedPropertyType = "MODIFIER_VALUE_MOVEMENT_SPEED_SLOW_PERCENT"
+				m_strCSSClass = "slow"
+			}
+			MoveCooldown = 
+			{
+				m_strValue = "5"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					m_bFunctionDisabled = false
+					m_eSpecificStatScaleType = "ETechCooldown"
+					_my_subclass_name = "movecooldownsf"
+				}
+			}
+			MaxStacks = 
+			{
+				m_strValue = "3"
+			}
+			ImmobilizeDuration = 
+			{
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					_my_subclass_name = "immobdurationsf"
+				}
+			}
+			ExpireDistance = 
+			{
+				m_strValue = "80m"
+			}
+			LiftHeight = 
+			{
+				m_strValue = "4m"
+			}
+			CheckmateThreshold = 
+			{
+				m_strValue = "0"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					m_bFunctionDisabled = false
+					m_flStatScale = 0.0
+					_my_subclass_name = "checkmate"
+					m_eSpecificStatScaleType = "ELevelUpBoons"
+				}
+				m_strCSSClass = "health"
+			}
+			Height = 
+			{
+				m_strValue = "10m"
+			}
+			AuraLingerDuration = 
+			{
+				m_strValue = "0.15"
+			}
+			AuraHeight = 
+			{
+				m_strValue = "8m"
+			}
+			DPS = 
+			{
+				m_strValue = "50"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_damage"
+					m_flStatScale = 0.7
+					_my_subclass_name = "dpssf"
+				}
+			}
+			DPSTickInterval = 
+			{
+				m_strValue = "0.5"
+			}
+			PulseDamage = 
+			{
+				m_strValue = "0"
+			}
+			TileSteps = 
+			{
+				m_strValue = "3"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_range_rounded"
+					_my_subclass_name = "stepsf"
+				}
+			}
+			SlowDuration = 
+			{
+				m_strValue = "1.5"
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_tech_duration"
+					m_flStatScale = 1.0
+					_my_subclass_name = "slowdurationsf"
+				}
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"ultimate_base",
+		]
+		m_bStartTrained = false
+		m_nAbilityPointsCost = 0
+		m_nAbillityUnlocksCost = 1
+		m_eAbilityType = "EAbilityType_Ultimate"
+		m_iMaxLevel = 1
+		m_bitsInterruptingStates = "MODIFIER_STATE_STUNNED"
+		m_PreviewPathParticle = resource_name:"particles/generic/generic_arc.vpcf"
+		m_strAbilityOffCooldownSound = soundevent:""
+		m_strAbilityChargeReadySound = soundevent:""
+		m_skillshotMissParticle = resource_name:"particles/abilities/skillshot_default_miss_owner.vpcf"
+		m_flBossDamageScale = 1.0
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_GROUND"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_PRESS"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_DISPLAYS_DAMAGE_IMPACT | CITADEL_ABILITY_BEHAVIOR_TARGET_THROUGH_WALLS | CITADEL_ABILITY_BEHAVIOR_CAN_SET_QUICK_CAST"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/chess/chessmaster_queen.psd"
+		m_strSubCastUICSSClass = "subcast_chessmaster_queen"
+		m_vecAbilityUpgrades = 
+		[
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "AbilityCooldown"
+						m_strBonus = "-40"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "CheckmateThreshold"
+						m_strBonus = "200"
+					},
+					{
+						m_strPropertyName = "CheckmateThreshold"
+						m_strBonus = "5"
+						m_eUpgradeType = "EAddToScale"
+						m_eScaleStatFilter = "ELevelUpBoons"
+					},
+					{
+						m_strPropertyName = "SlowPercent"
+						m_strBonus = "15"
+					},
+				]
+			},
+			{
+				m_vecPropertyUpgrades = 
+				[
+					{
+						m_strPropertyName = "TileSteps"
+						m_strBonus = "1"
+						m_eUpgradeType = "EAddToBase"
+						m_eScaleStatFilter = "ETechPower"
+					},
+					{
+						m_strPropertyName = "QueenBonusMoves"
+						m_strBonus = "2"
+					},
+				]
+			},
+		]
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = "#ability_chessmaster_queen_desc_active"
+					m_vecAbilityPropertiesBlock = 
+					[
+						{
+							m_vecAbilityProperties = 
+							[
+								{
+									m_strImportantProperty = "Damage"
+								},
+								{
+									m_strImportantProperty = "CheckmateThreshold"
+								},
+								{
+									m_strImportantProperty = "StatusEffectStun"
+									m_strStatusEffectValue = "StunDuration"
+									m_bShowPropertyValue = true
+								},
+							]
+						},
+					]
+					m_vecBasicProperties = 
+					[
+						"TileSteps",
+						"MoveDistance",
+						"MoveCooldown",
+						"QueenBonusMoves",
+						"SlowPercent",
+						"SlowDuration",
+					]
+				},
+			]
+		}
+		m_eAbilityTargetingShape = "CITADEL_ABILITY_TARGETING_SHAPE_CIRCLE"
+		m_projectileInfo = 
+		{
+			m_flGravityScale = 1.0
+			m_flSpeed = 1900.0
+			m_particle = resource_name:"particles/abilities/chessmaster/chessmaster_knight_projectile.vpcf"
+			m_flPhysicsRadius = 1.5
+			m_flTriggerRadius = 120.0
+			m_bHideWarningParticle = true
+		}
+		m_flTraceRadius = 3.0
+		m_flDistanceAboveGround = 10.0
+		m_flFloatDownRate = 10.0
+		m_flClimbHeight = 64.0
+		m_flStepDownHeight = 640.0
+		m_AOEExplodeParticle = resource_name:"particles/abilities/chessmaster/chessmaster_queen_stomp_impact.vpcf"
+		m_AOEExplodeSound = soundevent:"Chessmaster.Queen.Impact"
+		m_HUDPanel = 
+		{
+			m_vecHUDElements = 
+			[
+				{
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS"
+					m_strContext = "channel"
+					m_Layout = "file://{resources}/layout/ability_hud_elements/element_progress_bar_text.vxml"
+					m_Style = resource_name:"panorama/styles/ability_hud_elements/abilities_chessmaster.vcss"
+				},
+				{
+					m_eType = "CITADEL_ABILITY_HUD_ELEMENT_TYPE_PROGRESS"
+					m_strContext = "cast"
+					m_Layout = "file://{resources}/layout/ability_hud_elements/element_progress_bar_text.vxml"
+					m_Style = resource_name:"panorama/styles/ability_hud_elements/abilities_chessmaster.vcss"
+				},
+			]
+		}
+		m_AutoIntrinsicModifiers = [  ]
+		m_nAbilityTargetTypes = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+		m_strHitConfirmationSound = soundevent:"Chessmaster.Queen.Hit"
+		m_cameraSequenceCastStart = 
+		{
+			m_nPriority = 1
+			m_vecDistanceOperations = 
+			[
+				{
+					m_bValuesAreRelative = true
+					m_flApproachTarget = 100.0
+				},
+				{
+					m_eCameraOperation = "k_ECameraOp_Maintain"
+				},
+			]
+		}
+		m_AreaWarningEffect = resource_name:"particles/abilities/chessmaster/chessmaster_queen_warning_cast.vpcf"
+		m_mapDependentAbilities = 
+		{
+			ability_chessmaster_movechesspiece = 
+			{
+				m_eFlags = "AssignAsAltFire"
+			}
+			ability_chessmaster_queen_trigger = 
+			{
+			}
+		}
+		m_LiftModifier = subclass:
+		{
+			_class = "modifier_chessmaster_queen_holdinplace"
+			_my_subclass_name = "lift"
+			m_flDampingFactor = 0.25
+			m_flParallelTossSpeed = 0.0
+			m_flUpTossSpeed = 0.0
+			m_ImpactParticle = resource_name:"particles/abilities/chessmaster/chessmaster_queen_stomp_lift_impact.vpcf"
+			m_strImpactSound = soundevent:"Chessmaster.Queen.Slam"
+			m_flSlamAcc = 5000.0
+			m_flSlamMaxSpeed = 20000.0
+			m_strScreenParticleEffect = resource_name:"particles/abilities/chessmaster/chessmaster_queen_stomp_debuff_screen.vpcf"
+			m_cameraSequenceCreated = 
+			{
+				m_vecDistanceOperations = 
+				[
+					{
+						m_eCameraOperation = "k_ECameraOp_Spring"
+						m_bValuesAreRelative = true
+						m_bSpringToDefault = false
+						m_flSpringStrength = 20.0
+						m_flSpringTarget = 300.0
+					},
+					{
+						m_eCameraOperation = "k_ECameraOp_Maintain"
+					},
+				]
+			}
+			m_flSlamCurve = 
+			{
+				m_spline = 
+				[
+					{
+						x = 0.0
+						y = -0.023667
+						m_flSlopeIncoming = 3.17541
+						m_flSlopeOutgoing = 3.17541
+					},
+					{
+						x = 0.793248
+						y = 0.899
+						m_flSlopeIncoming = 0.126852
+						m_flSlopeOutgoing = 0.126852
+					},
+					{
+						x = 1.0
+						y = -1.0
+						m_flSlopeIncoming = -24.680658
+						m_flSlopeOutgoing = -24.680658
+					},
+				]
+				m_tangents = 
+				[
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+					{
+						m_nIncomingTangent = "CURVE_TANGENT_FREE"
+						m_nOutgoingTangent = "CURVE_TANGENT_MIRROR"
+					},
+				]
+				m_vDomainMins = [ 0.0, -1.0 ]
+				m_vDomainMaxs = [ 1.0, 1.0 ]
+			}
+			m_flRiseHeight = 180.0
+			m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
+			m_sLocalizationName = "modifier_citadel_stunned"
+			m_strCheckmateSound = soundevent:"Chessmaster.Queen.Checkmate"
+		}
+		m_bHasLimitedMoves = true
+		m_AutoCastDelayModifier = subclass:
+		{
+		}
+		m_strCastDelaySound = soundevent:"Chessmaster.Queen.Cast"
+		m_bHaveLinesStun = false
+		m_SlowModifier = subclass:
+		{
+			_class = "modifier_slow_base"
+			_my_subclass_name = "slow"
+			m_bIsHidden = true
+			m_vecAutoRegisterModifierValueFromAbilityPropertyName = 
+			[
+				"SlowPercent",
+			]
+		}
+		m_strSelectedSound = soundevent:"Chessmaster.Bishop.Select"
+		m_strSelectedLoopSound = soundevent:"Chessmaster.Bishop.Select.Lp"
+		m_strUnselectedSound = soundevent:"Chessmaster.Bishop.Unselect"
+		m_strAOEWarningSound = soundevent:"Chessmaster.Queen.AOE.Warning"
+		m_strExpireSound = soundevent:"Chessmaster.Queen.Expire"
+		m_bDamageBeforeLift = true
+		m_bOnlyStunOnce = false
+		m_bOnlyStunThreat = false
+		m_AOEPreviewParticleOverride = resource_name:"particles/abilities/chessmaster/chessmaster_queen_range_finder_preview.vpcf"
+		m_bUseSatShapesOnPreview = false
+		m_TileModifier = subclass:
+		{
+			_class = "modifier_chessmaster_groundtile"
+			_my_subclass_name = "tile"
+			m_GroundWarningParticle = resource_name:"particles/abilities/chessmaster/chessmaster_queen_aura_warning.vpcf"
+			m_bDestroyOnParentMove = false
+			m_bDestroyOnParentLost = false
+			m_bDetonate = true
+			m_bDetonateOnActivate = true
+			m_flActivationDelay = 0.0
+			m_GroundParticle = resource_name:""
+			m_GroundExplosionParticle = resource_name:"particles/abilities/chessmaster/chessmaster_queen_aura_explosion.vpcf"
+			m_DamageParticle = resource_name:""
+		}
+		m_TileExplodeParticle = resource_name:"particles/abilities/chessmaster/chessmaster_queen_aura_explosion.vpcf"
+		m_flTimeBetweenTiles = 0.15
+		m_strTileReleasedSound = soundevent:"Chessmaster.Queen.Tile.Impact"
+		m_flInitialTileDelay = 1.0
+		m_strAG2CastingAction = "chessmaster_queen_casting"
+		m_strAG2ChannelingAction = "chessmaster_queen_channeling"
+		m_strAG2CastCompletedAction = "chessmaster_queen_completed"
+		m_strAG2SourceName = "ability_chessmaster_queen"
+		m_strSlamSound = soundevent:"Chessmaster.Queen.Slam"
+		m_QueenRecallSound = soundevent:"Chessmaster.Queen.Recall"
+		m_PostExplodeParticle = resource_name:"particles/abilities/chessmaster/chessmaster_queen_stomp_post.vpcf"
+		m_QueenExpireSound = soundevent:"Chessmaster.Queen.Piece.Expire"
+	}
+	ability_chessmaster_queen_trigger = 
+	{
+		_class = "citadel_base_trigger_ability"
+		m_mapAbilityProperties = 
+		{
+			AbilityCooldown = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCooldown_scale_function"
+					m_eSpecificStatScaleType = "ETechCooldown"
+				}
+			}
+			AbilityDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "duration"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityDuration_scale_function"
+					m_eSpecificStatScaleType = "ETechDuration"
+				}
+			}
+			AbilityCastRange = 
+			{
+				m_strValue = "0"
+				m_eDisplayUnits = "EDisplayUnit_Meters"
+				m_strCSSClass = "range"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_single_stat"
+					_my_subclass_name = "AbilityCastRange_scale_function"
+					m_eSpecificStatScaleType = "ETechRange"
+				}
+			}
+			AbilityUnitTargetLimit = 
+			{
+				m_strValue = "1"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityCastDelay = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityChannelTime = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_multi_stats"
+					_my_subclass_name = "scale_duration"
+					m_vecScalingStats = 
+					[
+						"EChannelDuration",
+						"ETechDuration",
+					]
+				}
+			}
+			AbilityPostCastDuration = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+			}
+			AbilityCharges = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "-1"
+				m_strCSSClass = "cast"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_charges"
+					_my_subclass_name = "AbilityCharges_scale_function"
+				}
+			}
+			AbilityCooldownBetweenCharge = 
+			{
+				m_strValue = "-1.0"
+				m_strDisableValue = "-2"
+				m_strCSSClass = "charge_cooldown"
+				m_bCanSetTokenOverride = true
+				m_subclassScaleFunction = subclass:
+				{
+					_class = "scale_function_ability_recharge_time"
+					_my_subclass_name = "scale_function_ability_recharge_time"
+				}
+			}
+			ChannelMoveSpeed = 
+			{
+				m_strValue = "-1"
+				m_eDisplayUnits = "EDisplayUnit_MetersPerSecond"
+				m_strCSSClass = "move_speed"
+				m_bCanSetTokenOverride = true
+			}
+			AbilityResourceCost = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_strCSSClass = "cast"
+			}
+			TechPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_TECH_POWER"
+			}
+			WeaponPower = 
+			{
+				m_strValue = "0"
+				m_strDisableValue = "0"
+				m_bCanSetTokenOverride = true
+				m_eProvidedPropertyType = "MODIFIER_VALUE_WEAPON_POWER"
+			}
+		}
+		m_bitsPostCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		_editor = 
+		{
+			folder_name = "Hero ChessMaster"
+		}
+		m_mapWeaponInfos = 
+		{
+			primary = 
+			{
+				m_flBulletSpeed = 10000.0
+			}
+		}
+		m_bitsChannelEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_bitsPreCastEnabledStateMask = "MODIFIER_STATE_BUSY_WITH_ACTION"
+		m_sCustomStackLabel = "#CurrentBonus_label"
+		_multibase = 
+		[
+			"ability_trigger_base",
+		]
+		m_eAbilityType = "EAbilityType_Innate"
+		m_bStartTrained = true
+		m_iMaxLevel = 1
+		m_eAbilityTargetingLocation = "CITADEL_ABILITY_TARGETING_LOCATION_SELF"
+		m_eAbilityActivation = "CITADEL_ABILITY_ACTIVATION_INSTANT_CAST"
+		m_AbilityBehaviorsBits = "CITADEL_ABILITY_BEHAVIOR_NO_TARGET | CITADEL_ABILITY_BEHAVIOR_NON_COMBAT | CITADEL_ABILITY_BEHAVIOR_CAN_CAST_ON_ZIPLINE | CITADEL_ABILITY_BEHAVIOR_TRIGGER | CITADEL_ABILITY_BEHAVIOR_DONT_INTERRUPT_SLIDE_ON_CAST"
+		m_eAbilitySpectatePriority = "CITADELTV_ABILITY_SPECTATE_PRIORITY_HIGH"
+		m_strAbilityImage = panorama:"file://{images}/hud/abilities/chess/chessmaster_undoqueen.psd"
+		m_HUDPanel = 
+		{
+			m_vecButtonHints = 
+			[
+				{
+					m_nButton1 = "IN_ATTACK"
+					m_strContext = "channel"
+					m_strLocToken = "#ability_chessmaster_movepiece_confirm_tip"
+					m_nPriority = 1
+					m_bIsHintShownWhileOnCooldown = false
+					m_eHintSide = "EButtonSide_Right"
+				},
+			]
+			m_vecHUDElements = null
+		}
+		m_iUpdateTime = 0
+		m_strCastSound = soundevent:""
+		m_vecAbilityUpgrades = [  ]
+		m_AbilityTooltipDetails = 
+		{
+			m_vecAbilityInfoSections = 
+			[
+				{
+					m_strLocString = ""
+					m_vecAbilityPropertiesBlock = [  ]
+				},
+			]
+		}
+		m_flTargetingConeAngle = 60.0
+		m_flMinCancelTime = 2.0
+		m_AbilityToTrigger = "ability_chessmaster_queen"
 	}
 	citadel_weapon_ratking_set = 
 	{

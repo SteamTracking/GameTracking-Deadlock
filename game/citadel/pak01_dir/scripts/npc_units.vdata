@@ -6673,6 +6673,103 @@
 		m_DestroySound = soundevent:"Forge.FissureWall.Destroy"
 		m_DestroyParticle = resource_name:"particles/abilities/mcginnis/mcginnis_fissure_wall_destroy.vpcf"
 	}
+	citadel_chesspiece_bishop = 
+	{
+		_class = "citadel_chesspiece_entity"
+		m_ExpireModifier = subclass:
+		{
+			_class = "modifier_chessmaster_piece_expire"
+			_my_subclass_name = "expire"
+			m_bExpireOverTime = false
+			m_bExpireFromDistanceToCaster = false
+			m_bExpireWhenCasterDies = true
+			m_strParticleEffect = resource_name:""
+			m_MoveAvailableParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_available_bishop.vpcf"
+		}
+		m_flKnockbackStrength = 300.0
+		m_flKnockupStrength = 300.0
+		m_flPhysicsImpulseMultiplier = 1.0
+		m_flStepHeight = 0.0
+		m_sDefaultMovementSettings = ""
+		m_bSpawnOnGround = false
+		m_flAcceleration = 0.0
+		m_flSightRangeNPCs = 0.0
+		m_flSightRangePlayers = 0.0
+		m_vecNavLinkMovementNames = [  ]
+		m_sAmberModelName = resource_name:"models/particle/blend/chessmaster_chesspiece_bishop.vmdl"
+		m_sSapphireModelName = resource_name:"models/particle/blend/chessmaster_chesspiece_bishop.vmdl"
+		m_sModelName = resource_name:"models/particle/blend/chessmaster_chesspiece_bishop.vmdl"
+		m_bUseTeamRelativeMaterialGroups = false
+		m_flHopSpeed = 200.0
+		m_bTrackOutOfCombatStatus = true
+		m_NpcOutOfCombatModifier = subclass:
+		{
+			_class = "modifier_npc_ooc"
+			_my_subclass_name = "ooc"
+			m_flOOCRegen = 20.0
+			m_strParticleEffect = resource_name:""
+		}
+		m_NpcInCombatModifier = subclass:
+		{
+			_class = "modifier_npc_in_combat"
+			_my_subclass_name = "incombat"
+			m_flTimeToOOC = 5.0
+		}
+		m_bShouldTakeDamage = false
+		m_bShouldKnockupAndHealOnDeath = false
+		m_cCooldownOutlineColor = [ 154, 80, 80 ]
+		m_flCooldownOutlineWidth = 0.0
+		m_bShouldUseCooldownOutline = false
+		m_nMaxHealth = 0
+		m_DeathSound = soundevent:""
+		m_DeathParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_ally_endcap.vpcf"
+		m_bSpawnBreakablesOnDeath = true
+		m_flMeleeKnockupStrength = 300.0
+		m_flMeleeKnockbackStrength = 300.0
+		m_flWalkSpeed = 0.0
+		m_flRunSpeed = 0.0
+		m_flStrafeSpeed = 0.0
+		m_flTurnRate = 0.0
+		m_bOutlineThroughWalls = true
+	}
+	citadel_chesspiece_queen = 
+	{
+		_class = "citadel_chesspiece_entity"
+		m_ExpireModifier = subclass:
+		{
+			_class = "modifier_chessmaster_piece_expire"
+			_my_subclass_name = "expire"
+			m_bExpireOverTime = false
+			m_bExpireFromDistanceToCaster = false
+			m_bExpireWhenCasterDies = true
+			m_nEnabledStateMask = "MODIFIER_STATE_IGNORED_BY_NPC_TARGETING"
+			m_MoveAvailableParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_available.vpcf"
+		}
+		m_flKnockbackStrength = 200.0
+		m_flKnockupStrength = 200.0
+		m_flPhysicsImpulseMultiplier = 1.0
+		m_flStepHeight = 36.0
+		m_sDefaultMovementSettings = "default"
+		m_bSpawnOnGround = true
+		m_flAcceleration = 5.0
+		m_flSightRangeNPCs = 0.0
+		m_flSightRangePlayers = 0.0
+		m_vecNavLinkMovementNames = [  ]
+		m_sAmberModelName = resource_name:"models/particle/blend/chessmaster_queen.vmdl"
+		m_sSapphireModelName = resource_name:"models/particle/blend/chessmaster_queen.vmdl"
+		m_sModelName = resource_name:"models/particle/blend/chessmaster_queen.vmdl"
+		m_bUseTeamRelativeMaterialGroups = false
+		m_flHopSpeed = 200.0
+		m_bShouldTakeDamage = false
+		m_cCooldownOutlineColor = [ 154, 80, 80 ]
+		m_bShouldUseCooldownOutline = false
+		m_flCooldownOutlineWidth = 0.0
+		m_nMaxHealth = 0
+		m_DeathSound = soundevent:""
+		m_DeathParticle = resource_name:"particles/abilities/chessmaster/chessmaster_move_ally_endcap.vpcf"
+		m_bOutlineThroughWalls = true
+		m_bSpawnBreakablesOnDeath = true
+	}
 	neutral_dock_creature_strong = 
 	{
 		m_bTrackOutOfCombatStatus = false

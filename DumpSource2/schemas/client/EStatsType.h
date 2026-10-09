@@ -142,6 +142,8 @@ enum EStatsType : uint32_t
 	EAnimationTimeScale = 105,
 	// MStatValueCacheEnabled_IgnoreParams
 	EParticleTimeScale = 106,
-	EStatsCount = 107,
-	EStatsInvalid = 107,
+	// MStatValueCacheEnabled_IgnoreParams
+	ETechPowerStolen = 107,
+	EStatsCount = 108,
+	EStatsInvalid = 108,
 };

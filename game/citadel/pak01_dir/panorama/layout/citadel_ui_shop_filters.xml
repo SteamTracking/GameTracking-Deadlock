@@ -65,42 +65,54 @@
 						<Panel class="top_filter_bg" />
 						<Panel class="top_filter_img" />
 						<Panel class="FilterControlContainer">
-							<ToggleButton class="FilterGroupControl TopLevel" text="#CitadelShopFilterCategory_Physical" filterGroup="FilterGroupPhysical" />
+							<ToggleButton class="FilterGroupControl TopLevel" filterGroup="FilterGroupPhysical">
+								<SyncedFontSizeLabel id="CategoryLabel" fontsizesyncgroup="ShopFilterCategories" text="#CitadelShopFilterCategory_Physical" />
+							</ToggleButton>
 						</Panel>
 					</Panel>
 					<Panel class="FilterCategory Spirit" onmouseover="CitadelShopFilterShowMenu(&apos;Spirit&apos;)">
 						<Panel class="top_filter_bg" />
 						<Panel class="top_filter_img" />
 						<Panel class="FilterControlContainer">
-							<ToggleButton class="FilterGroupControl TopLevel" text="#CitadelShopFilterCategory_Spirit" filterGroup="FilterGroupSpirit" />
+							<ToggleButton class="FilterGroupControl TopLevel" filterGroup="FilterGroupSpirit">
+								<SyncedFontSizeLabel id="CategoryLabel" fontsizesyncgroup="ShopFilterCategories" text="#CitadelShopFilterCategory_Spirit" />
+							</ToggleButton>
 						</Panel>
 					</Panel>
 					<Panel class="FilterCategory Defense" onmouseover="CitadelShopFilterShowMenu(&apos;Defense&apos;)">
 						<Panel class="top_filter_bg" />
 						<Panel class="top_filter_img" />
 						<Panel class="FilterControlContainer">
-							<ToggleButton class="FilterGroupControl TopLevel" text="#CitadelShopFilterCategory_Defense" filterGroup="FilterGroupDefense" />
+							<ToggleButton class="FilterGroupControl TopLevel" filterGroup="FilterGroupDefense">
+								<SyncedFontSizeLabel id="CategoryLabel" fontsizesyncgroup="ShopFilterCategories" text="#CitadelShopFilterCategory_Defense" />
+							</ToggleButton>
 						</Panel>
 					</Panel>
 					<Panel class="FilterCategory Mobility" onmouseover="CitadelShopFilterShowMenu(&apos;Mobility&apos;)">
 						<Panel class="top_filter_bg" />
 						<Panel class="top_filter_img" />
 						<Panel class="FilterControlContainer">
-							<ToggleButton class="FilterGroupControl TopLevel" text="#CitadelShopFilterCategory_Mobility" filterGroup="FilterGroupMobility" />
+							<ToggleButton class="FilterGroupControl TopLevel" filterGroup="FilterGroupMobility">
+								<SyncedFontSizeLabel id="CategoryLabel" fontsizesyncgroup="ShopFilterCategories" text="#CitadelShopFilterCategory_Mobility" />
+							</ToggleButton>
 						</Panel>
 					</Panel>
 					<Panel class="FilterCategory Disruption" onmouseover="CitadelShopFilterShowMenu(&apos;Disruption&apos;)">
 						<Panel class="top_filter_bg" />
 						<Panel class="top_filter_img" />
 						<Panel class="FilterControlContainer">
-							<ToggleButton class="FilterGroupControl TopLevel" text="#CitadelShopFilterCategory_Disruption" filterGroup="FilterGroupDisruption" />
+							<ToggleButton class="FilterGroupControl TopLevel" filterGroup="FilterGroupDisruption">
+								<SyncedFontSizeLabel id="CategoryLabel" fontsizesyncgroup="ShopFilterCategories" text="#CitadelShopFilterCategory_Disruption" />
+							</ToggleButton>
 						</Panel>
 					</Panel>
 					<Panel class="FilterCategory Misc" onmouseover="CitadelShopFilterShowMenu(&apos;Misc&apos;)">
 						<Panel class="top_filter_bg" />
 						<Panel class="top_filter_img" />
 						<Panel class="FilterControlContainer">
-							<ToggleButton class="FilterGroupControl TopLevel NotClickableGroup" text="#CitadelShopFilterCategory_Misc" filterGroup="FilterGroupMisc" />
+							<ToggleButton class="FilterGroupControl TopLevel NotClickableGroup" filterGroup="FilterGroupMisc">
+								<SyncedFontSizeLabel id="CategoryLabel" fontsizesyncgroup="ShopFilterCategories" text="#CitadelShopFilterCategory_Misc" />
+							</ToggleButton>
 						</Panel>
 					</Panel>
 				</Panel>
@@ -298,6 +310,14 @@
 					<ToggleButton class="FilterToggle Hidden" id="FilterAndToggle" text="#CitadelShopFilter_FilterAndMode" onactivate="CitadelShopFilterAndMode(true)" onmouseover="UIShowTextTooltip(#CitadelShopFilter_AndTooltip)" onmouseout="UIHideTextTooltip();" />
 					<ToggleButton class="FilterToggle Hidden" id="FilterOrToggle" text="#CitadelShopFilter_FilterOrMode" onactivate="CitadelShopFilterAndMode(false)" onmouseover="UIShowTextTooltip(#CitadelShopFilter_OrTooltip)" onmouseout="UIHideTextTooltip();" />
 				</Panel>
+			</Panel>
+			<Panel id="ActiveFilterSigils" hittest="false" hittestchildren="false">
+				<Panel id="ActiveFilterSigilPhysical" class="ActiveFilterSigil Physical" />
+				<Panel id="ActiveFilterSigilSpirit" class="ActiveFilterSigil Spirit" />
+				<Panel id="ActiveFilterSigilDefense" class="ActiveFilterSigil Defense" />
+				<Panel id="ActiveFilterSigilMobility" class="ActiveFilterSigil Mobility" />
+				<Panel id="ActiveFilterSigilDisruption" class="ActiveFilterSigil Disruption" />
+				<Panel id="ActiveFilterSigilMisc" class="ActiveFilterSigil Misc" />
 			</Panel>
 		</Panel>
 	</CitadelShopFilters>

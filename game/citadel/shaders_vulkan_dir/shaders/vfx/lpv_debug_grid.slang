@@ -208,7 +208,6 @@ PS
 	DynamicCombo( D_POINT_TO_CUBE, 0..1 );
 	DynamicCombo( D_BAKED_LIGHTING_FROM_PROBE, 0..1 );
 	
-	bool g_bIsDeprecated < Attribute("bIsDeprecated"); UiType(CheckBox); >;
 	[[layer_constant]] ExternalDescriptorSet g_globalLateBoundBindlessSet < Source(ExternalDescSet); Attribute("g_globalLateBoundBindlessSet"); >;
 	[[layer_constant]] ExternalDescriptorSet g_lightBinnerGpuSet < Source(ExternalDescSet); Attribute("g_lightBinnerGpuSet"); >;
 	float3 g_vFlatOverlayColor < Default2(1, 0); Attribute("FlatOverlayColor"); UiType(VectorText); >;

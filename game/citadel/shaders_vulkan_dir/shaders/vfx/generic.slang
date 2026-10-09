@@ -272,7 +272,6 @@ PS
 	RenderState(StencilWriteMask, 2);
 	[[layer_constant]] StructuredBuffer g_BarnLights < Attribute("BarnLights"); >;
 	[[layer_constant]] StructuredBuffer g_CullBits < Attribute("CullBits"); >;
-	bool g_bIsDeprecated < Attribute("bIsDeprecated"); UiType(CheckBox); >;
 	bool g_bRenderBackfaces < UiType(CheckBox); Expression(F_RENDER_BACKFACES); >;
 	float g_fToolsVisMaxLightingComplexity < Default(8); Attribute("g_fToolsVisMaxLightingComplexity"); UiType(Slider); >;
 	float g_flAdditiveAmount < UiType(Slider); Expression(F_ADDITIVE_BLEND ? 1 : 0); >;

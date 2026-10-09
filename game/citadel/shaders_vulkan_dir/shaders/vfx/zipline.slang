@@ -248,7 +248,6 @@ PS
 	RenderState(SrcBlend, One);
 	[[layer_constant]] StructuredBuffer g_BarnLights < Attribute("BarnLights"); >;
 	[[layer_constant]] StructuredBuffer g_CullBits < Attribute("CullBits"); >;
-	bool g_bIsDeprecated < Attribute("bIsDeprecated"); UiType(CheckBox); >;
 	float g_fToolsVisMaxLightingComplexity < Default(8); Attribute("g_fToolsVisMaxLightingComplexity"); UiType(Slider); >;
 	float2 g_flAlphaAngleScaleBias < UiType(VectorText); Expression((g_flAlphaAnglePower<0) ? float2(-1,1) : float2(1,0)); >;
 	[[layer_constant]] ExternalDescriptorSet g_globalLateBoundBindlessSet < Source(ExternalDescSet); Attribute("g_globalLateBoundBindlessSet"); >;

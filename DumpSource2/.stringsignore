@@ -194,6 +194,7 @@ $SPECULARSCALE
 +cammousemove
 +chatwheel
 +citadel_swtich_player_cam
++in_ability_instant_ping
 +in_ability_ping
 -1 1
 -1 128
@@ -223,6 +224,7 @@ $SPECULARSCALE
 -cammousemove
 -chatwheel
 -citadel_swtich_player_cam
+-in_ability_instant_ping
 -in_ability_ping
 .1 .95
 0 0.333
@@ -1772,6 +1774,7 @@ CAI_MoveProbe
 CAI_MovementGaitSettings
 CAI_NPCMovementSettingsVData
 CAI_NPCMovementStanceSettings_t
+CAI_NPC_ChessPieceVData
 CAI_NPC_NecroSkeleVData
 CAI_NPC_Ratking_RatVData
 CAI_NPC_TrooperVData
@@ -2584,6 +2587,18 @@ CCitadel_Ability_CardToss::Card_t
 CCitadel_Ability_ChargedShot
 CCitadel_Ability_ChargedTackle
 CCitadel_Ability_Charged_Bomb
+CCitadel_Ability_ChessMaster_PrimaryWeapon
+CCitadel_Ability_ChessMaster_PrimaryWeaponVData
+CCitadel_Ability_Chessmaster_ForkPiece
+CCitadel_Ability_Chessmaster_ForkPieceVData
+CCitadel_Ability_Chessmaster_KnightBuff
+CCitadel_Ability_Chessmaster_KnightBuffVData
+CCitadel_Ability_Chessmaster_MoveChessPiece
+CCitadel_Ability_Chessmaster_MoveChessPieceVData
+CCitadel_Ability_Chessmaster_Queen
+CCitadel_Ability_Chessmaster_QueenVData
+CCitadel_Ability_Chessmaster_ThrowBishop
+CCitadel_Ability_Chessmaster_ThrowBishopVData
 CCitadel_Ability_ChronoSwap
 CCitadel_Ability_Chrono_KineticCarbine
 CCitadel_Ability_Chrono_KineticCarbineVData
@@ -3457,6 +3472,24 @@ CCitadel_Modifier_CheaterCurse
 CCitadel_Modifier_CheaterCurseVData
 CCitadel_Modifier_CheckNearbyPlayerParry
 CCitadel_Modifier_CheckNearbyPlayerParryVData
+CCitadel_Modifier_ChessMaster_CheckWatcher
+CCitadel_Modifier_ChessMaster_CheckWatcherVData
+CCitadel_Modifier_ChessMaster_GroundTile
+CCitadel_Modifier_ChessMaster_GroundTileVData
+CCitadel_Modifier_ChessMaster_Piece_Expire
+CCitadel_Modifier_ChessMaster_Piece_ExpireVData
+CCitadel_Modifier_ChessMaster_RookAura
+CCitadel_Modifier_ChessMaster_RookAuraVData
+CCitadel_Modifier_Chessmaster_BuffAlly_Buff
+CCitadel_Modifier_Chessmaster_DamageAura
+CCitadel_Modifier_Chessmaster_DamageAuraVData
+CCitadel_Modifier_Chessmaster_MovingPieceDamage
+CCitadel_Modifier_Chessmaster_MovingPieceDamageVData
+CCitadel_Modifier_Chessmaster_NearbyCaster
+CCitadel_Modifier_Chessmaster_NearbyCasterVData
+CCitadel_Modifier_Chessmaster_QueenHoldInPlace
+CCitadel_Modifier_Chessmaster_QueenHoldInPlaceVData
+CCitadel_Modifier_Chessmaster_StackingSpiritResistReduction
 CCitadel_Modifier_ChronoSwap_BubbleMove
 CCitadel_Modifier_ChronoSwap_BubbleMoveVData
 CCitadel_Modifier_Chrono_KineticCarbine
@@ -3895,6 +3928,10 @@ CCitadel_Modifier_MobileResupply
 CCitadel_Modifier_MobileResupplyAura
 CCitadel_Modifier_MobileResupplyVData
 CCitadel_Modifier_ModDisruptor
+CCitadel_Modifier_MoveChessPiece
+CCitadel_Modifier_MoveChessPieceCooldown
+CCitadel_Modifier_MoveChessPieceCooldownVData
+CCitadel_Modifier_MoveChessPieceVData
 CCitadel_Modifier_Muted
 CCitadel_Modifier_MutedVData
 CCitadel_Modifier_MysticReverbExplosion
@@ -5936,6 +5973,7 @@ CNPC_Boss_Tier3Core
 CNPC_Boss_Tier3Core_GraphController
 CNPC_Boss_Tier3VData
 CNPC_Boss_Tier3_GraphController
+CNPC_ChessPiece
 CNPC_Escort
 CNPC_Escort_GraphController
 CNPC_Escort_VData
@@ -6651,6 +6689,7 @@ CProductQuantizer
 CProjectile_Boho_BouncyProjectile
 CProjectile_Boho_SkipGrenade
 CProjectile_BookwormDragon_Projectile
+CProjectile_ChessMaster_Fork_Projectile
 CProjectile_Doorman_Cart_Projectile
 CProjectile_Familiar_MovingToAttach
 CProjectile_GraveStone_Projectile
@@ -6903,12 +6942,15 @@ CScaleFunctionAbilityProperty_HealingBoonScale
 CScaleFunctionAbilityProperty_HealingBoonScaleVData
 CScaleFunctionAbilityProperty_HealingSpiritScale
 CScaleFunctionAbilityProperty_HealingSpiritScaleVData
+CScaleFunctionAbilityProperty_HealingWeaponScale
+CScaleFunctionAbilityProperty_HealingWeaponScaleVData
 CScaleFunctionAbilityProperty_KineticCarbine
 CScaleFunctionAbilityProperty_NanoTechRoundsDamage
 CScaleFunctionAbilityProperty_TechDamage
 CScaleFunctionAbilityProperty_TechDuration
 CScaleFunctionAbilityProperty_TechRange
 CScaleFunctionAbilityProperty_TechRangeFloored
+CScaleFunctionAbilityProperty_TechRangeRounded
 CScaleFunctionAbilityProperty_WeaponDamage
 CScaleFunctionBase
 CScaleFunctionVData
@@ -7914,6 +7956,7 @@ C_PostProcessingVolume
 C_Precipitation
 C_PrecipitationBlocker
 C_Projectile_Boho_SkipGrenade
+C_Projectile_ChessMaster_Fork_Projectile
 C_Projectile_Doorman_Cart_Projectile
 C_Projectile_GraveStone_Projectile
 C_Projectile_KnightCharge_Projectile
@@ -8523,7 +8566,6 @@ Controls whether or not the friend list has grouping for party members or not
 Controls whether the compiled in vsnd morph data ease in/out values are used or values set from the convars (cl_vsnd_morph_override_ease_in, cl_vsnd_morph_override_ease_out) are used
 Convar for toggling foot lock ground tracking.
 Convar to open hero selection
-Convar to test new ping particle
 Conversations
 Convert From dB
 Convert SteamID into multiple formats
@@ -9662,6 +9704,7 @@ EBaseUserMessages
 EBaseWeaponDamageIncrease
 EBaseWeaponDamagePerShot
 EBetweenValueBehavior
+EBoardGrid
 EBossKill
 EBotTestNodeType
 EBotTestNode_Dest
@@ -9717,6 +9760,8 @@ EChannelDuration
 EChanneling
 ECharges
 ECheats
+EChessPieceState
+EChessPieceType
 ECitadelAbilityHUDElementType_t
 ECitadelAbilityOrder_DebugCommand_RequiresHeroTarget
 ECitadelAbilityOrder_Invalid_Asleep
@@ -10741,6 +10786,7 @@ ETechLifestealNonHero_DEPRECATED
 ETechPower
 ETechPowerAmpBonus_DEPRECATED
 ETechPowerAmp_DEPRECATED
+ETechPowerStolen
 ETechRadius
 ETechRange
 ETechShieldHealth_DEPRECATED
@@ -11964,6 +12010,7 @@ Forces citadel bots to melee continuously, 1: light, 2:Heavy
 Forces citadel bots to move back and forth
 Forces citadel bots to zig-zag side to side
 Forces color correction entities to be updated on the client
+Forces the local player pawn to render using the highest LOD level.
 Forward
 Forward Speed
 Forward Start Only
@@ -12664,6 +12711,7 @@ Hold point is rebuilt every tick from the direction the source is travelling.
 Hold time (ms)
 HoldAnimation
 Holding Modifier
+Holding the instant ping key longer than this cancels the ping.
 Holds game events until client has received the tick the event was fired on.
 Honors the per-particle radius (multiplied by radius scale) but is more expensive to render.  Some particles with large radii can make things much costlier
 HookVictimChanged
@@ -13997,6 +14045,7 @@ Lockon
 LockonTarget_t
 Lod at level at which visemes stops always considering two phonemes, regardless of duration.
 Log FUL_FULL_EDICT_CHANGED calls.
+Log SyncedFontSizeLabel group constraints and shared font size changes
 Log caption names and contents (0 = off, 1 = found captions, 2 = unfound captions, 3 = all captions)
 Log every ability active reason edge, one line per opened or closed window.
 Log game events being considered by the director
@@ -16197,6 +16246,7 @@ Offset the deployment position by this amount of the deployment model's height. 
 OffsetTimeInSeconds
 Offsets the bot yaw.
 Oil
+Old name of citadel_hero_specific_settings_enabled
 OldFeEdge_t
 Omni Light
 On
@@ -16828,7 +16878,6 @@ Override the near clipping plane. -1 means use the default.
 Override the priority token count. -1 uses the real value.
 Override the priority token progress. -1 uses the real value.
 Override the radius of the capsule. Requires m_bAllowNonZUpMovement or m_bRequestCapsuleCollision to be set. 0 to use collision prop OBB
-Override the region of the client
 Override the sound we play when a melee attack hits an enemy
 Override the sound we play when a melee attack hits nothing
 Override timescale for objects that touch a times warp not handled by the wall itself
@@ -17610,8 +17659,11 @@ Ping Mini Map on Active
 Ping Target and Pinging Player only
 Ping a peer.
 Ping button pressed
+Ping button pressed. Long hold opens comms wheel.
 Ping button released
+Ping button released. Long hold opens comms wheel.
 Ping higher than this (ms) is considered 'poor'.
+Ping without radial
 PingConditions_t
 PingDefaultOverride_t
 PingMessageID_t
@@ -21864,6 +21916,7 @@ Use fake dummy data for profile cards instead of the real data from the GC.
 Use fast frame skipping when available for demo_goto commands.
 Use fixed seeds for easier debugging
 Use fog_override convars instead of world fog data
+Use hero-specific settings and keybinds
 Use hold sprint ability?
 Use item drafting?  1=only street brawl 2=always
 Use legacy vsync mode -- for testing for a couple user machines.
@@ -22980,6 +23033,11 @@ ability_bullet_flurry
 ability_burrow
 ability_charged_bomb
 ability_charged_shot
+ability_chessmaster_forkpiece
+ability_chessmaster_knightbuff
+ability_chessmaster_movechesspiece
+ability_chessmaster_queen
+ability_chessmaster_throwbishop
 ability_crackshot
 ability_death_tax
 ability_demonmark
@@ -23993,6 +24051,8 @@ check full bbox only
 check_if_dest_clear_for_player
 check_nofilefd
 check_transmit_dump_ents
+chesspiece_state
+chesspiece_type
 child
 child group ID
 child group ID to affect
@@ -24036,6 +24096,7 @@ citadel_ability_cancel_time
 citadel_ability_card_toss
 citadel_ability_cast_cancel_mash_protection_time
 citadel_ability_charged_tackle
+citadel_ability_chessmaster_primaryweapon
 citadel_ability_chrono_kinetic_carbine
 citadel_ability_chrono_pulse_grenade
 citadel_ability_chrono_swap
@@ -24475,6 +24536,7 @@ citadel_chat_fade_time
 citadel_chat_fade_time_extension
 citadel_chat_typing_indicator_fade_time
 citadel_check_walk_on_skyclip
+citadel_chesspiece_entity
 citadel_cinematic_intro_duration_npc
 citadel_cinematic_intro_duration_player
 citadel_cinematic_intro_enabled
@@ -24724,7 +24786,6 @@ citadel_econ_item_container
 citadel_enable_chat_rate_limiting
 citadel_enable_duplicate_heroes
 citadel_enable_nearby_capture_point
-citadel_enable_new_ping_particle
 citadel_enable_parties
 citadel_enable_ping_rate_limiting
 citadel_enable_slows_affect_air_drag
@@ -24877,6 +24938,7 @@ citadel_hero_roster_high_priority
 citadel_hero_roster_preferred
 citadel_hero_roster_random
 citadel_hero_settings_cloud_disable
+citadel_hero_specific_settings_enabled
 citadel_hero_testing_dummy_bullet_resist
 citadel_hero_testing_dummy_debuff_resist
 citadel_hero_testing_dummy_health_regen
@@ -24983,6 +25045,7 @@ citadel_increase_replay_speed
 citadel_increment_killstreak
 citadel_increment_killstreak [player_slot] [first_blood]
 citadel_initial_wall_jump_stamina_cost
+citadel_instant_ping_cancel_time
 citadel_invalidate_player_stats_cache
 citadel_invis_volume
 citadel_item
@@ -25323,6 +25386,7 @@ citadel_player_gold_reward_time
 citadel_player_ground_dash_max_percent
 citadel_player_ground_dash_min_percent
 citadel_player_level_hiding_extra_duration
+citadel_player_model_force_highest_lod
 citadel_player_move_speed_min
 citadel_player_move_speed_scale
 citadel_player_neutral_gold_drop_min
@@ -25512,7 +25576,6 @@ citadel_recent_comms_session_attempt_throttled_count
 citadel_recent_comms_throttling_limit
 citadel_recent_comms_throttling_penalty
 citadel_reduce_camera_shake
-citadel_region_override
 citadel_reload_rank_data
 citadel_render_minimap
 citadel_replay_manager_download_chunk_size
@@ -29091,7 +29154,17 @@ jpeg_screenshot
 jump_sometimes
 justify_horizontal
 justify_vertical
+kBoardGrid_All
+kBoardGrid_Black
+kBoardGrid_White
 kBranch
+kChessPiece_State_Idle
+kChessPiece_State_Moving
+kChessPiece_State_PickedUp
+kChessPiece_Type_Bishop
+kChessPiece_Type_Knight
+kChessPiece_Type_None
+kChessPiece_Type_Queen
 kDecalBlood
 kDecalCloak
 kDecalDefault
@@ -30523,6 +30596,8 @@ m_AIPhysicsModifier
 m_AOEAmberAnnounceSound
 m_AOEAmberImpactSound
 m_AOECastParticle
+m_AOEExplodeParticle
+m_AOEExplodeSound
 m_AOEImpactParticle
 m_AOELOSCheckType
 m_AOEModifier
@@ -30563,6 +30638,7 @@ m_ActorTargetProxTester
 m_ActualFlags
 m_AdditionalExtRefs
 m_AdditionalExtensions
+m_AdditionalPathParticle
 m_AdditionalTargetEntities
 m_AdditionalTornadoMover
 m_AfterChannelModifier
@@ -30717,6 +30793,7 @@ m_AuraModifier
 m_AuraModifierHandle
 m_AuraOffModifier
 m_AuraParticle
+m_AuraParticleFriendly
 m_AuraRadius
 m_AuraWerewolfModifier
 m_AutoCastDelayModifier
@@ -30796,6 +30873,10 @@ m_BiasEffectNegative
 m_BiasEffectPositive
 m_BigExplosionSlowModifier
 m_BindPose
+m_BishopPathParticle
+m_BishopRecallSound
+m_BishopSpawnSound
+m_BlackPieceModifier
 m_BlackboardReferences
 m_BlackboardResource
 m_BlastParticle
@@ -31085,6 +31166,8 @@ m_Constraints
 m_ConsumeMaxStacksHeroSound
 m_ConsumeMaxStacksSound
 m_ControlPoint
+m_CooldownModifier
+m_CooldownPlayerModifier
 m_CopiedUltSpawnedEntityModifier
 m_CopyTetherParticle
 m_CoreParticle
@@ -31440,6 +31523,7 @@ m_ExitTunnelSound
 m_ExpectedArgs
 m_ExpectedParamType
 m_ExperimentTokenHashCode
+m_ExpireModifier
 m_ExplodeBaseParticle
 m_ExplodeDebuffModifier
 m_ExplodeEffect
@@ -31556,6 +31640,7 @@ m_FootstepOverride
 m_FootstepType
 m_ForceGenerators
 m_ForceVSCameraPitch
+m_ForkParticle
 m_ForwardSpeedCurve
 m_Frame1
 m_Frame2
@@ -31632,6 +31717,7 @@ m_Grid
 m_GroundAuraModifier
 m_GroundDashCancelExecuteTime
 m_GroundDashExecuteTime
+m_GroundExplosionParticle
 m_GroundImpactParticle
 m_GroundJumpExecutedSound
 m_GroundParticle
@@ -31639,6 +31725,7 @@ m_GroundParticleFriendly
 m_GroundPointModifier
 m_GroundPoundFallModifier
 m_GroundPoundImpactParticle
+m_GroundWarningParticle
 m_Group
 m_GroupName
 m_GroupNames
@@ -31948,6 +32035,7 @@ m_LaunchedSelfModifier
 m_LayerName
 m_LayerParticle
 m_Layout
+m_LeanCurve
 m_LeapHitImpact
 m_LeapHitSound
 m_LeapModifier
@@ -32104,13 +32192,20 @@ m_ModsPurchased
 m_MorphLayers
 m_MorphSetData
 m_MotionEnabled
+m_MoveAllyModifier
+m_MoveAvailableParticle
+m_MoveBuffModifier
 m_MoveChildArrowImg
 m_MoveCollide
+m_MoveKingModifier
+m_MoveModifier
+m_MoveQueenModifier
 m_MoveSlowModifier
 m_MoveSpeedModifier
 m_MoveType
 m_MoveTypeOverride
 m_MovementBlockedClips
+m_MovementCurve
 m_MovementSpeedCurve
 m_MovingToAttachModifier
 m_MovingToAttachProjectileSpeedCurve
@@ -32583,6 +32678,7 @@ m_PathNodes_TangentIn
 m_PathNodes_TangentOut
 m_PathParameters
 m_PathParams
+m_PathParticle
 m_PathSimple
 m_PathToEntityTransform
 m_PatrolTravelTimeByDistance
@@ -32640,6 +32736,7 @@ m_Position
 m_PositionDelta
 m_PostAOEModifier
 m_PostCubeBuffModifier
+m_PostExplodeParticle
 m_PostProcessing
 m_PostProcessingVolumes
 m_PostSleepBulletShredModifier
@@ -32726,6 +32823,8 @@ m_QAngle
 m_Quads
 m_Quaternion
 m_QuaternionStorage
+m_QueenExpireSound
+m_QueenRecallSound
 m_QueuedAbilityEndTime
 m_QueuedEvents
 m_QueuedLightStyleStrings
@@ -33144,6 +33243,7 @@ m_StaticChargeModifier
 m_StaticChargeWorldModifier
 m_StatueInvis
 m_StatusEffect
+m_StatusEffectParticle
 m_StatusImmuneModifier
 m_StealWatcherModifier
 m_StimPakModifier
@@ -33242,6 +33342,7 @@ m_TargetDir
 m_TargetEntities
 m_TargetEntity
 m_TargetFOV
+m_TargetHoverParticle
 m_TargetInput
 m_TargetLifestealModifier
 m_TargetLoopingSound
@@ -33251,7 +33352,11 @@ m_TargetNameMap
 m_TargetNonHeroModifier
 m_TargetOrientation
 m_TargetParticle
+m_TargetPreviewAllyParticle
+m_TargetPreviewBishopParticle
+m_TargetPreviewKingParticle
 m_TargetPreviewParticle
+m_TargetPreviewQueenParticle
 m_TargetPreviews
 m_TargetRevealModifier
 m_TargetScreenParticleEffect
@@ -33307,6 +33412,8 @@ m_ThreadSapAmpParticle
 m_ThrowSound
 m_ThumbnailOverlayImage
 m_TickParticle
+m_TileExplodeParticle
+m_TileModifier
 m_TiltTime
 m_TimeBetweenEvents
 m_TimeDestroy
@@ -33458,6 +33565,7 @@ m_VertexMaps
 m_VertexPositions
 m_VertexSetNames
 m_VerticalDrag
+m_VerticalOffsetCurve
 m_VerticallRecoil
 m_Vertices
 m_VialDebuffModifier
@@ -33507,6 +33615,8 @@ m_WeaponEaterTracker
 m_WeaponFxParticle
 m_WeaponImpactParticle
 m_WeaponInfo
+m_WeaponOffsetCrouch
+m_WeaponOffsetStand
 m_WebWallDestroyedParticle
 m_WebWallHitParticle
 m_WebWallParticle
@@ -33771,6 +33881,7 @@ m_bAirborneWhenDuckPressed
 m_bAjarDoorShouldntAlwaysOpen
 m_bAlert
 m_bAlignCameraOnAutoDismount
+m_bAlignOnDiagonal
 m_bAlignOrientationWithEdgeNormal
 m_bAlignWithExitDirectionDuringFall
 m_bAlignWithParent
@@ -33802,6 +33913,7 @@ m_bAllowLooping
 m_bAllowModifiersOnDeadEntities
 m_bAllowMotionDuringNoCollisionDuration
 m_bAllowMovableNavMeshDockingOnEntireEntity
+m_bAllowMultihitOnReverse
 m_bAllowMultipleOutConnections
 m_bAllowMultipleScenes
 m_bAllowNewGibs
@@ -34096,6 +34208,7 @@ m_bCreateNavObstacle
 m_bCreateNonSolid
 m_bCreatePooledBuffer
 m_bCreateRawBuffer
+m_bCreateSatVolume
 m_bCreatedChargeEffects
 m_bCreatedFromMapFile
 m_bCreatedModel
@@ -34110,6 +34223,7 @@ m_bCustomTooltipInteractive
 m_bCylepose
 m_bDOFFarSettingsAreOffsetByGunRange
 m_bDamageAffectedByEffectiveness
+m_bDamageBeforeLift
 m_bDamageBreakableWithMelee
 m_bDamageDone
 m_bDamageInProgress
@@ -34136,6 +34250,7 @@ m_bDebugDraw
 m_bDebugDrawEvents
 m_bDebugOrientation
 m_bDebugThisNode
+m_bDebugTrace
 m_bDecayBounce
 m_bDecisionMaking
 m_bDefault
@@ -34153,6 +34268,8 @@ m_bDestroyAfterReload
 m_bDestroyImmediately
 m_bDestroyMoverOnArrivedAtEnd
 m_bDestroyNearbyNeutrals
+m_bDestroyOnParentLost
+m_bDestroyOnParentMove
 m_bDestroyed
 m_bDestructiblePartInitialStateDestructed0_GenerateBreakpieces
 m_bDestructiblePartInitialStateDestructed1_GenerateBreakpieces
@@ -34161,6 +34278,8 @@ m_bDestructiblePartInitialStateDestructed3_GenerateBreakpieces
 m_bDestructiblePartInitialStateDestructed4_GenerateBreakpieces
 m_bDetachFromOwner
 m_bDetailedLookTargets
+m_bDetonate
+m_bDetonateOnActivate
 m_bDetonateSoundStarted
 m_bDetonateStarted
 m_bDeveloperOnly
@@ -34209,8 +34328,11 @@ m_bDisplay
 m_bDistanceAlpha
 m_bDistributeEvenly
 m_bDiveApplied
+m_bDoCheckmate
+m_bDoDPS
 m_bDoDecalLightmapping
 m_bDoFinalTeleport
+m_bDoLiftOnStun
 m_bDoNotDrawInParticlePass
 m_bDoNotRepeatCycle
 m_bDoNotWarnAboutLargeAssetBatches
@@ -34241,6 +34363,7 @@ m_bDraw3DSkybox
 m_bDrawAsOpaque
 m_bDrawBackground
 m_bDrawCableCaps
+m_bDropGroundAuras
 m_bDroppedByPlayer
 m_bDroppedFromZipline
 m_bDucked
@@ -34354,6 +34477,9 @@ m_bExecuted
 m_bExpandRenderBoundsToIncludeCloth
 m_bExpectingCursorTerminatedDueToMaxInstructions
 m_bExpectingToDestroyWithYieldedCursors
+m_bExpireFromDistanceToCaster
+m_bExpireOverTime
+m_bExpireWhenCasterDies
 m_bExplicitTimeStepping
 m_bExplode
 m_bExplodeOnLand
@@ -34522,6 +34648,7 @@ m_bGroundCheck
 m_bGroupByPrefab
 m_bGroupByVolume
 m_bGroupOtherGroups
+m_bGrowImmobilizeDurationFromDistance
 m_bGrowing
 m_bGuideBotAssigned
 m_bHUDElementVisible
@@ -34559,6 +34686,7 @@ m_bHasHeightFogEnd
 m_bHasHitSomething
 m_bHasLatchedOnce
 m_bHasLightmaps
+m_bHasLimitedMoves
 m_bHasLocalContrastParams
 m_bHasLocalExposureParams
 m_bHasLookTarget
@@ -34603,6 +34731,7 @@ m_bHasValidBaseLocation
 m_bHasVictims
 m_bHasVignetteParams
 m_bHasWeightsSet
+m_bHaveLinesStun
 m_bHealCaster
 m_bHeavyMelee
 m_bHeavyMeleeOnly
@@ -34675,6 +34804,7 @@ m_bIgnoreRotation
 m_bIgnoreSlope
 m_bIgnoreTeleport
 m_bIgnoringZoom
+m_bImmuneDuringMove
 m_bImpacted
 m_bImplicitSeqIgnoreDelta
 m_bImportant
@@ -35073,7 +35203,10 @@ m_bModelOverrodeBlockLOS
 m_bModulateStepHeight
 m_bMomentary
 m_bMouseWheelBind
+m_bMoveAllFixedDistance
 m_bMoveCollidedPushUp
+m_bMoveOnDiagonal
+m_bMoveOnRightTriangle
 m_bMoveVarsDisabled
 m_bMoveViewToPlayerNextThink
 m_bMovementCodeDriven
@@ -35165,6 +35298,7 @@ m_bOldFrozen
 m_bOnChangeLevelFired
 m_bOnGround
 m_bOnlyChildren
+m_bOnlyDebuffOnFork
 m_bOnlyDestroyWhenGibbing
 m_bOnlyGoals
 m_bOnlyGrantIfNotOwned
@@ -35174,6 +35308,8 @@ m_bOnlyRenderInEffectsBloomPass
 m_bOnlyRenderInEffectsWaterPass
 m_bOnlyRenderToTexture
 m_bOnlySampleBaseRootMotion
+m_bOnlyStunOnce
+m_bOnlyStunThreat
 m_bOnlyTailsOnFadeOut
 m_bOnlyWarnAddons
 m_bOnlyWarnIfContentFilePresent
@@ -35188,6 +35324,7 @@ m_bOrientToEyes
 m_bOrientToHMD
 m_bOrientToHand
 m_bOrientToNormal
+m_bOrientToWorldForward
 m_bOrientZ
 m_bOriginalBlockLOS
 m_bOriginalModel
@@ -35584,6 +35721,8 @@ m_bShoot
 m_bShotAnimPlayed
 m_bShouldAnimateInWorld
 m_bShouldApplyAbilityCooldown
+m_bShouldApplySlow
+m_bShouldApplySlowOnImpact
 m_bShouldAutoConvertBackFromDebris
 m_bShouldBatch
 m_bShouldBeExecuted
@@ -35591,6 +35730,8 @@ m_bShouldBleed
 m_bShouldCheckFoW
 m_bShouldCompileErrorFallbackToDisk
 m_bShouldCreateAirJumpEffects
+m_bShouldCreateEnemyAura
+m_bShouldDamageOnAura
 m_bShouldDeflect
 m_bShouldDeleteActivationRecord
 m_bShouldDeleteAttachedActivationRecord
@@ -35604,6 +35745,8 @@ m_bShouldDrawAttachmentNames
 m_bShouldDrawAttachments
 m_bShouldDrawControlPointAxes
 m_bShouldDrawHitboxes
+m_bShouldDropAllyAura
+m_bShouldDropEnemyAura
 m_bShouldEnableBuff
 m_bShouldGenerateAIFootstepEvents
 m_bShouldHideTradeCraftDelete
@@ -35611,8 +35754,12 @@ m_bShouldHitThrower
 m_bShouldHitboxesFallbackToCollisionHulls
 m_bShouldHitboxesFallbackToRenderBounds
 m_bShouldHitboxesFallbackToSnapshot
+m_bShouldKnockawayOnMelee
 m_bShouldLeaveCorpse
+m_bShouldMove
 m_bShouldPerformCullCheck
+m_bShouldPulseOnAuraCreation
+m_bShouldPulseOnlyOffCooldown
 m_bShouldReflectAgainstWall
 m_bShouldRemove
 m_bShouldSampleRootMotion
@@ -35624,6 +35771,7 @@ m_bShouldSort
 m_bShouldSpark
 m_bShouldTriggerSlowGetup
 m_bShouldUpdateTransformations
+m_bShouldUseCooldownOutline
 m_bShouldVoiceDuck
 m_bShouldWraparound
 m_bShowAbilityIcon
@@ -35773,6 +35921,7 @@ m_bSuppressTint
 m_bSupressDefaultBarrierBreakParticle
 m_bSuspendConnectionsWhileMoving
 m_bSweepRightFirst
+m_bSweepToDestination
 m_bSwitchDynamically
 m_bSyncCycles
 m_bSyncCyclesOnChange
@@ -35847,6 +35996,7 @@ m_bTriggerOnStartTouch
 m_bTriggerOnce
 m_bTriggerStarted
 m_bTrooperTestSpawner
+m_bTryToGroundDuring
 m_bTurnEnabled
 m_bTurnToFace
 m_bTurnToFaceVelocity
@@ -36012,6 +36162,7 @@ m_bWaitForChildOutflows
 m_bWaitForGroundToTrigger
 m_bWaitForRefire
 m_bWaitUntilMoveCompletesToStartAnimation
+m_bWaitUntilParentOffCooldown
 m_bWaitingForActor
 m_bWaitingForInterrupt
 m_bWalking
@@ -36176,7 +36327,11 @@ m_bvDisabledHitGroups
 m_bvDisabledStateMask
 m_bvEnabledPredictedStateMask
 m_bvEnabledStateMask
+m_cCooldownOutlineColor
 m_cGlowColor
+m_cHoverOutlineColor
+m_cProjectileLeft
+m_cProjectileRight
 m_cRenderColor
 m_cShardGenerator
 m_cTicksNoMovement
@@ -36564,6 +36719,7 @@ m_eCameraOperation == k_ECameraOp_Lag
 m_eCaptureState
 m_eCardType
 m_eCategory
+m_eChessPieceType
 m_eChoreoState
 m_eCitadelDamageType
 m_eClass
@@ -37063,6 +37219,7 @@ m_flActionReloadTimingStart
 m_flActivateDelay
 m_flActivatePressTime
 m_flActivateRange
+m_flActivationDelay
 m_flActivationTime
 m_flActiveTime
 m_flActiveWindowDeadlines
@@ -37516,6 +37673,7 @@ m_flButtonPressWindow
 m_flBuyTimeGracePeriod
 m_flCParm
 m_flCachedCastTime
+m_flCachedMoveDistance
 m_flCalculationInterval
 m_flCameraBackOffset
 m_flCameraBackOffsetAiming
@@ -37698,6 +37856,7 @@ m_flCooldownMax
 m_flCooldownMin
 m_flCooldownOnHit
 m_flCooldownOnMiss
+m_flCooldownOutlineWidth
 m_flCooldownStart
 m_flCooldownTime
 m_flCoreDeathTime
@@ -37783,6 +37942,8 @@ m_flCycleTimePct
 m_flCycleUnclamped
 m_flCycleZeroTime
 m_flCyclesPerSecond
+m_flCylinderTraceLength
+m_flCylinderTraceRadius
 m_flDPI
 m_flDPS
 m_flDPSPctGrowthPerMinute
@@ -37941,6 +38102,7 @@ m_flDensityMax
 m_flDensityMin
 m_flDensityMinScale
 m_flDepartureTime
+m_flDeployGap
 m_flDeployTime
 m_flDepth
 m_flDepthBias
@@ -38631,8 +38793,10 @@ m_flHoldingDuration
 m_flHomingBias
 m_flHookEndTime
 m_flHookTargetOnlyWindow
+m_flHopSpeed
 m_flHorizGap
 m_flHorizontalOffset
+m_flHorizontalOffsetPerShot
 m_flHorizontalPunch
 m_flHorizontalSpawnOffset
 m_flHorizontalStaggerPerSoldier
@@ -38642,6 +38806,7 @@ m_flHourChimeInterval
 m_flHoverInputAcceleration
 m_flHoverInputSpeedMax
 m_flHoverOffset
+m_flHoverOutlineWidth
 m_flHoverSpeedDecay
 m_flHoverTime
 m_flHueAdjust
@@ -38662,6 +38827,7 @@ m_flIkRotation_MaxQuantizationError
 m_flIkRotation_MaxSplineError
 m_flIkTranslation_MaxQuantizationError
 m_flIkTranslation_MaxSplineError
+m_flImmunityDuration
 m_flImpactDelay
 m_flImpactEffectRadius
 m_flImpactEnergyScale
@@ -38703,6 +38869,7 @@ m_flInitialSpeed
 m_flInitialSpeedBias
 m_flInitialSpeedMax
 m_flInitialSpeedMin
+m_flInitialTileDelay
 m_flInitialTravelDistance
 m_flInitialVacuumSideSpeed
 m_flInitialVacuumUpSpeed
@@ -39249,6 +39416,8 @@ m_flMeleeFireDelay
 m_flMeleeHitRange
 m_flMeleeHitTime
 m_flMeleeInputBufferTime
+m_flMeleeKnockbackStrength
+m_flMeleeKnockupStrength
 m_flMeleeLockoutDuration
 m_flMeleeRadius
 m_flMeleeTargetRadius
@@ -39744,6 +39913,10 @@ m_flParticleSimulationRate
 m_flParticleSpacing
 m_flParticleTimeScale
 m_flParticlesPerOrbit
+m_flPassiveTargetingConeAngle
+m_flPassiveTargetingHalfWidth
+m_flPassiveTargetingNearbyCasterRadius
+m_flPassiveTargetingNearbyCrosshairRadius
 m_flPathCreationTime
 m_flPathDistToLastWaypoint
 m_flPathDistanceToNavLink
@@ -39859,6 +40032,7 @@ m_flPlayerTargetProximity
 m_flPlayerWakeRadius
 m_flPoolHealth
 m_flPoolHealthMax
+m_flPopUpSpeed
 m_flPortDragOffCreateThreshold
 m_flPortalEndTime
 m_flPortalStartTime
@@ -39962,6 +40136,7 @@ m_flPullSpeedMax
 m_flPullSpeedMin
 m_flPullTargetSpeed
 m_flPullToCasterLocationDuration
+m_flPulseDelay
 m_flPulseFrequency
 m_flPulseWidth
 m_flPushForce
@@ -40056,6 +40231,7 @@ m_flReadIndex
 m_flRealTime
 m_flRearOffset
 m_flRecalcRate
+m_flRecallOnMeleeRange
 m_flRecastWindowEnd
 m_flRecentExecConnectionIndicatorSize
 m_flRecentExecEndOffset
@@ -40134,6 +40310,7 @@ m_flRepulsionMinDistance
 m_flRequiredDuration
 m_flReselectionTimeWindow
 m_flResetRate
+m_flReshuffleHoldTime
 m_flResistMaxAtStart
 m_flResistMaxCap
 m_flResistMaxPerMinute
@@ -40171,6 +40348,7 @@ m_flRevealTime
 m_flReverbTimeHigh
 m_flReverbTimeLow
 m_flReverbTimeMid
+m_flReverseTraceDistance
 m_flRichPresenceUpdateInterval
 m_flRicochetBulletSpeed
 m_flRicochetConeAngle
@@ -40189,6 +40367,7 @@ m_flRiseDecayFracEnd
 m_flRiseDecayFracStart
 m_flRiseDuration
 m_flRiseGravityScale
+m_flRiseHeight
 m_flRiseMaxSpeed
 m_flRiseSpeed
 m_flRiseTime
@@ -40378,6 +40557,7 @@ m_flSightingStartTime
 m_flSimRateFPS
 m_flSimulationScale
 m_flSimulationTime
+m_flSinclairModelSwapHold
 m_flSize
 m_flSizeMax
 m_flSizeMin
@@ -40394,6 +40574,7 @@ m_flSkyboxBrightnessScale
 m_flSkyclipVelocityZ
 m_flSlack
 m_flSlamAcc
+m_flSlamCurve
 m_flSlamEnabledTime
 m_flSlamImpactRadius
 m_flSlamMaxSpeed
@@ -40780,6 +40961,7 @@ m_flTier2MaxResistTime
 m_flTiltPlanePitchSpringStrength
 m_flTiltPlaneRollSpringStrength
 m_flTime
+m_flTimeBetweenTiles
 m_flTimeCurTaskStarted
 m_flTimeDuration
 m_flTimeEnemyChanged
@@ -41420,6 +41602,7 @@ m_hConstraint
 m_hConstraintParent
 m_hControlPointEnts
 m_hController
+m_hCooldownModifier
 m_hCtrl
 m_hCurrentBlocker
 m_hCurrentEnemy
@@ -41573,6 +41756,7 @@ m_hModel
 m_hModifier
 m_hModifierCaster
 m_hModifierListHandle
+m_hMoveAbility
 m_hMoveHeadingParam
 m_hMoveHeadingParameter
 m_hMoveVecParam
@@ -41853,6 +42037,7 @@ m_iAuraSearchType
 m_iBatCountOnCast
 m_iBatchCount
 m_iBeam
+m_iBishopIndex
 m_iBoltsFired
 m_iBonusBats
 m_iBonusClip
@@ -41868,6 +42053,8 @@ m_iCatRecallHealth
 m_iChainEffect
 m_iChangedVariables
 m_iChargedAmmoConsumedPerShot
+m_iChessPieceState
+m_iChessPieceType
 m_iClassIgnore
 m_iClassIgnore2
 m_iClip
@@ -42074,6 +42261,7 @@ m_iRejuvBossKill02
 m_iRemainingBolts
 m_iRemainingCasts
 m_iRemainingCharges
+m_iRemainingMoves
 m_iResonantHealingRegenStacks
 m_iRopeMaterialModelIndex
 m_iRound
@@ -42513,6 +42701,7 @@ m_mapBoundAbilities
 m_mapBuckets
 m_mapCastEventParticles
 m_mapCellDesc
+m_mapChessAbilities
 m_mapClonedAbilities
 m_mapCurrencyRewards
 m_mapCursorDesc
@@ -43958,6 +44147,7 @@ m_nParticle
 m_nParticleIncrement
 m_nParticleIndex
 m_nParticleIndexAura
+m_nParticleIndexTether
 m_nParticleNumber
 m_nParticleRope1
 m_nParticleSelection
@@ -44719,6 +44909,7 @@ m_pD3DSemanticName
 m_pData
 m_pDebugName
 m_pDefaultVariationData
+m_pDeployedQueen
 m_pDestructiblePartsSystemComponent
 m_pEnableForceFacing
 m_pEnemyServices
@@ -44824,6 +45015,7 @@ m_pScene
 m_pSceneNode
 m_pSearchingParticle
 m_pSecondaryGraph
+m_pSelectedPiece
 m_pSemantic
 m_pSemanticName
 m_pSenses
@@ -45768,12 +45960,14 @@ m_strAG2CastCompletedAction
 m_strAG2CastFailedAction
 m_strAG2CastingAction
 m_strAG2ChannelingAction
+m_strAG2HeroActionGainedBullets
 m_strAG2PostCastAction
 m_strAG2SourceName
 m_strAG2SuccessHeroState
 m_strAG2UltFinishedAction
 m_strAOEAnnounceSound
 m_strAOEImpactSound
+m_strAOEWarningSound
 m_strAbilityChargeReadySound
 m_strAbilityImage
 m_strAbilityOffCooldownSound
@@ -45781,6 +45975,7 @@ m_strAbilityPropertyUpgradeRequired
 m_strAbilityUpgrade
 m_strActivateAmbushSound
 m_strActivateSound
+m_strActivationSound
 m_strActiveEffectConfigName
 m_strAddPendingBulletSound
 m_strAdditionalClasses
@@ -45815,6 +46010,7 @@ m_strAttackMissSound
 m_strAttackerHitSound
 m_strAuraEnterNPCSound
 m_strAuraEnterPlayerSound
+m_strAuraHitNPCSound
 m_strAvoidDamage
 m_strBallApexSound
 m_strBarrageLoop
@@ -45830,8 +46026,11 @@ m_strBaseSentryKill
 m_strBaseSentryOrb
 m_strBaseSlideAbility
 m_strBeamEndSound
+m_strBeamHitSound
+m_strBeamLoopSound
 m_strBeamLoopSound1
 m_strBeamLoopSound2
+m_strBeamLoopStartSound
 m_strBeamPointClosestLoopSound
 m_strBeamStart
 m_strBeamStartAttachmentPoint
@@ -45845,6 +46044,9 @@ m_strBeamTarget
 m_strBeepSound
 m_strBerserkerStackSound
 m_strBigExplodeSound
+m_strBishopCommandSound
+m_strBishopExpireSound
+m_strBishopTracer
 m_strBlockedDamageSound
 m_strBloodSpillStatName
 m_strBodygroupName
@@ -45916,11 +46118,14 @@ m_strChargedJumpSound
 m_strChargingLoopSound
 m_strChargingStartSound
 m_strCheats
+m_strCheckmateSound
 m_strClothEffect
 m_strCommsWheelLabelToken
 m_strConditionalLocTokenOverride
 m_strConfigName
 m_strContext
+m_strCooldownCompleteQueenSound
+m_strCooldownCompleteSound
 m_strCountKeyName
 m_strCrackingSound
 m_strCrashSound
@@ -46015,6 +46220,7 @@ m_strExpiredSound
 m_strExplodeEffect
 m_strExplodeHitSound
 m_strExplodeSound
+m_strExplosionSound
 m_strExraBodygroup
 m_strExternalRegenAbilityPropertyName
 m_strExtraTimerSound
@@ -46042,6 +46248,7 @@ m_strFlyingLoop
 m_strFlyingSound
 m_strFollowLoop
 m_strForceDetachSound
+m_strForkSound
 m_strFriendlyParticle
 m_strFriendlySkin
 m_strFruitModelName
@@ -46168,6 +46375,7 @@ m_strKothSpawnLoopSound
 m_strKothSpawnLoopStartSound
 m_strLabelName
 m_strLandSound
+m_strLandingSound
 m_strLandmarkName
 m_strLaneName
 m_strLaneTrooperKill
@@ -46230,6 +46438,10 @@ m_strMissSound
 m_strModelName
 m_strModifier
 m_strModifierOverrideStatusID
+m_strMoveBishopSound
+m_strMoveKingSound
+m_strMoveKnightSound
+m_strMoveQueenSound
 m_strMovementForward
 m_strMovementLoop
 m_strMovementLoopStart
@@ -46325,6 +46537,7 @@ m_strRatAttachSound
 m_strRatReleaseSound
 m_strRecallSound
 m_strRedirect
+m_strReflectSound
 m_strRefreshStackSound
 m_strRegenAbilityPropertyName
 m_strRegenPerSecondProperty
@@ -46354,6 +46567,7 @@ m_strSearchName
 m_strSeasonLocName
 m_strSecondaryStatName
 m_strSecondaryWeaponDescLocString
+m_strSelectPieceSound
 m_strSelectedLoopSound
 m_strSelectedSound
 m_strSelfMessageToken
@@ -46373,6 +46587,7 @@ m_strSilenceAppliedSound
 m_strSilenceTargetSound
 m_strSingleDoorAbilityImage
 m_strSkillTierName
+m_strSlamSound
 m_strSlashFullSound
 m_strSlashImpactSound
 m_strSlashSound
@@ -46460,6 +46675,7 @@ m_strTickTockSound
 m_strTier1BossOrb
 m_strTier2BossOrb
 m_strTier3BossOrb
+m_strTileReleasedSound
 m_strTimeWallHitSound
 m_strTimerSound
 m_strTitle
@@ -46643,6 +46859,7 @@ m_tActiveEndTime
 m_tAttackWindowStart
 m_tBeginTimeWithPrewarm
 m_tBuffRechargeTime
+m_tCancelHoverTime
 m_tCastCompleteTime
 m_tCatRecallTime
 m_tChoreUseCooldownEndTime
@@ -46972,6 +47189,7 @@ m_vBoundsMinLS
 m_vBoxMaxs
 m_vBoxMins
 m_vBoxSize
+m_vBuffs
 m_vC
 m_vCPRelativeDir
 m_vCPRelativePosition
@@ -47540,6 +47758,7 @@ m_vecConstrainingMarkups
 m_vecConstrainingPlanes
 m_vecConstrainingSpheres
 m_vecConsumedComponents
+m_vecCornerLocation
 m_vecCornerPairsNetworked
 m_vecCorruptedPenaltyDefs
 m_vecCpOffset
@@ -47564,6 +47783,7 @@ m_vecDebugOverlayData
 m_vecDefaultOverrides
 m_vecDefaultValue
 m_vecDeployedGravestones
+m_vecDeployedPieces
 m_vecDeployedProjectiles
 m_vecDeployedSentries
 m_vecDeployedSkulls
@@ -47699,6 +47919,8 @@ m_vecLastPosition
 m_vecLastVel
 m_vecLastVelocity
 m_vecLatchWorldPosition
+m_vecLaunchPosition
+m_vecLaunchVelocity
 m_vecLeft
 m_vecLerpingObjects
 m_vecLiftTargets
@@ -47828,6 +48050,7 @@ m_vecPoseTransitions
 m_vecPosition
 m_vecPosition1
 m_vecPosition2
+m_vecPossibleClasses
 m_vecPostProcessEffects
 m_vecPreBuyTime
 m_vecPredictionError
@@ -47856,6 +48079,7 @@ m_vecPunchAngleVel
 m_vecPushDirEntitySpace
 m_vecPushDirection
 m_vecPushers
+m_vecQueenPosition
 m_vecQueuedRemovals
 m_vecQuickbuyQueue
 m_vecQuickbuySellQueue
@@ -47900,6 +48124,7 @@ m_vecServerVelocity
 m_vecSharedPoseParentSpace
 m_vecShatterGlassShards
 m_vecShootTargets
+m_vecShotBishops
 m_vecSize
 m_vecSlamDest
 m_vecSlashInfos
@@ -47916,6 +48141,7 @@ m_vecSpecifiedSurroundingMins
 m_vecSpeculativeGoals
 m_vecSpiritGroups
 m_vecStart
+m_vecStartLocation
 m_vecStartOrigin
 m_vecStartPos
 m_vecStartPosition
@@ -47926,6 +48152,7 @@ m_vecStompedEnemies
 m_vecStressPositionA
 m_vecStressPositionB
 m_vecStressVelocity
+m_vecStunnedUnits
 m_vecStyleEquipModifiers
 m_vecSubMotors
 m_vecSubnavMessageIDs
@@ -49525,6 +49752,7 @@ panorama_streaming_load_local_images
 panorama_style_flag_force_invalidate
 panorama_suspend_animation
 panorama_suspend_paint
+panorama_synced_font_size_spew
 panorama_temp_comp_layer_min_dimension
 panorama_toggledebugger_mode
 panorama_track_render_commands
@@ -49975,6 +50203,7 @@ project on characters
 project on water
 project on world
 projectile_boho_skipgrenade
+projectile_chessmaster_forkpiece
 projectile_cyclone
 projectile_doorman_cart_projectile
 projectile_dust_storm

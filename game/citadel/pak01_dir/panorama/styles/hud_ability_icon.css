@@ -597,10 +597,17 @@ CitadelAbilityIcon.Tier0.active .ability_ring,CitadelAbilityIcon.Tier1.active .a
 	transition-duration: 1s;
 }
 
-.active .button_container,.toggled_on .button_container,.channeling .button_container,.is_trigger .button_container
+.active .button_container,.toggled_on .button_container,.channeling .button_container
 {
 	z-index: 100;
 	animation-name: ability_active;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+}
+
+.is_trigger .button_container
+{
+	z-index: 100;
 	animation-duration: 1.5s;
 	animation-iteration-count: infinite;
 }
@@ -1060,6 +1067,136 @@ CitadelHudTopBarPlayer #PlayerAbilitiesContainer .ability_image
 	height: 26px;
 	width: 26px;
 	margin: 2px;
+}
+
+.subcast_chessmaster_bishop .subcast_icon
+{
+	background-image: url("s2r://panorama/images/hud/hero_specific/chess_subcast_bishop_psd.vtex");
+	background-size: 90% 76%;
+}
+
+.subcast_chessmaster_bishop .is_progress_active .subcast_icon
+{
+	wash-color: offBlack;
+	opacity: 1;
+}
+
+.subcast_chessmaster_bishop .is_progress_active.subcast_icon_container
+{
+	background-color: offWhite;
+}
+
+.subcast_chessmaster_knight .subcast_timer_border
+{
+	wash-color: offBlack&ee;
+}
+
+.subcast_chessmaster_knight .subcast_icon
+{
+	background-image: url("s2r://panorama/images/hud/hero_specific/chess_subcast_knight_psd.vtex");
+	background-size: 90% 76%;
+}
+
+.subcast_chessmaster_knight .is_king .subcast_icon
+{
+	background-image: url("s2r://panorama/images/hud/hero_specific/chess_subcast_knight_psd.vtex");
+	background-size: 90% 76%;
+}
+
+.subcast_chessmaster_knight .is_progress_active .subcast_icon
+{
+	wash-color: offBlack;
+	opacity: 1;
+}
+
+.subcast_chessmaster_knight .is_progress_active.subcast_icon_container
+{
+	background-color: offWhite;
+}
+
+.subcast_chessmaster_queen .subcast_timer_border
+{
+	wash-color: offBlack&ee;
+}
+
+.subcast_chessmaster_queen .subcast_icon
+{
+	background-image: url("s2r://panorama/images/hud/hero_specific/chess_subcast_queen_psd.vtex");
+	background-size: 90% 76%;
+}
+
+.subcast_chessmaster_queen .is_progress_active .subcast_icon
+{
+	wash-color: offBlack;
+	opacity: 1;
+}
+
+.subcast_chessmaster_queen .is_progress_active.subcast_icon_container
+{
+	background-color: offWhite;
+}
+
+.subcast_chessmaster_bishop #ability_subcasts,.subcast_chessmaster_knight #ability_subcasts,.subcast_chessmaster_queen #ability_subcasts
+{
+	margin-top: 80px;
+	overflow: render;
+	ui-scale: 120%;
+}
+
+.subcast_chessmaster_bishop .has_progress .subcast_icon,.subcast_chessmaster_knight .has_progress .subcast_icon,.subcast_chessmaster_queen .has_progress .subcast_icon
+{
+	wash-color: offBlack;
+	opacity: 0.9;
+}
+
+.subcast_chessmaster_bishop .has_progress.subcast_icon_container,.subcast_chessmaster_knight .has_progress.subcast_icon_container,.subcast_chessmaster_queen .has_progress.subcast_icon_container
+{
+	background-color: offWhite&50;
+}
+
+.subcast_chessmaster_bishop .has_progress .subcast_timer_border,.subcast_chessmaster_knight .has_progress .subcast_timer_border,.subcast_chessmaster_queen .has_progress .subcast_timer_border
+{
+	wash-color: #6efff3;
+	background-color: offBlack&99;
+}
+
+.subcast_chessmaster_bishop .subcast_icon_container,.subcast_chessmaster_knight .subcast_icon_container,.subcast_chessmaster_queen .subcast_icon_container
+{
+	transition-property: transform;
+	transition-duration: 0.2s;
+}
+
+.subcast_chessmaster_bishop .is_selected.subcast_icon_container,.subcast_chessmaster_knight .is_selected.subcast_icon_container,.subcast_chessmaster_queen .is_selected.subcast_icon_container
+{
+	background-color: rgba(0, 200, 200, 0.85);
+	background-color: #6efff3;
+	transform: translateY(-6px);
+	box-shadow: 0px 0px 15px offBlack&80;
+	animation-name: subcast_highlight;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'subcast_highlight'
+{
+	0%
+	{
+		pre-transform-scale2d: 1.1;
+		brightness: 1;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1.35;
+		brightness: 2;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1.1;
+		brightness: 1;
+	}
+	
 }
 
 @keyframes 'FlashAbilityIcon'

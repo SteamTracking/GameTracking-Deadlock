@@ -1237,6 +1237,31 @@ CCitadel_Ability_ChargedTackle
 
 CCitadel_Ability_Charged_Bomb
 
+CCitadel_Ability_ChessMaster_PrimaryWeapon
+	int m_iCurrentShotCount
+
+CCitadel_Ability_Chessmaster_ForkPiece
+	EHANDLE m_hCameraTarget (sent as: ehandle)
+	bool m_bActive
+
+CCitadel_Ability_Chessmaster_KnightBuff
+
+CCitadel_Ability_Chessmaster_MoveChessPiece
+	GameTime_t m_tCancelHoverTime (sent as: float32)
+	EHANDLE m_pSelectedPiece (sent as: ehandle)
+	float m_flCachedMoveDistance
+
+CCitadel_Ability_Chessmaster_Queen
+	int m_iRemainingMoves
+	EHANDLE m_pDeployedQueen (sent as: ehandle)
+	bool m_bActive
+
+CCitadel_Ability_Chessmaster_ThrowBishop
+	EHANDLE m_vecDeployedPieces (sent as: ehandle)
+	bool m_bActive
+	int m_iBishopIndex
+	GameTime_t m_tRecastEndTime (sent as: float32)
+
 CCitadel_Ability_ChronoSwap
 
 CCitadel_Ability_Chrono_KineticCarbine
@@ -1865,11 +1890,11 @@ CCitadel_Ability_Ratking_PrimaryWeapon
 CCitadel_Ability_Ratking_ScrapGrenade
 
 CCitadel_Ability_Ratking_StandardBearer
-	GameTime_t m_flForcedPlantTime (sent as: float32)
-	GameTime_t m_flChargeResumeTime (sent as: float32)
-	GameTime_t m_flChargeStartTime (sent as: float32; change callbacks: OnBannerChargingStateChanged)
-	EPlantLeapPhase_t m_ePlantLeapPhase
-	GameTime_t m_flPlantLeapPhaseStartTime (sent as: float32)
+	GameTime_t m_flForcedPlantTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flChargeResumeTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flChargeStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnBannerChargingStateChanged)
+	EPlantLeapPhase_t m_ePlantLeapPhase (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flPlantLeapPhaseStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_RestorativeGoo
 	GameTime_t m_flSelfCastEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -3724,6 +3749,13 @@ CNPC_Boss_Tier3
 
 CNPC_Boss_Tier3Core
 
+CNPC_ChessPiece
+	GameTime_t m_tCooldownStartTime (sent as: float32)
+	GameTime_t m_tCooldownEndTime (sent as: float32)
+	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
+	int m_iChessPieceState
+	int m_iChessPieceType
+
 CNPC_Escort
 
 CNPC_FamiliarHelper
@@ -4242,6 +4274,8 @@ CProjectile_Boho_BouncyProjectile
 CProjectile_Boho_SkipGrenade
 
 CProjectile_BookwormDragon_Projectile
+
+CProjectile_ChessMaster_Fork_Projectile
 
 CProjectile_Doorman_Cart_Projectile
 

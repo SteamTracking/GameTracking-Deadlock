@@ -263,7 +263,6 @@ PS
 	RenderState(DepthWriteEnable, false);
 	[[layer_constant]] StructuredBuffer g_BarnLights < Attribute("BarnLights"); >;
 	[[layer_constant]] StructuredBuffer g_CullBits < Attribute("CullBits"); >;
-	bool g_bIsDeprecated < Attribute("bIsDeprecated"); UiType(CheckBox); >;
 	[[layer_constant]] ExternalDescriptorSet g_globalLateBoundBindlessSet < Source(ExternalDescSet); Attribute("g_globalLateBoundBindlessSet"); >;
 	[[layer_constant]] StructuredBuffer g_instanceBuffer < Attribute("InstanceBuffer"); >;
 	[[layer_constant]] ExternalDescriptorSet g_lightBinnerGpuSet < Source(ExternalDescSet); Attribute("g_lightBinnerGpuSet"); >;

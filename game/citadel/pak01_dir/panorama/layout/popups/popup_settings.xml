@@ -348,6 +348,9 @@
 						<PopupSettingsSettingsRow>
 							<CitadelSettingsKeyBinder id="ChatTeamBinder" bind="ChatTeam" />
 						</PopupSettingsSettingsRow>
+						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_instant_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
+							<CitadelSettingsKeyBinder id="InstantPingBinder" bind="InstantPing" />
+						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_hotkeys_tooltip_ping, SettingsMenuTooltip )" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsKeyBinder id="PingBinder" bind="Ping" class="ChatWheelBind" new-setting-index="10" />
 						</PopupSettingsSettingsRow>
@@ -1380,7 +1383,7 @@
 				<PopupSettingsSettingsSection id="citadel_settings_advanced">
 					<PopupSettingsSettingsSubsection id="citadel_settings_hero_specific" new-setting-index="14" class="ExcludeFromBulkReset">
 						<PopupSettingsSettingsRow onmouseover="UIShowTextTooltipStyled( #citadel_Hotkeys_Tooltip_PerUnitHotkeys, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
-							<CitadelSettingsToggle class="CheckBox" id="PerUnitHotkeysCheckBox" text="#citadel_settings_per_unit_hotkeys" onactivate="CitadelSetPerUnitSettings();" convar="citadel_per_unit_hotkeys_checked" new-setting-index="14" />
+							<CitadelSettingsToggle class="CheckBox" id="PerUnitHotkeysCheckBox" text="#citadel_settings_per_unit_hotkeys" onactivate="CitadelSetPerUnitSettings();" convar="citadel_hero_specific_settings_enabled" new-setting-index="14" />
 						</PopupSettingsSettingsRow>
 						<PopupSettingsSettingsRow id="AlwaysShowAllSettingsRow" hidden-by="PerUnitHotkeysCheckBox" onmouseover="UIShowTextTooltipStyled( #citadel_settings_always_show_all_tooltip, SettingsMenuTooltip)" onmouseout="UIHideTextTooltip()">
 							<CitadelSettingsToggle class="CheckBox" id="AlwaysShowAllSettingsCheckBox" text="#citadel_settings_always_show_all" onactivate="CitadelSettingsAlwaysShowAllChanged();" convar="citadel_settings_always_show_all_settings" />

@@ -393,7 +393,6 @@ PS
 	RenderState(DepthFunc, Equal);
 	RenderState(FillMode, Wireframe);
 	RenderState(SlopeScaleDepthBias, 0);
-	bool g_bIsDeprecated < Attribute("bIsDeprecated"); UiType(CheckBox); >;
 	bool g_bOverrideBloomAmount < UiType(CheckBox); Expression(F_OVERRIDE_BLOOM_AMOUNT ? 1 : 0); >;
 	[[layer_constant]] ExternalDescriptorSet g_globalLateBoundBindlessSet < Source(ExternalDescSet); Attribute("g_globalLateBoundBindlessSet"); >;
 	[[layer_constant]] ExternalDescriptorSet g_lightBinnerGpuSet < Source(ExternalDescSet); Attribute("g_lightBinnerGpuSet"); >;

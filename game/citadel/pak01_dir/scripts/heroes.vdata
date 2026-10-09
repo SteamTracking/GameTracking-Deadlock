@@ -7723,7 +7723,7 @@
 			"#Citadel_Vindicta_HeroTag_3",
 		]
 		m_strGunTag = "#Attribute_EWeaponAttribute_LongRange"
-		m_strHideoutRichPresence = "#Steam_Citadel_Hideout_Brooding"
+		m_strHideoutRichPresence = "#Steam_Citadel_Hideout_Hathorne"
 		m_eHeroType = "ECitadelHeroType_Marksman"
 		m_hGeneratedVOEventScript = resource_name:"soundevents/vo/generated_vo_hero_hornet.vsndevts"
 		m_strIconHeroCardCritical = panorama:"file://{images}/heroes/hornet_card_critical.psd"
@@ -126499,14 +126499,14 @@
 		m_bInDevelopment = false
 		m_bNeedsTesting = false
 		m_bLimitedTesting = false
-		m_nComplexity = 3
+		m_nComplexity = 1
 		m_nAllyBotDifficulty = 1
 		m_nEnemyBotDifficulty = 1
 		m_HeroID = 85
 		m_strModelName = resource_name:"models/heroes_wip/chessmaster/chessmaster.vmdl"
-		m_strUIShoppingMap = "maps/ui/hero_shop/default_shop.vmap"
-		m_strUITeamRevealMap = "maps/ui/team_reveal_hero/default_team_reveal.vmap"
-		m_strUIPostgamePortraitMap = "maps/ui/hero_postgame_portrait/default_postgame_portrait.vmap"
+		m_strUIShoppingMap = "maps/ui/hero_shop/chessmaster_shop.vmap"
+		m_strUITeamRevealMap = "maps/ui/team_reveal_hero/chessmaster_team_reveal.vmap"
+		m_strUIPostgamePortraitMap = "maps/ui/hero_postgame_portrait/chessmaster_postgame_portrait.vmap"
 		m_hDamageTakenParticle = resource_name:"particles/generic/player_damage_screen.vpcf"
 		m_hGroundDamageTakenParticle = resource_name:"particles/generic/player_ground_damage_screen.vpcf"
 		m_hDeathParticle = resource_name:"particles/generic/player_death_screen.vpcf"
@@ -126516,8 +126516,8 @@
 		m_nModelSkin = 0
 		m_mapStartingStats = 
 		{
-			EMaxMoveSpeed = 7.2
-			ESprintSpeed = 1.6
+			EMaxMoveSpeed = 6.7
+			ESprintSpeed = 3.25
 			ECrouchSpeed = 4.75
 			EMoveAcceleration = 4
 			ELightMeleeDamage = 50
@@ -126527,7 +126527,7 @@
 			EReloadSpeed = 1
 			EWeaponPowerScale = 1
 			EProcBuildUpRateScale = 1
-			EStamina = 3
+			EStamina = 2
 			EBaseHealthRegen = 2.0
 			EStaminaRegenPerSecond = 0.222222
 			EAbilityResourceMax = 0
@@ -126539,9 +126539,9 @@
 			EHeroSpiritLifestealEffectiveness = 1.0
 			EHeroBulletLifestealEffectiveness = 1.0
 			EGroundDashDistanceInMeters = 10.0
-			EGroundDashDuration = 0.68
+			EGroundDashDuration = 0.72
 			EAirDashDistanceInMeters = 8.0
-			EAirDashDuration = 0.47
+			EAirDashDuration = 0.51
 			EOOCHealthRegen = 0
 		}
 		m_groundDashPositionCurve = 
@@ -126577,8 +126577,8 @@
 		}
 		m_mapBoundAbilities = 
 		{
-			ESlot_Weapon_Primary = "citadel_weapon_inferno_set"
-			ESlot_Weapon_Melee = "ability_melee_inferno"
+			ESlot_Weapon_Primary = "citadel_weapon_chessmaster_shotgun"
+			ESlot_Weapon_Melee = "ability_melee_chessmaster"
 			ESlot_Ability_Mantle = "citadel_ability_mantle"
 			ESlot_Ability_Jump = "citadel_ability_jump"
 			ESlot_Ability_Slide = "citadel_ability_slide"
@@ -126589,6 +126589,10 @@
 			ESlot_Ability_Innate_2 = "citadel_ability_sprint"
 			ESlot_Ability_Innate_3 = "citadel_ability_melee_parry"
 			ESlot_Cosmetic_1 = "cosmetic_ability_voting_poster"
+			ESlot_Signature_1 = "ability_chessmaster_throwbishop"
+			ESlot_Signature_2 = "ability_chessmaster_knightbuff"
+			ESlot_Signature_3 = "ability_chessmaster_forkpiece"
+			ESlot_Signature_4 = "ability_chessmaster_queen"
 		}
 		m_mapItemSlotInfo = 
 		{
@@ -126934,7 +126938,7 @@
 		m_flStealthSpeedMetersPerSecond = 4
 		m_strLastHitSound = soundevent:"LastHit.Default"
 		m_strLowHealthSound = soundevent:"PlayerAlert.LowHealth"
-		m_colorUI = [ 255, 255, 255 ]
+		m_colorUI = [ 156, 205, 236 ]
 		m_vecAmbientParticleSettings = 
 		[
 			{
@@ -127012,6 +127016,11 @@
 		}
 		m_mapScalingStats = 
 		{
+			EBulletDamage = 
+			{
+				eScalingStat = "ETechPower"
+				flScale = 0.14
+			}
 		}
 		m_heroStatsDisplay = 
 		{
@@ -127059,7 +127068,7 @@
 		{
 			MODIFIER_VALUE_BASE_BULLET_DAMAGE_FROM_LEVEL = 0.4
 			MODIFIER_VALUE_BASE_BULLET_DAMAGE_FROM_LEVEL_ALT_FIRE = 0.0
-			MODIFIER_VALUE_BASE_HEALTH_FROM_LEVEL = 38.0
+			MODIFIER_VALUE_BASE_HEALTH_FROM_LEVEL = 40.0
 			MODIFIER_VALUE_BASE_MELEE_DAMAGE_FROM_LEVEL = 1.58
 			MODIFIER_VALUE_BONUS_ATTACK_RANGE = 0.0
 			MODIFIER_VALUE_BOON_COUNT = 1
@@ -127094,6 +127103,8 @@
 					"ELightMeleeDamage",
 					"EHeavyMeleeDamage",
 				]
+				m_eWeaponAttributes = "EWeaponAttribute_RapidFire | EWeaponAttribute_LongRange"
+				m_strWeaponImage = panorama:"file://{images}/heroes/guns/chessmaster_gun.psd"
 			}
 			m_eVitalityStatsDisplay = 
 			{
@@ -127315,12 +127326,12 @@
 		{
 			upgrade_ability_power_shard = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_ability_refresher = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_absorbing_armor = 
@@ -127350,7 +127361,7 @@
 			}
 			upgrade_aoe_root = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_apex_combat = 
@@ -127365,12 +127376,12 @@
 			}
 			upgrade_arcane_extension = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_arcane_surge = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_arctic_blast = 
@@ -127390,7 +127401,7 @@
 			}
 			upgrade_blitz_bullets = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_blood_tribute = 
@@ -127400,7 +127411,7 @@
 			}
 			upgrade_boundless_spirit = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_boxing_glove = 
@@ -127435,7 +127446,7 @@
 			}
 			upgrade_cardio_calibrator = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_celestial_guidance = 
@@ -127495,12 +127506,12 @@
 			}
 			upgrade_containment = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_cooldown_reduction = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_counterspell = 
@@ -127545,7 +127556,7 @@
 			}
 			upgrade_divine_barrier = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_diviners_kevlar = 
@@ -127575,12 +127586,12 @@
 			}
 			upgrade_endurance = 
 			{
-				m_strBucket = "Normal"
-				m_flWeight = 0.4
+				m_strBucket = "Good"
+				m_flWeight = 1.0
 			}
 			upgrade_escalating_exposure = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_eternal_gift = 
@@ -127635,12 +127646,12 @@
 			}
 			upgrade_greater_withering_whip = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_guardian_ward = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_haunting_scream = 
@@ -127670,12 +127681,12 @@
 			}
 			upgrade_healbuff = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_healing_booster = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_health = 
@@ -127685,7 +127696,7 @@
 			}
 			upgrade_health_nova = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_health_stealing_magic = 
@@ -127700,7 +127711,7 @@
 			}
 			upgrade_high_velocity_mag = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_hollow_point_rounds = 
@@ -127715,7 +127726,7 @@
 			}
 			upgrade_imbued_duration_extender = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_improved_bullet_armor = 
@@ -127725,12 +127736,12 @@
 			}
 			upgrade_improved_spirit = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_improved_stamina = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_infinite_rounds = 
@@ -127775,7 +127786,7 @@
 			}
 			upgrade_magic_burst = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_magic_carpet = 
@@ -127785,37 +127796,37 @@
 			}
 			upgrade_magic_reach = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_magic_shield = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_magic_shock = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_magic_slow = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_magic_storm = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_magic_tempo = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_magic_vulnerability = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_medic_bullets = 
@@ -127890,7 +127901,7 @@
 			}
 			upgrade_pristine_emblem = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_proc_silence = 
@@ -127905,7 +127916,7 @@
 			}
 			upgrade_rapid_recharge = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_rapid_rounds = 
@@ -127935,7 +127946,7 @@
 			}
 			upgrade_rescue_beam = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_resonant_healing = 
@@ -127966,7 +127977,7 @@
 			upgrade_runed_gauntlets = 
 			{
 				m_strBucket = "Normal"
-				m_flWeight = 0.4
+				m_flWeight = 1.0
 			}
 			upgrade_rupture = 
 			{
@@ -128015,7 +128026,7 @@
 			}
 			upgrade_soaring_spirit = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_spellbreaker = 
@@ -128030,12 +128041,12 @@
 			}
 			upgrade_spirit_bubble = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_spirit_burn = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_spirit_sap = 
@@ -128055,12 +128066,12 @@
 			}
 			upgrade_sprint_booster = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_superior_stamina = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_suppressor = 
@@ -128075,7 +128086,7 @@
 			}
 			upgrade_target_stun = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_targeted_silence = 
@@ -128095,7 +128106,7 @@
 			}
 			upgrade_tech_overflow = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_tech_purge = 
@@ -128105,12 +128116,12 @@
 			}
 			upgrade_tech_range = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_thermal_detonator = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_timeless_emblem = 
@@ -128120,7 +128131,7 @@
 			}
 			upgrade_titan_round = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_toxic_bullets = 
@@ -128130,17 +128141,17 @@
 			}
 			upgrade_transcendent_cooldown = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_trophy_collector = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_ultimate_burst = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_unstable_concoction = 
@@ -128190,7 +128201,7 @@
 			}
 			upgrade_withering_whip = 
 			{
-				m_strBucket = "Normal"
+				m_strBucket = "Good"
 				m_flWeight = 1.0
 			}
 			upgrade_auto_cleanse = 
@@ -128205,21 +128216,437 @@
 			}
 		}
 		_base = "hero_base"
+		m_bNewPlayerRecommended = false
+		m_bLaneTestingRecommended = false
+		m_strIconImageSmall = panorama:"file://{images}/heroes/chessmaster_sm.psd"
 		m_strVoteSticker = panorama:"file://{images}/events/voting_sept2026/sticker_chessmaster.psd"
+		m_strMinimapImage = panorama:"file://{images}/heroes/chessmaster_mm.psd"
+		m_strDeathVOSound = soundevent:"Generated.Chessmaster.Hero.Death.VO"
 		m_strHeroSearchName = "#hero_chessmaster_search"
+		m_strHeroGender = "male"
+		m_hGameSoundEventScript = resource_name:"soundevents/hero/hornet.vsndevts"
+		m_strRosterSelectedSound = soundevent:"Generated.Chessmaster.Hero.Pick.VO"
 		m_strIconHeroCard = panorama:"file://{images}/heroes/chessmaster_card.psd"
 		m_strUIPortraitMap = "maps/ui/hero_prefabs/chessmaster.vmap"
 		m_strTopBarVertical = panorama:"file://{images}/heroes/chessmaster_vertical.psd"
+		m_strPostGameDefeatSound = soundevent:"Inferno.Progession.Page.Lose.VO"
+		m_strRosterRemovedSound = soundevent:"Generated.Chessmaster.Hero.Remove.VO"
 		m_vecHeroTags = 
 		[
 			"#Citadel_Chessmaster_HeroTag_1",
 			"#Citadel_Chessmaster_HeroTag_2",
 			"#Citadel_Chessmaster_HeroTag_3",
 		]
-		m_eHeroDevelopmentState = "EHeroDevState_PreRelease"
+		m_strGunTag = "#Attribute_EWeaponAttribute_Projectile"
+		m_strHideoutRichPresence = "#Steam_Citadel_Hideout_Chess"
+		m_eHeroType = "ECitadelHeroType_Mystic"
+		m_strIconHeroCardCritical = panorama:"file://{images}/heroes/chessmaster_card_critical.psd"
+		m_strIconHeroCardGloat = panorama:"file://{images}/heroes/chessmaster_card_gloat.psd"
+		m_strPostGameVictorySound = soundevent:"Chessmaster.Progession.Page.Win.VO"
+		m_eHeroDevelopmentState = "EHeroDevState_Release"
+		m_strWIPModelName = resource_name:"models/heroes_wip/chessmaster/chessmaster.vmdl"
+		m_hGeneratedVOEventScript = resource_name:"soundevents/vo/generated_vo_hero_chessmaster.vsndevts"
+		m_PopularItems = 
+		{
+			m_unTimestamp = 1791307974
+			m_mapGeneratedItemPopularity = 
+			{
+				ECitadelItemGamePhase_EarlyGame = 
+				{
+					upgrade_endurance = 
+					{
+						m_flPickPct = 38.29787
+						m_flWinratePct = 66.666664
+					}
+					upgrade_grit = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 75.0
+					}
+					upgrade_guardian_ward = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 66.666664
+					}
+					upgrade_healbane = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 66.666664
+					}
+					upgrade_high_velocity_mag = 
+					{
+						m_flPickPct = 40.425533
+						m_flWinratePct = 57.894737
+					}
+					upgrade_improved_spirit = 
+					{
+						m_flPickPct = 53.19149
+						m_flWinratePct = 60.0
+					}
+					upgrade_improved_stamina = 
+					{
+						m_flPickPct = 19.148935
+						m_flWinratePct = 66.666664
+					}
+					upgrade_magic_burst = 
+					{
+						m_flPickPct = 44.68085
+						m_flWinratePct = 71.42857
+					}
+					upgrade_magic_reach = 
+					{
+						m_flPickPct = 53.19149
+						m_flWinratePct = 56.0
+					}
+					upgrade_magic_slow = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 25.0
+					}
+					upgrade_magic_tempo = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 50.0
+					}
+					upgrade_non_player_bonus = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 66.666664
+					}
+					upgrade_pristine_emblem = 
+					{
+						m_flPickPct = 38.29787
+						m_flWinratePct = 50.0
+					}
+					upgrade_rapid_rounds = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 50.0
+					}
+					upgrade_soaring_spirit = 
+					{
+						m_flPickPct = 21.276596
+						m_flWinratePct = 60.0
+					}
+				}
+				ECitadelItemGamePhase_MidGame = 
+				{
+					upgrade_arcane_surge = 
+					{
+						m_flPickPct = 10.638298
+						m_flWinratePct = 80.0
+					}
+					upgrade_blitz_bullets = 
+					{
+						m_flPickPct = 10.638298
+						m_flWinratePct = 20.0
+					}
+					upgrade_boundless_spirit = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 100.0
+					}
+					upgrade_cardio_calibrator = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 100.0
+					}
+					upgrade_clip_size = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 66.666664
+					}
+					upgrade_cooldown_reduction = 
+					{
+						m_flPickPct = 40.425533
+						m_flWinratePct = 63.157894
+					}
+					upgrade_crackshot = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 100.0
+					}
+					upgrade_express_shot = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 50.0
+					}
+					upgrade_grit = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 33.333332
+					}
+					upgrade_guardian_ward = 
+					{
+						m_flPickPct = 17.021276
+						m_flWinratePct = 50.0
+					}
+					upgrade_healbane = 
+					{
+						m_flPickPct = 29.787233
+						m_flWinratePct = 50.0
+					}
+					upgrade_health = 
+					{
+						m_flPickPct = 10.638298
+						m_flWinratePct = 100.0
+					}
+					upgrade_improved_spirit = 
+					{
+						m_flPickPct = 19.148935
+						m_flWinratePct = 44.444443
+					}
+					upgrade_improved_stamina = 
+					{
+						m_flPickPct = 53.19149
+						m_flWinratePct = 60.0
+					}
+					upgrade_kinetic_sash = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 66.666664
+					}
+					upgrade_magic_burst = 
+					{
+						m_flPickPct = 29.787233
+						m_flWinratePct = 42.857143
+					}
+					upgrade_magic_reach = 
+					{
+						m_flPickPct = 31.914894
+						m_flWinratePct = 53.333332
+					}
+					upgrade_magic_shield = 
+					{
+						m_flPickPct = 38.29787
+						m_flWinratePct = 55.555557
+					}
+					upgrade_magic_shock = 
+					{
+						m_flPickPct = 40.425533
+						m_flWinratePct = 57.894737
+					}
+					upgrade_magic_slow = 
+					{
+						m_flPickPct = 12.765958
+						m_flWinratePct = 33.333332
+					}
+					upgrade_magic_tempo = 
+					{
+						m_flPickPct = 48.93617
+						m_flWinratePct = 52.173912
+					}
+					upgrade_magic_vulnerability = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 75.0
+					}
+					upgrade_non_player_bonus_sacrifice = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 50.0
+					}
+					upgrade_pristine_emblem = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 50.0
+					}
+					upgrade_reduce_debuff_duration = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 66.666664
+					}
+					upgrade_regenerating_bullet_shield = 
+					{
+						m_flPickPct = 10.638298
+						m_flWinratePct = 20.0
+					}
+					upgrade_soaring_spirit = 
+					{
+						m_flPickPct = 46.80851
+						m_flWinratePct = 59.090908
+					}
+					upgrade_spirit_bubble = 
+					{
+						m_flPickPct = 12.765958
+						m_flWinratePct = 50.0
+					}
+					upgrade_superior_stamina = 
+					{
+						m_flPickPct = 42.553192
+						m_flWinratePct = 65.0
+					}
+					upgrade_target_stun = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 50.0
+					}
+					upgrade_tech_purge = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 66.666664
+					}
+					upgrade_tech_range = 
+					{
+						m_flPickPct = 59.574467
+						m_flWinratePct = 64.28571
+					}
+					upgrade_titan_round = 
+					{
+						m_flPickPct = 10.638298
+						m_flWinratePct = 40.0
+					}
+					upgrade_toxic_bullets = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 66.666664
+					}
+					upgrade_trophy_collector = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 33.333332
+					}
+				}
+				ECitadelItemGamePhase_LateGame = 
+				{
+					upgrade_aoe_root = 
+					{
+						m_flPickPct = 10.638298
+						m_flWinratePct = 100.0
+					}
+					upgrade_blitz_bullets = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 33.333332
+					}
+					upgrade_boundless_spirit = 
+					{
+						m_flPickPct = 61.70213
+						m_flWinratePct = 51.724136
+					}
+					upgrade_cooldown_reduction = 
+					{
+						m_flPickPct = 38.29787
+						m_flWinratePct = 50.0
+					}
+					upgrade_divine_barrier = 
+					{
+						m_flPickPct = 17.021276
+						m_flWinratePct = 62.5
+					}
+					upgrade_escalating_exposure = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 100.0
+					}
+					upgrade_health_stealing_magic = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 50.0
+					}
+					upgrade_imbued_duration_extender = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 25.0
+					}
+					upgrade_magic_carpet = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 50.0
+					}
+					upgrade_magic_shock = 
+					{
+						m_flPickPct = 36.17021
+						m_flWinratePct = 52.941177
+					}
+					upgrade_magic_slow = 
+					{
+						m_flPickPct = 14.893617
+						m_flWinratePct = 85.71429
+					}
+					upgrade_magic_tempo = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 33.333332
+					}
+					upgrade_magic_vulnerability = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 66.666664
+					}
+					upgrade_reduce_debuff_duration = 
+					{
+						m_flPickPct = 14.893617
+						m_flWinratePct = 57.142857
+					}
+					upgrade_self_bubble = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 100.0
+					}
+					upgrade_soaring_spirit = 
+					{
+						m_flPickPct = 14.893617
+						m_flWinratePct = 57.142857
+					}
+					upgrade_spirit_burn = 
+					{
+						m_flPickPct = 12.765958
+						m_flWinratePct = 66.666664
+					}
+					upgrade_superior_stamina = 
+					{
+						m_flPickPct = 21.276596
+						m_flWinratePct = 60.0
+					}
+					upgrade_target_stun = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 66.666664
+					}
+					upgrade_tech_overflow = 
+					{
+						m_flPickPct = 10.638298
+						m_flWinratePct = 80.0
+					}
+					upgrade_tech_purge = 
+					{
+						m_flPickPct = 12.765958
+						m_flWinratePct = 50.0
+					}
+					upgrade_tech_range = 
+					{
+						m_flPickPct = 27.659575
+						m_flWinratePct = 46.153847
+					}
+					upgrade_toxic_bullets = 
+					{
+						m_flPickPct = 6.382979
+						m_flWinratePct = 33.333332
+					}
+					upgrade_transcendent_cooldown = 
+					{
+						m_flPickPct = 17.021276
+						m_flWinratePct = 37.5
+					}
+					upgrade_ultimate_burst = 
+					{
+						m_flPickPct = 21.276596
+						m_flWinratePct = 70.0
+					}
+					upgrade_warp_stone = 
+					{
+						m_flPickPct = 8.510638
+						m_flWinratePct = 75.0
+					}
+				}
+			}
+		}
 		m_strLogoImageEnglish = panorama:"file://{images}/heroes/hero_names/solomon.svg"
 		m_strLogoImageLocalized = panorama:"file://{images}/heroes/hero_names/solomon_localized.svg"
+		m_strMovementLoop = soundevent:"Chessmaster.Movement.Lp"
 		m_strHeroVotedSound = soundevent:"Generated.Chessmaster.Hero.Voted.VO"
+		m_strHeroDebutSound = soundevent:"Generated.Chessmaster.Hero.Debut.VO"
 	}
 	hero_artist = 
 	{

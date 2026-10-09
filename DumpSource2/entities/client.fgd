@@ -1081,6 +1081,31 @@
 [
 ]
 
+// CCitadel_Ability_Chessmaster_ForkPiece
+@PointClass base(citadel_base_ability) = ability_chessmaster_forkpiece
+[
+]
+
+// CCitadel_Ability_Chessmaster_KnightBuff
+@PointClass base(citadel_base_ability) = ability_chessmaster_knightbuff
+[
+]
+
+// CCitadel_Ability_Chessmaster_MoveChessPiece
+@PointClass base(citadel_base_ability) = ability_chessmaster_movechesspiece
+[
+]
+
+// CCitadel_Ability_Chessmaster_Queen
+@PointClass base(citadel_base_ability) = ability_chessmaster_queen
+[
+]
+
+// CCitadel_Ability_Chessmaster_ThrowBishop
+@PointClass base(citadel_base_ability) = ability_chessmaster_throwbishop
+[
+]
+
 // CCitadel_Ability_Crackshot
 @PointClass base(citadel_base_ability) = ability_crackshot
 [
@@ -2191,6 +2216,11 @@
 [
 ]
 
+// CCitadel_Ability_ChessMaster_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_chessmaster_primaryweapon
+[
+]
+
 // CCitadel_Ability_Chrono_KineticCarbine
 @PointClass base(citadel_base_ability) = citadel_ability_chrono_kinetic_carbine
 [
@@ -2720,6 +2750,15 @@
 // C_Citadel_CatAnimating
 @PointClass base(citadel_animating_model_entity) = citadel_cat_animating
 [
+]
+
+// CNPC_ChessPiece
+@PointClass base(C_AI_CitadelNPC) = citadel_chesspiece_entity
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+	lifetime(float) // FIELD_FLOAT32 m_flLifetime
+	chesspiece_state(integer) // FIELD_INT32 m_iChessPieceState
+	chesspiece_type(integer) // FIELD_INT32 m_iChessPieceType
 ]
 
 // C_CitadelConfigurableTrackedProjectile
@@ -5150,6 +5189,11 @@
 
 // C_Projectile_Boho_SkipGrenade
 @PointClass base(citadel_projectile) = projectile_boho_skipgrenade
+[
+]
+
+// C_Projectile_ChessMaster_Fork_Projectile
+@PointClass base(citadel_projectile) = projectile_chessmaster_forkpiece
 [
 ]
 

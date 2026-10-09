@@ -402,7 +402,6 @@ PS
 	RenderState(DepthFunc, GreaterEqual);
 	RenderState(FillMode, Wireframe);
 	RenderState(SlopeScaleDepthBias, 0);
-	bool g_bIsDeprecated < Attribute("bIsDeprecated"); UiType(CheckBox); >;
 	bool g_bOverlayTintMaskInvert1 < UiType(CheckBox); Expression(g_nOverlayTintMask1==2); >;
 	bool g_bOverlayTintMaskInvert2 < UiType(CheckBox); Expression(g_nOverlayTintMask2==2); >;
 	bool g_bOverlayTintMaskInvert3 < UiType(CheckBox); Expression(g_nOverlayTintMask3==2); >;

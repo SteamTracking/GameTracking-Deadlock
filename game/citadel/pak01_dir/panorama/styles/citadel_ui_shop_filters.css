@@ -20,7 +20,7 @@ CitadelShopFilters .Header
 	flow-children: right;
 }
 
-CitadelShopFilters .Header Label
+CitadelShopFilters .Header Label,CitadelShopFilters .Header SyncedFontSizeLabel
 {
 	text-overflow: shrink;
 	max-height: 60px;
@@ -448,6 +448,12 @@ CitadelShopFilters:not(.AndMode) #ActiveFiltersContainer #Breadcrumbs .Breadcrum
 {
 	horizontal-align: left;
 	flow-children: right;
+	margin-right: 170px;
+}
+
+#FilterContainer #FilterList SyncedFontSizeLabel
+{
+	white-space: nowrap;
 }
 
 #FilterContainer #FilterMenus
@@ -456,6 +462,37 @@ CitadelShopFilters:not(.AndMode) #ActiveFiltersContainer #Breadcrumbs .Breadcrum
 	flow-children: none;
 	width: 100%;
 	height: 800px;
+}
+
+#FilterContainer #ActiveFilterSigils
+{
+	ignore-parent-flow: true;
+	flow-children: none;
+	width: 100%;
+	height: 100%;
+	overflow: noclip;
+}
+
+#FilterContainer .ActiveFilterSigil
+{
+	width: 30px;
+	height: 45px;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	opacity: 0;
+	transition-property: pre-transform-scale2d, transform;
+	transition-duration: 0.15s;
+}
+
+.ShowPhysical #FilterContainer .ActiveFilterSigil.Physical,.ShowSpirit #FilterContainer .ActiveFilterSigil.Spirit,.ShowDefense #FilterContainer .ActiveFilterSigil.Defense,.ShowMobility #FilterContainer .ActiveFilterSigil.Mobility,.ShowDisruption #FilterContainer .ActiveFilterSigil.Disruption,.ShowMisc #FilterContainer .ActiveFilterSigil.Misc
+{
+	opacity: 2;
+}
+
+.ShowPhysical #FilterContainer .FilterCategory.Physical .top_filter_img,.ShowSpirit #FilterContainer .FilterCategory.Spirit .top_filter_img,.ShowDefense #FilterContainer .FilterCategory.Defense .top_filter_img,.ShowMobility #FilterContainer .FilterCategory.Mobility .top_filter_img,.ShowDisruption #FilterContainer .FilterCategory.Disruption .top_filter_img,.ShowMisc #FilterContainer .FilterCategory.Misc .top_filter_img
+{
+	opacity: 0;
 }
 
 #FilterContainer .FilterControlContainer
@@ -512,13 +549,19 @@ CitadelShopFilters:not(.AndMode) #ActiveFiltersContainer #Breadcrumbs .Breadcrum
 	transition-duration: 0.15s;
 }
 
-#FilterContainer .FilterCategory.FilterCategory.Physical:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Spirit:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Defense:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Mobility:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Disruption:hover .top_filter_img
+#FilterContainer .FilterCategory.FilterCategory.Physical:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Spirit:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Defense:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Mobility:hover .top_filter_img,#FilterContainer .FilterCategory.FilterCategory.Disruption:hover .top_filter_img,.ShowPhysical #FilterContainer .FilterCategory.FilterCategory.Physical .top_filter_img,.ShowSpirit #FilterContainer .FilterCategory.FilterCategory.Spirit .top_filter_img,.ShowDefense #FilterContainer .FilterCategory.FilterCategory.Defense .top_filter_img,.ShowMobility #FilterContainer .FilterCategory.FilterCategory.Mobility .top_filter_img,.ShowDisruption #FilterContainer .FilterCategory.FilterCategory.Disruption .top_filter_img
 {
 	pre-transform-scale2d: 1.4;
 	transform: rotateZ(-5deg);
 }
 
-#FilterContainer .FilterCategory:hover .top_filter_bg
+.ShowPhysical #FilterContainer .ActiveFilterSigil.Physical,.ShowSpirit #FilterContainer .ActiveFilterSigil.Spirit,.ShowDefense #FilterContainer .ActiveFilterSigil.Defense,.ShowMobility #FilterContainer .ActiveFilterSigil.Mobility,.ShowDisruption #FilterContainer .ActiveFilterSigil.Disruption
+{
+	pre-transform-scale2d: 1.4;
+	transform: rotateZ(-5deg);
+}
+
+#FilterContainer .FilterCategory:hover .top_filter_bg,.ShowPhysical #FilterContainer .FilterCategory.Physical .top_filter_bg,.ShowSpirit #FilterContainer .FilterCategory.Spirit .top_filter_bg,.ShowDefense #FilterContainer .FilterCategory.Defense .top_filter_bg,.ShowMobility #FilterContainer .FilterCategory.Mobility .top_filter_bg,.ShowDisruption #FilterContainer .FilterCategory.Disruption .top_filter_bg,.ShowMisc #FilterContainer .FilterCategory.Misc .top_filter_bg
 {
 	background-image: url("s2r://panorama/images/shop/catalog/filters/top_level_filter_fill.vsvg");
 	background-img-opacity: 1;
@@ -626,62 +669,62 @@ CitadelShopFilters:not(.AndMode) #ActiveFiltersContainer #Breadcrumbs .Breadcrum
 	background-image: url("s2r://panorama/images/shop/catalog/filters/filter_backer_dot_pattern_psd.vtex");
 }
 
-.FilterCategory.Physical:hover .top_filter_bg
+.FilterCategory.Physical:hover .top_filter_bg,.ShowPhysical .FilterCategory.Physical .top_filter_bg
 {
 	wash-color: PhysicalColor;
 }
 
-.FilterCategory.Spirit:hover .top_filter_bg
+.FilterCategory.Spirit:hover .top_filter_bg,.ShowSpirit .FilterCategory.Spirit .top_filter_bg
 {
 	wash-color: MagicColor;
 }
 
-.FilterCategory.Defense:hover .top_filter_bg
+.FilterCategory.Defense:hover .top_filter_bg,.ShowDefense .FilterCategory.Defense .top_filter_bg
 {
 	wash-color: DefenseColor;
 }
 
-.FilterCategory.Mobility:hover .top_filter_bg
+.FilterCategory.Mobility:hover .top_filter_bg,.ShowMobility .FilterCategory.Mobility .top_filter_bg
 {
 	wash-color: MobilityColor;
 }
 
-.FilterCategory.Disruption:hover .top_filter_bg
+.FilterCategory.Disruption:hover .top_filter_bg,.ShowDisruption .FilterCategory.Disruption .top_filter_bg
 {
 	wash-color: DisruptionColor;
 }
 
-.FilterCategory.Misc:hover .top_filter_bg
+.FilterCategory.Misc:hover .top_filter_bg,.ShowMisc .FilterCategory.Misc .top_filter_bg
 {
 	wash-color: MiscColor;
 }
 
-.FilterCategory.Physical .top_filter_img
+.FilterCategory.Physical .top_filter_img,.ActiveFilterSigil.Physical
 {
 	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_physical_psd.vtex");
 }
 
-.FilterCategory.Spirit .top_filter_img
+.FilterCategory.Spirit .top_filter_img,.ActiveFilterSigil.Spirit
 {
 	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_magic_psd.vtex");
 }
 
-.FilterCategory.Defense .top_filter_img
+.FilterCategory.Defense .top_filter_img,.ActiveFilterSigil.Defense
 {
 	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_defense_psd.vtex");
 }
 
-.FilterCategory.Mobility .top_filter_img
+.FilterCategory.Mobility .top_filter_img,.ActiveFilterSigil.Mobility
 {
 	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_mobility_psd.vtex");
 }
 
-.FilterCategory.Disruption .top_filter_img
+.FilterCategory.Disruption .top_filter_img,.ActiveFilterSigil.Disruption
 {
 	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_disruption_psd.vtex");
 }
 
-.FilterCategory.Misc .top_filter_img
+.FilterCategory.Misc .top_filter_img,.ActiveFilterSigil.Misc
 {
 	background-image: url("s2r://panorama/images/shop/catalog/filters/sigil_misc_psd.vtex");
 }
@@ -822,7 +865,7 @@ CitadelShopFilters:not(.AndMode) #ActiveFiltersContainer #Breadcrumbs .Breadcrum
 	transform: none;
 }
 
-ToggleButton Label
+ToggleButton Label,ToggleButton SyncedFontSizeLabel
 {
 	text-overflow: shrink;
 	font-family: oracle;
@@ -834,20 +877,20 @@ ToggleButton Label
 	text-shadow: 0px 0px 0px 1.0 offBlack;
 }
 
-.Header ToggleButton Label,#Breadcrumbs ToggleButton Label
+.Header ToggleButton Label,#Breadcrumbs ToggleButton Label,.Header ToggleButton SyncedFontSizeLabel,#Breadcrumbs ToggleButton SyncedFontSizeLabel
 {
 	font-weight: bold;
 	text-shadow: none;
 }
 
-ToggleButton.ParentSelected Label
+ToggleButton.ParentSelected Label,ToggleButton.ParentSelected SyncedFontSizeLabel
 {
 	font-weight: medium;
 	font-style: italic;
 	opacity: 0.7;
 }
 
-ToggleButton.ParentSelected.FilterGroupControl Label
+ToggleButton.ParentSelected.FilterGroupControl Label,ToggleButton.ParentSelected.FilterGroupControl SyncedFontSizeLabel
 {
 	font-weight: bold;
 	font-style: italic;

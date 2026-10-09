@@ -219,6 +219,7 @@ PS
 	Texture2D g_tSceneDepth < Attribute("SceneDepth"); SrgbRead(false); >;
 	Texture2D g_tSelfIllum < Channel(G, Box(TextureSelfIllumMask), Linear); OutputFormat(DXT1); SrgbRead(false); >;
 	[[layer_constant]] StructuredBuffer g_transformBuffer < Attribute("TransformBuffer"); >;
+	float2 g_vOoTileSize < UiType(VectorText); Expression(float2((g_vTileSize.x>0) ? 1/g_vTileSize.x : 0,(g_vTileSize.y>0) ? 1/g_vTileSize.y : 0)); >;
 	
 	// Color
 	CreateInputTexture2D(TextureColor, Srgb, 8, "", "_color", "Color", Default4(1, 1, 1, 0));
@@ -254,6 +255,9 @@ PS
 	// Self Illum
 	float g_flSelfIllumScale < Range(0, 10); UiType(Slider); UiGroup("Self Illum,30 / 40"); >;
 	
+	// Texture Coordinates
+	float2 g_vTileSize < Range2(0, 0, 4000, 4000); UiType(VectorText); UiGroup("Texture Coordinates"); >;
+	
 	#if (S_USE_SHEETS == 1)
 		Texture2D g_tColor < Channel(RGBA, Box(TextureColor), Srgb); OutputFormat(BC7); SrgbRead(true); >;
 	#endif
@@ -273,6 +277,18 @@ PS
 	
 	#version 460
 	#extension GL_EXT_samplerless_texture_functions : require
+	#if defined(GL_EXT_control_flow_attributes)
+	#extension GL_EXT_control_flow_attributes : require
+	#define SPIRV_CROSS_FLATTEN [[flatten]]
+	#define SPIRV_CROSS_BRANCH [[dont_flatten]]
+	#define SPIRV_CROSS_UNROLL [[unroll]]
+	#define SPIRV_CROSS_LOOP [[dont_unroll]]
+	#else
+	#define SPIRV_CROSS_FLATTEN
+	#define SPIRV_CROSS_BRANCH
+	#define SPIRV_CROSS_UNROLL
+	#define SPIRV_CROSS_LOOP
+	#endif
 	
 	struct _1125
 	{
@@ -302,10 +318,9 @@ PS
 	
 	layout(set = 1) uniform _1220 PerViewConstantBuffer_t;
 	
-	struct _2289
+	struct _2433
 	{
 	    uint g_sAniso;
-	    uint g_sTrilinearClamp;
 	    uint g_tColor;
 	    uint g_tSelfIllum;
 	    uint g_tNormalRoughness;
@@ -324,6 +339,7 @@ PS
 	    float g_flSelfIllumScale;
 	    int g_bBiplanarProjection;
 	    int g_bMultiplyAlbedo;
+	    vec2 g_vOoTileSize;
 	    int g_bRipples;
 	    vec4 g_vRippleStrengths;
 	    vec4 g_vRippleFrequencies;
@@ -333,7 +349,7 @@ PS
 	    vec4 g_vRippleRoughnessPerturb;
 	};
 	
-	layout(set = 1) uniform _2289 _Globals_;
+	layout(set = 1) uniform _2433 _Globals_;
 	
 	layout(set = 4, binding = 32, std430) readonly buffer g_instanceBuffer
 	{
@@ -446,10 +462,12 @@ PS
 	    vec3 _22912 = _22906.xyz - _22909.xyz;
 	    vec3 _20307 = _22910.xyz - _22906.xyz;
 	    vec2 _4360 = _18404.xy;
-	    vec3 _11878 = mix(_22911, _19714, bvec3(abs(_19714.z) < abs(_22911.z))).xyz;
-	    vec3 _13263 = _10294.xyz;
+	    vec3 _18430 = mix(_22911, _19714, bvec3(abs(_19714.z) < abs(_22911.z))).xyz;
+	    vec3 _9238 = _10294.xyz;
 	    vec3 _8659 = -_10295.xyz;
-	    vec3 _7879 = mix(_20307, _22912, bvec3(abs(_22912.z) < abs(_20307.z))).xyz;
+	    vec2 _5218 = vec2(dot(_18430, _9238), dot(_18430, _8659)) * 0.5;
+	    vec3 _15332 = mix(_20307, _22912, bvec3(abs(_22912.z) < abs(_20307.z))).xyz;
+	    vec2 _5581 = vec2(dot(_15332, _9238), dot(_15332, _8659)) * 0.5;
 	    vec3 _13528 = normalize((texelFetch(g_bindless_Texture2D_float_1[PerViewConstantBufferCitadel_t._m1], ivec3(ivec2(gl_FragCoord.xy), 0).xy, 0).xyz * 2.0) - vec3(1.0));
 	    vec3 _24386 = normalize(_13528 * _13976);
 	    vec3 _13136;
@@ -543,8 +561,8 @@ PS
 	        mat3 _16415 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
 	        mat3 _16416 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
 	        mat3 _16417 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
-	        mat3 _16446 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
-	        mat3 _16442 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
+	        mat3 _16418 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
+	        mat3 _16419 = mat3(vec3(1.0, 0.0, 0.0), vec3(0.0, 1.0, 0.0), vec3(0.0, 0.0, 1.0));
 	        vec2 _19651 = saturate((vec2(_16409[_23727.x], _16409[_12772]) - vec2(0.577300012111663818359375)) * vec2(2.365744113922119140625));
 	        vec2 _19317 = _19651 / vec2(_19651.x + _19651.y);
 	        float _13747 = _19317.y;
@@ -556,12 +574,12 @@ PS
 	        float _16784 = (_8867 + _18662) - 1.00392162799835205078125;
 	        float _11177 = _8867 - _18662;
 	        vec3 _15729 = normalize(vec3(vec2(_16784, _11177), (1.0 - abs(_16784)) - abs(_11177)));
-	        float _23407 = _15367.x;
+	        float _23408 = _15367.x;
 	        float _7081 = _15367.y;
-	        float _16785 = (_23407 + _7081) - 1.00392162799835205078125;
-	        float _11178 = _23407 - _7081;
+	        float _16785 = (_23408 + _7081) - 1.00392162799835205078125;
+	        float _11178 = _23408 - _7081;
 	        vec3 _15730 = normalize(vec3(vec2(_16785, _11178), (1.0 - abs(_16785)) - abs(_11178)));
-	        vec3 _13758 = mix((((_16414[_7285 ? _23727.z : _23727.y].xyz * _15729.x).xyz + (_16415[_7285 ? _23727.y : _23727.z].xyz * (-_15729.y))).xyz + ((_16416[_23727.x] * _16408[_23727.x]).xyz * _15729.z)).xyz, (((_16417[_14746 ? _17895 : _9637].xyz * _15730.x).xyz + (_16446[_14746 ? _9637 : _17895].xyz * (-_15730.y))).xyz + ((_16442[_12772] * _16408[_12772]).xyz * _15730.z)).xyz, vec3(_13747)) * _13976;
+	        vec3 _13758 = mix((((_16414[_7285 ? _23727.z : _23727.y].xyz * _15729.x).xyz + (_16415[_7285 ? _23727.y : _23727.z].xyz * (-_15729.y))).xyz + ((_16416[_23727.x] * _16408[_23727.x]).xyz * _15729.z)).xyz, (((_16417[_14746 ? _17895 : _9637].xyz * _15730.x).xyz + (_16418[_14746 ? _9637 : _17895].xyz * (-_15730.y))).xyz + ((_16419[_12772] * _16408[_12772]).xyz * _15730.z)).xyz, vec3(_13747)) * _13976;
 	        _13136 = normalize(_13758);
 	        _16305 = mix(textureGrad(sampler2D(g_bindless_Texture2D_float_1[_Globals_.g_tSelfIllum], g_bindless_Sampler[_Globals_.g_sAniso]), _15176, _6422, _22743), textureGrad(sampler2D(g_bindless_Texture2D_float_1[_Globals_.g_tSelfIllum], g_bindless_Sampler[_Globals_.g_sAniso]), _17788, _6424, _24795), _17962);
 	        _13960 = mix(_14261, _15367, _17962);
@@ -569,42 +587,66 @@ PS
 	    }
 	    else
 	    {
+	        int _23989;
+	        int _13039 = 0;
+	        SPIRV_CROSS_UNROLL
+	        for (;;)
+	        {
+	            if (!(_13039 < 2))
+	            {
+	                break;
+	            }
+	            vec2 _16420 = _Globals_.g_vOoTileSize;
+	            if (_16420[_13039] > 0.0)
+	            {
+	                mat4x3 _16446 = _10676;
+	                vec2 _16442 = _Globals_.g_vOoTileSize;
+	                float _4384 = sqrt(dot(_16446[_13039], _16446[_13039])) * _16442[_13039];
+	                _4360[_13039] = ((_4360[_13039] - 0.5) * _4384) + 0.5;
+	                _5218[_13039] *= _4384;
+	                _5581[_13039] *= _4384;
+	            }
+	            _23989 = _13039 + 1;
+	            _13039 = _23989;
+	            continue;
+	        }
+	        vec2 _25061 = _4360;
 	        bool _9197 = (input_1 & 1u) != 0u;
 	        vec2 _19629;
 	        if (_9197)
 	        {
-	            vec2 _19101 = _4360;
-	            _19101.x = 1.0 - _18404.x;
+	            vec2 _19101 = _25061;
+	            _19101.x = 1.0 - _25061.x;
 	            _19629 = _19101;
 	        }
 	        else
 	        {
-	            _19629 = _4360;
+	            _19629 = _25061;
 	        }
-	        vec2 _10826 = (vec2(dot(_11878, _13263), dot(_11878, _8659)) * 0.5).xy;
-	        vec2 _9376 = (vec2(dot(_7879, _13263), dot(_7879, _8659)) * 0.5).xy;
-	        vec2 _19287;
+	        vec2 _16670 = _4360;
+	        vec2 _19630;
 	        if (_9197)
 	        {
-	            vec2 _19102 = _4360;
-	            _19102.x = 1.0 - _18404.x;
-	            _19287 = _19102;
+	            vec2 _19102 = _16670;
+	            _19102.x = 1.0 - _16670.x;
+	            _19630 = _19102;
 	        }
 	        else
 	        {
-	            _19287 = _4360;
+	            _19630 = _16670;
 	        }
-	        vec4 _13568 = textureGrad(sampler2D(g_bindless_Texture2D_float_1[_Globals_.g_tNormalRoughness], g_bindless_Sampler[_Globals_.g_sAniso]), _19287.xy, _10826, _9376);
-	        vec2 _19288;
+	        vec4 _13568 = textureGrad(sampler2D(g_bindless_Texture2D_float_1[_Globals_.g_tNormalRoughness], g_bindless_Sampler[_Globals_.g_sAniso]), _19630.xy, _5218.xy, _5581.xy);
+	        vec2 _16671 = _4360;
+	        vec2 _19631;
 	        if (_9197)
 	        {
-	            vec2 _19103 = _4360;
-	            _19103.x = 1.0 - _18404.x;
-	            _19288 = _19103;
+	            vec2 _19103 = _16671;
+	            _19103.x = 1.0 - _16671.x;
+	            _19631 = _19103;
 	        }
 	        else
 	        {
-	            _19288 = _4360;
+	            _19631 = _16671;
 	        }
 	        float _15751 = _13568.x;
 	        float _17298 = _13568.y;
@@ -612,9 +654,9 @@ PS
 	        float _11176 = _15751 - _17298;
 	        vec3 _15728 = normalize(vec3(vec2(_16783, _11176), (1.0 - abs(_16783)) - abs(_11176)));
 	        _13136 = normalize((((normalize(_10294).xyz * _15728.x).xyz + (normalize(_10295).xyz * (-_15728.y))).xyz + (_13528.xyz * _15728.z)).xyz);
-	        _16305 = textureGrad(sampler2D(g_bindless_Texture2D_float_1[_Globals_.g_tSelfIllum], g_bindless_Sampler[_Globals_.g_sTrilinearClamp]), _19288.xy, _10826, _9376);
+	        _16305 = textureGrad(sampler2D(g_bindless_Texture2D_float_1[_Globals_.g_tSelfIllum], g_bindless_Sampler[_Globals_.g_sAniso]), _19631.xy, _5218.xy, _5581.xy);
 	        _13960 = _13568;
-	        _23265 = textureGrad(sampler2D(g_bindless_Texture2D_float_1[_Globals_.g_tColor], g_bindless_Sampler[_Globals_.g_sAniso]), _19629.xy, _10826, _9376);
+	        _23265 = textureGrad(sampler2D(g_bindless_Texture2D_float_1[_Globals_.g_tColor], g_bindless_Sampler[_Globals_.g_sAniso]), _19629.xy, _5218.xy, _5581.xy);
 	    }
 	    vec3 _13043 = _23265.xyz * input_0.xyz;
 	    float _19494 = (_Globals_.g_flOpacityScale * input_0.w) * ((pow(saturate(dot(normalize(_9251), _13528)), _Globals_.g_flSlopeFadeSharpness) * _Globals_.g_flSlopeFade) + (1.0 - _Globals_.g_flSlopeFade));
@@ -653,7 +695,7 @@ PS
 	    vec3 _20940;
 	    if (_Globals_.g_bRipples != 0)
 	    {
-	        vec2 _4374 = _4360 - vec2(0.5);
+	        vec2 _4374 = _18404.xy - vec2(0.5);
 	        float _11498 = length(_4374);
 	        vec3 _13259 = normalize(vec3(normalize(_4374), 0.0) * _13976);
 	        vec3 _5057 = (((_13136 + (_13259 * (_Globals_.g_vRippleStrengths.x * pow(0.5 + (0.5 * sin((_Globals_.g_vRippleFrequencies.x * _11498) - (PerViewConstantBuffer_t._m1 * ((_Globals_.g_vRippleSpeeds.x + (_Globals_.g_vRippleAlphaPerturb.x * _23265.w)) + (_Globals_.g_vRippleRoughnessPerturb.x * _13960.z))))), _Globals_.g_vRippleSharpnesses.x)))) + (_13259 * (_Globals_.g_vRippleStrengths.y * pow(0.5 + (0.5 * sin((_Globals_.g_vRippleFrequencies.y * _11498) - (PerViewConstantBuffer_t._m1 * ((_Globals_.g_vRippleSpeeds.y + (_Globals_.g_vRippleAlphaPerturb.y * _23265.w)) + (_Globals_.g_vRippleRoughnessPerturb.y * _13960.z))))), _Globals_.g_vRippleSharpnesses.y)))) + (_13259 * (_Globals_.g_vRippleStrengths.z * pow(0.5 + (0.5 * sin((_Globals_.g_vRippleFrequencies.z * _11498) - (PerViewConstantBuffer_t._m1 * ((_Globals_.g_vRippleSpeeds.z + (_Globals_.g_vRippleAlphaPerturb.z * _23265.w)) + (_Globals_.g_vRippleRoughnessPerturb.z * _13960.z))))), _Globals_.g_vRippleSharpnesses.z)))) + (_13259 * (_Globals_.g_vRippleStrengths.w * pow(0.5 + (0.5 * sin((_Globals_.g_vRippleFrequencies.w * _11498) - (PerViewConstantBuffer_t._m1 * ((_Globals_.g_vRippleSpeeds.w + (_Globals_.g_vRippleAlphaPerturb.w * _23265.w)) + (_Globals_.g_vRippleRoughnessPerturb.w * _13960.z))))), _Globals_.g_vRippleSharpnesses.w)));

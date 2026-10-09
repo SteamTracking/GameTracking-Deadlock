@@ -623,7 +623,6 @@ PS
 	RenderState(StencilWriteMask, 6);
 	[[layer_constant]] StructuredBuffer g_BarnLights < Attribute("BarnLights"); >;
 	[[layer_constant]] StructuredBuffer g_CullBits < Attribute("CullBits"); >;
-	bool g_bIsDeprecated < Attribute("bIsDeprecated"); UiType(CheckBox); >;
 	bool g_bNPRBounceDiffuse < Attribute("g_bNPRBounceDiffuse"); UiType(CheckBox); >;
 	bool g_bNPRDirectDiffuse < Attribute("g_bNPRDirectDiffuse"); UiType(CheckBox); >;
 	bool g_bNPRDirectSpecular < Attribute("g_bNPRDirectSpecular"); UiType(CheckBox); >;

@@ -757,6 +757,31 @@
 [
 ]
 
+// CCitadel_Ability_Chessmaster_ForkPiece
+@PointClass base(citadel_base_ability) = ability_chessmaster_forkpiece
+[
+]
+
+// CCitadel_Ability_Chessmaster_KnightBuff
+@PointClass base(citadel_base_ability) = ability_chessmaster_knightbuff
+[
+]
+
+// CCitadel_Ability_Chessmaster_MoveChessPiece
+@PointClass base(citadel_base_ability) = ability_chessmaster_movechesspiece
+[
+]
+
+// CCitadel_Ability_Chessmaster_Queen
+@PointClass base(citadel_base_ability) = ability_chessmaster_queen
+[
+]
+
+// CCitadel_Ability_Chessmaster_ThrowBishop
+@PointClass base(citadel_base_ability) = ability_chessmaster_throwbishop
+[
+]
+
 // CCitadel_Ability_Crackshot
 @PointClass base(citadel_base_ability) = ability_crackshot
 [
@@ -2767,6 +2792,11 @@
 [
 ]
 
+// CCitadel_Ability_ChessMaster_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_chessmaster_primaryweapon
+[
+]
+
 // CCitadel_Ability_Chrono_KineticCarbine
 @PointClass base(citadel_base_ability) = citadel_ability_chrono_kinetic_carbine
 [
@@ -3334,6 +3364,25 @@
 [
 ]
 
+// CAI_CitadelNPC
+@BaseClass base(base_npc) = citadel_npc
+[
+	// component CCitadelAbilityComponent
+	// component CCitadelRegenComponent
+	// component CCitadelMinimapComponent
+	owning_ability(target_destination) // FIELD_EHANDLE m_hAbilityOwner
+	caster(target_destination) // FIELD_EHANDLE m_hCaster
+]
+
+// CNPC_ChessPiece
+@PointClass base(citadel_npc) = citadel_chesspiece_entity
+[
+	ability(target_destination) // FIELD_EHANDLE m_hAbility
+	lifetime(float) // FIELD_FLOAT32 m_flLifetime
+	chesspiece_state(integer) // FIELD_INT32 m_iChessPieceState
+	chesspiece_type(integer) // FIELD_INT32 m_iChessPieceType
+]
+
 // CCitadelConfigurableTrackedProjectile
 @PointClass base(citadel_projectile) = citadel_configurable_tracked_projectile
 [
@@ -3734,16 +3783,6 @@
 	FireworkParticle8(string) // FIELD_UTLSTRING m_sFireworkParticle8
 	SoundName(string) // FIELD_STRING m_iszSoundName
 	StartSoundVerticalOffset(float) // FIELD_FLOAT32 m_flStartSoundVerticalOffset
-]
-
-// CAI_CitadelNPC
-@BaseClass base(base_npc) = citadel_npc
-[
-	// component CCitadelAbilityComponent
-	// component CCitadelRegenComponent
-	// component CCitadelMinimapComponent
-	owning_ability(target_destination) // FIELD_EHANDLE m_hAbilityOwner
-	caster(target_destination) // FIELD_EHANDLE m_hCaster
 ]
 
 // CTriggerObscuredVolume
@@ -9427,6 +9466,11 @@
 
 // CProjectile_Boho_SkipGrenade
 @PointClass base(citadel_projectile) = projectile_boho_skipgrenade
+[
+]
+
+// CProjectile_ChessMaster_Fork_Projectile
+@PointClass base(citadel_projectile) = projectile_chessmaster_forkpiece
 [
 ]
 

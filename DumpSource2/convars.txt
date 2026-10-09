@@ -2473,9 +2473,6 @@ citadel_dump_keybindings false (developmentonly clientdll defensive)
 citadel_enable_chat_rate_limiting true (developmentonly gamedll)
 	<no description>
 
-citadel_enable_new_ping_particle false (developmentonly clientdll)
-	Convar to test new ping particle
-
 citadel_enable_parties true (developmentonly clientdll defensive)
 	Enable client side party UI
 
@@ -2845,6 +2842,9 @@ citadel_hero_roster_random false (clientdll archive per_user release)
 citadel_hero_settings_cloud_disable false (developmentonly clientdll defensive)
 	<no description>
 
+citadel_hero_specific_settings_enabled false (clientdll archive per_user)
+	Use hero-specific settings and keybinds
+
 citadel_hero_testing_dummy_bullet_resist 0 (gamedll clientdll replicated cheat)
 	Bonus bullet resist % given to Target Dummies in Hero Testing
 
@@ -3096,6 +3096,9 @@ citadel_inactive_time_grace_period 30 (developmentonly gamedll defensive)
 
 citadel_initial_wall_jump_stamina_cost 0 (developmentonly gamedll clientdll replicated defensive)
 	How much stamina is required, and costs, to perform your first wall jump.
+
+citadel_instant_ping_cancel_time 0.5 (developmentonly clientdll)
+	Holding the instant ping key longer than this cancels the ping.
 
 citadel_item_draft_enabled 1 (gamedll clientdll replicated release)
 	Use item drafting?  1=only street brawl 2=always
@@ -3736,8 +3739,8 @@ citadel_pending_replay_num_retries 30 (developmentonly clientdll defensive)
 citadel_pending_replay_retry_seconds 300 (developmentonly clientdll defensive)
 	<no description>
 
-citadel_per_unit_hotkeys_checked false (clientdll archive per_user)
-	<no description>
+citadel_per_unit_hotkeys_checked false (clientdll hidden per_user release)
+	Old name of citadel_hero_specific_settings_enabled
 
 citadel_per_weapon_per_surface_impact_effects true (developmentonly gamedll clientdll replicated defensive)
 	<no description>
@@ -3933,6 +3936,9 @@ citadel_player_ground_dash_min_percent 0.5 (gamedll clientdll replicated cheat)
 
 citadel_player_level_hiding_extra_duration 0.45 (developmentonly clientdll defensive)
 	<no description>
+
+citadel_player_model_force_highest_lod true (clientdll release)
+	Forces the local player pawn to render using the highest LOD level.
 
 citadel_player_move_speed_min 80 (gamedll clientdll replicated cheat)
 	Min walk speed
@@ -4437,9 +4443,6 @@ citadel_recent_comms_throttling_penalty 10 (gamedll replicated release)
 
 citadel_reduce_camera_shake false (clientdll archive per_user)
 	Turns off screen shake.
-
-citadel_region_override -1 (clientdll release)
-	Override the region of the client
 
 citadel_replay_manager_download_chunk_size 1048576 (clientdll archive)
 	<no description>
@@ -8014,7 +8017,7 @@ labelled_debug_helper_show_text true (gamedll clientdll replicated cheat)
 labelled_debug_helper_skeleton_show_bone_names true (gamedll clientdll replicated cheat)
 	<no description>
 
-lb_allow_shadow_rotation true (developmentonly cheat menubar_item)
+lb_allow_shadow_rotation true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Shadow Rotation
 
 lb_barnlight_shadow_use_precomputed_vis true (developmentonly defensive)
@@ -8044,7 +8047,7 @@ lb_csm_draw_alpha_tested true (developmentonly defensive)
 lb_csm_draw_translucent true (developmentonly defensive)
 	<no description>
 
-lb_csm_fov_override -1 (developmentonly cheat)
+lb_csm_fov_override -1 (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
 lb_csm_override_bulb_radius -1 (developmentonly defensive)
@@ -8071,40 +8074,40 @@ lb_cubemap_normalization_max 32 (developmentonly defensive)
 lb_cubemap_normalization_roughness_begin 0.1 (developmentonly defensive)
 	<no description>
 
-lb_cull_offscreen_bounce_light_shadows true (developmentonly cheat)
+lb_cull_offscreen_bounce_light_shadows true (developmentonly cheat gameinfo_cannot_override)
 	Skip shadowmaps for offscreen dynamic bounce lights that indirect diffuse isn't going to sample
 
-lb_cull_onscreen_bounce_light_shadows false (developmentonly cheat)
+lb_cull_onscreen_bounce_light_shadows false (developmentonly cheat gameinfo_cannot_override)
 	Skip shadowmaps for *onscreen* dynamic bounce lights which will probably not be visible
 
-lb_debug_light_bounds false (developmentonly cheat menubar_item)
+lb_debug_light_bounds false (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug Light Bounds
 
-lb_debug_shadow_atlas false (developmentonly cheat menubar_item)
+lb_debug_shadow_atlas false (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug Shadow Atlas
 
-lb_debug_shadowtile_atlas false (developmentonly cheat menubar_item)
+lb_debug_shadowtile_atlas false (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug ShadowTile Atlas
 
-lb_debug_silhouette "" (enum: ESilhouetteType_t, developmentonly cheat menubar_item enum_value)
+lb_debug_silhouette "" (enum: ESilhouetteType_t, developmentonly cheat menubar_item gameinfo_cannot_override enum_value)
 	SceneSystem/LightBinner/Debug Silhouettes
 
-lb_debug_silhouette_sum 1 (min: 1, max: 3, developmentonly cheat)
+lb_debug_silhouette_sum 1 (min: 1, max: 3, developmentonly cheat gameinfo_cannot_override)
 	If we should draw normal silhouette or minkowski sum silhouette
 
-lb_debug_tiles "" (enum: ESilhouetteType_t, developmentonly cheat menubar_item enum_value)
+lb_debug_tiles "" (enum: ESilhouetteType_t, developmentonly cheat menubar_item gameinfo_cannot_override enum_value)
 	SceneSystem/LightBinner/Debug Tiles
 
-lb_debug_visualize_fog_shadowed_lights 0 (developmentonly cheat menubar_item)
+lb_debug_visualize_fog_shadowed_lights 0 (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug Visualize Fog Shadowed Lights
 
-lb_debug_visualize_lights 0 (developmentonly cheat menubar_item)
+lb_debug_visualize_lights 0 (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug Visualize Lights
 
-lb_debug_visualize_shadowed_light_details false (developmentonly cheat)
+lb_debug_visualize_shadowed_light_details false (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
-lb_debug_visualize_shadowed_lights 0 (developmentonly cheat menubar_item)
+lb_debug_visualize_shadowed_lights 0 (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Debug Visualize Shadowed Lights
 
 lb_dynamic_shadow_penumbra true (developmentonly defensive)
@@ -8128,52 +8131,52 @@ lb_dynamic_shadow_resolution_hysteresis 0.33 (min: 0.01, max: 1, developmentonly
 lb_dynamic_shadow_resolution_quantization 64 (min: 8, max: 128, developmentonly defensive)
 	Quantization of dynamically computed shadow size
 
-lb_enable_baked_shadows true (developmentonly cheat menubar_item)
+lb_enable_baked_shadows true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable Baked Shadows
 
 lb_enable_binning true (developmentonly menubar_item defensive)
 	SceneSystem/LightBinner/Enable Binning
 
-lb_enable_dynamic_lights true (developmentonly cheat)
+lb_enable_dynamic_lights true (developmentonly cheat gameinfo_cannot_override)
 	Allows rendering dynamic lights
 
-lb_enable_envmaps true (developmentonly cheat menubar_item)
+lb_enable_envmaps true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable EnvMaps
 
-lb_enable_fog_mixed_shadows true (developmentonly cheat menubar_item)
+lb_enable_fog_mixed_shadows true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable Fog Mixed Shadows
 
-lb_enable_lights true (developmentonly cheat menubar_item)
+lb_enable_lights true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable Lights
 
 lb_enable_shadow_casting true (developmentonly defensive)
 	Allow stationary/dynamic lights to cast shadows.
 
-lb_enable_stationary_lights true (developmentonly cheat)
+lb_enable_stationary_lights true (developmentonly cheat gameinfo_cannot_override)
 	Allows rendering stationary/mixed lights
 
-lb_enable_sunlight true (developmentonly cheat menubar_item)
+lb_enable_sunlight true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable Sunlight
 
-lb_low_quality_shader_fade_region_rescale 0 (developmentonly cheat)
+lb_low_quality_shader_fade_region_rescale 0 (min: 0, max: 1, developmentonly)
 	For envmaps in low quality shader mode, how much of the fade region to scale the envmap box by.
 
-lb_max_visible_barn_lights_override -1 (developmentonly cheat)
+lb_max_visible_barn_lights_override -1 (developmentonly cheat gameinfo_cannot_override)
 	Override maximum visible barn lights
 
-lb_max_visible_envmaps_override -1 (developmentonly cheat)
+lb_max_visible_envmaps_override -1 (developmentonly cheat gameinfo_cannot_override)
 	Override maximum visible envmaps
 
-lb_mixed_shadows true (developmentonly cheat menubar_item)
+lb_mixed_shadows true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Enable Mixed Shadows
 
-lb_override_barn_light_fade_sizes [0.05, 0.025] (developmentonly cheat)
+lb_override_barn_light_fade_sizes [0.05, 0.025] (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
-lb_override_barn_light_fade_sizes_enable false (developmentonly cheat)
+lb_override_barn_light_fade_sizes_enable false (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
-lb_override_barn_light_shadow_fade_sizes [0.1, 0.05] (developmentonly cheat)
+lb_override_barn_light_shadow_fade_sizes [0.1, 0.05] (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
 lb_precomputed_shadowmap_depth_bias 0.00035 (developmentonly)
@@ -8185,10 +8188,10 @@ lb_precomputed_shadowmap_depth_bias_perspective 0.01 (developmentonly)
 lb_precomputed_shadowmap_enable true (developmentonly)
 	<no description>
 
-lb_shadow_map_cull_empty_mixed false (cheat)
+lb_shadow_map_cull_empty_mixed false (cheat gameinfo_cannot_override)
 	Don't render shadows for mixed shadowmaps with no dynamics objects in view
 
-lb_shadow_map_culling true (cheat)
+lb_shadow_map_culling true (cheat gameinfo_cannot_override)
 	<no description>
 
 lb_shadow_texture_height_override -1 (developmentonly defensive)
@@ -8221,13 +8224,13 @@ lb_time_sliced_shadow_map_rendering_enable true (developmentonly defensive)
 lb_timesliced_shadows_dynamic_size true (developmentonly defensive)
 	<no description>
 
-lb_use_ellipsoid_bounds true (developmentonly cheat)
+lb_use_ellipsoid_bounds true (developmentonly cheat gameinfo_cannot_override)
 	<no description>
 
-lb_use_illumination_silhouette true (developmentonly cheat menubar_item)
+lb_use_illumination_silhouette true (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/LightBinner/Use Illumination Bounds
 
-lb_use_illumination_volume true (developmentonly cheat)
+lb_use_illumination_volume true (developmentonly cheat gameinfo_cannot_override)
 	Disables use of illumination volume (may cause precomputed lighting errors)
 
 leaderboards_cache_duration 600 (developmentonly clientdll)
@@ -9964,6 +9967,9 @@ panorama_suspend_animation false (developmentonly hidden defensive)
 panorama_suspend_paint false (developmentonly hidden defensive)
 	<no description>
 
+panorama_synced_font_size_spew false (developmentonly clientdll hidden defensive)
+	Log SyncedFontSizeLabel group constraints and shared font size changes
+
 panorama_temp_comp_layer_min_dimension 512 (developmentonly hidden defensive)
 	<no description>
 
@@ -10852,7 +10858,7 @@ r_experimental_lag_limiter false (developmentonly defensive)
 r_extra_render_frames 0 (cheat)
 	<no description>
 
-r_fallback_texture_lod_scale 2 (cheat)
+r_fallback_texture_lod_scale 2 (cheat gameinfo_cannot_override)
 	Scale factor for requested texture size (texture streaming) - used for geo that doesn't have a precomputed UV density measure
 
 r_farz -1 (clientdll cheat)
@@ -11398,7 +11404,7 @@ r_texture_eager_eviction false (developmentonly defensive)
 r_texture_hookup_uses_threadpool true (developmentonly defensive)
 	Async Texture hookup uses its own threadpool instead of the global pool.
 
-r_texture_lod_scale 1 (cheat)
+r_texture_lod_scale 1 (cheat gameinfo_cannot_override)
 	Scale factor for requested texture size (texture streaming)
 
 r_texture_nonstreaming_load true (developmentonly defensive)
@@ -11863,19 +11869,19 @@ sc_clutter_desity_override false (developmentonly)
 sc_clutter_enable true (developmentonly menubar_item)
 	SceneSystem/Clutter/Draw Clutter
 
-sc_disableThreading false (cheat)
+sc_disableThreading false (developmentonly defensive)
 	<no description>
 
 sc_disable_baked_lighting false (developmentonly defensive)
 	<no description>
 
-sc_disable_culling_boxes false (cheat)
+sc_disable_culling_boxes false (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_disable_procedural_layer_rendering false (cheat)
+sc_disable_procedural_layer_rendering false (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_disable_shadow_fastpath false (cheat)
+sc_disable_shadow_fastpath false (developmentonly defensive)
 	<no description>
 
 sc_disable_spotlight_shadows false (cheat gameinfo_cannot_override)
@@ -11893,22 +11899,22 @@ sc_dithered_lod_transition_amt 0.075 (min: 0, max: 0.2, developmentonly defensiv
 sc_draw_aggregate_meshes true (developmentonly menubar_item)
 	SceneSystem/Aggregates/Draw Aggregates
 
-sc_dump_lists "" (cheat)
+sc_dump_lists "" (cheat gameinfo_cannot_override)
 	<no description>
 
 sc_enable_discard true (developmentonly defensive)
 	<no description>
 
-sc_extended_stats false (cheat)
+sc_extended_stats false (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_fade_distance_scale_override -1 (cheat)
+sc_fade_distance_scale_override -1 (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_fog_cull true (cheat)
+sc_fog_cull true (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_force_lod_level -1 (cheat)
+sc_force_lod_level -1 (cheat gameinfo_cannot_override)
 	<no description>
 
 sc_force_materials_batchable false (cheat)
@@ -11917,7 +11923,7 @@ sc_force_materials_batchable false (cheat)
 sc_force_single_display_list_per_layer false (developmentonly defensive)
 	<no description>
 
-sc_force_translation_in_projection false (cheat)
+sc_force_translation_in_projection false (cheat gameinfo_cannot_override)
 	If enabled, the camera's translation will be included in the projection matrix.
 
 sc_hdr_enabled_override -1 (developmentonly defensive)
@@ -12019,22 +12025,22 @@ sc_no_cull false (developmentonly defensive)
 sc_no_vis false (developmentonly defensive)
 	<no description>
 
-sc_only_render_opaque false (cheat)
+sc_only_render_opaque false (cheat gameinfo_cannot_override)
 	<no description>
 
-sc_only_render_shadowcasters false (cheat)
+sc_only_render_shadowcasters false (cheat gameinfo_cannot_override)
 	<no description>
 
 sc_particle_debug_visualizer false (developmentonly cheat menubar_item)
 	SceneSystem/Particles/Debug Visualizer
 
-sc_reject_all_objects false (cheat)
+sc_reject_all_objects false (developmentonly defensive)
 	<no description>
 
 sc_rendergraph_debug_visualizer false (developmentonly menubar_item)
 	SceneSystem/RenderGraph Visualizer
 
-sc_screen_size_lod_scale_override -1 (cheat)
+sc_screen_size_lod_scale_override -1 (developmentonly defensive)
 	<no description>
 
 sc_shadow_depth_bias 256 (developmentonly defensive)
@@ -12049,7 +12055,7 @@ sc_shadow_depth_bias_state_override false (developmentonly defensive)
 sc_shadow_slopescale_depth_bias 2.13 (developmentonly defensive)
 	<no description>
 
-sc_show_cs_skinning_stats false (developmentonly cheat menubar_item)
+sc_show_cs_skinning_stats false (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/Compute Skinning Stats
 
 sc_show_gpu_profiler false (developmentonly cheat menubar_item)
@@ -12064,13 +12070,13 @@ sc_show_object_browser false (developmentonly cheat menubar_item)
 sc_show_texture_visualizer false (developmentonly cheat menubar_item)
 	SceneSystem/Texture Visualizer
 
-sc_show_view_profiler false (developmentonly cheat menubar_item)
+sc_show_view_profiler false (developmentonly cheat menubar_item gameinfo_cannot_override)
 	SceneSystem/View Profiler
 
-sc_show_vt_stats false (developmentonly cheat)
+sc_show_vt_stats false (developmentonly cheat gameinfo_cannot_override)
 	SceneSystem/Virtual Texturing
 
-sc_skip_traversal false (cheat)
+sc_skip_traversal false (developmentonly defensive)
 	<no description>
 
 sc_spew_cmt_usage false (developmentonly defensive)

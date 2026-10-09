@@ -3,6 +3,8 @@ class CCitadel_Ability_Baba_BenchRun_VData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flMaxChargeJumpDuration;
+	Vector m_WeaponOffsetStand;
+	Vector m_WeaponOffsetCrouch;
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_BenchRunModifier;
 	// MPropertyStartGroup = "Visuals"
