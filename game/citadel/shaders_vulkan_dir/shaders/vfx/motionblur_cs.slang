@@ -54,8 +54,8 @@ CS
 	
 	Texture2D<float4> g_tMotionVectors : register(t32, space0);
 	SamplerState AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipPoint : register(s22, space0);
-	RWTexture2D<float4> _3046 : register(u158, space0);
-	RWTexture2D<float4> _3725 : register(u159, space0);
+	RWTexture2D<float4> g_tTileMaxHorizontal : register(u158, space0);
+	RWTexture2D<float4> g_tTileMinHorizontal : register(u159, space0);
 	
 	static uint3 gl_WorkGroupID;
 	static uint3 gl_LocalInvocationID;
@@ -134,11 +134,11 @@ CS
 	        uint2 _3872 = uint2(gl_WorkGroupID.x, _10370) + uint2(0u, gl_LocalInvocationID.y);
 	        if (_5551[gl_LocalInvocationID.y] == _8204)
 	        {
-	            _3046[_3872.xy] = float4(_16305, 0.0f, 0.0f);
+	            g_tTileMaxHorizontal[_3872.xy] = float4(_16305, 0.0f, 0.0f);
 	        }
 	        if (_3039[gl_LocalInvocationID.y] == _11571)
 	        {
-	            _3725[_3872.xy] = float4(_13136, 0.0f, 0.0f);
+	            g_tTileMinHorizontal[_3872.xy] = float4(_13136, 0.0f, 0.0f);
 	        }
 	        break;
 	    } while(false);

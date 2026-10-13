@@ -78,7 +78,7 @@ VS
 	
 	struct VS_INPUT
 	{
-	    float3 vPositionOs : TEXCOORD0;
+	    float3 vPositionOs : POSITION0;
 	    uint gl_InstanceIndex : SV_InstanceID;
 	};
 	
@@ -93,7 +93,7 @@ VS
 	    uint _24513 = uint(gl_InstanceIndex - gl_BaseInstanceARB);
 	    uint _6225 = _24513 + uint(_Globals_1_g_nStartDecal);
 	    float _7521 = vPositionOs.z + 0.5f;
-	    float4 _21562 = mul(PerViewConstantBuffer_t_1_m0, (float4(float3(mad(vPositionOs.xy, asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 16)).xy * lerp(asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 16)).z, 1.0f, _7521), asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).xy), lerp(asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).z, asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).w, _7521)).xyz, 1.0f) + (PerViewConstantBuffer_t_1_m1 * 1.0f)).xyzw);
+	    float4 _21562 = mul(PerViewConstantBuffer_t_1_m0, (float4(float3(mad(vPositionOs.xy, g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 16).xy * lerp(g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 16).z, 1.0f, _7521), g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).xy), lerp(g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).z, g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).w, _7521)).xyz, 1.0f) + (PerViewConstantBuffer_t_1_m1 * 1.0f)).xyzw);
 	    output_0 = _24513;
 	    _21562.y = -_21562.y;
 	    gl_Position = _21562;
@@ -187,7 +187,7 @@ PS
 	void MainPs_inner()
 	{
 	    uint _6225 = input_0 + uint(_Globals_1_g_nStartDecal);
-	    float4x4 _24370 = asfloat(uint4x4(g_ShadowDecalInfo.Load(_6225 * 128 + 32), g_ShadowDecalInfo.Load(_6225 * 128 + 48), g_ShadowDecalInfo.Load(_6225 * 128 + 64), g_ShadowDecalInfo.Load(_6225 * 128 + 80), g_ShadowDecalInfo.Load(_6225 * 128 + 36), g_ShadowDecalInfo.Load(_6225 * 128 + 52), g_ShadowDecalInfo.Load(_6225 * 128 + 68), g_ShadowDecalInfo.Load(_6225 * 128 + 84), g_ShadowDecalInfo.Load(_6225 * 128 + 40), g_ShadowDecalInfo.Load(_6225 * 128 + 56), g_ShadowDecalInfo.Load(_6225 * 128 + 72), g_ShadowDecalInfo.Load(_6225 * 128 + 88), g_ShadowDecalInfo.Load(_6225 * 128 + 44), g_ShadowDecalInfo.Load(_6225 * 128 + 60), g_ShadowDecalInfo.Load(_6225 * 128 + 76), g_ShadowDecalInfo.Load(_6225 * 128 + 92)));
+	    float4x4 _24370 = float4x4(g_ShadowDecalInfo.Load<float>(_6225 * 128 + 32), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 48), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 64), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 80), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 36), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 52), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 68), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 84), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 40), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 56), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 72), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 88), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 44), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 60), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 76), g_ShadowDecalInfo.Load<float>(_6225 * 128 + 92));
 	    int2 _11700 = int3(int2(gl_FragCoord.xy), 0).xy;
 	    float4 _19089 = g_tGBufferDepth.Load(int3(_11700, 0));
 	    float _18959 = _19089.x;
@@ -204,13 +204,13 @@ PS
 	    float _21813 = _15614.y;
 	    _22905.y = _21813;
 	    float _21986 = _15614.z;
-	    float _24542 = _21986 - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).z;
-	    float _11446 = _24542 / (asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).w - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).z);
-	    float2 _14628 = asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 16)).xy * lerp(asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 16)).z, 1.0f, saturate(_11446));
+	    float _24542 = _21986 - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).z;
+	    float _11446 = _24542 / (g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).w - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).z);
+	    float2 _14628 = g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 16).xy * lerp(g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 16).z, 1.0f, saturate(_11446));
 	    float _7034 = _14628.x;
 	    float _15755 = (-0.5f) * _7034;
 	    float _6933 = (0.5f * _7034) - _15755;
-	    float3 _13230 = float3((((_12011 - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).x) - _15755) / _6933) + (-0.5f), (((_21813 - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).y) - _15755) / _6933) + (-0.5f), _11446 - 0.5f);
+	    float3 _13230 = float3((((_12011 - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).x) - _15755) / _6933) + (-0.5f), (((_21813 - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).y) - _15755) / _6933) + (-0.5f), _11446 - 0.5f);
 	    bool _12885;
 	    if (any(bool3(_13230.x < (-0.5f).xxx.x, _13230.y < (-0.5f).xxx.y, _13230.z < (-0.5f).xxx.z)))
 	    {
@@ -228,19 +228,19 @@ PS
 	    {
 	        discard;
 	    }
-	    float2 _18437 = _22905.xy - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).xy;
+	    float2 _18437 = _22905.xy - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).xy;
 	    float3 _22101;
 	    _22101.x = _18437.x;
 	    _22101.y = _18437.y;
-	    float2 _21285 = _22101.xy * ((saturate(_24542 / (asfloat(g_ShadowDecalInfo.Load(_6225 * 128 + 100)) - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).z)) * (1.0f - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 16)).w)) + asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 16)).w);
+	    float2 _21285 = _22101.xy * ((saturate(_24542 / (g_ShadowDecalInfo.Load<float>(_6225 * 128 + 100) - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).z)) * (1.0f - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 16).w)) + g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 16).w);
 	    float3 _8673;
 	    _8673.x = _21285.x;
 	    _8673.y = _21285.y;
 	    float2 _21124 = _13230.xy;
 	    float _23794;
-	    if (int(g_ShadowDecalInfo.Load(_6225 * 128 + 96)) >= 0)
+	    if (g_ShadowDecalInfo.Load<int>(_6225 * 128 + 96) >= 0)
 	    {
-	        float4 _16012 = mul(float4(float3(_8673.xy + asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 0)).xy, max(_21986, asfloat(g_ShadowDecalInfo.Load(_6225 * 128 + 100)))), 1.0f), _24370);
+	        float4 _16012 = mul(float4(float3(_8673.xy + g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 0).xy, max(_21986, g_ShadowDecalInfo.Load<float>(_6225 * 128 + 100))), 1.0f), _24370);
 	        float3 _10521 = _16012.xyz / _16012.w.xxx;
 	        float _9589 = _10521.x;
 	        float4 _22906;
@@ -262,7 +262,7 @@ PS
 	            discard;
 	        }
 	        float _15602 = 0.5f * _Globals_1_g_flOoNumShadowMaps;
-	        float4 _5636 = float4(_15602 + (float(int(g_ShadowDecalInfo.Load(_6225 * 128 + 96))) * _Globals_1_g_flOoNumShadowMaps), 0.5f, _15602, -0.5f);
+	        float4 _5636 = float4(_15602 + (float(g_ShadowDecalInfo.Load<int>(_6225 * 128 + 96)) * _Globals_1_g_flOoNumShadowMaps), 0.5f, _15602, -0.5f);
 	        float _13136;
 	        float _16324;
 	        _13136 = 0.0f;
@@ -311,7 +311,7 @@ PS
 	    {
 	        _23794 = smoothstep(0.0f, 1.0f, saturate(((2.0f * sqrt(dot(_21124, _21124))) - 0.20000000298023223876953125f) * 2.1276595592498779296875f));
 	    }
-	    output_0 = lerp(1.0f, _23794, (asfloat(g_ShadowDecalInfo.Load(_6225 * 128 + 104)) * saturate((_21986 - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 112)).x) / (asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 112)).y - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 112)).x))) * ((saturate((_21986 - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 112)).z) / (asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 112)).w - asfloat(g_ShadowDecalInfo.Load4(_6225 * 128 + 112)).z)) * (-1.0f)) + 1.0f)).xxxx;
+	    output_0 = lerp(1.0f, _23794, (g_ShadowDecalInfo.Load<float>(_6225 * 128 + 104) * saturate((_21986 - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 112).x) / (g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 112).y - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 112).x))) * ((saturate((_21986 - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 112).z) / (g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 112).w - g_ShadowDecalInfo.Load<float4>(_6225 * 128 + 112).z)) * (-1.0f)) + 1.0f)).xxxx;
 	}
 	
 	PS_OUTPUT MainPs(PS_INPUT stage_input)

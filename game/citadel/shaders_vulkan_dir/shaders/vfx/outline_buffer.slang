@@ -99,7 +99,7 @@ VS
 	
 	struct VS_INPUT
 	{
-	    float3 vPositionOs : TEXCOORD0;
+	    float3 vPositionOs : POSITION0;
 	    uint gl_InstanceIndex : SV_InstanceID;
 	};
 	
@@ -113,9 +113,9 @@ VS
 	void MainVs_inner()
 	{
 	    uint _24589 = uint(gl_InstanceIndex - gl_BaseInstanceARB);
-	    uint _16180 = uint(int(g_GlowList.Load(_24589 * 16 + 8)));
+	    uint _16180 = uint(g_GlowList.Load<int>(_24589 * 16 + 8));
 	    uint _8834 = _16180 - 2u;
-	    float2 _5759 = float2(int2(g_BoundingRects.Load2(_8834 * 8 + 0))) * 1.52587890625e-05f;
+	    float2 _5759 = float2(g_BoundingRects.Load<int2>(_8834 * 8 + 0)) * 1.52587890625e-05f;
 	    float _18989 = (vPositionOs.y - (-1.0f)) * 0.5f;
 	    float _7581 = _5759.x;
 	    float _15610 = _5759.y;
@@ -123,7 +123,7 @@ VS
 	    if (_7581 < _15610)
 	    {
 	        float4 _9338 = float4(-1.0f, -1.0f, 0.5f, 1.0f);
-	        _9338.x = (((vPositionOs.x - (-1.0f)) * 0.5f) * (asfloat(g_GlowList.Load2(_24589 * 16 + 0)).y - asfloat(g_GlowList.Load2(_24589 * 16 + 0)).x)) + asfloat(g_GlowList.Load2(_24589 * 16 + 0)).x;
+	        _9338.x = (((vPositionOs.x - (-1.0f)) * 0.5f) * (g_GlowList.Load<float2>(_24589 * 16 + 0).y - g_GlowList.Load<float2>(_24589 * 16 + 0).x)) + g_GlowList.Load<float2>(_24589 * 16 + 0).x;
 	        _9338.y = (_18989 * (_15610 - _7581)) + _7581;
 	        _22247 = _9338;
 	    }

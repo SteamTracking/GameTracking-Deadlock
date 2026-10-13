@@ -233,7 +233,7 @@ CS
 	layout(set = 0, binding = 40) uniform texture3D g_tLightCookieTexture;
 	layout(set = 0, binding = 25) uniform sampler g_sCookieSampler;
 	layout(set = 4, binding = 46) uniform texture2D g_bindless_Texture2D[65536];
-	layout(set = 0, binding = 159) uniform writeonly image3D _3982;
+	layout(set = 0, binding = 159) uniform writeonly image3D OutLightingFroxelTexture;
 	
 	void main()
 	{
@@ -922,7 +922,7 @@ CS
 	    {
 	        _19456 = vec3(0.0);
 	    }
-	    imageStore(_3982, ivec3(uvec3(gl_GlobalInvocationID.xy, gl_GlobalInvocationID.z)), vec4(sqrt(_19456.xyz * vec3(0.5)), _23381));
+	    imageStore(OutLightingFroxelTexture, ivec3(uvec3(gl_GlobalInvocationID.xy, gl_GlobalInvocationID.z)), vec4(sqrt(_19456.xyz * vec3(0.5)), _23381));
 	}
 	
 	

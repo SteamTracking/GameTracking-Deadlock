@@ -4491,10 +4491,10 @@ PS
 	
 	layout(set = 1) uniform _982 PerViewConstantBufferCitadel_t;
 	
-	layout(push_constant, std430) uniform _981_6012
+	layout(push_constant, std430) uniform SpriteCardPushConstants_t
 	{
 	    uint _m0;
-	} _6012;
+	} SpriteCardPushConstants_t_1;
 	
 	layout(set = 4, binding = 46) uniform texture2D g_bindless_Texture2D_float4[65536];
 	layout(set = 4, binding = 29) uniform sampler g_bindless_Sampler[2048];
@@ -4522,10 +4522,10 @@ PS
 	        _12575 = float(_9501 & 1) == 1.0;
 	        if (_12575)
 	        {
-	            _6691 = texture(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _16418.xy);
+	            _6691 = texture(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _16418.xy);
 	            break;
 	        }
-	        _6691 = texture(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _16418.xy);
+	        _6691 = texture(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _16418.xy);
 	        break;
 	    } while(false);
 	    vec4 _16417 = _6691;
@@ -4554,10 +4554,10 @@ PS
 	        {
 	            if (_12575)
 	            {
-	                _6692 = texture(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _16418.zw);
+	                _6692 = texture(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _16418.zw);
 	                break;
 	            }
-	            _6692 = texture(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _16418.zw);
+	            _6692 = texture(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _16418.zw);
 	            break;
 	        } while(false);
 	        vec4 _16416 = _6692;
@@ -4647,10 +4647,10 @@ PS
 	                {
 	                    if (_12575)
 	                    {
-	                        _12905 = textureGrad(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _17877.xy, _12566.xy, _15406.xy);
+	                        _12905 = textureGrad(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _17877.xy, _12566.xy, _15406.xy);
 	                        break;
 	                    }
-	                    _12905 = textureGrad(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _17877.xy, _12566.xy, _15406.xy);
+	                    _12905 = textureGrad(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _17877.xy, _12566.xy, _15406.xy);
 	                    break;
 	                } while(false);
 	                vec4 _19630;
@@ -4658,10 +4658,10 @@ PS
 	                {
 	                    if (_12575)
 	                    {
-	                        _19630 = textureGrad(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _7426.xy, _15903.xy, _11320.xy);
+	                        _19630 = textureGrad(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _7426.xy, _15903.xy, _11320.xy);
 	                        break;
 	                    }
-	                    _19630 = textureGrad(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _7426.xy, _15903.xy, _11320.xy);
+	                    _19630 = textureGrad(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _7426.xy, _15903.xy, _11320.xy);
 	                    break;
 	                } while(false);
 	                vec4 _13679 = mix(_19630.xyzw, _12905.xyzw, vec4(_16439 * _16439));
@@ -4705,10 +4705,10 @@ PS
 	                {
 	                    if (_12575)
 	                    {
-	                        _12502 = texture(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _16414.xy);
+	                        _12502 = texture(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _16414.xy);
 	                        break;
 	                    }
-	                    _12502 = texture(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _16414.xy);
+	                    _12502 = texture(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _16414.xy);
 	                    break;
 	                } while(false);
 	                _13174 = _12502;
@@ -4736,10 +4736,10 @@ PS
 	                {
 	                    if (_12575)
 	                    {
-	                        _12904 = textureGrad(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _17876.xy, _12565.xy, _15405.xy);
+	                        _12904 = textureGrad(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _17876.xy, _12565.xy, _15405.xy);
 	                        break;
 	                    }
-	                    _12904 = textureGrad(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _17876.xy, _12565.xy, _15405.xy);
+	                    _12904 = textureGrad(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _17876.xy, _12565.xy, _15405.xy);
 	                    break;
 	                } while(false);
 	                vec4 _19629;
@@ -4747,10 +4747,10 @@ PS
 	                {
 	                    if (_12575)
 	                    {
-	                        _19629 = textureGrad(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _7425.xy, _15902.xy, _11319.xy);
+	                        _19629 = textureGrad(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _7425.xy, _15902.xy, _11319.xy);
 	                        break;
 	                    }
-	                    _19629 = textureGrad(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _7425.xy, _15902.xy, _11319.xy);
+	                    _19629 = textureGrad(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _7425.xy, _15902.xy, _11319.xy);
 	                    break;
 	                } while(false);
 	                vec4 _13678 = mix(_19629.xyzw, _12904.xyzw, vec4(_16438 * _16438));
@@ -4788,10 +4788,10 @@ PS
 	                {
 	                    if (_12575)
 	                    {
-	                        _12501 = texture(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _16412.xy);
+	                        _12501 = texture(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _16412.xy);
 	                        break;
 	                    }
-	                    _12501 = texture(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _16412.xy);
+	                    _12501 = texture(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _16412.xy);
 	                    break;
 	                } while(false);
 	                _13174 = _12501;
@@ -4838,10 +4838,10 @@ PS
 	                {
 	                    if (_12575)
 	                    {
-	                        _22247 = texture(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _14593.xy);
+	                        _22247 = texture(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearClampUV]), _14593.xy);
 	                        break;
 	                    }
-	                    _22247 = texture(sampler2D(g_bindless_Texture2D_float4[_6012._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _14593.xy);
+	                    _22247 = texture(sampler2D(g_bindless_Texture2D_float4[SpriteCardPushConstants_t_1._m0], g_bindless_Sampler[_Globals_.g_sParticleTrilinearWrap]), _14593.xy);
 	                    break;
 	                } while(false);
 	                vec4 _16409 = _22247;

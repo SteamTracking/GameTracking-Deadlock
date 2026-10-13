@@ -274,7 +274,7 @@ CS
 	layout(set = 0, binding = 33) uniform texture3D g_tLightCookieTexture;
 	layout(set = 0, binding = 24) uniform sampler g_sCookieSampler;
 	layout(set = 4, binding = 46) uniform texture2D g_bindless_Texture2D[65536];
-	layout(set = 0, binding = 158) uniform writeonly image2D _4309;
+	layout(set = 0, binding = 158) uniform writeonly image2D g_tIntermediateRT;
 	
 	void main()
 	{
@@ -1149,7 +1149,7 @@ CS
 	            continue;
 	        }
 	        vec3 _14163 = (((((_13148 + ((_21166 * (vec3(1.0) - (_8738 + _23170))).xyz * (((((_12345 * 2.040400028228759765625) - vec3(0.3323999941349029541015625)) * 1.0) - (((_12345 * 4.79510021209716796875) - vec3(0.6417000293731689453125)) * 1.0)) + (((_12345 * 2.755199909210205078125) + vec3(0.69029998779296875)) * 1.0)).xyz)) * ((_12345 * (1.0 - _8108)) * 1.0)) + (_12345 * (_23186.z * 10.0))) + _16328) + ((((_8738 * ((_17116 + (vec3(dot(PerViewLightingConstantBufferGpu_t._m1._m0[0].xyzw, _23875), dot(PerViewLightingConstantBufferGpu_t._m1._m0[1].xyzw, _23875), dot(PerViewLightingConstantBufferGpu_t._m1._m0[2].xyzw, _23875)) * _6272)) * min(dot(_21166.xyz, vec3(0.2125000059604644775390625, 0.7153999805450439453125, 0.07209999859333038330078125)) / dot(_19344, (_16305 + (PerViewLightingConstantBufferGpu_t._m2 * _6272)).xyzw), max((_20556 * PerViewLightingConstantBufferGpu_t._m0.x) + PerViewLightingConstantBufferGpu_t._m0.y, 1.0)))) * 1.0) + ((_23170 * _21166) * 1.0)).xyz * saturate(pow(saturate(dot(_6598, _13353)) + 1.0, _20373)))).xyz;
-	        imageStore(_4309, ivec2(uvec2(_5509)), vec4(_14163, 1.0));
+	        imageStore(g_tIntermediateRT, ivec2(uvec2(_5509)), vec4(_14163, 1.0));
 	        break;
 	    } while(false);
 	}

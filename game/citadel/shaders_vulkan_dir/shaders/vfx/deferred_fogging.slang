@@ -73,7 +73,7 @@ CS
 	};
 	
 	Texture2D<float4> g_tGBufferDepth : register(t59, space0);
-	RWTexture2D<float4> _4309 : register(u158, space0);
+	RWTexture2D<float4> g_tIntermediateRT : register(u158, space0);
 	
 	static uint3 gl_GlobalInvocationID;
 	struct SPIRV_Cross_Input
@@ -104,7 +104,7 @@ CS
 	        _22905.y = _10521.y;
 	        _22905.z = _10521.z;
 	        float3 _18925 = ((_22905.xyz / dot(PerViewConstantBuffer_t_1_m4, _22905.xyz).xxx).xyz * (PerViewConstantBuffer_t_1_m2 / _18947)) + PerViewConstantBuffer_t_1_m3.xyz;
-	        float4 _24697 = _4309[_9477];
+	        float4 _24697 = g_tIntermediateRT[_9477];
 	        float3 _24455 = _24697.xyz;
 	        float3 _19302;
 	        do
@@ -130,7 +130,7 @@ CS
 	            _19302 = _24455;
 	            break;
 	        } while(false);
-	        _4309[uint2(_9477)] = float4(_19302, _24697.w);
+	        g_tIntermediateRT[uint2(_9477)] = float4(_19302, _24697.w);
 	        break;
 	    } while(false);
 	}

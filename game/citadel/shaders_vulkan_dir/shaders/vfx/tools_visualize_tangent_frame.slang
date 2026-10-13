@@ -88,10 +88,10 @@ VS
 	
 	struct VS_INPUT
 	{
-	    float3 vPositionOs : TEXCOORD0;
-	    float3 vNormalOs : TEXCOORD1;
-	    uint4 vBlendIndices : TEXCOORD3;
-	    uint nInstanceIdx : TEXCOORD4;
+	    float3 vPositionOs : POSITION0;
+	    float3 vNormalOs : NORMAL0;
+	    uint4 vBlendIndices : BLENDINDICES0;
+	    uint nInstanceIdx : TEXCOORD13;
 	};
 	
 	struct PS_INPUT
@@ -102,17 +102,17 @@ VS
 	
 	void MainVs_inner()
 	{
-	    uint _13771 = (g_instanceBuffer.Load(nInstanceIdx * 32 + 20) >> uint(16)) & 15u;
+	    uint _13771 = (g_instanceBuffer.Load<uint>(nInstanceIdx * 32 + 20) >> uint(16)) & 15u;
 	    uint _21785;
 	    if (_13771 == 1u)
 	    {
-	        _21785 = g_instanceBuffer.Load(nInstanceIdx * 32 + 4) + (2u + vBlendIndices.x);
+	        _21785 = g_instanceBuffer.Load<uint>(nInstanceIdx * 32 + 4) + (2u + vBlendIndices.x);
 	    }
 	    else
 	    {
-	        _21785 = g_instanceBuffer.Load(nInstanceIdx * 32 + 4);
+	        _21785 = g_instanceBuffer.Load<uint>(nInstanceIdx * 32 + 4);
 	    }
-	    float3x4 _24688 = asfloat(uint3x4(g_transformBuffer.Load4(_21785 * 48 + 0), g_transformBuffer.Load4(_21785 * 48 + 16), g_transformBuffer.Load4(_21785 * 48 + 32)));
+	    float3x4 _24688 = float3x4(g_transformBuffer.Load<float4>(_21785 * 48 + 0), g_transformBuffer.Load<float4>(_21785 * 48 + 16), g_transformBuffer.Load<float4>(_21785 * 48 + 32));
 	    float4x3 _10676 = transpose(_24688);
 	    float3 _7726 = _10676[0];
 	    float3 _16758 = _10676[1];
@@ -120,7 +120,7 @@ VS
 	    float3 _22401;
 	    if (_13771 > 0u)
 	    {
-	        float3x4 _25207 = asfloat(uint3x4(g_transformBuffer.Load4(g_instanceBuffer.Load(nInstanceIdx * 32 + 4) * 48 + 0), g_transformBuffer.Load4(g_instanceBuffer.Load(nInstanceIdx * 32 + 4) * 48 + 16), g_transformBuffer.Load4(g_instanceBuffer.Load(nInstanceIdx * 32 + 4) * 48 + 32)));
+	        float3x4 _25207 = float3x4(g_transformBuffer.Load<float4>(g_instanceBuffer.Load<uint>(nInstanceIdx * 32 + 4) * 48 + 0), g_transformBuffer.Load<float4>(g_instanceBuffer.Load<uint>(nInstanceIdx * 32 + 4) * 48 + 16), g_transformBuffer.Load<float4>(g_instanceBuffer.Load<uint>(nInstanceIdx * 32 + 4) * 48 + 32));
 	        _22401 = _25207[0].z.xxx;
 	    }
 	    else
@@ -158,38 +158,39 @@ GS
 	[[layer_constant]] ExternalDescriptorSet g_globalLateBoundBindlessSet < Source(ExternalDescSet); Attribute("g_globalLateBoundBindlessSet"); >;
 	[[layer_constant]] ExternalDescriptorSet g_lightBinnerGpuSet < Source(ExternalDescSet); Attribute("g_lightBinnerGpuSet"); >;
 	
-	// SPIR-V reflection failed for backend HLSL:
-	// Unsupported shader stage.
-	//
-	// Re-attempting reflection with the GLSL backend.
-	
 	// Source 2 Viewer - https://valveresourceformat.github.io
-	// SPIR-V source, GLSL reflection with SPIRV-Cross by KhronosGroup
+	// SPIR-V source, HLSL reflection with SPIRV-Cross by KhronosGroup
 	
-	#version 460
-	layout(triangles) in;
-	layout(max_vertices = 6, line_strip) out;
-	
-	struct _1224
+	cbuffer PerViewConstantBuffer_t : register(b1, space2)
 	{
-	    mat4 _m0;
-	    vec4 _m1;
+	    column_major float4x4 PerViewConstantBuffer_t_1_m0 : packoffset(c0);
+	    float4 PerViewConstantBuffer_t_1_m1 : packoffset(c24);
 	};
 	
-	layout(set = 2) uniform _1224 PerViewConstantBuffer_t;
-	
-	struct _985
+	cbuffer _Globals_ : register(b0, space2)
 	{
-	    float _m0;
+	    float _Globals_1_g_flVectorLength : packoffset(c0);
 	};
 	
-	layout(set = 2) uniform _985 undetermined;
 	
-	layout(location = 0) in vec3 input_0[3];
-	layout(location = 1) in vec3 input_1[3];
-	layout(location = 0) out vec3 output_0;
+	static float4 gl_Position;
+	static float3 input_0[3];
+	static float3 input_1[3];
+	static float3 output_0;
 	
-	void main()
+	struct SPIRV_Cross_Input
+	{
+	    float3 input_0 : TEXCOORD0;
+	    float3 input_1 : TEXCOORD1;
+	};
+	
+	struct SPIRV_Cross_Output
+	{
+	    float3 output_0 : TEXCOORD0;
+	    float4 gl_Position : SV_Position;
+	};
+	
+	void MainGs_inner(triangle SPIRV_Cross_Input stage_input[3], inout LineStream<SPIRV_Cross_Output> geometry_stream)
 	{
 	    int _10337;
 	    int _13039 = 0;
@@ -199,24 +200,47 @@ GS
 	        {
 	            break;
 	        }
-	        vec4 _21447 = PerViewConstantBuffer_t._m1 * 1.0;
-	        vec4 _18241 = (vec4(input_0[_13039].xyz, 1.0) + _21447).xyzw * PerViewConstantBuffer_t._m0;
-	        output_0 = vec3(0.0, 0.0, 1.0);
+	        float4 _21447 = PerViewConstantBuffer_t_1_m1 * 1.0f;
+	        float4 _18241 = mul(PerViewConstantBuffer_t_1_m0, (float4(input_0[_13039].xyz, 1.0f) + _21447).xyzw);
+	        output_0 = float3(0.0f, 0.0f, 1.0f);
 	        _18241.y = -_18241.y;
 	        gl_Position = _18241;
-	        EmitVertex();
-	        vec4 _8486 = (vec4((input_0[_13039].xyz + (input_1[_13039].xyz * undetermined._m0)).xyz, 1.0) + _21447).xyzw * PerViewConstantBuffer_t._m0;
-	        output_0 = vec3(0.300000011920928955078125, 0.300000011920928955078125, 1.0);
+	        {
+	            SPIRV_Cross_Output stage_output;
+	            stage_output.gl_Position = gl_Position;
+	            stage_output.output_0 = output_0;
+	            geometry_stream.Append(stage_output);
+	        }
+	        float4 _8486 = mul(PerViewConstantBuffer_t_1_m0, (float4((input_0[_13039].xyz + (input_1[_13039].xyz * _Globals_1_g_flVectorLength)).xyz, 1.0f) + _21447).xyzw);
+	        output_0 = float3(0.300000011920928955078125f, 0.300000011920928955078125f, 1.0f);
 	        _8486.y = -_8486.y;
 	        gl_Position = _8486;
-	        EmitVertex();
-	        EndPrimitive();
+	        {
+	            SPIRV_Cross_Output stage_output;
+	            stage_output.gl_Position = gl_Position;
+	            stage_output.output_0 = output_0;
+	            geometry_stream.Append(stage_output);
+	        }
+	        geometry_stream.RestartStrip();
 	        _10337 = _13039 + 1;
 	        _13039 = _10337;
 	        continue;
 	    }
 	}
 	
+	[maxvertexcount(6)]
+	void MainGs(triangle SPIRV_Cross_Input stage_input[3], inout LineStream<SPIRV_Cross_Output> geometry_stream)
+	{
+	    for (int i = 0; i < 3; i++)
+	    {
+	        input_0[i] = stage_input[i].input_0;
+	    }
+	    for (int i = 0; i < 3; i++)
+	    {
+	        input_1[i] = stage_input[i].input_1;
+	    }
+	    MainGs_inner(stage_input, geometry_stream);
+	}
 	
 	// ---------  SPIRV -> HLSL end  --------- 
 	

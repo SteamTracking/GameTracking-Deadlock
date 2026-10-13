@@ -87,9 +87,9 @@ CS
 	};
 	
 	ByteAddressBuffer g_constantBuffer : register(t30, space0);
-	globallycoherent RWByteAddressBuffer undetermined : register(u163, space0);
-	RWByteAddressBuffer undetermined_1 : register(u162, space0);
-	globallycoherent RWByteAddressBuffer undetermined_2 : register(u164, space0);
+	globallycoherent RWByteAddressBuffer b_passHist : register(u163, space0);
+	RWByteAddressBuffer b_globalHist : register(u162, space0);
+	globallycoherent RWByteAddressBuffer b_index : register(u164, space0);
 	cbuffer OneSweepSortPushConstants_t_natural
 	{
 	    uint g_consts_e_constIdx : packoffset(c0);
@@ -106,8 +106,8 @@ CS
 	uint GetThreadBlocks()
 	{
 	    OneSweepSortConstants_t_natural _214;
-	    _214.e_numKeys = g_constantBuffer.Load(g_consts_e_constIdx * 8 + 0);
-	    _214.e_threadBlocks = g_constantBuffer.Load(g_consts_e_constIdx * 8 + 4);
+	    _214.e_numKeys = g_constantBuffer.Load<uint>(g_consts_e_constIdx * 8 + 0);
+	    _214.e_threadBlocks = g_constantBuffer.Load<uint>(g_consts_e_constIdx * 8 + 4);
 	    OneSweepSortConstants_t_natural_logical _215;
 	    _215.e_numKeys = _214.e_numKeys;
 	    _215.e_threadBlocks = _214.e_threadBlocks;
@@ -133,7 +133,7 @@ CS
 	                _52_ladder_break = true;
 	                break;
 	            }
-	            undetermined.Store(i * 4 + 0, 0u);
+	            b_passHist.Store<uint>(i * 4 + 0, 0u);
 	            break;
 	        } while(false);
 	        if (_52_ladder_break)
@@ -147,11 +147,11 @@ CS
 	    }
 	    if (gl_GlobalInvocationID.x < 1024u)
 	    {
-	        undetermined_1.Store(gl_GlobalInvocationID.x * 4 + 0, 0u);
+	        b_globalHist.Store<uint>(gl_GlobalInvocationID.x * 4 + 0, 0u);
 	    }
 	    if (gl_GlobalInvocationID.x < 4u)
 	    {
-	        undetermined_2.Store(gl_GlobalInvocationID.x * 4 + 0, 0u);
+	        b_index.Store<uint>(gl_GlobalInvocationID.x * 4 + 0, 0u);
 	    }
 	}
 	

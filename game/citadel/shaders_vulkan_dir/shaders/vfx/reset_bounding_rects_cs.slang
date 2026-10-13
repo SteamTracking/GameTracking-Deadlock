@@ -33,7 +33,7 @@ CS
 	// Source 2 Viewer - https://valveresourceformat.github.io
 	// SPIR-V source, HLSL reflection with SPIRV-Cross by KhronosGroup
 	
-	RWByteAddressBuffer undetermined : register(u158, space0);
+	RWByteAddressBuffer g_BoundingRects : register(u158, space0);
 	
 	static uint3 gl_GlobalInvocationID;
 	struct SPIRV_Cross_Input
@@ -44,11 +44,11 @@ CS
 	void MainCs_inner()
 	{
 	    uint _23125;
-	    undetermined.GetDimensions(_23125);
+	    g_BoundingRects.GetDimensions(_23125);
 	    _23125 = (_23125 - 0) / 8;
 	    if (gl_GlobalInvocationID.x < _23125)
 	    {
-	        undetermined.Store2(gl_GlobalInvocationID.x * 8 + 0, uint2(int2(2147483647, int(0x80000000))));
+	        g_BoundingRects.Store<int2>(gl_GlobalInvocationID.x * 8 + 0, int2(2147483647, int(0x80000000)));
 	    }
 	}
 	

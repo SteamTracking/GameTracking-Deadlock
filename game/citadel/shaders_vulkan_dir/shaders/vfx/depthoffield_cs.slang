@@ -79,8 +79,8 @@ CS
 	
 	Texture2D<float4> g_tDepth : register(t31, space0);
 	SamplerState AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipPoint : register(s22, space0);
-	RWTexture2D<float4> _4798 : register(u158, space0);
-	RWTexture2D<float4> _5182 : register(u159, space0);
+	RWTexture2D<float4> g_uTileHorizontalMinDepthMaxCoC : register(u158, space0);
+	RWTexture2D<float4> g_uTileHorizontalMinCoC : register(u159, space0);
 	
 	static uint3 gl_WorkGroupID;
 	static uint3 gl_LocalInvocationID;
@@ -154,8 +154,8 @@ CS
 	        if (gl_LocalInvocationID.x == 0u)
 	        {
 	            uint2 _23555 = (uint2(gl_WorkGroupID.x, _10370) + gl_LocalInvocationID.xy).xy;
-	            _4798[_23555] = float4(asfloat(_3077[gl_LocalInvocationID.y] ^ (((_3077[gl_LocalInvocationID.y] >> uint(31)) - 1u) | 2147483648u)), asfloat(_3635[gl_LocalInvocationID.y] ^ (((_3635[gl_LocalInvocationID.y] >> uint(31)) - 1u) | 2147483648u)), 0.0f, 0.0f);
-	            _5182[_23555] = asfloat(_5784[gl_LocalInvocationID.y] ^ (((_5784[gl_LocalInvocationID.y] >> uint(31)) - 1u) | 2147483648u)).xxxx;
+	            g_uTileHorizontalMinDepthMaxCoC[_23555] = float4(asfloat(_3077[gl_LocalInvocationID.y] ^ (((_3077[gl_LocalInvocationID.y] >> uint(31)) - 1u) | 2147483648u)), asfloat(_3635[gl_LocalInvocationID.y] ^ (((_3635[gl_LocalInvocationID.y] >> uint(31)) - 1u) | 2147483648u)), 0.0f, 0.0f);
+	            g_uTileHorizontalMinCoC[_23555] = asfloat(_5784[gl_LocalInvocationID.y] ^ (((_5784[gl_LocalInvocationID.y] >> uint(31)) - 1u) | 2147483648u)).xxxx;
 	        }
 	        break;
 	    } while(false);

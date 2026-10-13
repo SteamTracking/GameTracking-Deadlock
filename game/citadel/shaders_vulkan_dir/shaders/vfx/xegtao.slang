@@ -98,11 +98,11 @@ CS
 	
 	layout(set = 0, binding = 22) uniform sampler AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipPoint;
 	layout(set = 0, binding = 60) uniform texture2D g_srcRawDepth;
-	layout(set = 0, binding = 158) uniform writeonly image2D _4551;
-	layout(set = 0, binding = 159) uniform writeonly image2D _4552;
-	layout(set = 0, binding = 160) uniform writeonly image2D _4553;
-	layout(set = 0, binding = 161) uniform writeonly image2D _4554;
-	layout(set = 0, binding = 162) uniform writeonly image2D _4555;
+	layout(set = 0, binding = 158) uniform writeonly image2D g_outWorkingDepthMIP0;
+	layout(set = 0, binding = 159) uniform writeonly image2D g_outWorkingDepthMIP1;
+	layout(set = 0, binding = 160) uniform writeonly image2D g_outWorkingDepthMIP2;
+	layout(set = 0, binding = 161) uniform writeonly image2D g_outWorkingDepthMIP3;
+	layout(set = 0, binding = 162) uniform writeonly image2D g_outWorkingDepthMIP4;
 	
 	shared float _5894[8][8];
 	
@@ -114,10 +114,10 @@ CS
 	    float _11893 = clamp(abs(PerViewConstantBuffer_t._m2.x / ((PerViewConstantBuffer_t._m2.y * _7120.z) + PerViewConstantBuffer_t._m2.z)), 0.0, 65504.0);
 	    float _11532 = clamp(abs(PerViewConstantBuffer_t._m2.x / ((PerViewConstantBuffer_t._m2.y * _7120.x) + PerViewConstantBuffer_t._m2.z)), 0.0, 65504.0);
 	    float _24886 = clamp(abs(PerViewConstantBuffer_t._m2.x / ((PerViewConstantBuffer_t._m2.y * _7120.y) + PerViewConstantBuffer_t._m2.z)), 0.0, 65504.0);
-	    imageStore(_4551, ivec2(_14796), vec4(_25043));
-	    imageStore(_4551, ivec2(_14796 + uvec2(1u, 0u)), vec4(_11893));
-	    imageStore(_4551, ivec2(_14796 + uvec2(0u, 1u)), vec4(_11532));
-	    imageStore(_4551, ivec2(_14796 + uvec2(1u)), vec4(_24886));
+	    imageStore(g_outWorkingDepthMIP0, ivec2(_14796), vec4(_25043));
+	    imageStore(g_outWorkingDepthMIP0, ivec2(_14796 + uvec2(1u, 0u)), vec4(_11893));
+	    imageStore(g_outWorkingDepthMIP0, ivec2(_14796 + uvec2(0u, 1u)), vec4(_11532));
+	    imageStore(g_outWorkingDepthMIP0, ivec2(_14796 + uvec2(1u)), vec4(_24886));
 	    float _12887 = max(max(_25043, _11893), max(_11532, _24886));
 	    float _14613 = (-1.48800384998321533203125) / GTAOConstantBuffer_t._m0._m1;
 	    float _15749 = (((GTAOConstantBuffer_t._m0._m1 * 1.092750072479248046875) * (1.0 - GTAOConstantBuffer_t._m0._m2)) / (GTAOConstantBuffer_t._m0._m1 * 0.67204129695892333984375)) + 1.0;
@@ -126,7 +126,7 @@ CS
 	    float _21057 = saturate(((_12887 - _11532) * _14613) + _15749);
 	    float _21325 = saturate(((_12887 - _24886) * _14613) + _15749);
 	    float _16652 = ((((_21055 * _25043) + (_21056 * _11893)) + (_21057 * _11532)) + (_21325 * _24886)) / (((_21055 + _21056) + _21057) + _21325);
-	    imageStore(_4552, ivec2(gl_GlobalInvocationID.xy), vec4(_16652));
+	    imageStore(g_outWorkingDepthMIP1, ivec2(gl_GlobalInvocationID.xy), vec4(_16652));
 	    _5894[gl_LocalInvocationID.x][gl_LocalInvocationID.y] = _16652;
 	    barrier();
 	    SPIRV_CROSS_BRANCH
@@ -140,7 +140,7 @@ CS
 	        float _21060 = saturate(((_21908 - _5894[gl_LocalInvocationID.x][_13648]) * _14613) + _15749);
 	        float _21326 = saturate(((_21908 - _5894[_22788][_13648]) * _14613) + _15749);
 	        float _22733 = ((((_21058 * _5894[gl_LocalInvocationID.x][gl_LocalInvocationID.y]) + (_21059 * _5894[_22788][gl_LocalInvocationID.y])) + (_21060 * _5894[gl_LocalInvocationID.x][_13648])) + (_21326 * _5894[_22788][_13648])) / (((_21058 + _21059) + _21060) + _21326);
-	        imageStore(_4553, ivec2(gl_GlobalInvocationID.xy / uvec2(2u)), vec4(_22733));
+	        imageStore(g_outWorkingDepthMIP2, ivec2(gl_GlobalInvocationID.xy / uvec2(2u)), vec4(_22733));
 	        _5894[gl_LocalInvocationID.x][gl_LocalInvocationID.y] = _22733;
 	    }
 	    barrier();
@@ -155,7 +155,7 @@ CS
 	        float _21063 = saturate(((_21909 - _5894[gl_LocalInvocationID.x][_13649]) * _14613) + _15749);
 	        float _21327 = saturate(((_21909 - _5894[_22789][_13649]) * _14613) + _15749);
 	        float _22734 = ((((_21061 * _5894[gl_LocalInvocationID.x][gl_LocalInvocationID.y]) + (_21062 * _5894[_22789][gl_LocalInvocationID.y])) + (_21063 * _5894[gl_LocalInvocationID.x][_13649])) + (_21327 * _5894[_22789][_13649])) / (((_21061 + _21062) + _21063) + _21327);
-	        imageStore(_4554, ivec2(gl_GlobalInvocationID.xy / uvec2(4u)), vec4(_22734));
+	        imageStore(g_outWorkingDepthMIP3, ivec2(gl_GlobalInvocationID.xy / uvec2(4u)), vec4(_22734));
 	        _5894[gl_LocalInvocationID.x][gl_LocalInvocationID.y] = _22734;
 	    }
 	    barrier();
@@ -169,7 +169,7 @@ CS
 	        float _21065 = saturate(((_21910 - _5894[_22790][gl_LocalInvocationID.y]) * _14613) + _15749);
 	        float _21066 = saturate(((_21910 - _5894[gl_LocalInvocationID.x][_13650]) * _14613) + _15749);
 	        float _21328 = saturate(((_21910 - _5894[_22790][_13650]) * _14613) + _15749);
-	        imageStore(_4555, ivec2(gl_GlobalInvocationID.xy / uvec2(8u)), vec4(((((_21064 * _5894[gl_LocalInvocationID.x][gl_LocalInvocationID.y]) + (_21065 * _5894[_22790][gl_LocalInvocationID.y])) + (_21066 * _5894[gl_LocalInvocationID.x][_13650])) + (_21328 * _5894[_22790][_13650])) / (((_21064 + _21065) + _21066) + _21328)));
+	        imageStore(g_outWorkingDepthMIP4, ivec2(gl_GlobalInvocationID.xy / uvec2(8u)), vec4(((((_21064 * _5894[gl_LocalInvocationID.x][gl_LocalInvocationID.y]) + (_21065 * _5894[_22790][gl_LocalInvocationID.y])) + (_21066 * _5894[gl_LocalInvocationID.x][_13650])) + (_21328 * _5894[_22790][_13650])) / (((_21064 + _21065) + _21066) + _21328)));
 	    }
 	}
 	

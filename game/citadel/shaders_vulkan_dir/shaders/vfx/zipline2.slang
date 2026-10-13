@@ -519,7 +519,7 @@ PS
 	    float _7766 = input_0.w / _13413;
 	    float2 _11084 = (gl_FragCoord.xy * PerViewConstantBuffer_t_1_m1.xy).xy;
 	    float _8730;
-	    if (gl_FragCoord.z > float((min16float)f16tof32(min16uint(uint((min16uint)f32tof16(min16float(g_bindless_Texture2D_float4[PerViewConstantBufferCitadel_t_1_m1].Sample(g_bindless_Sampler[_Globals_1_g_sPointClamp], _11084).x))) & 4294967294u))))
+	    if (gl_FragCoord.z > float((half)f16tof32(uint16_t(uint((uint16_t)f32tof16(half(g_bindless_Texture2D_float4[PerViewConstantBufferCitadel_t_1_m1].Sample(g_bindless_Sampler[_Globals_1_g_sPointClamp], _11084).x))) & 4294967294u))))
 	    {
 	        float _15529 = _7766 * _24582;
 	        float _12501;
@@ -545,8 +545,8 @@ PS
 	        }
 	        _8730 = _7766 * (2.0f * _13413);
 	    }
-	    float4 _14437 = float4(float3((min16float3)f16tof32(min16uint3(uint3((min16uint3)f32tof16(min16float3((input_0 * _8730).xyz * 2.0f)))))), 5.9604644775390625e-08f);
-	    bool4 _21909 = (gl_FragCoord.z > float((min16float)f16tof32(min16uint(uint((min16uint)f32tof16(min16float(g_bindless_Texture2D_float4[PerViewConstantBufferCitadel_t_1_m1].Sample(g_bindless_Sampler[_Globals_1_g_sPointClamp], _11084).x))) & 4294967294u)))).xxxx;
+	    float4 _14437 = float4(float3((half3)f16tof32(uint16_t3(uint3((uint16_t3)f32tof16(half3((input_0 * _8730).xyz * 2.0f)))))), 5.9604644775390625e-08f);
+	    bool4 _21909 = (gl_FragCoord.z > float((half)f16tof32(uint16_t(uint((uint16_t)f32tof16(half(g_bindless_Texture2D_float4[PerViewConstantBufferCitadel_t_1_m1].Sample(g_bindless_Sampler[_Globals_1_g_sPointClamp], _11084).x))) & 4294967294u)))).xxxx;
 	    output_0 = float4(_21909.x ? 0.0f.xxxx.x : _14437.x, _21909.y ? 0.0f.xxxx.y : _14437.y, _21909.z ? 0.0f.xxxx.z : _14437.z, _21909.w ? 0.0f.xxxx.w : _14437.w);
 	    output_1 = float4(_21909.x ? _14437.x : 0.0f.xxxx.x, _21909.y ? _14437.y : 0.0f.xxxx.y, _21909.z ? _14437.z : 0.0f.xxxx.z, _21909.w ? _14437.w : 0.0f.xxxx.w);
 	}

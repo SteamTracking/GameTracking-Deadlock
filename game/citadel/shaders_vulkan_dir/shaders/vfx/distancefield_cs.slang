@@ -121,7 +121,7 @@ CS
 	ByteAddressBuffer g_models : register(t57, space0);
 	Texture3D<float4> g_tAtlas : register(t56, space0);
 	SamplerState AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear : register(s21, space0);
-	RWTexture2DArray<float4> _5153 : register(u160, space0);
+	RWTexture2DArray<float4> g_tVisualizeOutput : register(u160, space0);
 	
 	static uint3 gl_WorkGroupID;
 	static uint3 gl_LocalInvocationID;
@@ -182,7 +182,7 @@ CS
 	        int _17017 = -1;
 	        uint _17114 = 0u;
 	        uint _17115 = 0u;
-	        bool _17116;
+	        bool _17116 = false;
 	        [loop]
 	        for (;;)
 	        {
@@ -193,9 +193,9 @@ CS
 	                _10883 = _17017;
 	                break;
 	            }
-	            uint _13766 = g_tlas.Load(_17114 * 32 + 12) & 255u;
+	            uint _13766 = g_tlas.Load<uint>(_17114 * 32 + 12) & 255u;
 	            uint _16589;
-	            if ((g_tlas.Load(_17114 * 32 + 12) >> uint(31)) > 0u)
+	            if ((g_tlas.Load<uint>(_17114 * 32 + 12) >> uint(31)) > 0u)
 	            {
 	                bool _13137;
 	                float _16306;
@@ -220,20 +220,20 @@ CS
 	                    {
 	                        break;
 	                    }
-	                    uint _14203 = g_tlas.Load(_17114 * 32 + 28) + _17018;
-	                    float4x3 _8526 = asfloat(uint4x3(g_instances.Load(_14203 * 64 + 0), g_instances.Load(_14203 * 64 + 16), g_instances.Load(_14203 * 64 + 32), g_instances.Load(_14203 * 64 + 4), g_instances.Load(_14203 * 64 + 20), g_instances.Load(_14203 * 64 + 36), g_instances.Load(_14203 * 64 + 8), g_instances.Load(_14203 * 64 + 24), g_instances.Load(_14203 * 64 + 40), g_instances.Load(_14203 * 64 + 12), g_instances.Load(_14203 * 64 + 28), g_instances.Load(_14203 * 64 + 44)));
+	                    uint _14203 = g_tlas.Load<uint>(_17114 * 32 + 28) + _17018;
+	                    float4x3 _8526 = float4x3(g_instances.Load<float>(_14203 * 64 + 0), g_instances.Load<float>(_14203 * 64 + 16), g_instances.Load<float>(_14203 * 64 + 32), g_instances.Load<float>(_14203 * 64 + 4), g_instances.Load<float>(_14203 * 64 + 20), g_instances.Load<float>(_14203 * 64 + 36), g_instances.Load<float>(_14203 * 64 + 8), g_instances.Load<float>(_14203 * 64 + 24), g_instances.Load<float>(_14203 * 64 + 40), g_instances.Load<float>(_14203 * 64 + 12), g_instances.Load<float>(_14203 * 64 + 28), g_instances.Load<float>(_14203 * 64 + 44));
 	                    float3 _12382 = mul(float4(PerViewConstantBuffer_t_1_m3, 1.0f), _8526).xyz;
 	                    float3 _21499 = mul(float4(_10507, 0.0f), _8526).xyz;
 	                    float3 _14975 = 1.0f.xxx / _21499;
-	                    float3 _16228 = asfloat(g_models.Load3(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 16)) - asfloat(g_models.Load3(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 0));
-	                    float _15688 = float(g_models.Load(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 12));
+	                    float3 _16228 = g_models.Load<float3>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 16) - g_models.Load<float3>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 0);
+	                    float _15688 = float(g_models.Load<uint>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 12));
 	                    float3 _24227 = ((_16228.x / _15688) * 0.5f).xxx;
 	                    float2 _11556;
 	                    bool _16054;
 	                    do
 	                    {
-	                        float3 _22595 = _14975 * ((asfloat(g_models.Load3(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 0)) + _24227) - _12382);
-	                        float3 _17510 = _14975 * ((asfloat(g_models.Load3(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 16)) - _24227) - _12382);
+	                        float3 _22595 = _14975 * ((g_models.Load<float3>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 0) + _24227) - _12382);
+	                        float3 _17510 = _14975 * ((g_models.Load<float3>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 16) - _24227) - _12382);
 	                        float3 _7416 = min(_17510, _22595);
 	                        float3 _13038 = max(_17510, _22595);
 	                        float2 _11254 = max(_7416.xx, _7416.yz);
@@ -263,8 +263,8 @@ CS
 	                        float3 _17191;
 	                        if (_11556.x < _16306)
 	                        {
-	                            float _17157 = asfloat(g_models.Load(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 52)) * asfloat(g_instances.Load(_14203 * 64 + 52));
-	                            float3 _18722 = float3(_15688 * 0.0009765625f, float(g_models.Load(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 28)) * 0.0009765625f, float(g_models.Load(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 44)) * 0.015625f);
+	                            float _17157 = g_models.Load<float>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 52) * g_instances.Load<float>(_14203 * 64 + 52);
+	                            float3 _18722 = float3(_15688 * 0.0009765625f, float(g_models.Load<uint>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 28)) * 0.0009765625f, float(g_models.Load<uint>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 44)) * 0.015625f);
 	                            bool _12886;
 	                            float _13138;
 	                            do
@@ -285,7 +285,7 @@ CS
 	                                        _16863 = false;
 	                                        break;
 	                                    }
-	                                    float _18457 = (((g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_12382 + (_21499 * _13156)) - asfloat(g_models.Load3(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 0))) / _16228) * _18722) + asfloat(g_models.Load3(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 32)), 0.0f).x * 2.0f) - 1.0f) * asfloat(g_models.Load(int(g_instances.Load(_14203 * 64 + 48)) * 72 + 48))) * asfloat(g_instances.Load(_14203 * 64 + 52));
+	                                    float _18457 = (((g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_12382 + (_21499 * _13156)) - g_models.Load<float3>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 0)) / _16228) * _18722) + g_models.Load<float3>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 32), 0.0f).x * 2.0f) - 1.0f) * g_models.Load<float>(g_instances.Load<int>(_14203 * 64 + 48) * 72 + 48)) * g_instances.Load<float>(_14203 * 64 + 52);
 	                                    float _12279 = max(_17157, _16672 * _13156);
 	                                    if (_18457 < _12279)
 	                                    {
@@ -335,7 +335,7 @@ CS
 	                                _13139 = _20847 ? _13138 : _16306;
 	                                _16307 = _23149;
 	                                _17190 = float3(_9204.x ? _21499.x : _17119.x, _9204.y ? _21499.y : _17119.y, _9204.z ? _21499.z : _17119.z);
-	                                _16479 = _20847 ? int(g_instances.Load(_14203 * 64 + 48)) : _17134;
+	                                _16479 = _20847 ? g_instances.Load<int>(_14203 * 64 + 48) : _17134;
 	                            }
 	                            else
 	                            {
@@ -401,12 +401,12 @@ CS
 	                    {
 	                        break;
 	                    }
-	                    uint _14202 = g_tlas.Load(_17114 * 32 + 28) + _16208;
+	                    uint _14202 = g_tlas.Load<uint>(_17114 * 32 + 28) + _16208;
 	                    bool _11267;
 	                    do
 	                    {
-	                        float3 _22594 = _8772 * (asfloat(g_tlas.Load3(_14202 * 32 + 0)) - PerViewConstantBuffer_t_1_m3);
-	                        float3 _17509 = _8772 * (asfloat(g_tlas.Load3(_14202 * 32 + 16)) - PerViewConstantBuffer_t_1_m3);
+	                        float3 _22594 = _8772 * (g_tlas.Load<float3>(_14202 * 32 + 0) - PerViewConstantBuffer_t_1_m3);
+	                        float3 _17509 = _8772 * (g_tlas.Load<float3>(_14202 * 32 + 16) - PerViewConstantBuffer_t_1_m3);
 	                        float3 _7415 = min(_17509, _22594);
 	                        float3 _13037 = max(_17509, _22594);
 	                        float2 _11253 = max(_7415.xx, _7415.yz);
@@ -466,14 +466,14 @@ CS
 	        }
 	        if (_10883 != (-1))
 	        {
-	            float3 _6341 = asfloat(g_models.Load3(_10883 * 72 + 16)) - asfloat(g_models.Load3(_10883 * 72 + 0));
-	            float _15689 = float(g_models.Load(_10883 * 72 + 12));
-	            float3 _16124 = float3(_15689 * 0.0009765625f, float(g_models.Load(_10883 * 72 + 28)) * 0.0009765625f, float(g_models.Load(_10883 * 72 + 44)) * 0.015625f);
+	            float3 _6341 = g_models.Load<float3>(_10883 * 72 + 16) - g_models.Load<float3>(_10883 * 72 + 0);
+	            float _15689 = float(g_models.Load<uint>(_10883 * 72 + 12));
+	            float3 _16124 = float3(_15689 * 0.0009765625f, float(g_models.Load<uint>(_10883 * 72 + 28)) * 0.0009765625f, float(g_models.Load<uint>(_10883 * 72 + 44)) * 0.015625f);
 	            float _7677 = (_6341.x / _15689) * 0.5f;
 	            float3 _17805 = float3(_7677, 0.0f, 0.0f);
 	            float3 _22308 = float3(0.0f, _7677, 0.0f);
 	            float3 _22309 = float3(0.0f, 0.0f, _7677);
-	            float3 _11594 = float3(asfloat(g_models.Load(_10883 * 72 + 48)) * (2.0f * (g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 + _17805) - asfloat(g_models.Load3(_10883 * 72 + 0))) / _6341) * _16124) + asfloat(g_models.Load3(_10883 * 72 + 32)), 0.0f).x - g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 - _17805) - asfloat(g_models.Load3(_10883 * 72 + 0))) / _6341) * _16124) + asfloat(g_models.Load3(_10883 * 72 + 32)), 0.0f).x)), asfloat(g_models.Load(_10883 * 72 + 48)) * (2.0f * (g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 + _22308) - asfloat(g_models.Load3(_10883 * 72 + 0))) / _6341) * _16124) + asfloat(g_models.Load3(_10883 * 72 + 32)), 0.0f).x - g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 - _22308) - asfloat(g_models.Load3(_10883 * 72 + 0))) / _6341) * _16124) + asfloat(g_models.Load3(_10883 * 72 + 32)), 0.0f).x)), asfloat(g_models.Load(_10883 * 72 + 48)) * (2.0f * (g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 + _22309) - asfloat(g_models.Load3(_10883 * 72 + 0))) / _6341) * _16124) + asfloat(g_models.Load3(_10883 * 72 + 32)), 0.0f).x - g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 - _22309) - asfloat(g_models.Load3(_10883 * 72 + 0))) / _6341) * _16124) + asfloat(g_models.Load3(_10883 * 72 + 32)), 0.0f).x)));
+	            float3 _11594 = float3(g_models.Load<float>(_10883 * 72 + 48) * (2.0f * (g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 + _17805) - g_models.Load<float3>(_10883 * 72 + 0)) / _6341) * _16124) + g_models.Load<float3>(_10883 * 72 + 32), 0.0f).x - g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 - _17805) - g_models.Load<float3>(_10883 * 72 + 0)) / _6341) * _16124) + g_models.Load<float3>(_10883 * 72 + 32), 0.0f).x)), g_models.Load<float>(_10883 * 72 + 48) * (2.0f * (g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 + _22308) - g_models.Load<float3>(_10883 * 72 + 0)) / _6341) * _16124) + g_models.Load<float3>(_10883 * 72 + 32), 0.0f).x - g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 - _22308) - g_models.Load<float3>(_10883 * 72 + 0)) / _6341) * _16124) + g_models.Load<float3>(_10883 * 72 + 32), 0.0f).x)), g_models.Load<float>(_10883 * 72 + 48) * (2.0f * (g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 + _22309) - g_models.Load<float3>(_10883 * 72 + 0)) / _6341) * _16124) + g_models.Load<float3>(_10883 * 72 + 32), 0.0f).x - g_tAtlas.SampleLevel(AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear, ((((_13144 - _22309) - g_models.Load<float3>(_10883 * 72 + 0)) / _6341) * _16124) + g_models.Load<float3>(_10883 * 72 + 32), 0.0f).x)));
 	            float _19750 = length(_11594);
 	            float3 _10121;
 	            if (_19750 > 0.0f)
@@ -484,11 +484,11 @@ CS
 	            {
 	                _10121 = 0.0f.xxx;
 	            }
-	            _5153[uint3(_13756, 0u)] = saturate(abs(dot(_10121, normalize(-_14899)))).xxxx;
+	            g_tVisualizeOutput[uint3(_13756, 0u)] = saturate(abs(dot(_10121, normalize(-_14899)))).xxxx;
 	        }
 	        else
 	        {
-	            _5153[uint3(_13756, 0u)] = 0.0f.xxxx;
+	            g_tVisualizeOutput[uint3(_13756, 0u)] = 0.0f.xxxx;
 	        }
 	        break;
 	    } while(false);

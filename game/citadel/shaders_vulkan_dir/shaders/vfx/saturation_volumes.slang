@@ -130,14 +130,14 @@ CS
 	
 	layout(set = 0) uniform _503 SaturationVolumes_t;
 	
-	layout(set = 0, binding = 158) uniform image2D _5852;
+	layout(set = 0, binding = 158) uniform image2D g_tHDRColor;
 	layout(set = 0, binding = 56) uniform texture2D g_tGBufferDepth;
-	layout(set = 0, binding = 159) uniform writeonly image2D _3990;
+	layout(set = 0, binding = 159) uniform writeonly image2D g_tGlowIndex;
 	
 	void main()
 	{
 	    ivec2 _20736 = ivec2(gl_GlobalInvocationID.xy);
-	    vec4 _23585 = imageLoad(_5852, _20736);
+	    vec4 _23585 = imageLoad(g_tHDRColor, _20736);
 	    float _5746 = PerViewConstantBuffer_t._m0 / texelFetch(g_tGBufferDepth, ivec2(gl_GlobalInvocationID.xy), 0).x;
 	    vec4 _11894 = vec4((vec2(_20736) * _Globals_.g_vPixelToProj.xy) + _Globals_.g_vPixelToProj.zw, 1.0, 1.0);
 	    vec4 _14015 = _11894 * _Globals_.g_mHighPrecisionWorldFromProj;
@@ -348,8 +348,8 @@ CS
 	    _17842.x = _25191.x;
 	    _17842.y = _25191.y;
 	    _17842.z = _25191.z;
-	    imageStore(_5852, ivec2(gl_GlobalInvocationID.xy), _17842);
-	    imageStore(_3990, ivec2(gl_GlobalInvocationID.xy), vec4((_13160 > 0.5) ? 0.0039215688593685626983642578125 : 0.0));
+	    imageStore(g_tHDRColor, ivec2(gl_GlobalInvocationID.xy), _17842);
+	    imageStore(g_tGlowIndex, ivec2(gl_GlobalInvocationID.xy), vec4((_13160 > 0.5) ? 0.0039215688593685626983642578125 : 0.0));
 	}
 	
 	
