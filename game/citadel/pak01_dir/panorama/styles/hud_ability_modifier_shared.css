@@ -166,6 +166,14 @@
 	visibility: visible;
 }
 
+.stunned.deadpack_ult_grabbed .SplitLabelProgress,.MODIFIER_STATE_COMMAND_RESTRICTED.deadpack_ult_grabbed .SplitLabelProgress
+{
+	animation-name: WarningColorFlash;
+	animation-iteration-count: infinite;
+	animation-duration: 1s;
+	animation-frame-time: 0.5s;
+}
+
 .citadel_nurse_fear_debuff .SplitLabelProgressBar .SplitLabelProgress
 {
 	wash-color: red;
@@ -851,5 +859,86 @@ CitadelHudModifiers_Entry.MODIFIER_STATE_DROP_IDOL .SplitLabelProgressBar .Split
 CitadelHudModifiers_Entry.MODIFIER_STATE_DROP_IDOL .SplitLabelProgressBar .SplitLabelProgress
 {
 	wash-color: colorEnemy;
+}
+
+.deadpack_ult_grabbed,.stunned.deadpack_ult_grabbed
+{
+	background-image: url("s2r://panorama/images/hud/hero_specific/deadpack_ult_target_png.vtex");
+	background-size: 120px 80px;
+	background-position: center 20px;
+	background-repeat: no-repeat;
+	ui-scale: 120%;
+}
+
+.deadpack_ult_grabbed #channel_and_name,.stunned.deadpack_ult_grabbed #channel_and_name
+{
+	opacity: 1;
+	margin-top: 30px;
+}
+
+.deadpack_ult_grabbed .SplitLabelProgressBar,.stunned.deadpack_ult_grabbed .SplitLabelProgressBar
+{
+	visibility: visible;
+}
+
+.deadpack_ult_grabbed .SplitLabelProgressBar .SplitLabelName Label,.stunned.deadpack_ult_grabbed .SplitLabelProgressBar .SplitLabelName Label
+{
+	font-family: block;
+}
+
+.deadpack_ult_grabbed .SplitLabelProgressBar .SplitLabelName Image,.stunned.deadpack_ult_grabbed .SplitLabelProgressBar .SplitLabelName Image
+{
+	animation-name: WarningAnim;
+	animation-duration: 0.08s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.deadpack_ult_grabbed .SplitLabelProgressBar .SplitLabelName Image:nth-child(odd),.stunned.deadpack_ult_grabbed .SplitLabelProgressBar .SplitLabelName Image:nth-child(odd)
+{
+	animation-direction: alternate-reverse;
+}
+
+.deadpack_ult_grabbed .SplitLabelProgressBar .SplitLabelName Image:nth-child(even),.stunned.deadpack_ult_grabbed .SplitLabelProgressBar .SplitLabelName Image:nth-child(even)
+{
+	animation-direction: alternate;
+}
+
+.deadpack_ult_grabbed .SplitLabelProgressBar .SplitLabelName .SplitLabelProgress,.stunned.deadpack_ult_grabbed .SplitLabelProgressBar .SplitLabelName .SplitLabelProgress
+{
+	wash-color: colorEnemy;
+}
+
+@keyframes 'WarningAnim'
+{
+	0%
+	{
+		transform: translateY( 0.5px );
+	}
+	
+	50%
+	{
+		transform: translateY( 0px );
+	}
+	
+	100%
+	{
+		transform: translateY( -0.5px );
+	}
+	
+}
+
+@keyframes 'WarningColorFlash'
+{
+	0%
+	{
+		wash-color: offWhite;
+	}
+	
+	100%
+	{
+		wash-color: colorEnemy;
+	}
+	
 }
 

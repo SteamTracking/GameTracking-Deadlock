@@ -1,0 +1,357 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+@import url("s2r://panorama/styles/citadel_base_styles.vcss");
+.ability_element_deadpack
+{
+	visibility: visible;
+	height: 200px;
+	width: 130px;
+	margin-top: 20px;
+	margin-right: -200px;
+	horizontal-align: center;
+	vertical-align: center;
+	z-index: -1;
+	overflow: render;
+	padding: 20px;
+	ui-scale: 90%;
+}
+
+#dp_parent_cnt
+{
+	height: 100%;
+	width: 100%;
+	overflow: render;
+}
+
+#dp_parent_cnt.heat_level_0
+{
+	opacity: 0.2;
+}
+
+#dp_parent_cnt.attempted_use
+{
+	animation-name: deadpack_attempted_use;
+	animation-duration: 0.3s;
+	animation-iteration-count: 1;
+}
+
+#dp_parent_cnt.overheating
+{
+	animation-name: deadpack_overheat_anim;
+	animation-duration: 0.3s;
+	animation-iteration-count: infinite;
+}
+
+.heat_gauge
+{
+	horizontal-align: center;
+	width: 37px;
+	padding: 10px;
+	overflow: render;
+	opacity-mask: url("s2r://panorama/images/hud/hero_specific/deadpack_texture_scanlines_png.vtex");
+}
+
+.overheating .heat_gauge
+{
+	animation-name: deadpack_overheat_anim;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.locked_out .heat_gauge
+{
+	opacity: 0.3;
+	animation-name: deadpack_cooldown_anim;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-out;
+}
+
+@keyframes 'deadpack_overheat_anim'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+		wash-color: none;
+	}
+	
+	25%
+	{
+		pre-transform-scale2d: 1.1;
+		transform: rotateZ(-3deg);
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1;
+		wash-color: none;
+	}
+	
+	75%
+	{
+		pre-transform-scale2d: 1.1;
+		transform: rotateZ(3deg);
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+		wash-color: none;
+	}
+	
+}
+
+@keyframes 'deadpack_cooldown_anim'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 0.9;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+}
+
+@keyframes 'deadpack_attempted_use'
+{
+	0%
+	{
+		transform: rotateZ(-5deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(5deg);
+		wash-color: colorEnemy&90;
+		opacity: 1;
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+}
+
+.bar_container
+{
+	width: 14px;
+	height: 114px;
+	margin-top: 4px;
+	horizontal-align: left;
+}
+
+.bar_frame
+{
+	width: 10px;
+	height: 120px;
+	horizontal-align: right;
+	ignore-parent-flow: true;
+	background-image: url("s2r://panorama/images/hud/hero_specific/deadpack_fuel_frame.vsvg");
+	background-size: 100% 100%;
+	opacity: 0.3;
+	wash-color: offWhite;
+}
+
+.overheating .bar_frame
+{
+	wash-color: #ff3b30;
+}
+
+.bar_fg
+{
+	width: 100%;
+	height: 100%;
+	margin: 3px;
+	background-color: #ffbb47;
+	background-image: url("s2r://panorama/images/hud/hero_specific/deadpack_fuel_fill_png.vtex");
+	background-size: 16px 116px;
+	background-position: center bottom;
+	z-index: 2;
+	vertical-align: bottom;
+}
+
+.venting .bar_fg
+{
+	opacity: 0.7;
+}
+
+.locked_out .bar_fg
+{
+	background-color: #6fd2ff;
+	background-image: none;
+}
+
+@keyframes 'deadpack_overheat_flash'
+{
+	0%
+	{
+		wash-color: #ff3b30;
+	}
+	
+	100%
+	{
+		wash-color: #a0251f;
+	}
+	
+}
+
+.overheating .bar_fg
+{
+	background-color: #ff3b30;
+	animation-name: deadpack_overheat_flash;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.bar_bg
+{
+	width: 100%;
+	height: 100%;
+	margin: 3px;
+	align: center center;
+}
+
+#dp_heat_value
+{
+	width: 100%;
+	height: fit-children;
+	font-size: 18px;
+	vertical-align: bottom;
+	horizontal-align: center;
+	text-shadow: 0px 0px 0px 5.0 offBlack&80;
+	text-align: center;
+	font-weight: bold;
+	font-family: numericBlock;
+	color: offWhite;
+	transition-property: color, text-shadow, pre-transform-scale2d;
+	transition-duration: 0.1s;
+}
+
+.jetpacking #dp_heat_value
+{
+	animation-name: deadpack_jetpacking_text;
+	animation-duration: 0.2s;
+	animation-iteration-count: infinite;
+}
+
+.overheating #dp_heat_value
+{
+	margin-right: 0px;
+	transform: translateX(0px);
+	opacity: 0;
+	animation-name: deadpack_overheat_text;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+}
+
+.locked_out #dp_heat_value
+{
+	margin-right: 0px;
+	color: #c6c6c6;
+	text-shadow: 0px 0px 0px 3.0 offBlack&80;
+	font-size: 14px;
+	margin-bottom: 3px;
+	opacity: 0.4;
+	transform: translateX(0px) rotateZ(0deg);
+}
+
+.heat_level_1 #dp_heat_value
+{
+	pre-transform-scale2d: 1.1;
+}
+
+.heat_level_2 #dp_heat_value
+{
+	pre-transform-scale2d: 1.2;
+}
+
+.heat_level_3 #dp_heat_value
+{
+	pre-transform-scale2d: 1.3;
+	animation-duration: 0.15s;
+	transform: translateX(0px) rotateZ(-6deg);
+}
+
+.heat_level_4 #dp_heat_value
+{
+	pre-transform-scale2d: 1.4;
+	animation-duration: 0.15s;
+	transform: translateX(0px) rotateZ(-6deg);
+}
+
+#dp_heat_overheat_warning
+{
+	font-size: 12px;
+	font-family: block;
+	text-transform: uppercase;
+	horizontal-align: center;
+	vertical-align: bottom;
+	visibility: collapse;
+}
+
+.icon_warning
+{
+	width: 20px;
+	height: 20px;
+	background-image: url("s2r://panorama/images/hud/hero_specific/deadpack_warning_symbol.vsvg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	horizontal-align: center;
+	vertical-align: bottom;
+	opacity: 0;
+	wash-color: #ff3b30;
+}
+
+.overheating .icon_warning
+{
+	opacity: 0.8;
+}
+
+@keyframes 'deadpack_jetpacking_text'
+{
+	0%
+	{
+		transform: translateY( 0px ) rotateZ(-6deg);
+	}
+	
+	50%
+	{
+		transform: translateY( 0px ) rotateZ(-3deg);
+	}
+	
+	100%
+	{
+		transform: translateY( 0px ) rotateZ(-6deg);
+	}
+	
+}
+
+@keyframes 'deadpack_overheat_text'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1.1;
+		wash-color: #ff7b7b;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+	}
+	
+}
+

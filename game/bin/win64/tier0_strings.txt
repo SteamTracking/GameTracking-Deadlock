@@ -205,7 +205,6 @@ $xmm9
 %s bytes used out of %s bytes available (%.2f%%)
 %s called on a pool arena (no root available)\n
 %s is out of range for KeyValues, which doesn't support signed 64-bit numbers
-%s not expected here.  A valid JSON document should be a single object, which begins with '{' and ends with '}'
 %s not expected here.  Missing ',' or ']'?
 %s not expected here.  Missing ',' or '}'?
 %s not expected here.  Missing ':'?
@@ -741,7 +740,6 @@ $xmm9
 ;BIb?
 ;srv*http://symbols/windows
 <!-- kv3 encoding:%s:version{%s} format:%s:version{%s} -->\n
-<!-- schema 
 </link>
 </script>
 << NULL >>\n
@@ -1577,7 +1575,7 @@ $xmm9
 ?GetWinLevelRevision@CPUInformation@@SA_NPEAG0@Z
 ?GrowByChunks@CBufferString@@QEAAHHH@Z
 ?GrowPool@CPoolAllocator@@QEAAXI@Z
-?HEAP WARNING: memory pointer %p is invalid\n
+?HEAP WARNING: memory block at %p appears to be corrupt\n
 ?HandleFirstWriteLockTransition@CEventRWLock@@IEAAXAEAVCEventListNode@@@Z
 ?HandleToString@CCountedStringPool_CI@@QEBAPEBDG@Z
 ?HandlerQueueHeartBeat@MiniDumpStandardData_t@@QEBAXXZ
@@ -3609,6 +3607,7 @@ EncodePointer
 Encoder alias '%s': field %s declares bits %d flags %d range [%f->%f] but field %s already declared bits %d flags %d range [%f->%f]; keeping the first definition.\n
 Encoder alias '%s': ignoring unusable definition bits %d flags %d range [%f->%f]\n
 End of input was reached and '[' was not matched by ']'
+End of input was reached and '{' was not matched by '}'
 EndDialog
 EndPaint
 Engine2/MapMaxCoord
@@ -3939,10 +3938,10 @@ GlobalUnlock
 Goal_Distance
 Got symsrv indices
 Group
-HEAP WARNING: memory block at %p appears to be corrupt\n
 HEAP WARNING: memory block at %p is unexpectedly allocated\n
 HEAP WARNING: memory block at %p is unexpectedly free\n
 HEAP WARNING: memory block at %p is unexpectedly unrecognized\n
+HEAP WARNING: memory pointer %p is invalid\n
 HH:MM:SS.z
 HH:mm:ss
 HIGHDPI
@@ -4618,7 +4617,6 @@ Outflow_NPCUseScriptedAbility
 Outflow_Simultaneous
 OutputDebugStringA
 OverrideQuantizedFloatEncoderAlias
-P(YX
 P4_EXTRACT_CMD=p4.exe print -o %srcsrvtrg% -q "//%var3%#%var4%"\n
 P4_EXTRACT_TARGET=%targ%\%var2%\%fnbksl%(%var3%)\%var4%\%fnfile%(%var1%)\n
 PARTICLE_DEPTH_FEATHERING_OFF
@@ -5876,6 +5874,7 @@ Unable to create thread in %s\n
 Unable to determine CPU Frequency\n
 Unable to determine ELF default base address\n
 Unable to determine Mach-O default base address\n
+Unable to determine buffer encoding.
 Unable to load COM\n
 Unable to load SDL\n
 Unable to load oleaut32\n
@@ -6574,7 +6573,7 @@ X360LODEF
 X360SPLITSCREEN
 X360WIDE
 XXXXXX: found leading plus sign while parsing string '%s' as float64, ignoring it\n
-Zvpcf1
+Zvpcf3
 ZwSetTimerResolution
 [   func+child         func ]
 [   func+child       func ]
@@ -6616,7 +6615,7 @@ ZwSetTimerResolution
 \nThreadPoolTest: ===== RunThreadPoolPerFrame Tests =====\n
 \n\nCMiniDumpComment encountered an error while generating the comment
 \n\t\n\n\n\v\n\f\n\r\n
-\rEnd of input was reached and '{' was not matched by '}'
+\r%s not expected here.  A valid JSON document should be a single object, which begins with '{' and ends with '}'
 \rGeneral
 \sdktools\bin
 \sdktools\bin\win32
@@ -7921,6 +7920,7 @@ modf
 moredetailed
 moveto
 multiplayer_break
+n<!-- schema 
 n>log2
 nBits != 32
 nInterruptability
@@ -7930,7 +7930,6 @@ nOffset < m_nAllocationSize
 nOverrideCPField
 nSwitchValue
 nTries < 10000000
-nUnable to determine buffer encoding.
 name
 nan(ind)
 nan(snan)
@@ -8334,6 +8333,7 @@ vmdlkeys4
 void
 volatile
 vpcf
+vpcf1
 vpcf10
 vpcf11
 vpcf12
@@ -8355,7 +8355,6 @@ vpcf26
 vpcf27
 vpcf28
 vpcf29
-vpcf3
 vpcf30
 vpcf31
 vpcf32

@@ -50,4 +50,6 @@ class C_OP_RenderDeferredLight : public CParticleFunctionRenderer
 	float32 m_flSpotFoV; // = 60
 	// MPropertyFriendlyName = "HSV Shift Control Point"
 	int32 m_nHSVShiftControlPoint; // = -1
+	// MPropertyFriendlyName = "draw even when the game disables particle lights"
+	bool m_bIgnoreParticleLightsDisabled;
 };

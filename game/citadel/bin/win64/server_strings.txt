@@ -1059,7 +1059,6 @@ $light_emissive
 ((long)msg_hdr->msg_len) > 0
 ()$^.*+?[]|\-{},:=!\n\r
 (0x%08X)'??'
-(9VG
 (ACTIVE)
 (CAI_BaseNPC)\nActive behavior name
 (CAI_BaseNPC)\nDistaince to enemy (inches)
@@ -2892,6 +2891,18 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_Damage_Taken_Reduction_Handicap@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Dazed@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_DazzlingOrbWatcher@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_DeadpackUltimateTarget@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_ChargeBlastMine_Aura@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_Coated@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_FlamethrowerFireRate@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_FlamethrowerResistReduction@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_ForcedToAirMovement@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_HeatPool@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_JetpackLockout@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_MaxHeat@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_OverloadedLaunch@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_RocketSelfJump@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Deadpack_UltimateGoingDown@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_DeathTax@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_DeathTaxTechAmp@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_DebuffImmunity@@$0PPPP@@@
@@ -3050,7 +3061,7 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_HideoutIntro@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_HideoutIntroExit@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Hideout_Teleport@@$0PPPP@@@
-.?AV?$CModifierFactory@VCCitadel_Modifier_HoldingGoldenIdol@@$0JJ@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_HoldingGoldenIdol@@$0JK@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_HollowPoint_Proc@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_HollowPoint_Stack@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_HookSelf@@$0PPPP@@@
@@ -3867,6 +3878,7 @@ $light_emissive
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hRemapLineEnd@CPointValueRemapper@@@@
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hRemapLineStart@CPointValueRemapper@@@@
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hStartPoint@CRopeKeyframe@@@@
+.?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hTarget@CCitadel_Ability_Deadpack_Ultimate@@@@
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hTarget@CCitadel_Ability_UltCombo@@@@
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hVacuumTarget@CCitadel_Pickup@@@@
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hViewEntity@CPlayer_CameraServices@@@@
@@ -4451,6 +4463,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flCaptureProgress@CCitadelTriggerCapturePoint@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flCaptureProgressFrac@TeamKothState_t@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flCaptureTime@CCitadelControlPointTrigger@@@@
+.?AV?$CNetworkVarBase@MVNetworkVar_m_flCastDelayFrac@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flCasterSpeed@CCitadel_Ability_ZipLine@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flChannelTime@CCitadel_Ability_VampireBat_BatSwarm@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flColorTemperature@CBarnLight@@@@
@@ -4563,6 +4576,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flGlowStartTime@CGlowProperty@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flGlowTime@CGlowProperty@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flGoingUpStartElevation@CCitadel_Ability_PunkGoat_GoatFlip@@@@
+.?AV?$CNetworkVarBase@MVNetworkVar_m_flGoingUpTargetElevation@CCitadel_Ability_Deadpack_Ultimate@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flGoingUpTargetElevation@CCitadel_Ability_PunkGoat_GoatFlip@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flGravityScale@CBaseEntity@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flGuideBotLastTimeTaskCompleted@CCitadelPlayerController@@@@
@@ -4580,6 +4594,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flIndirectStrength@CEnvVolumetricFogController@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flInitialRadius@CCitadelControlPointTrigger@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flInitialWindSpeed@CEnvWindShared@@@@
+.?AV?$CNetworkVarBase@MVNetworkVar_m_flInitialYaw@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flInitialYaw@CCitadel_Ability_LashDownStrike@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flInnerAngle@COmniLight@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flInputOffset@CPointValueRemapper@@@@
@@ -4692,6 +4707,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStartDistance@CEnvCubemapFog@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStartDrawDistance@CEnvVolumetricFogController@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStartFrame@CTextureBasedAnimatable@@@@
+.?AV?$CNetworkVarBase@MVNetworkVar_m_flStartHeight@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStartHeight@CCitadel_Ability_LashDownStrike@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStartHeight@CCitadel_Ability_Tengu_StoneForm@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStartScattering@CEnvVolumetricFogController@@@@
@@ -4858,6 +4874,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vBoxProjectMins@CEnvCubemap@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vEdgeFadeDists@CEnvCombinedLightProbeVolume@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_Entity_vEdgeFadeDists@CEnvCubemap@@@@
+.?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vAimOffset@CCitadel_Ability_Deadpack_ChargeBlast@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vAirDashDir@CCitadel_Ability_HoldMelee@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vAlternateColor@CBarnLight@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vAnimationBoundsMax@CTextureBasedAnimatable@@@@
@@ -4885,6 +4902,9 @@ $light_emissive
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vFlyingInitialOffsetToPath@CCitadel_Ability_FlyingStrike@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vInTangentLocal@CPathNode@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vInitialVacuumVel@CCitadel_Pickup@@@@
+.?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vIntentSpaceCurrent@CCitadel_Ability_Deadpack_Rocketeer@@@@
+.?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vIntentSpaceTarget@CCitadel_Ability_Deadpack_Rocketeer@@@@
+.?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vIntentSpaceVelocities@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vLastVelocity@CCitadel_Ability_IcePath@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vLookDirection@CAbility_Fencer_Lunge@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vMax@CSoundAreaEntityOrientedBox@@@@
@@ -4928,10 +4948,13 @@ $light_emissive
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vPrecomputedOBBOrigin@CLightComponent@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vShear@CBarnLight@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vSizeParams@CBarnLight@@@@
+.?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vSputterIntents@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vStrikeDirection@CAbility_Fencer_Lunge@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vStrikeVel@CCitadel_Ability_LashDownStrike@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vTangentIn@CCitadelZipLineNode@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vTangentOut@CCitadelZipLineNode@@@@
+.?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vVTOLVel@CCitadel_Ability_Deadpack_Rocketeer@@@@
+.?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vVelocity@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vVelocityHistory1@CCitadel_Ability_ZipLine@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vVelocityHistory2@CCitadel_Ability_ZipLine@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vWindDirection@CEnvVolumetricFogController@@@@
@@ -5262,6 +5285,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_nActivateTime@CCitadelAbilityBeam_t@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_reloadQueuedStartTime@CCitadel_Ability_PrimaryWeapon@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tAbandonTriggerEarlyTime@CCitadelGameRules@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tActivationTime@CCitadel_Ability_Deadpack_Flamethrower@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tActiveEndTime@CCitadel_Werewolf_UnloadGun2@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tBeginTimeWithPrewarm@PlayOfTheGamePlaybackData_t@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tCancelHoverTime@CCitadel_Ability_Chessmaster_MoveChessPiece@@@@
@@ -5277,20 +5301,31 @@ $light_emissive
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tDoubleCastWindow@CCitadel_Ability_Nano_Pounce_Instant@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tEndTime@PlayOfTheGamePlaybackData_t@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tFireOnReleaseHoldBeginTime@CCitadel_Ability_PrimaryWeapon@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tGravityReductionEndTime@CCitadel_Ability_Deadpack_Rocketeer@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tGravityReductionStartTime@CCitadel_Ability_Deadpack_Rocketeer@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tHeatDecayStartTime@CCitadel_Ability_Deadpack_Rocketeer@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tJetpackInputHeldBeginTime@CCitadel_Ability_Deadpack_Rocketeer@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLastDamageDealTime@CCitadel_Ability_Deadpack_Flamethrower@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLastDashJumpTime@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLastPlayerRevealTime@CCitadelPlayerPawn@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLastRevealTime@CCitadelPlayerPawn@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLastUpwardVelocityTime@CCitadel_Ability_Deadpack_Ultimate@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLaunchHeldBeginTime@CCitadel_Ability_Deadpack_ChargeBlast@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLeapOffTime@CCitadel_Ability_Werewolf_KickFlip@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLeapOffTime@CCitadel_Ability_Werewolf_Leap@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLeapStartTime@CCitadel_Ability_Werewolf_KickFlip@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLeapStartTime@CCitadel_Ability_Werewolf_Leap@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLeapStartTime@CCitadel_Ability_Werewolf_MaulingLeap@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tNextDropTime@CCitadel_PickupItemSpawner@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tPauseBeginTime@CCitadel_Ability_Deadpack_Flamethrower@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tQueuedEnableTime@CCitadelTriggerCapturePoint@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tRecastEndTime@CCitadel_Ability_Chessmaster_ThrowBishop@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tRecastEndTime@CCitadel_Ability_Fencer_ThrowBlade@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tSoonestHelperCooldownEndTime@CCitadel_Ability_Familiar_HelpingHands@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tSpawnTime@CNPC_NecroSkele@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tStateEnterTime@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tStateStartTime@CCitadel_Ability_PunkGoat_GoatFlip@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tStateTimeBegin@CCitadel_Ability_Deadpack_Ultimate@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tTeleportCompletedTime@CCitadel_Ability_Mirage_Teleport@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tTetherAttachTime@CCitadel_Ability_Necro_PrimaryWeapon@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tTetherBreakTime@CCitadel_Ability_Necro_PrimaryWeapon@@@@
@@ -5333,6 +5368,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@VQAngle@@VNetworkVar_m_qForward@CCitadel_Ice_Path_Shard_Physics@@@@
 .?AV?$CNetworkVarBase@VQAngle@@VNetworkVar_m_qLastAngles@CCitadel_Ability_IcePath@@@@
 .?AV?$CNetworkVarBase@VQAngle@@VNetworkVar_m_qPostTeleportAngles@CAbility_Drifter_ShadowMark@@@@
+.?AV?$CNetworkVarBase@VQAngle@@VNetworkVar_m_qStateAnglesBegin@CCitadel_Ability_Deadpack_Ultimate@@@@
 .?AV?$CNetworkVarBase@VQAngle@@VNetworkVar_m_vPrecomputedOBBAngles0@CBarnLight@@@@
 .?AV?$CNetworkVarBase@VQAngle@@VNetworkVar_m_vPrecomputedOBBAngles1@CBarnLight@@@@
 .?AV?$CNetworkVarBase@VQAngle@@VNetworkVar_m_vPrecomputedOBBAngles2@CBarnLight@@@@
@@ -5354,6 +5390,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vDashStartPos@CAbility_Fencer_Lunge@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vDeparturePosition@CCitadel_Ability_Nano_Pounce@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vDeparturePosition@CCitadel_Ability_Nano_Pounce_Instant@@@@
+.?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vEndPoint@CCitadel_Ability_Deadpack_ChargeBlast@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vEndPosition@CCitadel_Ability_NanoDash@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vExitOrigin@CCitadelTeleportTrigger@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vEyeBeamTarget@CAI_CitadelNPC@@@@
@@ -5365,6 +5402,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vMinimapMins@CCitadelGameRules@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vRiposteStartPosition@CCitadel_Ability_Fencer_Riposte@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vShrineAttackTargetPos@CNPC_Boss_Tier3@@@@
+.?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStartPoint@CCitadel_Ability_Deadpack_ChargeBlast@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStartPos@CCitadel_Ability_Mantle@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStartPosition@CAbility_Fencer_Ultimate@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStartPosition@CCitadel_Ability_NanoDash@@@@
@@ -5372,6 +5410,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStartPosition@CCitadel_Ability_Nano_Pounce_Instant@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStartPosition@CCitadel_Ability_ShivDash@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStartPosition@CCitadel_Ability_Shiv_KillingBlow@@@@
+.?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStateOriginBegin@CCitadel_Ability_Deadpack_Ultimate@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vTargetCameraPos@CCitadelPlayer_ObserverServices@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vTargetCastPos@CCitadel_Ability_FlyingStrike@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vTargetPos@CCitadel_Ability_Mantle@@@@
@@ -5443,12 +5482,14 @@ $light_emissive
 .?AV?$CNetworkVarBase@W4EPlantLeapPhase_t@@VNetworkVar_m_ePlantLeapPhase@CCitadel_Ability_Ratking_StandardBearer@@@@
 .?AV?$CNetworkVarBase@W4EPlayOfTheGameReplayTrigger@@VNetworkVar_m_eType@PlayOfTheGameTrigger_t@@@@
 .?AV?$CNetworkVarBase@W4EPlayerPlayState@@VNetworkVar_m_ePlayState@CCitadelPlayerController@@@@
+.?AV?$CNetworkVarBase@W4ERocketeerState@@VNetworkVar_m_eState@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@W4EState@CCitadel_Ability_Baba_BubblingBrew@@VNetworkVar_m_eState@2@@@
 .?AV?$CNetworkVarBase@W4EStreetBrawlGameState@@VNetworkVar_m_eStreetBrawlState@CStreetBrawlController@@@@
 .?AV?$CNetworkVarBase@W4ESwingState_t@@VNetworkVar_m_eSwingState@CCitadel_Ability_SkyRunner_SwingLine@@@@
 .?AV?$CNetworkVarBase@W4ETelepunchState_t@@VNetworkVar_m_eTelepunchState@CCitadel_Ability_Viscous_Telepunch@@@@
 .?AV?$CNetworkVarBase@W4ETier3Phase_t@@VNetworkVar_m_ePhase@CNPC_Boss_Tier3@@@@
 .?AV?$CNetworkVarBase@W4ETier3State_t@@VNetworkVar_m_eAliveState@CNPC_Boss_Tier3@@@@
+.?AV?$CNetworkVarBase@W4EUltimateState_t@@VNetworkVar_m_eState@CCitadel_Ability_Deadpack_Ultimate@@@@
 .?AV?$CNetworkVarBase@W4EViscousBowlingBallState_t@@VNetworkVar_m_eRollingState@CCitadel_Ability_GooBowlingBall@@@@
 .?AV?$CNetworkVarBase@W4EntityDissolveType_t@@VNetworkVar_m_nDissolveType@CEntityDissolve@@@@
 .?AV?$CNetworkVarBase@W4EntityPlatformTypes_t@@VNetworkVar_m_nPlatformType@CBaseEntity@@@@
@@ -5544,6 +5585,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bAwake@CPhysicsProp@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bBackdoorProtectionActive@STeamFOWEntity@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bBeamActive@CAI_CitadelNPC@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bBeaming@CCitadel_Ability_Deadpack_Flamethrower@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bBotDisconnectTakeover@CCitadelPlayerController@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bBraceParamTriggered@CCitadel_Ability_Bull_Leap@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bBrewLocked@CCitadel_Ability_Baba_HexingBrew@@@@
@@ -5582,6 +5624,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bDisabled@CSoundAreaEntityBase@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bDismissedReportCard@CCitadelPlayerPawn@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bDiveApplied@CCitadel_Ability_Baba_BenchMelee@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bDiveStraightDown@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bDofEnabled@CPointCamera@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bDontMove@CNPC_NecroSkele@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bDownAirDash@CCitadel_Ability_Dash@@@@
@@ -5683,6 +5726,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bInputPressedWhileSelected@CCitadel_Ability_PrimaryWeapon@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bInteractive@CCitadel_Pickup@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsActivelyStolen@CitadelStolenAbilitySlot_t@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsApproachingApex@CCitadel_Ability_Deadpack_Ultimate@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsBeingBlocked@CCitadelControlPointTrigger@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsBeingCaptured@CCitadelControlPointTrigger@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsBlinking@CCitadel_Ability_VampireBat_BatBlink@@@@
@@ -5821,6 +5865,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bTackling@CCitadel_Ability_ChargedTackle@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bTackling@CCitadel_Ability_SuperNeutralCharge@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bTakesDamage@CBaseEntity@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bTargetingActive@CCitadel_Ability_Deadpack_ChargeBlast@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bTeleported@CAbility_Drifter_ShadowMark@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bTestAllVisibleOcclusion@CTriggerLook@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bTestOcclusion@CTriggerLook@@@@
@@ -6209,6 +6254,18 @@ $light_emissive
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Damage_Taken_Reduction_Handicap@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Dazed@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_DazzlingOrbWatcher@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_DeadpackUltimateTarget@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_ChargeBlastMine_Aura@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_Coated@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_FlamethrowerFireRate@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_FlamethrowerResistReduction@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_ForcedToAirMovement@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_HeatPool@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_JetpackLockout@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_MaxHeat@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_OverloadedLaunch@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_RocketSelfJump@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Deadpack_UltimateGoingDown@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_DeathTax@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_DeathTaxTechAmp@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_DebuffImmunity@@VCBaseModifier@@@@
@@ -8524,6 +8581,16 @@ $light_emissive
 .?AVCCitadel_Ability_Crackshot@@
 .?AVCCitadel_Ability_CrowdControl@@
 .?AVCCitadel_Ability_Dash@@
+.?AVCCitadel_Ability_DeadpackChargeBlastVData@@
+.?AVCCitadel_Ability_DeadpackPrimaryWeaponChargeVData@@
+.?AVCCitadel_Ability_DeadpackRocketeerVData@@
+.?AVCCitadel_Ability_Deadpack_ChargeBlast@@
+.?AVCCitadel_Ability_Deadpack_Flamethrower@@
+.?AVCCitadel_Ability_Deadpack_FlamethrowerVData@@
+.?AVCCitadel_Ability_Deadpack_PrimaryWeapon_Charge@@
+.?AVCCitadel_Ability_Deadpack_Rocketeer@@
+.?AVCCitadel_Ability_Deadpack_Ultimate@@
+.?AVCCitadel_Ability_Deadpack_UltimateVData@@
 .?AVCCitadel_Ability_DeathTax@@
 .?AVCCitadel_Ability_Digger_EnterTunnel@@
 .?AVCCitadel_Ability_Digger_EnterTunnelVData@@
@@ -9470,6 +9537,23 @@ $light_emissive
 .?AVCCitadel_Modifier_Dazed@@
 .?AVCCitadel_Modifier_DazzlingOrbWatcher@@
 .?AVCCitadel_Modifier_DazzlingOrbWatcherVData@@
+.?AVCCitadel_Modifier_DeadpackUltimateTarget@@
+.?AVCCitadel_Modifier_DeadpackUltimateTargetVData@@
+.?AVCCitadel_Modifier_Deadpack_ChargeBlastMine_Aura@@
+.?AVCCitadel_Modifier_Deadpack_Coated@@
+.?AVCCitadel_Modifier_Deadpack_FlamethrowerFireRate@@
+.?AVCCitadel_Modifier_Deadpack_FlamethrowerResistReduction@@
+.?AVCCitadel_Modifier_Deadpack_ForcedToAirMovement@@
+.?AVCCitadel_Modifier_Deadpack_ForcedToAirMovementVData@@
+.?AVCCitadel_Modifier_Deadpack_HeatPool@@
+.?AVCCitadel_Modifier_Deadpack_HeatPoolVData@@
+.?AVCCitadel_Modifier_Deadpack_JetpackLockout@@
+.?AVCCitadel_Modifier_Deadpack_LockoutVData@@
+.?AVCCitadel_Modifier_Deadpack_MaxHeat@@
+.?AVCCitadel_Modifier_Deadpack_MaxHeatVData@@
+.?AVCCitadel_Modifier_Deadpack_OverloadedLaunch@@
+.?AVCCitadel_Modifier_Deadpack_RocketSelfJump@@
+.?AVCCitadel_Modifier_Deadpack_UltimateGoingDown@@
 .?AVCCitadel_Modifier_DeathTax@@
 .?AVCCitadel_Modifier_DeathTaxTechAmp@@
 .?AVCCitadel_Modifier_DebuffImmunity@@
@@ -10459,6 +10543,7 @@ $light_emissive
 .?AVCCitadel_Projectile_BookwormGun@@
 .?AVCCitadel_Projectile_BubblingBrew@@
 .?AVCCitadel_Projectile_Cyclone@@
+.?AVCCitadel_Projectile_DeadpackMissile@@
 .?AVCCitadel_Projectile_DustStorm@@
 .?AVCCitadel_Projectile_FeatherBoomerang@@
 .?AVCCitadel_Projectile_FortunaWeapon@@
@@ -13408,6 +13493,7 @@ $light_emissive
 .?AVNetworkVar_m_beam03@CCitadel_Item_PrismBlast@@
 .?AVNetworkVar_m_beam04@CCitadel_Item_PrismBlast@@
 .?AVNetworkVar_m_beam@CCitadel_Ability_Bebop_LaserBeam@@
+.?AVNetworkVar_m_beam@CCitadel_Ability_Deadpack_Flamethrower@@
 .?AVNetworkVar_m_beam@CCitadel_Ability_IceBeam@@
 .?AVNetworkVar_m_collisionAttribute@CCollisionProperty@@
 .?AVNetworkVar_m_eStolenInSlot@CCitadelBaseAbility@@
@@ -13528,12 +13614,14 @@ $light_emissive
 .?AW4EPlantLeapPhase_t@@
 .?AW4EPlayOfTheGameReplayTrigger@@
 .?AW4EPlayerPlayState@@
+.?AW4ERocketeerState@@
 .?AW4EState@CCitadel_Ability_Baba_BubblingBrew@@
 .?AW4EStreetBrawlGameState@@
 .?AW4ESwingState_t@@
 .?AW4ETelepunchState_t@@
 .?AW4ETier3Phase_t@@
 .?AW4ETier3State_t@@
+.?AW4EUltimateState_t@@
 .?AW4EViscousBowlingBallState_t@@
 .?AW4EntityDissolveType_t@@
 .?AW4EntityPlatformTypes_t@@
@@ -13990,13 +14078,14 @@ $light_emissive
 ?33s?
 ?AE_COUNT
 ?CAnimSkeleton
-?CCitadel_Ability_Mirage_FireBeetles_VData
 ?Entities
 ?NmFrameSnapEventMode_t
 ?StatViewerModifierValues_t
+?citadel_spew_rate_limited_suppressed_sounds
 ?expf
 ?vote_create_failed_t
 @Accolades
+@ffF@
 @fff>fff>fff>fff>
 @player_start_teleport_destination
 @zipline_panel_tutorial_relay
@@ -14035,7 +14124,6 @@ ADH-RC4-MD5
 ADH-SEED-SHA
 ADJACENCY
 AD_DVCS
-ADissolve
 AEAD
 AECDH
 AECDH-AES128-SHA
@@ -14451,11 +14539,13 @@ Already recording direct: %s\n
 Already recording: %s\n
 AltJumpSpeed
 Alternate icon definition index %d must be greater than or equal to zero
+Am_tStateStartTime
 Amber
 Ambient Particle
 Ambient Particle Settings
 AmbushDuration
 AmmoConsumedPct
+AmmoPerSecond
 AmmoPerSoul
 AmpDamagePercent
 AmpDuration
@@ -14793,7 +14883,6 @@ BOOLEAN
 BOT TEST: Bot %s failed moving to node %s\n
 BOTREC.
 BOUNDARY
-BOptional. Pins the icon on the radials whose layout is fixed - the minimap compass and the hud chrome wheels - so the art stays put when an override fires underneath. Overrides cannot reach it. Leave unset to inherit the generic row's. Author at final colour: a pinned icon draws unwashed. Only ever read for the row's own wheel, since the minimap borrows the generic row's four whatever it is pointing at.
 BREAKABLE
 BRouteMsgToJob
 BRouteWorkItemCompleted called for a job that could not be found!\n
@@ -14820,6 +14909,7 @@ B\vP\n0
 B\vp\n0
 BackBufferHeight
 BackBufferWidth
+BackblastConeAngle
 BackstabBonusDamagePct
 Backtrack failed completely, bad starting position\n
 Backtrack got most of the way\n
@@ -14932,6 +15022,7 @@ Batched CacheData response without corresponding waiting handle! (%d)
 Batched Inference response without corresponding waiting handle! (%d)
 Batched Snapshot response without corresponding waiting handle! (%d)
 BatteryGenerationPercent
+Bcitadel_passthrough_fakewall_draw_debug
 BeamCloseDamagePercent
 BeamCloseRadius
 BeamDamageOutput
@@ -15319,6 +15410,7 @@ BurnRadius
 BurstBonusPerStack
 BurstFireShotPercent
 BurstFireShotsFromClipPercent
+BurstMarkStacks
 BurstShotCount
 Busage:\ncitadel_bot_run_mantle_tests <all | hero>\n
 Button %s(%s) calling ButtonReturn with a toggle state of %d\n
@@ -15459,12 +15551,12 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_he
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_familiar.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_necro.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_necro.cpp:2010
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_ratking.cpp:3871
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_ratking.cpp:3870
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_shiv.cpp:2070
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_tengu.cpp:2172
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1551
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1588
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1939
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1553
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1590
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1941
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_wrecker.cpp:2060
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\familiar\citadel_hero_familiar_sprites.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\npc_escort.cpp
@@ -16417,6 +16509,7 @@ CCitadelZapTrigger_API
 CCitadelZipLineNode_API
 CCitadelZipLinePathNode_API
 CCitadelZiplinePath_API
+CCitadel_Ability_Deadpack_ChargeBlast::LaunchMissile
 CCitadel_Ability_ShivDash::OnThink
 CCitadel_BaseProp_MidStairs_API
 CCitadel_BreakableProp_API
@@ -17307,6 +17400,7 @@ CInfoWorldLayer_API::HideWorldLayerAndDestroyEntities
 CInfoWorldLayer_API::ShowWorldLayer
 CInfoWorldLayer_API::ShowWorldLayerAndSpawnEntities
 CInfoWorldLayer_API::SpawnEntities
+CInherit the source's velocity and add a chase term proportional to how far behind we are, clamped so it can't overshoot the hold point.
 CInlineJob_CMsgClientWelcome_Server
 CInlineJob_CMsgGCServerVersionUpdated
 CInlineJob_CMsgGCToServerAddSpectator
@@ -19563,7 +19657,6 @@ Catmull-Rom
 Catmull-Rom (Norm X)
 Catmull-Rom (Norm)
 Catmull-Rom (Tangent)
-Ccitadel_item_pickup_idol
 Ceiling - round float up to nearest integer)
 Ceiling Float
 Celeste##RadiantDaggerTimeAt_%d_stacks
@@ -19603,10 +19696,12 @@ Char=
 ChargeDistance
 ChargeDragVerticalOffset
 ChargeForMaxDamage
+ChargeLevel2ExplosionRadius
 ChargeMultiHitRadius
 ChargeParticleMaxScale
 ChargeRadius
 ChargeReplenish
+ChargeShotExplosionRadiusPercent
 ChargeSpeed
 ChargeSpeedMax
 ChargeUpTime
@@ -19792,6 +19887,10 @@ CloudHeight
 ClubSlowDuration
 ClubSlowPercent
 Co-dependent physics tasks detected!
+CoatedDamage
+CoatedDuration
+CoatedSlowDuration
+CoatedSlowPercent
 Code Signing
 Code forced %s(%s), to be the target of scripted sequence %s, but it can't play it.\n
 Code=
@@ -20408,6 +20507,7 @@ DamagePctDeferredMaxRage
 DamagePctPerWallHit
 DamagePerBite
 DamagePerChain
+DamagePerMeter
 DamagePerProjectile
 DamagePerRocket
 DamagePerSecond
@@ -21438,6 +21538,7 @@ ExplodeOnImpact
 ExplodeTime
 ExplodeTimeInterval
 ExploreNYC
+ExplosionBulletDamage
 ExplosionDamage
 ExplosionMaxPercent
 ExplosionMinPercent
@@ -22594,6 +22695,16 @@ Heap32ListNext
 Heap32Next
 HeartHeal
 HeartHealNonHeroRatio
+HeatDrainRate
+HeatGain
+HeatGainAirDash
+HeatGainLaunch
+HeatGainRate
+HeatGainRateHittingEnemy
+HeatGainRateSlowPercentEffectiveness
+HeatGainRateVTOL
+HeatGainedTotal
+HeatPct
 HeavyMeleeDamage
 HeavyMeleeForce
 HeavyMeleeMultiplier
@@ -22711,7 +22822,6 @@ IDEA-CBC
 IDEA-CFB
 IDEA-ECB
 IDEA-OFB
-IDLE
 ID_CHAR
 IGNORED due to being marked "Dont save".\n
 IGNORED, no across_transition flag & no globalname\n
@@ -23644,6 +23754,7 @@ Margin desired = %0.2f, actual = %0.2f\n
 MarkDuration
 MarkMovementSuccessful
 Marked Area is connected to %d other Areas\n
+MarksTotal
 Markup Tags: 
 Markup entities not in any group:\n
 Markup groups:\n
@@ -23732,6 +23843,8 @@ MaxHealthPct
 MaxHealthPercentAsDPS
 MaxHealthRegen
 MaxHealthRegenPct
+MaxHealthSelfDamagePercent
+MaxHeight
 MaxHeightForBonus
 MaxHeightFromLastGround
 MaxHits
@@ -23872,6 +23985,7 @@ MinTimeBeforeDestroy
 MinTimeToTarget
 MinVelocityZ
 MinWallToWallDistance
+MineArmTime
 MiniJumpVelocity
 Minimum of two values (float)
 Minimum of two values (int)
@@ -23900,6 +24014,7 @@ MissNotOptedIn
 MissPreviewMode
 MissTick
 Missed%s
+MissileGroundDuration
 Missing
 Missing 'doorman_victim_start' target.  Victim will just stay in the elevator!\n
 Missing Ent
@@ -24544,7 +24659,7 @@ Object Signing CA
 ObservableNetworkVar
 Obsolete / Unused
 Oceania
-Oct  9 2026
+Oct 13 2026
 Offset:
 OffsetScatterAngle
 OffsetScatterDir
@@ -24656,6 +24771,11 @@ OutroPlaybackRate
 Outside sphere?
 OutsideTransition
 OverdriveClipDuration
+OverheatDamageHealthPct
+OverheatLockoutDurationReductionOnPlayerHitPercent
+OverheatStunDelayDuration
+OverheatStunDuration
+OverheatStunDurationSelf
 Overlay Blend
 Overlay Blend (Masked): %.2f%%
 Overlay Blend: %.2f%%
@@ -25798,8 +25918,10 @@ RecvMargin_P5
 RecvMargin_P50
 RecvMargin_P95
 RedirectVelocity
+ReduceCooldownOnEnemyHitPercent
 ReduceCooldownOnHitPct
 ReduceDebuffs
+ReduceStunOnEnemyHitPercent
 ReelSpeed
 Reference Pose Task
 RefillDuration
@@ -26583,6 +26705,7 @@ Schedule: %s \n
 Schema_ClassOps
 Scope exceeded time! (%0.3f ms): %s\n
 Scorch
+ScorchDamage
 Score
 ScrapDamage
 Script Player Death
@@ -26871,6 +26994,7 @@ SelfCastForwardOffset
 SelfDamagePct
 SelfDamagePercent
 SelfDamagePercentage
+SelfDamageReductionOnPlayerHitPercent
 SelfLaunchPercent
 SelfModifier
 SelfMoveDistance
@@ -27501,7 +27625,6 @@ Simulated GC communications failure is active.\n
 Simulated GC communications failure is not active.\n
 Sinclair - Copied ult & model. %s\n
 Sinclair - CopyUlt failed: %s\n
-Sinclair - Resetting model to base\n
 Sine of angle. Input in radians, output in radians
 SingleCodeExecution
 SingleTargetPlayerMultiplier
@@ -27964,6 +28087,7 @@ Strong Extranet ID
 Stuck to parent! woo! \n
 StunDelay
 StunDuration
+StunDurationSelf
 StunOnLand
 StunsTargets
 Styles %s and %s both have the same id m_unSlotStyleID %u
@@ -28839,7 +28963,6 @@ UTIL_RemoveImmediate
 UTIL_ResetMessageText
 UTIL_ResetMessageTextAll
 UTIL_ShowMessageAll
-Ultimate cast detected. Swapping model to cached copy.\n
 Un Pause Sound
 UnInvalid
 UnNegate
@@ -29871,6 +29994,7 @@ _pos
 _procedural_connection_world_target
 _to_curve_
 _tools_event_desc
+`ht0'
 a bound game port
 a null shared library handle was used
 a trigger_changelevel doesn't have a map
@@ -30854,6 +30978,9 @@ charge1
 charge2
 charge3
 charge_cost
+charged_shot_charged
+charged_shot_charging
+charged_shot_shoot
 charging
 charging_carbine
 charm_location
@@ -30862,6 +30989,7 @@ chatwheel
 check if a C++ handler reads %s, annotate that handler with MATTR( MModifierFunctionValueDependency( %s ) );
 checkpoint_exit
 child_piece
+chimera_overheating
 choice_group
 choices
 choose_item
@@ -30933,6 +31061,8 @@ citadel_local_botmatch.cfg
 citadel_lose
 citadel_minion
 citadel_modifier_breakable_melee_shield
+citadel_modifier_deadpack_jetpacklockout
+citadel_modifier_deadpack_maxheat
 citadel_modifier_familiar_asleep
 citadel_modifier_familiar_exposed
 citadel_modifier_familiar_infested
@@ -31367,6 +31497,7 @@ day_night
 dcObject
 dcobject
 dead
+deadpack_backblast
 dealdamage
 death
 death_count
@@ -33389,6 +33520,7 @@ ivy_airlift_throw
 j <= (int)sizeof(ctx->key)
 j <= sizeof(c->iv)
 janetMailbox
+jetpack_hatch
 jiggle
 jjjjjjjjjjjjjjjj[
 job warning: Resuming job '%s (id: %lld)' due to timeout while paused for %s\n
@@ -34433,6 +34565,16 @@ modifier_damage_on_hit_ground
 modifier_damage_resistance
 modifier_data
 modifier_dazzling_orb_watcher
+modifier_deadpack_chargeblast_mine_aura
+modifier_deadpack_coated
+modifier_deadpack_flamethrower_fire_rate
+modifier_deadpack_flamethrower_resist_reduction
+modifier_deadpack_forcedtoairmovement
+modifier_deadpack_heat_pool
+modifier_deadpack_overloadedlaunch
+modifier_deadpack_rocketselfjump
+modifier_deadpack_ultimate_goingdown
+modifier_deadpack_ultimate_target
 modifier_debuff_immunity
 modifier_debug_is_visible_to_enemy_team
 modifier_debug_scale
@@ -37268,6 +37410,11 @@ startup_ServerModuleInit
 startup_SteamLoggedOn
 stash
 stateOrProvinceName
+state_charging
+state_comingdown
+state_goingup
+state_goingup_apex
+state_impact
 static
 static socket 1
 static socket 2
@@ -38051,6 +38198,7 @@ vecVelocity
 vecline
 vector<bool> too long
 velocity_cp
+vent_time
 verification failure
 version incompatibility
 versus_screen

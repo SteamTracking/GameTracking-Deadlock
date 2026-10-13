@@ -1303,6 +1303,51 @@ CCitadel_Ability_Dash
 	int8 m_nConsecutiveDownDashes (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bDownAirDash (user groups: LocalPlayerOwnerAndObserversExclusive)
 
+CCitadel_Ability_Deadpack_ChargeBlast
+	VectorWS m_vStartPoint
+	VectorWS m_vEndPoint
+	Vector m_vAimOffset
+	GameTime_t m_tLaunchHeldBeginTime (sent as: float32)
+	bool m_bTargetingActive
+
+CCitadel_Ability_Deadpack_Flamethrower
+	GameTime_t m_tLastDamageDealTime (sent as: float32)
+	GameTime_t m_tActivationTime (sent as: float32)
+	GameTime_t m_tPauseBeginTime (sent as: float32)
+	bool m_bBeaming
+	CCitadelAbilityBeam_t m_beam
+
+CCitadel_Ability_Deadpack_PrimaryWeapon_Charge
+
+CCitadel_Ability_Deadpack_Rocketeer
+	Vector m_vIntentSpaceVelocities
+	Vector m_vIntentSpaceCurrent
+	Vector m_vIntentSpaceTarget
+	Vector m_vVelocity
+	GameTime_t m_tStateEnterTime (sent as: float32)
+	GameTime_t m_tGravityReductionStartTime (sent as: float32)
+	GameTime_t m_tGravityReductionEndTime (sent as: float32)
+	GameTime_t m_tJetpackInputHeldBeginTime (sent as: float32)
+	GameTime_t m_tLastDashJumpTime (sent as: float32)
+	Vector m_vSputterIntents
+	Vector m_vVTOLVel
+	float m_flStartHeight
+	float m_flInitialYaw
+	bool m_bDiveStraightDown
+	float m_flCastDelayFrac
+	GameTime_t m_tHeatDecayStartTime (sent as: float32)
+	ERocketeerState m_eState
+
+CCitadel_Ability_Deadpack_Ultimate
+	EUltimateState_t m_eState
+	GameTime_t m_tStateTimeBegin (sent as: float32)
+	VectorWS m_vStateOriginBegin
+	QAngle m_qStateAnglesBegin
+	CHandle< CBaseEntity> m_hTarget (sent as: ehandle)
+	float m_flGoingUpTargetElevation
+	GameTime_t m_tLastUpwardVelocityTime (sent as: float32)
+	bool m_bIsApproachingApex
+
 CCitadel_Ability_DeathTax
 
 CCitadel_Ability_Digger_EnterTunnel
@@ -2655,6 +2700,8 @@ CCitadel_Projectile_BubblingBrew
 	bool m_bIsReturningProjectile
 
 CCitadel_Projectile_Cyclone
+
+CCitadel_Projectile_DeadpackMissile
 
 CCitadel_Projectile_DustStorm
 

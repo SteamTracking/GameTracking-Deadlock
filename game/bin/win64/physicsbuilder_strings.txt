@@ -84,6 +84,7 @@ $prefix_element$
 %s (CS: %3d, TU: %3d, HU: %3d, HD: %3d, TD: %3d)
 %s (Color)
 %s (Material)
+%s (forced on by gameinfo)
 %s (mesh %i/%i): %d joint weights per vertex, max %d
 %s :: %s (%d)
 %s :: %s (%s) (%d)
@@ -160,6 +161,7 @@ $prefix_element$
 %sEdgeCurveType
 %sEdgeValue
 %sIndices
+%s\n\nForced on for this game by "%s" in gameinfo.gi, this checkbox has no effect.
 %s_clothBox
 %s_clothCapsule
 %s_clothNode
@@ -463,6 +465,7 @@ $prefix_element$
 .?AUCAttr_m_bAssignR@?1??GetStaticAttributes@CModelDocMeshModifier_MeshOpAssignFaceColor@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bAssignToAll@?1??GetStaticAttributes@CModelDocMeshModifier_MeshOpAssignFaceColor@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bAssignToAllFaces@?1??GetStaticAttributes@CModelDocMeshModifier_MeshOpAssignMaterial@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
+.?AUCAttr_m_bAttachmentCorrectionEnabled@?1??GetStaticAttributes@CModelDocNmSkeletonReference@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bAutoCycle@?1??GetStaticAttributes@CModelDocAnimGesture@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bAutoCycle@?1??GetStaticAttributes@CModelDocAnimPosture@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_m_bAutoFramePosition@?1??GetStaticAttributes@CModelDocEditorCamera@@MEAAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
@@ -7177,6 +7180,7 @@ ACTIVITY WEIGHTS
 ACT_DOTA_IDLE
 ACT_IDLE
 ACT_NEUTRAL_REF_POSE
+AG2 re-orients this skeleton's root and gameplay bones. Bake the inverse into attachments parented to those bones so they stay where they were authored when animated with AG2.
 ARRAY_MEMBERS_VIA_PARENT
 ARRAY_PARENT_ONLY
 ATTACHMENT_INFLUENCE_FLAGS_NONE
@@ -8511,6 +8515,7 @@ CopyMeshSkinning
 Copyright
 Core Shape
 Corners
+Correct Root/Gameplay Bone Attachments
 Could not create HairMetaData( %s ) node
 Could not create ModelDoc1DBlend( %s ) node
 Could not create ModelDocAnim( %s ) node
@@ -9523,6 +9528,7 @@ KV3 syntax error: %s while parsing @entitygroup %s
 KV3DefaultTestFnName
 Keep Colliders
 Keep Vertices In Memory
+Keep every bone used by this skeleton, even if the model would otherwise discard it.
 Keep track of the position/orientation of the specific chain before the sequence is applied, then after it's applied, do a local IK rule to move it back into position/orientation. The weights are floating point values form 0.0 to 1.0, if both are 0 this node does nothing.\nShould not be used with AnimGraph.
 KeepOnlySpecifiedBones
 Keeps the cloth physics simulation running even when the object is out of view. Without this, the cloth stops simulating when off-screen and snaps back to its animated pose when it comes back into view.
@@ -10572,6 +10578,7 @@ Resets face normals and optionally averages them.
 Resets the starting frame of a looping animation.  This is useful when mixing multiple animations and the animations need to all run together in phase, but the source animations don't match.
 Resolution
 ResolutionUnit
+ResourceCompiler/ModelCompiler/ForceDoNotDiscardNmSkeletonBones
 Return to Lasso viewpoint
 Reverse the direction of the animation.  This happens after the frame range is truncated.
 Revolute joint.
@@ -11434,10 +11441,10 @@ ZIPVSetField
 \n***ERROR*** [PsdExtract] File seems to be corrupt, reserved bytes are not zero.
 \n***ERROR*** [PsdExtract] File seems to be corrupt, signature does not match "8BPS".
 \n***ERROR*** [PsdExtract] File seems to be corrupt, version does not match 1 or 2.
-\nXvg
 \nclass 
 \ndummyfilename.tif
 \ng default\n
+\nhzg
 \nprop 
 \tNAN encountered in element '%s' guid %s attribute '%s'!\n
 _CustomCommand
@@ -11637,6 +11644,7 @@ attach_point_name
 attach_to_base_mesh
 attached_prop_physics
 attached_soundevents
+attachment_correction
 attachment_key
 attr
 attr_name_match
@@ -12260,7 +12268,6 @@ far_field_only
 fast
 fast_strobe
 fbx2dmx
-fcj{
 features
 feeder_bone
 fieldOfView
@@ -12293,7 +12300,6 @@ floatchoices choice
 floating point predictor 
 fluorescent_flicker
 focalDistance
-foj{
 folder_name
 follow_the_lead
 follower_bone
@@ -12329,6 +12335,7 @@ fromAttribute
 fromElement
 fromIndex
 from_name
+fsn{
 full_frame_range
 full_sphere
 functionName

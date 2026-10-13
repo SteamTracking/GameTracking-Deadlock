@@ -9,6 +9,6 @@ class CCitadel_Ability_ChessMaster_PrimaryWeaponVData : public CCitadel_Ability_
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flHorizontalOffsetPerShot; // = 5
 	// MPropertyStartGroup = "AnimGraph2"
-	float32 m_flReshuffleHoldTime; // = 0.05
+	int32 m_nTicksToHoldShuffleTime; // = 1
 	CGlobalSymbol m_strAG2HeroActionGainedBullets; // = "reshuffle"
 };

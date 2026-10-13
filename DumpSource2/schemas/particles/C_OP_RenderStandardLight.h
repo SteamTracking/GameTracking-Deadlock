@@ -56,6 +56,8 @@ class C_OP_RenderStandardLight : public CParticleFunctionRenderer
 	CUtlString m_lightCookie;
 	// MPropertyFriendlyName = "light priority"
 	int32 m_nPriority;
+	// MPropertyFriendlyName = "draw even when the game disables particle lights"
+	bool m_bIgnoreParticleLightsDisabled;
 	// MPropertyFriendlyName = "fog lighting mode"
 	// MPropertySuppressExpr = "m_nLightType == PARTICLE_LIGHT_TYPE_FX"
 	ParticleLightFogLightingMode_t m_nFogLightingMode; // = "PARTICLE_LIGHT_FOG_LIGHTING_MODE_NONE"

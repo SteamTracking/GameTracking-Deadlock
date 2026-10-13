@@ -1,0 +1,7 @@
+enum EUltimateState_t : uint32_t
+{
+	ULTIMATE_INACTIVE = 0,
+	ULTIMATE_CHARGING = 1,
+	ULTIMATE_GOINGUP = 2,
+	ULTIMATE_COMINGDOWN = 3,
+};

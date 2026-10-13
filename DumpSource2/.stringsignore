@@ -1279,6 +1279,7 @@ Attachment Points
 Attachment Type
 Attachment Type (Control Point 1)
 Attachment index for attachment mode
+Attachment on Deadpack to draw the grabbed player at.
 Attachment to fire bullets from
 Attachment to fire from. Empty uses "eye".
 AttachmentHandle_t
@@ -1605,6 +1606,7 @@ Bots get free gold over time
 Bots pick on a time interval
 Bots try to balance lanes
 Bots will say updates in all talk
+Bounce Back
 Bounce Scale
 Bounce multiplier for when physically simulated objects collide with other objects.
 Bounce off walls
@@ -2611,6 +2613,16 @@ CCitadel_Ability_Climb_RopeVData
 CCitadel_Ability_Crackshot
 CCitadel_Ability_CrowdControl
 CCitadel_Ability_Dash
+CCitadel_Ability_DeadpackChargeBlastVData
+CCitadel_Ability_DeadpackPrimaryWeaponChargeVData
+CCitadel_Ability_DeadpackRocketeerVData
+CCitadel_Ability_Deadpack_ChargeBlast
+CCitadel_Ability_Deadpack_Flamethrower
+CCitadel_Ability_Deadpack_FlamethrowerVData
+CCitadel_Ability_Deadpack_PrimaryWeapon_Charge
+CCitadel_Ability_Deadpack_Rocketeer
+CCitadel_Ability_Deadpack_Ultimate
+CCitadel_Ability_Deadpack_UltimateVData
 CCitadel_Ability_DeathTax
 CCitadel_Ability_Digger_EnterTunnel
 CCitadel_Ability_Digger_EnterTunnelVData
@@ -3548,6 +3560,23 @@ CCitadel_Modifier_Damage_Taken_Reduction_Handicap
 CCitadel_Modifier_Dazed
 CCitadel_Modifier_DazzlingOrbWatcher
 CCitadel_Modifier_DazzlingOrbWatcherVData
+CCitadel_Modifier_DeadpackUltimateTarget
+CCitadel_Modifier_DeadpackUltimateTargetVData
+CCitadel_Modifier_Deadpack_ChargeBlastMine_Aura
+CCitadel_Modifier_Deadpack_Coated
+CCitadel_Modifier_Deadpack_FlamethrowerFireRate
+CCitadel_Modifier_Deadpack_FlamethrowerResistReduction
+CCitadel_Modifier_Deadpack_ForcedToAirMovement
+CCitadel_Modifier_Deadpack_ForcedToAirMovementVData
+CCitadel_Modifier_Deadpack_HeatPool
+CCitadel_Modifier_Deadpack_HeatPoolVData
+CCitadel_Modifier_Deadpack_JetpackLockout
+CCitadel_Modifier_Deadpack_LockoutVData
+CCitadel_Modifier_Deadpack_MaxHeat
+CCitadel_Modifier_Deadpack_MaxHeatVData
+CCitadel_Modifier_Deadpack_OverloadedLaunch
+CCitadel_Modifier_Deadpack_RocketSelfJump
+CCitadel_Modifier_Deadpack_UltimateGoingDown
 CCitadel_Modifier_DeathTax
 CCitadel_Modifier_DeathTaxTechAmp
 CCitadel_Modifier_DebuffImmunity
@@ -4538,6 +4567,7 @@ CCitadel_Projectile_BloodBomb
 CCitadel_Projectile_BookwormGun
 CCitadel_Projectile_BubblingBrew
 CCitadel_Projectile_Cyclone
+CCitadel_Projectile_DeadpackMissile
 CCitadel_Projectile_DustStorm
 CCitadel_Projectile_FeatherBoomerang
 CCitadel_Projectile_FortunaWeapon
@@ -4957,6 +4987,7 @@ CITADEL_ABILITY_ACTIVATION_ON_BUTTON_RELEASE
 CITADEL_ABILITY_ACTIVATION_PASSIVE
 CITADEL_ABILITY_ACTIVATION_PRESS
 CITADEL_ABILITY_ACTIVATION_PRESS_TOGGLE
+CITADEL_ABILITY_BEHAVIOR_ABILITY_IS_COLD
 CITADEL_ABILITY_BEHAVIOR_ALLOW_ALT_CAST
 CITADEL_ABILITY_BEHAVIOR_ALLOW_GLOBAL_PURCHASE
 CITADEL_ABILITY_BEHAVIOR_ALLOW_GLOBAL_SELL
@@ -5004,6 +5035,7 @@ CITADEL_ABILITY_BEHAVIOR_DO_NOT_ALLOW_SPAM_PROC
 CITADEL_ABILITY_BEHAVIOR_DO_NOT_CANCEL_ON_PARRY
 CITADEL_ABILITY_BEHAVIOR_EQUAL_UNIT_TARGET_PRIORITY
 CITADEL_ABILITY_BEHAVIOR_EXCLUSIVE_USE
+CITADEL_ABILITY_BEHAVIOR_FORCE_TRIGGER_UI
 CITADEL_ABILITY_BEHAVIOR_HIDDEN
 CITADEL_ABILITY_BEHAVIOR_HOLDS_AT_MAX_CHANNEL
 CITADEL_ABILITY_BEHAVIOR_IGNORE_SELECTION_MASH_PROTECTION
@@ -8048,6 +8080,7 @@ Camera Pivot Offset in the hero model space: +Forward -Backward
 Camera Pivot Offset in the hero model space: +Left -Right
 Camera Pivot Offset in the hero model space: +Up -Down
 Camera Settings
+Camera Shake
 Camera sequence that plays when casting completes.
 Camera sequence that plays when casting starts and stops when casting completes, unless the bool below is un-checked
 Camera sequence that plays when channeling starts and is stopped when channeling ends, unless the bool below is un-checked.
@@ -8116,6 +8149,7 @@ Causes each execution cursor to wait for the completion of all prior cursors tha
 Causes radius damage where you're looking, at the passed in radius.
 Causes this execution cursor to wait for the completion of other cursors with the given tag. Can optionally kill the tag while waiting.
 Ceiling
+Ceiling on the arc height no matter how far the missile travels. 0 removes the cap.
 Center
 Center 1
 Center 2
@@ -8157,6 +8191,7 @@ Channels
 CharacterDecalRenderer
 Charge
 Charge speed multiplier over the rise
+Charged Weapons
 Charges
 Chase cam's ideal distance from target
 Chat text messages that trigger the concept associated with this message
@@ -8428,6 +8463,7 @@ CnmGraphDocVariationConstFloatNode::CData
 CnmGraphDocVelocityBasedSpeedScaleNode
 Code
 CodeGenAABB_t
+Cold Hits
 CollapseToForcePoint
 Collect CPU usage stats
 Collect model names of the entities you're pointing at
@@ -9175,6 +9211,7 @@ Disable focus based priority boost
 Disable glow on friendly troopers except for through walls during laning
 Disable interpolation list optimizations.
 Disable map color-correction entities
+Disable particle lights except when explicitly overriden in particle renderer ops.
 Disable passing through portals
 Disable purchasing if you deal or take damage from an enemy player.
 Disable ragdoll_fixup_joint_limits on joints too high in the hierarchy because long chains tend to depend on violating limits
@@ -10552,6 +10589,7 @@ EResourceType_Ink
 EResourceType_None
 EResourceType_Rage
 ERevitalization
+ERocketeerState
 ERopeClimb_Attached
 ERopeClimb_Count
 ERopeClimb_Latching
@@ -10811,6 +10849,7 @@ ETrackedProjectileTarget_Position
 ETrackedProjectileTarget_t
 ETrackedStatAggregate
 ETreasureChest
+EUltimateState_t
 EUnitQueryBucket
 EUnitQueryVolumeMode
 EVENT_ENTITY_ATTR_TYPE_FLOAT
@@ -11791,6 +11830,7 @@ FireworkParticle5
 FireworkParticle6
 FireworkParticle7
 FireworkParticle8
+Firing
 Firing Behavior
 Firing Behavior/+Reload
 Firing Behavior/Charge
@@ -12390,6 +12430,7 @@ Graphs
 Graphs CIE1931 functions to make sure they look right
 Graphs the old broken filter kernel and candidates for new ones
 Gravity
+Gravity Reduction
 Gravity multiplier at the moment a parry cancels an air dash. Ramps to 1.0 over the glide duration
 Gravity multiplier while falling during the charge, so he feels heavier without changing jump height.
 Gravity scale for the lob. 1.0 matches world gravity; higher is a steeper arc.
@@ -12753,6 +12794,7 @@ How far away before we stop showing in world deny events.
 How far back a target must dash during the melee attack delay window  in order to dodge a pending hit
 How far back before our current playback head in seconds to hold onto fragments.
 How far back the spectator camera should be
+How far each resampled point is pushed sideways into open space. 0 disables the scatter.
 How far forward from the plane of hero and camera forward to move the shoot position
 How far forward the mantle will move the player onto the ledge
 How far forward/back to offset the camera, in camera rotation space, from the camera pivot. -Backwards/+Forwards
@@ -13001,6 +13043,7 @@ ICitadelModifierCustomHudDisplay
 IClientAlphaProperty
 ID
 ID of the sound device to use
+IDLE
 IDs
 IEconItemInterface
 IHasAttributes
@@ -13042,6 +13085,7 @@ IMPULSE_TYPE_NONE
 IMPULSE_TYPE_PARTICLE_SYSTEM
 IMPULSE_TYPE_ROPE
 IModifierTrackedObject
+INAIR
 INCLUDE
 INETSUPPORT_001
 INHERITABLE_BOOL_FALSE
@@ -13402,7 +13446,6 @@ InZone2
 InZone3
 Inactive
 IncompatibleFilter_t
-Increase Cycle Time (Decrease FireRate)
 Increase texture memory pool size by this many MB / s when under budget.
 Increase the Replay speed while watching a replay
 Increase weapon damage for testing
@@ -13661,6 +13704,8 @@ JOINT_MOTION_LOCKED
 JUMP
 JUMP_COND
 JavaScriptCompiler
+Jetpacking Intent
+Jetpacking Slows
 Jiggle Bone
 Jiggle Bones
 JiggleBoneSettingsList_t
@@ -14390,6 +14435,11 @@ MODIFIER_STATE_COUNT
 MODIFIER_STATE_DAMAGE_MOVEMENT_PENALTY_IMMUNE
 MODIFIER_STATE_DASH_DISABLED
 MODIFIER_STATE_DASH_DISABLED_DEBUFF
+MODIFIER_STATE_DEADPACK_JETPACKING
+MODIFIER_STATE_DEADPACK_JETPACKING_REDUCED
+MODIFIER_STATE_DEADPACK_JETPACK_LOCKOUT
+MODIFIER_STATE_DEADPACK_OVERCHARGED
+MODIFIER_STATE_DEADPACK_OVERHEATING
 MODIFIER_STATE_DEAF
 MODIFIER_STATE_DEFUSED
 MODIFIER_STATE_DIGGER_BURROW_CHANNEL
@@ -14397,6 +14447,7 @@ MODIFIER_STATE_DIGGER_SPIN
 MODIFIER_STATE_DISABLE_AIR_SPREAD_PENALTY
 MODIFIER_STATE_DISABLE_GRAVITY
 MODIFIER_STATE_DISABLE_INATTACK2_DESELECT
+MODIFIER_STATE_DISABLE_LOOK_TARGET
 MODIFIER_STATE_DISABLE_PINGS
 MODIFIER_STATE_DISABLE_SENSING
 MODIFIER_STATE_DISABLE_SQUAD
@@ -14663,6 +14714,7 @@ MODIFIER_STATE_WEREWOLF_READY
 MODIFIER_STATE_YAMATO_SHADOW_FORM
 MODIFIER_STATE_ZIPLINE_CONSTRAINED
 MODIFIER_STATE_ZIPLINE_DISABLED
+MODIFIER_STATE_ZIPLINE_DISABLED_INPUT_REQUIRED
 MODIFIER_STATE_ZIPLINE_INTRO
 MODIFIER_STATE_ZIPLINE_LOCKED
 MODIFIER_TIME_SCALE_USE_CASTER
@@ -15331,6 +15383,7 @@ Misc
 Misc Control Point
 Misc Juggle Minigame
 Misc Spirit
+Missile Path
 MissingParentInheritBehavior_t
 Mix Amp
 Mix Blend Mode
@@ -16735,6 +16788,7 @@ Only text params, renders in real time
 Only warp if there is a warp tag active. Otherwise this node will warp whenever it's active
 OnlySearchAnimEvents
 OnlySearchGraphEvents
+Opacity of the grabbed player's model as seen by themselves, so it's easier to see Deadpack
 Opacity scale for see-thru UI
 Opacity, in percent, of the HUD subtitle background.
 Open
@@ -16849,6 +16903,7 @@ Outputs text debugging information to the console about the all the tasks + brea
 Outputs the current max of up to six control inputs.
 Outputs the current state of the NPC
 Outputs timings of neutral camp spawns.
+Overheat Sputter
 Overlay
 Override
 Override Angle of Split shots left and right most bullets
@@ -17570,6 +17625,7 @@ Pauses when the 'render time' reaches the specified tick.
 PawnSubclass
 Peak
 Peak Mode
+Peak arc height as a fraction of the total travel distance, reached at the halfway point. 0 keeps the path flat.
 Peak mode
 Pelvis Joint
 Pelvis Offset Parameter
@@ -17604,6 +17660,7 @@ Percentage of health to be considered mid health when you have high max health.
 Percentage of the time to look for gold orbs to shoot
 Percentage of the time to look for red orbs to shoot
 Percentage of the transition between two lods we will apply a dither
+Percentage scale on the base fire rate, applied before fire rate bonuses (25 is 1.25x, -25 is 0.75x)
 Percentage the shadow grows in each dimension per 100 game units below the character's feet.
 PercentageOnly
 PercentageThroughState
@@ -18733,6 +18790,7 @@ RnSphereDesc_t
 RnTriangle_t
 RnVertex_t
 RnWing_t
+Rocket Jump
 RocketBarrage
 Roll
 Roll Jump
@@ -21348,6 +21406,7 @@ The value to set the parameter "base_action" to.  Should be used for actions tha
 The value to set the parameter "base_state" to.  Should be used for states that are common to all heroes (ex. asleep).
 The value to set the parameter "hero_state" to.  Should be used for states that are custom for the casting hero (ex. icepathing, flamedashing).
 The various damage levels for this hitgroup.
+The voxel route is resampled at this spacing before being scattered.
 The weight for this draft round to have a rare allocated to it.  The weights of all the draft rounds are used to generated the odds
 The weight for this draft round to have an enhanced allocated to it.  The weights of all the draft rounds are used to generated the odds
 The weights from the tip of the chain to the base. 0 is the effector/tip of the chain weight, N is the base of the chain.
@@ -21400,6 +21459,7 @@ Threshold of screen size percentage below which objects get culled
 Threshold of shadow map size percentage below which objects get culled
 Threshold to warn about when rendering particles.
 Thresholds for mapping a player's played matches with a minimum allowed 'new player' score. If a new player with n games has a new player score less than to the value in this curve, log as a smurf.Map from games played (x) to min allowed new player score (y)
+Thrust Movement
 Tick count to pause on
 Tight-camera test mode alternative.
 Tilt
@@ -21723,6 +21783,10 @@ UIMemory
 UINT16
 UINT32
 UINT8
+ULTIMATE_CHARGING
+ULTIMATE_COMINGDOWN
+ULTIMATE_GOINGUP
+ULTIMATE_INACTIVE
 UM_AchievementEvent
 UM_AmmoDenied
 UM_AnimGraphUpdate
@@ -22222,6 +22286,8 @@ VScriptDbg
 VScriptManager010
 VScriptScripts
 VStringTokenSystem001
+VTOL
+VTOLCASTDELAY
 Vacuum Settings
 Vacuum Start Sound
 VacuumTrigger
@@ -23039,6 +23105,11 @@ ability_chessmaster_movechesspiece
 ability_chessmaster_queen
 ability_chessmaster_throwbishop
 ability_crackshot
+ability_deadpack_chargeblast
+ability_deadpack_flamethrower
+ability_deadpack_primary_weapon_charge
+ability_deadpack_rocketeer
+ability_deadpack_ultimate
 ability_death_tax
 ability_demonmark
 ability_digger_entertunnel
@@ -24685,6 +24756,7 @@ citadel_damage_text_spacing
 citadel_damage_text_x_offset_far
 citadel_damage_text_x_offset_near
 citadel_dash_cast_ability
+citadel_deadpack_instant_shot
 citadel_death_linger_time
 citadel_death_ragdoll_duration
 citadel_death_replay_enabled
@@ -25030,6 +25102,7 @@ citadel_hud_player_stats_delta_increment_time
 citadel_hud_player_stats_delta_time
 citadel_hud_top_bar_enable_dynamic_player_position
 citadel_hud_unit_indicators_v2_enable
+citadel_hud_unit_indicators_v2_show_distance
 citadel_hud_visible
 citadel_ice_dome_blocker
 citadel_idle_time
@@ -26234,6 +26307,7 @@ cl_citadel_stat_value_cache_validate_interval
 cl_citadel_unit_query_draw_registry
 cl_citadel_unit_query_registry_report
 cl_citadel_wrecker_ultimate_debug_physics
+cl_citadel_zipline_and_mantle_same_bind
 cl_citadel_zipline_rebuildpaths
 cl_citadel_zoom_is_toggle
 cl_cleardraw
@@ -26934,6 +27008,7 @@ deadlock_hero_debuts_seen
 deadlock_mm_preference
 deadlock_steam_input_debug
 deadlock_steam_input_on_disc_manifest
+deadpack_projectile_missile
 debug - disable trace query cache
 debug orientation
 debug_async_data_panel_override_state
@@ -27154,6 +27229,7 @@ drag
 drag_override
 draw as opaque
 draw caps at each end of the cable
+draw even when the game disables particle lights
 draw range indicators for all abilities on the NPC
 draw the route for this npc
 draw_3dskybox
@@ -30807,6 +30883,9 @@ m_AutoShotCounterModifier
 m_AutoThrowModifier
 m_AxialEdges
 m_BLASes
+m_BackblastModifier
+m_BackblastParticle
+m_BackblastSound
 m_BackdoorBulletResistModifier
 m_BackdoorProtection
 m_BackdoorProtectionModifier
@@ -30932,6 +31011,7 @@ m_BossActivity
 m_BossAttackParticle
 m_BossDamage
 m_BossWeaponName
+m_BounceBackModifier
 m_BounceCount
 m_BounceModifier
 m_BounceParticle
@@ -31073,15 +31153,19 @@ m_ChannelMode
 m_ChannelParticle
 m_ChannelStartParticle
 m_ChargeActiveModifier
+m_ChargeBeginParticle
 m_ChargeBombModifier
 m_ChargeHitSound
 m_ChargeImpactSound
+m_ChargeLevel2AmbientParticle
+m_ChargeLevel2Particle
 m_ChargeParticle
 m_ChargePrepareModifier
 m_ChargePreviewParticle
 m_ChargeUpParticle
 m_ChargedJumpParticle
 m_Charging
+m_ChargingAmbientParticle
 m_ChargingCameraSequence
 m_ChargingJumpParticle
 m_ChargingModifier
@@ -31111,6 +31195,8 @@ m_ClonedParticle
 m_ClothEffectName
 m_ClubCardTrail
 m_ClubModifier
+m_CoatedModifier
+m_CoatedSlowModifier
 m_Collision
 m_CollisionAttributeIndices
 m_CollisionGroup
@@ -31258,6 +31344,7 @@ m_Data
 m_DataChangeEventRef
 m_DazeModifier
 m_DeathBarrierModifier
+m_DeathExplosionWarningFX
 m_DeathImmuneModifier
 m_DeathParticle
 m_DeathSound
@@ -31537,6 +31624,7 @@ m_ExplodeSound
 m_ExplodingAllyModifier
 m_Explosion
 m_ExplosionEffect
+m_ExplosionFX
 m_ExplosionModifier
 m_ExplosionParticle
 m_ExplosionSound
@@ -31562,6 +31650,7 @@ m_FailureParticle
 m_FakeFamiliarParticle
 m_FallSpeedCurve
 m_FallSpeedMax
+m_FallSpeedReductionCurve
 m_FanForceCurveString
 m_FeModelAnims
 m_FeModelInitPose
@@ -31686,6 +31775,8 @@ m_GoalDampedSpringIntegrators
 m_GoalDamping
 m_GoalStrength
 m_GoatGoingUp
+m_GoingDownModifier
+m_GoingUpModifier
 m_GoingUpSpeedCurve
 m_GoldPerOrb
 m_GooGrenadeExplodeParticle
@@ -31875,6 +31966,7 @@ m_ImageName
 m_ImmobilizeModifier
 m_ImmuneModifier
 m_ImmunityModifier
+m_ImpactExplosionChargeLevel2
 m_ImpactModifier
 m_ImpactParticle
 m_ImpactSound
@@ -31882,6 +31974,7 @@ m_ImpactTime
 m_ImportedCollision
 m_ImposterModifier
 m_ImposterModifierFX
+m_ImpulseAccelCurve
 m_InAirLoopSound
 m_InAirModifier
 m_InAirWatcherModifier
@@ -31927,6 +32020,10 @@ m_Instances
 m_InstantCast
 m_InstructionDebugInfos
 m_Instructions
+m_IntentSpaceFwdVelocity
+m_IntentSpaceLeftVelocity
+m_IntentSpaceScaleWhileHolding
+m_IntentSpaceVerticalVelocity
 m_InteractAs
 m_InteractAsStrings
 m_InteractExclude
@@ -31962,6 +32059,9 @@ m_ItemUsedParticle
 m_ItemView
 m_JarExplodeParticle
 m_JarExplodeSound
+m_JetpackLockoutModifier
+m_JetpackingModifier
+m_JetpackingVTOLModifier
 m_JiggleBones
 m_JokerCardTrail
 m_JuggleRunEnded
@@ -32028,6 +32128,7 @@ m_LastMin
 m_LastThinkTime
 m_LaunchAngle
 m_LaunchAngleRemap
+m_LaunchInCooldownParticle
 m_LaunchParticle
 m_LaunchTossModifier
 m_LaunchTrailParticle
@@ -32121,6 +32222,7 @@ m_MapName
 m_MarkLingerParticle
 m_MarkModifier
 m_MarkParticle
+m_MarkedExplosionParticle
 m_MasksBlock
 m_MassProperties
 m_Master
@@ -32138,6 +32240,7 @@ m_MaxFalloff
 m_MaxForce
 m_MaxHealth
 m_MaxHealthBuff
+m_MaxHeatModifier
 m_MaxWeight
 m_MedicHealActiveParticle
 m_MeleeActivateParticle
@@ -32624,6 +32727,8 @@ m_OutputConnections
 m_OutputIndex
 m_Outputs
 m_OverdriveClipModifier
+m_OverheatAirToBackflipModifier
+m_OverheatLaunchModifier
 m_OverlaidEnd
 m_OverlaidStart
 m_OverrideFogColor
@@ -32840,6 +32945,7 @@ m_RageDrainSuppressedHandle
 m_RageDrainSuppressedModifier
 m_RampTimer
 m_Range
+m_RangeCircleIndicator
 m_RangeIndicatorParticle
 m_RangeRingParticle
 m_RangedArmorModifier
@@ -32907,6 +33013,7 @@ m_RequiredSpecialDependency
 m_RequirementNodeIDs
 m_ResistBuffModifier
 m_ResistBuffParticle
+m_ResistModifier
 m_ResistReductionModifier
 m_Resolution
 m_ResourceAbility
@@ -32939,6 +33046,7 @@ m_RigidColliderPriorities
 m_RiposteDashParticle
 m_RiposteParriedParticle
 m_RocketFireSound
+m_RocketJumpModifier
 m_RocketLaunchAmbientParticle
 m_RocketLaunchParticle
 m_Rods
@@ -33000,6 +33108,7 @@ m_ScheduleRelatedRemovalConditions
 m_ScheduleState
 m_Scheduler
 m_ScopeFoV
+m_ScorchParticle
 m_Score
 m_ScriptCallbackScope
 m_ScriptSpawnCallback
@@ -33267,6 +33376,7 @@ m_StreetBrawl
 m_StrikeParticle
 m_StrikeParticleFriendly
 m_StringParticle
+m_StuckMineAuraModifier
 m_StunAttachedParticle
 m_StunDelayModifier
 m_StunDuration
@@ -33274,6 +33384,7 @@ m_StunEnemyModifier
 m_StunModifier
 m_StunParticle
 m_StunSound
+m_StunTriggeredParticle
 m_StunnedParticle
 m_Style
 m_StyleEvent
@@ -33518,6 +33629,8 @@ m_VSShrine
 m_VSTrooper
 m_VSWalker
 m_VSWatcher
+m_VTOLImpactOnGroundFX
+m_VTOLTargetingPreviewFX
 m_VacuumAuraModifier
 m_VacuumInitialVelSpeedCurve
 m_VacuumToPlayerSpeedCurve
@@ -34039,6 +34152,7 @@ m_bBatchSameVolumeType
 m_bBeamActive
 m_bBeamInit
 m_bBeamTurnToFire
+m_bBeaming
 m_bBeatEnvelopes
 m_bBeenEnabled
 m_bBlendFramesSeq0
@@ -34237,6 +34351,7 @@ m_bDamagedByPlayersOnly
 m_bDamagedBySlide
 m_bDampAllRotation
 m_bDampenNearWaterPlane
+m_bDashCancelled
 m_bDataStringLocalized
 m_bDeactivated
 m_bDead
@@ -34328,6 +34443,7 @@ m_bDisplay
 m_bDistanceAlpha
 m_bDistributeEvenly
 m_bDiveApplied
+m_bDiveStraightDown
 m_bDoCheckmate
 m_bDoDPS
 m_bDoDecalLightmapping
@@ -34798,6 +34914,7 @@ m_bIgnoreLookAt
 m_bIgnoreNormal
 m_bIgnoreParentOrientation
 m_bIgnoreParentRotation
+m_bIgnoreParticleLightsDisabled
 m_bIgnoreRadius
 m_bIgnoreResists
 m_bIgnoreRotation
@@ -34886,6 +35003,7 @@ m_bIsAdditive
 m_bIsAdjacent
 m_bIsAngle
 m_bIsAngularConstraintDisabled
+m_bIsApproachingApex
 m_bIsAsyncCreate
 m_bIsAttachableProp
 m_bIsAttachment
@@ -35356,6 +35474,7 @@ m_bOvertime
 m_bOwnsCoverLocation
 m_bPadding
 m_bPadding2
+m_bPanelShowThruWalls
 m_bParallel
 m_bParentFrozen
 m_bParentToCamera
@@ -35939,6 +36058,7 @@ m_bTakesDamage
 m_bTargetFacePositionIsWorldSpace
 m_bTargetIsPosition
 m_bTargetPositionIsWorldSpace
+m_bTargetingActive
 m_bTargetingCompleted
 m_bTargetingPreviewDesaturatesScreen
 m_bTeamSpecificCameras
@@ -37238,12 +37358,14 @@ m_flAgeMin
 m_flAggregateRadius
 m_flAggroDuration
 m_flAimConeAngle
+m_flAimDeadzone
 m_flAimPitch
 m_flAimYaw
 m_flAirAcceleration
 m_flAirDashAccPct
 m_flAirDashCastTime
 m_flAirDashDelayedEffectsTime
+m_flAirDashDistancePct
 m_flAirDashDragStartTime
 m_flAirDashEndVelocityScale
 m_flAirDashStartPos
@@ -37323,6 +37445,7 @@ m_flAnisotropy
 m_flAnticipationDistance
 m_flAnticipationTime
 m_flAoeWaveHealthThreshold
+m_flApexSpeedByDistance
 m_flAppendButtonSize
 m_flApproachAcceleration
 m_flApproachMinDuration
@@ -37573,6 +37696,8 @@ m_flBossVictimCalmTime
 m_flBossVictimNoMeleeTime
 m_flBottomOffset
 m_flBounceAmount
+m_flBounceBackXYSpeedLimit
+m_flBounceBackZSpeed
 m_flBounceDirectionalDampening
 m_flBounceForwardRatio
 m_flBounceForwardSpeed
@@ -37689,6 +37814,7 @@ m_flCameraRotateSpeed
 m_flCameraSideOffset
 m_flCameraSideOffsetZiplining
 m_flCameraTurnRate
+m_flCameraTurnRateMax
 m_flCameraWobbleIntensity
 m_flCancelCooldown
 m_flCancelHookTime
@@ -37713,6 +37839,7 @@ m_flCartSpeedFast
 m_flCastCompleteToAttackTime
 m_flCastCompletedTime
 m_flCastDelay
+m_flCastDelayFrac
 m_flCastDelayMax
 m_flCastDelayMaxDist
 m_flCastDelayMin
@@ -37795,6 +37922,7 @@ m_flCmdForwardMove
 m_flCmdLeftMove
 m_flCmdUpMove
 m_flCohesionStrength
+m_flColdHitHeatRemovedPercent
 m_flCollideRadius
 m_flCollidedWallMaxDist
 m_flCollisionConfirmationSpeed
@@ -38017,12 +38145,14 @@ m_flDashJumpDistanceInMeters
 m_flDashJumpEndTime
 m_flDashJumpExtraAirControlPercent
 m_flDashJumpExtraAirControlTime
+m_flDashJumpJetpackLockoutDuration
 m_flDashJumpMantleDisableTime
 m_flDashJumpMissMaxSpeed
 m_flDashJumpStartTime
 m_flDashJumpVerticalSpeed
 m_flDashMaxTurnRate
 m_flDashMinActivationSpeed
+m_flDashRemovalDelay
 m_flDashSlideFailSpeed
 m_flDashSlideFriction
 m_flDashSlideFrictionTime
@@ -38346,6 +38476,7 @@ m_flExplosionDamageScaleAtMaxRadius
 m_flExplosionHalfHeightMeters
 m_flExplosionRadius
 m_flExplosionRadius == 0
+m_flExplosionRadiusInnerFraction
 m_flExplosionShakeAmplitude
 m_flExplosionShakeDuration
 m_flExplosionShakeFrequency
@@ -38490,8 +38621,12 @@ m_flFlattenStrength
 m_flFlightAirDrag
 m_flFlightSpeed
 m_flFloat
+m_flFloatDistanceAboveHead
 m_flFloatDownRate
 m_flFloatElapsedTime
+m_flFloatForwardBackDistance
+m_flFloatInitialSpeed
+m_flFloatLeftRightDistance
 m_flFloatValue
 m_flFloatValue1
 m_flFloatValue2
@@ -38616,7 +38751,12 @@ m_flFriendlyChaseMinDistance
 m_flFriendlyChaseRandomPositionDistance
 m_flFriendlyHookIgnoreRange
 m_flFriendlyInBushVisibility
+m_flFromGroundNoThrustAddZ
+m_flFromGroundThrustAddZ
+m_flFromGroundThrustFwd
+m_flFromGroundThrustXYMultiplier
 m_flFullPullDistance
+m_flFwdVelocityOverTime
 m_flGGEndsAtTime
 m_flGain
 m_flGainAmount
@@ -38657,12 +38797,15 @@ m_flGoalDistance
 m_flGoalHeight
 m_flGoalSuccessRadius
 m_flGoalSuccessRadiusWhenBlocked
+m_flGoingDownSpeedOverTime
+m_flGoingUpSpeedOverTime
 m_flGoingUpStartElevation
 m_flGoingUpTargetElevation
 m_flGoldAmount
 m_flGoldPerMinuteAmount
 m_flGoldReward
 m_flGoldRewardBonusPercentPerMinute
+m_flGrabDistance
 m_flGraceTime
 m_flGrainCrossfadeAmount
 m_flGrainLength
@@ -38676,6 +38819,10 @@ m_flGrappleStartTime
 m_flGravity
 m_flGravityChange
 m_flGravityForce
+m_flGravityReductionDuration_Ability
+m_flGravityReductionDuration_AirDash
+m_flGravityReductionDuration_JetpackInput
+m_flGravityReductionDuration_Shoot
 m_flGravityScale
 m_flGridMajorWidth
 m_flGridMinorSpacingV2
@@ -38739,6 +38886,7 @@ m_flHealthRegen
 m_flHealthRegenSnapShot
 m_flHealthScale
 m_flHeartWeight
+m_flHeatWarningFraction
 m_flHeavyAttackRequiredHoldTime
 m_flHeavyHoldTime
 m_flHeavyMeleeBuildUp
@@ -38763,6 +38911,7 @@ m_flHeroFloat3
 m_flHeroKillGoldShareFrac
 m_flHeroLockBreakRange
 m_flHeroLockRange
+m_flHeroStateDuration
 m_flHertz
 m_flHexStartTime
 m_flHideDuration
@@ -38790,6 +38939,8 @@ m_flHoldJumpStartTime
 m_flHoldTime
 m_flHoldTimeMS
 m_flHoldingDuration
+m_flHomeDelay
+m_flHomeInterval
 m_flHomingBias
 m_flHookEndTime
 m_flHookTargetOnlyWindow
@@ -38841,6 +38992,7 @@ m_flInMax
 m_flInMin
 m_flInOutBounceLoss
 m_flInOutMaxPathLength
+m_flInSlideThrustMultiplier
 m_flInValue
 m_flIncrement
 m_flIndirectStrength
@@ -38902,6 +39054,12 @@ m_flInputScale2
 m_flInputValue
 m_flInsideThreshold
 m_flIntensity
+m_flIntentSpaceStringStrengthFwd
+m_flIntentSpaceStringStrengthLeft
+m_flIntentSpaceStringStrengthVertical
+m_flIntentSpaceSurplusSpringStrength
+m_flIntentSpaceVerticalWithXYInput
+m_flIntentSpaceVerticalZInputOnly
 m_flInteractDistance
 m_flInteractLookRadius
 m_flInteractionDistance
@@ -38932,6 +39090,7 @@ m_flJumpDuration
 m_flJumpEndCycle
 m_flJumpFallSpeedMax
 m_flJumpHeight
+m_flJumpHeightIncreasePercent
 m_flJumpHeightPct
 m_flJumpMaxDist
 m_flJumpMaxDrop
@@ -39092,15 +39251,21 @@ m_flLateReflections
 m_flLateSlideJumpWindow
 m_flLateralInputSuppressEndTime
 m_flLateralMoveDuration
+m_flLateralSpeedGoingDown
+m_flLateralSpeedGoingUp
 m_flLateralSpeedMax
 m_flLateralSpeedMin
 m_flLaunchAirDrag
+m_flLaunchAngleRandom
 m_flLaunchBiasUp
+m_flLaunchForce
+m_flLaunchForceSelf
 m_flLaunchMaxSpeed
 m_flLaunchSpeed
 m_flLaunchSpeedMult
 m_flLaunchTime
 m_flLaunchUpSpeed
+m_flLaunchZFractionWhenFlyingSelf
 m_flLeanCalculationLookAheadDistance
 m_flLeanSmoothingFactor
 m_flLeapStartTime
@@ -39306,6 +39471,7 @@ m_flMaxHealthHeal
 m_flMaxHealthPctDamage
 m_flMaxHeight
 m_flMaxHighlightLum
+m_flMaxHoldDuration
 m_flMaxHookTravelTime
 m_flMaxHopFacingDelta
 m_flMaxIKLength
@@ -39340,6 +39506,7 @@ m_flMaxPitchChange
 m_flMaxPitchDown
 m_flMaxPitchRangeScale
 m_flMaxPitchUp
+m_flMaxPossibleFlyHeight
 m_flMaxPowerPadding
 m_flMaxProjectileSpeed
 m_flMaxProjectionDepth
@@ -39917,6 +40084,8 @@ m_flPassiveTargetingConeAngle
 m_flPassiveTargetingHalfWidth
 m_flPassiveTargetingNearbyCasterRadius
 m_flPassiveTargetingNearbyCrosshairRadius
+m_flPathApexFractionOfDistance
+m_flPathApexMaxMeters
 m_flPathCreationTime
 m_flPathDistToLastWaypoint
 m_flPathDistanceToNavLink
@@ -39927,6 +40096,8 @@ m_flPathLocation
 m_flPathLocationStart
 m_flPathLocationToBeginStop
 m_flPathMaxDetour
+m_flPathScatterDistanceMeters
+m_flPathSegmentLengthMeters
 m_flPathingDistanceNormFactor
 m_flPathingMixLevel
 m_flPauseTime
@@ -40021,6 +40192,8 @@ m_flPlayerAutoAttackRange
 m_flPlayerCheckDistanceM
 m_flPlayerCheckSphereRadius
 m_flPlayerCheckThink
+m_flPlayerCollisionLookaheadFrames
+m_flPlayerCollisionSphereSize
 m_flPlayerDPS
 m_flPlayerDamage
 m_flPlayerDamageResistPct
@@ -40310,7 +40483,6 @@ m_flRepulsionMinDistance
 m_flRequiredDuration
 m_flReselectionTimeWindow
 m_flResetRate
-m_flReshuffleHoldTime
 m_flResistMaxAtStart
 m_flResistMaxCap
 m_flResistMaxPerMinute
@@ -40374,6 +40546,15 @@ m_flRiseTime
 m_flRisingEdge
 m_flRisingTime
 m_flRoamingSpeed
+m_flRocketJumpAlreadyFasterMultiplier
+m_flRocketJumpExtraRadiusMeters
+m_flRocketJumpForceCrouchMultiplier
+m_flRocketJumpForceMax
+m_flRocketJumpForceMin
+m_flRocketJumpForceUpBias
+m_flRocketJumpForceWallMultiplier
+m_flRocketJumpSelfDamageMaxHealthPercent
+m_flRocketJumpWallJumpWindow
 m_flRodVelocitySmoothRate
 m_flRoll
 m_flRollOffset
@@ -40481,6 +40662,7 @@ m_flSelfIllumAmount
 m_flSelfIllumBlendToFull
 m_flSelfIllumScale
 m_flSelfPortalTelegraphTime
+m_flSelfViewOpacity
 m_flSensingSensitivity
 m_flSensitivity
 m_flSentryDistanceFromWall
@@ -40524,6 +40706,8 @@ m_flShieldReactivateDelay
 m_flShieldScale
 m_flShieldUpTime
 m_flShootAfterEnteringTime
+m_flShootDelay
+m_flShootInterval
 m_flShootMoveSpeedPercent
 m_flShootSpreadPenaltyDecay
 m_flShootSpreadPenaltyDecayDelay
@@ -40599,6 +40783,8 @@ m_flSlopeScaledDepthBias
 m_flSlowDownStrength
 m_flSlowDuration
 m_flSlowDurationAtCast
+m_flSlowEffectivenessLateral
+m_flSlowEffectivenessVertical
 m_flSlowGetupStartTime
 m_flSlowPercent
 m_flSlowSpeed
@@ -40674,6 +40860,7 @@ m_flSpinAxisFriction
 m_flSpinDecayRate
 m_flSpinIncreaseRate
 m_flSpinRate
+m_flSpinRateGoingDownDegreesPerSec
 m_flSpinSpeed
 m_flSpinStrength
 m_flSpinUpDecayOverride
@@ -40699,6 +40886,9 @@ m_flSprintMult
 m_flSprintStartTime
 m_flSpriteFramerate
 m_flSpriteScale
+m_flSputterChance
+m_flSputterDuration
+m_flSputterImmuneDuration
 m_flSquadDistance
 m_flSquiggleMotionAmplitude
 m_flSquiggleMotionRandomizeInterval
@@ -40981,6 +41171,7 @@ m_flTimeMovementStart
 m_flTimeMovementStop
 m_flTimeNextAvailable
 m_flTimeOffset
+m_flTimeOnGroundBeforeLaunchAllowed
 m_flTimePathUpdated
 m_flTimeRotationStart
 m_flTimeRotationStop
@@ -41082,6 +41273,7 @@ m_flTraceTolerance
 m_flTraceTravelRadius
 m_flTrackAmount
 m_flTrackVel
+m_flTrackedProjectileSpeed
 m_flTrackingAngularStrengthMax
 m_flTrackingAngularStrengthMin
 m_flTrackingDampingCoefficient
@@ -41174,6 +41366,7 @@ m_flUpMove
 m_flUpSpeed
 m_flUpSpeedMax
 m_flUpSpeedMin
+m_flUpVelocityOverTime
 m_flUpdateDistance
 m_flUpdateInterval
 m_flUpdateRate
@@ -41229,6 +41422,9 @@ m_flVerticalCameraOffset
 m_flVerticalCameraOffsetBias
 m_flVerticalCameraOffsetLerpTime
 m_flVerticalFOV
+m_flVerticalIntentDiminishFracAtRangeEnd
+m_flVerticalIntentDiminishRangeBegin
+m_flVerticalIntentDiminishRangeEnd
 m_flVerticalMoveSpeedPercent
 m_flVerticalOffset
 m_flVerticalPunch
@@ -44595,6 +44791,7 @@ m_nTickRotateRan
 m_nTickStarted
 m_nTicks
 m_nTicksNotMoving
+m_nTicksToHoldShuffleTime
 m_nTier1GoldKill
 m_nTier1GoldOrbs
 m_nTier2BonusHealth
@@ -45335,6 +45532,7 @@ m_qPostTeleportAngles
 m_qRelativeOffset
 m_qSpawnOrientation
 m_qStartRot
+m_qStateAnglesBegin
 m_qTransitionSourceOrientation
 m_quantizer
 m_quat
@@ -46111,15 +46309,21 @@ m_strCharacterRevealSfxStop
 m_strChargeGlintSound
 m_strChargeHitOtherSound
 m_strChargeHitSound
+m_strChargeLevel2LoopSound
+m_strChargeLevel2Sound
 m_strChargeLoopSound
 m_strChargeSound
 m_strChargeUpSound
 m_strChargedJumpSound
 m_strChargingLoopSound
+m_strChargingSound
 m_strChargingStartSound
 m_strCheats
 m_strCheckmateSound
+m_strChimeraDiveSound
 m_strClothEffect
+m_strCoatedAppliedSound
+m_strCoatedConsumeSound
 m_strCommsWheelLabelToken
 m_strConditionalLocTokenOverride
 m_strConfigName
@@ -46259,6 +46463,8 @@ m_strFullyChargedSound
 m_strGainedBatSound
 m_strGainedSound
 m_strGoalSoundName
+m_strGoingDownSounds
+m_strGoingUpSounds
 m_strGoldFinishSound
 m_strGoldTickSound
 m_strGraceLoopSound
@@ -46280,6 +46486,7 @@ m_strHUDSnippetName
 m_strHangSound
 m_strHealCastSound
 m_strHealSound
+m_strHeatWarningSound
 m_strHeavyKickSound
 m_strHeavyMeleeSweetenerSound
 m_strHelperBuffSound
@@ -46294,6 +46501,7 @@ m_strHeroGender
 m_strHeroSearchName
 m_strHeroSortName
 m_strHeroSpecificLowHealthSound
+m_strHeroState
 m_strHeroVotedSound
 m_strHexSound
 m_strHideoutRichPresence
@@ -46309,8 +46517,10 @@ m_strHitNPCSound
 m_strHitProcSound
 m_strHitSequenceName
 m_strHitSound
+m_strHoldAttachment
 m_strHoldBegin
 m_strHoldBombLoopSound
+m_strHomeSound
 m_strHookAllySound
 m_strHookImpactGeoSound
 m_strHookNPCSound
@@ -46329,6 +46539,8 @@ m_strIconHeroCardOverride
 m_strIconImageSmall
 m_strImage
 m_strImmobilizeTargetSound
+m_strImpactDefaultSound
+m_strImpactLevel2Sound
 m_strImpactSound
 m_strImportantProperty
 m_strImportantProperty != StatusEffectEMP && m_strImportantProperty != StatusEffectStun && m_strImportantProperty != StatusEffectFreeze && m_strImportantProperty != StatusEffectBurn && m_strImportantProperty != StatusEffectBleed && m_strImportantProperty != StatusEffectSleep && m_strImportantProperty != StatusEffectTethered && m_strImportantProperty != StatusEffectImmobilize && m_strImportantProperty != StatusEffectDisarmed && m_strImportantProperty != StatusEffectInvisible && m_strImportantProperty != StatusEffectStacks && m_strImportantProperty != StatusEffectInfiniteClip && m_strImportantProperty != StatusEffectBulletDebuff && m_strImportantProperty != StatusEffectBuff && m_strImportantProperty != StatusEffectPetrify && m_strImportantProperty != StatusEffectCustomDebuff && m_strImportantProperty != StatusEffectUnstoppable && m_strImportantProperty != StatusEffectDisplacement && m_strImportantProperty != StatusEffectSilence && m_strImportantProperty != StatusEffectCurse
@@ -46388,9 +46600,14 @@ m_strLaserStartSound
 m_strLastHitSound
 m_strLastValidName
 m_strLateHitConfirmSound
+m_strLaunchAirSound
+m_strLaunchGroundSound
+m_strLaunchInCooldownSound
 m_strLaunchSound
 m_strLayoutFile
 m_strLayoutFile == ""
+m_strLevel2HitConfirmNPCSound
+m_strLevel2HitConfirmSound
 m_strLightKickBeginSound
 m_strLightKickSound
 m_strLightMeleeSweetenerSound
@@ -46405,6 +46622,7 @@ m_strLocToken
 m_strLocTokenOverride
 m_strLocalPlayerBulletImpactHeavySound
 m_strLocalPlayerBulletImpactSound
+m_strLockoutEndSound
 m_strLogoImageEnglish
 m_strLogoImageLocalized
 m_strLoopingSequenceName
@@ -46414,6 +46632,8 @@ m_strLowHealthSound
 m_strMainOnlyModelName
 m_strMapToLoad
 m_strMaxBuffReceivedSound
+m_strMaxHeatLoopingSound
+m_strMaxHeatSound
 m_strMaxHoldSweetener
 m_strMaxResourceProperty
 m_strMaxStackLayer
@@ -46551,6 +46771,10 @@ m_strReturnSound
 m_strRewardDescription
 m_strRewardFlavor
 m_strRewardName
+m_strRocketeerAirDashJumpSound
+m_strRocketeerLoopStopSound
+m_strRocketeerLoopingSound
+m_strRocketeerOverheatedLoopingSound
 m_strRootTargetSound
 m_strRopeMaterialModel
 m_strRosterAvoidedSound
@@ -46577,7 +46801,9 @@ m_strShieldBreakEffect
 m_strShieldRefreshSound
 m_strShivOnlyActivateSound
 m_strShootAttachment
+m_strShootDefaultSound
 m_strShootDelaySound
+m_strShootLevel2Sound
 m_strShootOrigin
 m_strShootSound
 m_strShopIconLarge
@@ -46877,11 +47103,17 @@ m_tExecuteTime
 m_tFireOnReleaseHoldBeginTime
 m_tFirstPickupTime
 m_tForceTransformTime
+m_tGravityReductionEndTime
+m_tGravityReductionStartTime
+m_tHeatDecayStartTime
 m_tHeldItem
 m_tIdleTurnTarget
 m_tInitialShotID
 m_tInteriorModifier
+m_tJetpackInputHeldBeginTime
+m_tLastDamageDealTime
 m_tLastDamageTime
+m_tLastDashJumpTime
 m_tLastHeadshot
 m_tLastLOSTime
 m_tLastPickupTime
@@ -46892,6 +47124,8 @@ m_tLastShotID
 m_tLastStopTime
 m_tLastTetherTime
 m_tLastToggleTime
+m_tLastUpwardVelocityTime
+m_tLaunchHeldBeginTime
 m_tLeapOffTime
 m_tLeapStartTime
 m_tLingerMovementControlUntilTime
@@ -46908,6 +47142,7 @@ m_tNextPingTime
 m_tNextShotTime
 m_tNoTrooperTime
 m_tParticlePrecipTraceTimer
+m_tPauseBeginTime
 m_tPriorityTargetTime
 m_tQueuedEnableTime
 m_tRecastEndTime
@@ -46917,7 +47152,9 @@ m_tSoonestHelperCooldownEndTime
 m_tSourcePrevious
 m_tSpawnTime
 m_tStateChangeTime
+m_tStateEnterTime
 m_tStateStartTime
+m_tStateTimeBegin
 m_tStopTarget
 m_tStreetBrawl
 m_tTargetPrevious
@@ -47156,6 +47393,7 @@ m_vAcceleration
 m_vAccelerationWS
 m_vAccumulatedRootMotion
 m_vActions
+m_vAimOffset
 m_vAirDashDir
 m_vAlternateColor
 m_vAnchorOffsetRestore
@@ -47249,6 +47487,7 @@ m_vDropStartLocation
 m_vDynamicProxyPoint
 m_vEnd
 m_vEndOffset
+m_vEndPoint
 m_vEndPointRelative
 m_vEndPointWorld
 m_vEndPos
@@ -47276,6 +47515,7 @@ m_vFootBaseBindPosePositionMS
 m_vForce
 m_vForceAccumulator
 m_vForward
+m_vForwardAtCast
 m_vGoalActualPos_ForClipping
 m_vGoalActualPos_Initial
 m_vGoalBasePos_Initial
@@ -47316,6 +47556,9 @@ m_vInput2
 m_vInputMax
 m_vInputMin
 m_vInputVectorWS
+m_vIntentSpaceCurrent
+m_vIntentSpaceTarget
+m_vIntentSpaceVelocities
 m_vInterpOutput0
 m_vInterpOutput1
 m_vKnockAwayVector
@@ -47540,9 +47783,11 @@ m_vSpawnPos
 m_vSpotlightDir
 m_vSpotlightOrg
 m_vSpringTarget
+m_vSputterIntents
 m_vSrc
 m_vStancePositionMS
 m_vStart
+m_vStartPoint
 m_vStartPointOffset
 m_vStartPos
 m_vStartPosition
@@ -47550,6 +47795,7 @@ m_vStartPositionOffsetLS
 m_vStartValue
 m_vStartingOffset
 m_vStartingPositionSpringVelocity
+m_vStateOriginBegin
 m_vStatusEffectsOffset
 m_vStompDir
 m_vStompPos
@@ -47588,6 +47834,7 @@ m_vUnitStatusOffset
 m_vUp
 m_vUpOverride
 m_vUpVector
+m_vVTOLVel
 m_vVacuumPos
 m_vVacuumStartPos
 m_vValues
@@ -50348,6 +50595,7 @@ r_citadel_depthoffield_enable
 r_citadel_depthoffield_focus_distance
 r_citadel_depthoffield_mode
 r_citadel_depthoffield_sensor_size
+r_citadel_disable_particle_lights
 r_citadel_distancefield_ao_quality
 r_citadel_distancefield_blur
 r_citadel_distancefield_blur_depth_threshold

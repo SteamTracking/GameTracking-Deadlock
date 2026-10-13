@@ -190,7 +190,7 @@ enum EModifierValue : uint16_t
 	MODIFIER_VALUE_FIRE_RATE = 95,
 	// MPropertyDescription = "the stat version of negative fire rate"
 	MODIFIER_VALUE_FIRE_RATE_SLOW = 96,
-	// MPropertyDescription = "Increase Cycle Time (Decrease FireRate)"
+	// MPropertyDescription = "Percentage scale on the base fire rate, applied before fire rate bonuses (25 is 1.25x, -25 is 0.75x)"
 	MODIFIER_VALUE_CYCLE_TIME_PERCENTAGE = 97,
 	MODIFIER_VALUE_SPREAD_SCALE = 98,
 	// MModifierValueCacheEnabled_IgnoreParams
