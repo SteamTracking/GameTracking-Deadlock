@@ -68,6 +68,7 @@ $prefix_element$
 %06d
 %08x
 %d Effects are mutually exclusive
+%d edges, %d interior edges, %d silhouette edges\n
 %d materials used in physics builder:\n
 %d_%lld_%x.dmx
 %d_%lld_%x_in.dmx
@@ -7099,13 +7100,11 @@ $prefix_element$
 4-byte data pool
 4096
 5;FJ$,XEK4<
-5sfm_v8
 64 283 0
 8-byte data pool
 8192
 :: <NO TARGET BONE>
 ; tris:
-;acosf
 <!-- DMXVersion
 <INVALID_RBF_TYPE>
 <No schemasystem>
@@ -7117,23 +7116,10 @@ $prefix_element$
 <pair_a> 
 <pair_b> 
 <unnamed>
-=CAnimSkeleton
 =fff?
-=m_bUseShadowFastPath
->Hull
-?%d edges, %d interior edges, %d silhouette edges\n
-?CurveEditor()
-?ModelDoc
-?Unknown
-?catmullrom_normalize_x
-?flags
-?material_blend_sampler_color_%i_%i
-?vtex
 @%s_lookFrame_0
 @%s_lookFrame_1
 @%s_lookFrame_2
-@Integer overflow in %s
-@m_nParticle
 @unnamed_%d
 A bone named %s already exists.
 A box shape which cloth collides with.
@@ -7491,13 +7477,11 @@ BC4_UNORM
 BC5_SNORM
 BC5_TYPELESS
 BC5_UNORM
-BTools
 BVH::PrepareBuild( .. ), bvh not rebuildable.
 BVH::PrepareBuild( .. ), empty vertex slice.
 BVH::PrepareBuild( .. ), indices == 0.
 BVH::PrepareBuild( .. ), prims == 0.
 BVH::PrepareBuild( 0, .. ), not called from ::Build( aabb ).
-B\vp\n0
 Back-solve Joints
 Back-solve Joints Drive Meshes
 Back-solve Min Weight
@@ -7581,7 +7565,6 @@ Blend Anim Events
 Blend Weights Per Vertex
 BlendLayersUsingTimeSelection
 Blur Radius
-Bm_Plane
 Bodies are ordered by bone depth (root bone body is first)
 Bodies are ordered the way their shapes appear in the shape list 
 Body Collection
@@ -7665,7 +7648,6 @@ By default, any change to the chain position will be reflected in parent's rotat
 By default, empty selection is the failure case. Set this to false to make having not-empty selection be a failure case.
 By default, only the animation events on the first child animation are considered, if true all animation events which have a non-zero blend weight are used to detect animation events
 C:\buildworker\citadel_rel_win64\build\_build_\utils\physicsbuilder\_vpc_physicsbuilder\default\win64\_msvc_\Retail\physicsbuilder.pdb
-C:\buildworker\citadel_rel_win64\build\src\bitmap\floatbitmap.cpp
 C:\buildworker\citadel_rel_win64\build\src\datamodel\dependencygraph.cpp
 C:\buildworker\citadel_rel_win64\build\src\modeldoc_lib\modeldoc_texture_generator.cpp
 C:\buildworker\citadel_rel_win64\build\src\modeldoc_lib\physicsconversion.cpp
@@ -8556,7 +8538,6 @@ Cycle Start Frame
 Cycle Type
 Cylinder
 Cylinder: %s
-D(None)
 D16_UNORM
 D24_UNORM_S8_UINT
 D32_FLOAT
@@ -9195,7 +9176,6 @@ G channel
 G channel not found!\n
 G8R8_G8B8_UNORM
 GPSIFDOffset
-GVertexGenericIntegerData
 Game Motion Smoothing
 GameDataList
 GameDataNode
@@ -9321,6 +9301,7 @@ How much to consider facing angle in occlusion.
 How quickly the elasticity target pose changes to match the current pose
 How should the bodies, created by these shapes, be ordered in the final model
 How the end effector should be rotated after the solve.
+Hull
 Hull Per Element
 Hull Per Mesh
 Hull Too Complex for Runtime (%d verts, %d edges, %d faces)
@@ -9460,6 +9441,7 @@ Insufficient header/data size.\n
 Int Choice Array
 IntArray
 IntChoiceArray
+Integer overflow in %s
 Internal Error (mismatched mesh and bindpose)
 Internal Pressure
 Internal Render Resolution
@@ -11303,6 +11285,7 @@ Vertex to Edge
 Vertex to Face
 Vertex-Vertex Only
 VertexElementAnnotation
+VertexGenericIntegerData
 VertexGenericIntegerData$0
 VertexLocks provided but not using a simplification method that honors them
 VertexMap Name (optional)
@@ -11429,7 +11412,6 @@ ZIPVSetField
 [ADVANCED] Simplify Across Seams
 [DEBUG] Visualize Simplification Edges
 [anim]
-[choices
 [cloth] | [procedural]
 [procedural]
 \n***ASSERT FAILED*** Image data section has too many channels (%d).
@@ -11441,10 +11423,9 @@ ZIPVSetField
 \n***ERROR*** [PsdExtract] File seems to be corrupt, reserved bytes are not zero.
 \n***ERROR*** [PsdExtract] File seems to be corrupt, signature does not match "8BPS".
 \n***ERROR*** [PsdExtract] File seems to be corrupt, version does not match 1 or 2.
+\nIHDRPLTEIDATIENDtRNScHRMgAMAiCCPsBITsRGBtEXtzTXtiTXtbKGDhISTpHYssPLTtIMEoFFseXIf
 \nclass 
-\ndummyfilename.tif
 \ng default\n
-\nhzg
 \nprop 
 \tNAN encountered in element '%s' guid %s attribute '%s'!\n
 _CustomCommand
@@ -11503,6 +11484,7 @@ _zero
 absolute
 accent
 accent_frame
+acosf
 acosf() heavily exaggerates floating point precision errors. Threshold is high (1e-2f) for this reason. This can probably stay fixed. Increase for Stability at the cost of Accuracy.
 activation_distance
 activeBookmarkSet
@@ -11636,7 +11618,6 @@ assign_r
 assign_to_all
 assign_to_all_faces
 associated_key
-ati_compress_wrapper.dll
 atlas_dimension
 attach_material
 attach_mesh
@@ -11821,6 +11802,7 @@ capture_region
 capture_renderdoc
 catmullrom
 catmullrom_normalize
+catmullrom_normalize_x
 catmullrom_tangent
 cellConfiguration
 cellsNodeID
@@ -12138,10 +12120,10 @@ draw_order
 draw_parent
 draw_surface
 draw_wireframe
+dummyfilename.tif
 durationTime
 duration_info
 dynamic_attributes
-eCONTENTROOT
 ease_in_key
 ease_is_duration
 ease_out_key
@@ -12335,7 +12317,6 @@ fromAttribute
 fromElement
 fromIndex
 from_name
-fsn{
 full_frame_range
 full_sphere
 functionName
@@ -12774,6 +12755,7 @@ m_bOptional
 m_bParentJointRequiresAlignment
 m_bUseCompressedNormalTangent
 m_bUseNewPoleVectorForAxis
+m_bUseShadowFastPath
 m_bUsingLegacyDefault
 m_bmaxs
 m_bmins
@@ -12828,6 +12810,7 @@ mass_override
 massoverride
 material_attribute_name
 material_blend_sampler_alpha_%i_%i
+material_blend_sampler_color_%i_%i
 material_blend_sampler_emissive_%i_%i
 material_filter
 material_group
@@ -13225,7 +13208,6 @@ postion_lock_to_controlpoint
 posture
 posture_nohands
 posxyz
-powf
 preMerge face 0
 preMerge face 1
 precision_degrees
@@ -13466,6 +13448,7 @@ sfm_v4
 sfm_v5
 sfm_v6
 sfm_v7
+sfm_v8
 sfm_v9
 shader_extra_data_1
 shader_extra_data_2
@@ -13641,7 +13624,6 @@ swing_offset_angle
 switch_threshold
 syncEngineFramerate
 synched
-tBVsInputSignature_t
 tag_list
 tag_list_dynamic
 tags
