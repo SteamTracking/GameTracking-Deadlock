@@ -21,6 +21,7 @@ class BabaBenchMeleeAttack_t
 	CPiecewiseCurve m_SpeedBonusCurve;
 	float32 m_flMovementAcc; // = 300
 	float32 m_flAttackImpulse;
+	float32 m_flAttackImpulseMaxUpward; // = 340282346638528859811704183484516925440
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strMeleeDashSound;
 	CSoundEventName m_strHitSound;

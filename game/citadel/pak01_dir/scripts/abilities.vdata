@@ -238848,7 +238848,7 @@
 				{
 					_class = "scale_function_healing_spirit_scale"
 					_my_subclass_name = "TotalHealthRegen_scale_function"
-					m_flStatScale = 0.04
+					m_flStatScale = 0.035
 				}
 			}
 			RegenerationDuration = 
@@ -288897,6 +288897,7 @@
 				m_flChargeTime = 0.125
 				m_flAttackStateTime = 0.5
 				m_flAttackImpulse = 500.0
+				m_flAttackImpulseMaxUpward = 150.0
 				m_MovementSpeedCurve = 
 				{
 					m_spline = 
@@ -289084,7 +289085,7 @@
 		{
 			AbilityCooldown = 
 			{
-				m_strValue = 26.0
+				m_strValue = 28.0
 				m_strDisableValue = "0"
 				m_strCSSClass = "cooldown"
 				m_bCanSetTokenOverride = true
@@ -289255,6 +289256,7 @@
 			DebuffDuration = 
 			{
 				m_strValue = "22"
+				m_strStreetBrawlValue = "14"
 				m_strCSSClass = "duration"
 				m_subclassScaleFunction = subclass:
 				{
@@ -289412,6 +289414,7 @@
 					{
 						m_strPropertyName = "DebuffDuration"
 						m_strBonus = "8"
+						m_strStreetBrawlBonus = "5"
 					},
 				]
 			},
@@ -289599,7 +289602,7 @@
 		{
 			AbilityCooldown = 
 			{
-				m_strValue = "30"
+				m_strValue = "32"
 				m_strDisableValue = "0"
 				m_strCSSClass = "cooldown"
 				m_bCanSetTokenOverride = true
@@ -290229,7 +290232,7 @@
 		{
 			AbilityCooldown = 
 			{
-				m_strValue = 25.0
+				m_strValue = 27.0
 				m_strDisableValue = "0"
 				m_strCSSClass = "cooldown"
 				m_bCanSetTokenOverride = true
@@ -290430,7 +290433,7 @@
 			}
 			CombatBarrier = 
 			{
-				m_strValue = "100"
+				m_strValue = "90"
 				m_strCSSClass = "combat_barrier"
 				m_eProvidedPropertyType = "MODIFIER_VALUE_BARRIER_HEALTH"
 				m_eStatsUsageFlags = "ConditionallyApplied"
@@ -290439,7 +290442,7 @@
 					_class = "scale_function_tech_damage"
 					_my_subclass_name = "CombatBarrier_scale_function"
 					m_eSpecificStatScaleType = "ETechPower"
-					m_flStatScale = 1.2
+					m_flStatScale = 0.7
 				}
 			}
 			BarrierDuration = 
@@ -290521,7 +290524,7 @@
 				[
 					{
 						m_strPropertyName = "AbilityCooldown"
-						m_strBonus = "-12"
+						m_strBonus = "-14"
 					},
 				]
 			},
@@ -297936,8 +297939,8 @@
 				m_strZoomOutSound = soundevent:"Deadpack.Wpn.ZoomOut"
 				m_flDamageForce = 50.0
 				m_bBulletShouldUseVerlet = true
-				m_flBulletDamage = 12
-				m_flChargedBulletDamage = 44.0
+				m_flBulletDamage = 15
+				m_flChargedBulletDamage = 48.0
 				m_bChargesUp = true
 				m_iChargedAmmoConsumedPerShot = 1
 				m_flChargeUpTime = 0.8
@@ -298106,12 +298109,12 @@
 		m_flRocketJumpExtraRadiusMeters = 2.75
 		m_flRocketJumpForceMin = 550.0
 		m_flRocketJumpForceMax = 610.0
-		m_flRocketJumpForceUpBias = 23
+		m_flRocketJumpForceUpBias = 18
 		m_flRocketJumpForceCrouchMultiplier = 1.12
-		m_flRocketJumpForceWallMultiplier = 0.5
+		m_flRocketJumpForceWallMultiplier = 0.65
 		m_flRocketJumpWallJumpWindow = 0.5
 		m_flRocketJumpAlreadyFasterMultiplier = 1.0
-		m_flRocketJumpSelfDamageMaxHealthPercent = 6.5
+		m_flRocketJumpSelfDamageMaxHealthPercent = 5
 		m_RocketJumpModifier = subclass:
 		{
 			_my_subclass_name = "selflaunch"
@@ -299015,10 +299018,10 @@
 					m_eSpecificStatScaleType = "ELevelUpBoons"
 					m_vecScalingStats = 
 					[
-						"ETechCooldown",
 						"ELevelUpBoons",
+						"ETechCooldown",
 					]
-					m_flStatScale = -0.25
+					m_flStatScale = -0.45
 				}
 			}
 			AbilityDuration = 
@@ -299159,10 +299162,6 @@
 			{
 				m_strValue = 33.0
 			}
-			HeatGainRateSlowPercentEffectiveness = 
-			{
-				m_strValue = 75.0
-			}
 			HeatGainRateVTOL = 
 			{
 				m_strValue = 60.0
@@ -299199,7 +299198,7 @@
 			}
 			MaxHealthSelfDamagePercent = 
 			{
-				m_strValue = "12"
+				m_strValue = "10"
 			}
 			SelfDamageReductionOnPlayerHitPercent = 
 			{
@@ -299226,7 +299225,7 @@
 				{
 					_class = "scale_function_ability_weapon_damage"
 					m_eSpecificStatScaleType = "EBaseWeaponDamageIncrease"
-					m_flStatScale = 1.15
+					m_flStatScale = 1.4
 					_my_subclass_name = "ExplosionBulletDamage_sf"
 				}
 				m_bIsAbilityDamageProperty = true
@@ -299337,7 +299336,7 @@
 					},
 					{
 						m_strPropertyName = "HealOnHit"
-						m_strBonus = "1.0"
+						m_strBonus = "2.0"
 						m_eUpgradeType = "EAddToScale"
 						m_eScaleStatFilter = "ETechPower"
 					},
@@ -299352,7 +299351,7 @@
 					},
 					{
 						m_strPropertyName = "OverheatLockoutDurationReductionOnPlayerHitPercent"
-						m_strBonus = "40"
+						m_strBonus = "50"
 					},
 				]
 			},
@@ -299875,8 +299874,8 @@
 		m_flVerticalIntentDiminishRangeEnd = 1700.0
 		m_flVerticalIntentDiminishFracAtRangeEnd = 0.2
 		m_flInSlideThrustMultiplier = 0.87
-		m_flSlowEffectivenessVertical = 0.5
-		m_flSlowEffectivenessLateral = 1.0
+		m_flSlowEffectivenessVertical = 0.35
+		m_flSlowEffectivenessLateral = 0.7
 		m_HUDPanel = 
 		{
 			m_vecHUDElements = 
@@ -299946,7 +299945,7 @@
 		{
 			AbilityCooldown = 
 			{
-				m_strValue = 30.0
+				m_strValue = 25.0
 				m_strDisableValue = "0"
 				m_strCSSClass = "cooldown"
 				m_bCanSetTokenOverride = true
@@ -300146,7 +300145,7 @@
 					_class = "scale_function_tech_damage"
 					_my_subclass_name = "CoatedDamage_scale_function"
 					m_eSpecificStatScaleType = "ETechPower"
-					m_flStatScale = 0.9
+					m_flStatScale = 1.1
 				}
 				m_bIsAbilityDamageProperty = true
 			}
@@ -300238,11 +300237,11 @@
 				[
 					{
 						m_strPropertyName = "Damage"
-						m_strBonus = "20"
+						m_strBonus = "30"
 					},
 					{
 						m_strPropertyName = "CoatedDamage"
-						m_strBonus = "35"
+						m_strBonus = "45"
 					},
 				]
 			},
@@ -300259,13 +300258,13 @@
 					},
 					{
 						m_strPropertyName = "CoatedDamage"
-						m_strBonus = "0.2"
+						m_strBonus = "0.35"
 						m_eUpgradeType = "EAddToScale"
 						m_eScaleStatFilter = "ETechPower"
 					},
 					{
 						m_strPropertyName = "Damage"
-						m_strBonus = "0.225"
+						m_strBonus = "0.35"
 						m_eUpgradeType = "EAddToScale"
 						m_eScaleStatFilter = "ETechPower"
 					},
@@ -300392,7 +300391,7 @@
 		m_flHomeInterval = 0.15
 		m_flShootDelay = 0.0
 		m_flShootInterval = 0.07
-		m_flTrackedProjectileSpeed = 6000
+		m_flTrackedProjectileSpeed = 7000
 		m_flPathScatterDistanceMeters = 1.5
 		m_flPathSegmentLengthMeters = 10.0
 		m_flPathApexFractionOfDistance = 0.4
@@ -300600,7 +300599,7 @@
 			}
 			BonusDamagePercent = 
 			{
-				m_strValue = "50"
+				m_strValue = "75"
 				m_strLocTokenOverride = "DeadpackUltBonusTotalDamage"
 			}
 			CooldownOnMissReduction = 
@@ -300654,7 +300653,7 @@
 				[
 					{
 						m_strPropertyName = "Damage"
-						m_strBonus = 50.0
+						m_strBonus = 90.0
 					},
 				]
 			},
@@ -300922,6 +300921,7 @@
 		m_flLateralSpeedGoingUp = 300.0
 		m_flLateralSpeedGoingDown = 220.0
 		m_flSpinRateGoingDownDegreesPerSec = 420.0
+		m_flMaxPossibleFlyHeight = 1800
 		m_strCastDelaySound = soundevent:"Deadpack.Deal.Closer.Cast.Delay"
 		m_strCastSound = soundevent:"Deadpack.Deal.Closer.Cast"
 		m_AutoCastDelayModifier = subclass:
@@ -300937,18 +300937,18 @@
 			[
 				{
 					x = 0.0
-					y = 0.1
+					y = 0.3
 					m_flSlopeIncoming = 0.0
 					m_flSlopeOutgoing = 0.0
 				},
 				{
-					x = 19.67339
-					y = 0.1
-					m_flSlopeIncoming = 0.002375
-					m_flSlopeOutgoing = 0.002375
+					x = 10.0
+					y = 0.3
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 0.0
 				},
 				{
-					x = 280.0
+					x = 160.0
 					y = 1.0
 					m_flSlopeIncoming = 0.0
 					m_flSlopeOutgoing = 0.0
@@ -300970,7 +300970,7 @@
 				},
 			]
 			m_vDomainMins = [ 0.0, 0.05 ]
-			m_vDomainMaxs = [ 280.0, 1.0 ]
+			m_vDomainMaxs = [ 160.0, 1.0 ]
 		}
 	}
 	ability_deadpack_flamethrower = 

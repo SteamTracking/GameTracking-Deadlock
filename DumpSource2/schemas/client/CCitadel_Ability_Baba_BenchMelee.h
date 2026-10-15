@@ -12,5 +12,6 @@ class CCitadel_Ability_Baba_BenchMelee : public C_CitadelBaseAbility
 	bool m_bDiveApplied;
 	Vector m_vDashStartVelocity;
 	bool m_bAttackImpulseApplied;
+	int32 m_nAirborneAttackImpulses;
 	QAngle m_angForced;
 };
