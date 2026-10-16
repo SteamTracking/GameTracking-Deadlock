@@ -204,11 +204,11 @@ CitadelPostGameScoreboardNew
 {
 	width: 48px;
 	height: 48px;
-	background-image: url("s2r://panorama/images/icons/icon_thumbsup.vsvg");
+	background-image: url("s2r://panorama/images/post_game/cursor_commend_psd.vtex");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-size: 32% 32%;
+	background-size: contain;
 	wash-color: offWhite;
 	opacity: 1;
 	margin-bottom: 4px;
@@ -219,45 +219,39 @@ CitadelPostGameScoreboardNew
 	animation-name: CommendPulse;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
+	transition-property: pre-transform-scale2d, opacity;
+	transition-duration: 0.4s;
+	pre-transform-scale2d: 0.2;
+	transition-delay: 2s;
 }
 
 @keyframes 'CommendPulse'
 {
 	0%
 	{
-		pre-transform-scale2d: 0.95;
-		opacity: 0.15;
+		pre-transform-scale2d: 0.84;
+		opacity: 0.8;
 	}
 	
 	50%
 	{
-		pre-transform-scale2d: 1.05;
-		opacity: 0.3;
+		pre-transform-scale2d: .9;
+		opacity: 1;
 	}
 	
 	100%
 	{
-		pre-transform-scale2d: 0.95;
-		opacity: 0.15;
+		pre-transform-scale2d: 0.84;
+		opacity: 0.8;
 	}
 	
-}
-
-#Team1 .GotCommendedIcon
-{
-	wash-color: team1Color;
-	img-shadow: 0px 0px 6px #000000cc;
-}
-
-#Team2 .GotCommendedIcon
-{
-	wash-color: team2Color;
-	img-shadow: 0px 0px 6px #000000cc;
 }
 
 .Player .GotCommendedIcon.CommendColumn
 {
 	visibility: collapse;
+	opacity: 0;
+	pre-transform-scale2d: 0.2;
 }
 
 .Player.IsLocalPlayer #LocalPlayerIdentifier
@@ -275,24 +269,6 @@ CitadelPostGameScoreboardNew
 	pre-transform-rotate2d: 90deg;
 	brightness: 1.5;
 	saturation: 0.96;
-}
-
-#CommendPlayerButton
-{
-	vertical-align: bottom;
-	tooltip-position: bottom;
-	background-color: offWhite&05;
-	pre-transform-scale2d: 0.7;
-}
-
-#CommendPlayerButton:hover
-{
-	pre-transform-scale2d: 0.8;
-}
-
-#CommendPlayerButton:active
-{
-	sound: "UI.CommendConfirmation";
 }
 
 #Team1 #LocalPlayerIdentifier
@@ -864,6 +840,62 @@ CitadelPostGameScoreboardNew
 .CanCommendPlayers .Player.TotalsRow
 {
 	margin-left: 376px;
+}
+
+#PlayerCommendContainer
+{
+	ignore-parent-flow: true;
+	horizontal-align: center;
+	vertical-align: top;
+	visibility: collapse;
+}
+
+.CanCommendPlayers #PlayerCommendContainer
+{
+	visibility: visible;
+}
+
+#CommendPlayerButton
+{
+	width: 48px;
+	height: 48px;
+	horizontal-align: center;
+	background-size: contain;
+	wash-color: offWhite;
+	transition-property: brightness, pre-transform-scale2d;
+	transition-duration: 0.08s;
+	transition-timing-function: ease-in-out;
+	background-image: url("s2r://panorama/images/post_game/cursor_commend_psd.vtex");
+	pre-transform-scale2d: 0.8;
+	saturation: 0;
+}
+
+#CommendPlayerButton:active
+{
+	sound: "UI.CommendConfirmation";
+	pre-transform-scale2d: 0.2;
+}
+
+.CanCommendPlayers .localplayer #PlayerCommendContainer,.CanCommendPlayers .localplayer.PlayerSnippet:hover #PlayerCommendContainer,.CanCommendPlayers .localplayer.Selected #PlayerCommendContainer
+{
+	opacity: 1;
+}
+
+.CanReportPlayers #CommendPlayerButton:hover
+{
+	pre-transform-scale2d: 0.88;
+	saturation: 1;
+	opacity: 0.8;
+}
+
+.CanReportPlayers #CommendPlayerButton
+{
+	opacity: 0.05;
+}
+
+.botplayer #CommendPlayerButton,.localplayer #CommendPlayerButton
+{
+	visibility: collapse;
 }
 
 .Player.TotalsRow

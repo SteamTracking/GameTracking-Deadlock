@@ -5,7 +5,7 @@
 		<include src="s2r://panorama/styles/hud_quickbuy_entry.vcss" />
 	</styles>
 	<Panel class="HudQuickbuy" acceptsfocus="false">
-		<GlobalClassListener classes="gStreetBrawl gQuickbuyShopShowQueue" />
+		<GlobalClassListener classes="gStreetBrawl gQuickbuyShopShowQueue gHighUnspentSouls" />
 		<Panel class="EmptyContents HudQuickbuyElement">
 			<Panel class="PurchaseDisabledContainer">
 				<Panel class="purchasingDisabledX disabledX1" />
@@ -15,6 +15,11 @@
 			<Panel class="rightClick" />
 		</Panel>
 		<Panel id="HudMini" class="HudQuickbuyElement">
+			<Panel id="HudMiniFill" hittest="false" />
+			<Panel class="ItemsBlockedReason" hittest="false">
+				<Label class="SlotsFullLabel" text="#Citadel_Hud_Quickbuy_Exceeds_Slots" />
+				<Label class="SlotsLockedLabel" text="#Citadel_Hud_Quickbuy_ItemSlotsLocked" />
+			</Panel>
 			<Panel id="HudMiniContents">
 				<Panel class="PurchaseDisabledContainer">
 					<Panel class="purchasingDisabledX disabledX1" />

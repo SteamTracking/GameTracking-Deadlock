@@ -9,6 +9,7 @@ class STeamFOWEntity
 	bool m_bBackdoorProtectionActive;
 	GameTick_t m_nTickHidden;
 	CUtlString m_strCSSClass;
+	CEntityIndex m_nOwnerOnlyEntIndex;
 	uint8 m_nHealthPercent;
 	uint8 m_nPositionX;
 	uint8 m_nPositionY;

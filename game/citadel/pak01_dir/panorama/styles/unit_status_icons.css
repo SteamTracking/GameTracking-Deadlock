@@ -1390,3 +1390,43 @@ CitadelHudTopBar #StatusEffectsBorder
 	wash-color: offWhite;
 }
 
+.statusEffect.nurse_leech_eating
+{
+	pre-transform-scale2d: 1.3, 1.3;
+}
+
+.statusEffect.nurse_leech_eating #StatusEffectsBorder
+{
+	wash-color: #ff1f3d;
+}
+
+.statusEffect.nurse_leech_eating .statusEffectContainer
+{
+	animation-name: nurse_leech_eating_pulse;
+	animation-duration: 0.6s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes 'nurse_leech_eating_pulse'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+		brightness: 1;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1.15, 1.15;
+		brightness: 1.6;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1;
+		brightness: 1;
+	}
+	
+}
+

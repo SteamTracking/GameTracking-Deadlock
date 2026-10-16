@@ -8,6 +8,7 @@ class CCitadel_Ability_Familiar_HelpingHandsVData : public CitadelAbilityVData
 	CEmbeddedSubclass< CCitadelModifier > m_InfestModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_InfestWaitingModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_InfestBarrierModifier;
+	CEmbeddedSubclass< CCitadelModifier > m_InfestOwnerWatcherModifier;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strHelperShootSound;
 	CSoundEventName m_strHelperSpawnSound;

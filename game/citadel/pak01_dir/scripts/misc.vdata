@@ -288,6 +288,43 @@
 		m_OtherRejectSound = soundevent:"Tough.Crate.Reject.Other"
 		m_sMeleeDamageSound = soundevent:"Tough.Crate.Prop.Impact"
 	}
+	citadel_breakable_prop_tough_crate_hideout = 
+	{
+		_class = "citadel_breakable_prop_hideout"
+		m_flRespawnTime = 180.0
+		m_iHealth = 1
+		m_bBreakOnDodgeTouch = false
+		m_bSolidAfterDeath = false
+		m_bRenderAfterDeath = false
+		m_bDamagedByAbilities = false
+		m_bDamagedByMelee = true
+		m_bDamagedByBullets = false
+		m_flInitialSpawnTime = 180.0
+		m_flPowerupDropChance = 100.0
+		m_bDamagedBySlide = false
+		_base = "citadel_breakable_prop_tough_crate"
+		m_eRollType = "ECitadelRandomRoll_BreakableGoldPickup"
+		m_hModel = resource_name:"models/items/item_crate_tough_2.vmdl"
+		m_strHitSequenceName = "hit_tough_2"
+		m_flBreakDebrisSpeed = 150.0
+		m_bIsMantleable = true
+		m_sBreakSound = soundevent:"Tough.Crate.Break"
+		m_sSpawnSound = soundevent:"Wood.Crate.Spawn"
+		m_sMeleeRejectSound = soundevent:"Tough.Crate.Reject.Melee"
+		m_bHeavyMeleeOnly = true
+		m_nMeleeHitsToBreak = 1
+		m_nHeavyMeleeHitCount = 1
+		m_bNoMeleeCleave = true
+		m_mapPickupChances = 
+		{
+			big_gold_pickup = 1.0
+		}
+		m_flOutlineRadius = 10.0
+		m_colorOutline = [ 50, 205, 50 ]
+		m_OtherRejectSound = soundevent:"Tough.Crate.Reject.Other"
+		m_sMeleeDamageSound = soundevent:"Tough.Crate.Prop.Impact"
+		m_strLocInteractableString = "#Citadel_Hideout_HeavyCrate"
+	}
 	citadel_breakable_bell_chinatown = 
 	{
 		_class = "citadel_breakable_prop"
@@ -3822,6 +3859,771 @@
 		m_flOutlineRange = 2000.0
 		m_OutlineColor = [ 193, 245, 81, 255 ]
 		m_friendlyModelParticle = resource_name:""
+	}
+	pickup_artist_drawing_base = 
+	{
+		_class = "citadel_pickup_artist_drawing"
+		m_flPickupRadius = 
+		{
+			m_flBase = 200.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_friendlyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_enemyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_gainedParticle = resource_name:"particles/abilities/artist/artist_pickup_gained.vpcf"
+		m_hModel = resource_name:""
+		m_sSpawnSound = soundevent:"Powerup.Spawn.Generic"
+		m_flPickupExpirationDuration = 
+		{
+			m_flBase = 20.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_flParticleRadius = 1.5
+		m_bShowOnMinimap = false
+		m_sNameLocString = ""
+		m_sPickupSound = soundevent:"Artist.Drawing.Pickup"
+		m_nNameOffset = 60
+		_base = "permanent_pickup_base"
+		m_bIsPermanentPickup = true
+		m_Color = [ 104, 239, 59 ]
+		bPhysicallyDropToTheGroundOnSpawn = true
+		m_fInitialSpawnXYSpeed = [ 85.0, 125.0 ]
+		m_fInitialSpawnZSpeed = [ 30.0, 110.0 ]
+		m_flFallGravity = 1.0
+		m_flHoverOffset = 65.0
+		m_bPicupIsVacuum = true
+		m_eCollectionMethod = "VacuumTrigger"
+		m_bSameTeamOnly = true
+		m_flOutlineRange = 2000.0
+		m_OutlineColor = [ 197, 105, 240, 255 ]
+		m_VacuumToPlayerSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = -16.041637
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = -4004.629639
+				},
+				{
+					x = 0.105087
+					y = -436.874969
+					m_flSlopeIncoming = -4004.629639
+					m_flSlopeOutgoing = 4603.734863
+				},
+				{
+					x = 0.634412
+					y = 2000.0
+					m_flSlopeIncoming = 4603.734863
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, -500.0 ]
+			m_vDomainMaxs = [ 1.0, 2000.0 ]
+		}
+		m_flInitialVacuumUpSpeed = [ 100.0, 100.0 ]
+		m_VacuumInitialVelSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 0.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 3.105128
+				},
+				{
+					x = 0.037948
+					y = 0.117833
+					m_flSlopeIncoming = 7.669573
+					m_flSlopeOutgoing = 7.669573
+				},
+				{
+					x = 0.130385
+					y = 1.0
+					m_flSlopeIncoming = 0.423242
+					m_flSlopeOutgoing = 0.423242
+				},
+				{
+					x = 0.356127
+					y = 0.2525
+					m_flSlopeIncoming = -2.70552
+					m_flSlopeOutgoing = -2.70552
+				},
+				{
+					x = 0.5
+					y = 0.0
+					m_flSlopeIncoming = -1.755022
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.0 ]
+			m_vDomainMaxs = [ 0.5, 1.0 ]
+		}
+		m_flInitialVacuumSideSpeed = [ 200.0, 200.0 ]
+	}
+	pickup_artist_drawing_brawler = 
+	{
+		_class = "citadel_pickup_artist_drawing"
+		m_flPickupRadius = 
+		{
+			m_flBase = 200.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_friendlyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_enemyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_gainedParticle = resource_name:"particles/abilities/artist/artist_pickup_gained.vpcf"
+		m_hModel = resource_name:""
+		m_sSpawnSound = soundevent:"Powerup.Spawn.Generic"
+		m_flPickupExpirationDuration = 
+		{
+			m_flBase = 20.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_flParticleRadius = 1.5
+		m_bShowOnMinimap = false
+		m_sNameLocString = ""
+		m_sPickupSound = soundevent:"Artist.Drawing.Pickup"
+		m_nNameOffset = 60
+		_base = "pickup_artist_drawing_base"
+		m_bIsPermanentPickup = true
+		m_Color = [ 104, 239, 59 ]
+		bPhysicallyDropToTheGroundOnSpawn = true
+		m_fInitialSpawnXYSpeed = [ 85.0, 125.0 ]
+		m_fInitialSpawnZSpeed = [ 30.0, 110.0 ]
+		m_flFallGravity = 1.0
+		m_flHoverOffset = 65.0
+		m_bPicupIsVacuum = true
+		m_eCollectionMethod = "VacuumTrigger"
+		m_bSameTeamOnly = true
+		m_flOutlineRange = 2000.0
+		m_OutlineColor = [ 197, 105, 240, 255 ]
+		m_VacuumToPlayerSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = -16.041637
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = -4004.629639
+				},
+				{
+					x = 0.105087
+					y = -436.874969
+					m_flSlopeIncoming = -4004.629639
+					m_flSlopeOutgoing = 4603.734863
+				},
+				{
+					x = 0.634412
+					y = 2000.0
+					m_flSlopeIncoming = 4603.734863
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, -500.0 ]
+			m_vDomainMaxs = [ 1.0, 2000.0 ]
+		}
+		m_flInitialVacuumUpSpeed = [ 100.0, 100.0 ]
+		m_VacuumInitialVelSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 0.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 3.105128
+				},
+				{
+					x = 0.037948
+					y = 0.117833
+					m_flSlopeIncoming = 7.669573
+					m_flSlopeOutgoing = 7.669573
+				},
+				{
+					x = 0.130385
+					y = 1.0
+					m_flSlopeIncoming = 0.423242
+					m_flSlopeOutgoing = 0.423242
+				},
+				{
+					x = 0.356127
+					y = 0.2525
+					m_flSlopeIncoming = -2.70552
+					m_flSlopeOutgoing = -2.70552
+				},
+				{
+					x = 0.5
+					y = 0.0
+					m_flSlopeIncoming = -1.755022
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.0 ]
+			m_vDomainMaxs = [ 0.5, 1.0 ]
+		}
+		m_flInitialVacuumSideSpeed = [ 200.0, 200.0 ]
+		m_sBuffTypeLocString = "#Citadel_Graph_PermanentBuff_ArtistBrawler"
+		m_ArtistModifer = subclass:
+		{
+			_class = "modifier_artist_still_life_pickup"
+			_my_subclass_name = "buff"
+			m_vecScriptValues = 
+			[
+				{
+					m_eModifierValue = "MODIFIER_VALUE_HEALTH_MAX"
+					m_value = 20.0
+				},
+			]
+			m_strBonusIconCSSClass = "Health"
+			m_nEnabledStateMask = "MODIFIER_STATE_ARTIST_PERMANENT_BUFF"
+		}
+	}
+	pickup_artist_drawing_mystic = 
+	{
+		_class = "citadel_pickup_artist_drawing"
+		m_flPickupRadius = 
+		{
+			m_flBase = 200.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_friendlyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_enemyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_gainedParticle = resource_name:"particles/abilities/artist/artist_pickup_gained.vpcf"
+		m_hModel = resource_name:""
+		m_sSpawnSound = soundevent:"Powerup.Spawn.Generic"
+		m_flPickupExpirationDuration = 
+		{
+			m_flBase = 20.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_flParticleRadius = 1.5
+		m_bShowOnMinimap = false
+		m_sNameLocString = ""
+		m_sPickupSound = soundevent:"Artist.Drawing.Pickup"
+		m_nNameOffset = 60
+		_base = "pickup_artist_drawing_base"
+		m_bIsPermanentPickup = true
+		m_Color = [ 126, 46, 238 ]
+		bPhysicallyDropToTheGroundOnSpawn = true
+		m_fInitialSpawnXYSpeed = [ 85.0, 125.0 ]
+		m_fInitialSpawnZSpeed = [ 30.0, 110.0 ]
+		m_flFallGravity = 1.0
+		m_flHoverOffset = 65.0
+		m_bPicupIsVacuum = true
+		m_eCollectionMethod = "VacuumTrigger"
+		m_bSameTeamOnly = true
+		m_flOutlineRange = 2000.0
+		m_OutlineColor = [ 197, 105, 240, 255 ]
+		m_VacuumToPlayerSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = -16.041637
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = -4004.629639
+				},
+				{
+					x = 0.105087
+					y = -436.874969
+					m_flSlopeIncoming = -4004.629639
+					m_flSlopeOutgoing = 4603.734863
+				},
+				{
+					x = 0.634412
+					y = 2000.0
+					m_flSlopeIncoming = 4603.734863
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, -500.0 ]
+			m_vDomainMaxs = [ 1.0, 2000.0 ]
+		}
+		m_flInitialVacuumUpSpeed = [ 100.0, 100.0 ]
+		m_VacuumInitialVelSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 0.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 3.105128
+				},
+				{
+					x = 0.037948
+					y = 0.117833
+					m_flSlopeIncoming = 7.669573
+					m_flSlopeOutgoing = 7.669573
+				},
+				{
+					x = 0.130385
+					y = 1.0
+					m_flSlopeIncoming = 0.423242
+					m_flSlopeOutgoing = 0.423242
+				},
+				{
+					x = 0.356127
+					y = 0.2525
+					m_flSlopeIncoming = -2.70552
+					m_flSlopeOutgoing = -2.70552
+				},
+				{
+					x = 0.5
+					y = 0.0
+					m_flSlopeIncoming = -1.755022
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.0 ]
+			m_vDomainMaxs = [ 0.5, 1.0 ]
+		}
+		m_flInitialVacuumSideSpeed = [ 200.0, 200.0 ]
+		m_sBuffTypeLocString = "#Citadel_Graph_PermanentBuff_ArtistMystic"
+		m_ArtistModifer = subclass:
+		{
+			_class = "modifier_artist_still_life_pickup"
+			_my_subclass_name = "buff"
+			m_vecScriptValues = 
+			[
+				{
+					m_eModifierValue = "MODIFIER_VALUE_TECH_POWER"
+					m_value = 3.0
+				},
+			]
+			m_strBonusIconCSSClass = "Spirit"
+			m_nEnabledStateMask = "MODIFIER_STATE_ARTIST_PERMANENT_BUFF"
+		}
+	}
+	pickup_artist_drawing_marksman = 
+	{
+		_class = "citadel_pickup_artist_drawing"
+		m_flPickupRadius = 
+		{
+			m_flBase = 200.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_friendlyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_enemyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_gainedParticle = resource_name:"particles/abilities/artist/artist_pickup_gained.vpcf"
+		m_hModel = resource_name:""
+		m_sSpawnSound = soundevent:"Powerup.Spawn.Generic"
+		m_flPickupExpirationDuration = 
+		{
+			m_flBase = 20.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_flParticleRadius = 1.5
+		m_bShowOnMinimap = false
+		m_sNameLocString = ""
+		m_sPickupSound = soundevent:"Artist.Drawing.Pickup"
+		m_nNameOffset = 60
+		_base = "pickup_artist_drawing_base"
+		m_bIsPermanentPickup = true
+		m_Color = [ 238, 129, 45 ]
+		bPhysicallyDropToTheGroundOnSpawn = true
+		m_fInitialSpawnXYSpeed = [ 85.0, 125.0 ]
+		m_fInitialSpawnZSpeed = [ 30.0, 110.0 ]
+		m_flFallGravity = 1.0
+		m_flHoverOffset = 65.0
+		m_bPicupIsVacuum = true
+		m_eCollectionMethod = "VacuumTrigger"
+		m_bSameTeamOnly = true
+		m_flOutlineRange = 2000.0
+		m_OutlineColor = [ 197, 105, 240, 255 ]
+		m_VacuumToPlayerSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = -16.041637
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = -4004.629639
+				},
+				{
+					x = 0.105087
+					y = -436.874969
+					m_flSlopeIncoming = -4004.629639
+					m_flSlopeOutgoing = 4603.734863
+				},
+				{
+					x = 0.634412
+					y = 2000.0
+					m_flSlopeIncoming = 4603.734863
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, -500.0 ]
+			m_vDomainMaxs = [ 1.0, 2000.0 ]
+		}
+		m_flInitialVacuumUpSpeed = [ 100.0, 100.0 ]
+		m_VacuumInitialVelSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 0.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 3.105128
+				},
+				{
+					x = 0.037948
+					y = 0.117833
+					m_flSlopeIncoming = 7.669573
+					m_flSlopeOutgoing = 7.669573
+				},
+				{
+					x = 0.130385
+					y = 1.0
+					m_flSlopeIncoming = 0.423242
+					m_flSlopeOutgoing = 0.423242
+				},
+				{
+					x = 0.356127
+					y = 0.2525
+					m_flSlopeIncoming = -2.70552
+					m_flSlopeOutgoing = -2.70552
+				},
+				{
+					x = 0.5
+					y = 0.0
+					m_flSlopeIncoming = -1.755022
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.0 ]
+			m_vDomainMaxs = [ 0.5, 1.0 ]
+		}
+		m_flInitialVacuumSideSpeed = [ 200.0, 200.0 ]
+		m_sBuffTypeLocString = "#Citadel_Graph_PermanentBuff_ArtistMarksman"
+		m_ArtistModifer = subclass:
+		{
+			_class = "modifier_artist_still_life_pickup"
+			_my_subclass_name = "buff"
+			m_vecScriptValues = 
+			[
+				{
+					m_eModifierValue = "MODIFIER_VALUE_WEAPON_DAMAGE_INCREASE"
+					m_value = 4.0
+				},
+			]
+			m_strBonusIconCSSClass = "WeaponDamage"
+			m_nEnabledStateMask = "MODIFIER_STATE_ARTIST_PERMANENT_BUFF"
+		}
+	}
+	pickup_artist_drawing_assassin = 
+	{
+		_class = "citadel_pickup_artist_drawing"
+		m_flPickupRadius = 
+		{
+			m_flBase = 200.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_friendlyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_enemyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_gainedParticle = resource_name:"particles/abilities/artist/artist_pickup_gained.vpcf"
+		m_hModel = resource_name:""
+		m_sSpawnSound = soundevent:"Powerup.Spawn.Generic"
+		m_flPickupExpirationDuration = 
+		{
+			m_flBase = 20.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_flParticleRadius = 1.5
+		m_bShowOnMinimap = false
+		m_sNameLocString = ""
+		m_sPickupSound = soundevent:"Artist.Drawing.Pickup"
+		m_nNameOffset = 60
+		_base = "pickup_artist_drawing_base"
+		m_bIsPermanentPickup = true
+		m_Color = [ 0, 180, 200 ]
+		bPhysicallyDropToTheGroundOnSpawn = true
+		m_fInitialSpawnXYSpeed = [ 85.0, 125.0 ]
+		m_fInitialSpawnZSpeed = [ 30.0, 110.0 ]
+		m_flFallGravity = 1.0
+		m_flHoverOffset = 65.0
+		m_bPicupIsVacuum = true
+		m_eCollectionMethod = "VacuumTrigger"
+		m_bSameTeamOnly = true
+		m_flOutlineRange = 2000.0
+		m_OutlineColor = [ 197, 105, 240, 255 ]
+		m_VacuumToPlayerSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = -16.041637
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = -4004.629639
+				},
+				{
+					x = 0.105087
+					y = -436.874969
+					m_flSlopeIncoming = -4004.629639
+					m_flSlopeOutgoing = 4603.734863
+				},
+				{
+					x = 0.634412
+					y = 2000.0
+					m_flSlopeIncoming = 4603.734863
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, -500.0 ]
+			m_vDomainMaxs = [ 1.0, 2000.0 ]
+		}
+		m_flInitialVacuumUpSpeed = [ 100.0, 100.0 ]
+		m_VacuumInitialVelSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 0.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 3.105128
+				},
+				{
+					x = 0.037948
+					y = 0.117833
+					m_flSlopeIncoming = 7.669573
+					m_flSlopeOutgoing = 7.669573
+				},
+				{
+					x = 0.130385
+					y = 1.0
+					m_flSlopeIncoming = 0.423242
+					m_flSlopeOutgoing = 0.423242
+				},
+				{
+					x = 0.356127
+					y = 0.2525
+					m_flSlopeIncoming = -2.70552
+					m_flSlopeOutgoing = -2.70552
+				},
+				{
+					x = 0.5
+					y = 0.0
+					m_flSlopeIncoming = -1.755022
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.0 ]
+			m_vDomainMaxs = [ 0.5, 1.0 ]
+		}
+		m_flInitialVacuumSideSpeed = [ 200.0, 200.0 ]
+		m_sBuffTypeLocString = "#Citadel_Graph_PermanentBuff_ArtistAssassin"
+		m_ArtistModifer = subclass:
+		{
+			_class = "modifier_artist_still_life_pickup"
+			_my_subclass_name = "buff"
+			m_vecScriptValues = 
+			[
+				{
+					m_eModifierValue = "MODIFIER_VALUE_MOVEMENT_SPEED_MAX"
+					m_value = 7.874
+				},
+			]
+			m_strBonusIconCSSClass = "MoveSpeed"
+			m_nEnabledStateMask = "MODIFIER_STATE_ARTIST_PERMANENT_BUFF"
+		}
 	}
 	xp_orb = 
 	{

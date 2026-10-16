@@ -26,6 +26,13 @@
 				<Panel id="PropertiesContainer" class="LeftRightFlow" />
 			</Panel>
 		</snippet>
+		<snippet name="BonusEntryHeroIcons">
+			<Panel class="HeroStatCountEntries LeftRightFlow">
+				<Label class="BonusStackCountLabel" text="{i:hero_count}" />
+				<CitadelHeroImage id="HeroImage" class="StackBonus" heroimagestyle="minimap_icon" scaling="contain" />
+				<Panel id="StatIcon" class="InlineAttributeIcon" />
+			</Panel>
+		</snippet>
 	</snippets>
 	<AbilityDetailsPanel class="TopBottomFlow" hittest="false" hittestchildren="true">
 		<GlobalClassListener classes="gDetailView gScoreboardOpen" />
@@ -52,9 +59,12 @@
 		</Panel>
 		<Label id="UpdateTime" text="{s:updateText}" />
 		<Panel id="SectionsContainer" class="TopBottomFlow" />
-		<Panel class="BonusContainer LeftRightFlow">
-			<Label class="BonusDescLabel" text="{s:stack_label}" />
-			<Label id="BonusLabel" text="{i:num_stacks}" />
+		<Panel id="BonusContainerId" class="BonusContainer TopBottomFlow">
+			<Panel id="BonusContainerBaseId" class="LeftRightFlow">
+				<Label class="BonusDescLabel" text="{s:stack_label}" />
+				<Label id="BonusLabel" text="{i:num_stacks}" />
+			</Panel>
+			<Panel id="CustomBonusContainerId" class="LeftRightFlow" />
 		</Panel>
 		<Panel id="BrawlMsg">
 			<Panel class="brawl_icon" />

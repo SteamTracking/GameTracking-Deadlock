@@ -941,6 +941,101 @@
 [
 ]
 
+// CCitadel_Ability_Artist_BouncingPot
+@PointClass base(citadel_base_ability) = ability_artist_bouncingpot
+[
+]
+
+// CCitadel_Ability_Artist_Cloudburst
+@PointClass base(citadel_base_ability) = ability_artist_cloudburst
+[
+]
+
+// CCitadel_Ability_Artist_DamageZone
+@PointClass base(citadel_base_ability) = ability_artist_damagezone
+[
+]
+
+// CCitadel_Ability_Artist_EmpowerAbilities
+@PointClass base(citadel_base_ability) = ability_artist_empowerabilities
+[
+]
+
+// CCitadel_Ability_Artist_HealingBarrier
+@PointClass base(citadel_base_ability) = ability_artist_healingbarrier
+[
+]
+
+// CCitadel_Ability_Artist_HomingProjectile
+@PointClass base(citadel_base_ability) = ability_artist_homingbrush
+[
+]
+
+// CCitadel_Ability_Artist_InkActive
+@PointClass base(citadel_base_ability) = ability_artist_inkactive
+[
+]
+
+// CCitadel_Ability_Artist_InkBrush
+@PointClass base(citadel_base_ability) = ability_artist_inkbrush
+[
+]
+
+// CCitadel_Ability_Artist_LionDance
+@PointClass base(citadel_base_ability) = ability_artist_liondance
+[
+]
+
+// CCitadel_Ability_Artist_MultiHit
+@PointClass base(citadel_base_ability) = ability_artist_multihit
+[
+]
+
+// CCitadel_Ability_Artist_Pillar
+@PointClass base(citadel_base_ability) = ability_artist_pillar
+[
+]
+
+// CCitadel_Ability_Artist_ProjectileWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = ability_artist_projectileweapon
+[
+]
+
+// CCitadel_Ability_Artist_PullBrush
+@PointClass base(citadel_base_ability) = ability_artist_pullbrush
+[
+]
+
+// CCitadel_Ability_Artist_RideTiger
+@PointClass base(citadel_base_ability) = ability_artist_ridetiger
+[
+]
+
+// CCitadel_Ability_Artist_RollingProjectile
+@PointClass base(citadel_base_ability) = ability_artist_rollingprojectile
+[
+]
+
+// CCitadel_Ability_Artist_RootingProjectile
+@PointClass base(citadel_base_ability) = ability_artist_rootingprojectile
+[
+]
+
+// CCitadel_Ability_Artist_ShieldProjectile
+@PointClass base(citadel_base_ability) = ability_artist_shieldprojectile
+[
+]
+
+// CCitadel_Ability_Artist_Tether
+@PointClass base(citadel_base_ability) = ability_artist_tether
+[
+]
+
+// CCitadel_Ability_Artist_TransformingProjectile
+@PointClass base(citadel_base_ability) = ability_artist_transforming_projectile
+[
+]
+
 // CCitadel_Ability_Baba_BenchMelee
 @PointClass base(citadel_base_ability) = ability_baba_bench_melee
 [
@@ -2071,6 +2166,11 @@
 [
 ]
 
+// CCitadel_Projectile_ArtistGun
+@PointClass base(citadel_projectile) = artistgun_projectile
+[
+]
+
 // CCitadel_Projectile_BubblingBrew
 @PointClass base(citadel_projectile) = baba_bubblingbrew_projectile
 [
@@ -2188,6 +2288,31 @@
 
 // CCitadel_Ability_Cadence_SilenceContraptions
 @PointClass base(citadel_dash_cast_ability) = cadence_ability_silencecontraptions
+[
+]
+
+// CCitadel_Ability_Artist_BambooGrove
+@PointClass base(citadel_base_ability) = citadel_ability_artist_bamboogrove
+[
+]
+
+// CCitadel_Ability_Artist_FlyingLion
+@PointClass base(citadel_base_ability) = citadel_ability_artist_flyinglion
+[
+]
+
+// CCitadel_Ability_Artist_PrimaryWeapon
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_artist_primaryweapon
+[
+]
+
+// CCitadel_Ability_Artist_PrimaryWeapon2
+@PointClass base(CCitadel_Ability_PrimaryWeapon) = citadel_ability_artist_primaryweapon2
+[
+]
+
+// CCitadel_Ability_Artist_StoneTurtle
+@PointClass base(citadel_base_ability) = citadel_ability_artist_stoneturtle
 [
 ]
 
@@ -2731,6 +2856,26 @@
 [
 ]
 
+// C_Citadel_Artist_SolidBlocker
+@PointClass base(baseanimgraph) = citadel_artist_solidblocker
+[
+]
+
+// C_Citadel_Artist_StrokeBlocker
+@PointClass base(baseanimgraph) = citadel_artist_strokeblocker
+[
+	stroke_start(vector) // FIELD_POSITION_VECTOR m_vStrokeStart
+	stroke_end(vector) // FIELD_POSITION_VECTOR m_vStrokeEnd
+	stroke_radius(float) // FIELD_FLOAT32 m_flStrokeRadius
+	lifetime(float) // FIELD_FLOAT32 m_flLifetime
+	owning_ability(target_destination) // FIELD_EHANDLE m_hOwningAbility
+]
+
+// C_Citadel_Artist_VisionBlocker
+@PointClass base(baseanimgraph) = citadel_artist_visionblocker
+[
+]
+
 // CCitadelHeroLoader
 @PointClass base(C_BaseEntity) = citadel_base_hero
 [
@@ -2759,6 +2904,11 @@
 
 // C_Citadel_Bounce_Pad
 @PointClass base(citadel_animating_model_entity) = citadel_bounce_pad
+[
+]
+
+// C_Citadel_BreakableProp_Hideout
+@PointClass base(C_Citadel_BreakableProp) = citadel_breakable_prop_hideout
 [
 ]
 
@@ -3119,6 +3269,11 @@
 	trigger_distance_meters(float) // FIELD_FLOAT32 m_flTriggerDistanceMeters
 	output OnClose(void)
 	output OnOpen(void)
+]
+
+// CCitadel_Pickup_ArtistDrawing
+@PointClass base(C_Citadel_Pickup) = citadel_pickup_artist_drawing
+[
 ]
 
 // CBasePlayerController, ECF_SPAWN_GROUP_HANDLE_INVALID
@@ -5213,6 +5368,16 @@
 
 // CCitadel_Ability_Priest_Flashbang
 @PointClass base(citadel_base_ability) = priest_flashbang
+[
+]
+
+// CProjectile_Artist_BouncingPot
+@PointClass base(citadel_projectile) = projectile_artist_bouncingpot
+[
+]
+
+// C_Projectile_Artist_RollingProjectile
+@PointClass base(citadel_projectile) = projectile_artist_rollingprojectile
 [
 ]
 

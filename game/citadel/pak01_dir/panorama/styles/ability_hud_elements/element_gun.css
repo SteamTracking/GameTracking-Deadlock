@@ -736,6 +736,17 @@
 	transition-duration: 0.124s;
 }
 
+.nurse_needles .weapon_ammo
+{
+	color: armorColor;
+	text-shadow: 0px 0px 6px armorColor;
+}
+
+.nurse_needles .weapon_ammo_max
+{
+	color: armorColor&40;
+}
+
 .lowAmmo .weapon_ammo
 {
 	color: colorEnemy;
@@ -911,6 +922,52 @@
 .auto_fire_paused #auto_fire_indicator
 {
 	opacity: 0.5;
+}
+
+#healing_mode_indicator
+{
+	y: 120px;
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 8px 16px;
+	color: armorColor;
+	text-shadow: 0px 0px 4px 1.0 armorColor;
+	visibility: collapse;
+	animation-name: healing_mode_pulse;
+	animation-duration: 1.2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'healing_mode_pulse'
+{
+	0%
+	{
+		opacity: 1;
+		text-shadow: 0px 0px 4px 1.0 armorColor;
+	}
+	
+	50%
+	{
+		opacity: 0.45;
+		text-shadow: 0px 0px 2px 0.5 armorColor;
+	}
+	
+	100%
+	{
+		opacity: 1;
+		text-shadow: 0px 0px 4px 1.0 armorColor;
+	}
+	
+}
+
+.nurse_needles #healing_mode_indicator
+{
+	visibility: visible;
 }
 
 .hide_clip_ammo #auto_fire_indicator,.hide_clip_ammo #ammo_panel,.hide_clip_status_and_ammo #ammo_panel,.hide_clip_status_and_ammo #attack_delayed_progress_bar
@@ -1293,6 +1350,39 @@
 }
 
 .vampirebat .crosshair__pipborder
+{
+	visibility: collapse;
+}
+
+.nurse_needles .crosshair__pip--black
+{
+	visibility: collapse;
+}
+
+.nurse_needles .crosshair__dot
+{
+	opacity: 1;
+	background-image: url("s2r://panorama/images/hud/crosshair/reticlepip_nurse_psd.vtex");
+	background-size: 100% 100%;
+	background-img-opacity: 1.0;
+	background-color: armorColor;
+	background-color-opacity: 0.0;
+	height: 128px;
+	width: 128px;
+	ui-scale: 100%;
+}
+
+.nurse_needles .crosshair__dotborder
+{
+	visibility: collapse;
+}
+
+.nurse_needles .crosshair__pipborder
+{
+	visibility: collapse;
+}
+
+.nurse_needles .left,.nurse_needles .top
 {
 	visibility: collapse;
 }

@@ -4,7 +4,7 @@ class CCitadel_Ability_Chessmaster_MoveChessPieceVData : public CitadelAbilityVD
 	// MPropertyStartGroup = "Gameplay"
 	CUtlOrderedMap< EChessPieceType, CSubclassName< 4 > > m_mapChessAbilities;
 	// MPropertyStartGroup = "Modifiers"
-	CEmbeddedSubclass< CCitadelModifier > m_MoveModifier;
+	CEmbeddedSubclass< CCitadelModifier > m_MoveBishopModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_MoveAllyModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_MoveKingModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_MoveQueenModifier;
@@ -19,7 +19,6 @@ class CCitadel_Ability_Chessmaster_MoveChessPieceVData : public CitadelAbilityVD
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_TargetPreviewQueenParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_TargetPreviewKingParticle;
 	// MPropertyStartGroup = "Sounds"
-	CSoundEventName m_strHitConfirmSound;
 	CSoundEventName m_strMoveBishopSound;
 	CSoundEventName m_strMoveKnightSound;
 	CSoundEventName m_strMoveQueenSound;
@@ -32,9 +31,12 @@ class CCitadel_Ability_Chessmaster_MoveChessPieceVData : public CitadelAbilityVD
 	float32 m_flPassiveTargetingNearbyCasterRadius; // = 100
 	float32 m_flPassiveTargetingNearbyCrosshairRadius; // = 100
 	float32 m_flSpawnPositionNavMeshSearchRange; // = 100
-	bool m_bCreateSatVolume;
-	bool m_bMoveAllFixedDistance;
 	bool m_bSweepToDestination;
+	bool m_bCreateSatVolume;
+	bool m_bAllowSelfTarget; // = true
+	bool m_bAllowNonSelfTarget; // = true
+	bool m_bDrawUIElements; // = true
 	bool m_bDebug;
+	bool m_bApplyMoveCooldown;
 	CUtlVector< Class_T > m_vecPossibleClasses;
 };

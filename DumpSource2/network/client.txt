@@ -523,6 +523,76 @@ CCitadel_Ability_AbilityName
 
 CCitadel_Ability_Afterburn
 
+CCitadel_Ability_Artist_BambooGrove
+	bool m_bActive
+
+CCitadel_Ability_Artist_BouncingPot
+
+CCitadel_Ability_Artist_Cloudburst
+
+CCitadel_Ability_Artist_DamageZone
+
+CCitadel_Ability_Artist_EmpowerAbilities
+	bool m_bActive
+
+CCitadel_Ability_Artist_FlyingLion
+	bool m_bFlying (user groups: LocalPlayerOwnerAndObserversExclusive)
+
+CCitadel_Ability_Artist_HealingBarrier
+
+CCitadel_Ability_Artist_HomingProjectile
+	EHANDLE m_vecDeployedProjectiles (sent as: ehandle)
+	GameTime_t m_tShootingLockoutEndTime (sent as: float32)
+
+CCitadel_Ability_Artist_InkActive
+
+CCitadel_Ability_Artist_InkBrush
+	bool m_bButtonDown
+	float m_flAccumulatedDrawDistance
+
+CCitadel_Ability_Artist_LionDance
+	bool m_bActive
+	int m_iRemainingShots
+
+CCitadel_Ability_Artist_MultiHit
+	bool m_bActive
+	int m_iCurrentHits
+
+CCitadel_Ability_Artist_Pillar
+
+CCitadel_Ability_Artist_PrimaryWeapon
+	int m_iCurrentShotCount
+
+CCitadel_Ability_Artist_PrimaryWeapon2
+
+CCitadel_Ability_Artist_ProjectileWeapon
+	int m_iCurrentShotCount
+
+CCitadel_Ability_Artist_PullBrush
+	bool m_bPainting
+	GameTime_t m_tStopPaintingTime (sent as: float32)
+
+CCitadel_Ability_Artist_RideTiger
+	bool m_bIsEnabled
+
+CCitadel_Ability_Artist_RollingProjectile
+	bool m_bActive
+	CHandle< CCitadelProjectile> m_hDeployedProjectile (sent as: ehandle)
+
+CCitadel_Ability_Artist_RootingProjectile
+
+CCitadel_Ability_Artist_ShieldProjectile
+
+CCitadel_Ability_Artist_StoneTurtle
+
+CCitadel_Ability_Artist_Tether
+	bool m_bSuccess
+	GameTime_t m_tLastSuccessfulLookTime (sent as: float32)
+	EHANDLE m_pSelectedTarget (sent as: ehandle)
+	int m_iPermanentBuffCount
+
+CCitadel_Ability_Artist_TransformingProjectile
+
 CCitadel_Ability_Baba_BenchMelee
 	EBabaBenchMeleeState m_eState
 	EBabaBenchMeleeAttackType m_eAttackType
@@ -1270,7 +1340,7 @@ CCitadel_Ability_Priest_WeaponSwap
 CCitadel_Ability_PrimaryWeapon
 	GameTime_t m_flLastReloadStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flNextPrimaryAttack (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
-	int32 m_iClip (serializer: minusone; priority: 32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int32 m_iClip (serializer: minusone; priority: 32)
 	int32 m_iBonusClip (serializer: minusone; priority: 32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	int32 m_nNumContinuousShots (priority: 32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flContinuousShotStartTime (sent as: float32; user groups: LocalWeaponExclusive)
@@ -1989,10 +2059,14 @@ CCitadel_NewYears_Fireworks
 
 CCitadel_Omnicharge_Pendant
 
+CCitadel_Pickup_ArtistDrawing
+
 CCitadel_Priest_SlideTrap
 	float m_flRangeAtCast
 	bool m_bArmed
 	bool m_bMoving
+
+CCitadel_Projectile_ArtistGun
 
 CCitadel_Projectile_BatSwarmExtraProjectile
 
@@ -2532,6 +2606,8 @@ CPointOrient
 
 CPointTemplate
 
+CProjectile_Artist_BouncingPot
+
 CProjectile_Boho_BouncyProjectile
 
 CProjectile_BookwormDragon_Projectile
@@ -3005,7 +3081,7 @@ C_CitadelPlayerPawn
 	CWrappedInterpolatedVar<QAngle> m_angClientCamera (encoder: qangle; priority: 32; change callbacks: angClientCameraChanged; bit count: 11)
 	CMsgLaneColor m_eZipLineLaneColor
 	int8 m_nMapDistrictLocation (user groups: LocalPlayerExclusive)
-	int32 m_nLevel (change callbacks: ObservableRecv_m_nLevel, LevelChanged)
+	int32 m_nLevel (change callbacks: ObservableRecv_m_nLevel)
 	int32 m_nCurrencies (priority: 32; change callbacks: CurrenciesChanged)
 	int32 m_nSpentCurrencies
 	int m_nNumHeroChangesUsed (user groups: LocalPlayerExclusive)
@@ -3105,6 +3181,20 @@ C_CitadelViscousBall
 
 C_CitadelZiplinePath
 
+C_Citadel_Artist_SolidBlocker
+	GameTime_t m_flTurnSolidTime (sent as: float32)
+
+C_Citadel_Artist_StrokeBlocker
+	VectorWS m_vStrokeStart (encoder: coord)
+	VectorWS m_vStrokeEnd (encoder: coord)
+	CHandle< CCitadel_Artist_StrokeBlocker> m_hPrevBlocker (sent as: ehandle)
+	CHandle< CCitadel_Artist_StrokeBlocker> m_hNextBlocker (sent as: ehandle)
+	CHandle< C_BaseEntity > m_vecOverlap (sent as: ehandle; change callbacks: OverlapChanged)
+
+C_Citadel_Artist_VisionBlocker
+	GameTime_t m_flTurnSolidTime (sent as: float32)
+	GameTime_t m_flTearDownStartTime (sent as: float32; change callbacks: OnTearDownTimeChanged)
+
 C_Citadel_BaseProp_MidStairs
 	EMidStairsLocation_t m_eLocation
 
@@ -3117,6 +3207,8 @@ C_Citadel_BreakableProp
 	include by name: m_lifeState, m_iMaxHealth, m_iHealth
 	int m_nGoldCost (change callbacks: OnGoldCostChanged)
 	int m_nMeleeHitsTaken
+
+C_Citadel_BreakableProp_Hideout
 
 C_Citadel_CatAnimating
 
@@ -3975,6 +4067,8 @@ C_Precipitation
 
 C_PrecipitationBlocker
 
+C_Projectile_Artist_RollingProjectile
+
 C_Projectile_Boho_SkipGrenade
 
 C_Projectile_ChessMaster_Fork_Projectile
@@ -4413,6 +4507,7 @@ STeamFOWEntity
 	bool m_bBackdoorProtectionActive
 	GameTick_t m_nTickHidden (sent as: int32)
 	CUtlString m_strCSSClass
+	CEntityIndex m_nOwnerOnlyEntIndex (sent as: int32)
 	uint8 m_nHealthPercent
 	uint8 m_nPositionX (encoder: fixed8; priority: 32)
 	uint8 m_nPositionY (encoder: fixed8; priority: 32)

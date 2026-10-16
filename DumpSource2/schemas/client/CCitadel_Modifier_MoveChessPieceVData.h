@@ -9,7 +9,6 @@ class CCitadel_Modifier_MoveChessPieceVData : public CCitadelModifierVData
 	// MPropertyStartGroup = "Gameplay"
 	CPiecewiseCurve m_MovementCurve;
 	CPiecewiseCurve m_VerticalOffsetCurve;
-	CPiecewiseCurve m_LeanCurve;
 	bool m_bDebug;
 	bool m_bMoveOnRightTriangle;
 	bool m_bMoveOnDiagonal;

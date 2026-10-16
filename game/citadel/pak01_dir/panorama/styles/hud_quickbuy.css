@@ -30,6 +30,91 @@
 	
 }
 
+@keyframes 'quickbuy_blocked_pulse'
+{
+	0%
+	{
+		brightness: 0.9;
+		box-shadow: 0px 0px 6px 2.0 warningRed&88;
+	}
+	
+	50%
+	{
+		brightness: 1.2;
+		box-shadow: 0px 0px 20px 3.0 warningRed;
+	}
+	
+	100%
+	{
+		brightness: 0.9;
+		box-shadow: 0px 0px 6px 2.0 warningRed&88;
+	}
+	
+}
+
+@keyframes 'quickbuy_blocked_reason_bounce'
+{
+	0%
+	{
+		transform: translateY( 0px );
+	}
+	
+	30%
+	{
+		transform: translateY( -10px );
+	}
+	
+	60%
+	{
+		transform: translateY( 0px );
+	}
+	
+	80%
+	{
+		transform: translateY( -3px );
+	}
+	
+	100%
+	{
+		transform: translateY( 0px );
+	}
+	
+}
+
+@keyframes 'quickbuy_high_souls_bounce'
+{
+	0%
+	{
+		transform: translateY( 0px );
+	}
+	
+	2%
+	{
+		transform: translateY( -14px );
+	}
+	
+	4%
+	{
+		transform: translateY( 0px );
+	}
+	
+	5.5%
+	{
+		transform: translateY( -5px );
+	}
+	
+	7%
+	{
+		transform: translateY( 0px );
+	}
+	
+	100%
+	{
+		transform: translateY( 0px );
+	}
+	
+}
+
 #QuickbuyQueue
 {
 	width: 330px;
@@ -128,10 +213,20 @@
 
 #HudMini
 {
+	height: 125px;
+	width: 90px;
 	opacity: 0.2;
-	width: 74px;
-	height: 94px;
+	horizontal-align: center;
 	vertical-align: bottom;
+	flow-children: down;
+	margin-bottom: 15px;
+}
+
+.gHighUnspentSouls #HudMini
+{
+	animation-name: quickbuy_high_souls_bounce;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
 }
 
 .viewing_as_player.dead #HudMini
@@ -148,9 +243,30 @@
 {
 	width: 70px;
 	height: 70px;
+	horizontal-align: center;
 	border: 3px solid offWhite&30;
 	border-radius: 5px;
 	margin: 4px;
+}
+
+.ItemSlotsFull #HudMini #HudMiniContents
+{
+	border: 3px solid warningRed&88;
+	wash-color: warningRed&88;
+}
+
+.ItemSlotsLocked #HudMini #HudMiniContents
+{
+	border: 3px solid colorEnemy&90;
+	wash-color: colorEnemy&66;
+}
+
+.InShopZone.ItemSlotsFull #HudMini #HudMiniContents
+{
+	border: 3px solid warningRed;
+	animation-name: quickbuy_blocked_pulse;
+	animation-duration: 1.3s;
+	animation-iteration-count: infinite;
 }
 
 .ItemsReady #HudMini #HudMiniContents
@@ -168,7 +284,7 @@
 	opacity: 0.5;
 }
 
-.ItemsReady #HudMini
+.ItemsBlocked #HudMini,.ItemsReady #HudMini
 {
 	opacity: 1;
 }
@@ -638,6 +754,60 @@ ToggleButton Label
 .ShowQueue .ItemReadyIndicator,.gScoreboardOpen .ItemReadyIndicator,.gShopOpen .ItemReadyIndicator
 {
 	visibility: collapse;
+}
+
+#HudMiniFill
+{
+	width: 100%;
+	height: fill-parent-flow(1.0);
+}
+
+.ItemsBlockedReason
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	opacity: 1;
+	visibility: collapse;
+	border-radius: 2px;
+}
+
+.ItemsBlockedReason Label
+{
+	horizontal-align: center;
+	font-size: 13px;
+	font-weight: bold;
+	color: #fffee6;
+	background-color: #f85757ee;
+	box-shadow: none;
+	padding: 1px 4px;
+	border-radius: 2px;
+	text-overflow: shrink;
+	text-align: center;
+	visibility: collapse;
+}
+
+.ItemSlotsFull .ItemsBlockedReason .SlotsFullLabel
+{
+	visibility: visible;
+}
+
+.ItemSlotsLocked .ItemsBlockedReason .SlotsLockedLabel
+{
+	visibility: visible;
+}
+
+.ItemsBlockedReason .SlotsLockedLabel
+{
+	color: offWhite;
+}
+
+.InShopZone.ItemsBlocked .ItemsBlockedReason
+{
+	visibility: visible;
+	sound: "Player.Negative.Interact";
+	animation-name: quickbuy_blocked_reason_bounce, quickbuy_blocked_pulse;
+	animation-duration: 0.5s, 1.3s;
+	animation-iteration-count: 1, infinite;
 }
 
 .QueueSize

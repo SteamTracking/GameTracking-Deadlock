@@ -172,11 +172,13 @@
  %02X
  %02d. %-30s  %s\n
  %[^=, ] = %[^=, ] , %[^=, ] , %[^=, ] , %[^=, ] 
+ %c%c
  %s%lu (%s0x%lx)\n
  %s:%s(%.1f->%.1f) %s
  ( Custom: %s )
  ( NOT SUPPORTED BY ANIMGRAPH ) 
  ( stack %d )
+ (%.1f)
  (%ld unused bits)\n
  (%u unread)
  (Dirty Animation)
@@ -224,7 +226,6 @@
  ABILITY ACTIVE REPORT\n
  ABILITY MODIFIER VALUE ACTIVE-NESS REPORT\n
  ACTIVE GROUP
- CL:%d. Clearing discontinuity upon a new sequence being added. New Op: %s, Existing discontinuity: %s \n
  Damage Dealt to Trooper Boss
  Damage Taken from Player
  GMT
@@ -233,6 +234,8 @@
  MODIFIER VALUE CACHE REPORT\n
  NOT
  No valid position towards which to make progress.\n
+ P1=%d
+ P5=%d
  P95=%.1f
  P95=%u
  P99=%.1f
@@ -481,6 +484,9 @@ $light_emissive
 %%s  %%c %%10s : %c%%%ds%c %%s
 %%s  %%c %%10s : %c%%-%d.%ds%c %%s
 %*s%s OF %s {\n
+%*s%s:\n
+%*s%s:\n%*s
+%*s%s\n
 %*s<EMPTY>\n
 %*s<Not Supported>
 %*s<Parse Error>
@@ -514,6 +520,8 @@ $light_emissive
 %*scrlNum: 
 %*scrlTime: 
 %*scrlUrl: 
+%*s}\n
+%-*s
 %-15.15s[ %s ]
 %-18s
 %-23s %s Kx=%-8s Au=%-4s Enc=%-9s Mac=%-4s%s\n
@@ -527,18 +535,25 @@ $light_emissive
 %-50s %12s %12s %12s\n
 %-60s %-9s %8lld %8lld %4d%%  %8lld %8lld %8lld %8lld %8lld %8lld %8lld %8lld  %9lld %8lld %8lld %7lld\n
 %-60s %-9s %8s %8s %5s  %8s %8s %8s %8s %8s %8s %8s %8s  %9s %8s %8s %7s\n
+%-8d
+%.*s\n
+%.0f,
 %.0fdeg reach %.0f drift %.0f = %.0f
 %.14s.%03dZ
+%.2f
 %.2f "%s"  %s : %f (%f): interval %f\n
 %.2f %s Mantle: %d probes\n
 %.2f (t=%.2f)
 %.2f -> %.2f (accelT = %.2f dT=%.2fs)
 %.2f -> %.2f (decelT = %.2f)
 %.3d,%.3d,%.3d
+%.3f
 %.3f / %.3f
 %.4f %s: start %s
 %.5f (%.5f)
 %.5f (%.5f) = path %.2f + transitions %.2f
+%.6f
+%0*d
 %0.2f
 %0.2f, SpacePathfind_StringPull_FindLastVisiblePortal - start within future block\n
 %019llu
@@ -549,6 +564,7 @@ $light_emissive
 %02x%c
 %02x%s
 %04d%02d%02d%02d%02d%02dZ
+%04x - 
 %08X:
 %12sPublic Key Algorithm: 
 %12sUnable to load Public Key\n
@@ -562,6 +578,7 @@ $light_emissive
 %3.1f  (%s,%d) <-- (%s)\n
 %3.1f  (%s,%s) <-- (%s)\n
 %32.32s: %4.4s, counter % 4d, level %s\n
+%5d\t%s\n
 %5ld:
 %5lu file=%s, line=%d, 
 %6.2f KB
@@ -574,6 +591,7 @@ $light_emissive
 %I64i
 %d %s '%s' (%s)\n
 %d %s [%d] offset(s) %s are culled\n
+%d : %s
 %d == false\n
 %d Amber\n%d Sapphire
 %d CAIThreadedWorkQueue::StopSupervisor - [%d] at start, [%d] at stop request, [%d] at finish\n
@@ -605,23 +623,32 @@ $light_emissive
 %d(%s):  rejected\n
 %d, %d, %d, %s\n
 %d,Error parsing modifier!\n
+%d. %s\n%s
 %d.%d.%d.%d/%d.%d.%d.%d
+%d/%d
 %d/%s\n%s/%s
 %d: %f %f %f
+%d: %s: %s
+%d: %s\n
 %d:%s::%s %s
 %d\n%s\n%s\n(%0.2f,%0.2f,%0.2f)
 %d_model_contents_%d.vsnap
 %d_tasks_left
+%dd_%s
 %f %f %f %f %f %f %f
 %f %f %f, %f %f %f
+%f =%f
 %f IN_PROGRESS_LONG_FRAME TOOK %.3fms DURING GAMEPLAY.\n
+%f,%f,%f
 %f: Player %s at [%0.2f %0.2f %0.2f] took %f damage from %s, type %s\n
 %i : %s (ground %i %s)\n
 %ld bytes leaked in %d chunks\n
+%ld\n
 %llu.dem
 %llu_%d.dem
 %llu_%d.meta%s
 %lu:%s:%s:%d:%s\n
+%s %.1f\n
 %s %2d %02d:%02d:%02d %d%s
 %s %2d %02d:%02d:%02d%.*s %d%s
 %s %s %.2f -> %.2f\n
@@ -629,16 +656,24 @@ $light_emissive
 %s %s HTTP/1.0\r\n
 %s %s Lane has %d troopers pushing.\n
 %s %s%lu (%s0x%lx)\n
+%s %s%s
+%s %s%s/
 %s %s, no such classname or unit name\n
 %s %s.HL%s from save file on %s\n
+%s %s:
+%s %s: 
 %s %s: %s - %s - %s\n
+%s %s:%s
+%s '%s'
 %s '%s' (%s)
 %s '%s' failed to find a valid spawnpoint in destination group: '%s'\n
 %s '%s' has a base specified as '%s', but there is no matching entry in propdata.vdata.\n
 %s (%.1f, %.1f, %.1f) dz %.1f nz %.2f ent %s: %s
+%s (%.2f)
 %s (%.2f, %.2f, %.2f)
 %s (%d) SetEnemy to %s (%d) at %.2f (was %s (%d))\n
 %s (%d) prepared to speak %s (%f)\n
+%s (%i)
 %s (%s) at (%.3f %.3f %.3f) using obsolete or unknown material type.\n
 %s (%s) has no enemy particle system name specified!\n
 %s (%s) has no friendly particle system name specified!\n
@@ -648,22 +683,28 @@ $light_emissive
 %s (%s): started "%s":INT:%s\n
 %s (%s: %d/%s) m:%s [%d - %.2f]
 %s (%s: %d/%s) m:%s [%d - %.2f]\n
+%s (%s:%u)
+%s (%u)
 %s (ALWAYS)
 %s (Color)
 %s (Material)
 %s (NEVER)
+%s (PVS)
 %s (for %s) called SynchronizeSequence() at %0.2f\n
 %s (for %s) forcing synch of %s at %0.2f\n
 %s (for %s) starting %s seq at %0.2f\n
 %s (uid=%d)
 %s (unknown)
 %s - %.1f%%, %.2fs, frame %.1f %s
+%s - %s
 %s - %s %s\n
 %s - Blackboard reference %s: %u (%s) type mismatches
 %s - Could not find blackboard instance for %s
 %s - Could not find blackboard reference %s: %u (%s)
 %s -0700
 %s -0800
+%s / %s
+%s 0\n
 %s : %8.2f:  actor %d: %s : %s emitting sound %s [guid %u]\n
 %s : %8.2f:  clearing events\n
 %s : %8.2f:  finish %s [%s]\n
@@ -707,7 +748,10 @@ $light_emissive
 %s Self Regen
 %s Tick
 %s Z0000
+%s [%d]
 %s [%s%s%s]###%p
+%s [%s:%u]
+%s [%u]
 %s algorithm "%s" unsupported\n
 %s at %.0f %.0f %0.f uses model %s, which has an invalid prop_data type. DELETED.\n
 %s at %.0f %.0f %0.f uses model %s, which has no propdata which means it must be used on a prop_static. DELETED.\n
@@ -756,22 +800,31 @@ $light_emissive
 %s%08lx.%s%d
 %s%12.12s:  cycle %6.4f (prev %6.4f) weight %5.3f rate %6.3f: % 4d=[%s]
 %s%c%08lx.%s%d
+%s%g=%g
 %s%s=%.2f (float)
 %s%s=%.2f,%.2f,%.2f (vector)
+%s%s=%s
 %s%s=%s (bool)
 %s%s=%s (symbol)
 %s%s=? (unsupported type, %s)
 %s%s=pos(%.2f, %.2f, %.2f) ang(%.2f, %.2f, %.2f) 
+%s%s[%d]
 %s( %s, %s )\n
 %s(%-4.1f->%-4.1f avg %-4.1f dev %-4.2f)
+%s(%d)
 %s(%d) thinking for %.02fms!!! (%s, %s or preceding); r%.2f (c%.2f, pst%.2f, ms%.2f), m%.2f\n
 %s(%d): OpenSSL internal error, assertion failed: %s\n
+%s(%s)
 %s(%s) could not find scene %d, named %s\n
 %s(%s) found an entity that wasn't a logic_choreographed_scene or logic_scene_list_manager in slot %d, named %s\n
 %s(%s[%d]%s)
 %s(entindex: %d  slot:%d) on team %d pinging to %d players.\n
+%s,%u,%s
 %s------%s%s
 %s------%s--%s%s
+%s.%s 
+%s.%s#%u
+%s.%s.%s
 %s.vmat
 %s.vpcf
 %s/%s/gameevents_%s.txt
@@ -913,8 +966,13 @@ $light_emissive
 %s:  variants # %d of %d\n
 %s:  } IGameSystem::LoopActivateAllSystems done\n
 %s:  } IGameSystem::LoopDeactivateAllSystems done\n
+%s: %.3f\t
+%s: %d
 %s: %d (%.2f%%)\n
 %s: %d volumes found\n
+%s: %f
+%s: %s
+%s: %s %s
 %s: %s -> %s
 %s: %s [%d/%d] %.2f%%\n
 %s: %s could not find viewposition %s.\n
@@ -932,6 +990,7 @@ $light_emissive
 %s: %s: Not spawning break_create_particle as the part name was filtered out (expecting match of %s %s, received %s)\n
 %s: %s: Not spawning particle as the effect name is empty.\n
 %s: %s: Spawning particle effect %s.\n
+%s: %s\t
 %s: %u %s is ready to spawn entities\n
 %s: (%d bit)\n
 %s: (%d) Name: %s
@@ -973,9 +1032,13 @@ $light_emissive
 %s: unexpected parameter type %s, expected a CString\n
 %s: unknown entity %s specified by SetTargetIdentifierOverride.>\n
 %s:%d: rec->data != rec->input\n
+%s:%s:
 %s::%s (%u)
 %s::%s (Entity Output Handler)
 %s;%d;%s;%s
+%s;%s
+%s< %s%s >
+%s@%s
 %sActive : %s
 %sCharges : %d
 %sCooldown : %.1f
@@ -985,12 +1048,15 @@ $light_emissive
 %sRecv usercmd %d.  Margin:%5.1fms net +%2d queue =%5.1f total\n
 %sSamples
 %sTimeScale : %.4f
+%s[%d]
 %s[%d]: Trace[%d] fraction: %f, entity: %s, hitbox: %d, startsolid: %d\n
 %s[%d]: Trace[%d] fraction: %f, removed Entity post world hit: %s\n
 %s[%d]: Trace[%d], hitbox name: %s, hitbox_min: (%f, %f, %f), hitbox_max: (%f, %f, %f)\n
 %s\n%2.f - Pos: %.2f, Orient: %.2f
 %s\t%32.32s = "%s"\n
 %s_%03d
+%s_%d
+%s_%d_%d
 %s_%d_ang
 %s_%d_extent_max
 %s_%d_extent_min
@@ -1001,7 +1067,9 @@ $light_emissive
 %s_%d_type
 %s_%s.csv
 %s_%s_%i-%i-%i_%02uh%02um%02us
+%s_%s_%s
 %s_%s_physics_proxy
+%s_%u
 %s_color
 %s_corrupted
 %s_count
@@ -1013,6 +1081,7 @@ $light_emissive
 %s_preview
 %s_preview_corrupted
 %s_repeat
+%s_t%d
 %sclassname='%s'\n
 %sjunk
 %sm_bInReload : %d
@@ -1030,6 +1099,7 @@ $light_emissive
 %u:%s PlayerSlot Healed
 %u:%s PlayerSlot Lethal
 %u:%s PlayerSlot Regen
+%u[%d]
 %u\t%s\t%s\t%s\n
 &0000
 '%s' -> '%s' has malformed string (leading or trailing space)\n
@@ -1056,6 +1126,7 @@ $light_emissive
 (%d) Name: %s (%s)
 (%d)%s (%iH)
 (%f, %f, %f)
+(%s:%d)
 ((long)msg_hdr->msg_len) > 0
 ()$^.*+?[]|\-{},:=!\n\r
 (0x%08X)'??'
@@ -1177,6 +1248,7 @@ $light_emissive
 +in_weapon1
 +in_zipline
 , %d null handles
+, %s %s
 , Force Facing: %s
 , Priority: %s
 , Source: %s
@@ -1282,6 +1354,7 @@ $light_emissive
 .$$BY0IB@D
 .$$BY0L@I
 .%llu
+.%lu
 ... %s culled event %s after max %i reached \n
 ... and no start position
 ....................
@@ -2216,6 +2289,9 @@ $light_emissive
 .?AV?$CEntitySpawner@VCCitadelZipLineNode@@@@
 .?AV?$CEntitySpawner@VCCitadelZiplineCaptureTrigger@@@@
 .?AV?$CEntitySpawner@VCCitadel_Announcer@@@@
+.?AV?$CEntitySpawner@VCCitadel_Artist_SolidBlocker@@@@
+.?AV?$CEntitySpawner@VCCitadel_Artist_StrokeBlocker@@@@
+.?AV?$CEntitySpawner@VCCitadel_Artist_VisionBlocker@@@@
 .?AV?$CEntitySpawner@VCCitadel_Bounce_Pad@@@@
 .?AV?$CEntitySpawner@VCCitadel_CatAnimating@@@@
 .?AV?$CEntitySpawner@VCCitadel_DoorwayPortal@@@@
@@ -2230,6 +2306,7 @@ $light_emissive
 .?AV?$CEntitySpawner@VCCitadel_Nano_Predatory_Statue@@@@
 .?AV?$CEntitySpawner@VCCitadel_Pickup@@@@
 .?AV?$CEntitySpawner@VCCitadel_PickupSpawner@@@@
+.?AV?$CEntitySpawner@VCCitadel_Pickup_ArtistDrawing@@@@
 .?AV?$CEntitySpawner@VCCitadel_Pickup_AssignedGold@@@@
 .?AV?$CEntitySpawner@VCCitadel_Pickup_Currency@@@@
 .?AV?$CEntitySpawner@VCCitadel_Pickup_Health@@@@
@@ -2338,6 +2415,9 @@ $light_emissive
 .?AV?$CEntitySpawnerBase@VCCitadelZipLineNode@@@@
 .?AV?$CEntitySpawnerBase@VCCitadelZiplineCaptureTrigger@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_Announcer@@@@
+.?AV?$CEntitySpawnerBase@VCCitadel_Artist_SolidBlocker@@@@
+.?AV?$CEntitySpawnerBase@VCCitadel_Artist_StrokeBlocker@@@@
+.?AV?$CEntitySpawnerBase@VCCitadel_Artist_VisionBlocker@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_Bounce_Pad@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_CatAnimating@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_DoorwayPortal@@@@
@@ -2352,6 +2432,7 @@ $light_emissive
 .?AV?$CEntitySpawnerBase@VCCitadel_Nano_Predatory_Statue@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_Pickup@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_PickupSpawner@@@@
+.?AV?$CEntitySpawnerBase@VCCitadel_Pickup_ArtistDrawing@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_Pickup_AssignedGold@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_Pickup_Currency@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_Pickup_Health@@@@
@@ -2427,6 +2508,7 @@ $light_emissive
 .?AV?$CEntityWithSubclassSpawner@VCCitadelPlayerBotNPCBrain@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_PickupSpawner@@@@
+.?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup_ArtistDrawing@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup_AssignedGold@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup_Currency@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup_Health@@@@
@@ -2686,10 +2768,12 @@ $light_emissive
 .?AV?$CHandle@VCCitadelPassthroughFakeWall@@@@
 .?AV?$CHandle@VCCitadelPlayerPawn@@@@
 .?AV?$CHandle@VCCitadelPortalTrigger@@@@
+.?AV?$CHandle@VCCitadelProjectile@@@@
 .?AV?$CHandle@VCCitadelTrooperMinimap@@@@
 .?AV?$CHandle@VCCitadelTunnelNode@@@@
 .?AV?$CHandle@VCCitadelViscousBall@@@@
 .?AV?$CHandle@VCCitadelZipLineNode@@@@
+.?AV?$CHandle@VCCitadel_Artist_StrokeBlocker@@@@
 .?AV?$CHandle@VCCitadel_DoorwayPortal@@@@
 .?AV?$CHandle@VCCitadel_MagicianTurret@@@@
 .?AV?$CHandle@VCColorCorrection@@@@
@@ -2755,6 +2839,27 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_Arcane_Eater_Watcher@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ArcticBlastAOE@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ArcticBlast_Freeze@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_ArtistStillLifePickup@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_BuildUp@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_CloudburstProjectileArmed@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_DamageZoneAura@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_DelayedAOERoot@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_EnhancedSlide@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_FlowState_Buff@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_FlowState_Watcher@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_GroveAura@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_HealingBarrier@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_Pillar_AreaModifier@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_Pond@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_PullBrushRange@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_RideTiger@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_RollingProjectile_Debuff@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_SilenceAura@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_StackingBuff@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_StackingDamageAmp@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_Stun@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_Tether@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Artist_Wall@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Baba_BenchRun@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Baba_BrewHolding@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Baba_GroundPoundFall@@$0PPPP@@@
@@ -2841,7 +2946,6 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_CharmedWraps@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_CheaterCurse@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_CheckNearbyPlayerParry@@$0PPPP@@@
-.?AV?$CModifierFactory@VCCitadel_Modifier_ChessMaster_CheckWatcher@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ChessMaster_GroundTile@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ChessMaster_Piece_Expire@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ChessMaster_RookAura@@$0PPPP@@@
@@ -2930,6 +3034,7 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_Doorman_Hotel_Victim@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Doorway_Minimap_Range@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Drag@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_DragBrush_CircleAura@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Drag_Custom@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_DragonFireGroundAura@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Drifter_HungerKillBonus@@$0PPPP@@@
@@ -2957,6 +3062,7 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_ExplosiveShots@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Extendable_HealthRegen@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_FamiliarHelper_InvisWatcher@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_FamiliarInfestOwnerWatcher@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Familiar_Asleep@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Familiar_AttachHeal@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Familiar_AttachHost@@$0PPPP@@@
@@ -3906,6 +4012,9 @@ $light_emissive
 .?AV?$CNetworkHandleBase@VCCitadelBaseAbility@@VNetworkVar_m_pActiveCopyUltimateAbility@CCitadel_Ability_Magician_CopyUlt@@@@
 .?AV?$CNetworkHandleBase@VCCitadelHideoutPropBase@@VNetworkVar_m_hProp@CCitadelHideoutPropSlot@@@@
 .?AV?$CNetworkHandleBase@VCCitadelPlayerPawn@@VNetworkVar_m_hHeroPawn@CCitadelPlayerController@@@@
+.?AV?$CNetworkHandleBase@VCCitadelProjectile@@VNetworkVar_m_hDeployedProjectile@CCitadel_Ability_Artist_RollingProjectile@@@@
+.?AV?$CNetworkHandleBase@VCCitadel_Artist_StrokeBlocker@@VNetworkVar_m_hNextBlocker@1@@@
+.?AV?$CNetworkHandleBase@VCCitadel_Artist_StrokeBlocker@@VNetworkVar_m_hPrevBlocker@1@@@
 .?AV?$CNetworkHandleBase@VCCitadel_DoorwayPortal@@VNetworkVar_m_hDoor1@CCitadel_Ability_Doorman_Doorway@@@@
 .?AV?$CNetworkHandleBase@VCCitadel_DoorwayPortal@@VNetworkVar_m_hLinkedDoorway@1@@@
 .?AV?$CNetworkHandleBase@VCCitadel_MagicianTurret@@VNetworkVar_m_pActiveTurret@CCitadel_Ability_TurretClone@@@@
@@ -3941,9 +4050,11 @@ $light_emissive
 .?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_hOutputEntities@CPointValueRemapper@@$0?0H@@
 .?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_vecDeployedGravestones@CCitadel_Ability_Necro_GraveStone@@$0?0H@@
 .?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_vecDeployedPieces@CCitadel_Ability_Chessmaster_ThrowBishop@@$0?0H@@
+.?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_vecDeployedProjectiles@CCitadel_Ability_Artist_HomingProjectile@@$0?0H@@
 .?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_vecHelpers@CCitadel_Ability_Familiar_HelpingHands@@$0?0H@@
 .?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_vecLaneSwapRejects@CCitadelPlayerController@@$0?0H@@
 .?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_vecLaneSwapRequests@CCitadelPlayerController@@$0?0H@@
+.?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_vecOverlap@CCitadel_Artist_StrokeBlocker@@$0?0H@@
 .?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_vecPuddleModifiers@CCitadel_Ability_GooGrenade@@$0?0H@@
 .?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_vecTagAlongVisitedAllies@CCitadel_Ability_Familiar_Attach@@$0?0H@@
 .?AV?$CNetworkUtlVectorBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_vecTargetsInCone@CCitadel_Ability_Familiar_Ability01@@$0?0H@@
@@ -4117,7 +4228,10 @@ $light_emissive
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iCreepGoldKill@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iCreepGoldNeutral@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iCreepGoldSoloBonus@PlayerDataGlobal_t@@@@
+.?AV?$CNetworkVarBase@HVNetworkVar_m_iCurrentHits@CCitadel_Ability_Artist_MultiHit@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iCurrentResistValue@CCitadel_ArmorUpgrade_AblativeCoat@@@@
+.?AV?$CNetworkVarBase@HVNetworkVar_m_iCurrentShotCount@CCitadel_Ability_Artist_PrimaryWeapon@@@@
+.?AV?$CNetworkVarBase@HVNetworkVar_m_iCurrentShotCount@CCitadel_Ability_Artist_ProjectileWeapon@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iCurrentShotCount@CCitadel_Ability_ChessMaster_PrimaryWeapon@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iCurrentShotCount@CCitadel_Ability_Fencer_PrimaryWeapon@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iCurrentSwapCount@CCitadel_Ability_TurretClone@@@@
@@ -4166,11 +4280,13 @@ $light_emissive
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iObjectiveDamage@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iOpvarIndex@CSoundOpvarSetPointBase@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iPauseTeam@CCitadelGameRules@@@@
+.?AV?$CNetworkVarBase@HVNetworkVar_m_iPermanentBuffCount@CCitadel_Ability_Artist_Tether@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iPlayerAssists@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iPlayerKills@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iReapplyProvisionParity@CAttributeManager@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iRemainingCasts@CCitadel_Ability_VampireBat_BatBlink@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iRemainingMoves@CCitadel_Ability_Chessmaster_Queen@@@@
+.?AV?$CNetworkVarBase@HVNetworkVar_m_iRemainingShots@CCitadel_Ability_Artist_LionDance@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iRound@CStreetBrawlController@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iSapphireRejuvCount@CCitadelGameRules@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iScore@CTeam@@@@
@@ -4415,6 +4531,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@MVNetworkVar_m_fWindSpeed@CEnvVolumetricFogController@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_fadeMaxDist@CBaseModelEntity@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_fadeMinDist@CBaseModelEntity@@@@
+.?AV?$CNetworkVarBase@MVNetworkVar_m_flAccumulatedDrawDistance@CCitadel_Ability_Artist_InkBrush@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flAimPitch@CNPC_ShieldedSentry@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flAlphaScale@CEnvParticleGlow@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flAmmoFrac@CCitadel_Ability_PrimaryWeapon@@@@
@@ -4808,6 +4925,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_pNextNode@CCitadel_Ability_ZipLine@@@@
 .?AV?$CNetworkVarBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_pPrevNode@CCitadel_Ability_ZipLine@@@@
 .?AV?$CNetworkVarBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_pSelectedPiece@CCitadel_Ability_Chessmaster_MoveChessPiece@@@@
+.?AV?$CNetworkVarBase@V?$CHandle@VCBaseEntity@@@@VNetworkVar_m_pSelectedTarget@CCitadel_Ability_Artist_Tether@@@@
 .?AV?$CNetworkVarBase@V?$CHandle@VCBaseModelEntity@@@@VNetworkVar_m_hOwner@CDestructiblePartsComponent@@@@
 .?AV?$CNetworkVarBase@V?$CHandle@VCCitadelBaseAbility@@@@VNetworkVar_m_hAbilityOwner@CNPC_SimpleAnimatingAI@@@@
 .?AV?$CNetworkVarBase@V?$CHandle@VCCitadelPassthroughFakeWall@@@@VNetworkVar_m_hPushedFakeWall@CCitadel_Ability_Digger_EnterTunnel@@@@
@@ -4979,6 +5097,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@VAttachmentHandle_t@@VNetworkVar_m_nAttachment@CSprite@@@@
 .?AV?$CNetworkVarBase@VCEntityHandle@@VNetworkVar_m_hOwner@CGameSceneNodeHandle@@@@
 .?AV?$CNetworkVarBase@VCEntityIndex@@VNetworkVar_m_nEntIndex@STeamFOWEntity@@@@
+.?AV?$CNetworkVarBase@VCEntityIndex@@VNetworkVar_m_nOwnerOnlyEntIndex@STeamFOWEntity@@@@
 .?AV?$CNetworkVarBase@VCGlobalSymbol@@VNetworkVar_m_sSharedPoseSlotID@CAI_MotorServices@@@@
 .?AV?$CNetworkVarBase@VCNetworkedQuantizedFloat@@VNetworkVar_m_flPlaybackRate@CBaseAnimGraphController@@@@
 .?AV?$CNetworkVarBase@VCNetworkedQuantizedFloat@@VNetworkVar_m_flWeight@CNetworkedSequenceOperation@@@@
@@ -5265,6 +5384,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flStuckStartTime@CAbility_Fathom_ReefdwellerHarpoon@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTackleStartTime@CCitadel_Ability_ChargedTackle@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTackleStartTime@CCitadel_Ability_SuperNeutralCharge@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTearDownStartTime@CCitadel_Artist_VisionBlocker@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTime@CCitadelAutoScaledTime@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTimeEnterState@CCitadel_Ability_ZipLine@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTimeForKnockdownProtection@CCitadel_Ability_ZipLine@@@@
@@ -5272,6 +5392,8 @@ $light_emissive
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTimeStopZipping@CCitadel_Ability_ZipLine@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTransformEndTime@CCitadel_Ability_Nano_CatForm@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTransformStartTime@CCitadel_Ability_Nano_CatForm@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTurnSolidTime@CCitadel_Artist_SolidBlocker@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTurnSolidTime@CCitadel_Artist_VisionBlocker@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTurnSolidTime@CCitadel_Ice_Dome_Blocker@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTurnSolidTime@CCitadel_Magic_Beam_Blocker@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_flTurnSolidTime@CCitadel_SmokeGrenade_Blocker@@@@
@@ -5309,6 +5431,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLastDashJumpTime@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLastPlayerRevealTime@CCitadelPlayerPawn@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLastRevealTime@CCitadelPlayerPawn@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLastSuccessfulLookTime@CCitadel_Ability_Artist_Tether@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLastUpwardVelocityTime@CCitadel_Ability_Deadpack_Ultimate@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLaunchHeldBeginTime@CCitadel_Ability_Deadpack_ChargeBlast@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tLeapOffTime@CCitadel_Ability_Werewolf_KickFlip@@@@
@@ -5321,11 +5444,13 @@ $light_emissive
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tQueuedEnableTime@CCitadelTriggerCapturePoint@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tRecastEndTime@CCitadel_Ability_Chessmaster_ThrowBishop@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tRecastEndTime@CCitadel_Ability_Fencer_ThrowBlade@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tShootingLockoutEndTime@CCitadel_Ability_Artist_HomingProjectile@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tSoonestHelperCooldownEndTime@CCitadel_Ability_Familiar_HelpingHands@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tSpawnTime@CNPC_NecroSkele@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tStateEnterTime@CCitadel_Ability_Deadpack_Rocketeer@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tStateStartTime@CCitadel_Ability_PunkGoat_GoatFlip@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tStateTimeBegin@CCitadel_Ability_Deadpack_Ultimate@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tStopPaintingTime@CCitadel_Ability_Artist_PullBrush@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tTeleportCompletedTime@CCitadel_Ability_Mirage_Teleport@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tTetherAttachTime@CCitadel_Ability_Necro_PrimaryWeapon@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tTetherBreakTime@CCitadel_Ability_Necro_PrimaryWeapon@@@@
@@ -5411,6 +5536,8 @@ $light_emissive
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStartPosition@CCitadel_Ability_ShivDash@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStartPosition@CCitadel_Ability_Shiv_KillingBlow@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStateOriginBegin@CCitadel_Ability_Deadpack_Ultimate@@@@
+.?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStrokeEnd@CCitadel_Artist_StrokeBlocker@@@@
+.?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vStrokeStart@CCitadel_Artist_StrokeBlocker@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vTargetCameraPos@CCitadelPlayer_ObserverServices@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vTargetCastPos@CCitadel_Ability_FlyingStrike@@@@
 .?AV?$CNetworkVarBase@VVectorWS@@VNetworkVar_m_vTargetPos@CCitadel_Ability_Mantle@@@@
@@ -5546,6 +5673,11 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bAbandon@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bAbandonTriggerAmber@CCitadelGameRules@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bAbandonTriggerSapphire@CCitadelGameRules@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bActive@CCitadel_Ability_Artist_BambooGrove@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bActive@CCitadel_Ability_Artist_EmpowerAbilities@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bActive@CCitadel_Ability_Artist_LionDance@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bActive@CCitadel_Ability_Artist_MultiHit@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bActive@CCitadel_Ability_Artist_RollingProjectile@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bActive@CCitadel_Ability_Chessmaster_ForkPiece@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bActive@CCitadel_Ability_Chessmaster_Queen@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bActive@CCitadel_Ability_Chessmaster_ThrowBishop@@@@
@@ -5590,6 +5722,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bBraceParamTriggered@CCitadel_Ability_Bull_Leap@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bBrewLocked@CCitadel_Ability_Baba_HexingBrew@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bBulletFlying@CAbility_Fathom_ReefdwellerHarpoon@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bButtonDown@CCitadel_Ability_Artist_InkBrush@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bCanActiveReload@CCitadel_Ability_PrimaryWeapon@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bCanBeImbued@CCitadelBaseAbility@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bCanBeUpgraded@CCitadelBaseAbility@@@@
@@ -5666,6 +5799,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bFlicker@CLightComponent@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bFloating@CCitadel_Ability_VampireBat_StealLife@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bFloating@CCitadel_MobileResupply@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bFlying@CCitadel_Ability_Artist_FlyingLion@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bFlying@CCitadel_Upgrade_MagicCarpet@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bFogEnable@CPointCamera@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bFollowPlayerAcrossTeleport@CPointClientUIWorldPanel@@@@
@@ -5735,6 +5869,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsCrashingDown@CCitadel_Ability_LashDownStrike@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsDashing@CCitadel_Ability_NanoDash@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsDashing@CCitadel_Ability_ShivDash@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsEnabled@CCitadel_Ability_Artist_RideTiger@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsEnabled@CGradientFog@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsEnabled@CPlayerVisibility@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bIsExit@CCitadelTunnelNode@@@@
@@ -5799,6 +5934,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bOverrideNoiseStrength@CEnvVolumetricFogVolume@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bOverrideSunLightStrength@CEnvVolumetricFogVolume@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bOverrideTintColor@CEnvVolumetricFogVolume@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bPainting@CCitadel_Ability_Artist_PullBrush@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bParentFrozen@shard_model_desc_t@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bPassiveFXActive@CCitadel_Ability_PrimaryWeapon@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bPauseChannel@CCitadel_Ability_VampireBat_BatSwarm@@@@
@@ -5861,6 +5997,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bStartDisabled@CPlayerVisibility@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bStartedInAir@CAbility_Fencer_Lunge@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bStartedOnGround@CCitadel_Ability_Shiv_KillingBlow@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bSuccess@CCitadel_Ability_Artist_Tether@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bSummoning@CCitadel_Upgrade_MagicCarpet@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bTackling@CCitadel_Ability_ChargedTackle@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bTackling@CCitadel_Ability_SuperNeutralCharge@@@@
@@ -6119,6 +6256,27 @@ $light_emissive
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Arcane_Eater_Watcher@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ArcticBlastAOE@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ArcticBlast_Freeze@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_ArtistStillLifePickup@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_BuildUp@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_CloudburstProjectileArmed@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_DamageZoneAura@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_DelayedAOERoot@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_EnhancedSlide@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_FlowState_Buff@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_FlowState_Watcher@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_GroveAura@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_HealingBarrier@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_Pillar_AreaModifier@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_Pond@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_PullBrushRange@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_RideTiger@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_RollingProjectile_Debuff@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_SilenceAura@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_StackingBuff@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_StackingDamageAmp@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_Stun@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_Tether@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Artist_Wall@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Baba_BenchRun@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Baba_BrewHolding@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Baba_GroundPoundFall@@VCBaseModifier@@@@
@@ -6205,7 +6363,6 @@ $light_emissive
 .?AV?$CSubclassFactory@VCCitadel_Modifier_CharmedWraps@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_CheaterCurse@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_CheckNearbyPlayerParry@@VCBaseModifier@@@@
-.?AV?$CSubclassFactory@VCCitadel_Modifier_ChessMaster_CheckWatcher@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ChessMaster_GroundTile@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ChessMaster_Piece_Expire@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ChessMaster_RookAura@@VCBaseModifier@@@@
@@ -6294,6 +6451,7 @@ $light_emissive
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Doorman_Hotel_Victim@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Doorway_Minimap_Range@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Drag@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_DragBrush_CircleAura@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Drag_Custom@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_DragonFireGroundAura@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Drifter_HungerKillBonus@@VCBaseModifier@@@@
@@ -6321,6 +6479,7 @@ $light_emissive
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ExplosiveShots@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Extendable_HealthRegen@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_FamiliarHelper_InvisWatcher@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_FamiliarInfestOwnerWatcher@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Familiar_Asleep@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Familiar_AttachHeal@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Familiar_AttachHost@@VCBaseModifier@@@@
@@ -8490,6 +8649,54 @@ $light_emissive
 .?AVCCitadelZiplinePath@@
 .?AVCCitadel_Ability_AbilityName@@
 .?AVCCitadel_Ability_Afterburn@@
+.?AVCCitadel_Ability_Artist_BambooGrove@@
+.?AVCCitadel_Ability_Artist_BambooGroveVData@@
+.?AVCCitadel_Ability_Artist_BouncingPot@@
+.?AVCCitadel_Ability_Artist_BouncingPotVData@@
+.?AVCCitadel_Ability_Artist_Cloudburst@@
+.?AVCCitadel_Ability_Artist_CloudburstVData@@
+.?AVCCitadel_Ability_Artist_DamageZone@@
+.?AVCCitadel_Ability_Artist_DamageZoneVData@@
+.?AVCCitadel_Ability_Artist_EmpowerAbilities@@
+.?AVCCitadel_Ability_Artist_EmpowerAbilitiesVData@@
+.?AVCCitadel_Ability_Artist_FlyingLion@@
+.?AVCCitadel_Ability_Artist_FlyingLionVData@@
+.?AVCCitadel_Ability_Artist_HealingBarrier@@
+.?AVCCitadel_Ability_Artist_HealingBarrierVData@@
+.?AVCCitadel_Ability_Artist_HomingProjectile@@
+.?AVCCitadel_Ability_Artist_HomingProjectileVData@@
+.?AVCCitadel_Ability_Artist_InkActive@@
+.?AVCCitadel_Ability_Artist_InkActiveVData@@
+.?AVCCitadel_Ability_Artist_InkBrush@@
+.?AVCCitadel_Ability_Artist_InkBrushVData@@
+.?AVCCitadel_Ability_Artist_LionDance@@
+.?AVCCitadel_Ability_Artist_LionDanceVData@@
+.?AVCCitadel_Ability_Artist_MultiHit@@
+.?AVCCitadel_Ability_Artist_MultiHitVData@@
+.?AVCCitadel_Ability_Artist_Pillar@@
+.?AVCCitadel_Ability_Artist_PillarVData@@
+.?AVCCitadel_Ability_Artist_PrimaryWeapon2@@
+.?AVCCitadel_Ability_Artist_PrimaryWeapon2VData@@
+.?AVCCitadel_Ability_Artist_PrimaryWeapon@@
+.?AVCCitadel_Ability_Artist_PrimaryWeaponVData@@
+.?AVCCitadel_Ability_Artist_ProjectileWeapon@@
+.?AVCCitadel_Ability_Artist_ProjectileWeaponVData@@
+.?AVCCitadel_Ability_Artist_PullBrush@@
+.?AVCCitadel_Ability_Artist_PullBrushVData@@
+.?AVCCitadel_Ability_Artist_RideTiger@@
+.?AVCCitadel_Ability_Artist_RideTigerVData@@
+.?AVCCitadel_Ability_Artist_RollingProjectile@@
+.?AVCCitadel_Ability_Artist_RollingProjectileVData@@
+.?AVCCitadel_Ability_Artist_RootingProjectile@@
+.?AVCCitadel_Ability_Artist_RootingProjectileVData@@
+.?AVCCitadel_Ability_Artist_ShieldProjectile@@
+.?AVCCitadel_Ability_Artist_ShieldProjectileVData@@
+.?AVCCitadel_Ability_Artist_StoneTurtle@@
+.?AVCCitadel_Ability_Artist_StoneTurtleVData@@
+.?AVCCitadel_Ability_Artist_Tether@@
+.?AVCCitadel_Ability_Artist_TetherVData@@
+.?AVCCitadel_Ability_Artist_TransformingProjectile@@
+.?AVCCitadel_Ability_Artist_TransformingProjectileVData@@
 .?AVCCitadel_Ability_Baba_BenchMelee@@
 .?AVCCitadel_Ability_Baba_BenchRun@@
 .?AVCCitadel_Ability_Baba_BenchRun_VData@@
@@ -9119,6 +9326,10 @@ $light_emissive
 .?AVCCitadel_ArmorUpgrade_VexBarrierVData@@
 .?AVCCitadel_ArmorUpgrade_WeaponShielding@@
 .?AVCCitadel_ArmorUpgrade_WeaponShieldingVData@@
+.?AVCCitadel_Artist_SolidBlocker@@
+.?AVCCitadel_Artist_StrokeBlocker@@
+.?AVCCitadel_Artist_StrokeBlockerVData@@
+.?AVCCitadel_Artist_VisionBlocker@@
 .?AVCCitadel_BaseProp_MidStairs@@
 .?AVCCitadel_BeamBulletHandler@@
 .?AVCCitadel_Bounce_Pad@@
@@ -9128,6 +9339,8 @@ $light_emissive
 .?AVCCitadel_BreakablePropHealthPickupVData@@
 .?AVCCitadel_BreakablePropVData@@
 .?AVCCitadel_BreakableProp_GraphController@@
+.?AVCCitadel_BreakableProp_Hideout@@
+.?AVCCitadel_BreakableProp_HideoutVData@@
 .?AVCCitadel_BulletHandler@@
 .?AVCCitadel_Bullet_Base@@
 .?AVCCitadel_Bullet_Standard@@
@@ -9312,6 +9525,43 @@ $light_emissive
 .?AVCCitadel_Modifier_ArcticBlastAOE_VData@@
 .?AVCCitadel_Modifier_ArcticBlast_Freeze@@
 .?AVCCitadel_Modifier_ArcticBlast_Freeze_VData@@
+.?AVCCitadel_Modifier_ArtistStillLifePickup@@
+.?AVCCitadel_Modifier_ArtistStillLifePickupVData@@
+.?AVCCitadel_Modifier_Artist_BuildUp@@
+.?AVCCitadel_Modifier_Artist_BuildUpVData@@
+.?AVCCitadel_Modifier_Artist_CloudburstProjectileArmed@@
+.?AVCCitadel_Modifier_Artist_CloudburstProjectileArmedVData@@
+.?AVCCitadel_Modifier_Artist_DamageZoneAura@@
+.?AVCCitadel_Modifier_Artist_DamageZoneAuraVData@@
+.?AVCCitadel_Modifier_Artist_DelayedAOERoot@@
+.?AVCCitadel_Modifier_Artist_DelayedAOERootVData@@
+.?AVCCitadel_Modifier_Artist_EnhancedSlide@@
+.?AVCCitadel_Modifier_Artist_EnhancedSlideVData@@
+.?AVCCitadel_Modifier_Artist_FlowState_Buff@@
+.?AVCCitadel_Modifier_Artist_FlowState_Watcher@@
+.?AVCCitadel_Modifier_Artist_FlowState_Watcher_VData@@
+.?AVCCitadel_Modifier_Artist_GroveAura@@
+.?AVCCitadel_Modifier_Artist_GroveAuraVData@@
+.?AVCCitadel_Modifier_Artist_HealingBarrier@@
+.?AVCCitadel_Modifier_Artist_HealingBarrierVData@@
+.?AVCCitadel_Modifier_Artist_Pillar_AreaModifier@@
+.?AVCCitadel_Modifier_Artist_Pillar_AreaModifierVData@@
+.?AVCCitadel_Modifier_Artist_Pond@@
+.?AVCCitadel_Modifier_Artist_PondVData@@
+.?AVCCitadel_Modifier_Artist_PullBrushRange@@
+.?AVCCitadel_Modifier_Artist_PullBrushRangeVData@@
+.?AVCCitadel_Modifier_Artist_RideTiger@@
+.?AVCCitadel_Modifier_Artist_RideTigerVData@@
+.?AVCCitadel_Modifier_Artist_RollingProjectile_Debuff@@
+.?AVCCitadel_Modifier_Artist_SilenceAura@@
+.?AVCCitadel_Modifier_Artist_SilenceAuraVData@@
+.?AVCCitadel_Modifier_Artist_StackingBuff@@
+.?AVCCitadel_Modifier_Artist_StackingDamageAmp@@
+.?AVCCitadel_Modifier_Artist_Stun@@
+.?AVCCitadel_Modifier_Artist_Tether@@
+.?AVCCitadel_Modifier_Artist_TetherVData@@
+.?AVCCitadel_Modifier_Artist_Wall@@
+.?AVCCitadel_Modifier_Artist_WallVData@@
 .?AVCCitadel_Modifier_Baba_BenchRun@@
 .?AVCCitadel_Modifier_Baba_BenchRun_VData@@
 .?AVCCitadel_Modifier_Baba_BrewHolding@@
@@ -9461,8 +9711,6 @@ $light_emissive
 .?AVCCitadel_Modifier_CheaterCurseVData@@
 .?AVCCitadel_Modifier_CheckNearbyPlayerParry@@
 .?AVCCitadel_Modifier_CheckNearbyPlayerParryVData@@
-.?AVCCitadel_Modifier_ChessMaster_CheckWatcher@@
-.?AVCCitadel_Modifier_ChessMaster_CheckWatcherVData@@
 .?AVCCitadel_Modifier_ChessMaster_GroundTile@@
 .?AVCCitadel_Modifier_ChessMaster_GroundTileVData@@
 .?AVCCitadel_Modifier_ChessMaster_Piece_Expire@@
@@ -9591,6 +9839,8 @@ $light_emissive
 .?AVCCitadel_Modifier_Doorman_Hotel_Victim@@
 .?AVCCitadel_Modifier_Doorway_Minimap_Range@@
 .?AVCCitadel_Modifier_Drag@@
+.?AVCCitadel_Modifier_DragBrush_CircleAura@@
+.?AVCCitadel_Modifier_DragBrush_CircleAuraVData@@
 .?AVCCitadel_Modifier_DragVData@@
 .?AVCCitadel_Modifier_Drag_Custom@@
 .?AVCCitadel_Modifier_DragonFireGroundAura@@
@@ -9632,6 +9882,7 @@ $light_emissive
 .?AVCCitadel_Modifier_ExplosiveShots@@
 .?AVCCitadel_Modifier_Extendable_HealthRegen@@
 .?AVCCitadel_Modifier_FamiliarHelper_InvisWatcher@@
+.?AVCCitadel_Modifier_FamiliarInfestOwnerWatcher@@
 .?AVCCitadel_Modifier_Familiar_Asleep@@
 .?AVCCitadel_Modifier_Familiar_AsleepVData@@
 .?AVCCitadel_Modifier_Familiar_AttachHeal@@
@@ -10519,6 +10770,8 @@ $light_emissive
 .?AVCCitadel_PickupSpawnerVData@@
 .?AVCCitadel_Pickup_Ability@@
 .?AVCCitadel_Pickup_Ability_VData@@
+.?AVCCitadel_Pickup_ArtistDrawing@@
+.?AVCCitadel_Pickup_ArtistDrawingVData@@
 .?AVCCitadel_Pickup_AssignedGold@@
 .?AVCCitadel_Pickup_Currency@@
 .?AVCCitadel_Pickup_Currency_VData@@
@@ -10536,6 +10789,7 @@ $light_emissive
 .?AVCCitadel_PointTalker_Idol@@
 .?AVCCitadel_Priest_SlideTrap@@
 .?AVCCitadel_Projectile_Archer_ChargedShot@@
+.?AVCCitadel_Projectile_ArtistGun@@
 .?AVCCitadel_Projectile_BatSwarmExtraProjectile@@
 .?AVCCitadel_Projectile_BatSwarmProjectile@@
 .?AVCCitadel_Projectile_Bebop_Hook@@
@@ -12488,6 +12742,8 @@ $light_emissive
 .?AVCPredictionEvent_Teleport_t@@
 .?AVCPredictionSuppressEffects@@
 .?AVCPreloaderGameSystem@@
+.?AVCProjectile_Artist_BouncingPot@@
+.?AVCProjectile_Artist_RollingProjectile@@
 .?AVCProjectile_Boho_BouncyProjectile@@
 .?AVCProjectile_Boho_SkipGrenade@@
 .?AVCProjectile_BookwormDragon_Projectile@@
@@ -13275,7 +13531,6 @@ $light_emissive
 .?AVIBaseErrorContext@@
 .?AVIBaseSequence@@
 .?AVIBaseToolAttr@@
-.?AVIBoneTransformModifier@@
 .?AVIBoneTransformOverride@@
 .?AVIBreakableSystem@@
 .?AVIChoreoEventCallback@@
@@ -13975,7 +14230,7 @@ $light_emissive
 60.0
 60000
 666666666666666666666666666666666666666666666666\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\.\ssl\s3_enc.c
-6666666666666666announcer
+6666666666666666HeroPersona_t
 7qp9
 9999
 999999.0
@@ -13990,6 +14245,9 @@ $light_emissive
 :EXTERNAL TYPE %s\n
 :parsed on tick %d of %d got %d new commands through command number %d [%s]\n
 ;sv_pausable;sv_cheats
+<%d:%llu>
+<%s:%llu>
+<%s:%s>
 <<ERROR>>
 <ABSENT>\n
 <ASN1 %d>
@@ -14068,7 +14326,6 @@ $light_emissive
 >>NAVGEN: stage %02d / %02d: 
 >>NAVGEN: stage %02d / %02d: %s, disabled\n
 ?33s?
-@ffF@
 @fff>fff>fff>fff>
 @player_start_teleport_destination
 @zipline_panel_tutorial_relay
@@ -14451,7 +14708,6 @@ Added subscription message of version %llu for %s from system %d\n
 Added up to date partial of version %llu for %s from system %d\n
 Adding listener %s\n
 Additional Wait Trooper Spawn
-AdditionalBounceDetonateTimer
 AdditionalShockTarget
 AdditionalTargetRadius
 AdditionalTargets
@@ -14475,9 +14731,11 @@ AggregateEvent
 AimTargetManager
 AirBonusDamageGiven
 AirBonusDamageTaken
+AirControlAccelPerc
 AirControlAccelPercent
 AirControlDashReductionPct
 AirControlDebuffDuration
+AirControlPerc
 AirControlPercent
 AirDampingDuration
 AirDashDistanceInMeters
@@ -14940,6 +15198,7 @@ BarrelScale
 BarrelUpFactor
 BarrierDamagePercentage
 BarrierDuration
+BarrierHealPercentage
 BarrierLockTime
 Barrier[%d]: expiration: %f - health: %f\n
 Base Defense Sentry
@@ -15145,6 +15404,7 @@ BoneConstraintRbf :: Cannot find output bone "%s" :: %s\n
 BoneConstraintRbf :: Invalid input %d or output %d bone count :: %s\n
 BoneConstraintRbf :: input bone count %d != input pose count %d :: %s\n
 BoneConstraintRbf :: output bone count %d != output pose count %d :: %s\n
+BonusAbility1Charge
 BonusAbilityCharges
 BonusAbilityChargesNonCharge
 BonusAbilityDurationPercent
@@ -15176,6 +15436,7 @@ BonusDebuffResist
 BonusFireRate
 BonusFireRateNPC
 BonusFireRatePerHero
+BonusFireRatePerStack
 BonusGoldOnKill
 BonusGoldPerMinute
 BonusHealth
@@ -15192,6 +15453,7 @@ BonusMoveSpeedPercent
 BonusMovespeed
 BonusPerChain
 BonusProjectileRadiusPercent
+BonusProjectiles
 BonusReloadSpeed
 BonusReloadTime
 BonusShockDamagePercentage
@@ -15220,6 +15482,7 @@ BonusWeaponDamage
 BonusWeaponPower
 BonusWeaponTethers
 Bool Param was of wrong type %s!
+Bool( %s )
 BoostTime
 Boss Kill Bounty
 BossDamagePercentIncoming
@@ -15231,6 +15494,7 @@ BotDifficulty
 Both Entity Type and Entity Name were empty. Please specify either type, name, or both to search\n
 Bots
 BounceCount
+BounceDamage
 BounceGrace
 BounceGrenadeSpeed
 BounceLifetime
@@ -15241,6 +15505,7 @@ BounceRadians
 BounceRadius
 BounceRange
 BounceVelocity
+BouncesBeforeExplosion
 BountyDuration
 BountyThreshold
 BoxAngles
@@ -15310,6 +15575,7 @@ BuildUpPerDagger
 BuildUpPerShot
 BuildUpRate
 Building
+BuildupDuration
 BuildupProcDamage
 BuildupProcDuration
 BuildupSpiritDamageThreshold
@@ -15342,6 +15608,7 @@ BulletArmorReductionPerStack
 BulletDamage
 BulletDamageAmp
 BulletDamageAmpDuration
+BulletDamageMultiplier
 BulletDamageReflectedPct
 BulletEffectiveness
 BulletLifesteal
@@ -15497,8 +15764,8 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_accolades
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_audio_limiter.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_audio_util.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:6305
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:6480
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:6306
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:6481
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_hero.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_bot_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_gaffer.cpp
@@ -15524,12 +15791,12 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_he
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_familiar.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_necro.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_necro.cpp:2010
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_ratking.cpp:3870
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_ratking.cpp:3889
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_shiv.cpp:2070
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_tengu.cpp:2172
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1553
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1590
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1941
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1552
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1589
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1940
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_wrecker.cpp:2060
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\familiar\citadel_hero_familiar_sprites.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\npc_escort.cpp
@@ -15777,7 +16044,7 @@ CAnimGraphControllerManager::CreateAndBindController
 CAnimGraphControllerManager::CreateControllerToGraphBindings
 CAnimGraphControllerManager::PreGraphUpdate
 CAnimGraphGameSystem::OnServerPrePackEntities
-CAnimGraphGameSystem::OnServerPrePackEntities(), C:\buildworker\citadel_rel_win64\build\src\game\shared\animgraph_gamesystem.cpp:2434
+CAnimGraphGameSystem::OnServerPrePackEntities(), C:\buildworker\citadel_rel_win64\build\src\game\shared\animgraph_gamesystem.cpp:2500
 CAnimGraphGameSystem::PreUpdateAnimGraphAnimations
 CAnimGraphParamAutoResetRef
 CAnimGraphParamRef
@@ -16484,6 +16751,7 @@ CCitadelZipLinePathNode_API
 CCitadelZiplinePath_API
 CCitadel_Ability_Deadpack_ChargeBlast::LaunchMissile
 CCitadel_Ability_ShivDash::OnThink
+CCitadel_Artist_StrokeBlocker_API
 CCitadel_BaseProp_MidStairs_API
 CCitadel_BreakableProp_API
 CCitadel_Bullet_Base
@@ -16708,6 +16976,9 @@ CEntitySpawner<class CCitadelViscousBall>::Spawn
 CEntitySpawner<class CCitadelZipLineNode>::Spawn
 CEntitySpawner<class CCitadelZiplineCaptureTrigger>::Spawn
 CEntitySpawner<class CCitadel_Announcer>::Spawn
+CEntitySpawner<class CCitadel_Artist_SolidBlocker>::Spawn
+CEntitySpawner<class CCitadel_Artist_StrokeBlocker>::Spawn
+CEntitySpawner<class CCitadel_Artist_VisionBlocker>::Spawn
 CEntitySpawner<class CCitadel_Bounce_Pad>::Spawn
 CEntitySpawner<class CCitadel_CatAnimating>::Spawn
 CEntitySpawner<class CCitadel_DoorwayPortal>::Spawn
@@ -16722,6 +16993,7 @@ CEntitySpawner<class CCitadel_MobileResupply>::Spawn
 CEntitySpawner<class CCitadel_Nano_Predatory_Statue>::Spawn
 CEntitySpawner<class CCitadel_Pickup>::Spawn
 CEntitySpawner<class CCitadel_PickupSpawner>::Spawn
+CEntitySpawner<class CCitadel_Pickup_ArtistDrawing>::Spawn
 CEntitySpawner<class CCitadel_Pickup_AssignedGold>::Spawn
 CEntitySpawner<class CCitadel_Pickup_Currency>::Spawn
 CEntitySpawner<class CCitadel_Pickup_Health>::Spawn
@@ -17301,7 +17573,11 @@ CHandle< CCitadelPassthroughFakeWall >
 CHandle< CCitadelPlayerPawn >
 CHandle< CCitadelPlayerPawn>
 CHandle< CCitadelPortalTrigger >
+CHandle< CCitadelProjectile >
+CHandle< CCitadelProjectile>
 CHandle< CCitadelViscousBall >
+CHandle< CCitadel_Artist_StrokeBlocker >
+CHandle< CCitadel_Artist_StrokeBlocker>
 CHandle< CCitadel_DoorwayPortal >
 CHandle< CCitadel_DoorwayPortal>
 CHandle< CCitadel_MagicianTurret >
@@ -17829,6 +18105,7 @@ CNetworkUtlVector: successfully late-resolved 0x%p in entity %d:%s to %s:'%s'.\n
 CNetworkUtlVectorBase< CGlobalSymbol, NetworkVar_m_vecSecondarySkeletonSlotIDs , -1, int >
 CNetworkUtlVectorBase< CHandle< CBaseAnimGraph >, NetworkVar_m_vecSecondarySkeletons , -1, int >
 CNetworkUtlVectorBase< CHandle< CBaseEntity >, NetworkVar_m_hOutputEntities , -1, int >
+CNetworkUtlVectorBase< CHandle< CBaseEntity >, NetworkVar_m_vecOverlap , -1, int >
 CNetworkUtlVectorBase< CHandle< CBaseModelEntity >, NetworkVar_m_AssociatedEntities , -1, int >
 CNetworkUtlVectorBase< CHandle< CBaseModelEntity >, NetworkVar_m_LightStyleTargets , -1, int >
 CNetworkUtlVectorBase< CHandle< CBaseModelEntity >, NetworkVar_m_TargetEntities , -1, int >
@@ -17850,6 +18127,7 @@ CNetworkUtlVectorBase< CUtlString, NetworkVar_m_QueuedLightStyleStrings , -1, in
 CNetworkUtlVectorBase< EHANDLE, NetworkVar_m_hGuardingBosses , -1, int >
 CNetworkUtlVectorBase< EHANDLE, NetworkVar_m_vecDeployedGravestones , -1, int >
 CNetworkUtlVectorBase< EHANDLE, NetworkVar_m_vecDeployedPieces , -1, int >
+CNetworkUtlVectorBase< EHANDLE, NetworkVar_m_vecDeployedProjectiles , -1, int >
 CNetworkUtlVectorBase< EHANDLE, NetworkVar_m_vecHelpers , -1, int >
 CNetworkUtlVectorBase< EHANDLE, NetworkVar_m_vecLaneSwapRejects , -1, int >
 CNetworkUtlVectorBase< EHANDLE, NetworkVar_m_vecLaneSwapRequests , -1, int >
@@ -19421,6 +19699,7 @@ CUtlOrderedMap<class CCitadelBaseAbility const *,class CCitadel_BeamBulletInfo *
 CUtlOrderedMap<class CCitadelPlayerPawn *,class CUtlString,class CDefLess<class CCitadelPlayerPawn *>,int>::FindElement
 CUtlOrderedMap<class CUtlString,enum EAbilitySlots_t,class CDefLess<class CUtlString>,int>::FindElement
 CUtlOrderedMap<class PulseCursorID_t,struct PulseGraphExecutionHistoryCursorDesc_t *,class CDefLess<class PulseCursorID_t>,int>::FindElement
+CUtlOrderedMap<enum EAbilitySlots_t,class CSubclassName<4>,class CDefLess<enum EAbilitySlots_t>,int>::FindElement
 CUtlOrderedMap<enum ECitadelAudioLoopSounds,class CSoundEventName,class CDefLess<enum ECitadelAudioLoopSounds>,int>::FindElement
 CUtlOrderedMap<enum EModifierValue,float,class CDefLess<enum EModifierValue>,int>::FindElement
 CUtlOrderedMap<int,float,class CDefLess<int>,int>::FindElement
@@ -19708,6 +19987,7 @@ ChooseEnemy() {\n
 Choreo Component created without a valid CBaseModelEntity.\n
 Choreo Control State
 Choreographed scene which controls animation and/or dialog on one or more actors.
+CircleAuraRadius
 CircleScreenOriented
 CitadeNPCMovementTaskQueue
 Citadel HLTV Director, Entering game state: %d (%s) %s\n
@@ -20643,6 +20923,7 @@ Destroy a destructible hit group. Damage level of -1 means all damage levels, ot
 Destroy a particle effect instance
 Destroy this joint by Name
 DestroyDamageInfo
+DestroyOnDamage
 DestroyParticle
 DestroyedTime
 Destroying bullet handler %p\n
@@ -20823,6 +21104,7 @@ Draw an axis with the given position in world space
 Draw pretty debug text (x, y, lineOffset, text, r, g, b, a, duration, font, size, bBold)
 Draw text in 3d (origin, text, bViewCheck, duration)
 Draw text with a line offset (x, y, lineOffset, text, r, g, b, a, duration)
+DrawDuration
 DrawEntityDebugOverlays
 DrawTickMarkedLine
 Draws 2D text. Specify origin in world space.
@@ -21244,6 +21526,7 @@ EdiPartyName:<unsupported>
 Effect: %s
 EffectDispatch
 EffectDuration
+EffectivenessPerHit
 EffectivenessVolumeScaleMax
 EffectivenessVolumeScaleMin
 Effector: %s
@@ -21506,11 +21789,13 @@ ExplodeDebuffDuration
 ExplodeDelay
 ExplodeInterval
 ExplodeOnBreak
+ExplodeOnFirstBounce
 ExplodeOnImpact
 ExplodeTime
 ExplodeTimeInterval
 ExploreNYC
 ExplosionBulletDamage
+ExplosionCone
 ExplosionDamage
 ExplosionMaxPercent
 ExplosionMinPercent
@@ -21702,7 +21987,6 @@ FilterPopup
 Filters
 Final
 Final Boss
-FinalBounceDetonateTimer
 FinalTickDelay
 Finalize
 Find All Entities
@@ -21822,7 +22106,6 @@ Firing: (%s)\n
 First valid class must be greater than 0.
 First valid class must be less than or equal to last valid class.
 First valid item slot must be less than or equal to last valid item slot.
-FirstBounceDetonateTimer
 FirstDamageTime
 FirstMoveChild
 FixationStacks
@@ -21962,6 +22245,7 @@ FromLane
 FullCache
 FullChargeDamage
 FullRageCurrentHealthDamagePct
+Func( %s )
 FuncTrackChange.Blocking
 FuncTrackTrain '%s' has no target.\n
 FuncTrain '%s' has no target.\n
@@ -22510,8 +22794,11 @@ GrenadesPerSecond
 GrenadesPerSecondMult
 Ground
 GroundAccelerationPercentage
+GroundAuraDuration
 GroundAuraHeight
+GroundAuraLingerDuration
 GroundAuraPopDelay
+GroundAuraRadius
 GroundAuraSpacing
 GroundDashDistanceInMeters
 GroundDashDuration
@@ -22525,6 +22812,7 @@ GroundStickHeight
 Groundent: nullptr\n\n
 Groundent:%s\n\n
 Group%02d
+GroveRadius
 GrowTime
 GrowthPerMeter
 Grph2
@@ -22886,6 +23174,7 @@ Ignoring unsupported entity class '%s' in shared environment: %s\n
 ImbueAbilityLifesteal
 ImbuedCooldownMultiplier
 Immediately removes the specified entity
+ImmobilizeBuildup
 ImmobilizeDuration
 ImmobilizeGrowthTime
 ImmobilizeMaxDuration
@@ -22918,6 +23207,7 @@ IncomingBulletDamagePercentFromCaster
 IncomingDamagePercent
 IncomingDamagePercentFromCaster
 IncomingDamagePercentFromCasterPerStack
+IncomingDamagePercentReductionPerPickup
 IncomingDamageReductionPercent
 Inconsistent treatment of '%s' (existing key is %s)!\n
 Incorrect data received or wrong callback result!\n
@@ -22966,6 +23256,11 @@ InitialWidth
 InitializeAINetworks
 Initializing NPC
 Initializing bot for player slot %u: %s\n
+InkCostPerMeter
+InkGenerationCooldown
+InkGenerationPercent
+InkPerSecond
+InkPerSecondOOC
 InnerRadius
 Input specified this location.
 InputEmitAIVolumetricEvent
@@ -22981,6 +23276,7 @@ InstallClasses
 InstanceData = %s
 InstancedAutoGeneratedSequenceScene:  Expecting non-NULL pActor for sound %s\n
 InstancedAutoGeneratedSoundScene:  Expecting non-NULL pActor for sound %s\n
+Int( %d )
 Int16
 Int32
 Int64
@@ -23789,6 +24085,7 @@ MaxDamage
 MaxDamageBeforePerfect
 MaxDamagePerHit
 MaxDamageTime
+MaxDrawDistance
 MaxDuration
 MaxFireRateIncrease
 MaxFireRateSlowPercent
@@ -23797,6 +24094,7 @@ MaxFlyHeight
 MaxGravestones
 MaxGroundDashReduction
 MaxGroundDashReductionPercent
+MaxGrowthTime
 MaxHPDPS
 MaxHPDamage
 MaxHeal
@@ -23829,6 +24127,7 @@ MaxPitch
 MaxProjectileSpeed
 MaxPushForceHorizontal
 MaxPushForceVertical
+MaxRadius
 MaxRage
 MaxRats
 MaxRecasts
@@ -23851,6 +24150,7 @@ MaxStolenTargets
 MaxTargets
 MaxTrailTargets
 MaxTriggers
+MaxWallSize
 MaxWallToWallDistance
 MaxWeaponPower
 Maximum of two values (float)
@@ -23873,9 +24173,6 @@ MeleeDamage
 MeleeDamageScale
 MeleeEMP
 MeleeHalfAngle
-MeleeImpulseHeavy
-MeleeImpulseLight
-MeleeImpulseUpScale
 MeleeKill
 MeleeLifesteal
 MeleeLifestealNonHeroPct
@@ -23935,6 +24232,7 @@ MinHeight
 MinJumpHeight
 MinKingMoveDuration
 MinProjectileSpeed
+MinRadius
 MinRange
 MinReflectionDOTResult
 MinReflectionZ
@@ -23949,6 +24247,7 @@ MinStaminaRestore
 MinSwapTime
 MinTargetsRequired
 MinTimeBeforeDestroy
+MinTimeForBarrier
 MinTimeToTarget
 MinVelocityZ
 MinWallToWallDistance
@@ -24626,7 +24925,6 @@ Object Signing CA
 ObservableNetworkVar
 Obsolete / Unused
 Oceania
-Oct 13 2026
 Offset:
 OffsetScatterAngle
 OffsetScatterDir
@@ -24731,6 +25029,7 @@ Outgoing Falloff Damage
 OutgoingDamage
 OutgoingDamagePenaltyPercent
 OutgoingDamagePercent
+OutgoingDamagePercentPerPickup
 OutgoingDamagePercentPerStack
 OutgoingProjectileLifetime
 Outro Playback Rate
@@ -25024,6 +25323,7 @@ Parse error on %s: %s\n
 ParseSubclass
 Parser encountered %d error(s)
 Parsing event action grants not within the context of an event definition?
+PartialChargeCost
 Particle (%s) (%s)
 Particle Binding
 Particle Binding (Real)
@@ -25289,6 +25589,8 @@ PickupsPerBossDeath
 PickupsPerDeath
 PickupsPerHeroDeath
 PickupsPerNeutralTrooperDeath
+PillarAuraRadius
+PillarDuration
 Pin or Unpin the overlay to the Entity's location
 Ping target "%s" lists no entity classes, so nothing will ever match it.\n
 Pitch Shift
@@ -25389,11 +25691,13 @@ Polyclip : Generating connections...
 Polyclip : Optimising to Quads...
 Polyclip pipeline: \n
 Polynomial:
+Pond Length Error: %f, Pond Summed Dot: %f, Pond Tangent Error: %f\n
 PopDebugOverlayScope
 PopUpSpeed
 Pops the identifier used to group overlays. Overlays marked with this identifier can be deleted in a big batch.
 PopupForce
 PortraitBackground
+Pos [%d]
 Pose Evaluation Report:\n
 Position: %0.3f, %0.3f, %0.3f\n
 Post Idle %s finished for %s\n
@@ -25546,6 +25850,7 @@ ProjectileTurnMaxAmount
 ProjectileTurnMaxDegrees
 ProjectileTurnMinAmount
 ProjectileTurnRate
+Prop( %s )
 PropBreakableCreateAll
 PropData
 PropWorldOrigin
@@ -25890,6 +26195,7 @@ ReduceCooldownOnEnemyHitPercent
 ReduceCooldownOnHitPct
 ReduceDebuffs
 ReduceStunOnEnemyHitPercent
+ReducedEffectivenessPerHit
 ReelSpeed
 Reference Pose Task
 RefillDuration
@@ -27026,6 +27332,8 @@ ServerCPUBrand
 ServerCurTime
 ServerHideoutGameSystem
 ServerHitEntity
+ServerMemPeakRSS_MB
+ServerMemRSS_MB
 ServerPOPID
 ServerReleaseVoteSystem
 ServerTest
@@ -27766,6 +28074,7 @@ SpiritDamage
 SpiritDamageReductionProc
 SpiritDamageReflectedPct
 SpiritLifestealEffectiveness
+SpiritPerPickup
 SpiritPerStack
 SpiritPower
 SpiritPowerPerSoul
@@ -27830,6 +28139,7 @@ StackingGoldPerMinute
 StackingTechRadiusMultiplier
 StackingTechRangeMultiplier
 StacksCanDecay
+StacksPerCast
 StacksRequiredForSlow
 StacksToProcSkull
 StageDuration
@@ -27839,6 +28149,7 @@ Stale
 StaleReads
 Stamina
 StaminaCooldown
+StaminaCooldownReduction
 StaminaDrain
 StaminaHeal
 StaminaRecoveryDisabledDuration
@@ -28069,6 +28380,7 @@ Suboptimal
 Subtract From Timer
 Success
 Success!
+SuccessDuration
 SuccessInputWindow
 Suite B: cannot sign P-384 with P-256
 Suite B: certificate version invalid
@@ -28122,6 +28434,7 @@ Synchronously spawn an entity group from a list of spawn tables.
 Synchronously spawns a single entity from a table
 Syntax for NxN grid of troopers: "citadel_spawn_trooper_grid N [trooper-type]"\n
 System %s failed to init\n
+T%d (%s)
 T1DeathTime
 T61STRING
 TAG NAME: %s | BOUND: %s, REFERENCED: %s\n
@@ -28563,6 +28876,8 @@ Test_CreateEntity( %s ) failed.
 Test_CreateEntity: requires entity classname argument.
 Test_RandomPlayerPosition: no local player entity.
 Testing Area
+TetherBreakDuration
+TetherBreakRange
 TetherDuration
 TetherLeashRange
 TetherMinimumDuration
@@ -28643,11 +28958,13 @@ Time Stamping
 Time controlled nodes ignore synchronization!
 Time since the start of the timer
 Time:   %3.2f
+Time: [%f]
 TimeBeforeCursed
 TimeBeforeGoUpForLagComp
 TimeBeforeProjectileLaunch
 TimeBetweenAttacks
 TimeBetweenGrenades
+TimeBetweenHits
 TimeBetweenSegments
 TimeGoingUpEnemy
 TimeScaleDebuff
@@ -28713,6 +29030,7 @@ TossGroundSideRatio
 TossSpeed
 TossSpeedUpWall
 TossSpeedWall
+TossUpDuration
 TossUpMagnitude
 TossUpSpeed
 TossUpStrength
@@ -28729,6 +29047,7 @@ Total: %d (%.2f%%)\n
 TotalBolts
 TotalDamageOutput
 TotalHealthRegen
+TotalHits
 TotalOrbsFired
 TotalShots
 TotalSwaps
@@ -28933,6 +29252,7 @@ UTIL_RemoveImmediate
 UTIL_ResetMessageText
 UTIL_ResetMessageTextAll
 UTIL_ShowMessageAll
+UltCooldownReduction
 Un Pause Sound
 UnInvalid
 UnNegate
@@ -29217,6 +29537,7 @@ ValueName
 ValveSMMem:%s
 ValveSMMut:%s
 Vampire Bat's Love Bites burst damage
+Var( %s )
 Variant Bool
 Variant Color
 Variant Float
@@ -29378,12 +29699,15 @@ WakeDependentJobFinished
 WakeGotLock
 WakeRecvMsg
 WakeUp
+WallDelay
 WallImpactDamage
 WallImpactLookAheadDistance
 WallImpactRange
 WallLatchIdealDist
 WallLatchSettleDist
 WallLatchSettleTime
+WallSearchRadius
+WallSpacing
 WallStunDistance
 WallStunDuration
 Wants Handshake
@@ -29817,6 +30141,7 @@ ZoomTime
 [dt %5.2f] velocity: %s
 [ex %5.2f] extrap  : frac %.6f%s
 [in %5.2f] interp  : frac %.6f%s
+[net] %s
 [none]
 [null]
 [removed]
@@ -29828,6 +30153,7 @@ ZoomTime
 \n        Public key OCSP hash: 
 \n    near %s\n    
 \n CURRENTLY ACTIVE ABILITIES \n
+\n%*s
 \n%*s            
 \n%*sExtensions: 
 \n%*sLog ID    : 
@@ -29862,6 +30188,7 @@ ZoomTime
 \t"%s" "%s" // local\n
 \t"%s" "%s"\n
 \t"sourcefile" "%s"\n
+\t%.*s\n
 \t%2d: <none>\n
 \t%2d: Bits: %d %s\n
 \t%s - %u frames (%.1f%%), Longest Run - %u, Avg Run: %.1f\n
@@ -29997,12 +30324,19 @@ ability_added
 ability_almost_ready
 ability_apply
 ability_apply_ground
+ability_artist_bamboogrove
+ability_artist_bamboogrove_trigger
+ability_artist_damagezone_trigger
+ability_artist_liondance_trigger
+ability_artist_ridetiger_trigger
+ability_artist_rollingprojectile_trigger
 ability_attach
 ability_bone
 ability_cast
 ability_cast_failed
 ability_charged_bomb_throw
 ability_chessmaster_forkpiece_trigger
+ability_chessmaster_knightbuff_trigger
 ability_chessmaster_queen_trigger
 ability_chessmaster_throwbishop_trigger
 ability_damage
@@ -30250,6 +30584,7 @@ animsequence_is_public
 animsequence_public_name
 annotation
 announce_event
+announcer
 announcer_preview
 ansi-X9-62
 anyExtendedKeyUsage
@@ -30303,6 +30638,7 @@ arm_time
 armor_stacks
 arrival_options
 arrival_options_are_external
+artist_transformingprojectile
 as & fltexcl
 as all
 as any
@@ -30328,7 +30664,10 @@ associated_item
 associated_item_def
 astro_bouncepad_stomp
 async load of
+at %s\n
+att(%d:%s)
 attach_arm_fx
+attach_brush_fx
 attach_cat_fx
 attach_core_fx
 attach_eye_fx_left
@@ -30620,6 +30959,7 @@ bn error
 bn lib
 bn pubkey error
 bn to asn1 integer error
+bn(%d,%d)
 bn_expand2
 body_collection
 body_groups
@@ -32706,6 +33046,7 @@ height out of range
 help_out_
 helper
 hero incompatible
+heroID
 hero_
 hero_%d
 hero_action
@@ -33868,6 +34209,7 @@ m_hHost
 m_hInstance
 m_hListenerInstance
 m_hObserver
+m_hOwningAbility
 m_hWorldOffsetReferenceClip
 m_hitboxsets
 m_iLaneSlot
@@ -34235,6 +34577,25 @@ modifier_arcane_surge
 modifier_arcane_surge_ability_watcher
 modifier_arctic_blast_freeze
 modifier_armor_return_fire
+modifier_artist_cloudburstprojectilearmed
+modifier_artist_damagezoneaura
+modifier_artist_delayedaoeroot
+modifier_artist_enhancedslide
+modifier_artist_flowstate_buff
+modifier_artist_flowstate_watcher
+modifier_artist_grove_aura
+modifier_artist_healingbarrier
+modifier_artist_pillar_areamodifier
+modifier_artist_pond
+modifier_artist_pullbrush_range
+modifier_artist_ridetiger
+modifier_artist_rollingprojectile_debuff
+modifier_artist_silence_aura
+modifier_artist_stackingbuff
+modifier_artist_stackingdamageamp
+modifier_artist_still_life_pickup
+modifier_artist_stun
+modifier_artist_wall
 modifier_baba_bench_run
 modifier_baba_brew_burn
 modifier_baba_brew_holding
@@ -34308,7 +34669,6 @@ modifier_charred
 modifier_cheat_death_immunity
 modifier_check_nearby_player_parry
 modifier_chessmaster_buffally_buff
-modifier_chessmaster_check_watcher
 modifier_chessmaster_damageaura
 modifier_chessmaster_groundtile
 modifier_chessmaster_movingpiecedamage
@@ -34329,6 +34689,8 @@ modifier_citadel_accuracy_tracker
 modifier_citadel_active_disarm_spirit_steal
 modifier_citadel_animalcurse
 modifier_citadel_armor_out_of_combat_health_regen
+modifier_citadel_artist_buildup
+modifier_citadel_artist_tether
 modifier_citadel_backdoor_protection
 modifier_citadel_base_buildup
 modifier_citadel_basic_dot
@@ -34567,6 +34929,7 @@ modifier_doorway_minimap_range
 modifier_dps_aura_active
 modifier_drag
 modifier_drag_custom
+modifier_dragbrush_circle_aura
 modifier_dragonfire_ground_aura
 modifier_drifter_darkness_caster
 modifier_drifter_darkness_target
@@ -34605,6 +34968,7 @@ modifier_familiar_barrier
 modifier_familiar_camdummy
 modifier_familiar_helper_invis_watcher
 modifier_familiar_hopoutlockout
+modifier_familiar_infest_owner_watcher
 modifier_familiar_movingtoattach
 modifier_familiar_shadowclone
 modifier_familiar_spotlight_aura
@@ -35926,6 +36290,11 @@ physics_particle
 pick_up_
 picked %.0fdeg, score %.0f
 picker
+pickup_artist_drawing_assassin
+pickup_artist_drawing_base
+pickup_artist_drawing_brawler
+pickup_artist_drawing_marksman
+pickup_artist_drawing_mystic
 pickup_item
 pickups_collected_gold
 pickups_collected_powerup
@@ -36116,6 +36485,8 @@ post_cast
 post_requirement_duration
 postalAddress
 postalCode
+postcast_fail
+postcast_success
 posxyz
 potentially_audible_set_minus_target
 pound
@@ -36198,7 +36569,6 @@ progress_brewing
 progress_fire
 progress_silence
 projectile
-projectile_artist_rollingprojectile
 prone
 prop
 prop_contexts
@@ -36591,7 +36961,6 @@ room
 roomNumber
 root ca not trusted
 root_aim
-root_motion
 rootbone_follow
 rope_climb_down
 rope_climb_idle
@@ -38210,6 +38579,7 @@ waiting for lock
 waiting_group
 wake_up_delay
 walkers
+wall
 wall_attach_forward
 wall_attach_left
 wall_attach_right

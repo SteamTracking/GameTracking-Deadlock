@@ -47,6 +47,7 @@ class CNPC_TrooperNeutralVData : public CAI_CitadelNPCVData
 	CUtlVector< CUtlString > m_vecRandomSkin;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_SpawnSound;
+	CSoundEventName m_AggroSound;
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_NeutralDamageGrowth;
 	CEmbeddedSubclass< CCitadelModifier > m_SleepModifier;

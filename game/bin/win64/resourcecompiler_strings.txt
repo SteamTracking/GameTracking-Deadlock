@@ -201,12 +201,16 @@
   Vertex Data Uncompressed: %d bytes\n
   frame %d display time = %f\n
   split %6u  len %7.2f  %s  A <%.1f %.1f %.1f>  B <%.1f %.1f %.1f>  verts %d  queue %d\n
+ %.0f
  %9s (%9s) |
+ %f %f
+ %f %f %f
  %f %f %f %f
  %i Compile ERRORS\n
  %i Compile WARNINGS\n
  %s%lu (%s0x%lx)\n
  %s%s%s -> 
+ %s=%d
  (%ld unused bits)\n
  (Bad Remap %d)
  (INVALID PSS PARAMETERS)\n
@@ -307,6 +311,7 @@
  __________ Aggregates __________\n 
  __________ SceneObjects __________\n
  bad channel name '%c'\n
+ by %d
  characters
  due to applied WeightList "%s"
  export
@@ -380,6 +385,7 @@ $TEXTURE_REPLACEMENT_TOKEN
 $auto:
 $blob%d_%d
 $blob%d_%d_%d
+$cc%s_%d
 $cc%s_Ctr
 $cloth
 $cloth%s%d_%d
@@ -387,8 +393,12 @@ $cloth_m%dp%d
 $cloth_node_
 $cloth_root
 $fix%s%d_
+$ha_%s
 $key:FloatBitmap_t
 %*s%s OF %s {\n
+%*s%s:\n
+%*s%s:\n%*s
+%*s%s\n
 %*s<EMPTY>\n
 %*s<Not Supported>
 %*s<Parse Error>
@@ -422,13 +432,17 @@ $key:FloatBitmap_t
 %*scrlNum: 
 %*scrlTime: 
 %*scrlUrl: 
+%*s}\n
 %-18s
 %-23s %s Kx=%-8s Au=%-4s Enc=%-9s Mac=%-4s%s\n
+%-8d
 %.*s.vgcxdata
 %.14s.%03dZ
 %.15lf
 %.2f < X < %.2f
 %.2f <= X <= %.2f
+%.3f
+%0*d
 %019llu
 %02X%02X
 %02X:
@@ -438,6 +452,7 @@ $key:FloatBitmap_t
 %02x%s
 %04d%02d%02d%02d%02d%02dZ
 %04d/%02d/%02d
+%04x - 
 %08dx.geo
 %12sPublic Key Algorithm: 
 %12sUnable to load Public Key\n
@@ -479,7 +494,10 @@ $key:FloatBitmap_t
 %d tiles
 %d vertices
 %d warnings, while processing %s
+%d,%d
+%d,%d,%d
 %d,%d,%d,%d
+%d. %s\n%s
 %d.%d.%d.%d/%d.%d.%d.%d
 %d.Add( %s, %d, %.2f )
 %d.Add( %s, %d, %.2f )\n
@@ -524,22 +542,31 @@ $key:FloatBitmap_t
 %i skipped, 
 %i tris, 
 %i%s|%2.1f%% 
+%i: %s;
 %ld bytes leaked in %d chunks\n
+%ld\n
 %lldms\n
 %lluus(%llums) to remap %i faces\n
 %lu:%s:%s:%d:%s\n
+%s %.2f
+%s %.3f
 %s %2d %02d:%02d:%02d %d%s
 %s %2d %02d:%02d:%02d%.*s %d%s
+%s %s (%s)
 %s %s HTTP/1.0\r\n
 %s %s audio contains INF/NaN
 %s %s audio contains INF/NaN at index %d\n
 %s %s not found, transform undefined
 %s %s%lu (%s0x%lx)\n
 %s %s: %s - %s - %s\n
+%s '%s'
 %s '%s' (%s)
 %s '%s' is not compatible (is '%s' but need '%s')
+%s (%.2f)
 %s (%.2f, %.2f)
 %s (%.2f, %.2f, %.2f)
+%s (%g)
+%s (%i)
 %s (Via node)
 %s (from '%s')
 %s (hammer id %d)
@@ -557,8 +584,11 @@ $key:FloatBitmap_t
 %s - m_nAttributeFlags (0x%llX) m_nObjectFlags (0x%llX)
 %s - unexpected code %08x\n
 %s -map %s -script script-gpu.vrad3 -trackmemorycounts -aftermath -aftermath_full -vulkan -gpuraytracing -allthreads -unbufferedio
+%s 0\n
 %s : %d.%s influences %d/%d verts {%.1f,%.1f,%.1f}-{%.1f,%.1f,%.1f}\n
 %s :: Keeping Joint :: %s\n
+%s <%s>
+%s = %.3f
 %s ? %i : (%s)
 %s @ %0.1fs
 %s @ frame %u
@@ -583,6 +613,7 @@ $key:FloatBitmap_t
 %s View WorldSpace
 %s [%.1f,%.1f,%.1f] (hammer id %d)
 %s [%.1f,%.1f,%.1f] (hammer id %d) has RT dynamic materials enabled, but none of its materials support them.It keeps the baked RT proxy colors.\n
+%s [ID=%d]
 %s [note: This has been explicitly disallowed by gameinfo setting: 'content_consider_missing_materials_fatal']
 %s algorithm "%s" unsupported\n
 %s by %s on %s
@@ -604,11 +635,20 @@ $key:FloatBitmap_t
 %s references the wrong skeleton in variation: %s
 %s references unknown shape node '%s'
 %s took %8.6f seconds. %g iterations/sec
+%s#%i
+%s#%s
+%s#%s#%s
 %s%02X
 %s%02d:%02d
 %s%04x - <SPACES/NULS>\n
 %s%08lx.%s%d
+%s%c
 %s%c%08lx.%s%d
+%s%d_%s
+%s%i
+%s%i_
+%s%s : %s\n
+%s%s%c
 %s%s%s crc=0x%x metadatasz=%d
 %s%s%s.vnmclip
 %s%s%s.vnmgraph
@@ -618,6 +658,8 @@ $key:FloatBitmap_t
 %s%s_Actor_%s
 %s%s_Dialogue_%s
 %s%s_Heading_%s
+%s(%d)
+%s(%d): %s
 %s(%d): No patch note specified!\n
 %s(%d): OpenSSL internal error, assertion failed: %s\n
 %s(%d): Unknown hero name: '%s' in '%s'!\n
@@ -625,6 +667,7 @@ $key:FloatBitmap_t
 %s(%d): Unknown neutral creep name: '%s' in '%s'!\n
 %s(%d): Unmatch HTML tag "%s"\n
 %s(%d): Using '~' to denote a deleted ability, but missing ':' to notate end of ability name!\n
+%s(%i)
 %s() isn't a known function.
 %s(token %i, line %i, col %i) : %s\n
 %s------%s%s
@@ -632,8 +675,10 @@ $key:FloatBitmap_t
 %s.vsvg
 %s.vtex
 %s/%s.txt
+%s/%s/%s
 %s/%s/%s.rte
 %s/%s/%s.viscfg
+%s/*.txt
 %s/*.vmmd
 %s/content/%s
 %s/content/%s/%s
@@ -655,6 +700,7 @@ $key:FloatBitmap_t
 %s/valve/rc_mapbld_%d
 %s/valve/rc_vpk_%d/game
 %s: %f %f %f %f %f %f %f;
+%s: %s %s
 %s: (%d bit)\n
 %s: Bad loop of %d sample frames, disabling\n
 %s: Can't find nodes for edge: %s -> %s\n
@@ -669,9 +715,12 @@ $key:FloatBitmap_t
 %s: called for a CDmeModel which uses CDmeFlexRules, CFlexCompiler should have been called\n
 %s:%d: rec->data != rec->input\n
 %s:%s [ID=%d]
+%s:%u;
+%s:(%s)
 %s::%s (%u)
 %s::%s (Entity Output Handler)
 %s:no_port
+%s;%s
 %s<br><br><b>%s:</b> %s
 %s<br><br><b>%s:</b> %s (<i>%s</i>)
 %sRESOURCE COMPILE ERROR: %s : %s\n
@@ -690,11 +739,15 @@ $key:FloatBitmap_t
 %s\fog_opacity_map.tga
 %s\fog_opacity_map.vtex
 %s\n%2.f - Pos: %.2f, Orient: %.2f
+%s\n%s
 %s\ngroup:\t%s\ntype:\t%s
 %s\pulse_fgd_%s_%s.txt
 %s\water_flow_map.tga
 %s\water_flow_map.vtex
+%s_#&%s
 %s_%03d.vpk
+%s_%d
+%s_%d_%s
 %s_%d_ang
 %s_%d_extent_max
 %s_%d_extent_min
@@ -703,13 +756,21 @@ $key:FloatBitmap_t
 %s_%d_radius
 %s_%d_tolerance_angle
 %s_%d_type
+%s_%i
+%s_%i_%i
+%s_%s.%s
 %s_%s.vtex
+%s_%s_
+%s_%s_%d
 %s_%s_%x.vtex
+%s_%x.%s
 %s_@%d_#&%s
 %s_Extra
 %s_Title
+%s_c
 %s_cm%02d_lp%02d
 %s_count
+%s_lr%i_%s
 %s_lr%i_clutter%i_%s
 %s_mip%d.%s
 %s_noshadow
@@ -736,9 +797,16 @@ $key:FloatBitmap_t
 ($key_value)
 (%.2f seconds)\n
 (%d hrs %d mins %d seconds)\n
+(%d) %s
 (%d)pin: %s
+(%d,%d
+(%d,%d,%d
+(%d,%d,%d)
 (%d,%d,%d,%d
 (%f, %f, %f)
+(%g,%g,%g)
+(%i) %s
+(%s:%d)
 ((%s.x %s %f) && (%s.y %s %f) && (%s.z %s %f) && (%s.w %s %f))
 ((%s.x %s %f) && (%s.y %s %f) && (%s.z %s %f))
 ((long)msg_hdr->msg_len) > 0
@@ -884,6 +952,8 @@ $key:FloatBitmap_t
 -vulkan_enable_sync_validation
 -vulkan_enable_validation
 -vulkan_validation_error_assert
+.%lu
+.%s%s
 ....................
 ../src/devtools/bin/certificates/game/
 .?AU?$AccessorT@VCActionComponent@@VCAnimGraphDoc_Action@@@ArrayOperator@Attribute@@
@@ -14307,8 +14377,8 @@ $key:FloatBitmap_t
 1 vertex
 1.0 - FractionalPart( A ) 
 1.0 outside
-11:47:34
 1280x720
+12:01:05
 14 (default)
 1:1: Tokens : ( PLUS | MINUS | MUL | DIV | COMMA | LPAREN | RPAREN | EQUALS | PERCENT | INT | FLOAT | ID | ML_COMMENT | SL_COMMENT | NL | WS );
 1:1: Tokens : ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | BOOLLITERAL | ID | INTEGERLITERAL | HEXINTEGERLITERAL | FLOATLITERAL | COMMENT | WS );
@@ -15344,6 +15414,7 @@ BoneMask node has Blend Source set to "Parameter" but does not have a valid para
 BoneMask node has invalid weight list\n
 BoneMask node is missing a child.  Will use t-pose by default.
 Bones To Sample In Model Space
+Bool( %s )
 Boolean inverse - true converts to false and false converts to true.<br>Represented in expressions as <tt>!VALUE</tt>
 Bools
 Both Baked and Realtime
@@ -15976,6 +16047,7 @@ CP#%d Relative Pos
 CP#%d Relative Random Dir
 CP#%d Snapshot Changed
 CP#%d Snapshot Entry Count - Subset %s
+CP#%d.%s
 CP#%d.%s Distance
 CP#%d.%s Speed
 CPPScript Component
@@ -16226,6 +16298,7 @@ CPulseValueFullType
 CPulseValuePort::CMD_CHANGE_VALUE_SOURCE
 CPulseValuePort::CMD_JUMP_TO_BLACKBOARD_REF
 CPulseVariant
+CRC = %x\n
 CRC of "%s" (Failure: requires absolute path)\n
 CRC of "%s" (File does not exist? Err %d)\n
 CRC of "%s" (Unexpected failure %d)\n
@@ -19327,6 +19400,7 @@ Freq Range End
 Freq Range Start
 From
 Full
+Func( %s )
 Function "%s" takes %i parameters, but %i were given
 Function %s() expects %d arguments. Found %d.
 Function not implemented
@@ -19937,6 +20011,7 @@ Instances
 Instead of calling an Input on an Entity, call it on the associated Game Blackboard.
 Int To String Map
 Int Value
+Int( %d )
 IntArg
 Integer Divide
 Integer division - unlike the divide (/) node, this will truncate any remainder (floor) and return an integer.
@@ -21257,7 +21332,6 @@ OcclusionCullingBoundsExpand
 OcclusionCullingBoundsNormalDisplacement
 OcclusionCullingBoundsScale
 OcclusionCullingBoundsShapeOffset
-Oct 13 2026
 Offset Time In Seconds
 Offset Type
 Offset from %d 
@@ -21924,6 +21998,7 @@ Projection Mode
 Projection Targets
 Prop Dynamic - Set Animgraph Param
 Prop Dynamic - Set Animgraph Param '%s'
+Prop( %s )
 PropStatic
 Property Name
 Property Owner
@@ -22017,6 +22092,7 @@ RC5-CFB
 RC5-ECB
 RC5-OFB
 RC5_CTRL
+RC::%s
 RDNS
 READ_N
 REAL
@@ -23282,6 +23358,7 @@ Sync Offset: %.2f
 SyncToFollowingGesture
 SystemFunction036
 T -> x: %.3f, y: %.3f, z: %.3f
+T%d (%s)
 T61STRING
 TAG_
 TARGET_ENTRY
@@ -24125,6 +24202,7 @@ Value_Switch
 Value_VarReference
 Values connected to this port will be automatically re-evaluated on change.
 Var Reference
+Var( %s )
 Variable "%s" has %i components, a specific component must be specified, for example use: "%s.x"
 Variable %s does not have a valid type
 Variable '%s' could not find subsection '%s' in reference file: %s\n
@@ -24556,6 +24634,7 @@ ZoomSensitivityMouseWheel
 [%.3f, %.3f]
 [%02d:%02d:%02d] 
 [%3d] %20s: %d vert mean weight = %.3f\n
+[%s] %s
 [%s] %s=%s\n
 [%s] Collision on param groups. The subgraph [%s] already owns the group [%s]
 [%s] Collision on tag groups. subgraph [%s] already subgraph owns the tag group [%s]
@@ -24602,6 +24681,7 @@ ZoomSensitivityMouseWheel
 \n            Not After : 
 \n        Public key OCSP hash: 
 \n    near %s\n    
+\n%*s
 \n%*s            
 \n%*sExtensions: 
 \n%*sLog ID    : 
@@ -24610,6 +24690,7 @@ ZoomSensitivityMouseWheel
 \n%*sVersion   : 
 \n%*sZone: %s, User: 
 \n%12s%s
+\n%s: %s
 \n(this file): %s
 \n*** %s "%s" in %s does not follow the 0..N format!\n\n
 \n*** %s "%s" in %s has a bad range: %s!\n\n
@@ -24744,6 +24825,7 @@ ZoomSensitivityMouseWheel
 \t"m_outputTypeString" "string" "2D"\n
 \t"m_textureOutputChannelArray" "element_array"\n
 \t"m_vClamp" "vector3" "0 0 0"\n
+\t%.*s\n
 \t%s (%i meshes)\n
 \t%s(%s): %i instances\n
 \tError\n
@@ -24841,6 +24923,7 @@ _baked
 _bakeresourcecache
 _base
 _bio
+_c%i
 _ceeff
 _ceeff (cloth end effector) is reserved suffix, please don't use it in joint names
 _cells
@@ -25434,6 +25517,7 @@ bn error
 bn lib
 bn pubkey error
 bn to asn1 integer error
+bn(%d,%d)
 bn_expand2
 body_groups
 boneIndicesAndWeights%i
@@ -29682,7 +29766,7 @@ pbeWithSHA1And40BitRC2-CBC
 pbeWithSHA1And40BitRC4
 pbeWithSHA1AndDES-CBC
 pbeWithSHA1AndRC2-CBC
-pc64 Oct 13 2026 11:47:21
+pc64 Oct 16 2026 12:02:02
 pcPathLengthConstraint
 peer did not return a certificate
 peer does not accept heartbeats

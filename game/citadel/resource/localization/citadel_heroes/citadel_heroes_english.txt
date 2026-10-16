@@ -5197,10 +5197,11 @@
 
 		//--------------Ability 2 
 		"ability_chessmaster_knightbuff" "Kingside Knight"
-		"ability_chessmaster_knightbuff_desc" "Promote an ally to be a <span class=\"highlight\">knight</span>, granting <span class=\"highlight\">bonus stamina</span> and {g:citadel_inline_attribute:'CombatBarrier'} for a duration.<br><br>If self-cast you develop yourself as <span class=\"highlight\">king</span> instead, granting double the {g:citadel_inline_attribute:'CombatBarrier'} but no stamina. <br><br><span class=\"diminish\">Move ({g:citadel_binding:'ADS'}):</span> Moves the piece, making it <span class=\"highlight\">invulnerable</span> during the duration before landing."
+		"ability_chessmaster_knightbuff_trigger" "Move King"
+		"ability_chessmaster_knightbuff_desc" "Promote an ally to be a <span class=\"highlight\">knight</span>, granting <span class=\"highlight\">bonus stamina</span> and {g:citadel_inline_attribute:'CombatBarrier'} for a duration.<br><br>If self-cast you develop yourself as <span class=\"highlight\">king</span> instead, granting double the {g:citadel_inline_attribute:'CombatBarrier'} but no stamina. <br><br><span class=\"diminish\">Move ({g:citadel_binding:'ADS'}):</span> Moves the piece, making it <span class=\"highlight\">invulnerable</span> during the duration before landing. If self-cast, re-activate the ability to move instead."
 		"ability_chessmaster_knightbuff_t2_desc" "+{s:CombatBarrier} Barrier<br>+{s:Stamina} Stamina"
 		"ability_chessmaster_knightbuff_t3_desc" "Can target two allies within radius.<br>On Self: <span class=\"highlight\">Remove all debuffs</span> after a move"
-
+		"ability_chessmaster_knightbuff/rookbuff" "Kingside Knight"
 
 		//--------------Ability 3 
 		"ability_chessmaster_forkpiece" "Rook Battery"
@@ -5368,6 +5369,101 @@
 		"GrabRange_postvalue_label"						"Grab Range"
 		"GrabRange_label"								"Grab Range"
 
+
+		//-----------------------------------------------------------------------------
+		// Artist
+		//-----------------------------------------------------------------------------
+		"citadel_weapon_artist_set"			"Creative Solutions"
+
+
+		//-----Ability 1
+		"ability_artist_pullbrush" "Living Ink"
+		"ability_artist_homingbrush" "Living Ink"
+		"ability_artist_homingbrush_desc_passive" "<span class=\"diminish\">Passive:</span> Casting any other ability refreshes the cooldown of <span class=\"highlight\">Flow State</span>."
+		"ability_artist_homingbrush_desc_active" "<span class=\"diminish\">Empower ({g:citadel_binding:'ABILITY1'}):</span> Your next <span class=\"highlight\">3</span> bullets come to life, allowing you to steer them as they travel. The bullets deal increased {g:citadel_inline_attribute:'BulletDamage'} and splash {g:citadel_inline_attribute:'SpiritDamage'} in a small area.<br><br>Each successful hit against a hero reduces <span class=\"highlight\">all ability cooldowns</span>, and half for <span class=\"highlight\">all item cooldowns</span>."
+		"ability_artist_homingbrush_desc_active_alt" "<span class=\"diminish\">Draw ({g:citadel_binding:'ADS'}):</span> Paint a solid stroke of ink instead that blocks projectiles and characters from passing through.<br><br>The stroke can be destroyed with a heavy melee, but deals {g:citadel_inline_attribute:'SpiritDamage'} to the attacker.</span>"
+		"ability_artist_homingbrush/stack" "Living Ink"
+		"ability_artist_homingbrush/stackingbuff" "Living Ink"
+		"BulletDamageMultiplier_postvalue_label" "Bullet Damage"
+		"BulletDamageMultiplier_postfix" "%"
+
+		"ability_artist_homingbrush/active" "Living Ink"
+		"ability_artist_homingbrush_t2_desc" "On Empower: Gain +{s:BonusFireRatePerStack}% Fire Rate for {s:StackDuration}s, stacking {s:MaxStacks} times"
+		"ability_artist_homingbrush_t1_desc" "{s:AbilityCooldown}s Cooldown<br>{s:MaxDrawDistance}m Max Draw Distance"
+		"ability_artist_homingbrush_t3_desc" "+{s:CooldownReductionPerHit}s Cooldown Reduction Per Hit<br>Improve scaling"
+		
+		"MaxDrawDistance_label" "Max Drawing Size"
+		"MaxDrawDistance_postvalue_label" "Max Drawing Size"
+		"MaxDrawDistance_postfix" "m"
+		"DrawDuration_label" "Drawing Duration"
+		"DrawDuration_postvalue_label" "Drawing Duration"
+		"DrawDuration_postfix" "s"
+
+		
+		//---Ability 2
+		"ability_artist_rollingprojectile" "Flow State"
+		"ability_artist_rollingprojectile_desc" "Drag a brush that continues to travel forward, leaving a trail that grants <span class=\"highlight\">bonus slide distance</span> for allies and a fading {g:citadel_inline_attribute:'Slow'} and {g:citadel_inline_attribute:'SpiritDamage'} to enemies it passes through, increased the further it travels. <br><br>Re-activate the ability to flick the brush forward, ending the ability early but dealing {g:citadel_inline_attribute:'SpiritDamage'} in a larger area."
+		"ability_artist_rollingprojectile_t1_desc" "On Slide: +{s:StaminaCooldownReduction}% Stamina Regeneration"
+		"ability_artist_rollingprojectile_t2_desc" "{s:AbilityCooldown}s Cooldown<br>+{s:ExplosionRadius}m Flick Range<br>+{s:GroundAuraDuration}s Trail Duration"
+		"ability_artist_rollingprojectile_t3_desc" "On Slide: Gain Damage Amp over time, up to {s:OutgoingDamagePercent}% for {s:DamageAmpDuration}s"
+		"ability_artist_rollingprojectile/debuff" "Flow State"
+		"GroundAuraDuration_postfix" "s"
+		"GroundAuraDuration_postvalue_label" "Ground Aura Duration"
+		"GroundAuraDuration_label" "Ground Aura Duration"
+
+		
+
+		//------Ability 3
+		"ability_artist_tether" "Still Life"
+		"ability_artist_tether_desc" "Choose a hero to be your <span class=\"highlight\">subject</span>, dealing {g:citadel_inline_attribute:'SpiritDPS'} as long as you are looking at them. <br><br>If the sketch is completed they take additional {g:citadel_inline_attribute:'SpiritDamage'}, suffer from {g:citadel_inline_attribute:'Stun'}, and drop a <span class=\"highlight\">sketch</span> that can be picked up.<br><br> For each collected <span class=\"highlight\">sketch</span>, you permanently gain stats based on the hero."
+		"ability_artist_tether_t1_desc" "On Cast: Gain {s:HealthRegen} Health Regen for {s:BuffDuration}s, refreshed on pickup"
+		"ability_artist_tether_t2_desc" "While Drawing: Subjects deal {s:OutgoingDamagePercent}% Damage"
+		"ability_artist_tether_t3_desc" "+{s:BonusMoveSpeedPercent}% Move Speed<br>{s:AbilityCooldown}s Cooldown<br>+{s:StunDuration}s Stun Duration"
+		"ability_artist_tether/buildup" "Still Drawing"
+		"ability_artist_tether/buildup/stun" "Still Life"
+		"ability_artist_tether/buildup/buff" "Still Life"
+		"ability_artist_tether/self" "Still Life"
+		"ability_artist_tether/stun" "Still Life"
+		"BuildUpPerAbility_postvalue_label" "Buildup Per Ability"
+		"BuildUpPerAbility_label" "Buildup Per Ability"
+		"BuildUpPerAbility_postfix" "%"
+		"TotalDrawingTime_postvalue_label" "Time to Draw"
+		"TotalDrawingTime_postfix" "s"
+		"OutgoingDamagePercentPerPickup_postvalue_label" "Damage Bonus per Drawing"
+		"OutgoingDamagePercentPerPickup_postfix" "%"
+		"IncomingDamagePercentReductionPerPickup_postvalue_label" "Damage Reduction per Drawing"
+		"IncomingDamagePercentReductionPerPickup_postfix" "%"
+		"SpiritPerPickup_postvalue_label" "Spirit per Sketch"
+		"SpiritPerPickup_label" "Spirit per Sketch"
+		"CurrentSketches_label" "Sketches Collected:"
+		"Citadel_Graph_PermanentBuff_ArtistMystic" "Artist Sketches"
+		"Citadel_Graph_PermanentBuff_ArtistBrawler" "Brawler Sketches"
+		"Citadel_Graph_PermanentBuff_ArtistAssassin" "Assassin Sketches"
+		"Citadel_Graph_PermanentBuff_ArtistMarksman" "Marksman Sketches"
+
+		"artist_drawing_mystic" "Mystic Sketch"
+		"artist_drawing_marksman" "Marksman Sketch"
+		"artist_drawing_brawler" "Brawler Sketch"
+		"artist_drawing_assassin" "Assassin Sketch"
+
+
+		//----Ability 4
+		"ability_artist_bamboogrove" "Abstract Landscape"
+		"ability_artist_bamboogrove_desc" "Create a circular display of ink that blocks vision and grants allies {g:citadel_inline_attribute:'Spirit'}.<br><br>Enemies inside are revealed, and leaving causes them to take {g:citadel_inline_attribute:'SpiritDamage'} and suffer from {g:citadel_inline_attribute:'Silence'} and {g:citadel_inline_attribute:'Slow'}, destroying the ink in the process."
+		"ability_artist_bamboogrove/center/buff" "Abstract Landscape"
+		"ability_artist_bamboogrove_t2_desc" "On Buff: +{s:AbilityLifestealPercentHero}% Spirit Lifesteal<br>+{s:TechPower} Spirit Power"
+		"ability_artist_bamboogrove_t3_desc" "+{s:SilenceDuration}s Silence Duration<br>+{s:AbilityDuration}s Ability Duration<br>Ink is no longer destroyed"
+
+		"ability_artist_bamboogrove/groundaura/silence" "Abstract Landscape"
+		"ability_artist_bamboogrove/groveally/buff" "Abstract Landscape"
+		"AttackFrequency_postvalue_label" "Attack Frequency"
+		"AttackFrequency_postfix" "s"
+		"GroveRadius_postvalue_label" "Display Radius"
+		"GroveRadius_label" "Display Radius"
+		"GroveRadius_postfix" "m"
+
+
+
 		//-----------------------------------------------------------------------------
 		// END HERO ABILITIES
 		//-----------------------------------------------------------------------------
@@ -5528,8 +5624,9 @@
 		"ability_melee_ratking"					"Melee"
 		"ability_melee_baba"					"Melee"
 		"ability_baba_bench_melee"				"Melee"
-		"ability_melee_chessmaster"						"Melee"
-		"ability_melee_deadpack"						"Melee"
+		"ability_melee_chessmaster"				"Melee"
+		"ability_melee_deadpack"				"Melee"
+		"ability_melee_artist"					"Melee"
 
 		"Citadel_Familiar_HeroTag_1" "Helpful"
 		"Citadel_Familiar_HeroTag_2" "Tiny"
@@ -5694,6 +5791,7 @@
 		"hero_baba_lore"						"There are a few things most denizens of The Cursed Apple hope to experience at some point in their lives.<br><br>See a Broadway show.<br>Ice Skate at Rockefeller Center during Christmas season.<br>Get yelled at by the Central Park Pigeon Lady.<br><br>Because Baba is more than just an old woman that feeds spirit pigeons in the park... she's an institution. A force of nature woven into the very lore of New York City. Is it true that she's sat at the same bench every day for the past 50 years, rain or shine? Maybe. Is she REALLY the leader of The Soho Coven? Who's to say. One thing's for sure though... she's a New Yorker.  And she's not going to sit back and watch a bunch of tourists tear apart Manhattan in pursuit of power."
 		"hero_chessmaster_lore"			"In a world that moves too fast, Solomon is content to stop and listen. Offering a friendly ear and good counsel, Solomon has found himself sitting across the chess table from tourists, criminals, and titans of industry.  But no matter his opponent, Solomon remains un-phased... because to him, chess is so much more than a game. It's an equalizer. A way for him to connect to people from all walks of life on an even playing field."
 		"hero_deadpack_lore"			"\"Ladies and Gentlemen, I'm going to tell you a shocking secret: at Fairfax Industries we know nothing about safety. Now let me tell you something even MORE shocking... that's a good thing! Now in my tenure here I have been shot, stabbed, impaled, defenestrated, blown up, atomized, and decapitated-not once. not twice. not thrice. but quice. That's right, my head has been cut off enough times that I had to use a made up word to quantify it.<br><br>But I put myself through figurative and sometimes literal hell because it's not enough to THINK about how things go wrong, we need to KNOW how things go wrong.<br><br>Now the demonstration you are about to witness is extremely dangerous. So sit back. Put on your safety googles. And bear witness to the miracle of flight courtesy of Fairfax Industries, and the Chimera Mark 1.\"<br><br><span class=\"italics\">- This transcription of Danny's opening remarks at The Military Technology Expo has been provided by Fairfax Industries</span>"
+		"hero_artist_lore"			"Violet immigrated to The Cursed Apple when she was 12, and while there was a certain amount of culture shock to adapting to New York, she quickly fell in love with the vibrance of the city.   Dedicating herself to the pursuit of the arts, Violet's passion lead her to successes far beyond most of her peers.<br><br>First, a full ride to art school.<br><br>Then in her junior year, inclusion in MOMA'S prestigious celebration of student artists: \"The Upstart Gallery\".<br><br>By any measure she's doing phenomenal for her age, however Violet has not been able shake her existential dread of dying a failure. She knows that commercial success as a fine artist isn't about being good enough. It's not even about being great. It's about being seen by the right person at the right time.  And so she has set her sights on The Ritual... not to embellish on her own talent, but just to have a chance to show the world what she can do."
 
 	}
 }
