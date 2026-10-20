@@ -129,13 +129,13 @@ PS
 	    float4 _Globals_1_g_vDofLerpBias : packoffset(c13);
 	};
 	
-	Texture2D<float4> g_tInputColor : register(t56, space1);
+	Texture2D<float4> g_tInputColor : register(t54, space1);
 	SamplerState AddressU_Clamp_AddressV_Clamp_Filter_MinMagLinearMipPoint : register(s27, space1);
-	Texture2D<float4> g_tInputDepth : register(t57, space1);
+	Texture2D<float4> g_tInputDepth : register(t55, space1);
 	SamplerState AddressU_Clamp_AddressV_Clamp_Filter_MinMagLinearMipPoint_1 : register(s28, space1);
-	Texture2D<float4> g_tInputSmallBlur : register(t60, space1);
+	Texture2D<float4> g_tInputSmallBlur : register(t58, space1);
 	SamplerState AddressU_Clamp_AddressV_Clamp_Filter_MinMagLinearMipPoint_2 : register(s14, space1);
-	Texture2D<float4> g_tInputLargeBlur : register(t61, space1);
+	Texture2D<float4> g_tInputLargeBlur : register(t59, space1);
 	SamplerState AddressU_Clamp_AddressV_Clamp_Filter_MinMagLinearMipPoint_3 : register(s15, space1);
 	
 	static float2 input_0;

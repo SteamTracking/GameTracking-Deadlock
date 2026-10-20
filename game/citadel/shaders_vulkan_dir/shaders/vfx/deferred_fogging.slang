@@ -72,7 +72,7 @@ CS
 	    float4 PerViewConstantBufferCitadel_t_1_m4 : packoffset(c17);
 	};
 	
-	Texture2D<float4> g_tGBufferDepth : register(t59, space0);
+	Texture2D<float4> g_tGBufferDepth : register(t57, space0);
 	RWTexture2D<float4> g_tIntermediateRT : register(u158, space0);
 	
 	static uint3 gl_GlobalInvocationID;

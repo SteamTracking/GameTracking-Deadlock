@@ -388,9 +388,9 @@ PS
 	    int2 PerViewConstantBufferCitadel_t_1_m0 : packoffset(c6);
 	};
 	
-	Texture2D<float4> g_tColor : register(t57, space1);
+	Texture2D<float4> g_tColor : register(t55, space1);
 	SamplerState Filter_Anisotropic_MaxAniso_8 : register(s14, space1);
-	Texture2D<float4> g_tNormal : register(t56, space1);
+	Texture2D<float4> g_tNormal : register(t54, space1);
 	Texture2D<float4> g_tBlueNoise : register(t30, space1);
 	
 	static float4 gl_FragCoord;

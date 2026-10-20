@@ -99,7 +99,7 @@ PS
 	    float2 PerViewConstantBuffer_t_1_m0 : packoffset(c20.z);
 	};
 	
-	Texture2D<float4> g_tGBufferDepth : register(t56, space1);
+	Texture2D<float4> g_tGBufferDepth : register(t54, space1);
 	
 	static float4 gl_FragCoord;
 	static float4 output_0;

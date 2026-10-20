@@ -5,7 +5,7 @@ class CCitadel_UtilityUpgrade_RocketBooster : public CCitadel_UtilityUpgrade_Roc
 	bool m_bCrashingDown;
 	bool m_bImpulseApplied;
 	bool m_bCanCrash;
+	bool m_bPlayLandingSound;
 	VectorWS m_vecCrashPosition;
 	Vector m_vecCrashDirection;
-	SndOpEventGuid_t m_InAirLoopSound;
 };

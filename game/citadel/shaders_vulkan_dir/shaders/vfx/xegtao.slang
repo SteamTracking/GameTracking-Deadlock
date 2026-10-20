@@ -97,7 +97,7 @@ CS
 	layout(set = 0) uniform _1064 PerViewConstantBuffer_t;
 	
 	layout(set = 0, binding = 22) uniform sampler AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipPoint;
-	layout(set = 0, binding = 60) uniform texture2D g_srcRawDepth;
+	layout(set = 0, binding = 58) uniform texture2D g_srcRawDepth;
 	layout(set = 0, binding = 158) uniform writeonly image2D g_outWorkingDepthMIP0;
 	layout(set = 0, binding = 159) uniform writeonly image2D g_outWorkingDepthMIP1;
 	layout(set = 0, binding = 160) uniform writeonly image2D g_outWorkingDepthMIP2;

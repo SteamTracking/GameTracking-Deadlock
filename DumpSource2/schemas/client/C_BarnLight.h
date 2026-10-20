@@ -75,6 +75,12 @@ class C_BarnLight : public C_BaseModelEntity
 	Vector m_vPrecomputedOBBOrigin5;
 	QAngle m_vPrecomputedOBBAngles5;
 	Vector m_vPrecomputedOBBExtent5;
+	Vector4D m_vPrecomputedShadowmapAtlasRect0;
+	Vector4D m_vPrecomputedShadowmapAtlasRect1;
+	Vector4D m_vPrecomputedShadowmapAtlasRect2;
+	Vector4D m_vPrecomputedShadowmapAtlasRect3;
+	Vector4D m_vPrecomputedShadowmapAtlasRect4;
+	Vector4D m_vPrecomputedShadowmapAtlasRect5;
 	// MNotSaved
 	bool m_bInitialBoneSetup;
 	C_NetworkUtlVectorBase< uint16 > m_VisClusters;

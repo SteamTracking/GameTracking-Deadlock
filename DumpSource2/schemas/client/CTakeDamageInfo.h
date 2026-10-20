@@ -42,6 +42,12 @@ class CTakeDamageInfo
 	float32 m_flCritDamage;
 	// MNotSaved
 	bool m_bSpeakDamageEvent;
+	// MNotSaved
+	float32 m_flDeferredHealthLossFraction;
+	// MNotSaved
+	bool m_bCannotBeDeferred;
+	// MNotSaved
+	bool m_bIgnoresSelfBubble;
 	CUtlLeanVector< DestructiblePartDamageRequest_t > m_DestructibleHitGroupRequests;
 	// MNotSaved
 	bool m_bInTakeDamageFlow;

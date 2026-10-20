@@ -254,10 +254,10 @@ PS
 	    float PerViewConstantBuffer_t_1_m0 : packoffset(c18.z);
 	};
 	
-	Texture2D<float4> g_tNormalRoughness1 : register(t57, space1);
+	Texture2D<float4> g_tNormalRoughness1 : register(t55, space1);
 	SamplerState Filter_Anisotropic_MaxAniso_8 : register(s14, space1);
-	Texture2D<float4> g_tColor1 : register(t56, space1);
-	Texture2D<float4> g_tPacked1 : register(t58, space1);
+	Texture2D<float4> g_tColor1 : register(t54, space1);
+	Texture2D<float4> g_tPacked1 : register(t56, space1);
 	Texture2D<float4> g_tBlueNoise : register(t30, space1);
 	
 	static float4 gl_FragCoord;

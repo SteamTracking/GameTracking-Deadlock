@@ -240,11 +240,13 @@
  P95=%u
  P99=%.1f
  P99=%u
+ PlayerSlot Crowd Control
  PlayerSlot Damage
  PlayerSlot Damage Mitigated
  PlayerSlot Heal Prevented
  PlayerSlot Healed
  PlayerSlot Lethal
+ PlayerSlot Mitigated By
  PlayerSlot Regen
  Replay not yet uploaded
  STAT VALUE CACHE REPORT\n
@@ -1093,11 +1095,13 @@ $light_emissive
 %sm_nBurstShotsRemaining : %d
 %u players have disconnected, will shut down the match in %.1f seconds\n
 %u:%02u:%02u
+%u:%s PlayerSlot Crowd Control
 %u:%s PlayerSlot Damage
 %u:%s PlayerSlot Damage Mitigated
 %u:%s PlayerSlot Heal Prevented
 %u:%s PlayerSlot Healed
 %u:%s PlayerSlot Lethal
+%u:%s PlayerSlot Mitigated By
 %u:%s PlayerSlot Regen
 %u[%d]
 %u\t%s\t%s\t%s\n
@@ -1477,6 +1481,7 @@ $light_emissive
 .?AUCAttr_no_member@?L@??GetAttributeTable_CChoreoEvent_LOCATOR@CChoreoEvent_LOCATOR@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCAttr_no_member@?M@??GetAttributeTable_CChoreoEvent_ANIM_CLIP@CChoreoEvent_ANIM_CLIP@@SAXPEAV?$CUtlVector@PEAVIBaseToolAttr@@HV?$CUtlVectorMemory_Growable@PEAVIBaseToolAttr@@H$0A@@@@@@Z@
 .?AUCCitadelAbilityBeam_t@@
+.?AUCCitadelProjectileVData@@
 .?AUCCitadelRecentDamage@@
 .?AUCDefinition@CNmAndNode@@
 .?AUCDefinition@CNmAnimationPoseNode@@
@@ -2201,6 +2206,7 @@ $light_emissive
 .?AV?$CEmbeddedSubclass@VCCitadel_Modifier_UltCombo_Target@@@@
 .?AV?$CEmbeddedSubclass@VCScaleFunctionBase@@@@
 .?AV?$CEmbeddedSubclassGeneric@$01@@
+.?AV?$CEmbeddedSubclassGeneric@$0A@@@
 .?AV?$CEnduringClassMemoryPool@VCAnimPose@@@@
 .?AV?$CEntityComponentHelperContained@VCCitadelAbilityComponent@@@@
 .?AV?$CEntityComponentHelperContained@VCCitadelHeroComponent@@@@
@@ -2341,6 +2347,7 @@ $light_emissive
 .?AV?$CEntitySpawner@VCNPC_Neutral_Flying_Pigeon@@@@
 .?AV?$CEntitySpawner@VCNPC_Neutral_Hideout_Cat@@@@
 .?AV?$CEntitySpawner@VCNPC_Neutral_Hideout_Rabbit@@@@
+.?AV?$CEntitySpawner@VCNPC_NurseLeech@@@@
 .?AV?$CEntitySpawner@VCNPC_Ratking_Rat@@@@
 .?AV?$CEntitySpawner@VCNPC_ShieldedSentry@@@@
 .?AV?$CEntitySpawner@VCNPC_Trooper@@@@
@@ -2467,6 +2474,7 @@ $light_emissive
 .?AV?$CEntitySpawnerBase@VCNPC_Neutral_Flying_Pigeon@@@@
 .?AV?$CEntitySpawnerBase@VCNPC_Neutral_Hideout_Cat@@@@
 .?AV?$CEntitySpawnerBase@VCNPC_Neutral_Hideout_Rabbit@@@@
+.?AV?$CEntitySpawnerBase@VCNPC_NurseLeech@@@@
 .?AV?$CEntitySpawnerBase@VCNPC_Ratking_Rat@@@@
 .?AV?$CEntitySpawnerBase@VCNPC_ShieldedSentry@@@@
 .?AV?$CEntitySpawnerBase@VCNPC_Trooper@@@@
@@ -2506,6 +2514,7 @@ $light_emissive
 .?AV?$CEntityWithSubclassSpawner@VCBaseEntity@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadelBaseAbility@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadelPlayerBotNPCBrain@@@@
+.?AV?$CEntityWithSubclassSpawner@VCCitadelProjectile@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_PickupSpawner@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup_ArtistDrawing@@@@
@@ -2521,6 +2530,7 @@ $light_emissive
 .?AV?$CEntityWithSubclassSpawner@VCNPC_MidBoss@@@@
 .?AV?$CEntityWithSubclassSpawner@VCNPC_NecroSkele@@@@
 .?AV?$CEntityWithSubclassSpawner@VCNPC_Neutral_Bug@@@@
+.?AV?$CEntityWithSubclassSpawner@VCNPC_NurseLeech@@@@
 .?AV?$CEntityWithSubclassSpawner@VCNPC_Ratking_Rat@@@@
 .?AV?$CEntityWithSubclassSpawner@VCNPC_Trooper@@@@
 .?AV?$CEntityWithSubclassSpawner@VCNPC_TrooperBoss@@@@
@@ -3318,6 +3328,17 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_NoCatapult@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_NonPlayerCamera@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_NullificationAuraAOE@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_AdrenalineRush_Base@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_AdrenalineRush_Buff@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_AdrenalineRush_Crash@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_Fear_Buildup@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_Fear_Debuff@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_Fear_Gaze@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_HealingNeedleEquipped@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_HealingNeedles_Buff@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_LeechTherapy_Ally@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_LeechTherapy_StackBonus@@$0PPPP@@@
+.?AV?$CModifierFactory@VCCitadel_Modifier_Nurse_LeechTherapy_Target@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Objective_Bullet_Resist@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Objective_HealthGrowth@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Objective_Regen@@$0PPPP@@@
@@ -3978,6 +3999,7 @@ $light_emissive
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hEndPoint@CRopeKeyframe@@@@
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hEntAttached@CEntityFlame@@@@
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hGroundEntity@1@@@
+.?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hNurse@CNPC_NurseLeech@@@@
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hObserverTarget@CPlayer_ObserverServices@@@@
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hOwnerEntity@1@@@
 .?AV?$CNetworkHandleBase@VCBaseEntity@@VNetworkVar_m_hRemapLineEnd@CPointValueRemapper@@@@
@@ -4271,6 +4293,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iLane@STeamFOWEntity@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iLastBuyCountDown@CStreetBrawlController@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iLastHits@PlayerDataGlobal_t@@@@
+.?AV?$CNetworkVarBase@HVNetworkVar_m_iLeechCount@CCitadel_Ability_Nurse_LeechTherapy@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iLevel@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iMaxAmmo@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iMidbossKillCount@CCitadelGameRules@@@@
@@ -4368,6 +4391,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@HVNetworkVar_m_nLastEnteredTunnelID@CCitadelPlayerPawn@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_nLastGroundDashTick@CCitadel_Ability_Dash@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_nLaunchNum@CItemXP@@@@
+.?AV?$CNetworkVarBase@HVNetworkVar_m_nLeechStacksAtCast@CCitadel_Ability_Nurse_Fear@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_nLightChainCount@CCitadel_Ability_HoldMelee@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_nLightMapUniqueId@CBarnLight@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_nLightMapUniqueId@CLightComponent@@@@
@@ -4581,8 +4605,10 @@ $light_emissive
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flCaptureProgressFrac@TeamKothState_t@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flCaptureTime@CCitadelControlPointTrigger@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flCastDelayFrac@CCitadel_Ability_Deadpack_Rocketeer@@@@
+.?AV?$CNetworkVarBase@MVNetworkVar_m_flCastDelaySpeedScale@CCitadelBaseAbility@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flCasterSpeed@CCitadel_Ability_ZipLine@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flChannelTime@CCitadel_Ability_VampireBat_BatSwarm@@@@
+.?AV?$CNetworkVarBase@MVNetworkVar_m_flChargeProgress@CCitadel_Ability_Nurse_HealingNeedles@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flColorTemperature@CBarnLight@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flCreationTime@CPlayerSprayDecal@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flCumulativeDistance@CCitadelZipLineNode@@@@
@@ -4831,6 +4857,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStartTime@CTextureBasedAnimatable@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStartTimeInCommentary@CPointCommentaryNode@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStopDuration@CCitadelBulletTimeWarp@@@@
+.?AV?$CNetworkVarBase@MVNetworkVar_m_flStoppedCooldownRemaining@CCitadelBaseAbility@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStoredDamageAmp@CCitadel_Ability_Nano_CatForm@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStreetBrawlTotalNonCombatTime@CStreetBrawlController@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flStrength@CEnvVolumetricFogVolume@@@@
@@ -4846,6 +4873,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flTotalPendingHeal@CCitadel_Ability_Frank_Revive@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flTotalPendingHeal@CCitadel_Ability_Frank_SelfZap@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flTotalPendingHeal@CCitadel_Ability_PassiveBeefy@@@@
+.?AV?$CNetworkVarBase@MVNetworkVar_m_flUltimateStoppedCooldownRemaining@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flUpFactor@CCitadel_Bounce_Pad@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flUpdateInterval@CCitadelTrooperMinimap@@@@
 .?AV?$CNetworkVarBase@MVNetworkVar_m_flValue@CEconItemAttribute@@@@
@@ -5092,6 +5120,12 @@ $light_emissive
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vecWallClingNormal@CCitadel_Ability_TestHero_WallCling@@@@
 .?AV?$CNetworkVarBase@V?$Vec3D@M@@VNetworkVar_m_vecWallExitVelocity@CCitadel_Ability_GooBowlingBall@@@@
 .?AV?$CNetworkVarBase@V?$Vec4D@M@@VNetworkVar_m_Values@EntityRenderAttribute_t@@@@
+.?AV?$CNetworkVarBase@V?$Vec4D@M@@VNetworkVar_m_vPrecomputedShadowmapAtlasRect0@CBarnLight@@@@
+.?AV?$CNetworkVarBase@V?$Vec4D@M@@VNetworkVar_m_vPrecomputedShadowmapAtlasRect1@CBarnLight@@@@
+.?AV?$CNetworkVarBase@V?$Vec4D@M@@VNetworkVar_m_vPrecomputedShadowmapAtlasRect2@CBarnLight@@@@
+.?AV?$CNetworkVarBase@V?$Vec4D@M@@VNetworkVar_m_vPrecomputedShadowmapAtlasRect3@CBarnLight@@@@
+.?AV?$CNetworkVarBase@V?$Vec4D@M@@VNetworkVar_m_vPrecomputedShadowmapAtlasRect4@CBarnLight@@@@
+.?AV?$CNetworkVarBase@V?$Vec4D@M@@VNetworkVar_m_vPrecomputedShadowmapAtlasRect5@CBarnLight@@@@
 .?AV?$CNetworkVarBase@VAttachmentHandle_t@@VNetworkVar_m_iEndAttachment@CRopeKeyframe@@@@
 .?AV?$CNetworkVarBase@VAttachmentHandle_t@@VNetworkVar_m_iStartAttachment@CRopeKeyframe@@@@
 .?AV?$CNetworkVarBase@VAttachmentHandle_t@@VNetworkVar_m_nAttachment@CSprite@@@@
@@ -5451,6 +5485,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tStateStartTime@CCitadel_Ability_PunkGoat_GoatFlip@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tStateTimeBegin@CCitadel_Ability_Deadpack_Ultimate@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tStopPaintingTime@CCitadel_Ability_Artist_PullBrush@@@@
+.?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tSwapInFinishTime@CCitadel_Ability_Nurse_HealingNeedles@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tTeleportCompletedTime@CCitadel_Ability_Mirage_Teleport@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tTetherAttachTime@CCitadel_Ability_Necro_PrimaryWeapon@@@@
 .?AV?$CNetworkVarBase@VGameTime_t@@VNetworkVar_m_tTetherBreakTime@CCitadel_Ability_Necro_PrimaryWeapon@@@@
@@ -5941,6 +5976,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bPaused@CSceneEntity@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bPermanentlyBroken@WeakPoint_t@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bPickedUp@CCitadelItemPickupRejuv@@@@
+.?AV?$CNetworkVarBase@_NVNetworkVar_m_bPlayLandingSound@CCitadel_UtilityUpgrade_RocketBooster@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bPowerupActive@CCitadel_PickupItemSpawner@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bPrecomputedFieldsValid@CBarnLight@@@@
 .?AV?$CNetworkVarBase@_NVNetworkVar_m_bPrecomputedFieldsValid@CLightComponent@@@@
@@ -6048,12 +6084,14 @@ $light_emissive
 .?AV?$CNetworkVectorBase@V?$Vec3D@M@@VNetworkVar_m_vecMaxs@CCollisionProperty@@V1@@@
 .?AV?$CNetworkVectorBase@V?$Vec3D@M@@VNetworkVar_m_vecMins@CCollisionProperty@@V1@@@
 .?AV?$CNetworkVectorBase@V?$Vec3D@M@@VNetworkVar_m_vecNormal@CPlayerSprayDecal@@V1@@@
+.?AV?$CNetworkVectorBase@V?$Vec3D@M@@VNetworkVar_m_vecRecoilDirection@CCitadel_Ability_Nurse_Fear@@V1@@@
 .?AV?$CNetworkVectorBase@V?$Vec3D@M@@VNetworkVar_m_vecSpecifiedSurroundingMaxs@CCollisionProperty@@V1@@@
 .?AV?$CNetworkVectorBase@V?$Vec3D@M@@VNetworkVar_m_vecSpecifiedSurroundingMins@CCollisionProperty@@V1@@@
 .?AV?$CNetworkVectorBase@VQAngle@@VNetworkVar_m_angClientCamera@CCitadelPlayerPawn@@V1@@@
 .?AV?$CNetworkVectorBase@VQAngle@@VNetworkVar_m_angEyeAngles@CCitadelPlayerPawn@@V1@@@
 .?AV?$CNetworkVectorBase@VQAngle@@VNetworkVar_m_angRotation@CGameSceneNode@@V1@@@
 .?AV?$CNetworkVectorBase@VQAngle@@VNetworkVar_m_closedAngles@CBasePropDoor@@V1@@@
+.?AV?$CNetworkVectorBase@VQAngle@@VNetworkVar_m_playerAngles@CCitadel_Ability_Nurse_Fear@@V1@@@
 .?AV?$CNetworkVectorBase@VQAngle@@VNetworkVar_m_vecPunchAngle@CPlayer_CameraServices@@V1@@@
 .?AV?$CNetworkVectorBase@VQAngle@@VNetworkVar_m_vecPunchAngleVel@CPlayer_CameraServices@@V1@@@
 .?AV?$CNetworkVectorBase@VQAngle@@VNetworkVar_qAngle@ViewAngleServerChange_t@@V1@@@
@@ -6101,6 +6139,7 @@ $light_emissive
 .?AV?$CObservableNetworkVarStorage@_NVNetworkVar_m_bInCastDelay@CCitadelBaseAbility@@@@
 .?AV?$CObservableNetworkVarStorage@_NVNetworkVar_m_bIsSliding@CCitadel_Ability_Slide@@@@
 .?AV?$CObservableNetworkVarStorage@_NVNetworkVar_m_bLeaping@CCitadel_Ability_HornetLeap@@@@
+.?AV?$CObservableNetworkVarStorage@_NVNetworkVar_m_bNeedlesOut@CCitadel_Ability_Nurse_HealingNeedles@@@@
 .?AV?$CObservableNetworkVarStorage@_NVNetworkVar_m_bToggleState@CCitadelBaseAbility@@@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?1???$ParallelForEach@AEAV?$CUtlVector@PEAVCCitadelPlayerPawn_GraphController2@@HV?$CUtlVectorMemory_Growable@PEAVCCitadelPlayerPawn_GraphController2@@H$0A@@@@@V<lambda_1>@?2??FrameUpdatePostEntityThink@CCitadelParallelGraphUpdaterGameSystem@@UEAAXAEBUEventServerPostEntityThink_t@@@Z@@@YAXAEAV?$CUtlVector@PEAVCCitadelPlayerPawn_GraphController2@@HV?$CUtlVectorMemory_Growable@PEAVCCitadelPlayerPawn_GraphController2@@H$0A@@@@@PEBD$$QEAV1?2??FrameUpdatePostEntityThink@CCitadelParallelGraphUpdaterGameSystem@@UEAAXAEBUEventServerPostEntityThink_t@@@Z@HHW4JobPriority_t@@@Z@@CParallelProcessLauncher@@
 .?AV?$CParallelLambdaJob@V<lambda_1>@?4??PushDynamicTransformsWorker@CPhysicsGameSystem@@AEAAXPEAUVPhysXWorldStepResults@@@Z@@CParallelProcessLauncher@@
@@ -6735,6 +6774,17 @@ $light_emissive
 .?AV?$CSubclassFactory@VCCitadel_Modifier_NoCatapult@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_NonPlayerCamera@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_NullificationAuraAOE@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_AdrenalineRush_Base@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_AdrenalineRush_Buff@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_AdrenalineRush_Crash@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_Fear_Buildup@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_Fear_Debuff@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_Fear_Gaze@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_HealingNeedleEquipped@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_HealingNeedles_Buff@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_LeechTherapy_Ally@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_LeechTherapy_StackBonus@@VCBaseModifier@@@@
+.?AV?$CSubclassFactory@VCCitadel_Modifier_Nurse_LeechTherapy_Target@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Objective_Bullet_Resist@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Objective_HealthGrowth@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Objective_Regen@@VCBaseModifier@@@@
@@ -7880,6 +7930,7 @@ $light_emissive
 .?AVCAI_MoveProbeTraceFilter@@
 .?AVCAI_NPC_ChessPieceVData@@
 .?AVCAI_NPC_NecroSkeleVData@@
+.?AVCAI_NPC_NurseLeechVData@@
 .?AVCAI_NPC_Ratking_RatVData@@
 .?AVCAI_NPC_TrooperVData@@
 .?AVCAI_NavLinkMotor@@
@@ -8999,6 +9050,16 @@ $light_emissive
 .?AVCCitadel_Ability_Necro_ZombieWall@@
 .?AVCCitadel_Ability_Necro_ZombieWallVData@@
 .?AVCCitadel_Ability_Nikuman@@
+.?AVCCitadel_Ability_Nurse_AdrenalineRush@@
+.?AVCCitadel_Ability_Nurse_AdrenalineRush_VData@@
+.?AVCCitadel_Ability_Nurse_Fear@@
+.?AVCCitadel_Ability_Nurse_Fear_VData@@
+.?AVCCitadel_Ability_Nurse_HealingNeedleWeapon@@
+.?AVCCitadel_Ability_Nurse_HealingNeedleWeaponVData@@
+.?AVCCitadel_Ability_Nurse_HealingNeedles@@
+.?AVCCitadel_Ability_Nurse_HealingNeedlesVData@@
+.?AVCCitadel_Ability_Nurse_LeechTherapy@@
+.?AVCCitadel_Ability_Nurse_LeechTherapy_VData@@
 .?AVCCitadel_Ability_Opera_Ability01@@
 .?AVCCitadel_Ability_Opera_Ability02@@
 .?AVCCitadel_Ability_Opera_Ability03@@
@@ -10268,6 +10329,23 @@ $light_emissive
 .?AVCCitadel_Modifier_NonPlayerCamera@@
 .?AVCCitadel_Modifier_NullificationAuraAOE@@
 .?AVCCitadel_Modifier_NullificationAuraAOE_VData@@
+.?AVCCitadel_Modifier_Nurse_AdrenalineRush_Base@@
+.?AVCCitadel_Modifier_Nurse_AdrenalineRush_Buff@@
+.?AVCCitadel_Modifier_Nurse_AdrenalineRush_BuffVData@@
+.?AVCCitadel_Modifier_Nurse_AdrenalineRush_Crash@@
+.?AVCCitadel_Modifier_Nurse_AdrenalineRush_CrashVData@@
+.?AVCCitadel_Modifier_Nurse_Fear_Buildup@@
+.?AVCCitadel_Modifier_Nurse_Fear_Debuff@@
+.?AVCCitadel_Modifier_Nurse_Fear_Debuff_VData@@
+.?AVCCitadel_Modifier_Nurse_Fear_Gaze@@
+.?AVCCitadel_Modifier_Nurse_HealingNeedleEquipped@@
+.?AVCCitadel_Modifier_Nurse_HealingNeedleEquippedVData@@
+.?AVCCitadel_Modifier_Nurse_HealingNeedles_Buff@@
+.?AVCCitadel_Modifier_Nurse_HealingNeedles_BuffVData@@
+.?AVCCitadel_Modifier_Nurse_LeechTherapy_Ally@@
+.?AVCCitadel_Modifier_Nurse_LeechTherapy_StackBonus@@
+.?AVCCitadel_Modifier_Nurse_LeechTherapy_Target@@
+.?AVCCitadel_Modifier_Nurse_LeechTherapy_Target_VData@@
 .?AVCCitadel_Modifier_Objective_BulletReistVData@@
 .?AVCCitadel_Modifier_Objective_Bullet_Resist@@
 .?AVCCitadel_Modifier_Objective_HealthGrowth@@
@@ -12324,6 +12402,8 @@ $light_emissive
 .?AVCNPC_Neutral_Hideout_RabbitVData@@
 .?AVCNPC_Neutral_SinnersSacrifice@@
 .?AVCNPC_Neutral_SinnersSacrifice_Hideout@@
+.?AVCNPC_NurseLeech@@
+.?AVCNPC_NurseLeech_GraphController@@
 .?AVCNPC_Ratking_Rat@@
 .?AVCNPC_Ratking_Rat_GraphController@@
 .?AVCNPC_ShieldedSentry@@
@@ -12988,6 +13068,7 @@ $light_emissive
 .?AVCScheduleLoader@CNPC_FamiliarHelper@@
 .?AVCScheduleLoader@CNPC_MidBoss@@
 .?AVCScheduleLoader@CNPC_NecroSkele@@
+.?AVCScheduleLoader@CNPC_NurseLeech@@
 .?AVCScheduleLoader@CNPC_Trooper@@
 .?AVCScheduleLoader@CNPC_TrooperBoss@@
 .?AVCScheduleLoader@CNPC_TrooperNeutral@@
@@ -14218,6 +14299,7 @@ $light_emissive
 2ndry
 3.0f
 30.0
+32.0
 333333
 333?
 33s?
@@ -14230,7 +14312,7 @@ $light_emissive
 60.0
 60000
 666666666666666666666666666666666666666666666666\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\.\ssl\s3_enc.c
-6666666666666666HeroPersona_t
+6666666666666666nothing
 7qp9
 9999
 999999.0
@@ -15344,6 +15426,7 @@ Bindings for CNPC_Boss_Tier3_GraphController\n
 Bindings for CNPC_Escort_GraphController\n
 Bindings for CNPC_MidBoss_GraphController\n
 Bindings for CNPC_NecroSkele_GraphController\n
+Bindings for CNPC_NurseLeech_GraphController\n
 Bindings for CNPC_Ratking_Rat_GraphController\n
 Bindings for CNPC_ShieldedSentry_GraphController\n
 Bindings for CNPC_SimpleAnimatingAI_GraphController\n
@@ -15546,6 +15629,8 @@ Buff %s - Received from %s
 BuffDamageMult
 BuffDelay
 BuffDuration
+BuffExtendMaxDurationPercent
+BuffExtendPercentPerShot
 BuffFrequency
 BuffMaxStacks
 Buffer too small
@@ -15575,10 +15660,15 @@ BuildUpPerDagger
 BuildUpPerShot
 BuildUpRate
 Building
+BuildupDecayTime
 BuildupDuration
+BuildupLookAngle
+BuildupLookAngleFull
 BuildupProcDamage
 BuildupProcDuration
 BuildupSpiritDamageThreshold
+BuildupTickRate
+BuildupTime
 Bullet
 Bullet %stime:%.2fs, %.0f, %d, %.0f, %.0f\n
 Bullet : Path Wall Check
@@ -15649,6 +15739,7 @@ BurnDurationBase
 BurnLingerDuration
 BurnRadius
 BurstBonusPerStack
+BurstDamage
 BurstFireShotPercent
 BurstFireShotsFromClipPercent
 BurstMarkStacks
@@ -15749,7 +15840,7 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\baseplayercontroller.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\baseplayerpawn_shared.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\beam_shared.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\breakableprop.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability_melee.cpp:1574
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability_melee.cpp:1577
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability_slide.cpp:1163
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability_slide.cpp:849
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\tier_2_boss_abilities.cpp:1516
@@ -15764,8 +15855,8 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_accolades
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_audio_limiter.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_audio_util.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:6306
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:6481
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:6368
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_ability_shared.cpp:6543
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_base_hero.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_bot_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_gaffer.cpp
@@ -15783,21 +15874,24 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_ranked_sc
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_stat_tracker_schema.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_stats_shared.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\citadel_unit_query_system.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_archer.cpp:1332
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_baba.cpp:317
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_baba.cpp:331
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_archer.cpp:1331
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_baba.cpp:316
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_baba.cpp:330
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_bull.cpp:426
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_chessmaster.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_familiar.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_necro.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_necro.cpp:2010
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_ratking.cpp:3889
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_shiv.cpp:2070
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_tengu.cpp:2172
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1552
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1589
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1940
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_wrecker.cpp:2060
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_necro.cpp:2008
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_nurse.cpp
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_nurse.cpp:2178
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_nurse.cpp:3515
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_ratking.cpp:3922
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_shiv.cpp:2069
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_tengu.cpp:2201
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1575
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1612
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_viscous.cpp:1975
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\citadel_hero_wrecker.cpp:2058
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\heroes\familiar\citadel_hero_familiar_sprites.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\npc_escort.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\street_brawl_controller.cpp
@@ -17028,6 +17122,7 @@ CEntitySpawner<class CNPC_Neutral_Bug>::Spawn
 CEntitySpawner<class CNPC_Neutral_Flying_Pigeon>::Spawn
 CEntitySpawner<class CNPC_Neutral_Hideout_Cat>::Spawn
 CEntitySpawner<class CNPC_Neutral_Hideout_Rabbit>::Spawn
+CEntitySpawner<class CNPC_NurseLeech>::Spawn
 CEntitySpawner<class CNPC_Ratking_Rat>::Spawn
 CEntitySpawner<class CNPC_ShieldedSentry>::Spawn
 CEntitySpawner<class CNPC_Trooper>::Spawn
@@ -18260,6 +18355,8 @@ COND_NPCNEUTRAL_NO_AGGRO
 COND_NPCNEUTRAL_NO_WATCHER
 COND_NPCNEUTRAL_TETHER_MAX_RANGE
 COND_NPCNEUTRAL_WATCHER_NEARBY
+COND_NURSELEECH_NURSE_IN_CRAWL_RANGE
+COND_NURSELEECH_NURSE_OUT_OF_CRAWL_RANGE
 COND_OBJECTIVE_LOST
 COND_OUT_OF_AMMO
 COND_PHYSICS_IMPULSED
@@ -19940,6 +20037,7 @@ ChangeGameState
 ChangeGameState: %s (%d)\n
 ChangeLogger
 ChangeState
+ChannelDamageImmune
 ChannelDuration
 ChannelMoveSpeed
 ChannelTimeForMaxDebuff
@@ -19948,9 +20046,17 @@ Char=
 ChargeDistance
 ChargeDragVerticalOffset
 ChargeForMaxDamage
+ChargeGenPctScale
+ChargeHitCooldown
 ChargeLevel2ExplosionRadius
 ChargeMultiHitRadius
 ChargeParticleMaxScale
+ChargePercentPerAbilityHit
+ChargePercentPerBulletHit
+ChargePercentPerHeadshot
+ChargePercentPerHeavyMelee
+ChargePercentPerLightMelee
+ChargePercentPerSecondPerLeech
 ChargeRadius
 ChargeReplenish
 ChargeShotExplosionRadiusPercent
@@ -20032,6 +20138,22 @@ Citadel_BlockMantle
 Citadel_Bullet
 Citadel_Camera_Can_Pass_Through
 Citadel_Foliage
+Citadel_Graph_CrowdControl_Disarm
+Citadel_Graph_CrowdControl_Fear
+Citadel_Graph_CrowdControl_Root
+Citadel_Graph_CrowdControl_Silence
+Citadel_Graph_CrowdControl_Sleep
+Citadel_Graph_CrowdControl_Slow
+Citadel_Graph_CrowdControl_Stun
+Citadel_Graph_CrowdControl_Tether
+Citadel_Graph_Mitigation_Barrier
+Citadel_Graph_Mitigation_BulletResist
+Citadel_Graph_Mitigation_DamageReduction
+Citadel_Graph_Mitigation_Evasion
+Citadel_Graph_Mitigation_Immunity
+Citadel_Graph_Mitigation_ItemsAndAbilities
+Citadel_Graph_Mitigation_MeleeResist
+Citadel_Graph_Mitigation_SpiritResist
 Citadel_HUD_CorruptedItemShopRestock_Desc
 Citadel_HUD_CorruptedItemShopSpawn_Desc
 Citadel_HUD_Koth_Warning_Desc
@@ -20350,6 +20472,8 @@ Crash report has been pending to submit for %d seconds\n
 Crash report message acknowledge by GC.\n
 Crash report message send failed with result code %d.  GIVING UP!\n
 Crash report message send failed with result code %d.  Will retry in %d seconds\n
+CrashDuration
+CrashTimeScalePenaltyPercent
 Crate
 Crawl
 Create Effect
@@ -20779,6 +20903,7 @@ DamageSearchExtraDistance
 DamageSharePercentage
 DamageShareRadius
 DamageSlowDuration
+DamageSpiritThresholdPercent
 DamageState
 DamageThreshold
 DamageThresholdDuration
@@ -20874,7 +20999,9 @@ Default when no player found.
 DefaultAnim
 DefaultComponentString
 DeferClearPct
+DeferredDamageBonusPercent
 DeferredDamageDuration
+DeferredDamagePercent
 Defined in local space of the location entity (first tries to use optional location ent, then target 1, then target 2), the axis on which the object will rotate. This should include the length of the hinge as well.
 DeflectionPercent
 DeflectionRandomness
@@ -21019,6 +21146,7 @@ DismountHorizontalMinSpeedPercent
 DismountVerticalSpeed
 Dispatch Response
 DispatchInput
+DispelDebuffs
 DispelOnUse
 Display Time Override:
 DistMean
@@ -21884,6 +22012,7 @@ Faceposer_LookSpeedSuggestions
 Faceposer_LookTypeSuggestions
 Faceposer_SequenceNameSuggestions
 Facial Animation
+FacingAwayDamagePercent
 Factor 1: %f
 Factor 2: %f
 Factor 3: %f
@@ -21970,6 +22099,8 @@ Farthest.
 FastRetrigger: %s
 FeEffectName
 FearDuration
+FearDurationPerLeechStack
+FearMoveSpeedBonus
 Feature preserving XY warp required scaling is lower than the minimum allowed threshold. Falling back to LERP!
 FervorStatusResistancePercent
 Field "%s" of class "%s" cannot be unserialized yet (lacking array support)!\n
@@ -22081,6 +22212,7 @@ FireRateBuffDuration
 FireRatePerHero
 FireRatePerHit
 FireRatePerKill
+FireRatePerLeechPickup
 FireRatePerStack
 FireRateScale
 FireRateSlow
@@ -22370,6 +22502,7 @@ GatherEmoteConditions
 GatherRocketBarrageConditions
 GatherScheduleRelatedConditions
 GatherStompConditions
+GazeLingerDuration
 General information about a player and match
 General.BurningFlesh
 General.BurningObject
@@ -22886,6 +23019,7 @@ HeadShotBonusDamage
 Headshot Kills
 HeadshotBonus
 HeadshotBonusSteal
+HeadshotHealBonusPercent
 HeadshotStacks
 Heal Lost
 Heal Prevented
@@ -22900,6 +23034,7 @@ HealInterval
 HealLifePercentOutOfCombat
 HealMaxHealth
 HealMaxHealthPercent
+HealMaxHealthPercentPerShot
 HealOnActivate
 HealOnHit
 HealOnKill
@@ -22912,8 +23047,10 @@ HealPctVsNonHeroes
 HealPerPickup
 HealPerStack
 HealPercentAmount
+HealPercentOfLeechDamage
 HealPercentPerHeadshot
 HealRadius
+HealRegen
 Heal_Players
 Heal_Players_Post_Lane
 Heal_Troopers
@@ -23621,6 +23758,7 @@ LateCheckoutCooldown
 LateCheckoutDamage
 LateCheckoutStun
 LaunchFalloff
+LaunchHeight
 LaunchMaxSpeed
 LaunchMinSpeed
 LaunchMinVerticalAmount
@@ -23636,6 +23774,28 @@ LeapInputSpeed
 LeapOutSpeed
 LeapRadius
 LeapUpSpeed
+LeechCount
+LeechCrawlRadius
+LeechCrawlRadiusExitGap
+LeechEatDurationPerSecond
+LeechEatTickRate
+LeechGroundLifetime
+LeechHuntCrawlSpeed
+LeechHuntLifetime
+LeechHuntLifetimeVariance
+LeechHuntMaxDrop
+LeechHuntSearchInterval
+LeechHuntSearchRadiusPercent
+LeechLeapArcHeight
+LeechLeapDuration
+LeechLungeSpeed
+LeechMoveSpeed
+LeechPurgeBuffs
+LeechSpawnAngleJitter
+LeechSpawnSpreadMinPercent
+LeechSpawnSpreadPercent
+LeechStacksKeptOnDeathPercent
+LeechStaminaDrain
 LeftForce
 Length (magnitude) of Vector
 Length (magnitude) of Vector2D
@@ -23809,6 +23969,7 @@ Look at '%s'
 Look at Actor
 Look at position
 LookAtActorName
+LookBuildupScalePercent
 LookSpeed
 LookType
 Loop Count
@@ -24116,6 +24277,7 @@ MaxHits
 MaxJumpHeight
 MaxKillBonusMoveSpeedStack
 MaxLandingSpeed
+MaxLeechBonusStacks
 MaxLifetime
 MaxLinks
 MaxLockonStacks
@@ -24765,6 +24927,7 @@ Non Critical
 Non Repudiation
 Non-entity Aggregate: %s
 NonBurstFireConversionFactor
+NonHeroChargeScalePercent
 NonHeroDamagePercentOutgoing
 NonHeroHealPct
 NonHeroHealingFactor
@@ -25490,6 +25653,7 @@ PerformTaskNecroSkeleMoveToTarget
 PerformTaskNecroSkeleWaitForLaneMovement
 PerformTaskNpcNeutralRangeAttack
 PerformTaskNpcNeutralRangeAttackNoMovement
+PerformTaskNurseLeechSeekNurse
 PerformTaskPhase2IdleWait
 PerformTaskPostShrineTransition
 PerformTaskRequestFacingTarget
@@ -25594,6 +25758,8 @@ PillarDuration
 Pin or Unpin the overlay to the Entity's location
 Ping target "%s" lists no entity classes, so nothing will ever match it.\n
 Pitch Shift
+PitchScaleMax
+PitchScaleMin
 PivotPaint
 PlaceDecalEvent_t
 PlaceDistance
@@ -26216,6 +26382,7 @@ RegenDamageInterval
 RegenDuration
 RegenIncomingDamageDuration
 RegenIncomingDamagePercent
+RegenPerLeechPickup
 RegenStaminaPerHit
 RegenWhileInvisible
 RegenZoneDismountHorizontalMaxSpeed
@@ -26530,6 +26697,7 @@ RunThinkFunctions
 RunThinks
 RunWorkItems
 Running command %d.\n{ %s }\n
+RushTimeScaleBonusPercent
 Russia
 S/MIME
 S/MIME CA
@@ -26622,6 +26790,8 @@ SCHED_NPCNEUTRAL_SENTRY
 SCHED_NPCNEUTRAL_SLEEP
 SCHED_NPCNEUTRAL_STRAFE_ATTACK
 SCHED_NPCNEUTRAL_WAKEUP
+SCHED_NURSELEECH_IDLE
+SCHED_NURSELEECH_SEEK_NURSE
 SCHED_RUN_TEST_PATH
 SCHED_T2BOSS_ATTACK_WITH_AOEWAVE
 SCHED_T2BOSS_ATTACK_WITH_ELECTRIC_BEAM
@@ -27245,6 +27415,7 @@ Secondary Muzzle Reset Time
 Secondary Muzzles
 SecondaryExplosionDelay
 SecondaryHealHeroRange
+SecondaryShotHealPercent
 Seconds
 SectionPause
 Secure Electronic Transactions
@@ -27944,6 +28115,7 @@ Slope: %.2f\n
 Slots %s and %s both have the same id m_unSlotID %u
 Slow %.1f, %s %.1f 
 SlowDuration
+SlowLingerDuration
 SlowPercent
 SlowPercentPerStack
 SlowResistance
@@ -28021,6 +28193,7 @@ SpawnEntityListFromTableSynchronous
 SpawnGroupCompletionCallbackGameSystem
 SpawnGroupManagerGameSystem
 SpawnGroups
+SpawnProjectileFromInfo
 SpawnRadius
 Spawner %s spawning even though seen due to notarget\n
 Spawning camp '%s' at match time %f because its respawn was at '%f\n
@@ -28077,6 +28250,7 @@ SpiritLifestealEffectiveness
 SpiritPerPickup
 SpiritPerStack
 SpiritPower
+SpiritPowerPerLeechStack
 SpiritPowerPerSoul
 SpiritReducedPerStack
 SpiritResReducedPerStack
@@ -28139,6 +28313,7 @@ StackingGoldPerMinute
 StackingTechRadiusMultiplier
 StackingTechRangeMultiplier
 StacksCanDecay
+StacksLostOnDeathPercent
 StacksPerCast
 StacksRequiredForSlow
 StacksToProcSkull
@@ -28161,6 +28336,7 @@ StaminaRegenPercent
 StaminaRegenReduction
 StaminaRegenReductionDuration
 StaminaRestore
+StaminaRestorePerHit
 StaminaToRestore
 Stance
 StandStillMinTime
@@ -28416,6 +28592,7 @@ Suspicious bulk combat log request from player %d.  Player seems to be spamming 
 Suspicious navigation goal tolerance specified\n
 SwapDamage
 SwapEndDelay
+SwapInDelay
 SwapTime
 Swapped heroes
 SweepSpeed
@@ -28537,6 +28714,7 @@ TASK_NPCNEUTRAL_WAIT_FOR_MOVEMENT
 TASK_NPCNEUTRAL_WAIT_FOR_MOVEMENT_AGGRO
 TASK_NPCNEUTRAL_WAIT_FOR_MOVEMENT_STRAFE_ATTACK
 TASK_NPCNEUTRAL_WAKEUP
+TASK_NURSELEECH_SEEK_NURSE
 TASK_REQUEST_FACING_TARGET
 TASK_REQUEST_MOVEMENT_FACING_MODE_PATH
 TASK_SET_FAIL_SCHEDULE
@@ -28750,6 +28928,7 @@ TargetLifesteal
 TargetLifestealDuration
 TargetLifestealNonHero
 TargetLingerDuration
+TargetMantleAttemptInterval
 TargetName
 TargetSearchDelayMax
 TargetSearchDelayMin
@@ -29561,11 +29740,7 @@ Vector[tether_DEST_BUFFER_SIZE]
 Vel %.1f %.1f %.1f   Ang: %.1f %.1f %.1f\n
 Velocity is not high enough
 Velocity: %.3f
-VelocityPitchScaleMax
-VelocityPitchScaleMin
 VelocityRetainedPct
-VelocityVolScaleMax
-VelocityVolScaleMin
 VenomDuration
 VenomMaxDamage
 VenomMaxDamageHealthPercentage
@@ -29607,6 +29782,8 @@ VisibilityMonitor
 Visible: %s\n
 VisualContractRadius
 VisualSplashRadius
+VolScaleMax
+VolScaleMin
 VolleyInterval
 Volume Matches Event Ramp
 Volume to add tags to the world
@@ -30638,7 +30815,6 @@ arm_time
 armor_stacks
 arrival_options
 arrival_options_are_external
-artist_transformingprojectile
 as & fltexcl
 as all
 as any
@@ -30672,6 +30848,7 @@ attach_cat_fx
 attach_core_fx
 attach_eye_fx_left
 attach_eye_fx_right
+attach_hand_left_fx
 attach_heal_fx
 attach_hitloc
 attach_hitloc_phase2
@@ -31687,6 +31864,7 @@ cvar_getf
 cvar_setf
 cvarname
 cvarvalue
+cyclone
 d e not congruent to 1
 d.allOrFirstTier
 d.authenticatedData
@@ -31838,6 +32016,7 @@ default_idle_expression
 default_list
 defaults
 defeated
+deferred_damage
 define a priority for task %d
 deg2rad
 delaunayHull: Removing dangling face %d [%d,%d,%d].
@@ -32075,6 +32254,7 @@ dumping all gameevents to '%s'\n
 dup_protection
 duplicate compression id
 duplicate zone id
+dust_storm
 dvcs
 dying
 dynamic
@@ -32493,6 +32673,7 @@ external_graphs
 external_health_regen
 external_navlink_a
 external_navlink_b
+extra
 extra data in message
 eye_aim
 eye_l_fx
@@ -32546,6 +32727,7 @@ failed loading private key
 failed loading public key
 fails
 fake_particle_system
+fakegun
 fakeout
 fall_gravity_scale
 falling
@@ -33025,6 +33207,8 @@ headshots
 heal_amount
 heal_heroes
 healing
+healing_needles
+healing_needles_activate
 healing_percent
 healing_prevented
 healing_snacks
@@ -33991,6 +34175,7 @@ latched
 launch_forced
 launch_up_speed
 lcO/<1\r=,!\r-@@@
+leading
 leak_liquid
 lean_position
 lean_right
@@ -34787,6 +34972,8 @@ modifier_citadel_metal_skin
 modifier_citadel_muted
 modifier_citadel_nano_pounce_self
 modifier_citadel_no_catapult
+modifier_citadel_nurse_fear_debuff
+modifier_citadel_nurse_gaze
 modifier_citadel_objective_bullet_resist
 modifier_citadel_objective_healthgrowth
 modifier_citadel_objective_regen
@@ -35194,6 +35381,15 @@ modifier_non_player_camera
 modifier_npc_gait_override
 modifier_npc_in_combat
 modifier_npc_ooc
+modifier_nurse_adrenaline_rush_base
+modifier_nurse_adrenaline_rush_buff
+modifier_nurse_adrenaline_rush_crash
+modifier_nurse_fear_buildup
+modifier_nurse_healing_needles_buff
+modifier_nurse_healing_needles_equipped
+modifier_nurse_leech_therapy_ally
+modifier_nurse_leech_therapy_stack_bonus
+modifier_nurse_leech_therapy_target
 modifier_obscured
 modifier_obscured_by_steam
 modifier_one_vs_one
@@ -35826,7 +36022,6 @@ notAfter
 notBefore
 notarget OFF\n
 notarget ON\n
-nothing
 noticeNumbers
 noticenos
 noticeref
@@ -36067,6 +36262,7 @@ pOnEntity
 pOptionalLocationEnt
 pOtherEntity
 pOwner
+pOwnerInterface
 pParamValue
 pParameterName
 pPhysicsModel
@@ -37004,6 +37200,7 @@ s->version <= TLS_MAX_VERSION
 s2i_ASN1_INTEGER
 s2i_ASN1_OCTET_STRING
 sAttachBoneName
+sAttachmentPoint
 sExpSoundName
 sOARecord
 sStatsDescs[ i ].m_eType == ( EStatsType ) i
@@ -37853,6 +38050,7 @@ subjectUID
 subscription
 subtreeMaximumQuality
 subtreeMinimumQuality
+suck
 suggestions
 super_special_quartero_antique
 superseded
@@ -38077,6 +38275,7 @@ tools/images/propertyeditor/attr_alert.png
 tools/images/pulse_editor/cursor_kill.png
 tools/images/pulse_editor/kill_cursor_with_tag.png
 tools_content_changed
+top_attacker
 top_of_garage
 top_of_mid
 total number of times this character has died (NOT including this time)
@@ -38086,6 +38285,7 @@ total_heal
 tower_got_denied
 tpBasis
 trace and query disabled so not folded
+tracked
 tracked_object_count
 tradable after date
 trade cooldown until date

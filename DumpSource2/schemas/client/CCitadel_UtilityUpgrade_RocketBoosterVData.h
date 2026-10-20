@@ -9,6 +9,10 @@ class CCitadel_UtilityUpgrade_RocketBoosterVData : public CCitadel_UtilityUpgrad
 	CSoundEventName m_DropDownStartSound;
 	CSoundEventName m_LandingSound;
 	CSoundEventName m_strInAirLoopingSound;
+	float32 m_VelocityPitchScaleMin; // = 0.8
+	float32 m_VelocityPitchScaleMax; // = 1.8
+	float32 m_VelocityVolScaleMin; // = 0.25
+	float32 m_VelocityVolScaleMax; // = 1
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_DebuffModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_BarrierModifier;

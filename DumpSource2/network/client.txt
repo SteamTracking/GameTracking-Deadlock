@@ -1292,6 +1292,23 @@ CCitadel_Ability_Necro_ZombieWall
 
 CCitadel_Ability_Nikuman
 
+CCitadel_Ability_Nurse_AdrenalineRush
+
+CCitadel_Ability_Nurse_Fear
+	QAngle m_playerAngles (encoder: qangle_precise)
+	int m_nLeechStacksAtCast
+	Vector m_vecRecoilDirection
+
+CCitadel_Ability_Nurse_HealingNeedleWeapon
+
+CCitadel_Ability_Nurse_HealingNeedles
+	float m_flChargeProgress
+	bool m_bNeedlesOut (change callbacks: ObservableRecv_m_bNeedlesOut)
+	GameTime_t m_tSwapInFinishTime (sent as: float32)
+
+CCitadel_Ability_Nurse_LeechTherapy
+	int m_iLeechCount
+
 CCitadel_Ability_Opera_Ability01
 
 CCitadel_Ability_Opera_Ability02
@@ -2136,6 +2153,7 @@ CCitadel_UtilityUpgrade_RocketBooster
 	bool m_bCrashingDown (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bImpulseApplied (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bCanCrash (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bPlayLandingSound (user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vecCrashPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
 	Vector m_vecCrashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
 
@@ -2472,6 +2490,9 @@ CNPC_NecroSkele
 	float m_flAttackRange
 	float m_flSpawnDuration
 
+CNPC_NurseLeech
+	CHandle< CBaseEntity> m_hNurse (sent as: ehandle)
+
 CNPC_Ratking_Rat
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
 
@@ -2784,6 +2805,12 @@ C_BarnLight
 	Vector m_vPrecomputedOBBOrigin5 (change callbacks: RenderingChanged)
 	QAngle m_vPrecomputedOBBAngles5 (change callbacks: RenderingChanged)
 	Vector m_vPrecomputedOBBExtent5 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect0 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect1 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect2 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect3 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect4 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect5 (change callbacks: RenderingChanged)
 	uint16 m_VisClusters (change callbacks: RenderingChanged)
 
 C_BaseButton
@@ -2960,9 +2987,11 @@ C_CitadelBaseAbility
 	bool m_bToggleState (change callbacks: ObservableRecv_m_bToggleState)
 	GameTime_t m_flCooldownStart (sent as: float32; priority: 32)
 	GameTime_t m_flCooldownEnd (sent as: float32; priority: 32; change callbacks: ObservableRecv_m_flCooldownEnd)
+	float m_flStoppedCooldownRemaining (priority: 32)
 	GameTime_t m_flCastCompletedTime (sent as: float32)
 	GameTime_t m_flChannelStartTime (sent as: float32)
 	GameTime_t m_flCastDelayStartTime (sent as: float32)
+	float m_flCastDelaySpeedScale
 	EAbilitySlots_t m_eAbilitySlot (change callbacks: OnAbilitySlotChanged)
 	GameTime_t m_flPostCastDelayEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flPostCastDelayEndTime)
 	int m_iRemainingCharges (priority: 32; change callbacks: ObservableRecv_m_iRemainingCharges)
@@ -4473,6 +4502,7 @@ PlayerDataGlobal_t
 	bool m_bUltimateTrained
 	GameTime_t m_flUltimateCooldownStart (sent as: float32)
 	GameTime_t m_flUltimateCooldownEnd (sent as: float32)
+	float m_flUltimateStoppedCooldownRemaining
 	bool m_bHasRejuvenator
 	bool m_bHasRebirth
 	bool m_bFlaggedAsCheater

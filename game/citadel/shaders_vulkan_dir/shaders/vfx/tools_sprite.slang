@@ -26,6 +26,7 @@ FEATURES
 	Feature( F_PER_POINT_SIZE, 0..1, "" );
 	Feature( F_WORLD_SPACE_SIZE, 0..1 (0="Size In Pixels", 1="Size In World Space"), "" );
 	Feature( F_CULL_LARGER_THAN_BOX, 0..1, "Cull if Larger Than Box" );
+	Feature( F_ALIGN_TO_DIRECTION, 0..1, "Align +X To Vertex Normal On Screen" );
 	FeatureRule( Requires( F_ALPHA_TEST, F_TEXTURED ), "Alpha testing requires texturing" );
 	FeatureRule( Allow1( F_CULL_LARGER_THAN_BOX, F_WORLD_SPACE_SIZE ), "Box-Culling only supported for screen-space sprites" );
 }
@@ -38,6 +39,7 @@ COMMON
 struct VS_INPUT
 {
 	float4 vColor          : COLOR0     < Semantic( Color ); >;                                   
+	float4 vAlignDirWs     : NORMAL0    < Semantic( None ); >;                                     // S_ALIGN_TO_DIRECTION=1
 	float3 vPositionWs     : POSITION0  < Semantic( PosXyz ); >;                                  
 	float4 vUv_flPointSize : TEXCOORD0  < Semantic( NONE ); >;                                     // S_PER_POINT_SIZE=1
 };
@@ -46,6 +48,7 @@ VS
 {
 	StaticCombo( S_MODE_DEPTH, 0..1 );
 	StaticCombo( S_PER_POINT_SIZE, F_PER_POINT_SIZE );
+	StaticCombo( S_ALIGN_TO_DIRECTION, F_ALIGN_TO_DIRECTION );
 	StaticCombo( S_CULL_LARGER_THAN_BOX, F_CULL_LARGER_THAN_BOX );
 	StaticCombo( S_WORLD_SPACE_SIZE, F_WORLD_SPACE_SIZE );
 	StaticComboRule( Allow1( S_CULL_LARGER_THAN_BOX, S_WORLD_SPACE_SIZE ) );
@@ -141,6 +144,7 @@ GS
 	StaticCombo( S_MODE_DEPTH, 0..1 );
 	StaticCombo( S_WORLD_SPACE_SIZE, F_WORLD_SPACE_SIZE );
 	StaticCombo( S_CULL_LARGER_THAN_BOX, F_CULL_LARGER_THAN_BOX );
+	StaticCombo( S_ALIGN_TO_DIRECTION, F_ALIGN_TO_DIRECTION );
 	StaticComboRule( Allow1( S_CULL_LARGER_THAN_BOX, S_WORLD_SPACE_SIZE ) );
 	
 	

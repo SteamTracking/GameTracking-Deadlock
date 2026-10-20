@@ -519,6 +519,11 @@
 	border-color: colorEnemy&cc;
 }
 
+.nurse_needles.reloading #attack_delayed_progress_bar
+{
+	border-color: rgba(128, 255, 215, 0.8);
+}
+
 @keyframes 'progress_red_flash_shot_disarmed'
 {
 	0%
@@ -573,6 +578,7 @@
 	vertical-align: center;
 	horizontal-align: center;
 	font-size: 12px;
+	font-family: block;
 	visibility: collapse;
 	color: rgba(255, 200, 200, 1);
 	text-shadow: 0px 0px 8px 3.0 rgb(124, 0, 0);
@@ -693,6 +699,11 @@
 	visibility: visible;
 }
 
+.nurse_needles #attackDelayedReloading
+{
+	wash-color: #80ffd7;
+}
+
 #obstructed_shot
 {
 	visibility: collapse;
@@ -732,14 +743,21 @@
 	vertical-align: bottom;
 	horizontal-align: left;
 	width: 32px;
+	letter-spacing: 0.5px;
+	font-family: numericOracle;
 	transition-property: color, text-shadow;
 	transition-duration: 0.124s;
 }
 
 .nurse_needles .weapon_ammo
 {
-	color: armorColor;
-	text-shadow: 0px 0px 6px armorColor;
+	color: #80ffd7;
+	text-shadow: 0px 0px 6px armorColor&90;
+}
+
+.nurse_needles .lowAmmo .weapon_ammo
+{
+	text-shadow: 0px 0px 6px armorColor&00;
 }
 
 .nurse_needles .weapon_ammo_max
@@ -777,6 +795,7 @@
 .weapon_ammo_max
 {
 	font-size: 16px;
+	font-family: numericOracle;
 	color: rgba(255, 255, 255, 0.1);
 	vertical-align: bottom;
 	horizontal-align: left;
@@ -846,6 +865,28 @@
 }
 
 .infinite_ammo .weapon_ammo_infinite
+{
+	visibility: visible;
+}
+
+.nurse_heal_icon
+{
+	width: 21px;
+	height: 21px;
+	background-image: url("s2r://panorama/images/hud/hero_specific/nurse_heal_icon.vsvg");
+	background-size: 50%;
+	background-position: center;
+	background-repeat: no-repeat;
+	visibility: collapse;
+	wash-color: #80ffd7;
+	horizontal-align: center;
+	margin-right: -12px;
+	margin-top: 0px;
+	animation-duration: 2s;
+	img-shadow: 0px 0px 10px armorColor&90;
+}
+
+.nurse_needles .nurse_heal_icon
 {
 	visibility: visible;
 }
@@ -953,7 +994,7 @@
 	
 	50%
 	{
-		opacity: 0.45;
+		opacity: 0.55;
 		text-shadow: 0px 0px 2px 0.5 armorColor;
 	}
 	
@@ -963,11 +1004,6 @@
 		text-shadow: 0px 0px 4px 1.0 armorColor;
 	}
 	
-}
-
-.nurse_needles #healing_mode_indicator
-{
-	visibility: visible;
 }
 
 .hide_clip_ammo #auto_fire_indicator,.hide_clip_ammo #ammo_panel,.hide_clip_status_and_ammo #ammo_panel,.hide_clip_status_and_ammo #attack_delayed_progress_bar
@@ -1365,11 +1401,19 @@
 	background-image: url("s2r://panorama/images/hud/crosshair/reticlepip_nurse_psd.vtex");
 	background-size: 100% 100%;
 	background-img-opacity: 1.0;
-	background-color: armorColor;
-	background-color-opacity: 0.0;
+	background-color: none;
 	height: 128px;
 	width: 128px;
 	ui-scale: 100%;
+	animation-name: healing_mode_pulse;
+	animation-duration: 1.2s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+.weapon_swap.nurse_needles .crosshair__dot
+{
+	background-img-opacity: 0;
 }
 
 .nurse_needles .crosshair__dotborder

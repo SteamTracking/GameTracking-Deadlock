@@ -57,10 +57,8 @@ CS
 	RWTexture2D<float4> g_tIntermediateRT < Attribute("GBufferLight"); >;
 	Texture3D g_tLightCookieTexture < Attribute("LightCookieTexture"); SrgbRead(true); >;
 	Texture2DArray g_tLightmapDebugChart < Attribute("debug_chart_color"); SrgbRead(false); >;
-	Texture2DArray g_tLightmapIrradiance_SH2_B < Attribute("directional_irradiance_sh2_b"); SrgbRead(false); >;
 	Texture2DArray g_tLightmapIrradiance_SH2_DC < Attribute("directional_irradiance_sh2_dc"); SrgbRead(false); >;
-	Texture2DArray g_tLightmapIrradiance_SH2_G < Attribute("directional_irradiance_sh2_g"); SrgbRead(false); >;
-	Texture2DArray g_tLightmapIrradiance_SH2_R < Attribute("directional_irradiance_sh2_r"); SrgbRead(false); >;
+	Texture2DArray g_tLightmapIrradiance_SH2_Lum < Attribute("directional_irradiance_sh2_lum"); SrgbRead(false); >;
 	Texture2DArray g_tLightmapShadows < Attribute("direct_light_shadows"); SrgbRead(false); >;
 	Texture2D g_tSSAO < Attribute("SSAO"); SrgbRead(false); >;
 	Texture2D g_tShadowDepthBufferDepthNoCmp < Attribute("ShadowDepthBufferNoCmp"); SrgbRead(false); >;
@@ -259,17 +257,17 @@ CS
 	    layout(row_major) _200 _m0[];
 	} g_BarnLights_1;
 	
-	layout(set = 0, binding = 59) uniform texture2D g_tGBufferDepth;
-	layout(set = 0, binding = 55) uniform texture2D g_tGBufferTarget0;
-	layout(set = 0, binding = 56) uniform texture2D g_tGBufferTarget1;
-	layout(set = 0, binding = 57) uniform texture2D g_tGBufferTarget2;
-	layout(set = 0, binding = 58) uniform texture2D g_tGBufferTarget3;
+	layout(set = 0, binding = 57) uniform texture2D g_tGBufferDepth;
+	layout(set = 0, binding = 53) uniform texture2D g_tGBufferTarget0;
+	layout(set = 0, binding = 54) uniform texture2D g_tGBufferTarget1;
+	layout(set = 0, binding = 55) uniform texture2D g_tGBufferTarget2;
+	layout(set = 0, binding = 56) uniform texture2D g_tGBufferTarget3;
 	layout(set = 4, binding = 46) uniform textureCubeArray g_bindless_TextureCubeArray[65536];
 	layout(set = 0, binding = 20) uniform sampler AddressU_Wrap_AddressV_Wrap_AddressW_Wrap_AllowGlobalMipBiasOverride_0_Filter_MinMagMipLinear;
 	layout(set = 4, binding = 46) uniform texture3D g_bindless_Texture3D_float4[65536];
 	layout(set = 0, binding = 17) uniform sampler AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagLinearMipPoint;
 	layout(set = 0, binding = 34) uniform texture2DArray g_tBRDFLookup;
-	layout(set = 0, binding = 46) uniform texture2D g_tShadowDepthBufferDepthNoCmp;
+	layout(set = 0, binding = 44) uniform texture2D g_tShadowDepthBufferDepthNoCmp;
 	layout(set = 0, binding = 19) uniform sampler AddressU_Wrap_AddressV_Wrap_AddressW_Wrap_Filter_MinMagMipLinear;
 	layout(set = 0, binding = 33) uniform texture3D g_tLightCookieTexture;
 	layout(set = 0, binding = 24) uniform sampler g_sCookieSampler;

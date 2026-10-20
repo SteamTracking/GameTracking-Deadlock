@@ -24,6 +24,8 @@ class CitadelAbilityProperty_t
 	// MPropertyStartGroup = "UI"
 	// MPropertyDescription = "Set this so we know how to display the ability property (prefix, postfix, and # decimal places)"
 	EStatsType m_eDisplayType; // = "EStatsCount"
+	// MPropertyDescription = "Overrides the max decimal places shown for this property. -1 uses the display type's precision."
+	int32 m_nMaxDecimalsDisplayed; // = -1
 	ModifierValueDisplayUnits_t m_eDisplayUnits; // = "EDisplayUnit_Normal"
 	// MPropertyDescription = "When true, we don't show this ability property anywhere in the UI."
 	bool m_bIsHidden;

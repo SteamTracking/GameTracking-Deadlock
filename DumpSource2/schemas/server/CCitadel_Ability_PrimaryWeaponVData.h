@@ -19,6 +19,7 @@ class CCitadel_Ability_PrimaryWeaponVData : public CitadelAbilityVData
 	float32 m_flActionReloadTimingDuration; // = 0.3
 	// MPropertyStartGroup = "UI"
 	CUtlString m_strCrosshairCSSClass;
+	bool m_bCustomCrossIgnoreThemedReticleSetting;
 	bool m_bUseCustomCrosshairSettings;
 	// MPropertySuppressExpr = "m_bUseCustomCrosshairSettings == false"
 	CustomCrosshairSettings_t m_CustomCrosshairSettings; // = { "m_DotColor": [ 255, 255, 255 ], "m_DotOutlineColor": [ 0, 0, 0 ], "m_PipColor": [ 255, 255, 255 ], "m_PipOutlineColor": [ 0, 0, 0 ], "m_SpreadIndicatingElement": "LINE_GAP", "m_flBaseSpread": 0, "m_flDotOpacity": 0, "m_flDotOutlineOpacity": 0, "m_flPipOpacity": 0, "m_flPipOutlineOpacity": 0, "m_nDotOutlineGap": 0, "m_nDotOutlineWidth": 0, "m_nDotRadius": 0, "m_nPipHeight": 0, "m_nPipOutlineGap": 0, "m_nPipOutlineWidth": 0, "m_nPipWidth": 0 }

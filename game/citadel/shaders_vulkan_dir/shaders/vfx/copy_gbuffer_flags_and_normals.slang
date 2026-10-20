@@ -88,8 +88,8 @@ PS
 	// Source 2 Viewer - https://valveresourceformat.github.io
 	// SPIR-V source, HLSL reflection with SPIRV-Cross by KhronosGroup
 	
-	Texture2D<float4> g_tGBufferTarget0 : register(t56, space1);
-	Texture2D<float4> g_tGBufferTarget1 : register(t57, space1);
+	Texture2D<float4> g_tGBufferTarget0 : register(t54, space1);
+	Texture2D<float4> g_tGBufferTarget1 : register(t55, space1);
 	
 	static float4 gl_FragCoord;
 	static float4 output_0;

@@ -108,9 +108,9 @@ PS
 	    float PerViewConstantBuffer_t_1_m0 : packoffset(c18);
 	};
 	
-	Texture2D<float4> g_tInput : register(t56, space1);
+	Texture2D<float4> g_tInput : register(t54, space1);
 	SamplerState Filter_MinMagLinearMipPoint : register(s27, space1);
-	Texture2D<float4> g_tGBufferTarget2 : register(t57, space1);
+	Texture2D<float4> g_tGBufferTarget2 : register(t55, space1);
 	SamplerState Filter_MinMagMipPoint : register(s28, space1);
 	
 	static float4 gl_FragCoord;

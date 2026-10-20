@@ -315,6 +315,13 @@
 				input2 = "@not_culling_and_unstopped.output"
 			},
 			{
+				name = "start_mode_and_track_1_start"
+				operator = "math_float"
+				apply = "and"
+				input1 = "@switch_start_mode.output"
+				input2 = "@citadel_8track_parameters::track1_parameters::output.track_start"
+			},
+			{
 				name = "start_vmix"
 				operator = "vmix_voice_start"
 				input_execute = "1"
@@ -360,7 +367,7 @@
 				execute_once = "false"
 				input_should_pause = "@public.vsnd_pause_with_game"
 				input_should_play_tail = "@public.vsnd_play_loop_release"
-				input_start = "@switch_start_mode.output"
+				input_start = "@start_mode_and_track_1_start.output"
 				input_speaker_volumes = "@citadel_base_3d::speakers_spatialize.output"
 				input_pitch = "@pitch_filter.output"
 				input_fade_out = "@public.volume_fade_out"

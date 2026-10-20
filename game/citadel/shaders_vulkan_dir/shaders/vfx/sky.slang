@@ -201,11 +201,11 @@ PS
 	
 	layout(set = 3) uniform _1017 PerViewLightingConstantBufferGpu_t;
 	
-	layout(set = 1, binding = 56) uniform textureCube g_tSkyTexture;
+	layout(set = 1, binding = 54) uniform textureCube g_tSkyTexture;
 	layout(set = 1, binding = 27) uniform sampler DefaultSamplerState_0;
 	layout(set = 1, binding = 30) uniform texture2D g_tBlueNoise;
 	layout(set = 1, binding = 23) uniform sampler g_sPoint;
-	layout(set = 1, binding = 55) uniform texture3D g_tFogVolume;
+	layout(set = 1, binding = 53) uniform texture3D g_tFogVolume;
 	layout(set = 1, binding = 26) uniform sampler AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_AllowGlobalMipBiasOverride_0_Filter_MinMagMipLinear;
 	
 	layout(location = 0) in vec3 input_0;

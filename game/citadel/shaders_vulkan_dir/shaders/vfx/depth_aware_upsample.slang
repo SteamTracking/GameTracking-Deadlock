@@ -104,9 +104,9 @@ PS
 	    float PerViewConstantBuffer_t_1_m0 : packoffset(c23.z);
 	};
 	
-	Texture2D<float4> g_tFineDepth : register(t59, space1);
-	Texture2D<float4> g_tCoarseDepth : register(t58, space1);
-	Texture2D<float4> g_tCoarseInput0 : register(t56, space1);
+	Texture2D<float4> g_tFineDepth : register(t57, space1);
+	Texture2D<float4> g_tCoarseDepth : register(t56, space1);
+	Texture2D<float4> g_tCoarseInput0 : register(t54, space1);
 	
 	static float4 gl_FragCoord;
 	static float4 output_0;

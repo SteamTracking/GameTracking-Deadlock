@@ -75,6 +75,12 @@ class CBarnLight : public CBaseModelEntity
 	Vector m_vPrecomputedOBBOrigin5;
 	QAngle m_vPrecomputedOBBAngles5;
 	Vector m_vPrecomputedOBBExtent5;
+	Vector4D m_vPrecomputedShadowmapAtlasRect0;
+	Vector4D m_vPrecomputedShadowmapAtlasRect1;
+	Vector4D m_vPrecomputedShadowmapAtlasRect2;
+	Vector4D m_vPrecomputedShadowmapAtlasRect3;
+	Vector4D m_vPrecomputedShadowmapAtlasRect4;
+	Vector4D m_vPrecomputedShadowmapAtlasRect5;
 	bool m_bPvsModifyEntity;
 	bool m_bTransmitAlways;
 	CNetworkUtlVectorBase< uint16 > m_VisClusters;

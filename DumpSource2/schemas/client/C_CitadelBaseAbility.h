@@ -15,9 +15,11 @@ class C_CitadelBaseAbility : public C_BaseEntity
 	bool m_bToggleState;
 	GameTime_t m_flCooldownStart;
 	GameTime_t m_flCooldownEnd;
+	float32 m_flStoppedCooldownRemaining;
 	GameTime_t m_flCastCompletedTime;
 	GameTime_t m_flChannelStartTime;
 	GameTime_t m_flCastDelayStartTime;
+	float32 m_flCastDelaySpeedScale;
 	EAbilitySlots_t m_eAbilitySlot;
 	GameTime_t m_flPostCastDelayEndTime;
 	int32 m_iRemainingCharges;

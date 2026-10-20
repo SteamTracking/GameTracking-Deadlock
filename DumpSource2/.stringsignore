@@ -1779,6 +1779,7 @@ CAI_NPCMovementSettingsVData
 CAI_NPCMovementStanceSettings_t
 CAI_NPC_ChessPieceVData
 CAI_NPC_NecroSkeleVData
+CAI_NPC_NurseLeechVData
 CAI_NPC_Ratking_RatVData
 CAI_NPC_TrooperVData
 CAI_NavLinkMotor
@@ -2476,6 +2477,7 @@ CCitadelProjectile
 CCitadelProjectileTouchVolume
 CCitadelProjectileTouchVolumeVData
 CCitadelProjectileTrackingParams
+CCitadelProjectileVData
 CCitadelProjectile_ImmobilizeTrap
 CCitadelPushTrigger
 CCitadelRankedBadgeProp
@@ -2873,6 +2875,16 @@ CCitadel_Ability_Necro_PrimaryWeaponVData
 CCitadel_Ability_Necro_ZombieWall
 CCitadel_Ability_Necro_ZombieWallVData
 CCitadel_Ability_Nikuman
+CCitadel_Ability_Nurse_AdrenalineRush
+CCitadel_Ability_Nurse_AdrenalineRush_VData
+CCitadel_Ability_Nurse_Fear
+CCitadel_Ability_Nurse_Fear_VData
+CCitadel_Ability_Nurse_HealingNeedleWeapon
+CCitadel_Ability_Nurse_HealingNeedleWeaponVData
+CCitadel_Ability_Nurse_HealingNeedles
+CCitadel_Ability_Nurse_HealingNeedlesVData
+CCitadel_Ability_Nurse_LeechTherapy
+CCitadel_Ability_Nurse_LeechTherapy_VData
 CCitadel_Ability_Opera_Ability01
 CCitadel_Ability_Opera_Ability02
 CCitadel_Ability_Opera_Ability03
@@ -4134,6 +4146,23 @@ CCitadel_Modifier_NoCatapult
 CCitadel_Modifier_NonPlayerCamera
 CCitadel_Modifier_NullificationAuraAOE
 CCitadel_Modifier_NullificationAuraAOE_VData
+CCitadel_Modifier_Nurse_AdrenalineRush_Base
+CCitadel_Modifier_Nurse_AdrenalineRush_Buff
+CCitadel_Modifier_Nurse_AdrenalineRush_BuffVData
+CCitadel_Modifier_Nurse_AdrenalineRush_Crash
+CCitadel_Modifier_Nurse_AdrenalineRush_CrashVData
+CCitadel_Modifier_Nurse_Fear_Buildup
+CCitadel_Modifier_Nurse_Fear_Debuff
+CCitadel_Modifier_Nurse_Fear_Debuff_VData
+CCitadel_Modifier_Nurse_Fear_Gaze
+CCitadel_Modifier_Nurse_HealingNeedleEquipped
+CCitadel_Modifier_Nurse_HealingNeedleEquippedVData
+CCitadel_Modifier_Nurse_HealingNeedles_Buff
+CCitadel_Modifier_Nurse_HealingNeedles_BuffVData
+CCitadel_Modifier_Nurse_LeechTherapy_Ally
+CCitadel_Modifier_Nurse_LeechTherapy_StackBonus
+CCitadel_Modifier_Nurse_LeechTherapy_Target
+CCitadel_Modifier_Nurse_LeechTherapy_Target_VData
 CCitadel_Modifier_Objective_BulletReistVData
 CCitadel_Modifier_Objective_Bullet_Resist
 CCitadel_Modifier_Objective_HealthGrowth
@@ -6123,6 +6152,8 @@ CNPC_Neutral_Hideout_Rabbit
 CNPC_Neutral_Hideout_RabbitVData
 CNPC_Neutral_SinnersSacrifice
 CNPC_Neutral_SinnersSacrifice_Hideout
+CNPC_NurseLeech
+CNPC_NurseLeech_GraphController
 CNPC_Ratking_Rat
 CNPC_Ratking_Rat_GraphController
 CNPC_ShieldedSentry
@@ -8389,7 +8420,6 @@ CitadelCameraVertOffsetOperationDef_t
 CitadelConcept_t
 CitadelConfigurableTrackedAbilityProjectileCreateInfo_t
 CitadelCosmeticAbilityVData
-CitadelCurvedAbilityProjectileCreateInfo_t
 CitadelDialogManager
 CitadelEntityMessageIds
 CitadelEventIDToBodyGroupMapping_t
@@ -9472,6 +9502,7 @@ Distance from core we consider to be a threat
 Distance in meters from the camera at which names above health bars are fully faded out
 Distance in meters from the camera at which names above health bars start fading out
 Distance invariant capsule radius, in pixels at 1080 vertical res. This makes targets less finnicky to hit at a distance. Near range, we'll have already hit via hitbox.
+Distance pushed back over the recoil. X = recoil progress [0,1], Y = fraction of m_flRecoilDistance
 Distance threshold that we allow bullet to penetrate body to headshot.
 Distance to Both of Two Control Points
 Distance to Control Point
@@ -9790,6 +9821,7 @@ EApplyFilter_None
 EApplyFilter_OnlyIfHasCharges
 EApplyFilter_OnlyIfImbued
 EApplyFilter_OnlyIfNonImbued
+EApplyFilter_OnlyIfNonUltimateSignature
 EApplyFilter_OnlyIfSignature
 EApplyFilter_OnlyIfUltimate
 EArea_Active
@@ -11385,6 +11417,7 @@ Experimental: Set to 1 to enable full GPU pipeline flushing after each command l
 Experimental: Set to 1 to enable full GPU pipeline flushing after each present.
 Experimental: Set to 1 to use the ID3D11DeviceContext11::Flush() to flush the GPU pipeline instead of queries.
 Experimental: Use Multithreaded implementation. 0: Use regular style. > 0 number of jobs to chunk the 128 traces into. Power of 2 only, please. 8 is great.
+Experimental: the ultimate charge follows a server-side NavSpace path to its target, and the client stops predicting it
 Expiration Time (seconds)
 Explode
 ExplodeDamage
@@ -11971,6 +12004,7 @@ Flat Bullet Damage given from boons that will be scaled by all increases and mul
 Flat Melee Damage given from boons that will be scaled by all increases and multipliers
 Flat bonus to the max move speed while crouched on the ground
 Flat bullet damage that is added after all the scaling is done.
+Flat distance she's pushed back, away from her aim, when the scare goes off (inches). 0 = none
 FlattenedSerializersVersion001
 FlexOpCode_t
 FlickerLights
@@ -12759,6 +12793,7 @@ Height Reflectivity
 Height of navigating agent capsule.
 Height of the model
 Height of volume fog texture
+Height risen over the cast delay. X = cast delay progress [0,1], Y = fraction of LaunchHeight
 Height to place samples to query occlusion for visualization.
 HeightFogDepth
 HeightFogEdgeWidth
@@ -12864,6 +12899,7 @@ Hop
 HorizJustification_e
 Horizontal Axis
 Horizontal Parameter
+Horizontal speed the leech is thrown with when it lets go of its victim
 Horizontal view punch per shot
 Host
 Host SourceTV[0] port
@@ -12882,6 +12918,7 @@ How big of a trigger to use when tracing for targets
 How big to cap the size of the sphere when checking for really large explosion/effects
 How close another visible enemy has to be to the pinged position to count toward the group callout.
 How close is close enough for pathfinding to a node.
+How close the leech has to get to Nurse before she absorbs it
 How close to goal to count as made it
 How close to the crosshair to be.  Hints are next to the crosshair when by themselves, but get ordered by this priority when multiple are active on the same side.  0 is highest priority (closest to crosshair)
 How damage to this damage level is handled.
@@ -14023,6 +14060,7 @@ Lean Matrix
 Leave this as "Automatic" unless you are forcing mono/stereo for some reason.  That way each graph will get configured to match the incoming vsnd (for a voice graph) or the audio device (main mix graph)
 Leaves current party
 Leaving an ally alone
+Leech
 Left
 Left Channel Delay (in seconds)
 Left Hand
@@ -14411,6 +14449,7 @@ MODIFIER_EVENT_ON_ABILITY_CHANNEL_FINISHED
 MODIFIER_EVENT_ON_BECOME_GROUND_FOR
 MODIFIER_EVENT_ON_PRE_ABILITY_CHANNEL_STARTED
 MODIFIER_EVENT_ORB_CLAIMED
+MODIFIER_EVENT_OVERRIDE_CURRENCY_CHANGE
 MODIFIER_EVENT_OVERRIDE_SHOT_PARAMS
 MODIFIER_EVENT_PARENT_ACTIVATED
 MODIFIER_EVENT_PARRY_SUCCESS
@@ -14584,6 +14623,7 @@ MODIFIER_STATE_FAMILIAR_INFEST_WAITING
 MODIFIER_STATE_FAMILIAR_MOVING_TO_ATTACH
 MODIFIER_STATE_FAMILIAR_SPIRIT_STOLEN
 MODIFIER_STATE_FATHOM_DO_NOT_REQUIRE_STAND_STILL_FOR_INVIS
+MODIFIER_STATE_FEARED
 MODIFIER_STATE_FLYING
 MODIFIER_STATE_FLYING_BEETLE_TARGET
 MODIFIER_STATE_FOOTSTEP_SOUNDS_DISABLE
@@ -14597,6 +14637,7 @@ MODIFIER_STATE_FORCE_GROUND_JUMP
 MODIFIER_STATE_FORCE_TUCKED_LEGS_CAPSULE
 MODIFIER_STATE_FRANK_REVIVING
 MODIFIER_STATE_FRANK_ZOMBIE
+MODIFIER_STATE_FREE_WALL_JUMPS
 MODIFIER_STATE_FRIENDLY_FIRE_ENABLED
 MODIFIER_STATE_FROZEN
 MODIFIER_STATE_FULL_SPEED_DUCKING
@@ -14823,6 +14864,7 @@ MODIFIER_STATE_ZIPLINE_INTRO
 MODIFIER_STATE_ZIPLINE_LOCKED
 MODIFIER_TIME_SCALE_USE_CASTER
 MODIFIER_TIME_SCALE_USE_PARENT
+MODIFIER_VALUE_ABILITY_CAST_SPEED_PERCENT
 MODIFIER_VALUE_ABILITY_DAMAGE_REDUCTION_PERCENT
 MODIFIER_VALUE_ABILITY_PROJECTILE_SPEED_PERCENT
 MODIFIER_VALUE_ABILITY_RESOURCE_MAX_ADDITIVE
@@ -14906,15 +14948,18 @@ MODIFIER_VALUE_CLOSE_RANGE_WEAPON_DAMAGE_INCREASE
 MODIFIER_VALUE_COOLDOWN_BETWEEN_CHARGE_REDUCTION_PERCENTAGE
 MODIFIER_VALUE_COOLDOWN_MAX_TIME
 MODIFIER_VALUE_COOLDOWN_REDUCTION_PERCENTAGE
+MODIFIER_VALUE_COOLDOWN_STOPPED
 MODIFIER_VALUE_COUNT
 MODIFIER_VALUE_CRIT_DAMAGE_RECEIVED_SCALE
 MODIFIER_VALUE_CROUCH_SPEED_BONUS
 MODIFIER_VALUE_CYCLE_TIME
 MODIFIER_VALUE_CYCLE_TIME_PERCENTAGE
+MODIFIER_VALUE_DEFERRED_DAMAGE_PERCENT
 MODIFIER_VALUE_DIMENSION_TYPE
 MODIFIER_VALUE_DISPLAY_SPEED_CURRENT
 MODIFIER_VALUE_DISPLAY_SPEED_MAX
 MODIFIER_VALUE_DOORWAY_MINIMAP_RANGE
+MODIFIER_VALUE_DOWN_DASH_SPEED_PERCENT
 MODIFIER_VALUE_ENABLE_CHARGES
 MODIFIER_VALUE_EXTERNAL_HEALTH_REGEN_LOOP_SOUND_OVERRIDE
 MODIFIER_VALUE_EXTERNAL_HEALTH_REGEN_PER_SECOND
@@ -14945,6 +14990,7 @@ MODIFIER_VALUE_HERO_ATTACH_PARENT
 MODIFIER_VALUE_HERO_BULLET_LIFESTEAL_EFFECTIVENESS
 MODIFIER_VALUE_HERO_CARD_OVERRIDE
 MODIFIER_VALUE_HERO_SPIRIT_LIFESTEAL_EFFECTIVENESS
+MODIFIER_VALUE_IGNORE_COOLDOWN
 MODIFIER_VALUE_IMBUED_BONUS_DAMAGE
 MODIFIER_VALUE_IMBUED_BONUS_DURATION
 MODIFIER_VALUE_INCOMING_DAMAGE_PERCENTAGE
@@ -15013,6 +15059,7 @@ MODIFIER_VALUE_RELOAD_SPEED_CONSTANT
 MODIFIER_VALUE_RESPAWN_RAMP_TIME_REDUCTION_PERCENT
 MODIFIER_VALUE_RESPAWN_TIME_ADDITIVE
 MODIFIER_VALUE_RESPAWN_TIME_PERCENTAGE
+MODIFIER_VALUE_RUSH_MOVEMENT_TIME_SCALE_PERCENT
 MODIFIER_VALUE_SELFCAST_TARGET_OVERRIDE
 MODIFIER_VALUE_SLIDE_EFFECT_REPLACEMENT
 MODIFIER_VALUE_SPECTATING_SPEED_OVERRIDE
@@ -15515,6 +15562,7 @@ Model Space Direction
 Model Space Position
 Model Space, Rotation Only
 Model Space, Translation Only
+Model scale for leeches fresh out of the jar, waiting on the ground for an enemy
 Model to be displayed.
 Model to get the animation list from
 Model used by the tools only to populate comboboxes for things like animgraph parameter pickers
@@ -16230,6 +16278,7 @@ Number of times a user can fail rcon authentication in sv_rcon_minfailuretime be
 Number of triggers before meemop reaches full volume
 Numer of points along path
 Numerator
+Nurse has to come within this range for a grounded leech to start crawling toward her; it settles again once she is past 1.5x this
 OBJECT_TYPE_BAKED_GEOMETRY
 OBJECT_TYPE_BLOCK_LIGHT
 OBJECT_TYPE_DISABLED_IN_LOW_QUALITY
@@ -16332,6 +16381,7 @@ ObservableRecv_m_bChanneling
 ObservableRecv_m_bInCastDelay
 ObservableRecv_m_bIsSliding
 ObservableRecv_m_bLeaping
+ObservableRecv_m_bNeedlesOut
 ObservableRecv_m_bToggleState
 ObservableRecv_m_eFlightState
 ObservableRecv_m_flAttackTriggeredTime
@@ -17057,6 +17107,7 @@ Overrides IP for multihomed hosts
 Overrides the SourceTV master root address.
 Overrides the default footstep. The footstep with the greatest Priority is selected. It must have a priority greater than -1 to be selected!
 Overrides the map's fog settings (-1 populates fog_ vars with map's values)
+Overrides the max decimal places shown for this property. -1 uses the display type's precision.
 Overrides the max players reported to prospective clients
 Oversampling
 OwnerModifierEventListener_t
@@ -17763,9 +17814,11 @@ Percentage of health to be considered low health
 Percentage of health to be considered low health when you have high max health.
 Percentage of health to be considered mid health
 Percentage of health to be considered mid health when you have high max health.
+Percentage of incoming damage whose health loss is deferred; the hit still counts as full damage for events, procs and interrupts
 Percentage of the time to look for gold orbs to shoot
 Percentage of the time to look for red orbs to shoot
 Percentage of the transition between two lods we will apply a dither
+Percentage scale on ability and item cast delay speed (25 casts 1.25x faster, -25 casts 0.75x as fast)
 Percentage scale on the base fire rate, applied before fire rate bonuses (25 is 1.25x, -25 is 0.75x)
 Percentage the shadow grows in each dimension per 100 game units below the character's feet.
 PercentageOnly
@@ -18181,15 +18234,15 @@ Profile particle spike
 Progress blurry at this distance.
 Progress to crisp at this distance.
 Projectile
-Projectile Info
+Projectile Infos
 Projectile Model
 Projectile Speed over time.
+Projectile infos keyed by context. The "primary" context is what GetProjectileInfoVData() returns by default.
 Projectile only interacts / touches world
 Projectile should detonate when near position
 Projectile should hit when near position
 Projectile won't impact targets until this much time has elapsed.
 ProjectileBehaviorFlag_t
-ProjectileInfo_t
 ProjectileShape_t
 ProjectileWait
 Prompt for confirmation before discarding unsaved hero build edits.
@@ -18702,6 +18755,7 @@ Render sun lighting
 Render the 2d skybox.
 Render the minimap
 Render the world.
+Render tint for leeches fresh out of the jar, to read as less saturated than fed ones
 Render view model
 Render while dead?
 RenderBufferFlags_t
@@ -18742,6 +18796,7 @@ Repel
 Replace
 Replacement Options
 Replaces the charging sequence from the start of the plant leap rise until the leap ends.
+Replaces the spawn particle once the leech lets go of its victim and is waiting to be picked up
 Replay the last death of the round, if possible. Disabled on official servers by default. Experimental.
 Replay time in seconds before the highlighted event
 ReplayEventType_t
@@ -18860,6 +18915,7 @@ RevertToDefaultRelationship
 Revitalization
 Rewards
 Rewards keyed by the match time in minutes they start dropping at. Each set stays in use until the next set's match time is reached.
+Rides the leech from the moment it spawns until it is removed
 Right
 Right Channel Delay (in seconds)
 Right Hand
@@ -19424,6 +19480,7 @@ SceneSystem/LightBinner/Debug Silhouettes
 SceneSystem/LightBinner/Debug Tiles
 SceneSystem/LightBinner/Debug Visualize Fog Shadowed Lights
 SceneSystem/LightBinner/Debug Visualize Lights
+SceneSystem/LightBinner/Debug Visualize Precomputed Shadow Atlas Lights
 SceneSystem/LightBinner/Debug Visualize Shadowed Lights
 SceneSystem/LightBinner/Enable Baked Shadows
 SceneSystem/LightBinner/Enable Binning
@@ -20376,6 +20433,7 @@ Sleep the local player
 Slide
 Slide Jump
 Sliding out of a mantle gives you this impulse. units/second
+Slime trail everyone sees while the leech is on the ground, hunting or crawling back to Nurse
 Slope
 Slope Angle
 Slope Heading
@@ -20634,6 +20692,7 @@ Speed Function
 Speed Range (optional)
 Speed Scale
 Speed Scaling
+Speed over one looping crawl cycle. X = cycle progress [0,1], Y = fraction of LeechMoveSpeed
 Speed remap to slide effect intensity
 Speed to stop when sticking
 SpeedScale
@@ -21212,6 +21271,7 @@ TargetWarpLinearRootMotionMode
 TargetWarpLinearRootMotionMode_Default
 TargetWarpLinearRootMotionMode_FollowPath
 TargetWarpTimingMethod
+Targeting
 Targeting Flags
 Targets a SURFACE (not the ground), and fails if no surface is within reach of AbilityRange.
 Targets a position on the minimap. Dunno how this handles elevation.
@@ -21588,6 +21648,7 @@ Time between bot using ability
 Time between roll attempts
 Time duration of box filter to pass over phonemes.
 Time for a disconnected player to be taken over by a bot
+Time for one crawl cycle, looped while crawling. 0 = constant LeechMoveSpeed
 Time from the end of the mood when an animation cannot play
 Time from the start of the mood before an animation can start
 Time in seconds before mmqueue reservation expires.
@@ -21600,6 +21661,7 @@ Time interval between NPC thinks when set to AI LOD very low.
 Time it takes to fully capture
 Time scale
 Time spent at 0.0 speed before fade.
+Time the backwards push takes to cover m_flRecoilDistance (seconds)
 Time to crossfade sound effects between soundscapes
 Time to move between crouch and stand
 Time when DPS dealt to enemy reaches "End DPS". Leave the value as 0 to stay at "Start DPS" all match.
@@ -21747,6 +21809,8 @@ Trail Head & Tail
 Trail Particle
 Trail UV Controls
 Trail forward shift (fraction)
+Trail radius for hunting leeches out of the jar, sent to the trail particle as CP3.x
+Trail radius for leeches crawling back to Nurse, sent to the trail particle as CP3.x
 TrailLength
 Trails
 TrainOrientationType_t
@@ -22039,6 +22103,7 @@ UpscalerType_t
 Upward Ratio
 Upward launch speed of anyone caught in the eruption.
 Upward speed of the little hop he does after planting the banner. 0 disables the hop.
+Upward speed the leech is thrown with when it lets go of its victim
 UrnCarried
 UrnDelivered
 UrnExpired
@@ -22417,6 +22482,7 @@ Value to set "hero_action" to set when casting. "hero_action_source" will be set
 Value to set "hero_action" to set when channeling. "hero_action_source" will be set to this ability's name
 Value to set "hero_action" to when casting completes. "hero_action_source" will be set to this ability's name
 Value to set "hero_action" to when casting fails for any reason. "hero_action_source" will be set to this ability's name
+Value to set "hero_action" to while casting to put the needles away (m_strAG2CastingAction is used when getting them out)
 Value to set for the body group when the damage level is broken.
 ValueRemapperHapticsType_t
 ValueRemapperInputType_t
@@ -22481,6 +22547,7 @@ VertexSet
 Vertical Axis
 Vertical Parameter
 Vertical offset for drawing the mesh (useful for flat planes where the mesh is often a fixed offset from the physical ground
+Vertical speed the leech is thrown with when it pops out of the Leech Therapy jar
 Vertical view fixup when eyes are near water plane.
 Vertical view punch per shot
 VerticalFOV
@@ -23334,6 +23401,11 @@ ability_necro_killsummon_trigger
 ability_necro_nukemap
 ability_necro_zombiewall
 ability_npc_shield
+ability_nurse_adrenaline_rush
+ability_nurse_fear
+ability_nurse_healing_needles
+ability_nurse_healing_needles_weapon
+ability_nurse_leech_therapy
 ability_opera_ability01
 ability_opera_ability02
 ability_opera_ability03
@@ -24894,6 +24966,7 @@ citadel_damage_text_x_offset_far
 citadel_damage_text_x_offset_near
 citadel_dash_cast_ability
 citadel_deadpack_instant_shot
+citadel_deadpack_ult_charge_navpath
 citadel_death_linger_time
 citadel_death_ragdoll_duration
 citadel_death_replay_enabled
@@ -30519,6 +30592,7 @@ lb_debug_silhouette_sum
 lb_debug_tiles
 lb_debug_visualize_fog_shadowed_lights
 lb_debug_visualize_lights
+lb_debug_visualize_precomputed_shadow_atlas_lights
 lb_debug_visualize_shadowed_light_details
 lb_debug_visualize_shadowed_lights
 lb_dynamic_shadow_penumbra
@@ -30878,6 +30952,7 @@ m_AllyFlagAuraModifier
 m_AllyGroundParticle
 m_AllyIndicatorParticle
 m_AllyLockoutModifier
+m_AllyModifier
 m_AlphaAnimationCurve
 m_AlphaCropMode
 m_AltCast
@@ -31346,6 +31421,7 @@ m_ClubCardTrail
 m_ClubModifier
 m_CoatedModifier
 m_CoatedSlowModifier
+m_CollectParticle
 m_Collision
 m_CollisionAttributeIndices
 m_CollisionGroup
@@ -31411,12 +31487,14 @@ m_CornerBoostExecutedSound
 m_CornerLean
 m_CorruptedItemInfo
 m_CrackshotImmuneModifier
+m_CrashDamageSpiritParticle
 m_CrashModifier
 m_CrashParticle
 m_CrashSpeedScaleCurve
 m_CrashTrailParticle
 m_CrateModel
 m_CrateType
+m_CrawlCycleCurve
 m_CrescendoAOEModifier
 m_Criteria
 m_CriterionDistance
@@ -31473,6 +31551,7 @@ m_DamageReceivedSounds
 m_DamageShareModifier
 m_DamageShareParticle
 m_DamageSlowModifier
+m_DamageSpiritParticle
 m_DamageTaken
 m_DamageTakenParticle
 m_DamageTargetParticle
@@ -31627,6 +31706,7 @@ m_DynNodeVertexSet
 m_DynNodeWindBases
 m_EGrappleState
 m_EarnedParticle
+m_EatingBuffsModifier
 m_EchoStartTime
 m_EconSlotName
 m_Edges
@@ -31917,6 +31997,7 @@ m_FuseParticle
 m_GainedBatParticle
 m_GameTimeEnabled
 m_GarbageAuraModifier
+m_GazeModifier
 m_GetupSpeedCurve
 m_GlintParticle
 m_GlitchModifier
@@ -32006,6 +32087,10 @@ m_HealingFruitModel
 m_HealingFruitModifier
 m_HealingLoopSoundOverride
 m_HealingModifier
+m_HealingNeedleEntImpactParticle
+m_HealingNeedleImpactParticle
+m_HealingNeedleMuzzleFlashParticle
+m_HealingNeedleProcParticle
 m_HealingPulseTrackerModifier
 m_HealingReceivedSounds
 m_HealingSlashParticle
@@ -32089,6 +32174,7 @@ m_HungerTargetKillParticle
 m_HungerTargetParticle
 m_HungerTargetPlayerParticle
 m_HunterModifier
+m_HuntingRenderColor
 m_IBData
 m_ID
 m_IDSets
@@ -32133,7 +32219,6 @@ m_ImportedCollision
 m_ImposterModifier
 m_ImposterModifierFX
 m_ImpulseAccelCurve
-m_InAirLoopSound
 m_InAirModifier
 m_InAirWatcherModifier
 m_InFlightModifier
@@ -32287,6 +32372,7 @@ m_LastMin
 m_LastThinkTime
 m_LaunchAngle
 m_LaunchAngleRemap
+m_LaunchHeightCurve
 m_LaunchInCooldownParticle
 m_LaunchParticle
 m_LaunchTossModifier
@@ -32304,6 +32390,7 @@ m_LeapingModifier
 m_LeapingSpeedCurve
 m_LeapingUpCurve
 m_LeechModifier
+m_LeechTargetParticle
 m_LegacyKeyValueText
 m_LegacyStretchForce
 m_Length
@@ -32430,6 +32517,7 @@ m_MinimapZoom
 m_MinuteParticle
 m_MirvExplodeParticle
 m_MissSound
+m_MissedJarImpactParticle
 m_MixCommands
 m_Mod
 m_ModelBindPose
@@ -32961,6 +33049,8 @@ m_PhaseOutModifier
 m_PhysicsBodyMarkupByBoneName
 m_PhysicsDelegate
 m_PickUpAura
+m_PickupBonusModifier
+m_PickupIndicatorParticle
 m_PickupTimer
 m_PickupTimerModifier
 m_PillarModifier
@@ -33142,6 +33232,7 @@ m_Receivers
 m_RecentDamageModifier
 m_RecentExecConnectionIndicatorImg
 m_Recipients
+m_RecoilDistanceCurve
 m_RedirectParticle
 m_RefCount
 m_ReflectedBulletTracerParticle
@@ -33838,6 +33929,10 @@ m_VectorWS
 m_VeilWalkerMovespeed
 m_VeilWalkerTriggeredModifier
 m_Velocity
+m_VelocityPitchScaleMax
+m_VelocityPitchScaleMin
+m_VelocityVolScaleMax
+m_VelocityVolScaleMin
 m_VenomExplodeParticle
 m_VenomModifier
 m_VertexMapName
@@ -34153,6 +34248,7 @@ m_bAdditive
 m_bAdrenalineActive
 m_bAffectInvulnerableEnts
 m_bAffectedAnyTargets
+m_bAffectedByRushMovementTimeScale
 m_bAgentEnabled
 m_bAggregate
 m_bAggregateInstanceStreams
@@ -34417,6 +34513,7 @@ m_bCanZoom == false
 m_bCancelAtNextInterrupt
 m_bCannonPending
 m_bCannotBeAMultiParentChildCompile
+m_bCannotBeDeferred
 m_bCannotBeRefracted
 m_bCannotBeShown
 m_bCapsule
@@ -34520,6 +34617,7 @@ m_bCullInside
 m_bCullOnMiss
 m_bCullOnSky
 m_bCullOutside
+m_bCustomCrossIgnoreThemedReticleSetting
 m_bCustomTooltipInteractive
 m_bCylepose
 m_bDOFFarSettingsAreOffsetByGunRange
@@ -34678,6 +34776,7 @@ m_bDroppedFromZipline
 m_bDucked
 m_bDurationAffectedByEffectiveness
 m_bDurationCanBeTimeScaled
+m_bDurationExtendible
 m_bDurationReducible
 m_bDurationReducibleByCrowdControlDiminish
 m_bDynamicAILOD
@@ -34827,6 +34926,7 @@ m_bFinalEmitOnStop
 m_bFinishEarly
 m_bFinished
 m_bFireEventsOnPath
+m_bFireFakeBullets
 m_bFireOnEmissionEnd
 m_bFireOnEmpty
 m_bFireUser1
@@ -35114,6 +35214,7 @@ m_bIgnoreResists
 m_bIgnoreRotation
 m_bIgnoreSlope
 m_bIgnoreTeleport
+m_bIgnoresSelfBubble
 m_bIgnoringZoom
 m_bImmuneDuringMove
 m_bImpacted
@@ -35313,7 +35414,6 @@ m_bIsPlayingPreIdle
 m_bIsPosition
 m_bIsPredicted
 m_bIsPrimaryProc
-m_bIsProjectileAsBullet
 m_bIsPropSkeleton
 m_bIsPublic
 m_bIsPublicBlackboardVariable
@@ -35540,6 +35640,7 @@ m_bNavLinkIsOnPath
 m_bNavLinksEnabled
 m_bNavObstacleUpdatesOverridden
 m_bNavWantsMoveSolve
+m_bNeedlesOut
 m_bNeedsBBoxUpdate
 m_bNeedsBeamReset
 m_bNeedsExplosion
@@ -35730,6 +35831,7 @@ m_bPlayEndCap
 m_bPlayEndcapOnStop
 m_bPlayHead
 m_bPlayImpactEffectsOnTeammates
+m_bPlayLandingSound
 m_bPlayMeepMop
 m_bPlayOnClient
 m_bPlayOnServer
@@ -37607,6 +37709,10 @@ m_flAjarAngle
 m_flAlignWithGravityFactor
 m_flAllowResponsesEndTime
 m_flAllowedSlideAngleCos
+m_flAllyAutoAimStrengthDistMax
+m_flAllyAutoAimStrengthDistMin
+m_flAllyAutoAimStrengthMax
+m_flAllyAutoAimStrengthMin
 m_flAllyCollideRadius
 m_flAllyDelayedBoostTime
 m_flAllyGrabCancelTime
@@ -37867,6 +37973,7 @@ m_flBlendWeightMinScale
 m_flBlockCommentRegionAlpha
 m_flBlockDamage
 m_flBlockedTalkTime
+m_flBlockerExtent
 m_flBloomStartValue
 m_flBloomStrength
 m_flBloomThreshold
@@ -38070,6 +38177,7 @@ m_flCastDelayFrac
 m_flCastDelayMax
 m_flCastDelayMaxDist
 m_flCastDelayMin
+m_flCastDelaySpeedScale
 m_flCastDelayStartTime
 m_flCastDelayTime
 m_flCastTime
@@ -38099,6 +38207,7 @@ m_flChargeDuration
 m_flChargeFallGravityScale
 m_flChargeForMaxDamage
 m_flChargeJumpAnimSpeedScale
+m_flChargeProgress
 m_flChargeRechargeEnd
 m_flChargeRechargeStart
 m_flChargeResumeTime
@@ -38151,6 +38260,7 @@ m_flCmdLeftMove
 m_flCmdUpMove
 m_flCohesionStrength
 m_flColdHitHeatRemovedPercent
+m_flCollectRadius
 m_flCollideRadius
 m_flCollidedWallMaxDist
 m_flCollisionConfirmationSpeed
@@ -38224,6 +38334,8 @@ m_flCpMovementTolerance
 m_flCrashBraceAnimTime
 m_flCrashDownInputBuffer
 m_flCrashSpeed
+m_flCrawlCycleDuration
+m_flCrawlRadius
 m_flCreateTime
 m_flCreationTime
 m_flCreepDamagePerTick
@@ -38441,8 +38553,10 @@ m_flDefaultVelAirDrag
 m_flDefaultVelQuadAirDrag
 m_flDefaultVolumetricSolveAmount
 m_flDefendBaseSearchRadius
+m_flDeferredDamage
 m_flDeferredDamageApplicationInterval
 m_flDeferredHealingFromBlasted
+m_flDeferredHealthLossFraction
 m_flDegrees
 m_flDegreesMax
 m_flDegreesMin
@@ -38591,8 +38705,10 @@ m_flDrawingLingerTime
 m_flDropDownPenaltyCostBase
 m_flDropDownPenaltyCostScalar
 m_flDropDownRate
+m_flDropOutSpeed
 m_flDropShadowRadius
 m_flDropSpeed
+m_flDropUpSpeed
 m_flDrowningDamageInterval
 m_flDuckOffHorizontal
 m_flDuckOffVertical
@@ -38790,6 +38906,7 @@ m_flFailSafeDurationMult
 m_flFailSafeMinTime
 m_flFakeBulletDistanceFudge
 m_flFakeBulletSpread
+m_flFakeBulletsCycleTime
 m_flFallGravity
 m_flFallGravityScale
 m_flFallRate
@@ -39324,6 +39441,7 @@ m_flInvulModifierRange
 m_flInvulRange
 m_flInvulnRange
 m_flIronSightsTime
+m_flJarLaunchUpSpeed
 m_flJointFriction
 m_flJokerWeight
 m_flJuggleTimeAdd
@@ -39464,6 +39582,7 @@ m_flLastSpotted
 m_flLastStackChangeTime
 m_flLastStackTime
 m_flLastStateChangeTime
+m_flLastTargetMantleAttempt
 m_flLastThinkTime
 m_flLastTickTime
 m_flLastTime
@@ -39774,6 +39893,7 @@ m_flMaxRotation
 m_flMaxRotationLeft
 m_flMaxRotationRight
 m_flMaxScale
+m_flMaxScaleDuration
 m_flMaxShadowLum
 m_flMaxSimulationTime
 m_flMaxSize
@@ -39930,6 +40050,7 @@ m_flMinRootHeightOffset
 m_flMinRotation
 m_flMinRoughness
 m_flMinScale
+m_flMinScaleDuration
 m_flMinScopeTimeToShoot
 m_flMinShadowLum
 m_flMinShootTime
@@ -39989,6 +40110,9 @@ m_flMix
 m_flModDepth
 m_flModRate
 m_flModelScale
+m_flModelScaleAttachedEnd
+m_flModelScaleAttachedStart
+m_flModelScaleHunting
 m_flModelScaleMax
 m_flModelScaleMin
 m_flModelVerticalPlacementScaleOffset
@@ -40117,9 +40241,11 @@ m_flNextAuraDropTick
 m_flNextBatTime
 m_flNextBeep
 m_flNextBlockTime
+m_flNextBuildupTickTime
 m_flNextDamageTick
 m_flNextDamageTime
 m_flNextDisarmSound
+m_flNextFakeBulletTime
 m_flNextHeavyAttackAllowedTime
 m_flNextLightAttackAllowedTime
 m_flNextMPSoundTime
@@ -40145,6 +40271,7 @@ m_flNextStart
 m_flNextStateTime
 m_flNextSuckTime
 m_flNextTeleportTime
+m_flNextTickTime
 m_flNextTime
 m_flNextUseTime
 m_flNextWallCheck
@@ -40678,6 +40805,8 @@ m_flRecentExecEndOffset
 m_flRecentExecLineWidth
 m_flRecentExecStartOffset
 m_flRecentExecTimeoutSec
+m_flRecoilDistance
+m_flRecoilDuration
 m_flRecoilRecoveryDelayFactor
 m_flRecoilRecoverySpeed
 m_flRecoilShotIndexRecoveryTimeFactor
@@ -41175,6 +41304,7 @@ m_flStaggerDamageMult
 m_flStaggerDuration
 m_flStaggerMeleeMult
 m_flStaggeredDuration
+m_flStaminaDrained
 m_flStanceDirectionMS
 m_flStart
 m_flStartAlpha
@@ -41279,6 +41409,7 @@ m_flStopTalkTime
 m_flStopTalkTimeWithoutDelay
 m_flStopTargetRange
 m_flStopTimeToShoot
+m_flStoppedCooldownRemaining
 m_flStoppedMovingStartTime
 m_flStoppingDistance
 m_flStoppingRadius
@@ -41480,7 +41611,6 @@ m_flTimeToNextGust
 m_flTimeToOOC
 m_flTimeToReachMaxSpeed
 m_flTimeToReachZeroSpeed
-m_flTimeToReturn
 m_flTimeToRunBackInstantly
 m_flTimeToStartScale
 m_flTimeToTrigger
@@ -41562,6 +41692,8 @@ m_flTrackingSpeed
 m_flTrackingStartTime
 m_flTrackingWindowEnd
 m_flTrackingWindowStart
+m_flTrailRadius
+m_flTrailRadiusHunting
 m_flTrailSpawnInterval
 m_flTrailStartDelay
 m_flTrailTrajectoryTimeSpacing
@@ -41634,6 +41766,7 @@ m_flUVScale
 m_flUWidthSrc
 m_flUltimateCooldownEnd
 m_flUltimateCooldownStart
+m_flUltimateStoppedCooldownRemaining
 m_flUninterruptableAfter
 m_flUnitHitTargetingRadius
 m_flUnitTraceRadius
@@ -42198,6 +42331,7 @@ m_hLastOrbTarget
 m_hLastSpawnedShard
 m_hLastWeapon
 m_hLayerSpawnGroup
+m_hLeech
 m_hLerpTarget
 m_hLerpTargetAttachment
 m_hLight
@@ -42252,6 +42386,7 @@ m_hNextNode
 m_hNextTarget
 m_hNotifySceneCompletion
 m_hNpc
+m_hNurse
 m_hObserverTarget
 m_hOldAttached
 m_hOldAuraUnits
@@ -42390,6 +42525,7 @@ m_hSplitOwner
 m_hSplitScreenPlayers
 m_hSpriteMaterial
 m_hStableHandle
+m_hStackBonus
 m_hStartPoint
 m_hStartRelay
 m_hStatue
@@ -42435,6 +42571,7 @@ m_hTowerAmber
 m_hTowerSapphire
 m_hTrackedEntity
 m_hTrackedTarget
+m_hTrailParticle
 m_hTrain
 m_hTransitionSourcePath
 m_hTrigger
@@ -42669,6 +42806,7 @@ m_iLastFrame
 m_iLastHits
 m_iLayer
 m_iLayoutFileType
+m_iLeechCount
 m_iLevel
 m_iLockRefCount
 m_iLoop
@@ -43221,6 +43359,7 @@ m_mapOriginalConVarVals
 m_mapPickupChances
 m_mapPickupsByMatchTimeMins
 m_mapPingMessages
+m_mapProjectileInfos
 m_mapResourceTypes
 m_mapScalingStats
 m_mapSourceSounds
@@ -43613,6 +43752,7 @@ m_nCascadeRenderStaticObjects
 m_nCascades
 m_nCase
 m_nCastCompleteParticle
+m_nCastDelayParticleIdx
 m_nCastDelayParticleIndex
 m_nCastEffect
 m_nCastParticle
@@ -43630,6 +43770,7 @@ m_nChainLength
 m_nChangeCount
 m_nChannel
 m_nChannelElements
+m_nChannelParticleIdx
 m_nChannelSet
 m_nChannels
 m_nChargeEffect
@@ -44284,6 +44425,7 @@ m_nLayerBoneMaskNodeIdx
 m_nLayerId
 m_nLayerRootMotionWeightNodeIdx
 m_nLayerWeightNodeIdx
+m_nLeechStacksAtCast
 m_nLeftEffectorBoneIdx
 m_nLeftTargetBoneIdx
 m_nLeftTargetNodeIdx
@@ -44382,6 +44524,7 @@ m_nMaxCountAll
 m_nMaxCount_1
 m_nMaxCount_2
 m_nMaxCount_3
+m_nMaxDecimalsDisplayed
 m_nMaxDistance
 m_nMaxEmittedPerFrame
 m_nMaxFactorAll
@@ -44684,6 +44827,7 @@ m_nPlatformType
 m_nPlayInReverseValueNodeIdx
 m_nPlayerDeathEventID
 m_nPlayerKillNumber
+m_nPlayerShieldFXIndex
 m_nPlayerSlot
 m_nPlayerTeamEvent
 m_nPoolState
@@ -44909,6 +45053,7 @@ m_nShape
 m_nShapeCount
 m_nShapeInBody
 m_nShapeType
+m_nShieldFXIndex
 m_nShieldParticle
 m_nShootIndex
 m_nShootIndexNPC
@@ -45059,10 +45204,12 @@ m_nTargetChangeCount
 m_nTargetClassifyAs
 m_nTargetCount
 m_nTargetDetailLayer
+m_nTargetFlags
 m_nTargetIndex
 m_nTargetMaskNodeIdx
 m_nTargetStateIdx
 m_nTargetStateNodeIdx
+m_nTargetTypes
 m_nTargetValueNodeIdx
 m_nTargetingLightEffect
 m_nTargetingParticleIndex
@@ -45089,6 +45236,7 @@ m_nTickRotateRan
 m_nTickStarted
 m_nTicks
 m_nTicksNotMoving
+m_nTicksRemaining
 m_nTicksToHoldShuffleTime
 m_nTier1GoldKill
 m_nTier1GoldOrbs
@@ -45785,7 +45933,6 @@ m_progressionRadius
 m_progressionSnowballCount
 m_progressionSpeed
 m_projInfo
-m_projectileInfo
 m_projectionAngularTolerance
 m_projectionLinearTolerance
 m_proneStance
@@ -46063,6 +46210,7 @@ m_sGroupName
 m_sHandshakeName
 m_sHealAndDamagePulseSound
 m_sHealPulseSound
+m_sHealingMaterialGroupName
 m_sHealthBarAttachment
 m_sHeroBuildSerialized
 m_sHitGroup
@@ -46171,7 +46319,6 @@ m_sOriginalMaterial
 m_sOriginalModel
 m_sOtherDamageSound
 m_sOverrideAnticipationName
-m_sOverrideClassName
 m_sPairedRole
 m_sPairedSequenceRole
 m_sParentAttachment
@@ -46465,6 +46612,7 @@ m_strAG2HeroActionPostCastFail
 m_strAG2HeroActionPostCastSuccess
 m_strAG2PostCastAction
 m_strAG2ProjectileFlightHeroState
+m_strAG2PutAwayCastingAction
 m_strAG2SourceName
 m_strAG2SuccessHeroState
 m_strAG2UltFinishedAction
@@ -46597,6 +46745,7 @@ m_strCastEffect
 m_strCastHitSound
 m_strCastSound
 m_strCastStartSound
+m_strCastTargetParticle
 m_strCasterBounceSound
 m_strCasterLoopingSound
 m_strCatFormMeleeSwing
@@ -46631,6 +46780,7 @@ m_strChimeraDiveSound
 m_strClothEffect
 m_strCoatedAppliedSound
 m_strCoatedConsumeSound
+m_strCollectSound
 m_strCommsWheelLabelToken
 m_strConditionalLocTokenOverride
 m_strConfigName
@@ -46662,6 +46812,7 @@ m_strDamageReceiveNPC
 m_strDamageReceiveShield
 m_strDamageRecievedSound
 m_strDamageSound
+m_strDamageSpiritCreatedSound
 m_strDamageTakenSound
 m_strDamageTarget
 m_strDamageTickSound
@@ -46681,6 +46832,7 @@ m_strDebuffStatName
 m_strDecal
 m_strDefaultSkin
 m_strDefaultString
+m_strDeferredDamageTickSound
 m_strDelayPublicFieldName
 m_strDepartSound
 m_strDeploySound
@@ -46741,6 +46893,7 @@ m_strFailSound
 m_strFailureSound
 m_strFallCollideImpactSound
 m_strFastMaterialGroup
+m_strFearAppliedSound
 m_strFileName
 m_strFilterAbilityName
 m_strFilterName
@@ -46816,6 +46969,10 @@ m_strHexSound
 m_strHideoutRichPresence
 m_strHighThresholdOneshot
 m_strHintText
+m_strHitConfirmMaxHealth
+m_strHitConfirmNPC
+m_strHitConfirmPlayer
+m_strHitConfirmPlayerHeadshot
 m_strHitConfirmSound
 m_strHitConfirmationSound
 m_strHitDebrisSound
@@ -46917,6 +47074,7 @@ m_strLaunchInCooldownSound
 m_strLaunchSound
 m_strLayoutFile
 m_strLayoutFile == ""
+m_strLeechRemoveSound
 m_strLevel2HitConfirmNPCSound
 m_strLevel2HitConfirmSound
 m_strLightKickBeginSound
@@ -46967,6 +47125,7 @@ m_strMinimapClass
 m_strMinimapImage
 m_strMinuteSound
 m_strMissSound
+m_strMissedDissolveSound
 m_strModelName
 m_strModifier
 m_strModifierOverrideStatusID
@@ -46976,11 +47135,13 @@ m_strMoveKnightSound
 m_strMoveQueenSound
 m_strMovementForward
 m_strMovementLoop
+m_strMovementLoopSound
 m_strMovementLoopStart
 m_strMovementLoopStop
 m_strMovementLoopingSound
 m_strMovementName
 m_strMovementReverse
+m_strMovementStartSound
 m_strMuzzleFlashParticleConfig
 m_strName
 m_strNavRestrictionVolume
@@ -47167,6 +47328,8 @@ m_strStartHourSound
 m_strStartParry
 m_strStartSound
 m_strStartTouchEventName
+m_strStartWithSpiritsSound
+m_strStartWithoutSpiritsSound
 m_strStartingAmount
 m_strStateBlob
 m_strStatusEffectValue
@@ -47191,6 +47354,8 @@ m_strSwapCloneSound
 m_strSwapParticle
 m_strSwapSound
 m_strSwapStarted
+m_strSwapToHealingSound
+m_strSwapToPrimarySound
 m_strSwatchImage
 m_strSwipeHitParticle
 m_strSwipeHitSound
@@ -47227,6 +47392,7 @@ m_strTitle
 m_strToken
 m_strTooltipCSSClass
 m_strTopBarVertical
+m_strTopOffSound
 m_strTreasureChest
 m_strTriggerID
 m_strTripSound
@@ -47482,12 +47648,14 @@ m_tStopPaintingTime
 m_tStopTarget
 m_tStreetBrawl
 m_tSubCooldownEndTime
+m_tSwapInFinishTime
 m_tTargetPrevious
 m_tTeleportCompletedTime
 m_tTetherAttachTime
 m_tTetherBreakTime
 m_tTetherEndTime
 m_tTimeOfLastBulletHit
+m_tTrailStartTime
 m_tTriggerTime
 m_tWallDeployFinishTime
 m_table
@@ -48055,6 +48223,12 @@ m_vPrecomputedOBBOrigin2
 m_vPrecomputedOBBOrigin3
 m_vPrecomputedOBBOrigin4
 m_vPrecomputedOBBOrigin5
+m_vPrecomputedShadowmapAtlasRect0
+m_vPrecomputedShadowmapAtlasRect1
+m_vPrecomputedShadowmapAtlasRect2
+m_vPrecomputedShadowmapAtlasRect3
+m_vPrecomputedShadowmapAtlasRect4
+m_vPrecomputedShadowmapAtlasRect5
 m_vPrevEnd
 m_vPrevEndPointPos
 m_vPrevEntry
@@ -48286,6 +48460,7 @@ m_vecBoxHelpersNetworked
 m_vecBrushCurrentPosition
 m_vecBrushPositions
 m_vecBrushVelocity
+m_vecBuildupTargets
 m_vecBulletOriginOffsets0
 m_vecBulletOriginOffsets1
 m_vecBuoyancyForce
@@ -48409,6 +48584,7 @@ m_vecExternalGraphs
 m_vecFOVOperations
 m_vecFOWEntities
 m_vecFearLocation
+m_vecFearedTargets
 m_vecFinalAngle
 m_vecFinalDest
 m_vecFinalPosition
@@ -48671,6 +48847,7 @@ m_vecRatParticles
 m_vecRateMax
 m_vecRateMin
 m_vecRecentCommAttempts
+m_vecRecoilDirection
 m_vecReflectionEnergy
 m_vecRelationships
 m_vecRenderAttributes
@@ -49190,8 +49367,6 @@ minimap_update_rate_hz
 minimap_zoom_in
 minimap_zoom_out
 minimum
-minimum CPU level
-minimum GPU level
 minimum alpha
 minimum detail collision mode
 minimum distance
@@ -49977,6 +50152,7 @@ npc_neutral_hideout_cat
 npc_neutral_hideout_rabbit
 npc_neutral_sinners_sacrifice
 npc_neutral_sinners_sacrifice_hideout
+npc_nurse_leech
 npc_pathquery_text
 npc_player_bot_brain
 npc_position
@@ -50716,6 +50892,12 @@ pre_sim_time
 precipitationSubclass
 precision for depth compression at SST leaf nodes.
 precommands
+precomputed_shadowmap_atlas_rect_0
+precomputed_shadowmap_atlas_rect_1
+precomputed_shadowmap_atlas_rect_2
+precomputed_shadowmap_atlas_rect_3
+precomputed_shadowmap_atlas_rect_4
+precomputed_shadowmap_atlas_rect_5
 precomputedboundsmaxs
 precomputedboundsmins
 precomputedfieldsvalid

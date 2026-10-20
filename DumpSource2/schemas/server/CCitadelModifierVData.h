@@ -17,6 +17,7 @@ class CCitadelModifierVData : public CModifierVData
 	// MPropertyDescription = "When set, the duration will get scaled depending on the owner's timescale"
 	bool m_bDurationCanBeTimeScaled;
 	bool m_bDurationReducible; // = true
+	bool m_bDurationExtendible;
 	// MPropertyDescription = "When set, the duration will get reduced based on recent CC applied to the victim"
 	bool m_bDurationReducibleByCrowdControlDiminish; // = true
 	// MPropertyDescription = "Whose timescale to use when adjusting duration."

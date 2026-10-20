@@ -1,0 +1,71 @@
+// MHasKV3TransferPolymorphicClassname
+class CCitadelProjectileVData : public CEntitySubclassVDataBase
+{
+	ProjectileBehaviorFlag_t m_nBehaviors;
+	// MPropertyStartGroup = "Targeting"
+	CITADEL_UNIT_TARGET_TYPE m_nTargetTypes; // = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+	CITADEL_UNIT_TARGET_FLAGS m_nTargetFlags;
+	// MPropertyStartGroup = "Physics"
+	float32 m_flGravityScale; // = 1
+	float32 m_flFriction;
+	float32 m_flElasticity;
+	float32 m_flSpeed; // = 3500
+	float32 m_flUpSpeed; // = 100
+	float32 m_flMaxLinearRange;
+	float32 m_flArmTime;
+	float32 m_flVerticalAimBias;
+	float32 m_flNoCollisionDuration;
+	// MPropertySuppressExpr = "m_flNoCollisionDuration == 0"
+	bool m_bAllowMotionDuringNoCollisionDuration;
+	ProjectileShape_t m_eProjectileShape; // = "Sphere"
+	// MPropertySuppressExpr = "m_eProjectileShape != Sphere"
+	float32 m_flTriggerRadius; // = 1.5
+	// MPropertySuppressExpr = "m_eProjectileShape != Sphere"
+	float32 m_flPhysicsRadius; // = 1.5
+	// MPropertySuppressExpr = "m_eProjectileShape != Sphere"
+	// MPropertyFriendlyName = "Additional Bullet Only Trigger Radius"
+	// MPropertyDescription = "When > 0, creates an additional trigger volume of this radius that bullets will touch and call OnBulletHit().  Useful when we want bullets to be more generous at hitting this projectile."
+	float32 m_flBulletOnlyTriggerRadius;
+	// MPropertySuppressExpr = "m_eProjectileShape != Capsule"
+	Vector m_vecCapsulePhysicsCenter1;
+	// MPropertySuppressExpr = "m_eProjectileShape != Capsule"
+	Vector m_vecCapsulePhysicsCenter2;
+	// MPropertySuppressExpr = "m_eProjectileShape != Capsule"
+	float32 m_flCapsulePhysicsRadius; // = 1.5
+	// MPropertySuppressExpr = "m_eProjectileShape != Capsule"
+	Vector m_vecCapsuleTriggerCenter1;
+	// MPropertySuppressExpr = "m_eProjectileShape != Capsule"
+	Vector m_vecCapsuleTriggerCenter2;
+	// MPropertySuppressExpr = "m_eProjectileShape != Capsule"
+	float32 m_flCapsuleTriggerRadius; // = 1.5
+	// MPropertyStartGroup = "Visuals"
+	// MPropertyFriendlyName = "Trail Particle"
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_particle;
+	bool m_bHideWarningParticle;
+	// MPropertyFriendlyName = "Warning Particle"
+	// MPropertySuppressExpr = "m_bHideWarningParticle == true"
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_warningParticle;
+	// MPropertyFriendlyName = "Projectile Model"
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_customModel;
+	float32 m_flProjectileModelScale; // = 1
+	// MPropertyStartGroup = "Sounds"
+	// MPropertyDescription = "Plays when a projectile hits a valid target - or the world. Not the same as detonating, just colliding."
+	CSoundEventName m_HitSound;
+	// MPropertyDescription = "Plays when a projectile hits a valid target ONLY. Should use a soundevent with base 'Base.Ability.Hit'."
+	CSoundEventName m_HitTargetSound;
+	// MPropertyDescription = "Plays when a projectile hits the world ONLY."
+	CSoundEventName m_HitWorldSound;
+	// MPropertyDescription = "Plays when a projectile detonates. Not all projectiles detonate."
+	CSoundEventName m_DetonateSound;
+	// MPropertyDescription = "Plays while a projectile is alive."
+	CSoundEventName m_LoopingSound;
+	// MPropertyDescription = "Plays a warning sound when a projectile hits a surface, but before it detonates. Plays ONLY if a warning particle is also created."
+	CSoundEventName m_WarningSound;
+	// MPropertyStartGroup = "Tracking"
+	float32 m_flTrackingDampingCoefficient;
+	float32 m_flTrackingDuration;
+	float32 m_flTrackingStartTime;
+	float32 m_flTrackingEndTime;
+	// MPropertyStartGroup = "Modifiers"
+	CEmbeddedSubclass< CBaseModifier > m_AutoProjectileModifier;
+};

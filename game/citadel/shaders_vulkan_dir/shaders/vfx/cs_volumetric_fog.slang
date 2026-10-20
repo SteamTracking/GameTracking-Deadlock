@@ -46,6 +46,7 @@ CS
 	Texture3D g_tFogIndirectVolume < Attribute("g_tFogIndirect"); SrgbRead(false); >;
 	Texture3D g_tLastFrameFogVolume < Attribute("g_tLastFrameFogVolume"); SrgbRead(false); >;
 	Texture3D g_tLightCookieTexture < Attribute("LightCookieTexture"); SrgbRead(true); >;
+	Texture2D g_tPrecomputedShadowmapAtlas < Attribute("precomputed_shadowmap_atlas"); SrgbRead(false); >;
 	Texture2D g_tShadowDepthBufferDepthNoCmp < Attribute("ShadowDepthBufferNoCmp"); SrgbRead(false); >;
 	
 	
@@ -75,6 +76,7 @@ CS
 	#define SPIRV_CROSS_LOOP
 	#endif
 	#extension GL_KHR_shader_subgroup_arithmetic : require
+	#extension GL_EXT_spirv_intrinsics : require
 	layout(local_size_x = 8, local_size_y = 8, local_size_z = 1) in;
 	
 	struct _1045
@@ -228,12 +230,17 @@ CS
 	
 	layout(set = 0, binding = 30) uniform texture2D g_tBlueNoise;
 	layout(set = 0, binding = 17) uniform sampler AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagLinearMipPoint;
-	layout(set = 0, binding = 53) uniform texture2D g_tShadowDepthBufferDepthNoCmp;
+	layout(set = 0, binding = 51) uniform texture2D g_tShadowDepthBufferDepthNoCmp;
 	layout(set = 0, binding = 19) uniform sampler AddressU_Wrap_AddressV_Wrap_AddressW_Wrap_Filter_MinMagMipLinear;
 	layout(set = 0, binding = 40) uniform texture3D g_tLightCookieTexture;
 	layout(set = 0, binding = 25) uniform sampler g_sCookieSampler;
 	layout(set = 4, binding = 46) uniform texture2D g_bindless_Texture2D[65536];
+	layout(set = 0, binding = 53) uniform texture2D g_tPrecomputedShadowmapAtlas;
+	layout(set = 0, binding = 22) uniform sampler AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipPoint;
 	layout(set = 0, binding = 159) uniform writeonly image3D OutLightingFroxelTexture;
+	
+	spirv_instruction (extensions = ["SPV_KHR_integer_dot_product"], capabilities = [6019, 6016], id = 4450)
+	int spvSDot_int_ivec4_ivec4(ivec4 arg0, ivec4 arg1);
 	
 	void main()
 	{
@@ -828,7 +835,7 @@ CS
 	                    {
 	                        _12887 = 0.0;
 	                    }
-	                    vec3 _19629;
+	                    vec3 _21710;
 	                    if (_10513)
 	                    {
 	                        vec3 _11396 = vec3(_22905.xy, 1.0 - _21775);
@@ -898,11 +905,33 @@ CS
 	                            _12505 = _13156;
 	                            break;
 	                        }
-	                        _19629 = _24492;
+	                        _21710 = _24492;
 	                    }
 	                    else
 	                    {
-	                        _19629 = _21548 * mix(1.0, 1.0, _12887);
+	                        _21710 = _21548 * mix(1.0, 1.0, _12887);
+	                    }
+	                    vec3 _19629;
+	                    SPIRV_CROSS_BRANCH
+	                    if ((g_BarnLights_1._m0[_12608]._m13 & 32u) != 0u)
+	                    {
+	                        vec4 _19975 = vec4(_3718.xyz, 1.0) * g_BarnLights_1._m0[_12608]._m23;
+	                        vec3 _10522 = _19975.xyz / vec3(_19975.w);
+	                        vec4 _22906;
+	                        _22906.x = _10522.x;
+	                        _22906.y = _10522.y;
+	                        _22906.z = _10522.z;
+	                        vec3 _17274 = _21710.xyz * float(spvSDot_int_ivec4_ivec4(ivec4(lessThan(textureGather(sampler2D(g_tPrecomputedShadowmapAtlas, AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipPoint), _22906.xy), _22906.zzzz)), ivec4(1)) / 4);
+	                        if (all(equal(_17274.xyz, vec3(0.0))))
+	                        {
+	                            _12505 = _13156;
+	                            break;
+	                        }
+	                        _19629 = _17274;
+	                    }
+	                    else
+	                    {
+	                        _19629 = _21710;
 	                    }
 	                    _12505 = _13156.xyz + (_19629.xyz * 1.0);
 	                    break;

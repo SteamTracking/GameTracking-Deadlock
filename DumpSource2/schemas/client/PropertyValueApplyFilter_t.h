@@ -6,4 +6,5 @@ enum PropertyValueApplyFilter_t : uint32_t
 	EApplyFilter_OnlyIfHasCharges = 3,
 	EApplyFilter_OnlyIfUltimate = 4,
 	EApplyFilter_OnlyIfSignature = 5,
+	EApplyFilter_OnlyIfNonUltimateSignature = 6,
 };

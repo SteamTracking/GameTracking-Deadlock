@@ -32,6 +32,7 @@ class PlayerDataGlobal_t
 	bool m_bUltimateTrained;
 	GameTime_t m_flUltimateCooldownStart;
 	GameTime_t m_flUltimateCooldownEnd;
+	float32 m_flUltimateStoppedCooldownRemaining;
 	bool m_bHasRejuvenator;
 	bool m_bHasRebirth;
 	bool m_bFlaggedAsCheater;

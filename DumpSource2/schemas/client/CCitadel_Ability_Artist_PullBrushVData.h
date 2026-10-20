@@ -11,6 +11,7 @@ class CCitadel_Ability_Artist_PullBrushVData : public CitadelAbilityVData
 	float32 m_flDragDamp; // = 2
 	float32 m_flDrawingLingerTime; // = 0.1
 	bool m_bShowDesatVolume;
+	float32 m_flBlockerExtent; // = 30
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_CollisionModifier;
 	// MPropertyStartGroup = "Visuals"

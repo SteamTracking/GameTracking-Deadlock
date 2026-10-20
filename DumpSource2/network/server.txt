@@ -23,6 +23,7 @@ CAITestPath
 
 CAI_BaseNPC
 	include by name: m_lifeState, m_spawnflags
+	network class
 	NPC_STATE m_NPCState
 	CAI_MotorServices * m_pMotorServices
 
@@ -36,6 +37,7 @@ CAI_CitadelNPC
 	include by name: m_iMaxHealth, m_iHealth, m_iTeam, m_vecViewOffset
 	exclude by name: m_flEncodedController, m_flPoseParameter, m_flSimulationTime
 	exclude by user group: m_flCycle
+	network class
 	CCitadelAbilityComponent::Storage_t m_CCitadelAbilityComponent (class: CCitadelAbilityComponent; alias: CCitadelAbilityComponent; type alias: CCitadelAbilityComponent; user groups: CCitadelAbilityComponent)
 	CCitadelRegenComponent::Storage_t m_CCitadelRegenComponent (class: CCitadelRegenComponent; alias: CCitadelRegenComponent; type alias: CCitadelRegenComponent; user groups: CCitadelRegenComponent)
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
@@ -73,21 +75,27 @@ CAI_VolumetricEventEntityAlias_ai_sound
 CAI_VolumetricEventSensor
 
 CAbility_Drifter_BloodBlast
+	network class
 
 CAbility_Drifter_Darkness
+	network class
 
 CAbility_Drifter_ShadowMark
+	network class
 	EHANDLE m_hTeleportTarget (sent as: ehandle)
 	bool m_bTeleported
 	QAngle m_qPostTeleportAngles (encoder: qangle; change callbacks: OnTeleportAnglesChanged)
 
 CAbility_Drifter_StalkersMark_Teleport
+	network class
 
 CAbility_Fathom_LurkersAmbush
+	network class
 	bool m_bIsVisibleOnMinimap
 	GameTime_t m_flStoppedMovingStartTime (sent as: float32)
 
 CAbility_Fathom_ReefdwellerHarpoon
+	network class
 	bool m_bBulletFlying
 	bool m_bHasLatchedOnce
 	bool m_bLatched
@@ -98,6 +106,7 @@ CAbility_Fathom_ReefdwellerHarpoon
 	GameTime_t m_flReelStartTime (sent as: float32)
 
 CAbility_Fencer_Lunge
+	network class
 	uint8 m_nCurrentLungeState (user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flStateStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vDashStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -111,6 +120,7 @@ CAbility_Fencer_Lunge
 	int m_nPowerLevel (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CAbility_Fencer_Ultimate
+	network class
 	VectorWS m_vStartPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
 	Vector m_vDashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vecLastPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -118,44 +128,59 @@ CAbility_Fencer_Ultimate
 	GameTime_t m_flStateStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CAbility_Mirage_SandPhantom
+	network class
 	bool m_bHasVictims (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CAbility_Mirage_Tornado
+	network class
 	QAngle m_anglesCharging
 	GameTime_t m_flChargeStartTime (sent as: float32; change callbacks: OnMirageTornadoStateChanged)
 
 CAbility_Operative_Revelation
+	network class
 
 CAbility_Operative_UmbrellaManeuver
+	network class
 
 CAbility_Rutger_CheatDeath
+	network class
 
 CAbility_Rutger_ForceField
+	network class
 
 CAbility_Rutger_RocketLauncher
+	network class
 
 CAbility_Synth_Affliction
+	network class
 
 CAbility_Synth_Barrage
+	network class
 	GameTime_t m_flNextShootTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CAbility_Synth_PlasmaFlux
+	network class
 	EHANDLE m_hActiveProjectile (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CAbility_Synth_PlasmaFlux_Trigger
+	network class
 
 CAbility_Synth_Pulse
+	network class
 
 CAbility_TestHero_SpookyHide
+	network class
 	bool m_bIsVisibleOnMinimap
 	GameTime_t m_flStoppedMovingStartTime (sent as: float32)
 
 CAbility_Werewolf_Frenzy
+	network class
 
 CAmbientGeneric
 
 CAssignedLaneParticle
 	include by name: m_iTeamNum
+	network class
 	int m_iLane
 
 CAttributeContainer
@@ -171,6 +196,7 @@ CAttributeManager
 	attributeprovidertypes_t m_ProviderType
 
 CBarnLight
+	network class
 	bool m_bEnabled (change callbacks: RenderingChanged)
 	int m_nColorMode (change callbacks: RenderingChanged)
 	Color m_Color (change callbacks: RenderingChanged)
@@ -244,10 +270,17 @@ CBarnLight
 	Vector m_vPrecomputedOBBOrigin5 (change callbacks: RenderingChanged)
 	QAngle m_vPrecomputedOBBAngles5 (change callbacks: RenderingChanged)
 	Vector m_vPrecomputedOBBExtent5 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect0 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect1 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect2 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect3 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect4 (change callbacks: RenderingChanged)
+	Vector4D m_vPrecomputedShadowmapAtlasRect5 (change callbacks: RenderingChanged)
 	uint16 m_VisClusters (change callbacks: RenderingChanged)
 
 CBaseAnimGraph
 	include by name: m_bClientSideRagdoll
+	network class
 	bool m_bInitiallyPopulateInterpHistory
 	bool m_bAnimGraphUpdateEnabled
 	Vector m_vecForce
@@ -281,11 +314,13 @@ CBaseAnimGraphController
 	ResourceId_t m_vecExternalClipIds (sent as: uint64; change callbacks: AG2_OnAnimGraphSerializationContextInvalidated)
 
 CBaseButton
+	network class
 	CHandle< CBaseModelEntity> m_glowEntity (sent as: ehandle)
 	bool m_usable
 	string_t m_szDisplayText
 
 CBaseClientUIEntity
+	network class
 	bool m_bEnabled
 	string_t m_DialogXMLName
 	string_t m_PanelClassName
@@ -293,17 +328,20 @@ CBaseClientUIEntity
 
 CBaseCombatCharacter
 	exclude by user group: LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
+	network class
 	CHandle< CEconWearable > m_hMyWearables (sent as: ehandle)
 
 CBaseDMStart
 
 CBaseDoor
+	network class
 	bool m_bIsUsable
 
 CBaseEntity
 	exclude by name: m_bClientSideRagdoll, m_iMaxHealth, m_spawnflags, m_bTakesDamage, m_nTakeDamageFlags
 	exclude by user group: Water, Player, LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
 	user group proxies: AnimTime
+	network class
 	CBodyComponent::Storage_t m_CBodyComponent (class: CBodyComponent; alias: CBodyComponent; type alias: CBodyComponent; priority: 48; user groups: CBodyComponent)
 	int32 m_iHealth (serializer: ClampHealth; priority: 32; user groups: Player; change callbacks: ObservableRecv_m_iHealth)
 	int32 m_iMaxHealth (change callbacks: ObservableRecv_m_iMaxHealth)
@@ -341,6 +379,7 @@ CBaseEntity
 CBaseFilter
 
 CBaseModelEntity
+	network class
 	CHitboxComponent::Storage_t m_CHitboxComponent (class: CHitboxComponent; alias: CHitboxComponent; type alias: CHitboxComponent; user groups: CHitboxComponent)
 	CChoreoComponent * m_pChoreoComponent (change pointer callback: OnChoreoComponentPointerChanged)
 	CDestructiblePartsComponent * m_pDestructiblePartsSystemComponent (type alias: CDestructiblePartsSystemComponent*)
@@ -373,6 +412,7 @@ CBasePlayerController
 	include by user group: LocalPlayerExclusive, LocalPlayerAndPredictorsExclusive
 	overrides: m_nNextThinkTick userGroup LocalPlayerAndPredictorsExclusive
 	user group proxies: LocalPlayerExclusive, LocalTeamExclusive, LocalPlayerAndObserversExclusive, LocalPlayerAndPredictorsExclusive
+	network class
 	uint32 m_nTickBase (priority: 1; user groups: LocalPlayerAndPredictorsExclusive)
 	CHandle< CBasePlayerPawn> m_hPawn (sent as: ehandle; change callbacks: OnPawnChanged)
 	bool m_bKnownTeamMismatch
@@ -390,6 +430,7 @@ CBasePlayerPawn
 	exclude by user group: FogController
 	overrides: CNetworkOriginCellCoordQuantizedVector::m_vecX bitCount 32, CNetworkOriginCellCoordQuantizedVector::m_vecY bitCount 32, CNetworkOriginCellCoordQuantizedVector::m_vecZ bitCount 32
 	user group proxies: LocalPlayerExclusive, LocalPlayerAndObserversExclusive, LocalPlayerAndPredictorsExclusive
+	network class
 	CPlayer_WeaponServices * m_pWeaponServices
 	CPlayer_ItemServices * m_pItemServices
 	CPlayer_AutoaimServices * m_pAutoaimServices (user groups: LocalPlayerExclusive)
@@ -411,6 +452,7 @@ CBasePlayerWeapon
 	exclude by name: m_flexWeight
 	exclude by user group: m_flPoseParameter, m_flCycle, overlay_vars
 	user group proxies: LocalWeaponExclusive
+	network class
 	GameTick_t m_nNextPrimaryAttackTick (sent as: int32; user groups: LocalWeaponExclusive)
 	float32 m_flNextPrimaryAttackTickRatio (user groups: LocalWeaponExclusive)
 	GameTick_t m_nNextSecondaryAttackTick (sent as: int32; user groups: LocalWeaponExclusive)
@@ -425,6 +467,7 @@ CBasePropDoor
 	include by name: m_spawnflags
 	exclude by name: m_flexWeight, m_animationController.m_flPlaybackRate
 	exclude by user group: m_flPoseParameter, overlay_vars
+	network class
 	DoorState_t m_eDoorState
 	bool m_bLocked
 	bool m_bNoNPCs
@@ -433,18 +476,22 @@ CBasePropDoor
 	CHandle< CBasePropDoor> m_hMaster (sent as: ehandle)
 
 CBaseToggle
+	network class
 
 CBaseTrackedStatsEntity
+	network class
 	TrackedStatNetworkData_t m_vecTrackedStats (change callbacks: OnTrackedStatsChanged)
 
 CBaseTrigger
 	include by name: m_spawnflags
+	network class
 	bool m_bDisabled (change callbacks: OnNetworkedDisableChanged)
 
 CBeam
 	include by name: m_nModelIndex, m_nRenderFX, m_nRenderMode, m_clrRender, CGameSceneNode::m_hParent
 	include by user group: Origin
 	overrides: m_clrRender priority NETWORK_FIELD_CHANGES_OFTEN_PRIORITY
+	network class
 	float32 m_flFrameRate (bit count: 10; encode flags: 2; min: -25; max: 25)
 	float32 m_flHDRColorScale
 	uint8 m_nNumBeamEnts
@@ -479,9 +526,11 @@ CBodyComponentSkeletonInstance
 	CSkeletonInstance m_skeletonInstance
 
 CBreakable
+	network class
 	CPropDataComponent::Storage_t m_CPropDataComponent (class: CPropDataComponent; alias: CPropDataComponent; type alias: CPropDataComponent; user groups: CPropDataComponent)
 
 CBreakableProp
+	network class
 	CPropDataComponent::Storage_t m_CPropDataComponent (class: CPropDataComponent; alias: CPropDataComponent; type alias: CPropDataComponent; user groups: CPropDataComponent)
 
 CChangeLevel
@@ -512,22 +561,31 @@ CCitadelAbilityComponent
 	ConsumedComponentState_t m_vecConsumedComponents (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadelAbilityDruidAbility04
+	network class
 
 CCitadelAbilityDruidBasePlant
+	network class
 
 CCitadelAbilityDruidHelicopterSeeds
+	network class
 
 CCitadelAbilityDruidLeechSeed
+	network class
 
 CCitadelAbilityDruidPlantBranchWall
+	network class
 
 CCitadelAbilityDruidPlantHealingTree
+	network class
 
 CCitadelAbilityDruidPlantInvisBush
+	network class
 
 CCitadelAbilityDruidPlantSomething
+	network class
 
 CCitadelAbilityDruidSprout
+	network class
 
 CCitadelAnimatingModelEntity
 	include by name: m_vecViewOffset, m_iHealth, m_iMaxHealth
@@ -535,10 +593,12 @@ CCitadelAnimatingModelEntity
 	CCitadelRegenComponent::Storage_t m_CCitadelRegenComponent (class: CCitadelRegenComponent; alias: CCitadelRegenComponent; type alias: CCitadelRegenComponent; user groups: CCitadelRegenComponent)
 
 CCitadelAudioProcessingVolumeBase
+	network class
 	CUtlString m_strEffectName
 	int32 m_nVolumeID
 
 CCitadelAudioProcessingVolumeOBB
+	network class
 	Vector m_vMins
 	Vector m_vMaxs
 
@@ -551,6 +611,7 @@ CCitadelBaseAbility
 	exclude by user group: m_flCycle, overlay_vars
 	overrides: m_flTimeScale userGroup
 	user group proxies: LocalPlayerOwnerExclusive, LocalPlayerOwnerAndObserversExclusive
+	network class
 	bool m_bChanneling (change callbacks: ObservableRecv_m_bChanneling)
 	bool m_bInCastDelay (change callbacks: ObservableRecv_m_bInCastDelay)
 	bool m_bShouldBeExecuted
@@ -560,9 +621,11 @@ CCitadelBaseAbility
 	bool m_bToggleState (change callbacks: ObservableRecv_m_bToggleState)
 	GameTime_t m_flCooldownStart (sent as: float32; priority: 32)
 	GameTime_t m_flCooldownEnd (sent as: float32; priority: 32; change callbacks: ObservableRecv_m_flCooldownEnd)
+	float m_flStoppedCooldownRemaining (priority: 32)
 	GameTime_t m_flCastCompletedTime (sent as: float32)
 	GameTime_t m_flChannelStartTime (sent as: float32)
 	GameTime_t m_flCastDelayStartTime (sent as: float32)
+	float m_flCastDelaySpeedScale
 	EAbilitySlots_t m_eAbilitySlot (change callbacks: OnAbilitySlotChanged)
 	GameTime_t m_flPostCastDelayEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flPostCastDelayEndTime)
 	int m_iRemainingCharges (priority: 32; change callbacks: ObservableRecv_m_iRemainingCharges)
@@ -579,32 +642,40 @@ CCitadelBaseAbility
 CCitadelBaseAbilityServerOnly
 
 CCitadelBaseDashCastAbility
+	network class
 	GameTime_t m_flDashCastStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	Vector m_vDashCastDir (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadelBaseLockonAbility
+	network class
 	LockonTarget_t m_vecLockonTargets (user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_LockOnStartTime (sent as: float32)
 
 CCitadelBaseMusicOBB
+	network class
 
 CCitadelBaseShivAbility
 
 CCitadelBaseTieredLockonAbility
+	network class
 
 CCitadelBaseTriggerAbility
+	network class
 	CHandle< CCitadelBaseAbility> m_hAbilityToTrigger (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_SwappedToTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadelBaseYamatoAbility
 
 CCitadelBoomerangProjectile
+	network class
 
 CCitadelBotTestNode
 
 CCitadelBulletRedirectVolume
+	network class
 
 CCitadelBulletTimeWarp
+	network class
 	float m_flBulletTimeScale
 	float m_flProjectileTimeScale
 	GameTime_t m_flExpireTime (sent as: float32)
@@ -613,15 +684,19 @@ CCitadelBulletTimeWarp
 	float m_flBonusBulletBaseDamageFriendly
 
 CCitadelCatapultTrigger
+	network class
 	VectorWS m_vLaunchTarget
 	float m_flLaunchSpeed
 
 CCitadelClimbRopeTrigger
+	network class
 	bool m_bAlignCameraOnAutoDismount
 
 CCitadelConfigurableTrackedProjectile
+	network class
 
 CCitadelControlPointTrigger
+	network class
 	float m_flInitialRadius
 	float m_flEndRadius
 	float m_flProgress
@@ -634,12 +709,16 @@ CCitadelControlPointTrigger
 CCitadelDevTrigger
 
 CCitadelDruidHealingFruit
+	network class
 
 CCitadelDruidHealingTree
+	network class
 
 CCitadelDruidInvisBush
+	network class
 
 CCitadelDruidPlantShield
+	network class
 
 CCitadelEconItemContainer
 
@@ -654,6 +733,7 @@ CCitadelFamiliarClone_MovementServices
 CCitadelFilterModifier
 
 CCitadelGaffer
+	network class
 	Vector m_vSkyboxScale
 	Vector m_vCubemapFogScale
 	Vector m_vSunlightScale
@@ -722,6 +802,7 @@ CCitadelGameRules
 	CStreetBrawlController m_tStreetBrawl
 
 CCitadelGameRulesProxy
+	network class
 	CCitadelGameRules * m_pGameRules (type alias: CCitadelGamerules*; priority: 32)
 
 CCitadelHeroComponent
@@ -732,8 +813,10 @@ CCitadelHeroComponent
 CCitadelHeroLoader
 
 CCitadelHeroReleaseVoteTerminal
+	network class
 
 CCitadelHideoutInteractableProp
+	network class
 	CUtlString m_strInteractLocString
 	EHideoutButtonInteractStyle m_eInteractStyle
 	EHideoutButtonAction m_eHideoutAction
@@ -742,26 +825,32 @@ CCitadelHideoutInteractableProp
 	CUtlString m_strOpacityCurveString
 
 CCitadelHideoutInteractableTrigger
+	network class
 	CUtlString m_strInteractLocString
 	EHideoutButtonAction m_eHideoutAction
 
 CCitadelHideoutInterestPoint
+	network class
 	float m_flMaxDistance
 
 CCitadelHideoutPropBase
 	exclude by name: m_flSimulationTime
+	network class
 	CEconItemView m_ItemView
 
 CCitadelHideoutPropSlot
+	network class
 	int m_nSlotID
 	EHideoutPropSlotType_t m_nSlotType
 	CHandle< CCitadelHideoutPropBase> m_hProp (sent as: ehandle)
 
 CCitadelHideoutTeleportTrigger
+	network class
 
 CCitadelHotelExitTrigger
 
 CCitadelIdolReturnTrigger
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 
 CCitadelIgnoreOutOfPlayArea
@@ -769,8 +858,10 @@ CCitadelIgnoreOutOfPlayArea
 CCitadelInteriorTrigger
 
 CCitadelItemKothSpawner
+	network class
 
 CCitadelItemPickup
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	int32 m_eLootType
 	int32 m_nCurrencyValue
@@ -780,25 +871,32 @@ CCitadelItemPickup
 	float m_flFallRate
 
 CCitadelItemPickupIdol
+	network class
 	int m_nTeamBias
 
 CCitadelItemPickupRejuv
+	network class
 	CCitadelAbilityComponent::Storage_t m_CCitadelAbilityComponent (class: CCitadelAbilityComponent; alias: CCitadelAbilityComponent; type alias: CCitadelAbilityComponent; user groups: CCitadelAbilityComponent)
 	bool m_bPickedUp
 
 CCitadelItemPickupRejuvHeroTest
+	network class
 
 CCitadelItemPickupRejuvHeroTestInfoSpawn
 
 CCitadelItemPunchableNeutralGold
+	network class
 
 CCitadelLocalPlayerRankedBadgeProp
+	network class
 
 CCitadelMapDistrictTrigger
 
 CCitadelMatchmakingStatusInfo
+	network class
 
 CCitadelMinimapBoundary
+	network class
 
 CCitadelMinimapComponent
 
@@ -812,20 +910,24 @@ CCitadelObserverPawn
 	exclude by name: m_baseLayer.m_hSequence, m_flEncodedController, m_flPoseParameter
 	exclude by user group: m_flCycle
 	var type overrides: m_pObserverServices CCitadelPlayer_ObserverServices, m_pCameraServices CCitadelPlayer_CameraServices, m_pMovementServices CCitadelObserver_MovementServices
+	network class
 
 CCitadelObserver_MovementServices
 
 CCitadelPassthroughFakeWall
+	network class
 
 CCitadelPlayOfTheGame
 	bool m_bTriggerStarted (change callbacks: triggerChanged)
 	PlayOfTheGamePlaybackData_t m_playOfTheGameDataServer
 
 CCitadelPlayerBotNPCBrain
+	network class
 
 CCitadelPlayerClipComponent
 
 CCitadelPlayerController
+	network class
 	EPlayerPlayState m_ePlayState
 	int m_iGuidedBotMatchLastHits
 	int m_iGuidedBotMatchOrbsSecured
@@ -864,6 +966,7 @@ CCitadelPlayerPawn
 	exclude by user group: m_flCycle
 	var type overrides: m_pCameraServices CCitadelPlayer_CameraServices, m_pMovementServices CCitadelPlayer_MovementServices
 	user group proxies: RemotePlayersOnly, SourceTVOnly, LocalPlayerOwnerExclusive, LocalPlayerOwnerAndObserversExclusive
+	network class
 	QAngle m_angClientCamera (priority: 32; user groups: SourceTVExclusive; bit count: 11)
 	QAngle m_angEyeAngles (encoder: qangle; priority: 32; user groups: RemotePlayersOnly; bit count: 11)
 	QAngle m_angLockedEyeAngles (user groups: LocalPlayerExclusive)
@@ -927,6 +1030,7 @@ CCitadelPlayerPawn
 
 CCitadelPlayerPawnBase
 	exclude by name: m_flSimulationTime
+	network class
 
 CCitadelPlayer_CameraServices
 
@@ -941,14 +1045,17 @@ CCitadelPlayer_ObserverServices
 	VectorWS m_vTargetCameraPos (encoder: coord; priority: 32; user groups: LocalPlayerExclusive)
 
 CCitadelPortalTrigger
+	network class
 	CHandle< CCitadelPortalTrigger > m_hOtherPortal (sent as: ehandle)
 
 CCitadelPregameHeroDraftButton
+	network class
 
 CCitadelProjectile
 	include by name: m_flTimeScale
 	exclude by name: m_flSimulationTime
 	overrides: m_flTimeScale userGroup, m_flTimeScale changeCallback OnCitadelProjectileTimeScaleChanged
+	network class
 	Vector m_vInitialVelocity
 	VectorWS m_vInitialPosition
 	AbilityID_t m_abilityID (sent as: uint32)
@@ -959,12 +1066,15 @@ CCitadelProjectile
 	float m_flParticleRadius
 
 CCitadelProjectileTouchVolume
+	network class
 
 CCitadelProjectile_ImmobilizeTrap
+	network class
 
 CCitadelPushTrigger
 
 CCitadelRankedBadgeProp
+	network class
 	PackedRank_t m_unPackedRank
 
 CCitadelRecentDamage
@@ -978,10 +1088,12 @@ CCitadelRegenComponent
 CCitadelShopTunnelTrigger
 
 CCitadelSoundEntityOBB
+	network class
 	Vector m_vMins
 	Vector m_vMaxs
 
 CCitadelSoundOpvarSetOBB
+	network class
 	string_t m_iszStackName
 	string_t m_iszOperatorName
 	string_t m_iszOpvarName
@@ -992,6 +1104,7 @@ CCitadelSoundOpvarSetOBB
 	int m_nAABBDirection
 
 CCitadelSoundStackFieldOBB
+	network class
 	Vector m_vMins
 	Vector m_vMaxs
 	uint32 m_nMaxDistance
@@ -1001,10 +1114,12 @@ CCitadelSoundStackFieldOBB
 	uint32 m_nMusicState
 
 CCitadelSpawnBlocker
+	network class
 
 CCitadelSpeedBoostTrigger
 
 CCitadelTeam
+	network class
 	float32 m_flBaseObjectiveHealth
 	int m_vecBaseLocationX
 	int m_vecBaseLocationY
@@ -1020,14 +1135,17 @@ CCitadelTeam
 CCitadelTeleportLocation
 
 CCitadelTeleportTrigger
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	VectorWS m_vExitOrigin
 
 CCitadelTrackedProjectile
+	network class
 
 CCitadelTriggerBonk
 
 CCitadelTriggerCapturePoint
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	GameTime_t m_tQueuedEnableTime (sent as: float32; change callbacks: OnQueuedEnableTimeChanged)
 	float m_flCaptureProgress
@@ -1039,26 +1157,33 @@ CCitadelTriggerCapturePoint
 CCitadelTriggerCapturePoint_Escort
 
 CCitadelTriggerCorruptedItemShop
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 
 CCitadelTriggerHideout
+	network class
 
 CCitadelTriggerHurt
 
 CCitadelTriggerMultiCapturePoint
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	uint8 m_nEnableState (change callbacks: OnMultiEnableStateChanged)
 
 CCitadelTriggerNoPortals
+	network class
 
 CCitadelTriggerSecureSouls
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 
 CCitadelTrooperMinimap
+	network class
 	float m_flUpdateInterval
 	STrooperFOWEntity m_vecFOWEntities (priority: 32)
 
 CCitadelTunnelNode
+	network class
 	bool m_bIsExit
 	int32 m_nTunnelID
 	CHandle<CCitadelTunnelNode> m_hConnection1 (sent as: ehandle)
@@ -1066,12 +1191,15 @@ CCitadelTunnelNode
 	CHandle<CCitadelTunnelNode> m_hConnection3 (sent as: ehandle)
 
 CCitadelTunnelTrigger
+	network class
 
 CCitadelViscousBall
+	network class
 
 CCitadelZapTrigger
 
 CCitadelZipLineNode
+	network class
 	CHandle<CCitadelZipLineNode> m_vecConnections (sent as: ehandle; change callbacks: connectionsChanged)
 	int m_vecConnectionDir
 	Vector m_vTangentIn
@@ -1094,82 +1222,110 @@ CCitadelZipLinePathNode
 CCitadelZiplineCaptureTrigger
 
 CCitadelZiplinePath
+	network class
 
 CCitadel_Ability_AbilityName
+	network class
 
 CCitadel_Ability_Afterburn
+	network class
 
 CCitadel_Ability_Artist_BambooGrove
+	network class
 	bool m_bActive
 
 CCitadel_Ability_Artist_BouncingPot
+	network class
 
 CCitadel_Ability_Artist_Cloudburst
+	network class
 
 CCitadel_Ability_Artist_DamageZone
+	network class
 
 CCitadel_Ability_Artist_EmpowerAbilities
+	network class
 	bool m_bActive
 
 CCitadel_Ability_Artist_FlyingLion
+	network class
 	bool m_bFlying (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Artist_HealingBarrier
+	network class
 
 CCitadel_Ability_Artist_HomingProjectile
+	network class
 	EHANDLE m_vecDeployedProjectiles (sent as: ehandle)
 	GameTime_t m_tShootingLockoutEndTime (sent as: float32)
 
 CCitadel_Ability_Artist_InkActive
+	network class
 
 CCitadel_Ability_Artist_InkBrush
+	network class
 	bool m_bButtonDown
 	float m_flAccumulatedDrawDistance
 
 CCitadel_Ability_Artist_LionDance
+	network class
 	bool m_bActive
 	int m_iRemainingShots
 
 CCitadel_Ability_Artist_MultiHit
+	network class
 	bool m_bActive
 	int m_iCurrentHits
 
 CCitadel_Ability_Artist_Pillar
+	network class
 
 CCitadel_Ability_Artist_PrimaryWeapon
+	network class
 	int m_iCurrentShotCount
 
 CCitadel_Ability_Artist_PrimaryWeapon2
+	network class
 
 CCitadel_Ability_Artist_ProjectileWeapon
+	network class
 	int m_iCurrentShotCount
 
 CCitadel_Ability_Artist_PullBrush
+	network class
 	bool m_bPainting
 	GameTime_t m_tStopPaintingTime (sent as: float32)
 
 CCitadel_Ability_Artist_RideTiger
+	network class
 	bool m_bIsEnabled
 
 CCitadel_Ability_Artist_RollingProjectile
+	network class
 	bool m_bActive
 	CHandle< CCitadelProjectile> m_hDeployedProjectile (sent as: ehandle)
 
 CCitadel_Ability_Artist_RootingProjectile
+	network class
 
 CCitadel_Ability_Artist_ShieldProjectile
+	network class
 
 CCitadel_Ability_Artist_StoneTurtle
+	network class
 
 CCitadel_Ability_Artist_Tether
+	network class
 	bool m_bSuccess
 	GameTime_t m_tLastSuccessfulLookTime (sent as: float32)
 	EHANDLE m_pSelectedTarget (sent as: ehandle)
 	int m_iPermanentBuffCount
 
 CCitadel_Ability_Artist_TransformingProjectile
+	network class
 
 CCitadel_Ability_Baba_BenchMelee
+	network class
 	EBabaBenchMeleeState m_eState
 	EBabaBenchMeleeAttackType m_eAttackType
 	GameTime_t m_flStateStartTime (sent as: float32)
@@ -1184,6 +1340,7 @@ CCitadel_Ability_Baba_BenchMelee
 	int m_nAirborneAttackImpulses
 
 CCitadel_Ability_Baba_BenchRun
+	network class
 	bool m_bHoldingJump
 	bool m_bHeldJumpAborted
 	GameTime_t m_flHoldJumpStartTime (sent as: float32)
@@ -1195,68 +1352,95 @@ CCitadel_Ability_Baba_BenchRun
 	bool m_bRideCut
 
 CCitadel_Ability_Baba_BubblingBrew
+	network class
 	EState m_eState
 
 CCitadel_Ability_Baba_HexingBrew
+	network class
 	EBrewEffect m_eBrewEffect
 	bool m_bBrewLocked
 	GameTime_t m_flBrewLockTime (sent as: float32)
 	float m_flBrewPausedTime
 
 CCitadel_Ability_Baba_HexingBrew_Throw
+	network class
 
 CCitadel_Ability_Baba_Ultimate2
+	network class
 
 CCitadel_Ability_BaseHeldItem
+	network class
 
 CCitadel_Ability_Bebop_LaserBeam
+	network class
 	bool m_bAirCast
 	CCitadelAbilityBeam_t m_beam
 
 CCitadel_Ability_Bebop_StickyBomb2
+	network class
 
 CCitadel_Ability_BloodBomb
+	network class
 
 CCitadel_Ability_Boho_Ability01
+	network class
 
 CCitadel_Ability_Boho_Ability02
+	network class
 
 CCitadel_Ability_Boho_BouncyProjectile
+	network class
 
 CCitadel_Ability_Boho_ChannelTether
+	network class
 
 CCitadel_Ability_Boho_DamageShare
+	network class
 
 CCitadel_Ability_Boho_DoubleHit
+	network class
 
 CCitadel_Ability_Boho_PrimaryWeapon
+	network class
 
 CCitadel_Ability_Boho_RideBroom
+	network class
 	bool m_bLeaping
 	GameTime_t m_flLeapStartTime (sent as: float32)
 
 CCitadel_Ability_Boho_SkipGrenade
+	network class
 
 CCitadel_Ability_Bomber_Ability02
+	network class
 
 CCitadel_Ability_Bomber_Ability03
+	network class
 
 CCitadel_Ability_Bomber_ULT
+	network class
 
 CCitadel_Ability_BookWorm_PrimaryWeapon
+	network class
 
 CCitadel_Ability_Bookworm_AOEMagic
+	network class
 
 CCitadel_Ability_Bookworm_DragonFire
+	network class
 
 CCitadel_Ability_Bookworm_KnightBarrier
+	network class
 
 CCitadel_Ability_Bookworm_KnightCharge
+	network class
 
 CCitadel_Ability_Bounce_Pad
+	network class
 	QAngle m_angFacing
 
 CCitadel_Ability_Bull_Charge
+	network class
 	QAngle m_anglesCharging
 	GameTime_t m_flChargeStartTime (sent as: float32; change callbacks: OnChargingStateChanged)
 	GameTime_t m_flFastChargeStartTime (sent as: float32)
@@ -1264,8 +1448,10 @@ CCitadel_Ability_Bull_Charge
 	bool m_bHitSomethingStunnable (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Bull_Heal
+	network class
 
 CCitadel_Ability_Bull_Leap
+	network class
 	bool m_bBraceParamTriggered (user groups: LocalPlayerOwnerAndObserversExclusive)
 	float m_flBoostYaw
 	VectorWS m_vecCrashPosition
@@ -1276,30 +1462,40 @@ CCitadel_Ability_Bull_Leap
 	CCitadelAutoScaledTime m_flBoostEndTime
 
 CCitadel_Ability_BulletFlurry
+	network class
 	CCitadelAutoScaledTime m_flFlurryEndTime
 	GameTime_t m_flNextAttackTime (sent as: float32)
 
 CCitadel_Ability_Burrow
+	network class
 	bool m_bInGround (user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flLastDamageTime (sent as: float32)
 	GameTime_t m_SpinEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Cadence_Anthem
+	network class
 
 CCitadel_Ability_Cadence_Crescendo
+	network class
 
 CCitadel_Ability_Cadence_GrandFinale
+	network class
 
 CCitadel_Ability_Cadence_Lullaby
+	network class
 
 CCitadel_Ability_Cadence_SilenceContraptions
+	network class
 
 CCitadel_Ability_CardToss
+	network class
 	bool m_bCardIsFlying
 
 CCitadel_Ability_ChargedShot
+	network class
 
 CCitadel_Ability_ChargedTackle
+	network class
 	bool m_bPreparing
 	bool m_bTackling
 	GameTime_t m_flTackleStartTime (sent as: float32)
@@ -1307,35 +1503,44 @@ CCitadel_Ability_ChargedTackle
 	Vector m_vecTackleDir
 
 CCitadel_Ability_Charged_Bomb
+	network class
 
 CCitadel_Ability_ChessMaster_PrimaryWeapon
+	network class
 	int m_iCurrentShotCount
 
 CCitadel_Ability_Chessmaster_ForkPiece
+	network class
 	EHANDLE m_hCameraTarget (sent as: ehandle)
 	bool m_bActive
 
 CCitadel_Ability_Chessmaster_KnightBuff
+	network class
 
 CCitadel_Ability_Chessmaster_MoveChessPiece
+	network class
 	GameTime_t m_tCancelHoverTime (sent as: float32)
 	EHANDLE m_pSelectedPiece (sent as: ehandle)
 	float m_flCachedMoveDistance
 
 CCitadel_Ability_Chessmaster_Queen
+	network class
 	int m_iRemainingMoves
 	EHANDLE m_pDeployedQueen (sent as: ehandle)
 	bool m_bActive
 
 CCitadel_Ability_Chessmaster_ThrowBishop
+	network class
 	EHANDLE m_vecDeployedPieces (sent as: ehandle)
 	bool m_bActive
 	int m_iBishopIndex
 	GameTime_t m_tRecastEndTime (sent as: float32)
 
 CCitadel_Ability_ChronoSwap
+	network class
 
 CCitadel_Ability_Chrono_KineticCarbine
+	network class
 	bool m_bWantsSlow (user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flLatchedTimeScaleFracChangeTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	float m_flLatchedTimeScaleFrac (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1343,11 +1548,14 @@ CCitadel_Ability_Chrono_KineticCarbine
 	GameTime_t m_flShotTimeScaleEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flShotTimeScaleEndTime)
 
 CCitadel_Ability_Chrono_PulseGrenade
+	network class
 
 CCitadel_Ability_Chrono_TimeWall
+	network class
 	bool m_bAirCast
 
 CCitadel_Ability_Climb_Rope
+	network class
 	CNetworkOriginQuantizedVectorWS m_vTop (user groups: LocalPlayerOwnerAndObserversExclusive)
 	CNetworkOriginQuantizedVectorWS m_vBottom (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bRequestStopClimbing (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1356,10 +1564,13 @@ CCitadel_Ability_Climb_Rope
 	EClimbRopeState_t m_eClimbState
 
 CCitadel_Ability_Crackshot
+	network class
 
 CCitadel_Ability_CrowdControl
+	network class
 
 CCitadel_Ability_Dash
+	network class
 	float m_flDashAngle (user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_GroundDashExecuteTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_GroundDashCancelExecuteTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1375,6 +1586,7 @@ CCitadel_Ability_Dash
 	bool m_bDownAirDash (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Deadpack_ChargeBlast
+	network class
 	VectorWS m_vStartPoint
 	VectorWS m_vEndPoint
 	Vector m_vAimOffset
@@ -1382,6 +1594,7 @@ CCitadel_Ability_Deadpack_ChargeBlast
 	bool m_bTargetingActive
 
 CCitadel_Ability_Deadpack_Flamethrower
+	network class
 	GameTime_t m_tLastDamageDealTime (sent as: float32)
 	GameTime_t m_tActivationTime (sent as: float32)
 	GameTime_t m_tPauseBeginTime (sent as: float32)
@@ -1389,8 +1602,10 @@ CCitadel_Ability_Deadpack_Flamethrower
 	CCitadelAbilityBeam_t m_beam
 
 CCitadel_Ability_Deadpack_PrimaryWeapon_Charge
+	network class
 
 CCitadel_Ability_Deadpack_Rocketeer
+	network class
 	Vector m_vIntentSpaceVelocities
 	Vector m_vIntentSpaceCurrent
 	Vector m_vIntentSpaceTarget
@@ -1410,6 +1625,7 @@ CCitadel_Ability_Deadpack_Rocketeer
 	ERocketeerState m_eState
 
 CCitadel_Ability_Deadpack_Ultimate
+	network class
 	EUltimateState_t m_eState
 	GameTime_t m_tStateTimeBegin (sent as: float32)
 	VectorWS m_vStateOriginBegin
@@ -1420,85 +1636,116 @@ CCitadel_Ability_Deadpack_Ultimate
 	bool m_bIsApproachingApex
 
 CCitadel_Ability_DeathTax
+	network class
 
 CCitadel_Ability_Digger_EnterTunnel
+	network class
 	CHandle< CCitadelPassthroughFakeWall > m_hPushedFakeWall (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 	CHandle< CCitadelPassthroughFakeWall > m_hPushedFakeWallLastThink (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Disruptive_Charge
+	network class
 
 CCitadel_Ability_Doorman_Bomb
+	network class
 
 CCitadel_Ability_Doorman_Cart
+	network class
 
 CCitadel_Ability_Doorman_Doorway
+	network class
 	CHandle< CCitadel_DoorwayPortal> m_hDoor1 (sent as: ehandle)
 
 CCitadel_Ability_Doorman_Hotel
+	network class
 	VectorWS m_vLookTarget
 
 CCitadel_Ability_Drifter_Hunger
+	network class
 
 CCitadel_Ability_Drifter_PrimaryWeapon
+	network class
 
 CCitadel_Ability_Dust_Storm
+	network class
 
 CCitadel_Ability_EmpowerBullet
+	network class
 
 CCitadel_Ability_Empty
+	network class
 
 CCitadel_Ability_ExplosiveBarrel
+	network class
 
 CCitadel_Ability_Familiar_Ability01
+	network class
 	EHANDLE m_vecTargetsInCone (sent as: ehandle)
 
 CCitadel_Ability_Familiar_Ability02
+	network class
 	bool m_bCastWhileAttached
 
 CCitadel_Ability_Familiar_AltWeapon
+	network class
 	int16 m_nAmmoToBeConsumedForChannel
 	bool m_bForceFiring
 
 CCitadel_Ability_Familiar_Attach
+	network class
 	EHANDLE m_vecTagAlongVisitedAllies (sent as: ehandle)
 	EHANDLE m_hLastAttachedTo (sent as: ehandle)
 
 CCitadel_Ability_Familiar_Attach_Trigger
+	network class
 
 CCitadel_Ability_Familiar_Clone
+	network class
 
 CCitadel_Ability_Familiar_CloneSingle
+	network class
 
 CCitadel_Ability_Familiar_CloneSingle_Trigger
+	network class
 
 CCitadel_Ability_Familiar_Clone_End
+	network class
 
 CCitadel_Ability_Familiar_HealHost
+	network class
 	float m_flOverrideCooldown
 
 CCitadel_Ability_Familiar_HelpingHands
+	network class
 	EHANDLE m_vecHelpers (sent as: ehandle)
 	GameTime_t m_tChoreUseCooldownEndTime (sent as: float32)
 	GameTime_t m_tSoonestHelperCooldownEndTime (sent as: float32)
 	char m_nAvailableHelperCount
 
 CCitadel_Ability_Familiar_PrimaryWeapon
+	network class
 
 CCitadel_Ability_Familiar_Spotlight
+	network class
 	EHANDLE m_hWasAttachedTo (sent as: ehandle)
 	VectorWS m_vAuraPosition
 
 CCitadel_Ability_Fathom_Breach
+	network class
 	bool m_bInFlight
 
 CCitadel_Ability_Fathom_ScaldingSpray
+	network class
 
 CCitadel_Ability_Fealty
+	network class
 
 CCitadel_Ability_Fencer_PrimaryWeapon
+	network class
 	int m_iCurrentShotCount
 
 CCitadel_Ability_Fencer_Riposte
+	network class
 	EHANDLE m_hTarget (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vRiposteStartPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
 	Vector m_vDashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1507,13 +1754,16 @@ CCitadel_Ability_Fencer_Riposte
 	GameTime_t m_flSuccessfulRiposteTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flSuccessfulRiposteTime)
 
 CCitadel_Ability_Fencer_ThrowBlade
+	network class
 	GameTime_t m_tRecastEndTime (sent as: float32)
 
 CCitadel_Ability_FireBomb
+	network class
 	CCitadelAutoScaledTime m_flDetonateTime (user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_FissureWall
+	network class
 	VectorWS m_vecPosition
 	VectorWS m_vecTravellingPosition
 	VectorWS m_vecInitialPosition
@@ -1525,10 +1775,12 @@ CCitadel_Ability_FissureWall
 	bool m_bPreview
 
 CCitadel_Ability_FlameDash
+	network class
 	CCitadelAutoScaledTime m_flDashEndTime
 	bool m_bIsSpeedBursting
 
 CCitadel_Ability_FlyingStrike
+	network class
 	bool m_bShadowFormCast (user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vYamatoCastPos (encoder: coord; user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vTargetCastPos (encoder: coord; user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1549,50 +1801,69 @@ CCitadel_Ability_FlyingStrike
 	float flDistFlown (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Fortuna_Ability01
+	network class
 
 CCitadel_Ability_Fortuna_Ability02
+	network class
 
 CCitadel_Ability_Fortuna_Ability03
+	network class
 
 CCitadel_Ability_Fortuna_Ability04
+	network class
 
 CCitadel_Ability_Fortuna_PrimaryWeapon
+	network class
 
 CCitadel_Ability_Frank_PainAura
+	network class
 	GameTime_t m_ToggleOnTime (sent as: float32)
 
 CCitadel_Ability_Frank_PrimaryWeapon
+	network class
 
 CCitadel_Ability_Frank_Revive
+	network class
 	bool m_bReviveIsActive
 	GameTime_t m_TimeOfDeath (sent as: float32)
 	GameTime_t m_TimeOfRevive (sent as: float32)
 	float m_flTotalPendingHeal (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Frank_SelfZap
+	network class
 	float m_flTotalPendingHeal (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Frank_ShockTarget2
+	network class
 	bool m_bIsFullyCharged
 
 CCitadel_Ability_GangActivity
+	network class
 
 CCitadel_Ability_GangActivity_Cancel
+	network class
 
 CCitadel_Ability_GenericPerson_1
+	network class
 
 CCitadel_Ability_GenericPerson_2
+	network class
 
 CCitadel_Ability_GenericPerson_3
+	network class
 
 CCitadel_Ability_GenericPerson_4
+	network class
 
 CCitadel_Ability_Ghost_BloodShards
+	network class
 
 CCitadel_Ability_GoldenIdol
+	network class
 	float m_flHeldTime (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_GooBowlingBall
+	network class
 	bool m_bIsRolling (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnIsRollingChanged)
 	CHandle< CCitadelViscousBall > m_hBall (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 	EViscousBowlingBallState_t m_eRollingState (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1603,25 +1874,33 @@ CCitadel_Ability_GooBowlingBall
 	Vector m_vecWallExitVelocity (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_GooGrenade
+	network class
 	EHANDLE m_vecPuddleModifiers (sent as: ehandle)
 
 CCitadel_Ability_Graf_Ability01
+	network class
 
 CCitadel_Ability_Graf_Ability02
+	network class
 
 CCitadel_Ability_Graf_Ability03
+	network class
 
 CCitadel_Ability_Graf_Ability04
+	network class
 
 CCitadel_Ability_Gravity_Lasso
+	network class
 
 CCitadel_Ability_GuidedArrow
+	network class
 	EHANDLE m_hProjectile (sent as: ehandle)
 	EHANDLE m_hCameraTarget (sent as: ehandle)
 	float m_flArrowSpeed
 	GameTime_t m_flSnapAnglesBackTime (sent as: float32)
 
 CCitadel_Ability_Gunslinger_DemonCarbine
+	network class
 	bool m_bWantsSlow (user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flLatchedTimeScaleFracChangeTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	float m_flLatchedTimeScaleFrac (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1629,21 +1908,29 @@ CCitadel_Ability_Gunslinger_DemonCarbine
 	GameTime_t m_flShotTimeScaleEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Gunslinger_KnockbackBlast
+	network class
 
 CCitadel_Ability_Gunslinger_Salvo
+	network class
 
 CCitadel_Ability_Gunslinger_SpreadingFire
+	network class
 
 CCitadel_Ability_Haze_StackingDamage
+	network class
 
 CCitadel_Ability_HealingSlash
+	network class
 
 CCitadel_Ability_HealthSwap
+	network class
 	GameTime_t m_flPostCastHoldEndTime (sent as: float32)
 
 CCitadel_Ability_HighAlert
+	network class
 
 CCitadel_Ability_HoldMelee
+	network class
 	GameTime_t m_flStateStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flStateStartTime)
 	GameTime_t m_flDashStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	EMeleeHold_AttackState m_eCurrentAttackState (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1654,6 +1941,7 @@ CCitadel_Ability_HoldMelee
 	int m_nLightChainCount (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Hook
+	network class
 	EHANDLE m_hHookVictim (sent as: ehandle; change callbacks: HookVictimChanged)
 	VectorWS m_vecHookTargetStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flCancelHookTime (sent as: float32)
@@ -1661,43 +1949,56 @@ CCitadel_Ability_Hook
 	GameTime_t m_flBulletShouldExpireTime (sent as: float32)
 
 CCitadel_Ability_HornetLeap
+	network class
 	bool m_bLeaping (change callbacks: ObservableRecv_m_bLeaping)
 	GameTime_t m_flLeapStartTime (sent as: float32)
 
 CCitadel_Ability_HornetSting
+	network class
 
 CCitadel_Ability_Hornet_Chain
+	network class
 
 CCitadel_Ability_Hornet_Snipe
+	network class
 	GameTime_t m_flScopeStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flScopeStartTime)
 
 CCitadel_Ability_IceBeam
+	network class
 	bool m_bIceBeaming (user groups: LocalPlayerOwnerAndObserversExclusive)
 	CCitadelAbilityBeam_t m_beam
 
 CCitadel_Ability_IceDome
+	network class
 	GameTime_t m_flDomeStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flDomeEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_IceGrenade
+	network class
 
 CCitadel_Ability_IcePath
+	network class
 	bool m_bIcePathing (user groups: LocalPlayerOwnerAndObserversExclusive)
 	QAngle m_qLastAngles
 	Vector m_vLastVelocity
 	bool m_bFirstMovementTick
 
 CCitadel_Ability_ImmobilizeTrap
+	network class
 
 CCitadel_Ability_IncendiaryProjectile
+	network class
 
 CCitadel_Ability_InfinitySlash
+	network class
 	GameTime_t m_flExplodeEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flBuffEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Intimidate
+	network class
 
 CCitadel_Ability_Jump
+	network class
 	CCitadelAutoScaledTime m_flDashJumpStartTime
 	CCitadelAutoScaledTime m_flDashJumpEndTime
 	bool m_bJumped (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1710,41 +2011,54 @@ CCitadel_Ability_Jump
 	GameTime_t m_flLateralInputSuppressEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Kobun
+	network class
 
 CCitadel_Ability_Lash
+	network class
 
 CCitadel_Ability_LashDownStrike
+	network class
 	bool m_bIsCrashingDown (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnCrashingDownChanged)
 	Vector m_vStrikeVel (user groups: LocalPlayerOwnerAndObserversExclusive)
 	float m_flInitialYaw (user groups: LocalPlayerOwnerAndObserversExclusive)
 	float m_flStartHeight (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Lash_Flog
+	network class
 
 CCitadel_Ability_Lash_Ultimate
+	network class
 	ELashGrappleState m_EGrappleState
 	GameTime_t m_flStateEnterTime (sent as: float32)
 	GameTime_t m_flNextStateTime (sent as: float32)
 	GameTime_t m_flBoostEndTime (sent as: float32)
 
 CCitadel_Ability_LifeDrain
+	network class
 	GameTime_t m_tDrainLifeStopTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_tDrainLifeStopTime)
 	GameTime_t m_tSlowStartTime (sent as: float32; user groups: LocalPlayerOwnerExclusive; change callbacks: ObservableRecv_m_tSlowStartTime)
 	GameTime_t m_tSlowStopTime (sent as: float32; user groups: LocalPlayerOwnerExclusive; change callbacks: ObservableRecv_m_tSlowStopTime)
 
 CCitadel_Ability_LightningBall
+	network class
 
 CCitadel_Ability_LockDown
+	network class
 
 CCitadel_Ability_MageWalk
+	network class
 
 CCitadel_Ability_Magician_AnimalCurse
+	network class
 
 CCitadel_Ability_Magician_AnimalHexArea
+	network class
 
 CCitadel_Ability_Magician_BigBolt
+	network class
 
 CCitadel_Ability_Magician_CopyUlt
+	network class
 	bool m_bHasUsedCopiedUlt
 	bool m_bHasCopiedUlt
 	bool m_bIsModelSwapped
@@ -1753,12 +2067,16 @@ CCitadel_Ability_Magician_CopyUlt
 	HeroID_t m_nCopiedHeroID (sent as: uint32)
 
 CCitadel_Ability_Magician_Escape
+	network class
 
 CCitadel_Ability_Magician_MagicBolt
+	network class
 
 CCitadel_Ability_Magician_ShadowClone
+	network class
 
 CCitadel_Ability_Mantle
+	network class
 	float m_flVertOffset (user groups: LocalPlayerOwnerAndObserversExclusive)
 	float m_flHorizGap (user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1771,13 +2089,16 @@ CCitadel_Ability_Mantle
 	VectorWS m_vAutoMantleLastPushPos (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_MedicHeal
+	network class
 
 CCitadel_Ability_MeleeParry
+	network class
 	GameTime_t m_flParryStartTime (sent as: float32)
 	bool m_bAttackParried
 	GameTime_t m_flParrySuccessEndTime (sent as: float32; change callbacks: ObservableRecv_m_flParrySuccessEndTime)
 
 CCitadel_Ability_Melee_Base
+	network class
 	bool m_bUsingThisMelee (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bUsingMeleeTagActive (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bHitWithThisAttack (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -1786,21 +2107,26 @@ CCitadel_Ability_Melee_Base
 	GameTime_t m_flAttackTriggeredTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flAttackTriggeredTime)
 
 CCitadel_Ability_Mirage_FireBeetles
+	network class
 
 CCitadel_Ability_Mirage_Teleport
+	network class
 	EHANDLE m_hTarget (sent as: ehandle)
 	GameTime_t m_tTeleportCompletedTime (sent as: float32)
 	VectorWS m_vTargetPosition
 	QAngle m_vTargetAngles
 
 CCitadel_Ability_MobileResupply
+	network class
 
 CCitadel_Ability_NanoDash
+	network class
 	VectorWS m_vStartPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vEndPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bIsDashing (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Nano_CatForm
+	network class
 	bool m_bIsInCatform
 	GameTime_t m_flLastDamageTime (sent as: float32)
 	GameTime_t m_flTransformStartTime (sent as: float32)
@@ -1808,10 +2134,13 @@ CCitadel_Ability_Nano_CatForm
 	float m_flStoredDamageAmp
 
 CCitadel_Ability_Nano_CatFormPounce
+	network class
 
 CCitadel_Ability_Nano_ClusterGrenade
+	network class
 
 CCitadel_Ability_Nano_Pounce
+	network class
 	bool m_bActive
 	EHANDLE m_hCurrentTarget (sent as: ehandle)
 	EHANDLE m_hLastCastTarget (sent as: ehandle)
@@ -1823,6 +2152,7 @@ CCitadel_Ability_Nano_Pounce
 	GameTime_t m_tDoubleCastWindow (sent as: float32)
 
 CCitadel_Ability_Nano_Pounce_Instant
+	network class
 	bool m_bActive
 	EHANDLE m_hCurrentTarget (sent as: ehandle)
 	EHANDLE m_hLastCastTarget (sent as: ehandle)
@@ -1834,86 +2164,142 @@ CCitadel_Ability_Nano_Pounce_Instant
 	GameTime_t m_tDoubleCastWindow (sent as: float32)
 
 CCitadel_Ability_Nano_PrimaryWeapon
+	network class
 
 CCitadel_Ability_Nano_Shadow
+	network class
 
 CCitadel_Ability_Necro_Coffin
+	network class
 
 CCitadel_Ability_Necro_Fear
+	network class
 	float m_flTotalBuildup
 
 CCitadel_Ability_Necro_GraveStone
+	network class
 	EHANDLE m_vecDeployedGravestones (sent as: ehandle)
 
 CCitadel_Ability_Necro_HauntingSkull
+	network class
 	bool m_bIsFullyCharged
 
 CCitadel_Ability_Necro_HauntingSpirits
+	network class
 
 CCitadel_Ability_Necro_KillSummon
+	network class
 	bool m_bIsInRecast
 	GameTime_t m_RecastEndTime (sent as: float32)
 
 CCitadel_Ability_Necro_KillSummonTrigger
+	network class
 
 CCitadel_Ability_Necro_NukeMap
+	network class
 
 CCitadel_Ability_Necro_PrimaryWeapon
+	network class
 	GameTime_t m_tTetherAttachTime (sent as: float32)
 	GameTime_t m_tTetherBreakTime (sent as: float32)
 	bool m_bHasTetherTarget
 
 CCitadel_Ability_Necro_ZombieWall
+	network class
 	GameTime_t m_tWallDeployFinishTime (sent as: float32)
 
 CCitadel_Ability_Nikuman
+	network class
+
+CCitadel_Ability_Nurse_AdrenalineRush
+	network class
+
+CCitadel_Ability_Nurse_Fear
+	network class
+	QAngle m_playerAngles (encoder: qangle_precise)
+	int m_nLeechStacksAtCast
+	Vector m_vecRecoilDirection
+
+CCitadel_Ability_Nurse_HealingNeedleWeapon
+	network class
+
+CCitadel_Ability_Nurse_HealingNeedles
+	network class
+	float m_flChargeProgress
+	bool m_bNeedlesOut (change callbacks: ObservableRecv_m_bNeedlesOut)
+	GameTime_t m_tSwapInFinishTime (sent as: float32)
+
+CCitadel_Ability_Nurse_LeechTherapy
+	network class
+	int m_iLeechCount
 
 CCitadel_Ability_Opera_Ability01
+	network class
 
 CCitadel_Ability_Opera_Ability02
+	network class
 
 CCitadel_Ability_Opera_Ability03
+	network class
 
 CCitadel_Ability_Opera_Ability04
+	network class
 
 CCitadel_Ability_Operative_Blindside
+	network class
 
 CCitadel_Ability_PassiveBeefy
+	network class
 	float m_flTotalPendingHeal (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Perched_Predator
+	network class
 	EHANDLE m_hActiveProjectile (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_PowerJump
+	network class
 	bool m_bAirRaiding
 
 CCitadel_Ability_PowerSlash
+	network class
 	int m_nPowerLevel (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_PowerSurge
+	network class
 
 CCitadel_Ability_Priest_AntiSpiritVest
+	network class
 
 CCitadel_Ability_Priest_BearTrap
+	network class
 
 CCitadel_Ability_Priest_CrossbowWeapon
+	network class
 
 CCitadel_Ability_Priest_Flashbang
+	network class
 
 CCitadel_Ability_Priest_Knockback
+	network class
 
 CCitadel_Ability_Priest_SelfHeal
+	network class
 
 CCitadel_Ability_Priest_SilenceBomb
+	network class
 
 CCitadel_Ability_Priest_SmokeGrenade
+	network class
 
 CCitadel_Ability_Priest_StackingDefense
+	network class
 	float m_flMaxStacksBonusDamage
 
 CCitadel_Ability_Priest_WeaponSwap
+	network class
 
 CCitadel_Ability_PrimaryWeapon
+	network class
 	GameTime_t m_flLastReloadStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flNextPrimaryAttack (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	int32 m_iClip (serializer: minusone; priority: 32)
@@ -1950,62 +2336,82 @@ CCitadel_Ability_PrimaryWeapon
 	bool m_bHasReleasedForFireOnRelease (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_PrimaryWeapon_Bebop
+	network class
 	GameTime_t m_flStartWindUpTime (sent as: float32)
 	GameTime_t m_flStartFiringTime (sent as: float32)
 	bool m_bFiring
 
 CCitadel_Ability_PrimaryWeapon_Cadence
+	network class
 
 CCitadel_Ability_PrimaryWeapon_Empty
+	network class
 
 CCitadel_Ability_PrimaryWeapon_ScalingAltFire
+	network class
 
 CCitadel_Ability_ProjectMind
+	network class
 
 CCitadel_Ability_Protection_Racket
+	network class
 
 CCitadel_Ability_ProximityRitual
+	network class
 	ECatStatueState_t m_eState (user groups: LocalPlayerOwnerAndObserversExclusive)
 	EHANDLE m_hStatue (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_PsychicLift
+	network class
 	VectorWS m_vLiftPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vCrashPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_PunkGoat_Blasted
+	network class
 	float m_flBlastedCurrentDuration
 
 CCitadel_Ability_PunkGoat_GoatFlip
+	network class
 	PG_RisingRamState m_eState
 	GameTime_t m_tStateStartTime (sent as: float32)
 	float m_flGoingUpTargetElevation
 	float m_flGoingUpStartElevation
 
 CCitadel_Ability_PunkGoat_Tether
+	network class
 	bool m_bTetheringActive
 
 CCitadel_Ability_PunkGoat_Ult
+	network class
 	uint8 m_nSlamTravelType
 	float m_flDistanceToTravel
 	bool m_bHoldingAbilityButton
 
 CCitadel_Ability_Punkgoat_PrimaryWeapon
+	network class
 
 CCitadel_Ability_RapidFire
+	network class
 
 CCitadel_Ability_RatArmor
+	network class
 
 CCitadel_Ability_RatKing_RatNibble
+	network class
 
 CCitadel_Ability_Ratking_EnterTunnel
+	network class
 	CHandle< CCitadelPassthroughFakeWall > m_hPushedFakeWall (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 	CHandle< CCitadelPassthroughFakeWall > m_hPushedFakeWallLastThink (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Ratking_PrimaryWeapon
+	network class
 
 CCitadel_Ability_Ratking_ScrapGrenade
+	network class
 
 CCitadel_Ability_Ratking_StandardBearer
+	network class
 	GameTime_t m_flForcedPlantTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flChargeResumeTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flChargeStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnBannerChargingStateChanged)
@@ -2013,56 +2419,78 @@ CCitadel_Ability_Ratking_StandardBearer
 	GameTime_t m_flPlantLeapPhaseStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_RestorativeGoo
+	network class
 	GameTime_t m_flSelfCastEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_RiotProtocol
+	network class
 	bool m_bActive (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_RiposteTargetSelect
+	network class
 
 CCitadel_Ability_RocketBarrage
+	network class
 	CCitadelAutoScaledTime m_flBarrageEndTime
 
 CCitadel_Ability_RocketLauncher
+	network class
 
 CCitadel_Ability_Rolling_FireBall
+	network class
 
 CCitadel_Ability_Rutger_Pulse
+	network class
 
 CCitadel_Ability_SelfVacuum
+	network class
 
 CCitadel_Ability_SettingSun
+	network class
 
 CCitadel_Ability_ShadowPulse
+	network class
 
 CCitadel_Ability_Shakedown_Target
+	network class
 
 CCitadel_Ability_Shield
+	network class
 
 CCitadel_Ability_ShieldGuy_Ability01
+	network class
 
 CCitadel_Ability_ShieldGuy_Ability02
+	network class
 
 CCitadel_Ability_ShieldGuy_Ability03
+	network class
 
 CCitadel_Ability_ShieldGuy_Ability04
+	network class
 
 CCitadel_Ability_ShieldedSentry
+	network class
 	CHandle<CNPC_ShieldedSentry> m_vecDeployedSentries (sent as: ehandle)
 
 CCitadel_Ability_ShivDagger
+	network class
 
 CCitadel_Ability_ShivDash
+	network class
 	VectorWS m_vStartPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
 	Vector m_vDashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bIsDashing (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_ShivWeapon
+	network class
 
 CCitadel_Ability_Shiv_Defer_Damage
+	network class
 	float m_flTotalPendingDamage
 
 CCitadel_Ability_Shiv_KillingBlow
+	network class
 	bool m_bDamagedAnyHero
 	bool m_bActive
 	bool m_bStartedOnGround
@@ -2074,12 +2502,16 @@ CCitadel_Ability_Shiv_KillingBlow
 	GameTime_t m_flRecastWindowEnd (sent as: float32)
 
 CCitadel_Ability_SkyRunner_Ability04
+	network class
 
 CCitadel_Ability_SkyRunner_FlakShot
+	network class
 
 CCitadel_Ability_SkyRunner_PrimaryWeapon
+	network class
 
 CCitadel_Ability_SkyRunner_SwingLine
+	network class
 	ESwingState_t m_eSwingState
 	GameTime_t m_SwingStartTime (sent as: float32)
 	GameTime_t m_SwingEndTime (sent as: float32)
@@ -2087,12 +2519,16 @@ CCitadel_Ability_SkyRunner_SwingLine
 	float m_flIdealSpringLength
 
 CCitadel_Ability_Skyrunner_MagicBeam
+	network class
 
 CCitadel_Ability_SleepBomb
+	network class
 
 CCitadel_Ability_SleepDagger
+	network class
 
 CCitadel_Ability_Slide
+	network class
 	CCitadelAutoScaledTime m_flGroundDashSlideTime
 	GameTime_t m_flSlowGetupStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flSlowGetupStartTime)
 	bool m_bShouldTriggerSlowGetup (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -2109,36 +2545,48 @@ CCitadel_Ability_Slide
 	GameTime_t m_flDashSlideStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_SmokeBomb
+	network class
 
 CCitadel_Ability_SnakeDash
+	network class
 
 CCitadel_Ability_SpiderShield
+	network class
 
 CCitadel_Ability_Spinning_Blade
+	network class
 
 CCitadel_Ability_Sprint
+	network class
 	bool m_bSprinting (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnSprintingChanged)
 	GameTime_t m_flSprintStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_StaticCharge
+	network class
 
 CCitadel_Ability_StaticCharge_V2
+	network class
 
 CCitadel_Ability_StickyBomb
+	network class
 	EHANDLE m_hAutoTarget (sent as: ehandle)
 	GameTime_t m_flHookEndTime (sent as: float32)
 	float m_flBombBonusHits
 	float m_flBombBonusKills
 
 CCitadel_Ability_Stomp
+	network class
 
 CCitadel_Ability_StormCloud
+	network class
 	float m_flFloat
 	int m_nLightningStrikesRemaining
 
 CCitadel_Ability_SummonGangster
+	network class
 
 CCitadel_Ability_SuperNeutralCharge
+	network class
 	bool m_bPreparing
 	bool m_bTackling
 	GameTime_t m_flTackleStartTime (sent as: float32)
@@ -2146,18 +2594,25 @@ CCitadel_Ability_SuperNeutralCharge
 	Vector m_vecTackleDir
 
 CCitadel_Ability_SuperNeutralIncendiary
+	network class
 
 CCitadel_Ability_SuperNeutralShield
+	network class
 
 CCitadel_Ability_Swan_Ability04
+	network class
 
 CCitadel_Ability_Swan_Acrobat
+	network class
 
 CCitadel_Ability_Swan_FeatherBoomerang
+	network class
 
 CCitadel_Ability_Swan_Leap
+	network class
 
 CCitadel_Ability_TangoTether
+	network class
 	Vector m_vecCastStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
 	Vector m_vecDashStartPos (user groups: LocalPlayerOwnerAndObserversExclusive)
 	Vector m_vecDashEndPos (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -2171,22 +2626,31 @@ CCitadel_Ability_TangoTether
 	GameTime_t m_rgTargetPosTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_TangoTether_Trigger
+	network class
 
 CCitadel_Ability_Targetdummy_1
+	network class
 
 CCitadel_Ability_Targetdummy_2
+	network class
 
 CCitadel_Ability_Targetdummy_3
+	network class
 
 CCitadel_Ability_Targetdummy_4
+	network class
 
 CCitadel_Ability_Teleport
+	network class
 
 CCitadel_Ability_TeleportToGangster
+	network class
 
 CCitadel_Ability_Tenacity
+	network class
 
 CCitadel_Ability_Tengu_AirLift
+	network class
 	EHANDLE m_hGrabTarget (sent as: ehandle)
 	EFlightState m_eFlightState (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_eFlightState)
 	bool m_bIsGrabbing (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -2194,6 +2658,7 @@ CCitadel_Ability_Tengu_AirLift
 	float m_flCurrentSpeed (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Tengu_StoneForm
+	network class
 	GameTime_t m_flStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flLandedTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bLanded (user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -2202,112 +2667,155 @@ CCitadel_Ability_Tengu_StoneForm
 	float m_flStartHeight (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Tengu_Urn
+	network class
 
 CCitadel_Ability_TestHero_Ability04
+	network class
 
 CCitadel_Ability_TestHero_FearTarget
+	network class
 
 CCitadel_Ability_TestHero_StanceSwitch
+	network class
 	bool m_bStanceActive
 
 CCitadel_Ability_TestHero_Stance_Bow
+	network class
 
 CCitadel_Ability_TestHero_Stance_Spaceman
+	network class
 
 CCitadel_Ability_TestHero_SummonCannon
+	network class
 	bool m_bCannonPending
 
 CCitadel_Ability_TestHero_SummonSoldier
+	network class
 	EHANDLE m_vecTargetsInCone (sent as: ehandle)
 
 CCitadel_Ability_TestHero_WallCling
+	network class
 	Vector m_vecWallClingNormal
 	VectorWS m_vecWallPosition
 	Vector m_vecLastVelocity
 
 CCitadel_Ability_ThrowSand
+	network class
 
 CCitadel_Ability_Thumper_1
+	network class
 
 CCitadel_Ability_Thumper_2
+	network class
 
 CCitadel_Ability_Thumper_3
+	network class
 
 CCitadel_Ability_Thumper_4
+	network class
 
 CCitadel_Ability_Tier2Boss_AoEWave
+	network class
 
 CCitadel_Ability_Tier2Boss_LaserBeam
+	network class
 
 CCitadel_Ability_Tier2Boss_RocketBarrage
+	network class
 
 CCitadel_Ability_Tier2Boss_Stomp
+	network class
 
 CCitadel_Ability_Tier3Boss_AoEWave
+	network class
 
 CCitadel_Ability_Tier3Boss_DropBombs
+	network class
 
 CCitadel_Ability_Tier3Boss_LaserBeam
+	network class
 
 CCitadel_Ability_Tier3Boss_RocketBarrage
+	network class
 
 CCitadel_Ability_Trapper_Fear
+	network class
 
 CCitadel_Ability_Trapper_PoisonJar
+	network class
 
 CCitadel_Ability_Trapper_SpiderJar
+	network class
 
 CCitadel_Ability_Trapper_WebWall
+	network class
 	VectorWS m_vecCastPosition
 	Vector m_vecCastPositionNormal
 	VectorWS m_vecEndPosition
 	Vector m_vecEndPositionNormal
 
 CCitadel_Ability_Trappers_Bolo
+	network class
 
 CCitadel_Ability_TriggerTower
+	network class
 
 CCitadel_Ability_TrooperBossGrenade
+	network class
 
 CCitadel_Ability_TrooperGrenade
+	network class
 
 CCitadel_Ability_TrooperZipLine
+	network class
 
 CCitadel_Ability_TurretClone
+	network class
 	bool m_bHasTurretReady
 	int m_iCurrentSwapCount
 	GameTime_t m_flTurretExpireTime (sent as: float32)
 	CHandle< CCitadel_MagicianTurret> m_pActiveTurret (sent as: ehandle)
 
 CCitadel_Ability_TurretClone_Trigger
+	network class
 
 CCitadel_Ability_UltCombo
+	network class
 	int m_iBonusHealth
 	CHandle< CBaseEntity> m_hTarget (sent as: ehandle)
 
 CCitadel_Ability_Unicorn_DazzlingOrb
+	network class
 
 CCitadel_Ability_Unicorn_LuminousStrike
+	network class
 	GameTime_t m_vecNextExplosionTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vecNextExplosionLocation (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Ability_Unicorn_PrimaryWeapon
+	network class
 
 CCitadel_Ability_Unicorn_PrismaticGuard
+	network class
 
 CCitadel_Ability_Unicorn_RadiantBlast
+	network class
 
 CCitadel_Ability_Uppercut
+	network class
 
 CCitadel_Ability_VampireBat_BatBlink
+	network class
 	int m_iRemainingCasts
 	bool m_bIsBlinking
 	GameTime_t m_RecastEndTime (sent as: float32)
 	GameTime_t m_BlinkEndTime (sent as: float32)
 
 CCitadel_Ability_VampireBat_BatCloud
+	network class
 
 CCitadel_Ability_VampireBat_BatSwarm
+	network class
 	int m_iBonusBats
 	int m_iBatCountOnCast
 	float m_flChannelTime
@@ -2315,92 +2823,127 @@ CCitadel_Ability_VampireBat_BatSwarm
 	float m_flLastRemainingChannelTime
 
 CCitadel_Ability_VampireBat_DoubleDagger
+	network class
 
 CCitadel_Ability_VampireBat_LoveBites
+	network class
 
 CCitadel_Ability_VampireBat_StealLife
+	network class
 	bool m_bFloating
 
 CCitadel_Ability_VandalOverflow
+	network class
 
 CCitadel_Ability_VandalSurge
+	network class
 
 CCitadel_Ability_Vandal_Ability03
+	network class
 
 CCitadel_Ability_Vandal_Pillar
+	network class
 
 CCitadel_Ability_ViperHookblade
+	network class
 
 CCitadel_Ability_ViperVenom
+	network class
 
 CCitadel_Ability_Viper_Ability04
+	network class
 
 CCitadel_Ability_Viper_DebuffDagger
+	network class
 
 CCitadel_Ability_Viper_PetrifyBola
+	network class
 
 CCitadel_Ability_Viscous_Telepunch
+	network class
 	VectorWS m_vecTeleportPosition
 	Vector m_vecTeleportPositionNormal
 	ETelepunchState_t m_eTelepunchState
 	GameTime_t m_flNextStateTime (sent as: float32)
 
 CCitadel_Ability_VoidSphere
+	network class
 
 CCitadel_Ability_Weapon_BossTier2
+	network class
 
 CCitadel_Ability_Weapon_BossTier3
+	network class
 
 CCitadel_Ability_Werewolf_ClawWeapon
+	network class
 
 CCitadel_Ability_Werewolf_KickFlip
+	network class
 	bool m_bIsLeaping
 	GameTime_t m_tLeapStartTime (sent as: float32)
 	GameTime_t m_tLeapOffTime (sent as: float32)
 
 CCitadel_Ability_Werewolf_Leap
+	network class
 	bool m_bWillLeapOff
 	bool m_bIsLeaping
 	GameTime_t m_tLeapStartTime (sent as: float32)
 	GameTime_t m_tLeapOffTime (sent as: float32)
 
 CCitadel_Ability_Werewolf_MaulingLeap
+	network class
 	GameTime_t m_tLeapStartTime (sent as: float32)
 
 CCitadel_Ability_Werewolf_NetShot
+	network class
 
 CCitadel_Ability_Werewolf_OnTheHunt
+	network class
 
 CCitadel_Ability_Werewolf_Rifle
+	network class
 
 CCitadel_Ability_Werewolf_TrackingBomb
+	network class
 
 CCitadel_Ability_Wraith_RapidFire
+	network class
 
 CCitadel_Ability_WreckerGarbageSuck
+	network class
 
 CCitadel_Ability_WreckerScrapBlast
+	network class
 
 CCitadel_Ability_WreckerTeleport
+	network class
 	EHANDLE m_hProjectile (sent as: ehandle)
 	float m_flArrowSpeed
 	GameTime_t m_flSnapAnglesBackTime (sent as: float32)
 
 CCitadel_Ability_Wrecker_BoulderGrenade
+	network class
 
 CCitadel_Ability_Wrecker_Salvage
+	network class
 
 CCitadel_Ability_Wrecker_Ultimate
+	network class
 	QAngle m_angBeamAngles
 
 CCitadel_Ability_WreckingBall
+	network class
 	bool m_bHoldingBall
 
 CCitadel_Ability_WreckingBallThrow
+	network class
 
 CCitadel_Ability_Yakuza_Shakedown
+	network class
 
 CCitadel_Ability_ZipLine
+	network class
 	GameTime_t m_flTimeStartZipping (sent as: float32)
 	GameTime_t m_flTimeForKnockdownProtection (sent as: float32)
 	GameTime_t m_flTimeStopZipping (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
@@ -2424,70 +2967,100 @@ CCitadel_Ability_ZipLine
 	int m_iDesiredLane (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: DesiredLaneChanged)
 
 CCitadel_Ability_ZipLine_Boost
+	network class
 
 CCitadel_Announcer
 
 CCitadel_Announcer_Base
 
 CCitadel_ArmorUpgrade_AbilityLifeSteal
+	network class
 
 CCitadel_ArmorUpgrade_AblativeCoat
+	network class
 	int m_iCurrentResistValue
 
 CCitadel_ArmorUpgrade_ActiveBulletShield
+	network class
 
 CCitadel_ArmorUpgrade_AutoCleanse
+	network class
 
 CCitadel_ArmorUpgrade_BulletArmorReductionAura
+	network class
 
 CCitadel_ArmorUpgrade_CloakingDevice
+	network class
 
 CCitadel_ArmorUpgrade_CloakingDeviceActive
+	network class
 
 CCitadel_ArmorUpgrade_Colossus
+	network class
 
 CCitadel_ArmorUpgrade_DamageRecycler
+	network class
 
 CCitadel_ArmorUpgrade_DebuffReducer
+	network class
 
 CCitadel_ArmorUpgrade_DoubleJump
+	network class
 
 CCitadel_ArmorUpgrade_Frenzy
+	network class
 
 CCitadel_ArmorUpgrade_Grit
+	network class
 
 CCitadel_ArmorUpgrade_HealOnLevel
+	network class
 
 CCitadel_ArmorUpgrade_HighImpactArmor
+	network class
 
 CCitadel_ArmorUpgrade_MetalSkin
+	network class
 
 CCitadel_ArmorUpgrade_PersonalRejuvenator
+	network class
 
 CCitadel_ArmorUpgrade_RegeneratingBulletShield
+	network class
 
 CCitadel_ArmorUpgrade_RegenerativeArmor
+	network class
 
 CCitadel_ArmorUpgrade_ReturnFire
+	network class
 
 CCitadel_ArmorUpgrade_Shrink_Ray
+	network class
 
 CCitadel_ArmorUpgrade_SlowImmunity
+	network class
 
 CCitadel_ArmorUpgrade_SpellShield
+	network class
 
 CCitadel_ArmorUpgrade_SpiritBubble
+	network class
 
 CCitadel_ArmorUpgrade_Stimpak
+	network class
 
 CCitadel_ArmorUpgrade_VexBarrier
+	network class
 
 CCitadel_ArmorUpgrade_WeaponShielding
+	network class
 
 CCitadel_Artist_SolidBlocker
+	network class
 	GameTime_t m_flTurnSolidTime (sent as: float32)
 
 CCitadel_Artist_StrokeBlocker
+	network class
 	VectorWS m_vStrokeStart (encoder: coord)
 	VectorWS m_vStrokeEnd (encoder: coord)
 	CHandle< CCitadel_Artist_StrokeBlocker> m_hPrevBlocker (sent as: ehandle)
@@ -2495,46 +3068,58 @@ CCitadel_Artist_StrokeBlocker
 	CHandle< CBaseEntity > m_vecOverlap (sent as: ehandle; change callbacks: OverlapChanged)
 
 CCitadel_Artist_VisionBlocker
+	network class
 	GameTime_t m_flTurnSolidTime (sent as: float32)
 	GameTime_t m_flTearDownStartTime (sent as: float32; change callbacks: OnTearDownTimeChanged)
 
 CCitadel_BaseProp_MidStairs
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	EMidStairsLocation_t m_eLocation
 
 CCitadel_Bounce_Pad
+	network class
 	float m_flUpFactor
 	float m_flBounceVelocity
 	GameTime_t m_tDeactivationTime (sent as: float32)
 
 CCitadel_BreakableProp
 	include by name: m_lifeState, m_iMaxHealth, m_iHealth
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	int m_nGoldCost
 	int m_nMeleeHitsTaken
 
 CCitadel_BreakableProp_Hideout
+	network class
 
 CCitadel_CatAnimating
+	network class
 
 CCitadel_CosmeticAbility
+	network class
 
 CCitadel_CosmeticAbility_Emote
+	network class
 
 CCitadel_CosmeticAbility_Snowball
+	network class
 	int m_nSeasonal2025Level
 	float m_flSeasonal2025LevelFrac
 	GameTime_t m_flNextShotTime (sent as: float32; user groups: LocalPlayerOwnerExclusive)
 	int m_nShotsRemaining (user groups: LocalPlayerOwnerExclusive)
 
 CCitadel_CosmeticAbility_VotingPoster
+	network class
 	bool m_bPreview
 	HeroID_t m_nActiveHero (sent as: uint32)
 
 CCitadel_DeployablePreview
+	network class
 
 CCitadel_Destroyable_Building
 	include by name: m_bTakesDamage, m_nTakeDamageFlags
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	CCitadelAbilityComponent::Storage_t m_CCitadelAbilityComponent (class: CCitadelAbilityComponent; alias: CCitadelAbilityComponent; type alias: CCitadelAbilityComponent; user groups: CCitadelAbilityComponent)
 	WeakPoint_t m_vecWeakPoints
@@ -2543,42 +3128,54 @@ CCitadel_Destroyable_Building
 	bool m_bFinal
 
 CCitadel_DoorwayPortal
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	CHandle< CCitadel_DoorwayPortal> m_hLinkedDoorway (sent as: ehandle)
 
 CCitadel_DynamicProp
+	network class
 	CUtlString m_strDefaultSkin
 	CUtlString m_strFriendlySkin
 	CUtlString m_strEnemySkin
 	bool m_bIsWorld
 
 CCitadel_FissureWall
+	network class
 
 CCitadel_GrandFinaleStage
+	network class
 
 CCitadel_GraveStone_Blocker
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
 	int m_iGravestoneState
 
 CCitadel_GuidedArrow_OwlModel
+	network class
 
 CCitadel_Gunslinger_DemonMark
+	network class
 
 CCitadel_HeroTestOrbSpawner
+	network class
 
 CCitadel_HideOutTargetSpawner
 
 CCitadel_Hideout_Ball
 	exclude by name: m_flSimulationTime
+	network class
 
 CCitadel_Hideout_Clock
+	network class
 
 CCitadel_Ice_Dome_Blocker
+	network class
 	GameTime_t m_flTurnSolidTime (sent as: float32)
 
 CCitadel_Ice_Path_Shard_Physics
 	exclude by name: m_hModel
+	network class
 	ice_path_shard_model_desc_t m_ShardDesc
 	QAngle m_qForward
 	GameTime_t m_flStartTime (sent as: float32)
@@ -2586,72 +3183,104 @@ CCitadel_Ice_Path_Shard_Physics
 	float m_flShardWidth
 
 CCitadel_Item
+	network class
 
 CCitadel_Item_AOERoot
+	network class
 
 CCitadel_Item_AOE_Tech_Shield
+	network class
 
 CCitadel_Item_ActiveReload
+	network class
 
 CCitadel_Item_ArcticBlast
+	network class
 
 CCitadel_Item_Aura_Base
+	network class
 
 CCitadel_Item_BaseProjectileAOEModifier
+	network class
 
 CCitadel_Item_Bubble
+	network class
 	GameTime_t m_flEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Item_Camouflage
+	network class
 
 CCitadel_Item_CelestialGuidance
+	network class
 
 CCitadel_Item_Charge_Mastery
+	network class
 
 CCitadel_Item_CheatDeath
+	network class
 
 CCitadel_Item_ColdFront
+	network class
 
 CCitadel_Item_ComboBreaker
+	network class
 
 CCitadel_Item_Containment
+	network class
 
 CCitadel_Item_DPS_Aura
+	network class
 
 CCitadel_Item_Disarm
+	network class
 
 CCitadel_Item_DivineBarrier
+	network class
 
 CCitadel_Item_DivinersKevlar
+	network class
 
 CCitadel_Item_Electric_Slippers
+	network class
 
 CCitadel_Item_Empty
+	network class
 
 CCitadel_Item_FocusLens
+	network class
 
 CCitadel_Item_GooseEgg
+	network class
 	int m_iAccruedGold (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Item_GuardianWard
+	network class
 
 CCitadel_Item_HealthRegenAura
+	network class
 
 CCitadel_Item_Intensifying_Clip
+	network class
 
 CCitadel_Item_ModDisruptor
+	network class
 
 CCitadel_Item_Mystic_Regeneration
+	network class
 	int m_iRegenStacks (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_iRegenStacks)
 	float m_flPendingIncomingHeal
 
 CCitadel_Item_NullificationAura
+	network class
 
 CCitadel_Item_PhantomStrike
+	network class
 
 CCitadel_Item_PowerShard
+	network class
 
 CCitadel_Item_PrismBlast
+	network class
 	CCitadelAbilityBeam_t m_beam00
 	CCitadelAbilityBeam_t m_beam01
 	CCitadelAbilityBeam_t m_beam02
@@ -2659,70 +3288,99 @@ CCitadel_Item_PrismBlast
 	CCitadelAbilityBeam_t m_beam04
 
 CCitadel_Item_ProjectileTest
+	network class
 
 CCitadel_Item_ProjectileTest02
+	network class
 
 CCitadel_Item_ProjectileTest04
+	network class
 
 CCitadel_Item_ProjectileTest05
+	network class
 
 CCitadel_Item_ProjectileTest06
+	network class
 
 CCitadel_Item_Refresher
+	network class
 
 CCitadel_Item_RejuvTrackingProjectile
+	network class
 
 CCitadel_Item_RescueBeam
+	network class
 	bool m_bCanPull
 
 CCitadel_Item_SelfBuffModifier
+	network class
 
 CCitadel_Item_ShadowStep
+	network class
 
 CCitadel_Item_ShadowStrike
+	network class
 
 CCitadel_Item_SingleTargetStun
+	network class
 
 CCitadel_Item_SpiritSap
+	network class
 
 CCitadel_Item_Stasis_Bomb
+	network class
 
 CCitadel_Item_TechCleave
+	network class
 
 CCitadel_Item_TechDamagePulse
+	network class
 
 CCitadel_Item_TrackingProjectileApplyModifier
+	network class
 
 CCitadel_Item_TrophyCollector
+	network class
 	int m_iTrophyCount
 
 CCitadel_Item_WarpStone
+	network class
 
 CCitadel_KothCashIn
+	network class
 
 CCitadel_Magic_Beam_Blocker
+	network class
 	GameTime_t m_flTurnSolidTime (sent as: float32)
 
 CCitadel_MagicianTurret
+	network class
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
 
 CCitadel_MobileResupply
+	network class
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
 	bool m_bFloating
 
 CCitadel_NPCAbility_Shield
+	network class
 
 CCitadel_NPCAbility_Vanguard_AOEBuff
+	network class
 
 CCitadel_Nano_Predatory_Statue
+	network class
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
 
 CCitadel_NewYears_Fireworks
+	network class
 
 CCitadel_Omnicharge_Pendant
+	network class
 
 CCitadel_Pickup
 	exclude by name: m_flSimulationTime
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	CHandle< CBaseEntity> m_hAssignedClaimer (sent as: ehandle)
 	bool m_bActive
@@ -2732,12 +3390,15 @@ CCitadel_Pickup
 	CHandle< CBaseEntity> m_hVacuumTarget (sent as: ehandle)
 
 CCitadel_PickupItemSpawner
+	network class
 	GameTime_t m_tNextDropTime (sent as: float32)
 	bool m_bPowerupActive
 
 CCitadel_PickupSpawner
+	network class
 
 CCitadel_Pickup_Ability
+	network class
 	AbilityUpgradeBits_t m_nUpgradeBits
 	int m_nUpgradeLevel
 	AbilityID_t m_unAbilityID (sent as: uint32)
@@ -2745,22 +3406,30 @@ CCitadel_Pickup_Ability
 	bool m_bShowGoldCostInUI
 
 CCitadel_Pickup_ArtistDrawing
+	network class
 
 CCitadel_Pickup_AssignedGold
+	network class
 
 CCitadel_Pickup_Currency
+	network class
 	int m_nCurrencyAmount
 
 CCitadel_Pickup_Gold
+	network class
 	int m_iGoldReward
 
 CCitadel_Pickup_Health
+	network class
 
 CCitadel_Pickup_Item
+	network class
 
 CCitadel_Pickup_Modifier
+	network class
 
 CCitadel_Pickup_NecroDeath
+	network class
 
 CCitadel_PointTalker
 
@@ -2769,181 +3438,252 @@ CCitadel_PointTalker_Base
 CCitadel_PointTalker_Idol
 
 CCitadel_Priest_SlideTrap
+	network class
 	float m_flRangeAtCast
 	bool m_bArmed
 	bool m_bMoving
 
 CCitadel_Projectile_Archer_ChargedShot
+	network class
 
 CCitadel_Projectile_ArtistGun
+	network class
 
 CCitadel_Projectile_BatSwarmExtraProjectile
+	network class
 
 CCitadel_Projectile_BatSwarmProjectile
+	network class
 
 CCitadel_Projectile_Bebop_Hook
+	network class
 
 CCitadel_Projectile_BloodBomb
+	network class
 
 CCitadel_Projectile_BookwormGun
+	network class
 
 CCitadel_Projectile_BubblingBrew
+	network class
 	bool m_bIsReturningProjectile
 
 CCitadel_Projectile_Cyclone
+	network class
 
 CCitadel_Projectile_DeadpackMissile
+	network class
 
 CCitadel_Projectile_DustStorm
+	network class
 
 CCitadel_Projectile_FeatherBoomerang
+	network class
 
 CCitadel_Projectile_FortunaWeapon
+	network class
 
 CCitadel_Projectile_Guided_Arrow
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 
 CCitadel_Projectile_HookBlade
+	network class
 
 CCitadel_Projectile_MagicBolt
+	network class
 	bool bIsCloneProjectile
 
 CCitadel_Projectile_Petrify
+	network class
 
 CCitadel_Projectile_Pillar
+	network class
 
 CCitadel_Projectile_RocketLauncher_Rocket
+	network class
 
 CCitadel_Projectile_SettingSun
+	network class
 
 CCitadel_Projectile_SpiderProjectile
+	network class
 
 CCitadel_Projectile_Viscous_GooGrenade
+	network class
 
 CCitadel_Projectile_WebWall
+	network class
 
 CCitadel_Projectile_Wrecker_Teleport
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 
 CCitadel_Projectile_WreckingBall
+	network class
 
 CCitadel_Prop_MidBossIndicator
 
 CCitadel_Ratking_Standard
+	network class
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
 
 CCitadel_RestorativeGooCube
+	network class
 
 CCitadel_Shield
 	include by name: m_fFlags
+	network class
 	bool m_bAllowRotatingUp
 	bool m_bFixedPosition
 	float m_flShieldOffset
 
 CCitadel_ShopProp
+	network class
 	bool m_bIsShopOpen
 	int m_iLane
 
 CCitadel_SmokeGrenade_Blocker
+	network class
 	GameTime_t m_flTurnSolidTime (sent as: float32)
 
 CCitadel_Soldier_Entity
+	network class
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
 	int m_iSoldierState
 
 CCitadel_SpiderAnimating
+	network class
 
 CCitadel_TechUpgrade_CorpseExplosion
+	network class
 
 CCitadel_TechUpgrade_Infuser
+	network class
 
 CCitadel_TechUpgrade_SuperAcolyteGloves
+	network class
 
 CCitadel_Upgrade_AerialAssault
+	network class
 
 CCitadel_Upgrade_AmmoScavenger
+	network class
 
 CCitadel_Upgrade_MagicCarpet
+	network class
 	bool m_bFlying (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bSummoning (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_Upgrade_OverdriveClip
+	network class
 
 CCitadel_Upgrade_WeaponPowerForHealth
+	network class
 
 CCitadel_UtilityUpgrade_AOESmokeBomb
+	network class
 
 CCitadel_UtilityUpgrade_DebuffImmunity
+	network class
 
 CCitadel_UtilityUpgrade_HealthNova
+	network class
 
 CCitadel_UtilityUpgrade_RocketBooster
+	network class
 	GameTime_t m_flCastTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: OnCanSlamDownChanged)
 	bool m_bCrashingDown (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bImpulseApplied (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bCanCrash (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bPlayLandingSound (user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vecCrashPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
 	Vector m_vecCrashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
 
 CCitadel_UtilityUpgrade_RocketBoots
+	network class
 
 CCitadel_WeaponUpgrade_ApexCombat
+	network class
 
 CCitadel_WeaponUpgrade_BloodTribute
+	network class
 
 CCitadel_WeaponUpgrade_BurstFire
+	network class
 	GameTime_t m_nFastFireEndTime (sent as: float32; change callbacks: ObservableRecv_m_nFastFireEndTime)
 
 CCitadel_WeaponUpgrade_CooldownOnMiss
+	network class
 
 CCitadel_WeaponUpgrade_CultistSacrifice
+	network class
 
 CCitadel_WeaponUpgrade_ExpressShot
+	network class
 	int m_iShotsToCreate
 	bool m_bIsInExpressShot
 	bool m_bProcShotCharged
 	float m_flProcChargeBonusDamage
 
 CCitadel_WeaponUpgrade_FireRateAura
+	network class
 
 CCitadel_WeaponUpgrade_FuryTrance
+	network class
 
 CCitadel_WeaponUpgrade_GlassCannon
+	network class
 
 CCitadel_WeaponUpgrade_HeadshotDamage
+	network class
 
 CCitadel_WeaponUpgrade_InfiniteMagazine
+	network class
 
 CCitadel_WeaponUpgrade_InstantReload
+	network class
 
 CCitadel_WeaponUpgrade_RechargingBullets
+	network class
 
 CCitadel_WeaponUpgrade_Ricochet
+	network class
 
 CCitadel_WeaponUpgrade_SiphonBullets
+	network class
 	int m_iStacks
 
 CCitadel_WeaponUpgrade_SpellslingerHeadshots
+	network class
 
 CCitadel_WeaponUpgrade_SplitShot
+	network class
 	bool m_bSplitShotActive
 
 CCitadel_WeaponUpgrade_SurgingPower
+	network class
 
 CCitadel_WeaponUpgrade_WeaponEater
+	network class
 	int m_nWeaponPower
 
 CCitadel_Werewolf_CripplingSlash
+	network class
 
 CCitadel_Werewolf_Hunt
+	network class
 
 CCitadel_Werewolf_Transformation
+	network class
 	bool m_bIsTransformed
 	GameTime_t m_flWerewolfStartTime (sent as: float32)
 
 CCitadel_Werewolf_UnloadGun
+	network class
 
 CCitadel_Werewolf_UnloadGun2
+	network class
 	GameTime_t m_tActiveEndTime (sent as: float32)
 
 CCollisionProperty
@@ -2964,6 +3704,7 @@ CCollisionProperty
 
 CColorCorrection
 	include by user group: Origin
+	network class
 	float32 m_flFadeInDuration
 	float32 m_flFadeOutDuration
 	float32 m_flMaxWeight
@@ -2977,6 +3718,7 @@ CColorCorrection
 	char m_netlookupFilename
 
 CColorCorrectionVolume
+	network class
 	float32 m_MaxWeight
 	float32 m_FadeDuration
 	float32 m_Weight
@@ -2987,6 +3729,7 @@ CCommentaryAuto
 CCommentaryViewPosition
 
 CConditionalCollidable
+	network class
 
 CConstraintAnchor
 
@@ -2998,8 +3741,10 @@ CDestructiblePartsComponent
 	CHandle< CBaseModelEntity > m_hOwner (sent as: ehandle)
 
 CDoormanBombProjectile
+	network class
 
 CDynamicLight
+	network class
 	uint8 m_Flags
 	uint8 m_LightStyle
 	float32 m_Radius
@@ -3011,6 +3756,7 @@ CDynamicLight
 CDynamicNavConnectionsVolume
 
 CDynamicProp
+	network class
 	bool m_bUseHitboxesForRenderBox
 	bool m_bUseAnimGraph
 
@@ -3021,6 +3767,7 @@ CDynamicPropAlias_dynamic_prop
 CDynamicPropAlias_prop_dynamic_override
 
 CEconEntity
+	network class
 	CAttributeContainer m_AttributeManager
 
 CEconItemAttribute
@@ -3039,6 +3786,7 @@ CEconItemView
 	CAttributeList m_AttributeList
 
 CEconWearable
+	network class
 
 CEnableMotionFixup
 
@@ -3047,6 +3795,7 @@ CEntityBlocker
 CEntityComponent
 
 CEntityDissolve
+	network class
 	float32 m_flFadeInStart
 	float32 m_flFadeInLength
 	float32 m_flFadeOutModelStart
@@ -3059,6 +3808,7 @@ CEntityDissolve
 	uint32 m_nMagnitude
 
 CEntityFlame
+	network class
 	CHandle< CBaseEntity> m_hEntAttached (sent as: ehandle)
 	bool m_bCheapEffect
 
@@ -3073,6 +3823,7 @@ CEnvBeam
 CEnvBeverage
 
 CEnvCombinedLightProbeVolume
+	network class
 	Color m_Entity_Color (change callbacks: StateChanged)
 	float m_Entity_flBrightness (change callbacks: StateChanged)
 	HRenderTextureStrong m_Entity_hCubemapTexture (resource type: vtex)
@@ -3104,6 +3855,7 @@ CEnvCombinedLightProbeVolume
 CEnvCombinedLightProbeVolumeAlias_func_combined_light_probe_volume
 
 CEnvCubemap
+	network class
 	HRenderTextureStrong m_Entity_hCubemapTexture (resource type: vtex)
 	bool m_Entity_bCustomCubemapTexture
 	float m_Entity_flInfluenceRadius
@@ -3124,6 +3876,7 @@ CEnvCubemap
 	bool m_Entity_bEnabled
 
 CEnvCubemapFog
+	network class
 	float m_flEndDistance
 	float m_flStartDistance
 	float m_flFogFalloffExponent
@@ -3149,6 +3902,7 @@ CEnvCubemapFog
 	bool m_bHasHeightFogEnd
 
 CEnvDecal
+	network class
 	HMaterialStrong m_hDecalMaterial (resource type: vmat)
 	float m_flWidth (change callbacks: OnDecalDimensionsChanged)
 	float m_flHeight (change callbacks: OnDecalDimensionsChanged)
@@ -3160,6 +3914,7 @@ CEnvDecal
 	float m_flDepthSortBias
 
 CEnvDetailController
+	network class
 	float32 m_flFadeStartDist
 	float32 m_flFadeEndDist
 
@@ -3181,6 +3936,7 @@ CEnvInstructorVRHint
 CEnvLaser
 
 CEnvLightProbeVolume
+	network class
 	HRenderTextureStrong m_Entity_hLightProbeTexture_AmbientCube (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeTexture_SDF (resource type: vtex)
 	HRenderTextureStrong m_Entity_hLightProbeTexture_SH2_DC (resource type: vtex)
@@ -3205,6 +3961,7 @@ CEnvLightProbeVolume
 CEnvMuzzleFlash
 
 CEnvParticleGlow
+	network class
 	float32 m_flAlphaScale
 	float32 m_flRadiusScale
 	float32 m_flSelfIllumScale
@@ -3214,6 +3971,7 @@ CEnvParticleGlow
 CEnvShake
 
 CEnvSky
+	network class
 	HMaterialStrong m_hSkyMaterial (change callbacks: SkyStateChanged; resource type: vmat)
 	HMaterialStrong m_hSkyMaterialLightingOnly (change callbacks: SkyStateChanged; resource type: vmat)
 	bool m_bStartDisabled (change callbacks: SkyStateChanged)
@@ -3248,6 +4006,7 @@ CEnvTilt
 CEnvViewPunch
 
 CEnvVolumetricFogController
+	network class
 	float m_flScattering
 	Color m_TintColor
 	float m_flAnisotropy
@@ -3285,6 +4044,7 @@ CEnvVolumetricFogController
 	Vector m_vWindDirection
 
 CEnvVolumetricFogVolume
+	network class
 	bool m_bActive
 	Vector m_vBoxMins
 	Vector m_vBoxMaxs
@@ -3305,6 +4065,7 @@ CEnvVolumetricFogVolume
 	bool m_bOverrideNoiseStrength
 
 CEnvWind
+	network class
 	CEnvWindShared m_EnvWindShared
 
 CEnvWindShared
@@ -3324,6 +4085,7 @@ CEnvWindShared
 	VectorWS m_location (encoder: coord)
 
 CEnvironmentLight
+	network class
 	Color m_SkyColor (change callbacks: RenderingChanged)
 	float m_flSkyIntensity (change callbacks: RenderingChanged)
 	Color m_SkyAmbientBounce (change callbacks: RenderingChanged)
@@ -3355,6 +4117,7 @@ CFilterTeam
 
 CFish
 	include by name: m_nModelIndex, m_lifeState
+	network class
 	float32 m_x (serializer: fish_pos_x)
 	float32 m_y (serializer: fish_pos_y)
 	float32 m_z (serializer: fish_pos_z)
@@ -3365,6 +4128,7 @@ CFish
 CFishPool
 
 CFogController
+	network class
 	fogparams_t m_fog
 
 CFogTrigger
@@ -3372,8 +4136,10 @@ CFogTrigger
 CFogVolume
 
 CFuncBrush
+	network class
 
 CFuncElectrifiedVolume
+	network class
 	string_t m_EffectName
 
 CFuncIllusionary
@@ -3381,6 +4147,7 @@ CFuncIllusionary
 CFuncInteractionLayerClip
 
 CFuncLadder
+	network class
 	Vector m_vecLadderDir (encoder: coord)
 	VectorWS m_vecPlayerMountPositionTop (encoder: coord)
 	VectorWS m_vecPlayerMountPositionBottom (encoder: coord)
@@ -3390,6 +4157,7 @@ CFuncLadder
 CFuncLadderAlias_func_useableladder
 
 CFuncMonitor
+	network class
 	CUtlString m_targetCamera
 	int m_nResolutionEnum
 	bool m_bRenderShadows
@@ -3402,10 +4170,12 @@ CFuncMonitor
 CFuncMoveLinear
 	include by name: m_fFlags, m_vecVelocity
 	overrides: CBaseEntity::m_fFlags removeAll 
+	network class
 
 CFuncMoveLinearAlias_momentary_door
 
 CFuncMover
+	network class
 
 CFuncMoverRouter
 
@@ -3421,6 +4191,7 @@ CFuncPropRespawnZone
 
 CFuncRotating
 	overrides: CGameSceneNode::m_angRotation serializer StepSimulationFuncRotatingAnglesSerializer, CBaseEntity::m_flSimulationTime serializer funcRotatingSimulationTimeSerializer
+	network class
 
 CFuncRotator
 
@@ -3435,6 +4206,7 @@ CFuncTrackAuto
 CFuncTrackChange
 
 CFuncTrackTrain
+	network class
 
 CFuncTrain
 
@@ -3460,6 +4232,7 @@ CGameRules
 	bool m_bGamePaused
 
 CGameRulesProxy
+	network class
 
 CGameSceneNode
 	CGameSceneNodeHandle m_hParent (serializer: gameSceneNode; priority: 32; change callbacks: gameSceneNodeHierarchyParentChanged; embedded field offset delta: 8)
@@ -3490,6 +4263,7 @@ CGlowProperty
 	float m_flGlowStartTime
 
 CGradientFog
+	network class
 	HRenderTextureStrong m_hGradientFogTexture (resource type: vtex)
 	float m_flFogStartDistance (change callbacks: FogStateChanged)
 	float m_flFogEndDistance (change callbacks: FogStateChanged)
@@ -3511,12 +4285,14 @@ CGunTarget
 CHandleDummy
 
 CHandleTest
+	network class
 	CHandle< CBaseEntity> m_Handle (sent as: ehandle)
 	bool m_bSendHandle
 
 CHitboxComponent
 
 CInWorldKeyBindPanel
+	network class
 
 CInfoAbilityTestBot
 
@@ -3533,6 +4309,7 @@ CInfoDynamicShadowHint
 CInfoDynamicShadowHintBox
 
 CInfoFan
+	network class
 	float m_fFanForceMaxRadius
 	float m_fFanForceMinRadius
 	float m_flCurveDistRange
@@ -3549,12 +4326,14 @@ CInfoInstructorHintTarget
 CInfoKOTHSpawnLocation
 
 CInfoLadderDismount
+	network class
 
 CInfoLandmark
 
 CInfoMidBossSpawn
 
 CInfoOffscreenPanoramaTexture
+	network class
 	bool m_bDisabled
 	bool m_bEnableMipGen
 	int m_nResolutionX
@@ -3571,6 +4350,7 @@ CInfoParticleTarget
 CInfoPlayerStart
 
 CInfoPortalLink
+	network class
 
 CInfoSpawnGroupLandmark
 
@@ -3594,15 +4374,18 @@ CInfoTrooperNeutralSpawn
 CInfoTrooperSpawn
 
 CInfoTutorialController
+	network class
 
 CInfoTutorialPoint
 
 CInfoVisibilityBox
+	network class
 	int m_nMode
 	Vector m_vBoxSize
 	bool m_bEnabled
 
 CInfoWorldLayer
+	network class
 	string_t m_worldName
 	string_t m_layerName
 	bool m_bWorldLayerVisible
@@ -3615,46 +4398,58 @@ CInstructorEventEntity
 CItem
 
 CItemCapacitor
+	network class
 
 CItemCrate
 	include by name: m_iHealth, m_iMaxHealth
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	int m_eLootType
 
 CItemCrateSpawn
 
 CItemExplosiveBarrel
+	network class
 
 CItemGeneric
 
 CItemGenericTriggerHelper
 
 CItemHauntingScream
+	network class
 
 CItemMysticReverb
+	network class
 
 CItemSilenceGlyph
+	network class
 
 CItemSoda
 
 CItemXP
 	exclude by name: m_flSimulationTime
+	network class
 	GameTime_t m_timeLaunch (sent as: float32)
 	GameTime_t m_flAttackableTime (sent as: float32)
 	GameTime_t m_flEndAttackableTime (sent as: float32)
 	int m_nLaunchNum
 
 CItem_FleetfootBoots
+	network class
 
 CItem_GreaterWitheringWhip
+	network class
 
 CItem_ResonantHealing
+	network class
 	int m_iResonantHealingRegenStacks (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_iResonantHealingRegenStacks)
 
 CItem_RestorativeLocket
+	network class
 	int m_nNumStacks
 
 CItem_WitheringWhip
+	network class
 
 CKeepUpright
 
@@ -3732,13 +4527,17 @@ CLightComponent
 	float m_flMinRoughness (change callbacks: LightRenderingChanged)
 
 CLightDirectionalEntity
+	network class
 
 CLightEntity
+	network class
 	CLightComponent::Storage_t m_CLightComponent (class: CLightComponent; alias: CLightComponent; type alias: CLightComponent; user groups: CLightComponent)
 
 CLightOrthoEntity
+	network class
 
 CLightSpotEntity
+	network class
 
 CLogicAchievement
 
@@ -3810,6 +4609,7 @@ CMarkupVolumeTagged_NavGame
 CMarkupVolumeWithRef
 
 CMatchTrackedStatsEntity
+	network class
 
 CMathColorBlend
 
@@ -3822,10 +4622,12 @@ CMessage
 CMessageEntity
 
 CMiniMapMarker
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	EMiniMapMarkerType_t m_eType
 
 CModelPointEntity
+	network class
 
 CModelState
 	HModelStrong m_hModel (change callbacks: skeletonModelChanged; resource type: vmdl)
@@ -3861,6 +4663,7 @@ CNPCMaker
 CNPCSpawnDestination
 
 CNPC_BarrackBoss
+	network class
 	CCitadelPlayerClipComponent::Storage_t m_CCitadelPlayerClipComponent (class: CCitadelPlayerClipComponent; alias: CCitadelPlayerClipComponent; type alias: CCitadelPlayerClipComponent; user groups: CCitadelPlayerClipComponent)
 	int m_iLane
 	GameTime_t m_flFadeOutStart (sent as: float32)
@@ -3868,8 +4671,10 @@ CNPC_BarrackBoss
 
 CNPC_BaseDefenseSentry
 	include by name: m_bTakesDamage, m_nTakeDamageFlags
+	network class
 
 CNPC_Boss_Tier2
+	network class
 	int m_iLane
 	EHANDLE m_hTargetedEnemy (sent as: ehandle)
 	GameTime_t m_flFadeOutStart (sent as: float32)
@@ -3879,6 +4684,7 @@ CNPC_Boss_Tier2
 	int m_nElectricBeamCasts
 
 CNPC_Boss_Tier3
+	network class
 	int m_iLane
 	VectorWS m_vecElectricBeamTargetEnd
 	ETier3State_t m_eAliveState
@@ -3886,8 +4692,10 @@ CNPC_Boss_Tier3
 	VectorWS m_vShrineAttackTargetPos
 
 CNPC_Boss_Tier3Core
+	network class
 
 CNPC_ChessPiece
+	network class
 	GameTime_t m_tCooldownStartTime (sent as: float32)
 	GameTime_t m_tCooldownEndTime (sent as: float32)
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
@@ -3895,15 +4703,19 @@ CNPC_ChessPiece
 	int m_iChessPieceType
 
 CNPC_Escort
+	network class
 
 CNPC_FamiliarHelper
+	network class
 	GameTime_t m_tCooldownStartTime (sent as: float32)
 	GameTime_t m_tCooldownEndTime (sent as: float32)
 	bool m_bIsHelperAvailableNet
 
 CNPC_MidBoss
+	network class
 
 CNPC_NecroSkele
+	network class
 	CHandle< CCitadelBaseAbility> m_hCastingAbility (sent as: ehandle)
 	GameTime_t m_tSpawnTime (sent as: float32)
 	VectorWS m_vecCastLocation
@@ -3913,25 +4725,37 @@ CNPC_NecroSkele
 
 CNPC_Neutral_Bug
 	exclude by name: m_flSimulationTime
+	network class
 
 CNPC_Neutral_Flying_Pigeon
+	network class
 
 CNPC_Neutral_Hideout_Cat
+	network class
 
 CNPC_Neutral_Hideout_Rabbit
+	network class
 
 CNPC_Neutral_SinnersSacrifice
+	network class
 	int m_iVaultState
 	int m_nGoldToGiveOnDamage
 	float m_flRandomTimePhase
 	float m_flMiniGameTimeScale
 
 CNPC_Neutral_SinnersSacrifice_Hideout
+	network class
+
+CNPC_NurseLeech
+	network class
+	CHandle< CBaseEntity> m_hNurse (sent as: ehandle)
 
 CNPC_Ratking_Rat
+	network class
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
 
 CNPC_ShieldedSentry
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	float m_flAttackRange
 	float m_flAimPitch
@@ -3943,24 +4767,29 @@ CNPC_SimpleAnimatingAI
 	include by name: m_iMaxHealth, m_iHealth, m_iTeam
 	exclude by name: m_flSimulationTime, m_flEncodedController, m_flPoseParameter
 	exclude by user group: m_flCycle
+	network class
 	EHANDLE m_hEnemy (sent as: ehandle)
 	CHandle<CCitadelBaseAbility> m_hAbilityOwner (sent as: ehandle)
 	CCitadelRegenComponent::Storage_t m_CCitadelRegenComponent (class: CCitadelRegenComponent; alias: CCitadelRegenComponent; type alias: CCitadelRegenComponent; user groups: CCitadelRegenComponent)
 
 CNPC_Trooper
+	network class
 	int m_iLane
 	EHANDLE m_hTargetedEnemy (sent as: ehandle)
 	bool m_bUsingBossWeapon
 
 CNPC_TrooperBoss
+	network class
 	CCitadelPlayerClipComponent::Storage_t m_CCitadelPlayerClipComponent (class: CCitadelPlayerClipComponent; alias: CCitadelPlayerClipComponent; type alias: CCitadelPlayerClipComponent; user groups: CCitadelPlayerClipComponent)
 	int m_iLane
 	GameTime_t m_flFadeOutStart (sent as: float32)
 	GameTime_t m_flFadeOutEnd (sent as: float32)
 
 CNPC_TrooperNeutral
+	network class
 
 CNPC_YakuzaGangster
+	network class
 
 CNavLinkAreaEntity
 
@@ -3970,6 +4799,7 @@ CNavWalkable
 
 CNecro_HauntingSkullEntity
 	include by name: m_iHealth, m_iMaxHealth
+	network class
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
 	int m_eSkullState
 
@@ -4038,6 +4868,7 @@ CNpcFootSweep
 CNullEntity
 
 COmniLight
+	network class
 	float m_flInnerAngle (change callbacks: RenderingChanged)
 	float m_flOuterAngle (change callbacks: RenderingChanged)
 	bool m_bShowLight (change callbacks: RenderingChanged)
@@ -4049,6 +4880,7 @@ COrnamentProp
 CParticleSystem
 	include by name: CGameSceneNode::m_angRotation, m_hOwnerEntity, CGameSceneNode::m_hParent, CGameSceneNode::m_hierarchyAttachName, m_nameStringTableIndex
 	include by user group: Origin
+	network class
 	char m_szSnapshotFileName
 	bool m_bActive
 	bool m_bFrozen
@@ -4080,12 +4912,14 @@ CPathMover
 CPathMoverEntitySpawner
 
 CPathNode
+	network class
 	Vector m_vInTangentLocal
 	Vector m_vOutTangentLocal
 	CUtlString m_strParentPathUniqueID
 	CUtlString m_strPathNodeParameter
 
 CPathParticleRope
+	network class
 	float m_flParticleSpacing
 	float m_flSlack (change callbacks: parametersChanged)
 	float m_flRadius (change callbacks: parametersChanged)
@@ -4106,18 +4940,21 @@ CPathQueryComponent
 CPathQueryUtil
 
 CPathSimple
+	network class
 	CPathQueryComponent::Storage_t m_CPathQueryComponent (class: CPathQueryComponent; alias: CPathQueryComponent; type alias: CPathQueryComponent; user groups: CPathQueryComponent)
 	CUtlString m_pathString
 
 CPathTrack
 
 CPathWithDynamicNodes
+	network class
 	CHandle< CPathNode > m_vecPathNodes (sent as: ehandle)
 	CTransform m_xInitialPathWorldToLocal
 
 CPhysBallSocket
 
 CPhysBox
+	network class
 
 CPhysConstraint
 
@@ -4136,6 +4973,7 @@ CPhysImpact
 CPhysLength
 
 CPhysMagnet
+	network class
 
 CPhysMotor
 
@@ -4159,6 +4997,7 @@ CPhysicsProp
 	include by name: m_spawnflags
 	exclude by name: m_flexWeight, m_animationController.m_flPlaybackRate
 	exclude by user group: m_flPoseParameter, overlay_vars
+	network class
 	bool m_bAwake
 
 CPhysicsPropOverride
@@ -4176,6 +5015,7 @@ CPlayerControllerComponent
 CPlayerPawnComponent
 
 CPlayerSprayDecal
+	network class
 	int m_nUniqueID
 	uint32 m_unAccountID
 	uint32 m_unTraceID
@@ -4195,9 +5035,11 @@ CPlayerSprayDecal
 	bool m_bDamaged
 
 CPlayerTrackedStatsEntity
+	network class
 	CPlayerSlot m_nPlayerSlot (sent as: int32)
 
 CPlayerVisibility
+	network class
 	float m_flVisibilityStrength (change callbacks: PlayerVisibilityStateChanged)
 	float m_flFogDistanceMultiplier (change callbacks: PlayerVisibilityStateChanged)
 	float m_flFogMaxDensityMultiplier (change callbacks: PlayerVisibilityStateChanged)
@@ -4251,6 +5093,7 @@ CPointAngularVelocitySensor
 CPointBroadcastClientCommand
 
 CPointCamera
+	network class
 	float m_FOV
 	float m_Resolution
 	bool m_bFogEnable
@@ -4281,9 +5124,11 @@ CPointChildModifier
 CPointClientCommand
 
 CPointClientUIDialog
+	network class
 	EHANDLE m_hActivator (sent as: ehandle; change callbacks: OnDialogActivatorChanged)
 
 CPointClientUIWorldPanel
+	network class
 	bool m_bIgnoreInput
 	bool m_bLit
 	bool m_bFollowPlayerAcrossTeleport
@@ -4312,9 +5157,11 @@ CPointClientUIWorldPanel
 	bool m_bIgnoreParentOrientation
 
 CPointClientUIWorldTextPanel
+	network class
 	char m_messageText
 
 CPointCommentaryNode
+	network class
 	string_t m_iszCommentaryFile
 	CHandle< CBaseEntity> m_hViewPosition (sent as: ehandle)
 	bool m_bActive
@@ -4327,6 +5174,7 @@ CPointCommentaryNode
 	bool m_bListenedTo
 
 CPointEntity
+	network class
 
 CPointEntityFinder
 
@@ -4335,6 +5183,7 @@ CPointHurt
 CPointModifierThinker
 
 CPointOrient
+	network class
 
 CPointPrefab
 
@@ -4351,6 +5200,7 @@ CPointTeleport
 CPointTemplate
 
 CPointValueRemapper
+	network class
 	bool m_bDisabled
 	bool m_bUpdateOnClient
 	ValueRemapperInputType_t m_nInputType
@@ -4372,6 +5222,7 @@ CPointValueRemapper
 CPointVelocitySensor
 
 CPointWorldText
+	network class
 	char m_messageText
 	char m_FontName
 	char m_BackgroundMaterialName
@@ -4390,6 +5241,7 @@ CPointWorldText
 	PointWorldTextReorientMode_t m_nReorientMode
 
 CPostProcessingVolume
+	network class
 	HPostProcessingStrong m_hPostSettings (resource type: vpost)
 	float m_flFadeDuration
 	float m_flMinLogExposure
@@ -4404,65 +5256,90 @@ CPostProcessingVolume
 	bool m_bExposureControl
 
 CPrecipitation
+	network class
 
 CPrecipitationBlocker
+	network class
 
 CProjectile_Artist_BouncingPot
+	network class
 
 CProjectile_Artist_RollingProjectile
+	network class
 
 CProjectile_Boho_BouncyProjectile
+	network class
 
 CProjectile_Boho_SkipGrenade
+	network class
 
 CProjectile_BookwormDragon_Projectile
+	network class
 
 CProjectile_ChessMaster_Fork_Projectile
+	network class
 
 CProjectile_Doorman_Cart_Projectile
+	network class
 
 CProjectile_Familiar_MovingToAttach
+	network class
 
 CProjectile_GraveStone_Projectile
+	network class
 	float m_flWidth
 	GameTime_t m_tDieTime (sent as: float32)
 
 CProjectile_KnightChargeLeading_Projectile
+	network class
 
 CProjectile_KnightCharge_Projectile
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 
 CProjectile_Necro_HauntProjectile
+	network class
 
 CProjectile_Necro_ZombieWall_Projectile
+	network class
 
 CProjectile_Perched_Predator
+	network class
 
 CProjectile_PunkgoatTether
+	network class
 
 CProjectile_Rolling_FireBall
+	network class
 
 CProjectile_Rutger_Rocket
+	network class
 
 CProjectile_Stomp_Projectile
+	network class
 	float m_flWidth
 	GameTime_t m_tDieTime (sent as: float32)
 
 CProjectile_Synth_Barrage
+	network class
 
 CProjectile_Synth_PlasmaFlux
+	network class
 	bool m_bSpawnedInNoTeleportArea
 
 CPropAnimatingBreakable
 	include by name: m_iMaxHealth, m_iHealth
+	network class
 
 CPropDataComponent
 
 CPropDoorRotating
+	network class
 
 CPropDoorRotatingBreakable
 
 CPulseGameBlackboard
+	network class
 	CUtlString m_strGraphName
 	CUtlString m_strStateBlob (change callbacks: OnBlackboardStateChanged)
 
@@ -4473,9 +5350,11 @@ CRagdollConstraint
 CRagdollMagnet
 
 CRagdollManager
+	network class
 	int8 m_iCurrentMaxRagdollCount
 
 CRagdollProp
+	network class
 	CPropDataComponent::Storage_t m_CPropDataComponent (class: CPropDataComponent; alias: CPropDataComponent; type alias: CPropDataComponent; user groups: CPropDataComponent)
 	bool m_ragEnabled
 	Vector m_ragPos (encoder: coord)
@@ -4485,12 +5364,14 @@ CRagdollProp
 CRagdollPropAlias_physics_prop_ragdoll
 
 CRagdollPropAttached
+	network class
 	uint32 m_boneIndexAttached
 	uint32 m_ragdollAttachedObjectIndex
 	Vector m_attachmentPointBoneSpace (encoder: coord)
 	Vector m_attachmentPointRagdollSpace (encoder: coord)
 
 CRectLight
+	network class
 	bool m_bShowLight (change callbacks: RenderingChanged)
 
 CRegenerateZone
@@ -4499,6 +5380,7 @@ CRenderComponent
 
 CRenderPortal
 	exclude by name: m_flSimulationTime
+	network class
 	EHANDLE m_hLocalPortalLink (sent as: ehandle)
 	EHANDLE m_hRemotePortalLink (sent as: ehandle)
 	CUtlString m_brushModelName
@@ -4514,6 +5396,7 @@ CRevertSaved
 CRopeKeyframe
 	include by name: CGameSceneNode::m_hParent, CGameSceneNode::m_hierarchyAttachName, m_nMinCPULevel, m_nMaxCPULevel, m_nMinGPULevel, m_nMaxGPULevel
 	include by user group: Origin
+	network class
 	uint16 m_RopeFlags
 	int16 m_Slack
 	float32 m_Width
@@ -4546,6 +5429,7 @@ CRuleEntity
 CRulePointEntity
 
 CSceneEntity
+	network class
 	bool m_bIsPlayingBack
 	bool m_bPaused
 	bool m_bMultiplayer
@@ -4559,6 +5443,7 @@ CSceneEntityAlias_logic_choreographed_scene
 CSceneListManager
 
 CScrapGrenadeProjectile
+	network class
 
 CScriptComponent
 
@@ -4586,6 +5471,7 @@ CServerRagdollTrigger
 
 CShatterGlassShardPhysics
 	exclude by name: m_hModel
+	network class
 	shard_model_desc_t m_ShardDesc
 
 CShower
@@ -4603,71 +5489,92 @@ CSkeletonInstance
 	uint8 m_nHitboxSet
 
 CSkyCamera
+	network class
 	sky3dparams_t m_skyboxData
 	CUtlStringToken m_skyboxSlotToken (sent as: uint32)
 
 CSkyboxReference
 
 CSoundAreaEntityBase
+	network class
 	bool m_bDisabled
 	string_t m_iszSoundAreaType
 	Vector m_vPos
 
 CSoundAreaEntityOrientedBox
+	network class
 	Vector m_vMin
 	Vector m_vMax
 
 CSoundAreaEntitySphere
+	network class
 	float m_flRadius
 
 CSoundEventAABBEntity
+	network class
 	Vector m_vMins
 	Vector m_vMaxs
 
 CSoundEventBoxEntity
+	network class
 	SoundeventBoxHelperNetworked_t m_vecBoxHelpersNetworked
 
 CSoundEventBoxHelper
+	network class
 	Vector m_vMins
 	Vector m_vMaxs
 
 CSoundEventConeEntity
+	network class
 
 CSoundEventEntity
+	network class
 
 CSoundEventEntityAlias_snd_event_point
 
 CSoundEventMultiPointEntity
+	network class
 
 CSoundEventOBBEntity
+	network class
 	Vector m_vMins
 	Vector m_vMaxs
 
 CSoundEventParameter
 
 CSoundEventPathCornerEntity
+	network class
 	SoundeventPathCornerPairNetworked_t m_vecCornerPairsNetworked
 
 CSoundEventSphereEntity
+	network class
 	float m_flRadius
 
 CSoundOpvarSetAABBEntity
+	network class
 
 CSoundOpvarSetAutoRoomEntity
+	network class
 
 CSoundOpvarSetBoxEntity
+	network class
 
 CSoundOpvarSetDomeEntity
+	network class
 
 CSoundOpvarSetEntity
 
 CSoundOpvarSetOBBEntity
+	network class
 
 CSoundOpvarSetOBBWindEntity
+	network class
 
 CSoundOpvarSetPathCornerEntity
+	network class
 
 CSoundOpvarSetPointBase
+	network class
 	string_t m_iszStackName
 	string_t m_iszOperatorName
 	string_t m_iszOpvarName
@@ -4676,20 +5583,25 @@ CSoundOpvarSetPointBase
 	bool m_bFastRefresh
 
 CSoundOpvarSetPointEntity
+	network class
 
 CSoundOpvarSetPrecipitationEntity
+	network class
 
 CSoundOpvarSetPrecipitationOBBEntity
+	network class
 
 CSoundStackSave
 
 CSplineConstraint
 
 CSpotlightEnd
+	network class
 	float32 m_flLightScale
 	float32 m_Radius
 
 CSprite
+	network class
 	HMaterialStrong m_hSpriteMaterial (resource type: vmat)
 	CHandle< CBaseEntity> m_hAttachedToEntity (sent as: ehandle)
 	AttachmentHandle_t m_nAttachment (sent as: uint8)
@@ -4706,6 +5618,7 @@ CSprite
 CSpriteAlias_env_glow
 
 CSpriteOriented
+	network class
 
 CStreetBrawlController
 	EStreetBrawlGameState m_eStreetBrawlState (change callbacks: streetBrawlStateChanged)
@@ -4723,6 +5636,7 @@ CTankTrainAI
 
 CTeam
 	include by name: m_iTeamNum
+	network class
 	CHandle< CBasePlayerController > m_aPlayerControllers (sent as: ehandle; alias: m_aPlayers)
 	CHandle< CBasePlayerPawn > m_aPlayers (sent as: ehandle; alias: m_aPawns)
 	int32 m_iScore
@@ -4731,10 +5645,12 @@ CTeam
 CTeamRelativeParticleSystem
 	include by name: m_iTeamNum
 	exclude by name: m_iEffectIndex
+	network class
 	HParticleSystemDefinitionStrong m_iFriendlyEffectIndex (resource type: vpcf)
 	HParticleSystemDefinitionStrong m_iEnemyEffectIndex (resource type: vpcf)
 
 CTeamTrackedStatsEntity
+	network class
 	CitadelTeam_t m_nTeam
 
 CTeamplayRules
@@ -4746,6 +5662,7 @@ CTestEffect
 CTestPulseIO
 
 CTextureBasedAnimatable
+	network class
 	bool m_bLoop
 	float m_flFPS
 	HRenderTextureStrong m_hPositionKeys (resource type: vtex)
@@ -4760,6 +5677,7 @@ CTier3BossAbility
 CTimerEntity
 
 CTonemapController2
+	network class
 	float m_flAutoExposureMin
 	float m_flAutoExposureMax
 	float m_flExposureAdaptationSpeedUp
@@ -4787,6 +5705,7 @@ CTriggerDetectBulletFire
 CTriggerDetectExplosion
 
 CTriggerFan
+	network class
 	Vector m_vFanOriginOffset
 	Vector m_vDirection
 	bool m_bPushTowardsInfoTarget
@@ -4811,8 +5730,10 @@ CTriggerIcePathVolume
 CTriggerImpact
 
 CTriggerInvisVolume
+	network class
 
 CTriggerItemShop
+	network class
 	CCitadelMinimapComponent::Storage_t m_CCitadelMinimapComponent (class: CCitadelMinimapComponent; alias: CCitadelMinimapComponent; type alias: CCitadelMinimapComponent; user groups: CCitadelMinimapComponent)
 	string_t m_iszSoundName
 	int m_iLane
@@ -4834,14 +5755,17 @@ CTriggerMultiple
 CTriggerNeutralIdles
 
 CTriggerNeutralShield
+	network class
 
 CTriggerObscuredVolume
 
 CTriggerOnce
 
 CTriggerPassthroughFakeWall
+	network class
 
 CTriggerPhysics
+	network class
 	float m_gravityScale
 	float m_linearLimit
 	float m_linearDamping
@@ -4880,6 +5804,7 @@ CTriggerTeamBase
 CTriggerTeleport
 
 CTriggerTier3Phase2Shield
+	network class
 	int8 m_nNumEnemyPlayers
 
 CTriggerTrooperDamageReductionDetector
@@ -4887,12 +5812,15 @@ CTriggerTrooperDamageReductionDetector
 CTriggerTrooperDetector
 
 CTriggerVolume
+	network class
 
 CTrooperApproachHorizon
 
 CWaterBullet
+	network class
 
 CWorld
+	network class
 
 C_HeroPreview
 	CCitadelHeroComponent::Storage_t m_CCitadelHeroComponent (class: CCitadelHeroComponent; alias: CCitadelHeroComponent; type alias: CCitadelHeroComponent; user groups: CCitadelHeroComponent)
@@ -5041,6 +5969,7 @@ PlayerDataGlobal_t
 	bool m_bUltimateTrained
 	GameTime_t m_flUltimateCooldownStart (sent as: float32)
 	GameTime_t m_flUltimateCooldownEnd (sent as: float32)
+	float m_flUltimateStoppedCooldownRemaining
 	bool m_bHasRejuvenator
 	bool m_bHasRebirth
 	bool m_bFlaggedAsCheater

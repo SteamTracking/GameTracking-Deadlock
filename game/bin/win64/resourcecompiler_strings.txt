@@ -68,6 +68,7 @@
     lightmap_compute_block_gpu %d %d %.3f\n
     lightmap_export_packing_geometry_to_obj lightmap_packing_geometry_for_visualization -repack\n
     lightmap_export_packing_geometry_to_obj lightmap_packing_geometry_for_visualization_pre_repack\n
+    lightmap_image_consolidate_sh2_directional\n
     lightmap_image_consolidate_small_charts %d\n
     lightmap_image_dilate_over_invalid_jfa\n
     lightmap_image_encode_ahd\n
@@ -86,6 +87,8 @@
     lightmap_image_write_mean irradiance%s.exr\n
     lightmap_image_write_samplecount   samplecount.exr\n
     lightmap_image_write_sh2 sh2_dc%s.exr sh2_r%s.exr sh2_g%s.exr sh2_b%s.exr\n
+    lightmap_image_write_sh2 sh2_dc%s.exr\n
+    lightmap_image_write_sh2_lum sh2_lum%s.exr\n
     lightmap_image_write_sh_irradiance sh_irradiance%s.exr \n
     lightmap_load_block_gpu lightmap_info.dat %d\n
     lpv_box %f %f %f %f %f %f\n
@@ -14378,7 +14381,7 @@ $key:FloatBitmap_t
 1.0 - FractionalPart( A ) 
 1.0 outside
 1280x720
-12:01:05
+12:42:05
 14 (default)
 1:1: Tokens : ( PLUS | MINUS | MUL | DIV | COMMA | LPAREN | RPAREN | EQUALS | PERCENT | INT | FLOAT | ID | ML_COMMENT | SL_COMMENT | NL | WS );
 1:1: Tokens : ( T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | BOOLLITERAL | ID | INTEGERLITERAL | HEXINTEGERLITERAL | FLOATLITERAL | COMMENT | WS );
@@ -16076,9 +16079,9 @@ CPolygonMeshRenderData
 CPolygonMeshRenderData::BuildVertexAndIndexBuffers(1145): 
 CPolygonMeshRenderData::BuildVertexAndIndexBuffersForFaces(377): 
 CPolygonMeshRenderData_Model
-CPrecomputedShadowmapBaker::CreateShadowmapArray(9712): 
-CPrecomputedShadowmapBaker::CreateShadowmapRT(9690): 
-CPrecomputedShadowmapBaker::RenderWorldFromView(9907): 
+CPrecomputedShadowmapBaker::CreateShadowmapArray(9773): 
+CPrecomputedShadowmapBaker::CreateShadowmapRT(9751): 
+CPrecomputedShadowmapBaker::RenderWorldFromView(9968): 
 CPulseArraylib
 CPulseArraylib::ArrayAppend
 CPulseArraylib::ArrayConcatenate
@@ -21705,6 +21708,7 @@ Pack Charts
 Packed data buffer overflow: %d > %d\n
 Packed store %s with refcount > 0.\n
 Packing %d UV charts onto atlas...\n
+Packing %i precomputed shadowmaps into a %ix%i atlas\n
 Packing 'flat' allows only 'sequence-rgba'!\n
 Packing error: failed to pack images!\n
 Packing morph data...\n
@@ -22438,7 +22442,9 @@ ResourceCompiler/WorldRendererBuilder/AggregateInstancingMeshlets
 ResourceCompiler/WorldRendererBuilder/AggregateRayTraceProxy
 ResourceCompiler/WorldRendererBuilder/AggregateRayTraceProxy/Enabled
 ResourceCompiler/WorldRendererBuilder/AggregateRayTraceProxy/SimplifyError
+ResourceCompiler/WorldRendererBuilder/BakePrecomputedDepthPyramids
 ResourceCompiler/WorldRendererBuilder/BakePrecomputedShadows
+ResourceCompiler/WorldRendererBuilder/BakePrecomputedShadowsForDirectionalLights
 ResourceCompiler/WorldRendererBuilder/BakePropsWithExtraVertexStreams
 ResourceCompiler/WorldRendererBuilder/BakePropsWithNonUniformScale
 ResourceCompiler/WorldRendererBuilder/ComputeVertexAlbedo
@@ -22451,6 +22457,8 @@ ResourceCompiler/WorldRendererBuilder/MinimumVolumePerClusteredMesh
 ResourceCompiler/WorldRendererBuilder/PrecomputedDepthPyramidMaxLuminaireSamples
 ResourceCompiler/WorldRendererBuilder/PrecomputedDepthPyramidResolutionDefault
 ResourceCompiler/WorldRendererBuilder/PrecomputedDepthPyramidResolutionDirectional
+ResourceCompiler/WorldRendererBuilder/PrecomputedShadowmapAtlas
+ResourceCompiler/WorldRendererBuilder/PrecomputedShadowmapAtlasBorder
 ResourceCompiler/WorldRendererBuilder/PrecomputedShadowmapEncodingDirectional
 ResourceCompiler/WorldRendererBuilder/PrecomputedShadowmapResolutionDefault
 ResourceCompiler/WorldRendererBuilder/PrecomputedShadowmapResolutionDirectional
@@ -23756,6 +23764,7 @@ Too many flex types, max %d\n
 Too many links
 Too many open files
 Too many open files in system
+Too many precomputed shadowmaps (%d) for a %dx%d atlas at %d texels each, dropping %d of them\n
 Too many simultaneously active particle systems!\n
 Too many streans of this type (%s:%d)
 Took %.3f seconds to create selection set for hidden nodes\n
@@ -26745,6 +26754,7 @@ directional_irradiance.exr
 directional_irradiance_sh2_b
 directional_irradiance_sh2_dc
 directional_irradiance_sh2_g
+directional_irradiance_sh2_lum
 directional_irradiance_sh2_r
 directmixlevel
 directory services (X.500)
@@ -28285,6 +28295,7 @@ lightmapres
 lightmaps
 lightmaps/depth_pyramid_%s_%08x.vtex
 lightmaps/depth_pyramid_%s_%08x_%i.vtex
+lightmaps/precomputed_shadowmap_atlas.vtex
 lightmaps/shadowmap_%s_%08x.vtex
 lightmaps/shadowmap_%s_%08x_%i.vtex
 lightmaps/shadowmap_coarse_%s_%08x.vtex
@@ -29766,7 +29777,7 @@ pbeWithSHA1And40BitRC2-CBC
 pbeWithSHA1And40BitRC4
 pbeWithSHA1AndDES-CBC
 pbeWithSHA1AndRC2-CBC
-pc64 Oct 16 2026 12:02:02
+pc64 Oct 20 2026 12:41:47
 pcPathLengthConstraint
 peer did not return a certificate
 peer does not accept heartbeats
@@ -29915,6 +29926,7 @@ precomputed_depth_pyramid_bounds_min
 precomputed_pyramid
 precomputed_shadowmap
 precomputed_shadowmap_%i
+precomputed_shadowmap_atlas_rect_%i
 precomputed_shadowmap_coarse
 precomputed_shadowmap_residual
 precomputed_vis_clusters
@@ -30702,6 +30714,7 @@ sh1_r
 sh2_b.exr
 sh2_dc.exr
 sh2_g.exr
+sh2_lum.exr
 sh2_r.exr
 sha-256
 sha-384

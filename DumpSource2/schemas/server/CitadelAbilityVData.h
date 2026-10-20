@@ -63,12 +63,14 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	float32 m_flBossDamageScale; // = 1
 	bool m_bShowTargetingPreviewWhileChanneling;
 	bool m_bShowTargetingPreviewWhileCasting;
+	bool m_bAffectedByRushMovementTimeScale;
 	// MPropertyStartGroup = ""
 	// MPropertyFriendlyName = "Weapon Infos"
 	// MPropertyDescription = "Weapon infos keyed by context. The "primary" context is what GetWeaponInfoVData() returns by default."
 	CUtlOrderedMap< CGlobalSymbol, CCitadelWeaponInfo > m_mapWeaponInfos;
-	// MPropertyFriendlyName = "Projectile Info"
-	ProjectileInfo_t m_projectileInfo; // = { "m_AutoProjectileModifier": {  }, "m_DetonateSound": "", "m_HitSound": "", "m_HitTargetSound": "", "m_HitWorldSound": "", "m_LoopingSound": "", "m_WarningSound": "", "m_bAllowMotionDuringNoCollisionDuration": false, "m_bHideWarningParticle": false, "m_customModel": "", "m_eProjectileShape": "Sphere", "m_flBulletOnlyTriggerRadius": 0, "m_flCapsulePhysicsRadius": 1.5, "m_flCapsuleTriggerRadius": 1.5, "m_flElasticity": 0, "m_flFriction": 0, "m_flGravityScale": 1, "m_flMaxLinearRange": 0, "m_flNoCollisionDuration": 0, "m_flPhysicsRadius": 1.5, "m_flProjectileModelScale": 1, "m_flSpeed": 3500, "m_flTrackingDampingCoefficient": 0, "m_flTrackingDuration": 0, "m_flTrackingEndTime": 0, "m_flTrackingStartTime": 0, "m_flTriggerRadius": 1.5, "m_flUpSpeed": 100, "m_flVerticalAimBias": 0, "m_nBehaviors": "", "m_particle": "", "m_vecCapsulePhysicsCenter1": [ 0, 0, 0 ], "m_vecCapsulePhysicsCenter2": [ 0, 0, 0 ], "m_vecCapsuleTriggerCenter1": [ 0, 0, 0 ], "m_vecCapsuleTriggerCenter2": [ 0, 0, 0 ], "m_warningParticle": "" }
+	// MPropertyFriendlyName = "Projectile Infos"
+	// MPropertyDescription = "Projectile infos keyed by context. The "primary" context is what GetProjectileInfoVData() returns by default."
+	CUtlOrderedMap< CGlobalSymbol, CEmbeddedSubclassGeneric< 0 > > m_mapProjectileInfos;
 	// MPropertyFriendlyName = "Deployment Info"
 	DeploymentInfo_t m_deploymentInfo; // = { "m_bCheckPlayerFit": false, "m_bDownCheckIgnoreLos": false, "m_bGroundCheck": false, "m_bPlaceFlat": false, "m_bPlaceNormalToSurface": false, "m_bPointTrace": false, "m_bRequiresUpNormal": false, "m_flFlatYawOffset": 0, "m_flGroundCheckHeightOffset": -1, "m_flGroundCheckHeightOffsetDown": -1, "m_flModelVerticalPlacementScaleOffset": 0, "m_flPreviewModelScale": 1, "m_previewModel": "", "m_previewParticle": "", "m_strExraBodygroup": "", "m_strPreviewClass": "citadel_deployable_preview", "m_strPreviewParticleEffectConfig": "" }
 	// MPropertyStartGroup = ""

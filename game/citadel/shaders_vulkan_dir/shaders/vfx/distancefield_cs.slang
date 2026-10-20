@@ -116,10 +116,10 @@ CS
 	    float Visualize_DistanceField_t_1_m0 : packoffset(c0);
 	};
 	
-	ByteAddressBuffer g_tlas : register(t59, space0);
-	ByteAddressBuffer g_instances : register(t58, space0);
-	ByteAddressBuffer g_models : register(t57, space0);
-	Texture3D<float4> g_tAtlas : register(t56, space0);
+	ByteAddressBuffer g_tlas : register(t57, space0);
+	ByteAddressBuffer g_instances : register(t56, space0);
+	ByteAddressBuffer g_models : register(t55, space0);
+	Texture3D<float4> g_tAtlas : register(t54, space0);
 	SamplerState AddressU_Clamp_AddressV_Clamp_AddressW_Clamp_Filter_MinMagMipLinear : register(s21, space0);
 	RWTexture2DArray<float4> g_tVisualizeOutput : register(u160, space0);
 	

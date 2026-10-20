@@ -1,6 +1,10 @@
-class ProjectileInfo_t
+// MHasKV3TransferPolymorphicClassname
+class CCitadelProjectileVData : public CEntitySubclassVDataBase
 {
 	ProjectileBehaviorFlag_t m_nBehaviors;
+	// MPropertyStartGroup = "Targeting"
+	CITADEL_UNIT_TARGET_TYPE m_nTargetTypes; // = "CITADEL_UNIT_TARGET_ALL_ENEMY"
+	CITADEL_UNIT_TARGET_FLAGS m_nTargetFlags;
 	// MPropertyStartGroup = "Physics"
 	float32 m_flGravityScale; // = 1
 	float32 m_flFriction;
@@ -8,6 +12,7 @@ class ProjectileInfo_t
 	float32 m_flSpeed; // = 3500
 	float32 m_flUpSpeed; // = 100
 	float32 m_flMaxLinearRange;
+	float32 m_flArmTime;
 	float32 m_flVerticalAimBias;
 	float32 m_flNoCollisionDuration;
 	// MPropertySuppressExpr = "m_flNoCollisionDuration == 0"
