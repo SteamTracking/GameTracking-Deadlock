@@ -15,6 +15,7 @@ class CCitadel_Modifier_ItemWalkBackVData : public CCitadelModifierVData
 	float32 m_flVerticalOffset; // = 16
 	float32 m_flTolerance; // = 20
 	float32 m_flRepathTime; // = 5
+	float32 m_flPathHeightPenaltyScale; // = 0.02
 	float32 m_flWaitTimeLimit; // = 20
 	float32 m_flWaitTimeLimitOverheld;
 	float32 m_flCheckPlayerRate; // = 0.5
