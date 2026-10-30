@@ -762,3 +762,33 @@ CitadelHudModifiers_Entry
 	box-shadow: inset #ffffffa0 0px 0px 4px 1px;
 }
 
+.hud_bar_pulse #split_text_container,.hud_bar_pulse #bar_container
+{
+	animation-name: HudBarPulse;
+	animation-duration: 0.8s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+}
+
+@keyframes 'HudBarPulse'
+{
+	0%
+	{
+		pre-transform-scale2d: 1.0;
+		brightness: 1.0;
+	}
+	
+	50%
+	{
+		pre-transform-scale2d: 1.08;
+		brightness: 1.8;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 1.0;
+		brightness: 1.0;
+	}
+	
+}
+
