@@ -553,6 +553,9 @@ citadel_enable_duplicate_heroes (gamedll cheat release client_can_execute)
 citadel_enable_nearby_capture_point (gamedll cheat release)
 	Enables the first capture point found within 20m
 
+citadel_event_state_dump (gamedll cheat release)
+	Prints the active events and the map overrides applied at load
+
 citadel_exonerate_account (clientdll release)
 	<Account ID> Clear recent cheat reports on this account.
 
@@ -588,6 +591,9 @@ citadel_get_rp (developmentonly clientdll)
 
 citadel_give_gold (gamedll cheat client_can_execute)
 	<gold> [unsecure=0|1] Give gold value to all players
+
+citadel_give_halloween_candy (gamedll cheat release)
+	Gives you candy for the eat Halloween candy ability. Usage: citadel_give_halloween_candy <count>
 
 citadel_give_permanent_buffs (gamedll cheat release)
 	Gives you N random breakable permanent buffs at once, the same way a Sinner's Sacrifice jackpot does. Usage: citadel_give_permanent_buffs <count>
@@ -2103,11 +2109,20 @@ ents (developmentonly gamedll defensive)
 escape (release clientcmd_can_execute)
 	Escape key pressed.
 
+event_grant_action (developmentonly clientdll)
+	<event id> <action id> [quantity] - Grant an event action
+
 event_grant_points (developmentonly clientdll)
 	Reset all state on your account relating to the given event id
 
+event_override_action (developmentonly clientdll)
+	<event id> <action id> [action score] - Set a clientside override of an event action. -1 to remove the override.
+
 event_override_clear (developmentonly clientdll)
 	<event id> - Clear any clientside overrides for an event
+
+event_override_level (developmentonly clientdll)
+	<event id> [level] - Set a clientside override of the level value for an event. -1 to remove the override.
 
 event_override_owned (developmentonly clientdll)
 	<event id> [owned] - Set a clientside override of whether an event is owned. -1 for not owned, 1 for owned, 0 for no override.
@@ -2120,6 +2135,12 @@ event_override_premium_points (developmentonly clientdll)
 
 event_reload_schema (linked_concommand developmentonly gamedll clientdll defensive)
 	<no description>
+
+event_reset_action (developmentonly clientdll)
+	<event id> <action id> [remove audit]
+
+event_reset_action_range (developmentonly clientdll)
+	<event id> <start action id> <end action id> [remove audit]
 
 event_reset_state (developmentonly clientdll)
 	Reset all state on your account relating to the given event id

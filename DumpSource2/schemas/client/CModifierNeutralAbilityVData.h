@@ -20,4 +20,8 @@ class CModifierNeutralAbilityVData : public CCitadelModifierVData
 	CEmbeddedSubclass< CCitadelModifier > m_AutoChannelModifier;
 	// MPropertyDescription = "Seconds to keep the cast delay modifier alive past the end of the cast delay. 0 is default behavior."
 	float32 m_flAutoCastDelayKillDelay;
+	// MPropertyStartGroup = "Animation"
+	ENeutralNPCAction m_eAG2PreCastAction; // = "EAbilityCharge"
+	ENeutralNPCAction m_eAG2CastCompleteAction; // = "EAbilityCastComplete"
+	ENeutralNPCAction m_eAG2ChannelAction; // = "EAbilityChannel"
 };

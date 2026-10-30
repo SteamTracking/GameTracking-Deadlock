@@ -3,6 +3,7 @@ class CNPC_MidBossVData : public CAI_CitadelNPCVData
 {
 	int32 m_iStartingHealth; // = 6000
 	int32 m_iHealthGainPerMinute; // = 325
+	float32 m_flLowHealthSoundHealthFraction; // = 0.2
 	float32 m_flAggroDuration; // = 4
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_DyingSmallExplosion;

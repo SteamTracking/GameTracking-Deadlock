@@ -26,6 +26,8 @@ class CitadelAbilityProperty_t
 	EStatsType m_eDisplayType; // = "EStatsCount"
 	// MPropertyDescription = "Overrides the max decimal places shown for this property. -1 uses the display type's precision."
 	int32 m_nMaxDecimalsDisplayed; // = -1
+	// MPropertyDescription = "Overrides the max decimal places shown for this property's stat scaling multipliers. -1 picks based on the multiplier's size."
+	int32 m_nMaxScaleDecimalsDisplayed; // = -1
 	ModifierValueDisplayUnits_t m_eDisplayUnits; // = "EDisplayUnit_Normal"
 	// MPropertyDescription = "When true, we don't show this ability property anywhere in the UI."
 	bool m_bIsHidden;

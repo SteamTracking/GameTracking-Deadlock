@@ -30,6 +30,8 @@ class CCitadel_Ability_Ratking_ScrapGrenadeVData : public CitadelAbilityVData
 	float32 m_flMeleeImpulseLight; // = 750
 	float32 m_flMeleeImpulseHeavy; // = 1000
 	float32 m_flMeleeImpulseUpScale; // = 0.45
+	// MPropertyDescription = "Meleeing a grenade with a running fuse pushes the detonation out to at least this many seconds from the hit"
+	float32 m_flMeleeMinFuseRemaining; // = 0.4
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ShrapnelTracer;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_BounceParticle;

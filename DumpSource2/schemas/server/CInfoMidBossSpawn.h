@@ -1,3 +1,0 @@
-class CInfoMidBossSpawn : public CServerOnlyPointEntity
-{
-};

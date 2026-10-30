@@ -863,17 +863,43 @@ CitadelPostGameScoreboardNew
 	background-size: contain;
 	wash-color: offWhite;
 	transition-property: brightness, pre-transform-scale2d;
-	transition-duration: 0.08s;
+	transition-duration: 0.3s;
 	transition-timing-function: ease-in-out;
 	background-image: url("s2r://panorama/images/post_game/cursor_commend_psd.vtex");
 	pre-transform-scale2d: 0.8;
 	saturation: 0;
 }
 
-#CommendPlayerButton:active
+@keyframes 'CommendTrigger'
 {
-	sound: "UI.CommendConfirmation";
-	pre-transform-scale2d: 0.2;
+	0%
+	{
+		pre-transform-rotate2d: -5deg;
+	}
+	
+	50%
+	{
+		pre-transform-rotate2d: 5deg;
+	}
+	
+	100%
+	{
+		pre-transform-rotate2d: -5deg;
+	}
+	
+}
+
+.CommendContainer
+{
+	flow-children: none;
+}
+
+.CommendContainer.CommendTrigger
+{
+	animation-name: CommendTrigger;
+	animation-duration: .24s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: 2;
 }
 
 .CanCommendPlayers .localplayer #PlayerCommendContainer,.CanCommendPlayers .localplayer.PlayerSnippet:hover #PlayerCommendContainer,.CanCommendPlayers .localplayer.Selected #PlayerCommendContainer

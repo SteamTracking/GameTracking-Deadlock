@@ -9,6 +9,7 @@ class CCitadel_Ability_Chessmaster_QueenVData : public CitadelAbilityVData
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_AOEExplodeParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_AreaWarningEffect;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_TileExplodeParticle;
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_TilePreviewParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_PostExplodeParticle;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_AOEExplodeSound;

@@ -7,5 +7,4 @@ class EventGrantDefinition_Points_t : public EventGrantDefinition_t
 	uint64 m_unAuditData;
 	EEvent m_eEventID; // = "EVENT_ID_NONE"
 	bool m_bRequireEventOwnership; // = true
-	bool m_bRewardSeasonalPoints;
 };

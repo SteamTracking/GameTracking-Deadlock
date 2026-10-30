@@ -17,5 +17,6 @@ class CCitadel_Ability_Deadpack_Rocketeer : public CCitadelBaseAbility
 	bool m_bDiveStraightDown;
 	float32 m_flCastDelayFrac;
 	GameTime_t m_tHeatDecayStartTime;
+	bool m_bJetpackDisabledUntilGrounded;
 	ERocketeerState m_eState;
 };

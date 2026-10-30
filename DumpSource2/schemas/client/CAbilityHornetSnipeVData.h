@@ -11,9 +11,6 @@ class CAbilityHornetSnipeVData : public CitadelAbilityVData
 	CEmbeddedSubclass< CCitadelModifier > m_GlowEnemyModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_KillCheckModifier;
 	// MPropertyStartGroup = "Sounds"
-	CSoundEventName m_strSnipeImpactSound;
-	CSoundEventName m_strZoomIn;
-	CSoundEventName m_strZoomOut;
 	CSoundEventName m_strFullyChargedSound;
 	CSoundEventName m_strBeamPointClosestLoopSound;
 	// MPropertyStartGroup = "+Snipe Properties"

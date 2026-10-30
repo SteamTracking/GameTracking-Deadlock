@@ -20,6 +20,7 @@ class CCitadelAbilityFlyingStrikeVData : public CCitadelYamatoBaseVData
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CBaseModifier > m_SlowModifier;
 	CEmbeddedSubclass< CBaseModifier > m_GrappleTargetModifier;
+	CEmbeddedSubclass< CBaseModifier > m_HomingTargetModifier;
 	CEmbeddedSubclass< CBaseModifier > m_BuffModifier;
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_LeapParticle;

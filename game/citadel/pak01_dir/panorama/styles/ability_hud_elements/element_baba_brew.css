@@ -183,7 +183,6 @@
 
 .brew_barrier #group_effects Label,.brew_silence #group_effects Label,.brew_fire #group_effects Label
 {
-	visibility: visible;
 	max-width: 120px;
 	max-height: 30px;
 	text-overflow: shrink;
@@ -197,67 +196,51 @@
 	transition-duration: 0.2s;
 }
 
-#group_effects #bar_container_barrier #bar_fg
+.slot1_barrier #bar_container_slot1 #bar_fg,.slot2_barrier #bar_container_slot2 #bar_fg,.slot3_barrier #bar_container_slot3 #bar_fg
 {
 	background-color: baba_barrier_brew_color;
 }
 
-.brew_barrier #group_effects #bar_container_barrier
+.slot1_barrier #bar_container_slot1 .label_barrier,.slot2_barrier #bar_container_slot2 .label_barrier,.slot3_barrier #bar_container_slot3 .label_barrier
 {
-	transform: translateY(0px);
+	visibility: visible;
 }
 
-.brew_barrier #group_effects #bar_container_barrier #bar_bg
-{
-	background-color: #132131ee;
-}
-
-#group_effects #bar_container_silence #bar_fg
+.slot1_silence #bar_container_slot1 #bar_fg,.slot2_silence #bar_container_slot2 #bar_fg,.slot3_silence #bar_container_slot3 #bar_fg
 {
 	background-color: spiritBrightColor;
 }
 
-.brew_silence #group_effects #bar_container_silence
+.slot1_silence #bar_container_slot1 .label_silence,.slot2_silence #bar_container_slot2 .label_silence,.slot3_silence #bar_container_slot3 .label_silence
 {
-	transform: translateY(0px);
+	visibility: visible;
 }
 
-.brew_silence #group_effects #bar_container_silence #bar_bg
-{
-	background-color: #132131ee;
-}
-
-#group_effects #bar_container_fire #bar_fg
+.slot1_fire #bar_container_slot1 #bar_fg,.slot2_fire #bar_container_slot2 #bar_fg,.slot3_fire #bar_container_slot3 #bar_fg
 {
 	background-color: baba_fire_brew_color;
 }
 
-.brew_fire #group_effects #bar_container_fire
+.slot1_fire #bar_container_slot1 .label_fire,.slot2_fire #bar_container_slot2 .label_fire,.slot3_fire #bar_container_slot3 .label_fire
 {
-	transform: translateY(0px);
+	visibility: visible;
 }
 
-.brew_fire #group_effects #bar_container_fire #bar_bg
+.slot1_active #bar_container_slot1 #bar_bg,.slot2_active #bar_container_slot2 #bar_bg,.slot3_active #bar_container_slot3 #bar_bg
 {
 	background-color: #132131ee;
 }
 
-.brew_barrier.brew_locked #group_effects #bar_container_silence,.brew_barrier.brew_locked #group_effects #bar_container_fire
+.brew_locked #group_effects .progress_bar
 {
 	opacity: 0.2;
 	saturation: 0.2;
 }
 
-.brew_silence.brew_locked #group_effects #bar_container_barrier,.brew_silence.brew_locked #group_effects #bar_container_fire
+.brew_locked.slot1_active #bar_container_slot1,.brew_locked.slot2_active #bar_container_slot2,.brew_locked.slot3_active #bar_container_slot3
 {
-	opacity: 0.2;
-	saturation: 0.2;
-}
-
-.brew_fire.brew_locked #group_effects #bar_container_silence,.brew_fire.brew_locked #group_effects #bar_container_barrier
-{
-	opacity: 0.2;
-	saturation: 0.2;
+	opacity: 1;
+	saturation: 1;
 }
 
 @keyframes 'locked_pulse'

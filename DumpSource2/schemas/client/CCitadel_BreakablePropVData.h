@@ -64,6 +64,8 @@ class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 	// MPropertyDescription = "Also require being visible on the minimap"
 	// MPropertySuppressExpr = "m_flOutlineRadius <= 0"
 	bool m_bRequireVisibleOnMinimapForOutline;
+	// MPropertyDescription = "Added an aura that gives nearby heroes a melee hint state."
+	CEmbeddedSubclass< CCitadelModifier > m_NearbyAuraModifier;
 	// MPropertyDescription = "What color to glow"
 	// MPropertySuppressExpr = "m_flOutlineRadius <= 0"
 	Color m_colorOutline;
@@ -72,11 +74,18 @@ class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 	// MPropertyProvidesEditContextString = "ToolEditContext_ID_VMDL"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeCModel > > m_hModel;
 	float32 m_flModelScale; // = 1
+	// MPropertyDescription = "Offset from the map-placed position, in the prop's local space."
+	// MPropertyFriendlyName = "Local Offset"
+	Vector m_vecLocalOffset;
+	// MPropertyDescription = "Rotation relative to the map-placed angles, as Pitch / Yaw / Roll."
+	// MPropertyFriendlyName = "Local Rotation"
+	QAngle m_angLocalRotation;
 	// MPropertyFriendlyName = "Material Group"
 	CModelMaterialGroupName m_sMaterialGroupName;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ambientParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_breakParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_breakRollFailParticle;
+	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_damageParticle;
 	// MPropertyStartGroup = "Audio"
 	// MPropertyDescription = "3D Sound of the prop breaking"
 	CSoundEventName m_sBreakSound;
@@ -91,6 +100,8 @@ class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 	// MPropertyDescription = "3D ambient sound that plays while the prop is alive"
 	CSoundEventName m_sAmbientSound;
 	// MPropertyStartGroup = "Respawn Behavior"
+	// MPropertyDescription = "Use our initial spawn and respawn times instead of the ones from our spawn group in generic data"
+	bool m_bUseVDataSpawnTimes;
 	float32 m_flInitialSpawnTime; // = 180
 	// MPropertyDescription = "In test maps, use this as our initial spawn time"
 	float32 m_flInitialSpawnTimeTest; // = 1
@@ -98,6 +109,8 @@ class CCitadel_BreakablePropVData : public CEntitySubclassVDataBase
 	float32 m_flRespawnTime; // = 180
 	// MPropertyDescription = "In test maps, use this as our respawn time"
 	float32 m_flRespawnTimeTest; // = 10
+	// MPropertyDescription = "Spawn this breakable in Street Brawl, initially at 0s"
+	bool m_bSpawnInStreetBrawl;
 	// MPropertyStartGroup = "UI"
 	// MPropertyDescription = "CSS class to apply to this breakable's minimap icon while alive"
 	CUtlString m_strMinimapCSSClassAlive;

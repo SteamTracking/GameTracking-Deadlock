@@ -67,4 +67,6 @@ enum CitadelUserMessageIds : uint32_t
 	k_EUserMsg_LocalLobby = 371,
 	k_EUserMsg_SoulBagPickup = 372,
 	k_EUserMsg_HeroReleaseVote = 373,
+	k_EUserMsg_ItemAcquired = 374,
+	k_EUserMsg_MapTargetingCursor = 375,
 };

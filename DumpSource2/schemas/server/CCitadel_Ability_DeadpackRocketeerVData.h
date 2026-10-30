@@ -23,6 +23,7 @@ class CCitadel_Ability_DeadpackRocketeerVData : public CitadelAbilityVData
 	// MPropertyStartGroup = "Jetpacking Slows"
 	float32 m_flSlowEffectivenessLateral; // = 1
 	float32 m_flSlowEffectivenessVertical; // = 1
+	float32 m_flSlowEffectivenessMovementAbilitySilenceFrac; // = 2
 	// MPropertyStartGroup = "Movement"
 	float32 m_flAirDrag;
 	float32 m_flAirDashDistancePct;

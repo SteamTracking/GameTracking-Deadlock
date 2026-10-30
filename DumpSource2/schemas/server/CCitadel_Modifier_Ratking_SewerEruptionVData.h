@@ -11,6 +11,8 @@ class CCitadel_Modifier_Ratking_SewerEruptionVData : public CCitadelModifierVDat
 	float32 m_flExplosionHalfHeightMeters; // = 10
 	// MPropertyDescription = "Upward launch speed of anyone caught in the eruption."
 	float32 m_flTossSpeed; // = 500
+	// MPropertyDescription = "Gravity multiplier on anyone caught in the eruption until they land."
+	float32 m_flTossGravityScale; // = 1
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_AnticipationParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ExplodeParticle;

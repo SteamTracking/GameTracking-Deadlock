@@ -597,6 +597,19 @@ Label.ability_key
 	border-radius: 3px 3px 0px 0px;
 }
 
+.item_seasonal .bonusCounter
+{
+	background-color: none;
+	color: offWhite;
+	color: #ffcf7b;
+	border-radius: 0px;
+	text-shadow: 0px 0px 0px 3.0 offBlack;
+	background-color: offBlack&ee;
+	padding: 0px 10px;
+	font-size: 18px;
+	border-radius: 3px;
+}
+
 .hasBonusCounter .bonusCounter
 {
 	opacity: 1;
@@ -608,6 +621,7 @@ Label.ability_key
 	opacity: 0.3;
 	color: rgba(200, 200, 200, 0.95);
 	text-shadow: 0px 0px 0px 5.0 offBlack;
+	transform: rotateZ(0deg);
 }
 
 @keyframes 'FlashBonusCounter'
@@ -633,6 +647,19 @@ Label.ability_key
 {
 	animation-name: FlashBonusCounter;
 	animation-duration: 0.8s;
+}
+
+.item_seasonal .bonusCounter,.item_seasonal.bonusCounterIncreased .bonusCounter
+{
+	animation-name: UIGroove1;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-frame-time: 0.5s;
+}
+
+.gShopOpen .item_seasonal .bonusCounter
+{
+	visibility: collapse;
 }
 
 .cooling_down #cooldown_mask,.ability_not_ready #cooldown_mask

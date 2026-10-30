@@ -291,6 +291,9 @@ CCitadelControlPointTrigger
 
 CCitadelEconItemContainer
 
+CCitadelEventState
+	EEvent m_vecActiveEvents
+
 CCitadelFamiliarClonePlayerPawn
 	include by name: m_pMovementServices
 	var type overrides: m_pMovementServices CCitadelFamiliarClone_MovementServices
@@ -831,6 +834,7 @@ CCitadel_Ability_Deadpack_Rocketeer
 	bool m_bDiveStraightDown
 	float m_flCastDelayFrac
 	GameTime_t m_tHeatDecayStartTime (sent as: float32)
+	bool m_bJetpackDisabledUntilGrounded
 	ERocketeerState m_eState
 
 CCitadel_Ability_Deadpack_Ultimate
@@ -1214,6 +1218,7 @@ CCitadel_Ability_Mirage_FireBeetles
 CCitadel_Ability_Mirage_Teleport
 	EHANDLE m_hTarget (sent as: ehandle)
 	GameTime_t m_tTeleportCompletedTime (sent as: float32)
+	GameTime_t m_tLastLandedTime (sent as: float32)
 	VectorWS m_vTargetPosition
 	QAngle m_vTargetAngles
 
@@ -2078,6 +2083,8 @@ CCitadel_Omnicharge_Pendant
 
 CCitadel_Pickup_ArtistDrawing
 
+CCitadel_Pickup_HalloweenCandy
+
 CCitadel_Priest_SlideTrap
 	float m_flRangeAtCast
 	bool m_bArmed
@@ -2119,6 +2126,9 @@ CCitadel_Projectile_WebWall
 
 CCitadel_Ratking_Standard
 	CHandle< CCitadelBaseAbility> m_hAbility (sent as: ehandle)
+
+CCitadel_SeasonalAbility_EatHalloweenCandy
+	int m_nCandyCount
 
 CCitadel_ShopProp
 	bool m_bIsShopOpen
@@ -3239,6 +3249,8 @@ C_Citadel_BreakableProp
 
 C_Citadel_BreakableProp_Hideout
 
+C_Citadel_BreakableProp_PunchableTroll
+
 C_Citadel_CatAnimating
 
 C_Citadel_DeployablePreview
@@ -3313,7 +3325,7 @@ C_Citadel_Pickup_Ability
 	int m_nGoldCost
 	bool m_bShowGoldCostInUI
 
-C_Citadel_Pickup_AssignedGold
+C_Citadel_Pickup_AssignedCurrencies
 
 C_Citadel_Pickup_Currency
 	int m_nCurrencyAmount

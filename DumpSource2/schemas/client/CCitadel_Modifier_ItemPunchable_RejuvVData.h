@@ -1,8 +1,6 @@
 // MHasKV3TransferPolymorphicClassname
 class CCitadel_Modifier_ItemPunchable_RejuvVData : public CCitadelModifierVData
 {
-	int32 m_iRejuvBossKill01; // = 3
-	int32 m_iRejuvBossKill02; // = 3
 	float32 m_flPhysicsRadius; // = 40
 	float32 m_flMaxDistForHeal; // = 1400
 	// MPropertyStartGroup = "Visuals"

@@ -18,6 +18,9 @@ class CCitadel_Ability_Baba_HexingBrew_VData : public CitadelAbilityVData
 	Color m_FuseNoColor;
 	Color m_FuseFireColor; // = [ 220, 50, 50 ]
 	Color m_FuseBarrierColor; // = [ 70, 100, 150 ]
+	Color m_TargetingFireColor; // = [ 225, 63, 63 ]
+	Color m_TargetingBarrierColor; // = [ 94, 173, 156 ]
+	Color m_TargetingSilenceColor; // = [ 206, 144, 255 ]
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strBrewLockSound;
 	CSoundEventName m_strBrewUnlockSound;

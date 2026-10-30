@@ -724,6 +724,10 @@ CCitadelEconItemContainer
 
 CCitadelEnergyTower
 
+CCitadelEventState
+	network class
+	EEvent m_vecActiveEvents
+
 CCitadelFamiliarClonePlayerPawn
 	include by name: m_pMovementServices
 	var type overrides: m_pMovementServices CCitadelFamiliarClone_MovementServices
@@ -1622,6 +1626,7 @@ CCitadel_Ability_Deadpack_Rocketeer
 	bool m_bDiveStraightDown
 	float m_flCastDelayFrac
 	GameTime_t m_tHeatDecayStartTime (sent as: float32)
+	bool m_bJetpackDisabledUntilGrounded
 	ERocketeerState m_eState
 
 CCitadel_Ability_Deadpack_Ultimate
@@ -2113,6 +2118,7 @@ CCitadel_Ability_Mirage_Teleport
 	network class
 	EHANDLE m_hTarget (sent as: ehandle)
 	GameTime_t m_tTeleportCompletedTime (sent as: float32)
+	GameTime_t m_tLastLandedTime (sent as: float32)
 	VectorWS m_vTargetPosition
 	QAngle m_vTargetAngles
 
@@ -3093,6 +3099,9 @@ CCitadel_BreakableProp
 CCitadel_BreakableProp_Hideout
 	network class
 
+CCitadel_BreakableProp_PunchableTroll
+	network class
+
 CCitadel_CatAnimating
 	network class
 
@@ -3408,7 +3417,7 @@ CCitadel_Pickup_Ability
 CCitadel_Pickup_ArtistDrawing
 	network class
 
-CCitadel_Pickup_AssignedGold
+CCitadel_Pickup_AssignedCurrencies
 	network class
 
 CCitadel_Pickup_Currency
@@ -3418,6 +3427,9 @@ CCitadel_Pickup_Currency
 CCitadel_Pickup_Gold
 	network class
 	int m_iGoldReward
+
+CCitadel_Pickup_HalloweenCandy
+	network class
 
 CCitadel_Pickup_Health
 	network class
@@ -3530,6 +3542,10 @@ CCitadel_Ratking_Standard
 
 CCitadel_RestorativeGooCube
 	network class
+
+CCitadel_SeasonalAbility_EatHalloweenCandy
+	network class
+	int m_nCandyCount
 
 CCitadel_Shield
 	include by name: m_fFlags
@@ -4329,8 +4345,6 @@ CInfoLadderDismount
 	network class
 
 CInfoLandmark
-
-CInfoMidBossSpawn
 
 CInfoOffscreenPanoramaTexture
 	network class

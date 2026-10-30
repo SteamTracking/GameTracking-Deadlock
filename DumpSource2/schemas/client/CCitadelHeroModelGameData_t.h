@@ -17,6 +17,10 @@ class CCitadelHeroModelGameData_t
 	float32 m_flTurnDuration; // = 1
 	// MPropertyDescription = "These are the unique aims of this hero.  If one is not specified, the "idle" aim will be used instead."
 	EHeroAimAnimSet m_eUniqueAims; // = "Crouch|InAir|Run|CrouchRun|Slide"
+	// MPropertyDescription = "'run_to_stop' will not trigger until we've gone over the bigger speed then fall under the smaller speed."
+	CRangeFloat m_runToStopSpeedRange; // = [ 70, 85 ]
+	// MPropertyDescription = "'run_to_stop' will not trigger while crouching until we've gone over the bigger speed then fall under the smaller speed."
+	CRangeFloat m_runToStopCrouchSpeedRange; // = [ 70, 85 ]
 	// MPropertyStartGroup = "+Physics / Movement"
 	float32 m_flStepHeight; // = 32
 	// MPropertyDescription = "Size of the capsule"

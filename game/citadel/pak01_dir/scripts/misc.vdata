@@ -325,6 +325,321 @@
 		m_sMeleeDamageSound = soundevent:"Tough.Crate.Prop.Impact"
 		m_strLocInteractableString = "#Citadel_Hideout_HeavyCrate"
 	}
+	citadel_breakable_prop_candy_cauldron = 
+	{
+		_class = "citadel_breakable_prop"
+		m_flRespawnTime = 40.0
+		m_iHealth = 1
+		m_bBreakOnDodgeTouch = false
+		m_bSolidAfterDeath = false
+		m_bRenderAfterDeath = false
+		m_bDamagedByAbilities = false
+		m_bDamagedByMelee = true
+		m_bDamagedByBullets = false
+		m_flInitialSpawnTime = 20.0
+		m_flPowerupDropChance = 100.0
+		m_bDamagedBySlide = false
+		_base = "citadel_breakable_prop_base"
+		m_bUseVDataSpawnTimes = true
+		m_flRespawnTimeTest = 3.0
+		m_bSpawnInStreetBrawl = true
+		m_eRollType = "ECitadelRandomRoll_LastEnum"
+		m_hModel = resource_name:"models/props_gameplay/halloween/halloween_cauldron/halloween_cauldron.vmdl"
+		m_flModelScale = 1
+		m_strHitSequenceName = "caudlron_hit_reaction"
+		m_flBreakDebrisSpeed = 150.0
+		m_bIsMantleable = true
+		m_sBreakSound = soundevent:"Candy.Cauldron.Break"
+		m_sMeleeRejectSound = soundevent:"Candy.Cauldron.Impact"
+		m_bHeavyMeleeOnly = true
+		m_strLocInteractableString = "#Citadel_Hideout_HalloweenCauldron"
+		m_NearbyAuraModifier = subclass:
+		{
+			m_nAttributes = "MODIFIER_ATTRIBUTE_CANNOT_BE_PURGED | MODIFIER_ATTRIBUTE_PERMANENT"
+			_class = "modifier_base_aura"
+			_my_subclass_name = "near_candy_cauldron"
+			m_bIsHidden = true
+			m_flAuraRadius = 300.0
+			m_modifierProvidedByAura = subclass:
+			{
+				_class = "modifier_base"
+				_my_subclass_name = "target_near_candy_cauldron"
+				m_bIsHidden = true
+				m_nEnabledStateMask = "MODIFIER_STATE_NEAR_HALLOWEEN_CAULDRON"
+				m_nAttributes = "MODIFIER_ATTRIBUTE_CANNOT_BE_PURGED"
+			}
+			m_iAuraSearchType = "CITADEL_UNIT_TARGET_HERO"
+		}
+		m_nMeleeHitsToBreak = 1
+		m_nHeavyMeleeHitCount = 1
+		m_bNoMeleeCleave = true
+		m_mapPickupChances = 
+		{
+			halloween_candy_pickup = 0.0
+		}
+		m_flOutlineRadius = 10.0
+		m_colorOutline = [ 50, 205, 50 ]
+		m_OtherRejectSound = soundevent:"Candy.Cauldron.Impact"
+		m_sMeleeDamageSound = soundevent:"Tough.Crate.Prop.Impact"
+		m_breakParticle = resource_name:"particles/event/halloween/halloween_2026_candy_explosion.vpcf"
+		m_ambientParticle = resource_name:"particles/event/halloween/halloween_2026_cauldron_ambient.vpcf"
+		m_sSpawnSound = soundevent:"Candy.Cauldron.Spawn"
+		m_sAmbientSound = soundevent:"Candy.Cauldron.Ambient.Lp"
+	}
+	citadel_breakable_prop_candy_cauldron_hideout = 
+	{
+		_class = "citadel_breakable_prop_hideout"
+		m_flRespawnTime = 40.0
+		m_iHealth = 1
+		m_bBreakOnDodgeTouch = false
+		m_bSolidAfterDeath = false
+		m_bRenderAfterDeath = false
+		m_bDamagedByAbilities = false
+		m_bDamagedByMelee = true
+		m_bDamagedByBullets = false
+		m_flInitialSpawnTime = 20.0
+		m_flPowerupDropChance = 100.0
+		m_bDamagedBySlide = false
+		_base = "citadel_breakable_prop_candy_cauldron"
+		m_bUseVDataSpawnTimes = true
+		m_flRespawnTimeTest = 3.0
+		m_bSpawnInStreetBrawl = true
+		m_eRollType = "ECitadelRandomRoll_LastEnum"
+		m_hModel = resource_name:"models/props_gameplay/halloween/halloween_cauldron/halloween_cauldron.vmdl"
+		m_flModelScale = 1
+		m_strHitSequenceName = "caudlron_hit_reaction"
+		m_flBreakDebrisSpeed = 150.0
+		m_bIsMantleable = true
+		m_sBreakSound = soundevent:"Candy.Cauldron.Break"
+		m_sMeleeRejectSound = soundevent:"Candy.Cauldron.Impact"
+		m_bHeavyMeleeOnly = true
+		m_strLocInteractableString = "#Citadel_Hideout_HalloweenCauldron"
+		m_NearbyAuraModifier = subclass:
+		{
+			m_nAttributes = "MODIFIER_ATTRIBUTE_CANNOT_BE_PURGED | MODIFIER_ATTRIBUTE_PERMANENT"
+			_class = "modifier_base_aura"
+			_my_subclass_name = "near_candy_cauldron"
+			m_bIsHidden = true
+			m_flAuraRadius = 300.0
+			m_modifierProvidedByAura = subclass:
+			{
+				_class = "modifier_base"
+				_my_subclass_name = "target_near_candy_cauldron"
+				m_bIsHidden = true
+				m_nEnabledStateMask = "MODIFIER_STATE_NEAR_HALLOWEEN_CAULDRON"
+				m_nAttributes = "MODIFIER_ATTRIBUTE_CANNOT_BE_PURGED"
+			}
+			m_iAuraSearchType = "CITADEL_UNIT_TARGET_HERO"
+		}
+		m_nMeleeHitsToBreak = 1
+		m_nHeavyMeleeHitCount = 1
+		m_bNoMeleeCleave = true
+		m_mapPickupChances = 
+		{
+			halloween_candy_pickup = 0.0
+		}
+		m_flOutlineRadius = 10.0
+		m_colorOutline = [ 50, 205, 50 ]
+		m_OtherRejectSound = soundevent:"Candy.Cauldron.Impact"
+		m_sMeleeDamageSound = soundevent:"Tough.Crate.Prop.Impact"
+		m_breakParticle = resource_name:"particles/event/halloween/halloween_2026_candy_explosion.vpcf"
+		m_ambientParticle = resource_name:"particles/event/halloween/halloween_2026_cauldron_ambient.vpcf"
+		m_sSpawnSound = soundevent:"Candy.Cauldron.Spawn"
+		m_sAmbientSound = soundevent:"Candy.Cauldron.Ambient.Lp"
+	}
+	citadel_breakable_prop_punchable_troll = 
+	{
+		_class = "citadel_breakable_prop_punchable_troll"
+		m_flRespawnTime = 1.0
+		m_iHealth = 1
+		m_bBreakOnDodgeTouch = false
+		m_bSolidAfterDeath = false
+		m_bRenderAfterDeath = false
+		m_bDamagedByAbilities = false
+		m_bDamagedByMelee = false
+		m_bDamagedByBullets = false
+		m_flInitialSpawnTime = 1.0
+		m_flPowerupDropChance = 0.0
+		m_bDamagedBySlide = false
+		_base = "citadel_breakable_prop_base"
+		m_bUseVDataSpawnTimes = true
+		m_flRespawnTimeTest = 1.0
+		m_hModel = resource_name:"models/props_gameplay/bridge_troll/bridge_troll.vmdl"
+		m_sPickupSound = soundevent:"Powerup.Pickup.Spirit"
+		m_sBridgeBuffPickupSound = soundevent:"Powerup.Pickup.Generic"
+		m_sStunSound = soundevent:"Troll.Stun"
+		m_sStealSound = soundevent:"Troll.Steal"
+		m_sMeleeRejectSound = soundevent:"Troll.Impact.Reject"
+		m_sBreakSound = soundevent:"Troll.Success.Small"
+		m_flStealCandyChance = 0.3
+		m_NearTrollAuraModifier = subclass:
+		{
+			m_nAttributes = "MODIFIER_ATTRIBUTE_CANNOT_BE_PURGED | MODIFIER_ATTRIBUTE_PERMANENT"
+			_class = "modifier_base_aura"
+			_my_subclass_name = "near_troll"
+			m_bIsHidden = true
+			m_flAuraRadius = 400.0
+			m_modifierProvidedByAura = subclass:
+			{
+				_class = "modifier_base"
+				_my_subclass_name = "target_near_troll"
+				m_bIsHidden = true
+				m_nEnabledStateMask = "MODIFIER_STATE_NEAR_HALLOWEEN_TROLL"
+				m_nAttributes = "MODIFIER_ATTRIBUTE_CANNOT_BE_PURGED"
+			}
+			m_iAuraSearchType = "CITADEL_UNIT_TARGET_HERO"
+		}
+		m_BuffModifiers = 
+		[
+			subclass:
+			{
+				_class = "modifier_citadel_powerup_survival"
+				_my_subclass_name = "survival_powerup_pickup"
+				m_flDuration = 160.0
+				m_flTimeMin = 5
+				m_flTimeMax = 40
+				m_vecModifierValues = 
+				[
+					{
+						m_eModifierValue = "MODIFIER_VALUE_HEALTH_MAX"
+						m_valueMin = 200.0
+						m_valueMax = 750.0
+					},
+					{
+						m_eModifierValue = "MODIFIER_VALUE_HEALTH_REGEN_PER_SECOND"
+						m_valueMin = 4
+						m_valueMax = 40
+					},
+				]
+				m_sLocalizationName = "survival_powerup_pickup"
+				m_vecAlwaysShowInStatModifierUI = 
+				[
+					"MODIFIER_VALUE_HEALTH_MAX",
+					"MODIFIER_VALUE_HEALTH_REGEN_PER_SECOND",
+				]
+				m_strHudIcon = panorama:"file://{images}/hud/modifiers/icon_powerup.svg"
+				m_strSmallIconCssClass = "survival_pickup"
+				m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+				m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+				m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_EVERYONE"
+				m_Color = [ 122, 184, 29 ]
+				m_BuffParticle = resource_name:"particles/environment/powerup_spawner_buff.vpcf"
+			},
+			subclass:
+			{
+				_class = "modifier_citadel_powerup_casting"
+				_my_subclass_name = "casting_powerup_pickup"
+				m_flDuration = 160.0
+				m_flTimeMin = 5
+				m_flTimeMax = 40
+				m_vecModifierValues = 
+				[
+					{
+						m_eModifierValue = "MODIFIER_VALUE_TECH_POWER"
+						m_valueMin = 15.0
+						m_valueMax = 65.0
+					},
+					{
+						m_eModifierValue = "MODIFIER_VALUE_COOLDOWN_REDUCTION_PERCENTAGE"
+						m_valueMin = 12.0
+						m_valueMax = 20.0
+					},
+				]
+				m_sLocalizationName = "casting_powerup_pickup"
+				m_vecAlwaysShowInStatModifierUI = 
+				[
+					"MODIFIER_VALUE_TECH_POWER",
+					"MODIFIER_VALUE_COOLDOWN_REDUCTION_PERCENTAGE",
+				]
+				m_strHudIcon = panorama:"file://{images}/hud/modifiers/icon_powerup.svg"
+				m_strSmallIconCssClass = "casting_pickup"
+				m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+				m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+				m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_EVERYONE"
+				m_Color = [ 185, 103, 253 ]
+				m_BuffParticle = resource_name:"particles/environment/powerup_spawner_buff.vpcf"
+			},
+			subclass:
+			{
+				_class = "modifier_citadel_powerup_movement"
+				_my_subclass_name = "movement_powerup_pickup"
+				m_flDuration = 160.0
+				m_flTimeMin = 5
+				m_flTimeMax = 40
+				m_vecModifierValues = 
+				[
+					{
+						m_eModifierValue = "MODIFIER_VALUE_STAMINA"
+						m_valueMin = 2
+						m_valueMax = 4
+					},
+					{
+						m_eModifierValue = "MODIFIER_VALUE_SPRINT_SPEED_BONUS"
+						m_valueMin = 59.0551
+						m_valueMax = 157.48
+					},
+					{
+						m_eModifierValue = "MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGE"
+						m_valueMin = 40
+						m_valueMax = 80
+					},
+					{
+						m_eModifierValue = "MODIFIER_VALUE_STAMINA_REGEN_PER_SECOND_PERCENTAGE"
+						m_valueMin = 20
+						m_valueMax = 50
+					},
+				]
+				m_vecAlwaysShowInStatModifierUI = 
+				[
+					"MODIFIER_VALUE_SPRINT_SPEED_BONUS",
+					"MODIFIER_VALUE_SPRINT_SPEED_BONUS",
+					"MODIFIER_VALUE_ZIP_LINE_SPEED_PERCENTAGE",
+				]
+				m_sLocalizationName = "movement_powerup_pickup"
+				m_strHudIcon = panorama:"file://{images}/hud/modifiers/icon_powerup.svg"
+				m_strSmallIconCssClass = "movement_pickup"
+				m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+				m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+				m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_EVERYONE"
+				m_Color = [ 50, 50, 255 ]
+				m_BuffParticle = resource_name:"particles/environment/powerup_spawner_buff.vpcf"
+			},
+			subclass:
+			{
+				_class = "modifier_citadel_powerup_gun"
+				_my_subclass_name = "gun_powerup_pickup"
+				m_flDuration = 160.0
+				m_flTimeMin = 5
+				m_flTimeMax = 40
+				m_vecModifierValues = 
+				[
+					{
+						m_eModifierValue = "MODIFIER_VALUE_FIRE_RATE"
+						m_valueMin = 12.0
+						m_valueMax = 35.0
+					},
+					{
+						m_eModifierValue = "MODIFIER_VALUE_AMMO_CLIP_SIZE_PERCENT"
+						m_valueMin = 35.0
+						m_valueMax = 70.0
+					},
+				]
+				m_sLocalizationName = "gun_powerup_pickup"
+				m_vecAlwaysShowInStatModifierUI = 
+				[
+					"MODIFIER_VALUE_FIRE_RATE",
+					"MODIFIER_VALUE_AMMO_CLIP_SIZE_PERCENT",
+				]
+				m_strHudIcon = panorama:"file://{images}/hud/modifiers/icon_powerup.svg"
+				m_strSmallIconCssClass = "gunpower_pickup"
+				m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+				m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+				m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_EVERYONE"
+				m_Color = [ 218, 148, 65 ]
+				m_BuffParticle = resource_name:"particles/environment/powerup_spawner_buff.vpcf"
+			},
+		]
+	}
 	citadel_breakable_bell_chinatown = 
 	{
 		_class = "citadel_breakable_prop"
@@ -495,6 +810,8 @@
 		{
 			folder_name = "Halloween"
 		}
+		m_sMeleeDamageSound = soundevent:"Pumpkin.Prop.Impact"
+		m_angLocalRotation = [ 0, 180, 0 ]
 	}
 	citadel_breakable_prop_pumpkin02 = 
 	{
@@ -523,6 +840,8 @@
 		{
 			folder_name = "Halloween"
 		}
+		m_sMeleeDamageSound = soundevent:"Pumpkin.Prop.Impact"
+		m_angLocalRotation = [ 0, 180, 0 ]
 	}
 	citadel_breakable_prop_pumpkin03 = 
 	{
@@ -551,6 +870,8 @@
 		{
 			folder_name = "Halloween"
 		}
+		m_sMeleeDamageSound = soundevent:"Pumpkin.Prop.Impact"
+		m_angLocalRotation = [ 0, 180, 0 ]
 	}
 	citadel_breakable_prop_pumpkin04 = 
 	{
@@ -579,6 +900,8 @@
 		{
 			folder_name = "Halloween"
 		}
+		m_sMeleeDamageSound = soundevent:"Pumpkin.Prop.Impact"
+		m_angLocalRotation = [ 0, 180, 0 ]
 	}
 	citadel_breakable_prop_xmaspresent01 = 
 	{
@@ -995,7 +1318,7 @@
 		m_nNameOffset = 60
 		_base = "citadel_pickup_base"
 		m_flGoldAmount = 23
-		m_flGoldPerMinuteAmount = 2.0
+		m_flGoldPerMinuteAmount = 1.8
 		m_Color = [ 0, 255, 204 ]
 		m_sDefaultMaterialGroupName = "gold"
 		m_bIsPermanentPickup = true
@@ -1026,7 +1349,7 @@
 		m_nNameOffset = 60
 		_base = "citadel_pickup_base"
 		m_flGoldAmount = 46.0
-		m_flGoldPerMinuteAmount = 4.0
+		m_flGoldPerMinuteAmount = 3.6
 		m_Color = [ 0, 255, 204 ]
 		m_sDefaultMaterialGroupName = "gold"
 		m_bIsPermanentPickup = true
@@ -1061,6 +1384,36 @@
 		m_Color = [ 0, 255, 204 ]
 		m_sDefaultMaterialGroupName = "gold"
 		m_bUseLabelPanel = false
+	}
+	halloween_candy_pickup = 
+	{
+		_class = "citadel_pickup_halloween_candy"
+		m_flPickupRadius = 
+		{
+			m_flBase = 50.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_friendlyParticle = resource_name:"particles/event/halloween/halloween_2026_candy_pickup.vpcf"
+		m_enemyParticle = resource_name:"particles/event/halloween/halloween_2026_candy_pickup.vpcf"
+		m_gainedParticle = resource_name:"particles/event/halloween/halloween_candy_pickup_gained.vpcf"
+		m_hModel = resource_name:"models/props_gameplay/halloween/powerup_candy/powerup_candy.vmdl"
+		m_sSpawnSound = soundevent:"Powerup.Spawn.Generic"
+		m_flPickupExpirationDuration = 
+		{
+			m_flBase = 300
+			m_flPerMinuteAfterStart = 0
+		}
+		m_flParticleRadius = 1.5
+		m_bShowOnMinimap = false
+		m_sNameLocString = "#halloween_candy_pickup_label"
+		m_sPickupSound = soundevent:"Powerup.Pickup.Candy"
+		m_nNameOffset = 60
+		_base = "citadel_pickup_base"
+		m_Color = [ 109, 19, 195 ]
+		m_sDefaultMaterialGroupName = "gold"
+		m_bIsPermanentPickup = true
+		m_bShowModelOverhead = true
+		bPhysicallyDropToTheGroundOnSpawn = true
 	}
 	gun_powerup_pickup = 
 	{
@@ -2978,7 +3331,7 @@
 	}
 	dropped_soul_orb = 
 	{
-		_class = "citadel_pickup_assigned_gold"
+		_class = "citadel_pickup_assigned_currencies"
 		m_flPickupRadius = 
 		{
 			m_flBase = 709
@@ -3718,7 +4071,7 @@
 		m_bLosCheckOnTouchRadius = true
 		m_flRegenMaxHealthPercent = 
 		{
-			m_flBase = 10.0
+			m_flBase = 14.0
 		}
 		m_bPicupIsVacuum = true
 	}
@@ -4622,6 +4975,162 @@
 				},
 			]
 			m_strBonusIconCSSClass = "MoveSpeed"
+			m_nEnabledStateMask = "MODIFIER_STATE_ARTIST_PERMANENT_BUFF"
+		}
+	}
+	pickup_artist_drawing_healer = 
+	{
+		_class = "citadel_pickup_artist_drawing"
+		m_flPickupRadius = 
+		{
+			m_flBase = 200.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_friendlyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_enemyParticle = resource_name:"particles/abilities/artist/artist_item_drop.vpcf"
+		m_gainedParticle = resource_name:"particles/abilities/artist/artist_pickup_gained.vpcf"
+		m_hModel = resource_name:""
+		m_sSpawnSound = soundevent:"Powerup.Spawn.Generic"
+		m_flPickupExpirationDuration = 
+		{
+			m_flBase = 20.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_flParticleRadius = 1.5
+		m_bShowOnMinimap = false
+		m_sNameLocString = ""
+		m_sPickupSound = soundevent:"Artist.Drawing.Pickup"
+		m_nNameOffset = 60
+		_base = "pickup_artist_drawing_base"
+		m_bIsPermanentPickup = true
+		m_Color = [ 66, 200, 0 ]
+		bPhysicallyDropToTheGroundOnSpawn = true
+		m_fInitialSpawnXYSpeed = [ 85.0, 125.0 ]
+		m_fInitialSpawnZSpeed = [ 30.0, 110.0 ]
+		m_flFallGravity = 1.0
+		m_flHoverOffset = 65.0
+		m_bPicupIsVacuum = true
+		m_eCollectionMethod = "VacuumTrigger"
+		m_bSameTeamOnly = true
+		m_flOutlineRange = 2000.0
+		m_OutlineColor = [ 197, 105, 240, 255 ]
+		m_VacuumToPlayerSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = -16.041637
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = -4004.629639
+				},
+				{
+					x = 0.105087
+					y = -436.874969
+					m_flSlopeIncoming = -4004.629639
+					m_flSlopeOutgoing = 4603.734863
+				},
+				{
+					x = 0.634412
+					y = 2000.0
+					m_flSlopeIncoming = 4603.734863
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, -500.0 ]
+			m_vDomainMaxs = [ 1.0, 2000.0 ]
+		}
+		m_flInitialVacuumUpSpeed = [ 100.0, 100.0 ]
+		m_VacuumInitialVelSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 0.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 3.105128
+				},
+				{
+					x = 0.037948
+					y = 0.117833
+					m_flSlopeIncoming = 7.669573
+					m_flSlopeOutgoing = 7.669573
+				},
+				{
+					x = 0.130385
+					y = 1.0
+					m_flSlopeIncoming = 0.423242
+					m_flSlopeOutgoing = 0.423242
+				},
+				{
+					x = 0.356127
+					y = 0.2525
+					m_flSlopeIncoming = -2.70552
+					m_flSlopeOutgoing = -2.70552
+				},
+				{
+					x = 0.5
+					y = 0.0
+					m_flSlopeIncoming = -1.755022
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.0 ]
+			m_vDomainMaxs = [ 0.5, 1.0 ]
+		}
+		m_flInitialVacuumSideSpeed = [ 200.0, 200.0 ]
+		m_sBuffTypeLocString = "#Citadel_Graph_PermanentBuff_ArtistHealer"
+		m_ArtistModifer = subclass:
+		{
+			_class = "modifier_artist_still_life_pickup"
+			_my_subclass_name = "buff"
+			m_vecScriptValues = 
+			[
+				{
+					m_eModifierValue = "MODIFIER_VALUE_HEAL_AMP_CAST_PERCENT"
+					m_value = 2.0
+				},
+			]
+			m_strBonusIconCSSClass = "Healing"
 			m_nEnabledStateMask = "MODIFIER_STATE_ARTIST_PERMANENT_BUFF"
 		}
 	}

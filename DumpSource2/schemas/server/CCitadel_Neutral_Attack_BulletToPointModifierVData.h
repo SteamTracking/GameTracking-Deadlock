@@ -24,6 +24,8 @@ class CCitadel_Neutral_Attack_BulletToPointModifierVData : public CModifierNeutr
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_MuzzleFlashParticle;
 	// MPropertyDescription = "Name of particle control point config to use (empty means default)"
 	CUtlString m_strMuzzleFlashParticleConfig;
+	// MPropertyDescription = "If set - Trigger the 'action_shoot' for each ability bulllet used"
+	bool m_bAG2UseActionShootForAttack;
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_ShootSound;
 	CSoundEventName m_HitSound;

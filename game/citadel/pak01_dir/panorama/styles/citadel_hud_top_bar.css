@@ -923,7 +923,9 @@ CitadelHudTopBarPlayer.LocalPlayer.Dead .HeroContentsCoinBackground,CitadelHudTo
 #HealthBar_Fill
 {
 	width: 100%;
+	horizontal-align: center;
 	height: 100%;
+	opacity-mask: url("s2r://panorama/images/hud/healthbar/healthbar_backer_vert_mask.vsvg");
 	background-color: offWhite;
 }
 
@@ -1957,16 +1959,15 @@ CitadelHudTopBarPlayer:hover CitadelTopBarPlayerDetails
 	flow-children: right;
 }
 
-.gScoreboardOpen #RejuvenatorCharges
-{
-	margin-top: 100px;
-	visibility: collapse;
-}
-
 #RejuvenatorCharges #RejuvenatorTimer,#RejuvenatorCharges #RejuvenatorFriendly,#RejuvenatorCharges #RejuvenatorEnemy
 {
 	width: 70px;
 	height: 100%;
+}
+
+.gamemode_streetbrawl #RejuvenatorCharges
+{
+	visibility: collapse;
 }
 
 #RejuvenatorCharges #RejuvenatorEnemy
@@ -2010,6 +2011,7 @@ CitadelHudTopBarPlayer:hover CitadelTopBarPlayerDetails
 {
 	visibility:collapse;
 	opacity: 1;
+	tooltip-position: bottom;
 }
 
 #RejuvenatorCharges #RejuvenatorTimer.has_rejuv,#RejuvenatorCharges #RejuvenatorTimer.midboss_cooldown,#RejuvenatorCharges #RejuvenatorTimer.midboss_available
@@ -2452,7 +2454,7 @@ CitadelHudTopBarPlayer .demote
 .KillsAndAbilityPointsContainer
 {
 	horizontal-align: center;
-	margin-top: 80px;
+	margin-top: 120px;
 	flow-children: down;
 	visibility: collapse;
 	width: 200px;
@@ -2460,7 +2462,7 @@ CitadelHudTopBarPlayer .demote
 
 .gamemode_streetbrawl .KillsAndAbilityPointsContainer
 {
-	margin-top: 140px;
+	margin-top: 86px;
 }
 
 .wants_scoreboard .KillsAndAbilityPointsContainer

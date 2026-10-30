@@ -9,6 +9,7 @@ class CCitadel_Hideout_BallVData : public CEntitySubclassVDataBase
 	float32 m_flMaxDistanceAway; // = 3000
 	float32 m_flDamagePositionOffset; // = 32
 	CSoundEventName m_strKickSoundName;
+	CSoundEventName m_strHeavyKickSoundName;
 	CSoundEventName m_strGoalSoundName;
 	// MPropertyStartGroup = "Ball Touch Force"
 	// MPropertyDescription = "Always kick at least this much in the direction the player is facing."

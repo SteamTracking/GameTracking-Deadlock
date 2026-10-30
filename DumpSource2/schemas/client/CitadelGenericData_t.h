@@ -68,7 +68,7 @@ class CitadelGenericData_t
 	float32[6] m_flTrooperKillGoldShareFrac;
 	float32[6] m_flHeroKillGoldShareFrac;
 	DOFDesc_t m_DefaultDOF;
-	RejuvinatorParams_t m_RejuvParams; // = { "m_PlayerRespawnMult": [  ], "m_TrooperHealthMult": [  ], "m_flRejuvinatorBuffDuration": 240, "m_flRejuvinatorDropDuration": 7, "m_flRejuvinatorDropHeight": 500, "m_flRejuvinatorExpirationWarningTiming": 30, "m_flRejuvinatorRebirthDuration": [ 0, 0, 0 ], "m_strRejuvPickupSound": "" }
+	RejuvinatorParams_t m_RejuvParams; // = { "m_PlayerRespawnMult": [  ], "m_TrooperHealthMult": [  ], "m_flRejuvinatorBuffDuration": 240, "m_flRejuvinatorDropDuration": 7, "m_flRejuvinatorDropHeight": 500, "m_flRejuvinatorDropSpreadRadius": 800, "m_flRejuvinatorDropWallClearance": 150, "m_flRejuvinatorExpirationWarningTiming": 30, "m_flRejuvinatorRebirthDuration": [ 0, 0, 0 ], "m_nRejuvinatorBreakGold": 500, "m_nRejuvinatorBreakGoldPerMinute": 9, "m_nRejuvinatorDropCount": 3, "m_strRejuvPickupSound": "" }
 	IdolParams_t m_IdolParams; // = { "m_CrateModel": "", "m_IdolDroppingParticle": "", "m_IdolModel": "", "m_IdolReturnLocationParticle": "", "m_IdolSpawnCompleteSound": "", "m_IdolSpawnLocationParticle": "", "m_IdolSpawnSound": "", "m_ParachuteModel": "", "m_flIdolDropDuration": 25, "m_flIdolDropHeight": 1800, "m_flIdolReturnLocationParticleScale": 1, "m_strLoopingSequenceName": "" }
 	KothParams_t m_KothParams; // = { "m_KothEarlyWarningParticle": "", "m_KothOnSpawnParticle": "", "m_KothSpawnLocationParticle": "", "m_flKothRadius": 20, "m_flKothWarningDropHeight": 60, "m_strKothPreSpawnLoopSound": "", "m_strKothSpawnCompleteSound": "", "m_strKothSpawnLoopSound": "", "m_strKothSpawnLoopStartSound": "" }
 	TeleporterParams_t m_TeleporterParams;

@@ -20,8 +20,8 @@ class CModifierProperty
 	// MKV3TransferSaveOpsForField = "GetModifierOwnerEventsSaveRestoreOps"
 	CUtlVector< OwnerModifierEventListener_t >* m_pNotifyOwnerEvents;
 	uint32 m_nDisabledGroups;
-	uint32[11] m_bvEnabledStateMask;
-	uint32[11] m_bvDisabledStateMask;
-	uint32[11] m_bvEnabledPredictedStateMask;
+	uint32[12] m_bvEnabledStateMask;
+	uint32[12] m_bvDisabledStateMask;
+	uint32[12] m_bvEnabledPredictedStateMask;
 	bool m_bParentWantsModifierStateChangeCallback;
 };

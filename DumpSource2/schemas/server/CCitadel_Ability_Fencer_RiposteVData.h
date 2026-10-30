@@ -15,6 +15,7 @@ class CCitadel_Ability_Fencer_RiposteVData : public CitadelAbilityVData
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_DebuffModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_TargetLifestealModifier;
+	CEmbeddedSubclass< CCitadelModifier > m_ImmobilizeModifier;
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flAirSpeedMax; // = 1
 	float32 m_flAirDrag; // = 1

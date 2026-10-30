@@ -51,6 +51,27 @@
 						<Panel class="Spinner" />
 					</Panel>
 				</Panel>
+				<Panel id="GrantEventAction" class="GrantSection">
+					<Label class="GrantTitle" text="Grant Event Action" unlocalized="true" />
+					<TextEntry id="GrantSearch" class="GrantSearch" placeholder="Filter Actions..." unlocalized="true" />
+					<DropDown id="GrantEventActionDropDown" />
+					<Panel id="CustomActionIDRow" class="GrantControlsRow">
+						<Label text="Custom Action ID:" unlocalized="true" />
+						<NumberEntry id="GrantEventActionActionIDNumberEntry" />
+					</Panel>
+					<Panel class="GrantControlsRow">
+						<NumberEntry id="GrantEventActionNumberEntry" class="GrantNumberEntry" increment="1" value="1" />
+						<TextButton id="GrantEventActionButton" class="GrantButton" text="#Citadel_Grant" onactivate="CitadelEventDebugGrantEventAction()" />
+						<Image class="TooltipInfoIconSmall" src="s2r://panorama/images/icons/icon_info.vsvg" scaling="stretch-to-fit-preserve-aspect" onmouseover="UIShowTextTooltip( &apos;Grant this event action without checking for costs or prerequisites of the action.&apos; )" onmouseout="UIHideTextTooltip()" />
+						<Panel class="Spinner" />
+					</Panel>
+					<Panel class="GrantControlsRow">
+						<NumberEntry id="ClaimEventActionNumberEntry" class="GrantNumberEntry" increment="1" value="1" />
+						<TextButton id="ClaimEventActionButton" class="GrantButton" text="#Citadel_Claim" onactivate="CitadelEventDebugClaimEventAction()" />
+						<Image class="TooltipInfoIconSmall" src="s2r://panorama/images/icons/icon_info.vsvg" scaling="stretch-to-fit-preserve-aspect" onmouseover="UIShowTextTooltip( Attempt to claim this action. This will trigger the normal event action claim flow which can fail if the requirements for claiming aren&apos;t met. )" onmouseout="UIHideTextTooltip()" />
+						<Panel class="Spinner" />
+					</Panel>
+				</Panel>
 				<Panel class="GrantSection">
 					<TextButton id="ResetEventState" class="GrantButton" text="Reset Event State" onactivate="CitadelEventDebugResetEventState()" />
 				</Panel>
