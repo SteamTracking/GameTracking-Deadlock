@@ -17,6 +17,7 @@ class CModifierPsychicLiftVData : public CCitadel_Modifier_StunnedVData
 	float32 m_flRiseTime; // = 0.5
 	// MPropertyDescription = "Once this duration has pased in the slam, we start forcing the target to the ground"
 	float32 m_flSlamTime; // = 0.25
+	float32 m_flSlamFailSafeTime; // = 0.25
 	float32 m_flRiseAcc; // = 100
 	float32 m_flRiseMaxSpeed; // = 100
 	float32 m_flRiseDecayFracStart; // = 0.5
