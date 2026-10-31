@@ -1390,7 +1390,7 @@
 		_class = "citadel_pickup_halloween_candy"
 		m_flPickupRadius = 
 		{
-			m_flBase = 50.0
+			m_flBase = 138.0
 			m_flPerMinuteAfterStart = 0
 		}
 		m_friendlyParticle = resource_name:"particles/event/halloween/halloween_2026_candy_pickup.vpcf"
@@ -1414,6 +1414,111 @@
 		m_bIsPermanentPickup = true
 		m_bShowModelOverhead = true
 		bPhysicallyDropToTheGroundOnSpawn = true
+		m_eCollectionMethod = "VacuumTrigger"
+		m_VacuumToPlayerSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = -16.041637
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = -4004.629639
+				},
+				{
+					x = 0.105087
+					y = -436.874969
+					m_flSlopeIncoming = -4004.629639
+					m_flSlopeOutgoing = 4603.734863
+				},
+				{
+					x = 0.634412
+					y = 2000.0
+					m_flSlopeIncoming = 4603.734863
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, -500.0 ]
+			m_vDomainMaxs = [ 1.0, 2000.0 ]
+		}
+		m_flInitialVacuumUpSpeed = [ 100.0, 100.0 ]
+		m_VacuumInitialVelSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 0.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 3.105128
+				},
+				{
+					x = 0.037948
+					y = 0.117833
+					m_flSlopeIncoming = 7.669573
+					m_flSlopeOutgoing = 7.669573
+				},
+				{
+					x = 0.130385
+					y = 1.0
+					m_flSlopeIncoming = 0.423242
+					m_flSlopeOutgoing = 0.423242
+				},
+				{
+					x = 0.356127
+					y = 0.2525
+					m_flSlopeIncoming = -2.70552
+					m_flSlopeOutgoing = -2.70552
+				},
+				{
+					x = 0.5
+					y = 0.0
+					m_flSlopeIncoming = -1.755022
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.0 ]
+			m_vDomainMaxs = [ 0.5, 1.0 ]
+		}
+		m_flInitialVacuumSideSpeed = [ 200.0, 200.0 ]
 	}
 	gun_powerup_pickup = 
 	{
