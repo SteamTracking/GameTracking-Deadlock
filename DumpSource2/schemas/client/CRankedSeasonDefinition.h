@@ -12,5 +12,6 @@ class CRankedSeasonDefinition
 	uint32 m_unMinHeroUnlocks;
 	uint32 m_unCalibrationMatches;
 	uint32 m_unBaseWinLossPointGrant;
+	uint32 m_unCalibrationMaxRank;
 	CUtlVector< CRankInformation > m_vecRankInfo;
 };
