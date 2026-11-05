@@ -50,9 +50,9 @@ VS
 	float g_flJitterSpeedB1 < Default(7); Range(0, 40); UiType(Slider); UiGroup("Jitter Vertices"); >;
 	float3 g_vJitterAmplitudesXA1 < Default(4); Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Jitter Vertices"); >;
 	float3 g_vJitterAmplitudesXB1 < Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Jitter Vertices"); >;
-	float3 g_vJitterAmplitudesYA1 < Default(0); Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Jitter Vertices"); >;
+	float3 g_vJitterAmplitudesYA1 < Default2(0, 4); Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Jitter Vertices"); >;
 	float3 g_vJitterAmplitudesYB1 < Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Jitter Vertices"); >;
-	float3 g_vJitterAmplitudesZA1 < Default(0); Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Jitter Vertices"); >;
+	float3 g_vJitterAmplitudesZA1 < Default3(0, 0, 4); Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Jitter Vertices"); >;
 	float3 g_vJitterAmplitudesZB1 < Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Jitter Vertices"); >;
 	float3 g_vJitterExpression < Range3(-1024, -1024, -1024, 1024, 1024, 1024); UiType(VectorText); UiGroup("Jitter Vertices"); >;
 	float3 g_vJitterFrequenciesA1 < Default3(0.02, 0.04, 0.08); Range3(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5); UiType(VectorText); UiGroup("Jitter Vertices"); >;

@@ -70,7 +70,7 @@ VS
 	float g_flRimLightFalloff < Default(0.5); Range(0.05, 2); UiType(Slider); UiGroup("Rim Lighting,30/3"); >;
 	float g_flRimLightWrap < Default(0.5); Range(0.01, 0.99); UiType(Slider); UiGroup("Rim Lighting,30/3"); >;
 	float g_flRimLightStrength < Default(0.75); Range(0, 3); UiType(Slider); UiGroup("Rim Lighting,30/4"); >;
-	float2 g_vRimLightUpRamp < Default(0); Range2(-1, -1, 1, 1); UiType(VectorText); UiGroup("Rim Lighting,30/5"); >;
+	float2 g_vRimLightUpRamp < Default2(0, 1); Range2(-1, -1, 1, 1); UiType(VectorText); UiGroup("Rim Lighting,30/5"); >;
 	bool g_bRimLightingDepthOcclusion < Default(1); UiType(CheckBox); UiGroup("Rim Lighting,30/10"); >;
 	float g_flRimOcclusionDepthToleranceMin < Default(1); Range(0.5, 10); UiType(Slider); UiGroup("Rim Lighting,30/11"); >;
 	float g_flRimOcclusionDepthToleranceRange < Default(2); Range(0.5, 10); UiType(Slider); UiGroup("Rim Lighting,30/11"); >;

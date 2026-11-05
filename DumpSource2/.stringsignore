@@ -2399,6 +2399,7 @@ CCitadelHideoutInteractableModifierVData
 CCitadelHideoutInteractableProp
 CCitadelHideoutInteractableTrigger
 CCitadelHideoutInterestPoint
+CCitadelHideoutOwnerRankedSeasonRewardProp
 CCitadelHideoutPropBase
 CCitadelHideoutPropSlot
 CCitadelHideoutTeleportTrigger
@@ -2492,6 +2493,7 @@ CCitadelProjectileVData
 CCitadelProjectile_ImmobilizeTrap
 CCitadelPushTrigger
 CCitadelRankedBadgeProp
+CCitadelRankedSeasonRewardProp
 CCitadelRecentDamage
 CCitadelRegenComponent
 CCitadelShopTunnelTrigger
@@ -5642,6 +5644,7 @@ CLASS_HERO_MINION
 CLASS_HIDEOUT_BALL
 CLASS_HIDEOUT_INTERACTABLE_PROP
 CLASS_HIDEOUT_INTERACTABLE_TRIGGER
+CLASS_HIDEOUT_OWNER_RANKED_SEASON_BADGE_PROP
 CLASS_ICEPATH_SHARD
 CLASS_IMMOBILIZE_TRAP_PROJECTILE
 CLASS_ITEM_PICKUP
@@ -5677,6 +5680,7 @@ CLASS_PRIEST_BEARTRAP_PROJECTILE
 CLASS_PROJECTILE_TOUCH_VOLUME
 CLASS_PROP_MIDBOSS_INDICATOR
 CLASS_RANKED_BADGE_PROP
+CLASS_RANKED_SEASON_BADGE_PROP
 CLASS_RATKING_RAT
 CLASS_RATKING_SEWER
 CLASS_RATKING_STANDARD
@@ -16847,12 +16851,15 @@ OnPostIdleEndSequence
 OnPowerupActiveChanged
 OnPreGameWait
 OnPressed
+OnPropDisabled
+OnPropEnabled
 OnPulseRequirement
 OnPunchChanged
 OnPunchJoltChanged
 OnPushedPlayer
 OnQuarterHealth
 OnQueuedEnableTimeChanged
+OnRankDataChanged
 OnReachedPosition
 OnReachedStart
 OnReachedValueCustom
@@ -23321,6 +23328,7 @@ Zoom
 [hero_name | none] [team] - Creates an unit.  Pass 'my_hero' as hero_name to use your current hero
 [lobby id] Attempts to spectate the specified lobby ID
 [lobby id] Attempts to spectate the specified player
+[rank interval] Shows the ranked season completed popup. Defaults to the most recently completed interval.
 [report type] - Shows the reporter updates popup filled in with a fake update
 [seed] Rerolls the random penalty and stat variance of every corrupted item.  Omit the seed or pass 0 for a random one.
 _DisableUpdateTarget
@@ -23599,6 +23607,7 @@ accelerate position
 acceleration
 accept decals
 acceptdamagefromheldobjects
+account_id
 account_stats_dump
 account_stats_reset
 account_sync_storage_dump
@@ -25372,6 +25381,8 @@ citadel_hideout_intro_version_seen
 citadel_hideout_map_enabled
 citadel_hideout_news
 citadel_hideout_npc_debug
+citadel_hideout_owner_ranked_season_reward_override
+citadel_hideout_owner_ranked_season_reward_prop
 citadel_hideout_prop_base
 citadel_hideout_prop_slot
 citadel_hideout_reject_request
@@ -25964,6 +25975,8 @@ citadel_ranked_progress_fake_win_mask
 citadel_ranked_progress_fake_win_streak
 citadel_ranked_season_match_history_fake_rank_changes
 citadel_ranked_season_match_history_unfiltered
+citadel_ranked_season_reward_prop
+citadel_ranked_show_season_completed_popup
 citadel_rapid_stamina_regen
 citadel_ratking_standard
 citadel_recent_boss_damage_for_assist_time
@@ -27333,6 +27346,7 @@ deadlock_disable_post_match_survey
 deadlock_early_development_warning_disabled
 deadlock_hero_debuts_seen
 deadlock_mm_preference
+deadlock_ranked_season_last_acknowledged_interval
 deadlock_steam_input_debug
 deadlock_steam_input_on_disc_manifest
 deadpack_projectile_missile
@@ -32975,6 +32989,8 @@ m_OnPlayerUse
 m_OnPostIdleEndSequence
 m_OnPreGameWait
 m_OnPressed
+m_OnPropDisabled
+m_OnPropEnabled
 m_OnPulseRequirement
 m_OnPushedPlayer
 m_OnQuarterHealth
@@ -48053,6 +48069,7 @@ m_unPurchaseLimitedQuantity
 m_unQuantity
 m_unQuickbuyAutoPurchaseRequest
 m_unRankEnd
+m_unRankInterval
 m_unRankStart
 m_unRequiredGold
 m_unShowDelaySeconds
@@ -51735,7 +51752,9 @@ range
 rangefinder
 rangefinder2d
 rank
+rank_interval
 ranked_set_active_season
+ranked_type
 ratchetType
 rate
 rate scale

@@ -269,7 +269,7 @@ PS
 	Texture2D g_tClouds < Channel(R, Box(TextureClouds), Linear); OutputFormat(ATI1N); SrgbRead(false); >;
 	Texture2D g_tFrameBufferCopyTexture < Attribute("FrameBufferCopyTexture"); SrgbRead(false); >;
 	[[layer_constant]] StructuredBuffer g_transformBuffer < Attribute("TransformBuffer"); >;
-	float3 g_vFlatOverlayColor < Default2(1, 0); Attribute("FlatOverlayColor"); UiType(VectorText); >;
+	float3 g_vFlatOverlayColor < Default3(1, 0, 1); Attribute("FlatOverlayColor"); UiType(VectorText); >;
 	float4 g_vShaderIDColor < Source(ShaderIDColor); UiType(VectorText); >;
 	
 	// Textures

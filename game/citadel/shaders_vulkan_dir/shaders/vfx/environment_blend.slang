@@ -438,7 +438,7 @@ PS
 	Texture2D g_tRevealMask2 < Channel(R, Box(TextureRevealMask2), Linear); OutputFormat(ATI1N); SrgbRead(false); >;
 	Texture2D g_tRevealMask3 < Channel(R, Box(TextureRevealMask3), Linear); OutputFormat(ATI1N); SrgbRead(false); >;
 	Texture2D g_tRevealOverlay < Channel(R, Box(TextureRevealOverlay), Linear); OutputFormat(ATI1N); SrgbRead(false); >;
-	float3 g_vFlatOverlayColor < Default2(1, 0); Attribute("FlatOverlayColor"); UiType(VectorText); >;
+	float3 g_vFlatOverlayColor < Default3(1, 0, 1); Attribute("FlatOverlayColor"); UiType(VectorText); >;
 	float4 g_vRevealUvTransform2 < UiType(VectorText); Expression(v0 = g_vRevealScaleRotationTranslation2.x;
 		v1 = g_vRevealScaleRotationTranslation2.y*3.1415927/180;
 		v2 = g_vRevealScaleRotationTranslation2.zw/v0;

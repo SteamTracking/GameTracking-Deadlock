@@ -837,6 +837,11 @@ CCitadelHideoutInterestPoint
 	network class
 	float m_flMaxDistance
 
+CCitadelHideoutOwnerRankedSeasonRewardProp
+	network class
+	ECitadelRankedType m_eRankedType
+	RankInterval_t m_unRankInterval
+
 CCitadelHideoutPropBase
 	exclude by name: m_flSimulationTime
 	network class
@@ -1080,6 +1085,13 @@ CCitadelPushTrigger
 CCitadelRankedBadgeProp
 	network class
 	PackedRank_t m_unPackedRank
+
+CCitadelRankedSeasonRewardProp
+	network class
+	AccountID_t m_unAccountID (change callbacks: OnRankDataChanged)
+	ECitadelRankedType m_eRankedType (change callbacks: OnRankDataChanged)
+	RankInterval_t m_unRankInterval (change callbacks: OnRankDataChanged)
+	PackedRank_t m_unPackedRank (change callbacks: OnRankDataChanged)
 
 CCitadelRecentDamage
 	GameTime_t m_flLastDamageTime (sent as: float32)

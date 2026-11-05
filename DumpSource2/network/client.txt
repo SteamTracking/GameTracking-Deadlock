@@ -330,6 +330,10 @@ CCitadelHideoutInteractableTrigger
 CCitadelHideoutInterestPoint
 	float m_flMaxDistance
 
+CCitadelHideoutOwnerRankedSeasonRewardProp
+	ECitadelRankedType m_eRankedType
+	RankInterval_t m_unRankInterval
+
 CCitadelHideoutPropBase
 	exclude by name: m_flSimulationTime
 	CEconItemView m_ItemView (class: C_EconItemView)
@@ -433,6 +437,12 @@ CCitadelProjectileTouchVolume
 
 CCitadelRankedBadgeProp
 	PackedRank_t m_unPackedRank
+
+CCitadelRankedSeasonRewardProp
+	AccountID_t m_unAccountID (change callbacks: OnRankDataChanged)
+	ECitadelRankedType m_eRankedType (change callbacks: OnRankDataChanged)
+	RankInterval_t m_unRankInterval (change callbacks: OnRankDataChanged)
+	PackedRank_t m_unPackedRank (change callbacks: OnRankDataChanged)
 
 CCitadelRecentDamage
 	GameTime_t m_flLastDamageTime (sent as: float32)

@@ -2166,7 +2166,9 @@
 		119 : "CLASS_RATKING_SEWER"
 		120 : "CLASS_PASSTHROUGH_FAKE_WALL"
 		121 : "CLASS_NURSE_LEECH"
-		122 : "NUM_CLASSIFY_CLASSES"
+		122 : "CLASS_RANKED_SEASON_BADGE_PROP"
+		123 : "CLASS_HIDEOUT_OWNER_RANKED_SEASON_BADGE_PROP"
+		124 : "NUM_CLASSIFY_CLASSES"
 	]
 	targetclass(string) // FIELD_STRING m_iszTargetClass
 	targetclassify(intchoices) : "targetclassify" : : "" = // FIELD_INT32 m_nTargetClassifyAs (Class_T)
@@ -2293,7 +2295,9 @@
 		119 : "CLASS_RATKING_SEWER"
 		120 : "CLASS_PASSTHROUGH_FAKE_WALL"
 		121 : "CLASS_NURSE_LEECH"
-		122 : "NUM_CLASSIFY_CLASSES"
+		122 : "CLASS_RANKED_SEASON_BADGE_PROP"
+		123 : "CLASS_HIDEOUT_OWNER_RANKED_SEASON_BADGE_PROP"
+		124 : "NUM_CLASSIFY_CLASSES"
 	]
 	disposition(integer) // FIELD_INT32 m_iDisposition
 	rank(integer) // FIELD_INT32 m_iRank
@@ -3804,6 +3808,19 @@
 	]
 ]
 
+// CCitadelHideoutOwnerRankedSeasonRewardProp
+@PointClass base(CBaseEntity) = citadel_hideout_owner_ranked_season_reward_prop
+[
+	ranked_type(intchoices) : "ranked_type" : : "" = // FIELD_INT32 m_eRankedType (ECitadelRankedType)
+	[
+		0 : "k_eCitadelRankedType_Invalid"
+		1 : "k_eCitadelRankedType_Normal"
+	]
+	rank_interval(integer) // FIELD_UINT8 m_unRankInterval
+	output OnPropDisabled(void)
+	output OnPropEnabled(void)
+]
+
 // CCitadelHideoutPropBase
 @PointClass base(baseanimgraph) = citadel_hideout_prop_base
 [
@@ -4133,6 +4150,19 @@
 // CCitadelRankedBadgeProp
 @PointClass base(prop_dynamic) = citadel_ranked_badge_prop
 [
+	packed_rank(integer) // FIELD_UINT8 m_unPackedRank
+]
+
+// CCitadelRankedSeasonRewardProp
+@PointClass base(prop_dynamic) = citadel_ranked_season_reward_prop
+[
+	account_id(integer) // FIELD_UINT32 m_unAccountID
+	ranked_type(intchoices) : "ranked_type" : : "" = // FIELD_INT32 m_eRankedType (ECitadelRankedType)
+	[
+		0 : "k_eCitadelRankedType_Invalid"
+		1 : "k_eCitadelRankedType_Normal"
+	]
+	rank_interval(integer) // FIELD_UINT8 m_unRankInterval
 	packed_rank(integer) // FIELD_UINT8 m_unPackedRank
 ]
 
@@ -4936,7 +4966,9 @@
 		119 : "CLASS_RATKING_SEWER"
 		120 : "CLASS_PASSTHROUGH_FAKE_WALL"
 		121 : "CLASS_NURSE_LEECH"
-		122 : "NUM_CLASSIFY_CLASSES"
+		122 : "CLASS_RANKED_SEASON_BADGE_PROP"
+		123 : "CLASS_HIDEOUT_OWNER_RANKED_SEASON_BADGE_PROP"
+		124 : "NUM_CLASSIFY_CLASSES"
 	]
 	ignoredEntity(string) // FIELD_STRING m_iszEntityIgnoreName
 	explosion_type(string) // FIELD_STRING

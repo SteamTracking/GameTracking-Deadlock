@@ -3149,6 +3149,19 @@
 	]
 ]
 
+// CCitadelHideoutOwnerRankedSeasonRewardProp
+@PointClass base(C_BaseEntity) = citadel_hideout_owner_ranked_season_reward_prop
+[
+	ranked_type(intchoices) : "ranked_type" : : "" = // FIELD_INT32 m_eRankedType (ECitadelRankedType)
+	[
+		0 : "k_eCitadelRankedType_Invalid"
+		1 : "k_eCitadelRankedType_Normal"
+	]
+	rank_interval(integer) // FIELD_UINT8 m_unRankInterval
+	output OnPropDisabled(void)
+	output OnPropEnabled(void)
+]
+
 // CCitadelHideoutPropBase
 @PointClass base(baseanimgraph) = citadel_hideout_prop_base
 [
@@ -3357,6 +3370,19 @@
 // CCitadelRankedBadgeProp
 @PointClass base(prop_dynamic) = citadel_ranked_badge_prop
 [
+	packed_rank(integer) // FIELD_UINT8 m_unPackedRank
+]
+
+// CCitadelRankedSeasonRewardProp
+@PointClass base(prop_dynamic) = citadel_ranked_season_reward_prop
+[
+	account_id(integer) // FIELD_UINT32 m_unAccountID
+	ranked_type(intchoices) : "ranked_type" : : "" = // FIELD_INT32 m_eRankedType (ECitadelRankedType)
+	[
+		0 : "k_eCitadelRankedType_Invalid"
+		1 : "k_eCitadelRankedType_Normal"
+	]
+	rank_interval(integer) // FIELD_UINT8 m_unRankInterval
 	packed_rank(integer) // FIELD_UINT8 m_unPackedRank
 ]
 

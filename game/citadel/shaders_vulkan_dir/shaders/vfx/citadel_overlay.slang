@@ -259,12 +259,12 @@ PS
 	
 	// Translucency
 	CreateInputTexture2D(TextureTranslucency, Linear, 8, "", "_trans", "Translucency,20 / Translucency,10 / 10", Default4(1, 1, 1, 0));
-	float2 g_vColorTranslucencyInputRange < Default(0); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 20"); >;
-	float2 g_vColorTranslucencyOutputRange < Default(0); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 21"); >;
-	float2 g_vNormalTranslucencyInputRange < Default(0); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 30"); >;
-	float2 g_vNormalTranslucencyOutputRange < Default(0); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 31"); >;
-	float2 g_vRoughnessSelfIllumAoTranslucencyInputRange < Default(0); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 40"); >;
-	float2 g_vRoughnessSelfIllumAoTranslucencyOutputRange < Default(0); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 41"); >;
+	float2 g_vColorTranslucencyInputRange < Default2(0, 1); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 20"); >;
+	float2 g_vColorTranslucencyOutputRange < Default2(0, 1); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 21"); >;
+	float2 g_vNormalTranslucencyInputRange < Default2(0, 1); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 30"); >;
+	float2 g_vNormalTranslucencyOutputRange < Default2(0, 1); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 31"); >;
+	float2 g_vRoughnessSelfIllumAoTranslucencyInputRange < Default2(0, 1); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 40"); >;
+	float2 g_vRoughnessSelfIllumAoTranslucencyOutputRange < Default2(0, 1); UiType(VectorText); UiGroup("Translucency,20 / Translucency,10 / 41"); >;
 	
 	// Flags
 	bool g_bForceApply < UiType(CheckBox); UiGroup("Flags"); >;

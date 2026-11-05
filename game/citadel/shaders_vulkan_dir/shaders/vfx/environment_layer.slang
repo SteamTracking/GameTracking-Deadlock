@@ -384,7 +384,7 @@ PS
 	Texture2D g_tColor1 < Channel(RGB, Box(TextureColor1), Srgb); Channel(A, Box(TextureTintMask1), Linear); OutputFormat(BC7); SrgbRead(true); >;
 	Texture2D g_tNormalRoughness1 < Channel(RGBA, HemiOctIsoRoughness_RG_B(TextureNormal1, TextureRoughness1), Linear); OutputFormat(BC7); SrgbRead(false); >;
 	Texture2D g_tPacked1 < Channel(R, Box(TextureSelfIllum1), Linear); Channel(G, Box(TextureMetalness1), Linear); OutputFormat(ATI2N); SrgbRead(false); >;
-	float3 g_vFlatOverlayColor < Default2(1, 0); Attribute("FlatOverlayColor"); UiType(VectorText); >;
+	float3 g_vFlatOverlayColor < Default3(1, 0, 1); Attribute("FlatOverlayColor"); UiType(VectorText); >;
 	float4 g_vShaderIDColor < Source(ShaderIDColor); UiType(VectorText); >;
 	
 	// ENVIRONMENT_LAYER 1

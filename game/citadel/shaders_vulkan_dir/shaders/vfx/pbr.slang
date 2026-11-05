@@ -178,8 +178,8 @@ VS
 	float3 g_vJitterExpression < Range3(-1024, -1024, -1024, 1024, 1024, 1024); UiType(VectorText); UiGroup("Vertex Animation,90"); >;
 	float g_flJitterSpeedA1 < Default(10); Range(0, 40); UiType(Slider); UiGroup("Vertex Animation,90 / Jitter Waves A,10"); >;
 	float3 g_vJitterAmplitudesXA1 < Default(4); Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Vertex Animation,90 / Jitter Waves A,10"); >;
-	float3 g_vJitterAmplitudesYA1 < Default(0); Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Vertex Animation,90 / Jitter Waves A,10"); >;
-	float3 g_vJitterAmplitudesZA1 < Default(0); Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Vertex Animation,90 / Jitter Waves A,10"); >;
+	float3 g_vJitterAmplitudesYA1 < Default2(0, 4); Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Vertex Animation,90 / Jitter Waves A,10"); >;
+	float3 g_vJitterAmplitudesZA1 < Default3(0, 0, 4); Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Vertex Animation,90 / Jitter Waves A,10"); >;
 	float3 g_vJitterFrequenciesA1 < Default3(0.02, 0.04, 0.08); Range3(-0.5, -0.5, -0.5, 0.5, 0.5, 0.5); UiType(VectorText); UiGroup("Vertex Animation,90 / Jitter Waves A,10"); >;
 	float g_flJitterSpeedB1 < Default(7); Range(0, 40); UiType(Slider); UiGroup("Vertex Animation,90 / Jitter Waves B,20"); >;
 	float3 g_vJitterAmplitudesXB1 < Range3(0, 0, 0, 64, 64, 64); UiType(VectorText); UiGroup("Vertex Animation,90 / Jitter Waves B,20"); >;
@@ -736,7 +736,7 @@ PS
 		v4 = g_vAmbientOcclusionTexcoordOffset1;
 		-.5*v3*float2(v1-v2,v2+v1)+v4+.5); >;
 	float4 g_vDamageFlashParams < Attribute("g_vDamageFlashParams"); UiType(VectorText); >;
-	float4 g_vDamageFlashSphere < Default(0); Attribute("g_vDamageFlashSphere"); UiType(VectorText); >;
+	float4 g_vDamageFlashSphere < Default4(0, 0, 0, -1); Attribute("g_vDamageFlashSphere"); UiType(VectorText); >;
 	float4 g_vDetailTexCoordXform < UiType(VectorText); Expression(v0 = g_flDetailTexCoordRotation1*3.1415927/180;
 		v1 = cos(v0);
 		v2 = sin(v0);
@@ -748,7 +748,7 @@ PS
 		v3 = g_vDetailTexCoordScale1;
 		v4 = g_vDetailTexCoordOffset1;
 		-.5*v3*float2(v1-v2,v2+v1)+v4+.5); >;
-	float3 g_vFlatOverlayColor < Default2(1, 0); Attribute("FlatOverlayColor"); UiType(VectorText); >;
+	float3 g_vFlatOverlayColor < Default3(1, 0, 1); Attribute("FlatOverlayColor"); UiType(VectorText); >;
 	float2 g_vNPRDfaoInfluenceRange < Attribute("g_vNPRDfaoInfluenceRange"); UiType(VectorText); >;
 	float3 g_vNPRExposureTargets < Attribute("g_vNPRExposureTargets"); UiType(VectorText); >;
 	float4 g_vNPROutlineBrightColor < Attribute("g_vNPROutlineBrightColor"); UiType(VectorText); >;
@@ -898,7 +898,7 @@ PS
 	
 	// Self Illum
 	float g_flSelfIllumFresnelMaskExponent < Default(5); Range(0.001, 10); UiType(Slider); UiGroup("Self Illum,70 / Fresnel Mask,-2"); UiVisibility(F_SELF_ILLUM ? 1 : 0); >;
-	float2 g_vSelfIllumFresnelMaskRange1 < Default(0); UiType(VectorText); UiGroup("Self Illum,70 / Fresnel Mask,-2"); UiVisibility(F_SELF_ILLUM ? 1 : 0); >;
+	float2 g_vSelfIllumFresnelMaskRange1 < Default2(0, 1); UiType(VectorText); UiGroup("Self Illum,70 / Fresnel Mask,-2"); UiVisibility(F_SELF_ILLUM ? 1 : 0); >;
 	float3 g_vSelfIllumFresnelMaskTint1 < Default3(1, 1, 1); UiType(Color); UiGroup("Self Illum,70 / Fresnel Mask,-2"); UiVisibility(F_SELF_ILLUM ? 1 : 0); >;
 	bool g_bUseSecondaryUvForSelfIllum1 < UiType(CheckBox); UiGroup("Self Illum,70 / UVs,-1"); UiVisibility(F_SELF_ILLUM); >;
 	float g_flSelfIllumScrollQuantize1 < UiType(Slider); UiGroup("Self Illum,70 / UVs,-1"); UiVisibility(F_SELF_ILLUM); >;
