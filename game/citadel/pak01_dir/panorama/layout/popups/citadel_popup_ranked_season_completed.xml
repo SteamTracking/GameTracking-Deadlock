@@ -1,0 +1,24 @@
+<!-- xml reconstructed by Source 2 Viewer - https://valveresourceformat.github.io -->
+<root>
+	<styles>
+		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
+		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/citadel_popup_ranked_season_completed.vcss" />
+	</styles>
+	<CitadelPopupRankedSeasonCompleted class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked()">
+		<Panel class="SeasonSummary">
+			<Label class="Title" text="#Citadel_RankedTitle" />
+			<SplitLabel class="SeasonName" text="{s:season_name}" />
+			<Label class="SeasonStartEnd" text="{s:season_start_time} - {s:season_end_time}" />
+			<Label class="SeasonEnds" text="#Citadel_RankedSeasonCompleted_Title" />
+			<Panel class="SeasonDesc">
+				<Label text="{s:player_rank_status}" />
+			</Panel>
+			<Panel class="MainRankContainer">
+				<CitadelRotatableScenePanelNew id="SeasonRewardScenePanel" map="ui/ranked_season_reward.vmap" rotate="AnyMouseMove" rotation_entity_name="season_reward_prop" yawmin="15.0" yawmax="-15.0" />
+				<Label class="MainRankLabel" text="#Citadel_RankedSeason_FinalRank" />
+			</Panel>
+			<CitadelButton class="CloseButton" text="#Close" onactivate="UIPopupButtonClicked()" />
+		</Panel>
+	</CitadelPopupRankedSeasonCompleted>
+</root>

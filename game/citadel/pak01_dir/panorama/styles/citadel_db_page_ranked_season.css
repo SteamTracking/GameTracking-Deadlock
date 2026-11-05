@@ -62,7 +62,7 @@ CitadelRankedSeasonPage
 	font-weight: bold;
 	letter-spacing: 1px;
 	text-transform: uppercase;
-	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .7;
 	pre-transform-rotate2d: -1.8deg;
 }
 
@@ -70,8 +70,8 @@ CitadelRankedSeasonPage
 {
 	horizontal-align: center;
 	margin: -28px 0px -20px 0px;
-	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
-	opacity-mask-scale: 100% 100%;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .8;
+	opacity-mask-scale: 80% 80%;
 	pre-transform-rotate2d: -0.8deg;
 }
 
@@ -139,8 +139,14 @@ CitadelRankedSeasonPage
 	font-size: 18px;
 	font-family: block;
 	text-transform: uppercase;
-	color: #48575888;
-	margin-top: 4px;
+	color: offWhite&88;
+	margin-top: 8px;
+	background-color: offBlack;
+	box-shadow: 0px 0px 1px offBlack;
+	padding: 6px 12px;
+	animation-name: TagGroove2;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
 	visibility: collapse;
 }
 
@@ -271,6 +277,18 @@ CitadelRankedSeasonPage
 }
 
 .IsEligibleForRanked .SeasonSummary .EligibilityContainer .EligibleDesc
+{
+	visibility: collapse;
+}
+
+.SeasonSummary .EligibilityContainer #JoinSeasonButton
+{
+	horizontal-align: center;
+	margin-top: 30px;
+	ui-scale: 180%;
+}
+
+.SeasonSummary .EligibilityContainer #JoinSeasonButton:disabled
 {
 	visibility: collapse;
 }
@@ -818,6 +836,26 @@ CitadelRankedSeasonPage
 	width: 620px;
 }
 
+#OverviewTabContents .HeroWinsBullet
+{
+	visibility: collapse;
+}
+
+.HasHeroWinsRequirement #OverviewTabContents .HeroWinsBullet
+{
+	visibility: visible;
+}
+
+#OverviewTabContents .HeroPointsBullet
+{
+	visibility: collapse;
+}
+
+.HasHeroPointsRequirement #OverviewTabContents .HeroPointsBullet
+{
+	visibility: visible;
+}
+
 #OverviewTabContents .OverviewRanksRow
 {
 	flow-children: right;
@@ -1237,6 +1275,17 @@ CitadelRankedSeasonPage
 	opacity: 0.15;
 	font-size: 16px;
 	wash-color: offWhite;
+	visibility: collapse;
+}
+
+.HasHeroWinsRequirement #HeroesTabContents .HeroesHeader.HeroWinsRequired
+{
+	visibility: visible;
+}
+
+.HasHeroPointsRequirement #HeroesTabContents .HeroesHeader.HeroPointsRequired
+{
+	visibility: visible;
 }
 
 #HeroesTabContents b
@@ -1295,7 +1344,7 @@ CitadelRankedSeasonPage
 	opacity: 0;
 }
 
-.HeroRow .HeroWins
+.HeroRow .HeroWins,.HeroRow .HeroPoints
 {
 	vertical-align: middle;
 	margin-right: 24px;
@@ -1304,6 +1353,7 @@ CitadelRankedSeasonPage
 	font-weight: bold;
 	font-family: oracle;
 	color: offWhite&44;
+	visibility: collapse;
 }
 
 .HeroRow.HeroUnlocked
@@ -1318,9 +1368,19 @@ CitadelRankedSeasonPage
 	opacity: 1;
 }
 
-.HeroRow.HeroUnlocked .HeroWins
+.HeroRow.HeroUnlocked .HeroWins,.HeroRow.HeroUnlocked .HeroPoints
 {
 	color: #62e762cc;
+}
+
+.HasHeroWinsRequirement .HeroWins
+{
+	visibility: visible;
+}
+
+.HasHeroPointsRequirement .HeroPoints
+{
+	visibility: visible;
 }
 
 @keyframes 'TagGroove1'
@@ -1348,6 +1408,50 @@ CitadelRankedSeasonPage
 	100%
 	{
 		transform: rotateZ(1deg);
+	}
+	
+}
+
+@keyframes 'TagGroove2'
+{
+	0%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	26%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	51%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	76%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
 	}
 	
 }

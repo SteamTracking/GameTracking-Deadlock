@@ -12,7 +12,7 @@ CitadelRankedHistoryPage
 	flow-children: down;
 	vertical-align: middle;
 	horizontal-align: center;
-	width: 1200px;
+	width: 800px;
 	height: 800px;
 }
 
@@ -21,9 +21,12 @@ CitadelRankedHistoryPage
 	horizontal-align: center;
 	text-align: center;
 	font-family: oracle;
-	font-size: 48px;
+	color: #485758;
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: 1px;
 	text-transform: uppercase;
-	letter-spacing: 2px;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 0.6;
 }
 
 .MainContents #RankedSeasonsList
@@ -36,11 +39,14 @@ CitadelRankedHistoryPage
 .RankedSeason
 {
 	flow-children: right;
-	background-color: gradient( linear, 0% 0%, 0% 100%, from( #222 ), to( #333 ));
+	background-image: url("s2r://panorama/images/textures/paper_panel_bg_01_png.vtex");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-img-opacity: 0.8;
 	margin-bottom: 16px;
 	width: 100%;
 	height: 180px;
-	padding-right: 24px;
+	padding-right: 32px;
 	transition-property: brightness;
 	transition-duration: 0.2s;
 }
@@ -65,10 +71,14 @@ CitadelRankedHistoryPage
 {
 	horizontal-align: center;
 	text-align: center;
-	color: #666;
+	color: #738a8a88;
 	font-family: oracle;
-	border: 1px solid #666;
+	font-weight: bold;
 	padding: 4px 8px;
+	font-size: 48px;
+	width: 120px;
+	height: 40px;
+	text-overflow: shrink;
 }
 
 .RankedSeason .PlayerRankStatus #RankedBadge
@@ -89,32 +99,50 @@ CitadelRankedHistoryPage
 {
 	font-family: oracle;
 	font-size: 32px;
+	color: #8faaa9;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 }
 
 .RankedSeason .SeasonInfo .SeasonDates
 {
 	font-family: oracle;
-	color: #999;
+	color: #738a8a88;
+	font-weight: bold;
+	margin-top: -8px;
 }
 
 .RankedSeason .SeasonStatus
 {
 	vertical-align: middle;
-	margin-left: 32px;
 	font-family: block;
 	text-transform: uppercase;
-	letter-spacing: 2px;
-	font-size: 32px;
+	letter-spacing: 1px;
+	font-size: 20px;
+	color: #738a8a88;
 }
 
 .RankedSeason.SeasonActive .SeasonStatus
 {
-	color: soulColor;
+	horizontal-align: center;
+	text-align: center;
+	font-size: 18px;
+	font-family: block;
+	text-transform: uppercase;
+	color: offWhite&88;
+	margin-top: 8px;
+	background-color: offBlack;
+	box-shadow: 0px 0px 1px offBlack;
+	padding: 6px 12px;
+	animation-name: TagGroove2;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
 }
 
 .RankedSeason.SeasonFinished .SeasonStatus
 {
-	color: #666;
+	color: #738a8a88;
 }
 
 .RankedSeason.ShowBadge #RankedBadge
@@ -125,5 +153,49 @@ CitadelRankedHistoryPage
 .RankedSeason.ShowBadge .PlayerRankStatusLabel
 {
 	visibility: collapse;
+}
+
+@keyframes 'TagGroove2'
+{
+	0%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	26%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	51%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	76%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
+	}
+	
 }
 

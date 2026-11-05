@@ -1,0 +1,252 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+CitadelPopupRankedSeasonCompleted
+{
+	width: 760px;
+	background-image: none;
+	opacity-mask: url("s2r://panorama/images/masks/scroll_bottom_fade_psd.vtex");
+}
+
+.SeasonSummary
+{
+	flow-children: down;
+	width: 100%;
+}
+
+.SeasonSummary .Title
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #485758;
+	font-size: 44px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") 1;
+}
+
+.SeasonSummary .SeasonEnds
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: block;
+	color: offWhite&cc;
+	font-size: 40px;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .7;
+	background-color: offBlack;
+	padding: 8px 20px;
+	margin-top: 12px;
+	box-shadow: 0px 0px 1px offBlack;
+	animation-name: TagGroove2;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+.SeasonSummary .SeasonName
+{
+	horizontal-align: center;
+	margin: -28px 0px -20px 0px;
+	opacity-mask: url("s2r://panorama/images/masks/blackboard_portrait_mask_psd.vtex") .7;
+	opacity-mask-scale: 100% 100%;
+	pre-transform-rotate2d: -0.8deg;
+}
+
+.Language_japanese .SeasonSummary .SeasonName
+{
+	margin: -12px 0px -12px 0px;
+}
+
+.SeasonSummary .SeasonName Label
+{
+	text-align: center;
+	font-family: oracle;
+	color: #8faaa9;
+	font-size: 80px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-overflow: shrink;
+	max-width: 600px;
+}
+
+.SeasonSummary .SeasonName #InnerLabel
+{
+	width: 600px;
+	max-height: 120px;
+}
+
+.SeasonSummary .SeasonName #ImageSlices Image:nth-child(1n)
+{
+	transform: translateY( 0% ) rotateZ(2deg);
+}
+
+.SeasonSummary .SeasonName #ImageSlices Image:nth-child(2n)
+{
+	transform: translateY( -2% ) rotateZ(-2deg);
+}
+
+.SeasonSummary .SeasonName #ImageSlices Image:nth-child(3n)
+{
+	transform: translateY( 1% ) skew(6deg);
+}
+
+CitadelPopupRankedSeasonCompleted:not(.Hidden) .SeasonSummary .SeasonName
+{
+	animation-name: SeasonCompletedIntro;
+	animation-duration: .24s;
+	animation-timing-function: ease-in-out;
+}
+
+.SeasonSummary .SeasonStartEnd
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #738a8a88;
+	font-size: 20px;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+
+.SeasonSummary .SeasonDesc
+{
+	horizontal-align: center;
+	text-align: center;
+	padding: 4px 12px;
+	margin-top: 24px;
+	width: 400px;
+	height: 200px;
+}
+
+.ShowBadge .SeasonSummary .SeasonDesc
+{
+	visibility: collapse;
+}
+
+.SeasonSummary .SeasonDesc Label
+{
+	font-size: 32px;
+	font-family: oracle;
+	color: #666;
+	text-align: center;
+	horizontal-align: center;
+	vertical-align: middle;
+	text-overflow: shrink;
+}
+
+.SeasonSummary .MainRankContainer
+{
+	flow-children: down;
+	horizontal-align: center;
+	margin-top: 24px;
+	visibility: collapse;
+}
+
+.ShowBadge .SeasonSummary .MainRankContainer
+{
+	visibility: visible;
+}
+
+.SeasonSummary .MainRankContainer #SeasonRewardScenePanel
+{
+	height: 500px;
+	width: height-percentage( 66.67% );
+	horizontal-align: center;
+	ui-scale: 200%;
+	transform: scale3d( 0.5, 0.5, 1.0 );
+	margin: -250px -166px;
+}
+
+.SeasonSummary .MainRankContainer .MainRankLabel
+{
+	horizontal-align: center;
+	text-align: center;
+	font-family: oracle;
+	color: #485758;
+	margin-top: -8px;
+	font-size: 24px;
+}
+
+.Language_japanese .SeasonSummary .MainRankContainer .MainRankLabel
+{
+	margin-top: 0px;
+}
+
+.SeasonSummary .CloseButton
+{
+	horizontal-align: center;
+	margin-top: 32px;
+}
+
+@keyframes 'SeasonCompletedIntro'
+{
+	0%
+	{
+		opacity: 0;
+		pre-transform-scale2d: 0.2;
+		pre-transform-rotate2d: -10deg;
+	}
+	
+	80%
+	{
+		pre-transform-scale2d: 1.1;
+		pre-transform-rotate2d: 2deg;
+	}
+	
+	100%
+	{
+		opacity: 1;
+		pre-transform-scale2d: 1;
+		pre-transform-rotate2d: -2.2deg;
+	}
+	
+}
+
+@keyframes 'TagGroove2'
+{
+	0%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	25%
+	{
+		transform: rotateZ(-3deg);
+	}
+	
+	26%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	50%
+	{
+		transform: rotateZ(-1deg);
+	}
+	
+	51%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	75%
+	{
+		transform: rotateZ(2deg);
+	}
+	
+	76%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+	100%
+	{
+		transform: rotateZ(0deg);
+	}
+	
+}
+

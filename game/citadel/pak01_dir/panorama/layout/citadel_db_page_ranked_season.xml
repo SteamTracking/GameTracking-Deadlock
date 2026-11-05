@@ -38,6 +38,7 @@
 				<Label class="HeroName" text="{g:citadel_hero_name:hero_id}" />
 				<Panel class="FillWidth" />
 				<Label class="HeroWins" text="#Citadel_RankedSeason_HeroWins:f" />
+				<Label class="HeroPoints" text="#Citadel_RankedSeason_HeroPoints:f" />
 			</Panel>
 		</snippet>
 		<snippet name="CalibratingPip">
@@ -81,6 +82,7 @@
 						</Panel>
 						<Label class="NotEligibleDesc" text="#Citadel_RankedSeason_Eligibility_NotEligible" />
 						<Label class="EligibleDesc" text="#Citadel_RankedSeason_Eligibility_Eligible" />
+						<CitadelButton id="JoinSeasonButton" class="CTA Large" text="#Citadel_RankedSeason_JoinSeason" onactivate="CitadelRankedSeasonJoinSeason()" />
 					</Panel>
 					<Panel class="MainRankContainer">
 						<CitadelRankedBadgeFull id="MainBadge" />
@@ -146,11 +148,13 @@
 							</Panel>
 							<Label class="OverviewHeader" text="#Citadel_Ranked_Overview_Eligibility" />
 							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Eligibility_Bullet1:f" />
+							<Label class="OverviewBullet HeroWinsBullet" text="#Citadel_Ranked_Overview_Eligibility_Bullet1_HeroWins:f" />
+							<Label class="OverviewBullet HeroPointsBullet" text="#Citadel_Ranked_Overview_Eligibility_Bullet1_HeroPoints:f" />
 							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Eligibility_Bullet2" />
 							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Eligibility_Bullet3" />
 							<Label class="OverviewHeader" text="#Citadel_Ranked_Overview_PlayingMatches" />
 							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Playing_Bullet1" />
-							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Playing_Bullet2" />
+							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Playing_Bullet2:f" />
 							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Playing_Bullet3" />
 							<Label class="OverviewBullet" text="#Citadel_Ranked_Overview_Playing_Bullet4" />
 							<Panel class="PercentileTable">
@@ -179,14 +183,15 @@
 							</AsyncDataPanel>
 						</TabContents>
 						<TabContents id="HeroesTabContents" tabid="HeroesTab" group="ranked_tabs">
-							<Label class="HeroesHeader" html="true" text="#Citadel_RankedSeason_HeroWinsRequired:f" />
+							<Label class="HeroesHeader HeroWinsRequired" html="true" text="#Citadel_RankedSeason_HeroWinsRequired:f" />
+							<Label class="HeroesHeader HeroPointsRequired" html="true" text="#Citadel_RankedSeason_HeroPointsRequired:f" />
 							<Panel id="HeroesList" />
 						</TabContents>
 					</Panel>
 				</Panel>
 			</Panel>
 			<Panel class="Footer">
-				<CitadelButton id="ViewSeasonsButton" text="#Citadel_Ranked_ViewSeasonHistory" onactivate="CitadelShowRankedHistoryPage()" disabled="true" onmouseover="CitadelUIShowTextTooltip( &apos;#Citadel_RankedSeason_ViewNote&apos; )" onmouseout="CitadelUIHideTextTooltip()" />
+				<CitadelButton id="ViewSeasonsButton" text="#Citadel_Ranked_ViewSeasonHistory" onactivate="CitadelShowRankedHistoryPage()" />
 				<CitadelButton id="ViewLeaderboardsButton" text="#Citadel_Ranked_ViewLeaderboards" onactivate="CitadelShowGlobalLeaderboard()" />
 			</Panel>
 		</Panel>
