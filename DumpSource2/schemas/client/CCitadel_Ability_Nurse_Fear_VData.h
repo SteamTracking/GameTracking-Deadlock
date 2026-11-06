@@ -10,6 +10,7 @@ class CCitadel_Ability_Nurse_Fear_VData : public CitadelAbilityVData
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_CastDelayParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_ChannelParticle;
+	float32 m_flCastRangeVisualFixup; // = 60
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strChannelEndSound;
 	// MPropertyStartGroup = "Gameplay"

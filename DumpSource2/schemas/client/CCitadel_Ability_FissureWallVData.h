@@ -15,4 +15,5 @@ class CCitadel_Ability_FissureWallVData : public CitadelAbilityVData
 	float32 m_flWallPreviewDropdownRate; // = 8
 	float32 m_flWallStepHeight; // = 32
 	float32 m_flWallTraceRadius; // = 5
+	float32 m_flWallBackTraceDistance; // = 600
 };
