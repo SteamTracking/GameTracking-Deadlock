@@ -20,7 +20,7 @@ class CitadelItemVData : public CitadelAbilityVData
 	// MPropertyFriendlyName = "Allow Item Stacking"
 	bool m_bAllowItemStacking; // = true
 	// MPropertyFriendlyName = "Corrupted Item"
-	CorruptedItemInfo_t m_CorruptedItemInfo; // = { "m_Upgrade": { "m_vecPropertyUpgrades": [  ] }, "m_nSoulCostOverride": -1, "m_vecExcludedPenalties": [  ], "m_vecIntrinsicModifiers": [  ] }
+	CorruptedItemInfo_t m_CorruptedItemInfo;
 	CUtlVector< CSubclassName< 4 > > m_vecComponentItems;
 	// MPropertyCustomFGDType = "vdata_choice:scripts/heroes.vdata"
 	CUtlVector< CUtlString > m_vecDisabledOnHeroes;

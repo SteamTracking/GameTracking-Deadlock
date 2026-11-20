@@ -15,5 +15,5 @@ class CCitadel_Ability_TurretClone_VData : public CitadelAbilityVData
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_BuffModifier;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceTeleport; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceTeleport;
 };

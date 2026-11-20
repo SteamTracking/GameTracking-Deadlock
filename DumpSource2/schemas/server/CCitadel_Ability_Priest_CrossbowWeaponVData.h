@@ -14,7 +14,7 @@ class CCitadel_Ability_Priest_CrossbowWeaponVData : public CCitadel_Ability_Prim
 	CSoundEventName m_strHitHeadshotSound;
 	CSoundEventName m_strBeamPointClosestLoopSound;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceBolt; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceBolt;
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CCitadelModifier > m_ExecuteModifier;
 };

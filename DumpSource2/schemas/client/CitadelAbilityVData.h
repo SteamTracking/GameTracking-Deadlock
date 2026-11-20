@@ -48,7 +48,7 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	InputBitMask_t m_TriggerButtonOverride;
 	EAbilitySpectatePriority m_eAbilitySpectatePriority; // = "CITADELTV_ABILITY_SPECTATE_PRIORITY_NONE"
 	CBitVecEnum< EModifierState > m_bitsInterruptingStates;
-	IncompatibleFilter_t m_IncompatibleFilter; // = { "m_AbilityBehaviorsBits": "", "m_eAbilityActivation": "CITADEL_ABILITY_ACTIVATION_NONE", "m_eIncompatibleAbilityType": "EAbilityType_Invalid" }
+	IncompatibleFilter_t m_IncompatibleFilter;
 	CITADEL_UNIT_TARGET_TYPE m_nAbilityTargetTypes;
 	CITADEL_UNIT_TARGET_FLAGS m_nAbilityTargetFlags;
 	ELOSCheck m_eTargettingLOSCheck; // = "Bounds"
@@ -73,7 +73,7 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	// MPropertyDescription = "Projectile infos keyed by context. The "primary" context is what GetProjectileInfoVData() returns by default."
 	CUtlOrderedMap< CGlobalSymbol, CEmbeddedSubclassGeneric< 0 > > m_mapProjectileInfos;
 	// MPropertyFriendlyName = "Deployment Info"
-	DeploymentInfo_t m_deploymentInfo; // = { "m_bCheckPlayerFit": false, "m_bDownCheckIgnoreLos": false, "m_bGroundCheck": false, "m_bPlaceFlat": false, "m_bPlaceNormalToSurface": false, "m_bPointTrace": false, "m_bRequiresUpNormal": false, "m_flFlatYawOffset": 0, "m_flGroundCheckHeightOffset": -1, "m_flGroundCheckHeightOffsetDown": -1, "m_flModelVerticalPlacementScaleOffset": 0, "m_flPreviewModelScale": 1, "m_previewModel": "", "m_previewParticle": "", "m_strExraBodygroup": "", "m_strPreviewClass": "citadel_deployable_preview", "m_strPreviewParticleEffectConfig": "" }
+	DeploymentInfo_t m_deploymentInfo;
 	// MPropertyStartGroup = ""
 	CUtlDict< CitadelAbilityProperty_t > m_mapAbilityProperties;
 	// MPropertyMapKeyLeafChoiceProviderFn
@@ -130,13 +130,13 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	CUtlString m_strAltCastButtonLocToken;
 	// MPropertyStartGroup = "Camera"
 	// MPropertyDescription = "Camera sequence that plays when casting starts and stops when casting completes, unless the bool below is un-checked"
-	CitadelCameraOperationsSequence_t m_cameraSequenceCastStart; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceCastStart;
 	// MPropertyDescription = "By default, we stop the sequence from 'Sequence Cast Start' once the cast completes successfully.  Un-check this to allow it to continue past the cast."
 	bool m_bEndCastStartSequenceOnCastComplete; // = true
 	// MPropertyDescription = "Camera sequence that plays when casting completes."
-	CitadelCameraOperationsSequence_t m_cameraSequenceCastComplete; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceCastComplete;
 	// MPropertyDescription = "Camera sequence that plays when channeling starts and is stopped when channeling ends, unless the bool below is un-checked."
-	CitadelCameraOperationsSequence_t m_cameraSequenceChannelStart; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceChannelStart;
 	// MPropertyDescription = "By default, we stop the sequence from 'Sequence Channel Start' once the channel completes successfully.  Un-check this to allow it to continue past the channel duration."
 	bool m_bEndChannelStartSequenceOnChannelComplete; // = true
 	// MPropertyStartGroup = "Visuals"

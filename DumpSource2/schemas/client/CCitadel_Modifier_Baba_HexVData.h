@@ -8,7 +8,7 @@ class CCitadel_Modifier_Baba_HexVData : public CCitadelModifierVData
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_HexedParticle;
 	// MPropertyStartGroup = "Camera"
 	// MPropertyDescription = "Started on the victim when the hex lands, and stopped when it ends. Use this rather than Sequence Created, which would start before the hex lands"
-	CitadelCameraOperationsSequence_t m_cameraSequenceHexed; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceHexed;
 	// MPropertyStartGroup = "+Properties"
 	float32 m_flModelScale; // = 1
 	bool m_bInterruptsChannels; // = true

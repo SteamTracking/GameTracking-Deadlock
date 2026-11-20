@@ -46,7 +46,7 @@ class CitadelHeroData_t
 	CUtlString m_strUIPostgamePortraitMap;
 	// MPropertyAttributeEditor = "AssetBrowse( vmap )"
 	CUtlString m_strUIHeroRevealMap;
-	HeroStatsUI_t m_heroStatsUI; // = { "m_eWeaponStatDisplay": "EStatsCount", "m_eWeaponType": "ECitadelWeapon_Invalid", "m_strWeaponImage": "", "m_strWeaponNameLocString": "", "m_vecDisplayStats": [  ] }
+	HeroStatsUI_t m_heroStatsUI;
 	HeroStatsDisplay_t m_heroStatsDisplay;
 	CitadelStatsDisplay_t m_ShopStatDisplay;
 	// MPropertyStartGroup = "Sounds"

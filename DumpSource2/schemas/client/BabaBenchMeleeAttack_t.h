@@ -33,5 +33,5 @@ class BabaBenchMeleeAttack_t
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_MeleeAttackParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_MeleeImpactParticle;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceAttackStart; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceAttackStart;
 };

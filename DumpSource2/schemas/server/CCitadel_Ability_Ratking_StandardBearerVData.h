@@ -52,7 +52,7 @@ class CCitadel_Ability_Ratking_StandardBearerVData : public CitadelAbilityVData
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_CastParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_AnticipationParticle;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_ChargingCameraSequence; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_ChargingCameraSequence;
 	// MPropertyDescription = "Replaces the charging sequence from the start of the plant leap rise until the leap ends."
-	CitadelCameraOperationsSequence_t m_PlantLeapCameraSequence; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_PlantLeapCameraSequence;
 };

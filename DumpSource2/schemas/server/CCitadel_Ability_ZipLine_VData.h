@@ -10,7 +10,7 @@ class CCitadel_Ability_ZipLine_VData : public CitadelAbilityVData
 	float32 m_flCrouchDropAirDragSuppressDuration; // = 1
 	float32 m_flDetachDisallowedTime; // = 0.5
 	float32 m_flCameraWobbleIntensity; // = 0.2
-	float32 m_flDismountSpeedMax; // = 1574.800049
+	float32 m_flDismountSpeedMax; // = 1574.8
 	float32 m_flDismountSpeedMaxBrawl; // = 800
 	float32 m_flZiplineKnockdownUpImpulse; // = 100
 	float32 m_flZiplineIntroDuration; // = 3
@@ -35,8 +35,8 @@ class CCitadel_Ability_ZipLine_VData : public CitadelAbilityVData
 	CEmbeddedSubclass< CCitadelModifier > m_ZipLineKnockdownImmuneModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_ZipLineSlowModifier;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceAwaitingTether; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
-	CitadelCameraOperationsSequence_t m_cameraSequenceLatched; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
-	CitadelCameraOperationsSequence_t m_cameraSequenceAttached; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
-	CitadelCameraOperationsSequence_t m_cameraSequenceClear; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceAwaitingTether;
+	CitadelCameraOperationsSequence_t m_cameraSequenceLatched;
+	CitadelCameraOperationsSequence_t m_cameraSequenceAttached;
+	CitadelCameraOperationsSequence_t m_cameraSequenceClear;
 };

@@ -20,6 +20,6 @@ class CCitadel_Ability_GoldenIdolVData : public CCitadel_Ability_BaseHeldItemVDa
 	float32 m_flMaxHealthDamage; // = 0.01
 	float32 m_flTimeToDamage; // = 75
 	float32 m_flTimeToRunBackInstantly; // = 40
-	float32 m_flHeldTimeRadius; // = 1574.800049
+	float32 m_flHeldTimeRadius; // = 1574.8
 	float32 m_flJuggleTimeAdd; // = 8
 };

@@ -8,7 +8,7 @@ class CitadelGenericData_t
 	// MPropertyStartGroup = "Sounds"
 	CUtlOrderedMap< ECurrencyType, CurrencySound_t > m_CurrencyTypeSounds;
 	DamageReceivedSounds_t m_DamageReceivedSounds;
-	HealingReceivedSounds_t m_HealingReceivedSounds; // = { "m_HOTLoopSounds": {  }, "m_nPriority": 1, "m_strDirectHealingMedium": "", "m_strDirectHealingSmall": "", "m_strHOTToppedOff": "", "m_strHighThresholdOneshot": "" }
+	HealingReceivedSounds_t m_HealingReceivedSounds;
 	DamageIndicatorSounds_t m_DamageIndicatorSounds;
 	CSoundEventName m_strExitCombatSound;
 	// MPropertyStartGroup = "Particles and Visuals"
@@ -68,12 +68,12 @@ class CitadelGenericData_t
 	float32[6] m_flTrooperKillGoldShareFrac;
 	float32[6] m_flHeroKillGoldShareFrac;
 	DOFDesc_t m_DefaultDOF;
-	RejuvinatorParams_t m_RejuvParams; // = { "m_PlayerRespawnMult": [  ], "m_TrooperHealthMult": [  ], "m_flRejuvinatorBuffDuration": 240, "m_flRejuvinatorDropDuration": 7, "m_flRejuvinatorDropHeight": 500, "m_flRejuvinatorDropSpreadRadius": 800, "m_flRejuvinatorDropWallClearance": 150, "m_flRejuvinatorExpirationWarningTiming": 30, "m_flRejuvinatorRebirthDuration": [ 0, 0, 0 ], "m_nRejuvinatorBreakGold": 500, "m_nRejuvinatorBreakGoldPerMinute": 9, "m_nRejuvinatorDropCount": 3, "m_strRejuvPickupSound": "" }
-	IdolParams_t m_IdolParams; // = { "m_CrateModel": "", "m_IdolDroppingParticle": "", "m_IdolModel": "", "m_IdolReturnLocationParticle": "", "m_IdolSpawnCompleteSound": "", "m_IdolSpawnLocationParticle": "", "m_IdolSpawnSound": "", "m_ParachuteModel": "", "m_flIdolDropDuration": 25, "m_flIdolDropHeight": 1800, "m_flIdolReturnLocationParticleScale": 1, "m_strLoopingSequenceName": "" }
-	KothParams_t m_KothParams; // = { "m_KothEarlyWarningParticle": "", "m_KothOnSpawnParticle": "", "m_KothSpawnLocationParticle": "", "m_flKothRadius": 20, "m_flKothWarningDropHeight": 60, "m_strKothPreSpawnLoopSound": "", "m_strKothSpawnCompleteSound": "", "m_strKothSpawnLoopSound": "", "m_strKothSpawnLoopStartSound": "" }
+	RejuvinatorParams_t m_RejuvParams;
+	IdolParams_t m_IdolParams;
+	KothParams_t m_KothParams;
 	TeleporterParams_t m_TeleporterParams;
-	ObjectivesParams_t m_ObjectiveParams; // = { "m_GoldPerOrb": 0, "m_NearPlayerSplitPct": 60, "m_nBaseGuardiansGoldKill": 750, "m_nBaseGuardiansGoldOrbs": 0, "m_nPatronPhase1GoldKill": 0, "m_nPatronPhase1GoldOrbs": 0, "m_nShrinesGoldKill": 0, "m_nShrinesGoldOrbs": 0, "m_nTier1GoldKill": 1650, "m_nTier1GoldOrbs": 0, "m_nTier2GoldKill": 4500, "m_nTier2GoldOrbs": 0 }
-	BreakablePowerupLootParams_t m_BreakablePowerupLootParams; // = { "m_iLootListDeckSize": 1, "m_mapPickupsByMatchTimeMins": {  } }
+	ObjectivesParams_t m_ObjectiveParams;
+	BreakablePowerupLootParams_t m_BreakablePowerupLootParams;
 	CUtlVector< BreakableSpawnTimeDesc_t > m_BreakableSpawnTimeDesc;
 	CUtlOrderedMap< EStatsType, CUtlString > m_mapStatTypeImages;
 	// MPropertyDescription = "Remap camera angle delta to aim spring strength"
@@ -87,5 +87,5 @@ class CitadelGenericData_t
 	CUtlVector< ShopGroups_t > m_vecSpiritGroups;
 	// MPropertyFlattenIntoParentRow
 	// MPropertyStartGroup = "Street Brawl"
-	GameModeStreetBrawl_t m_StreetBrawl; // = { "m_flActivesReductionWeightScale": 0.35, "m_flBuyTimeGracePeriod": 15, "m_flComebackWeightScale_Trailing_1": 2, "m_flComebackWeightScale_Trailing_2": 8, "m_flEnhancedOwnerSkipChancePct": 75, "m_flLegendaryOwnerSkipChancePct": 95, "m_flOvertimeRespawnTimeIncrease": [  ], "m_flOvertimeRespawnTimeIncreaseUrgent": [  ], "m_flOvertimeTrooperDamageScale": [  ], "m_flOvertimeTrooperHealthScale": [  ], "m_flPreScoringTime": 1, "m_flRareWeightScale": 2, "m_flScoringGameTimeScale": 0.5, "m_flScoringTime": 5, "m_flTier1MaxResistTime": 4, "m_flTier2MaxResistTime": 4, "m_flTrooperNonOvertimeResist": 20, "m_flTrooperOvertimeResist": 20, "m_flTrooperSpawnBeforeRoundStartTimer": 5, "m_flTrooperSpawnTimer": [  ], "m_flZipBoostCooldownOnStart": 20, "m_iCorruptItemRound": 0, "m_iLaneNumber": 4, "m_iScoreToWin": 3, "m_iUltimateUnlockRound": 0, "m_mapItemTierToItemDraftBuckets": {  }, "m_nComebackBonusHealth": 1000, "m_nComebackBonusHealthCritical": 4000, "m_nMatchLengthMinutes": 18, "m_nTier2BonusHealth": 4000, "m_strAmberTrooperPickupToDrop": "", "m_strSapphireTrooperPickupToDrop": "", "m_strTrooperModifier": "", "m_vecAPPerRound": [  ], "m_vecBuyTime": [  ], "m_vecGoldPerRound": [  ], "m_vecItemDraftRerollsPerRound": [  ], "m_vecItemDraftRoundsPerGameRound": [  ], "m_vecObjectiveMaxHealth": [  ], "m_vecPreBuyTime": [  ], "m_vecRespawnTimes": [  ], "m_vecRoundLengthMinutes": [  ], "m_vecRoundLengthMinutesUrgent": [  ] }
+	GameModeStreetBrawl_t m_StreetBrawl;
 };

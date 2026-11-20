@@ -13,5 +13,5 @@ class CCitadel_Ability_Nurse_HealingNeedleWeaponVData : public CCitadel_Ability_
 	CSoundEventName m_strHitSound;
 	CSoundEventName m_strHitHeadshotSound;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceBolt; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceBolt;
 };

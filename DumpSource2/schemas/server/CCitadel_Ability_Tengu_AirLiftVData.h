@@ -46,5 +46,5 @@ class CCitadel_Ability_Tengu_AirLiftVData : public CitadelAbilityVData
 	float32 m_flHoldBombOffsetZ; // = -20
 	float32 m_flAnglePitchBias; // = 15
 	float32 m_flTrackAmount; // = 200
-	float32 m_flMoveCollideSpeed; // = 275.591003
+	float32 m_flMoveCollideSpeed; // = 275.591
 };

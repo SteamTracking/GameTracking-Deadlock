@@ -104,8 +104,8 @@ class CAbilitySlideVData : public CitadelAbilityVData
 	// MPropertyDescription = "The amount that sliding reduces recoil. 100 = no recoil at all."
 	float32 m_flSlidingRecoilReduction; // = 50
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceStartSliding; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
-	CitadelCameraOperationsSequence_t m_cameraSequenceEndSliding; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceStartSliding;
+	CitadelCameraOperationsSequence_t m_cameraSequenceEndSliding;
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_SlideParticle;
 	// MPropertyStartGroup = "Sounds"

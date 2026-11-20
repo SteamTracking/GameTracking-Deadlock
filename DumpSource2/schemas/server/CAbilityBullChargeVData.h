@@ -2,7 +2,7 @@
 class CAbilityBullChargeVData : public CitadelAbilityVData
 {
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceImpact; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceImpact;
 	// MPropertyStartGroup = "Modifiers"
 	CEmbeddedSubclass< CBaseModifier > m_ModifierTossAirControlLockout;
 	CEmbeddedSubclass< CBaseModifier > m_ModifierWeaponPowerIncrease;

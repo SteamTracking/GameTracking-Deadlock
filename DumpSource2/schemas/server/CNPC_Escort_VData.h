@@ -13,7 +13,7 @@ class CNPC_Escort_VData : public CAI_CitadelNPCVData
 	// MPropertyDescription = "Stop walking when we detect an objective this far away."
 	float32 m_flEscortEnemyObjectiveSearchRadius; // = 2000
 	// MPropertyDescription = "Disable fast walk if Enemies are within this range"
-	float32 m_flEscortEnemySlowWalkRadius; // = 787.401978
+	float32 m_flEscortEnemySlowWalkRadius; // = 787.402
 	// MPropertyDescription = "How close is close enough for pathfinding to a node."
 	float32 m_flCloseEnoughToNode; // = 200
 	// MPropertyDescription = "When we detect friendly players in front of us, apply this scale to our walking speed so we'll catch up to them."

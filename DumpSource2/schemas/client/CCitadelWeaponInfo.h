@@ -181,7 +181,7 @@ class CCitadelWeaponInfo
 	// MPropertyDescription = "Spread increase per shot. 0-1, % of max shoot penalty to add per shot."
 	float32 m_flShootSpreadPenaltyPerShot;
 	// MPropertyDescription = "How much to normalize shoot spread penalty per shot based on fire rate pct. Y values between 0.0-1.0"
-	CitadelSpreadPerShotNormalization_t m_ShootSpreadPenaltyPerShotNormalization; // = { "m_FireRatePctRange": [ 0, 100 ], "m_SpreadPerShotFactor": 1, "m_bNormalizeSpreadPerShot": false }
+	CitadelSpreadPerShotNormalization_t m_ShootSpreadPenaltyPerShotNormalization;
 	// MPropertyDescription = "Delay after shooting stops to start decaying shooting spread penalty.  -1 means use Cycle Time"
 	float32 m_flShootSpreadPenaltyDecayDelay; // = -1
 	// MPropertyDescription = "How much shoot spread penalty to decay per second"
@@ -209,8 +209,8 @@ class CCitadelWeaponInfo
 	float32 m_flVerticalPunch; // = 1
 	// MPropertyDescription = "Horizontal view punch per shot"
 	float32 m_flHorizontalPunch; // = 0.5
-	CitadelWeaponRecoilData_t m_HorizontalRecoil; // = { "m_Range": 0, "m_flBurstConstant": 0, "m_flBurstExponent": 1, "m_flBurstSlope": 0 }
-	CitadelWeaponRecoilData_t m_VerticallRecoil; // = { "m_Range": 0, "m_flBurstConstant": 0, "m_flBurstExponent": 1, "m_flBurstSlope": 0 }
+	CitadelWeaponRecoilData_t m_HorizontalRecoil;
+	CitadelWeaponRecoilData_t m_VerticallRecoil;
 	// MPropertyDescription = "Factor for how much faster than cycle time it should take for recoil to reach it's peak. 1 = cycle time, 2 = 1/2 * cycletime, etc."
 	float32 m_flRecoilSpeed; // = 1
 	// MPropertyDescription = "Factor for how much faster than cycle time before we should start recovering from recoil."

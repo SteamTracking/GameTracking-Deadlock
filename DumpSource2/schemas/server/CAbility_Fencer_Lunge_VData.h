@@ -38,6 +38,6 @@ class CAbility_Fencer_Lunge_VData : public CitadelAbilityVData
 	CSoundEventName m_strMaxHoldSweetener;
 	CSoundEventName m_strPerfectDamageHitSound;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequencePreRelease; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
-	CitadelCameraOperationsSequence_t m_cameraSequenceSlash; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequencePreRelease;
+	CitadelCameraOperationsSequence_t m_cameraSequenceSlash;
 };

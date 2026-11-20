@@ -2,11 +2,11 @@ class AI_PathfindingData_t
 {
 	NavGoalPathfindingAlgorithm_t m_pathFindingAlgorithm; // = "eStandard"
 	AI_PathfindingData_Waypoints_t m_dataWaypoints;
-	AI_PathfindingData_RadialGoal_t m_dataRadialGoal; // = { "m_Center": { "m_Type": "WORLD_SPACE_POSITION", "m_hEntity": null, "m_nLastKnownNavAreaVersion": 0, "m_nNavAreaID": 4294967295, "m_nNavBlockID": 4294967295, "m_vRelativeOffset": [ 340282346638528859811704183484516925440, 340282346638528859811704183484516925440, 340282346638528859811704183484516925440 ], "m_vWorldSpacePos": null }, "m_flMinAllowedRadius": 0, "m_flRadius": 0, "m_flRelArc": 0, "m_nFlags": "", "m_vUp": [ 340282346638528859811704183484516925440, 340282346638528859811704183484516925440, 340282346638528859811704183484516925440 ] }
-	AI_PathfindingData_DirectionalGoal_t m_dataDirectionalGoal; // = { "m_flMaxPathLength": -1, "m_flMinPathLength": 0, "m_vDir": [ 340282346638528859811704183484516925440, 340282346638528859811704183484516925440, 340282346638528859811704183484516925440 ] }
-	AI_PathfindingData_RandomGoal_t m_dataRandomGoal; // = { "m_Pos": { "m_Type": "WORLD_SPACE_POSITION", "m_hEntity": null, "m_nLastKnownNavAreaVersion": 0, "m_nNavAreaID": 4294967295, "m_nNavBlockID": 4294967295, "m_vRelativeOffset": [ 340282346638528859811704183484516925440, 340282346638528859811704183484516925440, 340282346638528859811704183484516925440 ], "m_vWorldSpacePos": null }, "m_flMaxPathLength": 0, "m_flMinPathLength": 0 }
-	AI_PathfindingData_WanderGoal_t m_dataWanderGoal; // = { "m_OptionalCenter": { "m_Type": "WORLD_SPACE_POSITION", "m_hEntity": null, "m_nLastKnownNavAreaVersion": 0, "m_nNavAreaID": 4294967295, "m_nNavBlockID": 4294967295, "m_vRelativeOffset": [ 340282346638528859811704183484516925440, 340282346638528859811704183484516925440, 340282346638528859811704183484516925440 ], "m_vWorldSpacePos": null }, "m_flMaxRadius": 0, "m_flMinRadius": 0 }
-	AI_PathfindingData_VectorGoal_t m_dataVectorGoal; // = { "m_OptionalStartPoint": { "m_Type": "WORLD_SPACE_POSITION", "m_hEntity": null, "m_nLastKnownNavAreaVersion": 0, "m_nNavAreaID": 4294967295, "m_nNavBlockID": 4294967295, "m_vRelativeOffset": [ 340282346638528859811704183484516925440, 340282346638528859811704183484516925440, 340282346638528859811704183484516925440 ], "m_vWorldSpacePos": null }, "m_bShouldDeflect": false, "m_flMinDist": 0, "m_flTargetDist": 0, "m_vDir": [ 340282346638528859811704183484516925440, 340282346638528859811704183484516925440, 340282346638528859811704183484516925440 ] }
+	AI_PathfindingData_RadialGoal_t m_dataRadialGoal;
+	AI_PathfindingData_DirectionalGoal_t m_dataDirectionalGoal;
+	AI_PathfindingData_RandomGoal_t m_dataRandomGoal;
+	AI_PathfindingData_WanderGoal_t m_dataWanderGoal;
+	AI_PathfindingData_VectorGoal_t m_dataVectorGoal;
 	AI_PathfindingData_MultiGoal_t m_dataMultiGoal;
-	AI_PathfindingData_StopGoal_t m_dataStopGoal; // = { "m_eFacing": "ePathForward", "m_eMode": "eSmooth" }
+	AI_PathfindingData_StopGoal_t m_dataStopGoal;
 };

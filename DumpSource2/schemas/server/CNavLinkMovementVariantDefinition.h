@@ -12,6 +12,6 @@ class CNavLinkMovementVariantDefinition
 	SharedMovementGait_t m_ePreferredMovementGait; // = "eInvalid"
 	StanceType_t m_ePreferredStance; // = "STANCE_CURRENT"
 	float32 m_flPreferredMovementGaitDistance; // = 100
-	CNavLinkApproachConditions m_approachConditionsFromIdle; // = { "m_flFacingAlignmentDegrees": 0, "m_flMaxPathEntryAngle": 40 }
-	CNavLinkApproachConditions m_approachConditionsFromMovement; // = { "m_flFacingAlignmentDegrees": 0, "m_flMaxPathEntryAngle": 40 }
+	CNavLinkApproachConditions m_approachConditionsFromIdle;
+	CNavLinkApproachConditions m_approachConditionsFromMovement;
 };

@@ -18,5 +18,5 @@ class CCitadel_Modifier_DazzlingOrbWatcherVData : public CCitadelModifierVData
 	// MPropertyStartGroup = "Gameplay"
 	CPiecewiseCurve m_BouncePositionCurve;
 	float32 m_flMinProjectileTravelTime;
-	CCitadelProjectileTrackingParams m_TrackingParams; // = { "m_ProjectileSpeedCurve": { "m_spline": [  ], "m_tangents": [  ], "m_vDomainMaxs": [ 0, 0 ], "m_vDomainMins": [ 0, 0 ] }, "m_TrackingAmountCurve": { "m_spline": [  ], "m_tangents": [  ], "m_vDomainMaxs": [ 0, 0 ], "m_vDomainMins": [ 0, 0 ] }, "m_bDisableSolidCollisions": true, "m_flMinTrackingTimeBeforeImpact": 0 }
+	CCitadelProjectileTrackingParams m_TrackingParams;
 };

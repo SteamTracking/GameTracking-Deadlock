@@ -10,7 +10,7 @@ class CCitadel_Ability_VampireBat_BatCloudVData : public CitadelAbilityVData
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strFireBatSound;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceBatCloud; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceBatCloud;
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flCameraForwardForce;
 	float32 m_flInputForce;

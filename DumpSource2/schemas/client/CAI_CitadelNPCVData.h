@@ -18,7 +18,7 @@ class CAI_CitadelNPCVData : public CAI_BaseNPCVData
 	float32 m_flStepHeight; // = 36
 	float32 m_flJumpAnticipationTime; // = 0.6
 	float32 m_flJumpUpBaseCostSeconds; // = 2
-	NPCFlightMotion_t m_FlightMotion; // = { "m_flFlightSpeed": 300, "m_flSquiggleMotionAmplitude": [ 25, 80 ], "m_flSquiggleMotionRandomizeInterval": [ 0.5, 1 ], "m_flSquiggleMotionScale": 1 }
+	NPCFlightMotion_t m_FlightMotion;
 	float32 m_flSquadDistance; // = 40
 	// MPropertyStartGroup = "Animation"
 	CGlobalSymbol m_sAnimGraphIdentifier;

@@ -10,5 +10,5 @@ class CModifierKnockdownVData : public CCitadel_Modifier_StunnedVData
 	Color m_satColorOutline; // = [ 150, 207, 184 ]
 	// MPropertyStartGroup = "Camera"
 	float32 m_flGetUpSeqDuration;
-	CitadelCameraOperationsSequence_t m_cameraSequenceGetUp; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceGetUp;
 };

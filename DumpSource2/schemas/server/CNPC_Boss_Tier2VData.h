@@ -32,8 +32,8 @@ class CNPC_Boss_Tier2VData : public CAI_CitadelNPCVData
 	CSoundEventName m_StompImpactSound;
 	// MPropertyStartGroup = "Range Rings"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_RangeRingParticle;
-	float32 m_flRangeRingShowDistance; // = 472.440002
-	float32 m_flRangeRingFadeDistance; // = 196.850006
+	float32 m_flRangeRingShowDistance; // = 472.44
+	float32 m_flRangeRingFadeDistance; // = 196.85
 	float32 m_flRangeRingAlpha; // = 0.8
 	// MPropertyStartGroup = "Gun"
 	float32 m_flBurstDuration;

@@ -9,8 +9,8 @@ class CAbilityDashVData : public CitadelAbilityVData
 	CSoundEventName m_strArriveSound;
 	CSoundEventName m_strStaminaDrainedSound;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceGroundDashActivate; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
-	CitadelCameraOperationsSequence_t m_cameraSequenceAirDashActivate; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceGroundDashActivate;
+	CitadelCameraOperationsSequence_t m_cameraSequenceAirDashActivate;
 	// MPropertyStartGroup = "Ground Dash Stuff"
 	float32 m_flMaxAngDiff; // = 20
 	float32 m_flSlideCancelBlockerWindow; // = 0.2

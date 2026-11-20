@@ -15,5 +15,5 @@ class CCitadel_Ability_BurrowVData : public CitadelAbilityVData
 	float32 m_flChannelEndEnemyPopUpForce; // = 100
 	float32 m_flChannelEndEnemyPopUpCylinderHeight; // = 150
 	// MPropertyDescription = "Spin Camera Controller that matches the modifier for client"
-	CitadelCameraOperationsSequence_t m_cameraSpinStart; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSpinStart;
 };

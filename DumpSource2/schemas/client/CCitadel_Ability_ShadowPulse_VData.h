@@ -12,5 +12,5 @@ class CCitadel_Ability_ShadowPulse_VData : public CitadelAbilityVData
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strExpireSound;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceInShadow; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceInShadow;
 };

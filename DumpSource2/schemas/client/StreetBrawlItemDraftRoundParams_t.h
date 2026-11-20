@@ -1,6 +1,6 @@
 class StreetBrawlItemDraftRoundParams_t
 {
-	ItemDraftRoundParams_t m_DraftParams; // = { "m_nDrafts": 1, "m_nOptionsToRoll": 3 }
+	ItemDraftRoundParams_t m_DraftParams;
 	// MPropertyDescription = "Restricts items to this tier for a normal roll."
 	EModTier_t m_eNormalModTier; // = "EModTier_1"
 	// MPropertyDescription = "When a rare is rolled, restrict items to this tier."

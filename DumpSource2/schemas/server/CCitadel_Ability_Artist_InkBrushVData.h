@@ -23,5 +23,5 @@ class CCitadel_Ability_Artist_InkBrushVData : public CitadelAbilityVData
 	float32 m_flDistanceThresholdForLoop; // = 5
 	float32 m_flLoopRadiusMultiplier; // = 1.1
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceSelected; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceSelected;
 };

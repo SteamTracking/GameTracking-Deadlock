@@ -53,12 +53,12 @@ class CCitadelModifierVData : public CModifierVData
 	// MPropertyDescription = "When set, this modifier is left out of the active stat rows entirely.  For buffs that already present themselves with their own HUD entry and would otherwise be listed twice."
 	bool m_bHideInStatModifierUI;
 	// MPropertyStartGroup = "Responses"
-	CCitadelModifierResponseRules_t m_OnCreateResponse; // = { "m_Criteria": {  }, "m_nConcept": "CITADEL_CONCEPT_NONE", "m_nFilterType": "MODIFIER_RR_FILTER_BROADCAST", "m_nSpeakerType": "MODIFIER_RR_SPEAKER_PARENT" }
+	CCitadelModifierResponseRules_t m_OnCreateResponse;
 	// MPropertyStartGroup = "Camera"
-	CitadelCameraOperationsSequence_t m_cameraSequenceCreated; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceCreated;
 	// MPropertyDescription = "By default, we stop the sequence from 'Sequence Created' once the modifier is removed.  Un-check this to allow it to continue past the modifier's lifetime."
 	bool m_bEndCreatedSequenceOnRemove; // = true
-	CitadelCameraOperationsSequence_t m_cameraSequenceRemoved; // = { "m_bIsEmpty": false, "m_nPriority": 1, "m_strToken": "", "m_vecDistanceOperations": [  ], "m_vecFOVOperations": [  ], "m_vecHorizOffsetOperations": [  ], "m_vecTargetPosOperations": [  ], "m_vecVertOffsetOperations": [  ] }
+	CitadelCameraOperationsSequence_t m_cameraSequenceRemoved;
 	// MPropertyStartGroup = "Barrier"
 	ModifierBarrierBehavior_t m_BarrierBehavior; // = "MODIFIER_BARRIER_BEHAVIOR_KEEP_ON_DESTROY"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_BarrierCreateParticle;
@@ -67,7 +67,7 @@ class CCitadelModifierVData : public CModifierVData
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_sExpiredSound;
 	// MPropertyDescription = "Overrides the default footstep. The footstep with the greatest Priority is selected. It must have a priority greater than -1 to be selected!"
-	FootstepSound_t m_FootstepOverride; // = { "m_nFootstepPriority": -1, "m_sFootstepSound": "" }
+	FootstepSound_t m_FootstepOverride;
 	// MPropertyDescription = "Plays alongside the default footstep."
 	CSoundEventName m_FootstepAdditional;
 	bool m_bRemoveOnInterrupted;
