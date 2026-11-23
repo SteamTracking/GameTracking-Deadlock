@@ -15940,7 +15940,7 @@ C:\buildworker\citadel_rel_win64\build\src\game\shared\baseplayercontroller.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\baseplayerpawn_shared.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\beam_shared.cpp
 C:\buildworker\citadel_rel_win64\build\src\game\shared\breakableprop.cpp
-C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability_melee.cpp:1577
+C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability_melee.cpp:1629
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability_slide.cpp:1163
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\ability_slide.cpp:849
 C:\buildworker\citadel_rel_win64\build\src\game\shared\citadel\abilities\tier_2_boss_abilities.cpp:1516
@@ -21090,7 +21090,6 @@ Debug World Sphere
 Debug World Text
 Debug bits %s toggled %s for '%s'\n
 Debug bits %s toggled on for '%s'\n
-DebugAddModifier called with no modifier name
 DebugBreak
 DebugDrawBox
 DebugDrawBoxDirection
@@ -24459,6 +24458,7 @@ MediumChargeDamagePct
 Melee Damage Dealt
 Melee Damage Dealt to Player
 Melee Kills
+Melee lagcomp was clamped due to excess latency: %.3f -> %.3f
 MeleeAttackLength
 MeleeBuildUp
 MeleeDamage
@@ -30424,6 +30424,9 @@ ZoomTime
 [INVALID] [%u]
 [Index: 
 [MISSING] '%s'
+[MeleeLagComp] tick %d: %s -> %s queued. ping %.1fms lerp %.1fms queued cmds %d -> delay %.1fms, capped %.1fms, due tick %d\n
+[MeleeLagComp] tick %d: %s HIT applied, due in %+.1fms\n
+[MeleeLagComp] tick %d: %s PARRIED pending hit, due in %+.1fms\n
 [NAVGENRT] - The world has changed since navgen started. Aborting.
 [NAVGENRT] Retrying navgen [%g,%g,%g - %g,%g,%g] because the world has changed.
 [NOP]
@@ -30454,6 +30457,7 @@ ZoomTime
 [Nav] New goal set:\n
 [Nav] Start TASK_STOP_MOVING %s\n
 [Nav] TASK_STOP_MOVING Complete\n
+[ParryLagComp] tick %d: %s parry started\n
 [Pulse] unhandled input: (%s) -> (%s), from (%s,%s); %s\n
 [RETURN R%d]
 [RETURN]
@@ -30749,7 +30753,6 @@ additional verification
 additional_drop
 additional_drops_replace_nodupe
 additional_wearable
-addmodifier
 addon_init
 addon_installed
 addon_targetname
