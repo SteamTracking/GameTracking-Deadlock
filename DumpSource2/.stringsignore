@@ -2419,8 +2419,6 @@ CCitadelItemPickupRejuvHeroTestInfoSpawn
 CCitadelItemPickupRejuvHeroTestVData
 CCitadelItemPickupRejuvVData
 CCitadelItemPickupVData
-CCitadelItemPunchableNeutralGold
-CCitadelItemPunchableNeutralGoldVData
 CCitadelLocalPlayerRankedBadgeProp
 CCitadelMapDistrictTrigger
 CCitadelMatchmakingStatusInfo
@@ -3992,8 +3990,6 @@ CCitadel_Modifier_ItemPickupAura
 CCitadel_Modifier_ItemPickupAuraTarget
 CCitadel_Modifier_ItemPickupAuraVData
 CCitadel_Modifier_ItemPickupTimer
-CCitadel_Modifier_ItemPunchable_Gold
-CCitadel_Modifier_ItemPunchable_GoldVData
 CCitadel_Modifier_ItemPunchable_Rejuv
 CCitadel_Modifier_ItemPunchable_RejuvVData
 CCitadel_Modifier_ItemWalkBack
@@ -4694,6 +4690,8 @@ CCitadel_Pickup_Item_VData
 CCitadel_Pickup_Modifier
 CCitadel_Pickup_Modifier_VData
 CCitadel_Pickup_NecroDeath
+CCitadel_Pickup_SoulBag
+CCitadel_Pickup_SoulBag_VData
 CCitadel_Pickup_VData
 CCitadel_PointTalker
 CCitadel_PointTalker_Base
@@ -7618,6 +7616,7 @@ C_Citadel_Pickup_Health
 C_Citadel_Pickup_Item
 C_Citadel_Pickup_Modifier
 C_Citadel_Pickup_NecroDeath
+C_Citadel_Pickup_SoulBag
 C_Citadel_Projectile_Archer_ChargedShot
 C_Citadel_Projectile_Bebop_Hook
 C_Citadel_Projectile_BloodBomb
@@ -10373,7 +10372,6 @@ ELoot_GoldIdol
 ELoot_Invalid
 ELoot_KothCapturePoint
 ELoot_LootTypeCount
-ELoot_NeutralGold
 ELoot_RespawnCredit
 ELosingLock
 EM_DoSpark
@@ -13889,6 +13887,7 @@ ItemTradeOption_t
 ItemTradeRoundID_t
 ItemTradeRoundState_t
 Items
+Items of this tier without an explicit bucket go in "Good" if their best popular item pick percentage across game phases is at least this
 Items to give a hero post spawn
 Iterate
 IterateRandom
@@ -25467,7 +25466,6 @@ citadel_item_pickup_rejuv
 citadel_item_pickup_rejuv_herotest
 citadel_item_pickup_rejuv_herotest_infospawn
 citadel_item_powerup_spawner
-citadel_item_punchable_gold
 citadel_item_purchases_force_corrupted
 citadel_item_purchases_force_enhanced
 citadel_item_rejuvenator_label_offset
@@ -25732,6 +25730,7 @@ citadel_pickup_health
 citadel_pickup_item
 citadel_pickup_modifier
 citadel_pickup_necro_death
+citadel_pickup_soulbag
 citadel_pickup_spawner
 citadel_pickup_spawner_enabled
 citadel_pickup_spawner_initial_spawn_time_override
@@ -25799,8 +25798,6 @@ citadel_player_move_speed_min
 citadel_player_move_speed_scale
 citadel_player_neutral_gold_drop_min
 citadel_player_neutral_gold_drop_min_increase_per_minute
-citadel_player_neutral_gold_duration
-citadel_player_neutral_gold_fallrate
 citadel_player_outline_allies
 citadel_player_outline_enemies
 citadel_player_outline_fade_at_min
@@ -26137,6 +26134,11 @@ citadel_snd_stack_field_obb
 citadel_snowball_level_override
 citadel_soldier_entity
 citadel_solo_bot_match
+citadel_soul_bag_extra_spawn_min_value_multiplier
+citadel_soul_bag_scale_max
+citadel_soul_bag_scale_max_value
+citadel_soul_bag_scale_min
+citadel_soul_bag_spawn_max
 citadel_soul_rune_lane_experiment
 citadel_spawn_all_heroes_in_a_line
 citadel_spawn_all_neutrals
@@ -38142,8 +38144,6 @@ m_flBloomThreshold
 m_flBloomThresholdWidth
 m_flBlurBloomStrength
 m_flBlurWeight
-m_flBobFrequency
-m_flBobHeight
 m_flBobbingFrequency
 m_flBobbingStrength
 m_flBodyForwardForce
@@ -39331,6 +39331,7 @@ m_flGoldAmount
 m_flGoldPerMinuteAmount
 m_flGoldReward
 m_flGoldRewardBonusPercentPerMinute
+m_flGoodItemPickRateThreshold
 m_flGrabDistance
 m_flGraceTime
 m_flGrainCrossfadeAmount
@@ -39483,12 +39484,15 @@ m_flHorizontalStaggerPerSoldier
 m_flHorizontalTime
 m_flHour
 m_flHourChimeInterval
+m_flHoverHeight
 m_flHoverInputAcceleration
 m_flHoverInputSpeedMax
 m_flHoverOffset
 m_flHoverOutlineWidth
+m_flHoverRate
 m_flHoverSpeedDecay
 m_flHoverTime
+m_flHoverTurnRate
 m_flHueAdjust
 m_flHybridRatio
 m_flHysteresisInnerAngle
@@ -41440,9 +41444,7 @@ m_flSpikeSharpness
 m_flSpinAxisFriction
 m_flSpinDecayRate
 m_flSpinIncreaseRate
-m_flSpinRate
 m_flSpinRateGoingDownDegreesPerSec
-m_flSpinSpeed
 m_flSpinStrength
 m_flSpinUpDecayOverride
 m_flSpinUpRateOverride
@@ -42159,6 +42161,7 @@ m_flYawDamping
 m_flYawFriction
 m_flYawLimit
 m_flYawOffset
+m_flYawSpin
 m_flYawStiffness
 m_flYieldedCursorStackOffset
 m_flZFar
@@ -54219,7 +54222,6 @@ vertex lighting tessellation (0-5)
 vertical texture offset
 vertical texture scale
 vertical_align
-victim_player
 view model effect
 view_ofs
 viewmodel_fov

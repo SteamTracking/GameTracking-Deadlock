@@ -252,58 +252,6 @@
 		m_eDebuffType = "MODIFIER_DEBUFF_NO"
 		m_bDurationReducible = false
 	}
-	modifier_neutral_gold_pickup_aura = 
-	{
-		_class = "modifier_item_pickup_aura"
-		m_iAuraSearchType = "CITADEL_UNIT_TARGET_HERO"
-		m_strParticleEffect = resource_name:"particles/generic/neutral_gold_pickup_aura.vpcf"
-		m_IsFrozenParticle = resource_name:"particles/environment/rejuv_frozen_model.vpcf"
-		m_modifierProvidedByAura = subclass:
-		{
-			_class = "modifier_item_pickup_aura_target"
-			_my_subclass_name = "aura_target"
-			m_bIsHidden = true
-			m_PickupTimerModifier = subclass:
-			{
-				_class = "modifier_item_pickup_timer"
-				_my_subclass_name = "timer"
-				m_bReverseHudProgressBar = true
-				m_bIsHidden = false
-				m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_EVERYONE"
-				m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
-				m_sEndSound = soundevent:""
-				m_bDurationReducible = false
-			}
-			m_PickupTimer = 0.75
-		}
-		m_bIsHidden = true
-		m_flAuraRadius = 70.0
-	}
-	modifier_early_gold_pickup_aura = 
-	{
-		_class = "modifier_item_pickup_aura"
-		m_iAuraSearchType = "CITADEL_UNIT_TARGET_HERO"
-		m_strParticleEffect = resource_name:"particles/items/crate_light_pillar.vpcf"
-		m_modifierProvidedByAura = subclass:
-		{
-			_class = "modifier_item_pickup_aura_target"
-			_my_subclass_name = "aura_target"
-			m_bIsHidden = true
-			m_PickupTimerModifier = subclass:
-			{
-				_class = "modifier_item_pickup_timer"
-				_my_subclass_name = "timer"
-				m_bReverseHudProgressBar = true
-				m_bIsHidden = false
-				m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_EVERYONE"
-				m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
-				m_bDurationReducible = false
-			}
-			m_PickupTimer = 2.0
-		}
-		m_bIsHidden = true
-		m_flAuraRadius = 70.0
-	}
 	modifier_citadel_disarmed = 
 	{
 		_class = "modifier_citadel_disarmed"

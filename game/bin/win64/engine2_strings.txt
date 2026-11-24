@@ -1072,6 +1072,7 @@ $tI(knN
 .?AV?$CNetMessagePB@$08VCNETMsg_SpawnGroup_ManifestUpdate@@$0P@$00$0A@@@
 .?AV?$CNetMessagePB@$0?0VC2S_CONNECTION_Message@@$0A@$00$0A@@@
 .?AV?$CNetMessagePB@$0?0VC2S_CONNECT_Message@@$0A@$00$0A@@@
+.?AV?$CNetMessagePB@$0?0VC2S_CONNECT_SameProcessCheck@@$0A@$00$0A@@@
 .?AV?$CNetMessagePB@$0?0VNetMessageConnectionClosed@@$0L@$00$0A@@@
 .?AV?$CNetMessagePB@$0?0VNetMessageConnectionCrashed@@$0L@$00$0A@@@
 .?AV?$CNetMessagePB@$0?0VNetMessageSplitscreenUserChanged@@$0L@$00$0A@@@
@@ -2926,22 +2927,22 @@ C:\buildworker\citadel_rel_win64\build\src\engine2\loopmoderemoteconnect.cpp
 C:\buildworker\citadel_rel_win64\build\src\engine2\looptypeclientserver.cpp
 C:\buildworker\citadel_rel_win64\build\src\engine2\networkclientservice.cpp
 C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclient.cpp
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclient.cpp:2666
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclient.cpp:3675
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclient.cpp:4474
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclient.cpp:4770
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclient.cpp:2668
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclient.cpp:3677
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclient.cpp:4476
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclient.cpp:4777
 C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclientbase.cpp
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclientbase.cpp:2821
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclientbase.cpp:4538
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclientbase.cpp:4580
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclientbase.cpp:2828
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclientbase.cpp:4555
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameclientbase.cpp:4597
 C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserver.cpp
 C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserver.cpp:984
 C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp:3079
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp:5757
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp:5823
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp:5912
-C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp:5918
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp:3098
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp:5776
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp:5842
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp:5931
+C:\buildworker\citadel_rel_win64\build\src\engine2\networkgameserverbase.cpp:5937
 C:\buildworker\citadel_rel_win64\build\src\engine2\networkp2pservice.cpp
 C:\buildworker\citadel_rel_win64\build\src\engine2\networkserverservice.cpp
 C:\buildworker\citadel_rel_win64\build\src\engine2\networkstringtable.cpp
@@ -3643,6 +3644,7 @@ CallScriptFunction
 Calling Steam to write a minidump for the assert\n
 Camera settings can't be changed during a live broadcast.\n
 Can't 
+Can't %s the primary slot %d\n
 Can't %s, no game running\n
 Can't %s, no more split screen player slots!\n
 Can't %s, no splitscreen users\n
@@ -3760,6 +3762,7 @@ Client %d '%s' setting rate to %d\n
 Client %d '%s' signon state %s -> %s\n
 Client %d (eidx %d, user id %d) %s - aborting wait for ack for tick %d, stopping replay at %d>=%d\n
 Client %d(%s) tried to send a RebroadcastSourceId msg.\n
+Client %s sent split player disconnect for invalid slot %d\n
 Client %s(%d) tried to execute command "%s" before being fully connected.\n
 Client %s(%d) tried to execute command "%s" but it is not marked FCVAR_CLIENT_CAN_EXECUTE.\n
 Client GameSessionManifest
@@ -5708,6 +5711,7 @@ Packet Entities has a larger spawn group creation sequence (%u) than we received
 Packet Entities has a larger spawn group creation sequence (%u) than we received, forcing to max %u\n
 PacketEntities @%d\n
 PacketEntities tick not set\n
+PacketEntities with baseline=%d\n
 PacketEntities with delta_from=%d, tick=%d??\n
 Packets
 Pagefile: estimated %llumb CPU %llumb GPU needed, %llumb pagefile free\n

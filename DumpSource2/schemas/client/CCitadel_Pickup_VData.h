@@ -88,6 +88,8 @@ class CCitadel_Pickup_VData : public CEntitySubclassVDataBase
 	CRangeFloat m_fInitialSpawnZSpeed; // = [ 100, 200 ]
 	// MPropertySuppressExpr = "bPhysicallyDropToTheGroundOnSpawn == false"
 	float32 m_flFallGravity; // = 1
+	// MPropertySuppressExpr = "bPhysicallyDropToTheGroundOnSpawn == false"
+	float32 m_flYawSpin;
 	// MPropertyDescription = "Optionally how far to hover off the ground"
 	// MPropertySuppressExpr = "bPhysicallyDropToTheGroundOnSpawn == false"
 	float32 m_flHoverOffset;

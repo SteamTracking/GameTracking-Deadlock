@@ -1053,38 +1053,6 @@
 		}
 		m_nSpawnMusicState = "k_EMusicQueue_KothAnnounce"
 	}
-	citadel_item_punchable_gold = 
-	{
-		_class = "citadel_item_punchable_gold"
-		m_AmbientParticle = resource_name:"particles/generic/holding_gold_dropped.vpcf"
-		m_flGroundOffset = 60
-		m_PunchPickupModifier = subclass:
-		{
-			_class = "modifier_item_punchable_gold"
-			_my_subclass_name = "modifier_item_punchable_gold"
-			m_nEnabledStateMask = "MODIFIER_STATE_IS_MELEE_TARGET"
-			m_bIsHidden = true
-			m_sHitSound = soundevent:"Powerup.Punchable.Souls"
-			m_flAuraRadius = 200.0
-			m_flPhysicsRadius = 20.0
-			m_modifierProvidedByAura = subclass:
-			{
-				_class = "modifier_base"
-				_my_subclass_name = "target_near_rejuv"
-				m_bIsHidden = true
-				m_nEnabledStateMask = "MODIFIER_STATE_NEAR_PUNCHABLE_PICKUP"
-				m_nAttributes = "MODIFIER_ATTRIBUTE_CANNOT_BE_PURGED"
-			}
-			m_iAuraSearchType = "CITADEL_UNIT_TARGET_HERO"
-		}
-		m_flBobHeight = 2.0
-		m_flBobFrequency = 1.5
-		_editor = 
-		{
-			folder_name = "Pickup Items"
-		}
-		m_bPanelShowThruWalls = true
-	}
 	citadel_item_pickup_rejuv = 
 	{
 		_class = "citadel_item_pickup_rejuv"
@@ -1354,6 +1322,69 @@
 		m_sDefaultMaterialGroupName = "gold"
 		m_bIsPermanentPickup = true
 		m_bShowModelOverhead = false
+	}
+	citadel_pickup_soulbag = 
+	{
+		_class = "citadel_pickup_soulbag"
+		m_flPickupRadius = 
+		{
+			m_flBase = 85.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_friendlyParticle = resource_name:"particles/generic/holding_gold_dropped.vpcf"
+		m_enemyParticle = resource_name:"particles/generic/holding_gold_dropped.vpcf"
+		m_gainedParticle = resource_name:"particles/generic/powerup_spawner_gained.vpcf"
+		m_hModel = resource_name:"models/props_gameplay/soul_container/soul_container.vmdl"
+		m_sSpawnSound = soundevent:"Powerup.Spawn.Generic"
+		m_flPickupExpirationDuration = 
+		{
+			m_flBase = 180
+			m_flPerMinuteAfterStart = 0
+		}
+		m_flParticleRadius = 1.5
+		m_bShowOnMinimap = true
+		m_sNameLocString = "#big_gold_pickup_label:f"
+		m_sPickupSound = soundevent:"Powerup.Punchable.Souls"
+		m_nNameOffset = 150
+		_base = "citadel_pickup_base"
+		m_bHeavyMeleeOnly = true
+		m_eCollectionMethod = "Punch"
+		m_Color = [ 0, 255, 204 ]
+		m_sDefaultMaterialGroupName = "gold"
+		m_bIsPermanentPickup = true
+		m_strMinimapClass = "gold_spawn"
+		m_bShowModelOverhead = false
+		m_flCollisionRadius = 7.0
+		m_flCenterHeightOffset = 0
+		m_flHoverOffset = 20.0
+		m_flHoverHeight = 0.0
+		m_flHoverRate = 1
+		m_flHoverTurnRate = 0
+		m_flYawSpin = 0
+		m_flOutlineRange = 2000.0
+		m_OutlineColor = [ 112, 248, 193, 255 ]
+		m_AuraModifier = subclass:
+		{
+			_class = "modifier_base_aura"
+			_my_subclass_name = "near_punch"
+			m_bIsHidden = true
+			m_flAuraRadius = 300.0
+			m_modifierProvidedByAura = subclass:
+			{
+				_class = "modifier_base"
+				_my_subclass_name = "target_near_item"
+				m_bIsHidden = true
+				m_nEnabledStateMask = "MODIFIER_STATE_NEAR_PUNCHABLE_PICKUP"
+				m_nAttributes = "MODIFIER_ATTRIBUTE_CANNOT_BE_PURGED"
+			}
+			m_iAuraSearchType = "CITADEL_UNIT_TARGET_HERO"
+		}
+		m_ParryCheckModifier = subclass:
+		{
+			_class = "modifier_check_nearby_player_parry"
+			_my_subclass_name = "modifier_check_nearby_player_parry"
+			m_flParryCheckRadius = 60.0
+		}
 	}
 	floating_apple_pickup = 
 	{

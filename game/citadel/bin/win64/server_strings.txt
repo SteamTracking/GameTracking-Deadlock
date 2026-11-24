@@ -172,7 +172,7 @@
  !"#$%&'()*+,-./0123success
  %02X
  %02d. %-30s  %s\n
- %[^=, ] = %[^=, ] , %[^=, ] , %[^=, ] , %[^=, ] 
+ %127[^=, ] = %31[^=, ] , %31[^=, ] , %31[^=, ] , %31[^=, ] 
  %c%c
  %s%lu (%s0x%lx)\n
  %s:%s(%.1f->%.1f) %s
@@ -2326,7 +2326,6 @@ $light_emissive
 .?AV?$CEntitySpawner@VCCitadelEventState@@@@
 .?AV?$CEntitySpawner@VCCitadelFamiliarClonePlayerPawn@@@@
 .?AV?$CEntitySpawner@VCCitadelItemPickup@@@@
-.?AV?$CEntitySpawner@VCCitadelItemPunchableNeutralGold@@@@
 .?AV?$CEntitySpawner@VCCitadelObserverPawn@@@@
 .?AV?$CEntitySpawner@VCCitadelPlayerBotNPCBrain@@@@
 .?AV?$CEntitySpawner@VCCitadelPlayerController@@@@
@@ -2364,6 +2363,7 @@ $light_emissive
 .?AV?$CEntitySpawner@VCCitadel_Pickup_Health@@@@
 .?AV?$CEntitySpawner@VCCitadel_Pickup_Item@@@@
 .?AV?$CEntitySpawner@VCCitadel_Pickup_NecroDeath@@@@
+.?AV?$CEntitySpawner@VCCitadel_Pickup_SoulBag@@@@
 .?AV?$CEntitySpawner@VCCitadel_PointTalker_Idol@@@@
 .?AV?$CEntitySpawner@VCCitadel_Priest_SlideTrap@@@@
 .?AV?$CEntitySpawner@VCCitadel_Ratking_Standard@@@@
@@ -2458,7 +2458,6 @@ $light_emissive
 .?AV?$CEntitySpawnerBase@VCCitadelFamiliarClonePlayerPawn@@@@
 .?AV?$CEntitySpawnerBase@VCCitadelHideoutPropBase@@@@
 .?AV?$CEntitySpawnerBase@VCCitadelItemPickup@@@@
-.?AV?$CEntitySpawnerBase@VCCitadelItemPunchableNeutralGold@@@@
 .?AV?$CEntitySpawnerBase@VCCitadelObserverPawn@@@@
 .?AV?$CEntitySpawnerBase@VCCitadelPlayerBotNPCBrain@@@@
 .?AV?$CEntitySpawnerBase@VCCitadelPlayerController@@@@
@@ -2496,6 +2495,7 @@ $light_emissive
 .?AV?$CEntitySpawnerBase@VCCitadel_Pickup_Health@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_Pickup_Item@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_Pickup_NecroDeath@@@@
+.?AV?$CEntitySpawnerBase@VCCitadel_Pickup_SoulBag@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_PointTalker_Idol@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_Priest_SlideTrap@@@@
 .?AV?$CEntitySpawnerBase@VCCitadel_Ratking_Standard@@@@
@@ -2576,6 +2576,7 @@ $light_emissive
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup_Health@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup_Item@@@@
 .?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup_NecroDeath@@@@
+.?AV?$CEntityWithSubclassSpawner@VCCitadel_Pickup_SoulBag@@@@
 .?AV?$CEntityWithSubclassSpawner@VCItemXP@@@@
 .?AV?$CEntityWithSubclassSpawner@VCNPC_ChessPiece@@@@
 .?AV?$CEntityWithSubclassSpawner@VCNPC_Escort@@@@
@@ -3278,7 +3279,6 @@ $light_emissive
 .?AV?$CModifierFactory@VCCitadel_Modifier_ItemPickupAura@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ItemPickupAuraTarget@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ItemPickupTimer@@$0PPPP@@@
-.?AV?$CModifierFactory@VCCitadel_Modifier_ItemPunchable_Gold@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ItemPunchable_Rejuv@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ItemWalkBack@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Item_AOESilence@@$0PPPP@@@
@@ -4327,6 +4327,7 @@ $light_emissive
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGold@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGoldNetWorth@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGoldReward@CCitadel_Pickup_Gold@@@@
+.?AV?$CNetworkVarBase@HVNetworkVar_m_iGoldReward@CCitadel_Pickup_SoulBag@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGravestoneState@CCitadel_GraveStone_Blocker@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGuidedBotMatchAbilityUpgrades@CCitadelPlayerController@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGuidedBotMatchDamageTaken@CCitadelPlayerController@@@@
@@ -6738,7 +6739,6 @@ $light_emissive
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ItemPickupAura@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ItemPickupAuraTarget@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ItemPickupTimer@@VCBaseModifier@@@@
-.?AV?$CSubclassFactory@VCCitadel_Modifier_ItemPunchable_Gold@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ItemPunchable_Rejuv@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ItemWalkBack@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Item_AOESilence@@VCBaseModifier@@@@
@@ -8484,8 +8484,6 @@ $light_emissive
 .?AVCCitadelItemPickupRejuvHeroTestVData@@
 .?AVCCitadelItemPickupRejuvVData@@
 .?AVCCitadelItemPickupVData@@
-.?AVCCitadelItemPunchableNeutralGold@@
-.?AVCCitadelItemPunchableNeutralGoldVData@@
 .?AVCCitadelItemSchema@@
 .?AVCCitadelItemSystem@@
 .?AVCCitadelJumpPostProcess@@
@@ -10240,8 +10238,6 @@ $light_emissive
 .?AVCCitadel_Modifier_ItemPickupAuraTarget@@
 .?AVCCitadel_Modifier_ItemPickupAuraVData@@
 .?AVCCitadel_Modifier_ItemPickupTimer@@
-.?AVCCitadel_Modifier_ItemPunchable_Gold@@
-.?AVCCitadel_Modifier_ItemPunchable_GoldVData@@
 .?AVCCitadel_Modifier_ItemPunchable_Rejuv@@
 .?AVCCitadel_Modifier_ItemPunchable_RejuvVData@@
 .?AVCCitadel_Modifier_ItemWalkBack@@
@@ -10942,6 +10938,8 @@ $light_emissive
 .?AVCCitadel_Pickup_Modifier@@
 .?AVCCitadel_Pickup_Modifier_VData@@
 .?AVCCitadel_Pickup_NecroDeath@@
+.?AVCCitadel_Pickup_SoulBag@@
+.?AVCCitadel_Pickup_SoulBag_VData@@
 .?AVCCitadel_Pickup_VData@@
 .?AVCCitadel_PointTalker@@
 .?AVCCitadel_PointTalker_Base@@
@@ -16774,7 +16772,6 @@ CCitadelInventoryManager
 CCitadelItemKothSpawner_API
 CCitadelItemPickupIdol_API
 CCitadelItemPickup_API
-CCitadelItemPunchableNeutralGold_API
 CCitadelLobby
 CCitadelLocalMatchServer
 CCitadelMVPSchema: %s\n
@@ -17167,7 +17164,6 @@ CEntitySpawner<class CCitadelDruidPlantShield>::Spawn
 CEntitySpawner<class CCitadelEventState>::Spawn
 CEntitySpawner<class CCitadelFamiliarClonePlayerPawn>::Spawn
 CEntitySpawner<class CCitadelItemPickup>::Spawn
-CEntitySpawner<class CCitadelItemPunchableNeutralGold>::Spawn
 CEntitySpawner<class CCitadelObserverPawn>::Spawn
 CEntitySpawner<class CCitadelPlayerBotNPCBrain>::Spawn
 CEntitySpawner<class CCitadelPlayerController>::Spawn
@@ -17205,6 +17201,7 @@ CEntitySpawner<class CCitadel_Pickup_HalloweenCandy>::Spawn
 CEntitySpawner<class CCitadel_Pickup_Health>::Spawn
 CEntitySpawner<class CCitadel_Pickup_Item>::Spawn
 CEntitySpawner<class CCitadel_Pickup_NecroDeath>::Spawn
+CEntitySpawner<class CCitadel_Pickup_SoulBag>::Spawn
 CEntitySpawner<class CCitadel_PointTalker_Idol>::Spawn
 CEntitySpawner<class CCitadel_Priest_SlideTrap>::Spawn
 CEntitySpawner<class CCitadel_Ratking_Standard>::Spawn
@@ -19409,8 +19406,8 @@ CSoundscapeSystem::Init:  Manifest '%s' with bogus file type '%s', expecting 'fi
 CSource1LegacyGameEventGameSystem
 CSource2GameClients::StartHLTVServer: game event %s not found.\n
 CSource2GameEntities::CheckEntities: %d ents\n
-CSource2GameEntities::CheckTransmit(), C:\buildworker\citadel_rel_win64\build\src\game\server\gameinterface.cpp:3133
-CSource2GameEntities::CheckTransmit(), C:\buildworker\citadel_rel_win64\build\src\game\server\gameinterface.cpp:3248
+CSource2GameEntities::CheckTransmit(), C:\buildworker\citadel_rel_win64\build\src\game\server\gameinterface.cpp:3138
+CSource2GameEntities::CheckTransmit(), C:\buildworker\citadel_rel_win64\build\src\game\server\gameinterface.cpp:3253
 CSource2Server::GameFrame
 CSource2Server::GameServerSteamAPIActivated()\n
 CSource2Server::GameServerSteamAPIDeactivated()\n
@@ -25266,7 +25263,6 @@ OnSetSchedule_TransitioningSchedules
 OnSimulate
 OnSimulateUserCommands
 OnSimulateUserCommands(), extended starvation\n
-OnSource1LegacyGameEventListenBitsReceived: game event %i not found.\n
 OnStartOpeningFromClosed
 OnSteamServerConnectFailure(result=%u, StillRetrying=%d)\n
 OnSteamServersConnected()\n
@@ -25959,6 +25955,8 @@ Player Open
 Player [%d]%s changing team %d->%d in game mode %d\n
 Player is active, replaying last kill will interfere with the gameplay
 Player removed from hideout
+Player slot %d sent invalid cl_interp_ratio '%s'\n
+Player slot %d sent invalid cl_updaterate '%s'\n
 Player was AFK too long
 Player.AbilityLevelUp
 Player.Negative.Interact
@@ -28293,6 +28291,8 @@ Soundscape warning: Event '%s' is being triggered by a soundscape entity and doe
 SoundscapeSystem
 Source1LegacyGameEventList_t
 Source1LegacyGameEvent_t
+Source1LegacyListenEvents: invalid player slot %d\n
+Source1LegacyListenEvents: player slot %d sent listeners for slot %d\n
 Source1LegacyListenEvents_t
 Source2EntitySystem
 Source2EntitySystemDeallocator
@@ -28527,6 +28527,7 @@ Start the event
 Start: %3.0f
 Start: %s
 StartLagCompensation
+StartLagCompensation: bogus lerp time %g for %s\n
 StartNewShot: %d   next: %d\n
 StartRadius
 StartSoundEvent
@@ -34897,7 +34898,6 @@ models/hideout/ranked_plaque_s0_wood.vmdl
 models/npc/trooper/trooper_humanoid.vmdl
 models/null.vmdl
 models/props_gameplay/coin/gold_coin.vmdl
-models/props_gameplay/soul_container/soul_container.vmdl
 models/props_plants/claypot03.vmdl
 models/test/shield/shield.vmdl
 models/w_models/weapons/w_HE_grenade.vmdl
@@ -35298,7 +35298,6 @@ modifier_drifter_stalkers_mark_post_teleport
 modifier_druid_invis
 modifier_druid_invis_aura
 modifier_druid_leech_seed
-modifier_early_gold_pickup_aura
 modifier_eat_halloween_candy_intrinsic
 modifier_econ
 modifier_econ_bodygroup_swap
@@ -35452,7 +35451,6 @@ modifier_item_nullification_aura_aoe
 modifier_item_pickup_aura
 modifier_item_pickup_aura_target
 modifier_item_pickup_timer
-modifier_item_punchable_gold
 modifier_item_punchable_rejuv
 modifier_item_smokebomb_precast
 modifier_item_weapon_power_for_health
@@ -35543,7 +35541,6 @@ modifier_neutral_attack_sludge_aura
 modifier_neutral_damage_growth
 modifier_neutral_debuff_pushback
 modifier_neutral_dot_debuff
-modifier_neutral_gold_pickup_aura
 modifier_neutral_ground_effect_aura
 modifier_neutral_lobbook_aura
 modifier_neutral_rat_swarm

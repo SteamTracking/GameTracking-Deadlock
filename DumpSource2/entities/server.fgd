@@ -3929,12 +3929,6 @@
 	input DropPowerup(void) : "Drop one of the spawner's configured powerups." // Pulse node
 ]
 
-// CCitadelItemPunchableNeutralGold
-@PointClass base(citadel_item_pickup) = citadel_item_punchable_gold
-[
-	victim_player(target_destination) // FIELD_EHANDLE m_hVictimPlayer
-]
-
 // CCitadelTriggerMultiCapturePoint
 @PointClass base(trigger) = citadel_multi_capture_point
 [
@@ -4081,6 +4075,11 @@
 
 // CCitadel_Pickup_NecroDeath
 @PointClass base(citadel_pickup) = citadel_pickup_necro_death
+[
+]
+
+// CCitadel_Pickup_SoulBag
+@PointClass base(citadel_pickup) = citadel_pickup_soulbag
 [
 ]
 
@@ -7339,9 +7338,8 @@
 		-1 : "ELoot_Invalid"
 		0 : "ELoot_GoldIdol"
 		1 : "ELoot_RespawnCredit"
-		2 : "ELoot_NeutralGold"
-		3 : "ELoot_KothCapturePoint"
-		4 : "ELoot_LootTypeCount"
+		2 : "ELoot_KothCapturePoint"
+		3 : "ELoot_LootTypeCount"
 	]
 	objective_position(intchoices) : "objective_position" : : "" = // FIELD_INT32 m_eObjectivePosition (EObjectivePositions_t)
 	[

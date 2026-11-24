@@ -4599,7 +4599,6 @@ $ent_weakpoint_hit
 .?AV?$CModifierFactory@VCCitadel_Modifier_ItemPickupAura@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ItemPickupAuraTarget@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ItemPickupTimer@@$0PPPP@@@
-.?AV?$CModifierFactory@VCCitadel_Modifier_ItemPunchable_Gold@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ItemPunchable_Rejuv@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_ItemWalkBack@@$0PPPP@@@
 .?AV?$CModifierFactory@VCCitadel_Modifier_Item_AOESilence@@$0PPPP@@@
@@ -5713,6 +5712,7 @@ $ent_weakpoint_hit
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGold@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGoldNetWorth@PlayerDataGlobal_t@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGoldReward@C_Citadel_Pickup_Gold@@@@
+.?AV?$CNetworkVarBase@HVNetworkVar_m_iGoldReward@C_Citadel_Pickup_SoulBag@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGravestoneState@C_Citadel_GraveStone_Blocker@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGuidedBotMatchAbilityUpgrades@CCitadelPlayerController@@@@
 .?AV?$CNetworkVarBase@HVNetworkVar_m_iGuidedBotMatchDamageTaken@CCitadelPlayerController@@@@
@@ -8141,7 +8141,6 @@ $ent_weakpoint_hit
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ItemPickupAura@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ItemPickupAuraTarget@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ItemPickupTimer@@VCBaseModifier@@@@
-.?AV?$CSubclassFactory@VCCitadel_Modifier_ItemPunchable_Gold@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ItemPunchable_Rejuv@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_ItemWalkBack@@VCBaseModifier@@@@
 .?AV?$CSubclassFactory@VCCitadel_Modifier_Item_AOESilence@@VCBaseModifier@@@@
@@ -10491,8 +10490,6 @@ $ent_weakpoint_hit
 .?AVCCitadelItemPickupRejuvHeroTestVData@@
 .?AVCCitadelItemPickupRejuvVData@@
 .?AVCCitadelItemPickupVData@@
-.?AVCCitadelItemPunchableNeutralGold@@
-.?AVCCitadelItemPunchableNeutralGoldVData@@
 .?AVCCitadelItemSchema@@
 .?AVCCitadelItemSystem@@
 .?AVCCitadelKeyBindingManager@@
@@ -12335,8 +12332,6 @@ $ent_weakpoint_hit
 .?AVCCitadel_Modifier_ItemPickupAuraTarget@@
 .?AVCCitadel_Modifier_ItemPickupAuraVData@@
 .?AVCCitadel_Modifier_ItemPickupTimer@@
-.?AVCCitadel_Modifier_ItemPunchable_Gold@@
-.?AVCCitadel_Modifier_ItemPunchable_GoldVData@@
 .?AVCCitadel_Modifier_ItemPunchable_Rejuv@@
 .?AVCCitadel_Modifier_ItemPunchable_RejuvVData@@
 .?AVCCitadel_Modifier_ItemWalkBack@@
@@ -13009,6 +13004,7 @@ $ent_weakpoint_hit
 .?AVCCitadel_Pickup_HalloweenCandy@@
 .?AVCCitadel_Pickup_Item_VData@@
 .?AVCCitadel_Pickup_Modifier_VData@@
+.?AVCCitadel_Pickup_SoulBag_VData@@
 .?AVCCitadel_Pickup_VData@@
 .?AVCCitadel_PopupSettings@@
 .?AVCCitadel_PopupSettings_HeroSelector@@
@@ -15937,6 +15933,7 @@ $ent_weakpoint_hit
 .?AVC_Citadel_Pickup_Item@@
 .?AVC_Citadel_Pickup_Modifier@@
 .?AVC_Citadel_Pickup_NecroDeath@@
+.?AVC_Citadel_Pickup_SoulBag@@
 .?AVC_Citadel_Projectile_Archer_ChargedShot@@
 .?AVC_Citadel_Projectile_Bebop_Hook@@
 .?AVC_Citadel_Projectile_BloodBomb@@
@@ -19260,7 +19257,6 @@ CCitadelInventoryManager
 CCitadelItemKothSpawner_API
 CCitadelItemPickupIdol_API
 CCitadelItemPickup_API
-CCitadelItemPunchableNeutralGold_API
 CCitadelKeyBindingManager::FindOrAddUnitSpecificKeysForUnit
 CCitadelKeyBindingManager::FindOrAddUnitSpecificKeysForUnit called with null pUnitName!!!\n
 CCitadelKeyBindingManager::InitUnitSpecificBindings encountered null pUnitName!!!\n
@@ -20160,6 +20156,7 @@ CNetworkFieldScratchData::Alloc created buffer %s of size %s\n
 CNetworkFieldScratchData::Alloc, failed to add new CMemoryStack at slot %d of size %u bytes.
 CNetworkFieldScratchData::Init failed on buffer of %u bytes.
 CNetworkGameClient::OnSource1Source1LegacyGameEvent: UnserializeKeyValue failed.\n
+CNetworkGameClient::PostDataUpdate: UnserializeKeyValue failed.\n
 CNetworkOriginCellCoordQuantizedVector m_cell%c cell %d is outside of cell bounds (0->%d) @(%f %f %f)\n
 CNetworkOriginCellCoordQuantizedVectorWS m_cell%c cell %d is outside of cell bounds (0->%d) @(%f %f %f)\n
 CNetworkSerializerBindingBuildFilter::GetFieldPriority
@@ -26471,6 +26468,7 @@ Ignoring CSVCMsg_UserCommands_t from bot\n
 Ignoring CSVCMsg_UserCommands_t with no command data
 Ignoring CSVCMsg_UserCommands_t: Missing command to delta from\n
 Ignoring CSVCMsg_UserCommands_t: delta apply failed
+Ignoring close caption placeholder of %d chars\n
 Ignoring invalid new value for '%s'.\n
 Ignoring requested disconnect %s\n
 Illegal byte sequence
@@ -29301,6 +29299,7 @@ ParrySuccessTimeChanged
 ParryTask
 ParryWindow
 Parse error on %s: %s\n
+ParseEventList: invalid event id %d for '%s'\n
 ParseSubclass
 Parser encountered %d error(s)
 PartialChargeCost
@@ -33503,6 +33502,8 @@ TrooperExecuteThreshold
 TrueView found no newly executed command for slot %d in %d consecutive snapshots.  Snapshot tick %d, last executed command %d, last created command %d.\n
 TrueView last created command %d for slot %d is out of range of last executed command %d.  Resetting last executed command.\n
 TrueViewDeadOnServerChanged
+Truncated %d char args of close caption command '%s'\n
+Truncated %d char close caption command '%s'\n
 Trust Root
 Try to clear all the debug overlay info
 TrySendVNotify - SendKV3 failed\n
@@ -33819,6 +33820,7 @@ Unsupported SpawnKeyType_t for entity "%s" class "%s" field "%s": %s (%d)
 Unsupported extension feature
 Unsupported recipe component type: '%s'!
 UnsupportedSpawnKeyType: %s
+Unterminated close caption command '%s'\n
 Untrained
 Unused
 Unwanted token '%s' %s
@@ -41458,7 +41460,6 @@ modifier_item_nullification_aura_aoe
 modifier_item_pickup_aura
 modifier_item_pickup_aura_target
 modifier_item_pickup_timer
-modifier_item_punchable_gold
 modifier_item_punchable_rejuv
 modifier_item_smokebomb_precast
 modifier_item_weapon_power_for_health
