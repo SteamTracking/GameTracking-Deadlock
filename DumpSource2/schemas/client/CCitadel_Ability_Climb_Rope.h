@@ -10,6 +10,7 @@ class CCitadel_Ability_Climb_Rope : public C_CitadelBaseAbility
 	VectorWS m_vLastPos;
 	bool m_bRequestStopClimbing;
 	bool m_bRequestJumpToRoof;
+	bool m_bLatchedNearTop;
 	GameTime_t m_flMoveDownStartTime;
 	EClimbRopeState_t m_eClimbState;
 };

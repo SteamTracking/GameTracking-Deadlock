@@ -781,12 +781,17 @@ CCitadelGameRules
 	GameTime_t m_timeKothGiveUp (sent as: float32)
 	int m_nAmberGold
 	int m_nSapphireGold
+	CitadelTeam_t m_nKothTrailingTeam
+	int m_nKothTrailingBonusGold
+	int m_nKothTrailingBonusResist
 	VectorWS m_vKothCashInCurrentLocation
 	EHANDLE m_hCurrentHeroDrafterRebels (sent as: ehandle; priority: 32)
 	EHANDLE m_hCurrentHeroDrafterCombine (sent as: ehandle; priority: 32)
 	int m_iMidbossKillCount
 	int m_iAmberRejuvCount
 	int m_iSapphireRejuvCount
+	GameTime_t m_tAmberRejuvExpireTime (sent as: float32)
+	GameTime_t m_tSapphireRejuvExpireTime (sent as: float32)
 	float m_tNextMidBossSpawnTime
 	VectorWS m_vecNeutralCampTimerOrigins
 	float m_vecNeutralCampNextSpawnTimes
@@ -887,6 +892,7 @@ CCitadelItemPickupRejuv
 	network class
 	CCitadelAbilityComponent::Storage_t m_CCitadelAbilityComponent (class: CCitadelAbilityComponent; alias: CCitadelAbilityComponent; type alias: CCitadelAbilityComponent; user groups: CCitadelAbilityComponent)
 	bool m_bPickedUp
+	int m_nDropNumber
 
 CCitadelItemPickupRejuvHeroTest
 	network class
@@ -1573,6 +1579,7 @@ CCitadel_Ability_Climb_Rope
 	CNetworkOriginQuantizedVectorWS m_vBottom (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bRequestStopClimbing (user groups: LocalPlayerOwnerAndObserversExclusive)
 	bool m_bRequestJumpToRoof (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bLatchedNearTop (user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flMoveDownStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	EClimbRopeState_t m_eClimbState
 
@@ -1760,9 +1767,10 @@ CCitadel_Ability_Fencer_PrimaryWeapon
 
 CCitadel_Ability_Fencer_Riposte
 	network class
-	EHANDLE m_hTarget (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
+	EHANDLE m_vecDeflectedTargets (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 	VectorWS m_vRiposteStartPosition (user groups: LocalPlayerOwnerAndObserversExclusive)
 	Vector m_vDashDirection (user groups: LocalPlayerOwnerAndObserversExclusive)
+	EHANDLE m_hDashTarget (sent as: ehandle; user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flStateStartTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
 	uint8 m_nCurrentRiposteState (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_nCurrentRiposteState)
 	GameTime_t m_flSuccessfulRiposteTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_flSuccessfulRiposteTime)
@@ -2023,6 +2031,10 @@ CCitadel_Ability_Jump
 	int8 m_nConsecutiveAirJumps (user groups: LocalPlayerOwnerAndObserversExclusive)
 	int8 m_nConsecutiveWallJumps (user groups: LocalPlayerOwnerAndObserversExclusive)
 	GameTime_t m_flLateralInputSuppressEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bFailedAirJump (user groups: LocalPlayerOwnerAndObserversExclusive)
+	GameTime_t m_flFailedAirJumpPenaltyEndTime (sent as: float32; user groups: LocalPlayerOwnerAndObserversExclusive)
+	int8 m_nFailedAirJumpPenaltyStacks (user groups: LocalPlayerOwnerAndObserversExclusive)
+	bool m_bGroundJumpAirDragPenalty (user groups: LocalPlayerOwnerAndObserversExclusive; change callbacks: ObservableRecv_m_bGroundJumpAirDragPenalty)
 
 CCitadel_Ability_Kobun
 	network class
@@ -3108,6 +3120,9 @@ CCitadel_BreakableProp
 CCitadel_BreakableProp_Hideout
 	network class
 
+CCitadel_BreakableProp_ParadeFloatBox
+	network class
+
 CCitadel_BreakableProp_PunchableTroll
 	network class
 
@@ -3455,6 +3470,9 @@ CCitadel_Pickup_NecroDeath
 CCitadel_Pickup_SoulBag
 	network class
 	int m_iGoldReward
+
+CCitadel_Pickup_Turkey
+	network class
 
 CCitadel_PointTalker
 
@@ -5365,6 +5383,9 @@ CPropDoorRotating
 
 CPropDoorRotatingBreakable
 
+CPropParadeFloat
+	network class
+
 CPulseGameBlackboard
 	network class
 	CUtlString m_strGraphName
@@ -5947,6 +5968,7 @@ LockonTarget_t
 	GameTime_t m_flLatchedTime (sent as: float32)
 	ELockonState m_eLockonState
 	EHANDLE m_hTarget (sent as: ehandle)
+	bool m_bHasLOS
 
 PhysicsRagdollPose_t
 	CTransform m_RelativeTransforms (encoder: coord; change callbacks: OnTransformChanged)

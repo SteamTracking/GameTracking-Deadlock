@@ -16,5 +16,6 @@ class CCitadel_Ability_NanoDash_VData : public CitadelAbilityVData
 	CitadelCameraOperationsSequence_t m_cameraSequenceSlash;
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flGroundBreakOffAngle; // = 30
+	float32 m_flEnemyStopCheckRadius; // = 60
 	CPiecewiseCurve m_SpeedCurve;
 };

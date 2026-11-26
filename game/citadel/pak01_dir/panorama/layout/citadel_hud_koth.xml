@@ -8,37 +8,54 @@
 		<include src="s2r://panorama/styles/unit_status_icons.vcss" />
 	</styles>
 	<Citadel_Hud_Koth hittest="false">
-		<Panel class="bg_backer" />
-		<Panel id="Koth_Center">
-			<Panel class="koth_gold">
-				<Panel class="soul_icon" />
-				<Label id="KothCashInValueLabel" class="koth_gold_text" text="{i:gold_value}" />
+		<Panel id="KothMeterBody">
+			<Panel class="bg_backer" />
+			<Panel id="Koth_Center">
+				<Panel class="koth_gold">
+					<Panel class="soul_icon" />
+					<Label id="KothCashInValueLabel" class="koth_gold_text" text="{i:gold_value}" />
+				</Panel>
+				<Panel class="koth_result">
+					<Label class="koth_result_label" text="#Citadel_HUD_KothCompleted" />
+					<Label class="koth_result_label_enemy" text="#Citadel_HUD_KothCompletedEnemy" />
+					<Label class="koth_result_label_timeout" text="#Citadel_HUD_KothTimeRanOut" />
+				</Panel>
 			</Panel>
-			<Panel class="koth_result">
-				<Label class="koth_result_label" text="#Citadel_HUD_KothCompleted" />
-				<Label class="koth_result_label_enemy" text="#Citadel_HUD_KothCompletedEnemy" />
-				<Label class="koth_result_label_timeout" text="#Citadel_HUD_KothTimeRanOut" />
+			<Panel id="KothIndicator">
+				<Panel id="KothCashInMeterTeam1" class="KothCashInMeter">
+					<ProgressBar id="KothCashInTeamBar1" class="KothProgressBar" />
+					<Label id="KothCashInTeamLabel1" class="KothTeamText" text="{i:KothTeam1Progress}%" />
+				</Panel>
+				<Panel id="KothCashInMeterTeam2" class="KothCashInMeter">
+					<ProgressBar id="KothCashInTeamBar2" class="KothProgressBar" />
+					<Label id="KothCashInTeamLabel2" class="KothTeamText" text="{i:KothTeam2Progress}%" />
+				</Panel>
+			</Panel>
+			<Panel id="KothParticipants">
+				<Panel id="KothParticipantsColumnLeft" class="KothParticipantsColumn">
+					<Panel id="KothParticipantsTeam1" class="KothParticipantsTeam friendly" />
+				</Panel>
+				<Panel id="KothParticipantsColumnRight" class="KothParticipantsColumn">
+					<Panel id="KothParticipantsTeam2" class="KothParticipantsTeam enemy" />
+				</Panel>
+			</Panel>
+			<Panel id="KothTextureElement" />
+			<Label class="koth_time_warning" text="#Citadel_HUD_Koth_Time_Warning" />
+			<Panel id="KothTrailingBonus">
+				<Label class="koth_trailing_title koth_trailing_title_friendly" text="#Citadel_HUD_Koth_TrailingBonus_Friendly" />
+				<Label class="koth_trailing_title koth_trailing_title_enemy" text="#Citadel_HUD_Koth_TrailingBonus_Enemy" />
+				<Label class="koth_trailing_title koth_trailing_title_spectator" text="#Citadel_HUD_Koth_TrailingBonus_Spectator" />
+				<Panel class="koth_trailing_values">
+					<Panel class="koth_trailing_gold">
+						<Panel class="soul_icon" />
+						<Label id="KothTrailingBonusGoldLabel" class="koth_trailing_value" />
+					</Panel>
+					<Panel class="koth_trailing_resist">
+						<Label id="KothTrailingBonusResistLabel" class="koth_trailing_value" />
+						<Label class="koth_trailing_value_desc" text="#Citadel_HUD_Koth_TrailingBonus_Resists" />
+					</Panel>
+				</Panel>
 			</Panel>
 		</Panel>
-		<Panel id="KothIndicator">
-			<Panel id="KothCashInMeterTeam1" class="KothCashInMeter">
-				<ProgressBar id="KothCashInTeamBar1" class="KothProgressBar" />
-				<Label id="KothCashInTeamLabel1" class="KothTeamText" text="{i:KothTeam1Progress}%" />
-			</Panel>
-			<Panel id="KothCashInMeterTeam2" class="KothCashInMeter">
-				<ProgressBar id="KothCashInTeamBar2" class="KothProgressBar" />
-				<Label id="KothCashInTeamLabel2" class="KothTeamText" text="{i:KothTeam2Progress}%" />
-			</Panel>
-		</Panel>
-		<Panel id="KothParticipants">
-			<Panel id="KothParticipantsColumnLeft" class="KothParticipantsColumn">
-				<Panel id="KothParticipantsTeam1" class="KothParticipantsTeam friendly" />
-			</Panel>
-			<Panel id="KothParticipantsColumnRight" class="KothParticipantsColumn">
-				<Panel id="KothParticipantsTeam2" class="KothParticipantsTeam enemy" />
-			</Panel>
-		</Panel>
-		<Panel id="KothTextureElement" />
-		<Label class="koth_time_warning" text="#Citadel_HUD_Koth_Time_Warning" />
 	</Citadel_Hud_Koth>
 </root>

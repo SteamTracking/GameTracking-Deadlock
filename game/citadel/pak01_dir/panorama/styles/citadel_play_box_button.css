@@ -1,0 +1,144 @@
+/* Prettified by Source 2 Viewer - https://valveresourceformat.github.io */
+
+.PlayBoxButton
+{
+	flow-children: right;
+}
+
+.PlayBoxButton:enabled:hover
+{
+	sound: "UI.HeroCard.Hover";
+}
+
+.PlayBoxButton:active
+{
+	sound: "UI.Roster.Confirm";
+}
+
+.PlayBoxButton:disabled
+{
+	opacity: 0.3;
+	saturation: 0;
+}
+
+.PlayBoxButton .buttonContent
+{
+	vertical-align: middle;
+	horizontal-align: middle;
+	min-width: 280px;
+	z-index: 2;
+}
+
+.PlayBoxButton .buttonContent SplitLabel
+{
+	horizontal-align: center;
+}
+
+.PlayBoxButton .buttonContent SplitLabel Image
+{
+	transition-property: transform;
+	transition-duration: 0.2s;
+}
+
+.PlayBoxButton .buttonContent .btn_bg
+{
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+	wash-color: rgb(18, 18, 18);
+	transition-property: background-color, transform, background-image, border;
+	transition-duration: 0.2s;
+}
+
+.PlayBoxButton .buttonContent .btn_texture
+{
+	width: 100%;
+	height: 100%;
+	background-image: url("s2r://panorama/images/main_menu/pick_screen/temp/play_box_psd.vtex");
+	background-size: 100% 100%;
+	opacity: 0.2;
+	wash-color: #93aead;
+}
+
+.PlayBoxButton:enabled:hover .btn_bg
+{
+	transform: rotateZ(-3deg);
+}
+
+.PlayBoxButton:enabled:hover .btn_texture
+{
+	background-image: url("s2r://panorama/images/main_menu/pick_screen/temp/play_box_fill_psd.vtex");
+	transform: rotateZ(-3deg);
+	opacity: 1;
+	wash-color: offWhite;
+}
+
+.PlayBoxButton:enabled:hover Label
+{
+	font-style: italic;
+	color: offBlack;
+}
+
+.PlayBoxButton:enabled:hover SplitLabel Image:first-child
+{
+	transform: rotateZ(-5deg);
+}
+
+.PlayBoxButton:enabled:hover SplitLabel Image:nth-child(even)
+{
+	transform: translateY(-1px);
+}
+
+.PlayBoxButton:enabled:hover SplitLabel Image:nth-child(odd)
+{
+	transform: translateY(1px);
+}
+
+.PlayBoxButton:enabled:hover SplitLabel Image:last-child
+{
+	transform: rotateZ(3deg);
+}
+
+.PlayBoxButton Label
+{
+	font-size: 30px;
+	font-weight: bold;
+	color: offWhite&ee;
+	font-family: oracle;
+	text-transform: uppercase;
+	vertical-align: middle;
+	horizontal-align: middle;
+	transition-duration: 0.2s;
+	text-overflow: shrink;
+	max-width: 300px;
+	letter-spacing: 1px;
+	padding: 5px 0px;
+	text-align: center;
+}
+
+.Language_polish .PlayBoxButton Label
+{
+	letter-spacing: 4px;
+}
+
+.Language_russian .PlayBoxButton Label
+{
+	letter-spacing: 7px;
+}
+
+.Language_ukrainian .PlayBoxButton Label
+{
+	letter-spacing: 7px;
+}
+
+.PlayBoxButton.Small .buttonContent
+{
+	min-width: 200px;
+}
+
+.PlayBoxButton.Small Label
+{
+	font-size: 24px;
+	max-width: 220px;
+}
+

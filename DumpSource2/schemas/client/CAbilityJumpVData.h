@@ -20,6 +20,9 @@ class CAbilityJumpVData : public CitadelAbilityVData
 	float32 m_flLateJumpGraceWindow; // = 0.1
 	// MPropertyDescription = "The most we'll adjust your speed in the input direction when performing an air jump"
 	float32 m_flMaxSpeedDelta; // = 200
+	float32 m_flFailedAirJumpGroundJumpAirDrag; // = 2
+	float32 m_flFailedAirJumpPenaltyGroundTime; // = 0.5
+	int32 m_nFailedAirJumpPenaltyJumpsToMaxAirDrag; // = 3
 	// MPropertyGroupName = "Sounds"
 	CSoundEventName m_strDashJumpSound;
 	// MPropertyStartGroup = "Roll Jump"

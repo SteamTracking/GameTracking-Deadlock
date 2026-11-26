@@ -13,4 +13,9 @@ class CAbilityGooGrenadeVData : public CitadelAbilityVData
 	// MPropertyStartGroup = "BounceSettings"
 	float32 m_flMinRestitution;
 	float32 m_flMaxRestitution;
+	float32 m_flClimbHeight;
+	float32 m_flLedgeForwardClearance; // = 18
+	float32 m_flLedgeExtraDropHeight; // = 8
+	float32 m_flEdgeBounceMaxNormalDot; // = 0.99
+	bool m_bDebug;
 };

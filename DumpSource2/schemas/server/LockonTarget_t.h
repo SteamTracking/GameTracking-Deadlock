@@ -8,4 +8,5 @@ class LockonTarget_t
 	GameTime_t m_flLatchedTime;
 	ELockonState m_eLockonState;
 	CHandle< CBaseEntity > m_hTarget;
+	bool m_bHasLOS;
 };

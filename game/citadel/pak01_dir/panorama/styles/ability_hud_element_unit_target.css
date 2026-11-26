@@ -181,6 +181,53 @@
 	height: 40px;
 }
 
+.riposte_target .target_shape
+{
+	width: 80px;
+	height: 80px;
+}
+
+.riposte_target .diamond
+{
+	visibility: visible;
+	border: 3px solid #ffffff;
+	animation-name: Riposte_Target_Pulse;
+	animation-duration: 0.45s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out;
+}
+
+@keyframes 'Riposte_Target_Pulse'
+{
+	0%
+	{
+		pre-transform-scale2d: 1;
+		wash-color: none;
+		background-color: #ffffff30;
+	}
+	
+	100%
+	{
+		pre-transform-scale2d: 0.8;
+		wash-color: #ff6161;
+		background-color: #ffffff00;
+	}
+	
+}
+
+.riposte_target_unselected .diamond_inner,.riposte_target_unselected #hint_container
+{
+	visibility: collapse;
+}
+
+.riposte_target_unreachable .diamond
+{
+	animation-name: none;
+	opacity: 0.3;
+	saturation: 0;
+}
+
 #hint_container
 {
 	horizontal-align: center;

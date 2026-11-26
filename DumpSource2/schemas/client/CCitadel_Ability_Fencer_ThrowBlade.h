@@ -7,4 +7,5 @@ class CCitadel_Ability_Fencer_ThrowBlade : public C_CitadelBaseAbility
 	ParticleIndex_t m_nExplodeParticleIndex;
 	bool m_bHitEnemyPlayer;
 	GameTime_t m_tRecastEndTime;
+	GameTime_t m_tFirstCastTime;
 };

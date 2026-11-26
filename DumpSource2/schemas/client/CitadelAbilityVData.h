@@ -106,6 +106,9 @@ class CitadelAbilityVData : public CEntitySubclassVDataBase
 	CPanoramaImageName m_strAbilityImage;
 	CitadelAbilityHUDPanel_t m_HUDPanel;
 	bool m_bShowInPassiveItemsArea;
+	bool m_bTooltipShowEnemyMovementAbilities;
+	bool m_bTooltipShowEnemyFlyingAbilities;
+	bool m_bTooltipShowAsMovementAbility;
 	bool m_bForceHideHUDPanel;
 	bool m_bForceShowHUDPanel;
 	bool m_bUsesFlightControls;

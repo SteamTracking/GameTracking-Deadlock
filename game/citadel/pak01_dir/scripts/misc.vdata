@@ -9,6 +9,7 @@
 		resource_name:"scripts/misc/neutral_camps.vdata_inc",
 		resource_name:"scripts/misc/capture_points.vdata_inc",
 		resource_name:"scripts/misc/triggers.vdata_inc",
+		resource_name:"scripts/misc/seasonal_thanksgiving.vdata_inc",
 	]
 	citadel_item_powerup_spawner = 
 	{
@@ -91,7 +92,7 @@
 		_class = "citadel_pickup_spawner"
 		m_sPickup = "citadel_pickup_health_float_in_world"
 		m_flSpawnDelay = 180.0
-		m_flRespawnTime = 180.0
+		m_flRespawnTime = 120.0
 		m_flRespawnTimeTest = 3.0
 	}
 	citadel_breakable_prop_base = 
@@ -1285,8 +1286,8 @@
 		m_sPickupSound = soundevent:"Powerup.Pickup.Souls"
 		m_nNameOffset = 60
 		_base = "citadel_pickup_base"
-		m_flGoldAmount = 23
-		m_flGoldPerMinuteAmount = 1.8
+		m_flGoldAmount = 18
+		m_flGoldPerMinuteAmount = 2.0
 		m_Color = [ 0, 255, 204 ]
 		m_sDefaultMaterialGroupName = "gold"
 		m_bIsPermanentPickup = true
@@ -1316,8 +1317,8 @@
 		m_sPickupSound = soundevent:"Powerup.Pickup.Souls"
 		m_nNameOffset = 60
 		_base = "citadel_pickup_base"
-		m_flGoldAmount = 46.0
-		m_flGoldPerMinuteAmount = 3.6
+		m_flGoldAmount = 36.0
+		m_flGoldPerMinuteAmount = 4.0
 		m_Color = [ 0, 255, 204 ]
 		m_sDefaultMaterialGroupName = "gold"
 		m_bIsPermanentPickup = true
@@ -3010,7 +3011,7 @@
 			[
 				{
 					m_eModifierValue = "MODIFIER_VALUE_BULLET_ARMOR_DAMAGE_RESIST"
-					m_value = 0.75
+					m_value = 1.0
 				},
 			]
 		}
@@ -3054,7 +3055,7 @@
 			[
 				{
 					m_eModifierValue = "MODIFIER_VALUE_BULLET_ARMOR_DAMAGE_RESIST"
-					m_value = 1.0
+					m_value = 1.5
 				},
 			]
 		}
@@ -3142,7 +3143,7 @@
 			[
 				{
 					m_eModifierValue = "MODIFIER_VALUE_TECH_RESIST"
-					m_value = 0.75
+					m_value = 1.0
 				},
 			]
 		}
@@ -3186,7 +3187,7 @@
 			[
 				{
 					m_eModifierValue = "MODIFIER_VALUE_TECH_RESIST"
-					m_value = 1.0
+					m_value = 1.5
 				},
 			]
 		}
@@ -3230,11 +3231,11 @@
 			[
 				{
 					m_eModifierValue = "MODIFIER_VALUE_TECH_RANGE_PERCENT"
-					m_value = 0.25
+					m_value = 0.5
 				},
 				{
 					m_eModifierValue = "MODIFIER_VALUE_TECH_RADIUS_PERCENT"
-					m_value = 0.25
+					m_value = 0.5
 				},
 			]
 		}
@@ -3278,7 +3279,11 @@
 			[
 				{
 					m_eModifierValue = "MODIFIER_VALUE_TECH_RANGE_PERCENT"
-					m_value = 0.5
+					m_value = 0.75
+				},
+				{
+					m_eModifierValue = "MODIFIER_VALUE_TECH_RADIUS_PERCENT"
+					m_value = 0.75
 				},
 			]
 		}
@@ -3322,7 +3327,11 @@
 			[
 				{
 					m_eModifierValue = "MODIFIER_VALUE_TECH_RANGE_PERCENT"
-					m_value = 0.75
+					m_value = 1.0
+				},
+				{
+					m_eModifierValue = "MODIFIER_VALUE_TECH_RADIUS_PERCENT"
+					m_value = 1.0
 				},
 			]
 		}
@@ -3454,7 +3463,7 @@
 			[
 				{
 					m_eModifierValue = "MODIFIER_VALUE_MOVEMENT_SPEED_MAX"
-					m_value = 11.811
+					m_value = 15.748
 				},
 			]
 		}
@@ -3470,7 +3479,7 @@
 		_class = "citadel_pickup_assigned_currencies"
 		m_flPickupRadius = 
 		{
-			m_flBase = 709
+			m_flBase = 659.4
 			m_flPerMinuteAfterStart = 0
 			m_flStartMinute = 0.0
 		}
@@ -3607,9 +3616,9 @@
 		_class = "citadel_pickup_health"
 		m_flPickupRadius = 
 		{
-			m_flBase = 709
-			m_flPerMinuteAfterStart = 59.0125
-			m_flMaxValue = 1181.1
+			m_flBase = 659.4
+			m_flPerMinuteAfterStart = 54.8816
+			m_flMaxValue = 1098.4
 			m_flStartMinute = 10.0
 		}
 		m_sPickupSound = soundevent:"Powerup.HealthPack.Pickup"
@@ -3805,9 +3814,9 @@
 		_class = "citadel_pickup_health"
 		m_flPickupRadius = 
 		{
-			m_flBase = 709
-			m_flPerMinuteAfterStart = 59.0125
-			m_flMaxValue = 1181.1
+			m_flBase = 659.4
+			m_flPerMinuteAfterStart = 54.8816
+			m_flMaxValue = 1098.4
 			m_flStartMinute = 10.0
 		}
 		m_sPickupSound = soundevent:"Powerup.HealthPack.Pickup"
@@ -4004,7 +4013,7 @@
 		_class = "citadel_pickup_health"
 		m_flPickupRadius = 
 		{
-			m_flBase = 120.0
+			m_flBase = 138.0
 			m_flPerMinuteAfterStart = 0.0
 			m_flMaxValue = 0.0
 			m_flStartMinute = 0.0
@@ -6031,5 +6040,438 @@
 	{
 		_class = "citadel_trigger_bonk"
 		m_strBonkSound = soundevent:"Player.Bonk"
+	}
+	prop_parade_float_base = 
+	{
+		_not_pickable = 2
+		_class = "prop_parade_float"
+		m_hModel = resource_name:"models/thanksgiving/balloon_owl/blend/balloon_owl.vmdl"
+		m_flModelScale = 1.0
+		m_iHealth = 1
+		m_flInitialSpawnTime = -1.0
+		m_angSpawnAngles = [ 0, 0, 0 ]
+		m_flMoveSpeed = 10.0
+		m_flTurnRate = 30.0
+		m_nZiplineLane = 4
+		m_flHeightAboveZipline = 600.0
+		m_flRaiseHeight = 200.0
+		m_flRaiseSpeed = 64.0
+		m_flDistanceToEndRise = 500.0
+		m_flMaxRiseHeight = 3000.0
+		m_flBoxFallbackZ = -450.0
+		m_sBulletHitSound = soundevent:"Thanksgiving.Parade.Float.Hit.Invulnerable"
+		m_flShotOffsetEaseInTime = 0.3
+		m_flShotOffsetPerDamage = 2.0
+		m_flMaxShotOffset = 400.0
+		m_flShotOffsetHalfLife = 5.0
+		m_flMaxShotTilt = 20.0
+		_editor = 
+		{
+			folder_name = "Parade"
+		}
+	}
+	prop_parade_float_owl = 
+	{
+		_class = "prop_parade_float"
+		m_hModel = resource_name:"models/thanksgiving/balloon_owl/balloon_owl.vmdl"
+		m_flModelScale = 1.0
+		m_iHealth = 1
+		m_flInitialSpawnTime = -1.0
+		m_angSpawnAngles = [ 0, 0, 0 ]
+		m_flMoveSpeed = 10.0
+		m_flTurnRate = 30.0
+		m_nZiplineLane = 4
+		m_flHeightAboveZipline = 600.0
+		m_flRaiseHeight = 200.0
+		m_flRaiseSpeed = 64.0
+		m_flDistanceToEndRise = 500.0
+		m_flMaxRiseHeight = 3000.0
+		m_flBoxFallbackZ = -450.0
+		m_sBulletHitSound = soundevent:"Thanksgiving.Parade.Float.Hit.Invulnerable"
+		m_flShotOffsetEaseInTime = 0.3
+		m_flShotOffsetPerDamage = 2.0
+		m_flMaxShotOffset = 400.0
+		m_flShotOffsetHalfLife = 5.0
+		m_flMaxShotTilt = 20.0
+		_editor = 
+		{
+			folder_name = "Parade"
+		}
+		_base = "prop_parade_float_base"
+	}
+	prop_parade_float_pizza = 
+	{
+		_class = "prop_parade_float"
+		m_hModel = resource_name:"models/thanksgiving/balloon_pizza/balloon_pizza_model.vmdl"
+		m_flModelScale = 1.0
+		m_iHealth = 1
+		m_flInitialSpawnTime = -1.0
+		m_angSpawnAngles = [ 0, 0, 0 ]
+		m_flMoveSpeed = 10.0
+		m_flTurnRate = 30.0
+		m_nZiplineLane = 4
+		m_flHeightAboveZipline = 600.0
+		m_flRaiseHeight = 200.0
+		m_flRaiseSpeed = 64.0
+		m_flDistanceToEndRise = 500.0
+		m_flMaxRiseHeight = 3000.0
+		m_flBoxFallbackZ = -450.0
+		m_sBulletHitSound = soundevent:"Thanksgiving.Parade.Float.Hit.Invulnerable"
+		m_flShotOffsetEaseInTime = 0.3
+		m_flShotOffsetPerDamage = 2.0
+		m_flMaxShotOffset = 400.0
+		m_flShotOffsetHalfLife = 5.0
+		m_flMaxShotTilt = 20.0
+		_editor = 
+		{
+			folder_name = "Parade"
+		}
+		_base = "prop_parade_float_base"
+	}
+	prop_parade_float_undead = 
+	{
+		_class = "prop_parade_float"
+		m_hModel = resource_name:"models/thanksgiving/balloon_undead/balloon_undead_model.vmdl"
+		m_flModelScale = 1.0
+		m_iHealth = 1
+		m_flInitialSpawnTime = -1.0
+		m_angSpawnAngles = [ 0, 0, 0 ]
+		m_flMoveSpeed = 10.0
+		m_flTurnRate = 30.0
+		m_nZiplineLane = 4
+		m_flHeightAboveZipline = 600.0
+		m_flRaiseHeight = 200.0
+		m_flRaiseSpeed = 64.0
+		m_flDistanceToEndRise = 500.0
+		m_flMaxRiseHeight = 3000.0
+		m_flBoxFallbackZ = -450.0
+		m_sBulletHitSound = soundevent:"Thanksgiving.Parade.Float.Hit.Invulnerable"
+		m_flShotOffsetEaseInTime = 0.3
+		m_flShotOffsetPerDamage = 2.0
+		m_flMaxShotOffset = 400.0
+		m_flShotOffsetHalfLife = 5.0
+		m_flMaxShotTilt = 20.0
+		_editor = 
+		{
+			folder_name = "Parade"
+		}
+		_base = "prop_parade_float_base"
+	}
+	prop_parade_float_manticat = 
+	{
+		_class = "prop_parade_float"
+		m_hModel = resource_name:"models/thanksgiving/balloon_manticat/balloon_manticat.vmdl"
+		m_flModelScale = 1.0
+		m_iHealth = 1
+		m_flInitialSpawnTime = -1.0
+		m_angSpawnAngles = [ 0, 0, 0 ]
+		m_flMoveSpeed = 10.0
+		m_flTurnRate = 30.0
+		m_nZiplineLane = 4
+		m_flHeightAboveZipline = 600.0
+		m_flRaiseHeight = 200.0
+		m_flRaiseSpeed = 64.0
+		m_flDistanceToEndRise = 500.0
+		m_flMaxRiseHeight = 3000.0
+		m_flBoxFallbackZ = -450.0
+		m_sBulletHitSound = soundevent:"Thanksgiving.Parade.Float.Hit.Invulnerable"
+		m_flShotOffsetEaseInTime = 0.3
+		m_flShotOffsetPerDamage = 2.0
+		m_flMaxShotOffset = 400.0
+		m_flShotOffsetHalfLife = 5.0
+		m_flMaxShotTilt = 20.0
+		_editor = 
+		{
+			folder_name = "Parade"
+		}
+		_base = "prop_parade_float_base"
+	}
+	prop_parade_float_porky = 
+	{
+		_class = "prop_parade_float"
+		m_hModel = resource_name:"models/thanksgiving/balloon_porky/balloon_porky.vmdl"
+		m_flModelScale = 1.0
+		m_iHealth = 1
+		m_flInitialSpawnTime = -1.0
+		m_angSpawnAngles = [ 0, 0, 0 ]
+		m_flMoveSpeed = 10.0
+		m_flTurnRate = 30.0
+		m_nZiplineLane = 4
+		m_flHeightAboveZipline = 600.0
+		m_flRaiseHeight = 200.0
+		m_flRaiseSpeed = 64.0
+		m_flDistanceToEndRise = 500.0
+		m_flMaxRiseHeight = 3000.0
+		m_flBoxFallbackZ = -450.0
+		m_sBulletHitSound = soundevent:"Thanksgiving.Parade.Float.Hit.Invulnerable"
+		m_flShotOffsetEaseInTime = 0.3
+		m_flShotOffsetPerDamage = 2.0
+		m_flMaxShotOffset = 400.0
+		m_flShotOffsetHalfLife = 5.0
+		m_flMaxShotTilt = 20.0
+		_editor = 
+		{
+			folder_name = "Parade"
+		}
+		_base = "prop_parade_float_base"
+	}
+	prop_parade_float_raccoon = 
+	{
+		_class = "prop_parade_float"
+		m_hModel = resource_name:"models/thanksgiving/balloon_raccoon/balloon_raccoon.vmdl"
+		m_flModelScale = 1.0
+		m_iHealth = 1
+		m_flInitialSpawnTime = -1.0
+		m_angSpawnAngles = [ 0, 0, 0 ]
+		m_flMoveSpeed = 10.0
+		m_flTurnRate = 30.0
+		m_nZiplineLane = 4
+		m_flHeightAboveZipline = 600.0
+		m_flRaiseHeight = 200.0
+		m_flRaiseSpeed = 64.0
+		m_flDistanceToEndRise = 500.0
+		m_flMaxRiseHeight = 3000.0
+		m_flBoxFallbackZ = -450.0
+		m_sBulletHitSound = soundevent:"Thanksgiving.Parade.Float.Hit.Invulnerable"
+		m_flShotOffsetEaseInTime = 0.3
+		m_flShotOffsetPerDamage = 2.0
+		m_flMaxShotOffset = 400.0
+		m_flShotOffsetHalfLife = 5.0
+		m_flMaxShotTilt = 20.0
+		_editor = 
+		{
+			folder_name = "Parade"
+		}
+		_base = "prop_parade_float_base"
+	}
+	citadel_breakable_prop_parade_float_box = 
+	{
+		_class = "citadel_breakable_prop_parade_float_box"
+		m_flRespawnTime = 5.0
+		m_iHealth = 1
+		m_bBreakOnDodgeTouch = true
+		m_bSolidAfterDeath = false
+		m_bRenderAfterDeath = false
+		m_bDamagedByAbilities = true
+		m_bDamagedByMelee = true
+		m_bDamagedByBullets = true
+		m_flInitialSpawnTime = 0.0
+		m_flPowerupDropChance = 100.0
+		m_bDamagedBySlide = true
+		_base = "citadel_breakable_prop_base"
+		m_hModel = resource_name:"models/items/item_crate.vmdl"
+		m_bIsMantleable = true
+		m_sBreakSound = soundevent:"Thanksgiving.Parade.Float.Wood.Crate.Break"
+		m_eRollType = "ECitadelRandomRoll_BreakableGoldPickup"
+		m_mapPickupChances = 
+		{
+			turkey_pickup = 1.0
+		}
+		m_flDropTwoChance = 30.0
+		m_flDropThreeChance = 15.0
+		m_flExtraDropTurkeyChance = 15.0
+		m_flExtraDropPowerupChance = 15.0
+		m_flDroppedItemMinSpeed = 50.0
+		m_flDroppedItemMaxSpeed = 200.0
+		m_flDroppedItemMinUpSpeed = 100.0
+		m_flDroppedItemMaxUpSpeed = 250.0
+		m_flSwayAngle = 4.0
+		m_flSwayPeriod = 4.0
+		m_RopeParticle = resource_name:"particles/generic/cable_follow.vpcf"
+		m_flRopeRadius = 2.0
+		_editor = 
+		{
+			folder_name = "Parade"
+		}
+	}
+	turkey_pickup = 
+	{
+		_class = "citadel_pickup_turkey"
+		m_flPickupRadius = 
+		{
+			m_flBase = 138.0
+			m_flPerMinuteAfterStart = 0
+		}
+		m_friendlyParticle = resource_name:"particles/event/thanksgiving/thanksgiving_2026_turkey_steam.vpcf"
+		m_enemyParticle = resource_name:"particles/event/thanksgiving/thanksgiving_2026_turkey_steam.vpcf"
+		m_gainedParticle = resource_name:"particles/event/thanksgiving/turkey_pickup_gained.vpcf"
+		m_hModel = resource_name:"models/thanksgiving/turkey/turkey.vmdl"
+		m_sSpawnSound = soundevent:"Powerup.Spawn.Generic"
+		m_flPickupExpirationDuration = 
+		{
+			m_flBase = 300
+			m_flPerMinuteAfterStart = 0
+		}
+		m_flParticleRadius = 1.5
+		m_bShowOnMinimap = false
+		m_sNameLocString = "#turkey_pickup_label"
+		m_sPickupSound = soundevent:"Powerup.Turkey.Eat"
+		m_nNameOffset = 60
+		_base = "halloween_candy_pickup"
+		m_Color = [ 196, 120, 40 ]
+		m_sDefaultMaterialGroupName = "gold"
+		m_bIsPermanentPickup = true
+		m_bShowModelOverhead = true
+		bPhysicallyDropToTheGroundOnSpawn = true
+		m_eCollectionMethod = "Touch"
+		m_VacuumToPlayerSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = -16.041637
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = -4004.629639
+				},
+				{
+					x = 0.105087
+					y = -436.874969
+					m_flSlopeIncoming = -4004.629639
+					m_flSlopeOutgoing = 4603.734863
+				},
+				{
+					x = 0.634412
+					y = 2000.0
+					m_flSlopeIncoming = 4603.734863
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, -500.0 ]
+			m_vDomainMaxs = [ 1.0, 2000.0 ]
+		}
+		m_flInitialVacuumUpSpeed = [ 100.0, 100.0 ]
+		m_VacuumInitialVelSpeedCurve = 
+		{
+			m_spline = 
+			[
+				{
+					x = 0.0
+					y = 0.0
+					m_flSlopeIncoming = 0.0
+					m_flSlopeOutgoing = 3.105128
+				},
+				{
+					x = 0.037948
+					y = 0.117833
+					m_flSlopeIncoming = 7.669573
+					m_flSlopeOutgoing = 7.669573
+				},
+				{
+					x = 0.130385
+					y = 1.0
+					m_flSlopeIncoming = 0.423242
+					m_flSlopeOutgoing = 0.423242
+				},
+				{
+					x = 0.356127
+					y = 0.2525
+					m_flSlopeIncoming = -2.70552
+					m_flSlopeOutgoing = -2.70552
+				},
+				{
+					x = 0.5
+					y = 0.0
+					m_flSlopeIncoming = -1.755022
+					m_flSlopeOutgoing = 0.0
+				},
+			]
+			m_tangents = 
+			[
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_SPLINE"
+					m_nOutgoingTangent = "CURVE_TANGENT_SPLINE"
+				},
+				{
+					m_nIncomingTangent = "CURVE_TANGENT_LINEAR"
+					m_nOutgoingTangent = "CURVE_TANGENT_LINEAR"
+				},
+			]
+			m_vDomainMins = [ 0.0, 0.0 ]
+			m_vDomainMaxs = [ 0.5, 1.0 ]
+		}
+		m_flInitialVacuumSideSpeed = [ 200.0, 200.0 ]
+		m_flHoverOffset = 20.0
+		m_flHoverHeight = 15.0
+		m_flHoverRate = 6
+		m_flHoverTurnRate = 12
+		m_flYawSpin = 50
+		_editor = 
+		{
+			folder_name = "Parade"
+		}
+		m_sBecomeInteractiveSound = soundevent:"Powerup.Turkey.Land"
+		m_flBuffDuration = 30
+		m_TurkeyBuffModifier = subclass:
+		{
+			_class = "modifier_eat_turkey_buff"
+			_my_subclass_name = "eat_turkey_buff"
+			m_sLocalizationName = "modifier_eat_turkey_buff"
+			m_eHudDisplayLocation = "DISPLAY_HUD_NONE"
+			m_eModifierDisplayLocaiton = "MODIFIER_DISPLAY_HEALTHBAR"
+			m_strParticleEffect = resource_name:"particles/event/thanksgiving/turkey_regen.vpcf"
+			m_strHudIcon = panorama:"file://{images}/items/seasonal/2026_turkey.psd"
+			m_flTotalHealthRegen = 90.0
+			m_flTotalHealthRegenPerMinute = 4.0
+			m_flStaminaOnPickup = 2.0
+			m_vecScriptValues = 
+			[
+				{
+					m_eModifierValue = "MODIFIER_VALUE_BULLET_ARMOR_DAMAGE_RESIST"
+					m_value = 5.0
+				},
+				{
+					m_eModifierValue = "MODIFIER_VALUE_TECH_RESIST"
+					m_value = 5.0
+				},
+			]
+			m_flOverstuffedDuration = 10.0
+			m_OverstuffedModifier = subclass:
+			{
+				_class = "modifier_base"
+				_my_subclass_name = "eat_turkey_overstuffed"
+				m_sLocalizationName = "modifier_eat_turkey_overstuffed"
+				m_nEnabledStateMask = "MODIFIER_STATE_SPRINT_DISABLED"
+				m_eHudDisplayLocation = "DISPLAY_HUD_CENTER"
+				m_bReverseHudProgressBar = false
+				m_eDrawOverheadStatus = "OVERHEAD_DRAW_FOR_EVERYONE"
+				m_strHudIcon = panorama:"file://{images}/items/seasonal/2026_turkey.psd"
+				m_vecScriptValues = 
+				[
+					{
+						m_eModifierValue = "MODIFIER_VALUE_GRAVITY_SCALE"
+						m_value = 1.6
+					},
+				]
+			}
+		}
+		m_strGainedSound = soundevent:"Powerup.Turkey.Gained"
 	}
 }

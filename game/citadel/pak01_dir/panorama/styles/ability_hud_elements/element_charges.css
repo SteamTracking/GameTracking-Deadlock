@@ -248,3 +248,78 @@
 	visibility: visible;
 }
 
+#air_moves
+{
+	flow-children: down;
+	vertical-align: center;
+	horizontal-align: center;
+	transform: translateX( 100px );
+}
+
+.air_move_row
+{
+	flow-children: right;
+	margin: 2px 0px;
+	visibility: collapse;
+}
+
+.air_move_row.used
+{
+	visibility: visible;
+}
+
+.air_move_icon
+{
+	width: 16px;
+	height: 16px;
+	vertical-align: center;
+	margin-right: 4px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: #FFEFD7;
+}
+
+.air_move_icon--jump
+{
+	background-image: url("s2r://panorama/images/icons/properties/move_double_jump.vsvg");
+}
+
+.air_move_icon--dash
+{
+	background-image: url("s2r://panorama/images/icons/properties/move_dash.vsvg");
+}
+
+.air_move_pips
+{
+	flow-children: right;
+	vertical-align: center;
+}
+
+.air_move_pip
+{
+	width: 8px;
+	height: 8px;
+	margin-right: 4px;
+	vertical-align: center;
+	border-radius: 50%;
+	border: 1px solid #10130D;
+	background-color: #FFEFD7;
+}
+
+.air_move_pip.spent
+{
+	border: 1px solid #FFEFD766;
+	background-color: #10130D99;
+}
+
+.air_move_row.depleted .air_move_icon
+{
+	wash-color: #FF410D;
+}
+
+.air_move_row.depleted .air_move_pip
+{
+	border: 1px solid #FF410D;
+}
+

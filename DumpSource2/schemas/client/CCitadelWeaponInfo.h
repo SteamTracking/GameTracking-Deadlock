@@ -151,6 +151,8 @@ class CCitadelWeaponInfo
 	bool m_bUseBulletGravityScaleCurve;
 	// MPropertySuppressExpr = "m_bUseBulletGravityScaleCurve == false"
 	CPiecewiseCurve m_flBulletGravityScaleOverDistance;
+	bool m_bUseBulletSpeedScaleCurve;
+	CPiecewiseCurve m_flBulletSpeedScaleOverDistance;
 	// MPropertyDescription = "Curved Bullets - How long (seconds) until fully directed at target"
 	float32 m_flCurveTime; // = 1
 	// MPropertyStartGroup = "Zoom"

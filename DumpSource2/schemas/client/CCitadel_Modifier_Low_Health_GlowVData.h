@@ -3,4 +3,6 @@ class CCitadel_Modifier_Low_Health_GlowVData : public CCitadelModifierVData
 {
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_GlowParticle;
+	// MPropertyStartGroup = "Gameplay"
+	bool m_bShowAsLowHealth;
 };

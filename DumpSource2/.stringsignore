@@ -359,6 +359,8 @@ $SPECULARSCALE
 <ID> <Value> Forces a set of the specified variable
 <ID> <Value> Sets a max style account sync storage value
 <MatchID> [Metadata Salt] Opens the match details to the specified match
+<amount> Gives all bots unsecured souls
+<amount> Gives your hero unsecured souls
 <b>Check</b> this if the input position is relative to the listener.<br /> <b>Don't check</b> this if the input position is aboslute world space coordinates.
 <bot name> <command string...>. Sends specified command to one or more player bots: [all], [east/west], [bot name]
 <classname> <fieldname>:  spew why field was excluded from networking for classname.
@@ -867,6 +869,7 @@ AddToCounter
 AddToTimer
 Added an aura that gives nearby heroes a melee hint state.
 Added for each barrage hit. The hit lands when it expires
+Added to Total Health Regen for every minute of match time when the turkey is collected.
 Added to the max after the property, e.g. a +1 rounding buffer.
 Additional Abilities
 Additional Ability Properties that are demoted compared to the Section Ability Properties
@@ -952,6 +955,7 @@ AimMatrixOpFixedSettings_t
 Air Dash Stuff
 Air Jump
 Air absorption coefficient sued for baked occlusion calculation.
+Air jumps the Lash bot drill target makes after Grapple to gain height
 Air-drag applied when jumping out of a slide linearly ramps from 100% to 0% from 0' to this angle.
 Alert
 AlertShooting
@@ -1635,6 +1639,7 @@ Bounds
 Bounds_IgnoreObscureBlockers
 Box
 Box - Ground
+Box Fallback Z
 Branch
 Branch Behavior
 Branch Recursion Distance Scale Factor
@@ -1669,6 +1674,7 @@ Broadcast server debug overlays
 Broadcast server debug overlays traffic
 BrushSolidities_e
 Buddha Mode
+Buff
 Buff Type Graph Color
 Buff Type Loc String
 Buff Type Value Unit
@@ -1687,6 +1693,7 @@ BuildupMode_t
 Bullet Damage
 Bullet Damage increase at long range
 Bullet Handler Type
+Bullet Hit Sound
 Bullet Protection
 Bullet Resist (positive)
 Bullet Resist Reduced Per Enemy Hero (Max 0%)
@@ -3237,6 +3244,8 @@ CCitadel_BreakablePropVData
 CCitadel_BreakableProp_GraphController
 CCitadel_BreakableProp_Hideout
 CCitadel_BreakableProp_HideoutVData
+CCitadel_BreakableProp_ParadeFloatBox
+CCitadel_BreakableProp_ParadeFloatBoxVData
 CCitadel_BreakableProp_PunchableTroll
 CCitadel_BreakableProp_PunchableTrollVData
 CCitadel_CapturePointVData
@@ -3741,6 +3750,8 @@ CCitadel_Modifier_Dust_Storm_Aura
 CCitadel_Modifier_Dust_Storm_Aura_Apply
 CCitadel_Modifier_Dust_Storm_Thrown
 CCitadel_Modifier_EatHalloweenCandy_Intrinsic
+CCitadel_Modifier_EatTurkeyBuff
+CCitadel_Modifier_EatTurkeyBuffVData
 CCitadel_Modifier_Econ
 CCitadel_Modifier_EconBodygroupSwap
 CCitadel_Modifier_EconBodygroupSwapVData
@@ -4692,6 +4703,8 @@ CCitadel_Pickup_Modifier_VData
 CCitadel_Pickup_NecroDeath
 CCitadel_Pickup_SoulBag
 CCitadel_Pickup_SoulBag_VData
+CCitadel_Pickup_Turkey
+CCitadel_Pickup_Turkey_VData
 CCitadel_Pickup_VData
 CCitadel_PointTalker
 CCitadel_PointTalker_Base
@@ -5158,12 +5171,14 @@ CITADEL_ABILITY_BEHAVIOR_COOLDOWN_ON_CHANNEL_END
 CITADEL_ABILITY_BEHAVIOR_COOLDOWN_PERSISTS_ACROSS_REBUY
 CITADEL_ABILITY_BEHAVIOR_COOLDOWN_REFILLS_ALL_CHARGES
 CITADEL_ABILITY_BEHAVIOR_COUNT
+CITADEL_ABILITY_BEHAVIOR_COUNTS_AS_ABILITY_USE
 CITADEL_ABILITY_BEHAVIOR_DAMAGE_DOESNT_WAKE_FROM_SLEEP
 CITADEL_ABILITY_BEHAVIOR_DEACTIVATE_CROUCH_TOGGLE_ON_CAST
 CITADEL_ABILITY_BEHAVIOR_DESTROY_UPON_NO_CHARGES
 CITADEL_ABILITY_BEHAVIOR_DISARMABLE
 CITADEL_ABILITY_BEHAVIOR_DISPLAYS_DAMAGE_IMPACT
 CITADEL_ABILITY_BEHAVIOR_DISPLAYS_DAMAGE_SOURCE_IMPACT
+CITADEL_ABILITY_BEHAVIOR_DOES_NOT_COUNT_AS_ABILITY_USE
 CITADEL_ABILITY_BEHAVIOR_DONT_AIM_FACING_ENEMY
 CITADEL_ABILITY_BEHAVIOR_DONT_BREAK_INVISIBILITY
 CITADEL_ABILITY_BEHAVIOR_DONT_CONSUME_ABILITY_RESOURCE_ON_CAST
@@ -5176,6 +5191,7 @@ CITADEL_ABILITY_BEHAVIOR_DO_NOT_ALLOW_SPAM_PROC
 CITADEL_ABILITY_BEHAVIOR_DO_NOT_CANCEL_ON_PARRY
 CITADEL_ABILITY_BEHAVIOR_EQUAL_UNIT_TARGET_PRIORITY
 CITADEL_ABILITY_BEHAVIOR_EXCLUSIVE_USE
+CITADEL_ABILITY_BEHAVIOR_FLYING
 CITADEL_ABILITY_BEHAVIOR_FORCE_TRIGGER_UI
 CITADEL_ABILITY_BEHAVIOR_HIDDEN
 CITADEL_ABILITY_BEHAVIOR_HOLDS_AT_MAX_CHANNEL
@@ -6889,6 +6905,8 @@ CPropAnimatingBreakable
 CPropDataComponent
 CPropDoorRotating
 CPropDoorRotatingBreakable
+CPropParadeFloat
+CPropParadeFloatVData
 CPulseBreakpointLocation
 CPulseCell_ApplyAnimGraphParam
 CPulseCell_ApplyAnimGraphParam::CursorState_t
@@ -7587,6 +7605,7 @@ C_Citadel_BaseProp_MidStairs
 C_Citadel_Bounce_Pad
 C_Citadel_BreakableProp
 C_Citadel_BreakableProp_Hideout
+C_Citadel_BreakableProp_ParadeFloatBox
 C_Citadel_BreakableProp_PunchableTroll
 C_Citadel_CatAnimating
 C_Citadel_DeployablePreview
@@ -8156,6 +8175,7 @@ C_Projectile_Rolling_FireBall
 C_Projectile_Stomp_Projectile
 C_Projectile_Synth_Barrage
 C_PropDoorRotating
+C_PropParadeFloat
 C_RagdollProp
 C_RagdollPropAttached
 C_RectLight
@@ -8213,6 +8233,7 @@ C_WaterBullet
 C_World
 C_fogplayerparams_t
 CabalID_t
+Cable drawn from each of the float's rope attachments (rope0, rope1, rope2) down to the box. Control points 0 and 1 are the two ends, control point 2's x is the cable radius. Empty for no ropes.
 Cache dynamic BLAS if geometry has not changed
 Cache sendtables
 Cache size for recently-used pose recipe shapes.
@@ -8319,9 +8340,14 @@ ChainToSolveData_t
 ChallengeID_t
 Chance a heavy melee feeds the troll a candy and gets nothing back
 Chance for this to drop a primary reward, 0 - 100%, this rolls first
+Chance per flight that the Grey Talon bot drill target fires a Charged Shot
 Chance to do a melee attack when within range
 Chance to do a melee attack when within range while reloading
 Chance to parry when bot sees a melee attack
+Chance, 0 - 100%, that a broken box drops 2 items instead of 1. Rolled together with Drop 3 Chance as one roll; whatever is left of 100 is the chance of the usual single item. What each extra item is comes from the Extra Drop chances below, not from Rewards.
+Chance, 0 - 100%, that a broken box drops 3 items instead of 1.
+Chance, 0 - 100%, that an extra item is a powerup, picked by the powerup spawner the way powerup breakables pick theirs. If it has none to give, the item is a small gold pickup instead.
+Chance, 0 - 100%, that an extra item is a turkey. Rolled together with Extra Drop Powerup Chance as one roll per extra item; whatever is left of 100 is the chance of a small gold pickup.
 Change Selection
 Change air control by this percentage
 Change the snowball level
@@ -9243,7 +9269,9 @@ DeformableSurfaceBuilderSystem
 Defrag algorithm 0=Fast 1=Balanced 2=full 3=Extensive
 Degrees
 Degrees of camera deflection away from the thing we pressed on that force the radial open ahead of its delay. Degrees rather than pixels so the mouse sensitivity slider already normalises it. <= 0, ignore gesture angle don't open 
+Degrees per second the float turns to face along the zipline as it bends. 0 snaps to the new direction.
 Degrees pitch to launch the ball up
+Degrees the float leans away from the shooter when pushed the full Max Shot Offset. The lean follows the push, so it eases in and drifts back with it. Negative leans toward the shooter instead. 0 turns the lean off.
 Delay
 Delay (ms)
 Delay Time (ms)
@@ -9510,6 +9538,7 @@ Distance Fade Scale
 Distance Field AO quality
 Distance Remaining Metric
 Distance Scaling
+Distance To End Rise
 Distance a nav link end target must move past its base metrics range boundary before the split disconnects or reconnects.
 Distance above player step height that needs to be clear to allow for jumping
 Distance away from target to search for an attack location
@@ -9529,9 +9558,15 @@ Distance field occlusion length
 Distance field ray origin bias max
 Distance field ray origin bias min
 Distance from core we consider to be a threat
+Distance in meters behind the player the McGinnis bot drill target deploys Spectral Wall at
+Distance in meters from its start a roaming bot drill target moves around in
+Distance in meters from its start the bot drill target stops chasing the player at
 Distance in meters from the camera at which names above health bars are fully faded out
 Distance in meters from the camera at which names above health bars start fading out
+Distance in meters from the player the McGinnis bot drill target dashes away at
+Distance in meters from the player the bot drill target starts at
 Distance invariant capsule radius, in pixels at 1080 vertical res. This makes targets less finnicky to hit at a distance. Near range, we'll have already hit via hitbox.
+Distance limit on the magnetism cone. 4000 units is roughly one second of projectile flight time
 Distance pushed back over the recoil. X = recoil progress [0,1], Y = fraction of m_flRecoilDistance
 Distance threshold that we allow bullet to penetrate body to headshot.
 Distance to Both of Two Control Points
@@ -9690,12 +9725,19 @@ Draws the banned heroes message
 Draws the game over message: citadel_test_game_over_message <WINNING_TEAM>
 Draws the street brawl scoring message: citadel_test_streetbrawl_scoring_message <ScoringTeam>
 Drive (dB)
+Drop 2 Chance
+Drop 3 Chance
 Drop Shadow Offset
 Drop a client if processing their messages consumes more than N ms of CPU time in a burst (token bucket capacity)
 Drop a client if processing their messages consumes more than N ms of CPU time per second, sustained (token bucket fill rate)
 Drop an ai_hint at the player's current eye position.
 Drop every Nth fragment
 DropPowerup
+Dropped Item
+Dropped Item Max Speed
+Dropped Item Max Up Speed
+Dropped Item Min Speed
+Dropped Item Min Up Speed
 Dry/Wet
 DualHull
 Dummy Target heroID if non-specified
@@ -11487,11 +11529,16 @@ ExternalAnimGraphHandle_t
 ExternalAnimGraphInactiveBehavior_t
 Extinguish
 Extra Arc Data Point
+Extra Drop Powerup Chance
+Extra Drop Turkey Chance
+Extra Drops
 Extra Tap Scale
 Extra distance bots are willing to engage enemies at to get last hits
 Extra distance bots are willing to engage heroes at
 Extra distance that a melee attacking npc can hit this npc from. Useful for medium and larger npcs.
+Extra height the float has right at either end of the move range. It eases to nothing over Distance To End Rise, and adds on top of the base height and Raise Height.
 Extra intrinsic modifiers granted only while the item is corrupted.
+Extra retaliate damage, as a percent of the attacker's max health.
 Extra time for an orb to linger to allow lag compensated players to contest
 Extra time for ice path movement controller to linger to prevent mispredictions
 Extra velocity along the wall, either direction, based on wish direction.
@@ -12253,7 +12300,6 @@ FourVectors2D
 Frac * 5 Players to get how much extra buildup is added. Larger values make the buildup complete faster.  0.2 (*5 Players) is exactly halving the buildup time
 Fraction of an active movement slow that is also applied as additional air drag
 Fraction of the breaker's velocity added to break debris, only when the breaker is in contact (e.g. dashing through). Stacks with Break Debris Speed.
-Fraction of the comeback souls earned by a player above the enemy team's average net worth that is redirected to the tick gold pool for the two lowest net worth teammates
 Fraction of the dash travel speed kept when a parry cancels the dash, so the stop tapers off instead of snapping
 Fraction of the pull distance covered (y) over normalized pull time (x)
 Fraction of the redirected comeback souls pool paid out to the two lowest net worth players each period
@@ -12299,6 +12345,7 @@ FuncMoverTransitionRecord_t
 FuncRotatorRotationSummaryFlags_t
 FuncRotatorRotationSummary_t
 FunctionInfo_t
+Furthest, in units, shots can push the float from where it should be.
 FuseFunctionIndex_t
 FuseVariableAccess_t
 FuseVariableIndex_t
@@ -12831,18 +12878,22 @@ Heals the target back to full health
 Health Bar
 Health Bar Offset (from abs origin)
 Health regen applied to us from an external source (ie. not intrinsic health regen)
+Health regenerated in total over the buff's duration.
 Health. Used by bullet and ability damage. Melee uses Melee Hits To Break instead, when that is set.
 Healthbar
 Heat
 Heavy Hitter
 Heavy Melee Hit Count
+Heavy melee charge percent at which the Graves bot drill target parries
 Height
 Height (milliseconds)
+Height Above Zipline
 Height Decrease Scale
 Height Increase Scale
 Height Offset (far)
 Height Offset (near)
 Height Reflectivity
+Height in meters the bot drill target flies at
 Height of navigating agent capsule.
 Height of the model
 Height of volume fog texture
@@ -12964,6 +13015,7 @@ HostStateManager
 HostStateMgr001
 HostUtils001
 Hostname for server.
+Hover
 HoverPoseFlags_t
 How aggressive the switch to fallbacks will be depending on how far over the cl_particle_sim_fallback_threshold_ms the sim time is.  Higher numbers are more aggressive.
 How big of a collision sprays should have
@@ -12979,6 +13031,8 @@ How do you want the ping to behave?
 How does the power of 'Wall Jump Max Lateral Speed' fall off with speed along the wall (so that players can't stack this speed forever). X axis is speed along the wall in meters per second (using METERS_PER_INCH). Values from this curve are clamped to 0..1 output. 
 How far a dash jump will send you forward.  This is on top of the ~8m already traveled by the dash.
 How far a path may detour from the direct route. Negative means no limit.
+How far above and below Hover Offset the turkey bobs.
+How far above its spawn height the float climbs while it has no box.
 How far above the ground the plant animation starts while he's slamming down
 How far above the ground to still be grounded while charging
 How far ahead we trace the navmesh when looking for somewhere to run.
@@ -12989,6 +13043,7 @@ How far away before we stop showing in world deny events.
 How far back a target must dash during the melee attack delay window  in order to dodge a pending hit
 How far back before our current playback head in seconds to hold onto fragments.
 How far back the spectator camera should be
+How far down the lane 4 zipline, in units along its path, from the first node inside the move range the first parade float spawns. The rest are spaced on from there.
 How far each resampled point is pushed sideways into open space. 0 disables the scatter.
 How far forward from the plane of hero and camera forward to move the shoot position
 How far forward the mantle will move the player onto the ledge
@@ -13443,6 +13498,7 @@ If enabled, prints diagnostic information about the current fog volume
 If enabled, show damage report
 If enabled, show purchase toasts for all item transactions, not just ones in your quickbuy queue
 If enabled, show quickbuy in the HUD
+If enabled, the Thanksgiving parade floats spawn when the match starts
 If enabled, the camera's translation will be included in the projection matrix.
 If enabled, the up direction will be evaluated in world space, such that the object orientation does not affect the surface slope filtering. Additionally if Orient To Surface is 0, then and world space up is enabled, then the object orientation will not affect the rotation of detail model.
 If enabled, you can purchase upgrades anywhere
@@ -14084,6 +14140,7 @@ Landing
 Landing to prediction
 Landmark
 Lane Color for certain pings that require a line color.
+Lane number whose zipline the float's XY position follows, heading toward +Y. 4 is blue. Off the end of the zipline, or past the citadel_seasonal_thanksgiving_float_move_range convars, it teleports back to the start. 0, or a map with no zipline for the lane, drives it straight along +Y instead.
 LaneDesc_t
 LaneNum
 LaneSide
@@ -14310,6 +14367,7 @@ Logs information about memory consumption by TraceDataForDraw_t/ToolsTraceData
 Logs sound event information for CCitadelAudioFilter.
 Logs the sound event entities that have empty names.
 Long Range
+Longest wait in seconds between a bot drill target's attacks
 Look At
 Look At Target Forward
 Look Direction
@@ -14511,6 +14569,7 @@ MODIFIER_EVENT_ON_PRE_ABILITY_CHANNEL_STARTED
 MODIFIER_EVENT_ORB_CLAIMED
 MODIFIER_EVENT_OVERRIDE_CURRENCY_CHANGE
 MODIFIER_EVENT_OVERRIDE_SHOT_PARAMS
+MODIFIER_EVENT_OWNER_DEFER_ADJUSTED_DAMAGE
 MODIFIER_EVENT_PARENT_ACTIVATED
 MODIFIER_EVENT_PARRY_SUCCESS
 MODIFIER_EVENT_PLAYER_ENTERED_FOUNTAIN
@@ -14790,6 +14849,7 @@ MODIFIER_STATE_KOTH_TROOPER
 MODIFIER_STATE_LADDER_DISABLE
 MODIFIER_STATE_LOCKED_AIM_ANGLES
 MODIFIER_STATE_LOCK_ENTITY_FACING
+MODIFIER_STATE_LOW_HEALTH_TARGET
 MODIFIER_STATE_MAGICIAN_ULT
 MODIFIER_STATE_MANTLE_DISABLED
 MODIFIER_STATE_MANUAL_RELOAD_DISABLED
@@ -14811,6 +14871,7 @@ MODIFIER_STATE_NEAR_HEAVY_PUNCHABLE_ITEM
 MODIFIER_STATE_NEAR_IDOL_CASHIN
 MODIFIER_STATE_NEAR_IDOL_CASHIN_ENEMY
 MODIFIER_STATE_NEAR_PUNCHABLE_CHANGE_TEAM
+MODIFIER_STATE_NEAR_PUNCHABLE_ITEM
 MODIFIER_STATE_NEAR_PUNCHABLE_PICKUP
 MODIFIER_STATE_NEAR_REJUVINATOR
 MODIFIER_STATE_NECRO_BUFF
@@ -15035,6 +15096,7 @@ MODIFIER_VALUE_FALL_SPEED_MAX
 MODIFIER_VALUE_FIREARM_ACCURACY_PERCENTAGE
 MODIFIER_VALUE_FIRE_RATE
 MODIFIER_VALUE_FIRE_RATE_SLOW
+MODIFIER_VALUE_FIRE_RATE_SLOW_RESISTANCE
 MODIFIER_VALUE_FLAT_BULLET_DAMAGE_POST_SCALE
 MODIFIER_VALUE_FOOTSTEP_ADDITIONAL
 MODIFIER_VALUE_FOOTSTEP_OVERRIDE
@@ -15347,7 +15409,7 @@ Max Angle for Inaccuracy
 Max Blend Weight
 Max Climb
 Max Confirmation Traces Per Fame
-Max Difference between teams to get full trailing bonuses for Koth/Urn
+Max Difference between teams to get full trailing bonuses for Urn
 Max Distance the camera can 'see' an entity
 Max Foot Lift
 Max Goal Overshoot Scale
@@ -15369,7 +15431,10 @@ Max Output Value
 Max Pitch Angle
 Max Radius
 Max Right Rotation
+Max Rise Height
 Max Root Motion Scale
+Max Shot Offset
+Max Shot Tilt
 Max Size (milliseconds)
 Max Slope
 Max Source Length (seconds)
@@ -15390,11 +15455,13 @@ Max distance a player can look at Fathom to reveal him
 Max distance a player can look at caster to reveal him
 Max distance that the camera will transition to the next target.
 Max extra secure rate (fraction of baseline) for a player behind the enemy team's average net worth
+Max fraction of the comeback souls earned by a player above their own team's average net worth that is redirected to the tick gold pool for the two lowest net worth teammates. Ramps from 0 at the team average.
 Max ground dash scale
 Max ground slope to be considered walkable.
 Max health regen percent
 Max height of a character with IS_TINY_CHARACTER or IsShrunkCharacter enabled
 Max horizontal offset over which to create a jump connection ( actually a parameter into the true threshold function ).
+Max horizontal speed, in units per second, a dropped item is tossed off the box with.
 Max number of array entries to spew when using SaveRestoreIO spewing.
 Max number of broadcast http requests in flight. If there is a network issue, the requests may start piling up, degrading server performance. If more than the specified number of requests are in flight, the new requests are dropped.
 Max number of broadcast1 http requests in flight. If there is a network issue, the requests may start piling up, degrading server performance. If more than the specified number of requests are in flight, the new requests are dropped.
@@ -15415,6 +15482,7 @@ Max time between Move Forward presses to toggle auto-move
 Max time to attempt a reconnect after a crash.
 Max to fire upon SplitShot (-1 = use default)
 Max turn rate
+Max upward speed, in units per second, a dropped item is tossed off the box with. Anything below the min is treated as the min.
 Max value property name
 Max vertical offset at which to create a jump connection ( possibly one-way ).
 Max vertical offset at which to make a jump connection two-way.
@@ -15499,6 +15567,7 @@ Melee Hits To Break
 Melee Resist (positive)
 Melee Resist Reductions (negative)
 Melee Spirit
+Melee attacks the Abrams and Billy bot drill targets finish their combos with
 Melee damage multiplier, after increases
 MeleeAttack
 MeleeVehicleSideOptions_t
@@ -15545,11 +15614,13 @@ Min amount of time a bot is forced to stay in lane for a required action
 Min bandwidth rate allowed on server, 0 == unlimited
 Min bytes/sec the host can receive data
 Min ground dash scale
+Min horizontal speed, in units per second, a dropped item is tossed off the box with.
 Min reverb gain amount amount for listener DSP.
 Min reverb gain amount for source-specific DSP.
 Min size of the recv margin queue when async usercmd send is disabled
 Min size of the recv margin queue when in tools/debug mode
 Min time between messages a player bot can send
+Min upward speed, in units per second, a dropped item is tossed off the box with.
 Min value property name
 Min walk speed
 Min z offset for character's whose offset attachment go very low
@@ -15671,6 +15742,7 @@ Modifier Owner on same team as Local Player
 Modifier Provided By Aura
 Modifier Table
 Modifier for physics impulses applied to this NPC (0 == unmoveable)
+Modifier given to whoever collects the turkey.
 Modifier to apply to the owner, when owner takes damage.
 Modifier to apply to the target dealing damage, when owner takes damage.
 Modifier value this penalty feeds.
@@ -15722,6 +15794,7 @@ MorphBundleType_t
 MorphFlexControllerRemapType_t
 Most candy a player can hold. Candy collected past this is wasted. 0 means no limit.
 Most simple expressions involving the VData keys are supported. Use 'true' to tag unconditionally.
+Most the box tips, in degrees, as it sways under its float. Pitch and roll each swing this far. 0 turns the sway off.
 Most voice graphs have a single output, that is routed by the sound operator stack.You should only use this for special cases where the vmix graph needs to route additional unique mixes to specific tracks.e.g.bypass HRTF andsend a different mix to the reverb send
 Motion
 Motion Clip Group
@@ -16451,6 +16524,7 @@ Objective Health Regen
 ObjectivesParams_t
 Observable
 ObservableRecv_m_bChanneling
+ObservableRecv_m_bGroundJumpAirDragPenalty
 ObservableRecv_m_bInCastDelay
 ObservableRecv_m_bIsSliding
 ObservableRecv_m_bLeaping
@@ -16990,6 +17064,7 @@ OnViewOffsetChanged
 OnWaitingForPlayersToJoin
 OnWaterLevelChangeNetworked
 OnWearablesChanged
+Once eased in, seconds for the push to shrink by half as the float drifts back to where it should be. 0 snaps it back on the next tick.
 Once the escort dies, how long until we re-enable ourselves.
 Once the lag period is over, how strong the spring is that pulls the current value to the default value
 Once this duration has pased in the slam, we start forcing the target to the ground
@@ -17189,6 +17264,7 @@ Overrides the max decimal places shown for this property's stat scaling multipli
 Overrides the max decimal places shown for this property. -1 uses the display type's precision.
 Overrides the max players reported to prospective clients
 Oversampling
+Overstuffed
 OwnerModifierEventListener_t
 P2P_Messages
 P4File
@@ -17705,6 +17781,7 @@ PanoramaTextServices001
 PanoramaUIClient001
 PanoramaUIEngine001
 PanoramaVideoPlayer
+Parade Float Sounds
 Parallalelize Filter
 ParamAndPriority_t
 ParamSpanSample_t
@@ -17865,6 +17942,7 @@ Peak arc height as a fraction of the total travel distance, reached at the halfw
 Peak mode
 Pelvis Joint
 Pelvis Offset Parameter
+Penalty applied every time another turkey is collected while this buff is still up.
 Penalty per item tier, indexed by EModTier_t exactly like m_nItemCorruptionPricePerTier.  Authored like an upgrade bonus, e.g. -12 or -2m.
 Penalty to parrying when bot has no LoS
 Penumbra size multiplier for shadow sampling, reduces fog shadow aliasing
@@ -17886,6 +17964,7 @@ Percent Missing Regen
 Percent each corrupted penalty magnitude can roll above or below its authored value each match. Results round away from zero to whole numbers.
 Percent of damage resisted when attacked by Enemy.
 Percent of incoming Bullet/Melee/Spirit Resist Reductions ignored (0-100)
+Percent of incoming Fire Rate reductions ignored (0-100)
 Percent of the target's Spirit Resist that my spirit damage ignores
 Percent of the victims max health the damage needs to be, for it to be dynamically emphasized.
 PercentMaxHealthDamage
@@ -17939,6 +18018,7 @@ Physics Body Data By Bone Name
 PhysicsBuilderMgr001
 PhysicsParticleId_t
 PhysicsRagdollPose_t
+Pick a player target within this cone, from the ricochet point, along the natural reflection angle. Bias (but do not snap) the ricochet angle based on how close it already is to a direct shot.
 PickRandom
 PickRandomShuffle
 Pickup
@@ -18019,6 +18099,7 @@ Playback Event Beat/Bar/Phrase/Length Multiplier
 Playback Event Type
 Playback Mode
 Playback Speed
+Played at the impact point when a player's bullet hits the float. Only the shooter hears it. The float takes no damage.
 Played on a player at the moment their meter fills.
 Played to assigned earners when an enemy denied their orb.
 Played to the player when they denied an enemy orb.
@@ -18035,6 +18116,7 @@ Player Fow Vision Range
 Player Input Motor
 Player Killed NPC Sound
 Player Wake Radius
+Player net worth / own team average net worth at which citadel_comeback_redirect_fraction is reached
 Player takes damage but won't die
 Player's active weapon will never run out of ammo
 PlayerActorFOV
@@ -18614,6 +18696,7 @@ Radius factor to multiply the distance between probes with to get the radius wit
 Radius for bots to consider whether a position is safe
 Radius for bots to look for better locations to path to
 Radius input
+Radius of each cable, passed to the rope particle as control point 2's x.
 Radius of navigating agent capsule.
 Radius of the parrot sausage cast
 Radius scale for distance calc
@@ -18627,6 +18710,8 @@ Ragdoll is not allowed to physically sleep until this timer has elapsed.
 RagdollCreationParams_t
 RagdollPoseControl
 Rage
+Raise Height
+Raise Speed
 Raise ground by this much for all cloth that traces the ground; should be 0 ideally
 Raise the bottom of the drag select volume.
 Raise the top of the drag select volume.
@@ -19058,10 +19143,13 @@ Rope
 Rope Global UV Controls
 Rope Global UV Controls/CP Scaling
 Rope Order Controls
+Rope Particle
+Rope Radius
 Rope Tesselation
 Rope subdivision amount
 RopeMaterial
 RopeShader
+Ropes
 Roster
 Rotate Through Forward
 Rotates an entity by a specified # of degrees
@@ -19074,6 +19162,7 @@ RotationAndTranslation
 RotationOnly
 Rotations
 Rotor Wash
+Roughly how many seconds one swing back and forth takes. Each box varies this a little and starts at a random point in its swing, so no two sway together.
 Round
 Round whose buy phase lets every player corrupt one non-enhanced item.  1 = first round, 0 = never.
 Route the UTIL_FindUnits* family through the cached unit query system instead of the physics broadphase
@@ -19472,6 +19561,7 @@ Sample accurate looping with xfade capabilities.
 SampleCode
 SamplerVoice_t
 Samples Times
+Sandbox bot drill. 1: diving Danny, 2: flying Vindicta, 3: Abrams Shoulder Charge and melee, 4: Grey Talon Rain of Arrows and Charged Shot, 5: Paradox Kinetic Carbine and Paradoxical Swap, 6: Viscous Goo Ball, 7: Viscous Puddle Punch, 8: Bebop Grapple Arm, 9: Graves Borrowed Decree parry, 10: Baba Threadsap, 11: Billy combo, 12: Baba Granny Long Legs, 13: Lash Death Slam and Ground Strike, 14: Silver wolf form, 15: Holliday Bounce Pad and Powder Keg, 16: McGinnis Spectral Wall and Heavy Barrage
 Sapphire Material Group Name
 SatVolumeIndex_t
 Saturate color pre alphablend
@@ -19650,9 +19740,11 @@ Seconds a minimap travel destination marker stays after the hero lands there
 Seconds a rat lives after leaping out. 
 Seconds after a bot sees you before it can react
 Seconds after a bullet stops updating before its tracer can be recycled for a new bullet. Should cover how long the tracer effect lingers after it stops emitting.
+Seconds after a parade float's box is broken before a new one appears on the float. Negative never respawns it.
 Seconds after a ping during which repeating it folds into the same chat bubble instead of making a new one. Restarts on each repeat.
 Seconds after a rat jumps onto a target before the next rat can jump onto that same target.
 Seconds after client connect during which extra frames are buffered to prevent non-delta'd update
+Seconds after landing or finishing an attack before the bot drill target returns to its start
 Seconds after the banner is planted before the sewer erupts and the auras switch on.
 Seconds after the pickup is collected before it comes back. Set to -1 for one and done.
 Seconds before the victim can pick their knocked out candy back up
@@ -19668,7 +19760,14 @@ Seconds each stat line from a permanent buff pickup stays on screen.
 Seconds for a full meter to drain back to empty after a player leaves. The grace period before draining starts is the buildup modifier's own m_flBuildUpDecayDelay.
 Seconds from a barrage hit's FX to its damage, hit sound and hex landing
 Seconds from launch to impact. Drives the arc height.
+Seconds of match time before a parade float gets its first box. Until then it has none, and rides at its raised height. 0 gives it one as soon as it spawns.
 Seconds of standing inside the field, from empty, before a player falls asleep.
+Seconds one full bob up and down takes. Also how long the turkey takes to rise to its hover after landing.
+Seconds one full turn takes once the turkey is hovering.
+Seconds the Overstuffed modifier lasts.
+Seconds the float takes to ease out to its pushed position after being shot. It only starts drifting back once it gets there. Another shot in that time restarts it from wherever the float has got to. 0 jumps straight to the pushed position.
+Seconds the turkey buff lasts. Collecting another turkey restarts it.
+Seconds to draw the Charged Shot ricochet aim cone (yellow), natural reflection (white) and biased shot (green). 0 disables.
 Seconds to keep the cast delay modifier alive past the end of the cast delay. 0 is default behavior.
 Seconds without an update before a teammate's minimap targeting cursor is hidden
 SectionAttributes_t
@@ -20268,8 +20367,13 @@ ShopGroups_t
 Shortcut to set both FakePacketLag_Recv and FakePacketLag_Send net options
 Shortcut to set both FakePacketLoss_Recv and FakePacketLoss_Send net options
 Shortcut to set jitter net options.  Run with no arguments for usage.
+Shortest wait in seconds between a bot drill target's attacks
 Shortly after a wall jump, acceleration back toward the wall is increased. This is the maximum bonus (immediately after the wall jump). 
 Shortly after a wall jump, acceleration back toward the wall is increased. This is the period this exists for. Strength fades over this time to zero.
+Shot Offset
+Shot Offset Ease In Time
+Shot Offset Half Life
+Shot Offset Per Damage
 ShotID_t
 Shotgun Pellet Spawn Origin Offsets. Allows you to manually define where pellets can be created.
 Shotgun Scatter offsets. Allows you to manually define where pellets from shotguns go. 
@@ -20720,6 +20824,7 @@ SparkOnce
 SparkType
 SparseShadowTree
 Spawn
+Spawn Angles
 Spawn Fake Entity
 Spawn Particle
 Spawn Particle Color
@@ -20729,6 +20834,7 @@ Spawn all of the heroes as bots in a line in front of you
 Spawn an urn for testing
 Spawn this breakable in Street Brawl, initially at 0s
 Spawn this many neutral camps per tick (this is a limit, so if it's 1, we'll only spawn one per tick (perf)). Set this value to something large to effectively remove the limit. 0 or negative will prevent spawning.
+SpawnBox
 SpawnDialog
 SpawnEntities
 SpawnFrequency
@@ -20753,6 +20859,7 @@ Spawns an entity that activates tutorial mode controls.
 Spawns an item pickup for a specific item. You can specify the item, or else you'll get a random one
 Spawns any neutral camps within 800 units (~20m)
 Spawns every neutral camp on the map
+Spawns one of each parade float type in a line starting at the given position. Usage: citadel_spawn_parade_floats <x> <y> <z>
 Spawns one trooper wave in every lane, even while trooper spawning is off
 Spawns the escort with an optional delay
 Spawns the pickup of every citadel_pickup_spawner (healing snacks) now
@@ -20855,6 +20962,7 @@ Ss Pos and Dot OUT CP
 Stack unwinding
 StackStats_Dump
 Staggered
+Stamina restored each time a turkey is collected.
 Stance Override
 Stance Scale
 Stance Source
@@ -21098,6 +21206,9 @@ SurfacePropertiesList
 SurroundingBoundsType_t
 SuspendConnectionsWhileMoving
 Swaps team members within the private lobby
+Sway
+Sway Angle
+Sway Period
 Switch the view to a named entity in the map
 Switch to firstperson camera.
 Switch to orthographic camera.
@@ -21975,10 +22086,12 @@ True
 True if the joystick is enabled, false otherwise.
 Try to deny orbs
 TryRandomMovementIfNoPath
+Turkey
 Turn
 Turn Duration
 Turn Helper
 Turn Limit Only
+Turn Rate
 Turn Start Time
 Turn Time Max
 Turn Time Min
@@ -22174,6 +22287,9 @@ Unit Status Attachment Name
 Unit Status Offset (from attachment)
 Unit Status Overlay
 UnitFilterResult
+Units per second the float climbs and settles between its spawn height and the raised height. 0 snaps.
+Units per second the float drives forward along its facing. 0 holds it in place.
+Units the float is pushed for every point of bullet damage a player's shot would have done, directly away from the shooter. Pushes from several shots add up, to at most Max Shot Offset. 0 turns the push off.
 Universal
 Unknown
 Unlock
@@ -23064,6 +23180,7 @@ When standing in a regen zone, how much extra do we stamina percentage
 When the Settings hero selector is expanded, typing in the search bar filters heroes instead of settings.
 When the client is catching up in low frame rate situations, should we run client simulate more than once a frame?
 When the client is catching up in low frame rate situations, should we run tick more than once a frame?
+When the float model has no breakable_spawn_origin attachment, the box spawns this many units above the float's origin instead.
 When there is only a single player on the server, set whether or not we allow for instant pausing/unpausing
 When this attack is used, pause shooting for this long
 When this attack is used, pause weapon reloads for this long
@@ -23195,6 +23312,7 @@ While a spectator, view team sapphire's minimap view
 While active, manage child cursors based on the results of a boolean condition. When the observable result changes, the prior cursor will be canceled and the appropriate outflow will fire a new child cursor. Will monitor continuously until externally canceled.
 While active, manage child cursors based on which case an observable value matches. When the observable result moves to a different case, the prior cursor will be canceled and the matching outflow will fire a new child cursor. Will monitor continuously until externally canceled.
 While doing stats_display, collect GPU perf counters. Used for stats_print_gpu.
+While following a zipline, how many units above it (negative for below) the float sits when it has a box. Raise Height is added on top of this. A float not following a zipline sits at the height it spawned at.
 While lagging behind, the max value we can approach the target value.
 While spectating or watching a replay, at this distance non-viewed character's opacity will be at 1
 While spectating or watching a replay, at this distance non-viewed character's opacity will be at citadel_camera_fade_other_near_opacity
@@ -23231,6 +23349,7 @@ WindDirection
 WindSpeed
 Window over which to average queries per second averages.
 With Cloth Effect
+Within this many units (along Y) of either end of the move range, the float lifts off toward Max Rise Height, so it floats up and away at the far end and comes down out of the sky at the start. Over the half of this nearest the end it also fades out, reaching invisible right at the end. 0 turns both off.
 Within-Cluster Fire Count Before Cooldown
 Within-Cluster Refire Time
 World
@@ -23241,6 +23360,9 @@ World Space Direction
 World Space Position
 World Transform
 World Vector
+World Y of the +Y end of the parade floats' path. A float driving toward +Y that passes this teleports back to the -Y end.
+World Y of the -Y end of the parade floats' path. No path limit unless this is below citadel_seasonal_thanksgiving_float_move_range_max_y.
+World angles the float is set to when it spawns, replacing whatever it was placed or spawned with. These are its angles while travelling straight along +Y; following a zipline, its yaw turns away from them by however far the zipline turns away from +Y.
 World friction.
 World gravity.
 World-Z Align
@@ -23304,6 +23426,7 @@ Zero Gravity Duration
 Zero Pose
 Zero the relative Z axis of the camera to reduce motion sickness.
 ZeroPitchAndRoll
+Zipline Lane
 Ziplines
 Zone1Distance
 Zone2Distance
@@ -24249,6 +24372,7 @@ box_mins
 box_outer_maxs
 box_outer_mins
 box_size
+box_subclass
 break
 break age
 break comparison control point 1
@@ -24634,6 +24758,7 @@ citadel_animating_model_entity
 citadel_announcement_banned_heroes_display_time
 citadel_announcement_display_time
 citadel_announcer
+citadel_archer_charged_shot_ricochet_aim_debug
 citadel_artist_solidblocker
 citadel_artist_strokeblocker
 citadel_artist_visionblocker
@@ -24728,12 +24853,27 @@ citadel_bot_director_respawn_window
 citadel_bot_director_zipline_min
 citadel_bot_director_zipline_stable
 citadel_bot_disconnect_takeover_enabled
+citadel_bot_drill
+citadel_bot_drill_air_jumps
+citadel_bot_drill_attack_delay_max
+citadel_bot_drill_attack_delay_min
+citadel_bot_drill_charged_shot_chance
+citadel_bot_drill_chase_distance
+citadel_bot_drill_combo_swings
+citadel_bot_drill_distance
+citadel_bot_drill_height
+citadel_bot_drill_parry_charge_percent
+citadel_bot_drill_reset_delay
+citadel_bot_drill_retreat_distance
+citadel_bot_drill_roam_distance
+citadel_bot_drill_wall_distance
 citadel_bot_force_abandon
 citadel_bot_forward_back
 citadel_bot_give_all_abilities
 citadel_bot_give_all_abilities_base
 citadel_bot_give_all_bots_all_items
 citadel_bot_give_team_gold
+citadel_bot_give_unsecured_souls
 citadel_bot_hero_testing_pitch
 citadel_bot_jump
 citadel_bot_kick
@@ -24800,6 +24940,7 @@ citadel_breakable_prop_break_velocity
 citadel_breakable_prop_breakable_enabled
 citadel_breakable_prop_hideout
 citadel_breakable_prop_initial_spawn_time_override
+citadel_breakable_prop_parade_float_box
 citadel_breakable_prop_punchable_troll
 citadel_breakable_prop_reject_cooldown
 citadel_breakable_prop_respawn_spread
@@ -24951,6 +25092,7 @@ citadel_combatlog_size_server
 citadel_combatlog_update
 citadel_combatlog_write_test
 citadel_comeback_redirect_fraction
+citadel_comeback_redirect_max_ratio
 citadel_commend_fake_received
 citadel_commend_notification_anonymous_allies
 citadel_commend_notification_anonymous_enemies
@@ -25280,6 +25422,7 @@ citadel_give_gold
 citadel_give_halloween_candy
 citadel_give_permanent_buffs
 citadel_give_player_gold
+citadel_give_unsecured_souls
 citadel_gold_bonus_scale_for_familiar_infest
 citadel_gold_flash_max_duration
 citadel_gold_flash_max_threshold
@@ -25469,6 +25612,7 @@ citadel_item_powerup_spawner
 citadel_item_purchases_force_corrupted
 citadel_item_purchases_force_enhanced
 citadel_item_rejuvenator_label_offset
+citadel_item_rejuvenator_label_scale
 citadel_item_sell_price_ratio
 citadel_item_tooltip_show_deltas
 citadel_item_used_text_height_offset
@@ -25735,6 +25879,7 @@ citadel_pickup_spawner
 citadel_pickup_spawner_enabled
 citadel_pickup_spawner_initial_spawn_time_override
 citadel_pickup_spawner_spawn_interval_override
+citadel_pickup_turkey
 citadel_ping_above_us_z
 citadel_ping_allow_responses_to_yourself
 citadel_ping_almost_respawned_seconds
@@ -26022,6 +26167,13 @@ citadel_sat_volume_desat_color
 citadel_sat_volume_outline_color
 citadel_sat_volume_sat_color
 citadel_scenepanel_use_intermediate_texture
+citadel_seasonal_thanksgiving
+citadel_seasonal_thanksgiving_float_box_respawn_time
+citadel_seasonal_thanksgiving_float_first_box_match_time
+citadel_seasonal_thanksgiving_float_initial_distance
+citadel_seasonal_thanksgiving_float_move_range_max_y
+citadel_seasonal_thanksgiving_float_move_range_min_y
+citadel_seasonal_thanksgiving_float_spacing
 citadel_secondary_language_builds
 citadel_secure_gold_behind_max_bonus
 citadel_secure_gold_behind_max_delta
@@ -26147,6 +26299,7 @@ citadel_spawn_combine_only
 citadel_spawn_escort
 citadel_spawn_midboss_breakables
 citadel_spawn_nearby_neutrals
+citadel_spawn_parade_floats
 citadel_spawn_pickup
 citadel_spawn_pickup_item
 citadel_spawn_practice_bots
@@ -31423,6 +31576,8 @@ m_BulletExitParticle
 m_BulletFlurryModifier
 m_BulletGrappleTracerParticle
 m_BulletImpactParticle
+m_BulletReflectAttackerHitFx
+m_BulletReflectImpactParticle
 m_BulletResist
 m_BulletResistModifier
 m_BulletResistReductionPerHero
@@ -32051,6 +32206,7 @@ m_FireRateSlowModifier
 m_FireTrailParticle
 m_FireworkExplodeParticle
 m_FireworkExplosionSound
+m_FirstCastTime
 m_FistReadyEffect
 m_FitMatrices
 m_FitWeights
@@ -32600,6 +32756,7 @@ m_LoopMode
 m_LoopSound
 m_LoopState
 m_LoopingSound
+m_LowHealthGlowModifier
 m_MagicBeamModifier
 m_MagnettedEntities
 m_MainSoundscapeName
@@ -33130,6 +33287,7 @@ m_OverrideSolverSettings
 m_OverrideSoundName
 m_OverrideTargetSettings
 m_OverrideToolShortcutName
+m_OverstuffedModifier
 m_OwningAnimNodePaths
 m_PackedAABB
 m_PaintingParticle
@@ -33227,6 +33385,7 @@ m_PlayersInCount
 m_PlayersOutCount
 m_PointLights
 m_PointOnPlane
+m_PommelDebuffModifier
 m_PoofInParticle
 m_PoofOutParticle
 m_PoofParticle
@@ -34001,6 +34160,7 @@ m_TrooperHealthMult
 m_TrooperModifier
 m_TrooperType
 m_TrophyStacksModifier
+m_TurkeyBuffModifier
 m_TurretModel
 m_TurretModifier
 m_TwistAxis
@@ -34280,6 +34440,7 @@ m_angRotationAjarDeprecated
 m_angRotationClosed
 m_angRotationOpenBack
 m_angRotationOpenForward
+m_angSpawnAngles
 m_angSrc
 m_angStart
 m_angStunAngles
@@ -35064,6 +35225,7 @@ m_bFadeOut
 m_bFadeToVisibleAtEndOfDuration
 m_bFadingIn
 m_bFadingOut
+m_bFailedAirJump
 m_bFailedTargetValidation
 m_bFakeLadder
 m_bFalling
@@ -35211,6 +35373,7 @@ m_bGravityDisabled
 m_bGravityOverrideSet
 m_bGridMinorPoints
 m_bGroundCheck
+m_bGroundJumpAirDragPenalty
 m_bGroupByPrefab
 m_bGroupByVolume
 m_bGroupOtherGroups
@@ -35250,6 +35413,7 @@ m_bHasFreeCursor
 m_bHasHealthForBonuses
 m_bHasHeightFogEnd
 m_bHasHitSomething
+m_bHasLOS
 m_bHasLatchedOnce
 m_bHasLightmaps
 m_bHasLimitedMoves
@@ -35672,6 +35836,7 @@ m_bLastTick
 m_bLastTickBeforeClientUpdate
 m_bLastUpdateSkipped
 m_bLatched
+m_bLatchedNearTop
 m_bLaunch
 m_bLeapLanded
 m_bLeaping
@@ -35902,6 +36067,7 @@ m_bOriginalModel
 m_bOrphanInsteadOfDeletingChildrenOnRemove
 m_bOscillationFromStart
 m_bOtherIsInFrontAtStart
+m_bOutgoingDamageScaleApplied
 m_bOutline
 m_bOutlineThroughWalls
 m_bOutlineWhenVisible
@@ -36070,6 +36236,7 @@ m_bProportionalOp
 m_bPublicItem
 m_bPullOnFull
 m_bPurchased
+m_bPureDamageUsesDamageAmps
 m_bPushAwayFromInfoTarget
 m_bPushPlayer
 m_bPushThroughLightPropsOnNavFailure
@@ -36359,6 +36526,7 @@ m_bShouldVOOnProc
 m_bShouldVoiceDuck
 m_bShouldWraparound
 m_bShowAbilityIcon
+m_bShowAsLowHealth
 m_bShowDesatVolume
 m_bShowExecutionHistory
 m_bShowFullContextLogging
@@ -36368,6 +36536,7 @@ m_bShowInRevisionSubMenu
 m_bShowInToolsMenu
 m_bShowItemAssetLootList
 m_bShowLight
+m_bShowLostLOSOnHUD
 m_bShowModelOverhead
 m_bShowOnMinimap
 m_bShowPropertyValue
@@ -36554,6 +36723,9 @@ m_bTintByGlobalLight
 m_bToLocalPlayer
 m_bToggleDuckActive
 m_bToggleState
+m_bTooltipShowAsMovementAbility
+m_bTooltipShowEnemyFlyingAbilities
+m_bTooltipShowEnemyMovementAbilities
 m_bTopLevel
 m_bTouchDisabled
 m_bTouched
@@ -36628,6 +36800,7 @@ m_bUseBones
 m_bUseBoundsCenter
 m_bUseBulletGravityScaleCurve
 m_bUseBulletGravityScaleCurve == false
+m_bUseBulletSpeedScaleCurve
 m_bUseCameraOffsetsForCone
 m_bUseCasterFacing
 m_bUseCenterPusher
@@ -38217,6 +38390,7 @@ m_flBoundaryRadius
 m_flBoundingRadius
 m_flBoundingRadiusSqr
 m_flBoundsExpandRadius
+m_flBoxFallbackZ
 m_flBpm
 m_flBranchDistanceScale
 m_flBranchOffsetScale
@@ -38253,6 +38427,7 @@ m_flBrightnessMult
 m_flBrightnessScale
 m_flBrightnessTimeStart
 m_flBrokenConnectionOffset
+m_flBuffDuration
 m_flBuffEndTime
 m_flBufferTimeBeforeLanding
 m_flBuildUpDecayDelay
@@ -38265,7 +38440,6 @@ m_flBuildupTickInterval
 m_flBulge
 m_flBulletCreationDelay
 m_flBulletDamage
-m_flBulletDamageAccum
 m_flBulletGravityScale
 m_flBulletGravityScaleOverDistance
 m_flBulletHitSlowPct
@@ -38279,6 +38453,7 @@ m_flBulletResistancePctMin
 m_flBulletShouldExpireTime
 m_flBulletSpeed
 m_flBulletSpeedRandomFactor
+m_flBulletSpeedScaleOverDistance
 m_flBulletTimeScale
 m_flBulletTimeScaleFriendly
 m_flBulletWhizDistance
@@ -38822,6 +38997,8 @@ m_flDistanceScale_MaxScale
 m_flDistanceScale_MinScale
 m_flDistanceScale_OuterRadius
 m_flDistanceThresholdForLoop
+m_flDistanceToEndRise
+m_flDistanceToEndRise <= 0
 m_flDistanceToPlayer
 m_flDistanceToReachMaxSpeed
 m_flDistanceToReachZeroSpeed
@@ -38876,7 +39053,13 @@ m_flDropDownRate
 m_flDropOutSpeed
 m_flDropShadowRadius
 m_flDropSpeed
+m_flDropThreeChance
+m_flDropTwoChance
 m_flDropUpSpeed
+m_flDroppedItemMaxSpeed
+m_flDroppedItemMaxUpSpeed
+m_flDroppedItemMinSpeed
+m_flDroppedItemMinUpSpeed
 m_flDrowningDamageInterval
 m_flDuckOffHorizontal
 m_flDuckOffVertical
@@ -38897,6 +39080,7 @@ m_flEaseIn
 m_flEaseOut
 m_flEaseTime
 m_flEchoDelay
+m_flEdgeBounceMaxNormalDot
 m_flEdgeSoftnessEnd
 m_flEdgeSoftnessStart
 m_flEffectGroundTrace
@@ -38959,6 +39143,7 @@ m_flEnemyPortalTelegraphTime
 m_flEnemyProgressRemoveScale
 m_flEnemySlowOnHitDuration
 m_flEnemySlowOnHitSpeed
+m_flEnemyStopCheckRadius
 m_flEnemyTrooperProtectionRange
 m_flEngageDistance
 m_flEnhancedOwnerSkipChancePct
@@ -39016,6 +39201,8 @@ m_flExposureFadeSpeedUp
 m_flExtensionScale
 m_flExternalHealthRegen
 m_flExternalHealthRegenSnapShot
+m_flExtraDropPowerupChance
+m_flExtraDropTurkeyChance
 m_flEyeZOffset
 m_flFOV
 m_flFOVAngle
@@ -39072,6 +39259,9 @@ m_flFadeToBlackDuration
 m_flFadeToBlackTime
 m_flFailSafeDurationMult
 m_flFailSafeMinTime
+m_flFailedAirJumpGroundJumpAirDrag
+m_flFailedAirJumpPenaltyEndTime
+m_flFailedAirJumpPenaltyGroundTime
 m_flFakeBulletDistanceFudge
 m_flFakeBulletSpread
 m_flFakeBulletsCycleTime
@@ -39422,6 +39612,7 @@ m_flHeavyMeleeMaxTurnRate
 m_flHeavyMeleeRefresh
 m_flHeight
 m_flHeightAboveGround
+m_flHeightAboveZipline
 m_flHeightFogDepth
 m_flHeightOffset
 m_flHeightOffsetFar
@@ -39589,6 +39780,8 @@ m_flInputScale2
 m_flInputValue
 m_flInsideThreshold
 m_flIntensity
+m_flIntentSpaceLateralSpringStrengthScale
+m_flIntentSpaceOpposingSpringStrength
 m_flIntentSpaceStringStrengthFwd
 m_flIntentSpaceStringStrengthLeft
 m_flIntentSpaceStringStrengthVertical
@@ -39806,6 +39999,8 @@ m_flLaunchZFractionWhenFlyingSelf
 m_flLeanCalculationLookAheadDistance
 m_flLeanSmoothingFactor
 m_flLeapStartTime
+m_flLedgeExtraDropHeight
+m_flLedgeForwardClearance
 m_flLeftLevel
 m_flLeftMove
 m_flLeftOffset
@@ -40061,6 +40256,7 @@ m_flMaxReduction
 m_flMaxResourceAdditive
 m_flMaxRestitution
 m_flMaxRicohetDot
+m_flMaxRiseHeight
 m_flMaxRootHeightOffset
 m_flMaxRootMotionScale
 m_flMaxRotation
@@ -40069,6 +40265,8 @@ m_flMaxRotationRight
 m_flMaxScale
 m_flMaxScaleDuration
 m_flMaxShadowLum
+m_flMaxShotOffset
+m_flMaxShotTilt
 m_flMaxSimulationTime
 m_flMaxSize
 m_flMaxSlow
@@ -40252,6 +40450,7 @@ m_flMinTimeBetweenAbilities
 m_flMinTimeBetweenExplosions
 m_flMinTimeRemaining
 m_flMinTimeToRoofCheck
+m_flMinTimeToRoofCheckLatchDist
 m_flMinTimeout
 m_flMinTrackingTimeBeforeImpact
 m_flMinTravelTime
@@ -40608,10 +40807,12 @@ m_flOverrideInitialSpawnTime
 m_flOverrideRadius
 m_flOverrideRespawnTime
 m_flOverrideSpawnDelay
+m_flOverstuffedDuration
 m_flOvertimeRespawnTimeIncrease
 m_flOvertimeRespawnTimeIncreaseUrgent
 m_flOvertimeTrooperDamageScale
 m_flOvertimeTrooperHealthScale
+m_flOwnerEventMitigationScale
 m_flPanel1
 m_flPanelDrawDistance
 m_flPanelHeight
@@ -40764,6 +40965,8 @@ m_flPlayerLightMeleeChipAngle
 m_flPlayerTargetFOV
 m_flPlayerTargetProximity
 m_flPlayerWakeRadius
+m_flPommelKnockBackSpeed
+m_flPommelKnockUpSpeed
 m_flPondDotThreshold
 m_flPondLengthThreshold
 m_flPondRadiusMultiplier
@@ -40919,6 +41122,8 @@ m_flRadiusScaleMax
 m_flRadiusScaleMin
 m_flRadiusStart
 m_flRadiusTaper
+m_flRaiseHeight
+m_flRaiseSpeed
 m_flRampDownTime
 m_flRampTime
 m_flRampUpTime
@@ -41012,6 +41217,7 @@ m_flRegenDurationTroopers
 m_flRegenFixed
 m_flRegenHPS
 m_flRegenMaxHealthPercent
+m_flRegenPerSecond
 m_flRegenTrooperMulti
 m_flRejuvinatorBuffDuration
 m_flRejuvinatorDropDuration
@@ -41078,6 +41284,7 @@ m_flRestrictedLookTolerance
 m_flResupplyForceScale
 m_flResupplyUp
 m_flRetaliateDamage
+m_flRetaliateDamageMaxHealthPercent
 m_flRetestRate
 m_flRetriggerDelay
 m_flRetriggerTimeMax
@@ -41297,6 +41504,9 @@ m_flShortestAcross
 m_flShortestEdge
 m_flShotChargeFrac
 m_flShotCosmeticVarianceMagnitude
+m_flShotOffsetEaseInTime
+m_flShotOffsetHalfLife
+m_flShotOffsetPerDamage
 m_flShotTimeScaleEndTime
 m_flShotTimeScaleLingerDuration
 m_flShoulderExponent
@@ -41487,6 +41697,7 @@ m_flStaggerDuration
 m_flStaggerMeleeMult
 m_flStaggeredDuration
 m_flStaminaDrained
+m_flStaminaOnPickup
 m_flStanceDirectionMS
 m_flStart
 m_flStartAlpha
@@ -41638,6 +41849,9 @@ m_flSurfaceOffset
 m_flSuspensionDampingRatio
 m_flSuspensionFrequency
 m_flSuspensionHeightOffset
+m_flSwayAngle
+m_flSwayAngle <= 0
+m_flSwayPeriod
 m_flSweepingDuration
 m_flSweetSpotAngle
 m_flSwingLimit
@@ -41834,6 +42048,8 @@ m_flTossUpStrength
 m_flTotalBuildup
 m_flTotalDamageTakenWhileAsleep
 m_flTotalHeal
+m_flTotalHealthRegen
+m_flTotalHealthRegenPerMinute
 m_flTotalHealthToCapture
 m_flTotalMass
 m_flTotalPendingDamage
@@ -41881,6 +42097,7 @@ m_flTrailRadiusHunting
 m_flTrailSpawnInterval
 m_flTrailStartDelay
 m_flTrailTrajectoryTimeSpacing
+m_flTrailingBonusFullDeficitPercent
 m_flTransformEndTime
 m_flTransformFromBallTime
 m_flTransformStartTime
@@ -42081,6 +42298,8 @@ m_flWallJumpReturnToWallBonusAccel
 m_flWallJumpUpSpeed
 m_flWallPauseTime
 m_flWallPreviewDropdownRate
+m_flWallRicochetAimMagnetismConeLength
+m_flWallRicochetAimMagnetismHalfAngleCone
 m_flWallRicochetMaxNormalZ
 m_flWallRicochetSpeedScale
 m_flWallSlideDirectionChangeCooldown
@@ -42414,6 +42633,7 @@ m_hDamageFilter
 m_hDamageOriginator
 m_hDamageTakenParticle
 m_hDamageTrackModifier
+m_hDashTarget
 m_hData
 m_hDeathParticle
 m_hDecalMaterial
@@ -43234,6 +43454,7 @@ m_iszAttachmentName
 m_iszBasePropData
 m_iszBinding
 m_iszBoxEntities
+m_iszBoxSubclass
 m_iszCampName
 m_iszCaption
 m_iszClassName
@@ -44196,6 +44417,7 @@ m_nDrafts
 m_nDraftsRemaining
 m_nDraftsTotal
 m_nDrawCallIndex
+m_nDropNumber
 m_nDrowningDamageInitial
 m_nDrowningDamageMax
 m_nDstResult
@@ -44275,6 +44497,8 @@ m_nFXIndexVictim
 m_nFXProgressBeam
 m_nFace
 m_nFacingMode
+m_nFailedAirJumpPenaltyJumpsToMaxAirDrag
+m_nFailedAirJumpPenaltyStacks
 m_nFailureCode
 m_nFallbackMaxCount
 m_nFallbackNodeIdx
@@ -44569,6 +44793,9 @@ m_nKeysSource
 m_nKillingTeamNumber
 m_nKothScoringTeam
 m_nKothSpawnWarnings
+m_nKothTrailingBonusGold
+m_nKothTrailingBonusResist
+m_nKothTrailingTeam
 m_nLFOShape
 m_nLOD
 m_nLODGroupMask
@@ -45490,6 +45717,7 @@ m_nTriCount2
 m_nTriangleCount
 m_nTriangleIndex
 m_nTriangleOffset
+m_nTrooperMeleeHits
 m_nTrueValueNodeIdx
 m_nTunnelID
 m_nTurbulence
@@ -45592,6 +45820,7 @@ m_nZAxisScalingAttribute
 m_nZCount
 m_nZSpacing
 m_nZeroGravityAttribute
+m_nZiplineLane
 m_nZoneParticle
 m_name
 m_nameAnchor
@@ -46339,6 +46568,7 @@ m_sBreakablePieceName
 m_sBridgeBuffPickupSound
 m_sBuffLoopingSound
 m_sBuffTypeLocString
+m_sBulletHitSound
 m_sBurnParticle
 m_sCamDummyModelName
 m_sCameraEntityName
@@ -46939,6 +47169,7 @@ m_strBuffReceivedSound
 m_strBuilding
 m_strBulletImpactSound
 m_strBulletLoopingSound
+m_strBulletReflectSound
 m_strBulletWhizSound
 m_strBurnAppliedSound
 m_strBurrowEndSound
@@ -47778,6 +48009,7 @@ m_tAbandonTriggerEarlyTime
 m_tAbilityCreateTime
 m_tActivationTime
 m_tActiveEndTime
+m_tAmberRejuvExpireTime
 m_tAttackWindowStart
 m_tBeginTimeWithPrewarm
 m_tBuffRechargeTime
@@ -47798,6 +48030,7 @@ m_tDrainLifeStopTime
 m_tEndTime
 m_tExecuteTime
 m_tFireOnReleaseHoldBeginTime
+m_tFirstCastTime
 m_tFirstPickupTime
 m_tForceTransformTime
 m_tGravityReductionEndTime
@@ -47847,6 +48080,7 @@ m_tPauseBeginTime
 m_tPriorityTargetTime
 m_tQueuedEnableTime
 m_tRecastEndTime
+m_tSapphireRejuvExpireTime
 m_tShootingLockoutEndTime
 m_tSlowStartTime
 m_tSlowStopTime
@@ -48756,6 +48990,7 @@ m_vecDataCPValue
 m_vecDebugOverlayData
 m_vecDefaultOverrides
 m_vecDefaultValue
+m_vecDeflectedTargets
 m_vecDeployedGravestones
 m_vecDeployedPieces
 m_vecDeployedProjectiles
@@ -50631,7 +50866,6 @@ p2p_Voice
 p2p_WatchSynchronization
 p2p_listpeers
 p2p_ping
-pRiposteAbility
 pSamples
 pVelocityZones
 pWorldObject
@@ -51228,6 +51462,7 @@ prop_nav_obstacle_block_edge_min_c
 prop_nav_obstacle_block_mass_a
 prop_nav_obstacle_block_mass_b
 prop_nav_obstacle_block_mass_c
+prop_parade_float
 prop_physics
 prop_physics_create
 prop_physics_override

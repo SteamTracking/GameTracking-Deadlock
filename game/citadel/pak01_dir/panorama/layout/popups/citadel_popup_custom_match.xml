@@ -3,33 +3,47 @@
 	<styles>
 		<include src="s2r://panorama/styles/citadel_base_styles.vcss" />
 		<include src="s2r://panorama/styles/popups/popups_shared.vcss" />
+		<include src="s2r://panorama/styles/popups/popup_join_or_create_party.vcss" />
+		<include src="s2r://panorama/styles/citadel_play_box_button.vcss" />
 		<include src="s2r://panorama/styles/popups/citadel_popup_custom_match.vcss" />
 	</styles>
 	<PopupCustomMatch class="PopupPanel Hidden" popupbackground="dim" oncancel="UIPopupButtonClicked(); CitdaelSetDBPageFocus();">
-		<Panel class="MainBody">
-			<Label text="#menu_bot_custom" class="h2 display silvered align_center" />
-			<Panel id="ContentArea">
-				<Panel class="CreateMatch">
-					<Panel class="CreateMatchButton" onactivate="CitadelPartyCreatePrivateLobby(); UIPopupButtonClicked();">
-						<Label text="#Citael_PrivateLobbyModal_CreateNewButton" />
+		<Panel id="TitleSection" class="Header">
+			<Label class="Title" text="#menu_bot_custom" />
+		</Panel>
+		<Panel class="Sections">
+			<Panel id="CreateSection" class="Section">
+				<Panel class="SectionColumnContainer">
+					<Panel class="SectionLeftColumn">
+						<Label class="SectionTitle" text="#Citael_PrivateLobbyModal_CreateNewButton" />
+						<Label class="SectionDesc" text="#Citael_PrivateLobbyModal_CreateNewDesc" />
+					</Panel>
+					<Panel class="SectionRightColumn">
+						<CitadelButton id="CreateButton" class="Fill Medium HasText" text="#Citael_PrivateLobbyModal_CreateButton" onactivate="CitadelPartyCreatePrivateLobby(); UIPopupButtonClicked();" />
 					</Panel>
 				</Panel>
-				<Panel class="Separator" />
-				<Panel class="CodeEntry">
-					<Label class="codeEntryLabel" text="#Citael_PrivateLobbyModal_JoinCode" />
-					<TextEntry id="PartyCodeEntry" placeholder="#Citadel_JoinParty_Prompt" oninputsubmit="CitadelCustomMatchJoin()">
-						<Label id="PlaceholderText" text="#Citadel_JoinParty_Prompt" />
-					</TextEntry>
+				<Panel class="HR1px" />
+			</Panel>
+			<Panel id="JoinSection" class="Section">
+				<Panel class="SectionColumnContainer">
+					<Panel class="SectionLeftColumn">
+						<Label class="SectionTitle" text="#Citael_PrivateLobbyModal_JoinCode" />
+						<Label class="SectionDesc" text="#Citael_PrivateLobbyModal_JoinCodeDesc" />
+					</Panel>
+					<Panel class="SectionRightColumn">
+						<TextEntry id="PartyCodeEntry" placeholder="#Citadel_JoinOrCreateParty_EnterCode" oninputsubmit="CitadelCustomMatchJoin()">
+							<Label id="PlaceholderText" text="#Citadel_JoinOrCreateParty_EnterCode" />
+						</TextEntry>
+						<CitadelButton id="OKButton" class="Medium Large HasText" text="#Citadel_JoinOrCreateParty_JoinParty" onactivate="CitadelCustomMatchJoin(); UIPopupButtonClicked();" />
+					</Panel>
+				</Panel>
+				<Panel class="HR1px" />
+			</Panel>
+			<Panel id="ButtonSection" class="Section">
+				<Panel class="SectionColumnContainer">
+					<CitadelButton id="CancelButton" class="Medium HasText" text="#Cancel" onactivate="CitdaelSetDBPageFocus(); UIPopupButtonClicked();" />
 				</Panel>
 			</Panel>
-		</Panel>
-		<Panel class="ButtonRow LeftRightFlow">
-			<Button id="OKButton" class="SecondaryButton align_center light fill" onactivate="CitadelCustomMatchJoin()">
-				<Label text="#OK" />
-			</Button>
-			<Button class="SecondaryButton align_center" onactivate="UIPopupButtonClicked(); CitdaelSetDBPageFocus();">
-				<Label text="#Cancel" />
-			</Button>
 		</Panel>
 	</PopupCustomMatch>
 </root>

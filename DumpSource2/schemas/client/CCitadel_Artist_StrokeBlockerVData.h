@@ -3,6 +3,7 @@ class CCitadel_Artist_StrokeBlockerVData : public CEntitySubclassVDataBase
 {
 	// MPropertyStartGroup = "Gameplay"
 	int32 m_nMeleeHits; // = 1
+	int32 m_nTrooperMeleeHits; // = 5
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strHitSound;
 	CSoundEventName m_strDestroySound;

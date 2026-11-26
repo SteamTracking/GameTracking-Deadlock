@@ -10,6 +10,7 @@ class CAbility_Fencer_Lunge : public CCitadelBaseAbility
 	bool m_bStartedInAir;
 	uint8 m_iRemainingCasts;
 	GameTime_t m_RecastEndTime;
+	GameTime_t m_FirstCastTime;
 	uint8 m_eLungeDirection;
 	float32 m_flHeldTime;
 	CUtlVector< CHandle< CBaseEntity > > m_vecHitEnemies;

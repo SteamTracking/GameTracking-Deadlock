@@ -13,5 +13,6 @@ class CCitadel_Ability_Priest_Flashbang_VData : public CitadelAbilityVData
 	float32 m_flMinSurfaceDotToBounce;
 	float32 m_flMaxSurfaceDotToBounce; // = 1
 	float32 m_flBounceVerticalReductionRatio; // = 0.5
+	float32 m_flClimbHeight;
 	bool m_bDebug;
 };

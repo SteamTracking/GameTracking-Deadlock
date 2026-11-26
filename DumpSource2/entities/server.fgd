@@ -3549,6 +3549,11 @@
 [
 ]
 
+// CCitadel_BreakableProp_ParadeFloatBox
+@PointClass base(citadel_breakable_prop) = citadel_breakable_prop_parade_float_box
+[
+]
+
 // CCitadel_BreakableProp_PunchableTroll
 @PointClass base(citadel_breakable_prop) = citadel_breakable_prop_punchable_troll
 [
@@ -4090,6 +4095,11 @@
 	spawn_delay_override(float) // FIELD_FLOAT32 m_flOverrideSpawnDelay
 	respawn_time_override(float) // FIELD_FLOAT32 m_flOverrideRespawnTime
 	input SpawnPickup(void) : "Spawn the configured pickup now, restarting the respawn cycle." // Pulse node
+]
+
+// CCitadel_Pickup_Turkey
+@PointClass base(citadel_pickup) = citadel_pickup_turkey
+[
 ]
 
 // CBasePlayerController, ECF_SPAWN_GROUP_HANDLE_INVALID
@@ -9844,6 +9854,13 @@
 // CDynamicPropAlias_prop_dynamic_override, ECF_ALIAS
 @PointClass base(prop_dynamic) = prop_dynamic_override
 [
+]
+
+// CPropParadeFloat
+@PointClass base(citadel_breakable_prop) = prop_parade_float
+[
+	box_subclass(string) // FIELD_STRING m_iszBoxSubclass
+	input SpawnBox(void) : "Spawn a new box on the attachment, replacing the current one." // Pulse node
 ]
 
 // CPhysicsPropOverride

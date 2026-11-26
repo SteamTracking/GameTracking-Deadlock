@@ -31,4 +31,8 @@ class CCitadel_Ability_Jump : public C_CitadelBaseAbility
 	int8 m_nConsecutiveAirJumps;
 	int8 m_nConsecutiveWallJumps;
 	GameTime_t m_flLateralInputSuppressEndTime;
+	bool m_bFailedAirJump;
+	GameTime_t m_flFailedAirJumpPenaltyEndTime;
+	int8 m_nFailedAirJumpPenaltyStacks;
+	bool m_bGroundJumpAirDragPenalty;
 };

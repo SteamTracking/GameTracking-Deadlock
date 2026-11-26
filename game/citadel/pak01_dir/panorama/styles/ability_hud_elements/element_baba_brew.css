@@ -183,10 +183,30 @@
 
 .brew_barrier #group_effects Label,.brew_silence #group_effects Label,.brew_fire #group_effects Label
 {
-	max-width: 120px;
+	max-width: 76px;
 	max-height: 30px;
 	text-overflow: shrink;
 	text-align: center;
+}
+
+#group_effects .slot_content
+{
+	horizontal-align: center;
+	vertical-align: middle;
+	flow-children: right;
+}
+
+#group_effects .brew_icon
+{
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+	margin-right: 4px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	wash-color: offWhite;
+	visibility: collapse;
 }
 
 #group_effects .progress_bar
@@ -194,6 +214,11 @@
 	transform: translateY(0px);
 	transition-property: transform;
 	transition-duration: 0.2s;
+}
+
+.slot1_barrier #bar_container_slot1 #bar_bg,.slot2_barrier #bar_container_slot2 #bar_bg,.slot3_barrier #bar_container_slot3 #bar_bg
+{
+	background-color: baba_barrier_brew_color&77;
 }
 
 .slot1_barrier #bar_container_slot1 #bar_fg,.slot2_barrier #bar_container_slot2 #bar_fg,.slot3_barrier #bar_container_slot3 #bar_fg
@@ -206,6 +231,17 @@
 	visibility: visible;
 }
 
+.slot1_barrier #bar_container_slot1 .brew_icon,.slot2_barrier #bar_container_slot2 .brew_icon,.slot3_barrier #bar_container_slot3 .brew_icon
+{
+	background-image: url("s2r://panorama/images/hud/core/icon_fortitude_shield.vsvg");
+	visibility: visible;
+}
+
+.slot1_silence #bar_container_slot1 #bar_bg,.slot2_silence #bar_container_slot2 #bar_bg,.slot3_silence #bar_container_slot3 #bar_bg
+{
+	background-color: spiritBrightColor&77;
+}
+
 .slot1_silence #bar_container_slot1 #bar_fg,.slot2_silence #bar_container_slot2 #bar_fg,.slot3_silence #bar_container_slot3 #bar_fg
 {
 	background-color: spiritBrightColor;
@@ -214,6 +250,17 @@
 .slot1_silence #bar_container_slot1 .label_silence,.slot2_silence #bar_container_slot2 .label_silence,.slot3_silence #bar_container_slot3 .label_silence
 {
 	visibility: visible;
+}
+
+.slot1_silence #bar_container_slot1 .brew_icon,.slot2_silence #bar_container_slot2 .brew_icon,.slot3_silence #bar_container_slot3 .brew_icon
+{
+	background-image: url("s2r://panorama/images/hud/modifiers/icon_emp.vsvg");
+	visibility: visible;
+}
+
+.slot1_fire #bar_container_slot1 #bar_bg,.slot2_fire #bar_container_slot2 #bar_bg,.slot3_fire #bar_container_slot3 #bar_bg
+{
+	background-color: baba_fire_brew_color&77;
 }
 
 .slot1_fire #bar_container_slot1 #bar_fg,.slot2_fire #bar_container_slot2 #bar_fg,.slot3_fire #bar_container_slot3 #bar_fg
@@ -226,9 +273,15 @@
 	visibility: visible;
 }
 
-.slot1_active #bar_container_slot1 #bar_bg,.slot2_active #bar_container_slot2 #bar_bg,.slot3_active #bar_container_slot3 #bar_bg
+.slot1_fire #bar_container_slot1 .brew_icon,.slot2_fire #bar_container_slot2 .brew_icon,.slot3_fire #bar_container_slot3 .brew_icon
 {
-	background-color: #132131ee;
+	background-image: url("s2r://panorama/images/hud/modifiers/icon_burn.vsvg");
+	visibility: visible;
+}
+
+.slot1_active #bar_container_slot1,.slot2_active #bar_container_slot2,.slot3_active #bar_container_slot3
+{
+	border: 2px solid offWhite;
 }
 
 .brew_locked #group_effects .progress_bar

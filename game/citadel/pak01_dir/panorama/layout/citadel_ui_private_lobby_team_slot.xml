@@ -7,16 +7,13 @@
 	</styles>
 	<CitadelPrivateLobbyTeamSlot class="TeamSlot">
 		<Panel class="LaneColor" />
-		<CitadelHeroImage id="HeroImage" hittest="true" />
+		<CitadelHeroImage id="HeroImage" hittest="true" scaling="stretch-to-cover-preserve-aspect" />
 		<Panel class="Player">
 			<CitadelFriend class="PartyMember" id="PlayerID" />
 		</Panel>
-		<Panel class="Ready" onactivate="CitadelPrivateLobbyReadyUp()">
-			<Label text="#Citadel_PrivateLobby_Ready" />
-		</Panel>
-		<Panel class="Unready" onactivate="CitadelPrivateLobbyUnready()">
-			<Label text="#Citadel_PrivateLobby_Unready" />
-		</Panel>
+		<Panel class="ReadyCheck" />
+		<CitadelButton class="Ready Small HasText" text="#Citadel_PrivateLobby_Ready" onactivate="CitadelPrivateLobbyReadyUp()" />
+		<CitadelButton class="Unready Small HasText" text="#Citadel_PrivateLobby_Unready" onactivate="CitadelPrivateLobbyUnready()" />
 		<Panel class="EmptySlot">
 			<Label text="{s:BotDifficulty}" />
 		</Panel>

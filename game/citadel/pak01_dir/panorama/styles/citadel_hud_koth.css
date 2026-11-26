@@ -4,7 +4,7 @@
 #KothCashInMeter
 {
 	width: 320px;
-	height: 114px;
+	flow-children: down;
 	horizontal-align: middle;
 	margin-top: 110px;
 	ui-scale: 120%;
@@ -15,6 +15,12 @@
 	opacity-mask-scale: 100% 200%;
 	transition-property: border, background-color, margin-top, ui-scale;
 	transition-duration: 0.1s;
+}
+
+#KothCashInMeter #KothMeterBody
+{
+	width: 100%;
+	height: 114px;
 }
 
 #KothCashInMeter .bg_backer
@@ -447,6 +453,124 @@
 .captured_team_2 #KothCashInMeter #KothTextureElement
 {
 	border: 3px solid team2Color;
+}
+
+#KothTrailingBonus
+{
+	horizontal-align: center;
+	vertical-align: bottom;
+	flow-children: right;
+	margin-bottom: 1px;
+	visibility: collapse;
+}
+
+#KothTrailingBonus .koth_trailing_title
+{
+	vertical-align: center;
+	margin-right: 4px;
+	font-family: oracle;
+	font-size: 11px;
+	font-weight: semi-bold;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 0px 3.0 offBlack;
+	color: offWhite&88;
+	visibility: collapse;
+}
+
+#KothTrailingBonus .koth_trailing_values
+{
+	vertical-align: center;
+	flow-children: right;
+}
+
+#KothTrailingBonus .koth_trailing_gold,#KothTrailingBonus .koth_trailing_resist
+{
+	flow-children: right;
+	vertical-align: center;
+	margin-left: 4px;
+}
+
+#KothTrailingBonus .soul_icon
+{
+	vertical-align: center;
+	height: 10px;
+	width: 10px;
+	margin-right: 2px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-image: url("s2r://panorama/images/hud/icons/icon_soul.vsvg");
+	wash-color: soulColor&cc;
+}
+
+#KothTrailingBonus .koth_trailing_value
+{
+	vertical-align: center;
+	font-family: numericOracle;
+	font-size: 12px;
+	font-weight: bold;
+	color: offWhite&cc;
+	text-shadow: 0px 0px 0px 3.0 offBlack;
+}
+
+#KothTrailingBonus .koth_trailing_gold .koth_trailing_value
+{
+	color: soulColor&cc;
+}
+
+#KothTrailingBonus .koth_trailing_value_desc
+{
+	vertical-align: center;
+	margin-left: 3px;
+	font-family: oracle;
+	font-size: 11px;
+	font-weight: semi-bold;
+	text-transform: uppercase;
+	color: offWhite&88;
+	text-shadow: 0px 0px 0px 3.0 offBlack;
+}
+
+#KothCashInMeter.koth_enabled.has_trailing_bonus #KothTrailingBonus
+{
+	visibility: visible;
+}
+
+#KothCashInMeter.captured #KothTrailingBonus
+{
+	visibility: collapse;
+}
+
+#KothTrailingBonus.friendly .koth_trailing_title_friendly
+{
+	visibility: visible;
+}
+
+#KothTrailingBonus.enemy .koth_trailing_title_enemy
+{
+	visibility: visible;
+	color: #ffc3c3aa;
+}
+
+#KothTrailingBonus.team_1 .koth_trailing_title_spectator
+{
+	visibility: visible;
+	color: team1Color&cc;
+}
+
+#KothTrailingBonus.team_2 .koth_trailing_title_spectator
+{
+	visibility: visible;
+	color: team2Color&cc;
+}
+
+#KothTrailingBonus.no_bonus_gold .koth_trailing_gold
+{
+	visibility: collapse;
+}
+
+#KothTrailingBonus.no_bonus_resist .koth_trailing_resist
+{
+	visibility: collapse;
 }
 
 #KothCashInMeter.contested .KothIndicator

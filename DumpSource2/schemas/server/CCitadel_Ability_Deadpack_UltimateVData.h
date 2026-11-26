@@ -8,6 +8,7 @@ class CCitadel_Ability_Deadpack_UltimateVData : public CitadelAbilityVData
 	CEmbeddedSubclass< CCitadelModifier > m_GoingUpModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_GoingDownModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_TargetModifier;
+	CEmbeddedSubclass< CCitadelModifier > m_LowHealthGlowModifier;
 	// MPropertyStartGroup = "Sounds"
 	CUtlOrderedMap< ECitadelAudioLoopSounds, CSoundEventName > m_strGoingUpSounds;
 	CUtlOrderedMap< ECitadelAudioLoopSounds, CSoundEventName > m_strGoingDownSounds;

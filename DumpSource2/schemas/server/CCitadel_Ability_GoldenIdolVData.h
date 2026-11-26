@@ -15,7 +15,7 @@ class CCitadel_Ability_GoldenIdolVData : public CCitadel_Ability_BaseHeldItemVDa
 	CEmbeddedSubclass< CCitadelModifier > m_HoldingIdolModifier;
 	// MPropertyStartGroup = "Gameplay"
 	float32 m_flRevealTime; // = 30
-	int32 m_iComebackBounty; // = 130
+	int32 m_iComebackBounty; // = 125
 	float32 m_flDamageTickRate; // = 1
 	float32 m_flMaxHealthDamage; // = 0.01
 	float32 m_flTimeToDamage; // = 75

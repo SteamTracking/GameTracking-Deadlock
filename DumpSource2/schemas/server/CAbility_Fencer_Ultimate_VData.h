@@ -13,6 +13,7 @@ class CAbility_Fencer_Ultimate_VData : public CitadelAbilityVData
 	CEmbeddedSubclass< CCitadelModifier > m_CasterArrivalModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_TargetModifier;
 	CEmbeddedSubclass< CCitadelModifier > m_TargetNonHeroModifier;
+	CEmbeddedSubclass< CCitadelModifier > m_LowHealthGlowModifier;
 	// MPropertyStartGroup = "Visuals"
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_TargetPreviewParticle;
 	CResourceNameTyped< CWeakHandle< InfoForResourceTypeIParticleSystemDefinition > > m_DashImpactEffect;

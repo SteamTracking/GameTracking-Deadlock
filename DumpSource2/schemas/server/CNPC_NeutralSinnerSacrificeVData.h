@@ -4,6 +4,8 @@ class CNPC_NeutralSinnerSacrificeVData : public CNPC_TrooperNeutralVData
 	// MPropertyStartGroup = "Retaliation Attack"
 	// MPropertyDescription = "How much damage to deal on retaliate the attacker when this is hit."
 	float32 m_flRetaliateDamage;
+	// MPropertyDescription = "Extra retaliate damage, as a percent of the attacker's max health."
+	float32 m_flRetaliateDamageMaxHealthPercent;
 	// MPropertyStartGroup = "NPC Vault Data"
 	float32 m_flVaultMiniGameTime; // = 3
 	float32 m_flVaultMiniGameHitWindow; // = 0.5

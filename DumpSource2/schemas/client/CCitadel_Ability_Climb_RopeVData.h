@@ -21,6 +21,7 @@ class CCitadel_Ability_Climb_RopeVData : public CitadelAbilityVData
 	float32 m_flActivateRange; // = 40
 	float32 m_flJumpToRoofRayCheckDist; // = 80
 	float32 m_flMinTimeToRoofCheck; // = 0.7
+	float32 m_flMinTimeToRoofCheckLatchDist; // = 96
 	float32 m_flTimeToHintRefresh; // = 3
 	float32 m_iMaxHintCount; // = 5
 	float32 m_flClimbRopeSlowDurationOnHit; // = 2

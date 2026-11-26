@@ -6,4 +6,6 @@ class CBaseLockonAbilityVData : public CitadelAbilityVData
 	// MPropertyStartGroup = "Sounds"
 	CSoundEventName m_strApplyLockonStack;
 	CSoundEventName m_strApplyMaxLockonStack;
+	// MPropertyStartGroup = "UI"
+	bool m_bShowLostLOSOnHUD;
 };

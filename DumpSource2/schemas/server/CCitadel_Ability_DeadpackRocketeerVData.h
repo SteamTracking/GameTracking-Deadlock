@@ -15,6 +15,8 @@ class CCitadel_Ability_DeadpackRocketeerVData : public CitadelAbilityVData
 	float32 m_flIntentSpaceStringStrengthLeft;
 	float32 m_flIntentSpaceStringStrengthVertical;
 	float32 m_flIntentSpaceSurplusSpringStrength; // = 3.5
+	float32 m_flIntentSpaceOpposingSpringStrength; // = 7
+	float32 m_flIntentSpaceLateralSpringStrengthScale; // = 1
 	float32 m_flIntentSpaceVerticalWithXYInput;
 	float32 m_flIntentSpaceVerticalZInputOnly;
 	float32 m_flVerticalIntentDiminishRangeBegin; // = 1300

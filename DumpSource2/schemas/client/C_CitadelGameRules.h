@@ -38,6 +38,9 @@ class C_CitadelGameRules : public C_TeamplayRules
 	GameTime_t m_timeKothGiveUp;
 	int32 m_nAmberGold;
 	int32 m_nSapphireGold;
+	int32 m_nKothTrailingTeam;
+	int32 m_nKothTrailingBonusGold;
+	int32 m_nKothTrailingBonusResist;
 	VectorWS m_vKothCashInCurrentLocation;
 	CHandle< C_BaseEntity > m_hCurrentHeroDrafterRebels;
 	CHandle< C_BaseEntity > m_hCurrentHeroDrafterCombine;
@@ -45,6 +48,8 @@ class C_CitadelGameRules : public C_TeamplayRules
 	int32 m_iMidbossKillCount;
 	int32 m_iAmberRejuvCount;
 	int32 m_iSapphireRejuvCount;
+	GameTime_t m_tAmberRejuvExpireTime;
+	GameTime_t m_tSapphireRejuvExpireTime;
 	float32 m_tNextMidBossSpawnTime;
 	C_NetworkUtlVectorBase< VectorWS > m_vecNeutralCampTimerOrigins;
 	C_NetworkUtlVectorBase< float32 > m_vecNeutralCampNextSpawnTimes;

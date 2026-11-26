@@ -7,6 +7,7 @@
 		<include src="s2r://panorama/styles/tooltips/citadel_mod_tooltip_shared.vcss" />
 		<include src="s2r://panorama/styles/ability_property_icons.vcss" />
 		<include src="s2r://panorama/styles/tooltips/citadel_tooltip_mod_details.vcss" />
+		<include src="s2r://panorama/styles/citadel_disabled_enemy_abilities.vcss" />
 	</styles>
 	<snippets>
 		<snippet name="ImportantStatBox">
@@ -78,6 +79,12 @@
 				<Label class="componentModName" text="{s:modName}" />
 			</Panel>
 		</snippet>
+		<snippet name="DisabledEnemyAbilitiesEntry">
+			<Panel class="DisabledEnemyAbilitiesEntry">
+				<Image id="DisabledEnemyHeroIcon" class="hero_icon" scaling="stretch-to-fit-preserve-aspect" />
+				<Panel id="DisabledEnemyAbilityIcons" class="LeftRightFlow" />
+			</Panel>
+		</snippet>
 		<snippet name="ImbuementSourceSnippet">
 			<Panel class="ImbuementSource LeftRightFlow">
 				<Label class="ModImbuedLabel" text="#Citadel_Shop_AbilityIsImbuing" />
@@ -139,6 +146,14 @@
 							<Panel class="brawl_icon" />
 							<Label text="#Citadel_StreetBrawl_Tooltip_Modified" />
 						</Panel>
+					</Panel>
+					<Panel id="DisabledEnemyAbilitiesContainer" class="DisabledEnemyAbilitiesContainer">
+						<Label class="DisabledEnemyAbilitiesLabel" text="#Citadel_ItemDisablesEnemyAbilities" />
+						<Panel id="DisabledEnemyAbilitiesList" class="DisabledEnemyAbilitiesList" />
+					</Panel>
+					<Panel id="DisabledEnemyFlyingAbilitiesContainer" class="DisabledEnemyAbilitiesContainer">
+						<Label class="DisabledEnemyAbilitiesLabel" text="#Citadel_ItemDisablesEnemyFlyingAbilities" />
+						<Panel id="DisabledEnemyFlyingAbilitiesList" class="DisabledEnemyAbilitiesList" />
 					</Panel>
 					<Panel id="OwnedByContainer">
 						<Label class="OwnedByLabel" text="#Citadel_ItemOwnedBy" />
